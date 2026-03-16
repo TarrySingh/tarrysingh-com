@@ -1,0 +1,290 @@
+[
+  {
+    "code": "DE",
+    "name": "Germany",
+    "group": "eu27",
+    "total_jobs_k": 39336.5,
+    "avg_exposure": 5.37,
+    "occupations": 436
+  },
+  {
+    "code": "TR",
+    "name": "Turkey",
+    "group": "other_europe",
+    "total_jobs_k": 29065.9,
+    "avg_exposure": 4.43,
+    "occupations": 436
+  },
+  {
+    "code": "FR",
+    "name": "France",
+    "group": "eu27",
+    "total_jobs_k": 27246.9,
+    "avg_exposure": 5.19,
+    "occupations": 436
+  },
+  {
+    "code": "UK",
+    "name": "United Kingdom",
+    "group": "other_europe",
+    "total_jobs_k": 23561.1,
+    "avg_exposure": 5.23,
+    "occupations": 436
+  },
+  {
+    "code": "IT",
+    "name": "Italy",
+    "group": "eu27",
+    "total_jobs_k": 22701.0,
+    "avg_exposure": 5.02,
+    "occupations": 436
+  },
+  {
+    "code": "ES",
+    "name": "Spain",
+    "group": "eu27",
+    "total_jobs_k": 20684.1,
+    "avg_exposure": 4.92,
+    "occupations": 436
+  },
+  {
+    "code": "PL",
+    "name": "Poland",
+    "group": "eu27",
+    "total_jobs_k": 16677.5,
+    "avg_exposure": 5.02,
+    "occupations": 436
+  },
+  {
+    "code": "NL",
+    "name": "Netherlands",
+    "group": "eu27",
+    "total_jobs_k": 8624.3,
+    "avg_exposure": 5.53,
+    "occupations": 436
+  },
+  {
+    "code": "RO",
+    "name": "Romania",
+    "group": "eu27",
+    "total_jobs_k": 7567.5,
+    "avg_exposure": 4.44,
+    "occupations": 436
+  },
+  {
+    "code": "SE",
+    "name": "Sweden",
+    "group": "eu27",
+    "total_jobs_k": 4895.8,
+    "avg_exposure": 5.46,
+    "occupations": 436
+  },
+  {
+    "code": "BE",
+    "name": "Belgium",
+    "group": "eu27",
+    "total_jobs_k": 4878.8,
+    "avg_exposure": 5.37,
+    "occupations": 436
+  },
+  {
+    "code": "CZ",
+    "name": "Czechia",
+    "group": "eu27",
+    "total_jobs_k": 4864.6,
+    "avg_exposure": 5.0,
+    "occupations": 436
+  },
+  {
+    "code": "PT",
+    "name": "Portugal",
+    "group": "eu27",
+    "total_jobs_k": 4789.5,
+    "avg_exposure": 5.02,
+    "occupations": 436
+  },
+  {
+    "code": "HU",
+    "name": "Hungary",
+    "group": "eu27",
+    "total_jobs_k": 4550.5,
+    "avg_exposure": 4.91,
+    "occupations": 436
+  },
+  {
+    "code": "CH",
+    "name": "Switzerland",
+    "group": "efta",
+    "total_jobs_k": 4327.1,
+    "avg_exposure": 5.5,
+    "occupations": 436
+  },
+  {
+    "code": "AT",
+    "name": "Austria",
+    "group": "eu27",
+    "total_jobs_k": 4243.2,
+    "avg_exposure": 5.16,
+    "occupations": 436
+  },
+  {
+    "code": "EL",
+    "name": "Greece",
+    "group": "eu27",
+    "total_jobs_k": 4055.6,
+    "avg_exposure": 4.93,
+    "occupations": 436
+  },
+  {
+    "code": "BG",
+    "name": "Bulgaria",
+    "group": "eu27",
+    "total_jobs_k": 2812.1,
+    "avg_exposure": 4.7,
+    "occupations": 436
+  },
+  {
+    "code": "RS",
+    "name": "Serbia",
+    "group": "other_europe",
+    "total_jobs_k": 2682.9,
+    "avg_exposure": 4.82,
+    "occupations": 436
+  },
+  {
+    "code": "DK",
+    "name": "Denmark",
+    "group": "eu27",
+    "total_jobs_k": 2669.5,
+    "avg_exposure": 5.24,
+    "occupations": 436
+  },
+  {
+    "code": "NO",
+    "name": "Norway",
+    "group": "eea",
+    "total_jobs_k": 2561.4,
+    "avg_exposure": 5.36,
+    "occupations": 436
+  },
+  {
+    "code": "SK",
+    "name": "Slovakia",
+    "group": "eu27",
+    "total_jobs_k": 2552.9,
+    "avg_exposure": 5.03,
+    "occupations": 436
+  },
+  {
+    "code": "IE",
+    "name": "Ireland",
+    "group": "eu27",
+    "total_jobs_k": 2460.8,
+    "avg_exposure": 5.27,
+    "occupations": 436
+  },
+  {
+    "code": "FI",
+    "name": "Finland",
+    "group": "eu27",
+    "total_jobs_k": 2423.3,
+    "avg_exposure": 5.15,
+    "occupations": 436
+  },
+  {
+    "code": "HR",
+    "name": "Croatia",
+    "group": "eu27",
+    "total_jobs_k": 1569.3,
+    "avg_exposure": 5.02,
+    "occupations": 436
+  },
+  {
+    "code": "LT",
+    "name": "Lithuania",
+    "group": "eu27",
+    "total_jobs_k": 1360.0,
+    "avg_exposure": 4.93,
+    "occupations": 436
+  },
+  {
+    "code": "BA",
+    "name": "Bosnia and Herzegovina",
+    "group": "other_europe",
+    "total_jobs_k": 1175.7,
+    "avg_exposure": 4.57,
+    "occupations": 436
+  },
+  {
+    "code": "SI",
+    "name": "Slovenia",
+    "group": "eu27",
+    "total_jobs_k": 960.0,
+    "avg_exposure": 4.91,
+    "occupations": 436
+  },
+  {
+    "code": "LV",
+    "name": "Latvia",
+    "group": "eu27",
+    "total_jobs_k": 825.0,
+    "avg_exposure": 4.84,
+    "occupations": 436
+  },
+  {
+    "code": "MK",
+    "name": "North Macedonia",
+    "group": "other_europe",
+    "total_jobs_k": 676.5,
+    "avg_exposure": 4.79,
+    "occupations": 436
+  },
+  {
+    "code": "EE",
+    "name": "Estonia",
+    "group": "eu27",
+    "total_jobs_k": 644.5,
+    "avg_exposure": 5.08,
+    "occupations": 436
+  },
+  {
+    "code": "CY",
+    "name": "Cyprus",
+    "group": "eu27",
+    "total_jobs_k": 459.7,
+    "avg_exposure": 5.04,
+    "occupations": 436
+  },
+  {
+    "code": "LU",
+    "name": "Luxembourg",
+    "group": "eu27",
+    "total_jobs_k": 304.0,
+    "avg_exposure": 5.61,
+    "occupations": 436
+  },
+  {
+    "code": "MT",
+    "name": "Malta",
+    "group": "eu27",
+    "total_jobs_k": 291.3,
+    "avg_exposure": 5.16,
+    "occupations": 436
+  },
+  {
+    "code": "IS",
+    "name": "Iceland",
+    "group": "eea",
+    "total_jobs_k": 194.6,
+    "avg_exposure": 5.19,
+    "occupations": 433
+  },
+  {
+    "code": "ME",
+    "name": "Montenegro",
+    "group": "other_europe",
+    "total_jobs_k": 191.7,
+    "avg_exposure": 5.02,
+    "occupations": 436
+  }
+]
