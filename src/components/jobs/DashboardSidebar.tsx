@@ -133,13 +133,27 @@ export default function DashboardSidebar({
           </a>
         </p>
 
+        {/* Back to experiments */}
+        <div className="mt-3">
+          <a
+            href="/experiments"
+            className={`inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-md transition-colors ${
+              isDark
+                ? "bg-gold-500/10 hover:bg-gold-500/20 text-gold-400"
+                : "bg-amber-50 hover:bg-amber-100 text-amber-700"
+            }`}
+          >
+            &larr; Back to Experiments
+          </a>
+        </div>
+
         {/* Navigation links */}
         <div className={`flex flex-wrap gap-2 mt-3 text-xs`}>
           {[
-            { href: "/industry", label: "Industry" },
-            { href: "/agentic", label: "Agentic vs Human" },
-            { href: "/compare", label: "Compare" },
-            { href: "/about", label: "About" },
+            { href: "/jobs/industry", label: "Industry" },
+            { href: "/jobs/agentic", label: "Agentic vs Human" },
+            { href: "/jobs/compare", label: "Compare" },
+            { href: "/jobs/about", label: "About" },
           ].map((link) => (
             <Link
               key={link.href}

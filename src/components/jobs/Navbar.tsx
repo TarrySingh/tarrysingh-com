@@ -26,6 +26,17 @@ export default function Navbar() {
           </Link>
 
           <div className="flex items-center gap-1">
+            <a
+              href="/experiments"
+              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                isDark
+                  ? "text-gray-400 hover:text-white hover:bg-white/10"
+                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+              }`}
+            >
+              &larr; Experiments
+            </a>
+            <span className={`mx-1 ${isDark ? "text-white/20" : "text-gray-300"}`}>|</span>
             {NAV_ITEMS.map((item) => {
               const isActive =
                 item.href === "/jobs"
