@@ -51,6 +51,7 @@ export default function HomePage() {
     <div className={`flex h-screen overflow-hidden ${bgColor}`}>
       <DashboardSidebar
         data={displayData}
+        rawData={selectedCountry ? filterByCountry(allData, selectedCountry) : allData}
         countries={countries}
         selectedCountry={selectedCountry}
         onCountryChange={setSelectedCountry}

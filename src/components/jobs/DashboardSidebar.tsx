@@ -10,6 +10,7 @@ import CountrySelector from "./CountrySelector";
 
 interface DashboardSidebarProps {
   data: OccupationRecord[];
+  rawData: OccupationRecord[];  // Non-aggregated data for salary/education computation
   countries: CountrySummary[];
   selectedCountry: string | null;
   onCountryChange: (code: string | null) => void;
@@ -20,6 +21,7 @@ interface DashboardSidebarProps {
 
 export default function DashboardSidebar({
   data,
+  rawData,
   countries,
   selectedCountry,
   onCountryChange,
@@ -77,13 +79,16 @@ export default function DashboardSidebar({
 
   const educationExposure = useMemo(() => {
     const EDU_GROUPS = [
-      { key: "ED0-2", label: "Below Upper Secondary" },
-      { key: "ED3_4", label: "Upper Secondary" },
-      { key: "ED5-8", label: "Tertiary (Bachelor+)" },
+      { key: "ED0-2", label: "No Degree" },
+      { key: "ED3_4", label: "Secondary" },
+      { key: "ED5", label: "Short-cycle" },
+      { key: "ED6", label: "Bachelor's" },
+      { key: "ED7", label: "Master's" },
+      { key: "ED8", label: "Doctoral/PhD" },
     ];
     return EDU_GROUPS.map((grp) => {
       let wSum = 0, wCount = 0;
-      for (const r of data) {
+      for (const r of rawData) {
         if (r.education && grp.key in r.education && r.exposure !== null && r.jobs_k) {
           const share = r.education[grp.key];
           const jobsInLevel = r.jobs_k * share;
@@ -93,8 +98,8 @@ export default function DashboardSidebar({
       }
       const avg = wCount > 0 ? wSum / wCount : 0;
       return { ...grp, avg, jobs_k: wCount };
-    });
-  }, [data]);
+    }).filter((grp) => grp.jobs_k > 0);
+  }, [rawData]);
 
   const salaryExposure = useMemo(() => {
     const PAY_BANDS = [
@@ -107,7 +112,7 @@ export default function DashboardSidebar({
     let hasData = false;
     const bands = PAY_BANDS.map((band) => {
       let wSum = 0, wCount = 0;
-      for (const r of data) {
+      for (const r of rawData) {
         if (r.exposure !== null && r.jobs_k && r.pay_eur !== null && r.pay_eur !== undefined) {
           if (r.pay_eur >= band.min && r.pay_eur < band.max) {
             wSum += r.exposure * r.jobs_k;
@@ -120,7 +125,7 @@ export default function DashboardSidebar({
       return { ...band, avg, jobs_k: wCount };
     });
     return hasData ? bands : null;
-  }, [data]);
+  }, [rawData]);
 
   const bg = isDark ? "bg-[#1a1a2e]" : "bg-white";
   const text = isDark ? "text-white" : "text-gray-900";
@@ -413,8 +418,8 @@ export default function DashboardSidebar({
         <div className="space-y-1.5">
           {educationExposure.map((grp) => (
             <div key={grp.key} className="flex items-center gap-2 text-xs">
-              <span className={`${textMuted} w-16 shrink-0 truncate`} title={grp.label}>
-                {grp.label.includes("Below") ? "No degree" : grp.label.includes("Upper") ? "Secondary" : "Tertiary"}
+              <span className={`${textMuted} w-20 shrink-0 truncate text-[10px]`} title={grp.label}>
+                {grp.label}
               </span>
               <div className={`flex-1 h-3 rounded-sm overflow-hidden ${isDark ? "bg-white/5" : "bg-gray-100"}`}>
                 <div
