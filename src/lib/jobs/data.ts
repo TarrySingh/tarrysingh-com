@@ -85,7 +85,13 @@ export function aggregateByOccupation(data: OccupationRecord[]): OccupationRecor
     major_group: records[0].major_group,
     sub_major_group: records[0].sub_major_group,
     jobs_k: records.reduce((sum, r) => sum + (r.jobs_k || 0), 0),
-    pay_eur: null, // Can't meaningfully aggregate pay across countries
+    pay_eur: (() => {
+      const withPay = records.filter((r) => r.pay_eur !== null && r.jobs_k);
+      if (withPay.length === 0) return null;
+      const wSum = withPay.reduce((s, r) => s + (r.pay_eur! * (r.jobs_k || 1)), 0);
+      const wCount = withPay.reduce((s, r) => s + (r.jobs_k || 1), 0);
+      return Math.round(wSum / wCount);
+    })(),
     exposure: records[0].exposure, // Same score for all countries
     rationale: records[0].rationale,
     education: records[0].education,
