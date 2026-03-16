@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import { OccupationRecord, CountrySummary } from "@/lib/jobs/types";
-import { EXPOSURE_TIERS } from "@/lib/jobs/colors";
+import { EXPOSURE_TIERS, exposureColor } from "@/lib/jobs/colors";
 import { abbreviateNumber } from "@/lib/jobs/format";
 import { useTheme } from "@/lib/jobs/theme";
 import CountrySelector from "./CountrySelector";
@@ -73,6 +73,53 @@ export default function DashboardSidebar({
       mostExposed: sorted.slice(0, 5),
       leastExposed: sorted.slice(-5).reverse(),
     };
+  }, [data]);
+
+  const educationExposure = useMemo(() => {
+    const EDU_GROUPS = [
+      { key: "ED0-2", label: "Below Upper Secondary" },
+      { key: "ED3_4", label: "Upper Secondary" },
+      { key: "ED5-8", label: "Tertiary (Bachelor+)" },
+    ];
+    return EDU_GROUPS.map((grp) => {
+      let wSum = 0, wCount = 0;
+      for (const r of data) {
+        if (r.education && grp.key in r.education && r.exposure !== null && r.jobs_k) {
+          const share = r.education[grp.key];
+          const jobsInLevel = r.jobs_k * share;
+          wSum += r.exposure * jobsInLevel;
+          wCount += jobsInLevel;
+        }
+      }
+      const avg = wCount > 0 ? wSum / wCount : 0;
+      return { ...grp, avg, jobs_k: wCount };
+    });
+  }, [data]);
+
+  const salaryExposure = useMemo(() => {
+    const PAY_BANDS = [
+      { label: "<€20K", min: 0, max: 20000 },
+      { label: "€20–35K", min: 20000, max: 35000 },
+      { label: "€35–50K", min: 35000, max: 50000 },
+      { label: "€50–75K", min: 50000, max: 75000 },
+      { label: "€75K+", min: 75000, max: Infinity },
+    ];
+    let hasData = false;
+    const bands = PAY_BANDS.map((band) => {
+      let wSum = 0, wCount = 0;
+      for (const r of data) {
+        if (r.exposure !== null && r.jobs_k && r.pay_eur !== null && r.pay_eur !== undefined) {
+          if (r.pay_eur >= band.min && r.pay_eur < band.max) {
+            wSum += r.exposure * r.jobs_k;
+            wCount += r.jobs_k;
+            hasData = true;
+          }
+        }
+      }
+      const avg = wCount > 0 ? wSum / wCount : 0;
+      return { ...band, avg, jobs_k: wCount };
+    });
+    return hasData ? bands : null;
   }, [data]);
 
   const bg = isDark ? "bg-[#1a1a2e]" : "bg-white";
@@ -324,6 +371,62 @@ export default function DashboardSidebar({
               <span className={`${isDark ? "text-gray-300" : "text-gray-700"} truncate mr-2`}>{r.title}</span>
               <span className="text-green-400 font-mono shrink-0">
                 {r.exposure}/10
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Exposure by salary */}
+      {salaryExposure && (
+        <div className={`px-5 py-3 border-b ${border}`}>
+          <h3 className={`text-xs font-semibold ${textMuted} uppercase tracking-wider mb-2`}>
+            Exposure by Salary
+          </h3>
+          <div className="space-y-1.5">
+            {salaryExposure.map((band) => (
+              <div key={band.label} className="flex items-center gap-2 text-xs">
+                <span className={`${textMuted} w-16 shrink-0`}>{band.label}</span>
+                <div className={`flex-1 h-3 rounded-sm overflow-hidden ${isDark ? "bg-white/5" : "bg-gray-100"}`}>
+                  <div
+                    className="h-full rounded-sm"
+                    style={{
+                      width: `${(band.avg / 10) * 100}%`,
+                      backgroundColor: exposureColor(band.avg, 0.8),
+                    }}
+                  />
+                </div>
+                <span className={`${isDark ? "text-gray-300" : "text-gray-700"} font-mono w-8 text-right shrink-0`}>
+                  {band.avg.toFixed(1)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Exposure by education */}
+      <div className={`px-5 py-3 border-b ${border}`}>
+        <h3 className={`text-xs font-semibold ${textMuted} uppercase tracking-wider mb-2`}>
+          Exposure by Education
+        </h3>
+        <div className="space-y-1.5">
+          {educationExposure.map((grp) => (
+            <div key={grp.key} className="flex items-center gap-2 text-xs">
+              <span className={`${textMuted} w-16 shrink-0 truncate`} title={grp.label}>
+                {grp.label.includes("Below") ? "No degree" : grp.label.includes("Upper") ? "Secondary" : "Tertiary"}
+              </span>
+              <div className={`flex-1 h-3 rounded-sm overflow-hidden ${isDark ? "bg-white/5" : "bg-gray-100"}`}>
+                <div
+                  className="h-full rounded-sm"
+                  style={{
+                    width: `${(grp.avg / 10) * 100}%`,
+                    backgroundColor: exposureColor(grp.avg, 0.8),
+                  }}
+                />
+              </div>
+              <span className={`${isDark ? "text-gray-300" : "text-gray-700"} font-mono w-8 text-right shrink-0`}>
+                {grp.avg.toFixed(1)}
               </span>
             </div>
           ))}
