@@ -5,8 +5,8 @@ import { ArrowRight, TrendingUp, Lightbulb, Globe, Cpu, BarChart3, Layers } from
 
 const stats = [
   { value: "30+", label: "Years of Experience" },
-  { value: "5+", label: "Industries Transformed" },
-  { value: "3", label: "Continents" },
+  { value: "10+", label: "Industries" },
+  { value: "5", label: "Continents" },
 ]
 
 const highlights = [
