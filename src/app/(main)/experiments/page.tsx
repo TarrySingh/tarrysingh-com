@@ -5,6 +5,30 @@ import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot } from
 
 const experiments = [
   {
+    title: "The Agent & Me",
+    description:
+      "Explore how agentic AI transforms job roles across 10 industry verticals. Interactive playgrounds with 40-60+ core functions per sector, AI automation scoring, and real-world simulation.",
+    to: "/experiments/agent-and-me",
+    tag: "Agentic AI",
+    icon: Bot,
+    gradient: "from-violet-500/8 to-fuchsia-500/8",
+    accent: "bg-violet-500",
+    isNew: true,
+    date: "Mar 2026",
+  },
+  {
+    title: "European Jobs AI Exposure",
+    description:
+      "AI exposure across 40+ European countries and 436+ occupations.",
+    to: "/jobs",
+    tag: "Labour Market",
+    icon: Globe,
+    gradient: "from-cyan-500/8 to-blue-500/8",
+    accent: "bg-cyan-500",
+    isNew: true,
+    date: "Mar 2026",
+  },
+  {
     title: "AI Disruption: Winner-Take-All",
     description:
       "Interactive scatter plot analyzing how AI disruption reshapes market dynamics into winner-take-all competitions. Explore customizable bubbles representing market players across disruption zones.",
@@ -43,26 +67,6 @@ const experiments = [
     icon: Lightbulb,
     gradient: "from-purple-500/8 to-pink-500/8",
     accent: "bg-purple-500",
-  },
-  {
-    title: "European Jobs AI Exposure",
-    description:
-      "AI exposure across 40+ European countries and 436+ occupations.",
-    to: "/jobs",
-    tag: "Labour Market",
-    icon: Globe,
-    gradient: "from-cyan-500/8 to-blue-500/8",
-    accent: "bg-cyan-500",
-  },
-  {
-    title: "The Agent & Me",
-    description:
-      "Explore how agentic AI transforms job roles across 10 industry verticals. Interactive playgrounds with 40-60+ core functions per sector, AI automation scoring, and real-world simulation.",
-    to: "/experiments/agent-and-me",
-    tag: "Agentic AI",
-    icon: Bot,
-    gradient: "from-violet-500/8 to-fuchsia-500/8",
-    accent: "bg-violet-500",
   },
 ]
 
@@ -113,6 +117,16 @@ const Experiments = () => {
                       <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
                         {experiment.tag}
                       </span>
+                      {experiment.isNew && (
+                        <>
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-500 border border-rose-200">
+                            New!
+                          </span>
+                          <span className="text-[10px] text-gray-300 font-medium">
+                            {experiment.date}
+                          </span>
+                        </>
+                      )}
                     </div>
                     <h2 className="text-lg md:text-xl font-semibold text-navy-900 mb-2 group-hover:text-navy-800 transition-colors">
                       {experiment.title}
