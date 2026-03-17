@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Tarry Singh — Entrepreneur & AI Strategist",
   description:
     "Entrepreneur and technologist with over 30 years of experience building and scaling technology ventures across multiple industries and geographies.",
+  icons: {
+    icon: "/icon.svg",
+  },
 }
 
 export default function RootLayout({
