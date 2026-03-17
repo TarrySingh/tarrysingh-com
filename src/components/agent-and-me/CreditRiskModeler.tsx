@@ -391,7 +391,7 @@ function SimulationPanel({ t, scenario, onSimResults }: { t: ThemeColors; scenar
       {isOpen && (
         <div style={{ padding: "0 20px 24px" }}>
           <div style={{ fontSize: 12.5, color: t.textSecondary, lineHeight: 1.6, marginBottom: 18, padding: "12px 16px", background: t.bgSurface, borderRadius: 10 }}>
-            <strong style={{ color: t.text }}>Karpathy-style LLM Scoring:</strong> This simulation searches the live web for real-world evidence of AI adoption in credit risk modeling at peer banks, then uses Claude as an LLM-as-judge to re-score each domain based on actual market signals.
+            <strong style={{ color: t.text }}>Realtime LLM Scoring:</strong> This simulation searches the live web for real-world evidence of AI adoption in credit risk modeling at peer banks, then uses Claude as an LLM-as-judge to re-score each domain based on actual market signals.
           </div>
 
           <div style={{ fontSize: 10, color: t.textMuted, letterSpacing: "0.1em", marginBottom: 10, fontWeight: 600 }}>SELECT PEER GROUP</div>
@@ -833,7 +833,7 @@ function MethodologyPanel({ t, isOpen, onToggle }: { t: ThemeColors; isOpen: boo
               <h4 style={{ margin: "14px 0 8px", fontSize: 13, fontWeight: 700, color: t.text }}>AI Score (0{"\u2013"}100%)</h4>
               <p style={{ margin: 0 }}>Each task is scored on automation readiness factoring: data availability, decision repeatability, regulatory sensitivity, judgment requirements, and tooling maturity. The scenario selector shifts scores by adoption speed.</p>
               <h4 style={{ margin: "14px 0 8px", fontSize: 13, fontWeight: 700, color: t.text }}>Real World Simulation</h4>
-              <p style={{ margin: 0 }}>Uses <strong>Karpathy-style LLM-as-judge scoring</strong>: live web search for peer bank AI signals, then Claude evaluates each domain. Free demo results available; live runs use token baskets ({CONFIG.BASKET_PRICE} for {CONFIG.BASKET_SIZE} simulations).</p>
+              <p style={{ margin: 0 }}>Uses <strong>Realtime LLM-as-judge scoring</strong>: live web search for peer bank AI signals, then Claude evaluates each domain. Free demo results available; live runs use token baskets ({CONFIG.BASKET_PRICE} for {CONFIG.BASKET_SIZE} simulations).</p>
             </div>
             <div>
               <h4 style={{ margin: "0 0 8px", fontSize: 13, fontWeight: 700, color: t.text }}>5-tier classification</h4>
