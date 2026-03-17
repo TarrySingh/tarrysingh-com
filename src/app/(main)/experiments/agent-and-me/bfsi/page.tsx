@@ -32,7 +32,7 @@ const SECTIONS = [
 const ROLES: JobRole[] = [
   // Credit & Lending
   { id: "credit-risk-modeler", name: "Credit Risk Modeler", tagline: "PD/LGD/EAD modeling, Basel IRB, IFRS 9", icon: "📊", taskCount: 35, avgScore: 64, status: "active", section: "credit_lending" },
-  { id: "mortgage-specialist", name: "Mortgage Specialist", tagline: "Underwriting, affordability, property valuation", icon: "🏠", taskCount: 32, avgScore: 58, status: "coming_soon", section: "credit_lending" },
+  { id: "mortgage-specialist", name: "Mortgage Specialist", tagline: "Underwriting, affordability, property valuation", icon: "🏠", taskCount: 32, avgScore: 72, status: "active", section: "credit_lending" },
   { id: "consumer-lending-analyst", name: "Consumer Lending Analyst", tagline: "Personal loans, auto finance, scorecards", icon: "💳", taskCount: 28, avgScore: 67, status: "coming_soon", section: "credit_lending" },
   { id: "commercial-credit-analyst", name: "Commercial Credit Analyst", tagline: "Corporate lending, financial spreads, covenants", icon: "🏢", taskCount: 30, avgScore: 55, status: "coming_soon", section: "credit_lending" },
   { id: "credit-portfolio-manager", name: "Credit Portfolio Manager", tagline: "Concentration risk, portfolio analytics, stress testing", icon: "📈", taskCount: 26, avgScore: 61, status: "coming_soon", section: "credit_lending" },
