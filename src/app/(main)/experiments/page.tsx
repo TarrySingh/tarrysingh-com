@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe } from "lucide-react"
+import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot } from "lucide-react"
 
 const experiments = [
   {
@@ -53,6 +53,16 @@ const experiments = [
     icon: Globe,
     gradient: "from-cyan-500/8 to-blue-500/8",
     accent: "bg-cyan-500",
+  },
+  {
+    title: "The Agent & Me",
+    description:
+      "Explore how agentic AI transforms job roles across 10 industry verticals. Interactive playgrounds with 40-60+ core functions per sector, AI automation scoring, and real-world simulation.",
+    to: "/experiments/agent-and-me",
+    tag: "Agentic AI",
+    icon: Bot,
+    gradient: "from-violet-500/8 to-fuchsia-500/8",
+    accent: "bg-violet-500",
   },
 ]
 
