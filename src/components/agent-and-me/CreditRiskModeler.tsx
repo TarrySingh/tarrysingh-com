@@ -188,13 +188,13 @@ function useTheme(isDark: boolean): ThemeColors {
     tagText: "rgba(255,255,255,0.5)", inputBg: "rgba(255,255,255,0.03)", inputBorder: "rgba(255,255,255,0.08)",
     footerBg: "rgba(255,255,255,0.02)", methodBg: "rgba(255,255,255,0.015)", stroke: "#0A0E17"
   } : {
-    bg: "#F4F5F7", bgCard: "rgba(0,0,0,0.02)", bgSurface: "rgba(0,0,0,0.03)",
-    border: "rgba(0,0,0,0.08)", text: "#1A1D26", textSecondary: "rgba(0,0,0,0.55)",
-    textMuted: "rgba(0,0,0,0.4)", textFaint: "rgba(0,0,0,0.15)",
-    headerBg: "linear-gradient(180deg, rgba(0,100,70,0.04) 0%, transparent 100%)",
-    gridLine: "rgba(0,0,0,0.07)", barBg: "rgba(0,0,0,0.07)", tagBg: "rgba(0,0,0,0.05)",
-    tagText: "rgba(0,0,0,0.55)", inputBg: "#FFFFFF", inputBorder: "rgba(0,0,0,0.12)",
-    footerBg: "rgba(0,0,0,0.03)", methodBg: "rgba(0,0,0,0.02)", stroke: "#F4F5F7"
+    bg: "#F0F1F3", bgCard: "#FFFFFF", bgSurface: "#F7F8FA",
+    border: "rgba(0,0,0,0.12)", text: "#1A1D26", textSecondary: "#4A5068",
+    textMuted: "#6B7280", textFaint: "#9CA3AF",
+    headerBg: "linear-gradient(180deg, rgba(26,31,44,0.04) 0%, transparent 100%)",
+    gridLine: "rgba(0,0,0,0.10)", barBg: "rgba(0,0,0,0.08)", tagBg: "rgba(0,0,0,0.06)",
+    tagText: "#4A5068", inputBg: "#FFFFFF", inputBorder: "rgba(0,0,0,0.15)",
+    footerBg: "#E8E9EC", methodBg: "#F7F8FA", stroke: "#FFFFFF"
   }
 }
 
