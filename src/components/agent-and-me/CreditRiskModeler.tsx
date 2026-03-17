@@ -611,7 +611,7 @@ function CategoryRadar({ category, tasks, isSelected, onClick, t, simDelta }: {
       {simDelta != null && <div style={{ position: "absolute", top: 8, right: 10, fontSize: 9, fontWeight: 700, color: simDelta > 0 ? "#00E5A0" : simDelta < 0 ? "#FF6B6B" : t.textMuted, fontFamily: "'DM Mono', monospace" }}>SIM {simDelta > 0 ? "+" : ""}{simDelta}%</div>}
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
         <span style={{ fontSize: 18, color: category.color }}>{category.icon}</span>
-        <span style={{ fontSize: 13, fontWeight: 600, color: t.text }}>{category.name}</span>
+        <span style={{ fontSize: 14, fontWeight: 600, color: t.text }}>{category.name}</span>
       </div>
       <svg viewBox="0 0 180 180" style={{ width: "100%", maxWidth: 180, margin: "0 auto", display: "block" }}>
         {[1, 0.75, 0.5, 0.25].map(s => {
@@ -625,14 +625,14 @@ function CategoryRadar({ category, tasks, isSelected, onClick, t, simDelta }: {
         <text x={cx} y={cy - 6} textAnchor="middle" fill={category.color} fontSize="22" fontWeight="700">{displayAvg}%</text>
         <text x={cx} y={cy + 10} textAnchor="middle" fill={t.textMuted} fontSize="8">{simDelta != null ? "SIM SCORE" : "AI READY"}</text>
       </svg>
-      <div style={{ fontSize: 11, color: t.textMuted, textAlign: "center" as const, marginTop: 4 }}>{tasks.length} tasks</div>
+      <div style={{ fontSize: 12, color: t.textMuted, textAlign: "center" as const, marginTop: 4 }}>{tasks.length} tasks</div>
     </div>
   )
 }
 
 function AutomationBadge({ score }: { score: number }) {
   const { short, color } = getLevel(score)
-  return <span style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "3px 10px", borderRadius: 6, fontSize: 10, fontWeight: 700, color, background: color + "12", border: `1px solid ${color}25`, letterSpacing: "0.08em" }}><span style={{ width: 6, height: 6, borderRadius: "50%", background: color, boxShadow: `0 0 6px ${color}60` }} />{short}</span>
+  return <span style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "4px 10px", borderRadius: 6, fontSize: 11, fontWeight: 700, color, background: color + "12", border: `1px solid ${color}25`, letterSpacing: "0.08em" }}><span style={{ width: 6, height: 6, borderRadius: "50%", background: color, boxShadow: `0 0 6px ${color}60` }} />{short}</span>
 }
 
 function HeatmapGrid({ tasks, onSelect, selectedId, t }: { tasks: ComputedTask[]; onSelect: (t: ComputedTask) => void; selectedId: string | undefined; t: ThemeColors }) {
@@ -648,16 +648,16 @@ function HeatmapGrid({ tasks, onSelect, selectedId, t }: { tasks: ComputedTask[]
             borderRadius: 10, padding: "12px 14px", transition: "all 0.2s"
           }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8, marginBottom: 6 }}>
-              <span style={{ fontSize: 12.5, fontWeight: 600, color: t.text, lineHeight: 1.3, flex: 1 }}>{task.name}</span>
+              <span style={{ fontSize: 14, fontWeight: 600, color: t.text, lineHeight: 1.3, flex: 1 }}>{task.name}</span>
               <AutomationBadge score={task.aiScore} />
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 8 }}>
               <div style={{ flex: 1, height: 4, borderRadius: 2, background: t.barBg, overflow: "hidden" }}>
                 <div style={{ width: `${task.aiScore}%`, height: "100%", borderRadius: 2, background: `linear-gradient(90deg, ${task.categoryColor}90, ${task.categoryColor})`, transition: "width 0.6s ease" }} />
               </div>
-              <span style={{ fontSize: 12, fontWeight: 700, color: task.categoryColor, fontFamily: "'DM Mono', monospace", minWidth: 32, textAlign: "right" as const }}>{task.aiScore}%</span>
+              <span style={{ fontSize: 14, fontWeight: 700, color: task.categoryColor, fontFamily: "'DM Mono', monospace", minWidth: 36, textAlign: "right" as const }}>{task.aiScore}%</span>
             </div>
-            <div style={{ fontSize: 10, color: t.textMuted, marginTop: 6 }}>Complexity: {"\u2588".repeat(task.complexity)}{"\u2591".repeat(10 - task.complexity)} {"\u00B7"} {task.frequency}</div>
+            <div style={{ fontSize: 12, color: t.textMuted, marginTop: 6 }}>Complexity: {"\u2588".repeat(task.complexity)}{"\u2591".repeat(10 - task.complexity)} {"\u00B7"} {task.frequency}</div>
           </div>
         )
       })}
@@ -740,9 +740,9 @@ function SummaryStats({ tasks, t }: { tasks: ComputedTask[]; t: ThemeColors }) {
       ].map(s => (
         <div key={s.label} style={{ background: t.bgCard, border: `1px solid ${t.border}`, borderRadius: 12, padding: "16px 18px", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", top: 0, left: 0, width: 3, height: "100%", background: s.color }} />
-          <div style={{ fontSize: 10, color: t.textMuted, letterSpacing: "0.08em", marginBottom: 6 }}>{s.label.toUpperCase()}</div>
-          <div style={{ fontSize: 28, fontWeight: 800, color: s.color, fontFamily: "'DM Mono', monospace", lineHeight: 1 }}>{s.value}</div>
-          <div style={{ fontSize: 10, color: t.textFaint, marginTop: 4 }}>{s.sub}</div>
+          <div style={{ fontSize: 11, color: t.textMuted, letterSpacing: "0.08em", marginBottom: 6 }}>{s.label.toUpperCase()}</div>
+          <div style={{ fontSize: 32, fontWeight: 800, color: s.color, fontFamily: "'DM Mono', monospace", lineHeight: 1 }}>{s.value}</div>
+          <div style={{ fontSize: 12, color: t.textFaint, marginTop: 4 }}>{s.sub}</div>
         </div>
       ))}
     </div>
@@ -791,7 +791,7 @@ function MethodologyPanel({ t, isOpen, onToggle }: { t: ThemeColors; isOpen: boo
 function GlobalHeatmap({ tasks, t }: { tasks: ComputedTask[]; t: ThemeColors }) {
   return (
     <div style={{ marginBottom: 24 }}>
-      <div style={{ fontSize: 10, color: t.textMuted, letterSpacing: "0.1em", marginBottom: 10 }}>AUTOMATION HEATMAP {"\u2014"} ALL {tasks.length} TASKS</div>
+      <div style={{ fontSize: 12, color: t.textMuted, letterSpacing: "0.1em", marginBottom: 10 }}>AUTOMATION HEATMAP {"\u2014"} ALL {tasks.length} TASKS</div>
       <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 3, marginBottom: 8 }}>
         {[...tasks].sort((a, b) => b.aiScore - a.aiScore).map(tk => {
           const r = tk.aiScore >= 70 ? 0 : tk.aiScore >= 40 ? Math.round(255 * (1 - (tk.aiScore - 40) / 30)) : 255
@@ -901,7 +901,7 @@ export default function CreditRiskModelerApp() {
           <SummaryStats tasks={allTasks} t={t} />
           <GlobalHeatmap tasks={allTasks} t={t} />
 
-          <div style={{ fontSize: 10, color: t.textMuted, letterSpacing: "0.1em", marginBottom: 12 }}>
+          <div style={{ fontSize: 12, color: t.textMuted, letterSpacing: "0.1em", marginBottom: 12 }}>
             DOMAIN RADAR {"\u2014"} CLICK TO FILTER
             {simResults && <span style={{ marginLeft: 8, color: "#A855F7", fontWeight: 700 }}>{"\u00B7"} SIMULATION DELTAS APPLIED</span>}
           </div>
@@ -919,11 +919,11 @@ export default function CreditRiskModelerApp() {
               <input type="text" placeholder="Search tasks..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} style={{ width: "100%", padding: "10px 16px 10px 36px", borderRadius: 10, background: t.inputBg, border: `1px solid ${t.inputBorder}`, color: t.text, fontSize: 13, fontFamily: "'DM Sans', sans-serif", outline: "none" }} />
               <span style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", fontSize: 14, color: t.textMuted }}>{"\u2315"}</span>
             </div>
-            <div style={{ fontSize: 11, color: t.textMuted }}>
+            <div style={{ fontSize: 12, color: t.textMuted }}>
               Showing {filtered.length} of {allTasks.length} tasks
               {selectedCategory && <span onClick={() => setSelectedCategory(null)} style={{ marginLeft: 8, color: "#00E5A0", cursor: "pointer", textDecoration: "underline" }}>Clear filter</span>}
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 10, color: sc.color, background: sc.color + "10", padding: "5px 12px", borderRadius: 6, border: `1px solid ${sc.color}25` }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: sc.color, background: sc.color + "10", padding: "5px 12px", borderRadius: 6, border: `1px solid ${sc.color}25` }}>
               <span>{sc.icon}</span><span style={{ fontWeight: 700 }}>{sc.label} scenario</span><span style={{ color: t.textMuted }}>{"\u00B7"} scores {sc.modifier > 0 ? "+" : ""}{sc.modifier}%</span>
             </div>
           </div>
