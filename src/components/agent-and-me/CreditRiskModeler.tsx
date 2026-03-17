@@ -240,7 +240,7 @@ function getDemoResults(): SimResults {
         implementation: { realWorldScore: 70, evidence: "MLOps and CI/CD for models becoming standard.", confidence: "medium", delta: 6 },
         strategic: { realWorldScore: 35, evidence: "Strategic risk decisions remain firmly human-led.", confidence: "high", delta: -3 },
       },
-      overallInsight: "AI adoption in credit risk is accelerating in data-heavy tasks but remains constrained by regulatory requirements in governance and strategic areas.",
+      overallInsight: "AI adoption in credit risk is accelerating in data-heavy skills but remains constrained by regulatory requirements in governance and strategic areas.",
       topSignal: "Major banks investing in AI/ML platforms for credit scoring and monitoring automation.",
       riskLevel: "moderate"
     },
@@ -700,7 +700,7 @@ function CategoryRadar({ category, tasks, isSelected, onClick, t, simDelta }: {
         <text x={cx} y={cy - 6} textAnchor="middle" fill={category.color} fontSize="22" fontWeight="700">{displayAvg}%</text>
         <text x={cx} y={cy + 10} textAnchor="middle" fill={t.textMuted} fontSize="8">{simDelta != null ? "SIM SCORE" : "AI READY"}</text>
       </svg>
-      <div style={{ fontSize: 12, color: t.textMuted, textAlign: "center" as const, marginTop: 4 }}>{tasks.length} tasks</div>
+      <div style={{ fontSize: 12, color: t.textMuted, textAlign: "center" as const, marginTop: 4 }}>{tasks.length} skills</div>
     </div>
   )
 }
@@ -779,12 +779,12 @@ function TaskDetail({ task, onClose, t, scenario }: { task: ComputedTask; onClos
         </div>
         <div style={{ background: `${sc.color}08`, borderRadius: 12, padding: 16, border: `1px solid ${sc.color}20` }}>
           <div style={{ fontSize: 10, color: sc.color, letterSpacing: "0.1em", marginBottom: 10, fontWeight: 600 }}>SCENARIO {"\u2014"} {sc.label.toUpperCase()}</div>
-          <div style={{ fontSize: 12, color: t.textSecondary, lineHeight: 1.5, marginBottom: 10 }}>Under <strong style={{ color: sc.color }}>{sc.label}</strong> adoption, this task shifts from <strong style={{ color: getLevel(task.baseAiScore).color }}>{getLevel(task.baseAiScore).label}</strong> to <strong style={{ color: level.color }}>{level.label}</strong>.</div>
+          <div style={{ fontSize: 12, color: t.textSecondary, lineHeight: 1.5, marginBottom: 10 }}>Under <strong style={{ color: sc.color }}>{sc.label}</strong> adoption, this skill shifts from <strong style={{ color: getLevel(task.baseAiScore).color }}>{getLevel(task.baseAiScore).label}</strong> to <strong style={{ color: level.color }}>{level.label}</strong>.</div>
           <div style={{ fontSize: 11, color: t.textMuted }}><div>Urgency: <strong style={{ color: sc.color }}>{sc.urgency}</strong></div><div>Window: <strong style={{ color: sc.color }}>{sc.timeline}</strong></div><div>Risk: <strong style={{ color: sc.color }}>{sc.riskToRole}</strong></div></div>
         </div>
       </div>
       <div style={{ background: t.bgCard, borderRadius: 12, padding: 16 }}>
-        <div style={{ fontSize: 10, color: t.textMuted, letterSpacing: "0.1em", marginBottom: 12 }}>SUB-TASK BREAKDOWN {"\u2014"} AGENTIC AI OPPORTUNITY MAP</div>
+        <div style={{ fontSize: 10, color: t.textMuted, letterSpacing: "0.1em", marginBottom: 12 }}>SUB-SKILL BREAKDOWN {"\u2014"} AGENTIC AI OPPORTUNITY MAP</div>
         <div style={{ display: "flex", flexDirection: "column" as const, gap: 6 }}>
           {task.subtasks.map((st, i) => { const sub = clamp(Math.round(task.aiScore + (Math.sin(i * 2.5) * 18)), 5, 98); const sl = getLevel(sub); return (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "8px 12px", borderRadius: 8, background: t.bgSurface }}>
@@ -808,7 +808,7 @@ function SummaryStats({ tasks, t }: { tasks: ComputedTask[]; t: ThemeColors }) {
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 28 }}>
       {[
-        { label: "Total Tasks", value: String(total), sub: "mapped & assessed", color: "#00E5A0" },
+        { label: "Total Skills", value: String(total), sub: "mapped & assessed", color: "#00E5A0" },
         { label: "Avg AI Score", value: `${avgAi}%`, sub: "automation potential", color: "#00B4FF" },
         { label: "Full Auto Ready", value: String(fullAuto), sub: "tasks \u2265 85%", color: "#A855F7" },
         { label: "Human-Led", value: String(humanLed), sub: "tasks < 40%", color: "#FF6B6B" },
@@ -836,9 +836,9 @@ function MethodologyPanel({ t, isOpen, onToggle }: { t: ThemeColors; isOpen: boo
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             <div>
               <h4 style={{ margin: "0 0 8px", fontSize: 13, fontWeight: 700, color: t.text }}>What you{"'"}re seeing</h4>
-              <p style={{ margin: 0 }}>This atlas maps <strong>every task</strong> performed by an experienced Credit Risk Modeler. Tasks are organized into 6 domains, each as a radar chart showing AI automation potential (colored) vs complexity (white).</p>
+              <p style={{ margin: 0 }}>This atlas maps <strong>every skill</strong> performed by an experienced Credit Risk Modeler. Skills are organized into 6 domains, each as a radar chart showing AI automation potential (colored) vs complexity (white).</p>
               <h4 style={{ margin: "14px 0 8px", fontSize: 13, fontWeight: 700, color: t.text }}>AI Score (0{"\u2013"}100%)</h4>
-              <p style={{ margin: 0 }}>Each task is scored on automation readiness factoring: data availability, decision repeatability, regulatory sensitivity, judgment requirements, and tooling maturity. The scenario selector shifts scores by adoption speed.</p>
+              <p style={{ margin: 0 }}>Each skill is scored on automation readiness factoring: data availability, decision repeatability, regulatory sensitivity, judgment requirements, and tooling maturity. The scenario selector shifts scores by adoption speed.</p>
               <h4 style={{ margin: "14px 0 8px", fontSize: 13, fontWeight: 700, color: t.text }}>Real World Simulation</h4>
               <p style={{ margin: 0 }}>Uses <strong>Realtime LLM-as-judge scoring</strong>: live web search for peer bank AI signals, then Claude evaluates each domain. Free demo results available; live runs use token baskets ({CONFIG.BASKET_PRICE} for {CONFIG.BASKET_SIZE} simulations).</p>
             </div>
@@ -854,7 +854,7 @@ function MethodologyPanel({ t, isOpen, onToggle }: { t: ThemeColors; isOpen: boo
                 ))}
               </div>
               <h4 style={{ margin: "14px 0 8px", fontSize: 13, fontWeight: 700, color: t.text }}>How to use</h4>
-              <p style={{ margin: 0, fontSize: 12.5 }}>Click any domain radar to filter. Click any task card to drill into sub-tasks. Use scenario toggles + Real World Simulation for the most complete picture.</p>
+              <p style={{ margin: 0, fontSize: 12.5 }}>Click any domain radar to filter. Click any skill card to drill into sub-skills. Use scenario toggles + Real World Simulation for the most complete picture.</p>
             </div>
           </div>
         </div>
@@ -866,7 +866,7 @@ function MethodologyPanel({ t, isOpen, onToggle }: { t: ThemeColors; isOpen: boo
 function GlobalHeatmap({ tasks, t }: { tasks: ComputedTask[]; t: ThemeColors }) {
   return (
     <div style={{ marginBottom: 24 }}>
-      <div style={{ fontSize: 12, color: t.textMuted, letterSpacing: "0.1em", marginBottom: 10 }}>AUTOMATION HEATMAP {"\u2014"} ALL {tasks.length} TASKS</div>
+      <div style={{ fontSize: 12, color: t.textMuted, letterSpacing: "0.1em", marginBottom: 10 }}>AUTOMATION HEATMAP {"\u2014"} ALL {tasks.length} SKILLS</div>
       <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 3, marginBottom: 8 }}>
         {[...tasks].sort((a, b) => b.aiScore - a.aiScore).map(tk => {
           const r = tk.aiScore >= 70 ? 0 : tk.aiScore >= 40 ? Math.round(255 * (1 - (tk.aiScore - 40) / 30)) : 255
@@ -932,7 +932,7 @@ export default function CreditRiskModelerApp() {
               </div>
               <h1 style={{ margin: 0, fontSize: 30, fontWeight: 800, color: t.text, lineHeight: 1.2 }}>Credit Risk Modeler</h1>
               <p style={{ margin: "6px 0 0", fontSize: 13, color: t.textSecondary }}>
-                Complete task atlas & AI automation readiness {"\u00B7"} {allTasks.length} tasks {"\u00B7"} {CATEGORIES.length} domains
+                Complete skill atlas & AI automation readiness {"\u00B7"} {allTasks.length} skills {"\u00B7"} {CATEGORIES.length} domains
                 {simResults && <span style={{ marginLeft: 8, padding: "2px 8px", borderRadius: 4, background: "#A855F720", color: "#A855F7", fontSize: 10, fontWeight: 700 }}>SIMULATION ACTIVE</span>}
               </p>
             </div>
@@ -991,11 +991,11 @@ export default function CreditRiskModelerApp() {
 
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16, flexWrap: "wrap" as const }}>
             <div style={{ position: "relative", flex: 1, maxWidth: 360 }}>
-              <input type="text" placeholder="Search tasks..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} style={{ width: "100%", padding: "10px 16px 10px 36px", borderRadius: 10, background: t.inputBg, border: `1px solid ${t.inputBorder}`, color: t.text, fontSize: 13, fontFamily: "'DM Sans', sans-serif", outline: "none" }} />
+              <input type="text" placeholder="Search skills..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} style={{ width: "100%", padding: "10px 16px 10px 36px", borderRadius: 10, background: t.inputBg, border: `1px solid ${t.inputBorder}`, color: t.text, fontSize: 13, fontFamily: "'DM Sans', sans-serif", outline: "none" }} />
               <span style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", fontSize: 14, color: t.textMuted }}>{"\u2315"}</span>
             </div>
             <div style={{ fontSize: 12, color: t.textMuted }}>
-              Showing {filtered.length} of {allTasks.length} tasks
+              Showing {filtered.length} of {allTasks.length} skills
               {selectedCategory && <span onClick={() => setSelectedCategory(null)} style={{ marginLeft: 8, color: "#00E5A0", cursor: "pointer", textDecoration: "underline" }}>Clear filter</span>}
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: sc.color, background: sc.color + "10", padding: "5px 12px", borderRadius: 6, border: `1px solid ${sc.color}25` }}>

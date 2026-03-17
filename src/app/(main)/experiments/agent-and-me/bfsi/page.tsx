@@ -166,7 +166,7 @@ export default function BFSIHub() {
             <p style={{ fontSize: 15, color: t.textSecondary, marginTop: 8, maxWidth: 700, lineHeight: 1.6 }}>
               Explore AI automation readiness across <strong style={{ color: t.text }}>{ROLES.length} job roles</strong> spanning
               core banking, risk, trading, insurance, and support functions.
-              Each role is assessed across 20-35 tasks with domain-specific AI scoring.
+              Each role is assessed across 20-35 skills with domain-specific AI scoring.
             </p>
           </div>
           <button
@@ -182,7 +182,7 @@ export default function BFSIHub() {
           {[
             { label: "TOTAL ROLES", value: String(ROLES.length), color: t.accent },
             { label: "ACTIVE", value: String(activeCount), color: t.green },
-            { label: "TOTAL TASKS", value: `${totalTasks}+`, color: "#A855F7" },
+            { label: "TOTAL SKILLS", value: `${totalTasks}+`, color: "#A855F7" },
             { label: "SECTIONS", value: String(SECTIONS.length), color: "#3B82F6" },
           ].map(s => (
             <div key={s.label} style={{ background: t.bgCard, border: `1px solid ${t.border}`, borderRadius: 10, padding: "12px 20px", minWidth: 120, position: "relative", overflow: "hidden" }}>
@@ -198,7 +198,7 @@ export default function BFSIHub() {
           <Search size={16} style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: t.textMuted }} />
           <input
             type="text"
-            placeholder="Search roles, skills, or functions..."
+            placeholder="Search roles, domains, or functions..."
             value={search}
             onChange={e => setSearch(e.target.value)}
             style={{ width: "100%", padding: "12px 16px 12px 40px", borderRadius: 10, background: t.bgCard, border: `1px solid ${t.border}`, color: t.text, fontSize: 14, fontFamily: "'DM Sans', sans-serif", outline: "none" }}
@@ -269,7 +269,7 @@ export default function BFSIHub() {
                         <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 14 }}>
                           <div style={{ flex: 1 }}>
                             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                              <span style={{ fontSize: 11, color: t.textMuted }}>{role.taskCount} tasks assessed</span>
+                              <span style={{ fontSize: 11, color: t.textMuted }}>{role.taskCount} skills assessed</span>
                               <span style={{ fontSize: 12, fontWeight: 700, color: level.color, fontFamily: "'DM Mono', monospace" }}>{role.avgScore}%</span>
                             </div>
                             <div style={{ height: 4, borderRadius: 2, background: darkMode ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.06)", overflow: "hidden" }}>
