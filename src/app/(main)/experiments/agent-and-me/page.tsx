@@ -30,7 +30,7 @@ const verticals = [
     accentText: "text-emerald-600",
     active: true,
     roles: "45 roles",
-    tasks: "82+ tasks",
+    tasks: "1200+ tasks",
   },
   {
     title: "Education",
