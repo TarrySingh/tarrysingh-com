@@ -14,7 +14,7 @@ const CONFIG = {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   TOKEN MANAGEMENT (localStorage demo mode)
+   TOKEN MANAGEMENT (server-backed with localStorage fallback)
    ═══════════════════════════════════════════════════════════ */
 
 function getTokenBalance(): number {
@@ -28,6 +28,20 @@ function hasUsedFreeRun(roleSlug: string): boolean {
 }
 function markFreeRunUsed(roleSlug: string) {
   try { localStorage.setItem(`free_run_${roleSlug}`, "1") } catch { /* noop */ }
+}
+
+/** Fetch token balance from server, fallback to localStorage */
+async function fetchTokenBalance(): Promise<number> {
+  try {
+    const res = await fetch("/api/tokens")
+    if (res.ok) {
+      const data = await res.json()
+      const balance = data.balance ?? 0
+      setTokenBalance(balance) // sync localStorage
+      return balance
+    }
+  } catch { /* server unavailable, fall through */ }
+  return getTokenBalance()
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -241,8 +255,15 @@ function SimulationPanel({ t, scenario, onSimResults }: { t: ThemeColors; scenar
   const [showBuyModal, setShowBuyModal] = useState(false)
 
   useEffect(() => {
-    setTokens(getTokenBalance())
+    fetchTokenBalance().then(b => setTokens(b))
     setFreeUsed(hasUsedFreeRun(CONFIG.ROLE_SLUG))
+    // Check for Stripe purchase redirect
+    const params = new URLSearchParams(window.location.search)
+    if (params.get("purchase") === "success") {
+      // Refresh balance after successful purchase
+      setTimeout(() => fetchTokenBalance().then(b => setTokens(b)), 1000)
+      window.history.replaceState({}, "", window.location.pathname)
+    }
   }, [])
 
   const runFree = useCallback(() => {
@@ -260,23 +281,57 @@ function SimulationPanel({ t, scenario, onSimResults }: { t: ThemeColors; scenar
     setResults(null)
     setPhase("search")
 
-    await new Promise(r => setTimeout(r, 800))
-    setPhase("collect")
-    await new Promise(r => setTimeout(r, 600))
-    setPhase("score")
-    await new Promise(r => setTimeout(r, 1000))
+    try {
+      const res = await fetch("/api/simulation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          roleSlug: CONFIG.ROLE_SLUG,
+          scenario,
+          region,
+          categories: CATEGORIES.map(c => ({
+            id: c.id,
+            name: c.name,
+            tasks: c.tasks.map(t => ({ id: t.id, name: t.name, aiScore: t.aiScore })),
+          })),
+        }),
+      })
 
-    // Demo mode — use fallback scores
-    const demo = getDemoResults()
-    demo.fromCache = false
-    setResults(demo)
-    setPhase("done")
-    onSimResults(demo.scoring)
+      if (res.status === 402) {
+        setShowBuyModal(true)
+        setPhase(null)
+        return
+      }
 
-    const newBal = tokens - 1
-    setTokens(newBal)
-    setTokenBalance(newBal)
-  }, [scenario, onSimResults, tokens])
+      setPhase("collect")
+
+      if (!res.ok) throw new Error(`API error: ${res.status}`)
+
+      const data = await res.json()
+      setPhase("score")
+      await new Promise(r => setTimeout(r, 500)) // brief visual pause
+
+      setResults(data)
+      setPhase("done")
+      onSimResults(data.scoring)
+
+      // Refresh token balance from server
+      fetchTokenBalance().then(b => setTokens(b))
+    } catch (err) {
+      console.error("[simulation] Error:", err)
+      // Fallback to demo on error
+      const demo = getDemoResults()
+      demo.fromCache = false
+      demo.evidence = "Live API unavailable \u2014 showing demo results. " + (demo.evidence || "")
+      setResults(demo)
+      setPhase("done")
+      onSimResults(demo.scoring)
+      // Still deduct locally as fallback
+      const newBal = Math.max(0, tokens - 1)
+      setTokens(newBal)
+      setTokenBalance(newBal)
+    }
+  }, [scenario, region, onSimResults, tokens])
 
   const resetSim = () => {
     setPhase(null)
@@ -284,8 +339,18 @@ function SimulationPanel({ t, scenario, onSimResults }: { t: ThemeColors; scenar
     onSimResults(null)
   }
 
-  const handleBuyBasket = () => {
-    // Demo mode — simulate purchase
+  const handleBuyBasket = async () => {
+    try {
+      const res = await fetch("/api/stripe/checkout", { method: "POST" })
+      const data = await res.json()
+      if (data.url) {
+        window.location.href = data.url // Redirect to Stripe Checkout
+        return
+      }
+    } catch {
+      // Stripe unavailable — fall through to demo mode
+    }
+    // Demo fallback: simulate purchase locally
     const newBal = tokens + CONFIG.BASKET_SIZE
     setTokens(newBal)
     setTokenBalance(newBal)
@@ -483,6 +548,9 @@ function SimulationPanel({ t, scenario, onSimResults }: { t: ThemeColors; scenar
                 </button>
                 <div style={{ textAlign: "center" as const, marginTop: 10, fontSize: 10, color: t.textMuted }}>
                   One-time payment {"\u00B7"} No subscription {"\u00B7"} Secured by Stripe
+                </div>
+                <div style={{ textAlign: "center" as const, marginTop: 6, fontSize: 9, color: t.textFaint }}>
+                  Tokens are tied to this browser session
                 </div>
               </div>
             </div>
