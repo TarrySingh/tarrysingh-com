@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, TrendingUp, Lightbulb, Globe, Cpu, BarChart3, Layers } from "lucide-react"
+import { ArrowRight, TrendingUp, Lightbulb, Globe, Cpu, BarChart3, Layers, Bot } from "lucide-react"
 
 const stats = [
   { value: "30+", label: "Years of Experience" },
@@ -31,6 +31,26 @@ const highlights = [
 ]
 
 const experiments = [
+  {
+    title: "The Agent & Me",
+    description: "Explore how agentic AI transforms job roles across 10 industry verticals with interactive AI automation scoring.",
+    to: "/experiments/agent-and-me",
+    tag: "Agentic AI",
+    icon: Bot,
+    gradient: "from-violet-500/10 to-fuchsia-500/10",
+    isNew: true,
+    date: "Mar 2026",
+  },
+  {
+    title: "European Jobs AI Exposure",
+    description: "AI exposure across 40+ European countries and 436+ occupations.",
+    to: "/jobs",
+    tag: "Labour Market",
+    icon: Globe,
+    gradient: "from-cyan-500/10 to-blue-500/10",
+    isNew: true,
+    date: "Mar 2026",
+  },
   {
     title: "AI Disruption: Winner-Take-All",
     description: "How AI reshapes market dynamics into winner-take-all competitions.",
@@ -62,14 +82,6 @@ const experiments = [
     tag: "Finance",
     icon: Lightbulb,
     gradient: "from-purple-500/10 to-pink-500/10",
-  },
-  {
-    title: "European Jobs AI Exposure",
-    description: "AI exposure across 40+ European countries and 436+ occupations.",
-    to: "/jobs",
-    tag: "Labour Market",
-    icon: Globe,
-    gradient: "from-cyan-500/10 to-blue-500/10",
   },
 ]
 
@@ -250,6 +262,16 @@ const Landing = () => {
                     <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
                       {experiment.tag}
                     </span>
+                    {experiment.isNew && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-gradient-to-r from-amber-500 to-orange-500 px-2 py-0.5 rounded-full">
+                        New!
+                      </span>
+                    )}
+                    {experiment.date && (
+                      <span className="text-[10px] font-medium text-gray-400">
+                        {experiment.date}
+                      </span>
+                    )}
                   </div>
                   <h3 className="text-lg font-semibold text-navy-900 mb-2 group-hover:text-navy-800 transition-colors">
                     {experiment.title}

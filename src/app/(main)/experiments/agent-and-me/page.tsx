@@ -22,14 +22,15 @@ const verticals = [
     title: "Banking, Financial Services & Insurance",
     shortTitle: "BFSI",
     description:
-      "Credit risk modeling, mortgage specialists, fraud analysts, underwriters, and more. 35+ core banking functions mapped with AI automation scores.",
+      "Credit risk modeling, mortgage underwriting, fraud detection, compliance, and more. 45 job roles mapped across 11 domains with AI automation scoring.",
     to: "/experiments/agent-and-me/bfsi",
     icon: Landmark,
     gradient: "from-emerald-500/10 to-teal-500/10",
     accent: "bg-emerald-500",
     accentText: "text-emerald-600",
     active: true,
-    roles: "35+ roles",
+    roles: "45 roles",
+    tasks: "82+ tasks",
   },
   {
     title: "Education",
@@ -190,6 +191,11 @@ export default function AgentAndMeHub() {
                       {vertical.roles && (
                         <span className="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full">
                           {vertical.roles}
+                        </span>
+                      )}
+                      {vertical.tasks && (
+                        <span className="text-xs font-medium text-violet-500 bg-violet-50 px-2 py-0.5 rounded-full">
+                          {vertical.tasks}
                         </span>
                       )}
                     </div>
