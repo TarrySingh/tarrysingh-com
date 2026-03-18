@@ -22,15 +22,15 @@ const verticals = [
     title: "Banking, Financial Services & Insurance",
     shortTitle: "BFSI",
     description:
-      "Credit risk modeling, mortgage underwriting, fraud detection, compliance, and more. 45 job roles mapped across 11 domains with AI automation scoring.",
+      "Credit risk modeling, mortgage underwriting, fraud detection, compliance, and more. 56 job roles mapped across 11 domains with AI automation scoring.",
     to: "/experiments/agent-and-me/bfsi",
     icon: Landmark,
     gradient: "from-emerald-500/10 to-teal-500/10",
     accent: "bg-emerald-500",
     accentText: "text-emerald-600",
     active: true,
-    roles: "45 roles",
-    tasks: "1200+ skills",
+    roles: "56 roles",
+    tasks: "1500+ skills",
   },
   {
     title: "Education",

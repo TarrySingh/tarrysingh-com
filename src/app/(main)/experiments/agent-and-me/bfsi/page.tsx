@@ -36,8 +36,8 @@ const ROLES: JobRole[] = [
   { id: "consumer-lending-analyst", name: "Consumer Lending Analyst", tagline: "Personal loans, auto finance, scorecards", icon: "💳", taskCount: 28, avgScore: 67, status: "coming_soon", section: "credit_lending" },
   { id: "commercial-credit-analyst", name: "Commercial Credit Analyst", tagline: "Corporate lending, financial spreads, covenants", icon: "🏢", taskCount: 30, avgScore: 55, status: "coming_soon", section: "credit_lending" },
   { id: "credit-portfolio-manager", name: "Credit Portfolio Manager", tagline: "Concentration risk, portfolio analytics, stress testing", icon: "📈", taskCount: 26, avgScore: 61, status: "coming_soon", section: "credit_lending" },
-  { id: "collections-recovery", name: "Collections & Recovery", tagline: "Delinquency management, workout strategies", icon: "🔄", taskCount: 24, avgScore: 72, status: "coming_soon", section: "credit_lending" },
-  { id: "loan-origination-officer", name: "Loan Origination Officer", tagline: "Application processing, decisioning, disbursement", icon: "📋", taskCount: 22, avgScore: 75, status: "coming_soon", section: "credit_lending" },
+  { id: "collections-recovery", name: "Collections & Recovery Specialist", tagline: "Delinquency management, workout strategies, NPL", icon: "🔄", taskCount: 24, avgScore: 72, status: "coming_soon", section: "credit_lending" },
+  { id: "loan-officer", name: "Loan Officer / Originator", tagline: "Application processing, decisioning, disbursement", icon: "📋", taskCount: 22, avgScore: 75, status: "coming_soon", section: "credit_lending" },
 
   // Risk & Compliance
   { id: "market-risk-analyst", name: "Market Risk Analyst", tagline: "VaR, stress testing, trading book risk", icon: "📉", taskCount: 30, avgScore: 60, status: "coming_soon", section: "risk_compliance" },
@@ -47,13 +47,17 @@ const ROLES: JobRole[] = [
   { id: "regulatory-reporting", name: "Regulatory Reporting Analyst", tagline: "COREP, FINREP, Fed reporting, data quality", icon: "📑", taskCount: 26, avgScore: 73, status: "coming_soon", section: "risk_compliance" },
   { id: "internal-auditor", name: "Internal Auditor", tagline: "Audit planning, testing, issue tracking", icon: "🔍", taskCount: 28, avgScore: 56, status: "coming_soon", section: "risk_compliance" },
   { id: "fraud-detection-analyst", name: "Fraud Detection Analyst", tagline: "Transaction monitoring, pattern analysis, SAR filing", icon: "🚨", taskCount: 30, avgScore: 76, status: "coming_soon", section: "risk_compliance" },
+  { id: "model-validation-analyst", name: "Model Validation Analyst", tagline: "Independent model review, SR 11-7, ECB TRIM, challenger models", icon: "✅", taskCount: 30, avgScore: 50, status: "coming_soon", section: "risk_compliance" },
+  { id: "stress-testing-analyst", name: "Stress Testing Analyst", tagline: "CCAR/DFAST, EBA stress tests, scenario design, satellite models", icon: "🌪️", taskCount: 28, avgScore: 55, status: "coming_soon", section: "risk_compliance" },
 
   // Trading & Capital Markets
   { id: "quantitative-analyst", name: "Quantitative Analyst (Quant)", tagline: "Pricing models, algo development, backtesting", icon: "🧮", taskCount: 32, avgScore: 48, status: "coming_soon", section: "trading_markets" },
   { id: "fixed-income-trader", name: "Fixed Income Trader", tagline: "Bond trading, yield curve, duration management", icon: "💰", taskCount: 26, avgScore: 52, status: "coming_soon", section: "trading_markets" },
   { id: "equity-research-analyst", name: "Equity Research Analyst", tagline: "Company analysis, DCF models, sector coverage", icon: "🔬", taskCount: 28, avgScore: 65, status: "coming_soon", section: "trading_markets" },
-  { id: "derivatives-pricing", name: "Derivatives Pricing Analyst", tagline: "Options, swaps, Greeks, exotic structures", icon: "⚡", taskCount: 30, avgScore: 45, status: "coming_soon", section: "trading_markets" },
+  { id: "derivatives-analyst", name: "Derivatives Analyst / Structurer", tagline: "Options, swaps, Greeks, exotic structures, client solutions", icon: "⚡", taskCount: 30, avgScore: 45, status: "coming_soon", section: "trading_markets" },
   { id: "treasury-alm", name: "Treasury / ALM Analyst", tagline: "Asset-liability management, interest rate risk, FTP", icon: "🏛️", taskCount: 26, avgScore: 57, status: "coming_soon", section: "trading_markets" },
+  { id: "investment-banking-analyst", name: "Investment Banking Analyst", tagline: "M&A advisory, ECM/DCM, financial modeling, pitch books", icon: "🏦", taskCount: 32, avgScore: 48, status: "coming_soon", section: "trading_markets" },
+  { id: "trade-finance-specialist", name: "Trade Finance Specialist", tagline: "Letters of credit, guarantees, supply chain finance, documentary", icon: "🚢", taskCount: 26, avgScore: 65, status: "coming_soon", section: "trading_markets" },
 
   // Wealth & Retail
   { id: "relationship-manager", name: "Relationship Manager", tagline: "Private banking, portfolio advisory, HNW clients", icon: "🤝", taskCount: 28, avgScore: 45, status: "coming_soon", section: "wealth_retail" },
@@ -61,22 +65,27 @@ const ROLES: JobRole[] = [
   { id: "retail-product-manager", name: "Retail Banking Product Manager", tagline: "Account products, pricing, digital channels", icon: "📱", taskCount: 26, avgScore: 62, status: "coming_soon", section: "wealth_retail" },
   { id: "payment-systems", name: "Payment Systems Analyst", tagline: "SWIFT, SEPA, real-time payments, settlement", icon: "💸", taskCount: 24, avgScore: 68, status: "coming_soon", section: "wealth_retail" },
 
-  // Insurance
-  { id: "actuarial-analyst", name: "Actuarial Analyst", tagline: "Reserving, pricing, capital modeling, mortality", icon: "📐", taskCount: 32, avgScore: 52, status: "coming_soon", section: "insurance" },
-  { id: "insurance-underwriter", name: "Insurance Underwriter", tagline: "Risk assessment, policy terms, reinsurance", icon: "📝", taskCount: 28, avgScore: 63, status: "coming_soon", section: "insurance" },
+  // Insurance (expanded from 2 to 5 roles)
+  { id: "actuarial-analyst", name: "Actuarial Analyst", tagline: "Reserving, pricing, capital modeling, Solvency II, mortality tables", icon: "📐", taskCount: 32, avgScore: 52, status: "coming_soon", section: "insurance" },
+  { id: "insurance-underwriter", name: "Insurance Underwriter", tagline: "Risk assessment, policy terms, premium setting", icon: "📝", taskCount: 28, avgScore: 63, status: "coming_soon", section: "insurance" },
+  { id: "claims-analyst", name: "Claims Analyst / Adjuster", tagline: "Claims processing, fraud detection, settlement, subrogation", icon: "📋", taskCount: 26, avgScore: 72, status: "coming_soon", section: "insurance" },
+  { id: "insurance-product-manager", name: "Insurance Product Manager", tagline: "Product design, pricing strategy, regulatory approval, distribution", icon: "🎁", taskCount: 24, avgScore: 55, status: "coming_soon", section: "insurance" },
+  { id: "insurance-risk-manager", name: "Insurance Risk Manager", tagline: "Solvency II, catastrophe modeling, reinsurance optimization", icon: "🛡️", taskCount: 28, avgScore: 48, status: "coming_soon", section: "insurance" },
 
-  // Technology & Data
+  // Technology & Data (added Data Scientist)
   { id: "data-engineer", name: "Data Engineer (Banking)", tagline: "ETL pipelines, data lakes, regulatory data", icon: "🔧", taskCount: 30, avgScore: 72, status: "coming_soon", section: "tech_data" },
   { id: "cloud-architect", name: "IT / Cloud Architect", tagline: "Infrastructure, migration, hybrid cloud", icon: "☁️", taskCount: 28, avgScore: 65, status: "coming_soon", section: "tech_data" },
   { id: "cybersecurity-analyst", name: "Cybersecurity Analyst", tagline: "Threat detection, incident response, pen testing", icon: "🔒", taskCount: 32, avgScore: 68, status: "coming_soon", section: "tech_data" },
-  { id: "core-banking-developer", name: "Software Developer (Core Banking)", tagline: "Core systems, APIs, microservices, Temenos/FIS", icon: "💻", taskCount: 34, avgScore: 60, status: "coming_soon", section: "tech_data" },
+  { id: "core-banking-developer", name: "Software Engineer (Core Banking)", tagline: "Core systems, APIs, microservices, Temenos/FIS", icon: "💻", taskCount: 34, avgScore: 60, status: "coming_soon", section: "tech_data" },
   { id: "bi-analyst", name: "Business Intelligence Analyst", tagline: "Dashboards, MIS reporting, data visualization", icon: "📊", taskCount: 24, avgScore: 78, status: "coming_soon", section: "tech_data" },
+  { id: "data-scientist", name: "Data Scientist / ML Engineer", tagline: "Machine learning, NLP, predictive models, AI deployment", icon: "🤖", taskCount: 30, avgScore: 58, status: "coming_soon", section: "tech_data" },
 
-  // Operations
+  // Operations (added Business Analyst)
   { id: "back-office-ops", name: "Back Office Operations", tagline: "Trade settlement, reconciliation, confirmations", icon: "⚙️", taskCount: 26, avgScore: 80, status: "coming_soon", section: "operations" },
   { id: "contact-center-agent", name: "Customer Service Agent", tagline: "Contact center, complaints, service requests", icon: "🎧", taskCount: 22, avgScore: 82, status: "coming_soon", section: "operations" },
-  { id: "process-improvement", name: "Process Improvement Analyst", tagline: "Six Sigma, lean, automation, BPM", icon: "🔄", taskCount: 24, avgScore: 70, status: "coming_soon", section: "operations" },
+  { id: "process-improvement", name: "Process Improvement / Transformation Analyst", tagline: "Lean, agile, automation, digital transformation", icon: "🔄", taskCount: 24, avgScore: 70, status: "coming_soon", section: "operations" },
   { id: "procurement-specialist", name: "Procurement Specialist", tagline: "Vendor management, RFPs, contract negotiation", icon: "📦", taskCount: 22, avgScore: 65, status: "coming_soon", section: "operations" },
+  { id: "business-analyst", name: "Business Analyst", tagline: "Requirements gathering, process mapping, UAT, stakeholder liaison", icon: "📐", taskCount: 26, avgScore: 62, status: "coming_soon", section: "operations" },
 
   // Finance & Accounting
   { id: "management-accountant", name: "Management Accountant", tagline: "Cost allocation, budgeting, variance analysis", icon: "📒", taskCount: 26, avgScore: 70, status: "coming_soon", section: "finance_accounting" },
@@ -90,12 +99,13 @@ const ROLES: JobRole[] = [
 
   // Marketing & Communications
   { id: "digital-marketing", name: "Digital Marketing Manager", tagline: "SEO/SEM, social media, campaign analytics", icon: "📣", taskCount: 26, avgScore: 78, status: "coming_soon", section: "marketing" },
-  { id: "product-marketing", name: "Product Marketing / GTM", tagline: "Go-to-market, positioning, competitive intel", icon: "🚀", taskCount: 24, avgScore: 68, status: "coming_soon", section: "marketing" },
+  { id: "product-marketing", name: "Product Marketing Manager", tagline: "Positioning, competitive intel, campaign strategy", icon: "🚀", taskCount: 24, avgScore: 68, status: "coming_soon", section: "marketing" },
   { id: "corporate-comms", name: "Corporate Communications", tagline: "Press releases, investor relations, crisis comms", icon: "📰", taskCount: 22, avgScore: 62, status: "coming_soon", section: "marketing" },
 
   // Legal & Governance
   { id: "legal-counsel", name: "Legal Counsel (Banking)", tagline: "Regulatory law, contracts, litigation support", icon: "⚖️", taskCount: 26, avgScore: 42, status: "coming_soon", section: "legal" },
   { id: "corporate-secretary", name: "Corporate Secretary", tagline: "Board governance, filings, policy management", icon: "📜", taskCount: 20, avgScore: 60, status: "coming_soon", section: "legal" },
+  { id: "esg-analyst", name: "ESG / Sustainable Finance Analyst", tagline: "EU Taxonomy, SFDR, climate risk, green bonds, impact reporting", icon: "🌱", taskCount: 26, avgScore: 50, status: "coming_soon", section: "legal" },
 ]
 
 function getLevel(score: number) {
