@@ -33,7 +33,7 @@ const ROLES: JobRole[] = [
   // Credit & Lending
   { id: "credit-risk-modeler", name: "Credit Risk Modeler", tagline: "PD/LGD/EAD modeling, Basel IRB, IFRS 9", icon: "📊", taskCount: 42, avgScore: 62, status: "active", section: "credit_lending" },
   { id: "mortgage-specialist", name: "Mortgage Specialist / Underwriter", tagline: "Underwriting, affordability, property valuation, compliance", icon: "🏠", taskCount: 42, avgScore: 68, status: "active", section: "credit_lending" },
-  { id: "consumer-lending-analyst", name: "Consumer Lending Analyst", tagline: "Personal loans, auto finance, scorecards", icon: "💳", taskCount: 28, avgScore: 67, status: "coming_soon", section: "credit_lending" },
+  { id: "consumer-lending-analyst", name: "Consumer Lending Analyst", tagline: "Personal loans, auto finance, credit cards, BNPL, scorecards", icon: "💳", taskCount: 34, avgScore: 70, status: "active", section: "credit_lending" },
   { id: "commercial-credit-analyst", name: "Commercial Credit Analyst", tagline: "Corporate lending, financial spreads, covenants", icon: "🏢", taskCount: 30, avgScore: 55, status: "coming_soon", section: "credit_lending" },
   { id: "credit-portfolio-manager", name: "Credit Portfolio Manager", tagline: "Concentration risk, portfolio analytics, stress testing", icon: "📈", taskCount: 26, avgScore: 61, status: "coming_soon", section: "credit_lending" },
   { id: "collections-recovery", name: "Collections & Recovery Specialist", tagline: "Delinquency management, workout strategies, NPL", icon: "🔄", taskCount: 24, avgScore: 72, status: "coming_soon", section: "credit_lending" },
