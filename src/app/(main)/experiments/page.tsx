@@ -1,9 +1,21 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot } from "lucide-react"
+import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home } from "lucide-react"
 
 const experiments = [
+  {
+    title: "mklaar.ai — AI Makelaar",
+    description:
+      "AI-powered Dutch real estate platform for Noord-Nederland. Natural language property search, interactive Mapbox maps with nature overlays, energy label intelligence, buyer readiness checklists, and a conversational AI assistant — all competing with Funda's monopoly.",
+    to: "/mklaar",
+    tag: "PropTech",
+    icon: Home,
+    gradient: "from-blue-500/8 to-indigo-500/8",
+    accent: "bg-blue-500",
+    isNew: true,
+    date: "Mar 2026",
+  },
   {
     title: "The Agent & Me",
     description:
@@ -146,11 +158,11 @@ const Experiments = () => {
               </>
             )
 
-            if (experiment.to === "/jobs") {
+            if (experiment.to === "/jobs" || experiment.to === "/mklaar") {
               return (
                 <a
                   key={experiment.to}
-                  href="/jobs"
+                  href={experiment.to}
                   className={cardClassName}
                 >
                   {cardContent}
