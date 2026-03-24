@@ -5,14 +5,17 @@ import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home 
 
 const experiments = [
   {
-    title: "mklaar.ai — AI Makelaar",
+    title: "mklaar.ai",
+    tagline: "Jouw AI-makelaar. Altijd klaar.",
     description:
-      "AI-powered Dutch real estate platform for Noord-Nederland. Natural language property search, interactive Mapbox maps with nature overlays, energy label intelligence, buyer readiness checklists, and a conversational AI assistant — all competing with Funda's monopoly.",
+      "AI-powered Dutch real estate platform for Northern Netherlands. Natural language property search, 1000+ real listings, energy labels, neighbourhood scores, and an AI buyer guide — all in one place.",
     to: "/mklaar",
     tag: "PropTech",
+    tech: "Next.js, Supabase, Claude AI, Mapbox, PDOK/BAG",
     icon: Home,
     gradient: "from-blue-500/8 to-indigo-500/8",
     accent: "bg-blue-500",
+    status: "Beta",
     isNew: true,
     date: "Mar 2026",
   },
@@ -129,6 +132,11 @@ const Experiments = () => {
                       <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
                         {experiment.tag}
                       </span>
+                      {experiment.status && (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 border border-blue-200">
+                          {experiment.status}
+                        </span>
+                      )}
                       {experiment.isNew && (
                         <>
                           <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-500 border border-rose-200">
@@ -143,9 +151,19 @@ const Experiments = () => {
                     <h2 className="text-lg md:text-xl font-semibold text-navy-900 mb-2 group-hover:text-navy-800 transition-colors">
                       {experiment.title}
                     </h2>
+                    {experiment.tagline && (
+                      <p className="text-sm font-medium text-gold-600 italic mb-1">
+                        {experiment.tagline}
+                      </p>
+                    )}
                     <p className="text-sm text-gray-500 leading-relaxed max-w-2xl">
                       {experiment.description}
                     </p>
+                    {experiment.tech && (
+                      <p className="mt-2 text-xs text-gray-400">
+                        <span className="font-semibold text-gray-500">Tech:</span> {experiment.tech}
+                      </p>
+                    )}
                   </div>
                 </div>
 

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, TrendingUp, Lightbulb, Globe, Cpu, BarChart3, Layers, Bot } from "lucide-react"
+import { ArrowRight, TrendingUp, Lightbulb, Globe, Cpu, BarChart3, Layers, Bot, Home } from "lucide-react"
 
 const stats = [
   { value: "30+", label: "Years of Experience" },
@@ -31,6 +31,18 @@ const highlights = [
 ]
 
 const experiments = [
+  {
+    title: "mklaar.ai",
+    tagline: "Jouw AI-makelaar. Altijd klaar.",
+    description: "AI-powered Dutch real estate platform for Northern Netherlands. Natural language property search, 1000+ real listings, energy labels, neighbourhood scores, and an AI buyer guide.",
+    to: "/mklaar",
+    tag: "PropTech",
+    icon: Home,
+    gradient: "from-blue-500/10 to-indigo-500/10",
+    status: "Beta",
+    isNew: true,
+    date: "Mar 2026",
+  },
   {
     title: "The Agent & Me",
     description: "Explore how agentic AI transforms job roles across 10 industry verticals with interactive AI automation scoring.",
@@ -262,6 +274,11 @@ const Landing = () => {
                     <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
                       {experiment.tag}
                     </span>
+                    {experiment.status && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full">
+                        {experiment.status}
+                      </span>
+                    )}
                     {experiment.isNew && (
                       <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-gradient-to-r from-amber-500 to-orange-500 px-2 py-0.5 rounded-full">
                         New!
@@ -276,6 +293,11 @@ const Landing = () => {
                   <h3 className="text-lg font-semibold text-navy-900 mb-2 group-hover:text-navy-800 transition-colors">
                     {experiment.title}
                   </h3>
+                  {experiment.tagline && (
+                    <p className="text-sm font-medium text-gold-600 italic mb-1">
+                      {experiment.tagline}
+                    </p>
+                  )}
                   <p className="text-sm text-gray-500 leading-relaxed">
                     {experiment.description}
                   </p>
@@ -285,11 +307,11 @@ const Landing = () => {
               </>
             )
 
-            if (experiment.to === "/jobs") {
+            if (experiment.to === "/jobs" || experiment.to === "/mklaar") {
               return (
                 <a
                   key={experiment.to}
-                  href="/jobs"
+                  href={experiment.to}
                   className={`animate-fade-up delay-${(i + 1) * 100} premium-card group relative p-7 md:p-8 rounded-2xl border border-gray-100 bg-white overflow-hidden`}
                 >
                   {cardContent}
