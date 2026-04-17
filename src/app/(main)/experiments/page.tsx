@@ -191,7 +191,15 @@ const Experiments = () => {
               </>
             )
 
-            if (experiment.to === "/jobs" || experiment.to === "/mklaar") {
+            // Use plain <a> for:
+            // - /jobs, /mklaar: external rewrite targets
+            // - /experiments/panoraima: password-protected, avoid Next.js prefetch
+            //   triggering browser auth prompt on hover
+            if (
+              experiment.to === "/jobs" ||
+              experiment.to === "/mklaar" ||
+              experiment.to === "/experiments/panoraima"
+            ) {
               return (
                 <a
                   key={experiment.to}
