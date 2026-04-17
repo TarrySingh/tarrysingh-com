@@ -19,30 +19,13 @@ interface Props {
 }
 
 // -----------------------------------------------------------------------------
-// Same-city clusters. When multiple partners share a coordinate (Dublin has 3,
-// Sofia / Budapest / Naples each have 2), we fan the markers out around the
-// anchor using pixel offsets so they never overlap and labels never collide.
+// All 15 partners now have precise (different) addresses, so no coordinate
+// clustering is needed. Keep a noop offset function in case a future partner
+// happens to share a building with another. Also keep it so the rest of the
+// component doesn't need to change.
 // -----------------------------------------------------------------------------
-const CITY_GROUPS: Record<string, PartnerCode[]> = (() => {
-  const groups: Record<string, PartnerCode[]> = {}
-  for (const p of PARTNERS) {
-    const key = `${p.lat.toFixed(2)},${p.lng.toFixed(2)}`
-    ;(groups[key] ||= []).push(p.code)
-  }
-  return groups
-})()
-
-function offsetFor(code: PartnerCode): [number, number] {
-  const p = PARTNER_BY_CODE[code]
-  const key = `${p.lat.toFixed(2)},${p.lng.toFixed(2)}`
-  const group = CITY_GROUPS[key] || [code]
-  if (group.length === 1) return [0, 0]
-  const idx = group.indexOf(code)
-  const step = (2 * Math.PI) / group.length
-  const radius = group.length === 2 ? 14 : 18
-  // start from straight up (-90°) so two-partner fans sit left/right
-  const angle = idx * step - Math.PI / 2
-  return [Math.cos(angle) * radius, Math.sin(angle) * radius]
+function offsetFor(_code: PartnerCode): [number, number] {
+  return [0, 0]
 }
 
 const EUROPE_BOUNDS: [[number, number], [number, number]] = [
@@ -59,6 +42,13 @@ const INITIAL_VIEW = {
 const MAPBOX_TOKEN =
   (typeof process !== "undefined" ? process.env.NEXT_PUBLIC_MAPBOX_TOKEN : "") || ""
 
+const STYLE_OPTIONS = [
+  { id: "light", label: "Map",       url: "mapbox://styles/mapbox/light-v11" },
+  { id: "satellite", label: "Satellite", url: "mapbox://styles/mapbox/satellite-streets-v12" },
+  { id: "dark",  label: "Dark",      url: "mapbox://styles/mapbox/dark-v11" },
+] as const
+type StyleId = typeof STYLE_OPTIONS[number]["id"]
+
 export default function ConsortiumMap({
   events,
   onPartnerSelect,
@@ -66,6 +56,7 @@ export default function ConsortiumMap({
 }: Props) {
   const mapRef = useRef<MapRef | null>(null)
   const [hovered, setHovered] = useState<PartnerCode | null>(null)
+  const [styleId, setStyleId] = useState<StyleId>("light")
   const totalEligible = partnerTotalEligibleEvents(events)
 
   const activeCode = hovered ?? selectedPartner
@@ -170,6 +161,28 @@ export default function ConsortiumMap({
       <div className="relative grid md:grid-cols-[1fr,280px] gap-6 px-6 md:px-10 pb-10">
         {/* Map */}
         <div className="relative rounded-2xl overflow-hidden border border-gray-100 h-[520px] bg-white">
+          {/* Layer switcher (floats top-left over the map) */}
+          {!tokenMissing && (
+            <div className="absolute top-3 left-3 z-10 flex rounded-lg bg-white/95 backdrop-blur shadow-md border border-gray-200 p-0.5">
+              {STYLE_OPTIONS.map((s) => {
+                const active = s.id === styleId
+                return (
+                  <button
+                    key={s.id}
+                    type="button"
+                    onClick={() => setStyleId(s.id)}
+                    className={`px-3 py-1 text-[11px] font-semibold rounded transition-colors ${
+                      active
+                        ? "bg-navy-900 text-white"
+                        : "text-navy-700 hover:bg-navy-50"
+                    }`}
+                  >
+                    {s.label}
+                  </button>
+                )
+              })}
+            </div>
+          )}
           {tokenMissing ? (
             <div className="w-full h-full flex items-center justify-center p-6 text-center">
               <div>
@@ -191,7 +204,7 @@ export default function ConsortiumMap({
               ]}
               minZoom={2.8}
               maxZoom={9}
-              mapStyle="mapbox://styles/mapbox/light-v11"
+              mapStyle={STYLE_OPTIONS.find(s => s.id === styleId)!.url}
               attributionControl={false}
               reuseMaps
               style={{ width: "100%", height: "100%" }}
@@ -311,12 +324,14 @@ export default function ConsortiumMap({
                 )
               })}
 
-              {/* Hover popup */}
+              {/* Hover popup — pointer-events disabled on the content so
+                  moving the cursor onto the popup never interrupts the
+                  marker's mouseenter/leave, which previously caused flicker. */}
               {hovered && (
                 <Popup
                   longitude={PARTNER_BY_CODE[hovered].lng}
                   latitude={PARTNER_BY_CODE[hovered].lat}
-                  offset={offsetFor(hovered)}
+                  offset={18}
                   anchor="bottom"
                   closeButton={false}
                   closeOnClick={false}
@@ -448,6 +463,13 @@ export default function ConsortiumMap({
         @keyframes consortium-pulse {
           0%   { transform: scale(0.5); opacity: 0.55; }
           100% { transform: scale(1.6); opacity: 0;    }
+        }
+        /* Hover preview: disable pointer events so the popup never
+           blocks the marker and never takes its own hover. */
+        .panoraima-popup,
+        .panoraima-popup .mapboxgl-popup-content,
+        .panoraima-popup .mapboxgl-popup-tip {
+          pointer-events: none !important;
         }
         .panoraima-popup .mapboxgl-popup-content {
           background: rgba(255, 255, 255, 0.96);

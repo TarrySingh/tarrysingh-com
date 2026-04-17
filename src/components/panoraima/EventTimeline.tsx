@@ -200,8 +200,10 @@ export default function EventTimeline({ events, selectedId, onSelect }: Props) {
                          tooltips spuriously pop open. */}
                     {isHovered && (
                       <div
-                        className="absolute left-1/2 -translate-x-1/2 top-[-132px] z-20 w-[260px] rounded-xl bg-navy-900 text-white shadow-2xl p-4 animate-fade-in pointer-events-none"
-                        style={{ top: i % 2 === 0 ? -148 : 60, [i % 2 === 0 ? "top" : "bottom"]: "auto" }}
+                        // Alternate above/below the rail by chronological index so
+                        // successive tooltips never overlap their neighbours.
+                        className="absolute left-1/2 -translate-x-1/2 z-20 w-[260px] rounded-xl bg-navy-900 text-white shadow-2xl p-4 animate-fade-in pointer-events-none"
+                        style={{ top: i % 2 === 0 ? -148 : 60 }}
                       >
                         <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wider text-gold-300 mb-1">
                           <span>{style.label}</span>

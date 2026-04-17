@@ -46,22 +46,24 @@ export interface PartnerProfile {
   accent: string
 }
 
+// Addresses provided by Tarry on 2026-04-17 from the PANORAIMA consortium records.
+// Coordinates geocoded to the actual lab / campus building, not the city centre.
 export const PARTNERS: PartnerProfile[] = [
-  { code: "BME",    name: "Budapest University of Technology and Economics", country: "Hungary",     countryCode: "HU", city: "Budapest",  lat: 47.4811, lng: 19.0560, accent: "#ef4444" },
-  { code: "CeADAR", name: "Centre for Applied Data Analytics Research",       country: "Ireland",     countryCode: "IE", city: "Dublin",    lat: 53.3472, lng: -6.2593, accent: "#10b981" },
-  { code: "CNR",    name: "National Research Council",                        country: "Italy",       countryCode: "IT", city: "Naples",    lat: 40.8359, lng: 14.2488, accent: "#14b8a6" },
-  { code: "ENEA",   name: "Italian National Agency for New Technologies",     country: "Italy",       countryCode: "IT", city: "Rome",      lat: 41.9028, lng: 12.4964, accent: "#0ea5e9" },
-  { code: "ESI",    name: "ESI Center Eastern Europe",                        country: "Bulgaria",    countryCode: "BG", city: "Sofia",     lat: 42.6977, lng: 23.3219, accent: "#eab308" },
-  { code: "HAW",    name: "Hamburg University of Applied Sciences",           country: "Germany",     countryCode: "DE", city: "Hamburg",   lat: 53.5511, lng: 9.9937,  accent: "#f59e0b" },
-  { code: "HU",     name: "University of Applied Sciences Utrecht",           country: "Netherlands", countryCode: "NL", city: "Utrecht",   lat: 52.0907, lng: 5.1214,  accent: "#f97316" },
-  { code: "KPI",    name: "Igor Sikorsky Kyiv Polytechnic Institute",         country: "Ukraine",     countryCode: "UA", city: "Kyiv",      lat: 50.4501, lng: 30.5234, accent: "#3b82f6" },
-  { code: "NAT",    name: "Nathean Technologies",                             country: "Ireland",     countryCode: "IE", city: "Dublin",    lat: 53.3498, lng: -6.2603, accent: "#22c55e" },
-  { code: "QTICS",  name: "QTICS Ltd",                                        country: "Hungary",     countryCode: "HU", city: "Budapest",  lat: 47.4979, lng: 19.0402, accent: "#dc2626" },
-  { code: "SU",     name: "Sofia University",                                 country: "Bulgaria",    countryCode: "BG", city: "Sofia",     lat: 42.6925, lng: 23.3350, accent: "#ca8a04" },
-  { code: "TUD",    name: "Technological University Dublin",                  country: "Ireland",     countryCode: "IE", city: "Dublin",    lat: 53.3498, lng: -6.2700, accent: "#16a34a" },
-  { code: "UniNa",  name: "University of Naples Federico II",                 country: "Italy",       countryCode: "IT", city: "Naples",    lat: 40.8500, lng: 14.2681, accent: "#0891b2" },
-  { code: "UNIWA",  name: "University of West Attica",                        country: "Greece",      countryCode: "GR", city: "Athens",    lat: 37.9838, lng: 23.7275, accent: "#8b5cf6" },
-  { code: "RealAI", name: "Real AI Ltd",                                      country: "Netherlands", countryCode: "NL", city: "Rotterdam", lat: 51.9244, lng: 4.4777,  accent: "#d946ef" },
+  { code: "BME",    name: "Budapest University of Technology and Economics", country: "Hungary",     countryCode: "HU", city: "Budapest",  lat: 47.4816, lng: 19.0554, accent: "#ef4444" },
+  { code: "CeADAR", name: "Centre for Applied Data Analytics Research",       country: "Ireland",     countryCode: "IE", city: "Dublin",    lat: 53.3132, lng: -6.2226, accent: "#10b981" },
+  { code: "CNR",    name: "National Research Council",                        country: "Italy",       countryCode: "IT", city: "Naples",    lat: 40.8548, lng: 14.2269, accent: "#14b8a6" },
+  { code: "ENEA",   name: "Italian National Agency for New Technologies",     country: "Italy",       countryCode: "IT", city: "Rome",      lat: 41.9280, lng: 12.4693, accent: "#0ea5e9" },
+  { code: "ESI",    name: "ESI Center Eastern Europe",                        country: "Bulgaria",    countryCode: "BG", city: "Varna",     lat: 43.1869, lng: 27.9188, accent: "#eab308" },
+  { code: "HAW",    name: "Hamburg University of Applied Sciences",           country: "Germany",     countryCode: "DE", city: "Hamburg",   lat: 53.5579, lng: 10.0218, accent: "#f59e0b" },
+  { code: "HU",     name: "University of Applied Sciences Utrecht",           country: "Netherlands", countryCode: "NL", city: "Utrecht",   lat: 52.0862, lng: 5.1785,  accent: "#f97316" },
+  { code: "KPI",    name: "Igor Sikorsky Kyiv Polytechnic Institute",         country: "Ukraine",     countryCode: "UA", city: "Kyiv",      lat: 50.4501, lng: 30.4629, accent: "#3b82f6" },
+  { code: "NAT",    name: "Nathean Technologies",                             country: "Ireland",     countryCode: "IE", city: "Dublin",    lat: 53.3953, lng: -6.4114, accent: "#22c55e" },
+  { code: "QTICS",  name: "QTICS Ltd",                                        country: "Hungary",     countryCode: "HU", city: "Budapest",  lat: 47.5123, lng: 19.0716, accent: "#dc2626" },
+  { code: "SU",     name: "Sofia University",                                 country: "Bulgaria",    countryCode: "BG", city: "Sofia",     lat: 42.6935, lng: 23.3349, accent: "#ca8a04" },
+  { code: "TUD",    name: "Technological University Dublin",                  country: "Ireland",     countryCode: "IE", city: "Dublin",    lat: 53.2877, lng: -6.3728, accent: "#16a34a" },
+  { code: "UniNa",  name: "University of Naples Federico II",                 country: "Italy",       countryCode: "IT", city: "Naples",    lat: 40.8474, lng: 14.2595, accent: "#0891b2" },
+  { code: "UNIWA", name: "University of West Attica",                         country: "Greece",      countryCode: "GR", city: "Athens",    lat: 37.9930, lng: 23.6737, accent: "#8b5cf6" },
+  { code: "RealAI", name: "Real AI Ltd",                                      country: "Netherlands", countryCode: "NL", city: "Assen",     lat: 52.9946, lng: 6.5644,  accent: "#d946ef" },
 ]
 
 export const PARTNER_BY_CODE: Record<PartnerCode, PartnerProfile> =
