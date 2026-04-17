@@ -92,7 +92,15 @@ export default function EventTimeline({ events, selectedId, onSelect }: Props) {
           className="relative overflow-x-auto pb-6 -mx-2 px-2 scrollbar-hidden"
           style={{ scrollbarWidth: "none" }}
         >
-          <div className="relative min-w-max pt-12 pb-12" style={{ width: `${Math.max(chronological.length * 130, 800)}px` }}>
+          <div
+            // Vertical padding must clear the tooltip in both directions:
+            //   tooltip extends ~148px above or ~60+140px below each node.
+            // Browsers force overflow-y:auto on the scroller as soon as
+            // overflow-x is set, so anything that overflows this padded box
+            // gets clipped — hence the generous pt/pb.
+            className="relative min-w-max pt-36 pb-44"
+            style={{ width: `${Math.max(chronological.length * 130, 800)}px` }}
+          >
             {/* Central rail */}
             <div className="absolute left-0 right-0 top-1/2 h-[2px] bg-gradient-to-r from-gray-200 via-navy-200 to-gray-200 -translate-y-1/2" />
 

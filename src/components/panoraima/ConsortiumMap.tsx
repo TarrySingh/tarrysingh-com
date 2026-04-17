@@ -59,6 +59,25 @@ export default function ConsortiumMap({
   const [styleId, setStyleId] = useState<StyleId>("light")
   const totalEligible = partnerTotalEligibleEvents(events)
 
+  // Debounced hover — Mapbox marker DOM nodes get re-created on pan/zoom which
+  // can cause quick mouseenter/leave cycles. Holding the "leave" for 120ms lets
+  // a re-entry cancel the close, eliminating flicker.
+  const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const enterHover = (code: PartnerCode) => {
+    if (leaveTimerRef.current) {
+      clearTimeout(leaveTimerRef.current)
+      leaveTimerRef.current = null
+    }
+    setHovered(code)
+  }
+  const leaveHover = () => {
+    if (leaveTimerRef.current) return
+    leaveTimerRef.current = setTimeout(() => {
+      setHovered(null)
+      leaveTimerRef.current = null
+    }, 120)
+  }
+
   const activeCode = hovered ?? selectedPartner
 
   // Precompute per-partner engagement derivatives (submission rate, color bucket)
@@ -283,8 +302,8 @@ export default function ConsortiumMap({
                     anchor="center"
                   >
                     <button
-                      onMouseEnter={() => setHovered(p.code)}
-                      onMouseLeave={() => setHovered(null)}
+                      onMouseEnter={() => enterHover(p.code)}
+                      onMouseLeave={leaveHover}
                       onClick={(ev) => {
                         ev.stopPropagation()
                         onPartnerSelect(p.code)
