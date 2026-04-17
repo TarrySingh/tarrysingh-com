@@ -1,9 +1,24 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home } from "lucide-react"
+import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home, Network } from "lucide-react"
 
 const experiments = [
+  {
+    title: "PANORAIMA Consortium",
+    tagline: "15 labs. 8 countries. One year of AI education.",
+    description:
+      "Live dashboard tracking an EU Horizon Europe consortium. 21 events, 143 progress reports, 7 work packages — visualized on an interactive timeline, Europe map, submission heatmap, and WP activity lens. Password-protected for the consortium.",
+    to: "/experiments/panoraima",
+    tag: "EU Horizon · Live data",
+    tech: "Next.js, Python, Claude, SVG, Edge middleware",
+    icon: Network,
+    gradient: "from-navy-500/8 to-gold-500/8",
+    accent: "bg-gold-500",
+    status: "Beta",
+    isNew: true,
+    date: "Apr 2026",
+  },
   {
     title: "mklaar.ai",
     tagline: "Jouw AI-makelaar. Altijd klaar.",
