@@ -147,7 +147,10 @@ export default function EventTimeline({ events, selectedId, onSelect }: Props) {
                       aria-label={`${e.title} on ${e.label}`}
                       onMouseEnter={() => setHoveredId(e.id)}
                       onMouseLeave={() => setHoveredId(null)}
-                      onClick={() => onSelect(e.id)}
+                      onClick={() => {
+                        setHoveredId(null)
+                        onSelect(e.id)
+                      }}
                       className="relative group outline-none"
                     >
                       {/* Pulse ring when selected */}
@@ -188,8 +191,14 @@ export default function EventTimeline({ events, selectedId, onSelect }: Props) {
                       )}
                     </button>
 
-                    {/* Hover tooltip */}
-                    {(isHovered || isSelected) && (
+                    {/* Hover tooltip — shown only while the mouse is over this node.
+                         The selected state is conveyed by the pulse ring + the
+                         slide-in detail drawer, so we intentionally do not keep
+                         the tooltip open on selection. Keeping it would overlap
+                         neighbour buttons (tooltip is 260px wide) and leak hover
+                         events through pointer-events-none, making adjacent
+                         tooltips spuriously pop open. */}
+                    {isHovered && (
                       <div
                         className="absolute left-1/2 -translate-x-1/2 top-[-132px] z-20 w-[260px] rounded-xl bg-navy-900 text-white shadow-2xl p-4 animate-fade-in pointer-events-none"
                         style={{ top: i % 2 === 0 ? -148 : 60, [i % 2 === 0 ? "top" : "bottom"]: "auto" }}
