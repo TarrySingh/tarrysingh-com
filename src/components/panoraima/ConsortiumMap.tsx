@@ -142,6 +142,50 @@ export default function ConsortiumMap({
     mapRef.current?.easeTo({ center: [p.lng, p.lat], zoom: 4.5, duration: 900 })
   }, [selectedPartner])
 
+  // Animated "ant march" on connection lines — we loop a progressive
+  // line-dasharray sequence via requestAnimationFrame to give the static
+  // gray edges a sense of flow. The try/catch tolerates moments when the
+  // layer isn't mounted (e.g. during a style switch).
+  useEffect(() => {
+    const dashSequence: number[][] = [
+      [0, 4, 3],
+      [0.5, 4, 2.5],
+      [1, 4, 2],
+      [1.5, 4, 1.5],
+      [2, 4, 1],
+      [2.5, 4, 0.5],
+      [3, 4, 0],
+      [0, 0.5, 3, 3.5],
+      [0, 1, 3, 3],
+      [0, 1.5, 3, 2.5],
+      [0, 2, 3, 2],
+      [0, 2.5, 3, 1.5],
+      [0, 3, 3, 1],
+      [0, 3.5, 3, 0.5],
+    ]
+    let rafId: number | null = null
+    let step = -1
+    const tick = (ts: number) => {
+      const raw = mapRef.current?.getMap()
+      if (raw) {
+        const nextStep = Math.floor((ts / 90) % dashSequence.length)
+        if (nextStep !== step) {
+          try {
+            raw.setPaintProperty("connections-line", "line-dasharray", dashSequence[nextStep])
+          } catch {
+            /* layer not ready — happens briefly during style switch */
+          }
+          step = nextStep
+        }
+      }
+      rafId = requestAnimationFrame(tick)
+    }
+    rafId = requestAnimationFrame(tick)
+    return () => {
+      if (rafId != null) cancelAnimationFrame(rafId)
+    }
+  }, [])
+
   // Reset view — returns the map to the initial Europe-wide framing.
   const resetView = () => {
     setHovered(null)
@@ -283,30 +327,34 @@ export default function ConsortiumMap({
               <NavigationControl position="top-right" showCompass={false} />
               <AttributionControl position="bottom-right" compact />
 
-              {/* Connection lines */}
+              {/* Connection lines — animated dashes flow along every edge via
+                  an rAF loop that cycles line-dasharray. Active edges (those
+                  from a hovered / selected partner) are brighter and bolder. */}
               <Source id="connections" type="geojson" data={linesGeoJson}>
                 <Layer
                   id="connections-line"
                   type="line"
+                  layout={{ "line-cap": "round", "line-join": "round" }}
                   paint={{
                     "line-color": [
                       "case",
                       ["==", ["get", "active"], true],
                       "#C9A96E",
-                      "#0A1628",
+                      styleId === "dark" ? "#E4CE9D" : "#1B376D",
                     ],
                     "line-opacity": [
                       "case",
                       ["==", ["get", "active"], true],
-                      0.55,
-                      0.08,
+                      0.85,
+                      styleId === "dark" ? 0.32 : 0.22,
                     ],
                     "line-width": [
                       "case",
                       ["==", ["get", "active"], true],
-                      1.4,
-                      0.6,
+                      2,
+                      1,
                     ],
+                    "line-dasharray": [0, 4, 3],
                   }}
                 />
               </Source>
