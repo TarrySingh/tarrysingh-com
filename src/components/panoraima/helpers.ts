@@ -79,11 +79,16 @@ export function projectEurope(lat: number, lng: number, w = 640, h = 520) {
   return { x, y }
 }
 
-/** Formats a date like "2025-08-22" -> "Aug 22, 2025" */
+/** Formats a date like "2025-08-22" -> "Aug 22, 2025".
+ *  Strict: only accepts YYYY-MM-DD / YYYY-MM prefixes. Returns "" otherwise
+ *  so callers can show a placeholder like "Date TBD". This guards against
+ *  ids like "review-1" being accidentally parsed as year 2001 by V8's
+ *  legacy two-digit-year behaviour. */
 export function formatDate(iso: string): string {
   if (!iso) return ""
+  if (!/^\d{4}-\d{2}(-\d{2})?/.test(iso)) return ""
   const d = new Date(iso)
-  if (Number.isNaN(d.getTime())) return iso
+  if (Number.isNaN(d.getTime())) return ""
   return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
 }
 

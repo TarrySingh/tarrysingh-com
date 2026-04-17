@@ -100,7 +100,7 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
           <div className="flex items-center gap-4 text-[13px] text-navy-100/80">
             <span className="inline-flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5" />
-              {formatDate(event.date || event.id)}
+              {formatDate(event.date) || "Date TBD"}
             </span>
             {event.has_progress_reports && (
               <span className="inline-flex items-center gap-1.5">

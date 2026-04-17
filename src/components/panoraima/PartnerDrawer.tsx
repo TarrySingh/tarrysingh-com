@@ -189,7 +189,7 @@ export default function PartnerDrawer({ partner, events, open, onClose, onEventC
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 text-[10px] font-mono text-gray-500 uppercase tracking-wider font-semibold">
                           <Calendar className="w-3 h-3" />
-                          {formatDate(event.date || event.id)}
+                          {formatDate(event.date) || "Date TBD"}
                           <span className="text-gray-300">·</span>
                           <span>{event.title}</span>
                         </div>

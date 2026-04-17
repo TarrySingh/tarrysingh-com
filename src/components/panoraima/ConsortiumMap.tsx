@@ -57,28 +57,27 @@ export default function ConsortiumMap({
   const mapRef = useRef<MapRef | null>(null)
   const [hovered, setHovered] = useState<PartnerCode | null>(null)
   const [styleId, setStyleId] = useState<StyleId>("light")
+  const [cursor, setCursor] = useState<"" | "pointer">("")
   const totalEligible = partnerTotalEligibleEvents(events)
 
-  // Debounced hover — Mapbox marker DOM nodes get re-created on pan/zoom which
-  // can cause quick mouseenter/leave cycles. Holding the "leave" for 120ms lets
-  // a re-entry cancel the close, eliminating flicker.
-  const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const enterHover = (code: PartnerCode) => {
-    if (leaveTimerRef.current) {
-      clearTimeout(leaveTimerRef.current)
-      leaveTimerRef.current = null
-    }
-    setHovered(code)
-  }
-  const leaveHover = () => {
-    if (leaveTimerRef.current) return
-    leaveTimerRef.current = setTimeout(() => {
-      setHovered(null)
-      leaveTimerRef.current = null
-    }, 120)
-  }
-
   const activeCode = hovered ?? selectedPartner
+
+  // Partner points as a GeoJSON source — used for a single invisible circle
+  // layer that Mapbox hit-tests natively. Replacing DOM onMouseEnter/Leave on
+  // each <Marker> button with this pattern eliminates the hover flicker that
+  // the previous implementation had: DOM markers re-render on pan/zoom and
+  // fire enter/leave spuriously; Mapbox canvas hit-testing doesn't.
+  const partnersGeoJson = useMemo<GeoJSON.FeatureCollection<GeoJSON.Point>>(
+    () => ({
+      type: "FeatureCollection",
+      features: PARTNERS.map((p) => ({
+        type: "Feature",
+        properties: { code: p.code },
+        geometry: { type: "Point", coordinates: [p.lng, p.lat] },
+      })),
+    }),
+    []
+  )
 
   // Precompute per-partner engagement derivatives (submission rate, color bucket)
   const engagement = useMemo(() => {
@@ -143,6 +142,37 @@ export default function ConsortiumMap({
     mapRef.current?.easeTo({ center: [p.lng, p.lat], zoom: 4.5, duration: 900 })
   }, [selectedPartner])
 
+  // Reset view — returns the map to the initial Europe-wide framing.
+  const resetView = () => {
+    setHovered(null)
+    mapRef.current?.easeTo({
+      center: [INITIAL_VIEW.longitude, INITIAL_VIEW.latitude],
+      zoom: INITIAL_VIEW.zoom,
+      duration: 700,
+    })
+  }
+
+  // Mapbox canvas-level handlers — no DOM-marker flicker
+  const handleMapMouseMove = (ev: {
+    features?: Array<{ properties?: Record<string, unknown> }>
+  }) => {
+    const f = ev.features?.[0]
+    const code = f?.properties?.code as PartnerCode | undefined
+    if (code && code !== hovered) setHovered(code)
+    setCursor(code ? "pointer" : "")
+  }
+  const handleMapMouseLeave = () => {
+    setHovered(null)
+    setCursor("")
+  }
+  const handleMapClick = (ev: {
+    features?: Array<{ properties?: Record<string, unknown> }>
+  }) => {
+    const f = ev.features?.[0]
+    const code = f?.properties?.code as PartnerCode | undefined
+    if (code) onPartnerSelect(code)
+  }
+
   const tokenMissing = !MAPBOX_TOKEN
 
   return (
@@ -180,26 +210,42 @@ export default function ConsortiumMap({
       <div className="relative grid md:grid-cols-[1fr,280px] gap-6 px-6 md:px-10 pb-10">
         {/* Map */}
         <div className="relative rounded-2xl overflow-hidden border border-gray-100 h-[520px] bg-white">
-          {/* Layer switcher (floats top-left over the map) */}
+          {/* Floating controls — top-left stack */}
           {!tokenMissing && (
-            <div className="absolute top-3 left-3 z-10 flex rounded-lg bg-white/95 backdrop-blur shadow-md border border-gray-200 p-0.5">
-              {STYLE_OPTIONS.map((s) => {
-                const active = s.id === styleId
-                return (
-                  <button
-                    key={s.id}
-                    type="button"
-                    onClick={() => setStyleId(s.id)}
-                    className={`px-3 py-1 text-[11px] font-semibold rounded transition-colors ${
-                      active
-                        ? "bg-navy-900 text-white"
-                        : "text-navy-700 hover:bg-navy-50"
-                    }`}
-                  >
-                    {s.label}
-                  </button>
-                )
-              })}
+            <div className="absolute top-3 left-3 z-10 flex flex-col gap-2 items-start">
+              {/* Layer switcher */}
+              <div className="flex rounded-lg bg-white/95 backdrop-blur shadow-md border border-gray-200 p-0.5">
+                {STYLE_OPTIONS.map((s) => {
+                  const active = s.id === styleId
+                  return (
+                    <button
+                      key={s.id}
+                      type="button"
+                      onClick={() => setStyleId(s.id)}
+                      className={`px-3 py-1 text-[11px] font-semibold rounded transition-colors ${
+                        active
+                          ? "bg-navy-900 text-white"
+                          : "text-navy-700 hover:bg-navy-50"
+                      }`}
+                    >
+                      {s.label}
+                    </button>
+                  )
+                })}
+              </div>
+              {/* Reset view */}
+              <button
+                type="button"
+                onClick={resetView}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold rounded-lg bg-white/95 backdrop-blur shadow-md border border-gray-200 text-navy-700 hover:bg-navy-50 transition-colors"
+                title="Reset to the all-partners view"
+              >
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
+                  <path d="M3 3v5h5" />
+                </svg>
+                Reset view
+              </button>
             </div>
           )}
           {tokenMissing ? (
@@ -227,6 +273,11 @@ export default function ConsortiumMap({
               attributionControl={false}
               reuseMaps
               style={{ width: "100%", height: "100%" }}
+              cursor={cursor}
+              interactiveLayerIds={["partners-hit"]}
+              onMouseMove={handleMapMouseMove}
+              onMouseLeave={handleMapMouseLeave}
+              onClick={handleMapClick}
             >
               <NavigationControl position="top-right" showCompass={false} />
               <AttributionControl position="bottom-right" compact />
@@ -287,12 +338,33 @@ export default function ConsortiumMap({
                 )
               })}
 
-              {/* Partner markers (dots + labels) */}
+              {/* Invisible hit-test layer — Mapbox's onMouseMove fires against
+                  this, giving rock-solid hover / click without DOM flicker. */}
+              <Source id="partners-src" type="geojson" data={partnersGeoJson}>
+                <Layer
+                  id="partners-hit"
+                  type="circle"
+                  paint={{
+                    "circle-radius": 16,
+                    "circle-color": "#000000",
+                    "circle-opacity": 0,
+                  }}
+                />
+              </Source>
+
+              {/* Partner markers (dots + labels) — visual only, pointer-events
+                  disabled so they don't fight the hit-test layer. */}
               {PARTNERS.map((p) => {
                 const isActive = activeCode === p.code
                 const dim = activeCode && !isActive
                 const e = engagement[p.code]
                 const off = offsetFor(p.code)
+                const labelColor =
+                  styleId === "dark" || styleId === "satellite" ? "#ffffff" : "#0A1628"
+                const labelShadow =
+                  styleId === "dark" || styleId === "satellite"
+                    ? "0 0 4px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.9)"
+                    : "0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff"
                 return (
                   <Marker
                     key={p.code}
@@ -301,19 +373,13 @@ export default function ConsortiumMap({
                     offset={off}
                     anchor="center"
                   >
-                    <button
-                      onMouseEnter={() => enterHover(p.code)}
-                      onMouseLeave={leaveHover}
-                      onClick={(ev) => {
-                        ev.stopPropagation()
-                        onPartnerSelect(p.code)
-                      }}
+                    <div
                       aria-label={`${p.code}: ${Math.round(e.rate * 100)}% submissions`}
-                      className="group relative block outline-none"
+                      className="relative"
                       style={{
-                        opacity: dim ? 0.35 : 1,
+                        pointerEvents: "none",
+                        opacity: dim ? 0.4 : 1,
                         transition: "opacity 0.25s ease",
-                        cursor: "pointer",
                       }}
                     >
                       <span
@@ -327,18 +393,17 @@ export default function ConsortiumMap({
                         }}
                       />
                       <span
-                        className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-mono font-semibold text-navy-900"
+                        className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-mono font-semibold"
                         style={{
                           top: (isActive ? 18 : 12) + 4,
-                          textShadow:
-                            "0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff",
+                          color: labelColor,
+                          textShadow: labelShadow,
                           opacity: isActive ? 1 : 0.85,
-                          pointerEvents: "none",
                         }}
                       >
                         {p.code}
                       </span>
-                    </button>
+                    </div>
                   </Marker>
                 )
               })}

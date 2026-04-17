@@ -220,7 +220,7 @@ export default function EventTimeline({ events, selectedId, onSelect }: Props) {
                         </div>
                         <div className="text-sm font-bold mb-1">{e.title}</div>
                         <div className="text-[11px] font-mono text-navy-100/70 mb-3">
-                          {formatDate(e.date || e.id)}
+                          {formatDate(e.date) || "Date TBD"}
                         </div>
                         {e.has_progress_reports && (
                           <div className="space-y-1.5">
