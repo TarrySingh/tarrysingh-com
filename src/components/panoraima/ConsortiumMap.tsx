@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useRef, useState } from "react"
-import type { MapRef } from "react-map-gl/mapbox"
+import type { MapRef, MapMouseEvent } from "react-map-gl/mapbox"
 import Map, { Marker, Popup, Source, Layer, NavigationControl, AttributionControl } from "react-map-gl/mapbox"
 import "mapbox-gl/dist/mapbox-gl.css"
 import {
@@ -153,23 +153,24 @@ export default function ConsortiumMap({
   }
 
   // Mapbox canvas-level handlers — no DOM-marker flicker
-  const handleMapMouseMove = (ev: {
-    features?: Array<{ properties?: Record<string, unknown> }>
-  }) => {
-    const f = ev.features?.[0]
-    const code = f?.properties?.code as PartnerCode | undefined
-    if (code && code !== hovered) setHovered(code)
-    setCursor(code ? "pointer" : "")
+  const handleMapMouseMove = (ev: MapMouseEvent) => {
+    const feature = ev.features?.[0]
+    const code = (feature?.properties as { code?: PartnerCode } | null)?.code
+    if (code) {
+      if (code !== hovered) setHovered(code)
+      setCursor("pointer")
+    } else {
+      if (hovered !== null) setHovered(null)
+      setCursor("")
+    }
   }
   const handleMapMouseLeave = () => {
     setHovered(null)
     setCursor("")
   }
-  const handleMapClick = (ev: {
-    features?: Array<{ properties?: Record<string, unknown> }>
-  }) => {
-    const f = ev.features?.[0]
-    const code = f?.properties?.code as PartnerCode | undefined
+  const handleMapClick = (ev: MapMouseEvent) => {
+    const feature = ev.features?.[0]
+    const code = (feature?.properties as { code?: PartnerCode } | null)?.code
     if (code) onPartnerSelect(code)
   }
 
