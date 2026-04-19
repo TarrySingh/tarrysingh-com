@@ -1,0 +1,1462 @@
+{
+  "task": "T2.2",
+  "wp": "WP2",
+  "title": "Pedagogic & Organisational Needs Analysis",
+  "tagline": "How the 8 PANORAIMA partner universities said they want to teach Responsible AI.",
+  "coordinator": "UNIWA",
+  "involved": [
+    "HU",
+    "TUD",
+    "UNINA",
+    "BME",
+    "SU",
+    "KPI",
+    "HAW"
+  ],
+  "kpis": {
+    "participant_count": 17,
+    "institution_count": 8,
+    "question_count": 12,
+    "finding_count": 7,
+    "ai_skills_ranked": 14,
+    "consent_total": 8,
+    "filled_total": 25,
+    "desktop_research_count": 4,
+    "file_count": 48
+  },
+  "protocol": {
+    "title_en": "Research Protocol for the Understanding of Educational and Organisational Needs in PANORAIMA",
+    "title_el": "Πρωτόκολλο Έρευνας για την Κατανόηση των Εκπαιδευτικών και Οργανωτικών Αναγκών στο PANORAIMA",
+    "sections": [
+      {
+        "en": "Introduction",
+        "el": "Εισαγωγή",
+        "description": "PANORAIMA context, grant reference, and why T2.2 exists."
+      },
+      {
+        "en": "Purpose",
+        "el": "Σκοπός",
+        "description": "Identify internal pedagogic, course-delivery, and programme-restriction needs."
+      },
+      {
+        "en": "Research — Materials",
+        "el": "Υλικό",
+        "description": "Information Pack, indicative moderator questions, agenda, recording notice."
+      },
+      {
+        "en": "Research — Participants",
+        "el": "Συμμετέχοντες",
+        "description": "Selection via partner institutions; diversity and representation prioritised."
+      },
+      {
+        "en": "Research — Methodology",
+        "el": "Μεθοδολογία",
+        "description": "Focus group 1 — Educational Needs; Focus group 2 — Organisational Needs; online via MS Teams."
+      },
+      {
+        "en": "Research — Procedure",
+        "el": "Διαδικασία Ομάδας Εστίασης",
+        "description": "Setup, guide structure, 8 indicative questions on teaching methods + AI use."
+      },
+      {
+        "en": "Data Protection — Administrative",
+        "el": "Διοικητική διαδικασία",
+        "description": "Proposed participants; consent forms collected before session."
+      },
+      {
+        "en": "Data Protection — Technical",
+        "el": "Τεχνική διαδικασία",
+        "description": "MS Teams recording stored in password-protected OneDrive; no editing mid-recording."
+      },
+      {
+        "en": "Data Protection — Physical",
+        "el": "Φυσική διαδικασία",
+        "description": "OneDrive folder access restricted to listed research team only."
+      },
+      {
+        "en": "Data Analysis",
+        "el": "Ανάλυση Δεδομένων",
+        "description": "Verbatim transcription → generalisation → inductive thematic categories."
+      },
+      {
+        "en": "Expected Results",
+        "el": "Αναμενόμενα Αποτελέσματα",
+        "description": "Pedagogic + organisational requirements for the PANORAIMA masters' programme."
+      }
+    ],
+    "source_file": "focus groups/UNIWA/1. Research Protocol for the Understanding of Educational and Organisational Needs in the PANORAIMA greek FINAL.pdf"
+  },
+  "focus_group": {
+    "date": "2025-07-04",
+    "duration_min": 120,
+    "platform": "Microsoft Teams + Mentimeter",
+    "participant_count": 17,
+    "description": "According to the European project PANORAIMA (Pan-European Network for Responsible Artificial Intelligence Multisector Masters’ Programme/GA101189994, the University of West Attica conducted one (1) focus group to identify the pedagogical needs of the project, in line with WP2/T2.2 requirements. More specifically, according to the GA, partner universities should determine internal requirements concerning pedagogics, course delivery, and programme restrictions related to the delivery of the PANORAIMA, utilising focus groups. Consequently, a focus group discussion took place on July 4, 2025, from 12:00 to 14:00 (CET) exploring the pedagogical and organisational needs relevant to the project's development. The research was approved by the Research Ethics Committee of the University of West Attica (Ref. No. 54225 - 16/06/2025) and conducted online via Microsoft Teams.",
+    "aim": "The main target of the focus group was to engage leaders and key actors from Universities and Research Academia, to understand, record and organise pedagogical needs for the implementation of Human-Centric education in Artificial Intelligence.",
+    "research_team": [
+      {
+        "name": "Charalambos Z. Patrikakis",
+        "role": "Oversight & data collection",
+        "affiliation": "UNIWA"
+      },
+      {
+        "name": "Grigoris Nikolaou",
+        "role": "Data analysis & coordination",
+        "affiliation": "UNIWA"
+      },
+      {
+        "name": "Michalis Feidakis",
+        "role": "Data analysis & coordination",
+        "affiliation": "UNIWA"
+      },
+      {
+        "name": "Nikolaos Voudouris",
+        "role": "Data analysis",
+        "affiliation": "UNIWA"
+      }
+    ],
+    "findings": [
+      {
+        "id": "hybrid_blended",
+        "icon": "layers",
+        "title": "Hybrid preferred, blended requested",
+        "quote": "Most tutors prefer to teach through a hybrid format (on-site teaching + online teaching, simultaneously). However, through the discussion, the need for a blended learning model (on-site lectures + online lectures, at separate times) emerged."
+      },
+      {
+        "id": "project_based",
+        "icon": "compass",
+        "title": "Project-based beats lectures",
+        "quote": "Project/Problem/Self-paced and personalised learning is preferred instead of traditional instructional lectures. The former entails the adoption of corresponding learning strategies i.e. flipped classroom, on-the-job training."
+      },
+      {
+        "id": "ai_in_classroom",
+        "icon": "sparkles",
+        "title": "AI in the classroom — but with sustainability concerns",
+        "quote": "The adoption of AI in education dictates more AI-assisted frameworks, AI tools in the classroom, recognising the profound impact of Artificial Intelligence on education."
+      },
+      {
+        "id": "digital_tools",
+        "icon": "smartphone",
+        "title": "Smartphones > manuscripts",
+        "quote": "Digital tools, especially smartphones, laptops, and corresponding software (i.e. mobile apps, online tools), remain more preferable than hardcopy manuscripts for student engagement or learning. Robots and chatbots follow."
+      },
+      {
+        "id": "ai_reliance",
+        "icon": "alert-triangle",
+        "title": "AI-reliance is the new cognitive risk",
+        "quote": "Most participants highlighted AI Reliance as a high risk, since students rely too much on AI for quick and easy responses."
+      },
+      {
+        "id": "collaborative",
+        "icon": "users",
+        "title": "Collaborative over individual",
+        "quote": "Most participants agreed that the current pedagogical needs require more collaborative learning strategies, with self-paced learning being the second most popular response."
+      },
+      {
+        "id": "classroom_agreement",
+        "icon": "file-signature",
+        "title": "The classroom agreement",
+        "quote": "A classroom agreement could help in that direction, as teachers and students could sign a classroom agreement, in which the rules for using AI with Responsibility, Transparency and oversight are established."
+      }
+    ],
+    "questions": [
+      {
+        "id": 1,
+        "band": "Teaching methods",
+        "text": "How do tutors mostly teach today? What teaching methods do they prefer?",
+        "summary": "Hybrid (on-site + online simultaneously) was most common, but the group pushed toward a true blended model (on-site + online at separate times)."
+      },
+      {
+        "id": 2,
+        "band": "Teaching methods",
+        "text": "How should teachers adapt their teaching methods in the next 5 years, given the rise of AI in education?",
+        "summary": "Shift toward AI-assisted frameworks and in-class AI tools, with an equivalent emphasis on sustainability and responsible-AI practice."
+      },
+      {
+        "id": 3,
+        "band": "Teaching methods",
+        "text": "How much time do students spend studying per day today?",
+        "summary": "Study-time patterns vary widely across partner universities; framed as context for the learning-strategy discussion."
+      },
+      {
+        "id": 4,
+        "band": "Student learning",
+        "text": "Which media or tools do you find most effective for student engagement or learning? (manuscripts, digital tools, mobile apps, etc.)",
+        "summary": "Smartphones, laptops, and supporting software dominated; robots and chatbots followed; hardcopy manuscripts came last."
+      },
+      {
+        "id": 5,
+        "band": "Student learning",
+        "text": "Do students face issues or threats regarding critical or creative thinking? Do they need to use less or more technology?",
+        "summary": "Over-reliance on AI for quick answers was flagged as the highest risk to critical and creative thinking."
+      },
+      {
+        "id": 6,
+        "band": "Student learning",
+        "text": "In your opinion, what are our students' pedagogical needs now or in the next 5 years?",
+        "summary": "Collaborative learning strategies first; self-paced learning second."
+      },
+      {
+        "id": 7,
+        "band": "Student learning",
+        "text": "What kind of guidance do students need from teachers to use AI tools effectively and responsibly?",
+        "summary": "Understand how models are trained (explainability); show prompts (transparency); know good/bad practice; use AI as assistant not guide."
+      },
+      {
+        "id": 8,
+        "band": "AI guidance",
+        "text": "What specific sectoral or societal challenges related to AI (ethical governance, regulatory compliance, public trust) should syllabi address?",
+        "summary": "Ethical governance, regulatory compliance, risk assessment, and sustainability top the list — followed by transparency, interdisciplinarity, explainability, misinformation."
+      },
+      {
+        "id": 9,
+        "band": "AI guidance",
+        "text": "What types of AI-related skills, knowledge or professional roles are most necessary to support responsible AI across all sectors?",
+        "summary": "A ranked list of 14 skills — explainability, ethics, and critical thinking lead; see the skills ranking section."
+      },
+      {
+        "id": 10,
+        "band": "AI guidance",
+        "text": "Do you include ethical dilemmas and legal issues in your assessments? If yes, what is your approach?",
+        "summary": "Real case studies from industry / public sector for analysing bias and fairness; AI-generated work heavily penalised; scepticism about LLM use during online assessments."
+      },
+      {
+        "id": 11,
+        "band": "AI guidance",
+        "text": "How should teachers embed ethical and legal issues in real-world AI scenarios?",
+        "summary": "Encourage critical thinking, discussion, and responsible decision-making using real AI use-cases in assignments."
+      },
+      {
+        "id": 12,
+        "band": "AI guidance",
+        "text": "Any additional points about human-centric AI in the EU or how PANORAIMA can strengthen the AI ecosystem?",
+        "summary": "Myth-busting for public communication; stronger technical-social interdisciplinarity; ethically-driven, inclusive (incl. older learners) syllabi; more free/open educational resources; sustainability in AI curricula."
+      }
+    ],
+    "ai_skills_ranked": [
+      {
+        "rank": 1,
+        "name": "Explainability"
+      },
+      {
+        "rank": 2,
+        "name": "Ethics"
+      },
+      {
+        "rank": 3,
+        "name": "Critical thinking"
+      },
+      {
+        "rank": 4,
+        "name": "Human Oversight"
+      },
+      {
+        "rank": 5,
+        "name": "AI & ML Literacy for everyone"
+      },
+      {
+        "rank": 6,
+        "name": "Fairness"
+      },
+      {
+        "rank": 7,
+        "name": "Interdisciplinarity"
+      },
+      {
+        "rank": 8,
+        "name": "Legal Compliance"
+      },
+      {
+        "rank": 9,
+        "name": "Responsibility"
+      },
+      {
+        "rank": 10,
+        "name": "Identify data overfitting"
+      },
+      {
+        "rank": 11,
+        "name": "Optimisation"
+      },
+      {
+        "rank": 12,
+        "name": "Resilience"
+      },
+      {
+        "rank": 13,
+        "name": "Transparency"
+      },
+      {
+        "rank": 14,
+        "name": "Cross-disciplinary roles"
+      }
+    ],
+    "source_file": "focus groups/UNIWA/Wp2_deliverable_contribution/T2.2 Focus Group report.docx"
+  },
+  "participants": [
+    {
+      "abbr": "HU",
+      "institution": "Stichting Hogeschool Utrecht",
+      "country": "Netherlands",
+      "coords": [
+        5.12,
+        52.09
+      ],
+      "slots": [
+        {
+          "role": "Teaching Staff",
+          "name": "Meike Grol",
+          "email": "meike.grol@hu.nl",
+          "consent": true
+        },
+        {
+          "role": "Researcher",
+          "name": "Sietske Tacoma",
+          "email": "sietske.tacoma@hu.nl",
+          "consent": false
+        },
+        {
+          "role": "Student Representative",
+          "name": "Lex Zwakenberg",
+          "email": "alex.zwakenberg@student.hu.nl",
+          "consent": false
+        },
+        {
+          "role": "Administrative",
+          "name": "Huib Aldewereld",
+          "email": "huib.aldewereld@hu.nl",
+          "consent": false
+        }
+      ],
+      "consent_count": 1,
+      "filled_count": 4
+    },
+    {
+      "abbr": "TUD",
+      "institution": "Technological University Dublin",
+      "country": "Ireland",
+      "coords": [
+        -6.26,
+        53.35
+      ],
+      "slots": [
+        {
+          "role": "Teaching Staff",
+          "name": "Keith Quille",
+          "email": "keith.quille@tudublin.ie",
+          "consent": false
+        },
+        {
+          "role": "Researcher",
+          "name": "Zaur Gouliev",
+          "email": "Zaur.Gouliev@TUDublin.ie",
+          "consent": false
+        },
+        {
+          "role": "Student Representative",
+          "name": "Abdullah Zaidi",
+          "email": "X00177647@myTUDublin.ie",
+          "consent": false
+        },
+        {
+          "role": "Administrative",
+          "name": "Miriam Harte",
+          "email": "Miriam.Harte@TuDublin.ie",
+          "consent": false
+        }
+      ],
+      "consent_count": 0,
+      "filled_count": 4
+    },
+    {
+      "abbr": "UNINA",
+      "institution": "Università degli Studi di Napoli Federico II",
+      "country": "Italy",
+      "coords": [
+        14.25,
+        40.85
+      ],
+      "slots": [
+        {
+          "role": "Teaching Staff",
+          "name": "Michela Gravina",
+          "email": "michela.gravina@unina.it",
+          "consent": true
+        },
+        {
+          "role": "Researcher",
+          "name": "Venu",
+          "email": "michela.gravina@unina.it",
+          "consent": true
+        },
+        {
+          "role": "Student Representative",
+          "name": "",
+          "email": "v.siddapuragovindaraju@studenti.unina.it",
+          "consent": false
+        },
+        {
+          "role": "Administrative",
+          "name": "",
+          "email": "",
+          "consent": false
+        }
+      ],
+      "consent_count": 2,
+      "filled_count": 2
+    },
+    {
+      "abbr": "BME",
+      "institution": "Budapest University of Technology and Economics",
+      "country": "Hungary",
+      "coords": [
+        19.06,
+        47.47
+      ],
+      "slots": [
+        {
+          "role": "Teaching Staff",
+          "name": "",
+          "email": "egres.dorottya@gtk.bme.hu; csordas.hedi@gtk.bme.hu; szabo.krisztina@gtk.bme.hu; nagy.krisztina@gtk.bme.hu; tomasovszky.edit@gtk.bme.hu; pataki@mit.bme.hu; strausz@mit.bme.hu",
+          "consent": false
+        },
+        {
+          "role": "Researcher",
+          "name": "",
+          "email": "heder.mihaly@gtk.bme.hu",
+          "consent": false
+        },
+        {
+          "role": "Student Representative",
+          "name": "",
+          "email": "",
+          "consent": false
+        },
+        {
+          "role": "Administrative",
+          "name": "",
+          "email": "",
+          "consent": false
+        }
+      ],
+      "consent_count": 0,
+      "filled_count": 0
+    },
+    {
+      "abbr": "UNIWA",
+      "institution": "University of West Attica",
+      "country": "Greece",
+      "coords": [
+        23.73,
+        37.98
+      ],
+      "slots": [
+        {
+          "role": "Teaching Staff",
+          "name": "Panagiotis Monachelis",
+          "email": "pmonahelis@uniwa.gr",
+          "consent": false
+        },
+        {
+          "role": "Researcher",
+          "name": "Diogenis Alexandrakis",
+          "email": "diogenis.alex@gmail.com",
+          "consent": true
+        },
+        {
+          "role": "Student Representative",
+          "name": "Pericles Michalopoulos",
+          "email": "amichalopoulos@uniwa.gr",
+          "consent": true
+        },
+        {
+          "role": "Administrative",
+          "name": "Anastasia Ilia",
+          "email": "charitou@uniwa.gr, a.ilia@uniwa.gr",
+          "consent": true
+        }
+      ],
+      "consent_count": 3,
+      "filled_count": 4
+    },
+    {
+      "abbr": "SU",
+      "institution": "Sofia University St Kliment Ohridski",
+      "country": "Bulgaria",
+      "coords": [
+        23.32,
+        42.7
+      ],
+      "slots": [
+        {
+          "role": "Teaching Staff",
+          "name": "Maria Nisheva",
+          "email": "marian@fmi.uni-sofia.bg",
+          "consent": true
+        },
+        {
+          "role": "Researcher",
+          "name": "Kristina Arnaudova",
+          "email": "k.arnaoudova@fmi.uni-sofia.bg",
+          "consent": false
+        },
+        {
+          "role": "Student Representative",
+          "name": "Mihaela Paparinova",
+          "email": "mihaelapaparinova@gmail.com",
+          "consent": false
+        },
+        {
+          "role": "Administrative",
+          "name": "Elena Traykova",
+          "email": "etraykova@fmi.uni-sofia.bg",
+          "consent": false
+        }
+      ],
+      "consent_count": 1,
+      "filled_count": 4
+    },
+    {
+      "abbr": "KPI",
+      "institution": "National Technical University of Ukraine — Igor Sikorsky Kyiv",
+      "country": "Ukraine",
+      "coords": [
+        30.52,
+        50.45
+      ],
+      "slots": [
+        {
+          "role": "Teaching Staff",
+          "name": "Olena Butnyk",
+          "email": "butnik.elena@gmail.com ; obutnyk@lll.kpi.ua",
+          "consent": false
+        },
+        {
+          "role": "Researcher",
+          "name": "Maxym Yenin",
+          "email": "yeninmaksym@gmail.com",
+          "consent": true
+        },
+        {
+          "role": "Student Representative",
+          "name": "Oleksandra Shyts",
+          "email": "",
+          "consent": false
+        },
+        {
+          "role": "Administrative",
+          "name": "Iurii Perga",
+          "email": "y.perga@kpi.ua ; yperga@gmail.com",
+          "consent": false
+        }
+      ],
+      "consent_count": 1,
+      "filled_count": 4
+    },
+    {
+      "abbr": "HAW",
+      "institution": "Hochschule für Angewandte Wissenschaften Hamburg",
+      "country": "Germany",
+      "coords": [
+        10.0,
+        53.55
+      ],
+      "slots": [
+        {
+          "role": "Teaching Staff",
+          "name": "Frauke Schade, Michael Gille, Boris Tolg, Susanne Draheim",
+          "email": "frauke.schade@haw-hamburg.de, michael.gille@haw-hamburg.de, boris.tolg@haw-hamburg.de, susanne.draheim@haw-hamburg.de",
+          "consent": false
+        },
+        {
+          "role": "Researcher",
+          "name": "Alena Störmer, Ahmad Khalidi",
+          "email": "alena.stoermer@haw-hamburg.de, ahmad.khalidi@haw-hamburg.de",
+          "consent": false
+        },
+        {
+          "role": "Student Representative",
+          "name": "tbc",
+          "email": "",
+          "consent": false
+        },
+        {
+          "role": "Administrative",
+          "name": "",
+          "email": "",
+          "consent": false
+        }
+      ],
+      "consent_count": 0,
+      "filled_count": 3
+    }
+  ],
+  "ethics_trail": [
+    {
+      "stage": "Ethics application v2",
+      "date": "2025-05-08",
+      "file": "focus groups/Archive/Application-Form_v2 PANORAIMA.docx",
+      "pivotal": false,
+      "kb": 53,
+      "note": "First full research-governance submission."
+    },
+    {
+      "stage": "Ethics application v2.1",
+      "date": "2025-06-03",
+      "file": "focus groups/Archive/Application-Form_v2.1 PANORAIMA.docx",
+      "pivotal": false,
+      "kb": 46,
+      "note": "Revisions requested during first review."
+    },
+    {
+      "stage": "Ethics application v2.2 — final",
+      "date": "2025-06-03",
+      "file": "focus groups/Archive/Application-Form_v2.2 PANORAIMA.pdf",
+      "pivotal": false,
+      "kb": 483,
+      "note": "Final form submitted to UNIWA Ethics Committee."
+    },
+    {
+      "stage": "UNIWA Ethics Committee confirmation",
+      "date": "2025-06-16",
+      "file": "focus groups/UNIWA/UNIWA_Ethics_Commitee_confirmation_16.06.2025_Greek.pdf",
+      "pivotal": true,
+      "kb": 812,
+      "note": "Formal approval to run the two-focus-group study."
+    },
+    {
+      "stage": "8 consent forms collected",
+      "date": "2025-06-23",
+      "file": "focus groups/Consent_Forms/ (×8)",
+      "pivotal": false,
+      "kb": 0,
+      "note": "Rolling 2025-06-23 → 2025-07-03. Signed by: Maria Nisheva, Venu Unina Student, Gravina Unina, Ilia Uniwa, Helen Butnyk Kyiv, Diogenis, MG, Maksym."
+    },
+    {
+      "stage": "Focus group executed",
+      "date": "2025-07-04",
+      "file": "focus groups/UNIWA/Wp2_deliverable_contribution/Appendix 3_Task2.2_Focus_Group_Results_raw.pdf",
+      "pivotal": true,
+      "kb": 0,
+      "note": "Two-hour Mentimeter session via Microsoft Teams."
+    },
+    {
+      "stage": "Report finalised",
+      "date": "2025-07-25",
+      "file": "focus groups/UNIWA/Wp2_deliverable_contribution/T2.2 Focus Group report.docx",
+      "pivotal": true,
+      "kb": 92,
+      "note": "96-paragraph deliverable-contribution report."
+    }
+  ],
+  "pedagogic_framework": {
+    "learning_theories": [
+      {
+        "id": "TPACK",
+        "slide": 7,
+        "full_name": "Technological Pedagogical Content Knowledge",
+        "acronym": "TPACK",
+        "tagline": "The overlap of Technology, Pedagogy, and Content Knowledge.",
+        "why": "PANORAIMA is modelled as the overlap of AI (T), teaching design (P), and responsible-AI subject matter (C)."
+      },
+      {
+        "id": "Bloom",
+        "slide": 17,
+        "full_name": "Bloom's Taxonomy (revised 2001)",
+        "acronym": "Bloom",
+        "tagline": "Remember → Understand → Apply → Analyse → Evaluate → Create.",
+        "why": "Used to map each learning objective to its cognitive level."
+      },
+      {
+        "id": "Marzano",
+        "slide": 18,
+        "full_name": "Marzano's Design Thinking — 4 Core Cognitive Skill groups",
+        "acronym": "Marzano",
+        "tagline": "24 core cognitive skills across 4 groups (Marzano, 2007).",
+        "why": "Granular lens on which cognitive skill each AI activity exercises."
+      },
+      {
+        "id": "ADDIE",
+        "slide": 19,
+        "full_name": "ADDIE Model (Branch, 2010)",
+        "acronym": "ADDIE",
+        "tagline": "Analyse → Design → Develop → Implement → Evaluate.",
+        "why": "Governs PANORAIMA's instructional-design lifecycle."
+      },
+      {
+        "id": "Kolb",
+        "slide": 20,
+        "full_name": "Kolb's Experiential Learning Cycle",
+        "acronym": "Kolb",
+        "tagline": "Concrete Experience → Reflection → Conceptualisation → Experimentation.",
+        "why": "Drives the experiential / lab-based portions of the masters."
+      }
+    ],
+    "modern_learning_schools": [
+      {
+        "name": "Behaviorism",
+        "examples": [
+          "Drill & Practice",
+          "Mentoring",
+          "Information theory"
+        ],
+        "tagline": "Stimulus → response; skills acquired through repetition & feedback."
+      },
+      {
+        "name": "Constructivism",
+        "examples": [
+          "Experiential Learning",
+          "Discovery / Inquiry Learning",
+          "Problem Solving"
+        ],
+        "tagline": "Learners build understanding by acting on their environment."
+      },
+      {
+        "name": "Sociocultural",
+        "examples": [
+          "Project-based learning",
+          "Infoquest",
+          "Research Groups",
+          "Focus Groups"
+        ],
+        "tagline": "Knowledge emerges from social collaboration & cultural context."
+      }
+    ],
+    "ai_skill_categories": [
+      {
+        "name": "Understand AI",
+        "icon": "book-open"
+      },
+      {
+        "name": "Approach AI",
+        "icon": "compass"
+      },
+      {
+        "name": "Design & Implement AI",
+        "icon": "pen-tool"
+      },
+      {
+        "name": "Deploy AI",
+        "icon": "rocket"
+      },
+      {
+        "name": "Evaluate / Validate AI",
+        "icon": "check-circle"
+      },
+      {
+        "name": "Build AI Repository",
+        "icon": "database"
+      },
+      {
+        "name": "Train AI",
+        "icon": "cpu"
+      }
+    ],
+    "learning_outcomes": [
+      {
+        "type": "Knowledge",
+        "domain": "Cognitive",
+        "question": "what?"
+      },
+      {
+        "type": "Skills / Competences",
+        "domain": "Psychomotor",
+        "question": "how?"
+      },
+      {
+        "type": "Attitudes",
+        "domain": "Metacognitive / Emotional",
+        "question": "why?"
+      }
+    ],
+    "critical_risks": [
+      {
+        "id": 1,
+        "title": "Unable to contact relevant stakeholders",
+        "action": "Involved stakeholders already preliminary engaged, incl. EU-wide companies & academics."
+      },
+      {
+        "id": 4,
+        "title": "Needs-analysis phase takes longer than expected",
+        "action": "Ask partner schools to prioritise the work and run more parallel syllabus drafting."
+      },
+      {
+        "id": 13,
+        "title": "Delays in the project's timetable",
+        "action": "Re-allocation of resources; parallel execution of tasks; rescheduling of activities."
+      }
+    ],
+    "source_file": "WP2-T2.2.pptx",
+    "source_slide_count": 34,
+    "source_kb": 2910
+  },
+  "desktop_research": {
+    "anchor_papers": [
+      {
+        "title": "AI competency framework for students",
+        "authors": "UNESCO",
+        "year": 2024,
+        "venue": "UNESCO publication",
+        "tagline": "The UN's reference framework for school-level AI competencies — heavily cited by the PANORAIMA team as a foundational anchor.",
+        "kb": 745,
+        "file": "desktop research/AI competency framework for students UNESCO.pdf"
+      },
+      {
+        "title": "Justification and Roadmap for AI Literacy Courses in Higher Education",
+        "authors": "Hazari, S.",
+        "year": 2024,
+        "venue": "Journal of Educational Research & Practice 14(1)",
+        "tagline": "Proposes a conceptual framework for AI-literacy courses in HE: awareness + skill development + practical application.",
+        "kb": 281,
+        "file": "desktop research/Justification and Roadmap for Artificial Intelligence (AI).pdf"
+      },
+      {
+        "title": "Responsible AI for K-12",
+        "authors": "",
+        "year": 0,
+        "venue": "Policy framework",
+        "tagline": "Framework for introducing responsible-AI thinking at school level — informs the pedagogical foundations PANORAIMA builds on.",
+        "kb": 885,
+        "file": "desktop research/Responsible AI for K12.pdf"
+      },
+      {
+        "title": "The role and challenges of education for responsible AI",
+        "authors": "Dignum, V.",
+        "year": 2021,
+        "venue": "London Review of Education 19(1)",
+        "tagline": "Virginia Dignum's landmark piece on what education must change to produce responsible-AI practitioners.",
+        "kb": 539,
+        "file": "desktop research/The_role_and_challenges_of_education_for_responsib.pdf"
+      }
+    ],
+    "prototype_matrices": {
+      "pedagogics": {
+        "label": "Pedagogics matrix",
+        "columns": [
+          "Guide to inclusive education",
+          "lesson outline",
+          "TEACHING METHOD",
+          "industry intergration",
+          "Interdisciplinarity",
+          "Assesment",
+          "skills development competency"
+        ],
+        "rows": [
+          {
+            "abbr": "HU",
+            "institution": "Stichting Hogeschool Utrecht",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "TUD",
+            "institution": "Technological University Dublin",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "UNINA",
+            "institution": "Università degli Studi di Napoli Federico II",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "BME",
+            "institution": "Budapest University of Technology and Economics",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "UNIWA",
+            "institution": "University of West Attica",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "SU",
+            "institution": "Sofia University St Kliment Ohridski",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "KPI",
+            "institution": "National Technical University of Ukraine — Igor Sikorsky Kyiv",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "HAW",
+            "institution": "Hochschule für Angewandte Wissenschaften Hamburg",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        ],
+        "coverage_pct": 0.0,
+        "file": "desktop research/PROTOTYPE LIST FOR INFORMATION.xlsx"
+      },
+      "organisational": {
+        "label": "Organisational matrix",
+        "columns": [
+          "ects",
+          "duration",
+          "internship yes/no",
+          "strategy",
+          "governance",
+          "academic/research centers",
+          "Faculty"
+        ],
+        "rows": [
+          {
+            "abbr": "HU",
+            "institution": "Stichting Hogeschool Utrecht",
+            "cells": [
+              "60",
+              "1 year",
+              "yes",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "TUD",
+            "institution": "Technological University Dublin",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "UNINA",
+            "institution": "Università degli Studi di Napoli Federico II",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "BME",
+            "institution": "Budapest University of Technology and Economics",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "UNIWA",
+            "institution": "University of West Attica",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "SU",
+            "institution": "Sofia University St Kliment Ohridski",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "KPI",
+            "institution": "National Technical University of Ukraine — Igor Sikorsky Kyiv",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "abbr": "HAW",
+            "institution": "Hochschule für Angewandte Wissenschaften Hamburg",
+            "cells": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        ],
+        "coverage_pct": 5.4,
+        "file": "desktop research/PROTOTYPE LIST FOR INFORMATION ORGANIZATIONAL.xlsx"
+      }
+    }
+  },
+  "catalogue": [
+    {
+      "file": "3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_formMG.pdf",
+      "rel_path": "focus groups/Consent_Forms/3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_formMG.pdf",
+      "ext": "pdf",
+      "kb": 237,
+      "date": "2025-07-03",
+      "bucket": "Consent forms"
+    },
+    {
+      "file": "3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Diogenis.pdf",
+      "rel_path": "focus groups/Consent_Forms/3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Diogenis.pdf",
+      "ext": "pdf",
+      "kb": 277,
+      "date": "2025-07-01",
+      "bucket": "Consent forms"
+    },
+    {
+      "file": "3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Gravina_Unina.pdf",
+      "rel_path": "focus groups/Consent_Forms/3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Gravina_Unina.pdf",
+      "ext": "pdf",
+      "kb": 395,
+      "date": "2025-06-24",
+      "bucket": "Consent forms"
+    },
+    {
+      "file": "3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Ilia_Uniwa.pdf",
+      "rel_path": "focus groups/Consent_Forms/3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Ilia_Uniwa.pdf",
+      "ext": "pdf",
+      "kb": 301,
+      "date": "2025-06-27",
+      "bucket": "Consent forms"
+    },
+    {
+      "file": "3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Maksym.pdf",
+      "rel_path": "focus groups/Consent_Forms/3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Maksym.pdf",
+      "ext": "pdf",
+      "kb": 298,
+      "date": "2025-07-03",
+      "bucket": "Consent forms"
+    },
+    {
+      "file": "3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Maria Nisheva.pdf",
+      "rel_path": "focus groups/Consent_Forms/3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Maria Nisheva.pdf",
+      "ext": "pdf",
+      "kb": 344,
+      "date": "2025-06-23",
+      "bucket": "Consent forms"
+    },
+    {
+      "file": "3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Venu_Unina_Student.pdf",
+      "rel_path": "focus groups/Consent_Forms/3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form_Venu_Unina_Student.pdf",
+      "ext": "pdf",
+      "kb": 257,
+      "date": "2025-06-24",
+      "bucket": "Consent forms"
+    },
+    {
+      "file": "INVITATION TO PARTICIPATE IN RESEARCH_Helen Butnyk_Kyiv.pdf",
+      "rel_path": "focus groups/Consent_Forms/INVITATION TO PARTICIPATE IN RESEARCH_Helen Butnyk_Kyiv.pdf",
+      "ext": "pdf",
+      "kb": 9764,
+      "date": "2025-07-01",
+      "bucket": "Consent forms"
+    },
+    {
+      "file": "Appendix 1_PANORAIMA Focus Group Session-Information Pack for Participants.docx",
+      "rel_path": "focus groups/UNIWA/Wp2_deliverable_contribution/Appendix 1_PANORAIMA Focus Group Session-Information Pack for Participants.docx",
+      "ext": "docx",
+      "kb": 2377,
+      "date": "2025-07-23",
+      "bucket": "Deliverable contribution"
+    },
+    {
+      "file": "Appendix 1_PANORAIMA Focus Group Session-Information Pack for Participants.pdf",
+      "rel_path": "focus groups/UNIWA/Wp2_deliverable_contribution/Appendix 1_PANORAIMA Focus Group Session-Information Pack for Participants.pdf",
+      "ext": "pdf",
+      "kb": 164,
+      "date": "2025-07-23",
+      "bucket": "Deliverable contribution"
+    },
+    {
+      "file": "Appendix 2__consent_form.docx",
+      "rel_path": "focus groups/UNIWA/Wp2_deliverable_contribution/Appendix 2__consent_form.docx",
+      "ext": "docx",
+      "kb": 35,
+      "date": "2025-07-23",
+      "bucket": "Deliverable contribution"
+    },
+    {
+      "file": "Appendix 2__consent_form.pdf",
+      "rel_path": "focus groups/UNIWA/Wp2_deliverable_contribution/Appendix 2__consent_form.pdf",
+      "ext": "pdf",
+      "kb": 203,
+      "date": "2025-07-23",
+      "bucket": "Deliverable contribution"
+    },
+    {
+      "file": "Appendix 3-Task2.2 Focus Group Results raw.docx",
+      "rel_path": "focus groups/UNIWA/Wp2_deliverable_contribution/Appendix 3-Task2.2 Focus Group Results raw.docx",
+      "ext": "docx",
+      "kb": 21,
+      "date": "2025-07-23",
+      "bucket": "Deliverable contribution"
+    },
+    {
+      "file": "Appendix 3_Task2.2_Focus_Group_Results_raw.pdf",
+      "rel_path": "focus groups/UNIWA/Wp2_deliverable_contribution/Appendix 3_Task2.2_Focus_Group_Results_raw.pdf",
+      "ext": "pdf",
+      "kb": 2593,
+      "date": "2025-07-23",
+      "bucket": "Deliverable contribution"
+    },
+    {
+      "file": "T2.2 Focus Group report.docx",
+      "rel_path": "focus groups/UNIWA/Wp2_deliverable_contribution/T2.2 Focus Group report.docx",
+      "ext": "docx",
+      "kb": 92,
+      "date": "2025-07-25",
+      "bucket": "Deliverable contribution"
+    },
+    {
+      "file": "AI competency framework for students UNESCO.pdf",
+      "rel_path": "desktop research/AI competency framework for students UNESCO.pdf",
+      "ext": "pdf",
+      "kb": 745,
+      "date": "2025-03-18",
+      "bucket": "Desktop research"
+    },
+    {
+      "file": "DESK RESEARCH DOCUMENTS ON T2.docx",
+      "rel_path": "desktop research/DESK RESEARCH DOCUMENTS ON T2.docx",
+      "ext": "docx",
+      "kb": 23,
+      "date": "2025-04-09",
+      "bucket": "Desktop research"
+    },
+    {
+      "file": "Justification and Roadmap for Artificial Intelligence (AI).pdf",
+      "rel_path": "desktop research/Justification and Roadmap for Artificial Intelligence (AI).pdf",
+      "ext": "pdf",
+      "kb": 281,
+      "date": "2025-03-14",
+      "bucket": "Desktop research"
+    },
+    {
+      "file": "PROTOTYPE LIST FOR INFORMATION ORGANIZATIONAL.xlsx",
+      "rel_path": "desktop research/PROTOTYPE LIST FOR INFORMATION ORGANIZATIONAL.xlsx",
+      "ext": "xlsx",
+      "kb": 19,
+      "date": "2025-04-11",
+      "bucket": "Desktop research"
+    },
+    {
+      "file": "PROTOTYPE LIST FOR INFORMATION.xlsx",
+      "rel_path": "desktop research/PROTOTYPE LIST FOR INFORMATION.xlsx",
+      "ext": "xlsx",
+      "kb": 18,
+      "date": "2025-03-30",
+      "bucket": "Desktop research"
+    },
+    {
+      "file": "Responsible AI for K12.pdf",
+      "rel_path": "desktop research/Responsible AI for K12.pdf",
+      "ext": "pdf",
+      "kb": 885,
+      "date": "2025-03-14",
+      "bucket": "Desktop research"
+    },
+    {
+      "file": "The_role_and_challenges_of_education_for_responsib.pdf",
+      "rel_path": "desktop research/The_role_and_challenges_of_education_for_responsib.pdf",
+      "ext": "pdf",
+      "kb": 539,
+      "date": "2025-03-14",
+      "bucket": "Desktop research"
+    },
+    {
+      "file": "2. PANORAIMA ETHICS COMMITEE FINAL_application.pdf",
+      "rel_path": "focus groups/Archive/2. PANORAIMA ETHICS COMMITEE FINAL_application.pdf",
+      "ext": "pdf",
+      "kb": 846,
+      "date": "2025-06-04",
+      "bucket": "Ethics application (archive)"
+    },
+    {
+      "file": "Application-Form_v2 PANORAIMA.docx",
+      "rel_path": "focus groups/Archive/Application-Form_v2 PANORAIMA.docx",
+      "ext": "docx",
+      "kb": 53,
+      "date": "2025-05-08",
+      "bucket": "Ethics application (archive)"
+    },
+    {
+      "file": "Application-Form_v2.1 PANORAIMA.docx",
+      "rel_path": "focus groups/Archive/Application-Form_v2.1 PANORAIMA.docx",
+      "ext": "docx",
+      "kb": 46,
+      "date": "2025-06-03",
+      "bucket": "Ethics application (archive)"
+    },
+    {
+      "file": "Application-Form_v2.2 PANORAIMA.docx",
+      "rel_path": "focus groups/Archive/Application-Form_v2.2 PANORAIMA.docx",
+      "ext": "docx",
+      "kb": 49,
+      "date": "2025-06-03",
+      "bucket": "Ethics application (archive)"
+    },
+    {
+      "file": "Application-Form_v2.2 PANORAIMA.pdf",
+      "rel_path": "focus groups/Archive/Application-Form_v2.2 PANORAIMA.pdf",
+      "ext": "pdf",
+      "kb": 483,
+      "date": "2025-06-03",
+      "bucket": "Ethics application (archive)"
+    },
+    {
+      "file": "INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA 1.docx",
+      "rel_path": "focus groups/Archive/INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA 1.docx",
+      "ext": "docx",
+      "kb": 30,
+      "date": "2025-05-11",
+      "bucket": "Ethics application (archive)"
+    },
+    {
+      "file": "Research Protocol for the Understanding of Educational and Organisational Needs in the PANORAIMA_Greek.odt",
+      "rel_path": "focus groups/Archive/Research Protocol for the Understanding of Educational and Organisational Needs in the PANORAIMA_Greek.odt",
+      "ext": "odt",
+      "kb": 21,
+      "date": "2025-05-30",
+      "bucket": "Ethics application (archive)"
+    },
+    {
+      "file": "Research Protocol.docx",
+      "rel_path": "focus groups/Archive/Research Protocol.docx",
+      "ext": "docx",
+      "kb": 31,
+      "date": "2025-05-08",
+      "bucket": "Ethics application (archive)"
+    },
+    {
+      "file": "Οδηγίες-κατάθεσης-αίτησης-στην-Ε.Η.Δ.Ε-1 (2).pdf",
+      "rel_path": "focus groups/Archive/Οδηγίες-κατάθεσης-αίτησης-στην-Ε.Η.Δ.Ε-1 (2).pdf",
+      "ext": "pdf",
+      "kb": 792,
+      "date": "2025-05-28",
+      "bucket": "Ethics application (archive)"
+    },
+    {
+      "file": "1a. PANORAIMA Focus Group for Academia- Information Pack - Task2.2.pdf",
+      "rel_path": "focus groups/1a. PANORAIMA Focus Group for Academia- Information Pack - Task2.2.pdf",
+      "ext": "pdf",
+      "kb": 166,
+      "date": "2025-06-23",
+      "bucket": "Focus groups"
+    },
+    {
+      "file": "3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form.pdf",
+      "rel_path": "focus groups/3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form.pdf",
+      "ext": "pdf",
+      "kb": 161,
+      "date": "2025-06-19",
+      "bucket": "Focus groups"
+    },
+    {
+      "file": "List of Moderators.docx",
+      "rel_path": "focus groups/List of Moderators.docx",
+      "ext": "docx",
+      "kb": 23,
+      "date": "2025-05-05",
+      "bucket": "Focus groups"
+    },
+    {
+      "file": "email invitation T2.2 Focus Group Institutions.docx",
+      "rel_path": "focus groups/email invitation T2.2 Focus Group Institutions.docx",
+      "ext": "docx",
+      "kb": 24,
+      "date": "2025-07-22",
+      "bucket": "Focus groups"
+    },
+    {
+      "file": "panoraima T2.2 focus group participants.xlsx",
+      "rel_path": "focus groups/panoraima T2.2 focus group participants.xlsx",
+      "ext": "xlsx",
+      "kb": 24,
+      "date": "2025-07-03",
+      "bucket": "Focus groups"
+    },
+    {
+      "file": "PANORAIMA Organizational.xlsx",
+      "rel_path": "Organisational/PANORAIMA Organizational.xlsx",
+      "ext": "xlsx",
+      "kb": 15,
+      "date": "2025-07-25",
+      "bucket": "Organisational"
+    },
+    {
+      "file": "T2.2WP2D14.3.25.pptx",
+      "rel_path": "presentations/T2.2WP2D14.3.25.pptx",
+      "ext": "pptx",
+      "kb": 949,
+      "date": "2025-03-28",
+      "bucket": "Presentations"
+    },
+    {
+      "file": "WP2-T2.2.pptx",
+      "rel_path": "presentations/WP2-T2.2.pptx",
+      "ext": "pptx",
+      "kb": 2907,
+      "date": "2025-04-15",
+      "bucket": "Presentations"
+    },
+    {
+      "file": "T2.2WP2D14.3.25.pptx",
+      "rel_path": "T2.2WP2D14.3.25.pptx",
+      "ext": "pptx",
+      "kb": 952,
+      "date": "2025-03-28",
+      "bucket": "Task root"
+    },
+    {
+      "file": "TO-DOs.docx",
+      "rel_path": "TO-DOs.docx",
+      "ext": "docx",
+      "kb": 22,
+      "date": "2025-04-10",
+      "bucket": "Task root"
+    },
+    {
+      "file": "WP2-T2.2.pptx",
+      "rel_path": "WP2-T2.2.pptx",
+      "ext": "pptx",
+      "kb": 2910,
+      "date": "2025-04-15",
+      "bucket": "Task root"
+    },
+    {
+      "file": "1. Research Protocol for the Understanding of Educational and Organisational Needs in the PANORAIMA greek FINAL.docx",
+      "rel_path": "focus groups/UNIWA/1. Research Protocol for the Understanding of Educational and Organisational Needs in the PANORAIMA greek FINAL.docx",
+      "ext": "docx",
+      "kb": 240,
+      "date": "2025-06-18",
+      "bucket": "UNIWA — research protocol"
+    },
+    {
+      "file": "1. Research Protocol for the Understanding of Educational and Organisational Needs in the PANORAIMA greek FINAL.pdf",
+      "rel_path": "focus groups/UNIWA/1. Research Protocol for the Understanding of Educational and Organisational Needs in the PANORAIMA greek FINAL.pdf",
+      "ext": "pdf",
+      "kb": 333,
+      "date": "2025-06-04",
+      "bucket": "UNIWA — research protocol"
+    },
+    {
+      "file": "1a. PANORAIMA Focus Group for Academia- Information Pack - GR.docx",
+      "rel_path": "focus groups/UNIWA/1a. PANORAIMA Focus Group for Academia- Information Pack - GR.docx",
+      "ext": "docx",
+      "kb": 2374,
+      "date": "2025-06-17",
+      "bucket": "UNIWA — research protocol"
+    },
+    {
+      "file": "2. PANORAIMA ETHICS COMMITEE FINAL_application.pdf",
+      "rel_path": "focus groups/UNIWA/2. PANORAIMA ETHICS COMMITEE FINAL_application.pdf",
+      "ext": "pdf",
+      "kb": 648,
+      "date": "2025-06-04",
+      "bucket": "UNIWA — research protocol"
+    },
+    {
+      "file": "3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form.docx",
+      "rel_path": "focus groups/UNIWA/3. INVITATION-TO-PARTICIPATE-IN-RESEARCH_PANORAIMA_consent_form.docx",
+      "ext": "docx",
+      "kb": 32,
+      "date": "2025-06-23",
+      "bucket": "UNIWA — research protocol"
+    },
+    {
+      "file": "UNIWA_Ethics_Commitee_confirmation_16.06.2025_Greek.pdf",
+      "rel_path": "focus groups/UNIWA/UNIWA_Ethics_Commitee_confirmation_16.06.2025_Greek.pdf",
+      "ext": "pdf",
+      "kb": 812,
+      "date": "2025-06-18",
+      "bucket": "UNIWA — research protocol"
+    }
+  ],
+  "generated_at": "2026-04-19T18:07:14.314875Z"
+}

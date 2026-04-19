@@ -443,3 +443,200 @@ export const T21_COUNTRY_COORDS: Record<string, { lat: number; lng: number }> = 
   "Portugal":    { lat: 38.7223, lng: -9.1393 },
   "Austria":     { lat: 48.2082, lng: 16.3738 },
 }
+
+// ---------------------------------------------------------------------------
+// Task 2.2 deep-dive types
+// ---------------------------------------------------------------------------
+
+export type T22InstAbbr =
+  | "HU" | "TUD" | "UNINA" | "BME" | "UNIWA" | "SU" | "KPI" | "HAW"
+
+export interface T22ParticipantSlot {
+  role: "Teaching Staff" | "Researcher" | "Student Representative" | "Administrative" | string
+  name: string
+  email: string
+  consent: boolean
+}
+
+export interface T22Institution {
+  abbr: T22InstAbbr
+  institution: string
+  country: string
+  coords: [number, number]  // [lng, lat]
+  slots: T22ParticipantSlot[]
+  consent_count: number
+  filled_count: number
+}
+
+export interface T22ResearchTeam {
+  name: string
+  role: string
+  affiliation?: string
+}
+
+export interface T22Finding {
+  id: string
+  icon: string
+  title: string
+  quote: string
+}
+
+export interface T22Question {
+  id: number
+  band: "Teaching methods" | "Student learning" | "AI guidance" | string
+  text: string
+  summary: string
+}
+
+export interface T22AISkillRanked {
+  rank: number
+  name: string
+}
+
+export interface T22FocusGroup {
+  date: string
+  duration_min: number
+  platform: string
+  participant_count: number
+  description: string
+  aim: string
+  research_team: T22ResearchTeam[]
+  findings: T22Finding[]
+  questions: T22Question[]
+  ai_skills_ranked: T22AISkillRanked[]
+  source_file: string
+}
+
+export interface T22ProtocolSection {
+  en: string
+  el: string
+  description: string
+}
+
+export interface T22Protocol {
+  title_en: string
+  title_el: string
+  sections: T22ProtocolSection[]
+  source_file: string
+}
+
+export interface T22EthicsStage {
+  stage: string
+  date: string
+  file: string
+  pivotal: boolean
+  kb: number
+  note: string
+}
+
+export interface T22LearningTheory {
+  id: "TPACK" | "Bloom" | "Marzano" | "ADDIE" | "Kolb" | string
+  slide: number
+  full_name: string
+  acronym: string
+  tagline: string
+  why: string
+}
+
+export interface T22ModernSchool {
+  name: string
+  examples: string[]
+  tagline: string
+}
+
+export interface T22SkillCategory {
+  name: string
+  icon: string
+}
+
+export interface T22LearningOutcome {
+  type: string
+  domain: string
+  question: string
+}
+
+export interface T22Risk {
+  id: number
+  title: string
+  action: string
+}
+
+export interface T22PedagogicFramework {
+  learning_theories: T22LearningTheory[]
+  modern_learning_schools: T22ModernSchool[]
+  ai_skill_categories: T22SkillCategory[]
+  learning_outcomes: T22LearningOutcome[]
+  critical_risks: T22Risk[]
+  source_file: string
+  source_slide_count: number
+  source_kb: number
+}
+
+export interface T22AnchorPaper {
+  title: string
+  authors: string
+  year: number
+  venue: string
+  tagline: string
+  kb: number
+  file: string
+}
+
+export interface T22PrototypeRow {
+  abbr: T22InstAbbr | string
+  institution: string
+  cells: string[]
+}
+
+export interface T22PrototypeMatrix {
+  label: string
+  columns: string[]
+  rows: T22PrototypeRow[]
+  coverage_pct: number
+  file: string
+}
+
+export interface T22DesktopResearch {
+  anchor_papers: T22AnchorPaper[]
+  prototype_matrices: {
+    pedagogics?: T22PrototypeMatrix
+    organisational?: T22PrototypeMatrix
+  }
+}
+
+export interface T22CatalogueEntry {
+  file: string
+  rel_path: string
+  ext: string
+  kb: number
+  date: string
+  bucket: string
+}
+
+export interface Task22Detail {
+  task: string
+  wp: string
+  title: string
+  tagline: string
+  coordinator: string
+  involved: string[]
+  kpis: {
+    participant_count: number
+    institution_count: number
+    question_count: number
+    finding_count: number
+    ai_skills_ranked: number
+    consent_total: number
+    filled_total: number
+    desktop_research_count: number
+    file_count: number
+  }
+  protocol: T22Protocol
+  focus_group: T22FocusGroup
+  participants: T22Institution[]
+  ethics_trail: T22EthicsStage[]
+  pedagogic_framework: T22PedagogicFramework
+  desktop_research: T22DesktopResearch
+  catalogue: T22CatalogueEntry[]
+  generated_at: string
+}

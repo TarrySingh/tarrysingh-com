@@ -4,7 +4,8 @@ import path from "node:path"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import T21Dashboard from "@/components/panoraima/wps/wp2/t21/T21Dashboard"
-import type { Task21Detail } from "@/lib/panoraima/types"
+import T22Dashboard from "@/components/panoraima/wps/wp2/t22/T22Dashboard"
+import type { Task21Detail, Task22Detail } from "@/lib/panoraima/types"
 
 interface Props {
   params: Promise<{ wp: string; task: string }>
@@ -16,6 +17,12 @@ function loadT21(): Task21Detail | null {
   return JSON.parse(readFileSync(fp, "utf-8")) as Task21Detail
 }
 
+function loadT22(): Task22Detail | null {
+  const fp = path.join(process.cwd(), "src/lib/panoraima/task_2_2_data.json")
+  if (!existsSync(fp)) return null
+  return JSON.parse(readFileSync(fp, "utf-8")) as Task22Detail
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { wp, task } = await params
   if (wp === "wp2" && task === "t21") {
@@ -23,6 +30,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: "Task 2.1 · Market & Needs Analysis · PANORAIMA",
       description:
         "Deep-dive into WP2 Task 2.1 — 100+ stakeholders across 10 European countries, four working groups, Deliverable 2.1's six headline findings.",
+    }
+  }
+  if (wp === "wp2" && task === "t22") {
+    return {
+      title: "Task 2.2 · Pedagogic & Organisational Needs · PANORAIMA",
+      description:
+        "Deep-dive into WP2 Task 2.2 — the UNIWA-led academic focus group with 17 participants across 8 PANORAIMA partner universities.",
     }
   }
   return { title: `${wp.toUpperCase()} ${task.toUpperCase()} · PANORAIMA` }
@@ -34,6 +48,11 @@ export default async function Page({ params }: Props) {
   if (wp === "wp2" && task === "t21") {
     const detail = loadT21()
     if (detail) return <T21Dashboard detail={detail} />
+  }
+
+  if (wp === "wp2" && task === "t22") {
+    const detail = loadT22()
+    if (detail) return <T22Dashboard detail={detail} />
   }
 
   return (
