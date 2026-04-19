@@ -1,12 +1,17 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown, FileText, CheckCircle2, Clock, Sparkles } from "lucide-react"
+import Link from "next/link"
+import { ChevronDown, FileText, CheckCircle2, Clock, Sparkles, ArrowRight } from "lucide-react"
 import type { WpTask, WpDeliverable } from "@/lib/panoraima/types"
 
 interface Props {
   tasks: WpTask[]
   onDeliverableClick: (d: WpDeliverable) => void
+  /** Task IDs that have a dedicated deep-dive page under /wps/[wp]/[task]. */
+  deepDiveTaskIds?: string[]
+  /** Slug of the parent WP (for building the deep-dive URL). */
+  wpSlug?: string
 }
 
 const STATUS_STYLE: Record<string, { label: string; cls: string }> = {
@@ -16,8 +21,13 @@ const STATUS_STYLE: Record<string, { label: string; cls: string }> = {
   unknown:  { label: "—",         cls: "bg-gray-50 text-gray-500 border-gray-200" },
 }
 
-export default function TaskBreakdown({ tasks, onDeliverableClick }: Props) {
+export default function TaskBreakdown({
+  tasks, onDeliverableClick, deepDiveTaskIds = [], wpSlug = "",
+}: Props) {
   const [openId, setOpenId] = useState<string | null>(tasks[0]?.id ?? null)
+
+  const hasDeepDive = (id: string) => deepDiveTaskIds.includes(id)
+  const deepDiveSlug = (id: string) => `t${id.replace(/\D/g, "")}`
 
   return (
     <section>
@@ -78,6 +88,17 @@ export default function TaskBreakdown({ tasks, onDeliverableClick }: Props) {
 
               {isOpen && (
                 <div className="px-5 pb-5 pt-0 animate-fade-in border-t border-gray-100">
+                  {hasDeepDive(t.id) && wpSlug && (
+                    <Link
+                      href={`/experiments/panoraima/wps/${wpSlug}/${deepDiveSlug(t.id)}`}
+                      prefetch={false}
+                      className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg text-[12px] font-bold bg-navy-900 text-white hover:bg-navy-800 shadow-md transition-all"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+                      Dive deeper into {t.id}
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  )}
                   {deliverables.length === 0 ? (
                     <p className="mt-4 text-[12px] text-gray-500 italic">
                       No formal deliverables attached to this task yet — the {t.file_count} file

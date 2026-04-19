@@ -244,3 +244,202 @@ export const WP_REGION_COORDS: Record<string, { lat: number; lng: number; label:
   "Ireland":     { lat: 53.3498, lng: -6.2603, label: "Ireland" },
   "Netherlands": { lat: 52.0862, lng: 5.1785,  label: "Netherlands" },
 }
+
+// ---------------------------------------------------------------------------
+// Task 2.1 deep-dive types
+// ---------------------------------------------------------------------------
+
+export interface T21KeyInsight {
+  id: number
+  title: string
+  body: string
+}
+
+export interface T21Sector {
+  key: string
+  name: string
+  skills_priority: string[]
+  emerging_roles: string[]
+  notes: string
+}
+
+export interface T21EmergingRole {
+  name: string
+  sector: string
+  context: string
+}
+
+export interface T21Version {
+  label: string
+  file: string
+  is_final?: boolean
+  is_archive?: boolean
+  size_kb?: number
+}
+
+export interface T21Deliverable {
+  id: string
+  title: string
+  version: string
+  date: string
+  pdf_file: string
+  size_kb: number
+  executive_summary: string
+  key_insights: T21KeyInsight[]
+  sectors: T21Sector[]
+  emerging_roles: T21EmergingRole[]
+  versions: T21Version[]
+}
+
+export interface T21IrelandSession {
+  folder: string
+  date: string | null
+  kind: string
+  focus: string
+  recording_mb?: number | null
+  has_presentation?: boolean
+  has_report?: boolean
+  has_transcript?: boolean
+  report_excerpt?: string
+}
+
+export interface T21RegisterRow {
+  org?: string
+  type?: string
+  sector?: string
+  fg_type?: string
+  status?: string
+  notes?: string
+  panoraima_contact?: string
+  org_contact?: string
+  [k: string]: string | undefined
+}
+
+export interface T21Ireland {
+  sessions: T21IrelandSession[]
+  stakeholder_register: {
+    focus_groups: T21RegisterRow[]
+    surveys: T21RegisterRow[]
+  }
+}
+
+export interface T21NLInterview {
+  interviewee: string
+  role: string
+  company: string
+  recording_mb?: number | null
+  audio_mb?: number | null
+  has_transcript?: boolean
+  quotes: string[]
+  empty?: boolean
+}
+
+export interface T21Netherlands {
+  interviews: T21NLInterview[]
+  consolidated_report_excerpt?: string
+  hu_summary?: {
+    headers: string[]
+    row_count: number
+    sample: string[][]
+  } | null
+}
+
+export interface T21HamburgInterview {
+  code: string
+  file: string
+  excerpt: string
+  quotes: string[]
+  word_count: number
+}
+
+export interface T21Hamburg {
+  interviews: T21HamburgInterview[]
+  focus_group_excerpt?: string
+}
+
+export interface T21GreekSpreadsheet {
+  file: string
+  title: string
+  headers: string[]
+  row_count: number
+  sample: string[][]
+  wg?: boolean
+}
+
+export interface T21Greece {
+  spreadsheets: T21GreekSpreadsheet[]
+}
+
+export interface T21Paper {
+  file: string
+  title: string
+  kb: number
+  ext: string
+}
+
+export interface T21Topic {
+  bucket: string
+  folder: string
+  count: number
+  anchor_papers: string[]
+  papers: T21Paper[]
+}
+
+export interface T21Video {
+  file: string
+  session: string
+  rel_path: string
+  size_mb: number
+  kind: "video" | "audio" | "transcript"
+}
+
+export interface T21CatalogueEntry {
+  file: string
+  rel_path: string
+  top: string
+  ext: string
+  size_kb: number
+}
+
+export interface Task21Detail {
+  task: string
+  wp: string
+  title: string
+  lead: string
+  description: string
+  stats: {
+    total_files: number
+    size_mb: number
+    countries: string[]
+    sectors: string[]
+    stakeholders_estimated: number
+    video_minutes_estimated?: number
+  }
+  deliverable: T21Deliverable
+  working_groups: {
+    ireland: T21Ireland
+    netherlands: T21Netherlands
+    hamburg: T21Hamburg
+    greece: T21Greece
+  }
+  desktop_research: {
+    topics: T21Topic[]
+  }
+  video_gallery: T21Video[]
+  catalogue: T21CatalogueEntry[]
+  generated_at: string
+}
+
+// Coordinates for the 10 European countries represented in T2.1 stakeholder set
+export const T21_COUNTRY_COORDS: Record<string, { lat: number; lng: number }> = {
+  "Ireland":     { lat: 53.3498, lng: -6.2603 },
+  "Netherlands": { lat: 52.0862, lng: 5.1785  },
+  "Germany":     { lat: 53.5511, lng: 9.9937  },
+  "Greece":      { lat: 37.9838, lng: 23.7275 },
+  "Belgium":     { lat: 50.8503, lng: 4.3517  },
+  "France":      { lat: 48.8566, lng: 2.3522  },
+  "Spain":       { lat: 40.4168, lng: -3.7038 },
+  "Italy":       { lat: 41.9028, lng: 12.4964 },
+  "Portugal":    { lat: 38.7223, lng: -9.1393 },
+  "Austria":     { lat: 48.2082, lng: 16.3738 },
+}

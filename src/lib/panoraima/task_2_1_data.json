@@ -1,0 +1,3223 @@
+{
+  "task": "T2.1",
+  "wp": "WP2",
+  "title": "Market Analysis & Workforce Needs",
+  "lead": "CeADAR",
+  "description": "The first and largest task under WP2. Maps the AI workforce gap across academia, industry, SMEs and public sector in Greece, Germany, Ireland and the Netherlands through surveys, desktop research, focus groups and 1-1 CEO interviews.",
+  "stats": {
+    "total_files": 152,
+    "size_mb": 1313,
+    "countries": [
+      "Greece",
+      "Germany",
+      "Ireland",
+      "Netherlands",
+      "Belgium",
+      "France",
+      "Spain",
+      "Italy",
+      "Portugal",
+      "Austria"
+    ],
+    "sectors": [
+      "Healthcare & Life Sciences",
+      "Law & Compliance",
+      "Media & Culture",
+      "Management & Finance"
+    ],
+    "stakeholders_estimated": 637,
+    "video_minutes_estimated": 41
+  },
+  "deliverable": {
+    "id": "D2.1",
+    "title": "Market & Needs Analysis",
+    "version": "1.0",
+    "date": "2025-08-20",
+    "pdf_file": "Deliverable 2.1 Market & Needs Analysis PANORAIMA v1.0.pdf",
+    "size_kb": 8780,
+    "executive_summary": "This report provides a thorough market and needs analysis for the PANORAIMA project. PANORAIMA aims to develop a forward-looking, human-centred AI educational programme across four key societal sectors: Healthcare and Lifesciences, Law and Compliance, Media and Culture, and Management and Finances. Drawing on qualitative and quantitative data collected from over 100 stakeholders across 10 European countries, the report outlines the current landscape of AI adoption, identifies skill gaps, maps sector-specific needs, and assesses preferred training formats and job profiles. The findings are also contextualised within EU policy frameworks such as the AI Act and GDPR. Key insights include: • High AI Uptake: Over 90% of large enterprises and SMEs surveyed are already using or exploring AI technologies. However, challenges persist, including regulatory complexity, legacy systems, lack of trust, and internal capacity gaps. • Diverging Skill Demands: Sectors such as Healthcare and Lifesciences and Management and Finance prioritise technical skills (e.g., ML, cloud computing, validation of AI systems), while Law and Compliance and Media and Culture stress non-technical competencies (e.g., AI ethics, governance, explainability). • Cross-Sectoral Gaps: Common needs include AI literacy, prompt engineering, risk management, ethical awareness, and data governance. The demand is strongest for professionals who combine technical proficiency with human-centric, regulatory, and ethical knowledge and skills. • Preferred Learning Formats: Stakeholders express a clear preference for flexible, modular, hybrid training approaches that accommodate full-time professionals and are aligned with real-world roles and time constraints. • Emerging Job Roles: New hybrid roles are emerging (e.g., AI Risk Manager, Clinical AI Analyst, AI Media Curator), suggesting that the future workforce must be π-shaped—combining deep domain expertise with applied AI fluency and cross-functional insight. • Ethical and Inclusion Challenges: There is a pronounced need to address issues like bias, transparency, accountability, and sustainability in AI systems. Gaps persist in practical ethics training, inclusive design, accessibility, and environmental awareness (e.g., “Green AI”). The report concludes with strategic recommendations for curriculum design, including the integration of domain-specific and cros",
+    "key_insights": [
+      {
+        "id": 1,
+        "title": "High AI Uptake",
+        "body": "and GDPR. Key insights include: • High AI Uptake: Over 90% of large enterprises and SMEs surveyed are already using or exploring AI technologies. However, challenges persist, including regulatory complexity, legacy systems, lack of trust, and internal capacity gaps. • Diverging Skill Demands: Sectors such as Healthcare and Lifesciences and Management and Finance prioritise technical skills (e.g.,"
+      },
+      {
+        "id": 2,
+        "title": "Diverging Skill Demands",
+        "body": "of trust, and internal capacity gaps. • Diverging Skill Demands: Sectors such as Healthcare and Lifesciences and Management and Finance prioritise technical skills (e.g., ML, cloud computing, validation of AI systems), while Law and Compliance and Media and Culture stress non-technical competencies (e.g., AI ethics, governance, explainability). • Cross-Sectoral Gaps: Common needs include AI litera"
+      },
+      {
+        "id": 3,
+        "title": "Cross-Sectoral Gaps",
+        "body": "ks ........................... 36 4.2.1 Cross-sectoral Needs and Learning Areas................................................................................................................................... 36 4.2.2 Healthcare and Lifesciences Needs and Learning Areas ........................................................................................................ 38 4.2.3 Management an"
+      },
+      {
+        "id": 4,
+        "title": "Preferred Learning Formats",
+        "body": "hical knowledge and skills. • Preferred Learning Formats: Stakeholders express a clear preference for flexible, modular, hybrid training approaches that accommodate full-time professionals and are aligned with real-world roles and time constraints. • Emerging Job Roles: New hybrid roles are emerging (e.g., AI Risk Manager, Clinical AI Analyst, AI Media Curator), suggesting that the future workforc"
+      },
+      {
+        "id": 5,
+        "title": "Emerging Job Roles",
+        "body": "eal-world roles and time constraints. • Emerging Job Roles: New hybrid roles are emerging (e.g., AI Risk Manager, Clinical AI Analyst, AI Media Curator), suggesting that the future workforce must be π-shaped—combining deep domain expertise with applied AI fluency and cross-functional insight. • Ethical and Inclusion Challenges: There is a pronounced need to address issues like bias, transparency,"
+      },
+      {
+        "id": 6,
+        "title": "Ethical & Inclusion Challenges",
+        "body": "... 47 5.4 Recommendations for Ensuring Ethical, Inclusive, and Sustainable AI Education within PANORAIMA 5.5 Intended Learning Outcomes ..................................................................................................................................... 48 5.5.1 Health & Life Sciences.................................................................................................."
+      }
+    ],
+    "sectors": [
+      {
+        "key": "healthcare",
+        "name": "Healthcare & Life Sciences",
+        "skills_priority": [],
+        "emerging_roles": [],
+        "notes": "Life Science ................................................................................................................. 21 3.2.3 AI Sector Specific Skill Gaps: Law & Compliance ...................................................................................................................... 22 3.2.4 AI Sector Specific Skill Gaps: Media & Culture ........................................."
+      },
+      {
+        "key": "law",
+        "name": "Law & Compliance",
+        "skills_priority": [],
+        "emerging_roles": [],
+        "notes": "Law & Compliance ...................................................................................................................... 22 3.2.4 AI Sector Specific Skill Gaps: Media & Culture ........................................................................................................................... 23 3.2.5 AI Sector Specific Skill Gaps: Management & Finance........................"
+      },
+      {
+        "key": "media",
+        "name": "Media & Culture",
+        "skills_priority": [],
+        "emerging_roles": [],
+        "notes": "Media & Culture ........................................................................................................................... 23 3.2.5 AI Sector Specific Skill Gaps: Management & Finance............................................................................................................. 24 3.3 Identified Job Roles .............................................................."
+      },
+      {
+        "key": "finance",
+        "name": "Management & Finance",
+        "skills_priority": [],
+        "emerging_roles": [],
+        "notes": "Management & Finance............................................................................................................. 24 3.3 Identified Job Roles ........................................................................................................................................................ 25 3.3.1 Desktop Research ..............................................................."
+      }
+    ],
+    "emerging_roles": [
+      {
+        "name": "AI Risk Manager",
+        "sector": "Law & Compliance",
+        "context": "nd time constraints. • Emerging Job Roles: New hybrid roles are emerging (e.g., AI Risk Manager, Clinical AI Analyst, AI Media Curator), suggesting that the future workforce must be π-shaped—combining deep domain expertise with applied AI fluency and cross-functional insight. • E"
+      },
+      {
+        "name": "Clinical AI Analyst",
+        "sector": "Healthcare & Life Sciences",
+        "context": "ts. • Emerging Job Roles: New hybrid roles are emerging (e.g., AI Risk Manager, Clinical AI Analyst, AI Media Curator), suggesting that the future workforce must be π-shaped—combining deep domain expertise with applied AI fluency and cross-functional insight. • Ethical and Inclus"
+      },
+      {
+        "name": "AI Media Curator",
+        "sector": "Media & Culture",
+        "context": "les: New hybrid roles are emerging (e.g., AI Risk Manager, Clinical AI Analyst, AI Media Curator), suggesting that the future workforce must be π-shaped—combining deep domain expertise with applied AI fluency and cross-functional insight. • Ethical and Inclusion Challenges: There"
+      },
+      {
+        "name": "AI Ethics Officer",
+        "sector": "Law & Compliance",
+        "context": "I Risk Manager: oversees the risk management system for high-risk AI systems. ● AI Ethics Officer: embeds ethical considerations throughout AI development and deployment. ● AI Human Oversight Coordinator: ensures meaningful human oversight over automated decisions. ● AI Explainab"
+      },
+      {
+        "name": "AI Product Manager",
+        "sector": "Management & Finance",
+        "context": "er life science-related domains are: • Healthcare Informatics Analyst • Medical AI Product Manager • Compliance & Privacy Officer (AI) • Clinical Data Scientist • AI Trainer with life science background The Law and Compliance [16] industry-specific job profiles identified in onli"
+      },
+      {
+        "name": "Prompt Engineer",
+        "sector": "Cross-sectoral",
+        "context": "ance, explainability). • Cross-Sectoral Gaps: Common needs include AI literacy, prompt engineering, risk management, ethical awareness, and data governance. The demand is strongest for professionals who combine technical proficiency with human-centric, regulatory, and ethical kno"
+      },
+      {
+        "name": "ML Engineer",
+        "sector": "Healthcare & Life Sciences",
+        "context": "n develop concepts for reliable application of AI in business senarios. 60 NLP, ML engineers How non technical people in Operations (service managers, etc) 61 can leverage AI and GenAI for everyday mundane tasks. Automation using ready-made AI tools. 62 setup an AI solution that "
+      }
+    ],
+    "versions": [
+      {
+        "label": "v1.0",
+        "file": "Deliverable 2.1 Market & Needs Analysis PANORAIMA v1.0.pdf",
+        "is_final": true,
+        "size_kb": 8780
+      },
+      {
+        "label": "?",
+        "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.04.docx",
+        "is_final": false,
+        "size_kb": 1076
+      },
+      {
+        "label": "v1.0",
+        "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.1.0_FOR REVIEW.docx",
+        "is_final": false,
+        "size_kb": 1233
+      },
+      {
+        "label": "v1.1",
+        "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.1.1.docx",
+        "is_final": false,
+        "size_kb": 1562
+      },
+      {
+        "label": "archive",
+        "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.03.docx",
+        "is_archive": true,
+        "size_kb": 934
+      }
+    ]
+  },
+  "working_groups": {
+    "ireland": {
+      "sessions": [
+        {
+          "folder": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders",
+          "date": "2025-05-01",
+          "kind": "group",
+          "focus": "1 Session - Ecosystem Stakeholders",
+          "recording_mb": 159,
+          "has_presentation": true,
+          "has_report": true,
+          "has_transcript": true,
+          "report_excerpt": "Ecosystem Stakeholders · T2.1 Human-Centred AI Skills and Market Needs · About this Interview · The PANORAIMA project aims to develop a new generation of AI professionals equipped with human-centred, ethically informed, and interdisciplinary skills that meet the evolving societal, industrial, and policy demands across Europe. This 1:1 session with Theo Little, conducted as part of Work Package 2.1, was an opportunity to gather strategic insights from a leading innovation and "
+        },
+        {
+          "folder": "PANORAIMA-20250501-Focus 1-1 Session - Large Enterprises",
+          "date": "2025-05-01",
+          "kind": "group",
+          "focus": "1 Session - Large Enterprises",
+          "recording_mb": 183,
+          "has_presentation": false,
+          "has_report": true,
+          "has_transcript": true,
+          "report_excerpt": "1:1 Interview Large Enterprises · 13th May 2025 16:00 -17:00 · Stephen Redmond, Head of Data Analytics and AI BearingPoint · Barry Redmond, Senior Manager of Data Analytics and AI BearingPoint · Please introduce yourself and share an example of an AI-related project, initiative, or challenge you've been involved in recently. · The company has actively deployed Microsoft Copilot across the organisation giving most staff access to AI tools and rotating 500–600 licences. This de"
+        },
+        {
+          "folder": "PANORAIMA-20250506-Focus Group Session - Large Enterprises",
+          "date": "2025-05-06",
+          "kind": "group",
+          "focus": "Large Enterprises",
+          "recording_mb": 154,
+          "has_presentation": false,
+          "has_report": false,
+          "has_transcript": true,
+          "report_excerpt": ""
+        },
+        {
+          "folder": "PANORAIMA-20250507-Focus Group Session - SMEs",
+          "date": "2025-05-07",
+          "kind": "group",
+          "focus": "SMEs",
+          "recording_mb": 174,
+          "has_presentation": false,
+          "has_report": false,
+          "has_transcript": true,
+          "report_excerpt": ""
+        },
+        {
+          "folder": "PANORAIMA-20250508-Focus Group Session - Ecosystems",
+          "date": "2025-05-08",
+          "kind": "group",
+          "focus": "Ecosystems",
+          "recording_mb": 150,
+          "has_presentation": false,
+          "has_report": true,
+          "has_transcript": true,
+          "report_excerpt": "Ecosystem Stakeholders · T2.1 Human-Centred AI Skills and Market Needs · About this Focus Group · The PANORAIMA project aims to foster a new generation of AI professionals equipped with human-centred, ethically grounded, and interdisciplinary skills that align with evolving societal needs and policy frameworks across Europe. This focus group session, part of Work Package 2.1, was designed to engage ecosystem stakeholders, including policy-makers, funding agencies, and innovat"
+        }
+      ],
+      "stakeholder_register": {
+        "focus_groups": [
+          {
+            "": "1",
+            "org": "Anand Rajagopalan",
+            "sector": "Other",
+            "panoraima_contact": "John Pugh",
+            "fg_type": "SMEs",
+            "status": "Contacted"
+          },
+          {
+            "": "2",
+            "org": "Stephanie Ryan",
+            "sector": "Other",
+            "panoraima_contact": "John Pugh",
+            "fg_type": "Ecosystems",
+            "status": "Accepted",
+            "notes": "Information Pack sent, expecting a Zoom invitation and a reminder.",
+            "availability": "May 8"
+          },
+          {
+            "": "3",
+            "org": "Robert Bruton",
+            "sector": "Healthcare",
+            "panoraima_contact": "John Pugh",
+            "fg_type": "SMEs",
+            "status": "Contacted"
+          },
+          {
+            "": "4",
+            "org": "Shannon Owens",
+            "sector": "Compliance",
+            "panoraima_contact": "John Pugh",
+            "fg_type": "SMEs",
+            "status": "Contacted"
+          },
+          {
+            "": "5",
+            "org": "External Company",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "6",
+            "org": "External Company",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "7",
+            "org": "External Company",
+            "sector": "Media",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "8",
+            "org": "External Company",
+            "sector": "Media",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "9",
+            "org": "External Company",
+            "sector": "Media",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "10",
+            "org": "External Company",
+            "sector": "Finances",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "11",
+            "org": "Noelle Doody",
+            "sector": "Finances",
+            "panoraima_contact": "Christina Todorova",
+            "status": "Contacted",
+            "notes": "Out of office until  6th May. Contact Martina instead."
+          },
+          {
+            "": "12",
+            "org": "External Company",
+            "sector": "Finances",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "13",
+            "org": "External Company",
+            "sector": "Finances",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "14",
+            "org": "External Company",
+            "sector": "Healthcare",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "15",
+            "org": "External Company",
+            "sector": "Healthcare",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "16",
+            "org": "External Company",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "17",
+            "org": "External Company",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "18",
+            "org": "External Company",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "19",
+            "org": "External Company",
+            "sector": "Healthcare",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "20",
+            "org": "External Research Institution",
+            "sector": "Healthcare",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "21",
+            "org": "External Research Institution",
+            "sector": "Healthcare",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "22",
+            "org": "External Company"
+          },
+          {
+            "org": "Chantelle Kiernan",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "": "23",
+            "org": "Tom Bannon, John Wrigley",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Alireza Dehghani",
+            "fg_type": "Ecosystems",
+            "status": "Contacted"
+          },
+          {
+            "": "24",
+            "org": "Dermot Casey",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Alireza Dehghani",
+            "fg_type": "Ecosystems",
+            "status": "Contacted"
+          },
+          {
+            "": "25",
+            "org": "Sandra Carrol and Peter Clifford",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova",
+            "fg_type": "Ecosystems",
+            "status": "Accepted",
+            "notes": "Sandra is an executive assistant. Peter is Head of Strategy for Research Ireland",
+            "availability": "May 1"
+          },
+          {
+            "": "26",
+            "org": "Gráinne Walshe",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova",
+            "fg_type": "Ecosystems",
+            "status": "Contacted"
+          },
+          {
+            "org": "David Keeley",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova"
+          },
+          {
+            "org": "SkillNet Ireland"
+          },
+          {
+            "panoraima_contact": "Christina Todorova via Alireza Dehghani",
+            "org": "Mary Finegan"
+          },
+          {
+            "": "27",
+            "org": "Bronagh Riordan",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Alireza Dehghani",
+            "fg_type": "Ecosystems",
+            "status": "Contacted",
+            "notes": "Also member of CeADAR's advisory board."
+          },
+          {
+            "": "28",
+            "org": "Chris Bull",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Alireza Dehghani",
+            "status": "On pause, until Bronagh confirms"
+          },
+          {
+            "": "29",
+            "org": "Onra Mulhern",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Alireza Dehghani",
+            "fg_type": "Ecosystems",
+            "status": "Contacted",
+            "notes": "Auto-Reply, busy until May 1st. Contact again towards the end of the week."
+          },
+          {
+            "": "30",
+            "org": "John O'Gorman",
+            "sector": "Healthcare",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "SMEs",
+            "status": "Contacted"
+          },
+          {
+            "": "31",
+            "org": "Tudor Pitulac",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "SMEs",
+            "status": "Accepted",
+            "notes": "Information Pack sent, expecting a Zoom invitation and a reminder.",
+            "availability": "May 7"
+          },
+          {
+            "": "32",
+            "org": "Bernard Cosgrave",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "SMEs",
+            "status": "Contacted",
+            "notes": "Auto-Reply, busy until April 30th. Contact again towards the end of the week."
+          },
+          {
+            "": "33",
+            "org": "Michael Mulloy",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "notes": "Michael Mulloy"
+          },
+          {
+            "": "34",
+            "org": "Konark Paul",
+            "sector": "Other",
+            "panoraima_contact": "Yilin Li",
+            "fg_type": "Big Tech",
+            "status": "On pause, until Vishvander confirms",
+            "notes": "Konark Paul"
+          },
+          {
+            "": "35",
+            "org": "Brian Sullivan",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "SMEs",
+            "status": "Contacted"
+          },
+          {
+            "": "36",
+            "org": "Oran Rigby",
+            "sector": "Healthcare",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "SMEs",
+            "status": "Contacted"
+          },
+          {
+            "": "37",
+            "org": "Brendan O'Dowd",
+            "sector": "Healthcare",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "Big Tech",
+            "status": "Contacted",
+            "notes": "Out of the office - no information when he'll be back."
+          },
+          {
+            "": "38",
+            "org": "Fiona Spratt",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "Big Tech",
+            "status": "Contacted"
+          },
+          {
+            "": "39",
+            "org": "Paul Dolan",
+            "sector": "Media",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "SMEs",
+            "status": "Contacted"
+          },
+          {
+            "": "40",
+            "org": "Kevin Neary",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "SMEs",
+            "status": "Contacted via Linkedin",
+            "notes": "Participant in CeADAR's LLMs course."
+          },
+          {
+            "": "41",
+            "org": "Colm Harte",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "SMEs",
+            "status": "Contacted"
+          },
+          {
+            "": "42",
+            "org": "Anna Zaltsman",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "SMEs",
+            "status": "Contacted"
+          },
+          {
+            "": "43",
+            "org": "Kate Sugrue",
+            "sector": "Healthcare",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "Big Tech",
+            "status": "Accepted",
+            "notes": "Information Pack sent, expecting a Zoom invitation and a reminder. Participant in CeADAR's LLMs course.",
+            "availability": "May 6"
+          },
+          {
+            "": "44",
+            "org": "Jerome Purre",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "Big Tech",
+            "status": "Contacted"
+          },
+          {
+            "": "45",
+            "org": "Roger Whitehead",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "Big Tech",
+            "status": "Contacted"
+          },
+          {
+            "": "46",
+            "org": "Gemma Walker",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "Big Tech",
+            "status": "Contacted"
+          },
+          {
+            "": "47",
+            "org": "Vincent McGrady",
+            "sector": "Other",
+            "panoraima_contact": "Christina Todorova via Yilin Li",
+            "fg_type": "Big Tech",
+            "status": "Contacted"
+          },
+          {
+            "": "48",
+            "org": "Theo Little",
+            "sector": "Media",
+            "panoraima_contact": "Christina Todorova",
+            "fg_type": "Ecosystems",
+            "status": "Accepted",
+            "notes": "Information Pack sent, expecting a Zoom invitation and a reminder. Will confirm availability shortly. Participant in CeADAR's LLMs course.",
+            "availability": "May 1"
+          },
+          {
+            "": "49",
+            "org": "Alan Fahey",
+            "sector": "Big Tech",
+            "panoraima_contact": "Sean McHugh and Barry Feeney",
+            "fg_type": "Big Tech",
+            "status": "Contacted"
+          },
+          {
+            "": "50",
+            "org": "Vishvander Singh",
+            "sector": "Big Tech",
+            "panoraima_contact": "Sean McHugh and Barry Feeney",
+            "fg_type": "Big Tech",
+            "status": "Contacted"
+          },
+          {
+            "": "51",
+            "org": "FrancisFlannery@outlook.com",
+            "sector": "Big Tech",
+            "panoraima_contact": "Sean McHugh and Barry Feeney",
+            "fg_type": "Big Tech",
+            "status": "Contacted",
+            "notes": "Address not found!"
+          },
+          {
+            "": "52",
+            "org": "Jonathan Dunne",
+            "sector": "Big Tech",
+            "panoraima_contact": "Sean McHugh and Barry Feeney",
+            "fg_type": "Big Tech",
+            "status": "Tentatively Accepted",
+            "notes": "Information Pack sent, expecting a Zoom invitation and a reminder. Will confirm availability shortly. Proposed two additional questions: \n\nQ1. Can AI systems be effectively designed to identify and rectify their ethical failures over time? What role should human self-correcting mechanisms play in this process?\nQ2. To what extent do open-source AI models and datasets enhance ethical transparency and accountability? How can we balance these benefits against the potential risks of misuse or harm?",
+            "availability": "May 6"
+          },
+          {
+            "": "53",
+            "org": "Kieran McCorry",
+            "sector": "Big Tech",
+            "panoraima_contact": "Sean McHugh and Barry Feeney",
+            "fg_type": "Big Tech",
+            "status": "Contacted"
+          },
+          {
+            "": "54",
+            "org": "Mícheál Ó Foghlú",
+            "sector": "Big Tech",
+            "panoraima_contact": "Sean McHugh and Barry Feeney",
+            "fg_type": "Big Tech",
+            "status": "Accepted",
+            "notes": "Information Pack sent, expecting a Zoom invitation and a reminder.",
+            "availability": "May 6"
+          },
+          {
+            "": "55",
+            "org": "Sean Fitzgerald, Stephen Redmond, Barry Haycock",
+            "sector": "Big Tech",
+            "panoraima_contact": "Sean McHugh and Barry Feeney",
+            "fg_type": "Big Tech",
+            "status": "Accepted",
+            "notes": "Accepted",
+            "availability": "1:1, 13.05"
+          },
+          {
+            "": "56",
+            "org": "Gavin Shorten",
+            "sector": "Big Tech",
+            "panoraima_contact": "Sean McHugh and Barry Feeney",
+            "fg_type": "Big Tech",
+            "status": "Accepted",
+            "notes": "Information Pack sent, expecting a Zoom invitation and a reminder.",
+            "availability": "May 6"
+          },
+          {
+            "": "57",
+            "org": "Alan Carolan",
+            "sector": "Big Tech",
+            "panoraima_contact": "Sean McHugh and Barry Feeney",
+            "fg_type": "Big Tech",
+            "status": "Contacted, Will Forward to Team Members",
+            "notes": "Information Pack Sent, Will Forward to Team Members"
+          },
+          {
+            "org": "Michael Nolan"
+          }
+        ],
+        "surveys": [
+          {
+            "org": "Eannn O Bradaigh",
+            "sector": "Technology",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Michael McNamara",
+            "sector": "Life Sciences/Health",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Fidah Ibrahim",
+            "sector": "Life Sciences/Health",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Fiona Stapleton",
+            "sector": "Life Sciences/Health",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "John Timoney",
+            "sector": "Insurance",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "J-P Jacobs",
+            "sector": "Large Manufacturer",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Tadhg Cashman",
+            "sector": "Technology IoT",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Coman Burke",
+            "sector": "SME Technology",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "SME",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Damien Kelly",
+            "sector": "SME Technology",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "SME",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Paul McCann",
+            "sector": "SME Technology",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "SME",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Feargal OHanrahan",
+            "sector": "Insurance",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Enda Kyne",
+            "sector": "Insurance",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Darren McGrath",
+            "sector": "Large Motor Ind",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Stephen Murphy",
+            "sector": "Large Motor Ind",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Ian Doyle",
+            "sector": "Large Tech Insurance",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Thelma Pentony",
+            "sector": "Life Sciences/Health",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Richard Dennehy",
+            "sector": "Insurance",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Ciaran Delaney",
+            "sector": "Large Retail",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Barry Oloughlin",
+            "sector": "SME -Tech",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "SME",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Bernard Dunne",
+            "sector": "Life Sciences/Health",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 7th May 2025 AM"
+          },
+          {
+            "org": "Charlie Sloan",
+            "sector": "SME Tech",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "SME",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "David Wall",
+            "sector": "Life Sciences/Health",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Enda Lacey; elacey@itanco.com",
+            "sector": "Other",
+            "panoraima_contact": "John Pugh",
+            "company_type": "SMEs",
+            "status": "Completed Survey"
+          },
+          {
+            "org": "Trevor Coyle",
+            "sector": "SME Technology",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "SME",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Chris Fitzpatrick",
+            "sector": "Life Sciences/Health",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Greta Stahl",
+            "sector": "Finance/HR",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          },
+          {
+            "org": "Sharon Lynch",
+            "sector": "Finance/HR",
+            "panoraima_contact": "Sean McHugh",
+            "company_type": "Large",
+            "notes": "Survey sent 6th May 2025 AM"
+          }
+        ]
+      }
+    },
+    "netherlands": {
+      "interviews": [
+        {
+          "interviewee": "AndrewVDHaar",
+          "role": "",
+          "company": "FiberCarrierAssociation",
+          "recording_mb": 181,
+          "audio_mb": 6.7,
+          "has_transcript": true,
+          "quotes": [
+            "SPEAKERS Andrew Van Der Haar, Tarry Singh Tarry Singh  02:49 Andrew, I have a list of questionnaires, and I think it's an open discussion about I will, of course, take out the our initial conversation part out of this.",
+            "Yeah, so that, I think that that will complete your your question on how AI brings into the fiber, Tarry Singh  07:16 yes, of course.",
+            "I'm sure you will share more about specific from your area of expertise, data centers, as you know, Andrew, we have so many discussions also regarding, you know, build the infra, build the build the heart, build the brain, and only then evolve."
+          ],
+          "empty": false
+        },
+        {
+          "interviewee": "JelleHouben",
+          "role": "CEO",
+          "company": "Binqy",
+          "recording_mb": null,
+          "audio_mb": 6.7,
+          "has_transcript": true,
+          "quotes": [
+            "Duration of this project is about four years. 2028, and beginning 2029 we have delivered this program the opportunity for you guys to if you remain friends of us and are able to expand your business and portfolio, we would love to involve you in other new, more exciting ventures.",
+            "I think what we mainly see in the market right now is that the people that are very good and smart and and already in the first stage of understanding everything.",
+            "So I understand what's and I think this, this is indeed one of the gaps that definitely is, is, is, is there in the market?"
+          ],
+          "empty": false
+        },
+        {
+          "interviewee": "LexNicolai",
+          "role": "CEO",
+          "company": "BlueFiber",
+          "recording_mb": null,
+          "audio_mb": 11.6,
+          "has_transcript": true,
+          "quotes": [
+            "I think I did explain briefly when we were together in Egypt, PANORAIMA is European Commission funded project which is being run right now with 16 consortium members, eight countries, eight European countries that also includes, this time, Ukraine.",
+            "And of course, we talked in Egypt also about some other more far reaching concepts that could be developed using AI in a particular fashion, but this is at least what we have done so far.",
+            "So I think the next question that is more pertinent is which we experience a lot in the industry."
+          ],
+          "empty": false
+        },
+        {
+          "interviewee": "Nadeige",
+          "role": "Braaksma",
+          "company": "Sthaire",
+          "recording_mb": null,
+          "audio_mb": null,
+          "has_transcript": false,
+          "quotes": [],
+          "empty": true
+        },
+        {
+          "interviewee": "PetraRuiter",
+          "role": "",
+          "company": "CordialBV",
+          "recording_mb": null,
+          "audio_mb": 9.5,
+          "has_transcript": true,
+          "quotes": [
+            "Well, Vice advice have happened to focus new up, if we are built forming Petra, we have a new focus of the finance industry.",
+            "Speaker 1  39:36 Now we have fish guider that snail, height, yeah, penalty that drive when a faster snail height, yeah, Brookfield mighty and the Doom way on that I have a share thinning line that will make across the rope shadow who laughs the fish because she died for it.",
+            "May well you said it's what the I think head of the ladder with macro Bill Bray Danka."
+          ],
+          "empty": false
+        },
+        {
+          "interviewee": "Remco",
+          "role": "CEO",
+          "company": "Verzimpel",
+          "recording_mb": null,
+          "audio_mb": 6.4,
+          "has_transcript": true,
+          "quotes": [
+            "So that's why I think that AI is very important, because AI can help us manage one of the things that I think is really, really important, and that is that computers do what computers do best, so that we as humans can do what we as humans can do best.",
+            "So that's, I think that's a big issue, because if you don't, don't know how to work with AI and to learn alongside AI, but also know how to fine tune yourself using AI, but also different sources.",
+            "And to Yeah, how to fact check AI, etc, etc, so that this is kind of a short list of what I think is considered to be the the general mismatch between what people need and what people have."
+          ],
+          "empty": false
+        },
+        {
+          "interviewee": "Robin",
+          "role": "CTO",
+          "company": "Fraudio-Interview meeting online for Project PANORAIMA - Market analysis",
+          "recording_mb": null,
+          "audio_mb": 7.9,
+          "has_transcript": true,
+          "quotes": [
+            "And I think this is a simple question here, Robin, you've seen it.",
+            "I think that's also the complexity of what we're doing is that everything is in real time and on super low latency.",
+            "Yeah, I think it's so familiar actually, Robin for us, we when we started out our company, we started out with a research lab, and back then, for me, the most important need was to get scientists, as in, you know, researchers, because we believe that researcher is the core of any AI native company."
+          ],
+          "empty": false
+        },
+        {
+          "interviewee": "TjardaPolderman",
+          "role": "CEO",
+          "company": "Founded",
+          "recording_mb": null,
+          "audio_mb": null,
+          "has_transcript": false,
+          "quotes": [],
+          "empty": true
+        }
+      ],
+      "consolidated_report_excerpt": "Qualitative Report: PANORAIMA Focus Group Interviews · Project: PANORAIMA (Pan-European Network for Responsible Artificial Intelligence Multisector Masters) · Introduction to Reports · This document compiles qualitative analyses of interviews conducted with SME representatives and industry leaders. The interviews aimed to gather insights on AI skills, industry needs, and the potential role of the PANORAIMA Master’s program. The responses are mapped to the preliminary list of questions provided in the \"PANORAIMA Focus Group for SMEs - Information Pack.\" · The PANORAIMA project aims to develop a pan-European Master’s program focused on human-centered and ethical AI, expanding AI education beyond ICT students to professionals in diverse sectors. These interviews contribute to understanding se",
+      "hu_summary": {
+        "headers": [
+          "ID",
+          "Company name",
+          "Company Type",
+          "Interview or Focus Group",
+          "Current AI work",
+          "Skills gaps",
+          "Desired competencies / training needs",
+          "Preferred formats",
+          "Key application areas",
+          "Sector – Challenge – Solution",
+          "Upskilling on offer",
+          "Barriers",
+          "Suggested PANORAIMA content"
+        ],
+        "row_count": 5,
+        "sample": [
+          [
+            "1",
+            "Terberg Automotive",
+            "Specialist automotive software and electronic hardware engineering solutions for Terberg Environmental and Special Vehicles.",
+            "I",
+            "vision based automotive grade embedded 'smart solutions'; image classification system for waste containers; vision based ML in a low level entry fashion",
+            "gap in automotive-grade hardware; lack of easy-to-use software frameworks; difficulty deploying pre-trained models on embedded hardware",
+            "",
+            "",
+            "Vision-based machine learning, object detection, image classification,",
+            "",
+            "no",
+            "",
+            "none"
+          ],
+          [
+            "2",
+            "De Clercq",
+            "lawyer multi-disciplinary practice with attorneys and civil law notaries specilized in ICT law",
+            "I",
+            "compliance advice (AI Act, GDPR); AI tools for efficiency; AI for contract review, court documents, and case law search",
+            "prompt engineering; organising data to optimise AI capabilities",
+            "Understanding of AI technology; Reliability of AI outputs; Explainability; Critical thinking; Ethical reasoning; Technical AI insight",
+            "",
+            "prompt engineering, reliability, explainibility",
+            "law: data protection, confidentiality, bar regulations",
+            "Internal workshops",
+            "",
+            "A course on the technology behind modern AI systems, data protection, confidentiality, bar regulations"
+          ],
+          [
+            "4",
+            "Turing.law",
+            "law firm for IT, privacy and digital transformation",
+            "I",
+            "AI to assess company management & helpdesk triage; legal limitations; AI text generation (Microsoft Copilot)",
+            "understanding of legal compliance; assessing AI applications against GDPR; knowledge sufficient but compliance uncertainty",
+            "Causality vs. correlation; Bias awareness; Risk awareness; Data literacy; Critical thinking",
+            "",
+            "compliance, bias, encryption, information processing",
+            "law - AI Act, GDPR, intellectual property right - e.g. use of images by Facebook for training purposes, GDPR, encryption, risks",
+            "Talks by subject matter experts",
+            "",
+            "AI Act, GDPR and intellectual property right"
+          ],
+          [
+            "13",
+            "Dialogic",
+            "Dialogic is an indepen­dent research and consul­tan­cy firm that works on issues in the public domain. We support govern­ments, knowled­ge institu­ti­ons, and interme­dia­ry organi­za­ti­ons through policy research and strate­gic advice.",
+            "I",
+            "research on AI in SMEs/government; LLM integration; training & education; AI for matching entrepreneurs to government initiatives; internal automation of desk research, tender screening, labeling unstructured text, skill-vacancy mapping, policy analysis support",
+            "",
+            "Process understanding; Problem decomposition; Technical AI implementation; Data engineering; Data literacy",
+            "Internal workshops; Informal teaching; Knowledge sharing",
+            "data engineering, trustworthiness, IAMA/FRAIA, LM integration, agents",
+            "trustworthiness, responsibility, impact",
+            "Workshops, lectures, working group, informal teaching, collaboration, and knowledge transfer.",
+            "",
+            "IAMA, LLM integration, agents, human-centeredness on different levels"
+          ],
+          [
+            "21",
+            "NiceDay Nederland",
+            "a company providing an application for online psychotherapy support",
+            "I",
+            "AI pilot for psychotherapy session recording; automatic note generation;",
+            "AI skills shortage among therapists; digital literacy issues; lack of AI-specific training; difficulty with basic tech tasks",
+            "Safe AI use; Effective prompting; Technical AI configuration; AI regulation awareness; Ethical reasoning; Critical thinking; Responsible AI application; Digital literacy",
+            "Part-time format; Hybrid format; hands-on experience",
+            "automated session transcription and note-taking, medical devices, digital literacy, responsibility, AI regulations, generative AI, Chatbots, Overreliance, Human oversight, risks, ethical considerations",
+            "Automated collection of information for desk research, screening of tenders, labeling large scale unstructured text, applying skill frameworks on vacancy texts, suggestions for analysis and synthesis in policy analyses, automated session transcription and note-taking, digital literacy among therapists, medical device classification",
+            "no",
+            "lack of institutional embedding, time constraints, limited to no funding. no official AI experts work at the organization.",
+            "Generative AI for exposure therapy, chatbots for psychoeducation, mood tracking, behavior analysis, medical device classification,  history and evolution of AI, How AI works behind the scenes (without overly technical depth), Raising awareness that AI is not just “a robot” but a statistical system with limitations, Graduates should be able to apply AI responsibly in sensitive domains like healthcare,"
+          ]
+        ]
+      }
+    },
+    "hamburg": {
+      "interviews": [
+        {
+          "code": "AR",
+          "file": "Interview_AR_ENG.docx",
+          "excerpt": "Personnel across all Hamburg Interviews: · Interviewers: SD, AK, KL and AS · - BT: Academic institution: Professor for medical technology in Hamburg · - AR: Academic institution/SME: Professor for computer science and director for business development at an SMR in Hamburg · - LH: Academic institution/SME: Hamburg Computer Science Technology Center · - JS: SM",
+          "quotes": [
+            "But to what extent is the company you work for involved with AI?",
+            "What I'm saying is that they're introducing something, but there's no transition to using services, perhaps not in the sense of the common good, but in the sense of the good of the company or the employee.",
+            "That is, going back to the example of the company GPT, what do I do with the technology?"
+          ],
+          "word_count": 8089
+        },
+        {
+          "code": "BT",
+          "file": "Interview_BT_ENG.docx",
+          "excerpt": "Personnel across all Hamburg Interviews: · Interviewers: SD, AK, KL and AS · - BT: Academic institution: Professor for medical technology in Hamburg · - AR: Academic institution/SME: Professor for computer science and director for business development at an SMR in Hamburg · - LH: Academic institution/SME: Hamburg Computer Science Technology Center · - JS: SM",
+          "quotes": [],
+          "word_count": 5735
+        },
+        {
+          "code": "JS",
+          "file": "Interview_JS_ENG.docx",
+          "excerpt": "Personnel across all Hamburg Interviews: · Interviewers: SD, AK, KL and AS · - BT: Academic institution: Professor for medical technology in Hamburg · - AR: Academic institution/SME: Professor for computer science and director for business development at an SMR in Hamburg · - LH: Academic institution/SME: Hamburg Computer Science Technology Center · - JS: SM",
+          "quotes": [
+            "AI is also a global issue.",
+            "AS Speaking of hybrid, we also have the challenge that we would like to make this as practical as possible in collaboration with companies, for example.",
+            "We simply found out about it at the owner level, so to speak, that there is something like Response by AI and they really do AI in the company and have a large department and so on."
+          ],
+          "word_count": 7546
+        },
+        {
+          "code": "LH",
+          "file": "Interview_LH_ENG.docx",
+          "excerpt": "Personnel across all Hamburg Interviews: · Interviewers: SD, AK, KL and AS · - BT: Academic institution: Professor for medical technology in Hamburg · - AR: Academic institution/SME: Professor for computer science and director for business development at an SMR in Hamburg · - LH: Academic institution/SME: Hamburg Computer Science Technology Center · - JS: SM",
+          "quotes": [
+            "And for the handover, we then have to educate the company members in order to say, yes, if we want to develop this further now, what do we have to do?",
+            "And then you have to teach the people in the company how to train a neural network.",
+            "It's more the case that the company hires someone who already has AI expertise."
+          ],
+          "word_count": 5173
+        },
+        {
+          "code": "MI",
+          "file": "Interview_MI_ENG.docx",
+          "excerpt": "AS, AK: Interviewers · TM: Computer Scientist, works as developer and product owner for a large German energy provider · MI: Engineer, Head of Innovation for the same large German energy provider · The direction in which we would like to ask, because for us it is very much about the fact that AI is now playing an increasingly important role, of course, we do",
+          "quotes": [
+            "Because we have another very important authority in the company and that is the works council.",
+            "And that's why we always have to make sure that when we talk about wind farms, we talk about the company there, where we have x per cent, with others.",
+            "Then the student would be either at the university and then partly at the company and get to see both sides a bit."
+          ],
+          "word_count": 6027
+        }
+      ],
+      "focus_group_excerpt": "Interviewers: AS, SD · Participants: all are students at a Computer Science Master’s programme and work in companies based in Hamburg, Germany, each doing 20h a week as a stundent and 20h a week working · JF: software developer and consultant at a marketing SME · PK: software developer at an online retailer SME · MF: software developer for an online law consulting SME · JH: software developer for a software service provider SME · JT: software developer for a software service provider SME · MR: software developer for an SAP provider SME · If you then place it in the centre, we have halfway covered the table. This is the definition of human-centred AI that we are working with in this project. It comes from an EU commission on the topic of Responsible AI, which is about developing AI in such "
+    },
+    "greece": {
+      "spreadsheets": [
+        {
+          "file": "Desktop Research Inputs(1-148)_reviewed.xlsx",
+          "title": "Desktop Research Inputs",
+          "headers": [
+            "18",
+            "Sample size"
+          ],
+          "row_count": 147,
+          "sample": [
+            [
+              "Ratio",
+              "Responses"
+            ],
+            [
+              "1. PANORAIMA Relevance",
+              ""
+            ],
+            [
+              "6",
+              "Other"
+            ],
+            [
+              "6",
+              "Training Materials"
+            ]
+          ]
+        },
+        {
+          "file": "InterviewSME_Preliminary Research on Workforce Needs and AI Trends_NOT_reviewed.xlsx",
+          "title": "InterviewSME Preliminary Research on Workforce Needs and AI Trends",
+          "headers": [
+            "ID",
+            "Начален час",
+            "Час на завършване",
+            "Имейл",
+            "Име",
+            "Език",
+            "Време на последна промяна",
+            "Company name",
+            "Company Location",
+            "Please introduce yourself and share an example of an AI-related project, initiative, or challenge you've been involved in recently or expect to be involved in the near future",
+            "Does your organization currently use AI or plan to integrate AI solutions in the near future? If so, for what tasks or activities?",
+            "We often hear about a mismatch between the demand for AI-skilled talent and the available supply. In your experience, is there an AI skills gap in your company or sector?"
+          ],
+          "row_count": 21,
+          "sample": [
+            [
+              "1",
+              "2025-04-22 08:41:23",
+              "2025-04-22 09:06:54",
+              "anonymous",
+              "",
+              "English (United Kingdom)‎",
+              "",
+              "Terberg Automotive",
+              "IJsselstein",
+              "I'm a system architect involved in creating mostly vision based automotive grade embedded \"smart solutions\" deployed on Terberg vehicles.\nAlthough we are cloud users we do NOT rely on the cloud for ML inference. Local results may become available to vehicle operators directly or relayed to supervisors using the exisiting telematics system.",
+              "See Q3. In addition a number of solutions is planned. Within one of the subsidiaries an image classification system is used to identify the correct type of waste container.",
+              "No",
+              "The gap is in available automotive grade hardware and easy to use software frameworks. Although similarities exist with PC and cloud ML the embedded world requires a specific skillset not so much related to AI itself. Instead the path towards running a pre-trained model on the embedded hardware is a tough one.",
+              "duplicate question?",
+              "Not sure",
+              "No, too specific. We piece tte pieces together ourselves using NXP specific drivers and YOCTO.",
+              "Not sure as all is very much hardware dependent at this level. In fact this Terberg subsidiary is trying to build a framework for other Terberg subsidiaries to use vision based ML in a low level entry fashion.",
+              "no",
+              "no",
+              "no",
+              "-",
+              "-"
+            ],
+            [
+              "2",
+              "2025-04-23 18:32:30",
+              "2025-04-23 18:57:24",
+              "anonymous",
+              "",
+              "Български",
+              "",
+              "De Clercq",
+              "Leiden",
+              "I am a lawyer specialized in IT law. I regularly advise clients on whether an AI application complies with applicable regulations (AI Act, GDPR, etc.). At the firm, we experiment with AI tools to work more efficiently.",
+              "We are experimenting with AI solutions to see if they can help us review contracts, draf court documents and search for case law.",
+              "It's not always clear what the best way is to write a good prompt. I hear different advice on this from experts in the industry.",
+              "How to organise data and write prompts to maximise AI capabilities.",
+              "See previous question.",
+              "The program could certainly be helpful in the sense that employees gain a better understanding of the technology of AI and what you can do to make the results of AI reliable and explainable.",
+              "Internal workshops",
+              "The legal aspect (data protection, confidentiality, bar regulations) is particularly important in the legal industry.",
+              "No",
+              "No",
+              "No",
+              "A course on the technology behind modern AI systems seems essential to me.",
+              "No"
+            ],
+            [
+              "3",
+              "2025-04-24 11:12:26",
+              "2025-04-24 11:15:14",
+              "anonymous",
+              "",
+              "Български",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "4",
+              "2025-04-25 17:29:36",
+              "2025-04-25 17:58:50",
+              "anonymous",
+              "",
+              "English (United Kingdom)‎",
+              "",
+              "Turing.law",
+              "Eindhoven",
+              "We have clients that use AI to assess the management of companies. They are already doing it and want to fully understand legal limitations. Other example: assess urgency or problems for a help desk.",
+              "We experiment with text generation using AI, both using Microsoft Copilot, and we are experimenting with this",
+              "We look at people with IT specialisations and we can find these people through our network. AI is relatively new so we train people internally on the latest knowledge.",
+              "Large clients have sufficient knowledge but want to know whether certain applications are allowed. They also want to know if their AI applications are GDPR compliant.",
+              "We use CoPilot.",
+              "We will need data scientists in the future. We need people that understand the difference between causality and correlation and understands bias, and understands the practical risk of AI.",
+              "We invite subject matter experts for specific topics to give talks about specific topics, including domain experts, e.g. health care research experts.",
+              "The AI Act, GDPR and intellectual property right deserve more attention, e.g. use of images by Facebook for training purposes.",
+              "No",
+              "The topic of forbidden applications of AI under the AI act",
+              "Many GDPR auditors do not have sufficient technical knowledge to answer GDPR questions, e.g. understanding what encryption is and which risks it solves.",
+              "GDPR is very important for AI applications",
+              "No"
+            ]
+          ]
+        },
+        {
+          "file": "SurveyResearch&Academia_Workforce Needs(1-31)_reviewed.xlsx",
+          "title": "SurveyResearch&Academia Workforce Needs",
+          "headers": [
+            "11",
+            "Sample size"
+          ],
+          "row_count": 93,
+          "sample": [
+            [
+              "Ratio",
+              "Responses"
+            ],
+            [
+              "1. Could you present briefly your organisation?",
+              ""
+            ],
+            [
+              "2",
+              "Hellenic Institute of Transport (HIT)/Centre for Research and Technology Hellas (CERTH)"
+            ],
+            [
+              "1",
+              "National Technical University of Athens"
+            ]
+          ]
+        },
+        {
+          "file": "Survey_Greece_reviewed.xlsx",
+          "title": "Survey Greece",
+          "headers": [
+            "7",
+            "<-Sample size"
+          ],
+          "row_count": 78,
+          "sample": [
+            [
+              "Ratio",
+              "Responses"
+            ],
+            [
+              "1. Could you briefly present your company?(main activity, industry, location)",
+              ""
+            ],
+            [
+              "1",
+              "Startup SME"
+            ],
+            [
+              "1",
+              "Law firm"
+            ]
+          ]
+        },
+        {
+          "file": "Desktop Research Inputs(1-148)_GR_under_review.xlsx",
+          "title": "Desktop Research Inputs GR",
+          "headers": [
+            "18",
+            "Sample size"
+          ],
+          "row_count": 75,
+          "sample": [
+            [
+              "Ratio",
+              "Responses"
+            ],
+            [
+              "1. PANORAIMA Relevance",
+              ""
+            ],
+            [
+              "6",
+              "Other"
+            ],
+            [
+              "6",
+              "Training Materials"
+            ]
+          ],
+          "wg": true
+        },
+        {
+          "file": "InterviewSME_Preliminary Research on Workforce Needs and AI Trends_under_review.xlsx",
+          "title": "InterviewSME Preliminary Research on Workforce Needs and AI Trends",
+          "headers": [
+            "ID",
+            "Начален час",
+            "Час на завършване",
+            "Имейл",
+            "Име",
+            "Език",
+            "Време на последна промяна",
+            "Company name",
+            "Company Location",
+            "Please introduce yourself and share an example of an AI-related project, initiative, or challenge you've been involved in recently or expect to be involved in the near future",
+            "Does your organization currently use AI or plan to integrate AI solutions in the near future? If so, for what tasks or activities?",
+            "We often hear about a mismatch between the demand for AI-skilled talent and the available supply. In your experience, is there an AI skills gap in your company or sector?"
+          ],
+          "row_count": 21,
+          "sample": [
+            [
+              "1",
+              "2025-04-22 08:41:23",
+              "2025-04-22 09:06:54",
+              "anonymous",
+              "",
+              "English (United Kingdom)‎",
+              "",
+              "Terberg Automotive",
+              "IJsselstein",
+              "I'm a system architect involved in creating mostly vision based automotive grade embedded \"smart solutions\" deployed on Terberg vehicles.\nAlthough we are cloud users we do NOT rely on the cloud for ML inference. Local results may become available to vehicle operators directly or relayed to supervisors using the exisiting telematics system.",
+              "See Q3. In addition a number of solutions is planned. Within one of the subsidiaries an image classification system is used to identify the correct type of waste container.",
+              "No",
+              "The gap is in available automotive grade hardware and easy to use software frameworks. Although similarities exist with PC and cloud ML the embedded world requires a specific skillset not so much related to AI itself. Instead the path towards running a pre-trained model on the embedded hardware is a tough one.",
+              "duplicate question?",
+              "Not sure",
+              "No, too specific. We piece tte pieces together ourselves using NXP specific drivers and YOCTO.",
+              "Not sure as all is very much hardware dependent at this level. In fact this Terberg subsidiary is trying to build a framework for other Terberg subsidiaries to use vision based ML in a low level entry fashion.",
+              "no",
+              "no",
+              "no",
+              "-",
+              "-"
+            ],
+            [
+              "2",
+              "2025-04-23 18:32:30",
+              "2025-04-23 18:57:24",
+              "anonymous",
+              "",
+              "Български",
+              "",
+              "De Clercq",
+              "Leiden",
+              "I am a lawyer specialized in IT law. I regularly advise clients on whether an AI application complies with applicable regulations (AI Act, GDPR, etc.). At the firm, we experiment with AI tools to work more efficiently.",
+              "We are experimenting with AI solutions to see if they can help us review contracts, draf court documents and search for case law.",
+              "It's not always clear what the best way is to write a good prompt. I hear different advice on this from experts in the industry.",
+              "How to organise data and write prompts to maximise AI capabilities.",
+              "See previous question.",
+              "The program could certainly be helpful in the sense that employees gain a better understanding of the technology of AI and what you can do to make the results of AI reliable and explainable.",
+              "Internal workshops",
+              "The legal aspect (data protection, confidentiality, bar regulations) is particularly important in the legal industry.",
+              "No",
+              "No",
+              "No",
+              "A course on the technology behind modern AI systems seems essential to me.",
+              "No"
+            ],
+            [
+              "3",
+              "2025-04-24 11:12:26",
+              "2025-04-24 11:15:14",
+              "anonymous",
+              "",
+              "Български",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "4",
+              "2025-04-25 17:29:36",
+              "2025-04-25 17:58:50",
+              "anonymous",
+              "",
+              "English (United Kingdom)‎",
+              "",
+              "Turing.law",
+              "Eindhoven",
+              "We have clients that use AI to assess the management of companies. They are already doing it and want to fully understand legal limitations. Other example: assess urgency or problems for a help desk.",
+              "We experiment with text generation using AI, both using Microsoft Copilot, and we are experimenting with this",
+              "We look at people with IT specialisations and we can find these people through our network. AI is relatively new so we train people internally on the latest knowledge.",
+              "Large clients have sufficient knowledge but want to know whether certain applications are allowed. They also want to know if their AI applications are GDPR compliant.",
+              "We use CoPilot.",
+              "We will need data scientists in the future. We need people that understand the difference between causality and correlation and understands bias, and understands the practical risk of AI.",
+              "We invite subject matter experts for specific topics to give talks about specific topics, including domain experts, e.g. health care research experts.",
+              "The AI Act, GDPR and intellectual property right deserve more attention, e.g. use of images by Facebook for training purposes.",
+              "No",
+              "The topic of forbidden applications of AI under the AI act",
+              "Many GDPR auditors do not have sufficient technical knowledge to answer GDPR questions, e.g. understanding what encryption is and which risks it solves.",
+              "GDPR is very important for AI applications",
+              "No"
+            ]
+          ],
+          "wg": true
+        },
+        {
+          "file": "SurveyResearch&Academia_Workforce Needs(1-31)_GR_reviewed.xlsx",
+          "title": "SurveyResearch&Academia Workforce Needs GR",
+          "headers": [
+            "11",
+            "Sample size"
+          ],
+          "row_count": 93,
+          "sample": [
+            [
+              "Ratio",
+              "Responses"
+            ],
+            [
+              "1. Could you present briefly your organisation?",
+              ""
+            ],
+            [
+              "2",
+              "Hellenic Institute of Transport (HIT)/Centre for Research and Technology Hellas (CERTH)"
+            ],
+            [
+              "1",
+              "National Technical University of Athens"
+            ]
+          ],
+          "wg": true
+        },
+        {
+          "file": "Survey_Greece_under_review.xlsx",
+          "title": "Survey Greece",
+          "headers": [
+            "ID",
+            "Начален час",
+            "Час на завършване",
+            "Имейл",
+            "Име",
+            "Език",
+            "Време на последна промяна",
+            "Could you briefly present your company?(main activity, industry, location)",
+            "Does your company currently use any form of Artificial Intelligence (AI) or Machine Learning (ML)?",
+            "For which of the following activities is Artificial Intelligence (AI) or Machine Learning (ML) used in your company?",
+            "Which of the following best describes your role in the company?",
+            "What are the biggest AI-related skill gaps or training needs you observe in your company or industry?\n Please describe specific competencies or areas that are currently lacking or hard to find."
+          ],
+          "row_count": 7,
+          "sample": [
+            [
+              "11",
+              "2025-05-13 11:19:03",
+              "2025-05-13 11:27:05",
+              "anonymous",
+              "",
+              "",
+              "",
+              "Startup SME  located in Athens Greece,  empowering wellness with innovative technology",
+              "Not yet, but we’re interested",
+              "Optimisation of logistics processes;service personalization to user needs;",
+              "Executive / Senior Manager",
+              "Basic AI understanding for all employees and  a gap in skills related to technologies like generative AI",
+              "Maybe",
+              "Evening/weekend classes",
+              "No",
+              "",
+              "Uncertainty about what skills are needed",
+              "",
+              "practical application of ai algorithms",
+              "",
+              ""
+            ],
+            [
+              "16",
+              "2025-05-14 08:27:10",
+              "2025-05-14 08:31:57",
+              "anonymous",
+              "",
+              "",
+              "",
+              "law firm with 70 members, international clients, Athens",
+              "Yes, in a limited or experimental way",
+              "Copywriting, content production;Chatbot, customer service;",
+              "Executive / Senior Manager",
+              "Nobody know how to actually train AI and correct it if it’s wrong. We need to make it more efficient.",
+              "Yes",
+              "Modular or short-term intensive courses",
+              "No",
+              "",
+              "Lack of internal expertise",
+              "Methodology of use of AI including human intervention, ethics",
+              "How to train AI, how to train others on AI",
+              "",
+              ""
+            ],
+            [
+              "25",
+              "2025-05-19 17:27:23",
+              "2025-05-19 17:37:11",
+              "anonymous",
+              "",
+              "",
+              "",
+              "Technology, Financial Services, Greece",
+              "Yes, extensively",
+              "Data processing, data analysis;Chatbot, customer service;Cybersecurity;Marketing automation;",
+              "IT / Technical Lead",
+              "Prompt Engineering skills, AI literacy, Data readiness, Cross functional teams to deliver fast.",
+              "Yes",
+              "Online or hybrid delivery",
+              "Yes",
+              "Internal workshops or seminars",
+              "Time constraints for staff",
+              "Regulatory framework, risks and limitations, technical depth, customer experience, Advisors, security/fraud, governance framework",
+              "Technical depth and prompt engineering",
+              "No",
+              "No"
+            ],
+            [
+              "27",
+              "2025-05-19 18:29:50",
+              "2025-05-19 18:39:57",
+              "anonymous",
+              "",
+              "",
+              "",
+              "Banking services in Greece",
+              "Yes, in a limited or experimental way",
+              "Chatbot, customer service;Robotics;Copywriting, content production;",
+              "Executive / Senior Manager",
+              "We  lack the foundational knowledge required to comprehend how AI works, its capabilities, and its limitations.",
+              "Yes",
+              "Modular or short-term intensive courses",
+              "No",
+              "",
+              "Lack of internal expertise",
+              "",
+              "",
+              "no",
+              "no"
+            ]
+          ],
+          "wg": true
+        }
+      ]
+    }
+  },
+  "desktop_research": {
+    "topics": [
+      {
+        "bucket": "AI regulatory & strategy",
+        "folder": "AI_regulatory_strategy_framework",
+        "count": 21,
+        "anchor_papers": [
+          "AI HLEG Ethics Guidelines for Trustworthy",
+          "AI competency framework for students UNESCO",
+          "ETHICS GUIDELINES FOR TRUSTWORTHY AI High Level Expert Group on Artificial Intelligence EU",
+          "EU AI ACT",
+          "National AI Strategy UK"
+        ],
+        "papers": [
+          {
+            "file": "AI HLEG_Ethics Guidelines for Trustworthy.pdf",
+            "title": "AI HLEG Ethics Guidelines for Trustworthy",
+            "kb": 1553,
+            "ext": ".pdf"
+          },
+          {
+            "file": "AI competency framework for students UNESCO.pdf",
+            "title": "AI competency framework for students UNESCO",
+            "kb": 745,
+            "ext": ".pdf"
+          },
+          {
+            "file": "AIAdoptionFramework Saudi Arabia.pdf",
+            "title": "AIAdoptionFramework Saudi Arabia",
+            "kb": 549,
+            "ext": ".pdf"
+          },
+          {
+            "file": "AI_Governance_2024.pdf",
+            "title": "AI Governance 2024",
+            "kb": 585,
+            "ext": ".pdf"
+          },
+          {
+            "file": "ETHICS GUIDELINES FOR TRUSTWORTHY AI High-Level Expert Group on Artificial Intelligence  _ EU.pdf",
+            "title": "ETHICS GUIDELINES FOR TRUSTWORTHY AI High Level Expert Group on Artificial Intelligence EU",
+            "kb": 1594,
+            "ext": ".pdf"
+          },
+          {
+            "file": "EU AI ACT.pdf",
+            "title": "EU AI ACT",
+            "kb": 2522,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Governance Guidelines for Implementation of AI Principles  _ Japan.pdf",
+            "title": "Governance Guidelines for Implementation of AI Principles Japan",
+            "kb": 1041,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Guidelines_for_the_Responsible_Use_of_AI_in_the_Public_Service.pdf",
+            "title": "Guidelines for the Responsible Use of AI in the Public Service",
+            "kb": 5186,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Living guidelines on the responsible use of generative AI in research _ European comission.pdf",
+            "title": "Living guidelines on the responsible use of generative AI in research European comission",
+            "kb": 566,
+            "ext": ".pdf"
+          },
+          {
+            "file": "NSAI_AI_report_digital_links_Ireland.pdf",
+            "title": "NSAI AI report digital links Ireland",
+            "kb": 4406,
+            "ext": ".pdf"
+          },
+          {
+            "file": "National Artificial Intelligence Initiative Act of 2020 USA.pdf",
+            "title": "National Artificial Intelligence Initiative Act of 2020 USA",
+            "kb": 306,
+            "ext": ".pdf"
+          },
+          {
+            "file": "National_AI_Strategy _ UK.pdf",
+            "title": "National AI Strategy UK",
+            "kb": 3568,
+            "ext": ".pdf"
+          },
+          {
+            "file": "TOWARDS RESPONSIBLE AI THE INTERSECTION OF TECHNOLOGY SOCIETY AND GOVERNMENT LAW.pdf",
+            "title": "TOWARDS RESPONSIBLE AI THE INTERSECTION OF TECHNOLOGY SOCIETY AND GOVERNMENT LAW",
+            "kb": 399,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Ten Considerations for Generative Artificial Intelligence Adoption in Irish Higher Education.pdf",
+            "title": "Ten Considerations for Generative Artificial Intelligence Adoption in Irish Higher Education",
+            "kb": 128,
+            "ext": ".pdf"
+          },
+          {
+            "file": "The Artificial Intelligence and Data Act (AIDA) Canada.docx",
+            "title": "The Artificial Intelligence and Data Act (AIDA) Canada",
+            "kb": 102,
+            "ext": ".docx"
+          },
+          {
+            "file": "UAE-National-Strategy-for-Artificial-Intelligence-2031.pdf",
+            "title": "UAE National Strategy for Artificial Intelligence 2031",
+            "kb": 13225,
+            "ext": ".pdf"
+          },
+          {
+            "file": "ai_hleg_ethics_guidelines_for_trustworthy_ai-en_87F84A41-A6E8-F38C-BFF661481B40077B_60419 (1).pdf",
+            "title": "ai hleg ethics guidelines for trustworthy ai en 87F84A41 A6E8 F38C BFF661481B40077B 60419 (1)",
+            "kb": 1594,
+            "ext": ".pdf"
+          },
+          {
+            "file": "ai_hleg_policy_and_investment_recommendations_54BA36FA-AB4B-FDE5-23A63FBDC792CB19_60343.pdf",
+            "title": "ai hleg policy and investment recommendations 54BA36FA AB4B FDE5 23A63FBDC792CB19 60343",
+            "kb": 1793,
+            "ext": ".pdf"
+          },
+          {
+            "file": "draft-hse-ai-guidance-doc_v05-2.docx",
+            "title": "draft hse ai guidance doc v05 2",
+            "kb": 515,
+            "ext": ".docx"
+          },
+          {
+            "file": "governing_ai_for_humanity_final_report_en  UN.pdf",
+            "title": "governing ai for humanity final report en UN",
+            "kb": 4238,
+            "ext": ".pdf"
+          },
+          {
+            "file": "national-ai-strategy-refresh-2024_Ireland.pdf",
+            "title": "national ai strategy refresh 2024 Ireland",
+            "kb": 1605,
+            "ext": ".pdf"
+          }
+        ]
+      },
+      {
+        "bucket": "Skills & competences",
+        "folder": "Skills Knowledge Competences Job Roles",
+        "count": 20,
+        "anchor_papers": [
+          "11 Skills You’ll Need To Use AI Effectively Forbes",
+          "AI Skills You Need For 2025 IBM",
+          "How to Learn AI From Scratch in 2025 A Complete Expert Guide DataCamp",
+          "The 14 Essential AI Engineer Skills You Need to Know in 2025 DataCamp"
+        ],
+        "papers": [
+          {
+            "file": "11 Skills You’ll Need To Use AI Effectively_Forbes.pdf",
+            "title": "11 Skills You’ll Need To Use AI Effectively Forbes",
+            "kb": 1130,
+            "ext": ".pdf"
+          },
+          {
+            "file": "12 Must-Have AI Skills for Career Advancement [+ Resources].pdf",
+            "title": "12 Must Have AI Skills for Career Advancement [+ Resources]",
+            "kb": 36381,
+            "ext": ".pdf"
+          },
+          {
+            "file": "AI Skills You Need For 2025 _ IBM.pdf",
+            "title": "AI Skills You Need For 2025 IBM",
+            "kb": 353,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Attitudes, knowledge, and skills towards artificial intelligence from healthcare students.pdf",
+            "title": "Attitudes, knowledge, and skills towards artificial intelligence from healthcare students",
+            "kb": 2268,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Fairness.Measures.for.Machine.Learning.in.Finance.pdf",
+            "title": "Fairness.Measures.for.Machine.Learning.in.Finance",
+            "kb": 1596,
+            "ext": ".pdf"
+          },
+          {
+            "file": "How to Learn AI From Scratch in 2025_ A Complete Expert Guide _ DataCamp.pdf",
+            "title": "How to Learn AI From Scratch in 2025 A Complete Expert Guide DataCamp",
+            "kb": 4140,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Responsible AI for K12.pdf",
+            "title": "Responsible AI for K12",
+            "kb": 885,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Responsible AI practitioner_roles and skills.pdf",
+            "title": "Responsible AI practitioner roles and skills",
+            "kb": 666,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Seeing Like a Toolkit How Toolkits Envision the Work of AI.pdf",
+            "title": "Seeing Like a Toolkit How Toolkits Envision the Work of AI",
+            "kb": 592,
+            "ext": ".pdf"
+          },
+          {
+            "file": "The 14 Essential AI Engineer Skills You Need to Know in 2025 _ DataCamp.pdf",
+            "title": "The 14 Essential AI Engineer Skills You Need to Know in 2025 DataCamp",
+            "kb": 2389,
+            "ext": ".pdf"
+          },
+          {
+            "file": "The Ultimate Guide to the Top AI Skills for 2024 and Beyond - 33rd Square.pdf",
+            "title": "The Ultimate Guide to the Top AI Skills for 2024 and Beyond 33rd Square",
+            "kb": 815,
+            "ext": ".pdf"
+          },
+          {
+            "file": "The impact of AI on workers skills.pdf",
+            "title": "The impact of AI on workers skills",
+            "kb": 1304,
+            "ext": ".pdf"
+          },
+          {
+            "file": "The_Impact_of_Knowledge_Silos_on_Responsible_AI_Pr.pdf",
+            "title": "The Impact of Knowledge Silos on Responsible AI Pr",
+            "kb": 215,
+            "ext": ".pdf"
+          },
+          {
+            "file": "The_role_and_challenges_of_education_for_responsib.pdf",
+            "title": "The role and challenges of education for responsib",
+            "kb": 539,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Top 10 AI Skills for Success_ Mastering the Future.pdf",
+            "title": "Top 10 AI Skills for Success Mastering the Future",
+            "kb": 1255,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Top 17 Essential Artificial Intelligence (AI) Engineer Skills.pdf",
+            "title": "Top 17 Essential Artificial Intelligence (AI) Engineer Skills",
+            "kb": 655,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Top 20 AI Skills for Resume.pdf",
+            "title": "Top 20 AI Skills for Resume",
+            "kb": 2317,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Top 27 AI Skills to have a right Job in 2025 - Analytics Vidhya.pdf",
+            "title": "Top 27 AI Skills to have a right Job in 2025 Analytics Vidhya",
+            "kb": 2398,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Top Skills Required for AI Engineer - GeeksforGeeks.pdf",
+            "title": "Top Skills Required for AI Engineer GeeksforGeeks",
+            "kb": 858,
+            "ext": ".pdf"
+          },
+          {
+            "file": "What skills do you need to work in AI_ _ Udacity.pdf",
+            "title": "What skills do you need to work in AI Udacity",
+            "kb": 2595,
+            "ext": ".pdf"
+          }
+        ]
+      },
+      {
+        "bucket": "Industry insights",
+        "folder": "Industry Insights",
+        "count": 6,
+        "anchor_papers": [],
+        "papers": [
+          {
+            "file": "1-s2.0-S1386505618307007-main.pdf",
+            "title": "1 s2.0 S1386505618307007 main",
+            "kb": 1703,
+            "ext": ".pdf"
+          },
+          {
+            "file": "10-1055-s-0040-1701980.pdf",
+            "title": "10 1055 s 0040 1701980",
+            "kb": 1310,
+            "ext": ".pdf"
+          },
+          {
+            "file": "205.full.pdf",
+            "title": "205.full",
+            "kb": 229,
+            "ext": ".pdf"
+          },
+          {
+            "file": "9789240029200-eng.pdf",
+            "title": "9789240029200 eng",
+            "kb": 1923,
+            "ext": ".pdf"
+          },
+          {
+            "file": "ETHIC_MENNELLA.pdf",
+            "title": "ETHIC MENNELLA",
+            "kb": 1362,
+            "ext": ".pdf"
+          },
+          {
+            "file": "digital-for-care-a-digital-health-framework-for-ireland-2024-2030.pdf",
+            "title": "digital for care a digital health framework for ireland 2024 2030",
+            "kb": 3552,
+            "ext": ".pdf"
+          }
+        ]
+      },
+      {
+        "bucket": "University programs",
+        "folder": "University Programs and Courses",
+        "count": 3,
+        "anchor_papers": [],
+        "papers": [
+          {
+            "file": "Dip in Artificial Intelligence and Business Analytics.pdf",
+            "title": "Dip in Artificial Intelligence and Business Analytics",
+            "kb": 1188,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Justification and Roadmap for Artificial Intelligence (AI).pdf",
+            "title": "Justification and Roadmap for Artificial Intelligence (AI)",
+            "kb": 281,
+            "ext": ".pdf"
+          },
+          {
+            "file": "link for Higher Diploma in Science in Computing (Artificial Intelligence, Machine Learning) – National College of Ireland.docx",
+            "title": "link for Higher Diploma in Science in Computing (Artificial Intelligence, Machine Learning) – National College of Ireland",
+            "kb": 20,
+            "ext": ".docx"
+          }
+        ]
+      },
+      {
+        "bucket": "Training content",
+        "folder": "Training Content and Materials",
+        "count": 3,
+        "anchor_papers": [
+          "AI4Finance Foundation, Microsoft AI For Beginners, Machine Learning Practical Workout 8 Real World Projects"
+        ],
+        "papers": [
+          {
+            "file": "AI4Finance Foundation, Microsoft - AI-For-Beginners, Machine Learning Practical Workout - 8 Real-World Projects.docx",
+            "title": "AI4Finance Foundation, Microsoft AI For Beginners, Machine Learning Practical Workout 8 Real World Projects",
+            "kb": 23,
+            "ext": ".docx"
+          },
+          {
+            "file": "Peeters et al. - 2020 - Hybrid collective intelligence in a human–AI socie.pdf",
+            "title": "Peeters et al. 2020 Hybrid collective intelligence in a human–AI socie",
+            "kb": 933,
+            "ext": ".pdf"
+          },
+          {
+            "file": "de Visser et al. - 2019 - Towards a Theory of Longitudinal Trust Calibration.pdf",
+            "title": "de Visser et al. 2019 Towards a Theory of Longitudinal Trust Calibration",
+            "kb": 2880,
+            "ext": ".pdf"
+          }
+        ]
+      },
+      {
+        "bucket": "Other governance",
+        "folder": "Other",
+        "count": 2,
+        "anchor_papers": [],
+        "papers": [
+          {
+            "file": "AI Inventories Practical Challenges for Organizational Risk Management (3).pdf",
+            "title": "AI Inventories Practical Challenges for Organizational Risk Management (3)",
+            "kb": 3837,
+            "ext": ".pdf"
+          },
+          {
+            "file": "Best Practices for AI Governance Structures.pdf",
+            "title": "Best Practices for AI Governance Structures",
+            "kb": 4224,
+            "ext": ".pdf"
+          }
+        ]
+      },
+      {
+        "bucket": "Github",
+        "folder": "Github Resource Library",
+        "count": 1,
+        "anchor_papers": [],
+        "papers": [
+          {
+            "file": "URL of the repo.docx",
+            "title": "URL of the repo",
+            "kb": 18,
+            "ext": ".docx"
+          }
+        ]
+      }
+    ]
+  },
+  "video_gallery": [
+    {
+      "file": "AI Skills Gap Feedback.mp3",
+      "session": "AI Skills Gap Feedback otter ai",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/Remco-CEO-Verzimpel/AI Skills Gap Feedback_otter_ai/AI Skills Gap Feedback.mp3",
+      "size_mb": 6.4,
+      "kind": "audio"
+    },
+    {
+      "file": "Interview meeting online for P...ct PANORAIMA - Market analysis.mp3",
+      "session": "Interview meeting online for Project PANORAIMA Market analysis otter ai",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/AndrewVDHaar-FiberCarrierAssociation/Interview meeting online for Project PANORAIMA - Market analysis_otter_ai/Interview meeting online for P...ct PANORAIMA - Market analysis.mp3",
+      "size_mb": 6.7,
+      "kind": "audio"
+    },
+    {
+      "file": "Market Analysis Interview for ..., our EU funded AI MSc project.mp3",
+      "session": "Market Analysis Interview for PANORAIMA, our EU funded AI MSc project otter ai",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/JelleHouben-CEO-Binqy/Market Analysis Interview for PANORAIMA, our EU funded AI MSc project_otter_ai/Market Analysis Interview for ..., our EU funded AI MSc project.mp3",
+      "size_mb": 6.7,
+      "kind": "audio"
+    },
+    {
+      "file": "Market analysis interview PANORAIMA.mp3",
+      "session": "Market analysis interview PANORAIMA otter ai",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/LexNicolai-CEO-BlueFiber/Market analysis interview PANORAIMA_otter_ai/Market analysis interview PANORAIMA.mp3",
+      "size_mb": 11.6,
+      "kind": "audio"
+    },
+    {
+      "file": "Interview meeting online for P...ct PANORAIMA - Market analysis.mp3",
+      "session": "Robin CTO Fraudio Interview meeting online for Project PANORAIMA Market analysis",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/Robin-CTO-Fraudio-Interview meeting online for Project PANORAIMA - Market analysis/Interview meeting online for P...ct PANORAIMA - Market analysis.mp3",
+      "size_mb": 7.9,
+      "kind": "audio"
+    },
+    {
+      "file": "interview Petra namens Cordial.mp3",
+      "session": "interview Petra namens Cordial otter ai",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/PetraRuiter-CordialBV/interview Petra namens Cordial_otter_ai/interview Petra namens Cordial.mp3",
+      "size_mb": 9.5,
+      "kind": "audio"
+    },
+    {
+      "file": "[PANORAIMA] Focus Group Session - Large Enterprises - Transcript.vtt",
+      "session": "PANORAIMA 20250506 Focus Group Session Large Enterprises",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250506-Focus Group Session - Large Enterprises/[PANORAIMA] Focus Group Session - Large Enterprises - Transcript.vtt",
+      "size_mb": 0.1,
+      "kind": "transcript"
+    },
+    {
+      "file": "PANORAIMA-20250507-Focus Group Session - SMEs - Transcript.vtt",
+      "session": "PANORAIMA 20250507 Focus Group Session SMEs",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250507-Focus Group Session - SMEs/PANORAIMA-20250507-Focus Group Session - SMEs - Transcript.vtt",
+      "size_mb": 0.1,
+      "kind": "transcript"
+    },
+    {
+      "file": "PANORAIMA-20250508-Focus Group Session - Ecosystems - Trasncript.vtt",
+      "session": "PANORAIMA 20250508 Focus Group Session Ecosystems",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250508-Focus Group Session - Ecosystems/PANORAIMA-20250508-Focus Group Session - Ecosystems - Trasncript.vtt",
+      "size_mb": 0.1,
+      "kind": "transcript"
+    },
+    {
+      "file": "Interview meeting online for Project PANORAIMA - Market analysis-20250513_153446-Meeting Recording.mp4",
+      "session": "AndrewVDHaar FiberCarrierAssociation",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/AndrewVDHaar-FiberCarrierAssociation/Interview meeting online for Project PANORAIMA - Market analysis-20250513_153446-Meeting Recording.mp4",
+      "size_mb": 182.0,
+      "kind": "video"
+    },
+    {
+      "file": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Recording.mp4",
+      "session": "PANORAIMA 20250501 Focus 1 1 Session Ecosystem Stakeholders",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Recording.mp4",
+      "size_mb": 159.9,
+      "kind": "video"
+    },
+    {
+      "file": "Panoraima 1_1 Interview-20250513_160638-Meeting Recording.mp4",
+      "session": "PANORAIMA 20250501 Focus 1 1 Session Large Enterprises",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Large Enterprises/Panoraima 1_1 Interview-20250513_160638-Meeting Recording.mp4",
+      "size_mb": 183.1,
+      "kind": "video"
+    },
+    {
+      "file": "[PANORAIMA] Focus Group Session - Large Enterprises - Recording.mp4",
+      "session": "PANORAIMA 20250506 Focus Group Session Large Enterprises",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250506-Focus Group Session - Large Enterprises/[PANORAIMA] Focus Group Session - Large Enterprises - Recording.mp4",
+      "size_mb": 154.6,
+      "kind": "video"
+    },
+    {
+      "file": "PANORAIMA-20250507-Focus Group Session - SMEs - Recording.mp4",
+      "session": "PANORAIMA 20250507 Focus Group Session SMEs",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250507-Focus Group Session - SMEs/PANORAIMA-20250507-Focus Group Session - SMEs - Recording.mp4",
+      "size_mb": 174.3,
+      "kind": "video"
+    },
+    {
+      "file": "PANORAIMA-20250508-Focus Group Session - Ecosystems - Recording.mp4",
+      "session": "PANORAIMA 20250508 Focus Group Session Ecosystems",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250508-Focus Group Session - Ecosystems/PANORAIMA-20250508-Focus Group Session - Ecosystems - Recording.mp4",
+      "size_mb": 150.9,
+      "kind": "video"
+    }
+  ],
+  "catalogue": [
+    {
+      "file": "QAvsQC progress statistics.xlsx",
+      "rel_path": "QAvsQC progress statistics.xlsx",
+      "top": "QAvsQC progress statistics.xlsx",
+      "ext": ".xlsx",
+      "size_kb": 20
+    },
+    {
+      "file": "Guidelines_Desktop and Stakeholders Survey Input.docx",
+      "rel_path": "Guidelines_Desktop and Stakeholders Survey Input.docx",
+      "top": "Guidelines_Desktop and Stakeholders Survey Input.docx",
+      "ext": ".docx",
+      "size_kb": 62
+    },
+    {
+      "file": "Work Package 1.docx",
+      "rel_path": "Work Package 1.docx",
+      "top": "Work Package 1.docx",
+      "ext": ".docx",
+      "size_kb": 27
+    },
+    {
+      "file": "Tasks and Responsibilities.xlsx",
+      "rel_path": "Tasks and Responsibilities.xlsx",
+      "top": "Tasks and Responsibilities.xlsx",
+      "ext": ".xlsx",
+      "size_kb": 20
+    },
+    {
+      "file": "PANORAIMA-Communication-Plan-DRAFT.docx",
+      "rel_path": "PANORAIMA-Communication-Plan-DRAFT.docx",
+      "top": "PANORAIMA-Communication-Plan-DRAFT.docx",
+      "ext": ".docx",
+      "size_kb": 76
+    },
+    {
+      "file": "Timeline_v0.2.xlsx",
+      "rel_path": "Timeline_v0.2.xlsx",
+      "top": "Timeline_v0.2.xlsx",
+      "ext": ".xlsx",
+      "size_kb": 13
+    },
+    {
+      "file": "AI competency framework  for students Review.odt",
+      "rel_path": "Data Collection_Other Findings/AI competency framework  for students Review.odt",
+      "top": "Data Collection_Other Findings",
+      "ext": ".odt",
+      "size_kb": 48
+    },
+    {
+      "file": "Explainable Artificial Intelligence a Systematic Review.odt",
+      "rel_path": "Data Collection_Other Findings/Explainable Artificial Intelligence a Systematic Review.odt",
+      "top": "Data Collection_Other Findings",
+      "ext": ".odt",
+      "size_kb": 47
+    },
+    {
+      "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.1.1.docx",
+      "rel_path": "Deliverable 2.1/PANORAIMA_W2- MS3 Market and Needs Report_v.1.1.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 1562
+    },
+    {
+      "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.04.docx",
+      "rel_path": "Deliverable 2.1/PANORAIMA_W2- MS3 Market and Needs Report_v.04.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 1076
+    },
+    {
+      "file": "Deliverable 2.1 Market & Needs Analysis PANORAIMA v1.0.pdf",
+      "rel_path": "Deliverable 2.1/Deliverable 2.1 Market & Needs Analysis PANORAIMA v1.0.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 8780
+    },
+    {
+      "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.1.0_FOR REVIEW.docx",
+      "rel_path": "Deliverable 2.1/PANORAIMA_W2- MS3 Market and Needs Report_v.1.0_FOR REVIEW.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 1233
+    },
+    {
+      "file": "Desktop Research KPI Matrix.xlsx",
+      "rel_path": "Desktop Research and Relevant Work/Desktop Research KPI Matrix.xlsx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 15
+    },
+    {
+      "file": "Desktop Research_Questions for Data Collection.docx",
+      "rel_path": "Desktop Research and Relevant Work/Desktop Research_Questions for Data Collection.docx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 25
+    },
+    {
+      "file": "Desktop Research_Topics and Subtopics.docx",
+      "rel_path": "Desktop Research and Relevant Work/Desktop Research_Topics and Subtopics.docx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 23
+    },
+    {
+      "file": "Stakeholders Identification_Register.xlsx",
+      "rel_path": "05_Focus Groups and Relevant Work/Stakeholders Identification_Register.xlsx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 37
+    },
+    {
+      "file": "PANORAIMA-20250324-WP2-T21-Focus-Groups-.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/PANORAIMA-20250324-WP2-T21-Focus-Groups-.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 84
+    },
+    {
+      "file": "20250314_Bi-weekly meeting.pptx",
+      "rel_path": "Work Meetings Presentations and Materials/20250314_Bi-weekly meeting.pptx",
+      "top": "Work Meetings Presentations and Materials",
+      "ext": ".pptx",
+      "size_kb": 393
+    },
+    {
+      "file": "PANORAIMA flyer-EU-credit.pdf",
+      "rel_path": "Work Meetings Presentations and Materials/PANORAIMA flyer-EU-credit.pdf",
+      "top": "Work Meetings Presentations and Materials",
+      "ext": ".pdf",
+      "size_kb": 1647
+    },
+    {
+      "file": "20250220_PANORAIMA_Scope of Work.pptx",
+      "rel_path": "Work Meetings Presentations and Materials/20250220_PANORAIMA_Scope of Work.pptx",
+      "top": "Work Meetings Presentations and Materials",
+      "ext": ".pptx",
+      "size_kb": 90
+    },
+    {
+      "file": "PANORAIMA flyer.pdf",
+      "rel_path": "Work Meetings Presentations and Materials/PANORAIMA flyer.pdf",
+      "top": "Work Meetings Presentations and Materials",
+      "ext": ".pdf",
+      "size_kb": 405
+    },
+    {
+      "file": "Survey_Greece_reviewed.xlsx",
+      "rel_path": "Greece/Survey_Greece_reviewed.xlsx",
+      "top": "Greece",
+      "ext": ".xlsx",
+      "size_kb": 25
+    },
+    {
+      "file": "InterviewSME_Preliminary Research on Workforce Needs and AI Trends_NOT_reviewed.xlsx",
+      "rel_path": "Greece/InterviewSME_Preliminary Research on Workforce Needs and AI Trends_NOT_reviewed.xlsx",
+      "top": "Greece",
+      "ext": ".xlsx",
+      "size_kb": 45
+    },
+    {
+      "file": "Desktop Research Inputs(1-148)_reviewed.xlsx",
+      "rel_path": "Greece/Desktop Research Inputs(1-148)_reviewed.xlsx",
+      "top": "Greece",
+      "ext": ".xlsx",
+      "size_kb": 37
+    },
+    {
+      "file": "SurveyResearch&Academia_Workforce Needs(1-31)_reviewed.xlsx",
+      "rel_path": "Greece/SurveyResearch&Academia_Workforce Needs(1-31)_reviewed.xlsx",
+      "top": "Greece",
+      "ext": ".xlsx",
+      "size_kb": 25
+    },
+    {
+      "file": "Stakeholders Identification_Register.xlsx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/Stakeholders Identification_Register.xlsx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 31
+    },
+    {
+      "file": "Focus Group Questions Presentation.pptx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/Focus Group Questions Presentation.pptx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".pptx",
+      "size_kb": 1003
+    },
+    {
+      "file": "PANORAIMA-20250606-WP2, T2.1 - Initial Results Processing - Irish Working Group.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250606-WP2, T2.1 - Initial Results Processing - Irish Working Group.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 70
+    },
+    {
+      "file": "Summary of Findings from Interviews and Focus Groups - Ireland.xlsx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/Summary of Findings from Interviews and Focus Groups - Ireland.xlsx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 17
+    },
+    {
+      "file": "Krueger-FocusGroupInterviews.pdf",
+      "rel_path": "05_Focus Groups and Relevant Work/Reference Literature/Krueger-FocusGroupInterviews.pdf",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 145
+    },
+    {
+      "file": "toolkitforconductingfocusgroups-omni.pdf",
+      "rel_path": "05_Focus Groups and Relevant Work/Reference Literature/toolkitforconductingfocusgroups-omni.pdf",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 326
+    },
+    {
+      "file": "4_How_to_Conduct_a_Focus_Group-2-1.pdf",
+      "rel_path": "05_Focus Groups and Relevant Work/Reference Literature/4_How_to_Conduct_a_Focus_Group-2-1.pdf",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 164
+    },
+    {
+      "file": "focus-groups.pdf",
+      "rel_path": "05_Focus Groups and Relevant Work/Reference Literature/focus-groups.pdf",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 247
+    },
+    {
+      "file": "SME_Questionnaire_Focus_Group.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Hamburg Working Group/SME_Questionnaire_Focus_Group.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 36
+    },
+    {
+      "file": "Interview_AR_ENG.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Hamburg Working Group/Interview_AR_ENG.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 38
+    },
+    {
+      "file": "Interview_JS_ENG.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Hamburg Working Group/Interview_JS_ENG.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 36
+    },
+    {
+      "file": "Focus_Group_ENG.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Hamburg Working Group/Focus_Group_ENG.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 95
+    },
+    {
+      "file": "Interview_MI_ENG.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Hamburg Working Group/Interview_MI_ENG.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 34
+    },
+    {
+      "file": "Interview_BT_ENG.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Hamburg Working Group/Interview_BT_ENG.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 31
+    },
+    {
+      "file": "Interview_LH_ENG.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Hamburg Working Group/Interview_LH_ENG.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 37
+    },
+    {
+      "file": "PANORAIMA-20250324-WP2-T21-Focus-Groups-Initial-Profile-Scope-and-Schedule-DRAFT.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Archive/PANORAIMA-20250324-WP2-T21-Focus-Groups-Initial-Profile-Scope-and-Schedule-DRAFT.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 84
+    },
+    {
+      "file": "InterviewSME_Preliminary Research on Workforce Needs and AI Trends_under_review.xlsx",
+      "rel_path": "05_Focus Groups and Relevant Work/GR_Working Group/InterviewSME_Preliminary Research on Workforce Needs and AI Trends_under_review.xlsx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 45
+    },
+    {
+      "file": "Desktop Research Inputs(1-148)_GR_under_review.xlsx",
+      "rel_path": "05_Focus Groups and Relevant Work/GR_Working Group/Desktop Research Inputs(1-148)_GR_under_review.xlsx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 35
+    },
+    {
+      "file": "SurveyResearch&Academia_Workforce Needs(1-31)_GR_reviewed.xlsx",
+      "rel_path": "05_Focus Groups and Relevant Work/GR_Working Group/SurveyResearch&Academia_Workforce Needs(1-31)_GR_reviewed.xlsx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 26
+    },
+    {
+      "file": "Survey_Greece_under_review.xlsx",
+      "rel_path": "05_Focus Groups and Relevant Work/GR_Working Group/Survey_Greece_under_review.xlsx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 20
+    },
+    {
+      "file": "Consolidated Qualitative Report SME Interviews Real AI B.V..docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Consolidated Qualitative Report SME Interviews Real AI B.V..docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 5742
+    },
+    {
+      "file": "PANORAIMA Focus Group for SMEs - Information Pack - NL.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Info-Packs/PANORAIMA Focus Group for SMEs - Information Pack - NL.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 2639
+    },
+    {
+      "file": "PANORAIMA Focus Group for Large Enterprises - Information Pack - NL.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Info-Packs/PANORAIMA Focus Group for Large Enterprises - Information Pack - NL.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 2638
+    },
+    {
+      "file": "PANORAIMA Focus Group for Ecosystem Stakeholders- Information Pack - NL.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Info-Packs/PANORAIMA Focus Group for Ecosystem Stakeholders- Information Pack - NL.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 2336
+    },
+    {
+      "file": "InterviewsHU_summary.xlsx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/HU/InterviewsHU_summary.xlsx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 21
+    },
+    {
+      "file": "Interview meeting online for Project PANORAIMA - Market analysis-20250513_153446-Meeting Recording.mp4",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/AndrewVDHaar-FiberCarrierAssociation/Interview meeting online for Project PANORAIMA - Market analysis-20250513_153446-Meeting Recording.mp4",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp4",
+      "size_kb": 186336
+    },
+    {
+      "file": "Interview meeting online for P...ct PANORAIMA - Market analysis.mp3",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/Robin-CTO-Fraudio-Interview meeting online for Project PANORAIMA - Market analysis/Interview meeting online for P...ct PANORAIMA - Market analysis.mp3",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp3",
+      "size_kb": 8123
+    },
+    {
+      "file": "Interview meeting online for P...ct PANORAIMA - Market analysis.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/Robin-CTO-Fraudio-Interview meeting online for Project PANORAIMA - Market analysis/Interview meeting online for P...ct PANORAIMA - Market analysis.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 6017
+    },
+    {
+      "file": "interview Petra namens Cordial.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/PetraRuiter-CordialBV/interview Petra namens Cordial_otter_ai/interview Petra namens Cordial.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 42606
+    },
+    {
+      "file": "PetraRuiter-CordialBV-Dutch.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/PetraRuiter-CordialBV/interview Petra namens Cordial_otter_ai/PetraRuiter-CordialBV-Dutch.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 35
+    },
+    {
+      "file": "interview Petra namens Cordial.mp3.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/PetraRuiter-CordialBV/interview Petra namens Cordial_otter_ai/interview Petra namens Cordial.mp3.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 26
+    },
+    {
+      "file": "interview Petra namens Cordial.mp3",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/PetraRuiter-CordialBV/interview Petra namens Cordial_otter_ai/interview Petra namens Cordial.mp3",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp3",
+      "size_kb": 9740
+    },
+    {
+      "file": "Market analysis interview PANORAIMA.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/LexNicolai-CEO-BlueFiber/Market analysis interview PANORAIMA_otter_ai/Market analysis interview PANORAIMA.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 7515
+    },
+    {
+      "file": "Market analysis interview PANORAIMA.mp3",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/LexNicolai-CEO-BlueFiber/Market analysis interview PANORAIMA_otter_ai/Market analysis interview PANORAIMA.mp3",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp3",
+      "size_kb": 11901
+    },
+    {
+      "file": "Interview meeting online for P...ct PANORAIMA - Market analysis.mp3",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/AndrewVDHaar-FiberCarrierAssociation/Interview meeting online for Project PANORAIMA - Market analysis_otter_ai/Interview meeting online for P...ct PANORAIMA - Market analysis.mp3",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp3",
+      "size_kb": 6871
+    },
+    {
+      "file": "Interview meeting online for P...ct PANORAIMA - Market analysis.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/AndrewVDHaar-FiberCarrierAssociation/Interview meeting online for Project PANORAIMA - Market analysis_otter_ai/Interview meeting online for P...ct PANORAIMA - Market analysis.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 2283
+    },
+    {
+      "file": "AI Skills Gap Feedback.mp3",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/Remco-CEO-Verzimpel/AI Skills Gap Feedback_otter_ai/AI Skills Gap Feedback.mp3",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp3",
+      "size_kb": 6515
+    },
+    {
+      "file": "AI Skills Gap Feedback.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/Remco-CEO-Verzimpel/AI Skills Gap Feedback_otter_ai/AI Skills Gap Feedback.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 50
+    },
+    {
+      "file": "Market Analysis Interview for ..., our EU funded AI MSc project.mp3",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/JelleHouben-CEO-Binqy/Market Analysis Interview for PANORAIMA, our EU funded AI MSc project_otter_ai/Market Analysis Interview for ..., our EU funded AI MSc project.mp3",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp3",
+      "size_kb": 6885
+    },
+    {
+      "file": "Market Analysis Interview for ..., our EU funded AI MSc project.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/JelleHouben-CEO-Binqy/Market Analysis Interview for PANORAIMA, our EU funded AI MSc project_otter_ai/Market Analysis Interview for ..., our EU funded AI MSc project.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 17919
+    },
+    {
+      "file": "PANORAIMA Focus Group for Large Enterprises - Information Pack.pdf",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/Information Packs/PANORAIMA Focus Group for Large Enterprises - Information Pack.pdf",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 287
+    },
+    {
+      "file": "PANORAIMA Focus Group for SMEs - Information Pack.pdf",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/Information Packs/PANORAIMA Focus Group for SMEs - Information Pack.pdf",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 288
+    },
+    {
+      "file": "PANORAIMA Focus Group for Ecosystem Stakeholders- Information Pack.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/Information Packs/PANORAIMA Focus Group for Ecosystem Stakeholders- Information Pack.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 2318
+    },
+    {
+      "file": "PANORAIMA Focus Group for SMEs - Information Pack.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/Information Packs/PANORAIMA Focus Group for SMEs - Information Pack.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 2317
+    },
+    {
+      "file": "PANORAIMA Focus Group for Large Enterprises - Information Pack.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/Information Packs/PANORAIMA Focus Group for Large Enterprises - Information Pack.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 497
+    },
+    {
+      "file": "PANORAIMA Focus Group for Ecosystem Stakeholders - Information Pack.pdf",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/Information Packs/PANORAIMA Focus Group for Ecosystem Stakeholders - Information Pack.pdf",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 297
+    },
+    {
+      "file": "[PANORAIMA] Focus Group Session - Large Enterprises - Recording.mp4",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250506-Focus Group Session - Large Enterprises/[PANORAIMA] Focus Group Session - Large Enterprises - Recording.mp4",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp4",
+      "size_kb": 158268
+    },
+    {
+      "file": "[PANORAIMA] Focus Group Session - Large Enterprises - Transcript.vtt",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250506-Focus Group Session - Large Enterprises/[PANORAIMA] Focus Group Session - Large Enterprises - Transcript.vtt",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".vtt",
+      "size_kb": 104
+    },
+    {
+      "file": "PANORAIMA-20250508-Focus Group Session - Ecosystems - Report.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250508-Focus Group Session - Ecosystems/PANORAIMA-20250508-Focus Group Session - Ecosystems - Report.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 42
+    },
+    {
+      "file": "PANORAIMA-20250508-Focus Group Session - Ecosystems - Trasncript.vtt",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250508-Focus Group Session - Ecosystems/PANORAIMA-20250508-Focus Group Session - Ecosystems - Trasncript.vtt",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".vtt",
+      "size_kb": 93
+    },
+    {
+      "file": "PANORAIMA-20250508-Focus Group Session - Ecosystems - Recording.mp4",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250508-Focus Group Session - Ecosystems/PANORAIMA-20250508-Focus Group Session - Ecosystems - Recording.mp4",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp4",
+      "size_kb": 154492
+    },
+    {
+      "file": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Report.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Report.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 42
+    },
+    {
+      "file": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Transcript.txt",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Transcript.txt",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".txt",
+      "size_kb": 79
+    },
+    {
+      "file": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Presentation.pptx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Presentation.pptx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".pptx",
+      "size_kb": 598
+    },
+    {
+      "file": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Recording.mp4",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Recording.mp4",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp4",
+      "size_kb": 163760
+    },
+    {
+      "file": "Panoraima 1_1 Interview-20250513_160638-Meeting Recording.mp4",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Large Enterprises/Panoraima 1_1 Interview-20250513_160638-Meeting Recording.mp4",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp4",
+      "size_kb": 187512
+    },
+    {
+      "file": "PANORAIMA-20250513-Focus 1-1 Session - Large Enterprises - Report.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Large Enterprises/PANORAIMA-20250513-Focus 1-1 Session - Large Enterprises - Report.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 82
+    },
+    {
+      "file": "Panoraima 1_1 Interview-20250513_160638-Meeting Transcription.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Large Enterprises/Panoraima 1_1 Interview-20250513_160638-Meeting Transcription.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 62
+    },
+    {
+      "file": "PANORAIMA-20250507-Focus Group Session - SMEs - Recording.mp4",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250507-Focus Group Session - SMEs/PANORAIMA-20250507-Focus Group Session - SMEs - Recording.mp4",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".mp4",
+      "size_kb": 178443
+    },
+    {
+      "file": "PANORAIMA-20250507-Focus Group Session - SMEs - Transcript.vtt",
+      "rel_path": "05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250507-Focus Group Session - SMEs/PANORAIMA-20250507-Focus Group Session - SMEs - Transcript.vtt",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".vtt",
+      "size_kb": 88
+    },
+    {
+      "file": "Github Repo Register and Resources Shortlist.xlsx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Github Repo Register and Resources Shortlist.xlsx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 75
+    },
+    {
+      "file": "Panoraima Desktop Research — Final Contribution Brian Byrne.docx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Panoraima Desktop Research — Final Contribution Brian Byrne.docx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 25
+    },
+    {
+      "file": "Panoraima Summary Spreadsheet Brian Byrne.xlsx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Panoraima Summary Spreadsheet Brian Byrne.xlsx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 17
+    },
+    {
+      "file": "Panoraima Summary Spreadsheet_Jennifer Q Shang.xlsx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Panoraima Summary Spreadsheet_Jennifer Q Shang.xlsx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 18
+    },
+    {
+      "file": "Desktop Research_Resources Register.xlsx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Desktop Research_Resources Register.xlsx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".xlsx",
+      "size_kb": 47
+    },
+    {
+      "file": "URL of the repo.docx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Github Resource Library/URL of the repo.docx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 18
+    },
+    {
+      "file": "10-1055-s-0040-1701980.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Industry Insights/10-1055-s-0040-1701980.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1310
+    },
+    {
+      "file": "1-s2.0-S1386505618307007-main.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Industry Insights/1-s2.0-S1386505618307007-main.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1703
+    },
+    {
+      "file": "205.full.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Industry Insights/205.full.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 229
+    },
+    {
+      "file": "ETHIC_MENNELLA.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Industry Insights/ETHIC_MENNELLA.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1362
+    },
+    {
+      "file": "9789240029200-eng.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Industry Insights/9789240029200-eng.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1923
+    },
+    {
+      "file": "digital-for-care-a-digital-health-framework-for-ireland-2024-2030.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Industry Insights/digital-for-care-a-digital-health-framework-for-ireland-2024-2030.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 3552
+    },
+    {
+      "file": "AI Inventories Practical Challenges for Organizational Risk Management (3).pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Other/AI Inventories Practical Challenges for Organizational Risk Management (3).pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 3837
+    },
+    {
+      "file": "Best Practices for AI Governance Structures.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Other/Best Practices for AI Governance Structures.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 4224
+    },
+    {
+      "file": "The impact of AI on workers skills.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/The impact of AI on workers skills.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1304
+    },
+    {
+      "file": "The_Impact_of_Knowledge_Silos_on_Responsible_AI_Pr.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/The_Impact_of_Knowledge_Silos_on_Responsible_AI_Pr.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 215
+    },
+    {
+      "file": "Fairness.Measures.for.Machine.Learning.in.Finance.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Fairness.Measures.for.Machine.Learning.in.Finance.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1596
+    },
+    {
+      "file": "AI Skills You Need For 2025 _ IBM.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/AI Skills You Need For 2025 _ IBM.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 353
+    },
+    {
+      "file": "Top Skills Required for AI Engineer - GeeksforGeeks.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Top Skills Required for AI Engineer - GeeksforGeeks.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 858
+    },
+    {
+      "file": "The Ultimate Guide to the Top AI Skills for 2024 and Beyond - 33rd Square.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/The Ultimate Guide to the Top AI Skills for 2024 and Beyond - 33rd Square.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 815
+    },
+    {
+      "file": "Responsible AI for K12.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Responsible AI for K12.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 885
+    },
+    {
+      "file": "Top 20 AI Skills for Resume.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Top 20 AI Skills for Resume.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 2317
+    },
+    {
+      "file": "The_role_and_challenges_of_education_for_responsib.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/The_role_and_challenges_of_education_for_responsib.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 539
+    },
+    {
+      "file": "11 Skills You’ll Need To Use AI Effectively_Forbes.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/11 Skills You’ll Need To Use AI Effectively_Forbes.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1130
+    },
+    {
+      "file": "The 14 Essential AI Engineer Skills You Need to Know in 2025 _ DataCamp.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/The 14 Essential AI Engineer Skills You Need to Know in 2025 _ DataCamp.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 2389
+    },
+    {
+      "file": "Attitudes, knowledge, and skills towards artificial intelligence from healthcare students.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Attitudes, knowledge, and skills towards artificial intelligence from healthcare students.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 2268
+    },
+    {
+      "file": "Top 17 Essential Artificial Intelligence (AI) Engineer Skills.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Top 17 Essential Artificial Intelligence (AI) Engineer Skills.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 655
+    },
+    {
+      "file": "Top 27 AI Skills to have a right Job in 2025 - Analytics Vidhya.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Top 27 AI Skills to have a right Job in 2025 - Analytics Vidhya.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 2398
+    },
+    {
+      "file": "Seeing Like a Toolkit How Toolkits Envision the Work of AI.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Seeing Like a Toolkit How Toolkits Envision the Work of AI.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 592
+    },
+    {
+      "file": "12 Must-Have AI Skills for Career Advancement [+ Resources].pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/12 Must-Have AI Skills for Career Advancement [+ Resources].pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 36381
+    },
+    {
+      "file": "What skills do you need to work in AI_ _ Udacity.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/What skills do you need to work in AI_ _ Udacity.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 2595
+    },
+    {
+      "file": "Top 10 AI Skills for Success_ Mastering the Future.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Top 10 AI Skills for Success_ Mastering the Future.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1255
+    },
+    {
+      "file": "Responsible AI practitioner_roles and skills.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/Responsible AI practitioner_roles and skills.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 666
+    },
+    {
+      "file": "How to Learn AI From Scratch in 2025_ A Complete Expert Guide _ DataCamp.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Skills Knowledge Competences Job Roles/How to Learn AI From Scratch in 2025_ A Complete Expert Guide _ DataCamp.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 4140
+    },
+    {
+      "file": "Dip in Artificial Intelligence and Business Analytics.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/University Programs and Courses/Dip in Artificial Intelligence and Business Analytics.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1188
+    },
+    {
+      "file": "link for Higher Diploma in Science in Computing (Artificial Intelligence, Machine Learning) – National College of Ireland.docx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/University Programs and Courses/link for Higher Diploma in Science in Computing (Artificial Intelligence, Machine Learning) – National College of Ireland.docx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 20
+    },
+    {
+      "file": "Justification and Roadmap for Artificial Intelligence (AI).pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/University Programs and Courses/Justification and Roadmap for Artificial Intelligence (AI).pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 281
+    },
+    {
+      "file": "AI4Finance Foundation, Microsoft - AI-For-Beginners, Machine Learning Practical Workout - 8 Real-World Projects.docx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Training Content and Materials/AI4Finance Foundation, Microsoft - AI-For-Beginners, Machine Learning Practical Workout - 8 Real-World Projects.docx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 23
+    },
+    {
+      "file": "de Visser et al. - 2019 - Towards a Theory of Longitudinal Trust Calibration.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Training Content and Materials/de Visser et al. - 2019 - Towards a Theory of Longitudinal Trust Calibration.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 2880
+    },
+    {
+      "file": "Peeters et al. - 2020 - Hybrid collective intelligence in a human–AI socie.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/Training Content and Materials/Peeters et al. - 2020 - Hybrid collective intelligence in a human–AI socie.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 933
+    },
+    {
+      "file": "AI HLEG_Ethics Guidelines for Trustworthy.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/AI HLEG_Ethics Guidelines for Trustworthy.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1553
+    },
+    {
+      "file": "Living guidelines on the responsible use of generative AI in research _ European comission.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/Living guidelines on the responsible use of generative AI in research _ European comission.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 566
+    },
+    {
+      "file": "AI competency framework for students UNESCO.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/AI competency framework for students UNESCO.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 745
+    },
+    {
+      "file": "TOWARDS RESPONSIBLE AI THE INTERSECTION OF TECHNOLOGY SOCIETY AND GOVERNMENT LAW.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/TOWARDS RESPONSIBLE AI THE INTERSECTION OF TECHNOLOGY SOCIETY AND GOVERNMENT LAW.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 399
+    },
+    {
+      "file": "AI_Governance_2024.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/AI_Governance_2024.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 585
+    },
+    {
+      "file": "ai_hleg_ethics_guidelines_for_trustworthy_ai-en_87F84A41-A6E8-F38C-BFF661481B40077B_60419 (1).pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/ai_hleg_ethics_guidelines_for_trustworthy_ai-en_87F84A41-A6E8-F38C-BFF661481B40077B_60419 (1).pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1594
+    },
+    {
+      "file": "national-ai-strategy-refresh-2024_Ireland.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/national-ai-strategy-refresh-2024_Ireland.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1605
+    },
+    {
+      "file": "The Artificial Intelligence and Data Act (AIDA) Canada.docx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/The Artificial Intelligence and Data Act (AIDA) Canada.docx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 102
+    },
+    {
+      "file": "Ten Considerations for Generative Artificial Intelligence Adoption in Irish Higher Education.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/Ten Considerations for Generative Artificial Intelligence Adoption in Irish Higher Education.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 128
+    },
+    {
+      "file": "Guidelines_for_the_Responsible_Use_of_AI_in_the_Public_Service.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/Guidelines_for_the_Responsible_Use_of_AI_in_the_Public_Service.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 5186
+    },
+    {
+      "file": "UAE-National-Strategy-for-Artificial-Intelligence-2031.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/UAE-National-Strategy-for-Artificial-Intelligence-2031.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 13225
+    },
+    {
+      "file": "National_AI_Strategy _ UK.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/National_AI_Strategy _ UK.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 3568
+    },
+    {
+      "file": "Governance Guidelines for Implementation of AI Principles  _ Japan.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/Governance Guidelines for Implementation of AI Principles  _ Japan.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1041
+    },
+    {
+      "file": "governing_ai_for_humanity_final_report_en  UN.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/governing_ai_for_humanity_final_report_en  UN.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 4238
+    },
+    {
+      "file": "AIAdoptionFramework Saudi Arabia.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/AIAdoptionFramework Saudi Arabia.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 549
+    },
+    {
+      "file": "National Artificial Intelligence Initiative Act of 2020 USA.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/National Artificial Intelligence Initiative Act of 2020 USA.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 306
+    },
+    {
+      "file": "draft-hse-ai-guidance-doc_v05-2.docx",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/draft-hse-ai-guidance-doc_v05-2.docx",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 515
+    },
+    {
+      "file": "ai_hleg_policy_and_investment_recommendations_54BA36FA-AB4B-FDE5-23A63FBDC792CB19_60343.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/ai_hleg_policy_and_investment_recommendations_54BA36FA-AB4B-FDE5-23A63FBDC792CB19_60343.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1793
+    },
+    {
+      "file": "EU AI ACT.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/EU AI ACT.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 2522
+    },
+    {
+      "file": "ETHICS GUIDELINES FOR TRUSTWORTHY AI High-Level Expert Group on Artificial Intelligence  _ EU.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/ETHICS GUIDELINES FOR TRUSTWORTHY AI High-Level Expert Group on Artificial Intelligence  _ EU.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 1594
+    },
+    {
+      "file": "NSAI_AI_report_digital_links_Ireland.pdf",
+      "rel_path": "Desktop Research and Relevant Work/Task 2.1 Resources/AI_regulatory_strategy_framework/NSAI_AI_report_digital_links_Ireland.pdf",
+      "top": "Desktop Research and Relevant Work",
+      "ext": ".pdf",
+      "size_kb": 4406
+    },
+    {
+      "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.03.docx",
+      "rel_path": "Deliverable 2.1/Archive/PANORAIMA_W2- MS3 Market and Needs Report_v.03.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 934
+    },
+    {
+      "file": "Ebook-AI-Mastering-Legal-Compliance-2023.pdf",
+      "rel_path": "Data Collection_Other Findings/law, compliance, public services/Ebook-AI-Mastering-Legal-Compliance-2023.pdf",
+      "top": "Data Collection_Other Findings",
+      "ext": ".pdf",
+      "size_kb": 5676
+    },
+    {
+      "file": "1802.01029v1.pdf",
+      "rel_path": "Data Collection_Other Findings/law, compliance, public services/1802.01029v1.pdf",
+      "top": "Data Collection_Other Findings",
+      "ext": ".pdf",
+      "size_kb": 257
+    },
+    {
+      "file": "Responsability and AI EN DGI(2019)05 web A4.pdf",
+      "rel_path": "Data Collection_Other Findings/law, compliance, public services/Responsability and AI EN DGI(2019)05 web A4.pdf",
+      "top": "Data Collection_Other Findings",
+      "ext": ".pdf",
+      "size_kb": 7485
+    },
+    {
+      "file": "cellar%3Ae0649735-a372-11eb-9585-01aa75ed71a1.0001.02%2FDOC_1.pdf",
+      "rel_path": "Data Collection_Other Findings/law, compliance, public services/cellar%3Ae0649735-a372-11eb-9585-01aa75ed71a1.0001.02%2FDOC_1.pdf",
+      "top": "Data Collection_Other Findings",
+      "ext": ".pdf",
+      "size_kb": 1319
+    },
+    {
+      "file": "MSI-AUT(2018)05_eng_Draft Study on AI 9 November.docx.pdf",
+      "rel_path": "Data Collection_Other Findings/law, compliance, public services/MSI-AUT(2018)05_eng_Draft Study on AI 9 November.docx.pdf",
+      "top": "Data Collection_Other Findings",
+      "ext": ".pdf",
+      "size_kb": 1516
+    }
+  ],
+  "generated_at": "2026-04-19T17:40:44Z"
+}

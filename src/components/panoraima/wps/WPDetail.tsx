@@ -83,7 +83,12 @@ export default function WPDetail({ detail }: Props) {
 
           {/* 2 — Task breakdown */}
           <section className="animate-fade-up">
-            <TaskBreakdown tasks={detail.tasks} onDeliverableClick={openDeliverable} />
+            <TaskBreakdown
+              tasks={detail.tasks}
+              onDeliverableClick={openDeliverable}
+              deepDiveTaskIds={detail.wp === "WP2" ? ["T2.1"] : []}
+              wpSlug={detail.wp.toLowerCase()}
+            />
           </section>
 
           {/* 3 — Corpus-wide themes + stakeholder typology */}
