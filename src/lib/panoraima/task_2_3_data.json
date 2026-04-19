@@ -1,0 +1,380 @@
+{
+  "task": "T2.3",
+  "wp": "WP2",
+  "title": "Internal Accreditation",
+  "tagline": "Mapping how 8 partner universities will accredit the PANORAIMA Masters — and where HAW needs to help.",
+  "coordinator": "HAW",
+  "coordinator_person": "Jakob de Boer",
+  "ops_contact": {
+    "name": "Christine Wollmann",
+    "email": "Christine.Wollmann@haw-hamburg.de",
+    "phone": "+49 40 428 75-9021",
+    "role": "HAW EQA office — accreditation of study programmes"
+  },
+  "involved": [
+    "SU",
+    "UNIWA",
+    "BME",
+    "KPI",
+    "HU",
+    "UNINA",
+    "TUD"
+  ],
+  "kpis": {
+    "partners_total": 8,
+    "existing_programmes": 13,
+    "partners_need_help": 4,
+    "partners_ready": 2,
+    "partners_waiting": 2,
+    "file_count": 2
+  },
+  "task_brief": {
+    "authored_by": "Jakob de Boer",
+    "authored_at": "2025-03-14",
+    "sections": [
+      {
+        "n": 1,
+        "title": "What HAW will do",
+        "slide": 1,
+        "bullets": [
+          "Collect the general requirements at consortium universities via the Excel query (accreditation status + responsible contacts).",
+          "Contact each partner promptly to ask when its accreditation process should start and which documents (programme description, module handbook, …) are required by when.",
+          "Create a PANORAIMA summary roadmap from the collected responses."
+        ]
+      },
+      {
+        "n": 2,
+        "title": "Current status — and the open unknowns",
+        "slide": 2,
+        "bullets": [
+          "Important to understand, as early as possible, how each PANORAIMA university runs its accreditation process.",
+          "Unknown #1: how many 'new' degree programmes PANORAIMA will ultimately create (clarified only at the end of WP2).",
+          "Unknown #2: how much of HCAIM's existing accreditation work can be reused."
+        ]
+      },
+      {
+        "n": 3,
+        "title": "Roadmap for accreditation",
+        "slide": 3,
+        "bullets": [
+          "Contact the responsible persons at every consortium university.",
+          "Inquire about each local process & lead time for programme and system accreditation.",
+          "Ask for (or compile) a checklist of documents that each university requires."
+        ]
+      }
+    ],
+    "source_file": "PANORAIMA-WP 2.3-Accreditierung.pptx",
+    "source_kb": 1282,
+    "source_slide_count": 4
+  },
+  "partners": [
+    {
+      "abbr": "HAW",
+      "institution": "Hochschule für Angewandte Wissenschaften Hamburg",
+      "country": "Germany",
+      "coords": [
+        10.0,
+        53.55
+      ],
+      "programmes": 4,
+      "institutional_accreditation": "yes",
+      "programme_accreditation": "no",
+      "contact": {
+        "raw": "Christine.Wollmann@haw-hamburg.de, T +49 40 428 75-9021",
+        "email": "Christine.Wollmann@haw-hamburg.de",
+        "phone": "+49 40 428 75-9021"
+      },
+      "action_text": "https://www.haw-hamburg.de/hochschule/hochschuleinheiten/evaluation-qualitaetsmanagement-akkreditierung-eqa/akkreditierung/akkreditierung-von-studiengaengen/",
+      "links": [
+        "https://www.haw-hamburg.de/hochschule/hochschuleinheiten/evaluation-qualitaetsmanagement-akkreditierung-eqa/akkreditierung/akkreditierung-von-studiengaengen/"
+      ],
+      "roadmap": "yes",
+      "band": "coordinating"
+    },
+    {
+      "abbr": "SU",
+      "institution": "Sofia University St Kliment Ohridski",
+      "country": "Bulgaria",
+      "coords": [
+        23.32,
+        42.7
+      ],
+      "programmes": 1,
+      "institutional_accreditation": "yes",
+      "programme_accreditation": "yes",
+      "contact": {
+        "raw": "etraykova@fmi.uni-sofia.bg; phone: +359 2  8161 541",
+        "email": "etraykova@fmi.uni-sofia.bg",
+        "phone": "+359 2  8161 541"
+      },
+      "action_text": "To clarify, Sofia University already holds program accreditation in Informatics and Computer Science.\n\nIntroducing a new program within this field requires approval at the Faculty level, followed by the University's Academic Committee and finally the University's Academic Council.\n\nOnce these approvals are secured, we only need to notify the National Accreditation Agency about the new program; a full re-accreditation is not required.\n\nThe entire process takes approximately 6 months at most.\n\n\n\nHowever, if a list of documents for the complete accreditation process is needed for project purposes, we can certainly provide that.",
+      "links": [],
+      "roadmap": "yes",
+      "band": "coordinating"
+    },
+    {
+      "abbr": "UNIWA",
+      "institution": "University of West Attica",
+      "country": "Greece",
+      "coords": [
+        23.73,
+        37.98
+      ],
+      "programmes": 1,
+      "institutional_accreditation": "yes",
+      "programme_accreditation": "yes",
+      "contact": {
+        "raw": "aidl@uniwa.gr        +302105381549",
+        "email": "aidl@uniwa.gr",
+        "phone": "+302105381549"
+      },
+      "action_text": "",
+      "links": [],
+      "roadmap": "blank",
+      "band": "waiting"
+    },
+    {
+      "abbr": "BME",
+      "institution": "Budapest University of Technology and Economics",
+      "country": "Hungary",
+      "coords": [
+        19.06,
+        47.47
+      ],
+      "programmes": 3,
+      "institutional_accreditation": "yes",
+      "programme_accreditation": "yes",
+      "contact": {
+        "raw": "heder.mihaly@gtk.bme.hu +36 1 463 1182",
+        "email": "heder.mihaly@gtk.bme.hu",
+        "phone": "+36 1 463 1182"
+      },
+      "action_text": "Thank you for the offered help in facilitating our accreditation\nprocesses. Since this is internal university business, and the parts\nwhich are not will most certainly conducted in Hungarian, I don't expect\nthat you can help us directly",
+      "links": [],
+      "roadmap": "not needed",
+      "band": "ready"
+    },
+    {
+      "abbr": "KPI",
+      "institution": "National Technical University of Ukraine — Igor Sikorsky Kyiv",
+      "country": "Ukraine",
+      "coords": [
+        30.52,
+        50.45
+      ],
+      "programmes": 2,
+      "institutional_accreditation": "yes",
+      "programme_accreditation": "yes",
+      "contact": {
+        "raw": "obutnyk@lll.kpi.ua  380669001930",
+        "email": "obutnyk@lll.kpi.ua",
+        "phone": "380669001930"
+      },
+      "action_text": "",
+      "links": [],
+      "roadmap": "blank",
+      "band": "waiting"
+    },
+    {
+      "abbr": "HU",
+      "institution": "Stichting Hogeschool Utrecht",
+      "country": "Netherlands",
+      "coords": [
+        5.12,
+        52.09
+      ],
+      "programmes": 1,
+      "institutional_accreditation": "yes",
+      "programme_accreditation": "yes",
+      "contact": {
+        "raw": "meike.grol@hu.nl",
+        "email": "meike.grol@hu.nl",
+        "phone": ""
+      },
+      "action_text": "No further actions needed",
+      "links": [],
+      "roadmap": "not needed",
+      "band": "ready"
+    },
+    {
+      "abbr": "UNINA",
+      "institution": "Università degli Studi di Napoli Federico II",
+      "country": "Italy",
+      "coords": [
+        14.25,
+        40.85
+      ],
+      "programmes": 1,
+      "institutional_accreditation": "blank",
+      "programme_accreditation": "blank",
+      "contact": {
+        "raw": "carlo.sansone@unina.it",
+        "email": "carlo.sansone@unina.it",
+        "phone": ""
+      },
+      "action_text": "For a Master Program starting in the academic year 2026/27, we need a first proposal approved byour Department (Department of Electrical Engineering and Information Technology - DIETI) before 31.01.2026. In the case of a new activation, we must also acquire the opinion of the University QualityPresidium by that date. After the Department's approval, the Polytechnic School of Engineering and Basic Sciences should approve the proposal for the establishment/activation before 31.03.2026. Then, before 31.05.2026, the Academic Senate, subject to the opinion of the Board of Governors,has to express its favorable opinion on the creation and activation of this Master's Degree andshould approve its Regulations. Within the same date the Board of Governors should approve theactivation of this Master's Degree and express its favorable opinion on its Regulation. At the end of the process, our Rector will establish, for the academic year 2026/27, this newMaster's Degree together with its Regulation.",
+      "links": [],
+      "roadmap": "yes",
+      "band": "coordinating"
+    },
+    {
+      "abbr": "TUD",
+      "institution": "Technological University Dublin",
+      "country": "Ireland",
+      "coords": [
+        -6.26,
+        53.35
+      ],
+      "programmes": 0,
+      "institutional_accreditation": "yes",
+      "programme_accreditation": "blank",
+      "contact": {
+        "raw": "Sean.McHugh@TUDublin.ie",
+        "email": "Sean.McHugh@TUDublin.ie",
+        "phone": ""
+      },
+      "action_text": "we will need to go through a validation process either as a new programme or as an update of an existing programme. With regard to accreditation (validation) it has not been agreed in the university whether it will be a new programme or an extension of the HCAIM programme. Please see page 21 9. Process Flow Charts 9.1. Validation of Programmes 30 ECTS Credits or Greater.",
+      "links": [],
+      "roadmap": "blank",
+      "band": "coordinating"
+    }
+  ],
+  "roadmaps": [
+    {
+      "partner": "UNINA",
+      "title": "UNINA Federico II — AY 2026/27 Masters activation",
+      "kind": "dated",
+      "phases": [
+        {
+          "date": "2026-01-31",
+          "actor": "Department of Electrical Engineering & IT (DIETI)",
+          "action": "Approve first proposal of the new Masters."
+        },
+        {
+          "date": "2026-01-31",
+          "actor": "University Quality Presidium",
+          "action": "Provide opinion on the new programme activation."
+        },
+        {
+          "date": "2026-03-31",
+          "actor": "Polytechnic School of Engineering & Basic Sciences",
+          "action": "Approve establishment / activation of the Masters."
+        },
+        {
+          "date": "2026-05-31",
+          "actor": "Academic Senate",
+          "action": "Express favourable opinion (subject to Board of Governors) and approve the programme regulations."
+        },
+        {
+          "date": "2026-05-31",
+          "actor": "Board of Governors",
+          "action": "Approve activation and express favourable opinion on the regulations."
+        },
+        {
+          "date": "2026-06-30",
+          "actor": "Rector",
+          "action": "Formally establish the new Master's Degree and its Regulation for AY 2026/27."
+        }
+      ],
+      "note": "Six sequential approvals with hard calendar deadlines."
+    },
+    {
+      "partner": "SU",
+      "title": "Sofia University — 3-stage internal approval (notification, not re-accreditation)",
+      "kind": "sequential",
+      "phases": [
+        {
+          "actor": "Faculty",
+          "action": "Initial programme approval."
+        },
+        {
+          "actor": "University Academic Committee",
+          "action": "Second-tier review."
+        },
+        {
+          "actor": "University Academic Council",
+          "action": "Final decision."
+        },
+        {
+          "actor": "National Accreditation Agency",
+          "action": "Notification of the new programme only."
+        }
+      ],
+      "note": "Entire process takes ~6 months. Sofia already holds programme accreditation in Informatics & Computer Science, so a full re-accreditation is not required."
+    },
+    {
+      "partner": "TUD",
+      "title": "TUD — Programme validation (decision pending)",
+      "kind": "sequential",
+      "phases": [
+        {
+          "actor": "TUD (programme board)",
+          "action": "Decide: new programme OR extension of the existing HCAIM programme."
+        },
+        {
+          "actor": "TUD validation process",
+          "action": "Follow TUD Process Flow Chart 9.1 — 'Validation of Programmes 30 ECTS Credits or Greater'."
+        },
+        {
+          "actor": "TUD quality office",
+          "action": "Submit all programme documentation for validation review."
+        }
+      ],
+      "note": "Route undecided — whether PANORAIMA runs as a new Masters or as an extension of HCAIM has not yet been agreed inside the university."
+    },
+    {
+      "partner": "HAW",
+      "title": "HAW Hamburg — EQA coordination touchpoint",
+      "kind": "reference",
+      "phases": [
+        {
+          "actor": "HAW EQA office",
+          "action": "Provides the institutional accreditation procedures (see haw-hamburg.de link)."
+        },
+        {
+          "actor": "Christine Wollmann (EQA)",
+          "action": "Point of contact for the PANORAIMA Masters accreditation at HAW."
+        },
+        {
+          "actor": "Jakob de Boer (WP2/T2.3 lead)",
+          "action": "Collates each partner's roadmap into the consortium-wide summary."
+        }
+      ],
+      "note": "HAW currently holds Institutional accreditation; Programme-level acc is the open step for the new PANORAIMA Masters."
+    }
+  ],
+  "hcaim_legacy": {
+    "name": "HCAIM — Human-Centric AI Masters programme",
+    "description": "A precursor EU-funded Masters programme that some PANORAIMA partners (TUD and others) already delivered. HAW's T2.3 task brief explicitly asks whether the accreditation groundwork done for HCAIM can be reused to shortcut PANORAIMA's own accreditation path.",
+    "flagged_by": [
+      {
+        "who": "HAW (slide 2)",
+        "quote": "How was the topic of accreditation addressed in HCAIM? Is it possible to build on this for PANORAIMA?"
+      },
+      {
+        "who": "TUD (xlsx row)",
+        "quote": "It has not been agreed in the university whether it will be a new programme or an extension of the HCAIM programme."
+      }
+    ],
+    "open_question": "Should PANORAIMA be accredited as a new Masters or as an extension of HCAIM? Answer unlocks significant effort savings for TUD and potentially others."
+  },
+  "catalogue": [
+    {
+      "file": "PANORAIMA-WP 2.3-Accreditierung.pptx",
+      "rel_path": "PANORAIMA-WP 2.3-Accreditierung.pptx",
+      "ext": "pptx",
+      "kb": 1282,
+      "date": "2025-03-14",
+      "bucket": "Task brief"
+    },
+    {
+      "file": "Status-Accreditation-HEI-Partners-24042025-ausgefüllt.xlsx",
+      "rel_path": "Status-Accreditation-HEI-Partners-24042025-ausgefüllt.xlsx",
+      "ext": "xlsx",
+      "kb": 17,
+      "date": "2025-05-13",
+      "bucket": "Partner status register"
+    }
+  ],
+  "generated_at": "2026-04-19T22:34:32.725885Z"
+}

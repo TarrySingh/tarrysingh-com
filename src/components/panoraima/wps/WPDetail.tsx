@@ -86,7 +86,7 @@ export default function WPDetail({ detail }: Props) {
             <TaskBreakdown
               tasks={detail.tasks}
               onDeliverableClick={openDeliverable}
-              deepDiveTaskIds={detail.wp === "WP2" ? ["T2.1", "T2.2"] : []}
+              deepDiveTaskIds={detail.wp === "WP2" ? ["T2.1", "T2.2", "T2.3"] : []}
               wpSlug={detail.wp.toLowerCase()}
             />
           </section>

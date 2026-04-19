@@ -640,3 +640,115 @@ export interface Task22Detail {
   catalogue: T22CatalogueEntry[]
   generated_at: string
 }
+
+// ---------------------------------------------------------------------------
+// Task 2.3 deep-dive types
+// ---------------------------------------------------------------------------
+
+export type T23AccreditationFlag = "yes" | "no" | "blank" | string
+export type T23Band = "ready" | "coordinating" | "waiting"
+export type T23RoadmapKind = "dated" | "sequential" | "reference"
+
+export interface T23OpsContact {
+  name: string
+  email: string
+  phone: string
+  role: string
+}
+
+export interface T23TaskBriefSection {
+  n: number
+  title: string
+  slide: number
+  bullets: string[]
+}
+
+export interface T23TaskBrief {
+  authored_by: string
+  authored_at: string
+  sections: T23TaskBriefSection[]
+  source_file: string
+  source_kb: number
+  source_slide_count: number
+}
+
+export interface T23PartnerContact {
+  raw: string
+  email: string
+  phone: string
+}
+
+export interface T23Partner {
+  abbr: string
+  institution: string
+  country: string
+  coords: [number, number]   // [lng, lat]
+  programmes: number
+  institutional_accreditation: T23AccreditationFlag
+  programme_accreditation: T23AccreditationFlag
+  contact: T23PartnerContact
+  action_text: string
+  links: string[]
+  roadmap: T23AccreditationFlag | "not needed"
+  band: T23Band
+}
+
+export interface T23RoadmapPhase {
+  date?: string
+  actor: string
+  action: string
+}
+
+export interface T23Roadmap {
+  partner: string
+  title: string
+  kind: T23RoadmapKind
+  phases: T23RoadmapPhase[]
+  note?: string
+}
+
+export interface T23HcaimFlag {
+  who: string
+  quote: string
+}
+
+export interface T23HcaimLegacy {
+  name: string
+  description: string
+  flagged_by: T23HcaimFlag[]
+  open_question: string
+}
+
+export interface T23CatalogueEntry {
+  file: string
+  rel_path: string
+  ext: string
+  kb: number
+  date: string
+  bucket: string
+}
+
+export interface Task23Detail {
+  task: string
+  wp: string
+  title: string
+  tagline: string
+  coordinator: string
+  coordinator_person: string
+  ops_contact: T23OpsContact
+  involved: string[]
+  kpis: {
+    partners_total: number
+    existing_programmes: number
+    partners_need_help: number
+    partners_ready: number
+    partners_waiting: number
+    file_count: number
+  }
+  task_brief: T23TaskBrief
+  partners: T23Partner[]
+  roadmaps: T23Roadmap[]
+  hcaim_legacy: T23HcaimLegacy
+  catalogue: T23CatalogueEntry[]
+  generated_at: string
+}

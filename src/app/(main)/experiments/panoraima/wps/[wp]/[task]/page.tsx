@@ -5,7 +5,8 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import T21Dashboard from "@/components/panoraima/wps/wp2/t21/T21Dashboard"
 import T22Dashboard from "@/components/panoraima/wps/wp2/t22/T22Dashboard"
-import type { Task21Detail, Task22Detail } from "@/lib/panoraima/types"
+import T23Dashboard from "@/components/panoraima/wps/wp2/t23/T23Dashboard"
+import type { Task21Detail, Task22Detail, Task23Detail } from "@/lib/panoraima/types"
 
 interface Props {
   params: Promise<{ wp: string; task: string }>
@@ -21,6 +22,12 @@ function loadT22(): Task22Detail | null {
   const fp = path.join(process.cwd(), "src/lib/panoraima/task_2_2_data.json")
   if (!existsSync(fp)) return null
   return JSON.parse(readFileSync(fp, "utf-8")) as Task22Detail
+}
+
+function loadT23(): Task23Detail | null {
+  const fp = path.join(process.cwd(), "src/lib/panoraima/task_2_3_data.json")
+  if (!existsSync(fp)) return null
+  return JSON.parse(readFileSync(fp, "utf-8")) as Task23Detail
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -39,6 +46,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "Deep-dive into WP2 Task 2.2 — the UNIWA-led academic focus group with 17 participants across 8 PANORAIMA partner universities.",
     }
   }
+  if (wp === "wp2" && task === "t23") {
+    return {
+      title: "Task 2.3 · Internal Accreditation · PANORAIMA",
+      description:
+        "Deep-dive into WP2 Task 2.3 — HAW-led coordination of the 8 partner universities' accreditation pathways for the PANORAIMA Masters' programme.",
+    }
+  }
   return { title: `${wp.toUpperCase()} ${task.toUpperCase()} · PANORAIMA` }
 }
 
@@ -53,6 +67,11 @@ export default async function Page({ params }: Props) {
   if (wp === "wp2" && task === "t22") {
     const detail = loadT22()
     if (detail) return <T22Dashboard detail={detail} />
+  }
+
+  if (wp === "wp2" && task === "t23") {
+    const detail = loadT23()
+    if (detail) return <T23Dashboard detail={detail} />
   }
 
   return (
