@@ -1,0 +1,132 @@
+{
+  "generated_at": "2026-04-19T15:15:39Z",
+  "wps": [
+    {
+      "wp": "WP2",
+      "name": "Market & Workforce Needs Analysis",
+      "short": "Market & Needs",
+      "color": "#8b5cf6",
+      "emoji": "🔍",
+      "description": "Understand the AI workforce gap across academia, industry, SMEs and regulated sectors in Greece, Germany, Ireland and the Netherlands.",
+      "status": "active",
+      "stats": {
+        "total_files": 217,
+        "size_mb": 1655,
+        "by_ext": {
+          ".pdf": 90,
+          ".xlsx": 26,
+          ".rtf": 2,
+          ".docx": 69,
+          ".mp4": 7,
+          ".pptx": 10,
+          ".odt": 3,
+          ".vtt": 3,
+          ".txt": 1,
+          ".mp3": 6
+        },
+        "by_type": {
+          "other": 16,
+          "meeting": 8,
+          "research": 81,
+          "deliverable": 5,
+          "focus_group": 97,
+          "presentation": 6,
+          "admin": 4
+        },
+        "by_region": {
+          "Germany": 8,
+          "Ireland": 24,
+          "Greece": 8,
+          "Netherlands": 20
+        }
+      },
+      "task_count": 3,
+      "deliverable_count": 1
+    },
+    {
+      "wp": "WP3",
+      "name": "AI Competence Profiles & Learning Outcomes",
+      "short": "Competences",
+      "color": "#06b6d4",
+      "emoji": "📚",
+      "description": "Define the learning events and competence profiles that anchor the PANORAIMA curriculum.",
+      "status": "unseen",
+      "stats": {
+        "total_files": 0,
+        "by_ext": {},
+        "by_type": {},
+        "by_region": {}
+      },
+      "task_count": 0,
+      "deliverable_count": 0
+    },
+    {
+      "wp": "WP4",
+      "name": "Curriculum & Pilot Programmes",
+      "short": "Curriculum",
+      "color": "#10b981",
+      "emoji": "🛠",
+      "description": "Design lesson plans and run the cross-university pilots that validate the curriculum.",
+      "status": "unseen",
+      "stats": {
+        "total_files": 0,
+        "by_ext": {},
+        "by_type": {},
+        "by_region": {}
+      },
+      "task_count": 0,
+      "deliverable_count": 0
+    },
+    {
+      "wp": "WP5",
+      "name": "Quality Assurance",
+      "short": "QA",
+      "color": "#f59e0b",
+      "emoji": "🧪",
+      "description": "Ensure assessment quality and accreditation readiness across the consortium.",
+      "status": "unseen",
+      "stats": {
+        "total_files": 0,
+        "by_ext": {},
+        "by_type": {},
+        "by_region": {}
+      },
+      "task_count": 0,
+      "deliverable_count": 0
+    },
+    {
+      "wp": "WP6",
+      "name": "Ethics & Responsible AI",
+      "short": "Ethics",
+      "color": "#ef4444",
+      "emoji": "⚖",
+      "description": "Weave responsible AI practice into every track and deliverable.",
+      "status": "unseen",
+      "stats": {
+        "total_files": 0,
+        "by_ext": {},
+        "by_type": {},
+        "by_region": {}
+      },
+      "task_count": 0,
+      "deliverable_count": 0
+    },
+    {
+      "wp": "WP7",
+      "name": "Dissemination & Exploitation",
+      "short": "Dissemination",
+      "color": "#d946ef",
+      "emoji": "📣",
+      "description": "Amplify PANORAIMA's reach through clusters for social media, student recruitment, knowledge exchange and brand.",
+      "status": "unseen",
+      "stats": {
+        "total_files": 0,
+        "by_ext": {},
+        "by_type": {},
+        "by_region": {}
+      },
+      "task_count": 0,
+      "deliverable_count": 0
+    }
+  ]
+}

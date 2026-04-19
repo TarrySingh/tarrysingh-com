@@ -95,3 +95,88 @@ export const WORKSPRINT_CITIES: Record<string, { lat: number; lng: number; count
   "Athens":   { lat: 37.9838, lng: 23.7275, country: "Greece" },
   "Hamburg":  { lat: 53.5511, lng: 9.9937,  country: "Germany" },
 }
+
+// ---------------------------------------------------------------------------
+// Work-package dashboards (hub + per-WP detail)
+// ---------------------------------------------------------------------------
+
+export type WpCode = "WP1" | "WP2" | "WP3" | "WP4" | "WP5" | "WP6" | "WP7"
+export type WpStatus = "active" | "sparse" | "empty" | "unseen"
+export type DeliverableStatus = "draft" | "reviewed" | "final" | "unknown"
+
+export interface WpStats {
+  total_files: number
+  size_mb?: number
+  by_ext: Record<string, number>
+  by_type: Record<string, number>
+  by_region: Record<string, number>
+}
+
+export interface WpDeliverable {
+  id: string
+  file: string
+  version?: string | null
+  status: DeliverableStatus | string
+  date?: string | null
+  size_kb?: number
+  excerpt?: string | null
+  rel_path?: string
+}
+
+export interface WpTask {
+  id: string
+  title: string
+  file_count: number
+  deliverables: WpDeliverable[]
+}
+
+export interface WpTimelineEntry {
+  date: string
+  title: string
+  type: string
+  file: string
+  task?: string | null
+  region?: string | null
+  status?: string | null
+  rel_path?: string
+}
+
+export interface WorkPackageDetail {
+  wp: WpCode
+  name: string
+  short: string
+  color: string
+  emoji: string
+  description: string
+  stats: WpStats
+  tasks: WpTask[]
+  timeline: WpTimelineEntry[]
+  generated_at: string
+}
+
+export interface WpHubEntry {
+  wp: WpCode
+  name: string
+  short: string
+  color: string
+  emoji: string
+  description: string
+  status: WpStatus
+  stats: WpStats
+  task_count: number
+  deliverable_count: number
+}
+
+export interface WpHubMeta {
+  generated_at: string
+  wps: WpHubEntry[]
+}
+
+// Region coordinates for the WP2 geographic coverage map.
+// Data covers focus-group activity for T2.1 across 4 countries.
+export const WP_REGION_COORDS: Record<string, { lat: number; lng: number; label: string }> = {
+  "Greece":      { lat: 37.9838, lng: 23.7275, label: "Greece" },
+  "Germany":     { lat: 53.5511, lng: 9.9937,  label: "Hamburg" },
+  "Ireland":     { lat: 53.3498, lng: -6.2603, label: "Ireland" },
+  "Netherlands": { lat: 52.0862, lng: 5.1785,  label: "Netherlands" },
+}

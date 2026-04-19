@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Download, ExternalLink, Github } from "lucide-react"
+import { ArrowLeft, ArrowRight, Download, ExternalLink, Github, Layers } from "lucide-react"
 import type { PartnerCode, TimelineEvent } from "@/lib/panoraima/types"
 import HeroSection from "./HeroSection"
 import ConsortiumMap from "./ConsortiumMap"
@@ -79,6 +79,15 @@ export default function PanoraimaDashboard({ events }: Props) {
             Back to experiments
           </Link>
           <div className="flex items-center gap-3">
+            <Link
+              href="/experiments/panoraima/wps"
+              prefetch={false}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold bg-navy-900 text-white hover:bg-navy-800 transition-colors"
+            >
+              <Layers className="w-3.5 h-3.5" />
+              Work packages
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
             <a
               href="https://cordis.europa.eu/project/id/101201268"
               target="_blank"

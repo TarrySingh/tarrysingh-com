@@ -1,0 +1,209 @@
+{
+  "wp": "WP2",
+  "name": "Market & Workforce Needs Analysis",
+  "short": "Market & Needs",
+  "color": "#8b5cf6",
+  "emoji": "🔍",
+  "description": "Understand the AI workforce gap across academia, industry, SMEs and regulated sectors in Greece, Germany, Ireland and the Netherlands.",
+  "stats": {
+    "total_files": 217,
+    "size_mb": 1655,
+    "by_ext": {
+      ".pdf": 90,
+      ".xlsx": 26,
+      ".rtf": 2,
+      ".docx": 69,
+      ".mp4": 7,
+      ".pptx": 10,
+      ".odt": 3,
+      ".vtt": 3,
+      ".txt": 1,
+      ".mp3": 6
+    },
+    "by_type": {
+      "other": 16,
+      "meeting": 8,
+      "research": 81,
+      "deliverable": 5,
+      "focus_group": 97,
+      "presentation": 6,
+      "admin": 4
+    },
+    "by_region": {
+      "Germany": 8,
+      "Ireland": 24,
+      "Greece": 8,
+      "Netherlands": 20
+    }
+  },
+  "tasks": [
+    {
+      "id": "T2.1",
+      "title": "Market Analysis & Workforce Needs",
+      "file_count": 152,
+      "deliverables": [
+        {
+          "id": "D2.1",
+          "file": "Deliverable 2.1 Market & Needs Analysis PANORAIMA v1.0.pdf",
+          "version": "1.0",
+          "status": "final",
+          "date": null,
+          "size_kb": 8780,
+          "excerpt": "Market and Needs Report v1.0 – 20 August 2025                               20 Market and Needs Report v1.0 – 20 August 2025                                                              20 Revision                       Date            Editor                             Comments 0.2                            21.05.202",
+          "rel_path": "Task 2.1/Deliverable 2.1/Deliverable 2.1 Market & Needs Analysis PANORAIMA v1.0.pdf"
+        }
+      ]
+    },
+    {
+      "id": "T2.2",
+      "title": "Organisational & Sectoral Frameworks",
+      "file_count": 48,
+      "deliverables": []
+    },
+    {
+      "id": "T2.3",
+      "title": "Cross-sectoral Synthesis",
+      "file_count": 2,
+      "deliverables": []
+    },
+    {
+      "id": "unassigned",
+      "title": "Cross-cutting / unassigned",
+      "file_count": 15,
+      "deliverables": []
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-03-24",
+      "title": "WP2 T21 Focus Groups",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250324-WP2-T21-Focus-Groups-.docx",
+      "task": "T2.1",
+      "region": null,
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/PANORAIMA-20250324-WP2-T21-Focus-Groups-.docx"
+    },
+    {
+      "date": "2025-03-24",
+      "title": "WP2 T21 Focus Groups Initial Profile Scope and Schedule DRAFT",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250324-WP2-T21-Focus-Groups-Initial-Profile-Scope-and-Schedule-DRAFT.docx",
+      "task": "T2.1",
+      "region": null,
+      "status": "draft",
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Archive/PANORAIMA-20250324-WP2-T21-Focus-Groups-Initial-Profile-Scope-and-Schedule-DRAFT.docx"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "Focus 1 1 Session Ecosystem Stakeholders Presentation",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Presentation.pptx",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Presentation.pptx"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "Focus 1 1 Session Ecosystem Stakeholders Recording.mp4",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Recording.mp4",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Recording.mp4"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "Focus 1 1 Session Ecosystem Stakeholders Report",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Report.docx",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Report.docx"
+    },
+    {
+      "date": "2025-05-01",
+      "title": "Focus 1 1 Session Ecosystem Stakeholders Transcript.txt",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Transcript.txt",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Transcript.txt"
+    },
+    {
+      "date": "2025-05-07",
+      "title": "Focus Group Session SMEs Recording.mp4",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250507-Focus Group Session - SMEs - Recording.mp4",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250507-Focus Group Session - SMEs/PANORAIMA-20250507-Focus Group Session - SMEs - Recording.mp4"
+    },
+    {
+      "date": "2025-05-07",
+      "title": "Focus Group Session SMEs Transcript.vtt",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250507-Focus Group Session - SMEs - Transcript.vtt",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250507-Focus Group Session - SMEs/PANORAIMA-20250507-Focus Group Session - SMEs - Transcript.vtt"
+    },
+    {
+      "date": "2025-05-08",
+      "title": "Focus Group Session Ecosystems Recording.mp4",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250508-Focus Group Session - Ecosystems - Recording.mp4",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250508-Focus Group Session - Ecosystems/PANORAIMA-20250508-Focus Group Session - Ecosystems - Recording.mp4"
+    },
+    {
+      "date": "2025-05-08",
+      "title": "Focus Group Session Ecosystems Report",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250508-Focus Group Session - Ecosystems - Report.docx",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250508-Focus Group Session - Ecosystems/PANORAIMA-20250508-Focus Group Session - Ecosystems - Report.docx"
+    },
+    {
+      "date": "2025-05-08",
+      "title": "Focus Group Session Ecosystems Trasncript.vtt",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250508-Focus Group Session - Ecosystems - Trasncript.vtt",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250508-Focus Group Session - Ecosystems/PANORAIMA-20250508-Focus Group Session - Ecosystems - Trasncript.vtt"
+    },
+    {
+      "date": "2025-05-13",
+      "title": "Focus 1 1 Session Large Enterprises Report",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250513-Focus 1-1 Session - Large Enterprises - Report.docx",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Large Enterprises/PANORAIMA-20250513-Focus 1-1 Session - Large Enterprises - Report.docx"
+    },
+    {
+      "date": "2025-06-06",
+      "title": "WP2, T2.1 Initial Results Processing Irish Working Group",
+      "type": "focus_group",
+      "file": "PANORAIMA-20250606-WP2, T2.1 - Initial Results Processing - Irish Working Group.docx",
+      "task": "T2.1",
+      "region": "Ireland",
+      "status": null,
+      "rel_path": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250606-WP2, T2.1 - Initial Results Processing - Irish Working Group.docx"
+    }
+  ],
+  "generated_at": "2026-04-19T15:15:39Z"
+}
