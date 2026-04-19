@@ -129,20 +129,26 @@ export default function HeroSection({ totalEvents, totalSubmissions, totalChalle
         {/* Stats strip */}
         <div className="animate-fade-up delay-300 mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            { label: "Consortium partners", value: 15, accent: "from-gold-400 to-gold-600" },
-            { label: "Events tracked",       value: totalEvents, accent: "from-sky-400 to-sky-600" },
-            { label: "Progress reports",     value: totalSubmissions, accent: "from-emerald-400 to-emerald-600" },
-            { label: "Challenges logged",    value: totalChallenges, accent: "from-rose-400 to-rose-600" },
+            { label: "Consortium partners", value: 15, accent: "from-gold-400 to-gold-600", glow: "rgba(201, 169, 110, 0.35)" },
+            { label: "Events tracked",       value: totalEvents, accent: "from-sky-400 to-sky-600", glow: "rgba(56, 189, 248, 0.35)" },
+            { label: "Progress reports",     value: totalSubmissions, accent: "from-emerald-400 to-emerald-600", glow: "rgba(52, 211, 153, 0.35)" },
+            { label: "Challenges logged",    value: totalChallenges, accent: "from-rose-400 to-rose-600", glow: "rgba(251, 113, 133, 0.35)" },
           ].map((s) => (
             <div
               key={s.label}
-              className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm p-5 md:p-6 hover:bg-white/10 transition-colors group"
+              className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm p-5 md:p-6 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 group"
             >
-              <div className={`absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r ${s.accent} opacity-70`} />
-              <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-100/60">
+              <div className={`absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r ${s.accent} opacity-80`} />
+              {/* Soft radial glow on hover for the stunning lift */}
+              <div
+                aria-hidden
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{ background: `radial-gradient(circle at 0% 0%, ${s.glow}, transparent 70%)` }}
+              />
+              <div className="relative text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-100/60">
                 {s.label}
               </div>
-              <div className="mt-2 text-3xl md:text-4xl font-bold text-white tabular-nums">
+              <div className="relative mt-2 text-3xl md:text-4xl font-bold text-white tabular-nums">
                 <Counter target={s.value} />
               </div>
             </div>
@@ -150,8 +156,12 @@ export default function HeroSection({ totalEvents, totalSubmissions, totalChalle
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none z-20" />
+      {/* Extra bottom padding so the toolbar that overlaps at -mt-24 has a
+          proper mesh-gradient backdrop, not a sharp fade to white. */}
+      <div className="h-24" />
+
+      {/* Bottom fade (softer + lower so it doesn't wash out the toolbar sitting on top) */}
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none z-20" />
     </section>
   )
 }

@@ -68,44 +68,50 @@ export default function PanoraimaDashboard({ events }: Props) {
         totalChallenges={kpi.challenges}
       />
 
-      <div className="relative z-10 -mt-20 max-w-7xl mx-auto px-5 md:px-8 pb-24">
-        {/* Toolbar */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-10">
+      {/* Toolbar sits directly on the hero's lower edge; dark-glass pill
+          style keeps contrast whatever the mesh gradient is doing behind it. */}
+      <div className="relative z-20 -mt-24 max-w-7xl mx-auto px-5 md:px-8">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-navy-950/60 backdrop-blur-md border border-white/10 shadow-xl px-4 md:px-5 py-3">
           <Link
             href="/experiments"
-            className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.15em] text-navy-500 hover:text-navy-900 transition-colors"
+            className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to experiments
           </Link>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
+            <a
+              href="https://cordis.europa.eu/project/id/101201268"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold text-white/80 hover:text-white hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">CORDIS record</span>
+              <span className="sm:hidden">CORDIS</span>
+            </a>
+            <a
+              href="/experiments/panoraima#data"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold text-white/80 hover:text-white hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Download JSON</span>
+              <span className="sm:hidden">JSON</span>
+            </a>
             <Link
               href="/experiments/panoraima/wps"
               prefetch={false}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold bg-navy-900 text-white hover:bg-navy-800 transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-[12px] font-bold bg-gold-500 text-navy-950 hover:bg-gold-400 shadow-lg shadow-gold-500/30 transition-all"
             >
               <Layers className="w-3.5 h-3.5" />
               Work packages
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
-            <a
-              href="https://cordis.europa.eu/project/id/101201268"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-navy-500 hover:text-navy-900 transition-colors"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              CORDIS record
-            </a>
-            <a
-              href="/experiments/panoraima#data"
-              className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-navy-500 hover:text-navy-900 transition-colors"
-            >
-              <Download className="w-3.5 h-3.5" />
-              Download JSON
-            </a>
           </div>
         </div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pb-24 pt-10">
 
         <div className="space-y-16 md:space-y-20">
           {/* Timeline */}
