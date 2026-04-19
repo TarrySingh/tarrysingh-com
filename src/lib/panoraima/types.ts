@@ -141,6 +141,58 @@ export interface WpTimelineEntry {
   rel_path?: string
 }
 
+export interface WpThemeCount {
+  theme: string
+  count: number
+}
+
+export interface WpStakeholderCount {
+  type: string
+  count: number
+}
+
+export interface WpQuote {
+  kind: "quote" | "finding"
+  text: string
+  source_file?: string
+  task?: string | null
+}
+
+export interface WpRegionSummary {
+  region: string
+  file_count: number
+  top_themes: WpThemeCount[]
+  quotes: WpQuote[]
+  files: Array<{
+    name: string
+    type: string
+    date?: string | null
+    excerpt?: string | null
+    themes?: string[]
+    stakeholders?: string[]
+  }>
+}
+
+export interface WpCatalogueEntry {
+  name: string
+  rel_path: string
+  task?: string | null
+  type: string
+  status?: string | null
+  region?: string | null
+  date?: string | null
+  ext: string
+  size_kb?: number
+  title?: string
+  excerpt?: string | null
+  themes?: string[]
+  stakeholders?: string[]
+  slides_count?: number
+  sheets_count?: number
+  pages?: number
+  word_count?: number
+}
+
 export interface WorkPackageDetail {
   wp: WpCode
   name: string
@@ -148,9 +200,21 @@ export interface WorkPackageDetail {
   color: string
   emoji: string
   description: string
-  stats: WpStats
+  stats: WpStats & { total_words?: number }
+  themes: WpThemeCount[]
+  stakeholders: WpStakeholderCount[]
   tasks: WpTask[]
+  regions: WpRegionSummary[]
   timeline: WpTimelineEntry[]
+  findings: WpQuote[]
+  primary_deliverable?: {
+    name: string
+    size_kb?: number
+    pages?: number
+    version?: string | null
+    excerpt?: string | null
+  } | null
+  catalogue: WpCatalogueEntry[]
   generated_at: string
 }
 
