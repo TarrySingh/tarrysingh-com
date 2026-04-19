@@ -45,29 +45,37 @@ export default function SubmissionMatrix({
         </div>
       </div>
 
-      <div className="overflow-x-auto -mx-2 px-2 pb-2">
+      <div className="overflow-x-auto -mx-2 px-2 pb-2 pt-4">
         <table className="border-separate border-spacing-[3px] min-w-max">
           <thead>
             <tr>
-              <th className="sticky left-0 bg-white z-10 w-28" />
+              <th className="sticky left-0 bg-white z-10 w-32" />
               {reportEvents.map(e => {
                 const isActive = selectedEventId === e.id || hover?.event === e.id
                 return (
-                  <th key={e.id} className="p-0">
-                    <button
-                      onClick={() => onEventClick(e.id)}
-                      onMouseEnter={() => setHover({ ...hover, event: e.id })}
-                      onMouseLeave={() => setHover(null)}
-                      className={`h-16 w-10 flex items-center justify-center origin-bottom-left rotate-[-45deg] text-[10px] font-mono font-semibold transition-colors ${
-                        isActive ? "text-navy-900" : "text-gray-400"
-                      }`}
-                    >
-                      {e.label}
-                    </button>
+                  <th key={e.id} className="p-0 align-bottom">
+                    <div className="relative h-20 w-12">
+                      <button
+                        onClick={() => onEventClick(e.id)}
+                        onMouseEnter={() => setHover({ ...hover, event: e.id })}
+                        onMouseLeave={() => setHover(null)}
+                        // Centre-rotated label: the text is anchored to the
+                        // cell centre and tilted, so nothing leaks into the
+                        // sticky partner column on the left (previous
+                        // origin-bottom-left pushed ~33px past the left edge
+                        // and clipped the first month's label behind the
+                        // white sticky header).
+                        className={`absolute inset-0 flex items-center justify-center rotate-[-45deg] whitespace-nowrap text-[11px] font-mono font-semibold tracking-tight transition-colors ${
+                          isActive ? "text-navy-900" : "text-gray-500 hover:text-navy-700"
+                        }`}
+                      >
+                        {e.label}
+                      </button>
+                    </div>
                   </th>
                 )
               })}
-              <th className="w-12 px-2 text-[10px] text-gray-400 font-semibold uppercase tracking-wider">∑</th>
+              <th className="w-12 px-2 align-bottom text-[10px] text-gray-400 font-semibold uppercase tracking-wider">∑</th>
             </tr>
           </thead>
           <tbody>
