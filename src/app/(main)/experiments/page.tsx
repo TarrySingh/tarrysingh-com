@@ -1,9 +1,23 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home, Network } from "lucide-react"
+import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home, Network, Gauge } from "lucide-react"
 
 const experiments = [
+  {
+    title: "The Insane Pace of AI",
+    tagline: "Q1 2026 Executive Dashboard · 75 sections.",
+    description:
+      "An editorial research terminal on the state of AI, April 2026. Capability, cost, capital, geopolitics, compute, energy, IP, safety, regulation, strategy — across twenty dimensions of acceleration. Scroll-synced sidebar, hand-rolled SVG charts, live chrome.",
+    to: "/experiments/insane-pace-of-ai",
+    tag: "Executive Research",
+    tech: "Next.js, TypeScript, next/font, inline SVG",
+    icon: Gauge,
+    gradient: "from-orange-500/8 to-rose-500/8",
+    accent: "bg-orange-500",
+    isNew: true,
+    date: "Apr 2026",
+  },
   {
     title: "PANORAIMA Consortium",
     tagline: "15 labs. 8 countries. One year of AI education.",
