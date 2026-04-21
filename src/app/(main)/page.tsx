@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, TrendingUp, Lightbulb, Globe, Cpu, BarChart3, Layers, Bot, Home } from "lucide-react"
+import { ArrowRight, TrendingUp, Globe, Cpu, BarChart3, Bot, Home, Network, Gauge } from "lucide-react"
 
 const stats = [
   { value: "30+", label: "Years of Experience" },
@@ -30,7 +30,31 @@ const highlights = [
   },
 ]
 
+// Ordered newest → oldest by publication date. Home page shows the latest 6.
 const experiments = [
+  {
+    title: "The Insane Pace of AI",
+    tagline: "Q1 2026 Executive Dashboard · 75 sections.",
+    description: "Editorial research terminal on the state of AI, April 2026 — capability, cost, capital, geopolitics, compute, energy, IP, safety, regulation, strategy.",
+    to: "/experiments/insane-pace-of-ai",
+    tag: "Executive Research",
+    icon: Gauge,
+    gradient: "from-orange-500/10 to-rose-500/10",
+    isNew: true,
+    date: "Apr 2026",
+  },
+  {
+    title: "PANORAIMA Consortium",
+    tagline: "15 labs. 8 countries. One year of AI education.",
+    description: "Live dashboard tracking an EU Horizon Europe consortium — 21 events, 143 progress reports, 7 work packages across Europe.",
+    to: "/experiments/panoraima",
+    tag: "EU Horizon · Live Data",
+    icon: Network,
+    gradient: "from-navy-500/10 to-gold-500/10",
+    status: "Beta",
+    isNew: true,
+    date: "Apr 2026",
+  },
   {
     title: "mklaar.ai",
     tagline: "Jouw AI-makelaar. Altijd klaar.",
@@ -70,30 +94,6 @@ const experiments = [
     tag: "Market Analysis",
     icon: BarChart3,
     gradient: "from-blue-500/10 to-indigo-500/10",
-  },
-  {
-    title: "Risk-Return Strategy Space",
-    description: "Mapping AI ventures across risk and return dimensions.",
-    to: "/experiments/risk-return",
-    tag: "Strategy",
-    icon: TrendingUp,
-    gradient: "from-amber-500/10 to-orange-500/10",
-  },
-  {
-    title: "Strategic Technology Position",
-    description: "Competitive strengths vs. technological attractiveness.",
-    to: "/experiments/strategic",
-    tag: "Positioning",
-    icon: Layers,
-    gradient: "from-emerald-500/10 to-teal-500/10",
-  },
-  {
-    title: "Financing AI Startups",
-    description: "From seed capital through IPO — the startup lifecycle.",
-    to: "/experiments/financing",
-    tag: "Finance",
-    icon: Lightbulb,
-    gradient: "from-purple-500/10 to-pink-500/10",
   },
 ]
 
@@ -307,7 +307,14 @@ const Landing = () => {
               </>
             )
 
-            if (experiment.to === "/jobs" || experiment.to === "/mklaar") {
+            // Use plain <a> for rewrite targets (/jobs, /mklaar) and for
+            // /experiments/panoraima (password-protected; avoid Link prefetch
+            // triggering the browser auth prompt).
+            if (
+              experiment.to === "/jobs" ||
+              experiment.to === "/mklaar" ||
+              experiment.to === "/experiments/panoraima"
+            ) {
               return (
                 <a
                   key={experiment.to}
