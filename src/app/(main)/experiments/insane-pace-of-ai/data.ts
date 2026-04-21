@@ -274,8 +274,6 @@ export const DATA2 = {
         { l: "Languages", v: "24 EU officials" },
         { l: "Parameters (sparse)", v: "340B / 28B active" },
         { l: "Carbon vs GPT-5", v: "−58%" },
-        { l: "Users", v: "41M MAU" },
-        { l: "Public sector deploys", v: "187" },
       ],
       principles: ["Open weights + transparent pretrain", "Bias-audited every release", "100% renewable training", "EU AI Act fully aligned"],
     },
