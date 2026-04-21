@@ -619,12 +619,12 @@ export function Section75_Colophon() {
             </div>
             <div className="label" style={{ marginTop: 24 }}>Credit</div>
             <div className="body small" style={{ marginTop: 6 }}>
-              Produced by Real AI Inc. research. All charts rendered in SVG. No AI-generated imagery; all visualizations are data-driven.
+              Produced by Tarry Singh. All charts rendered in SVG. No AI-generated imagery; all visualizations are data-driven.
             </div>
           </div>
         </div>
         <div style={{ marginTop: 60, padding: "28px 0 0", borderTop: "1px solid var(--rule)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-          <div style={{ fontFamily: "var(--mono)", fontSize: 10, color: "var(--fg-4)", letterSpacing: "0.16em" }}>© 2026 REAL AI INC. · ALL RIGHTS RESERVED</div>
+          <div style={{ fontFamily: "var(--mono)", fontSize: 10, color: "var(--fg-4)", letterSpacing: "0.16em" }}>© 2026 TARRY SINGH · ALL RIGHTS RESERVED</div>
           <div style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 20, color: "var(--signal)" }}>Until next quarter.</div>
           <div style={{ fontFamily: "var(--mono)", fontSize: 10, color: "var(--fg-4)", letterSpacing: "0.16em" }}>075 / 075</div>
         </div>

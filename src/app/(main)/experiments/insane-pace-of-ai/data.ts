@@ -280,16 +280,16 @@ export const DATA2 = {
       principles: ["Open weights + transparent pretrain", "Bias-audited every release", "100% renewable training", "EU AI Act fully aligned"],
     },
     realbusiness: {
-      name: "realbusiness.ai (Real AI Inc.)",
+      name: "RealAI.EU (RealAI B.V.)",
       tag: "Agentic AI platform",
       metrics: [
-        { l: "Enterprise deploys", v: "312" },
+        { l: "Enterprise deploys", v: "10+" },
         { l: "Avg 12-mo ROI", v: "4.1×" },
         { l: "Process cycle ↓", v: "78%" },
         { l: "Innovation cycle ↑", v: "86%" },
         { l: "Autonomous workflows", v: "72hr+" },
       ],
-      principles: ["Perceive → Plan → Execute → Learn loop", "480+ enterprise API integrations", "Continuous enterprise-RLHF", "Supervisor-agent governance built-in"],
+      principles: ["Perceive → Plan → Execute → Learn loop", "Continuous enterprise-RLHF", "Supervisor-agent governance built-in"],
     },
   },
 

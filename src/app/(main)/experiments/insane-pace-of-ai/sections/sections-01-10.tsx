@@ -24,7 +24,7 @@ export function Section01_Cover() {
           </div>
           <div className="footnote">
             <span className="src">Research partners:</span> Stanford HAI · Epoch AI · McKinsey QuantumBlack · OECD.AI · MLPerf · Artificial Analysis · Our World in Data. <br />
-            <span className="src">Compiled by:</span> Real AI Inc. · Intelligence & Strategy Division.
+            <span className="src">Compiled by:</span> Tarry Singh.
           </div>
         </div>
         <div className="col-5">
@@ -35,10 +35,11 @@ export function Section01_Cover() {
             </div>
             <div style={{ marginTop: 28, height: 1, background: "rgba(11,13,16,0.2)" }} />
             <div style={{ marginTop: 16, fontFamily: "var(--mono)", fontSize: 11, lineHeight: 1.8, color: "rgba(11,13,16,0.7)", letterSpacing: "0.08em" }}>
+              <span style={{ color: "var(--paper-ink)", fontWeight: 600, display: "block", marginBottom: 6 }}>TARRY SINGH</span>
               ISSUE № 07 · APR 2026<br />
               PAGES 001 – 090<br />
               SERIES · THE INSANE PACE OF AI<br />
-              EDITOR · K. NAKAMURA<br />
+              EDITOR · TARRY SINGH<br />
               DATA CUTOFF · 14 APR 2026
             </div>
             <div style={{ marginTop: 28, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 15, color: "rgba(11,13,16,0.75)", borderLeft: "2px solid var(--signal-dim)", paddingLeft: 14 }}>

@@ -1,10 +1,11 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Download, FileText, Settings2 } from "lucide-react"
 import Link from "next/link"
 import { NAV } from "./nav"
 import { Tag } from "./primitives"
+import Tweaks from "./Tweaks"
 import {
   Section01_Cover, Section02_TOC, Section03_ExecSummary, Section04_KeyMetrics,
   Section05_ChapterAccel, Section06_ModelEfficiency, Section07_CostPerf,
@@ -39,9 +40,25 @@ import {
   Section73_Glossary, Section74_References, Section75_Colophon,
 } from "./sections/sections-61-75"
 
+const PPTX_MAILTO =
+  "mailto:tarry.singh@gmail.com" +
+  "?subject=" + encodeURIComponent("Insane Pace of AI — PPTX version request") +
+  "&body=" + encodeURIComponent(
+    "Hi Tarry,\n\nI'd like the PPTX version of the Q1 2026 Insane Pace of AI executive dashboard. Please share the paid option / invoice details.\n\nThanks,\n"
+  )
+
+function fmtToday(d: Date) {
+  const month = d.toLocaleString("en-US", { month: "short", timeZone: "UTC" }).toUpperCase()
+  const day = String(d.getUTCDate()).padStart(2, "0")
+  return `${month} ${day}, ${d.getUTCFullYear()}`
+}
+
 export default function Dashboard() {
   const [active, setActive] = useState("s-01")
   const [now, setNow] = useState<Date | null>(null)
+  const [accent, setAccent] = useState("#E8542B")
+  const [tweaksOpen, setTweaksOpen] = useState(false)
+  const rootRef = useRef<HTMLDivElement>(null)
   const mainRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -49,6 +66,12 @@ export default function Dashboard() {
     const t = setInterval(() => setNow(new Date()), 1000)
     return () => clearInterval(t)
   }, [])
+
+  useEffect(() => {
+    if (rootRef.current) {
+      rootRef.current.style.setProperty("--signal", accent)
+    }
+  }, [accent])
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -67,38 +90,29 @@ export default function Dashboard() {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
+  const handlePrint = () => {
+    window.print()
+  }
+
   const timeStr = now ? now.toISOString().slice(11, 19) + " UTC" : "—"
+  const dateStr = now ? fmtToday(now) : "—"
 
   return (
-    <div className="ipoai-root">
+    <div className="ipoai-root" ref={rootRef}>
       <div className="shell">
         <header className="chrome">
           <div className="chrome-inner">
             <Link
               href="/experiments"
               aria-label="Back to experiments"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                padding: "4px 10px 4px 6px",
-                fontFamily: "var(--mono)",
-                fontSize: 10.5,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "var(--fg-3)",
-                textDecoration: "none",
-                border: "1px solid var(--rule)",
-                borderRadius: 2,
-                marginRight: 4,
-              }}
+              className="ipoai-chrome-btn"
             >
               <ArrowLeft size={12} />
               Back
             </Link>
             <div className="chrome-brand">
               <span className="mark" />
-              <span>REAL · AI · INC</span>
+              <span>TARRY&nbsp;SINGH</span>
             </div>
             <div style={{ height: 20, width: 1, background: "var(--rule)" }} />
             <div className="chrome-title">The Insane Pace of <em>Accelerating AI</em></div>
@@ -108,8 +122,36 @@ export default function Dashboard() {
                 <span className="live-dot" />
                 LIVE
               </span>
-              <span>APR 14, 2026</span>
+              <span>{dateStr}</span>
               <span className="chrome-tick">{timeStr}</span>
+              <button
+                type="button"
+                onClick={handlePrint}
+                className="ipoai-chrome-btn"
+                title="Download this dashboard as a PDF via your browser's print dialog"
+              >
+                <FileText size={12} />
+                PDF
+              </button>
+              <a
+                href={PPTX_MAILTO}
+                className="ipoai-chrome-btn ipoai-chrome-btn--paid"
+                title="PPTX version available as a paid option — request by email"
+              >
+                <Download size={12} />
+                PPTX
+                <span className="ipoai-chrome-btn__tag">$</span>
+              </a>
+              <button
+                type="button"
+                onClick={() => setTweaksOpen((v) => !v)}
+                className={`ipoai-chrome-btn ${tweaksOpen ? "on" : ""}`}
+                aria-pressed={tweaksOpen}
+                title="Open the tweaks panel"
+              >
+                <Settings2 size={12} />
+                Tweaks
+              </button>
             </div>
           </div>
         </header>
@@ -229,12 +271,24 @@ export default function Dashboard() {
               flexWrap: "wrap",
             }}
           >
-            <span>© 2026 REAL AI INC. · INTERNAL USE ONLY</span>
+            <span>© 2026 TARRY SINGH · ALL RIGHTS RESERVED</span>
             <span>PAGE 075 / 075 · END OF REPORT</span>
-            <span>v26.04.14 · NEXT REFRESH MAY 12</span>
+            <span>v26.04.21 · NEXT REFRESH MAY 19</span>
           </div>
         </main>
       </div>
+
+      {tweaksOpen && (
+        <Tweaks
+          accent={accent}
+          setAccent={setAccent}
+          onClose={() => setTweaksOpen(false)}
+          onJump={(id) => {
+            jump(id)
+            setTweaksOpen(false)
+          }}
+        />
+      )}
     </div>
   )
 }

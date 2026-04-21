@@ -555,6 +555,80 @@
 .ipoai-root .flex-1 { flex: 1; }
 .ipoai-root .tar { text-align: right; }
 
+/* -------------------------------------------------------------------------
+   CHROME action buttons (Back / PDF / PPTX / Tweaks)
+   ------------------------------------------------------------------------- */
+.ipoai-root .ipoai-chrome-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: color 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.ipoai-root .ipoai-chrome-btn:hover {
+  color: var(--fg);
+  border-color: var(--rule-strong);
+  background: var(--ink-3);
+}
+.ipoai-root .ipoai-chrome-btn.on {
+  color: var(--signal);
+  border-color: var(--signal);
+  background: rgba(232, 84, 43, 0.08);
+}
+.ipoai-root .ipoai-chrome-btn--paid {
+  position: relative;
+  padding-right: 22px;
+}
+.ipoai-root .ipoai-chrome-btn__tag {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 8.5px;
+  letter-spacing: 0;
+  color: var(--signal);
+}
+
+/* -------------------------------------------------------------------------
+   TWEAKS panel
+   ------------------------------------------------------------------------- */
+.ipoai-root .ipoai-tweaks {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 320px;
+  max-width: calc(100vw - 36px);
+  z-index: 200;
+  background: var(--ink);
+  border: 1px solid var(--signal);
+  padding: 14px 16px 16px;
+  font-family: var(--sans);
+  color: var(--fg);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+}
+.ipoai-root .ipoai-tweaks h5 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--signal);
+  margin: 0 0 14px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ipoai-root .ipoai-tweaks-row { margin-bottom: 14px; }
+.ipoai-root .ipoai-tweaks-row:last-child { margin-bottom: 0; }
+
 /* Responsive (keep parity with design, stack gracefully below 1024) */
 @media (max-width: 1279px) {
   .ipoai-root .shell { grid-template-columns: 240px 1fr; }
@@ -588,4 +662,45 @@
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .ipoai-root .chrome-meta .live-dot { animation: none; }
+}
+
+/* -------------------------------------------------------------------------
+   PRINT — "Save as PDF" from the browser. Hides chrome/nav/tweaks
+   and lets the report flow as a single-column document on A4 / US Letter.
+   The dark aesthetic is preserved intentionally (this is a digital PDF,
+   not a paper-printable brief).
+   ------------------------------------------------------------------------- */
+@page {
+  margin: 16mm 14mm;
+}
+@media print {
+  html, body { background: #0B0D10 !important; }
+  .ipoai-root { min-height: 0; }
+  .ipoai-root .chrome,
+  .ipoai-root .nav,
+  .ipoai-root .ipoai-tweaks { display: none !important; }
+  .ipoai-root .shell {
+    display: block;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    min-height: 0;
+  }
+  .ipoai-root .main { display: block; }
+  .ipoai-root .section {
+    padding: 24px 0;
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+  .ipoai-root .section.chapter {
+    page-break-before: always;
+    break-before: page;
+    padding: 40px 0;
+  }
+  .ipoai-root .plate { grid-template-columns: 80px 1fr; }
+  .ipoai-root .plate .kicker { display: none; }
+  /* Ensure the signal orange renders in PDF output */
+  .ipoai-root {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }

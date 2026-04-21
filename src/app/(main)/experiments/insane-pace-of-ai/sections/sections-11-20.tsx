@@ -243,7 +243,7 @@ export function Section15_Convergence() {
       <p className="dek">The fusion of generative creation with agentic execution is the engine of 2026 enterprise value. Systems no longer just draft — they plan, act, monitor, and correct.</p>
       <div className="grid g-12">
         <div className="col-7">
-          <Panel title="realbusiness.ai · flagship case" aux="N=312 enterprises">
+          <Panel title="RealAI.EU · flagship case" aux="N=10+ enterprises">
             <div className="grid g-3">
               <div><div className="label">PROCESS AUTO ↑</div><div style={{ fontFamily: "var(--serif)", fontSize: 44, color: "var(--signal)" }}>+78%</div></div>
               <div><div className="label">INNOV CYCLE ↑</div><div style={{ fontFamily: "var(--serif)", fontSize: 44, color: "var(--signal)" }}>+86%</div></div>
@@ -253,7 +253,6 @@ export function Section15_Convergence() {
             <div className="h4" style={{ marginBottom: 8 }}>Capability stack</div>
             <ul style={{ margin: 0, paddingLeft: 18, color: "var(--fg-2)", fontSize: 13, lineHeight: 1.7 }}>
               <li>Autonomous execution of 72-hour workflows without human checkpoint</li>
-              <li>Cross-system orchestration across 480+ enterprise APIs</li>
               <li>Predictive insights driving proactive decisions — P99 latency &lt; 900ms</li>
               <li>Continuous RLHF from enterprise feedback closes the loop weekly</li>
             </ul>
