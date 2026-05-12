@@ -1,9 +1,23 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home, Network, Gauge, Brain } from "lucide-react"
+import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home, Network, Gauge, Brain, Cpu } from "lucide-react"
 
 const experiments = [
+  {
+    title: "MEMPHIS",
+    tagline: "Hippocampal · Memristive · Neuromorphic chip.",
+    description:
+      "Sister microsite to SYMPHONY in the Synaptic Cartography series. A neuromorphic architecture that co-locates memory and computation on a self-organising memristive substrate driven by two-phase replay dynamics — and the first such system to demonstrate offline replay-driven consolidation on physical hardware.",
+    to: "/synaptic/memphis",
+    tag: "EU Horizon · Deep tech",
+    tech: "Next.js, IBM Plex Serif, Gloock, next/image",
+    icon: Cpu,
+    gradient: "from-amber-500/8 to-rose-500/8",
+    accent: "bg-amber-500",
+    isNew: true,
+    date: "May 2026",
+  },
   {
     title: "SYMPHONY",
     tagline: "EIC Pathfinder 2026 · A neuromimetic substrate for code.",
