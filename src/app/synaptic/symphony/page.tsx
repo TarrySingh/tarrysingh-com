@@ -133,7 +133,7 @@ export default function SymphonyPage() {
       </section>
 
       <section className="syn-column pt-16">
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="space-y-16">
           <div className="print:hidden">
             <StatisticalCeiling />
             <div className="pt-3">
