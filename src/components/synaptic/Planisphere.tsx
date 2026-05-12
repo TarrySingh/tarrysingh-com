@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {
   CX,
   CY,
@@ -25,6 +25,15 @@ export function Planisphere({
 }: PlanisphereProps) {
   const [activeSec, setActiveSec] = useState(initialSec)
   const [hoverSec, setHoverSec] = useState<number | null>(null)
+  const [autoplay, setAutoplay] = useState(false)
+
+  useEffect(() => {
+    if (!autoplay) return
+    const id = setInterval(() => {
+      setActiveSec((s) => (s + 1) % 12)
+    }, 2500)
+    return () => clearInterval(id)
+  }, [autoplay])
 
   const handleSelect = (sec: number) => {
     setActiveSec(sec)
@@ -45,9 +54,58 @@ export function Planisphere({
   }
 
   return (
+    <div className={`mx-auto w-full max-w-[820px] ${className}`}>
+      <div
+        className="mb-6 flex items-center gap-3 rounded-2xl border px-4 py-3"
+        style={{
+          borderColor: "rgba(200,180,255,0.14)",
+          background:
+            "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+        }}
+      >
+        <span
+          className="syn-small-caps"
+          style={{ color: "var(--ink-dim)" }}
+        >
+          Task baton
+        </span>
+        <span
+          className="syn-mono flex-1 text-center"
+          style={{
+            color: "var(--ink)",
+            letterSpacing: "var(--track-mono)",
+            fontSize: "0.86rem",
+          }}
+        >
+          ν ={" "}
+          <span style={{ color: "var(--symphony-amber-hi)" }}>
+            {SECTORS[activeSec].task}
+          </span>
+        </span>
+        <button
+          type="button"
+          onClick={() => setAutoplay((a) => !a)}
+          className="syn-mono rounded-full border px-3 py-1 transition-colors"
+          style={{
+            fontSize: "0.7rem",
+            letterSpacing: "var(--track-mono)",
+            borderColor: autoplay
+              ? "var(--symphony-violet-hi)"
+              : "rgba(255,255,255,0.2)",
+            background: autoplay
+              ? "var(--symphony-violet)"
+              : "transparent",
+            color: autoplay ? "#0d1027" : "var(--ink)",
+          }}
+        >
+          {autoplay ? "■  Stop" : "▶  Auto-movement"}
+        </button>
+      </div>
     <svg
       viewBox={`0 0 ${VIEW} ${VIEW}`}
-      className={`block h-auto w-full ${className}`}
+      className="block h-auto w-full"
       role="img"
       aria-label="SYMPHONY planisphere — four concentric layers (rationale, historical, behavioural, structural) crossed with twelve engineering-task sectors. The violet task baton activates a three-sector fan; nodes in the fan brighten and a filament threads through the four layers."
     >
@@ -372,5 +430,13 @@ export function Planisphere({
         )
       })()}
     </svg>
+
+      <p
+        className="syn-small-caps mt-3 text-center"
+        style={{ color: "var(--ink-dim)" }}
+      >
+        Click any sector to point the task baton
+      </p>
+    </div>
   )
 }
