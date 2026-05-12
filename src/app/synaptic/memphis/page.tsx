@@ -1,5 +1,6 @@
 import Image from "next/image"
 import chipPlate from "@proposals/MEMPHIS/plates/plate-I-chip.png"
+import { Cartouche } from "@/components/editorial/Cartouche"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
@@ -175,6 +176,25 @@ export default function MemphisPage() {
           complex cognitive systems, embedded inside the dynamics of the
           physical hardware itself.
         </ItalicCaption>
+      </section>
+
+      <section className="syn-column pt-32">
+        <Cartouche title="The critical uncertainty" meta="MEMPHIS brief">
+          <p
+            style={{
+              color: "var(--ink)",
+              fontSize: "var(--text-body)",
+              lineHeight: 1.6,
+            }}
+          >
+            Whether memristive devices can be matched and stabilised at
+            the precision required by the replay-driven dynamics. The
+            biology demands a tighter device-to-device tolerance than
+            today&rsquo;s memristive arrays routinely deliver; the
+            engineering question is whether self-organisation can close
+            that gap inside the operating regime, not whether it must.
+          </p>
+        </Cartouche>
       </section>
 
       <footer className="syn-column pb-24 pt-32 text-center">
