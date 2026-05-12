@@ -4,6 +4,7 @@ import visionBanner from "@proposals/SYMPHONY/plates/plate-I-vision.png"
 import statisticalCeiling from "@proposals/SYMPHONY/plates/plate-V-statistical-ceiling.png"
 import comprehensionGap from "@proposals/SYMPHONY/plates/plate-IV-comprehension-gap.png"
 import substrateScales from "@proposals/SYMPHONY/plates/plate-II-substrate-x-scales.png"
+import consortiumPlate from "@proposals/SYMPHONY/plates/plate-III-consortium.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
@@ -348,6 +349,38 @@ export default function SymphonyPage() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section className="syn-column space-y-8 pt-32">
+        <SmallCaps>V · The consortium</SmallCaps>
+        <p
+          style={{
+            color: "var(--ink-cool)",
+            fontSize: "var(--text-body)",
+            lineHeight: 1.6,
+            maxWidth: "62ch",
+          }}
+        >
+          Four partners across three EU member states pair complementary
+          expertise: cortical neuromodulation from Newcastle (Ramaswamy);
+          haptic shared control from CREATE-PRISMA / UNINA (Siciliano);
+          foundation models for the real world from Real AI; and an
+          industrial-automation demonstrator codebase from UP Robotics.
+          Each lead carries a published, decade-spanning record in the
+          slice of the work they own.
+        </p>
+        <figure>
+          <Image
+            src={consortiumPlate}
+            alt="Plate III — Consortium plate naming the four SYMPHONY partners: Real AI · Newcastle (Ramaswamy) · CREATE / PRISMA (Siciliano) · UP Robotics, with their roles and the project's three reporting decision points."
+            sizes="(min-width: 1024px) 80vw, 100vw"
+            placeholder="blur"
+            className="mx-auto block h-auto w-full max-w-4xl rounded-[var(--radius-tight)]"
+          />
+          <figcaption className="pt-3 text-center">
+            <SmallCaps>Plate III · Consortium</SmallCaps>
+          </figcaption>
+        </figure>
       </section>
 
       <footer className="syn-column pb-24 pt-32 text-center">
