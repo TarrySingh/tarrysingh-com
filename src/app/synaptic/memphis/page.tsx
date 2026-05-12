@@ -5,6 +5,7 @@ import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
+import { ChipPlate } from "@/components/synaptic/ChipPlate"
 import { JumpNav } from "@/components/synaptic/JumpNav"
 
 const SECTIONS = [
@@ -44,11 +45,14 @@ const advances = [
 export default function MemphisPage() {
   return (
     <>
-      <figure className="relative w-full">
+      <section className="px-6 pb-12 pt-16 sm:px-12 lg:px-24 print:hidden">
+        <ChipPlate />
+      </section>
+
+      <figure className="relative hidden w-full print:block">
         <Image
           src={chipPlate}
           alt="MEMPHIS Plate I — a hippocampal-memristive chip plate: amber and rose memristor cells over a ceramic substrate with a silicon die, set in the MEMPHIS warm-midnight palette."
-          priority
           sizes="100vw"
           placeholder="blur"
           className="block h-auto w-full"
