@@ -437,6 +437,48 @@ export function Planisphere({
       >
         Click any sector to point the task baton
       </p>
+
+      <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+        {RINGS.map((r) => (
+          <div
+            key={r.name}
+            className="rounded-xl border px-3 py-3"
+            style={{
+              borderColor: "rgba(200,180,255,0.14)",
+              background:
+                "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+            }}
+          >
+            <div className="flex items-baseline gap-2">
+              <span
+                className="syn-display"
+                style={{ color: r.color, fontSize: "1.5rem" }}
+              >
+                {r.numeral}
+              </span>
+              <span
+                className="syn-mono"
+                style={{
+                  color: "var(--ink)",
+                  fontSize: "0.7rem",
+                  letterSpacing: "var(--track-mono)",
+                  textTransform: "uppercase",
+                }}
+              >
+                {r.name}
+              </span>
+            </div>
+            <p
+              className="syn-italic-caption mt-1"
+              style={{ fontSize: "0.78rem" }}
+            >
+              {r.sub}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
