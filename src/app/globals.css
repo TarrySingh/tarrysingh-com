@@ -1,3 +1,5 @@
+@import "../../design/tokens.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -216,4 +218,73 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* ---------------------------------------------------------------------------
+ * Synaptic Cartography — route-scoped tokens and utilities
+ *
+ * Activated only by adding `.syn-root` (and optionally `.syn-symphony`
+ * or `.syn-memphis`) on a wrapper element inside the route. The rest of
+ * the site remains on the existing shadcn/Inter system.
+ * ------------------------------------------------------------------------- */
+
+.syn-symphony {
+  --bg-deep: var(--symphony-bg-deep);
+  --bg-mid: var(--symphony-bg-mid);
+  --project-accent: var(--symphony-violet);
+  --project-accent-hi: var(--symphony-violet-hi);
+}
+
+.syn-memphis {
+  --project-accent: var(--memphis-amber);
+  --project-accent-hi: var(--memphis-amber-hi);
+}
+
+.syn-root {
+  background-color: var(--bg-deep);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: var(--text-body);
+  line-height: 1.6;
+}
+
+.syn-display {
+  font-family: var(--font-display);
+  letter-spacing: var(--track-display);
+}
+
+.syn-serif {
+  font-family: var(--font-serif);
+}
+
+.syn-mono {
+  font-family: var(--font-mono);
+}
+
+.syn-italic-caption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--text-italic-caption);
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.syn-small-caps {
+  font-family: var(--font-mono);
+  font-size: var(--text-small-caps);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.syn-hairline {
+  display: block;
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--hairline),
+    transparent
+  );
 }
