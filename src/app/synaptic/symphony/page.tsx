@@ -13,6 +13,7 @@ import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
+import { ComprehensionGap } from "@/components/synaptic/ComprehensionGap"
 import { JumpNav } from "@/components/synaptic/JumpNav"
 import { StatisticalCeiling } from "@/components/synaptic/StatisticalCeiling"
 import { SymphonyStudio } from "@/components/synaptic/SymphonyStudio"
@@ -151,15 +152,9 @@ export default function SymphonyPage() {
               className="block h-auto w-full rounded-[var(--radius-tight)]"
             />
           </figure>
-          <figure>
-            <Image
-              src={comprehensionGap}
-              alt="Plate IV — Comprehension gap chart: software-system complexity grows exponentially from 1970 to 2030 while individual human comprehension capacity is flat. The widening gap is the addressable problem for SYMPHONY."
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              placeholder="blur"
-              className="block h-auto w-full rounded-[var(--radius-tight)]"
-            />
-            <figcaption className="pt-3">
+          <div className="print:hidden">
+            <ComprehensionGap />
+            <div className="pt-3">
               <SmallCaps>Plate IV · Comprehension gap</SmallCaps>
               <p
                 className="pt-2"
@@ -174,7 +169,16 @@ export default function SymphonyPage() {
                 problem the substrate is built to address — through
                 task-adaptive activation, not exhaustive re-reading.
               </p>
-            </figcaption>
+            </div>
+          </div>
+          <figure className="hidden print:block">
+            <Image
+              src={comprehensionGap}
+              alt="Plate IV — Comprehension gap chart: software-system complexity grows exponentially from 1970 to 2030 while individual human comprehension capacity is flat. The widening gap is the addressable problem for SYMPHONY."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              placeholder="blur"
+              className="block h-auto w-full rounded-[var(--radius-tight)]"
+            />
           </figure>
         </div>
       </section>
