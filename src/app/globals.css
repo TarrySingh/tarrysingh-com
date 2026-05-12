@@ -308,3 +308,50 @@ html {
     padding-right: 6rem;
   }
 }
+
+/* Print mode for Synaptic Cartography routes — black-on-cream brief */
+@media print {
+  .syn-root {
+    background-color: #f5edd6 !important;
+    color: #1a1d24 !important;
+    --bg-deep: #f5edd6;
+    --bg-mid: #ffffff;
+    --ink: #1a1d24;
+    --ink-cool: #1a1d24;
+    --ink-soft: #2a2a2a;
+    --ink-dim: #555;
+    --hairline: rgba(0, 0, 0, 0.3);
+    --panel-deep: #ffffff;
+    --panel-mid: #f0e8d0;
+    --panel-edge: rgba(0, 0, 0, 0.18);
+    --symphony-violet: #5a4a8a;
+    --symphony-violet-hi: #3a2a6a;
+  }
+  .syn-root h1,
+  .syn-root h2,
+  .syn-root h3 {
+    color: #1a1d24 !important;
+  }
+  .syn-root section,
+  .syn-root figure {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .syn-root img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+  }
+  .syn-root table {
+    page-break-inside: avoid;
+  }
+  /* Hide the dossier download link in print — already on paper */
+  .syn-root a[download] {
+    display: none !important;
+  }
+  /* Tighten the editorial rhythm */
+  .syn-column {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
