@@ -1,9 +1,23 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home, Network, Gauge } from "lucide-react"
+import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home, Network, Gauge, Brain } from "lucide-react"
 
 const experiments = [
+  {
+    title: "SYMPHONY",
+    tagline: "EIC Pathfinder 2026 · A neuromimetic substrate for code.",
+    description:
+      "A Synaptic Cartography microsite for a Horizon-Europe deep-tech proposal. Nine museum-grade plates, five objectives across 36 months at decision milestones M12 / M18 / M24 / M30 / M33, four partner spreads (Newcastle · CREATE-PRISMA · Real AI · UP Robotics), and the full 25-page dossier for download.",
+    to: "/synaptic/symphony",
+    tag: "EU Horizon · Deep tech",
+    tech: "Next.js, IBM Plex Serif, Gloock, next/image",
+    icon: Brain,
+    gradient: "from-indigo-500/8 to-violet-500/8",
+    accent: "bg-violet-500",
+    isNew: true,
+    date: "May 2026",
+  },
   {
     title: "The Insane Pace of AI",
     tagline: "Q1 2026 Executive Dashboard · 75 sections.",
