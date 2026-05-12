@@ -139,6 +139,44 @@ export default function MemphisPage() {
         </div>
       </section>
 
+      <section className="syn-column space-y-8 pt-32">
+        <SmallCaps>III · Contribution to the long-term vision</SmallCaps>
+        <p
+          style={{
+            color: "var(--ink-cool)",
+            fontSize: "var(--text-body)",
+            lineHeight: 1.6,
+            maxWidth: "62ch",
+          }}
+        >
+          A hippocampal-inspired neuromorphic system with integrated
+          learning and memory consolidation is a concrete step toward
+          post–von-Neumann computing — paradigms in which intelligence
+          emerges from the interaction between computation, memory and
+          physical substrate, not from their separation.
+        </p>
+        <p
+          style={{
+            color: "var(--ink-cool)",
+            fontSize: "var(--text-body)",
+            lineHeight: 1.6,
+            maxWidth: "62ch",
+          }}
+        >
+          The proposed system establishes three things at once: the
+          scientific basis for replay-driven learning in artificial
+          systems, the technological feasibility of ultra-low-power
+          adaptive hardware, and a scalable framework for future
+          brain-inspired architectures in AI and robotics.
+        </p>
+        <ItalicCaption className="max-w-3xl">
+          The project focuses on a constrained hippocampal module — but
+          the principles developed here are directly extendable to more
+          complex cognitive systems, embedded inside the dynamics of the
+          physical hardware itself.
+        </ItalicCaption>
+      </section>
+
       <footer className="syn-column pb-24 pt-32 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">
           Memory and computation, co-localised.
