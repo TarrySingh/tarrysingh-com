@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { synapticDisplay, synapticSerif, synapticMono } from "./fonts"
 import "./globals.css"
 import { Providers } from "@/components/providers"
 
@@ -20,7 +21,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html
+      lang="en"
+      className={`${inter.className} ${synapticDisplay.variable} ${synapticSerif.variable} ${synapticMono.variable}`}
+    >
       <body>{children}</body>
     </html>
   )
