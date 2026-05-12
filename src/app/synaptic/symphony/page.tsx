@@ -281,6 +281,75 @@ export default function SymphonyPage() {
         </div>
       </section>
 
+      <section className="syn-column space-y-8 pt-32">
+        <div className="space-y-4">
+          <SmallCaps>IV · Five objectives, two reporting periods</SmallCaps>
+          <ItalicCaption className="max-w-3xl">
+            Each objective carries a quantitative threshold, a decision
+            milestone, and a documented alternative path if the threshold
+            is missed. RP1 closes at M12; RP2 closes at M36.
+          </ItalicCaption>
+        </div>
+
+        <div
+          className="overflow-x-auto rounded-[var(--radius-card)] border"
+          style={{
+            borderColor: "var(--panel-edge)",
+            backgroundColor: "var(--panel-deep)",
+            boxShadow: "var(--shadow-card)",
+          }}
+        >
+          <table className="w-full text-left" style={{ borderCollapse: "collapse" }}>
+            <thead>
+              <tr style={{ borderBottom: "1px solid var(--hairline)" }}>
+                <th className="syn-small-caps px-5 py-4">No.</th>
+                <th className="syn-small-caps px-5 py-4">Objective</th>
+                <th className="syn-small-caps px-5 py-4">Threshold</th>
+                <th className="syn-small-caps px-5 py-4">Milestone</th>
+                <th className="syn-small-caps px-5 py-4">Lead</th>
+              </tr>
+            </thead>
+            <tbody style={{ color: "var(--ink-cool)" }}>
+              <tr style={{ borderBottom: "1px solid var(--hairline)" }}>
+                <td className="syn-display px-5 py-5" style={{ color: "var(--symphony-violet)", fontSize: "1.4rem" }}>O1</td>
+                <td className="px-5 py-5" style={{ color: "var(--ink)" }}>Multi-layer extraction pipeline</td>
+                <td className="px-5 py-5">≥ 90 % function coverage, ≥ 80 % inter-module dependencies on both demonstrator codebases</td>
+                <td className="syn-mono px-5 py-5" style={{ color: "var(--ink)", letterSpacing: "var(--track-mono)" }}>M12</td>
+                <td className="px-5 py-5">Real AI · UP Robotics</td>
+              </tr>
+              <tr style={{ borderBottom: "1px solid var(--hairline)" }}>
+                <td className="syn-display px-5 py-5" style={{ color: "var(--symphony-violet)", fontSize: "1.4rem" }}>O2</td>
+                <td className="px-5 py-5" style={{ color: "var(--ink)" }}>Neuromodulatory reconfiguration mechanism</td>
+                <td className="px-5 py-5">F1 ≥ 0.6 vs expert annotation, <em>p</em> &lt; 0.01 paired across ≥ 30 instances and ≥ 3 task classes</td>
+                <td className="syn-mono px-5 py-5" style={{ color: "var(--ink)", letterSpacing: "var(--track-mono)" }}>M18</td>
+                <td className="px-5 py-5">Newcastle · Real AI</td>
+              </tr>
+              <tr style={{ borderBottom: "1px solid var(--hairline)" }}>
+                <td className="syn-display px-5 py-5" style={{ color: "var(--symphony-violet)", fontSize: "1.4rem" }}>O3</td>
+                <td className="px-5 py-5" style={{ color: "var(--ink)" }}>Low-bandwidth task control interface</td>
+                <td className="px-5 py-5">Task-switching latency &lt; 500 ms; state-preservation ≥ 0.95 over ≥ 100 trials</td>
+                <td className="syn-mono px-5 py-5" style={{ color: "var(--ink)", letterSpacing: "var(--track-mono)" }}>M24</td>
+                <td className="px-5 py-5">CREATE-PRISMA · Newcastle</td>
+              </tr>
+              <tr style={{ borderBottom: "1px solid var(--hairline)" }}>
+                <td className="syn-display px-5 py-5" style={{ color: "var(--symphony-violet)", fontSize: "1.4rem" }}>O4</td>
+                <td className="px-5 py-5" style={{ color: "var(--ink)" }}>Benchmarked advantage over LLM and KG baselines</td>
+                <td className="px-5 py-5">≥ 20 % relative F1 lift on task-relevant-subgraph recovery; ≥ 15 % in expert-rated actionability</td>
+                <td className="syn-mono px-5 py-5" style={{ color: "var(--ink)", letterSpacing: "var(--track-mono)" }}>M30</td>
+                <td className="px-5 py-5">Real AI · external advisory</td>
+              </tr>
+              <tr>
+                <td className="syn-display px-5 py-5" style={{ color: "var(--symphony-violet)", fontSize: "1.4rem" }}>O5</td>
+                <td className="px-5 py-5" style={{ color: "var(--ink)" }}>Equitable-access user study (≥ 60 engineers)</td>
+                <td className="px-5 py-5">Significant reduction in time-to-first-correct-change for under-represented strata, non-inferior 30-day retention</td>
+                <td className="syn-mono px-5 py-5" style={{ color: "var(--ink)", letterSpacing: "var(--track-mono)" }}>M33</td>
+                <td className="px-5 py-5">Newcastle ethics · Real AI</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <footer className="syn-column pb-24 pt-32 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">
           Same substrate. Different harmonies.
