@@ -14,6 +14,7 @@ import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { JumpNav } from "@/components/synaptic/JumpNav"
+import { StatisticalCeiling } from "@/components/synaptic/StatisticalCeiling"
 import { SymphonyStudio } from "@/components/synaptic/SymphonyStudio"
 
 const SECTIONS = [
@@ -122,15 +123,9 @@ export default function SymphonyPage() {
 
       <section className="syn-column pt-16">
         <div className="grid gap-8 lg:grid-cols-2">
-          <figure>
-            <Image
-              src={statisticalCeiling}
-              alt="Plate V — Statistical ceiling chart: published SWE-bench Verified scores compared with independently re-evaluated resolution rates after solution-leakage filtering. Headline scores above 80 per cent collapse to single digits."
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              placeholder="blur"
-              className="block h-auto w-full rounded-[var(--radius-tight)]"
-            />
-            <figcaption className="pt-3">
+          <div className="print:hidden">
+            <StatisticalCeiling />
+            <div className="pt-3">
               <SmallCaps>Plate V · Statistical ceiling</SmallCaps>
               <p
                 className="pt-2"
@@ -145,7 +140,16 @@ export default function SymphonyPage() {
                 replication studies both find a headline collapse once
                 solution leakage and weak test cases are removed.
               </p>
-            </figcaption>
+            </div>
+          </div>
+          <figure className="hidden print:block">
+            <Image
+              src={statisticalCeiling}
+              alt="Plate V — Statistical ceiling chart: published SWE-bench Verified scores compared with independently re-evaluated resolution rates after solution-leakage filtering. Headline scores above 80 per cent collapse to single digits."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              placeholder="blur"
+              className="block h-auto w-full rounded-[var(--radius-tight)]"
+            />
           </figure>
           <figure>
             <Image
