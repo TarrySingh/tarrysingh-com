@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SYMPHONY — An Interactive Planisphere</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<style>
+  :root {
+    --bg-deep:   #0d1027;
+    --bg-mid:    #16183a;
+    --panel:     #18204a;
+    --panel-2:   #1f2a5c;
+    --ink:       #f5e8cc;
+    --ink-dim:   #c2bea0;
+    --ink-cool:  #c0c6dd;
+    --teal:      #6cb4c2;
+    --rose:      #e5a896;
+    --amber:     #f4c482;
+    --amber-hi:  #ffd596;
+    --gold:      #c8a86e;
+    --copper:    #c98e4f;
+    --violet:    #a698d4;
+    --violet-hi: #c8b8ff;
+    --violet-dp: #5a4a8a;
+  }
+  html, body {
+    background: radial-gradient(ellipse at center 45%, #1c2058 0%, #0e1133 60%, #0a0b22 100%);
+    color: var(--ink);
+    font-family: 'IBM Plex Serif', serif;
+    min-height: 100vh;
+  }
+  .font-display { font-family: 'Gloock', serif; letter-spacing: 0.04em; }
+  .font-mono    { font-family: 'IBM Plex Mono', monospace; }
+  .font-serif   { font-family: 'IBM Plex Serif', serif; }
+
+  /* starfield */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 12% 25%, rgba(245,232,204,.20), transparent 60%),
+      radial-gradient(1px 1px at 38% 78%, rgba(245,232,204,.16), transparent 60%),
+      radial-gradient(1px 1px at 72% 32%, rgba(245,232,204,.20), transparent 60%),
+      radial-gradient(1px 1px at 88% 62%, rgba(245,232,204,.14), transparent 60%),
+      radial-gradient(1px 1px at 22% 58%, rgba(245,232,204,.18), transparent 60%),
+      radial-gradient(1px 1px at 58% 88%, rgba(245,232,204,.15), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hairline { background: linear-gradient(90deg, transparent, rgba(230,214,180,.45), transparent); height: 1px; }
+  .small-caps { letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.74rem; }
+
+  @keyframes pulseGlow {
+    0%,100% { opacity: .6; }
+    50%     { opacity: 1;  }
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes sweep {
+    0%   { opacity: 0;  r: 6; }
+    35%  { opacity: 1;  r: 10; }
+    100% { opacity: 0;  r: 18; }
+  }
+  @keyframes ribbonFlow {
+    0%   { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -200; }
+  }
+  @keyframes batonGlow {
+    0%,100% { opacity: .8; filter: drop-shadow(0 0 12px rgba(200,184,255,.6)); }
+    50%     { opacity: 1;  filter: drop-shadow(0 0 22px rgba(200,184,255,.95)); }
+  }
+
+  .annotation-card {
+    background: linear-gradient(180deg, rgba(28,38,80,.85), rgba(14,20,45,.92));
+    border: 1px solid rgba(200,180,255,.14);
+    backdrop-filter: blur(8px);
+  }
+  .annotation-card.active {
+    border-color: rgba(255,210,150,.55);
+    box-shadow: 0 0 0 1px rgba(255,210,150,.25), 0 12px 40px rgba(0,0,0,.45);
+  }
+  .pill-button {
+    transition: all 0.25s ease;
+    backdrop-filter: blur(6px);
+  }
+  .pill-button:hover { transform: translateY(-1px); }
+
+  .sector-region { transition: opacity .35s ease, fill .35s ease; cursor: pointer; }
+  .sector-region:hover { fill: rgba(255,210,150,0.10); }
+
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #0d1027; }
+  ::-webkit-scrollbar-thumb { background: #2a3470; border-radius: 4px; }
+
+  .grain {
+    position: fixed; inset: 0; pointer-events: none; z-index: 100;
+    opacity: .05; mix-blend-mode: overlay;
+    background-image:
+      repeating-radial-gradient(circle at 0 0, rgba(255,255,255,.7) 0, rgba(255,255,255,.7) 1px, transparent 1px, transparent 3px);
+  }
+</style>
+</head>
+<body class="antialiased">
+<div class="grain"></div>
+<div id="root" class="relative z-10"></div>
+
+<script type="text/babel" data-presets="env,react">
+const { useState, useEffect, useMemo, useRef } = React;
+
+// -------------------------------------------------------------
+// Static data
+// -------------------------------------------------------------
+const RINGS = [
+  { numeral: "I",   name: "RATIONALE",   sub: "design intent",            color: "#f4c482", rIn: 0.20, rOut: 0.34 },
+  { numeral: "II",  name: "HISTORICAL",  sub: "commits · provenance",     color: "#e5a896", rIn: 0.36, rOut: 0.50 },
+  { numeral: "III", name: "BEHAVIOURAL", sub: "tests · contracts · flow", color: "#6cb4c2", rIn: 0.52, rOut: 0.66 },
+  { numeral: "IV",  name: "STRUCTURAL",  sub: "modules · functions",      color: "#849cc8", rIn: 0.68, rOut: 0.82 },
+];
+
+const SECTORS = [
+  { id: 0,  task: "LOCALISATION",       blurb: "Pinpoint the source of an observed bug or behaviour.",     mod: "Rationale & Behavioural up · Structural narrowed" },
+  { id: 1,  task: "DIAGNOSIS",          blurb: "Identify root cause from a symptom across layers.",        mod: "Historical & Behavioural up" },
+  { id: 2,  task: "IMPACT ANALYSIS",    blurb: "Trace ripple effects of a proposed change.",               mod: "Structural up · Historical up" },
+  { id: 3,  task: "DEPENDENCY TRACE",   blurb: "Surface call & data dependencies for an entity.",          mod: "Structural up · Behavioural up" },
+  { id: 4,  task: "REFACTORING",        blurb: "Find candidates for safe structural change.",              mod: "Rationale up · Structural up" },
+  { id: 5,  task: "TESTING",            blurb: "Locate gaps and high-leverage test points.",               mod: "Behavioural up · Historical up" },
+  { id: 6,  task: "DOCUMENTATION",      blurb: "Recover the why behind the what.",                          mod: "Rationale up · Historical up" },
+  { id: 7,  task: "ONBOARDING",         blurb: "Build a beginner-friendly view of a strange codebase.",    mod: "All layers, equal weighting" },
+  { id: 8,  task: "REVIEW",             blurb: "Reason about a patch against design intent.",              mod: "Rationale up · Behavioural up" },
+  { id: 9,  task: "OPTIMISATION",       blurb: "Find hot paths and contention points.",                    mod: "Behavioural up · Structural up" },
+  { id: 10, task: "MIGRATION",          blurb: "Stage a transition across versions or stacks.",            mod: "Historical up · Structural up" },
+  { id: 11, task: "ARCHITECTURE",       blurb: "Survey large-scale form & boundaries.",                    mod: "Structural up · Rationale up" },
+];
+
+const OBJECTIVES = [
+  { id: "O1", title: "MULTI-LAYER EXTRACTION", subtitle: "structural · behavioural · historical · rationale",
+    body: "Build a pipeline that ingests a software system and emits a four-layer representation over a single graph. Coverage ≥ 90% of functions, ≥ 80% of inter-module dependencies, decision milestone M12." },
+  { id: "O2", title: "NEUROMODULATORY RECONFIG", subtitle: "four-scale activation",
+    body: "Implement the four-scale framework of Mei, Muller & Ramaswamy (2022): hyperparameter, plasticity, neuron-level and dendritic modulation, adapted to symbolic activations. F1 ≥ 0.6 against expert ground-truth, M18." },
+  { id: "O3", title: "LOW-BANDWIDTH CONTROL", subtitle: "task-switch < 500 ms",
+    body: "Derive a narrow scalar control interface (the task baton) by which task tokens reshape activation without modifying stored structure. State-preservation ≥ 0.95, M24." },
+  { id: "O4", title: "BENCHMARKED ADVANTAGE", subtitle: "≥ 20% F1 over baselines",
+    body: "Beat (a) a frontier LLM agent, (b) static-analysis + EAKG, and (c) LLM + RAG on a pre-registered 200-instance benchmark. ≥ 20% F1 lift and ≥ 15% expert-rated actionability, M30." },
+  { id: "O5", title: "EQUITABLE-ACCESS STUDY", subtitle: "≥ 60 engineers, stratified",
+    body: "Pre-registered user study stratified across gender, career stage, and native-language proficiency. Primary endpoint: significant time-to-first-correct-change reduction for under-represented strata, with no stratum disadvantaged. M33." },
+];
+
+// pre-seed positions for a stable layout
+function seedPositions(seed=42) {
+  let s = seed;
+  const rand = () => {
+    s = (s * 1664525 + 1013904223) >>> 0;
+    return (s & 0x7fffffff) / 0x7fffffff;
+  };
+  const nodes = [];   // {ringIdx, sectorIdx, x, y, r, ang}
+  const VIEW = 800;
+  const CX = VIEW / 2, CY = VIEW / 2;
+  RINGS.forEach((ring, ri) => {
+    const rIn = ring.rIn * (VIEW / 2 - 30);
+    const rOut = ring.rOut * (VIEW / 2 - 30);
+    const baseDensity = [1, 3, 4, 7][ri];
+    for (let sec = 0; sec < 12; sec++) {
+      const n = baseDensity + Math.floor(rand() * 2);
+      const angStart = sec * 30 - 90 - 15;
+      const angEnd   = sec * 30 - 90 + 15;
+      for (let k = 0; k < n; k++) {
+        const r = rIn + rand() * (rOut - rIn);
+        const a = angStart + 2 + rand() * (angEnd - angStart - 4);
+        const rad = a * Math.PI / 180;
+        nodes.push({
+          ringIdx: ri,
+          sectorIdx: sec,
+          x: CX + r * Math.cos(rad),
+          y: CY + r * Math.sin(rad),
+          r: r,
+          ang: a,
+        });
+      }
+    }
+  });
+  return nodes;
+}
+const NODES = seedPositions(7);
+
+// -------------------------------------------------------------
+// Planisphere component
+// -------------------------------------------------------------
+function Planisphere({ activeSec, setActiveSec, hoverSec, setHoverSec, t }) {
+  const VIEW = 800;
+  const CX = VIEW / 2, CY = VIEW / 2;
+
+  // active sectors form a fan of 3 around the chosen centre
+  const activeSet = useMemo(() => {
+    const set = new Set();
+    [-1, 0, 1].forEach(d => set.add(((activeSec + d) % 12 + 12) % 12));
+    return set;
+  }, [activeSec]);
+
+  // animated activation phase for active nodes
+  const pulsePhase = (t * 0.003);
+
+  // helper for sector wedge path
+  const wedgePath = (sec, rInner, rOuter) => {
+    const a0 = (sec * 30 - 90 - 15) * Math.PI / 180;
+    const a1 = (sec * 30 - 90 + 15) * Math.PI / 180;
+    const x0o = CX + rOuter * Math.cos(a0), y0o = CY + rOuter * Math.sin(a0);
+    const x1o = CX + rOuter * Math.cos(a1), y1o = CY + rOuter * Math.sin(a1);
+    const x0i = CX + rInner * Math.cos(a0), y0i = CY + rInner * Math.sin(a0);
+    const x1i = CX + rInner * Math.cos(a1), y1i = CY + rInner * Math.sin(a1);
+    return `M ${x0i} ${y0i} L ${x0o} ${y0o} A ${rOuter} ${rOuter} 0 0 1 ${x1o} ${y1o} L ${x1i} ${y1i} A ${rInner} ${rInner} 0 0 0 ${x0i} ${y0i} Z`;
+  };
+
+  const outerR = VIEW / 2 - 30;
+
+  // ribbon from token to center: draw a thin curved line
+  const a_mid = (activeSec * 30 - 90) * Math.PI / 180;
+  const batonTip = {
+    x: CX + (outerR * 0.40) * Math.cos(a_mid),
+    y: CY + (outerR * 0.40) * Math.sin(a_mid),
+  };
+
+  return (
+    <svg viewBox={`0 0 ${VIEW} ${VIEW}`} className="w-full h-full">
+      <defs>
+        <radialGradient id="centreGlow" cx="50%" cy="50%" r="35%">
+          <stop offset="0%"  stopColor="#c8b8ff" stopOpacity="0.95" />
+          <stop offset="50%" stopColor="#a698d4" stopOpacity="0.45" />
+          <stop offset="100%" stopColor="#5a4a8a" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="fanGlow" cx="50%" cy="50%" r="80%">
+          <stop offset="0%"  stopColor="#ffd596" stopOpacity="0.42" />
+          <stop offset="55%" stopColor="#c98e4f" stopOpacity="0.16" />
+          <stop offset="100%" stopColor="#0e1133" stopOpacity="0" />
+        </radialGradient>
+        <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" />
+        </filter>
+      </defs>
+
+      {/* full atmospheric bloom over active fan */}
+      {[...activeSet].map(sec => (
+        <path key={`bloom-${sec}`} d={wedgePath(sec, 0, outerR + 10)}
+              fill="url(#fanGlow)" opacity="0.85" />
+      ))}
+
+      {/* 4 concentric ring backgrounds (thin) */}
+      {RINGS.map((ring, ri) => {
+        const rIn = ring.rIn * outerR;
+        const rOut = ring.rOut * outerR;
+        return (
+          <g key={`ring-${ri}`}>
+            <circle cx={CX} cy={CY} r={rOut} fill="none" stroke={ring.color} strokeOpacity=".45" strokeWidth="1" />
+            <circle cx={CX} cy={CY} r={rIn}  fill="none" stroke={ring.color} strokeOpacity=".3"  strokeWidth="1" />
+          </g>
+        );
+      })}
+
+      {/* sector wedges as interactive regions (hairlines + click target) */}
+      {Array.from({length: 12}).map((_, sec) => (
+        <g key={`sec-${sec}`} className="sector-region"
+           onClick={() => setActiveSec(sec)}
+           onMouseEnter={() => setHoverSec(sec)}
+           onMouseLeave={() => setHoverSec(null)}>
+          <path d={wedgePath(sec, RINGS[0].rIn * outerR, outerR)}
+                fill={hoverSec === sec ? "rgba(200,184,255,0.06)" : "transparent"}
+                stroke="rgba(220,200,160,0.10)" strokeWidth="0.5" />
+        </g>
+      ))}
+
+      {/* 12 radial dividers */}
+      {Array.from({length: 12}).map((_, i) => {
+        const ang = (i * 30 - 90 - 15) * Math.PI / 180;
+        const r1 = RINGS[0].rIn * outerR * 0.85;
+        const r2 = outerR;
+        return (
+          <line key={`div-${i}`}
+                x1={CX + r1 * Math.cos(ang)} y1={CY + r1 * Math.sin(ang)}
+                x2={CX + r2 * Math.cos(ang)} y2={CY + r2 * Math.sin(ang)}
+                stroke="rgba(220,200,160,0.18)" strokeWidth="0.6" />
+        );
+      })}
+
+      {/* outer perimeter & tick marks */}
+      <circle cx={CX} cy={CY} r={outerR} fill="none" stroke="rgba(220,200,160,0.7)" strokeWidth="1" />
+      <circle cx={CX} cy={CY} r={outerR + 8} fill="none" stroke="rgba(220,200,160,0.35)" strokeWidth="0.7" />
+      {Array.from({length: 360}).map((_, i) => {
+        const ang = (i - 90) * Math.PI / 180;
+        const isLong = i % 30 === 0;
+        const isMed  = i % 5 === 0 && !isLong;
+        const r1 = outerR;
+        const r2 = outerR - (isLong ? 16 : isMed ? 9 : 4);
+        return (
+          <line key={`tk-${i}`}
+                x1={CX + r1 * Math.cos(ang)} y1={CY + r1 * Math.sin(ang)}
+                x2={CX + r2 * Math.cos(ang)} y2={CY + r2 * Math.sin(ang)}
+                stroke={isLong ? "rgba(245,232,204,0.85)" : isMed ? "rgba(220,200,160,0.55)" : "rgba(170,160,130,0.35)"}
+                strokeWidth={isLong ? 1 : 0.6} />
+        );
+      })}
+      {/* bearing numbers */}
+      {Array.from({length: 12}).map((_, i) => {
+        const ang = (i * 30 - 90) * Math.PI / 180;
+        const r = outerR + 22;
+        return (
+          <text key={`bn-${i}`}
+                x={CX + r * Math.cos(ang)} y={CY + r * Math.sin(ang) + 5}
+                textAnchor="middle" fontFamily="IBM Plex Mono" fontSize="11"
+                fill="rgba(220,200,160,0.85)">
+            {String(i * 30).padStart(3, "0")}
+          </text>
+        );
+      })}
+
+      {/* sector task labels (just inside outer ring) */}
+      {Array.from({length: 12}).map((_, sec) => {
+        const ang_mid = (sec * 30 - 90) * Math.PI / 180;
+        const r = outerR - 26;
+        const isActive = activeSet.has(sec);
+        const isPrimary = sec === activeSec;
+        return (
+          <text key={`sl-${sec}`}
+                x={CX + r * Math.cos(ang_mid)} y={CY + r * Math.sin(ang_mid) + 4}
+                textAnchor="middle" fontFamily="IBM Plex Mono"
+                fontSize="9" letterSpacing="1"
+                fill={isPrimary ? "#ffd596" : isActive ? "#f4c482" : "#f5e8cc"}
+                opacity={isActive ? 1 : 0.78}
+                style={{transition: 'fill .3s, opacity .3s'}}>
+            {SECTORS[sec].task}
+          </text>
+        );
+      })}
+
+      {/* nodes — render dim ones, then active with halos */}
+      {NODES.map((n, idx) => {
+        const isActive = activeSet.has(n.sectorIdx);
+        const ring = RINGS[n.ringIdx];
+        const isPrimary = n.sectorIdx === activeSec;
+        if (!isActive) {
+          return (
+            <circle key={idx} cx={n.x} cy={n.y} r="1.8"
+                    fill={ring.color} fillOpacity="0.55" />
+          );
+        }
+        // active node — varies in radius by pulse
+        const baseR = isPrimary ? 3.2 : 2.4;
+        const pulse = isPrimary ? (1 + Math.sin(pulsePhase + idx * 0.5) * 0.18) : 1;
+        const rr = baseR * pulse;
+        return (
+          <g key={idx}>
+            {isPrimary && (
+              <circle cx={n.x} cy={n.y} r={rr * 2.5}
+                      fill="#ffd596" fillOpacity="0.25" />
+            )}
+            <circle cx={n.x} cy={n.y} r={rr * 1.7}
+                    fill="#f4c482" fillOpacity="0.55" />
+            <circle cx={n.x} cy={n.y} r={rr}
+                    fill="#ffe0a4" />
+          </g>
+        );
+      })}
+
+      {/* cross-ring filaments within active fan (3 of them) */}
+      {[...activeSet].map(sec => {
+        // pick one node per ring closest to the sector midline
+        const a_mid = sec * 30 - 90;
+        const picks = [];
+        for (let ri = 0; ri < 4; ri++) {
+          const candidates = NODES.filter(n => n.ringIdx === ri && n.sectorIdx === sec);
+          if (candidates.length === 0) continue;
+          let best = candidates[0];
+          let bestScore = Math.abs(best.ang - a_mid);
+          for (const c of candidates) {
+            const s = Math.abs(c.ang - a_mid);
+            if (s < bestScore) { best = c; bestScore = s; }
+          }
+          picks.push(best);
+        }
+        if (picks.length < 2) return null;
+        // draw a polyline through picks
+        const d = picks.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
+        return (
+          <path key={`fil-${sec}`} d={d}
+                fill="none" stroke="#ffd596" strokeOpacity="0.7"
+                strokeWidth="1" strokeDasharray="3 2"
+                style={{animation: 'ribbonFlow 8s linear infinite'}} />
+        );
+      })}
+
+      {/* baton ribbon from outer (token side) to centre */}
+      <path d={`M ${CX} ${CY - outerR - 60}
+               Q ${CX + 30} ${CY - outerR / 2}
+                 ${batonTip.x} ${batonTip.y}`}
+            fill="none" stroke="#c8b8ff" strokeOpacity=".55"
+            strokeWidth="3"
+            strokeDasharray="6 5"
+            style={{animation: 'ribbonFlow 5s linear infinite'}} />
+
+      {/* baton arrow into centre */}
+      <line x1={CX} y1={CY} x2={batonTip.x} y2={batonTip.y}
+            stroke="#c8b8ff" strokeOpacity=".85" strokeWidth="1.5" />
+      <circle cx={batonTip.x} cy={batonTip.y} r="4" fill="#c8b8ff" />
+
+      {/* centre conductor sphere */}
+      <g style={{animation: 'batonGlow 3s ease-in-out infinite'}}>
+        <circle cx={CX} cy={CY} r="40" fill="url(#centreGlow)" />
+        <circle cx={CX} cy={CY} r="22" fill="#5a4a8a" />
+        <circle cx={CX} cy={CY} r="17" fill="#a698d4" />
+        <circle cx={CX} cy={CY} r="11" fill="#f5e8cc" />
+        {/* compass cross */}
+        <line x1={CX - 20} y1={CY} x2={CX + 20} y2={CY} stroke="#5a4a8a" strokeWidth="1.5" />
+        <line x1={CX} y1={CY - 20} x2={CX} y2={CY + 20} stroke="#5a4a8a" strokeWidth="1.5" />
+        <circle cx={CX} cy={CY} r="3" fill="#5a4a8a" />
+      </g>
+
+      {/* sweep pulse on active sector primary node centre */}
+      {(() => {
+        const a_mid = (activeSec * 30 - 90) * Math.PI / 180;
+        const r = (RINGS[2].rIn + RINGS[2].rOut) / 2 * outerR;
+        const x = CX + r * Math.cos(a_mid);
+        const y = CY + r * Math.sin(a_mid);
+        return (
+          <circle cx={x} cy={y} r="6" fill="none" stroke="#ffd596" strokeWidth="1"
+                  style={{animation:'sweep 1.8s ease-out infinite'}} />
+        );
+      })()}
+    </svg>
+  );
+}
+
+// -------------------------------------------------------------
+// App
+// -------------------------------------------------------------
+function App() {
+  const [activeSec, setActiveSec] = useState(0); // LOCALISATION default
+  const [hoverSec, setHoverSec] = useState(null);
+  const [selectedObj, setSelectedObj] = useState("O2");
+  const [t, setT] = useState(0);
+
+  useEffect(() => {
+    let raf, start = performance.now();
+    const tick = (now) => {
+      setT(now - start);
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  // auto-rotate option (off by default)
+  const [autoplay, setAutoplay] = useState(false);
+  useEffect(() => {
+    if (!autoplay) return;
+    const id = setInterval(() => setActiveSec(s => (s + 1) % 12), 2500);
+    return () => clearInterval(id);
+  }, [autoplay]);
+
+  const sector = SECTORS[hoverSec ?? activeSec];
+  const obj = OBJECTIVES.find(o => o.id === selectedObj);
+
+  return (
+    <div className="relative min-h-screen w-full px-6 md:px-10 pt-8 pb-20">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex justify-between items-start text-xs font-mono small-caps text-[color:var(--ink-dim)]">
+          <div>
+            <div style={{color:'var(--ink)'}} className="text-sm tracking-[0.2em]">PLATE  II  ·  MMXXVI</div>
+            <div className="mt-1">Anno 2026 · Folio 1.2</div>
+          </div>
+          <div className="text-right">
+            <div style={{color:'var(--ink)'}} className="text-sm tracking-[0.2em]">FIG. 1.2</div>
+            <div className="mt-1">Planisphere of a</div>
+            <div>neuromimetic substrate</div>
+          </div>
+        </div>
+        <div className="hairline mt-4"></div>
+
+        {/* Title */}
+        <div className="mt-10 text-center">
+          <h1 className="font-display text-[color:var(--ink)]"
+              style={{fontSize:'clamp(72px, 12vw, 180px)', letterSpacing:'0.08em', lineHeight:1}}>
+            SYMPHONY
+          </h1>
+          <p className="mt-4 font-serif italic" style={{color:'var(--violet-hi)', fontSize:'clamp(14px,1.6vw,22px)'}}>
+            a planisphere of the neuromimetic code substrate
+          </p>
+          <p className="mt-2 font-mono small-caps text-[color:var(--ink-dim)] tracking-[0.3em]">
+            · nervous system for software ·
+          </p>
+        </div>
+
+        {/* Task baton bar */}
+        <div className="mt-10 max-w-[820px] mx-auto annotation-card rounded-2xl px-4 py-3 flex items-center gap-3">
+          <div className="font-mono small-caps text-[color:var(--ink-dim)]">task baton</div>
+          <div className="font-mono tracking-[0.18em] text-[color:var(--ink)] flex-1 text-center">
+            ν = <span style={{color:'var(--amber-hi)'}}>{SECTORS[activeSec].task}</span>
+          </div>
+          <button
+            onClick={() => setAutoplay(a => !a)}
+            className={`pill-button rounded-full px-3 py-1 text-[11px] font-mono tracking-[0.18em] border ${
+              autoplay ? 'bg-[var(--violet)] text-[#0d1027] border-[var(--violet-hi)]' :
+              'bg-transparent text-[color:var(--ink)] border-white/20'
+            }`}>
+            {autoplay ? '■  STOP' : '▶  AUTO-MOVEMENT'}
+          </button>
+        </div>
+      </div>
+
+      {/* main grid */}
+      <div className="max-w-[1440px] mx-auto mt-10 grid grid-cols-1 lg:grid-cols-[1fr,380px] gap-10 items-start">
+        {/* PLANISPHERE */}
+        <div className="relative">
+          <div className="mx-auto" style={{maxWidth:'820px'}}>
+            <Planisphere
+              activeSec={activeSec}
+              setActiveSec={setActiveSec}
+              hoverSec={hoverSec}
+              setHoverSec={setHoverSec}
+              t={t}
+            />
+          </div>
+          <div className="text-center mt-2">
+            <div className="font-mono small-caps text-[color:var(--ink-dim)]">
+              click any sector to point the task baton
+            </div>
+          </div>
+
+          {/* ring legend below */}
+          <div className="mt-8 grid grid-cols-4 gap-3 max-w-[820px] mx-auto">
+            {RINGS.map(r => (
+              <div key={r.name} className="annotation-card rounded-xl px-3 py-3">
+                <div className="flex items-baseline gap-2">
+                  <div className="font-display text-2xl" style={{color: r.color}}>{r.numeral}</div>
+                  <div className="font-mono text-[11px] tracking-[0.2em] text-[color:var(--ink)]">{r.name}</div>
+                </div>
+                <div className="font-serif italic text-[12px] text-[color:var(--ink-dim)] mt-0.5">{r.sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* SIDE PANEL */}
+        <div className="sticky top-6 space-y-4">
+          {/* active sector info */}
+          <div className="annotation-card active rounded-2xl p-6">
+            <div className="font-mono text-xs tracking-[0.25em] text-[color:var(--ink-dim)]">
+              MOVEMENT
+            </div>
+            <div className="font-display text-5xl mt-1" style={{color:'var(--amber-hi)'}}>
+              {String((sector.id) + 1).padStart(2,"0")}
+            </div>
+            <h3 className="font-display text-2xl mt-2 text-[color:var(--ink)]">
+              {sector.task}
+            </h3>
+            <p className="font-serif italic mt-1 text-[color:var(--amber)]">{sector.blurb}</p>
+            <div className="hairline my-4"></div>
+            <div className="font-mono text-[10px] tracking-[0.2em] text-[color:var(--ink-dim)]">
+              MODULATORY SIGNATURE
+            </div>
+            <p className="font-serif text-[14px] text-[color:var(--ink-cool)] mt-1">{sector.mod}</p>
+          </div>
+
+          {/* 12-task grid */}
+          <div className="annotation-card rounded-2xl p-5">
+            <div className="font-mono small-caps text-[color:var(--ink-dim)]">tokens</div>
+            <div className="grid grid-cols-3 gap-1.5 mt-3">
+              {SECTORS.map(s => (
+                <button key={s.id}
+                  onClick={() => setActiveSec(s.id)}
+                  className={`pill-button text-[10px] font-mono tracking-[0.12em] rounded-md px-2 py-1.5 border text-left ${
+                    s.id === activeSec
+                      ? 'bg-[var(--amber)] text-[#0d1027] border-[var(--amber-hi)] font-bold'
+                      : 'bg-transparent text-[color:var(--ink)] border-white/10 hover:border-white/30'
+                  }`}>
+                  {s.task.length > 13 ? s.task.split(' ')[0] : s.task}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* OBJECTIVES strip */}
+      <div className="max-w-[1440px] mx-auto mt-14">
+        <div className="text-center font-mono small-caps tracking-[0.35em] text-[color:var(--ink-dim)]">
+          five objectives
+        </div>
+        <div className="mt-5 grid grid-cols-2 md:grid-cols-5 gap-3">
+          {OBJECTIVES.map(o => (
+            <button key={o.id}
+              onClick={() => setSelectedObj(o.id)}
+              className={`annotation-card rounded-xl p-4 text-left transition ${
+                selectedObj === o.id ? 'active' : ''
+              }`}>
+              <div className="font-display text-3xl" style={{color: selectedObj === o.id ? 'var(--amber-hi)' : 'var(--violet)'}}>
+                {o.id}
+              </div>
+              <div className="font-mono text-[11px] tracking-[0.18em] mt-1 text-[color:var(--ink)]">{o.title}</div>
+              <div className="font-serif italic text-[13px] text-[color:var(--ink-dim)] mt-0.5">{o.subtitle}</div>
+            </button>
+          ))}
+        </div>
+        {obj && (
+          <div key={obj.id} className="annotation-card rounded-2xl p-6 mt-4">
+            <div className="flex items-baseline gap-3">
+              <div className="font-display text-4xl" style={{color:'var(--amber-hi)'}}>{obj.id}</div>
+              <div>
+                <div className="font-mono text-[11px] tracking-[0.22em] text-[color:var(--ink)]">{obj.title}</div>
+                <div className="font-serif italic text-[14px] text-[color:var(--amber)]">{obj.subtitle}</div>
+              </div>
+            </div>
+            <p className="mt-3 font-serif text-[15px] leading-relaxed text-[color:var(--ink-cool)]">
+              {obj.body}
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* footer */}
+      <div className="max-w-[1440px] mx-auto mt-16">
+        <div className="hairline"></div>
+        <p className="text-center font-serif italic text-[color:var(--ink)] mt-8"
+           style={{fontSize:'clamp(18px, 2vw, 28px)', letterSpacing:'0.02em'}}>
+          Same substrate. Different harmonies.
+        </p>
+        <div className="flex justify-between items-center mt-8 font-mono text-[11px] small-caps text-[color:var(--ink-dim)]">
+          <div>SYMPHONY  ·  a neuromimetic knowledge substrate  ·  proposal dossier</div>
+          <div>plate II  ·  of II</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

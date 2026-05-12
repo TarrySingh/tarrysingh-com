@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MEMPHIS — An Interactive Plate</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- React + Babel -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<style>
+  :root {
+    --bg-deep: #0c1828;
+    --bg-mid:  #14223b;
+    --panel:   #18304e;
+    --panel-2: #1e3a5f;
+    --ink:     #f6ead0;
+    --ink-dim: #c7c2a8;
+    --ink-cool:#c4d2e1;
+    --teal:    #5aa9b8;
+    --teal-dp: #2b6e7f;
+    --copper:  #c98e4f;
+    --amber:   #e8b87a;
+    --amber-b: #ffd296;
+    --rose:    #e5a896;
+    --gold:    #b89256;
+    --ceramic: #e0cfac;
+    --silicon: #102030;
+  }
+  html, body {
+    background: radial-gradient(ellipse at center 40%, #16294a 0%, #0c1828 65%, #0a1320 100%);
+    color: var(--ink);
+    font-family: 'IBM Plex Serif', serif;
+    min-height: 100vh;
+  }
+  .font-display { font-family: 'Gloock', serif; letter-spacing: 0.04em; }
+  .font-mono    { font-family: 'IBM Plex Mono', monospace; }
+  .font-serif   { font-family: 'IBM Plex Serif', serif; }
+
+  /* Subtle starfield */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, rgba(246,234,208,.18), transparent 60%),
+      radial-gradient(1px 1px at 40% 80%, rgba(246,234,208,.14), transparent 60%),
+      radial-gradient(1px 1px at 75% 30%, rgba(246,234,208,.20), transparent 60%),
+      radial-gradient(1px 1px at 85% 65%, rgba(246,234,208,.13), transparent 60%),
+      radial-gradient(1px 1px at 25% 55%, rgba(246,234,208,.16), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hairline { background: linear-gradient(90deg, transparent, rgba(230,214,180,.45), transparent); height: 1px; }
+
+  .small-caps { letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.74rem; }
+
+  /* node pulses */
+  @keyframes softPulse {
+    0%,100% { opacity: .55; transform: scale(1); }
+    50%     { opacity: 1;   transform: scale(1.18); }
+  }
+  @keyframes sweep {
+    0%   { opacity: 0;   transform: scale(0.6); }
+    35%  { opacity: 1;   transform: scale(1.0); }
+    100% { opacity: 0;   transform: scale(1.4); }
+  }
+  @keyframes drift {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-40px); }
+  }
+
+  .chip-shadow { filter: drop-shadow(0 28px 80px rgba(88, 170, 200, .18)) drop-shadow(0 0 60px rgba(255,190,120,.10)); }
+
+  .pill-button {
+    transition: all 0.25s ease;
+    backdrop-filter: blur(6px);
+  }
+  .pill-button:hover { transform: translateY(-1px); }
+
+  .hotspot:hover circle.anchor {
+    fill: #ffe0a4;
+    r: 10;
+    filter: drop-shadow(0 0 8px #ffd296);
+  }
+  .hotspot text { transition: fill .2s, opacity .2s; }
+  .hotspot:hover text.num { fill: #ffe0a4; }
+
+  .leader-line { transition: stroke .2s, stroke-opacity .2s; }
+  .hotspot:hover .leader-line { stroke: #ffd296; stroke-opacity: .8; }
+
+  /* waveform animation */
+  .wave-anim path {
+    stroke-dasharray: 1200;
+    animation: dashDraw 5s linear infinite;
+  }
+  @keyframes dashDraw {
+    0%   { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -1200; }
+  }
+
+  .annotation-card {
+    background: linear-gradient(180deg, rgba(24,48,78,.85), rgba(14,28,46,.92));
+    border: 1px solid rgba(255,210,150,.12);
+    backdrop-filter: blur(8px);
+  }
+  .annotation-card.active {
+    border-color: rgba(255,210,150,.55);
+    box-shadow: 0 0 0 1px rgba(255,210,150,.25), 0 12px 40px rgba(0,0,0,.45);
+  }
+
+  /* scrollbar taming */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #0c1828; }
+  ::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 4px; }
+
+  .grain {
+    position: fixed; inset: 0; pointer-events: none; z-index: 100;
+    opacity: .05; mix-blend-mode: overlay;
+    background-image:
+      repeating-radial-gradient(circle at 0 0, rgba(255,255,255,.7) 0, rgba(255,255,255,.7) 1px, transparent 1px, transparent 3px);
+  }
+</style>
+</head>
+<body class="antialiased">
+<div class="grain"></div>
+<div id="root" class="relative z-10"></div>
+
+<script type="text/babel" data-presets="env,react">
+const { useState, useEffect, useMemo, useRef } = React;
+
+// -------------------------------------------------------------
+// Annotation data
+// -------------------------------------------------------------
+const ANNOTATIONS = [
+  {
+    id: "01",
+    title: "CA3 Recurrent Collaterals",
+    subtitle: "associative pattern completion",
+    body:
+      "A dense mesh of recurrent memristive connections implementing the CA3 auto-associative network. Partial cues reinstate full stored patterns — the hardware substrate of associative recall.",
+    anchor: { x: 330, y: 240 },   // chip-local coords in 1000x1000 viewBox
+    panel:  "TL",
+    color:  "#e8b87a"
+  },
+  {
+    id: "02",
+    title: "CA1 Pyramidal Layer",
+    subtitle: "read-out & novelty detection",
+    body:
+      "The output layer that compares CA3-reconstructed predictions against current input — signalling novelty, mismatch, and drive for replay. Rendered here as rose-tinted plasticity zones on the die's right flank.",
+    anchor: { x: 670, y: 240 },
+    panel:  "TR",
+    color:  "#e5a896"
+  },
+  {
+    id: "03",
+    title: "Memristive Crossbar",
+    subtitle: "co-localised memory + compute",
+    body:
+      "A self-organising memristor array where each intersection stores a synaptic weight and performs analog multiply-accumulate in place. Energy is spent only when events flow — not on shuffling activations.",
+    anchor: { x: 860, y: 500 },
+    panel:  "R",
+    color:  "#5aa9b8"
+  },
+  {
+    id: "04",
+    title: "Event-Driven Input",
+    subtitle: "camera · head-direction",
+    body:
+      "Asynchronous spikes from vision & proprioceptive streams enter the chip's left edge, timestamped in the picosecond domain. No clock, no frames — only salience.",
+    anchor: { x: 140, y: 500 },
+    panel:  "L",
+    color:  "#c98e4f"
+  },
+  {
+    id: "05",
+    title: "Offline Replay Drive",
+    subtitle: "consolidation without input",
+    body:
+      "During sleep-like phases, intrinsic dynamics reactivate stored traces. Memristive thresholds shift; redundant weights fade; salient patterns are reinforced. Learning continues in the dark.",
+    anchor: { x: 330, y: 760 },
+    panel:  "BL",
+    color:  "#b89256"
+  },
+  {
+    id: "06",
+    title: "Neuromodulatory Bus",
+    subtitle: "prioritisation & gating",
+    body:
+      "A slow, broadcast-style channel modulating global plasticity gain — the hardware analogue of dopamine and acetylcholine. Enables the system to decide what to remember, and what to let go.",
+    anchor: { x: 670, y: 760 },
+    panel:  "BR",
+    color:  "#e5a896"
+  }
+];
+
+// -------------------------------------------------------------
+// Waveform components
+// -------------------------------------------------------------
+function AwakeWave({ t }) {
+  // sparse sharp spikes — derived from time so they shift slightly
+  const spikes = [];
+  for (let i = 0; i < 24; i++) {
+    const x = 20 + ((i * 37 + Math.floor(t * 0.05) * 11) % 860);
+    const h = 14 + ((i * 73) % 48);
+    spikes.push(<line key={i} x1={x} y1={110} x2={x} y2={110 - h}
+                       stroke="#e8b87a" strokeWidth="2" opacity={0.85}
+                       filter="url(#amberGlow)" />);
+  }
+  return (
+    <svg viewBox="0 0 900 160" className="w-full">
+      <defs>
+        <filter id="amberGlow">
+          <feGaussianBlur stdDeviation="1.5" />
+          <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+      <line x1="10" y1="110" x2="890" y2="110" stroke="#5aa9b8" strokeWidth="1" opacity="0.4" />
+      {spikes}
+      <text x="14" y="150" fill="#c7c2a8" fontFamily="IBM Plex Mono" fontSize="11" letterSpacing="2">t →</text>
+    </svg>
+  );
+}
+
+function SleepWave({ t }) {
+  // smooth slow sinusoids, shifting with t
+  const pts1 = [];
+  const pts2 = [];
+  for (let x = 10; x <= 890; x += 3) {
+    const u = (x - 10) / 880;
+    const ph = t * 0.001;
+    const y1 = 110 - Math.sin(u * Math.PI * 4 + ph) * 28 - Math.sin(u * Math.PI * 9 + ph * 2) * 6;
+    const y2 = 110 - Math.sin(u * Math.PI * 2.2 + ph * .7 + 0.5) * 18 - Math.cos(u * Math.PI * 6 + ph) * 7;
+    pts1.push(`${x},${y1}`);
+    pts2.push(`${x},${y2}`);
+  }
+  return (
+    <svg viewBox="0 0 900 160" className="w-full">
+      <line x1="10" y1="110" x2="890" y2="110" stroke="#5aa9b8" strokeWidth="1" opacity="0.4" />
+      <polyline points={pts1.join(' ')} fill="none" stroke="#e5a896" strokeWidth="2" opacity="0.9" />
+      <polyline points={pts2.join(' ')} fill="none" stroke="#6cb6c4" strokeWidth="2" opacity="0.75" />
+      <text x="14" y="150" fill="#c7c2a8" fontFamily="IBM Plex Mono" fontSize="11" letterSpacing="2">t →</text>
+    </svg>
+  );
+}
+
+// -------------------------------------------------------------
+// Chip SVG (interactive)
+// -------------------------------------------------------------
+function ChipSVG({ phase, activeId, setActiveId, hoverId, setHoverId, t }) {
+  // grid — 22x22
+  const N = 22;
+  const cb0 = 240, cb1 = 760;     // crossbar extent in viewBox
+  const step = (cb1 - cb0) / (N - 1);
+
+  // seeded intensities
+  const intensities = useMemo(() => {
+    const out = [];
+    const cx = (N - 1) / 2, cy = (N - 1) / 2;
+    for (let j = 0; j < N; j++) {
+      const row = [];
+      for (let i = 0; i < N; i++) {
+        const dm = Math.hypot(i - cx, j - cy);
+        const base = Math.max(0, 1 - dm / (N * 0.62)) ** 1.3;
+        const inModule = dm <= 4.2;
+        const jitter = 0.55 + ((i * 131 + j * 17) % 1000) / 1000 * 0.45;
+        row.push({
+          base: base * jitter,
+          inModule,
+          warmT: (Math.sin(i * 0.9 + j * 0.7) + 1) / 2,
+          dm,
+        });
+      }
+      out.push(row);
+    }
+    return out;
+  }, []);
+
+  // per-phase firing
+  const firingSet = useMemo(() => {
+    const set = new Set();
+    const seed = Math.floor(t / 160);
+    if (phase === 'awake') {
+      // sparse spikes at random nodes (mostly outside module)
+      for (let k = 0; k < 5; k++) {
+        const si = (seed * 37 + k * 101) % (N * N);
+        set.add(si);
+      }
+    } else {
+      // sweep through module — radial wave
+      const radius = ((t / 30) % 180) / 20;  // 0..9
+      for (let j = 0; j < N; j++) {
+        for (let i = 0; i < N; i++) {
+          const cx = (N - 1) / 2, cy = (N - 1) / 2;
+          const dm = Math.hypot(i - cx, j - cy);
+          if (Math.abs(dm - radius) < 0.6 && dm <= 4.2) set.add(j * N + i);
+        }
+      }
+    }
+    return set;
+  }, [phase, t]);
+
+  const active = ANNOTATIONS.find(a => a.id === (activeId || hoverId));
+
+  return (
+    <svg viewBox="0 0 1000 1000" className="w-full h-full chip-shadow" role="img" aria-label="Memphis chip">
+      <defs>
+        <radialGradient id="haloTeal" cx="50%" cy="50%" r="60%">
+          <stop offset="0%"  stopColor="#6cb6c4" stopOpacity="0.35" />
+          <stop offset="55%" stopColor="#3e7b8c" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="#0c1828" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="haloAmber" cx="50%" cy="50%" r="30%">
+          <stop offset="0%"  stopColor="#ffd296" stopOpacity="0.55" />
+          <stop offset="60%" stopColor="#c98e4f" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="#0c1828" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id="ceramicGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"  stopColor="#e8d6ae" />
+          <stop offset="100%" stopColor="#c8b48a" />
+        </linearGradient>
+        <filter id="moduleBlur"><feGaussianBlur stdDeviation="2" /></filter>
+      </defs>
+
+      {/* outer halo */}
+      <rect x="0" y="0" width="1000" height="1000" fill="url(#haloTeal)" />
+
+      {/* ceramic substrate */}
+      <rect x="110" y="110" width="780" height="780" rx="24"
+            fill="url(#ceramicGrad)" stroke="#a89676" strokeWidth="2" />
+
+      {/* inner bevel */}
+      <rect x="126" y="126" width="748" height="748" rx="18"
+            fill="none" stroke="rgba(140,118,82,.6)" strokeWidth="1" />
+
+      {/* engravings */}
+      <text x="160" y="158" fontFamily="IBM Plex Mono" fontSize="11" fill="rgba(90,70,48,.9)">MEMPHIS  Rev.A  ·  NMR-01</text>
+      <text x="840" y="158" fontFamily="IBM Plex Mono" fontSize="11" fill="rgba(90,70,48,.9)" textAnchor="end">v · ii</text>
+      <text x="160" y="852" fontFamily="IBM Plex Mono" fontSize="11" fill="rgba(90,70,48,.9)">LOT  2026 / IV</text>
+      <text x="840" y="852" fontFamily="IBM Plex Mono" fontSize="11" fill="rgba(90,70,48,.9)" textAnchor="end">CA3·CA1  HIPPOCAMPAL CORE</text>
+
+      {/* contact pads */}
+      {(() => {
+        const pads = [];
+        const n = 22;
+        for (let i = 0; i < n; i++) {
+          const t = (i + 0.5) / n;
+          const x = 110 + t * 780;
+          pads.push(<rect key={`t${i}`} x={x - 8}  y={116} width={16} height={8}
+                          fill="#97805c" stroke="#5a4a32" strokeWidth="0.6" />);
+          pads.push(<rect key={`b${i}`} x={x - 8}  y={876} width={16} height={8}
+                          fill="#97805c" stroke="#5a4a32" strokeWidth="0.6" />);
+          const y = 110 + t * 780;
+          pads.push(<rect key={`l${i}`} x={116} y={y - 5} width={8} height={10}
+                          fill="#97805c" stroke="#5a4a32" strokeWidth="0.6" />);
+          pads.push(<rect key={`r${i}`} x={876} y={y - 5} width={8} height={10}
+                          fill="#97805c" stroke="#5a4a32" strokeWidth="0.6" />);
+        }
+        return pads;
+      })()}
+
+      {/* silicon die */}
+      <rect x="200" y="200" width="600" height="600" rx="10"
+            fill="#102030" stroke="#2c4458" strokeWidth="2" />
+      <rect x="210" y="210" width="580" height="580" rx="8"
+            fill="none" stroke="rgba(60,90,118,.8)" strokeWidth="1" />
+
+      {/* crossbar backing */}
+      <rect x={cb0 - 18} y={cb0 - 18} width={cb1 - cb0 + 36} height={cb1 - cb0 + 36}
+            rx="6" fill="#101c2c" stroke="rgba(60,94,120,.9)" strokeWidth="1" />
+
+      {/* verticals (teal) */}
+      {Array.from({length: N}).map((_, i) => (
+        <line key={`v${i}`} x1={cb0 + i * step} y1={cb0} x2={cb0 + i * step} y2={cb1}
+              stroke="#468ca0" strokeOpacity=".75" strokeWidth="1" />
+      ))}
+      {/* horizontals (gold) */}
+      {Array.from({length: N}).map((_, j) => (
+        <line key={`h${j}`} x1={cb0} y1={cb0 + j * step} x2={cb1} y2={cb0 + j * step}
+              stroke="#b89256" strokeOpacity=".88" strokeWidth="1" />
+      ))}
+
+      {/* module halo */}
+      <circle cx="500" cy="500" r="120" fill="url(#haloAmber)" />
+
+      {/* memristor nodes */}
+      {intensities.map((row, j) => row.map((v, i) => {
+        const x = cb0 + i * step;
+        const y = cb0 + j * step;
+        const isFiring = firingSet.has(j * N + i);
+        const warm = {
+          r: Math.round(232 * (1 - v.warmT) + 229 * v.warmT),
+          g: Math.round(184 * (1 - v.warmT) + 168 * v.warmT),
+          b: Math.round(122 * (1 - v.warmT) + 150 * v.warmT),
+        };
+        if (v.inModule) {
+          const r = 2 + v.base * 2.8 + (isFiring ? 2 : 0);
+          return (
+            <g key={`n${i}-${j}`}>
+              <circle cx={x} cy={y} r={r * 2} fill={`rgb(${warm.r},${warm.g},${warm.b})`} opacity={0.14 + v.base * 0.18} />
+              <circle cx={x} cy={y} r={r} fill={`rgb(${warm.r},${warm.g},${warm.b})`} opacity={0.75 + v.base * 0.25}
+                      style={isFiring ? {animation:'softPulse 1.2s ease-in-out infinite'} : {}} />
+            </g>
+          );
+        }
+        // outer dim dots
+        const r = 1.5 + v.base * 1.4;
+        const rr = Math.round(70 + 140 * v.base);
+        const gg = Math.round(100 + 80 * v.base);
+        const bb = Math.round(120 + 40 * v.base);
+        return (
+          <circle key={`n${i}-${j}`} cx={x} cy={y} r={r}
+                  fill={`rgb(${rr},${gg},${bb})`} opacity={0.55 + v.base * 0.35}
+                  style={isFiring ? {animation:'softPulse 0.8s ease-in-out infinite'} : {}} />
+        );
+      }))}
+
+      {/* module frame */}
+      <rect x={500 - 100} y={500 - 100} width="200" height="200"
+            fill="none" stroke="#e8b87a" strokeOpacity="0.65" strokeWidth="1" />
+
+      {/* module cartouche */}
+      <g>
+        <rect x={500 - 82} y={370} width="164" height="26" rx="2"
+              fill="#0d1a2a" stroke="#e8b87a" strokeOpacity=".7" strokeWidth="1" />
+        <text x="500" y="388" textAnchor="middle"
+              fontFamily="IBM Plex Mono" fontSize="11" letterSpacing="2" fill="#e8b87a">
+          CA3 ↔ CA1  MODULE
+        </text>
+      </g>
+
+      {/* corner sigils */}
+      {[[230,230],[770,230],[230,770],[770,770]].map(([px,py],i) => (
+        <g key={`sig${i}`} stroke="#c98e4f" strokeOpacity=".8" strokeWidth="1" fill="none">
+          <line x1={px-10} y1={py} x2={px+10} y2={py} />
+          <line x1={px} y1={py-10} x2={px} y2={py+10} />
+          <circle cx={px} cy={py} r="3" />
+        </g>
+      ))}
+
+      {/* Hotspots */}
+      {ANNOTATIONS.map(a => {
+        const isActive = activeId === a.id || hoverId === a.id;
+        return (
+          <g key={a.id} className="hotspot" style={{cursor:'pointer'}}
+             onMouseEnter={() => setHoverId(a.id)}
+             onMouseLeave={() => setHoverId(null)}
+             onClick={() => setActiveId(a.id === activeId ? null : a.id)}>
+            {/* pulse ring when active */}
+            {isActive && (
+              <circle cx={a.anchor.x} cy={a.anchor.y} r="10" fill="none"
+                      stroke={a.color} strokeOpacity=".9" strokeWidth="1.5"
+                      style={{animation:'sweep 1.8s ease-out infinite'}} />
+            )}
+            <circle className="anchor" cx={a.anchor.x} cy={a.anchor.y}
+                    r={isActive ? 8 : 6}
+                    fill={isActive ? '#ffd296' : '#e8b87a'}
+                    stroke="#c98e4f" strokeWidth="1.5" />
+            <text className="num" x={a.anchor.x + 12} y={a.anchor.y - 6}
+                  fontFamily="Gloock" fontSize="14" fill={isActive ? '#ffe0a4' : '#f6ead0'}>
+              {a.id}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+// -------------------------------------------------------------
+// Main App
+// -------------------------------------------------------------
+function App() {
+  const [phase, setPhase] = useState('awake');   // 'awake' | 'sleep'
+  const [activeId, setActiveId] = useState("03");
+  const [hoverId, setHoverId] = useState(null);
+  const [t, setT] = useState(0);
+
+  // animation clock
+  useEffect(() => {
+    let raf;
+    let start = performance.now();
+    const tick = (now) => {
+      setT(now - start);
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  const active = ANNOTATIONS.find(a => a.id === (hoverId || activeId));
+
+  return (
+    <div className="relative min-h-screen w-full px-6 md:px-10 pt-8 pb-20">
+      {/* header bar */}
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex justify-between items-start text-xs font-mono small-caps text-[color:var(--ink-dim)]">
+          <div>
+            <div style={{color:'var(--ink)'}} className="text-sm tracking-[0.2em]">PLATE  I  ·  MMXXVI</div>
+            <div className="mt-1">Anno 2026 · Folio 1.2.2</div>
+          </div>
+          <div className="text-right">
+            <div style={{color:'var(--ink)'}} className="text-sm tracking-[0.2em]">FIG. 1.2.2</div>
+            <div className="mt-1">Core science → technology</div>
+            <div>breakthrough</div>
+          </div>
+        </div>
+        <div className="hairline mt-4"></div>
+
+        {/* Title */}
+        <div className="mt-10 text-center">
+          <h1 className="font-display text-[color:var(--ink)]"
+              style={{fontSize:'clamp(72px, 12vw, 180px)', letterSpacing:'0.08em', lineHeight:1}}>
+            MEMPHIS
+          </h1>
+          <p className="mt-4 font-serif italic" style={{color:'var(--amber)', fontSize:'clamp(14px,1.6vw,22px)'}}>
+            a hippocampal · memristive · neuromorphic architecture
+          </p>
+          <p className="mt-2 font-mono small-caps text-[color:var(--ink-dim)] tracking-[0.3em]">
+            · study of a synaptic substrate ·
+          </p>
+        </div>
+      </div>
+
+      {/* main interactive area */}
+      <div className="max-w-[1440px] mx-auto mt-14 grid grid-cols-1 lg:grid-cols-[1fr,380px] gap-10 items-start">
+        {/* CHIP */}
+        <div className="relative">
+          <div className="relative mx-auto" style={{maxWidth: '820px'}}>
+            <ChipSVG
+              phase={phase}
+              activeId={activeId}
+              setActiveId={setActiveId}
+              hoverId={hoverId}
+              setHoverId={setHoverId}
+              t={t}
+            />
+          </div>
+          {/* caption under chip */}
+          <div className="text-center mt-2">
+            <div className="font-mono small-caps text-[color:var(--ink-dim)]">
+              Fig. 1 · the hippocampal-inspired memristive die
+            </div>
+            <div className="font-serif italic text-[color:var(--ink-dim)] mt-1">
+              click a numbered marker to inspect its role
+            </div>
+          </div>
+        </div>
+
+        {/* INFO PANEL */}
+        <div className="sticky top-6 space-y-4">
+          {/* phase toggle */}
+          <div className="annotation-card rounded-2xl p-5">
+            <div className="font-mono small-caps text-[color:var(--ink-dim)]">Computational phase</div>
+            <div className="mt-3 flex gap-2">
+              <button
+                onClick={() => setPhase('awake')}
+                className={`pill-button flex-1 rounded-full px-4 py-2 text-xs font-mono tracking-[0.18em] ${
+                  phase==='awake'
+                  ? 'bg-[#e8b87a] text-[#0c1828] font-bold'
+                  : 'bg-transparent text-[color:var(--ink)] border border-white/20'
+                }`}>
+                AWAKE · EVENT-DRIVEN
+              </button>
+              <button
+                onClick={() => setPhase('sleep')}
+                className={`pill-button flex-1 rounded-full px-4 py-2 text-xs font-mono tracking-[0.18em] ${
+                  phase==='sleep'
+                  ? 'bg-[#e5a896] text-[#0c1828] font-bold'
+                  : 'bg-transparent text-[color:var(--ink)] border border-white/20'
+                }`}>
+                SLEEP · REPLAY-DRIVEN
+              </button>
+            </div>
+            <p className="mt-3 text-[13px] leading-relaxed font-serif italic text-[color:var(--ink-cool)]">
+              {phase === 'awake'
+                ? 'Sparse, salient spikes propagate through CA3 → CA1. Energy is spent only on novelty.'
+                : 'Intrinsic dynamics replay and consolidate. The system learns without external input.'}
+            </p>
+          </div>
+
+          {/* active annotation */}
+          <div key={active?.id} className="annotation-card active rounded-2xl p-6">
+            <div className="flex items-start justify-between">
+              <div>
+                <div className="font-mono text-xs tracking-[0.25em] text-[color:var(--ink-dim)]">
+                  CALLOUT
+                </div>
+                <div className="font-display text-5xl mt-1" style={{color: active.color}}>
+                  {active.id}
+                </div>
+              </div>
+              <div className="w-3 h-3 rounded-full mt-2" style={{background: active.color, boxShadow:`0 0 18px ${active.color}`}}></div>
+            </div>
+            <h3 className="font-display text-2xl mt-2 text-[color:var(--ink)]">
+              {active.title}
+            </h3>
+            <p className="font-serif italic mt-0.5" style={{color: active.color, opacity: 0.9}}>
+              {active.subtitle}
+            </p>
+            <p className="mt-4 font-serif text-[15px] leading-relaxed text-[color:var(--ink-cool)]">
+              {active.body}
+            </p>
+            <div className="hairline my-5"></div>
+            <div className="flex flex-wrap gap-2">
+              {ANNOTATIONS.map(a => (
+                <button
+                  key={a.id}
+                  onClick={() => setActiveId(a.id)}
+                  className={`pill-button px-2.5 py-1 rounded-full text-[10px] font-mono tracking-[0.2em] border ${
+                    (activeId===a.id)
+                      ? 'bg-white/5 text-[color:var(--ink)]'
+                      : 'bg-transparent text-[color:var(--ink-dim)] border-white/10 hover:border-white/30'
+                  }`}
+                  style={(activeId===a.id) ? {borderColor: a.color, color: a.color} : {}}>
+                  {a.id}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* legend */}
+          <div className="annotation-card rounded-2xl p-5 text-sm">
+            <div className="font-mono small-caps text-[color:var(--ink-dim)]">Legend</div>
+            <ul className="mt-3 space-y-2 text-[13px] font-serif text-[color:var(--ink-cool)]">
+              <li className="flex items-center gap-3"><span className="inline-block w-3 h-3 rounded-full" style={{background:'#e8b87a'}}></span>Amber · active memristor (awake firing)</li>
+              <li className="flex items-center gap-3"><span className="inline-block w-3 h-3 rounded-full" style={{background:'#e5a896'}}></span>Rose · replay wave (sleep consolidation)</li>
+              <li className="flex items-center gap-3"><span className="inline-block w-3 h-3 rounded-full" style={{background:'#5aa9b8'}}></span>Teal · vertical memristor bitlines</li>
+              <li className="flex items-center gap-3"><span className="inline-block w-3 h-3 rounded-full" style={{background:'#b89256'}}></span>Gold · horizontal memristor wordlines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Waveform cartouche */}
+      <div className="max-w-[1440px] mx-auto mt-12">
+        <div className="annotation-card rounded-2xl p-6">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div className="font-mono small-caps text-[color:var(--ink-dim)]">
+              Fig. A · two-phase computational paradigm
+            </div>
+            <div className="font-mono text-xs text-[color:var(--ink-dim)]">
+              t  ≈  milliseconds → minutes
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className={`rounded-xl p-4 transition ${phase==='awake' ? 'ring-1 ring-[#e8b87a]/60' : 'opacity-55'}`}
+                 style={{background:'rgba(12, 24, 40, .6)'}}>
+              <div className="flex items-center justify-between mb-1">
+                <div className="font-mono text-xs tracking-[0.2em]" style={{color:'#e8b87a'}}>AWAKE · EVENT-DRIVEN</div>
+                <div className="text-[10px] font-mono text-[color:var(--ink-dim)]">online inference</div>
+              </div>
+              <AwakeWave t={t} />
+            </div>
+            <div className={`rounded-xl p-4 transition ${phase==='sleep' ? 'ring-1 ring-[#e5a896]/60' : 'opacity-55'}`}
+                 style={{background:'rgba(12, 24, 40, .6)'}}>
+              <div className="flex items-center justify-between mb-1">
+                <div className="font-mono text-xs tracking-[0.2em]" style={{color:'#e5a896'}}>SLEEP · REPLAY-DRIVEN</div>
+                <div className="text-[10px] font-mono text-[color:var(--ink-dim)]">offline consolidation</div>
+              </div>
+              <SleepWave t={t} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* breakthrough summary — 5 pillars from proposal */}
+      <div className="max-w-[1440px] mx-auto mt-10">
+        <div className="text-center">
+          <div className="font-mono small-caps text-[color:var(--ink-dim)] tracking-[0.35em]">
+            Advances beyond the state of the art
+          </div>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-4">
+          {[
+            ["I","Computational paradigm","distributed, event-driven"],
+            ["II","Learning capability","continuous, replay-consolidated"],
+            ["III","Memory optimisation","hardware-embedded sleep"],
+            ["IV","Hardware substrate","self-organising memristive"],
+            ["V","System functionality","biologically modulated"],
+          ].map(([r,h,s])=>(
+            <div key={r} className="annotation-card rounded-xl p-4">
+              <div className="font-display text-3xl text-[color:var(--amber)]">{r}</div>
+              <div className="font-mono small-caps text-[11px] text-[color:var(--ink)] mt-1 tracking-[0.2em]">{h}</div>
+              <div className="font-serif italic text-[13px] text-[color:var(--ink-cool)] mt-1">{s}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* footer */}
+      <div className="max-w-[1440px] mx-auto mt-16">
+        <div className="hairline"></div>
+        <p className="text-center font-serif italic text-[color:var(--ink)] mt-8"
+           style={{fontSize:'clamp(18px, 2vw, 28px)', letterSpacing:'0.02em'}}>
+          Memory and computation, co-localised.
+        </p>
+        <div className="flex justify-between items-center mt-8 font-mono text-[11px] small-caps text-[color:var(--ink-dim)]">
+          <div>MEMPHIS  ·  a hippocampal-memristive neuromorphic system  ·  proposal dossier</div>
+          <div>plate I  ·  of I</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

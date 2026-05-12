@@ -1,0 +1,120 @@
+/*
+ * Synaptic Cartography — Design Tokens (CSS Custom Properties)
+ * Source of truth for every colour, font and spacing decision.
+ * Import this file once at the top of your global stylesheet.
+ */
+
+:root {
+  /* ---------- studio (shared) palette ---------- */
+  --bg-deep:        #0c1828;
+  --bg-mid:         #14223b;
+  --panel-deep:     #16203a;
+  --panel-mid:      #1c2a48;
+  --panel-edge:     rgba(78, 78, 130, 0.7);
+
+  --ink:            #f6ead0;
+  --ink-soft:       #d7c8aa;
+  --ink-cool:       #c4d2e1;
+  --ink-dim:        #8e96a8;
+
+  --hairline:       rgba(230, 214, 180, 0.45);
+  --copper:         #c98e4f;
+  --gold:           #b89256;
+
+  /* ---------- MEMPHIS palette ---------- */
+  --memphis-amber:     #e8b87a;
+  --memphis-amber-hi:  #ffd296;
+  --memphis-rose:      #e5a896;
+  --memphis-teal:      #5aa9b8;
+  --memphis-teal-dp:   #2b6e7f;
+  --memphis-ceramic:   #e0cfac;
+  --memphis-ceramic-dp:#a89676;
+  --memphis-silicon:   #102030;
+
+  /* ---------- SYMPHONY palette ---------- */
+  --symphony-bg-deep:    #0d1027;
+  --symphony-bg-mid:     #16183a;
+  --symphony-violet:     #a698d4;
+  --symphony-violet-hi:  #c8b8ff;
+  --symphony-violet-dp:  #5a4a8a;
+  --symphony-rationale:  #f4c482;
+  --symphony-historical: #e5a896;
+  --symphony-behavioural:#6cb4c2;
+  --symphony-structural: #849cc8;
+  --symphony-amber:      #f4c482;
+  --symphony-amber-hi:   #ffd596;
+
+  /* ---------- typography stack ---------- */
+  --font-display: 'Gloock', 'Italiana', 'Cormorant Garamond', serif;
+  --font-serif:   'IBM Plex Serif', 'Source Serif Pro', Georgia, serif;
+  --font-mono:    'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ---------- scale ---------- */
+  --text-display:        clamp(4.5rem, 10vw, 11rem);
+  --text-h1:             3rem;
+  --text-h2:             2rem;
+  --text-italic-caption: clamp(1.125rem, 1.6vw, 1.5rem);
+  --text-body:           1.0625rem;
+  --text-small-caps:     0.74rem;
+
+  /* ---------- spacing (8px baseline) ---------- */
+  --space-1:  0.25rem;   /* 4 */
+  --space-2:  0.5rem;    /* 8 */
+  --space-3:  0.75rem;   /* 12 */
+  --space-4:  1rem;      /* 16 */
+  --space-6:  1.5rem;    /* 24 */
+  --space-8:  2rem;      /* 32 */
+  --space-12: 3rem;      /* 48 */
+  --space-16: 4rem;      /* 64 */
+  --space-24: 6rem;      /* 96 */
+  --space-32: 8rem;      /* 128 */
+  --space-paragraph: 1.4em;
+
+  /* ---------- motion ---------- */
+  --ease-paper: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-baton: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-pulse: cubic-bezier(0.45, 0, 0.55, 1);
+  --dur-micro:    120ms;
+  --dur-standard: 320ms;
+  --dur-slow:     800ms;
+  --dur-ambient:  2500ms;
+
+  /* ---------- letter-spacing ---------- */
+  --track-display: 0.08em;
+  --track-mono:    0.18em;
+  --track-tight:   0.02em;
+
+  /* ---------- radii ---------- */
+  --radius-card:  0.875rem;  /* 14px */
+  --radius-pill:  9999px;
+  --radius-tight: 0.375rem;
+
+  /* ---------- shadow ---------- */
+  --shadow-card:  0 12px 40px rgba(0, 0, 0, 0.45);
+  --shadow-glow-amber:  0 0 32px rgba(255, 210, 150, 0.35);
+  --shadow-glow-violet: 0 0 32px rgba(200, 184, 255, 0.40);
+}
+
+/* ---------- routes set their project accent on <html> via data-attribute ---------- */
+html[data-project='memphis'] {
+  --bg-deep: #0c1828;
+  --project-accent:     var(--memphis-amber);
+  --project-accent-hi:  var(--memphis-amber-hi);
+}
+
+html[data-project='symphony'] {
+  --bg-deep: var(--symphony-bg-deep);
+  --bg-mid:  var(--symphony-bg-mid);
+  --project-accent:     var(--symphony-violet);
+  --project-accent-hi:  var(--symphony-violet-hi);
+}
+
+/* ---------- print mode ---------- */
+@media print {
+  html {
+    background: #f5edd6;
+    color: #1a1d24;
+  }
+  .no-print { display: none !important; }
+  .print-only { display: revert !important; }
+}

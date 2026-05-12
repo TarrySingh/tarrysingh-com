@@ -40,3 +40,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Synaptic Cartography handover bundle staging
+# (contents extracted to docs/synaptic/, design/, proposals/, .claude/commands/)
+/tch-v2/
+/synaptic-cartography-handover-bundle-v2.zip
