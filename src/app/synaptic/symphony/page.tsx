@@ -6,6 +6,7 @@ import comprehensionGap from "@proposals/SYMPHONY/plates/plate-IV-comprehension-
 import substrateScales from "@proposals/SYMPHONY/plates/plate-II-substrate-x-scales.png"
 import consortiumPlate from "@proposals/SYMPHONY/plates/plate-III-consortium.png"
 import ramaswamyPlate from "@proposals/SYMPHONY/plates/plate-VII-ramaswamy-blue-brain.png"
+import sicilianoPlate from "@proposals/SYMPHONY/plates/plate-VIII-siciliano-prisma.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
@@ -425,6 +426,54 @@ export default function SymphonyPage() {
               Newcastle leads <strong style={{ color: "var(--ink)" }}>O2</strong> — the implementation of the four-scale neuromodulatory mechanism on the substrate produced by O1 — and co-leads the ethics layer of <strong style={{ color: "var(--ink)" }}>O5</strong>.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="syn-column pt-24">
+        <div className="grid items-start gap-10 lg:grid-cols-[1.3fr_1fr]">
+          <div className="space-y-5 lg:order-2">
+            <SmallCaps>CREATE · PRISMA Lab · UNINA</SmallCaps>
+            <h3
+              className="syn-display"
+              style={{
+                fontSize: "2rem",
+                color: "var(--ink)",
+                lineHeight: 1.1,
+                margin: 0,
+              }}
+            >
+              Bruno Siciliano
+            </h3>
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+              Director of the PRISMA Lab — Projects of Industrial and
+              Service Manipulation Robotics — at CREATE / UNINA in Naples.
+              ERC Advanced Grant holder and Engelberger Award laureate.
+              The Siciliano-school programme on haptic shared control
+              demonstrated, in hardware, that a low-bandwidth descending
+              signal can reshape a high-DOF autonomous controller&rsquo;s
+              operating regime without rewriting it — the architectural
+              property SYMPHONY transposes from physical manipulation into
+              the symbolic control of a code substrate.
+            </p>
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+              CREATE-PRISMA leads <strong style={{ color: "var(--ink)" }}>O3</strong> — the derivation of a narrow scalar control interface by which task tokens reshape the substrate&rsquo;s activation regime without modifying its stored structure.
+            </p>
+            <ItalicCaption className="pt-2">
+              Keep the gradient.
+            </ItalicCaption>
+          </div>
+          <figure className="lg:order-1">
+            <Image
+              src={sicilianoPlate}
+              alt="Plate VIII — CREATE / Bruno Siciliano / PRISMA Lab plate: a seven-sector PRISMA rose with the ERC and Engelberger awards, ERC grants and the lab's motto Keep the gradient."
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              placeholder="blur"
+              className="block h-auto w-full rounded-[var(--radius-tight)]"
+            />
+            <figcaption className="pt-3">
+              <SmallCaps>Plate VIII · Siciliano / PRISMA</SmallCaps>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
