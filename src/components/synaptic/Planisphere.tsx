@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import {
   CX,
   CY,
@@ -10,11 +13,24 @@ import {
 } from "@/lib/synaptic/planisphere-data"
 
 type PlanisphereProps = {
-  activeSec?: number
+  initialSec?: number
   className?: string
+  onSectorChange?: (sec: number) => void
 }
 
-export function Planisphere({ activeSec = 0, className = "" }: PlanisphereProps) {
+export function Planisphere({
+  initialSec = 0,
+  className = "",
+  onSectorChange,
+}: PlanisphereProps) {
+  const [activeSec, setActiveSec] = useState(initialSec)
+  const [hoverSec, setHoverSec] = useState<number | null>(null)
+
+  const handleSelect = (sec: number) => {
+    setActiveSec(sec)
+    onSectorChange?.(sec)
+  }
+
   // active sectors form a fan of 3 around the chosen centre
   const activeSet = new Set<number>()
   for (const d of [-1, 0, 1]) {
@@ -85,6 +101,28 @@ export function Planisphere({ activeSec = 0, className = "" }: PlanisphereProps)
           </g>
         )
       })}
+
+      {/* twelve sector wedges as interactive click and hover targets */}
+      {Array.from({ length: 12 }).map((_, sec) => (
+        <g
+          key={`sec-${sec}`}
+          className="syn-sector-target"
+          onClick={() => handleSelect(sec)}
+          onMouseEnter={() => setHoverSec(sec)}
+          onMouseLeave={() => setHoverSec(null)}
+        >
+          <path
+            d={wedgePath(sec, RINGS[0].rIn * OUTER_R, OUTER_R)}
+            fill={
+              hoverSec === sec
+                ? "rgba(200,184,255,0.06)"
+                : "transparent"
+            }
+            stroke="rgba(220,200,160,0.10)"
+            strokeWidth={0.5}
+          />
+        </g>
+      ))}
 
       {/* twelve radial dividers */}
       {Array.from({ length: 12 }).map((_, i) => {
@@ -262,6 +300,7 @@ export function Planisphere({ activeSec = 0, className = "" }: PlanisphereProps)
             strokeOpacity={0.7}
             strokeWidth={1}
             strokeDasharray="3 2"
+            className="syn-anim-fil"
           />
         )
       })}
@@ -274,6 +313,7 @@ export function Planisphere({ activeSec = 0, className = "" }: PlanisphereProps)
         strokeOpacity={0.55}
         strokeWidth={3}
         strokeDasharray="6 5"
+        className="syn-anim-ribbon"
       />
 
       {/* baton arrow into the centre */}
@@ -288,8 +328,8 @@ export function Planisphere({ activeSec = 0, className = "" }: PlanisphereProps)
       />
       <circle cx={batonTip.x} cy={batonTip.y} r={4} fill="#c8b8ff" />
 
-      {/* centre conductor sphere */}
-      <g>
+      {/* centre conductor sphere — pulses via syn-anim-baton */}
+      <g className="syn-anim-baton">
         <circle cx={CX} cy={CY} r={40} fill="url(#syn-planisphere-centre)" />
         <circle cx={CX} cy={CY} r={22} fill="#5a4a8a" />
         <circle cx={CX} cy={CY} r={17} fill="#a698d4" />
@@ -312,6 +352,25 @@ export function Planisphere({ activeSec = 0, className = "" }: PlanisphereProps)
         />
         <circle cx={CX} cy={CY} r={3} fill="#5a4a8a" />
       </g>
+
+      {/* sweep pulse at the primary sector's mid-ring position */}
+      {(() => {
+        const aMidPrimary = ((activeSec * 30 - 90) * Math.PI) / 180
+        const rMid = ((RINGS[2].rIn + RINGS[2].rOut) / 2) * OUTER_R
+        const x = CX + rMid * Math.cos(aMidPrimary)
+        const y = CY + rMid * Math.sin(aMidPrimary)
+        return (
+          <circle
+            cx={x}
+            cy={y}
+            r={6}
+            fill="none"
+            stroke="#ffd596"
+            strokeWidth={1}
+            className="syn-anim-sweep"
+          />
+        )
+      })()}
     </svg>
   )
 }

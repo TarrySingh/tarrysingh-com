@@ -296,6 +296,33 @@ html {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+
+/* Synaptic Cartography — interactive plate animations */
+@keyframes syn-baton-glow {
+  0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 12px rgba(200, 184, 255, 0.6)); }
+  50%      { opacity: 1;   filter: drop-shadow(0 0 22px rgba(200, 184, 255, 0.95)); }
+}
+@keyframes syn-ribbon-flow {
+  to { stroke-dashoffset: -200; }
+}
+@keyframes syn-sweep {
+  0%   { opacity: 0; r: 6; }
+  35%  { opacity: 1; r: 10; }
+  100% { opacity: 0; r: 18; }
+}
+.syn-anim-baton  { animation: syn-baton-glow 3s ease-in-out infinite; }
+.syn-anim-ribbon { animation: syn-ribbon-flow 5s linear infinite; }
+.syn-anim-fil    { animation: syn-ribbon-flow 8s linear infinite; }
+.syn-anim-sweep  { animation: syn-sweep 1.8s ease-out infinite; }
+.syn-sector-target {
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .syn-anim-baton, .syn-anim-ribbon, .syn-anim-fil, .syn-anim-sweep {
+    animation: none;
+  }
+}
 @media (min-width: 640px) {
   .syn-column {
     padding-left: 3rem;
