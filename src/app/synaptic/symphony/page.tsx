@@ -1,5 +1,6 @@
 import Image from "next/image"
 import coverPlate from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
+import visionBanner from "@proposals/SYMPHONY/plates/plate-I-vision.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
@@ -70,6 +71,19 @@ export default function SymphonyPage() {
           task.
         </ItalicCaption>
       </section>
+
+      <figure className="mt-24 lg:mx-auto lg:max-w-[90vw]">
+        <Image
+          src={visionBanner}
+          alt="SYMPHONY vision banner — a panoramic plate setting out the long-term programme: a multi-scale neuromimetic substrate spanning modules, functions, tests, commits and design rationale."
+          sizes="(min-width: 1280px) 90vw, 100vw"
+          placeholder="blur"
+          className="block h-auto w-full"
+        />
+        <figcaption className="syn-column pt-4">
+          <SmallCaps>Plate I · Panoramic vision</SmallCaps>
+        </figcaption>
+      </figure>
 
       <footer className="syn-column pb-24 pt-32 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">
