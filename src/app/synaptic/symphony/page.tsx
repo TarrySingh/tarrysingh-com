@@ -19,6 +19,7 @@ import { JumpNav } from "@/components/synaptic/JumpNav"
 import { StatisticalCeiling } from "@/components/synaptic/StatisticalCeiling"
 import { SubstrateScales } from "@/components/synaptic/SubstrateScales"
 import { SymphonyStudio } from "@/components/synaptic/SymphonyStudio"
+import { VisionHorizon } from "@/components/synaptic/VisionHorizon"
 
 const SECTIONS = [
   { id: "vision", label: "I · Vision" },
@@ -76,7 +77,13 @@ export default function SymphonyPage() {
         </ItalicCaption>
       </section>
 
-      <figure className="mt-24 lg:mx-auto lg:max-w-[90vw]">
+      <div className="mt-24 print:hidden lg:mx-auto lg:max-w-[90vw]">
+        <VisionHorizon />
+        <p className="syn-column pt-4">
+          <SmallCaps>Plate I · Panoramic vision</SmallCaps>
+        </p>
+      </div>
+      <figure className="hidden print:block lg:mx-auto lg:max-w-[90vw]">
         <Image
           src={visionBanner}
           alt="SYMPHONY vision banner — a panoramic plate setting out the long-term programme: a multi-scale neuromimetic substrate spanning modules, functions, tests, commits and design rationale."
@@ -84,9 +91,6 @@ export default function SymphonyPage() {
           placeholder="blur"
           className="block h-auto w-full"
         />
-        <figcaption className="syn-column pt-4">
-          <SmallCaps>Plate I · Panoramic vision</SmallCaps>
-        </figcaption>
       </figure>
 
       <section id="breakthrough" className="syn-column space-y-8 pt-32">
