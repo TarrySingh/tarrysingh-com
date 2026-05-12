@@ -8,6 +8,7 @@ import consortiumPlate from "@proposals/SYMPHONY/plates/plate-III-consortium.png
 import ramaswamyPlate from "@proposals/SYMPHONY/plates/plate-VII-ramaswamy-blue-brain.png"
 import sicilianoPlate from "@proposals/SYMPHONY/plates/plate-VIII-siciliano-prisma.png"
 import hominisPlate from "@proposals/SYMPHONY/plates/plate-VI-hominis.png"
+import { Cartouche } from "@/components/editorial/Cartouche"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
@@ -546,8 +547,40 @@ export default function SymphonyPage() {
         </div>
       </section>
 
+      <section className="syn-column pt-32">
+        <Cartouche title="The critical uncertainty" meta="§1.2">
+          <p
+            style={{
+              color: "var(--ink)",
+              fontSize: "var(--text-body)",
+              lineHeight: 1.6,
+            }}
+          >
+            Whether multi-scale neuromodulation — demonstrated in continuous
+            perceptual and motor domains characterised by embodied feedback —
+            transfers to a symbolic and structural domain (source code) where
+            the signals are discrete, hierarchical, and linguistic. This is
+            not a question of engineering polish; it is a question of
+            whether the biological principle generalises.
+          </p>
+          <p
+            style={{
+              color: "var(--ink-cool)",
+              fontSize: "var(--text-body)",
+              lineHeight: 1.6,
+              marginTop: "1rem",
+            }}
+          >
+            The five objectives above are constructed so that their decision
+            milestones surface a clear answer within the project&rsquo;s
+            36 months — not by retreat to a less ambitious aim, but by
+            forcing the question into a measurable outcome.
+          </p>
+        </Cartouche>
+      </section>
+
       <section className="syn-column pt-24 text-center">
-        <SmallCaps>VI · Read the full submission</SmallCaps>
+        <SmallCaps>VII · Read the full submission</SmallCaps>
         <div className="pt-6">
           <a
             href="/dossiers/Symphony-Additional-Information-Dossier.docx"
