@@ -16,6 +16,7 @@ import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { ComprehensionGap } from "@/components/synaptic/ComprehensionGap"
 import { JumpNav } from "@/components/synaptic/JumpNav"
 import { StatisticalCeiling } from "@/components/synaptic/StatisticalCeiling"
+import { SubstrateScales } from "@/components/synaptic/SubstrateScales"
 import { SymphonyStudio } from "@/components/synaptic/SymphonyStudio"
 
 const SECTIONS = [
@@ -185,15 +186,20 @@ export default function SymphonyPage() {
 
       <section id="substrate" className="syn-column space-y-10 pt-32">
         <SmallCaps>III · The substrate, four layers × four scales</SmallCaps>
-        <figure className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
-          <Image
-            src={substrateScales}
-            alt="Plate II — Substrate × scales: SYMPHONY's representation in code-system space (structural, behavioural, historical, rationale) crossed with the four neuromodulatory scales of Mei, Muller and Ramaswamy (2022) — hyperparameter, plasticity-driven connectivity, neuronal gain, and dendritic computation."
-            sizes="(min-width: 1024px) 55vw, 100vw"
-            placeholder="blur"
-            className="block h-auto w-full rounded-[var(--radius-tight)]"
-          />
-          <figcaption>
+        <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
+          <div className="print:hidden">
+            <SubstrateScales />
+          </div>
+          <figure className="hidden print:block">
+            <Image
+              src={substrateScales}
+              alt="Plate II — Substrate × scales: SYMPHONY's representation in code-system space (structural, behavioural, historical, rationale) crossed with the four neuromodulatory scales of Mei, Muller and Ramaswamy (2022) — hyperparameter, plasticity-driven connectivity, neuronal gain, and dendritic computation."
+              sizes="(min-width: 1024px) 55vw, 100vw"
+              placeholder="blur"
+              className="block h-auto w-full rounded-[var(--radius-tight)]"
+            />
+          </figure>
+          <div>
             <ItalicCaption>
               Four code-system layers crossed with four neuromodulatory
               scales. The substrate is the cell of the matrix the engineer
@@ -212,8 +218,8 @@ export default function SymphonyPage() {
               neuromodulatory scales adapted from Mei, Muller &amp;
               Ramaswamy (<em>Trends in Neurosciences</em>, 2022).
             </p>
-          </figcaption>
-        </figure>
+          </div>
+        </div>
       </section>
 
       <section className="syn-column pt-16">
