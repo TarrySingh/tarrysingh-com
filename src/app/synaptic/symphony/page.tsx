@@ -5,6 +5,7 @@ import statisticalCeiling from "@proposals/SYMPHONY/plates/plate-V-statistical-c
 import comprehensionGap from "@proposals/SYMPHONY/plates/plate-IV-comprehension-gap.png"
 import substrateScales from "@proposals/SYMPHONY/plates/plate-II-substrate-x-scales.png"
 import consortiumPlate from "@proposals/SYMPHONY/plates/plate-III-consortium.png"
+import ramaswamyPlate from "@proposals/SYMPHONY/plates/plate-VII-ramaswamy-blue-brain.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
@@ -381,6 +382,50 @@ export default function SymphonyPage() {
             <SmallCaps>Plate III · Consortium</SmallCaps>
           </figcaption>
         </figure>
+      </section>
+
+      <section className="syn-column pt-24">
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.3fr]">
+          <figure>
+            <Image
+              src={ramaswamyPlate}
+              alt="Plate VII — Newcastle / Sri Ramaswamy / Blue Brain heritage plate: cortical-column anatomy with neuromodulator beams and a pedigree timeline from 2005 to 2026."
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              placeholder="blur"
+              className="block h-auto w-full rounded-[var(--radius-tight)]"
+            />
+            <figcaption className="pt-3">
+              <SmallCaps>Plate VII · Ramaswamy / Blue Brain</SmallCaps>
+            </figcaption>
+          </figure>
+          <div className="space-y-5">
+            <SmallCaps>Newcastle University · School of Computing</SmallCaps>
+            <h3
+              className="syn-display"
+              style={{
+                fontSize: "2rem",
+                color: "var(--ink)",
+                lineHeight: 1.1,
+                margin: 0,
+              }}
+            >
+              Sri Ramaswamy
+            </h3>
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+              Chair of computational neuroscience at Newcastle&rsquo;s School
+              of Computing. Third author of Mei, Muller &amp; Ramaswamy
+              (<em>Trends in Neurosciences</em>, 2022) — the four-scale
+              neuromodulatory framework that SYMPHONY transposes from
+              continuous perceptual signals into the discrete symbolic
+              domain of source code. A Blue Brain Project alumnus whose
+              pedigree spans cortical microcircuit reconstruction from 2005
+              to today.
+            </p>
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+              Newcastle leads <strong style={{ color: "var(--ink)" }}>O2</strong> — the implementation of the four-scale neuromodulatory mechanism on the substrate produced by O1 — and co-leads the ethics layer of <strong style={{ color: "var(--ink)" }}>O5</strong>.
+            </p>
+          </div>
+        </div>
       </section>
 
       <footer className="syn-column pb-24 pt-32 text-center">
