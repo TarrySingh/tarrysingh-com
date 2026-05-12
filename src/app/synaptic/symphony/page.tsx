@@ -85,6 +85,41 @@ export default function SymphonyPage() {
         </figcaption>
       </figure>
 
+      <section className="syn-column space-y-8 pt-32">
+        <SmallCaps>II · The science-to-technology breakthrough</SmallCaps>
+        <p
+          style={{
+            color: "var(--ink-cool)",
+            fontSize: "var(--text-body)",
+            lineHeight: 1.6,
+            maxWidth: "62ch",
+          }}
+        >
+          Current approaches to machine code understanding divide into two
+          families, each with a structural ceiling we expect to hit within
+          this decade. The first is statistical — large-language-model
+          agents whose headline benchmark performance does not survive
+          independent re-evaluation. The second is structural — call graphs,
+          dependency edges, architecture knowledge graphs — which capture
+          what is explicitly declared but not the design rationale that
+          governs software change.
+        </p>
+        <p
+          style={{
+            color: "var(--ink-cool)",
+            fontSize: "var(--text-body)",
+            lineHeight: 1.6,
+            maxWidth: "62ch",
+          }}
+        >
+          SYMPHONY&rsquo;s advance is not to improve either family but to
+          combine their information content under an organising principle
+          drawn from biology. The two charts below anchor the ceiling
+          argument; the substrate figure that follows shows what we propose
+          to build in its place.
+        </p>
+      </section>
+
       <footer className="syn-column pb-24 pt-32 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">
           Same substrate. Different harmonies.
