@@ -90,17 +90,20 @@ export default function SynapticPage() {
             </figure>
           </Link>
 
-          <div className="syn-memphis block opacity-70">
+          <Link
+            href="/synaptic/memphis"
+            className="syn-memphis group block focus-visible:outline-none"
+          >
             <figure>
               <Image
                 src={chipPlate}
-                alt="Plate I (MEMPHIS) — the hippocampal-memristive chip plate, hero of /synaptic/memphis. The MEMPHIS microsite is forthcoming."
+                alt="Plate I (MEMPHIS) — the hippocampal-memristive chip plate, hero of /synaptic/memphis."
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 placeholder="blur"
-                className="block h-auto w-full rounded-[var(--radius-card)]"
+                className="block h-auto w-full rounded-[var(--radius-card)] transition-opacity group-hover:opacity-90"
               />
               <figcaption className="pt-5">
-                <SmallCaps>Plate I · MEMPHIS · forthcoming</SmallCaps>
+                <SmallCaps>Plate I · MEMPHIS</SmallCaps>
                 <h2
                   className="syn-display mt-2"
                   style={{
@@ -111,7 +114,7 @@ export default function SynapticPage() {
                     margin: 0,
                   }}
                 >
-                  MEMPHIS
+                  MEMPHIS <span style={{ color: "var(--memphis-amber)" }}>→</span>
                 </h2>
                 <p
                   style={{
@@ -120,13 +123,13 @@ export default function SynapticPage() {
                     lineHeight: 1.5,
                   }}
                 >
-                  A hippocampal-inspired memristive neuromorphic chip. The
-                  microsite ships after SYMPHONY is signed off — the second
-                  plate in the series.
+                  A hippocampal · memristive · neuromorphic architecture.
+                  Memory and computation co-localised on a self-organising
+                  substrate driven by two-phase replay dynamics.
                 </p>
               </figcaption>
             </figure>
-          </div>
+          </Link>
         </div>
       </section>
 
