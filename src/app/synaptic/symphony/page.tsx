@@ -13,6 +13,17 @@ import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
+import { JumpNav } from "@/components/synaptic/JumpNav"
+
+const SECTIONS = [
+  { id: "vision", label: "I · Vision" },
+  { id: "breakthrough", label: "II · Breakthrough" },
+  { id: "substrate", label: "III · Substrate" },
+  { id: "evidence", label: "IV · Evidence" },
+  { id: "objectives", label: "V · Objectives" },
+  { id: "consortium", label: "VI · Consortium" },
+  { id: "dossier", label: "VII · Dossier" },
+] as const
 
 export default function SymphonyPage() {
   return (
@@ -56,7 +67,7 @@ export default function SymphonyPage() {
         <Hairline className="my-16" />
       </div>
 
-      <section className="syn-column space-y-8">
+      <section id="vision" className="syn-column space-y-8">
         <SmallCaps>I · The long-term vision</SmallCaps>
         <p
           style={{
@@ -94,7 +105,7 @@ export default function SymphonyPage() {
         </figcaption>
       </figure>
 
-      <section className="syn-column space-y-8 pt-32">
+      <section id="breakthrough" className="syn-column space-y-8 pt-32">
         <SmallCaps>II · The science-to-technology breakthrough</SmallCaps>
         <p
           style={{
@@ -184,7 +195,7 @@ export default function SymphonyPage() {
         </div>
       </section>
 
-      <section className="syn-column space-y-10 pt-32">
+      <section id="substrate" className="syn-column space-y-10 pt-32">
         <SmallCaps>III · The substrate, four layers × four scales</SmallCaps>
         <figure className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
           <Image
@@ -286,7 +297,7 @@ export default function SymphonyPage() {
         </div>
       </section>
 
-      <section className="syn-column space-y-8 pt-32">
+      <section id="evidence" className="syn-column space-y-8 pt-32">
         <SmallCaps>IV · Preliminary evidence</SmallCaps>
         <p
           style={{
@@ -327,7 +338,7 @@ export default function SymphonyPage() {
         </div>
       </section>
 
-      <section className="syn-column space-y-8 pt-32">
+      <section id="objectives" className="syn-column space-y-8 pt-32">
         <div className="space-y-4">
           <SmallCaps>V · Five objectives, two reporting periods</SmallCaps>
           <ItalicCaption className="max-w-3xl">
@@ -396,7 +407,7 @@ export default function SymphonyPage() {
         </div>
       </section>
 
-      <section className="syn-column space-y-8 pt-32">
+      <section id="consortium" className="syn-column space-y-8 pt-32">
         <SmallCaps>VI · The consortium</SmallCaps>
         <p
           style={{
@@ -620,7 +631,7 @@ export default function SymphonyPage() {
         </Cartouche>
       </section>
 
-      <section className="syn-column pt-24 text-center">
+      <section id="dossier" className="syn-column pt-24 text-center">
         <SmallCaps>VII · Read the full submission</SmallCaps>
         <div className="pt-6">
           <a
@@ -651,6 +662,8 @@ export default function SymphonyPage() {
           Same substrate. Different harmonies.
         </ItalicCaption>
       </footer>
+
+      <JumpNav sections={SECTIONS} />
     </>
   )
 }
