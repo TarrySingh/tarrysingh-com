@@ -17,6 +17,7 @@ import { ComprehensionGap } from "@/components/synaptic/ComprehensionGap"
 import { ConsortiumGraph } from "@/components/synaptic/ConsortiumGraph"
 import { HominisCathedral } from "@/components/synaptic/HominisCathedral"
 import { JumpNav } from "@/components/synaptic/JumpNav"
+import { RamaswamyPedigree } from "@/components/synaptic/RamaswamyPedigree"
 import { StatisticalCeiling } from "@/components/synaptic/StatisticalCeiling"
 import { SubstrateScales } from "@/components/synaptic/SubstrateScales"
 import { SymphonyStudio } from "@/components/synaptic/SymphonyStudio"
@@ -444,7 +445,13 @@ export default function SymphonyPage() {
 
       <section className="syn-column pt-24">
         <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.3fr]">
-          <figure>
+          <div className="print:hidden">
+            <RamaswamyPedigree />
+            <p className="pt-3">
+              <SmallCaps>Plate VII · Ramaswamy / Blue Brain</SmallCaps>
+            </p>
+          </div>
+          <figure className="hidden print:block">
             <Image
               src={ramaswamyPlate}
               alt="Plate VII — Newcastle / Sri Ramaswamy / Blue Brain heritage plate: cortical-column anatomy with neuromodulator beams and a pedigree timeline from 2005 to 2026."
@@ -452,9 +459,6 @@ export default function SymphonyPage() {
               placeholder="blur"
               className="block h-auto w-full rounded-[var(--radius-tight)]"
             />
-            <figcaption className="pt-3">
-              <SmallCaps>Plate VII · Ramaswamy / Blue Brain</SmallCaps>
-            </figcaption>
           </figure>
           <div className="space-y-5">
             <SmallCaps>Newcastle University · School of Computing</SmallCaps>
