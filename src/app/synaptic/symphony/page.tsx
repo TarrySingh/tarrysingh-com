@@ -3,6 +3,7 @@ import coverPlate from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.pn
 import visionBanner from "@proposals/SYMPHONY/plates/plate-I-vision.png"
 import statisticalCeiling from "@proposals/SYMPHONY/plates/plate-V-statistical-ceiling.png"
 import comprehensionGap from "@proposals/SYMPHONY/plates/plate-IV-comprehension-gap.png"
+import substrateScales from "@proposals/SYMPHONY/plates/plate-II-substrate-x-scales.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
@@ -175,6 +176,39 @@ export default function SymphonyPage() {
             </figcaption>
           </figure>
         </div>
+      </section>
+
+      <section className="syn-column space-y-10 pt-32">
+        <SmallCaps>III · The substrate, four layers × four scales</SmallCaps>
+        <figure className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
+          <Image
+            src={substrateScales}
+            alt="Plate II — Substrate × scales: SYMPHONY's representation in code-system space (structural, behavioural, historical, rationale) crossed with the four neuromodulatory scales of Mei, Muller and Ramaswamy (2022) — hyperparameter, plasticity-driven connectivity, neuronal gain, and dendritic computation."
+            sizes="(min-width: 1024px) 55vw, 100vw"
+            placeholder="blur"
+            className="block h-auto w-full rounded-[var(--radius-tight)]"
+          />
+          <figcaption>
+            <ItalicCaption>
+              Four code-system layers crossed with four neuromodulatory
+              scales. The substrate is the cell of the matrix the engineer
+              activates next, not the entire matrix re-read.
+            </ItalicCaption>
+            <p
+              className="pt-4"
+              style={{
+                color: "var(--ink-dim)",
+                fontSize: "0.92rem",
+                lineHeight: 1.5,
+              }}
+            >
+              The vertical axis lists the four representational layers the
+              substrate unifies. The horizontal axis lists the four
+              neuromodulatory scales adapted from Mei, Muller &amp;
+              Ramaswamy (<em>Trends in Neurosciences</em>, 2022).
+            </p>
+          </figcaption>
+        </figure>
       </section>
 
       <footer className="syn-column pb-24 pt-32 text-center">
