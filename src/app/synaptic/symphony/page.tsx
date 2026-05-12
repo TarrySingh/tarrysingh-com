@@ -7,6 +7,7 @@ import substrateScales from "@proposals/SYMPHONY/plates/plate-II-substrate-x-sca
 import consortiumPlate from "@proposals/SYMPHONY/plates/plate-III-consortium.png"
 import ramaswamyPlate from "@proposals/SYMPHONY/plates/plate-VII-ramaswamy-blue-brain.png"
 import sicilianoPlate from "@proposals/SYMPHONY/plates/plate-VIII-siciliano-prisma.png"
+import hominisPlate from "@proposals/SYMPHONY/plates/plate-VI-hominis.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
@@ -474,6 +475,48 @@ export default function SymphonyPage() {
               <SmallCaps>Plate VIII · Siciliano / PRISMA</SmallCaps>
             </figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section className="syn-column pt-24">
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.3fr]">
+          <figure>
+            <Image
+              src={hominisPlate}
+              alt="Plate VI — Hominis cathedral plate: Real AI's foundation-model programme depicted as a three-pillar cathedral standing on the Leonardo / CINECA HPC foundation."
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              placeholder="blur"
+              className="block h-auto w-full rounded-[var(--radius-tight)]"
+            />
+            <figcaption className="pt-3">
+              <SmallCaps>Plate VI · Hominis cathedral</SmallCaps>
+            </figcaption>
+          </figure>
+          <div className="space-y-5">
+            <SmallCaps>Real AI · Coordinator</SmallCaps>
+            <h3
+              className="syn-display"
+              style={{
+                fontSize: "2rem",
+                color: "var(--ink)",
+                lineHeight: 1.1,
+                margin: 0,
+              }}
+            >
+              Tarry Singh
+            </h3>
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+              Founder of Real AI. Three decades across data and AI delivery
+              at industrial scale, with a current focus on foundation models
+              for the real world: <em>Hominis</em>, a family of situated,
+              auditable, compute-aware foundation models trained on
+              allocation time at Leonardo — the EuroHPC supercomputer at
+              CINECA, Bologna.
+            </p>
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+              Real AI coordinates SYMPHONY end-to-end and leads <strong style={{ color: "var(--ink)" }}>O1</strong> — the four-layer extraction pipeline — and <strong style={{ color: "var(--ink)" }}>O4</strong>, the pre-registered benchmark against frontier LLM and knowledge-graph baselines.
+            </p>
+          </div>
         </div>
       </section>
 
