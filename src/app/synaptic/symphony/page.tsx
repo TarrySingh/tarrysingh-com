@@ -18,6 +18,7 @@ import { ConsortiumGraph } from "@/components/synaptic/ConsortiumGraph"
 import { HominisCathedral } from "@/components/synaptic/HominisCathedral"
 import { JumpNav } from "@/components/synaptic/JumpNav"
 import { RamaswamyPedigree } from "@/components/synaptic/RamaswamyPedigree"
+import { SicilianoRose } from "@/components/synaptic/SicilianoRose"
 import { StatisticalCeiling } from "@/components/synaptic/StatisticalCeiling"
 import { SubstrateScales } from "@/components/synaptic/SubstrateScales"
 import { SymphonyStudio } from "@/components/synaptic/SymphonyStudio"
@@ -523,7 +524,13 @@ export default function SymphonyPage() {
               Keep the gradient.
             </ItalicCaption>
           </div>
-          <figure className="lg:order-1">
+          <div className="print:hidden lg:order-1">
+            <SicilianoRose />
+            <p className="pt-3">
+              <SmallCaps>Plate VIII · Siciliano / PRISMA</SmallCaps>
+            </p>
+          </div>
+          <figure className="hidden print:block lg:order-1">
             <Image
               src={sicilianoPlate}
               alt="Plate VIII — CREATE / Bruno Siciliano / PRISMA Lab plate: a seven-sector PRISMA rose with the ERC and Engelberger awards, ERC grants and the lab's motto Keep the gradient."
@@ -531,9 +538,6 @@ export default function SymphonyPage() {
               placeholder="blur"
               className="block h-auto w-full rounded-[var(--radius-tight)]"
             />
-            <figcaption className="pt-3">
-              <SmallCaps>Plate VIII · Siciliano / PRISMA</SmallCaps>
-            </figcaption>
           </figure>
         </div>
       </section>
