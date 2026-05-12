@@ -5,6 +5,13 @@ import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
+import { JumpNav } from "@/components/synaptic/JumpNav"
+
+const SECTIONS = [
+  { id: "breakthrough", label: "I · Breakthrough" },
+  { id: "advances", label: "II · Advances" },
+  { id: "vision", label: "III · Vision" },
+] as const
 
 const advances = [
   {
@@ -76,7 +83,7 @@ export default function MemphisPage() {
         <Hairline className="my-16" />
       </div>
 
-      <section className="syn-column space-y-8">
+      <section id="breakthrough" className="syn-column space-y-8">
         <SmallCaps>I · The core breakthrough</SmallCaps>
         <p
           style={{
@@ -115,7 +122,7 @@ export default function MemphisPage() {
         </ItalicCaption>
       </section>
 
-      <section className="syn-column space-y-10 pt-32">
+      <section id="advances" className="syn-column space-y-10 pt-32">
         <SmallCaps>II · Five advances beyond the state of the art</SmallCaps>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {advances.map((a) => (
@@ -140,7 +147,7 @@ export default function MemphisPage() {
         </div>
       </section>
 
-      <section className="syn-column space-y-8 pt-32">
+      <section id="vision" className="syn-column space-y-8 pt-32">
         <SmallCaps>III · Contribution to the long-term vision</SmallCaps>
         <p
           style={{
@@ -202,6 +209,8 @@ export default function MemphisPage() {
           Memory and computation, co-localised.
         </ItalicCaption>
       </footer>
+
+      <JumpNav sections={SECTIONS} accentVar="--memphis-amber-hi" />
     </>
   )
 }
