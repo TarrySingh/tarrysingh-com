@@ -2,7 +2,36 @@ import Image from "next/image"
 import chipPlate from "@proposals/MEMPHIS/plates/plate-I-chip.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
+import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
+
+const advances = [
+  {
+    numeral: "I",
+    dimension: "Computational paradigm",
+    body: "Distributed, event-driven computation inspired by biological circuits — not sequential and energy-intensive.",
+  },
+  {
+    numeral: "II",
+    dimension: "Learning capability",
+    body: "Continuous, replay-consolidated adaptation that addresses catastrophic forgetting without separating training from deployment.",
+  },
+  {
+    numeral: "III",
+    dimension: "Memory optimisation",
+    body: "Hardware-embedded sleep-like processes — replay and synaptic scaling — for long-term memory formation and restructuring.",
+  },
+  {
+    numeral: "IV",
+    dimension: "Hardware substrate",
+    body: "Self-organising memristive systems as a physically grounded implementation of synaptic plasticity, targeting competitive energy efficiency and high integration density.",
+  },
+  {
+    numeral: "V",
+    dimension: "System-level functionality",
+    body: "Biologically-inspired modulatory pathways for prioritisation and adaptive memory processing, beyond current neuromorphic implementations.",
+  },
+] as const
 
 export default function MemphisPage() {
   return (
@@ -83,6 +112,31 @@ export default function MemphisPage() {
           consolidation, improving task performance after offline
           processing without further external input.
         </ItalicCaption>
+      </section>
+
+      <section className="syn-column space-y-10 pt-32">
+        <SmallCaps>II · Five advances beyond the state of the art</SmallCaps>
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {advances.map((a) => (
+            <div key={a.numeral} className="space-y-4">
+              <NumberedDisk number={a.numeral} tone="amber" size={56} />
+              <h3
+                className="syn-display"
+                style={{
+                  fontSize: "1.4rem",
+                  color: "var(--ink)",
+                  lineHeight: 1.2,
+                  margin: 0,
+                }}
+              >
+                {a.dimension}
+              </h3>
+              <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+                {a.body}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <footer className="syn-column pb-24 pt-32 text-center">
