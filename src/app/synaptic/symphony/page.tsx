@@ -46,7 +46,32 @@ export default function SymphonyPage() {
         <Hairline className="my-16" />
       </div>
 
-      <footer className="syn-column pb-24 pt-16 text-center">
+      <section className="syn-column space-y-8">
+        <SmallCaps>I · The long-term vision</SmallCaps>
+        <p
+          style={{
+            color: "var(--ink-cool)",
+            fontSize: "var(--text-body)",
+            lineHeight: 1.6,
+            maxWidth: "62ch",
+          }}
+        >
+          SYMPHONY will establish the first neuromimetic knowledge substrate
+          for software systems: a computational representation of code in which
+          the elements of a software system — modules, functions, data flows,
+          contracts, tests, commit history, design decisions — are encoded as
+          nodes in a multi-scale network whose activation patterns are
+          reconfigured, on demand, by task-specific neuromodulatory signals.
+        </p>
+        <ItalicCaption className="max-w-3xl">
+          In plain terms — a code representation that behaves less like a
+          document to be re-read and more like a nervous system that
+          foregrounds the structures relevant to the engineer&rsquo;s current
+          task.
+        </ItalicCaption>
+      </section>
+
+      <footer className="syn-column pb-24 pt-32 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">
           Same substrate. Different harmonies.
         </ItalicCaption>
