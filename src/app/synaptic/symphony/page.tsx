@@ -14,6 +14,7 @@ import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { JumpNav } from "@/components/synaptic/JumpNav"
+import { Planisphere } from "@/components/synaptic/Planisphere"
 
 const SECTIONS = [
   { id: "vision", label: "I · Vision" },
@@ -28,11 +29,14 @@ const SECTIONS = [
 export default function SymphonyPage() {
   return (
     <>
-      <figure className="relative w-full">
+      <section className="px-6 pb-12 pt-16 sm:px-12 lg:px-24 print:hidden">
+        <Planisphere />
+      </section>
+
+      <figure className="relative hidden w-full print:block">
         <Image
           src={coverPlate}
           alt="SYMPHONY cover plate — a planisphere of the neuromimetic code substrate, with a violet task-baton sweeping twelve sectors of code knowledge."
-          priority
           sizes="100vw"
           placeholder="blur"
           className="block h-auto w-full"
