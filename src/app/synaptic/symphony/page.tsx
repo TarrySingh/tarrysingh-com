@@ -14,6 +14,7 @@ import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { ComprehensionGap } from "@/components/synaptic/ComprehensionGap"
+import { ConsortiumGraph } from "@/components/synaptic/ConsortiumGraph"
 import { JumpNav } from "@/components/synaptic/JumpNav"
 import { StatisticalCeiling } from "@/components/synaptic/StatisticalCeiling"
 import { SubstrateScales } from "@/components/synaptic/SubstrateScales"
@@ -419,7 +420,13 @@ export default function SymphonyPage() {
           Each lead carries a published, decade-spanning record in the
           slice of the work they own.
         </p>
-        <figure>
+        <div className="mx-auto w-full max-w-4xl print:hidden">
+          <ConsortiumGraph />
+          <p className="pt-3 text-center">
+            <SmallCaps>Plate III · Consortium</SmallCaps>
+          </p>
+        </div>
+        <figure className="hidden print:block">
           <Image
             src={consortiumPlate}
             alt="Plate III — Consortium plate naming the four SYMPHONY partners: Real AI · Newcastle (Ramaswamy) · CREATE / PRISMA (Siciliano) · UP Robotics, with their roles and the project's three reporting decision points."
@@ -427,9 +434,6 @@ export default function SymphonyPage() {
             placeholder="blur"
             className="mx-auto block h-auto w-full max-w-4xl rounded-[var(--radius-tight)]"
           />
-          <figcaption className="pt-3 text-center">
-            <SmallCaps>Plate III · Consortium</SmallCaps>
-          </figcaption>
         </figure>
       </section>
 
