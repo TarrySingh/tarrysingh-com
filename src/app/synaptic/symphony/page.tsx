@@ -2,6 +2,7 @@ import Image from "next/image"
 import coverPlate from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
 import visionBanner from "@proposals/SYMPHONY/plates/plate-I-vision.png"
 import statisticalCeiling from "@proposals/SYMPHONY/plates/plate-V-statistical-ceiling.png"
+import comprehensionGap from "@proposals/SYMPHONY/plates/plate-IV-comprehension-gap.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
@@ -145,6 +146,31 @@ export default function SymphonyPage() {
                 re-evaluation. Independent ICSE 2025 Companion and ICLR 2026
                 replication studies both find a headline collapse once
                 solution leakage and weak test cases are removed.
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <Image
+              src={comprehensionGap}
+              alt="Plate IV — Comprehension gap chart: software-system complexity grows exponentially from 1970 to 2030 while individual human comprehension capacity is flat. The widening gap is the addressable problem for SYMPHONY."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              placeholder="blur"
+              className="block h-auto w-full rounded-[var(--radius-tight)]"
+            />
+            <figcaption className="pt-3">
+              <SmallCaps>Plate IV · Comprehension gap</SmallCaps>
+              <p
+                className="pt-2"
+                style={{
+                  color: "var(--ink-dim)",
+                  fontSize: "0.92rem",
+                  lineHeight: 1.5,
+                }}
+              >
+                Software-system complexity against individual human
+                comprehension capacity, 1970–2030. The widening gap is the
+                problem the substrate is built to address — through
+                task-adaptive activation, not exhaustive re-reading.
               </p>
             </figcaption>
           </figure>
