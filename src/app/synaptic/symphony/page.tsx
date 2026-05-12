@@ -546,6 +546,32 @@ export default function SymphonyPage() {
         </div>
       </section>
 
+      <section className="syn-column pt-24 text-center">
+        <SmallCaps>VI · Read the full submission</SmallCaps>
+        <div className="pt-6">
+          <a
+            href="/dossiers/Symphony-Additional-Information-Dossier.docx"
+            download
+            className="syn-display inline-flex items-baseline gap-3 transition-opacity hover:opacity-80"
+            style={{
+              fontSize: "1.6rem",
+              color: "var(--symphony-violet-hi)",
+              letterSpacing: "var(--track-display)",
+              lineHeight: 1.2,
+            }}
+          >
+            Download the dossier
+            <span aria-hidden style={{ fontSize: "1.4rem" }}>→</span>
+          </a>
+        </div>
+        <p
+          className="syn-small-caps pt-3"
+          style={{ color: "var(--ink-dim)" }}
+        >
+          25 pages · .docx · 7.6 MB · Symphony additional-information submission
+        </p>
+      </section>
+
       <footer className="syn-column pb-24 pt-32 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">
           Same substrate. Different harmonies.
