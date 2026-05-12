@@ -14,7 +14,7 @@ import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { JumpNav } from "@/components/synaptic/JumpNav"
-import { Planisphere } from "@/components/synaptic/Planisphere"
+import { SymphonyStudio } from "@/components/synaptic/SymphonyStudio"
 
 const SECTIONS = [
   { id: "vision", label: "I · Vision" },
@@ -29,9 +29,9 @@ const SECTIONS = [
 export default function SymphonyPage() {
   return (
     <>
-      <section className="px-6 pb-12 pt-16 sm:px-12 lg:px-24 print:hidden">
-        <Planisphere />
-      </section>
+      <div className="print:hidden">
+        <SymphonyStudio />
+      </div>
 
       <figure className="relative hidden w-full print:block">
         <Image
@@ -42,30 +42,6 @@ export default function SymphonyPage() {
           className="block h-auto w-full"
         />
       </figure>
-
-      <header className="syn-column space-y-6 pt-24">
-        <div className="flex flex-wrap items-baseline gap-x-8 gap-y-1">
-          <SmallCaps>Plate II</SmallCaps>
-          <SmallCaps>Anno 2026</SmallCaps>
-          <SmallCaps>Cover · Planisphere</SmallCaps>
-        </div>
-        <h1
-          className="syn-display"
-          style={{
-            fontSize: "var(--text-display)",
-            color: "var(--ink)",
-            lineHeight: 0.95,
-            margin: 0,
-          }}
-        >
-          SYMPHONY
-        </h1>
-        <ItalicCaption className="max-w-3xl">
-          A neuromimetic knowledge substrate for software systems —
-          multi-scale neuromodulation and low-bandwidth shared control for
-          task-adaptive code comprehension.
-        </ItalicCaption>
-      </header>
 
       <div className="syn-column">
         <Hairline className="my-16" />

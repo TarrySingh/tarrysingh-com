@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import {
   CX,
   CY,
@@ -13,33 +12,20 @@ import {
 } from "@/lib/synaptic/planisphere-data"
 
 type PlanisphereProps = {
-  initialSec?: number
+  activeSec: number
+  hoverSec?: number | null
+  onSectorSelect: (sec: number) => void
+  onSectorHover?: (sec: number | null) => void
   className?: string
-  onSectorChange?: (sec: number) => void
 }
 
 export function Planisphere({
-  initialSec = 0,
+  activeSec,
+  hoverSec = null,
+  onSectorSelect,
+  onSectorHover,
   className = "",
-  onSectorChange,
 }: PlanisphereProps) {
-  const [activeSec, setActiveSec] = useState(initialSec)
-  const [hoverSec, setHoverSec] = useState<number | null>(null)
-  const [autoplay, setAutoplay] = useState(false)
-
-  useEffect(() => {
-    if (!autoplay) return
-    const id = setInterval(() => {
-      setActiveSec((s) => (s + 1) % 12)
-    }, 2500)
-    return () => clearInterval(id)
-  }, [autoplay])
-
-  const handleSelect = (sec: number) => {
-    setActiveSec(sec)
-    onSectorChange?.(sec)
-  }
-
   // active sectors form a fan of 3 around the chosen centre
   const activeSet = new Set<number>()
   for (const d of [-1, 0, 1]) {
@@ -54,58 +40,9 @@ export function Planisphere({
   }
 
   return (
-    <div className={`mx-auto w-full max-w-[820px] ${className}`}>
-      <div
-        className="mb-6 flex items-center gap-3 rounded-2xl border px-4 py-3"
-        style={{
-          borderColor: "rgba(200,180,255,0.14)",
-          background:
-            "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
-        }}
-      >
-        <span
-          className="syn-small-caps"
-          style={{ color: "var(--ink-dim)" }}
-        >
-          Task baton
-        </span>
-        <span
-          className="syn-mono flex-1 text-center"
-          style={{
-            color: "var(--ink)",
-            letterSpacing: "var(--track-mono)",
-            fontSize: "0.86rem",
-          }}
-        >
-          ν ={" "}
-          <span style={{ color: "var(--symphony-amber-hi)" }}>
-            {SECTORS[activeSec].task}
-          </span>
-        </span>
-        <button
-          type="button"
-          onClick={() => setAutoplay((a) => !a)}
-          className="syn-mono rounded-full border px-3 py-1 transition-colors"
-          style={{
-            fontSize: "0.7rem",
-            letterSpacing: "var(--track-mono)",
-            borderColor: autoplay
-              ? "var(--symphony-violet-hi)"
-              : "rgba(255,255,255,0.2)",
-            background: autoplay
-              ? "var(--symphony-violet)"
-              : "transparent",
-            color: autoplay ? "#0d1027" : "var(--ink)",
-          }}
-        >
-          {autoplay ? "■  Stop" : "▶  Auto-movement"}
-        </button>
-      </div>
     <svg
       viewBox={`0 0 ${VIEW} ${VIEW}`}
-      className="block h-auto w-full"
+      className={`block h-auto w-full ${className}`}
       role="img"
       aria-label="SYMPHONY planisphere — four concentric layers (rationale, historical, behavioural, structural) crossed with twelve engineering-task sectors. The violet task baton activates a three-sector fan; nodes in the fan brighten and a filament threads through the four layers."
     >
@@ -138,24 +75,8 @@ export function Planisphere({
         const rOut = ring.rOut * OUTER_R
         return (
           <g key={`ring-${ri}`}>
-            <circle
-              cx={CX}
-              cy={CY}
-              r={rOut}
-              fill="none"
-              stroke={ring.color}
-              strokeOpacity={0.45}
-              strokeWidth={1}
-            />
-            <circle
-              cx={CX}
-              cy={CY}
-              r={rIn}
-              fill="none"
-              stroke={ring.color}
-              strokeOpacity={0.3}
-              strokeWidth={1}
-            />
+            <circle cx={CX} cy={CY} r={rOut} fill="none" stroke={ring.color} strokeOpacity={0.45} strokeWidth={1} />
+            <circle cx={CX} cy={CY} r={rIn} fill="none" stroke={ring.color} strokeOpacity={0.3} strokeWidth={1} />
           </g>
         )
       })}
@@ -165,17 +86,13 @@ export function Planisphere({
         <g
           key={`sec-${sec}`}
           className="syn-sector-target"
-          onClick={() => handleSelect(sec)}
-          onMouseEnter={() => setHoverSec(sec)}
-          onMouseLeave={() => setHoverSec(null)}
+          onClick={() => onSectorSelect(sec)}
+          onMouseEnter={() => onSectorHover?.(sec)}
+          onMouseLeave={() => onSectorHover?.(null)}
         >
           <path
             d={wedgePath(sec, RINGS[0].rIn * OUTER_R, OUTER_R)}
-            fill={
-              hoverSec === sec
-                ? "rgba(200,184,255,0.06)"
-                : "transparent"
-            }
+            fill={hoverSec === sec ? "rgba(200,184,255,0.06)" : "transparent"}
             stroke="rgba(220,200,160,0.10)"
             strokeWidth={0.5}
           />
@@ -201,22 +118,8 @@ export function Planisphere({
       })}
 
       {/* outer perimeter and tick marks */}
-      <circle
-        cx={CX}
-        cy={CY}
-        r={OUTER_R}
-        fill="none"
-        stroke="rgba(220,200,160,0.7)"
-        strokeWidth={1}
-      />
-      <circle
-        cx={CX}
-        cy={CY}
-        r={OUTER_R + 8}
-        fill="none"
-        stroke="rgba(220,200,160,0.35)"
-        strokeWidth={0.7}
-      />
+      <circle cx={CX} cy={CY} r={OUTER_R} fill="none" stroke="rgba(220,200,160,0.7)" strokeWidth={1} />
+      <circle cx={CX} cy={CY} r={OUTER_R + 8} fill="none" stroke="rgba(220,200,160,0.35)" strokeWidth={0.7} />
       {Array.from({ length: 360 }).map((_, i) => {
         const ang = ((i - 90) * Math.PI) / 180
         const isLong = i % 30 === 0
@@ -230,13 +133,7 @@ export function Planisphere({
             y1={CY + r1 * Math.sin(ang)}
             x2={CX + r2 * Math.cos(ang)}
             y2={CY + r2 * Math.sin(ang)}
-            stroke={
-              isLong
-                ? "rgba(245,232,204,0.85)"
-                : isMed
-                  ? "rgba(220,200,160,0.55)"
-                  : "rgba(170,160,130,0.35)"
-            }
+            stroke={isLong ? "rgba(245,232,204,0.85)" : isMed ? "rgba(220,200,160,0.55)" : "rgba(170,160,130,0.35)"}
             strokeWidth={isLong ? 1 : 0.6}
           />
         )
@@ -290,36 +187,13 @@ export function Planisphere({
         const ring = RINGS[n.ringIdx]
         const isPrimary = n.sectorIdx === activeSec
         if (!isActive) {
-          return (
-            <circle
-              key={idx}
-              cx={n.x}
-              cy={n.y}
-              r={1.8}
-              fill={ring.color}
-              fillOpacity={0.55}
-            />
-          )
+          return <circle key={idx} cx={n.x} cy={n.y} r={1.8} fill={ring.color} fillOpacity={0.55} />
         }
         const baseR = isPrimary ? 3.2 : 2.4
         return (
           <g key={idx}>
-            {isPrimary ? (
-              <circle
-                cx={n.x}
-                cy={n.y}
-                r={baseR * 2.5}
-                fill="#ffd596"
-                fillOpacity={0.25}
-              />
-            ) : null}
-            <circle
-              cx={n.x}
-              cy={n.y}
-              r={baseR * 1.7}
-              fill="#f4c482"
-              fillOpacity={0.55}
-            />
+            {isPrimary ? <circle cx={n.x} cy={n.y} r={baseR * 2.5} fill="#ffd596" fillOpacity={0.25} /> : null}
+            <circle cx={n.x} cy={n.y} r={baseR * 1.7} fill="#f4c482" fillOpacity={0.55} />
             <circle cx={n.x} cy={n.y} r={baseR} fill="#ffe0a4" />
           </g>
         )
@@ -330,9 +204,7 @@ export function Planisphere({
         const aMidSec = sec * 30 - 90
         const picks: { x: number; y: number }[] = []
         for (let ri = 0; ri < 4; ri += 1) {
-          const candidates = NODES.filter(
-            (n) => n.ringIdx === ri && n.sectorIdx === sec,
-          )
+          const candidates = NODES.filter((n) => n.ringIdx === ri && n.sectorIdx === sec)
           if (candidates.length === 0) continue
           let best = candidates[0]
           let bestScore = Math.abs(best.ang - aMidSec)
@@ -346,9 +218,7 @@ export function Planisphere({
           picks.push({ x: best.x, y: best.y })
         }
         if (picks.length < 2) return null
-        const d = picks
-          .map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`)
-          .join(" ")
+        const d = picks.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ")
         return (
           <path
             key={`fil-${sec}`}
@@ -375,39 +245,17 @@ export function Planisphere({
       />
 
       {/* baton arrow into the centre */}
-      <line
-        x1={CX}
-        y1={CY}
-        x2={batonTip.x}
-        y2={batonTip.y}
-        stroke="#c8b8ff"
-        strokeOpacity={0.85}
-        strokeWidth={1.5}
-      />
+      <line x1={CX} y1={CY} x2={batonTip.x} y2={batonTip.y} stroke="#c8b8ff" strokeOpacity={0.85} strokeWidth={1.5} />
       <circle cx={batonTip.x} cy={batonTip.y} r={4} fill="#c8b8ff" />
 
-      {/* centre conductor sphere — pulses via syn-anim-baton */}
+      {/* centre conductor sphere */}
       <g className="syn-anim-baton">
         <circle cx={CX} cy={CY} r={40} fill="url(#syn-planisphere-centre)" />
         <circle cx={CX} cy={CY} r={22} fill="#5a4a8a" />
         <circle cx={CX} cy={CY} r={17} fill="#a698d4" />
         <circle cx={CX} cy={CY} r={11} fill="#f5e8cc" />
-        <line
-          x1={CX - 20}
-          y1={CY}
-          x2={CX + 20}
-          y2={CY}
-          stroke="#5a4a8a"
-          strokeWidth={1.5}
-        />
-        <line
-          x1={CX}
-          y1={CY - 20}
-          x2={CX}
-          y2={CY + 20}
-          stroke="#5a4a8a"
-          strokeWidth={1.5}
-        />
+        <line x1={CX - 20} y1={CY} x2={CX + 20} y2={CY} stroke="#5a4a8a" strokeWidth={1.5} />
+        <line x1={CX} y1={CY - 20} x2={CX} y2={CY + 20} stroke="#5a4a8a" strokeWidth={1.5} />
         <circle cx={CX} cy={CY} r={3} fill="#5a4a8a" />
       </g>
 
@@ -430,55 +278,5 @@ export function Planisphere({
         )
       })()}
     </svg>
-
-      <p
-        className="syn-small-caps mt-3 text-center"
-        style={{ color: "var(--ink-dim)" }}
-      >
-        Click any sector to point the task baton
-      </p>
-
-      <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
-        {RINGS.map((r) => (
-          <div
-            key={r.name}
-            className="rounded-xl border px-3 py-3"
-            style={{
-              borderColor: "rgba(200,180,255,0.14)",
-              background:
-                "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
-              backdropFilter: "blur(8px)",
-              WebkitBackdropFilter: "blur(8px)",
-            }}
-          >
-            <div className="flex items-baseline gap-2">
-              <span
-                className="syn-display"
-                style={{ color: r.color, fontSize: "1.5rem" }}
-              >
-                {r.numeral}
-              </span>
-              <span
-                className="syn-mono"
-                style={{
-                  color: "var(--ink)",
-                  fontSize: "0.7rem",
-                  letterSpacing: "var(--track-mono)",
-                  textTransform: "uppercase",
-                }}
-              >
-                {r.name}
-              </span>
-            </div>
-            <p
-              className="syn-italic-caption mt-1"
-              style={{ fontSize: "0.78rem" }}
-            >
-              {r.sub}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
   )
 }
