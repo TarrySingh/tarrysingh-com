@@ -621,7 +621,7 @@ export default function SymphonyPage() {
       </section>
 
       <section className="syn-column pt-24 text-center">
-        <SmallCaps>VIII · Read the full submission</SmallCaps>
+        <SmallCaps>VII · Read the full submission</SmallCaps>
         <div className="pt-6">
           <a
             href="/dossiers/Symphony-Additional-Information-Dossier.docx"
