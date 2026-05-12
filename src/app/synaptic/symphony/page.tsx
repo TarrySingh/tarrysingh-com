@@ -520,6 +520,32 @@ export default function SymphonyPage() {
         </div>
       </section>
 
+      <section className="syn-column pt-24">
+        <div className="mx-auto max-w-3xl space-y-5">
+          <SmallCaps>UP Robotics · Industrial demonstrator</SmallCaps>
+          <h3
+            className="syn-display"
+            style={{
+              fontSize: "2rem",
+              color: "var(--ink)",
+              lineHeight: 1.1,
+              margin: 0,
+            }}
+          >
+            The fourth partner
+          </h3>
+          <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+            UP Robotics contributes the industrial-automation demonstrator
+            codebase. The O1 pipeline that builds the substrate and the
+            O4 benchmark that validates it must both survive contact with
+            this code — a production system whose maintenance logs supply
+            half of the held-out task instances. Without a real industrial
+            system in the loop, SYMPHONY is a paper claim.
+          </p>
+          <Hairline />
+        </div>
+      </section>
+
       <footer className="syn-column pb-24 pt-32 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">
           Same substrate. Different harmonies.
