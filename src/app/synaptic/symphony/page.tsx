@@ -45,9 +45,11 @@ export default function SymphonyPage() {
 
         <Hairline className="my-16" />
 
-        <p style={{ color: "var(--ink-cool)", maxWidth: "62ch" }}>
-          The rest of the page follows in subsequent commits.
-        </p>
+        <footer className="mt-32 text-center">
+          <ItalicCaption className="mx-auto max-w-2xl">
+            Same substrate. Different harmonies.
+          </ItalicCaption>
+        </footer>
       </main>
     </>
   )
