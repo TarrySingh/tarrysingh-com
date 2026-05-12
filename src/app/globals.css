@@ -314,12 +314,23 @@ html {
 .syn-anim-ribbon { animation: syn-ribbon-flow 5s linear infinite; }
 .syn-anim-fil    { animation: syn-ribbon-flow 8s linear infinite; }
 .syn-anim-sweep  { animation: syn-sweep 1.8s ease-out infinite; }
+.syn-anim-cell-awake { animation: syn-cell-awake 1.2s ease-in-out infinite; }
+.syn-anim-cell-sleep { animation: syn-cell-sleep 2.5s ease-in-out infinite; }
 .syn-sector-target {
   cursor: pointer;
   transition: fill 0.3s ease;
 }
+@keyframes syn-cell-awake {
+  0%, 100% { opacity: 0.78; }
+  50%      { opacity: 1; }
+}
+@keyframes syn-cell-sleep {
+  0%, 100% { opacity: 0.55; transform: scale(1); transform-box: fill-box; transform-origin: center; }
+  50%      { opacity: 1;    transform: scale(1.18); transform-box: fill-box; transform-origin: center; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .syn-anim-baton, .syn-anim-ribbon, .syn-anim-fil, .syn-anim-sweep {
+  .syn-anim-baton, .syn-anim-ribbon, .syn-anim-fil, .syn-anim-sweep,
+  .syn-anim-cell-awake, .syn-anim-cell-sleep {
     animation: none;
   }
 }
