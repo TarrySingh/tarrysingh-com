@@ -287,8 +287,49 @@ export default function SymphonyPage() {
       </section>
 
       <section className="syn-column space-y-8 pt-32">
+        <SmallCaps>IV · Preliminary evidence</SmallCaps>
+        <p
+          style={{
+            color: "var(--ink-cool)",
+            fontSize: "var(--text-body)",
+            lineHeight: 1.6,
+            maxWidth: "62ch",
+          }}
+        >
+          At TRL 1–4 the question is whether the mechanism is sound, not
+          whether an industrial artefact exists. Three converging lines of
+          published evidence support the mechanism.
+        </p>
+        <div className="grid gap-6 md:grid-cols-3">
+          <Cartouche title="Simulation" meta="2022">
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.5, fontSize: "0.95rem" }}>
+              Mei, Muller &amp; Ramaswamy (<em>Trends in Neurosciences</em>,
+              2022) — neuromodulatory units at four scales yield faster
+              adaptation, higher cumulative reward and resistance to
+              catastrophic forgetting in deep networks.
+            </p>
+          </Cartouche>
+          <Cartouche title="Hardware" meta="2018–2025">
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.5, fontSize: "0.95rem" }}>
+              Selvaggio, Pacchierotti, Giordano &amp; Siciliano (RA-L 2018;
+              ICRA 2019; T-RO 2022; RAS 2025) — low-bandwidth supervisory
+              signals reshape high-DOF autonomous controllers into
+              qualitatively distinct task behaviours.
+            </p>
+          </Cartouche>
+          <Cartouche title="Failure" meta="ICSE 2025 · ICLR 2026">
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.5, fontSize: "0.95rem" }}>
+              SWE-bench re-evaluations show 80 %+ headline scores collapse
+              to single digits or 30 % once leakage is removed —
+              incremental scaling does not close the comprehension gap.
+            </p>
+          </Cartouche>
+        </div>
+      </section>
+
+      <section className="syn-column space-y-8 pt-32">
         <div className="space-y-4">
-          <SmallCaps>IV · Five objectives, two reporting periods</SmallCaps>
+          <SmallCaps>V · Five objectives, two reporting periods</SmallCaps>
           <ItalicCaption className="max-w-3xl">
             Each objective carries a quantitative threshold, a decision
             milestone, and a documented alternative path if the threshold
@@ -356,7 +397,7 @@ export default function SymphonyPage() {
       </section>
 
       <section className="syn-column space-y-8 pt-32">
-        <SmallCaps>V · The consortium</SmallCaps>
+        <SmallCaps>VI · The consortium</SmallCaps>
         <p
           style={{
             color: "var(--ink-cool)",
@@ -580,7 +621,7 @@ export default function SymphonyPage() {
       </section>
 
       <section className="syn-column pt-24 text-center">
-        <SmallCaps>VII · Read the full submission</SmallCaps>
+        <SmallCaps>VIII · Read the full submission</SmallCaps>
         <div className="pt-6">
           <a
             href="/dossiers/Symphony-Additional-Information-Dossier.docx"
