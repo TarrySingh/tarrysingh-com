@@ -18,39 +18,39 @@ export default function SymphonyPage() {
         />
       </figure>
 
-      <main className="mx-auto max-w-[1100px] px-6 py-24 sm:px-12 lg:px-24">
-        <header className="space-y-6">
-          <div className="flex flex-wrap items-baseline gap-x-8 gap-y-1">
-            <SmallCaps>Plate II</SmallCaps>
-            <SmallCaps>Anno 2026</SmallCaps>
-            <SmallCaps>Cover · Planisphere</SmallCaps>
-          </div>
-          <h1
-            className="syn-display"
-            style={{
-              fontSize: "var(--text-display)",
-              color: "var(--ink)",
-              lineHeight: 0.95,
-              margin: 0,
-            }}
-          >
-            SYMPHONY
-          </h1>
-          <ItalicCaption className="max-w-3xl">
-            A neuromimetic knowledge substrate for software systems —
-            multi-scale neuromodulation and low-bandwidth shared control for
-            task-adaptive code comprehension.
-          </ItalicCaption>
-        </header>
+      <header className="syn-column space-y-6 pt-24">
+        <div className="flex flex-wrap items-baseline gap-x-8 gap-y-1">
+          <SmallCaps>Plate II</SmallCaps>
+          <SmallCaps>Anno 2026</SmallCaps>
+          <SmallCaps>Cover · Planisphere</SmallCaps>
+        </div>
+        <h1
+          className="syn-display"
+          style={{
+            fontSize: "var(--text-display)",
+            color: "var(--ink)",
+            lineHeight: 0.95,
+            margin: 0,
+          }}
+        >
+          SYMPHONY
+        </h1>
+        <ItalicCaption className="max-w-3xl">
+          A neuromimetic knowledge substrate for software systems —
+          multi-scale neuromodulation and low-bandwidth shared control for
+          task-adaptive code comprehension.
+        </ItalicCaption>
+      </header>
 
+      <div className="syn-column">
         <Hairline className="my-16" />
+      </div>
 
-        <footer className="mt-32 text-center">
-          <ItalicCaption className="mx-auto max-w-2xl">
-            Same substrate. Different harmonies.
-          </ItalicCaption>
-        </footer>
-      </main>
+      <footer className="syn-column pb-24 pt-16 text-center">
+        <ItalicCaption className="mx-auto max-w-2xl">
+          Same substrate. Different harmonies.
+        </ItalicCaption>
+      </footer>
     </>
   )
 }
