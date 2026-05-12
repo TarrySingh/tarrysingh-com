@@ -174,6 +174,46 @@ function seedPositions(seed = 7): PlanisphereNode[] {
 
 export const NODES: ReadonlyArray<PlanisphereNode> = seedPositions(7)
 
+export type SymphonyObjective = {
+  id: string
+  title: string
+  subtitle: string
+  body: string
+}
+
+export const OBJECTIVES: ReadonlyArray<SymphonyObjective> = [
+  {
+    id: "O1",
+    title: "MULTI-LAYER EXTRACTION",
+    subtitle: "structural · behavioural · historical · rationale",
+    body: "Build a pipeline that ingests a software system and emits a four-layer representation over a single graph. Coverage ≥ 90 % of functions, ≥ 80 % of inter-module dependencies, decision milestone M12.",
+  },
+  {
+    id: "O2",
+    title: "NEUROMODULATORY RECONFIG",
+    subtitle: "four-scale activation",
+    body: "Implement the four-scale framework of Mei, Muller & Ramaswamy (2022): hyperparameter, plasticity, neuron-level and dendritic modulation, adapted to symbolic activations. F1 ≥ 0.6 against expert ground-truth, M18.",
+  },
+  {
+    id: "O3",
+    title: "LOW-BANDWIDTH CONTROL",
+    subtitle: "task-switch < 500 ms",
+    body: "Derive a narrow scalar control interface (the task baton) by which task tokens reshape activation without modifying stored structure. State-preservation ≥ 0.95, M24.",
+  },
+  {
+    id: "O4",
+    title: "BENCHMARKED ADVANTAGE",
+    subtitle: "≥ 20 % F1 over baselines",
+    body: "Beat (a) a frontier LLM agent, (b) static-analysis + EAKG, and (c) LLM + RAG on a pre-registered 200-instance benchmark. ≥ 20 % F1 lift and ≥ 15 % expert-rated actionability, M30.",
+  },
+  {
+    id: "O5",
+    title: "EQUITABLE-ACCESS STUDY",
+    subtitle: "≥ 60 engineers, stratified",
+    body: "Pre-registered user study stratified across gender, career stage, and native-language proficiency. Primary endpoint: significant time-to-first-correct-change reduction for under-represented strata, with no stratum disadvantaged. M33.",
+  },
+]
+
 export function wedgePath(
   sec: number,
   rInner: number,
