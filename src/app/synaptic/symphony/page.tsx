@@ -1,6 +1,7 @@
 import Image from "next/image"
 import coverPlate from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
 import visionBanner from "@proposals/SYMPHONY/plates/plate-I-vision.png"
+import statisticalCeiling from "@proposals/SYMPHONY/plates/plate-V-statistical-ceiling.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
@@ -118,6 +119,36 @@ export default function SymphonyPage() {
           argument; the substrate figure that follows shows what we propose
           to build in its place.
         </p>
+      </section>
+
+      <section className="syn-column pt-16">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <figure>
+            <Image
+              src={statisticalCeiling}
+              alt="Plate V — Statistical ceiling chart: published SWE-bench Verified scores compared with independently re-evaluated resolution rates after solution-leakage filtering. Headline scores above 80 per cent collapse to single digits."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              placeholder="blur"
+              className="block h-auto w-full rounded-[var(--radius-tight)]"
+            />
+            <figcaption className="pt-3">
+              <SmallCaps>Plate V · Statistical ceiling</SmallCaps>
+              <p
+                className="pt-2"
+                style={{
+                  color: "var(--ink-dim)",
+                  fontSize: "0.92rem",
+                  lineHeight: 1.5,
+                }}
+              >
+                Published SWE-bench Verified scores against independent
+                re-evaluation. Independent ICSE 2025 Companion and ICLR 2026
+                replication studies both find a headline collapse once
+                solution leakage and weak test cases are removed.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
       </section>
 
       <footer className="syn-column pb-24 pt-32 text-center">
