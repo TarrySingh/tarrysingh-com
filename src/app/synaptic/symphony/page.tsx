@@ -6,6 +6,7 @@ import comprehensionGap from "@proposals/SYMPHONY/plates/plate-IV-comprehension-
 import substrateScales from "@proposals/SYMPHONY/plates/plate-II-substrate-x-scales.png"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
+import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 
 export default function SymphonyPage() {
@@ -209,6 +210,75 @@ export default function SymphonyPage() {
             </p>
           </figcaption>
         </figure>
+      </section>
+
+      <section className="syn-column pt-16">
+        <div className="grid gap-10 lg:grid-cols-3">
+          <div className="space-y-4">
+            <NumberedDisk number="i" tone="violet" size={56} />
+            <h3
+              className="syn-display"
+              style={{
+                fontSize: "1.5rem",
+                color: "var(--ink)",
+                lineHeight: 1.2,
+                margin: 0,
+              }}
+            >
+              Multi-layer extraction
+            </h3>
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+              Existing architecture-recovery pipelines produce either a
+              single view or a separate document corpus. SYMPHONY unifies
+              structural, behavioural, historical and rationale layers in a
+              single graph-resident representation, built for
+              activation-based retrieval rather than query-based retrieval.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <NumberedDisk number="ii" tone="violet" size={56} />
+            <h3
+              className="syn-display"
+              style={{
+                fontSize: "1.5rem",
+                color: "var(--ink)",
+                lineHeight: 1.2,
+                margin: 0,
+              }}
+            >
+              Context-dependent activation
+            </h3>
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+              No existing representation alters its own salience profile in
+              response to the engineer&rsquo;s declared task. SYMPHONY&rsquo;s
+              substrate maintains a single state of the system but surfaces
+              different subnetworks under a task token, using the four-scale
+              neuromodulatory primitives of Mei, Muller &amp; Ramaswamy
+              (2022) as the mathematical template.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <NumberedDisk number="iii" tone="violet" size={56} />
+            <h3
+              className="syn-display"
+              style={{
+                fontSize: "1.5rem",
+                color: "var(--ink)",
+                lineHeight: 1.2,
+                margin: 0,
+              }}
+            >
+              Low-bandwidth task control
+            </h3>
+            <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+              Borrowing from Siciliano&rsquo;s haptic shared-control
+              architecture, the task interface is intentionally narrow — a
+              small set of scalar modulatory signals, not a prompt window —
+              so that behaviour under different engineering tasks is
+              composable, auditable, and bounded.
+            </p>
+          </div>
+        </div>
       </section>
 
       <footer className="syn-column pb-24 pt-32 text-center">
