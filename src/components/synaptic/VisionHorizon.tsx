@@ -339,51 +339,68 @@ export function VisionHorizon() {
           ))}
 
           {/* active waypoint detail panel at bottom */}
-          <g transform={`translate(60, ${VH - 110})`}>
-            <rect
-              x={0}
-              y={0}
-              width={VW - 120}
-              height={92}
-              rx={10}
-              fill="rgba(13,16,39,0.7)"
-              stroke={active.color}
-              strokeOpacity={0.55}
-              strokeWidth={1.2}
-            />
-            <text
-              x={28}
-              y={32}
-              fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
-              fontSize={11}
-              letterSpacing={3}
-              fill="rgba(220,200,160,0.65)"
-            >
-              REQUIREMENT · {active.numeral}
-            </text>
-            <text
-              x={28}
-              y={62}
-              fontFamily="var(--font-display), Gloock, serif"
-              fontSize={24}
-              fill={active.color}
-              letterSpacing={1}
-            >
-              {active.label}
-            </text>
-            <foreignObject x={28} y={70} width={VW - 200} height={42}>
-              <div
-                style={{
-                  fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
-                  fontSize: "14px",
-                  lineHeight: 1.45,
-                  color: "var(--ink-cool)",
-                }}
-              >
-                {active.body}
-              </div>
-            </foreignObject>
-          </g>
+          {(() => {
+            const PANEL_X = 60
+            const PANEL_W = VW - 2 * PANEL_X
+            const PANEL_H = 170
+            const INNER_PAD = 32
+            const INNER_W = PANEL_W - 2 * INNER_PAD
+            const PANEL_Y = VH - PANEL_H - 24
+            return (
+              <g transform={`translate(${PANEL_X}, ${PANEL_Y})`}>
+                <rect
+                  x={0}
+                  y={0}
+                  width={PANEL_W}
+                  height={PANEL_H}
+                  rx={10}
+                  fill="rgba(13,16,39,0.85)"
+                  stroke={active.color}
+                  strokeOpacity={0.55}
+                  strokeWidth={1.2}
+                />
+                <text
+                  x={INNER_PAD}
+                  y={30}
+                  fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
+                  fontSize={12}
+                  letterSpacing={3}
+                  fill="rgba(220,200,160,0.65)"
+                >
+                  REQUIREMENT · {active.numeral}
+                </text>
+                <text
+                  x={INNER_PAD}
+                  y={68}
+                  fontFamily="var(--font-display), Gloock, serif"
+                  fontSize={28}
+                  fill={active.color}
+                  letterSpacing={1}
+                >
+                  {active.label}
+                </text>
+                <foreignObject
+                  x={INNER_PAD}
+                  y={86}
+                  width={INNER_W}
+                  height={PANEL_H - 100}
+                >
+                  <div
+                    style={{
+                      fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
+                      fontSize: "15px",
+                      lineHeight: 1.55,
+                      color: "var(--ink-cool)",
+                      wordWrap: "break-word",
+                      overflowWrap: "anywhere",
+                    }}
+                  >
+                    {active.body}
+                  </div>
+                </foreignObject>
+              </g>
+            )
+          })()}
         </svg>
 
         <div
