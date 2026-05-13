@@ -6,13 +6,21 @@ import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
+import { Ca3Ca1Circuit } from "@/components/synaptic/Ca3Ca1Circuit"
 import { ChipPlate } from "@/components/synaptic/ChipPlate"
+import { EnergyGradient } from "@/components/synaptic/EnergyGradient"
 import { JumpNav } from "@/components/synaptic/JumpNav"
+import { StdpWindow } from "@/components/synaptic/StdpWindow"
+import { TwoPhaseDynamics } from "@/components/synaptic/TwoPhaseDynamics"
 
 const SECTIONS = [
   { id: "breakthrough", label: "I · Breakthrough" },
-  { id: "advances", label: "II · Advances" },
-  { id: "vision", label: "III · Vision" },
+  { id: "circuit", label: "II · Circuit" },
+  { id: "stdp", label: "III · STDP" },
+  { id: "phases", label: "IV · Phases" },
+  { id: "energy", label: "V · Energy" },
+  { id: "advances", label: "VI · Advances" },
+  { id: "vision", label: "VII · Vision" },
 ] as const
 
 const advances = [
@@ -152,8 +160,64 @@ export default function MemphisPage() {
         </ItalicCaption>
       </section>
 
+      {/* Plate M-III — circuit anatomy */}
+      <section id="circuit" className="syn-column space-y-6 pt-32">
+        <div className="space-y-3">
+          <SmallCaps>II · The circuit MEMPHIS reproduces</SmallCaps>
+          <p style={{ color: "var(--ink-cool)", lineHeight: 1.6, maxWidth: "62ch" }}>
+            Six labelled circuit motifs anchor the device-co-design problem.
+            Hover any node to read its role; the incident edges light up to
+            show its couplings to the rest of the substrate.
+          </p>
+        </div>
+        <Ca3Ca1Circuit />
+      </section>
+
+      {/* Plate M-I — STDP window */}
+      <section id="stdp" className="syn-column space-y-6 pt-32">
+        <div className="space-y-3">
+          <SmallCaps>III · The learning primitive</SmallCaps>
+          <p style={{ color: "var(--ink-cool)", lineHeight: 1.6, maxWidth: "62ch" }}>
+            Move the cursor across the curve. A pre-synaptic spike that
+            precedes a post-synaptic spike strengthens the connection; reverse
+            the order and the connection weakens. MEMPHIS demands the
+            memristive substrate produce this window <em>intrinsically</em>{" "}
+            from device physics, not from a software training rule applied
+            over the top.
+          </p>
+        </div>
+        <StdpWindow />
+      </section>
+
+      {/* Plate M-II — two-phase dynamics */}
+      <section id="phases" className="syn-column space-y-6 pt-32">
+        <div className="space-y-3">
+          <SmallCaps>IV · Two phases, one substrate</SmallCaps>
+          <p style={{ color: "var(--ink-cool)", lineHeight: 1.6, maxWidth: "62ch" }}>
+            Online events drive sparse, salient computation. Offline intrinsic
+            dynamics replay and consolidate — without external input.
+            One physical substrate, two regimes.
+          </p>
+        </div>
+        <TwoPhaseDynamics />
+      </section>
+
+      {/* Plate M-V — energy gradient */}
+      <section id="energy" className="syn-column space-y-6 pt-32">
+        <div className="space-y-3">
+          <SmallCaps>V · The energy gradient</SmallCaps>
+          <p style={{ color: "var(--ink-cool)", lineHeight: 1.6, maxWidth: "62ch" }}>
+            Per-synaptic-event energy on a log axis. GPU AI sits six orders
+            of magnitude above mammalian cortex. MEMPHIS targets the
+            biological benchmark — three orders below today&rsquo;s best
+            neuromorphic silicon.
+          </p>
+        </div>
+        <EnergyGradient />
+      </section>
+
       <section id="advances" className="syn-column space-y-10 pt-32">
-        <SmallCaps>II · Five advances beyond the state of the art</SmallCaps>
+        <SmallCaps>VI · Five advances beyond the state of the art</SmallCaps>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {advances.map((a) => (
             <div key={a.numeral} className="space-y-4">
@@ -178,7 +242,7 @@ export default function MemphisPage() {
       </section>
 
       <section id="vision" className="syn-column space-y-8 pt-32">
-        <SmallCaps>III · Contribution to the long-term vision</SmallCaps>
+        <SmallCaps>VII · Contribution to the long-term vision</SmallCaps>
         <p
           style={{
             color: "var(--ink-cool)",
@@ -235,7 +299,7 @@ export default function MemphisPage() {
       </section>
 
       <section className="syn-column pt-24 text-center">
-        <SmallCaps>IV · Read the full submission</SmallCaps>
+        <SmallCaps>VIII · Read the full submission</SmallCaps>
         <div className="mx-auto mt-6 max-w-2xl">
           <Link
             href="/synaptic/memphis/proposal"
