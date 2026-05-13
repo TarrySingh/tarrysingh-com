@@ -6,11 +6,11 @@ import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home,
 const experiments = [
   {
     title: "MEMPHIS",
-    tagline: "Hippocampal · Memristive · Neuromorphic chip.",
+    tagline: "Synaptic Cartography · Plate I · the chip.",
     description:
-      "Sister microsite to SYMPHONY in the Synaptic Cartography series. A neuromorphic architecture that co-locates memory and computation on a self-organising memristive substrate driven by two-phase replay dynamics — and the first such system to demonstrate offline replay-driven consolidation on physical hardware.",
-    to: "/synaptic/memphis",
-    tag: "EU Horizon · Deep tech",
+      "A hippocampal · memristive · neuromorphic architecture. Memory and computation co-localised on a self-organising substrate driven by two-phase replay dynamics. Sister plate to SYMPHONY in the Synaptic Cartography series. Click through to the series home, then dive into the chip.",
+    to: "/synaptic",
+    tag: "Synaptic Cartography · Deep tech",
     tech: "Next.js, IBM Plex Serif, Gloock, next/image",
     icon: Cpu,
     gradient: "from-amber-500/8 to-rose-500/8",
@@ -20,11 +20,11 @@ const experiments = [
   },
   {
     title: "SYMPHONY",
-    tagline: "EIC Pathfinder 2026 · A neuromimetic substrate for code.",
+    tagline: "Synaptic Cartography · Plate II · the planisphere.",
     description:
-      "A Synaptic Cartography microsite for a Horizon-Europe deep-tech proposal. Nine museum-grade plates, five objectives across 36 months at decision milestones M12 / M18 / M24 / M30 / M33, four partner spreads (Newcastle · CREATE-PRISMA · Real AI · UP Robotics), and the full 25-page dossier for download.",
-    to: "/synaptic/symphony",
-    tag: "EU Horizon · Deep tech",
+      "A neuromimetic knowledge substrate for software systems. Multi-scale neuromodulation and low-bandwidth shared control for task-adaptive code comprehension. Sister plate to MEMPHIS in the Synaptic Cartography series. Click through to the series home, then dive into the planisphere.",
+    to: "/synaptic",
+    tag: "Synaptic Cartography · Deep tech",
     tech: "Next.js, IBM Plex Serif, Gloock, next/image",
     icon: Brain,
     gradient: "from-indigo-500/8 to-violet-500/8",
