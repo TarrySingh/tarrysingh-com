@@ -9,7 +9,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "blog:new": "node scripts/blog/new.mjs",
+    "blog:audit": "node scripts/blog/audit.mjs",
+    "blog:promote": "node scripts/blog/promote.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.79.0",

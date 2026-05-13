@@ -34,7 +34,15 @@ const CONTENT_DIR = path.join(process.cwd(), "content", "blog")
 async function listMdxFiles(): Promise<string[]> {
   try {
     const entries = await fs.readdir(CONTENT_DIR)
-    return entries.filter((f) => f.endsWith(".mdx"))
+    return entries.filter(
+      (f) =>
+        f.endsWith(".mdx") &&
+        // Skip the _drafts subdirectory (it's a dir, not a .mdx file, but
+        // belt-and-braces) and any file whose name starts with _ — the
+        // underscore prefix is the blog tooling convention for "in
+        // progress; not on the wall yet."
+        !f.startsWith("_"),
+    )
   } catch {
     return []
   }
