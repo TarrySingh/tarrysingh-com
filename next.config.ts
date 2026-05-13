@@ -19,6 +19,18 @@ const nextConfig: NextConfig = {
           source: "/mklaar/:path*",
           destination: "https://mklaar.vercel.app/mklaar/:path*",
         },
+        // The cross-repo Monthly Roundup brief documented the digest
+        // endpoint as `/api/digest/this-month.json` (the conventional
+        // way to advertise a JSON-returning route), but the Next.js
+        // App-Router route file lives at
+        // `src/app/api/digest/this-month/route.ts` (no extension in
+        // the URL). Without this rewrite, the RealAI-CRM cron firing
+        // on the first Monday of every month would 404. Map the
+        // documented `.json` URL to the actual route so both work.
+        {
+          source: "/api/digest/this-month.json",
+          destination: "/api/digest/this-month",
+        },
       ],
     };
   },
