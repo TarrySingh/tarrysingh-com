@@ -32,8 +32,16 @@ import {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, "..", "..")
-const MD_PATH = path.join(ROOT, "docs", "reports", "dispatches-status-report.md")
-const OUT_PATH = path.join(ROOT, "docs", "reports", "dispatches-status-report.docx")
+
+// Resolve the input md path:
+//   - default: docs/reports/dispatches-status-report.md (back-compat)
+//   - or pass the md file as the first CLI arg
+//     e.g. `node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-plan.md`
+const arg = process.argv[2]
+const MD_PATH = arg
+  ? (path.isAbsolute(arg) ? arg : path.join(ROOT, arg))
+  : path.join(ROOT, "docs", "reports", "dispatches-status-report.md")
+const OUT_PATH = MD_PATH.replace(/\.md$/, ".docx")
 
 // ─── Style constants ────────────────────────────────────────────────
 
