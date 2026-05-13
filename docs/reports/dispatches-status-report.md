@@ -91,6 +91,10 @@ write a Dispatch in a browser, ask Claude Opus 4.7-extended-thinking
 
 **Live state (2026-05-13):** code shipped; awaits Vercel env vars (`STUDIO_USER`, `STUDIO_PASS`, `STUDIO_GITHUB_TOKEN`, `ANTHROPIC_API_KEY` confirmation, optional `STUDIO_AI_MODEL` override) and the Supabase migration. Tarry mints + sets; Stage A UAT next turn.
 
+**What's deliberately not in Sprint 3 (deferred to v2+):** AI-rendered hero images · image upload / crop / paste-from-clipboard · real-time collaborative editing · mobile-first writing UX · version-history surface · AI-suggested frontmatter · linked editing for the Synaptic plate library.
+
+These seven items are sequenced and sized in [`sprint-4-plus-roadmap.md`](./sprint-4-plus-roadmap.md) — read it cold to know what's coming and in what order.
+
 See *Outstanding work* (closed for Sprint 2) and *UAT plan*.
 
 ---
@@ -428,6 +432,9 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Blog publishing scripts | `scripts/blog/{new,audit,promote}.mjs` + `scripts/blog/_README.md` |
 | Editorial calendar | `docs/editorial/calendar.md` |
 | Monthly Roundup digest source | `src/app/api/digest/this-month/route.ts` |
+| Sprint 4+ roadmap | `docs/reports/sprint-4-plus-roadmap.md` |
+| Studio Editor (Sprint 3) source | `src/app/studio/`, `src/app/api/studio/`, `src/components/studio/`, `src/lib/studio/` |
+| Studio Editor Supabase migration | `docs/migrations/2026-05-13-studio-drafts.sql` |
 | Newsletter pipeline source | `src/lib/crm/`, `src/components/blog/`, `src/app/(main)/blog/unsubscribe/` |
 | Blog reader + MDX components | `src/lib/blog/`, `src/app/(main)/blog/` |
 | LinkedIn syndication source | `src/lib/linkedin/`, `src/app/api/integrations/linkedin/` |
