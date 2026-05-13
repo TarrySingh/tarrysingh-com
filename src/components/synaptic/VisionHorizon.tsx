@@ -4,6 +4,7 @@ import { useState } from "react"
 
 type Waypoint = {
   id: string
+  numeral: string
   label: string
   body: string
   x: number
@@ -14,64 +15,89 @@ type Waypoint = {
 const WAYPOINTS: ReadonlyArray<Waypoint> = [
   {
     id: "representation",
+    numeral: "I",
     label: "Representation",
-    body: "A single substrate capable of holding an industrial-scale codebase coherently — structural, behavioural, historical and rationale layers unified on one graph.",
-    x: 0.18,
-    height: 0.55,
+    body: "A single substrate capable of holding an industrial-scale codebase coherently — structural, behavioural, historical and rationale layers unified on one graph. The first requirement of the long-term vision.",
+    x: 0.22,
+    height: 0.62,
     color: "#f4c482",
   },
   {
     id: "reconfiguration",
+    numeral: "II",
     label: "Reconfiguration",
-    body: "A mechanism for reconfiguring that representation on demand without rebuilding it — multi-scale neuromodulation transposed from cortex to code.",
+    body: "A mechanism for reconfiguring that representation on demand without rebuilding it — multi-scale neuromodulation transposed from cortex to code. The tallest peak; the hardest claim.",
     x: 0.5,
-    height: 0.78,
+    height: 0.92,
     color: "#a698d4",
   },
   {
     id: "audit",
+    numeral: "III",
     label: "Narrow control surface",
-    body: "A scalar task-baton interface, deliberately bounded, so the substrate is composable, auditable and traceable — Siciliano-school shared control, in software.",
-    x: 0.82,
-    height: 0.62,
+    body: "A scalar task-baton interface, deliberately bounded, so the substrate is composable, auditable, and traceable — Siciliano-school shared control transposed into software.",
+    x: 0.78,
+    height: 0.7,
     color: "#6cb4c2",
   },
 ]
 
-const VW = 2400
-const VH = 720
+const VW = 1400
+const VH = 900
 const HORIZON_Y = VH * 0.78
 
 export function VisionHorizon() {
   const [hover, setHover] = useState<string | null>(null)
-  const active = hover ? WAYPOINTS.find((w) => w.id === hover) ?? null : null
+  const [pinned, setPinned] = useState<string>("reconfiguration")
+  const activeId = hover ?? pinned
+  const active = WAYPOINTS.find((w) => w.id === activeId) ?? WAYPOINTS[1]
 
-  // Build a curve through the three waypoint peaks and the two endpoints.
-  const pts = [
+  // Build ridge curve through endpoints + waypoints
+  const ridgePts = [
     { x: 0, y: HORIZON_Y - VH * 0.05 },
     ...WAYPOINTS.map((w) => ({
       x: w.x * VW,
-      y: HORIZON_Y - w.height * (VH - HORIZON_Y) - 60,
+      y: HORIZON_Y - w.height * (VH - HORIZON_Y) - 80,
     })),
     { x: VW, y: HORIZON_Y - VH * 0.04 },
   ]
-  const ridge = pts
-    .map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`)
-    .join(" ")
-  const ridgeFill =
-    pts.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ") +
-    ` L ${VW} ${HORIZON_Y} L 0 ${HORIZON_Y} Z`
+  const ridgePath = ridgePts.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ")
+  const ridgeFill = ridgePath + ` L ${VW} ${HORIZON_Y} L 0 ${HORIZON_Y} Z`
+
+  // Mid-range mountain layer
+  const midPts = [
+    { x: 0, y: HORIZON_Y - 20 },
+    { x: VW * 0.12, y: HORIZON_Y - 60 },
+    { x: VW * 0.25, y: HORIZON_Y - 30 },
+    { x: VW * 0.38, y: HORIZON_Y - 100 },
+    { x: VW * 0.52, y: HORIZON_Y - 50 },
+    { x: VW * 0.66, y: HORIZON_Y - 110 },
+    { x: VW * 0.8, y: HORIZON_Y - 40 },
+    { x: VW * 0.92, y: HORIZON_Y - 70 },
+    { x: VW, y: HORIZON_Y - 20 },
+  ]
+  const midPath = midPts.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ")
+  const midFill = midPath + ` L ${VW} ${HORIZON_Y} L 0 ${HORIZON_Y} Z`
+
+  // Far mountain layer
+  const farPts = Array.from({ length: 24 }).map((_, i) => ({
+    x: (i / 23) * VW,
+    y: HORIZON_Y - 80 - Math.sin(i * 0.7) * 30 - Math.cos(i * 0.31) * 20,
+  }))
+  const farPath = farPts.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ")
+  const farFill = farPath + ` L ${VW} ${HORIZON_Y} L 0 ${HORIZON_Y} Z`
 
   return (
     <figure className="syn-symphony">
       <div
         className="rounded-[var(--radius-card)] border"
         style={{
-          borderColor: "rgba(200,180,255,0.18)",
+          borderColor: "rgba(200,180,255,0.22)",
           background:
-            "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
+            "linear-gradient(180deg, rgba(28,38,80,0.92), rgba(14,20,45,0.96))",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          boxShadow: "0 24px 80px rgba(0,0,0,0.5)",
           overflow: "hidden",
         }}
       >
@@ -79,32 +105,88 @@ export function VisionHorizon() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="SYMPHONY vision horizon — a panoramic landscape of the three minimal requirements: a coherent representation, a reconfiguration mechanism, and a narrow auditable control surface. Hover any peak to read its requirement."
+          aria-label="SYMPHONY vision horizon — a panoramic landscape with three peaks marking the three minimal requirements of the long-term vision: a coherent representation, a reconfiguration mechanism, and a narrow auditable control surface."
         >
           <defs>
-            <linearGradient id="syn-vis-sky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#1c2058" />
-              <stop offset="60%" stopColor="#0e1133" />
-              <stop offset="100%" stopColor="#0a0b22" />
+            <linearGradient id="syn-vh-sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#16183a" />
+              <stop offset="40%" stopColor="#1a205a" />
+              <stop offset="80%" stopColor="#3a2a6a" />
+              <stop offset="100%" stopColor="#0e1133" />
             </linearGradient>
-            <linearGradient id="syn-vis-ridge" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#5a4a8a" stopOpacity="0.55" />
+            <linearGradient id="syn-vh-far" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#3a2a6a" stopOpacity="0.85" />
+              <stop offset="100%" stopColor="#0e1133" stopOpacity="0.95" />
+            </linearGradient>
+            <linearGradient id="syn-vh-mid" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#5a4a8a" stopOpacity="0.9" />
               <stop offset="100%" stopColor="#0a0b22" stopOpacity="0.95" />
             </linearGradient>
-            <radialGradient id="syn-vis-glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#ffd596" stopOpacity="0.6" />
+            <linearGradient id="syn-vh-near" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#7a6aaa" stopOpacity="0.55" />
+              <stop offset="100%" stopColor="#0a0b22" stopOpacity="0.95" />
+            </linearGradient>
+            <radialGradient id="syn-vh-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#ffd596" stopOpacity="0.65" />
               <stop offset="100%" stopColor="#ffd596" stopOpacity="0" />
+            </radialGradient>
+            <radialGradient id="syn-vh-moon" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#f5e8cc" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#f5e8cc" stopOpacity="0" />
             </radialGradient>
           </defs>
 
-          {/* sky background */}
-          <rect x={0} y={0} width={VW} height={VH} fill="url(#syn-vis-sky)" />
+          {/* sky */}
+          <rect x={0} y={0} width={VW} height={VH} fill="url(#syn-vh-sky)" />
 
-          {/* starfield — small dots */}
-          {Array.from({ length: 36 }).map((_, i) => {
-            const x = ((i * 137 + 41) % VW)
-            const y = ((i * 71 + 9) % (HORIZON_Y - 60)) * 0.8
-            const r = (i % 5) === 0 ? 2 : 1
+          {/* studio header */}
+          <text
+            x={60}
+            y={42}
+            fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
+            fontSize={14}
+            letterSpacing={4}
+            fill="rgba(220,200,160,0.85)"
+          >
+            PLATE I · MMXXVI · VISION
+          </text>
+          <text
+            x={60}
+            y={76}
+            fontFamily="var(--font-display), Gloock, serif"
+            fontSize={36}
+            fill="var(--ink)"
+            letterSpacing={2}
+          >
+            The long-term vision
+          </text>
+          <line x1={60} x2={VW - 60} y1={92} y2={92} stroke="rgba(220,200,160,0.35)" strokeWidth={0.8} />
+          <text
+            x={VW - 60}
+            y={42}
+            textAnchor="end"
+            fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
+            fontSize={12}
+            letterSpacing={3}
+            fill="rgba(220,200,160,0.7)"
+          >
+            THREE MINIMAL REQUIREMENTS · §1.1
+          </text>
+
+          {/* distant moon / glow above the central peak */}
+          <circle
+            cx={WAYPOINTS[1].x * VW}
+            cy={HORIZON_Y - WAYPOINTS[1].height * (VH - HORIZON_Y) - 200}
+            r={260}
+            fill="url(#syn-vh-moon)"
+            opacity={0.35}
+          />
+
+          {/* dense starfield */}
+          {Array.from({ length: 90 }).map((_, i) => {
+            const x = (i * 137 + 41) % VW
+            const y = ((i * 71 + 9) % (HORIZON_Y - 100)) * 0.85 + 100
+            const r = (i % 7) === 0 ? 2 : (i % 3) === 0 ? 1.4 : 1
             return (
               <circle
                 key={`star-${i}`}
@@ -112,22 +194,22 @@ export function VisionHorizon() {
                 cy={y}
                 r={r}
                 fill="#f5e8cc"
-                fillOpacity={0.12 + ((i * 31) % 100) / 1000}
+                fillOpacity={0.08 + ((i * 31) % 100) / 600}
               />
             )
           })}
 
-          {/* ridge fill */}
-          <path d={ridgeFill} fill="url(#syn-vis-ridge)" opacity={0.85} />
+          {/* far mountain layer */}
+          <path d={farFill} fill="url(#syn-vh-far)" opacity={0.7} />
+          <path d={farPath} fill="none" stroke="rgba(200,184,255,0.35)" strokeWidth={0.8} />
 
-          {/* ridge line */}
-          <path
-            d={ridge}
-            fill="none"
-            stroke="#c8b8ff"
-            strokeOpacity={0.55}
-            strokeWidth={1.5}
-          />
+          {/* mid mountain layer */}
+          <path d={midFill} fill="url(#syn-vh-mid)" opacity={0.85} />
+          <path d={midPath} fill="none" stroke="rgba(200,184,255,0.45)" strokeWidth={1} />
+
+          {/* near ridge (waypoint peaks) */}
+          <path d={ridgeFill} fill="url(#syn-vh-near)" opacity={0.95} />
+          <path d={ridgePath} fill="none" stroke="#c8b8ff" strokeOpacity={0.7} strokeWidth={2} />
 
           {/* horizon hairline */}
           <line
@@ -136,79 +218,97 @@ export function VisionHorizon() {
             y1={HORIZON_Y}
             y2={HORIZON_Y}
             stroke="#c8b8ff"
-            strokeOpacity={0.35}
-            strokeWidth={1}
+            strokeOpacity={0.5}
+            strokeWidth={1.2}
           />
 
           {/* waypoint peaks */}
           {WAYPOINTS.map((w) => {
             const peakX = w.x * VW
-            const peakY = HORIZON_Y - w.height * (VH - HORIZON_Y) - 60
-            const isHover = hover === w.id
+            const peakY = HORIZON_Y - w.height * (VH - HORIZON_Y) - 80
+            const isActive = activeId === w.id
             return (
               <g
                 key={w.id}
                 onMouseEnter={() => setHover(w.id)}
                 onMouseLeave={() => setHover(null)}
+                onClick={() => setPinned(w.id)}
                 style={{ cursor: "pointer" }}
               >
                 {/* generous hit zone */}
                 <rect
-                  x={peakX - 220}
-                  y={peakY - 40}
-                  width={440}
+                  x={peakX - 240}
+                  y={peakY - 60}
+                  width={480}
                   height={HORIZON_Y - peakY + 80}
                   fill="transparent"
                 />
-                {/* peak glow */}
+                {/* glow */}
                 <circle
                   cx={peakX}
                   cy={peakY}
-                  r={120}
-                  fill="url(#syn-vis-glow)"
-                  opacity={isHover ? 1 : 0.35}
+                  r={180}
+                  fill="url(#syn-vh-glow)"
+                  opacity={isActive ? 1 : 0.32}
                 />
-                {/* vertical plumb-line down to the horizon */}
+                {/* plumb line to horizon */}
                 <line
                   x1={peakX}
                   x2={peakX}
-                  y1={peakY + 6}
+                  y1={peakY + 12}
                   y2={HORIZON_Y - 6}
                   stroke={w.color}
-                  strokeOpacity={isHover ? 0.85 : 0.35}
-                  strokeWidth={1}
-                  strokeDasharray={isHover ? "0" : "4 4"}
+                  strokeOpacity={isActive ? 0.95 : 0.45}
+                  strokeWidth={isActive ? 1.6 : 1}
+                  strokeDasharray={isActive ? "0" : "5 4"}
                 />
-                {/* peak dot */}
+                {/* peak crown — small triangle marker on the ridge */}
+                <polygon
+                  points={`${peakX},${peakY - 14} ${peakX - 10},${peakY + 2} ${peakX + 10},${peakY + 2}`}
+                  fill={w.color}
+                  opacity={isActive ? 1 : 0.85}
+                />
+                {/* peak disc */}
                 <circle
                   cx={peakX}
                   cy={peakY}
-                  r={isHover ? 14 : 9}
+                  r={isActive ? 18 : 12}
                   fill={w.color}
                   stroke="#0d1027"
-                  strokeWidth={2}
+                  strokeWidth={2.5}
                 />
-                {/* label */}
                 <text
                   x={peakX}
-                  y={peakY - 30}
+                  y={peakY + 5}
                   textAnchor="middle"
                   fontFamily="var(--font-display), Gloock, serif"
-                  fontSize={32}
-                  fill={isHover ? "#ffd596" : "var(--ink)"}
-                  style={{ letterSpacing: "0.05em" }}
+                  fontSize={isActive ? 16 : 12}
+                  fill="#0d1027"
+                  letterSpacing={1}
+                >
+                  {w.numeral}
+                </text>
+                {/* label above */}
+                <text
+                  x={peakX}
+                  y={peakY - 44}
+                  textAnchor="middle"
+                  fontFamily="var(--font-display), Gloock, serif"
+                  fontSize={36}
+                  fill={isActive ? "#ffd596" : "var(--ink)"}
+                  letterSpacing={1}
                 >
                   {w.label}
                 </text>
-                {/* horizon-side small-caps marker */}
+                {/* horizon marker */}
                 <text
                   x={peakX}
-                  y={HORIZON_Y + 30}
+                  y={HORIZON_Y + 36}
                   textAnchor="middle"
                   fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
-                  fontSize={16}
+                  fontSize={14}
                   letterSpacing={3}
-                  fill={isHover ? "var(--ink)" : "rgba(220,200,160,0.7)"}
+                  fill={isActive ? "var(--ink)" : "rgba(220,200,160,0.7)"}
                 >
                   {String(WAYPOINTS.indexOf(w) + 1).padStart(2, "0")} ·{" "}
                   {w.label.toUpperCase()}
@@ -224,51 +324,80 @@ export function VisionHorizon() {
             width={VW}
             height={VH - HORIZON_Y}
             fill="#0a0b22"
-            opacity={0.55}
+            opacity={0.6}
           />
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 12 }).map((_, i) => (
             <line
               key={`ground-${i}`}
               x1={0}
               x2={VW}
-              y1={HORIZON_Y + 30 + i * 16}
-              y2={HORIZON_Y + 30 + i * 16}
-              stroke="rgba(200,184,255,0.06)"
+              y1={HORIZON_Y + 60 + i * 12}
+              y2={HORIZON_Y + 60 + i * 12}
+              stroke="rgba(200,184,255,0.05)"
               strokeWidth={1}
             />
           ))}
+
+          {/* active waypoint detail panel at bottom */}
+          <g transform={`translate(60, ${VH - 110})`}>
+            <rect
+              x={0}
+              y={0}
+              width={VW - 120}
+              height={92}
+              rx={10}
+              fill="rgba(13,16,39,0.7)"
+              stroke={active.color}
+              strokeOpacity={0.55}
+              strokeWidth={1.2}
+            />
+            <text
+              x={28}
+              y={32}
+              fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
+              fontSize={11}
+              letterSpacing={3}
+              fill="rgba(220,200,160,0.65)"
+            >
+              REQUIREMENT · {active.numeral}
+            </text>
+            <text
+              x={28}
+              y={62}
+              fontFamily="var(--font-display), Gloock, serif"
+              fontSize={24}
+              fill={active.color}
+              letterSpacing={1}
+            >
+              {active.label}
+            </text>
+            <foreignObject x={28} y={70} width={VW - 200} height={42}>
+              <div
+                style={{
+                  fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
+                  fontSize: "14px",
+                  lineHeight: 1.45,
+                  color: "var(--ink-cool)",
+                }}
+              >
+                {active.body}
+              </div>
+            </foreignObject>
+          </g>
         </svg>
 
-        {/* detail strip */}
         <div
-          className="border-t px-5 py-4"
+          className="border-t px-6 py-4"
           style={{
-            borderColor: "rgba(200,180,255,0.14)",
+            borderColor: "rgba(200,180,255,0.16)",
             color: "var(--ink-cool)",
-            fontSize: "0.88rem",
+            fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
+            fontStyle: "italic",
+            fontSize: "0.98rem",
             lineHeight: 1.5,
-            minHeight: "3.6em",
           }}
         >
-          {active ? (
-            <>
-              <span
-                className="syn-small-caps"
-                style={{ color: active.color, marginRight: "0.75rem" }}
-              >
-                {active.label}
-              </span>
-              <span style={{ color: "var(--ink)" }}>{active.body}</span>
-            </>
-          ) : (
-            <span style={{ color: "var(--ink-dim)" }}>
-              The vision requires, minimally, three things: a representation
-              that holds the codebase coherently; a reconfiguration
-              mechanism that reshapes it on demand; and a narrow,
-              auditable control surface. Hover any peak to read the
-              requirement it stands for.
-            </span>
-          )}
+          The vision requires, minimally, three things. The substrate is either the bridge by 2030 or the gap is permanent.
         </div>
       </div>
     </figure>
