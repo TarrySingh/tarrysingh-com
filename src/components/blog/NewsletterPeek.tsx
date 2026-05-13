@@ -7,7 +7,9 @@ type Status = "idle" | "loading" | "sent" | "error"
 
 const STORAGE_KEY = "dispatches.peek.dismissedAt"
 const DISMISS_WINDOW_MS = 30 * 24 * 60 * 60 * 1000 // 30 days
-const SCROLL_THRESHOLD = 1.2 // viewport heights scrolled before peek appears
+const SCROLL_THRESHOLD = 0.6 // fraction of total document height
+const MIN_SCROLL_PX = 600 // also require an absolute floor so very short
+//                          pages don't fire immediately on a tiny scroll
 
 /**
  * Studio-voice peek card — the small companion to the wide
@@ -44,12 +46,19 @@ export function NewsletterPeek() {
       // localStorage might be disabled; treat as fresh.
     }
 
-    // Respect users who prefer no motion: still show, but without slide
-    // animation — we just toggle visible from idle.
+    // Trigger when the reader has scrolled past 60 % of the total
+    // document height (and ≥ 600 px so very short pages don't fire
+    // immediately). Document height is measured live each tick because
+    // lazy-loaded sections / images can extend it as the visitor
+    // scrolls.
     const onScroll = () => {
-      const scrolled = window.scrollY
-      const viewport = window.innerHeight
-      if (scrolled > viewport * SCROLL_THRESHOLD) {
+      const scrolled = window.scrollY + window.innerHeight
+      const docHeight = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight,
+      )
+      const ratio = docHeight > 0 ? scrolled / docHeight : 0
+      if (ratio >= SCROLL_THRESHOLD && window.scrollY >= MIN_SCROLL_PX) {
         setVisible(true)
         window.removeEventListener("scroll", onScroll)
       }
