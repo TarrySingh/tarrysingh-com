@@ -1,7 +1,10 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, TrendingUp, Globe, Cpu, BarChart3, Bot, Home, Network, Gauge } from "lucide-react"
+import coverPlanisphere from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
+import chipPlate from "@proposals/MEMPHIS/plates/plate-I-chip.png"
 
 const stats = [
   { value: "30+", label: "Years of Experience" },
@@ -236,6 +239,242 @@ const Landing = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </div>
+
+      {/* ========== SYNAPTIC CARTOGRAPHY ========== */}
+      <section
+        className="relative overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(ellipse at center 30%, #1c2058 0%, #0e1133 60%, #0a0b22 100%)",
+          color: "#f6ead0",
+        }}
+      >
+        {/* fixed starfield within this section */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(1px 1px at 8% 18%, rgba(245,232,204,0.32), transparent 60%)," +
+              "radial-gradient(1.4px 1.4px at 22% 8%, rgba(245,232,204,0.5), transparent 60%)," +
+              "radial-gradient(1.4px 1.4px at 46% 32%, rgba(200,184,255,0.45), transparent 60%)," +
+              "radial-gradient(1px 1px at 58% 22%, rgba(245,232,204,0.16), transparent 60%)," +
+              "radial-gradient(1.6px 1.6px at 64% 78%, rgba(245,232,204,0.55), transparent 60%)," +
+              "radial-gradient(1px 1px at 72% 12%, rgba(245,232,204,0.24), transparent 60%)," +
+              "radial-gradient(1.2px 1.2px at 84% 28%, rgba(200,184,255,0.4), transparent 60%)," +
+              "radial-gradient(1.4px 1.4px at 92% 18%, rgba(245,232,204,0.35), transparent 60%)," +
+              "radial-gradient(1px 1px at 12% 82%, rgba(245,232,204,0.18), transparent 60%)",
+          }}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-28 md:py-36">
+          {/* header */}
+          <div className="text-center">
+            <span
+              className="inline-block text-[11px] font-mono uppercase tracking-[0.35em]"
+              style={{ color: "rgba(245,232,204,0.6)" }}
+            >
+              Synaptic Cartography · EIC Pathfinder 2026
+            </span>
+            <h2
+              className="mt-6"
+              style={{
+                fontFamily: "'Gloock', 'Italiana', 'Cormorant Garamond', serif",
+                fontSize: "clamp(40px, 6vw, 80px)",
+                letterSpacing: "0.06em",
+                lineHeight: 1,
+                color: "#f6ead0",
+              }}
+            >
+              The studio
+            </h2>
+            <p
+              className="mx-auto mt-5 max-w-2xl"
+              style={{
+                fontFamily: "'IBM Plex Serif', Georgia, serif",
+                fontStyle: "italic",
+                fontSize: "clamp(15px, 1.6vw, 20px)",
+                color: "#c8b8ff",
+                lineHeight: 1.5,
+              }}
+            >
+              Two interactive plates from a studio that takes its time —
+              museum-grade scientific illustration applied to the technical
+              content of frontier deep-tech proposals.
+            </p>
+          </div>
+
+          {/* paired feature cards */}
+          <div className="mt-14 grid gap-8 lg:grid-cols-2">
+            <Link
+              href="/synaptic"
+              className="group block rounded-2xl border p-6 transition-opacity hover:opacity-95"
+              style={{
+                borderColor: "rgba(200,180,255,0.22)",
+                background:
+                  "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+              }}
+            >
+              <div
+                className="relative aspect-[4/5] w-full overflow-hidden rounded-xl"
+                style={{ background: "#0d1027" }}
+              >
+                <Image
+                  src={coverPlanisphere}
+                  alt="SYMPHONY · the planisphere — cover plate of the Synaptic Cartography series."
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  placeholder="blur"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  fill
+                />
+              </div>
+              <div className="mt-6">
+                <span
+                  className="text-[11px] font-mono uppercase"
+                  style={{
+                    color: "rgba(200,180,255,0.7)",
+                    letterSpacing: "0.3em",
+                  }}
+                >
+                  Plate II · planisphere · May 2026
+                </span>
+                <h3
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'Gloock', serif",
+                    fontSize: "2rem",
+                    letterSpacing: "0.06em",
+                    color: "#f6ead0",
+                    lineHeight: 1,
+                  }}
+                >
+                  SYMPHONY{" "}
+                  <span style={{ color: "#a698d4" }}>→</span>
+                </h3>
+                <p
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'IBM Plex Serif', Georgia, serif",
+                    fontStyle: "italic",
+                    fontSize: "0.95rem",
+                    color: "#c8b8ff",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  A neuromimetic knowledge substrate for software systems
+                </p>
+                <p
+                  className="mt-3"
+                  style={{
+                    color: "rgba(196,210,225,0.85)",
+                    fontSize: "0.92rem",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Twelve interactive plates · the full proposal · four
+                  partner pages · multi-scale neuromodulation transposed
+                  from cortex to code.
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href="/synaptic"
+              className="group block rounded-2xl border p-6 transition-opacity hover:opacity-95"
+              style={{
+                borderColor: "rgba(232,184,122,0.32)",
+                background:
+                  "linear-gradient(180deg, rgba(20,34,59,0.85), rgba(12,24,40,0.92))",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+              }}
+            >
+              <div
+                className="relative aspect-[4/5] w-full overflow-hidden rounded-xl"
+                style={{ background: "#0c1828" }}
+              >
+                <Image
+                  src={chipPlate}
+                  alt="MEMPHIS · the chip — hippocampal-memristive plate of the Synaptic Cartography series."
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  placeholder="blur"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  fill
+                />
+              </div>
+              <div className="mt-6">
+                <span
+                  className="text-[11px] font-mono uppercase"
+                  style={{
+                    color: "rgba(232,184,122,0.75)",
+                    letterSpacing: "0.3em",
+                  }}
+                >
+                  Plate I · the chip · May 2026
+                </span>
+                <h3
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'Gloock', serif",
+                    fontSize: "2rem",
+                    letterSpacing: "0.06em",
+                    color: "#f6ead0",
+                    lineHeight: 1,
+                  }}
+                >
+                  MEMPHIS{" "}
+                  <span style={{ color: "#e8b87a" }}>→</span>
+                </h3>
+                <p
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'IBM Plex Serif', Georgia, serif",
+                    fontStyle: "italic",
+                    fontSize: "0.95rem",
+                    color: "#ffd296",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  A hippocampal · memristive · neuromorphic architecture
+                </p>
+                <p
+                  className="mt-3"
+                  style={{
+                    color: "rgba(196,210,225,0.85)",
+                    fontSize: "0.92rem",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Five interactive plates · STDP window · CA3 ↔ CA1
+                  circuit · memory and computation co-localised at
+                  &lt; 10 fJ per synaptic event.
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          {/* enter the studio CTA */}
+          <div className="mt-12 text-center">
+            <Link
+              href="/synaptic"
+              className="inline-flex items-center gap-3 rounded-full border px-7 py-3 transition-colors"
+              style={{
+                borderColor: "rgba(200,180,255,0.45)",
+                background: "rgba(28,38,80,0.4)",
+                color: "#f6ead0",
+                fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: "0.78rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}
+            >
+              Enter the studio
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ========== EXPERIMENTS ========== */}
       <section className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 md:py-32">
