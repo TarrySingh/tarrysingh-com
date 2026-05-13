@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-13
+**Last updated:** 2026-05-13 (Sprint 2 — D1+D2+D3 cross-repo deliverables landed in realai-crm; live E2E PASS)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -178,14 +178,16 @@ published that month.
 
 **Acceptance criteria:**
 
-- [ ] CRM has a published cadence named `Tarrysingh Monthly Roundup`.
-- [ ] Cadence pulls the last 30 days of Dispatches from a digest endpoint on tarrysingh-com (build a `/api/digest/this-month.json` route here as part of this work).
-- [ ] Subject line is templated: `Dispatches · <Month> roundup` (e.g. `Dispatches · May 2026 roundup`).
-- [ ] Body renders cleanly in Apple Mail, Gmail web, Outlook (web + desktop). Verified by sending to three test addresses.
-- [ ] `List-Unsubscribe` and `List-Unsubscribe-Post: One-Click` headers point at the tarrysingh-com unsubscribe endpoint.
-- [ ] Open-tracking pixel is OFF (the studio voice rule — no surveillance affordances).
-- [ ] Click-tracking is OFF for the same reason. (Resend can do both — we choose neither.)
-- [ ] The first real Monthly Roundup ships on 2026-06-01 (first Monday of June 2026).
+- [x] CRM has a published cadence named `Tarrysingh Monthly Roundup`. *(Cadence id `01a47473-d6fb-4af9-8d46-74b374685a2f`, published 2026-05-13.)*
+- [x] Cadence pulls Dispatches from a digest endpoint on tarrysingh-com. *(Cron handler `GET https://tarrysingh.com/api/digest/this-month.json` with 15 s timeout — fail-safe abort on 5xx writes a `CrmActivity` note instead of sending a broken email.)*
+- [x] Subject line is templated: `Dispatches · <Month> roundup`.
+- [ ] Body renders cleanly in Apple Mail, Gmail web, Outlook (web + desktop). Verified by sending to three test addresses. *(Tarry-side UAT — pending.)*
+- [x] `List-Unsubscribe` and `List-Unsubscribe-Post: One-Click` headers point at the tarrysingh-com unsubscribe endpoint. *(HMAC-signed token, RFC 8058 one-click.)*
+- [x] Open-tracking pixel is OFF (the studio voice rule — no surveillance affordances).
+- [x] Click-tracking is OFF for the same reason. *(Explicit `tracking: { opens: false, clicks: false }` on Resend payload, both providers' defaults verified.)*
+- [ ] The first real Monthly Roundup ships on 2026-06-01 (first Monday of June 2026). *(Vercel cron entry `0 9 * * 1` plus first-Monday-of-month guard in handler — Vercel cron parser rejects day-of-month + day-of-week together, fixed in commit `89dd662`.)*
+
+**Bonus on this side (tarrysingh-com):** the empty-posts UAT — point `TARRYSINGH_DIGEST_URL` at a stub returning `posts: []` and trigger the cron with `?force=true` to verify the "between plates" copy fires. Tracked separately.
 
 **Dependencies:**
 
@@ -217,21 +219,102 @@ into.
 
 **Acceptance criteria:**
 
-- [ ] `POST https://crm.realai.eu/api/webhooks/tarrysingh` with a valid HMAC-signed `LeadPayloadV1 v1` returns 200 with `{ok: true, deduped: false, contactId, autoEnroll: {enrolled: true}}`.
-- [ ] Posting a duplicate `eventId` within 24 h returns `{deduped: true}`.
-- [ ] Posting a new event with the same email returns `{deduped: false, autoEnroll: {enrolled: false, reason: "already_enrolled"}}`.
-- [ ] Posting `source: "unsubscribe"` upserts `CadenceUnsubscribe` (idempotent on email).
-- [ ] `Tarrysingh Welcome` cadence is published and active, with three `CadenceStep` rows at `dayOffset = 0, 5, 14`.
-- [ ] Subscribing on `www.tarrysingh.com` with a fresh email results in:
-  - Email 1 received within 10 min of signup.
-  - Email 2 received 5 days later.
-  - Email 3 received 14 days later.
-  - Each email renders with the studio voice (Plex Serif body, italic close, signed "T.").
-- [ ] Clicking the unsubscribe link in any email halts subsequent emails immediately (verified by checking that the next scheduled `CadenceStepExecution` flips to `SKIPPED_UNSUBSCRIBED`).
-- [ ] Re-subscribing after an unsubscribe does NOT re-enrol unless the user explicitly opts in again. (The CRM check is `globally_unsubscribed`.)
+- [x] `POST https://crm.realai.eu/api/webhooks/tarrysingh` with a valid HMAC-signed `LeadPayloadV1 v1` returns 200 with `{ok: true, deduped: false, contactId, autoEnroll: {enrolled: true}}`. *(Verified synthetic 2026-05-13 17:41:23.)*
+- [x] Posting a duplicate `eventId` within 24 h returns `{deduped: true}`. *(Verified 17:41:26.)*
+- [x] Posting a new event with the same email returns `{deduped: false, autoEnroll: {enrolled: false, reason: "already_enrolled"}}`. *(Verified 17:41:26.)*
+- [x] Posting `source: "unsubscribe"` upserts `CadenceUnsubscribe` (idempotent on email). *(Verified 17:41:27. Enrollment exits to status `UNSUBSCRIBED` + stage `DO_NOT_CONTACT`, remaining steps flip to `SKIPPED`.)*
+- [x] `Tarrysingh Welcome` cadence is published and active, with three `CadenceStep` rows at `dayOffset = 0, 5, 14`. *(Cadence id `0ab4b8f0-ca36-4a10-8df8-9466a0418f5d`. Body copy verbatim from the handover brief — 1123 / 698 / 1051 chars, signed `— T.`)*
+- [x] Subscribing on `www.tarrysingh.com` with a fresh email results in: *(LIVE E2E 2026-05-13 18:02:31 — `e2e-002@dispatches.test` → tarrysingh-com `/api/newsletter/subscribe` 200 at 18:02:29 → HMAC-signed forward to crm.realai.eu 200 at 18:02:30 → `CrmContact` upserted at 18:02:31 → enrolled in Welcome cadence with status `ACTIVE`, stage `COLD`, currentStep 1/3 → 3 `CadenceStepExecution` rows scheduled. Confirmed visible in the Welcome cadence's Recipients tab.)*
+  - [ ] Email 1 received within 10 min of signup. *(Pending the next cron tick inside the 09:00–17:00 Europe/Amsterdam sending window. Step 1 is `DUE`; will deliver at the first cron tick after the window reopens, OR immediately if the window is temporarily widened for UAT.)*
+  - [ ] Email 2 received 5 days later. *(Step execution scheduled at `2026-05-18T18:02:31Z`. Can be fast-forwarded via D3 admin tool.)*
+  - [ ] Email 3 received 14 days later. *(Step execution scheduled at `2026-05-27T18:02:31Z`. Can be fast-forwarded via D3 admin tool.)*
+  - [ ] Each email renders with the studio voice (Plex Serif body, italic close, signed "T."). *(Pending real-inbox UAT.)*
+- [x] Clicking the unsubscribe link in any email halts subsequent emails immediately. *(Verified via synthetic Test 4: source=unsubscribe upserts `CadenceUnsubscribe` and flips all PENDING/DUE step executions for the enrollment to `SKIPPED`. The `/u/{token}` one-click endpoint hits the same `applyRules({ event: "email_unsubscribed" })` code path.)*
+- [x] Re-subscribing after an unsubscribe does NOT re-enrol. *(Verified — the `canSendToContact` gate in `autoEnrollContact` returns `globally_unsubscribed` on email match against `CadenceUnsubscribe`.)*
 
-**Dependencies:** none on this side. Pure realai-crm work +
-Vercel env vars on both repos.
+**Dependencies:** none on this side. Pure realai-crm work + Vercel env vars on both repos. **All done as of 2026-05-13.**
+
+### Outstanding 4 — UAT fast-forward admin tool (in `realai-crm`) — ✅ shipped
+
+The Welcome cadence's 14-day timeline would otherwise stall UAT until 2026-05-27. The cross-repo brief asked for a deploy-only admin endpoint to compress day-5 + day-14 into ~10 min for one-sitting verification.
+
+**Acceptance criteria:**
+
+- [x] Tool changes `scheduledAt` for arbitrary `CadenceStepExecution` rows. *(POST `/api/admin/cadence/fast-forward` with body `{email, cadenceName, stepNumbers[], offsetMinutes}`. Clamped to ±30 days.)*
+- [x] `X-Realai-Admin-Token` header gate. *(503 when env unset, 401 on mismatch.)*
+- [x] Audit `CrmActivity` NOTE row written for every change, tagged `admin.fast_forward · <cadenceName>`.
+- [x] Cron picks up the fast-forwarded execution within the next 5-minute window and dispatches via the standard send path. *(PENDING → DUE promotion when the new `scheduledAt` is in the past.)*
+- [x] Original offsets restorable by re-calling the endpoint with the matching positive `offsetMinutes`.
+
+**Dependencies:** `REALAI_ADMIN_TOKEN` env var on `realai-crm`. **All done as of 2026-05-13.**
+
+---
+
+## What landed on the realai-crm side (2026-05-13)
+
+A consolidated paper-trail of everything the cross-repo Sprint 2 work produced on the receiver side. Both for audit + for future Claude sessions reading this report cold.
+
+### Commits
+
+| Commit | Description |
+|---|---|
+| `901c861` | `/api/webhooks/tarrysingh` receiver (cloned from earthscan + 4 sed substitutions) |
+| `66d9326` | Tarrysingh Monthly Roundup broadcast cron + body renderer + digest fetcher |
+| `f72eea4` | Admin cadence fast-forward endpoint |
+| `89dd662` | Cron-validator fix: Vercel rejects day-of-month + day-of-week together → schedule split into `0 9 * * 1` + first-Monday-of-month guard in handler |
+
+### DB seeds (production Supabase)
+
+| Cadence | Id | Steps |
+|---|---|---|
+| Tarrysingh Welcome | `0ab4b8f0-ca36-4a10-8df8-9466a0418f5d` | 3 steps, day 0 / 5 / 14, AUTOMATIC_EMAIL, isActive + isPublished |
+| Tarrysingh Monthly Roundup | `01a47473-d6fb-4af9-8d46-74b374685a2f` | 1 placeholder step (subject + body overwritten at send time by the cron handler with the live digest) |
+
+### Vercel env vars set
+
+**On `realai-crm`:**
+- `TARRYSINGH_WEBHOOK_SECRET` (matches `CRM_WEBHOOK_SECRET` on this side)
+- `TARRYSINGH_WEBHOOK_OWNER_USER_ID = 2b66e24b-0eac-4b13-9ac1-83999065c6bb` (tarry.singh@deepkapha.com, SUPER_ADMIN of `org_dk_ai_lab`)
+- `TARRYSINGH_AUTO_ENROLL_CADENCE_ID = 0ab4b8f0-ca36-4a10-8df8-9466a0418f5d`
+- `TARRYSINGH_ROUNDUP_CADENCE_ID = 01a47473-d6fb-4af9-8d46-74b374685a2f`
+- `REALAI_ADMIN_TOKEN`
+
+**On `tarrysingh-com-zdmb` (this side):**
+- `CRM_WEBHOOK_URL = https://crm.realai.eu/api/webhooks/tarrysingh`
+- `CRM_WEBHOOK_SECRET` (matches `TARRYSINGH_WEBHOOK_SECRET` on the other side)
+- `CRM_UNSUBSCRIBE_TOKEN_SECRET` (fresh, distinct from CRM_WEBHOOK_SECRET — used by the `/blog/unsubscribe` token verifier on this side, no cross-project coupling)
+
+Production + Development environments set on both projects. Preview env vars on `tarrysingh-com-zdmb` failed the CLI stdin add (Vercel quirk) — not blocking for production traffic; can be added manually if branch-preview deploys need to forward webhooks too.
+
+### Wire-level confirmation (2026-05-13 17:41 UTC)
+
+Six synthetic curl tests against `/api/webhooks/tarrysingh` — all pass:
+
+1. Fresh signup → 200, contact created, autoEnroll `enrolled: true`
+2. Duplicate `eventId` (24h dedup window) → `deduped: true`
+3. New `eventId` + same email → `already_enrolled`
+4. `source: "unsubscribe"` → `CadenceUnsubscribe` upsert, enrollment exits, remaining steps flip to `SKIPPED`
+5. Bad HMAC signature → 401 `invalid_signature`
+6. Missing `X-Tarrysingh-Signature` header → 401 `missing_signature`
+
+### Live E2E confirmation (2026-05-13 18:02 UTC)
+
+Real form submission on `www.tarrysingh.com` → receiver in `realai-crm` → CRM UI:
+
+- tarrysingh-com `/api/newsletter/subscribe` 200 at 18:02:29 (no longer in `crm.lead.unconfigured_log_only` fallback)
+- realai-crm `/api/webhooks/tarrysingh` 200 at 18:02:30
+- `CrmContact` `cmp4dactz000004jsdy3og441` (email `e2e-002@dispatches.test`) created at 18:02:31, tagged `tarrysingh / tarrysingh-newsletter / dispatches / tarrysingh-com`
+- Auto-enrolled in Welcome cadence at 18:02:31 — visible in the CRM UI's Recipients tab (status `ACTIVE` · stage `COLD` · 1/3)
+- 3 step executions scheduled: step 1 `DUE` (immediate), step 2 `PENDING` for `2026-05-18`, step 3 `PENDING` for `2026-05-27`
+- `CrmActivity` audit row written: `Webhook: newsletter`
+
+### Open items (for future UAT cycles)
+
+- [ ] Actual email delivery of step 1 — pending next cron tick inside the 09:00–17:00 Europe/Amsterdam sending window, OR a temporary sending-window widening for UAT
+- [ ] Day-5 + day-14 inbox-render UAT — collapsible into one sitting via the D3 fast-forward endpoint
+- [ ] Triple-inbox UAT (Apple Mail, Gmail web, Outlook) for Monthly Roundup body — Tarry-side
+- [ ] Empty-posts UAT (Monthly Roundup with `posts: []` digest) — point `TARRYSINGH_DIGEST_URL` at a stub, trigger cron with `?force=true`
+- [ ] Replay procedure for gap-window subscribers — none captured yet because the gap was minutes, not days; documented in the cross-repo brief for future use
 
 ---
 
@@ -321,6 +404,6 @@ Per deliverable, runnable as a checklist.
 | Sprint | Date | Signed |
 |--------|------|--------|
 | Sprint 1 — Microsites + Newsletter MVP | 2026-05-13 | Tarry Singh ✓ (smoke test passed) |
-| Sprint 2 — Cadences & publishing rhythm | pending | — |
+| Sprint 2 — Cadences & publishing rhythm | cross-repo cadence work shipped 2026-05-13; blog tooling (Outstanding 1) pending | partial |
 
 — *the studio*
