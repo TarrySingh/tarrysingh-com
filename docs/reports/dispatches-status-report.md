@@ -65,12 +65,33 @@ continues.
 
 **Commits to main:** ~30 micro-commits via two rebase-merged PRs (#2, #3). Production URL behaves consistently with local + preview builds.
 
-### Sprint 2 — Cadences, publishing rhythm, UAT (in progress)
+### Sprint 2 — Cadences, publishing rhythm, UAT (closed 2026-05-13)
+
+**Window:** 2026-05-13 → 2026-05-13 (single multi-hour cycle, both repos)
+**Outcome:** all three Outstanding items shipped + UAT-tested. Closed.
+
+### Sprint 3 — Studio Editor (in progress)
 
 **Window:** 2026-05-13 → TBD
-**Goal:** the three outstanding work items below, each acceptance-criteria-driven.
+**Goal:** a 2026-grade WYSIWYG composer at `/studio/*` so Tarry can
+write a Dispatch in a browser, ask Claude Opus 4.7-extended-thinking
+(4K tokens) for help on Continue + Rewrite, and Publish straight to
+`main` with one click.
 
-See *Outstanding work* and *UAT plan*.
+| Component | What landed |
+|---|---|
+| Middleware gate | `/studio/*` + `/api/studio/*` Basic-Auth-gated via `STUDIO_USER` / `STUDIO_PASS` — same pattern as PANORAIMA. Fail-closed (401) when env vars unset. `X-Robots-Tag: noindex, nofollow` on every response. |
+| Editor surface | `/studio` lists drafts; `/studio/editor` opens a new Dispatch; `/studio/editor/[slug]` resumes one. Editor is Tiptap with StarterKit + Typography + Placeholder + CharacterCount + Link extensions. Markdown shortcuts (`##` → H2, `**` → bold, etc.) Live-preview pane renders the same studio-prose CSS as production. |
+| Frontmatter form | Title (Gloock display), auto-derived slug (user can override), category dropdown (`Essays`/`Notes`/`Studio`), excerpt with 80–700 char counter, collapsible "more frontmatter" pane (hero / theme / LinkedIn URL / tags). |
+| Save | `POST /api/studio/save` upserts to a `studio_drafts` Supabase table. Debounced autosave (4 s after last change) + manual Save button. |
+| Publish | `POST /api/studio/publish` reads the draft, validates, commits `content/blog/<slug>.mdx` to `main` via the GitHub Contents API (Octokit), then deletes the draft row. Returns the canonical URL + commit URL. ~90 s from button-press to live via Vercel auto-deploy. |
+| AI Continue | `POST /api/studio/ai/continue` — Claude Opus 4.7-extended with 4K thinking tokens. System prompt encodes the studio voice (Plex Serif body, Gloock display, British English, one italic close, no SaaS slop, no surveillance vocabulary, plates-are-honest-not-poster-y). Output streams into the editor at the cursor. |
+| AI Rewrite | `POST /api/studio/ai/rewrite` — same model, rewrites the editor selection with optional instruction. Surrounding context is passed for tone reference but not rewritten. |
+| Thinking trace | Collapsible "Thinking trace" reveal in the AI panel — shows the extended-thinking output beneath the response in mono. |
+
+**Live state (2026-05-13):** code shipped; awaits Vercel env vars (`STUDIO_USER`, `STUDIO_PASS`, `STUDIO_GITHUB_TOKEN`, `ANTHROPIC_API_KEY` confirmation, optional `STUDIO_AI_MODEL` override) and the Supabase migration. Tarry mints + sets; Stage A UAT next turn.
+
+See *Outstanding work* (closed for Sprint 2) and *UAT plan*.
 
 ---
 
