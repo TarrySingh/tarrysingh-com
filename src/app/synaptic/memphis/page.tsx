@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import chipPlate from "@proposals/MEMPHIS/plates/plate-I-chip.png"
 import { Cartouche } from "@/components/editorial/Cartouche"
 import { Hairline } from "@/components/editorial/Hairline"
@@ -231,6 +232,43 @@ export default function MemphisPage() {
             that gap inside the operating regime, not whether it must.
           </p>
         </Cartouche>
+      </section>
+
+      <section className="syn-column pt-24 text-center">
+        <SmallCaps>IV · Read the full submission</SmallCaps>
+        <div className="mx-auto mt-6 max-w-2xl">
+          <Link
+            href="/synaptic/memphis/proposal"
+            className="block rounded-2xl border p-8 transition-opacity hover:opacity-90"
+            style={{
+              borderColor: "rgba(255,210,150,0.45)",
+              background:
+                "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              boxShadow:
+                "0 0 0 1px rgba(255,210,150,0.18), 0 12px 40px rgba(0,0,0,0.45)",
+            }}
+          >
+            <span
+              className="syn-display block"
+              style={{
+                fontSize: "1.6rem",
+                color: "var(--memphis-amber-hi)",
+                letterSpacing: "var(--track-display)",
+                lineHeight: 1.2,
+              }}
+            >
+              The full MEMPHIS proposal →
+            </span>
+            <span
+              className="syn-small-caps mt-3 block"
+              style={{ color: "var(--ink-dim)" }}
+            >
+              Problem · solution · novelty · validation · applications · investment thesis
+            </span>
+          </Link>
+        </div>
       </section>
 
       <footer className="syn-column pb-24 pt-32 text-center">
