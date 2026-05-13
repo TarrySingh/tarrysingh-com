@@ -235,9 +235,40 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* ========== DIVIDER ========== */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      {/* ========== STUDIO ENTRANCE ========== */}
+      <div
+        className="relative overflow-hidden"
+        style={{ background: "#0a0b22" }}
+      >
+        <div className="max-w-7xl mx-auto px-6 py-16 lg:px-8 md:py-20">
+          <div className="flex items-center justify-center gap-6">
+            <div
+              className="h-px flex-1"
+              style={{
+                background:
+                  "linear-gradient(to right, transparent, rgba(184,146,86,0.6) 60%, rgba(232,184,122,0.85))",
+              }}
+            />
+            <span
+              className="font-mono uppercase"
+              style={{
+                color: "rgba(232,184,122,0.85)",
+                fontSize: "11px",
+                letterSpacing: "0.35em",
+                whiteSpace: "nowrap",
+              }}
+            >
+              ↓ the studio below
+            </span>
+            <div
+              className="h-px flex-1"
+              style={{
+                background:
+                  "linear-gradient(to left, transparent, rgba(184,146,86,0.6) 60%, rgba(232,184,122,0.85))",
+              }}
+            />
+          </div>
+        </div>
       </div>
 
       {/* ========== SYNAPTIC CARTOGRAPHY ========== */}
@@ -328,6 +359,33 @@ const Landing = () => {
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   fill
                 />
+                {/* interactive plate hover affordance */}
+                <div
+                  className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3"
+                >
+                  <span
+                    className="font-mono uppercase transition-all duration-300 group-hover:tracking-[0.32em]"
+                    style={{
+                      color: "rgba(245,232,204,0.6)",
+                      fontSize: "10px",
+                      letterSpacing: "0.28em",
+                      textShadow: "0 1px 6px rgba(0,0,0,0.55)",
+                    }}
+                  >
+                    Interactive plate
+                  </span>
+                  <span
+                    className="font-mono uppercase transition-opacity duration-300"
+                    style={{
+                      color: "#c8b8ff",
+                      fontSize: "12px",
+                      letterSpacing: "0.32em",
+                      textShadow: "0 1px 6px rgba(0,0,0,0.6)",
+                    }}
+                  >
+                    Enter →
+                  </span>
+                </div>
               </div>
               <div className="mt-6">
                 <span
@@ -402,6 +460,33 @@ const Landing = () => {
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   fill
                 />
+                {/* interactive plate hover affordance */}
+                <div
+                  className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3"
+                >
+                  <span
+                    className="font-mono uppercase transition-all duration-300 group-hover:tracking-[0.32em]"
+                    style={{
+                      color: "rgba(245,232,204,0.6)",
+                      fontSize: "10px",
+                      letterSpacing: "0.28em",
+                      textShadow: "0 1px 6px rgba(0,0,0,0.55)",
+                    }}
+                  >
+                    Interactive plate
+                  </span>
+                  <span
+                    className="font-mono uppercase transition-opacity duration-300"
+                    style={{
+                      color: "#ffd296",
+                      fontSize: "12px",
+                      letterSpacing: "0.32em",
+                      textShadow: "0 1px 6px rgba(0,0,0,0.6)",
+                    }}
+                  >
+                    Enter →
+                  </span>
+                </div>
               </div>
               <div className="mt-6">
                 <span
