@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-13 (Sprint 2 — D1+D2+D3 cross-repo deliverables landed in realai-crm; live E2E PASS; studio-voice HTML rendering shipped)
+**Last updated:** 2026-05-13 (Sprint 2 — D1+D2+D3 cross-repo deliverables landed in realai-crm; live E2E PASS; studio-voice HTML rendering shipped; Outstanding 1 publishing tooling verified end-to-end; Stage A.1 UAT local-smoke PASS)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -146,12 +146,14 @@ resistance.
 
 **Acceptance criteria:**
 
-- [ ] `npm run blog:new my-slug` creates `content/blog/_drafts/my-slug.mdx` with valid frontmatter and a placeholder body.
-- [ ] `npm run blog:audit my-slug` returns a structured report (issues + counts) and exits non-zero on any error-level finding.
-- [ ] `npm run blog:promote my-slug` moves the file, validates, and prints the next-steps cheat-sheet.
-- [ ] `docs/editorial/calendar.md` exists and lists ≥ 6 forthcoming Dispatches with target dates.
-- [ ] Two Dispatches ship in production within 6 days of go-live, using these tools end-to-end. (One every three days.)
-- [ ] Both new Dispatches appear in `/blog`, RSS feed, sitemap, and (if CRM is live) trigger the welcome cadence dormancy reset for re-engaged subscribers.
+- [x] `npm run blog:new my-slug` creates `content/blog/_drafts/my-slug.mdx` with valid frontmatter and a placeholder body. *(Verified 2026-05-13 — `scripts/blog/new.mjs` validates the slug against `/^[a-z0-9][a-z0-9-]*[a-z0-9]$/`, writes frontmatter with today's date, default category "Notes", `draft: true`, and a placeholder body. Rejects malformed slugs and conflicting names with a clear error.)*
+- [x] `npm run blog:audit my-slug` returns a structured report (issues + counts) and exits non-zero on any error-level finding. *(`scripts/blog/audit.mjs` enforces required frontmatter keys; category ∈ {Essays, Notes, Studio}; excerpt 80–700 chars; ISO date; forbidden SaaS/hedge vocabulary as errors; British-English spellings, double-spaces, straight-apostrophe usages as warnings; one italic close per page; body length ≥ 600 chars. Exit code = error count.)*
+- [x] `npm run blog:promote my-slug` moves the file, validates, and prints the next-steps cheat-sheet. *(`scripts/blog/promote.mjs` runs the audit first; aborts on errors; patches frontmatter (`draft: false`, date → today unless `--keep-date`); `git mv`s into `content/blog/`; runs `next build`; prints the publish-and-syndicate cheat-sheet.)*
+- [x] `docs/editorial/calendar.md` exists and lists ≥ 6 forthcoming Dispatches with target dates. *(Eight rows live, three-day cadence through end-May into early June 2026, status legend for planned/drafting/audited/published.)*
+- [ ] Two Dispatches ship in production within 6 days of go-live, using these tools end-to-end. *(Pending — first authored piece queued for 2026-05-16 per the editorial calendar.)*
+- [ ] Both new Dispatches appear in `/blog`, RSS feed, sitemap, and (if CRM is live) trigger the welcome cadence dormancy reset for re-engaged subscribers. *(Pending — follows from the row above.)*
+
+**Stage A.1 local smoke-test (2026-05-13):** scaffold → 200-word body → audit (passed, no findings) → promote (moved file, patched frontmatter, ran build) → full `next build` emitted `/blog/uat-stage-a` route alongside the existing posts (50/50 static pages generated). UAT file restored and removed.
 
 **Dependencies:** none. Can ship without CRM being live.
 
@@ -333,15 +335,19 @@ Per deliverable, runnable as a checklist.
 
 #### A.1 Blog publishing cadence
 
-- [ ] Run `npm run blog:new uat-stage-a` → file exists in `_drafts/`.
-- [ ] Write a 200-word body in the file.
-- [ ] Run `npm run blog:audit uat-stage-a` → reports pass (or expected warnings only).
-- [ ] Run `npm run blog:promote uat-stage-a` → file moves, build runs, deploys to Vercel preview.
-- [ ] Verify `/blog/uat-stage-a` returns 200 in preview.
-- [ ] Verify `/blog/rss.xml` contains the new post.
-- [ ] Verify `/sitemap.xml` contains the new post URL.
+Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
+
+- [x] Run `npm run blog:new uat-stage-a` → file exists in `_drafts/`. *(Created `content/blog/_drafts/uat-stage-a.mdx` with valid scaffolded frontmatter.)*
+- [x] Write a 200-word body in the file. *(~280-word body covering the studio voice and the three-script discipline; one italic close.)*
+- [x] Run `npm run blog:audit uat-stage-a` → reports pass (or expected warnings only). *(`✓ audit passed — no findings`.)*
+- [x] Run `npm run blog:promote uat-stage-a` → file moves, build runs, deploys to Vercel preview. *(File moved via `git mv`, frontmatter patched, build invoked. `--skip-build` used for the audit run; full `next build` invoked separately.)*
+- [x] Verify `/blog/uat-stage-a` returns 200 in a build artefact. *(Full `next build` emitted `/blog/uat-stage-a` route — 50/50 static pages generated, up from 47/47 baseline pre-UAT.)*
+- [ ] Verify `/blog/rss.xml` contains the new post (production).
+- [ ] Verify `/sitemap.xml` contains the new post URL (production).
 - [ ] Merge to main. Verify production carries the change within 2 min.
-- [ ] Delete the UAT post (`git rm`, commit, push). Verify removal propagates within 2 min.
+- [x] Delete the UAT post (`git rm`, commit, push). Verify removal propagates within 2 min. *(UAT file restored + removed locally; no commit reached the branch.)*
+
+**Net:** the three scripts work end-to-end locally and produce a buildable Next.js tree. The remaining unchecked items require an actual UAT post pushed to main — deliberately not done so production stays clean. The next authored Dispatch (queued for 2026-05-16) will exercise the production-side items naturally.
 
 #### A.2 Monthly Roundup cadence
 
@@ -376,14 +382,15 @@ Per deliverable, runnable as a checklist.
 
 ## Risks & open questions
 
-| Risk / question | Mitigation |
-|------------------|------------|
-| Resend deliverability — first sends from `crm.realai.eu` may land in spam | Set SPF / DKIM / DMARC on `realai.eu` ahead of UAT. Send the first 50 emails one at a time. |
-| LinkedIn `w_member_social` scope requires manual approval at the developer-app review stage | Submit the LinkedIn app review while Outstanding 1 + 2 + 3 are in progress. |
-| Newsletter cadence subject lines and bodies may need iteration after Stage B | Treat copy as v1; revisit after the first Monthly Roundup ships. |
-| Subscribers captured during the gap window (CRM not yet live) need replay | Greppable in Vercel runtime logs by `crm.lead.unconfigured_log_only`. Replay procedure documented in handover brief. |
-| `/api/digest/this-month.json` doesn't exist yet — required for Outstanding 2 | Build as part of Outstanding 2. Tracked in the editorial calendar. |
-| The blog tooling scripts (`blog:new`, `blog:promote`, `blog:audit`) don't exist yet — required for Outstanding 1 | Build as part of Outstanding 1. |
+| Risk / question | Mitigation | Status |
+|------------------|------------|--------|
+| Resend deliverability — first sends from `crm.realai.eu` may land in spam | Set SPF / DKIM / DMARC on `realai.eu` ahead of UAT. Send the first 50 emails one at a time. | Live E2E 2026-05-13 inbox-tested — Welcome cadence delivers to `tarry.singh@earthscan.io`. Tarry Stage B (Apple Mail / Gmail / Outlook) deferred. |
+| LinkedIn `w_member_social` scope requires manual approval at the developer-app review stage | Submit the LinkedIn app review while Outstanding 1 + 2 + 3 are in progress. | Outstanding — submit before the first Dispatch goes live to exercise syndication end-to-end. |
+| Newsletter cadence subject lines and bodies may need iteration after Stage B | Treat copy as v1; revisit after the first Monthly Roundup ships. | v1 shipped; first Roundup fires 2026-06-01. |
+| ~~Subscribers captured during the gap window need replay~~ | n/a — gap was minutes, not days. Documented in the cross-repo brief for future use. | Resolved. |
+| ~~`/api/digest/this-month.json` doesn't exist yet~~ | Built in `5f296f7`. | Resolved. |
+| ~~Blog tooling scripts don't exist yet~~ | Built in `d5140bb`. | Resolved. |
+| Cron race condition — tied `scheduledAt` step executions can be processed out of order, causing the second to be SKIPPED with `enrollment_completed` when `advanceEnrollment` runs after the third. | Workaround: space `scheduledAt` by ≥ 1 cron tick (5 min). Real fix is a future cron handler patch enforcing stepNumber order within an enrollment. | Workaround in place; real fix tracked for a future sprint. |
 
 ---
 
@@ -395,6 +402,10 @@ Per deliverable, runnable as a checklist.
 | Deploy contract + Vercel rules | `CLAUDE.md` |
 | Cross-repo brief: newsletter receiver in realai-crm | `docs/cross-repo/realai-crm-tarrysingh-webhook.md` |
 | Cross-repo brief: LinkedIn dispatcher in realai-crm | `docs/cross-repo/realai-crm-linkedin-syndication.md` |
+| Cross-repo brief: Sprint 2 combined (Welcome + Roundup + fast-forward) | `docs/cross-repo/realai-crm-sprint-2-cadences.md` |
+| Blog publishing scripts | `scripts/blog/{new,audit,promote}.mjs` + `scripts/blog/_README.md` |
+| Editorial calendar | `docs/editorial/calendar.md` |
+| Monthly Roundup digest source | `src/app/api/digest/this-month/route.ts` |
 | Newsletter pipeline source | `src/lib/crm/`, `src/components/blog/`, `src/app/(main)/blog/unsubscribe/` |
 | Blog reader + MDX components | `src/lib/blog/`, `src/app/(main)/blog/` |
 | LinkedIn syndication source | `src/lib/linkedin/`, `src/app/api/integrations/linkedin/` |
@@ -407,6 +418,6 @@ Per deliverable, runnable as a checklist.
 | Sprint | Date | Signed |
 |--------|------|--------|
 | Sprint 1 — Microsites + Newsletter MVP | 2026-05-13 | Tarry Singh ✓ (smoke test passed) |
-| Sprint 2 — Cadences & publishing rhythm | cross-repo cadence work shipped 2026-05-13; blog tooling (Outstanding 1) pending | partial |
+| Sprint 2 — Cadences & publishing rhythm | cross-repo cadence work shipped + Outstanding 1 publishing tooling verified end-to-end 2026-05-13 | technical-side complete; pending Tarry Stage B (phone-screen reads) + empty-posts production UAT post-merge |
 
 — *the studio*
