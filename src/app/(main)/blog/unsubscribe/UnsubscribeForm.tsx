@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 
 type Status = "ready" | "loading" | "done" | "error"
 
@@ -99,7 +100,7 @@ export function UnsubscribeForm({ email, token }: Props) {
             : "Confirm unsubscribe"}
         </button>
 
-        <a
+        <Link
           href="/blog"
           className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-navy-200 bg-white text-navy-700 text-[11px] font-semibold uppercase tracking-[0.22em] hover:bg-navy-50 transition-colors"
           style={{
@@ -107,7 +108,7 @@ export function UnsubscribeForm({ email, token }: Props) {
           }}
         >
           Keep me on the list
-        </a>
+        </Link>
       </div>
 
       <div className="min-h-[1.25rem] mt-5" aria-live="polite">
