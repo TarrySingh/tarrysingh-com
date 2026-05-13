@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import {
   CHIP_ANNOTATIONS,
   CHIP_CB0,
@@ -25,6 +25,51 @@ export function ChipPlate({
   const [activeId, setActiveId] = useState<string | null>(initialId)
   const [hoverId, setHoverId] = useState<string | null>(null)
   const [phase, setPhase] = useState<ChipPhase>(initialPhase)
+  const [t, setT] = useState(0)
+  const startRef = useRef<number | null>(null)
+
+  // animation clock — drives firing patterns + replay sweep
+  useEffect(() => {
+    let raf = 0
+    const tick = (now: number) => {
+      if (startRef.current === null) startRef.current = now
+      setT(now - startRef.current)
+      raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [])
+
+  // Per-phase firing set — sparse random spikes during awake, radial wave during sleep
+  const firingSet = useMemo(() => {
+    const set = new Set<number>()
+    if (phase === "awake") {
+      const seed = Math.floor(t / 160)
+      for (let k = 0; k < 6; k += 1) {
+        const si = (seed * 37 + k * 101) % (CHIP_N * CHIP_N)
+        set.add(si)
+      }
+    } else {
+      // radial wave sweeping outward through the CA3↔CA1 module
+      const radius = ((t / 30) % 220) / 22 // 0 → ~10
+      const cx = (CHIP_N - 1) / 2
+      const cy = (CHIP_N - 1) / 2
+      for (let j = 0; j < CHIP_N; j += 1) {
+        for (let i = 0; i < CHIP_N; i += 1) {
+          const dm = Math.hypot(i - cx, j - cy)
+          if (Math.abs(dm - radius) < 0.7 && dm <= 4.2) set.add(j * CHIP_N + i)
+        }
+      }
+    }
+    return set
+  }, [phase, t])
+
+  // Replay-ring radius for sleep mode — drawn over the crossbar
+  const replayRadius = useMemo(() => {
+    if (phase !== "sleep") return null
+    const r = ((t / 30) % 220) / 22
+    return r
+  }, [phase, t])
 
   const active =
     CHIP_ANNOTATIONS.find((a) => a.id === (hoverId ?? activeId)) ?? null
@@ -235,11 +280,25 @@ export function ChipPlate({
           row.map((v, i) => {
             const x = CHIP_CB0 + i * CHIP_STEP
             const y = CHIP_CB0 + j * CHIP_STEP
-            const r = Math.round(232 * (1 - v.warmT) + 229 * v.warmT)
-            const g = Math.round(184 * (1 - v.warmT) + 168 * v.warmT)
-            const b = Math.round(122 * (1 - v.warmT) + 150 * v.warmT)
+            const isFiring = firingSet.has(j * CHIP_N + i)
+            // Warm interpolation; firing cells push toward amber-hi (#ffd296)
+            const warmR = 232 * (1 - v.warmT) + 229 * v.warmT
+            const warmG = 184 * (1 - v.warmT) + 168 * v.warmT
+            const warmB = 122 * (1 - v.warmT) + 150 * v.warmT
+            const r = isFiring
+              ? Math.round(warmR * 0.45 + 255 * 0.55)
+              : Math.round(warmR)
+            const g = isFiring
+              ? Math.round(warmG * 0.45 + 210 * 0.55)
+              : Math.round(warmG)
+            const b = isFiring
+              ? Math.round(warmB * 0.45 + 150 * 0.55)
+              : Math.round(warmB)
             if (v.inModule) {
-              const rad = 2 + v.base * 2.8
+              // Firing cells get a halo boost
+              const rad = 2 + v.base * 2.8 + (isFiring ? 1.8 : 0)
+              const haloOpacity =
+                0.14 + v.base * 0.18 + (isFiring ? 0.5 : 0)
               return (
                 <g key={`n-${i}-${j}`}>
                   <circle
@@ -247,7 +306,7 @@ export function ChipPlate({
                     cy={y}
                     r={rad * 2}
                     fill={`rgb(${r},${g},${b})`}
-                    opacity={0.14 + v.base * 0.18}
+                    opacity={haloOpacity}
                   />
                   <circle
                     cx={x}
@@ -255,28 +314,83 @@ export function ChipPlate({
                     r={rad}
                     fill={`rgb(${r},${g},${b})`}
                     opacity={0.75 + v.base * 0.25}
-                    className={phase === "sleep" ? "syn-anim-cell-sleep" : "syn-anim-cell-awake"}
-                    style={{ animationDelay: `${((i + j * 7) % 22) * 0.08}s` }}
                   />
+                  {isFiring ? (
+                    <circle
+                      cx={x}
+                      cy={y}
+                      r={rad * 0.55}
+                      fill="#ffe0a4"
+                      opacity={0.95}
+                    />
+                  ) : null}
                 </g>
               )
             }
-            const rad = 1.5 + v.base * 1.4
-            const rr = Math.round(70 + 140 * v.base)
-            const gg = Math.round(100 + 80 * v.base)
-            const bb = Math.round(120 + 40 * v.base)
+            const rad = 1.5 + v.base * 1.4 + (isFiring ? 1.2 : 0)
+            const rr = isFiring
+              ? Math.round(255)
+              : Math.round(70 + 140 * v.base)
+            const gg = isFiring
+              ? Math.round(220)
+              : Math.round(100 + 80 * v.base)
+            const bb = isFiring
+              ? Math.round(160)
+              : Math.round(120 + 40 * v.base)
             return (
-              <circle
-                key={`n-${i}-${j}`}
-                cx={x}
-                cy={y}
-                r={rad}
-                fill={`rgb(${rr},${gg},${bb})`}
-                opacity={0.55 + v.base * 0.35}
-              />
+              <g key={`n-${i}-${j}`}>
+                {isFiring ? (
+                  <circle
+                    cx={x}
+                    cy={y}
+                    r={rad * 2.4}
+                    fill={`rgb(${rr},${gg},${bb})`}
+                    opacity={0.4}
+                  />
+                ) : null}
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={rad}
+                  fill={`rgb(${rr},${gg},${bb})`}
+                  opacity={isFiring ? 1 : 0.55 + v.base * 0.35}
+                />
+              </g>
             )
           }),
         )}
+
+        {/* sleep replay-wave ring sweeping outward through the CA3↔CA1 module */}
+        {replayRadius !== null ? (
+          (() => {
+            const cx = CHIP_CB0 + ((CHIP_N - 1) / 2) * CHIP_STEP
+            const cy = CHIP_CB0 + ((CHIP_N - 1) / 2) * CHIP_STEP
+            const r = replayRadius * CHIP_STEP
+            const fade = 1 - (replayRadius / 10)
+            return (
+              <g>
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={r}
+                  fill="none"
+                  stroke="#e5a896"
+                  strokeOpacity={0.6 * fade}
+                  strokeWidth={2}
+                />
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={r + 6}
+                  fill="none"
+                  stroke="#e5a896"
+                  strokeOpacity={0.18 * fade}
+                  strokeWidth={6}
+                />
+              </g>
+            )
+          })()
+        ) : null}
 
         <rect
           x={500 - 100}
