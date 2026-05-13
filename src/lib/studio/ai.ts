@@ -68,6 +68,12 @@ interface AIResult {
 interface AIError {
   ok: false
   error: string
+  /** Raw upstream error message — surfaced when STUDIO_AI_DEBUG=1 so
+   *  UAT can see exactly what Anthropic rejected. Off by default. */
+  debug?: string
+  /** The model id we actually sent to the API (helps confirm the env
+   *  var override is taking effect). Surfaced when STUDIO_AI_DEBUG=1. */
+  modelUsed?: string
 }
 
 function getClient(): Anthropic | null {
@@ -116,8 +122,14 @@ Return Markdown only.`
     })
     return extractResult(msg)
   } catch (err) {
-    console.error(JSON.stringify({ tag: "studio.ai.continue_error", error: err instanceof Error ? err.message : String(err) }))
-    return { ok: false, error: "ai_call_failed" }
+    const message = err instanceof Error ? err.message : String(err)
+    console.error(JSON.stringify({ tag: "studio.ai.continue_error", model, error: message }))
+    const debug = process.env.STUDIO_AI_DEBUG === "1"
+    return {
+      ok: false,
+      error: "ai_call_failed",
+      ...(debug ? { debug: message, modelUsed: model } : {}),
+    } as AIError
   }
 }
 
@@ -155,8 +167,14 @@ Return only the rewritten passage in Markdown. Do not echo the original. Do not 
     })
     return extractResult(msg)
   } catch (err) {
-    console.error(JSON.stringify({ tag: "studio.ai.rewrite_error", error: err instanceof Error ? err.message : String(err) }))
-    return { ok: false, error: "ai_call_failed" }
+    const message = err instanceof Error ? err.message : String(err)
+    console.error(JSON.stringify({ tag: "studio.ai.rewrite_error", model, error: message }))
+    const debug = process.env.STUDIO_AI_DEBUG === "1"
+    return {
+      ok: false,
+      error: "ai_call_failed",
+      ...(debug ? { debug: message, modelUsed: model } : {}),
+    } as AIError
   }
 }
 
