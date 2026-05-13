@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-13 (Sprint 2 — D1+D2+D3 cross-repo deliverables landed in realai-crm; live E2E PASS)
+**Last updated:** 2026-05-13 (Sprint 2 — D1+D2+D3 cross-repo deliverables landed in realai-crm; live E2E PASS; studio-voice HTML rendering shipped)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -225,10 +225,10 @@ into.
 - [x] Posting `source: "unsubscribe"` upserts `CadenceUnsubscribe` (idempotent on email). *(Verified 17:41:27. Enrollment exits to status `UNSUBSCRIBED` + stage `DO_NOT_CONTACT`, remaining steps flip to `SKIPPED`.)*
 - [x] `Tarrysingh Welcome` cadence is published and active, with three `CadenceStep` rows at `dayOffset = 0, 5, 14`. *(Cadence id `0ab4b8f0-ca36-4a10-8df8-9466a0418f5d`. Body copy verbatim from the handover brief — 1123 / 698 / 1051 chars, signed `— T.`)*
 - [x] Subscribing on `www.tarrysingh.com` with a fresh email results in: *(LIVE E2E 2026-05-13 18:02:31 — `e2e-002@dispatches.test` → tarrysingh-com `/api/newsletter/subscribe` 200 at 18:02:29 → HMAC-signed forward to crm.realai.eu 200 at 18:02:30 → `CrmContact` upserted at 18:02:31 → enrolled in Welcome cadence with status `ACTIVE`, stage `COLD`, currentStep 1/3 → 3 `CadenceStepExecution` rows scheduled. Confirmed visible in the Welcome cadence's Recipients tab.)*
-  - [ ] Email 1 received within 10 min of signup. *(Pending the next cron tick inside the 09:00–17:00 Europe/Amsterdam sending window. Step 1 is `DUE`; will deliver at the first cron tick after the window reopens, OR immediately if the window is temporarily widened for UAT.)*
-  - [ ] Email 2 received 5 days later. *(Step execution scheduled at `2026-05-18T18:02:31Z`. Can be fast-forwarded via D3 admin tool.)*
-  - [ ] Email 3 received 14 days later. *(Step execution scheduled at `2026-05-27T18:02:31Z`. Can be fast-forwarded via D3 admin tool.)*
-  - [ ] Each email renders with the studio voice (Plex Serif body, italic close, signed "T."). *(Pending real-inbox UAT.)*
+  - [x] Email 1 received within 10 min of signup. *(Verified 2026-05-13 ~18:15 UTC and again ~18:35 UTC after the styled-HTML re-send to `tarry.singh@earthscan.io`.)*
+  - [x] Email 2 received 5 days later. *(Verified ~18:40 UTC using a temporary fast-forward — production fast-forward path via D3 admin endpoint will be exercised again with the day-5 timeline on a future enrollment.)*
+  - [x] Email 3 received 14 days later. *(Verified ~18:45 UTC, same fast-forward UAT pass.)*
+  - [x] Each email renders with the studio voice (Plex Serif body, italic close, signed "T."). *(Studio-voice HTML template shipped 2026-05-13 in commit `b53ffd4` — cream paper `#faf6ef`, midnight indigo `#0d1b3d`, IBM Plex Serif body via Google Fonts, italic close paragraph, em-dash bullets. Graceful system-serif fallback for Outlook desktop. All 3 emails inbox-tested and visually approved by Tarry.)*
 - [x] Clicking the unsubscribe link in any email halts subsequent emails immediately. *(Verified via synthetic Test 4: source=unsubscribe upserts `CadenceUnsubscribe` and flips all PENDING/DUE step executions for the enrollment to `SKIPPED`. The `/u/{token}` one-click endpoint hits the same `applyRules({ event: "email_unsubscribed" })` code path.)*
 - [x] Re-subscribing after an unsubscribe does NOT re-enrol. *(Verified — the `canSendToContact` gate in `autoEnrollContact` returns `globally_unsubscribed` on email match against `CadenceUnsubscribe`.)*
 
@@ -262,6 +262,7 @@ A consolidated paper-trail of everything the cross-repo Sprint 2 work produced o
 | `66d9326` | Tarrysingh Monthly Roundup broadcast cron + body renderer + digest fetcher |
 | `f72eea4` | Admin cadence fast-forward endpoint |
 | `89dd662` | Cron-validator fix: Vercel rejects day-of-month + day-of-week together → schedule split into `0 9 * * 1` + first-Monday-of-month guard in handler |
+| `b53ffd4` | Studio-voice HTML email rendering — shared template in `src/lib/cadences/tarrysingh-roundup/studio-html.ts` (cream paper + Plex Serif + indigo + italic close); Resend + MS Graph adapters detect pre-rendered HTML bodies and skip the legacy `\n→<br>` mangle; all 3 Welcome cadence bodies re-seeded as HTML via `scripts/seed-tarrysingh-welcome-html.ts` (idempotent) |
 
 ### DB seeds (production Supabase)
 
@@ -310,11 +311,13 @@ Real form submission on `www.tarrysingh.com` → receiver in `realai-crm` → CR
 
 ### Open items (for future UAT cycles)
 
-- [ ] Actual email delivery of step 1 — pending next cron tick inside the 09:00–17:00 Europe/Amsterdam sending window, OR a temporary sending-window widening for UAT
-- [ ] Day-5 + day-14 inbox-render UAT — collapsible into one sitting via the D3 fast-forward endpoint
-- [ ] Triple-inbox UAT (Apple Mail, Gmail web, Outlook) for Monthly Roundup body — Tarry-side
-- [ ] Empty-posts UAT (Monthly Roundup with `posts: []` digest) — point `TARRYSINGH_DIGEST_URL` at a stub, trigger cron with `?force=true`
+- [x] Actual email delivery of all 3 Welcome steps — verified 2026-05-13 with `tarry.singh@earthscan.io` enrollment, fast-forwarded for one-sitting UAT
+- [x] Day-5 + day-14 inbox-render UAT — done in the same sitting via SQL `scheduledAt` rewind
+- [x] Studio-voice HTML render — Plex Serif + cream paper + indigo + italic close
+- [ ] Triple-inbox UAT (Apple Mail, Gmail web, Outlook) for Monthly Roundup body — Tarry-side, deferred
+- [ ] Empty-posts UAT (Monthly Roundup with `posts: []` digest) — point `TARRYSINGH_DIGEST_URL` at a stub, trigger cron with `?force=true` — Tarry-side, deferred
 - [ ] Replay procedure for gap-window subscribers — none captured yet because the gap was minutes, not days; documented in the cross-repo brief for future use
+- [ ] Cron race-condition follow-up — tied `scheduledAt` step executions can be processed out of order, causing the second one to be SKIPPED with `enrollment_completed` when `advanceEnrollment` runs after the third. Workaround: space `scheduledAt` by at least one cron tick (5 min). Real fix is a future cron handler patch enforcing stepNumber order within an enrollment.
 
 ---
 
