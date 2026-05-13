@@ -3,6 +3,7 @@ import Link from "next/link"
 import visionBanner from "@proposals/SYMPHONY/plates/plate-I-vision.png"
 import coverPlanisphere from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
 import chipPlate from "@proposals/MEMPHIS/plates/plate-I-chip.png"
+import { Cartouche } from "@/components/editorial/Cartouche"
 import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
@@ -10,41 +11,91 @@ import { VisionHorizon } from "@/components/synaptic/VisionHorizon"
 
 export const metadata = {
   title:
-    "Synaptic Cartography — SYMPHONY and MEMPHIS · tarrysingh.com",
+    "Synaptic Cartography — SYMPHONY · MEMPHIS · tarrysingh.com",
   description:
-    "Two Horizon-Europe deep-tech proposals presented as museum plates: SYMPHONY — a neuromimetic knowledge substrate for software — and MEMPHIS — a hippocampal-inspired memristive neuromorphic chip.",
+    "A studio of deep-tech proposals presented as museum-grade interactive plates: SYMPHONY — a neuromimetic knowledge substrate for software — and MEMPHIS — a hippocampal-memristive neuromorphic architecture. Both EIC Pathfinder 2026 submissions.",
 }
+
+const proseStyle = {
+  color: "var(--ink-cool)",
+  fontSize: "var(--text-body)",
+  lineHeight: 1.7,
+  maxWidth: "62ch",
+} as const
+
+const sectionHeading = {
+  color: "var(--ink)",
+  fontSize: "2.4rem",
+  lineHeight: 1.1,
+  margin: 0,
+  letterSpacing: "var(--track-display)",
+} as const
+
+const PARTNERS = [
+  { href: "/synaptic/symphony/ramaswamy", name: "Sri Ramaswamy", role: "Newcastle · O2 lead", color: "#e5a896" },
+  { href: "/synaptic/symphony/siciliano", name: "Bruno Siciliano", role: "CREATE-PRISMA · O3 lead", color: "#6cb4c2" },
+  { href: "/synaptic/symphony/tarry", name: "Tarry Singh", role: "Real AI · Coordinator", color: "#f4c482" },
+  { href: "/synaptic/symphony/uprobotics", name: "UP Robotics", role: "Zagreb · industrial demonstrator", color: "#a698d4" },
+] as const
 
 export default function SynapticPage() {
   return (
     <div className="syn-root min-h-screen">
-      <header className="syn-column pb-12 pt-24 text-center">
-        <SmallCaps>The series</SmallCaps>
-        <h1
-          className="syn-display mt-6"
-          style={{
-            fontSize: "var(--text-display)",
-            color: "var(--ink)",
-            lineHeight: 0.95,
-            letterSpacing: "var(--track-display)",
-            margin: 0,
-          }}
-        >
-          Synaptic Cartography
-        </h1>
-        <ItalicCaption className="mx-auto mt-6 max-w-3xl">
-          A planisphere and an anatomy of two ideas that should not yet
-          exist.
-        </ItalicCaption>
+      {/* studio header */}
+      <header className="syn-column pt-16">
+        <div className="flex items-start justify-between syn-small-caps" style={{ color: "var(--ink-dim)" }}>
+          <div>
+            <div style={{ color: "var(--ink)", letterSpacing: "0.2em", fontSize: "0.78rem" }}>
+              SYNAPTIC CARTOGRAPHY · MMXXVI
+            </div>
+            <div className="mt-1">A studio of deep-tech proposals</div>
+          </div>
+          <div className="text-right">
+            <div style={{ color: "var(--ink)", letterSpacing: "0.2em", fontSize: "0.78rem" }}>
+              FOLIO 0
+            </div>
+            <div className="mt-1">EIC Pathfinder 2026</div>
+          </div>
+        </div>
+        <Hairline className="mt-4" />
+
+        {/* title */}
+        <div className="mt-14 text-center">
+          <SmallCaps>The series</SmallCaps>
+          <h1
+            className="syn-display mt-6"
+            style={{
+              fontSize: "clamp(56px, 9vw, 132px)",
+              letterSpacing: "0.08em",
+              color: "var(--ink)",
+              lineHeight: 1,
+              margin: 0,
+            }}
+          >
+            Synaptic Cartography
+          </h1>
+          <ItalicCaption className="mx-auto mt-6 max-w-3xl">
+            A planisphere and an anatomy of ideas that should not yet
+            exist — rendered as museum-grade interactive plates and bound
+            into a coherent body of work.
+          </ItalicCaption>
+          <p
+            className="syn-small-caps mt-3"
+            style={{ color: "var(--ink-dim)", letterSpacing: "0.3em" }}
+          >
+            · two finished plates · more on the way ·
+          </p>
+        </div>
       </header>
 
-      <div className="mx-auto print:hidden lg:max-w-[90vw]">
+      {/* interactive vision horizon */}
+      <section className="mt-16 print:hidden lg:mx-auto lg:max-w-[90vw]">
         <VisionHorizon />
-      </div>
+      </section>
       <figure className="mx-auto hidden print:block lg:max-w-[90vw]">
         <Image
           src={visionBanner}
-          alt="Synaptic Cartography vision banner — the panoramic Plate I that anchors the series, set in the studio's midnight-indigo palette."
+          alt="Synaptic Cartography vision banner — the panoramic Plate I that anchors the series."
           sizes="(min-width: 1280px) 90vw, 100vw"
           placeholder="blur"
           priority
@@ -52,7 +103,51 @@ export default function SynapticPage() {
         />
       </figure>
 
-      <section className="syn-column pt-24">
+      <div className="syn-column">
+        <Hairline className="mt-20" />
+      </div>
+
+      {/* manifesto */}
+      <section className="syn-column space-y-8 pt-20">
+        <div className="space-y-3 text-center">
+          <SmallCaps>The studio</SmallCaps>
+          <h2 className="syn-display mx-auto" style={sectionHeading}>
+            What this is for
+          </h2>
+        </div>
+        <p className="mx-auto" style={proseStyle}>
+          Synaptic Cartography is an aesthetic of quiet, museum-grade
+          scientific illustration applied to the technical content of
+          frontier deep-tech proposals. Each plate is built like a
+          nineteenth-century anatomical folio — except every line, every
+          colour, every data point is interactive. Hover. Click. Scrub the
+          curve. The image is the argument.
+        </p>
+        <p className="mx-auto" style={proseStyle}>
+          Two proposals live here. Both target post-von-Neumann
+          computing from opposite ends — one on the software side
+          (SYMPHONY · a neuromimetic substrate for code), one on the
+          hardware side (MEMPHIS · a hippocampal-memristive chip). Both
+          are EIC Pathfinder 2026 submissions. Future plates in the
+          series will join them as they earn their place.
+        </p>
+        <ItalicCaption className="mx-auto max-w-3xl text-center">
+          The plate is the argument. The argument is the plate.
+        </ItalicCaption>
+      </section>
+
+      <div className="syn-column">
+        <Hairline className="mt-20" />
+      </div>
+
+      {/* featured project cards */}
+      <section className="syn-column pt-20">
+        <div className="space-y-3 pb-12 text-center">
+          <SmallCaps>The two finished plates</SmallCaps>
+          <h2 className="syn-display mx-auto" style={sectionHeading}>
+            Pick a thread
+          </h2>
+        </div>
         <div className="grid gap-10 lg:grid-cols-2">
           <Link
             href="/synaptic/symphony"
@@ -66,30 +161,44 @@ export default function SynapticPage() {
                 placeholder="blur"
                 className="block h-auto w-full rounded-[var(--radius-card)] transition-opacity group-hover:opacity-90"
               />
-              <figcaption className="pt-5">
-                <SmallCaps>Plate II</SmallCaps>
-                <h2
-                  className="syn-display mt-2"
+              <figcaption className="pt-6">
+                <SmallCaps>Plate II · the planisphere</SmallCaps>
+                <h3
+                  className="syn-display mt-3"
                   style={{
-                    fontSize: "2.5rem",
+                    fontSize: "2.6rem",
                     color: "var(--ink)",
                     lineHeight: 1,
                     letterSpacing: "var(--track-display)",
                     margin: 0,
                   }}
                 >
-                  SYMPHONY <span style={{ color: "var(--symphony-violet)" }}>→</span>
-                </h2>
+                  SYMPHONY{" "}
+                  <span style={{ color: "var(--symphony-violet)" }}>→</span>
+                </h3>
+                <p
+                  className="syn-italic-caption mt-3"
+                  style={{ color: "var(--symphony-violet-hi)" }}
+                >
+                  A neuromimetic knowledge substrate for software systems
+                </p>
                 <p
                   style={{
                     color: "var(--ink-cool)",
-                    marginTop: "0.75rem",
-                    lineHeight: 1.5,
+                    marginTop: "0.8rem",
+                    lineHeight: 1.6,
                   }}
                 >
-                  A neuromimetic knowledge substrate for software systems —
-                  multi-scale neuromodulation and low-bandwidth shared
-                  control for task-adaptive code comprehension.
+                  Multi-scale neuromodulation and low-bandwidth shared
+                  control for task-adaptive code comprehension. Twelve
+                  interactive plates · the full proposal · the four
+                  partners · the deep-dive on each.
+                </p>
+                <p
+                  className="syn-small-caps mt-5"
+                  style={{ color: "var(--ink-dim)" }}
+                >
+                  EIC Pathfinder 2026 · May 2026
                 </p>
               </figcaption>
             </figure>
@@ -107,30 +216,44 @@ export default function SynapticPage() {
                 placeholder="blur"
                 className="block h-auto w-full rounded-[var(--radius-card)] transition-opacity group-hover:opacity-90"
               />
-              <figcaption className="pt-5">
-                <SmallCaps>Plate I · MEMPHIS</SmallCaps>
-                <h2
-                  className="syn-display mt-2"
+              <figcaption className="pt-6">
+                <SmallCaps>Plate I · the chip</SmallCaps>
+                <h3
+                  className="syn-display mt-3"
                   style={{
-                    fontSize: "2.5rem",
+                    fontSize: "2.6rem",
                     color: "var(--ink)",
                     lineHeight: 1,
                     letterSpacing: "var(--track-display)",
                     margin: 0,
                   }}
                 >
-                  MEMPHIS <span style={{ color: "var(--memphis-amber)" }}>→</span>
-                </h2>
+                  MEMPHIS{" "}
+                  <span style={{ color: "var(--memphis-amber)" }}>→</span>
+                </h3>
+                <p
+                  className="syn-italic-caption mt-3"
+                  style={{ color: "var(--memphis-amber-hi)" }}
+                >
+                  A hippocampal · memristive · neuromorphic architecture
+                </p>
                 <p
                   style={{
                     color: "var(--ink-cool)",
-                    marginTop: "0.75rem",
-                    lineHeight: 1.5,
+                    marginTop: "0.8rem",
+                    lineHeight: 1.6,
                   }}
                 >
-                  A hippocampal · memristive · neuromorphic architecture.
                   Memory and computation co-localised on a self-organising
-                  substrate driven by two-phase replay dynamics.
+                  substrate driven by two-phase replay dynamics. Five
+                  interactive plates · STDP window · CA3 ↔ CA1 circuit ·
+                  the full proposal.
+                </p>
+                <p
+                  className="syn-small-caps mt-5"
+                  style={{ color: "var(--ink-dim)" }}
+                >
+                  EIC Pathfinder 2026 · May 2026
                 </p>
               </figcaption>
             </figure>
@@ -138,30 +261,16 @@ export default function SynapticPage() {
         </div>
       </section>
 
-      {/* Deep-dive entry points */}
+      {/* partner pages strip */}
       <section className="syn-column space-y-10 pt-32">
         <div className="space-y-3 text-center">
           <SmallCaps>Inside SYMPHONY</SmallCaps>
-          <h2
-            className="syn-display"
-            style={{
-              fontSize: "2.4rem",
-              color: "var(--ink)",
-              lineHeight: 1.1,
-              letterSpacing: "var(--track-display)",
-              margin: 0,
-            }}
-          >
+          <h2 className="syn-display mx-auto" style={sectionHeading}>
             Read the consortium one face at a time
           </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            { href: "/synaptic/symphony/ramaswamy", name: "Sri Ramaswamy", role: "Newcastle · O2 lead", color: "#e5a896" },
-            { href: "/synaptic/symphony/siciliano", name: "Bruno Siciliano", role: "CREATE-PRISMA · O3 lead", color: "#6cb4c2" },
-            { href: "/synaptic/symphony/tarry", name: "Tarry Singh", role: "Real AI · Coordinator", color: "#f4c482" },
-            { href: "/synaptic/symphony/uprobotics", name: "UP Robotics", role: "Zagreb · industrial demonstrator", color: "#a698d4" },
-          ].map((p) => (
+          {PARTNERS.map((p) => (
             <Link
               key={p.href}
               href={p.href}
@@ -174,7 +283,7 @@ export default function SynapticPage() {
                 WebkitBackdropFilter: "blur(8px)",
               }}
             >
-              <SmallCaps className="block" >{p.role}</SmallCaps>
+              <SmallCaps>{p.role}</SmallCaps>
               <h3
                 className="syn-display mt-3"
                 style={{
@@ -201,11 +310,20 @@ export default function SynapticPage() {
             </Link>
           ))}
         </div>
+      </section>
 
-        <div className="grid gap-4 pt-2 sm:grid-cols-2">
+      {/* read the dossiers */}
+      <section className="syn-column space-y-10 pt-32">
+        <div className="space-y-3 text-center">
+          <SmallCaps>The complete dossiers</SmallCaps>
+          <h2 className="syn-display mx-auto" style={sectionHeading}>
+            Read the proposals end-to-end
+          </h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
           <Link
             href="/synaptic/symphony/proposal"
-            className="group block rounded-2xl border p-6 transition-opacity hover:opacity-90"
+            className="block rounded-2xl border p-6 transition-opacity hover:opacity-90"
             style={{
               borderColor: "rgba(255,210,150,0.45)",
               background:
@@ -216,69 +334,137 @@ export default function SynapticPage() {
                 "0 0 0 1px rgba(255,210,150,0.18), 0 12px 40px rgba(0,0,0,0.45)",
             }}
           >
-            <SmallCaps>The full proposal</SmallCaps>
+            <SmallCaps>SYMPHONY · the full proposal</SmallCaps>
             <h3
               className="syn-display mt-3"
               style={{
-                fontSize: "1.6rem",
+                fontSize: "1.4rem",
                 color: "var(--symphony-amber-hi)",
-                lineHeight: 1.1,
+                lineHeight: 1.15,
                 letterSpacing: "var(--track-display)",
                 margin: 0,
               }}
             >
               Problem · solution · novelty · go-to-market · funder brief →
             </h3>
-            <p
-              className="syn-small-caps mt-3"
-              style={{ color: "var(--ink-dim)" }}
-            >
+            <p className="syn-small-caps mt-3" style={{ color: "var(--ink-dim)" }}>
               12 sections · read on the web
             </p>
           </Link>
-          <a
-            href="/dossiers/Symphony-Additional-Information-Dossier.docx"
-            download
-            className="group block rounded-2xl border p-6 transition-opacity hover:opacity-90"
+          <Link
+            href="/synaptic/memphis/proposal"
+            className="block rounded-2xl border p-6 transition-opacity hover:opacity-90"
             style={{
-              borderColor: "rgba(200,180,255,0.35)",
+              borderColor: "rgba(232,184,122,0.45)",
               background:
-                "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
+                "linear-gradient(180deg, rgba(20,34,59,0.85), rgba(12,24,40,0.92))",
               backdropFilter: "blur(8px)",
               WebkitBackdropFilter: "blur(8px)",
+              boxShadow:
+                "0 0 0 1px rgba(232,184,122,0.18), 0 12px 40px rgba(0,0,0,0.45)",
             }}
           >
-            <SmallCaps>The EU dossier</SmallCaps>
+            <SmallCaps>MEMPHIS · the full proposal</SmallCaps>
             <h3
               className="syn-display mt-3"
               style={{
-                fontSize: "1.6rem",
-                color: "var(--symphony-violet-hi)",
-                lineHeight: 1.1,
+                fontSize: "1.4rem",
+                color: "var(--memphis-amber-hi)",
+                lineHeight: 1.15,
                 letterSpacing: "var(--track-display)",
                 margin: 0,
               }}
             >
-              Download the 25-page submission ↓
+              Three breakthroughs · three objectives · investment thesis →
             </h3>
-            <p
-              className="syn-small-caps mt-3"
-              style={{ color: "var(--ink-dim)" }}
-            >
-              .docx · 7.6 MB · EIC Pathfinder 2026
+            <p className="syn-small-caps mt-3" style={{ color: "var(--ink-dim)" }}>
+              9 sections · v5X content · &lt; 10 fJ per synaptic event
             </p>
-          </a>
+          </Link>
         </div>
       </section>
 
+      {/* future plates */}
+      <section className="syn-column pt-32">
+        <Cartouche title="In the studio" meta="forthcoming plates">
+          <p style={{ color: "var(--ink)", lineHeight: 1.6, fontSize: "0.98rem" }}>
+            More plates in the Synaptic Cartography series are in
+            preparation. Each will earn its place the same way SYMPHONY
+            and MEMPHIS did — a defensible scientific claim, a published
+            primary source for the mechanism, a real partner who has
+            survived contact with the field, and visuals built like the
+            inside of a Wellcome Collection folio.
+          </p>
+          <p
+            className="syn-italic-caption mt-4"
+            style={{ color: "var(--ink-cool)" }}
+          >
+            The studio takes its time. The next plate appears when the
+            work is ready, not when the calendar asks for it.
+          </p>
+        </Cartouche>
+      </section>
+
       <div className="syn-column">
-        <Hairline className="my-16" />
+        <Hairline className="my-20" />
       </div>
 
-      <footer className="syn-column pb-24 pt-8 text-center">
+      {/* colophon */}
+      <section className="syn-column pb-12">
+        <div className="grid gap-8 md:grid-cols-3" style={{ color: "var(--ink-cool)", fontSize: "0.86rem", lineHeight: 1.6 }}>
+          <div>
+            <SmallCaps>Typography</SmallCaps>
+            <p className="mt-2">
+              Gloock display serif (project names, large numerals · plate
+              roman numerals). IBM Plex Serif (body, italic captions).
+              IBM Plex Mono (small-caps tracked labels, axis ticks).
+            </p>
+          </div>
+          <div>
+            <SmallCaps>Palette</SmallCaps>
+            <p className="mt-2">
+              Midnight indigo / cool-navy backgrounds. Cream · amber ·
+              rose · teal inks. Symphony accent: lavender-violet
+              (task baton). MEMPHIS accent: warm amber (firing memristor).
+            </p>
+          </div>
+          <div>
+            <SmallCaps>Editorial rules</SmallCaps>
+            <p className="mt-2">
+              British English. No emojis. No marketing words. Lead with
+              the claim, then evidence, then caveat. Each page ends with
+              one italic line. The plate is the argument.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="syn-column pb-24 pt-12 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">
           Plates from a studio that takes its time.
         </ItalicCaption>
+        <p
+          className="syn-small-caps mt-8"
+          style={{ color: "var(--ink-dim)", letterSpacing: "0.3em" }}
+        >
+          ·
+          <Link
+            href="/"
+            className="mx-3 hover:opacity-80"
+            style={{ color: "var(--symphony-violet-hi)" }}
+          >
+            tarrysingh.com
+          </Link>
+          ·
+          <Link
+            href="/experiments"
+            className="mx-3 hover:opacity-80"
+            style={{ color: "var(--symphony-violet-hi)" }}
+          >
+            experiments
+          </Link>
+          ·
+        </p>
       </footer>
     </div>
   )
