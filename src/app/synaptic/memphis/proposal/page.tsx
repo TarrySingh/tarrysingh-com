@@ -8,13 +8,14 @@ import { JumpNav } from "@/components/synaptic/JumpNav"
 
 const SECTIONS = [
   { id: "abstract", label: "0 · Abstract" },
-  { id: "problem", label: "1 · Problem" },
-  { id: "solution", label: "2 · Solution" },
-  { id: "novelty", label: "3 · Novelty" },
-  { id: "validation", label: "4 · Validation" },
-  { id: "applications", label: "5 · Applications" },
-  { id: "uncertainty", label: "6 · Uncertainty" },
-  { id: "thesis", label: "7 · Thesis" },
+  { id: "vision", label: "1 · Vision" },
+  { id: "problem", label: "2 · Problem" },
+  { id: "breakthrough", label: "3 · Breakthrough" },
+  { id: "objectives", label: "4 · Objectives" },
+  { id: "validation", label: "5 · Validation" },
+  { id: "applications", label: "6 · Applications" },
+  { id: "uncertainty", label: "7 · Uncertainty" },
+  { id: "thesis", label: "8 · Thesis" },
 ] as const
 
 const proseStyle = {
@@ -42,31 +43,42 @@ const subHeading = {
   letterSpacing: "0.02em",
 } as const
 
-const advances = [
+const breakthroughs = [
   {
-    numeral: "I",
-    dimension: "Computational paradigm",
-    body: "Distributed, event-driven computation inspired by biological circuits — not sequential and energy-intensive. Energy is spent only when events flow.",
+    n: "I",
+    name: "Co-implementation of consolidation mechanisms",
+    body: "STDP, replay-driven consolidation, two-phase processing and neuromodulation are interdependent components of a single biological memory mechanism — yet every existing approach implemented each in isolation. MEMPHIS is the first system where all four emerge from the intrinsic dynamics of a single physical substrate.",
   },
   {
-    numeral: "II",
-    dimension: "Learning capability",
-    body: "Continuous, replay-consolidated adaptation that addresses catastrophic forgetting without separating training from deployment. The chip never stops learning.",
+    n: "II",
+    name: "Stochastic memristive substrate with network-level properties",
+    body: "Prior work treated memristive stochasticity, variability and nonlinear conductance updates as non-idealities to be mitigated. MEMPHIS inverts the premise: those device-level properties become the substrate of biological-like learning at network scale, rather than something to fight.",
   },
   {
-    numeral: "III",
-    dimension: "Memory optimisation",
-    body: "Hardware-embedded sleep-like processes — replay and synaptic scaling — for long-term memory formation and restructuring. Learning continues in the dark.",
+    n: "III",
+    name: "Physical convergence of substrate and computational principles",
+    body: "Three classical barriers — STDP voltage-time integration vs. spike timing, CA3 attractor connectivity statistics, and memristive switching scales — are addressed not by waveform engineering but by physically co-designing devices and circuit motifs so that the hippocampal computational primitives are intrinsic to the material.",
+  },
+]
+
+const objectives = [
+  {
+    n: "O1",
+    name: "Biologically validated CA3 ↔ CA1 circuit model",
+    threshold: "≥ 80 % of neurons match in vivo electrophysiology (firing rates, STDP weight changes, sharp-wave ripple statistics)",
+    body: "A computational model reproducing associative encoding, novelty-gated updating, bidirectional replay, two-phase dynamics and neuromodulatory control. Verified against in vivo rat-hippocampus recordings.",
   },
   {
-    numeral: "IV",
-    dimension: "Hardware substrate",
-    body: "Self-organising memristive systems as a physically grounded implementation of synaptic plasticity, targeting competitive energy efficiency and high integration density.",
+    n: "O2",
+    name: "Self-organising memristive substrate",
+    threshold: "Switching energy < 10 fJ per synaptic event · stable, reproducible switching · verified learning curves · power-law noise dynamics",
+    body: "Memristive devices with synaptic properties physically compatible with the CA3 ↔ CA1 model — STDP timescales matching biology, physically differentiated excitatory and inhibitory analogues, stochastic network topology.",
   },
   {
-    numeral: "V",
-    dimension: "System-level functionality",
-    body: "Biologically-inspired modulatory pathways for prioritisation and adaptive memory processing, beyond current neuromorphic implementations.",
+    n: "O3",
+    name: "Proof-of-principle: consolidation emerges from material",
+    threshold: "Measurable task-performance improvement after offline phase vs. online-only baseline · energy ≥ 2 orders below GPU · competitive with existing neuromorphic chips · validated on a robotic navigation task",
+    body: "Demonstrate that hippocampal consolidation mechanisms emerge from the intrinsic dynamics of the memristive CA3 ↔ CA1 module. The decisive experiment.",
   },
 ]
 
@@ -83,11 +95,11 @@ export default function MemphisProposalPage() {
           >
             ← Return to the chip plate
           </Link>
-          <SmallCaps>MEMPHIS · the complete dossier</SmallCaps>
+          <SmallCaps>MEMPHIS · the complete dossier · v5X</SmallCaps>
         </div>
         <Hairline className="mt-6" />
         <div className="mt-12 text-center">
-          <SmallCaps>MEMPHIS · neuromorphic substrate</SmallCaps>
+          <SmallCaps>MEMPHIS · post-von-Neumann neuromorphic substrate</SmallCaps>
           <h1
             className="syn-display mt-6"
             style={{
@@ -101,15 +113,16 @@ export default function MemphisProposalPage() {
             MEMPHIS
           </h1>
           <ItalicCaption className="mx-auto mt-5 max-w-3xl">
-            A hippocampal · memristive · neuromorphic architecture — memory
-            and computation co-localised on a self-organising substrate
-            driven by two-phase replay dynamics.
+            A hippocampal · memristive · neuromorphic architecture where
+            STDP, replay-driven consolidation, two-phase processing and
+            neuromodulation are not programmed but emerge from the
+            intrinsic dynamics of a physical material.
           </ItalicCaption>
           <p
             className="syn-small-caps mt-3"
             style={{ color: "var(--ink-dim)", letterSpacing: "0.3em" }}
           >
-            · post — von Neumann computing ·
+            · the first system where adaptation is a material property ·
           </p>
         </div>
       </header>
@@ -118,20 +131,23 @@ export default function MemphisProposalPage() {
       <section id="abstract" className="syn-column space-y-6 pt-24">
         <SmallCaps>0 · Abstract</SmallCaps>
         <p style={proseInkStyle}>
-          MEMPHIS is a neuromorphic chip that co-locates memory and
-          computation through a self-organising memristive substrate
-          driven by hippocampal-inspired two-phase dynamics — and is the
-          first such system to demonstrate offline replay-driven memory
-          consolidation on physical hardware.
+          MEMPHIS will establish proof-of-principle that hippocampal
+          consolidation mechanisms — STDP, replay-driven memory
+          consolidation, two-phase processing, and neuromodulation — can
+          emerge from the intrinsic dynamics of a self-organising
+          memristive substrate. A neuromorphic chip in which adaptation
+          is a <em>material property</em>, not an algorithmic feature
+          layered over silicon.
         </p>
         <p style={proseStyle}>
-          The decisive experiment is a small-scale memristive spiking
-          network (a CA3-CA1 module) that performs associative recall and
-          memory consolidation through replay-driven dynamics, achieving
-          improved task performance after offline processing{" "}
-          <em>without additional external input</em>. Adaptive learning
-          and memory optimisation emerge directly from intrinsic system
-          dynamics, not from conventional training pipelines.
+          The decisive experiment is a CA3 ↔ CA1 module that improves
+          task performance after an offline phase — without further
+          training data, with energy per synaptic operation at least
+          two orders of magnitude below GPU baselines and below the
+          ~10 pJ/event of Loihi and TrueNorth. The work targets TRL 4 in
+          36 months, with three objectives, a five-partner consortium,
+          and a route through EIC Transition to industrial pilots in
+          edge AI, autonomous robotics and implantable neurotechnology.
         </p>
         <ItalicCaption className="max-w-3xl">
           Sister microsite to{" "}
@@ -147,148 +163,261 @@ export default function MemphisProposalPage() {
         </ItalicCaption>
       </section>
 
-      {/* 1 Problem */}
-      <section id="problem" className="syn-column space-y-8 pt-32">
+      {/* 1 Vision */}
+      <section id="vision" className="syn-column space-y-8 pt-32">
         <div className="space-y-3">
-          <SmallCaps>1 · The problem</SmallCaps>
+          <SmallCaps>1 · The long-term vision</SmallCaps>
           <h2 className="syn-display" style={sectionHeading}>
-            The von Neumann bottleneck has run out of room
+            A material that learns, consolidates, and never recharges
           </h2>
         </div>
         <p style={proseStyle}>
-          Conventional computing architectures separate memory from
-          processing across a high-bandwidth bus. Every operation pays for
-          shuffling activations between the two — a cost that has come to
-          dominate the energy budget of any system doing inference at
-          scale. The bus is also where catastrophic forgetting lives,
-          where training and deployment have to be separated, and where
-          adaptive learning at the edge becomes impractical.
+          The long-term vision is a new class of artificial intelligence:
+          spiking, adaptive, and physically embodied computation inspired
+          by selected functional principles of the mammalian hippocampus.
+          Not biological intelligence in full — a more specific and
+          credible objective. Demonstrate that biologically grounded
+          mechanisms can be realised as material properties of a
+          neuromorphic substrate.
         </p>
-        <p style={proseStyle}>
-          The systems that escape this bottleneck — biological brains —
-          do not separate memory from computation. They co-locate them.
-          MEMPHIS asks whether the architectural principle that lets the
-          mammalian hippocampus consolidate memories without retraining
-          can be implemented in hardware as ultra-low-power,
-          continuously-learning neuromorphic compute.
-        </p>
-      </section>
-
-      {/* 2 Solution */}
-      <section id="solution" className="syn-column space-y-8 pt-32">
-        <div className="space-y-3">
-          <SmallCaps>2 · The solution</SmallCaps>
-          <h2 className="syn-display" style={sectionHeading}>
-            Hippocampus on memristors, two phases, one die
-          </h2>
-        </div>
-        <p style={proseStyle}>
-          MEMPHIS implements a two-phase computational paradigm on a
-          self-organising memristive crossbar. Online, event-driven
-          processing for real-time interaction. Offline, replay-driven
-          consolidation for memory optimisation and generalisation. Both
-          phases live on the same physical substrate. The crossbar
-          itself is the memory <em>and</em> the compute: each memristor
-          intersection stores a synaptic weight and performs analogue
-          multiply-accumulate in place.
-        </p>
-        <p style={proseStyle}>
-          A CA3-CA1 module sits at the centre of the die — the canonical
-          hippocampal motif transposed to silicon. The CA3 recurrent
-          collaterals implement an auto-associative network capable of
-          pattern completion from partial cues. The CA1 layer compares
-          the reconstructed prediction against current input and signals
-          novelty, mismatch, and drive for replay.
-        </p>
-      </section>
-
-      {/* 3 Novelty */}
-      <section id="novelty" className="syn-column space-y-8 pt-32">
-        <div className="space-y-3">
-          <SmallCaps>3 · Five advances beyond the state of the art</SmallCaps>
-          <h2 className="syn-display" style={sectionHeading}>
-            Where each dimension departs
-          </h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {advances.map((a) => (
-            <div key={a.numeral} className="space-y-3">
-              <NumberedDisk number={a.numeral} tone="amber" size={56} />
-              <h3 className="syn-display" style={subHeading}>
-                {a.dimension}
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            { t: "A new computational primitive", b: "Adaptation as material property, not algorithmic feature. STDP, replay and two-phase consolidation emerge from the substrate's physical dynamics. Inherently compatible with multimodal sensory input and continuous operation." },
+            { t: "Energy-efficient by construction", b: "Consolidation and energy efficiency arise from the same dynamics rather than from separate optimisations — a single architectural property, inseparable in principle." },
+            { t: "Agents that accumulate knowledge", b: "Systems that gain task-relevant knowledge over their operational lifetime without recharging or retraining. Not achievable by combining existing efficient hardware with existing adaptive algorithms; the two properties have to be architecturally fused." },
+          ].map((c, i) => (
+            <div key={i} className="space-y-2">
+              <NumberedDisk number={["I", "II", "III"][i]} tone="amber" size={48} />
+              <h3 className="syn-display mt-2" style={subHeading}>
+                {c.t}
               </h3>
               <p
-                style={{
-                  color: "var(--ink-cool)",
-                  fontSize: "0.96rem",
-                  lineHeight: 1.6,
-                }}
+                style={{ color: "var(--ink-cool)", fontSize: "0.95rem", lineHeight: 1.6 }}
               >
-                {a.body}
+                {c.b}
               </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 4 Validation */}
+      {/* 2 Problem */}
+      <section id="problem" className="syn-column space-y-8 pt-32">
+        <div className="space-y-3">
+          <SmallCaps>2 · The problem</SmallCaps>
+          <h2 className="syn-display" style={sectionHeading}>
+            Two fields, one missing convergence
+          </h2>
+        </div>
+        <p style={proseStyle}>
+          Two fields independently reached a point of convergence and
+          stopped. Bio-inspired approaches demonstrated real advantages
+          in continual learning, but were implemented on deterministic
+          digital hardware that preserved the von-Neumann separation of
+          memory and computation. Memristive devices reached synaptic
+          plasticity characteristics in the lab, but were used in
+          isolation — without the network-level mechanisms (replay,
+          neuromodulation, two-phase processing) that make biological
+          learning work.
+        </p>
+        <p style={proseStyle}>
+          Bringing the two streams together is not a software port. It
+          is a physical co-design problem. The substrate has to{" "}
+          <em>be</em> the algorithm.
+        </p>
+      </section>
+
+      {/* 3 Breakthrough */}
+      <section id="breakthrough" className="syn-column space-y-8 pt-32">
+        <div className="space-y-3">
+          <SmallCaps>3 · Three breakthroughs</SmallCaps>
+          <h2 className="syn-display" style={sectionHeading}>
+            What makes MEMPHIS the first
+          </h2>
+        </div>
+        <div className="space-y-6">
+          {breakthroughs.map((b, i) => (
+            <div
+              key={b.n}
+              className="rounded-2xl border p-6"
+              style={{
+                borderColor:
+                  i === 1 ? "rgba(229,168,150,0.45)" : "rgba(244,196,130,0.45)",
+                background:
+                  "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+              }}
+            >
+              <div className="flex items-baseline gap-4">
+                <span
+                  className="syn-display"
+                  style={{
+                    fontSize: "2rem",
+                    color: "var(--memphis-amber-hi)",
+                    lineHeight: 1,
+                  }}
+                >
+                  {b.n}
+                </span>
+                <h3
+                  className="syn-display"
+                  style={{ ...subHeading, fontSize: "1.35rem" }}
+                >
+                  {b.name}
+                </h3>
+              </div>
+              <p
+                className="mt-3"
+                style={{
+                  color: "var(--ink)",
+                  fontSize: "0.98rem",
+                  lineHeight: 1.6,
+                }}
+              >
+                {b.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4 Objectives */}
+      <section id="objectives" className="syn-column space-y-8 pt-32">
+        <div className="space-y-3">
+          <SmallCaps>4 · Three objectives</SmallCaps>
+          <h2 className="syn-display" style={sectionHeading}>
+            What we ship over 36 months
+          </h2>
+        </div>
+        <div className="space-y-4">
+          {objectives.map((o) => (
+            <div
+              key={o.n}
+              className="rounded-2xl border p-6"
+              style={{
+                borderColor: "rgba(200,180,255,0.22)",
+                background:
+                  "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+              }}
+            >
+              <div className="flex items-baseline gap-4">
+                <span
+                  className="syn-display"
+                  style={{
+                    fontSize: "2.4rem",
+                    color: "var(--memphis-amber-hi)",
+                    lineHeight: 1,
+                  }}
+                >
+                  {o.n}
+                </span>
+                <div className="flex-1">
+                  <h3 className="syn-display" style={{ ...subHeading, fontSize: "1.35rem" }}>
+                    {o.name}
+                  </h3>
+                  <p
+                    className="mt-2"
+                    style={{
+                      color: "var(--ink-cool)",
+                      fontSize: "0.95rem",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    {o.body}
+                  </p>
+                  <p
+                    className="syn-mono mt-3"
+                    style={{
+                      color: "var(--memphis-amber-hi)",
+                      fontSize: "0.78rem",
+                      letterSpacing: "var(--track-mono)",
+                      textTransform: "uppercase",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    Threshold · {o.threshold}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5 Validation */}
       <section id="validation" className="syn-column space-y-8 pt-32">
         <div className="space-y-3">
-          <SmallCaps>4 · The decisive experiment</SmallCaps>
+          <SmallCaps>5 · The decisive experiment</SmallCaps>
           <h2 className="syn-display" style={sectionHeading}>
             CA3 ↔ CA1 module — recall, replay, consolidation
           </h2>
         </div>
         <Cartouche title="Validation protocol" meta="proof of principle">
           <p style={proseInkStyle}>
-            A small-scale memristive spiking network (the CA3-CA1 module
-            visible at the centre of the chip plate) performs associative
-            recall on a held-out test set. The system then enters an
-            offline phase — no external input, only intrinsic dynamics
-            replaying the stored traces. After the offline phase, the
-            same test set is re-evaluated. The expected result: improved
-            recall performance, achieved without further training data.
+            A small-scale memristive spiking network (the CA3 ↔ CA1
+            module visible at the centre of the chip plate) performs
+            associative recall on a held-out test set. The system then
+            enters an offline phase — no external input, only intrinsic
+            dynamics replaying the stored traces. Memristive thresholds
+            shift, redundant weights fade, salient patterns are
+            reinforced. After the offline phase, the same test set is
+            re-evaluated. The expected result: improved recall
+            performance achieved without further training data, with
+            energy per synaptic operation at least two orders of
+            magnitude below the GPU baseline.
           </p>
         </Cartouche>
         <p style={proseStyle}>
           This is the proof of principle. It demonstrates — in physical
-          hardware, not in simulation — that adaptive learning and memory
-          optimisation can emerge from intrinsic system dynamics. If the
-          experiment lands, the architectural principle generalises; if
-          it does not, the failure mode is informative for the
-          next-generation memristive design.
+          hardware, not in simulation — that adaptive learning and
+          memory optimisation can emerge from intrinsic system dynamics.
+          If the experiment lands, the architectural principle
+          generalises; if it does not, the failure mode is informative
+          for the next-generation memristive design.
         </p>
       </section>
 
-      {/* 5 Applications */}
+      {/* 6 Applications */}
       <section id="applications" className="syn-column space-y-8 pt-32">
         <div className="space-y-3">
-          <SmallCaps>5 · Industry applications</SmallCaps>
+          <SmallCaps>6 · Industry applications</SmallCaps>
           <h2 className="syn-display" style={sectionHeading}>
-            Where ultra-low-power adaptive compute changes the unit economics
+            Where &lt; 10 fJ per synaptic event changes the unit economics
           </h2>
         </div>
+        <p style={proseStyle}>
+          The target switching energy — below 10 fJ per 100×100 nm
+          device — sits three orders of magnitude below existing
+          neuromorphic platforms (Intel Loihi, IBM TrueNorth), six
+          orders below GPU-based AI, and approaches the biological
+          benchmark of ~100 fJ per synaptic event. The corollary is
+          that entire product categories become physically possible
+          that today are not.
+        </p>
         <div className="grid gap-6 md:grid-cols-2">
           {[
             {
-              tag: "Edge AI · IoT",
+              tag: "Edge AI",
               title: "Inference under µW budgets",
-              body: "Battery-powered or energy-harvesting devices that need on-device adaptation — environmental sensors, agricultural monitoring, condition-based maintenance. Today's silicon either does inference (small, dumb) or learning (large, plugged-in). MEMPHIS does both within the energy budget of a coin cell.",
+              body: "Battery-powered or energy-harvesting devices that need on-device adaptation — environmental sensors, agricultural monitoring, condition-based maintenance. Today's silicon either does inference (small, dumb) or learning (large, plugged-in). MEMPHIS does both inside the energy envelope of a coin cell.",
             },
             {
               tag: "Autonomous robotics",
-              title: "Continuous adaptation in the field",
-              body: "Mobile platforms — drones, agricultural robots, undersea vehicles — that cannot afford retraining cycles in the cloud and cannot afford catastrophic forgetting when the environment shifts. The hippocampal-replay primitive maps onto exactly this constraint.",
+              title: "Continuous learning, no cloud",
+              body: "Mobile platforms — drones, agricultural robots, logistics, flexible manufacturing — that cannot afford cloud retraining and cannot afford catastrophic forgetting. The hippocampal-replay primitive maps onto exactly this constraint. WP2 includes a robotic-navigation validation task.",
             },
             {
-              tag: "Always-on perception",
-              title: "Speech · vision · proprioception",
-              body: "Voice interfaces, security cameras, wearable health monitors that need to update their models against the user's specific context over months and years. MEMPHIS's two-phase paradigm lets adaptation happen during idle / sleep cycles without paying the always-on inference cost.",
+              tag: "Implantable neurotech",
+              title: "Multi-year operation under thermal limits",
+              body: "Closed-loop neurotechnology — sense, interpret, act, learn — running for years on a milliwatt budget without cloud retraining or replacement surgery. Privacy-preserving by construction. MEMPHIS targets the architectural precursor; full clinical pathway is downstream.",
             },
             {
-              tag: "Defence and aerospace",
-              title: "Constrained-environment adaptation",
-              body: "Satellite-borne autonomy, in-pipeline robotics, anywhere bandwidth back to a training cluster is limited or contested. The system that learns in the dark is the system that survives radio silence.",
+              tag: "European leadership",
+              title: "Sovereign neuromorphic stack",
+              body: "Validated memristive design primitives establish a European foundation for next-generation neuromorphic hardware — reducing dependence on imported and energy-intensive solutions. High-value EU jobs in hardware design, AI engineering, and advanced robotics.",
             },
           ].map((item) => (
             <div
@@ -324,15 +453,15 @@ export default function MemphisProposalPage() {
         </div>
       </section>
 
-      {/* 6 Uncertainty */}
+      {/* 7 Uncertainty */}
       <section id="uncertainty" className="syn-column space-y-8 pt-32">
         <div className="space-y-3">
-          <SmallCaps>6 · Critical uncertainty</SmallCaps>
+          <SmallCaps>7 · Critical uncertainty</SmallCaps>
           <h2 className="syn-display" style={sectionHeading}>
             Device-to-device tolerance versus the replay dynamics
           </h2>
         </div>
-        <Cartouche title="The honest question" meta="MEMPHIS brief">
+        <Cartouche title="The honest question" meta="MEMPHIS v5X">
           <p style={proseInkStyle}>
             Whether memristive devices can be matched and stabilised at
             the precision required by the replay-driven dynamics. The
@@ -340,17 +469,18 @@ export default function MemphisProposalPage() {
             today&rsquo;s memristive arrays routinely deliver. The
             engineering question is whether self-organisation can close
             that gap inside the operating regime, not whether it must.
-            We expect the proof of principle to land for the CA3-CA1
-            module; scaling beyond it depends on memristive-device
-            roadmaps that are themselves on a 3–5 year horizon.
+            MEMPHIS&rsquo;s second breakthrough — treating stochasticity
+            as substrate rather than noise — is the bet that it can.
+            Proof of principle for the CA3 ↔ CA1 module is what tests
+            the bet.
           </p>
         </Cartouche>
       </section>
 
-      {/* 7 Investment thesis */}
+      {/* 8 Investment thesis */}
       <section id="thesis" className="syn-column space-y-8 pt-32">
         <div className="space-y-3">
-          <SmallCaps>7 · The investment thesis</SmallCaps>
+          <SmallCaps>8 · The investment thesis</SmallCaps>
           <h2 className="syn-display" style={sectionHeading}>
             Why MEMPHIS belongs in the next deep-tech portfolio
           </h2>
@@ -359,18 +489,18 @@ export default function MemphisProposalPage() {
           {[
             {
               n: "I",
-              h: "Architectural, not material",
-              b: "MEMPHIS does not require a new memristive material to win; it requires the architectural property that bio-replay imposes on the device array. The device roadmap is being driven independently by half a dozen industrial labs — MEMPHIS rides that wave.",
+              h: "Energy maths is unforgiving",
+              b: "10 fJ/event vs. 10 pJ/event for Loihi / TrueNorth · vs. ~1 nJ/event GPU-equivalent for foundation-model inference. Three orders of magnitude below state-of-the-art neuromorphic, six below GPU. The CFO maths writes itself for any edge or implantable deployment.",
             },
             {
               n: "II",
-              h: "Energy maths is unforgiving",
-              b: "The total cost of cloud inference is now visible to every CFO with a foundation-model budget. A 100× energy reduction at the edge is not a feature; it is the precondition for entire product categories that today are infeasible.",
+              h: "Architectural moat",
+              b: "MEMPHIS does not need a new memristive material to win — it needs the architectural property that bio-replay imposes on the device array. The device roadmap is being pushed independently by half a dozen industrial labs. MEMPHIS rides that wave with a 3–5 year lead in the system-level integration.",
             },
             {
               n: "III",
               h: "Sister to SYMPHONY",
-              b: "MEMPHIS is the hardware substrate that SYMPHONY's neuromodulated software substrate eventually needs. Co-developed roadmaps; shared editorial discipline; one consortium philosophy. A portfolio bet, not a single shot.",
+              b: "MEMPHIS is the hardware substrate that SYMPHONY's neuromodulated software substrate eventually needs. Co-developed roadmaps, shared editorial discipline, one consortium philosophy. A portfolio bet across two pillars of the post-von-Neumann era, not a single shot.",
             },
           ].map((c) => (
             <div
@@ -419,12 +549,21 @@ export default function MemphisProposalPage() {
             </div>
           ))}
         </div>
+        <Cartouche title="Verifiable end-of-project markers" meta="month 36">
+          <ul className="space-y-2" style={{ color: "var(--ink)", lineHeight: 1.55, fontSize: "0.95rem" }}>
+            <li>· CA3 ↔ CA1 model validated against in vivo electrophysiology at ≥ 80 % neuron-level agreement (O1).</li>
+            <li>· Self-organising memristive substrate with switching energy &lt; 10 fJ per event (O2).</li>
+            <li>· Proof of principle: offline-phase task-performance improvement, demonstrated on a robotic navigation task (O3).</li>
+            <li>· EIC Transition application submitted in Year 4 against the O3 evidence base.</li>
+            <li>· Industrial-pilot route via edge-AI or assistive-robotics partners contracted by Year 5.</li>
+          </ul>
+        </Cartouche>
         <p style={proseStyle}>
-          MEMPHIS is at TRL 1–4. The deliverable is a proof of principle,
-          not a product. The value is in the IP position, the device-co-
-          design relationship with the memristive labs that are 3–5 years
-          ahead of where the field expects them to be, and the
-          architectural priority over any team that arrives at the
+          MEMPHIS is at TRL 1–4. The deliverable is a proof of
+          principle, not a product. The value is in the IP position, the
+          device-co-design relationship with the memristive labs that
+          are 3–5 years ahead of where the field expects them to be, and
+          the architectural priority over any team that arrives at the
           insight later.
         </p>
       </section>
