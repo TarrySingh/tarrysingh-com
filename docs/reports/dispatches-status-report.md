@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-13 (Sprint 2 closed — D1+D2+D3 cross-repo deliverables landed in realai-crm; live E2E PASS; studio-voice HTML rendering shipped; Outstanding 1 publishing tooling verified end-to-end; Stage A.1 UAT local-smoke PASS; empty-posts production UAT PASS; digest URL rewrite shipped)
+**Last updated:** 2026-05-13 (Sprint 3 Stage A UAT PASS 9/9 · Stage B pending Tarry-side in-browser run · Sprint 2 closed earlier the same day)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -89,7 +89,7 @@ write a Dispatch in a browser, ask Claude Opus 4.7-extended-thinking
 | AI Rewrite | `POST /api/studio/ai/rewrite` — same model, rewrites the editor selection with optional instruction. Surrounding context is passed for tone reference but not rewritten. |
 | Thinking trace | Collapsible "Thinking trace" reveal in the AI panel — shows the extended-thinking output beneath the response in mono. |
 
-**Live state (2026-05-13):** code shipped; awaits Vercel env vars (`STUDIO_USER`, `STUDIO_PASS`, `STUDIO_GITHUB_TOKEN`, `ANTHROPIC_API_KEY` confirmation, optional `STUDIO_AI_MODEL` override) and the Supabase migration. Tarry mints + sets; Stage A UAT next turn.
+**Live state (2026-05-13):** code shipped; env vars set on Vercel (`STUDIO_USER`, `STUDIO_PASS`, `STUDIO_GITHUB_TOKEN`, `ANTHROPIC_API_KEY`, `STUDIO_AI_MODEL=claude-opus-4-6`, `STUDIO_AI_DEBUG=1` *temporary*); Supabase migration applied to project `agentify` (`ijmkekioxhfcinkjckju`); **Stage A UAT PASS 9/9 on 2026-05-13** ([results](./sprint-3-uat-results.md)). Stage B (10 in-browser steps) is the only remaining gate — queued for Tarry's morning run with fresh eyes. Once Stage B closes, clear `STUDIO_AI_DEBUG=1` from Vercel.
 
 **What's deliberately not in Sprint 3 (deferred to v2+):** AI-rendered hero images · image upload / crop / paste-from-clipboard · real-time collaborative editing · mobile-first writing UX · version-history surface · AI-suggested frontmatter · linked editing for the Synaptic plate library.
 
@@ -435,6 +435,8 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Sprint 4+ roadmap | `docs/reports/sprint-4-plus-roadmap.md` |
 | Studio Editor (Sprint 3) source | `src/app/studio/`, `src/app/api/studio/`, `src/components/studio/`, `src/lib/studio/` |
 | Studio Editor Supabase migration | `docs/migrations/2026-05-13-studio-drafts.sql` |
+| Sprint 3 UAT plan + results | `docs/reports/sprint-3-uat-plan.md`, `docs/reports/sprint-3-uat-results.md` |
+| API key rotation runbook | `docs/runbooks/api-key-rotation.md` |
 | Newsletter pipeline source | `src/lib/crm/`, `src/components/blog/`, `src/app/(main)/blog/unsubscribe/` |
 | Blog reader + MDX components | `src/lib/blog/`, `src/app/(main)/blog/` |
 | LinkedIn syndication source | `src/lib/linkedin/`, `src/app/api/integrations/linkedin/` |
