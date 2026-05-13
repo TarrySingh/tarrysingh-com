@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { getAllPosts, formatPostDate, type BlogPostMeta } from "@/lib/blog/posts"
+import { NewsletterCard } from "@/components/blog/NewsletterCard"
 
 export const metadata: Metadata = {
   title: "Dispatches — Tarry Singh",
@@ -141,6 +142,11 @@ export default async function BlogIndex() {
             ))}
           </ul>
         )}
+      </section>
+
+      {/* Newsletter card */}
+      <section className="max-w-3xl mx-auto px-6 lg:px-8 pb-14 md:pb-20">
+        <NewsletterCard variant="wide" />
       </section>
 
       {/* Footer marker */}

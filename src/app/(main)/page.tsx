@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ArrowRight, TrendingUp, Globe, Cpu, BarChart3, Bot, Home, Network, Gauge } from "lucide-react"
 import coverPlanisphere from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
 import chipPlate from "@proposals/MEMPHIS/plates/plate-I-chip.png"
+import { NewsletterCard } from "@/components/blog/NewsletterCard"
 
 const stats = [
   { value: "30+", label: "Years of Experience" },
@@ -671,6 +672,11 @@ const Landing = () => {
             <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
+      </section>
+
+      {/* ========== DISPATCHES (newsletter) ========== */}
+      <section className="max-w-3xl mx-auto px-6 lg:px-8 pb-20 md:pb-24">
+        <NewsletterCard variant="wide" />
       </section>
 
       {/* ========== CTA BANNER ========== */}

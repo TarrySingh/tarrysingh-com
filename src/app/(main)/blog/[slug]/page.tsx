@@ -13,6 +13,7 @@ import {
   type BlogPostMeta,
 } from "@/lib/blog/posts"
 import { mdxComponents } from "@/lib/blog/mdx-components"
+import { NewsletterCard } from "@/components/blog/NewsletterCard"
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -197,6 +198,10 @@ export default async function BlogPostPage({
               </a>
             ) : null}
           </div>
+        </div>
+
+        <div className="mt-10">
+          <NewsletterCard variant="compact" />
         </div>
 
         <div className="mt-12 flex items-center gap-4 text-navy-300">
