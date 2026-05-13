@@ -45,6 +45,55 @@ const advances = [
 export default function MemphisPage() {
   return (
     <>
+      {/* studio header */}
+      <header className="syn-column pt-16">
+        <div className="flex items-start justify-between syn-small-caps" style={{ color: "var(--ink-dim)" }}>
+          <div>
+            <div style={{ color: "var(--ink)", letterSpacing: "0.2em", fontSize: "0.78rem" }}>
+              PLATE  I  ·  MMXXVI
+            </div>
+            <div className="mt-1">Anno 2026 · Folio 1.2.2</div>
+          </div>
+          <div className="text-right">
+            <div style={{ color: "var(--ink)", letterSpacing: "0.2em", fontSize: "0.78rem" }}>
+              FIG. 1.2.2
+            </div>
+            <div className="mt-1">Core science → technology</div>
+            <div>breakthrough</div>
+          </div>
+        </div>
+        <Hairline className="mt-4" />
+
+        {/* title block — above the plate */}
+        <div className="mt-12 text-center">
+          <h1
+            className="syn-display"
+            style={{
+              fontSize: "clamp(72px, 12vw, 180px)",
+              letterSpacing: "0.08em",
+              color: "var(--ink)",
+              lineHeight: 1,
+              margin: 0,
+            }}
+          >
+            MEMPHIS
+          </h1>
+          <ItalicCaption className="mx-auto mt-4 max-w-3xl" >
+            a hippocampal · memristive · neuromorphic architecture
+          </ItalicCaption>
+          <p
+            className="syn-small-caps mt-2"
+            style={{
+              color: "var(--ink-dim)",
+              letterSpacing: "0.3em",
+            }}
+          >
+            · study of a synaptic substrate ·
+          </p>
+        </div>
+      </header>
+
+      {/* hero plate */}
       <section className="px-6 pb-12 pt-16 sm:px-12 lg:px-24 print:hidden">
         <ChipPlate />
       </section>
@@ -58,30 +107,6 @@ export default function MemphisPage() {
           className="block h-auto w-full"
         />
       </figure>
-
-      <header className="syn-column space-y-6 pt-24">
-        <div className="flex flex-wrap items-baseline gap-x-8 gap-y-1">
-          <SmallCaps>Plate I</SmallCaps>
-          <SmallCaps>Anno 2026</SmallCaps>
-          <SmallCaps>Chip · Hippocampal-memristive</SmallCaps>
-        </div>
-        <h1
-          className="syn-display"
-          style={{
-            fontSize: "var(--text-display)",
-            color: "var(--ink)",
-            lineHeight: 0.95,
-            margin: 0,
-          }}
-        >
-          MEMPHIS
-        </h1>
-        <ItalicCaption className="max-w-3xl">
-          A hippocampal · memristive · neuromorphic architecture — memory
-          and computation co-localised on a self-organising substrate
-          driven by two-phase replay dynamics.
-        </ItalicCaption>
-      </header>
 
       <div className="syn-column">
         <Hairline className="my-16" />
