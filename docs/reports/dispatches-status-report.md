@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-13 (Sprint 2 — D1+D2+D3 cross-repo deliverables landed in realai-crm; live E2E PASS; studio-voice HTML rendering shipped; Outstanding 1 publishing tooling verified end-to-end; Stage A.1 UAT local-smoke PASS)
+**Last updated:** 2026-05-13 (Sprint 2 closed — D1+D2+D3 cross-repo deliverables landed in realai-crm; live E2E PASS; studio-voice HTML rendering shipped; Outstanding 1 publishing tooling verified end-to-end; Stage A.1 UAT local-smoke PASS; empty-posts production UAT PASS; digest URL rewrite shipped)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -184,6 +184,7 @@ published that month.
 - [x] Cadence pulls Dispatches from a digest endpoint on tarrysingh-com. *(Cron handler `GET https://tarrysingh.com/api/digest/this-month.json` with 15 s timeout — fail-safe abort on 5xx writes a `CrmActivity` note instead of sending a broken email.)*
 - [x] Subject line is templated: `Dispatches · <Month> roundup`.
 - [ ] Body renders cleanly in Apple Mail, Gmail web, Outlook (web + desktop). Verified by sending to three test addresses. *(Tarry-side UAT — pending.)*
+- [x] **Empty-month digest path verified against production** *(2026-05-13: `GET https://www.tarrysingh.com/api/digest/this-month?month=2027-01` returns 200 with `{posts: []}`. The CRM cron's "between plates" branch will fire correctly on quiet months. The documented `.json` URL was off by an extension — added `/api/digest/this-month.json → /api/digest/this-month` rewrite in `next.config.ts` so both URLs serve.)*
 - [x] `List-Unsubscribe` and `List-Unsubscribe-Post: One-Click` headers point at the tarrysingh-com unsubscribe endpoint. *(HMAC-signed token, RFC 8058 one-click.)*
 - [x] Open-tracking pixel is OFF (the studio voice rule — no surveillance affordances).
 - [x] Click-tracking is OFF for the same reason. *(Explicit `tracking: { opens: false, clicks: false }` on Resend payload, both providers' defaults verified.)*
@@ -418,6 +419,7 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Sprint | Date | Signed |
 |--------|------|--------|
 | Sprint 1 — Microsites + Newsletter MVP | 2026-05-13 | Tarry Singh ✓ (smoke test passed) |
-| Sprint 2 — Cadences & publishing rhythm | cross-repo cadence work shipped + Outstanding 1 publishing tooling verified end-to-end 2026-05-13 | technical-side complete; pending Tarry Stage B (phone-screen reads) + empty-posts production UAT post-merge |
+| Sprint 2 — Cadences & publishing rhythm | closed 2026-05-13 — all cross-repo cadence work shipped, publishing tooling verified, empty-posts production UAT passed, digest URL rewrite shipped | technical-side complete; pending only Tarry Stage B (phone-screen reads of the 3 Welcome emails + first Monthly Roundup on 2026-06-01) |
+| Sprint 3 — Studio Editor (WYSIWYG + Claude Opus 4.7-extended AI + one-click publish) | kicked off 2026-05-13 | in progress |
 
 — *the studio*
