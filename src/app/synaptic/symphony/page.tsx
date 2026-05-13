@@ -624,6 +624,18 @@ export default function SymphonyPage() {
             half of the held-out task instances. Without a real industrial
             system in the loop, SYMPHONY is a paper claim.
           </p>
+          <Link
+            href="/synaptic/symphony/uprobotics"
+            className="syn-mono inline-flex items-baseline gap-2 pt-2 hover:opacity-80"
+            style={{
+              color: "var(--symphony-violet-hi)",
+              fontSize: "0.8rem",
+              letterSpacing: "var(--track-mono)",
+              textTransform: "uppercase",
+            }}
+          >
+            Read UP Robotics&rsquo; full page →
+          </Link>
           <Hairline />
         </div>
       </section>
