@@ -37,6 +37,7 @@ const Footer = () => {
                 { to: "/", label: "Home" },
                 { to: "/about", label: "About" },
                 { to: "/experiments", label: "Experiments" },
+                { to: "/blog", label: "Dispatches" },
               ].map((link) => (
                 <li key={link.to}>
                   <Link
