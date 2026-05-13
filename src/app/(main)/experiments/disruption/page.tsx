@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import DisruptionChart from "@/components/DisruptionChart"
+import { NewsletterFooter } from "@/components/blog/NewsletterFooter"
 
 const Index = () => {
   return (
@@ -36,6 +37,8 @@ const Index = () => {
           </Link>
         </div>
       </div>
+
+      <NewsletterFooter />
     </div>
   )
 }

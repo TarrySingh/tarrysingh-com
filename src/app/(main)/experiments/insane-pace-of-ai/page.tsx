@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Instrument_Serif, Geist, Geist_Mono } from "next/font/google"
 import Dashboard from "./Dashboard"
+import { NewsletterFooter } from "@/components/blog/NewsletterFooter"
 import "./styles.css"
 
 const instrumentSerif = Instrument_Serif({
@@ -40,6 +41,7 @@ export default function Page() {
   return (
     <div className={`${instrumentSerif.variable} ${geist.variable} ${geistMono.variable}`}>
       <Dashboard />
+      <NewsletterFooter />
     </div>
   )
 }
