@@ -466,6 +466,18 @@ export default function SymphonyPage() {
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
               Newcastle leads <strong style={{ color: "var(--ink)" }}>O2</strong> — the implementation of the four-scale neuromodulatory mechanism on the substrate produced by O1 — and co-leads the ethics layer of <strong style={{ color: "var(--ink)" }}>O5</strong>.
             </p>
+            <Link
+              href="/synaptic/symphony/ramaswamy"
+              className="syn-mono inline-flex items-baseline gap-2 pt-2 hover:opacity-80"
+              style={{
+                color: "var(--symphony-violet-hi)",
+                fontSize: "0.8rem",
+                letterSpacing: "var(--track-mono)",
+                textTransform: "uppercase",
+              }}
+            >
+              Read Sri Ramaswamy&rsquo;s full page →
+            </Link>
           </div>
         </div>
       </section>
@@ -502,6 +514,18 @@ export default function SymphonyPage() {
             <ItalicCaption className="pt-2">
               Keep the gradient.
             </ItalicCaption>
+            <Link
+              href="/synaptic/symphony/siciliano"
+              className="syn-mono inline-flex items-baseline gap-2 pt-2 hover:opacity-80"
+              style={{
+                color: "var(--symphony-violet-hi)",
+                fontSize: "0.8rem",
+                letterSpacing: "var(--track-mono)",
+                textTransform: "uppercase",
+              }}
+            >
+              Read Bruno Siciliano&rsquo;s full page →
+            </Link>
           </div>
           <div className="print:hidden lg:order-1">
             <SicilianoRose />
@@ -562,6 +586,18 @@ export default function SymphonyPage() {
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
               Real AI coordinates SYMPHONY end-to-end and leads <strong style={{ color: "var(--ink)" }}>O1</strong> — the four-layer extraction pipeline — and <strong style={{ color: "var(--ink)" }}>O4</strong>, the pre-registered benchmark against frontier LLM and knowledge-graph baselines.
             </p>
+            <Link
+              href="/synaptic/symphony/tarry"
+              className="syn-mono inline-flex items-baseline gap-2 pt-2 hover:opacity-80"
+              style={{
+                color: "var(--symphony-violet-hi)",
+                fontSize: "0.8rem",
+                letterSpacing: "var(--track-mono)",
+                textTransform: "uppercase",
+              }}
+            >
+              Read Tarry Singh&rsquo;s full page →
+            </Link>
           </div>
         </div>
       </section>
