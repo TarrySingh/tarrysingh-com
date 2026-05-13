@@ -52,7 +52,7 @@ const ERAS: ReadonlyArray<Era> = [
     comprehension: 1.25,
     era: "Microservices · cloud",
     detail:
-      "The readable subsystem disappears. A request crosses a dozen services none of which any single engineer fully owns.",
+      "The readable subsystem disappears. A request crosses a dozen services, none of which any single engineer fully owns.",
   },
   {
     year: 2020,
@@ -90,15 +90,20 @@ const ERAS: ReadonlyArray<Era> = [
 ]
 
 const VW = 1200
-const VH = 760
-const PAD_TOP = 96
-const PAD_BOTTOM = 152
-const PAD_LEFT = 96
-const PAD_RIGHT = 360
+const VH = 820
+const PAD_TOP = 168
+const PAD_BOTTOM = 156
+const PAD_LEFT = 100
+const PAD_RIGHT = 380
 const PLOT_W = VW - PAD_LEFT - PAD_RIGHT
 const PLOT_H = VH - PAD_TOP - PAD_BOTTOM
 const MIN_LOG = 0
 const MAX_LOG = Math.log10(50000)
+
+const PANEL_X = VW - PAD_RIGHT + 32
+const PANEL_W = PAD_RIGHT - 64
+const PANEL_PAD = 24
+const PANEL_INNER_W = PANEL_W - PANEL_PAD * 2
 
 const yForVal = (v: number) => {
   const l = Math.log10(Math.max(v, 1))
@@ -158,7 +163,7 @@ export function ComprehensionGap() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="The comprehension gap — software-system complexity grows roughly exponentially from 1970 to 2030 while individual human comprehension capacity stays nearly flat. The widening copper-shaded region is the gap SYMPHONY proposes to close."
+          aria-label="The comprehension gap — software-system complexity grows roughly exponentially from 1970 to 2030 while individual human comprehension capacity stays nearly flat."
         >
           <defs>
             <linearGradient id="syn-gap-bg" x1="0" y1="0" x2="0" y2="1">
@@ -181,52 +186,58 @@ export function ComprehensionGap() {
 
           <rect x={0} y={0} width={VW} height={VH} fill="url(#syn-gap-bg)" />
 
-          {/* studio header */}
+          {/* studio header — row 1: plate marker */}
           <text
             x={PAD_LEFT}
             y={42}
             fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
-            fontSize={14}
+            fontSize={13}
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
             PLATE IV · MMXXVI · FIG. 1.2.a
           </text>
           <text
-            x={PAD_LEFT}
-            y={72}
-            fontFamily="var(--font-display), Gloock, serif"
-            fontSize={32}
-            fill="var(--ink)"
-            letterSpacing={2}
-          >
-            The comprehension gap
-          </text>
-          <line
-            x1={PAD_LEFT}
-            x2={VW - PAD_RIGHT}
-            y1={84}
-            y2={84}
-            stroke="rgba(220,200,160,0.35)"
-            strokeWidth={0.8}
-          />
-          <text
-            x={VW - PAD_RIGHT - 4}
+            x={VW - PAD_LEFT}
             y={42}
             textAnchor="end"
             fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
-            fontSize={12}
+            fontSize={11}
             letterSpacing={3}
-            fill="rgba(220,200,160,0.7)"
+            fill="rgba(220,200,160,0.65)"
           >
             COMPLEXITY × COMPREHENSION · 1970 → 2030
+          </text>
+          <line
+            x1={PAD_LEFT}
+            x2={VW - PAD_LEFT}
+            y1={58}
+            y2={58}
+            stroke="rgba(220,200,160,0.35)"
+            strokeWidth={0.8}
+          />
+          {/* studio header — row 2: title */}
+          <text
+            x={PAD_LEFT}
+            y={108}
+            fontFamily="var(--font-display), Gloock, serif"
+            fontSize={42}
+            fill="var(--ink)"
+            letterSpacing={1.5}
+          >
+            The comprehension gap
           </text>
 
           {/* y-axis log gridlines */}
           {[1, 10, 100, 1000, 10000, 100000].map((tick) => {
             if (Math.log10(tick) > MAX_LOG + 0.1) return null
             const y = yForVal(tick)
-            const label = tick === 1 ? "1×" : tick >= 1000 ? `${tick / 1000}k×` : `${tick}×`
+            const label =
+              tick === 1
+                ? "1×"
+                : tick >= 1000
+                  ? `${tick / 1000}k×`
+                  : `${tick}×`
             return (
               <g key={`y-${tick}`}>
                 <line
@@ -253,7 +264,7 @@ export function ComprehensionGap() {
           })}
           <text
             x={PAD_LEFT - 14}
-            y={PAD_TOP - 16}
+            y={PAD_TOP - 18}
             textAnchor="end"
             fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
             fontSize={11}
@@ -262,23 +273,6 @@ export function ComprehensionGap() {
           >
             LOG SCALE
           </text>
-
-          {/* x-axis: decade ticks */}
-          {[1970, 1980, 1990, 2000, 2010, 2020, 2025, 2026, 2030].map((y) => {
-            const x = xForYear(y)
-            return (
-              <g key={`xt-${y}`}>
-                <line
-                  x1={x}
-                  x2={x}
-                  y1={PAD_TOP + PLOT_H}
-                  y2={PAD_TOP + PLOT_H + 6}
-                  stroke="rgba(220,200,160,0.4)"
-                  strokeWidth={0.8}
-                />
-              </g>
-            )
-          })}
 
           {/* gap shaded area */}
           <polygon points={gapArea} fill="url(#syn-gap-fill)" />
@@ -301,15 +295,34 @@ export function ComprehensionGap() {
             strokeOpacity={1}
           />
 
-          {/* era markers — alternate above/below */}
+          {/* x-axis decade tick marks */}
+          {ERAS.map((e) => {
+            const x = xForYear(e.year)
+            return (
+              <line
+                key={`xt-${e.year}`}
+                x1={x}
+                x2={x}
+                y1={PAD_TOP + PLOT_H}
+                y2={PAD_TOP + PLOT_H + 6}
+                stroke="rgba(220,200,160,0.4)"
+                strokeWidth={0.8}
+              />
+            )
+          })}
+
+          {/* era markers — minimal inline labels to avoid collisions; full detail lives in the side panel */}
           {ERAS.map((e, i) => {
             const x = xForYear(e.year)
             const cy = yForVal(e.complexity)
             const my = yForVal(e.comprehension)
             const isActive = idx === i
-            const labelAbove = i % 2 === 0
-            const labelAnchor = labelAbove ? cy - 28 : my + 28
             const isMilestone = e.year === 2025 || e.year === 2026
+            const labelHere = isActive
+
+            // Year labels — keep 2025/2026 on one row each to avoid stacking collisions
+            const yearY = VH - PAD_BOTTOM + 26
+
             return (
               <g
                 key={`era-${e.year}`}
@@ -338,11 +351,11 @@ export function ComprehensionGap() {
                     strokeDasharray="4 3"
                   />
                 ) : null}
-                {/* dots */}
+                {/* dots on each line */}
                 <circle
                   cx={x}
                   cy={cy}
-                  r={isActive ? 8 : isMilestone ? 6 : 4}
+                  r={isActive ? 9 : isMilestone ? 7 : 4}
                   fill="#ffd596"
                   stroke="#0d1027"
                   strokeWidth={2}
@@ -355,39 +368,41 @@ export function ComprehensionGap() {
                   stroke="#0d1027"
                   strokeWidth={2}
                 />
-                {/* connector for milestone */}
+                {/* connector at milestone */}
                 {isMilestone ? (
                   <line
                     x1={x}
                     x2={x}
                     y1={my}
                     y2={cy}
-                    stroke="rgba(255,210,150,0.55)"
+                    stroke="rgba(255,210,150,0.45)"
                     strokeWidth={1}
                   />
                 ) : null}
                 {/* year label */}
                 <text
                   x={x}
-                  y={VH - PAD_BOTTOM + 26}
+                  y={yearY}
                   textAnchor="middle"
                   fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
-                  fontSize={isMilestone ? 14 : 12}
+                  fontSize={isMilestone ? 13 : 12}
                   fill={isActive ? "var(--ink)" : "rgba(220,200,160,0.7)"}
                   letterSpacing={1.5}
                 >
                   {e.year}
                 </text>
-                {/* era short label */}
-                {isMilestone || isActive ? (
+                {/* compact era label below the year — only when active */}
+                {labelHere ? (
                   <text
                     x={x}
-                    y={labelAnchor}
-                    textAnchor="middle"
+                    y={VH - PAD_BOTTOM + 46}
+                    textAnchor={
+                      i < 2 ? "start" : i > ERAS.length - 3 ? "end" : "middle"
+                    }
                     fontFamily="var(--font-serif), 'IBM Plex Serif', serif"
                     fontStyle="italic"
                     fontSize={13}
-                    fill={isActive ? "#ffd596" : "rgba(220,200,160,0.8)"}
+                    fill="#ffd596"
                   >
                     {e.era}
                   </text>
@@ -397,7 +412,7 @@ export function ComprehensionGap() {
           })}
 
           {/* legend */}
-          <g transform={`translate(${PAD_LEFT}, ${VH - 36})`}>
+          <g transform={`translate(${PAD_LEFT}, ${VH - 26})`}>
             <line x1={0} x2={28} y1={0} y2={0} stroke="url(#syn-gap-complex)" strokeWidth={2.6} />
             <text
               x={36}
@@ -409,9 +424,9 @@ export function ComprehensionGap() {
             >
               SYSTEM COMPLEXITY
             </text>
-            <line x1={210} x2={238} y1={0} y2={0} stroke="url(#syn-gap-comp)" strokeWidth={2.2} />
+            <line x1={224} x2={252} y1={0} y2={0} stroke="url(#syn-gap-comp)" strokeWidth={2.2} />
             <text
-              x={246}
+              x={260}
               y={4}
               fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
               fontSize={12}
@@ -420,9 +435,9 @@ export function ComprehensionGap() {
             >
               HUMAN COMPREHENSION
             </text>
-            <rect x={460} y={-8} width={18} height={14} fill="url(#syn-gap-fill)" />
+            <rect x={500} y={-8} width={18} height={14} fill="url(#syn-gap-fill)" />
             <text
-              x={486}
+              x={526}
               y={4}
               fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
               fontSize={12}
@@ -434,20 +449,20 @@ export function ComprehensionGap() {
           </g>
 
           {/* side panel — active era */}
-          <g transform={`translate(${VW - PAD_RIGHT + 32}, ${PAD_TOP})`}>
+          <g transform={`translate(${PANEL_X}, ${PAD_TOP - 56})`}>
             <rect
               x={0}
               y={0}
-              width={PAD_RIGHT - 64}
-              height={PLOT_H + 60}
+              width={PANEL_W}
+              height={PLOT_H + 110}
               rx={10}
               fill="rgba(13,16,39,0.7)"
               stroke="rgba(255,210,150,0.35)"
               strokeWidth={1.2}
             />
             <text
-              x={20}
-              y={32}
+              x={PANEL_PAD}
+              y={36}
               fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
               fontSize={11}
               letterSpacing={3}
@@ -455,17 +470,25 @@ export function ComprehensionGap() {
             >
               YEAR · {active.year}
             </text>
-            <text
-              x={20}
-              y={70}
-              fontFamily="var(--font-display), Gloock, serif"
-              fontSize={26}
-              fill="var(--ink)"
-              letterSpacing={1}
+            <foreignObject
+              x={PANEL_PAD}
+              y={50}
+              width={PANEL_INNER_W}
+              height={88}
             >
-              {active.era}
-            </text>
-            <g transform="translate(20, 100)">
+              <div
+                style={{
+                  fontFamily: "var(--font-display), Gloock, serif",
+                  fontSize: "22px",
+                  lineHeight: 1.15,
+                  letterSpacing: "0.01em",
+                  color: "var(--ink)",
+                }}
+              >
+                {active.era}
+              </div>
+            </foreignObject>
+            <g transform={`translate(${PANEL_PAD}, 154)`}>
               <text
                 fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
                 fontSize={10}
@@ -477,14 +500,14 @@ export function ComprehensionGap() {
               <text
                 y={32}
                 fontFamily="var(--font-display), Gloock, serif"
-                fontSize={36}
+                fontSize={32}
                 fill="#ffd596"
                 letterSpacing={1}
               >
                 {active.complexity.toLocaleString()}×
               </text>
             </g>
-            <g transform="translate(20, 162)">
+            <g transform={`translate(${PANEL_PAD}, 214)`}>
               <text
                 fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
                 fontSize={10}
@@ -496,7 +519,7 @@ export function ComprehensionGap() {
               <text
                 y={32}
                 fontFamily="var(--font-display), Gloock, serif"
-                fontSize={36}
+                fontSize={32}
                 fill="#9bd0d8"
                 letterSpacing={1}
               >
@@ -504,18 +527,23 @@ export function ComprehensionGap() {
               </text>
             </g>
             <line
-              x1={20}
-              x2={PAD_RIGHT - 84}
-              y1={224}
-              y2={224}
+              x1={PANEL_PAD}
+              x2={PANEL_W - PANEL_PAD}
+              y1={272}
+              y2={272}
               stroke="rgba(220,200,160,0.25)"
               strokeWidth={0.6}
             />
-            <foreignObject x={20} y={240} width={PAD_RIGHT - 104} height={300}>
+            <foreignObject
+              x={PANEL_PAD}
+              y={288}
+              width={PANEL_INNER_W}
+              height={PLOT_H - 120}
+            >
               <div
                 style={{
                   fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
-                  fontSize: "14px",
+                  fontSize: "13.5px",
                   lineHeight: 1.6,
                   color: "var(--ink-cool)",
                 }}
@@ -524,7 +552,7 @@ export function ComprehensionGap() {
                 {active.source ? (
                   <div
                     style={{
-                      marginTop: "10px",
+                      marginTop: "12px",
                       fontFamily:
                         "var(--font-mono), 'IBM Plex Mono', monospace",
                       fontSize: "11px",
