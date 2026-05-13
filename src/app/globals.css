@@ -241,11 +241,99 @@ html {
 }
 
 .syn-root {
-  background-color: var(--bg-deep);
+  position: relative;
   color: var(--ink);
   font-family: var(--font-serif);
   font-size: var(--text-body);
   line-height: 1.6;
+  /* Studio backdrop — centred radial indigo gradient over a deep base */
+  background-color: #0a0b22;
+  background-image: radial-gradient(
+    ellipse at center 38%,
+    #1c2058 0%,
+    #14195a 22%,
+    #0e1133 60%,
+    #0a0b22 100%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow-x: hidden;
+}
+
+.syn-symphony.syn-root {
+  background-color: #07091c;
+  background-image: radial-gradient(
+    ellipse at center 38%,
+    #1c2058 0%,
+    #16183a 28%,
+    #0d1027 64%,
+    #07091c 100%
+  );
+}
+
+.syn-memphis.syn-root {
+  background-color: #06101f;
+  background-image: radial-gradient(
+    ellipse at center 42%,
+    #2a3760 0%,
+    #14223b 28%,
+    #0c1828 64%,
+    #06101f 100%
+  );
+}
+
+/* Fixed starfield layer behind everything inside a syn-root page. */
+.syn-root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 6% 14%, rgba(245, 232, 204, 0.32), transparent 60%),
+    radial-gradient(1px 1px at 12% 25%, rgba(245, 232, 204, 0.22), transparent 60%),
+    radial-gradient(1.4px 1.4px at 22% 8%, rgba(245, 232, 204, 0.5), transparent 60%),
+    radial-gradient(1px 1px at 28% 42%, rgba(245, 232, 204, 0.18), transparent 60%),
+    radial-gradient(1px 1px at 38% 78%, rgba(245, 232, 204, 0.18), transparent 60%),
+    radial-gradient(1.4px 1.4px at 46% 32%, rgba(200, 184, 255, 0.45), transparent 60%),
+    radial-gradient(1px 1px at 52% 62%, rgba(245, 232, 204, 0.2), transparent 60%),
+    radial-gradient(1px 1px at 58% 22%, rgba(245, 232, 204, 0.16), transparent 60%),
+    radial-gradient(1.6px 1.6px at 64% 88%, rgba(245, 232, 204, 0.55), transparent 60%),
+    radial-gradient(1px 1px at 72% 12%, rgba(245, 232, 204, 0.24), transparent 60%),
+    radial-gradient(1px 1px at 78% 48%, rgba(245, 232, 204, 0.18), transparent 60%),
+    radial-gradient(1.2px 1.2px at 84% 28%, rgba(200, 184, 255, 0.4), transparent 60%),
+    radial-gradient(1px 1px at 88% 62%, rgba(245, 232, 204, 0.16), transparent 60%),
+    radial-gradient(1px 1px at 22% 58%, rgba(245, 232, 204, 0.2), transparent 60%),
+    radial-gradient(1px 1px at 58% 88%, rgba(245, 232, 204, 0.16), transparent 60%),
+    radial-gradient(1.4px 1.4px at 92% 18%, rgba(245, 232, 204, 0.35), transparent 60%),
+    radial-gradient(1px 1px at 4% 72%, rgba(245, 232, 204, 0.2), transparent 60%),
+    radial-gradient(1px 1px at 12% 92%, rgba(245, 232, 204, 0.18), transparent 60%);
+  background-size: 100% 100%;
+}
+
+/* Fine grain / film overlay across the page. */
+.syn-root::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: repeating-radial-gradient(
+    circle at 0 0,
+    rgba(255, 255, 255, 0.7) 0,
+    rgba(255, 255, 255, 0.7) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* Content above the starfield + grain. */
+.syn-root > * {
+  position: relative;
+  z-index: 2;
 }
 
 .syn-display {
@@ -364,6 +452,11 @@ html {
     --panel-edge: rgba(0, 0, 0, 0.18);
     --symphony-violet: #5a4a8a;
     --symphony-violet-hi: #3a2a6a;
+    background-image: none !important;
+  }
+  .syn-root::before,
+  .syn-root::after {
+    display: none !important;
   }
   .syn-root h1,
   .syn-root h2,
