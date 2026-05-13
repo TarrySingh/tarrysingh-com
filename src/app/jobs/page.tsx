@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { OccupationRecord, CountrySummary } from "@/lib/jobs/types";
+import { NewsletterFooter } from "@/components/blog/NewsletterFooter";
+import { NewsletterPeek } from "@/components/blog/NewsletterPeek";
 import {
   loadOccupations,
   loadCountries,
@@ -74,6 +76,12 @@ export default function HomePage() {
           </div>
         )}
       </main>
+
+      {/* /jobs is outside the (main) route group so the global peek
+          doesn't reach it — mount the static card + peek here as a
+          one-off so this surface gets the same Dispatches affordance. */}
+      <NewsletterFooter />
+      <NewsletterPeek />
     </div>
   );
 }
