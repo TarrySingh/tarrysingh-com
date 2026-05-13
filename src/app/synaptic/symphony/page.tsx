@@ -424,7 +424,7 @@ export default function SymphonyPage() {
       </section>
 
       <section className="syn-column pt-24">
-        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.3fr]">
+        <div className="space-y-10">
           <div className="print:hidden">
             <RamaswamyPedigree />
             <p className="pt-3">
@@ -483,8 +483,8 @@ export default function SymphonyPage() {
       </section>
 
       <section className="syn-column pt-24">
-        <div className="grid items-start gap-10 lg:grid-cols-[1.3fr_1fr]">
-          <div className="space-y-5 lg:order-2">
+        <div className="space-y-10">
+          <div className="space-y-5">
             <SmallCaps>CREATE · PRISMA Lab · UNINA</SmallCaps>
             <h3
               className="syn-display"
@@ -527,13 +527,13 @@ export default function SymphonyPage() {
               Read Bruno Siciliano&rsquo;s full page →
             </Link>
           </div>
-          <div className="print:hidden lg:order-1">
+          <div className="print:hidden">
             <SicilianoRose />
             <p className="pt-3">
               <SmallCaps>Plate VIII · Siciliano / PRISMA</SmallCaps>
             </p>
           </div>
-          <figure className="hidden print:block lg:order-1">
+          <figure className="hidden print:block">
             <Image
               src={sicilianoPlate}
               alt="Plate VIII — CREATE / Bruno Siciliano / PRISMA Lab plate: a seven-sector PRISMA rose with the ERC and Engelberger awards, ERC grants and the lab's motto Keep the gradient."
@@ -546,7 +546,7 @@ export default function SymphonyPage() {
       </section>
 
       <section className="syn-column pt-24">
-        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.3fr]">
+        <div className="space-y-10">
           <div className="print:hidden">
             <HominisCathedral />
             <p className="pt-3">
