@@ -312,41 +312,52 @@ export function SicilianoArmHero() {
           </g>
 
           {/* active task description band */}
-          <g transform={`translate(60, ${VH - 88})`}>
-            <rect
-              x={0}
-              y={0}
-              width={VW - 120}
-              height={70}
-              rx={10}
-              fill="rgba(13,16,39,0.7)"
-              stroke={active.color}
-              strokeOpacity={0.55}
-              strokeWidth={1.2}
-            />
-            <text
-              x={28}
-              y={32}
-              fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
-              fontSize={11}
-              letterSpacing={3}
-              fill="rgba(220,200,160,0.65)"
-            >
-              ν = {active.label.toUpperCase()}
-            </text>
-            <foreignObject x={28} y={36} width={VW - 200} height={42}>
-              <div
-                style={{
-                  fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
-                  fontSize: "14px",
-                  lineHeight: 1.45,
-                  color: "var(--ink-cool)",
-                }}
-              >
-                {active.body}
-              </div>
-            </foreignObject>
-          </g>
+          {(() => {
+            const PX = 60
+            const PW = VW - 2 * PX
+            const PH = 150
+            const PAD = 32
+            const IW = PW - 2 * PAD
+            return (
+              <g transform={`translate(${PX}, ${VH - PH - 24})`}>
+                <rect
+                  x={0}
+                  y={0}
+                  width={PW}
+                  height={PH}
+                  rx={10}
+                  fill="rgba(13,16,39,0.85)"
+                  stroke={active.color}
+                  strokeOpacity={0.55}
+                  strokeWidth={1.2}
+                />
+                <text
+                  x={PAD}
+                  y={30}
+                  fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
+                  fontSize={12}
+                  letterSpacing={3}
+                  fill="rgba(220,200,160,0.65)"
+                >
+                  ν = {active.label.toUpperCase()}
+                </text>
+                <foreignObject x={PAD} y={50} width={IW} height={PH - 64}>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
+                      fontSize: "15px",
+                      lineHeight: 1.55,
+                      color: "var(--ink-cool)",
+                      wordWrap: "break-word",
+                      overflowWrap: "anywhere",
+                    }}
+                  >
+                    {active.body}
+                  </div>
+                </foreignObject>
+              </g>
+            )
+          })()}
         </svg>
       </div>
     </figure>
