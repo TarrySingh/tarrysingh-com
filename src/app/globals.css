@@ -435,6 +435,33 @@ html {
   }
 }
 
+/* Blog (Dispatches) — heading anchors + figure margins */
+.prose-tarry .heading-anchor {
+  opacity: 0;
+  margin-left: 0.45rem;
+  font-weight: 400;
+  color: rgba(184, 134, 11, 0.65);
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+.prose-tarry .heading-anchor::after {
+  content: "§";
+}
+.prose-tarry h2:hover .heading-anchor,
+.prose-tarry h3:hover .heading-anchor {
+  opacity: 1;
+}
+.prose-tarry figure {
+  margin: 2.5rem 0;
+}
+.prose-tarry strong {
+  font-weight: 600;
+  color: rgb(15, 23, 42);
+}
+.prose-tarry em {
+  font-style: italic;
+}
+
 /* Print mode for Synaptic Cartography routes — black-on-cream brief */
 @media print {
   .syn-root {
