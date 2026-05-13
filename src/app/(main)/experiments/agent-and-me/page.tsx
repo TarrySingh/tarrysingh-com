@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { NewsletterFooter } from "@/components/blog/NewsletterFooter"
 import {
   ArrowLeft,
   ArrowRight,
@@ -247,6 +248,8 @@ export default function AgentAndMeHub() {
           })}
         </div>
       </section>
+
+      <NewsletterFooter />
     </div>
   )
 }

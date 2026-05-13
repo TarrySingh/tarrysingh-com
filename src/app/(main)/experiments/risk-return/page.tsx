@@ -3,6 +3,7 @@
 import { ResponsiveContainer, ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, ZAxis, ReferenceLine } from "recharts"
 import { useState, useRef } from 'react'
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { NewsletterFooter } from "@/components/blog/NewsletterFooter"
 import { Input } from "@/components/ui/input"
 
 const RiskReturn = () => {
@@ -405,6 +406,8 @@ const RiskReturn = () => {
           </div>
         </div>
       </div>
+
+      <NewsletterFooter />
     </div>
   )
 }

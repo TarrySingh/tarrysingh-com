@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { ArrowRight, BarChart3, TrendingUp, Layers, Lightbulb, Globe, Bot, Home, Network, Gauge, Brain, Cpu } from "lucide-react"
+import { NewsletterFooter } from "@/components/blog/NewsletterFooter"
 
 const experiments = [
   {
@@ -265,6 +266,8 @@ const Experiments = () => {
           })}
         </div>
       </section>
+
+      <NewsletterFooter />
     </div>
   )
 }

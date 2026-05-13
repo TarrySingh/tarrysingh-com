@@ -1,6 +1,7 @@
 "use client"
 
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, ReferenceLine } from 'recharts'
+import { NewsletterFooter } from "@/components/blog/NewsletterFooter"
 
 const FinancingCycle = () => {
   const data = [
@@ -194,6 +195,8 @@ const FinancingCycle = () => {
           </div>
         </div>
       </div>
+
+      <NewsletterFooter />
     </div>
   )
 }

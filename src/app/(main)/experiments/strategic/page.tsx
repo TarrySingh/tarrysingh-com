@@ -4,6 +4,7 @@ import { useDraggableBubble } from '@/hooks/useDraggableBubble'
 import { StrategicChart } from '@/components/strategic/StrategicChart'
 import { BubbleControls } from '@/components/strategic/BubbleControls'
 import { ExplanationSection } from '@/components/strategic/ExplanationSection'
+import { NewsletterFooter } from "@/components/blog/NewsletterFooter"
 
 const StrategicTechnology = () => {
   const initialPositions = {
@@ -50,6 +51,8 @@ const StrategicTechnology = () => {
           <ExplanationSection />
         </div>
       </div>
+
+      <NewsletterFooter />
     </div>
   );
 };
