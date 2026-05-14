@@ -126,6 +126,6 @@ The cycle that took Stage B from "code shipped" to "real Dispatch live on `/blog
 **Post-close housekeeping:**
 
 - [x] Sprint 3 row in [`dispatches-status-report.md`](./dispatches-status-report.md) moved from *in progress* → *closed*.
-- [ ] **Tarry:** clear `STUDIO_AI_DEBUG=1` from `tarrysingh-com-zdmb` Vercel project (Dev / Preview / Prod). Triggers automatic redeploy.
+- [x] `STUDIO_AI_DEBUG=1` cleared from `tarrysingh-com-zdmb` Vercel project (Dev / Preview / Prod) by Tarry on 2026-05-14. Automatic redeploy followed.
 
 — *the studio · the test ran, the truth is filed.*
