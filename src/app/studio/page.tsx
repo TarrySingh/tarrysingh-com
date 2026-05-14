@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { listDrafts } from "@/lib/studio/drafts-store"
+import { DraftListItem } from "@/components/studio/DraftListItem"
 
 export const dynamic = "force-dynamic"
 
@@ -115,63 +116,7 @@ export default async function StudioHome() {
         ) : (
           <ul className="space-y-3">
             {drafts.map((d) => (
-              <li key={d.slug}>
-                <Link
-                  href={`/studio/editor/${d.slug}`}
-                  className="group block rounded-xl border border-navy-200/80 bg-white p-5 transition-all duration-200 hover:border-gold-400 hover:bg-white hover:shadow-[0_1px_0_rgba(15,23,42,0.04)]"
-                >
-                  <div className="mb-2 flex items-center gap-3">
-                    <span className="h-1.5 w-1.5 rounded-full bg-navy-300" />
-                    <span
-                      className="text-[10px] font-semibold uppercase tracking-[0.28em] text-navy-400"
-                      style={{
-                        fontFamily:
-                          "var(--font-mono), 'IBM Plex Mono', monospace",
-                      }}
-                    >
-                      {d.frontmatter.category}
-                    </span>
-                    <span className="text-navy-200">·</span>
-                    <span
-                      className="text-[10px] tracking-wide text-navy-400"
-                      style={{
-                        fontFamily:
-                          "var(--font-mono), 'IBM Plex Mono', monospace",
-                      }}
-                    >
-                      last touched {formatDate(d.updatedAt)}
-                    </span>
-                  </div>
-                  <h2
-                    className="text-xl text-navy-900 tracking-tight group-hover:text-gold-700 transition-colors"
-                    style={{
-                      fontFamily: "var(--font-display), 'Gloock', serif",
-                    }}
-                  >
-                    {d.frontmatter.title || "(untitled)"}
-                  </h2>
-                  {d.frontmatter.excerpt ? (
-                    <p
-                      className="mt-2 text-sm text-navy-600 leading-relaxed line-clamp-2"
-                      style={{
-                        fontFamily:
-                          "var(--font-serif), 'IBM Plex Serif', serif",
-                      }}
-                    >
-                      {d.frontmatter.excerpt}
-                    </p>
-                  ) : null}
-                  <p
-                    className="mt-2 text-[10px] uppercase tracking-[0.22em] text-navy-300"
-                    style={{
-                      fontFamily:
-                        "var(--font-mono), 'IBM Plex Mono', monospace",
-                    }}
-                  >
-                    slug: {d.slug}
-                  </p>
-                </Link>
-              </li>
+              <DraftListItem key={d.slug} draft={d} />
             ))}
           </ul>
         )}
