@@ -513,3 +513,47 @@ html {
     padding-right: 1.5rem !important;
   }
 }
+
+/* ────────────────────────────────────────────────────────────────────
+   Sprint 4.5 — theme: studio palette variant for Dispatches
+   ────────────────────────────────────────────────────────────────────
+   SP3-08 from the Sprint 3 UAT. The studio variant uses the same
+   cream + indigo + copper palette /synaptic/* uses, so a Dispatch
+   that argues something about the studio reads in the studio's own
+   register. The default (editorial) variant stays on the existing
+   gradient-to-white background.
+   ──────────────────────────────────────────────────────────────── */
+.theme-studio {
+  --paper: #fbf7ec;
+  --ink: #0d1b3d;
+  --ink-muted: #1e2a4a;
+  --copper: #b45309;
+  --hairline: rgba(180, 134, 11, 0.22);
+}
+.theme-studio .prose-tarry {
+  color: var(--ink);
+}
+.theme-studio .prose-tarry h2,
+.theme-studio .prose-tarry h3 {
+  color: var(--ink);
+}
+.theme-studio .prose-tarry a {
+  color: var(--copper);
+  text-decoration-color: rgba(180, 134, 11, 0.5);
+}
+.theme-studio .prose-tarry blockquote {
+  border-left-color: var(--copper);
+  color: var(--ink-muted);
+}
+.theme-studio .prose-tarry hr {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--hairline),
+    transparent
+  );
+}
+.theme-studio header time,
+.theme-studio header [data-category-label] {
+  color: var(--ink-muted);
+}
