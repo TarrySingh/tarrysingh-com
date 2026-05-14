@@ -1,7 +1,7 @@
 # Sprint 4+ roadmap — Studio Editor v2 and beyond
 
 **Status:** planning · maintained alongside the main status report
-**Last updated:** 2026-05-14 (Sprint 4 code-complete pending UAT; Sprint 5 next on the queue)
+**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 both code-complete pending UAT; Sprint 4.5 / 5.5 / 6 still on the queue)
 **Parent doc:** [`dispatches-status-report.md`](./dispatches-status-report.md)
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -26,7 +26,7 @@ roadmap-deck slop.
 |---|---|---|---|
 | ~~**Sprint 4**~~ | ~~AI-suggested frontmatter · Image upload (Supabase Storage)~~ | ~3 days | **Shipped 2026-05-14** — code-complete, pending Tarry-side UAT. See *Sprint 4 — shipped* below. |
 | **Sprint 4.5** | Frontmatter surface — `theme: studio` palette variant · `tags` row under post header · `/blog/tag/<tag>` index | ~1 day | Tiny finish-the-job pass: both fields are *parsed* already (SP3-08, SP3-09 in the UAT results); only the rendering is missing. Drop in before image work to keep voice momentum. |
-| **Sprint 5** | AI-rendered hero images | ~4 days | Depends on image upload (Sprint 4). High creative leverage per Dispatch. |
+| ~~**Sprint 5**~~ | ~~AI-rendered hero images~~ | ~4 days | **Shipped 2026-05-14** — code-complete, pending Tarry-side UAT + `REPLICATE_API_TOKEN` env. See *Sprint 5 — shipped* below. |
 | **Sprint 5.5** | Reader-side subscribe nudges (writer-track #1) — six experiments | ~2–3 days | Independent of Studio Editor work. First reader-side track in the backlog — earns the studio its subscribers without surveillance affordances. Pairs naturally with the Sprint 4.5 tags surface for tag-aware nudges. |
 | **Sprint 6** | Mobile-first writing UX | ~3 days | Independent. The first long flight or train write-session forces it. |
 | **Sprint 7** | Version-history surface | ~3 days | Independent. Reads from git via Octokit. Becomes valuable once 10+ Dispatches exist. |
@@ -60,6 +60,37 @@ What follows is the per-item breakdown.
 - **Image crop / resize / rotate** — out of MVP. Crop happens in the host OS preview tool, or via Sprint 5's AI-rendered flow which produces the right aspect ratio at gen time.
 - **Width / height in upload response** — `next/image` reads intrinsic dimensions at build time; the upload response doesn't need to carry them.
 - **Per-Dispatch image gallery / library view** — drag-and-drop UX assumes the author drops what they need at the moment they need it. A future "studio assets" view could surface previously-uploaded images for reuse — out of Sprint 4 scope.
+
+---
+
+## Sprint 5 — shipped 2026-05-14
+
+**Window:** same afternoon as Sprint 4. Branch `claude/sprint-5` → PR (pending merge).
+
+### What landed
+
+Four commits, end-to-end pipeline behind one button click in the editor:
+
+| Layer | Commit | Result |
+|---|---|---|
+| Prompt synthesis | `b81d31d` | `aiHeroPrompt({title, excerpt?, category?})` in `src/lib/studio/ai.ts`. Distinct system prompt from the writing voice — art-director scope, studio palette only, editorial-illustration register (NO photoreal, NO pixar-cute, NO SaaS gradients, NO stock-photo cliches), 16:9 with a quiet zone, NO text in the image. Returns a 60–100 word natural-language prompt. Token budget: 1500 thinking, 256 output. |
+| Image gen adapter | `f1acd0c` | `src/lib/studio/image-gen.ts`. Provider-agnostic surface; one backend implemented (Replicate, FLUX.1 schnell default). Uses `Prefer: wait=30` for a single round-trip in the happy path; falls back to polling `urls.get` every 1 s up to 45 s. Surfaces stable error codes (`image_gen_unconfigured`, `image_gen_create_failed`, `image_gen_failed`, `image_gen_timeout`, etc.) plus debug detail when `STUDIO_AI_DEBUG=1`. Supports both `owner/model` (latest) and `owner/model:hash` (pinned). |
+| Chained route | `67c58f9` | `POST /api/studio/ai/hero` — body `{title, excerpt?, category?, customPrompt?}`. If `customPrompt` is provided, skip synthesis; otherwise run `aiHeroPrompt()`. Then `generateHero()`. Then content-address by sha256, upload to the `studio-uploads` bucket under a `hero/` prefix so a future listing can distinguish AI-generated heroes from in-body drop/paste images. `maxDuration = 60`. Returns `{url, prompt, model, provider, durationMs, bytesUploaded, contentType, sha256}`. |
+| UI | `22d8569` | `HeroGeneratorBlock` inside the "More frontmatter" details, anchored to the Hero image URL field. Button disabled until a title exists. On click: status badge ("Synthesising prompt → rendering → uploading…") → preview card with the rendered image (16:9), the prompt that produced it (italic Plex Serif), and a mono footer showing provider · model · duration · bytes. Four follow-up actions: **Use it** (writes `frontmatter.hero` + autosaves), **Regenerate** (fresh synth + fresh render; FLUX is non-deterministic), **Edit prompt** (expands a textarea pre-filled with the current prompt; "Regenerate with this prompt" feeds the route's `customPrompt` field), **Dismiss**. |
+
+### Live state (2026-05-14, code-complete)
+
+- **Env vars on Vercel (`tarrysingh-com-zdmb`):** `REPLICATE_API_TOKEN=r8_...` (required — mint at https://replicate.com/account/api-tokens). Optional: `STUDIO_IMAGE_GEN_PROVIDER`, `STUDIO_IMAGE_GEN_MODEL`, `STUDIO_IMAGE_GEN_ASPECT`, `STUDIO_IMAGE_GEN_FORMAT` — defaults match the migration + adapter code.
+- **Bucket:** reuses Sprint 4.2's `studio-uploads`; AI-generated heroes live under the `hero/` prefix.
+- **Cost:** FLUX.1 schnell ~$0.003 per image. Negligible at one hero per Dispatch.
+- **Pending Tarry-side:** add `REPLICATE_API_TOKEN` to Vercel (Dev / Preview / Prod) → trigger redeploy → click "✨ Generate hero" on a real draft → UAT the four follow-up buttons.
+
+### Deliberate non-goals (deferred)
+
+- **In-editor crop / re-frame** — the prompt synth produces a 16:9 framing with a quiet zone; the author edits the prompt rather than the pixels. Pixel-level crop can land in Sprint 7+.
+- **Multi-image batching** — generate one hero at a time. Batching would change the UI from a single preview to a chooser; unnecessary for v1.
+- **Upscaling beyond FLUX schnell's native output** — defaults to ~1024×576 at 16:9 (megapixels=1). Real-ESRGAN upscaling is a Sprint 6+ extension if the post template ever needs 2× rasters.
+- **Style-locked LoRA / fine-tune** — FLUX schnell with the studio-voice prompt is the baseline. A future Sprint 8 increment could fine-tune a LoRA on the existing Synaptic plates if the prompt-based variance ever becomes a problem.
 
 ---
 
