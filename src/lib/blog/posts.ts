@@ -138,6 +138,24 @@ export function formatPostDate(iso: string): string {
 }
 
 /**
+ * Sprint 5.5.1 — read an AI-baked footer "nudge card" for a slug.
+ * Returns the card markdown if `content/blog/_nudges/<slug>.md`
+ * exists; null otherwise. The post template renders it in a styled
+ * block above the existing newsletter card when present.
+ *
+ * Bake new cards via `npm run blog:bake-nudge <slug>`.
+ */
+export async function getNudgeCard(slug: string): Promise<string | null> {
+  const file = path.join(process.cwd(), "content", "blog", "_nudges", `${slug}.md`)
+  try {
+    const raw = await fs.readFile(file, "utf8")
+    return raw.trim() || null
+  } catch {
+    return null
+  }
+}
+
+/**
  * Return all unique tags across the (non-draft) post tree, sorted by
  * post count desc then alpha. Used by /blog/tag/[tag] (Sprint 4.5) +
  * by sitemap.xml to emit per-tag pages.

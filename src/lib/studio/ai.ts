@@ -68,6 +68,12 @@ interface HeroPromptInput {
   category?: "Essays" | "Notes" | "Studio"
 }
 
+interface NudgeCardInput {
+  title: string
+  body: string
+  excerpt?: string
+}
+
 interface AIResult {
   ok: true
   output: string
@@ -93,6 +99,14 @@ interface AIFrontmatterResult {
 interface AIHeroPromptResult {
   ok: true
   prompt: string
+  thinking?: string
+  inputTokens: number
+  outputTokens: number
+}
+
+interface AINudgeCardResult {
+  ok: true
+  card: string
   thinking?: string
   inputTokens: number
   outputTokens: number
@@ -301,6 +315,88 @@ Return JSON only. No code fences. No preamble.`
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err)
     console.error(JSON.stringify({ tag: "studio.ai.frontmatter_error", model, error: message }))
+    const debug = process.env.STUDIO_AI_DEBUG === "1"
+    return {
+      ok: false,
+      error: "ai_call_failed",
+      ...(debug ? { debug: message, modelUsed: model } : {}),
+    } as AIError
+  }
+}
+
+/**
+ * Sprint 5.5.1 — synthesise an AI-personalised footer "nudge card"
+ * for a published Dispatch. Bakes at publish-time (via the script at
+ * scripts/blog/bake-nudge-card.mjs); the page template reads the
+ * baked card from content/blog/_nudges/<slug>.md if it exists.
+ *
+ * Tone-locked by the studio system prompt. 60-90 words. References
+ * the specific argument of the piece, not a generic "subscribe for
+ * more". Single italic close per the studio voice rule.
+ *
+ * Token budget: 1500 thinking, 300 output.
+ */
+export async function aiNudgeCard(
+  input: NudgeCardInput,
+): Promise<AINudgeCardResult | AIError> {
+  const client = getClient()
+  if (!client) return { ok: false, error: "ai_unconfigured" }
+
+  const { model } = modelConfig()
+  const thinkingTokens = Math.min(
+    Number(process.env.STUDIO_AI_THINKING_TOKENS) || DEFAULT_THINKING_TOKENS,
+    1500,
+  )
+  const maxTokens = 300
+
+  const userPrompt = `Read this Dispatch and write a 60-90 word footer "nudge card" that earns the reader's subscription on the strength of the argument they just read.
+
+TITLE: ${input.title}
+
+${input.excerpt ? `EXCERPT: ${input.excerpt}\n\n` : ""}BODY:
+
+${input.body}
+
+Voice rules (non-negotiable):
+
+  - 60-90 words. Plex Serif rhythm. One italic close per the studio voice — the last phrase or sentence in italics, nothing else.
+  - Reference the SPECIFIC argument of the piece in the first sentence. Not "subscribe for more like this." Something like *"If the argument held — Tuesday's Dispatch carries it forward."* with the actual claim of the piece named.
+  - No SaaS slop: leverage, ideate, unlock, seamless, supercharge, revolutionary, game-changing, best-in-class, world-class, thought leader, synergy.
+  - No tracking-vocabulary: convert, optimise, acquire, capture, monetise.
+  - End by inviting the reader to subscribe via the existing newsletter form — but don't call it a "newsletter" — call it "the next Dispatch" or "one quiet plate when it ships."
+  - British English. Em dashes. Smart quotes.
+  - No headings. Plain prose, in Markdown.
+
+Return only the card text. No commentary. No preamble.`
+
+  try {
+    const msg = await client.messages.create({
+      model,
+      max_tokens: maxTokens + thinkingTokens,
+      thinking: { type: "enabled", budget_tokens: thinkingTokens },
+      system: STUDIO_SYSTEM_PROMPT,
+      messages: [{ role: "user", content: userPrompt }],
+    })
+    const textBlocks = msg.content.filter(
+      (b): b is Anthropic.Messages.TextBlock => b.type === "text",
+    )
+    const thinkingBlocks = msg.content.filter(
+      (b): b is Anthropic.Messages.ThinkingBlock => b.type === "thinking",
+    )
+    const card = textBlocks.map((b) => b.text).join("\n").trim()
+    if (!card) {
+      return { ok: false, error: "ai_empty_card" }
+    }
+    return {
+      ok: true,
+      card,
+      thinking: thinkingBlocks.map((b) => b.thinking).join("\n").trim() || undefined,
+      inputTokens: msg.usage.input_tokens,
+      outputTokens: msg.usage.output_tokens,
+    }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    console.error(JSON.stringify({ tag: "studio.ai.nudge_card_error", model, error: message }))
     const debug = process.env.STUDIO_AI_DEBUG === "1"
     return {
       ok: false,
