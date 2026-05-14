@@ -550,42 +550,50 @@ export function StudioEditor({
       }}
     >
       <header className="sticky top-0 z-20 border-b border-navy-200/80 bg-[rgba(251,247,236,0.92)] backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center gap-3 px-6 py-3 lg:px-8">
+        <div className="mx-auto flex max-w-6xl items-center gap-2 sm:gap-3 px-3 sm:px-6 py-2 sm:py-3 lg:px-8">
           <Link
             href="/studio"
-            className="rounded-full px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.28em] text-navy-500 transition-colors hover:bg-navy-50 hover:text-navy-900"
+            className="inline-flex h-11 items-center rounded-full px-3 text-[10.5px] font-semibold uppercase tracking-[0.24em] text-navy-500 transition-colors hover:bg-navy-50 hover:text-navy-900"
             style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+            aria-label="Back to Studio"
           >
-            ← Studio
+            <span className="sm:hidden text-base leading-none">←</span>
+            <span className="hidden sm:inline tracking-[0.28em]">← Studio</span>
           </Link>
-          <span className="h-4 w-px bg-navy-200/60" />
+          <span className="hidden sm:inline-block h-4 w-px bg-navy-200/60" />
           <SaveBadge status={saveStatus} />
           <span className="flex-1" />
           <span
-            className="hidden sm:inline-block text-[10px] uppercase tracking-[0.22em] text-navy-400"
+            className="hidden md:inline-block text-[10px] uppercase tracking-[0.22em] text-navy-400"
             style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
           >
             {wordCount} words · {readingTimeMin} min · {charCount} chars
           </span>
           <button
             onClick={() => setShowPreview((v) => !v)}
-            className="rounded-full border border-navy-200 bg-white px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50"
+            aria-label={showPreview ? "Hide preview" : "Show preview"}
+            title="Preview"
+            className="inline-flex h-11 min-w-[44px] items-center justify-center rounded-full border border-navy-200 bg-white px-3 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50"
             style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
           >
-            {showPreview ? "Hide preview" : "Preview"}
+            <span className="sm:hidden text-base">{showPreview ? "✕" : "👁"}</span>
+            <span className="hidden sm:inline">{showPreview ? "Hide preview" : "Preview"}</span>
           </button>
           <button
             onClick={() => void save()}
             disabled={saveStatus.kind === "saving"}
-            className="rounded-full border border-navy-200 bg-white px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50 disabled:opacity-50"
+            aria-label="Save draft"
+            className="inline-flex h-11 min-w-[44px] items-center justify-center rounded-full border border-navy-200 bg-white px-3 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50 disabled:opacity-50"
             style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
           >
-            Save draft
+            <span className="sm:hidden">💾</span>
+            <span className="hidden sm:inline">Save draft</span>
           </button>
           <button
             onClick={() => void onPublish()}
             disabled={publishStatus.kind === "publishing"}
-            className="rounded-full border border-gold-400 bg-navy-900 px-4 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-navy-800 disabled:opacity-50"
+            aria-label={publishStatus.kind === "publishing" ? "Publishing…" : "Publish"}
+            className="inline-flex h-11 items-center justify-center rounded-full border border-gold-400 bg-navy-900 px-3 sm:px-4 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-navy-800 disabled:opacity-50"
             style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
           >
             {publishStatus.kind === "publishing" ? "Publishing…" : "Publish"}
@@ -621,7 +629,15 @@ export function StudioEditor({
       <TouchToolbar editor={editor} onPickImage={onPickImage} />
 
       <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-6 sm:pt-8 pb-36 sm:pb-24 lg:px-8">
-        <div className={`grid gap-8 ${showPreview ? "lg:grid-cols-[1fr_1fr]" : "lg:grid-cols-[1fr]"}`}>
+        {/* Sprint 6 — mobile word-count strip (header hides this below md) */}
+        <div
+          className="mb-4 md:hidden flex items-center justify-between text-[10px] uppercase tracking-[0.22em] text-navy-400"
+          style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+        >
+          <span>{wordCount} words · {readingTimeMin} min</span>
+          <span>{charCount} chars</span>
+        </div>
+        <div className={`grid gap-6 sm:gap-8 ${showPreview ? "lg:grid-cols-[1fr_1fr]" : "lg:grid-cols-[1fr]"}`}>
           {/* — composer — */}
           <section className="space-y-6">
             <FrontmatterForm
@@ -643,7 +659,7 @@ export function StudioEditor({
               dismissHero={dismissHero}
             />
 
-            <div className="rounded-2xl border border-navy-200/80 bg-white p-6 md:p-8">
+            <div className="rounded-2xl border border-navy-200/80 bg-white p-4 sm:p-6 md:p-8">
               <EditorToolbar
                 onPickImage={onPickImage}
                 uploadStatus={uploadStatus}
@@ -670,17 +686,52 @@ export function StudioEditor({
             />
           </section>
 
-          {/* — live preview — */}
+          {/* — live preview — desktop: side pane; mobile: full-screen overlay */}
           {showPreview ? (
-            <aside className="space-y-6">
-              <PreviewPane
-                title={frontmatter.title}
-                excerpt={frontmatter.excerpt}
-                category={frontmatter.category}
-                date={frontmatter.date}
-                bodyHtml={previewHtml}
-              />
-            </aside>
+            <>
+              {/* Desktop: inline aside in the grid (lg+) */}
+              <aside className="hidden lg:block space-y-6">
+                <PreviewPane
+                  title={frontmatter.title}
+                  excerpt={frontmatter.excerpt}
+                  category={frontmatter.category}
+                  date={frontmatter.date}
+                  bodyHtml={previewHtml}
+                />
+              </aside>
+              {/* Mobile: full-screen overlay below the sticky header */}
+              <div
+                className="lg:hidden fixed inset-0 z-30 overflow-y-auto bg-[#fbf7ec] pt-16 pb-32 px-4"
+                role="dialog"
+                aria-label="Live preview"
+                aria-modal="true"
+              >
+                <div className="mx-auto max-w-2xl">
+                  <div
+                    className="mb-3 flex items-center gap-3 text-[10px] uppercase tracking-[0.22em] text-gold-700"
+                    style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+                  >
+                    Live preview
+                    <span className="h-px flex-1 bg-navy-100" />
+                    <button
+                      type="button"
+                      onClick={() => setShowPreview(false)}
+                      className="inline-flex h-11 items-center justify-center rounded-full border border-navy-200 bg-white px-4 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50"
+                      style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+                    >
+                      ✕ Close
+                    </button>
+                  </div>
+                  <PreviewPane
+                    title={frontmatter.title}
+                    excerpt={frontmatter.excerpt}
+                    category={frontmatter.category}
+                    date={frontmatter.date}
+                    bodyHtml={previewHtml}
+                  />
+                </div>
+              </div>
+            </>
           ) : null}
         </div>
       </main>
@@ -1005,13 +1056,34 @@ function EditorToolbar({
 
 function SaveBadge({ status }: { status: SaveStatus }) {
   const mono = { fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" } as const
+  // Sprint 6 — short forms on mobile (the header is tight on a phone).
   if (status.kind === "idle")
-    return <span className="text-[10px] uppercase tracking-[0.22em] text-navy-300" style={mono}>Ready</span>
+    return (
+      <span className="text-[10px] uppercase tracking-[0.22em] text-navy-300 truncate" style={mono} title="Ready">
+        <span className="sm:hidden">●</span>
+        <span className="hidden sm:inline">Ready</span>
+      </span>
+    )
   if (status.kind === "saving")
-    return <span className="text-[10px] uppercase tracking-[0.22em] text-navy-400" style={mono}>Saving…</span>
+    return (
+      <span className="text-[10px] uppercase tracking-[0.22em] text-navy-400 truncate" style={mono} title="Saving…">
+        <span className="sm:hidden">↻</span>
+        <span className="hidden sm:inline">Saving…</span>
+      </span>
+    )
   if (status.kind === "saved")
-    return <span className="text-[10px] uppercase tracking-[0.22em] text-gold-700" style={mono}>Saved</span>
-  return <span className="text-[10px] uppercase tracking-[0.22em] text-rose-600" style={mono}>Save error: {status.message}</span>
+    return (
+      <span className="text-[10px] uppercase tracking-[0.22em] text-gold-700 truncate" style={mono} title="Saved">
+        <span className="sm:hidden">✓</span>
+        <span className="hidden sm:inline">Saved</span>
+      </span>
+    )
+  return (
+    <span className="text-[10px] uppercase tracking-[0.22em] text-rose-600 truncate max-w-[10rem] sm:max-w-none" style={mono} title={`Save error: ${status.message}`}>
+      <span className="sm:hidden">✗</span>
+      <span className="hidden sm:inline">Save error: {status.message}</span>
+    </span>
+  )
 }
 
 function FrontmatterForm({
@@ -1043,7 +1115,7 @@ function FrontmatterForm({
 }) {
   const isSuggesting = frontmatterAIStatus.kind === "running"
   return (
-    <div className="rounded-2xl border border-navy-200/80 bg-white p-6 md:p-7 space-y-4">
+    <div className="rounded-2xl border border-navy-200/80 bg-white p-4 sm:p-6 md:p-7 space-y-4">
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1">
           <label className="block text-[10px] uppercase tracking-[0.28em] text-navy-400 mb-2"
@@ -1054,7 +1126,7 @@ function FrontmatterForm({
             value={frontmatter.title}
             onChange={(e) => setFm("title", e.target.value)}
             placeholder="The piece begins with the claim."
-            className="w-full bg-transparent text-3xl md:text-4xl tracking-tight focus:outline-none text-navy-900"
+            className="w-full bg-transparent text-2xl sm:text-3xl md:text-4xl tracking-tight focus:outline-none text-navy-900"
             style={{ fontFamily: "var(--font-display), 'Gloock', serif" }}
           />
         </div>
@@ -1232,7 +1304,7 @@ function AIPanel({
 }) {
   const isRunning = status.kind === "running"
   return (
-    <div className="rounded-2xl border border-navy-200/80 bg-white p-5 md:p-6">
+    <div className="rounded-2xl border border-navy-200/80 bg-white p-4 sm:p-5 md:p-6">
       <div className="mb-4 flex items-center gap-3">
         <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-700"
           style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
@@ -1247,11 +1319,11 @@ function AIPanel({
         </span>
       </div>
 
-      <div className="grid gap-3 md:grid-cols-[1fr_1fr_auto]">
+      <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-[1fr_1fr_auto]">
         <button
           onClick={onContinue}
           disabled={isRunning}
-          className="rounded-full border border-navy-200 bg-white px-4 py-2.5 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50 disabled:opacity-50"
+          className="inline-flex h-11 items-center justify-center rounded-full border border-navy-200 bg-white px-4 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50 disabled:opacity-50"
           style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
         >
           {isRunning && status.action === "continue" ? "Thinking…" : "Continue from cursor"}
@@ -1259,7 +1331,7 @@ function AIPanel({
         <button
           onClick={onRewrite}
           disabled={isRunning}
-          className="rounded-full border border-navy-200 bg-white px-4 py-2.5 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50 disabled:opacity-50"
+          className="inline-flex h-11 items-center justify-center rounded-full border border-navy-200 bg-white px-4 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50 disabled:opacity-50"
           style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
         >
           {isRunning && status.action === "rewrite" ? "Thinking…" : "Rewrite selection"}
@@ -1269,7 +1341,7 @@ function AIPanel({
           value={rewriteInstruction}
           onChange={(e) => setRewriteInstruction(e.target.value)}
           placeholder="rewrite instruction (optional)"
-          className="rounded-md border border-navy-200 px-3 py-2.5 text-sm text-navy-900 focus:outline-none focus:border-gold-400 md:col-span-1"
+          className="h-11 rounded-md border border-navy-200 px-3 text-sm text-navy-900 focus:outline-none focus:border-gold-400 sm:col-span-2 md:col-span-1"
           style={{ fontFamily: "var(--font-serif), 'IBM Plex Serif', serif" }}
         />
       </div>
@@ -1573,7 +1645,7 @@ function PreviewPane({
   bodyHtml: string
 }) {
   return (
-    <div className="sticky top-20 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-2xl border border-navy-200/80 bg-white p-6 md:p-8">
+    <div className="sticky top-20 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-2xl border border-navy-200/80 bg-white p-4 sm:p-6 md:p-8">
       <div className="mb-4 flex items-center gap-3">
         <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-700"
           style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
