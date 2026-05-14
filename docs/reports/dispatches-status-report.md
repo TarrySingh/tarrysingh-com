@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 both code-complete — AI-suggested frontmatter · image upload · AI-rendered hero images; awaiting Tarry-side UAT + `REPLICATE_API_TOKEN` env)
+**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 + Sprint 4.5 all code-complete; Sprint 5.5 reader-side nudges in flight)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -499,5 +499,6 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Sprint 3 — Studio Editor (WYSIWYG + Claude Opus extended-thinking AI + one-click publish) | closed 2026-05-14 — Stage A 9/9 + Stage B 10/10 PASS; 7 follow-up fixes caught + shipped mid-flight; first real Dispatch *"Four Weeks That Bent the AI Arc"* live at `/blog/four-weeks-that-bent-the-ai-arc` | Tarry Singh ✓ Stage B (2026-05-14) · Claude ✓ Stage A (2026-05-13) |
 | Sprint 4 — AI-suggested frontmatter + image upload | code-complete 2026-05-14 — 7 commits on `claude/sprint-4`; Supabase Storage bucket applied; `next build` green; AI frontmatter route + Suggest pill in editor; drop/paste/click upload through `/api/studio/upload`; Sprint 5 next | technical-side complete; pending Tarry-side UAT |
 | Sprint 5 — AI-rendered hero images | code-complete 2026-05-14 — 4 commits on `claude/sprint-5`; aiHeroPrompt + Replicate FLUX schnell adapter + chained `POST /api/studio/ai/hero` route + Generate-hero pill with Use/Regenerate/Edit-prompt preview; `next build` green | technical-side complete; pending Tarry-side `REPLICATE_API_TOKEN` env + UAT |
+| Sprint 4.5 — `theme: studio` variant + tags surface | code-complete 2026-05-14 — 3 commits on `claude/sprint-4.5`; closes SP3-08 (theme palette) + SP3-09 (tags row + /blog/tag/[tag] index + sitemap); `next build` green with 3 tag routes statically generated | technical-side complete; pending Tarry-side UAT |
 
 — *the studio*
