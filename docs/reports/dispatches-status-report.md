@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-14 (Sprint 3 closed — Stage A 9/9 PASS · Stage B 10/10 PASS · first real Dispatch live at `/blog/four-weeks-that-bent-the-ai-arc`)
+**Last updated:** 2026-05-14 (Sprint 4 code-complete — AI-suggested frontmatter + image upload to Supabase Storage; awaiting Tarry-side UAT)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -101,6 +101,22 @@ Rewrite, and Publish straight to `main` with one click.
 **What's deliberately not in Sprint 3 (deferred to v2+):** AI-rendered hero images · image upload / crop / paste-from-clipboard · real-time collaborative editing · mobile-first writing UX · version-history surface · AI-suggested frontmatter · linked editing for the Synaptic plate library · `theme: studio` palette variant · `tags` surface on post + index · reader-side subscribe nudges (six experiments).
 
 These items are sequenced and sized in [`sprint-4-plus-roadmap.md`](./sprint-4-plus-roadmap.md) — Sprint 4.5 picks up the theme/tags surface SP3-08/SP3-09 caught at Stage B post-B8; Sprint 5.5 is the new reader-side track. Read it cold to know what's coming and in what order.
+
+### Sprint 4 — AI-suggested frontmatter + image upload (code-complete 2026-05-14)
+
+**Window:** 2026-05-14 (single afternoon). Branch `claude/sprint-4`.
+
+| Half | What landed |
+|---|---|
+| **4.1 AI-suggested frontmatter** | New `POST /api/studio/ai/frontmatter` route — Claude Opus extended-thinking proposes `{category, excerpt, tags}` from the body (≥ 200 words required). Tighter token budget than Continue/Rewrite (1500 thinking, 512 output). "✨ Suggest frontmatter" pill in the editor surfaces a diff-style preview block (old → new with strike-through per field); "Apply all" overwrites the three fields + triggers autosave; "Dismiss" throws the suggestion away. Title and slug are intentionally never touched — the title is the author's voice. |
+| **4.2 Image upload** | Supabase Storage bucket `studio-uploads` (public-read, 8 MiB limit, image MIMEs only). New `POST /api/studio/upload` route content-addresses uploads via sha256 (same bytes → same URL → no double-storage). Tiptap `@tiptap/extension-image` wired into the editor with native DOM listeners for drop / paste / click; upload status badge surfaces "uploading 1/3 hero.png" while in flight; CSS for `.studio-prose img / .studio-image` (centered, 12px radius, hairline border, copper outline on selection). Turndown handles `<img>` → `![alt](url)` on save; `marked` handles the inverse on load — no serializer changes needed. |
+
+**Live state (2026-05-14, code-complete):**
+
+- **Env vars on Vercel (`tarrysingh-com-zdmb`):** `STUDIO_UPLOADS_BUCKET=studio-uploads` (optional — defaults work).
+- **Supabase migration:** [`2026-05-14-studio-uploads-bucket.sql`](../migrations/2026-05-14-studio-uploads-bucket.sql) applied to `agentify`. Bucket verified.
+- **`next build` passes** with `/api/studio/ai/frontmatter` and `/api/studio/upload` in the routes list.
+- **Pending Tarry-side UAT:** end-to-end upload via the editor (drop, paste, click) plus AI-suggested frontmatter on a real Dispatch.
 
 See *Outstanding work* (closed for Sprint 2) and *UAT plan*.
 
@@ -441,8 +457,11 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Monthly Roundup digest source | `src/app/api/digest/this-month/route.ts` |
 | Sprint 4+ roadmap | `docs/reports/sprint-4-plus-roadmap.md` |
 | Studio Editor (Sprint 3) source | `src/app/studio/`, `src/app/api/studio/`, `src/components/studio/`, `src/lib/studio/` |
-| Studio Editor Supabase migration | `docs/migrations/2026-05-13-studio-drafts.sql` |
+| Studio Editor Supabase migration (drafts) | `docs/migrations/2026-05-13-studio-drafts.sql` |
+| Studio uploads bucket migration (Sprint 4.2) | `docs/migrations/2026-05-14-studio-uploads-bucket.sql` |
 | Sprint 3 UAT plan + results | `docs/reports/sprint-3-uat-plan.md`, `docs/reports/sprint-3-uat-results.md` |
+| AI-suggested frontmatter (Sprint 4.1) | `src/lib/studio/ai.ts:aiFrontmatter`, `src/app/api/studio/ai/frontmatter/route.ts` |
+| Image upload route (Sprint 4.2) | `src/app/api/studio/upload/route.ts` |
 | API key rotation runbook | `docs/runbooks/api-key-rotation.md` |
 | Newsletter pipeline source | `src/lib/crm/`, `src/components/blog/`, `src/app/(main)/blog/unsubscribe/` |
 | Blog reader + MDX components | `src/lib/blog/`, `src/app/(main)/blog/` |
@@ -458,5 +477,6 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Sprint 1 — Microsites + Newsletter MVP | 2026-05-13 | Tarry Singh ✓ (smoke test passed) |
 | Sprint 2 — Cadences & publishing rhythm | closed 2026-05-13 — all cross-repo cadence work shipped, publishing tooling verified, empty-posts production UAT passed, digest URL rewrite shipped | technical-side complete; pending only Tarry Stage B (phone-screen reads of the 3 Welcome emails + first Monthly Roundup on 2026-06-01) |
 | Sprint 3 — Studio Editor (WYSIWYG + Claude Opus extended-thinking AI + one-click publish) | closed 2026-05-14 — Stage A 9/9 + Stage B 10/10 PASS; 7 follow-up fixes caught + shipped mid-flight; first real Dispatch *"Four Weeks That Bent the AI Arc"* live at `/blog/four-weeks-that-bent-the-ai-arc` | Tarry Singh ✓ Stage B (2026-05-14) · Claude ✓ Stage A (2026-05-13) |
+| Sprint 4 — AI-suggested frontmatter + image upload | code-complete 2026-05-14 — 7 commits on `claude/sprint-4`; Supabase Storage bucket applied; `next build` green; AI frontmatter route + Suggest pill in editor; drop/paste/click upload through `/api/studio/upload`; Sprint 5 next | technical-side complete; pending Tarry-side UAT |
 
 — *the studio*

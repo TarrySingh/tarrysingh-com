@@ -1,7 +1,7 @@
 # Sprint 4+ roadmap — Studio Editor v2 and beyond
 
 **Status:** planning · maintained alongside the main status report
-**Last updated:** 2026-05-14 (Sprint 3 closed; Sprint 4.5 + Sprint 5.5 added — theme/tags surface, reader-side subscribe nudges)
+**Last updated:** 2026-05-14 (Sprint 4 code-complete pending UAT; Sprint 5 next on the queue)
 **Parent doc:** [`dispatches-status-report.md`](./dispatches-status-report.md)
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -24,7 +24,7 @@ roadmap-deck slop.
 
 | Sprint | Deliverable | Weight | Why this order |
 |---|---|---|---|
-| **Sprint 4** | AI-suggested frontmatter · Image upload (Supabase Storage) | ~3 days | Both are small + standalone; image upload unblocks Sprint 5. |
+| ~~**Sprint 4**~~ | ~~AI-suggested frontmatter · Image upload (Supabase Storage)~~ | ~3 days | **Shipped 2026-05-14** — code-complete, pending Tarry-side UAT. See *Sprint 4 — shipped* below. |
 | **Sprint 4.5** | Frontmatter surface — `theme: studio` palette variant · `tags` row under post header · `/blog/tag/<tag>` index | ~1 day | Tiny finish-the-job pass: both fields are *parsed* already (SP3-08, SP3-09 in the UAT results); only the rendering is missing. Drop in before image work to keep voice momentum. |
 | **Sprint 5** | AI-rendered hero images | ~4 days | Depends on image upload (Sprint 4). High creative leverage per Dispatch. |
 | **Sprint 5.5** | Reader-side subscribe nudges (writer-track #1) — six experiments | ~2–3 days | Independent of Studio Editor work. First reader-side track in the backlog — earns the studio its subscribers without surveillance affordances. Pairs naturally with the Sprint 4.5 tags surface for tag-aware nudges. |
@@ -36,6 +36,34 @@ roadmap-deck slop.
 What follows is the per-item breakdown.
 
 ---
+
+## Sprint 4 — shipped 2026-05-14
+
+**Window:** single afternoon. Branch `claude/sprint-4` → PR (pending merge).
+
+### What landed
+
+| Half | Commits | Result |
+|---|---|---|
+| **4.1 AI-suggested frontmatter** | `aiFrontmatter()` lib (`107abe9`) · `POST /api/studio/ai/frontmatter` route (`157eb8a`) · Suggest pill + diff-style preview in editor (`0f49759`) | One click on "✨ Suggest frontmatter" → Claude proposes `{category, excerpt, tags}` from the body (≥ 200 words required) → diff preview shows old → new with strike-through → "Apply all" overwrites. Title and slug untouched. |
+| **4.2 Image upload** | Supabase Storage bucket migration applied to `agentify` (`5dc9251`) · `@tiptap/extension-image` ^3.23.4 (`902004a`) · `POST /api/studio/upload` route (`c096ad3`) · Tiptap Image extension + drop/paste/click wiring (`0033eb1`) | Drop, paste, or click "+ Image" → upload streams through `/api/studio/upload` → bytes are sha256-content-addressed → file lands in `studio-uploads` bucket → public CDN URL inserted at cursor as `<img>` in the editor (and `![alt](url)` in the saved Markdown). Upload status badge surfaces "uploading 1/3 hero.png" while in flight. 8 MiB cap, image MIMEs only (PNG / JPEG / WebP / SVG / GIF / AVIF). |
+
+### Live state (2026-05-14, code-complete)
+
+- **Env vars on Vercel (`tarrysingh-com-zdmb`):** `STUDIO_UPLOADS_BUCKET=studio-uploads` (optional — the route falls back to this default if unset).
+- **Supabase migration:** `docs/migrations/2026-05-14-studio-uploads-bucket.sql` applied to project `agentify` (`ijmkekioxhfcinkjckju`). Bucket verified via `select id, name, public, file_size_limit, allowed_mime_types from storage.buckets where id = 'studio-uploads'` — row present, public=true, 8 MiB limit, MIME list matches.
+- **Wire-level smoke test:** `next build` passes; `/api/studio/upload` appears in the routes list.
+- **Pending:** Tarry-side UAT — pick an image, drop it into a draft, save → publish → confirm it surfaces on `/blog/<slug>` with the CDN URL. AI-suggested frontmatter UAT — write 300 words, click Suggest, confirm the diff renders and Apply works.
+
+### Deliberate non-goals (deferred)
+
+- **Image crop / resize / rotate** — out of MVP. Crop happens in the host OS preview tool, or via Sprint 5's AI-rendered flow which produces the right aspect ratio at gen time.
+- **Width / height in upload response** — `next/image` reads intrinsic dimensions at build time; the upload response doesn't need to carry them.
+- **Per-Dispatch image gallery / library view** — drag-and-drop UX assumes the author drops what they need at the moment they need it. A future "studio assets" view could surface previously-uploaded images for reuse — out of Sprint 4 scope.
+
+---
+
+## Sprint 4 (original plan — preserved below for the audit trail)
 
 ## Sprint 4 — AI-suggested frontmatter + Image upload
 
