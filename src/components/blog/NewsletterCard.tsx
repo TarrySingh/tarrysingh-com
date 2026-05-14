@@ -123,7 +123,12 @@ export function NewsletterCard({ variant = "wide" }: NewsletterCardProps) {
           id="dispatches-email"
           type="email"
           inputMode="email"
-          autoComplete="email"
+          // Sprint 5.5.6 — adding "webauthn" to autoComplete enables
+          // the native passkey-style autofill hint on Safari iOS 17+
+          // ("Sign in with Apple", "Hide My Email" relay) and on
+          // Chrome Android with saved passkeys. Two taps from "I want
+          // this" to subscribed. No password. No account.
+          autoComplete="email webauthn"
           required
           placeholder="you@quiet-mailbox.com"
           value={email}
