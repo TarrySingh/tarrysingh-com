@@ -126,12 +126,20 @@ export function StudioEditor({
     }
   }, [editor, triggerAutosave])
 
-  useEffect(() => {
-    triggerAutosave()
-  }, [frontmatter, slug, triggerAutosave])
-
+  // CRITICAL: do NOT autosave on mount. The previous `useEffect(() =>
+  // triggerAutosave(), [frontmatter, slug])` fired on initial render too —
+  // before the Tiptap editor finished loading `initialHtml` from the
+  // server-side draft. Result: 4 seconds after mount, autosave ran with an
+  // empty editor and overwrote the saved body with "". This wiped a 387-
+  // word draft during Stage B B4 UAT (2026-05-14).
+  //
+  // Autosave now triggers ONLY from real user input:
+  //   - editor.on("update")            — typing in the body (above)
+  //   - setFm() via the frontmatter inputs (below)
+  //   - the slug input's onChange      — wired in FrontmatterForm via setSlug
   function setFm<K extends keyof DispatchFrontmatter>(key: K, value: DispatchFrontmatter[K]) {
     setFrontmatter((prev) => ({ ...prev, [key]: value }))
+    triggerAutosave()
   }
 
   const getCurrentBodyMarkdown = useCallback((): string => {
@@ -150,8 +158,14 @@ export function StudioEditor({
         if (!silent) setSaveStatus({ kind: "error", message: "Title is required before saving." })
         return false
       }
-      setSaveStatus({ kind: "saving" })
       const body = getCurrentBodyMarkdown()
+      // Belt-and-braces: never overwrite an existing-draft's body with an
+      // empty string from an autosave. If the user genuinely deletes the
+      // whole body they can save manually; silent autosave never wipes.
+      if (silent && initialSlug && body.length === 0) {
+        return false
+      }
+      setSaveStatus({ kind: "saving" })
       try {
         const res = await fetch("/api/studio/save", {
           method: "POST",
@@ -374,6 +388,7 @@ export function StudioEditor({
               setSlug={(s) => {
                 setSlug(s)
                 setSlugTouched(true)
+                triggerAutosave()
               }}
               frontmatter={frontmatter}
               setFm={setFm}
