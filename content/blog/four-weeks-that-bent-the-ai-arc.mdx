@@ -1,0 +1,101 @@
+---
+title: "Four Weeks That Bent the AI Arc"
+date: "2026-05-14"
+category: "Notes"
+excerpt: "The AI arc bent in the last four weeks — not from one launch, but four shifts at once: the model race went plural, NVIDIA's Rubin redefined silicon economics, sovereign AI stopped being a slogan, and the agentic enterprise got real numbers. My read, after thirty years in this market. 👇"
+draft: false
+---
+
+I've been around long enough to remember when "AI" meant a rules engine on an OS/2 box and the most exotic thing in a data center was a Sun E10K. Three decades of watching this industry has taught me one thing: most "revolutions" are press releases dressed up for analyst day. The genuinely tectonic shifts arrive quietly, in clusters, and you only see them in hindsight.
+
+The past four weeks have been one of those clusters. Not because of any single dramatic launch — there was no GPT-4 moment — but because the *shape* of the industry visibly changed across four planes simultaneously: the frontier model race, the silicon underneath it, the geopolitical envelope around it, and the way enterprises are actually deploying it. Let me walk you through what I'm seeing, with sources, because I have zero patience for vapor.
+
+## The frontier is now plural — and Anthropic just changed the rules
+
+For the first time in this cycle, no single lab owns the leaderboard. Anthropic's Claude Opus 4.7, released in early May, leads SWE-bench Pro at 64.3% — meaningful, because SWE-bench Pro is the benchmark that actually tracks complex, multi-file software engineering rather than the toy completions we were celebrating two years ago. OpenAI's GPT-5.5 holds Terminal-Bench 2.0 at 82.7%, which is the benchmark that matters if you care about agents that can actually drive a shell. Google's Gemini 3.1 Pro tops GPQA Diamond at 94.3% for scientific reasoning ([LM Council](https://lmcouncil.ai/benchmarks), [Anthropic](https://www.anthropic.com/news/claude-opus-4-7)).
+
+But the headline isn't the scores. It's what Anthropic did with **Claude Mythos Preview**. After an accidental document leak in late March, Anthropic confirmed Mythos exists, said it found thousands of zero-day vulnerabilities across every major OS and browser during internal testing — and then explicitly withheld it from public release on safety grounds. This is the first time a major frontier lab has openly said: *we built it, we're not shipping it* ([Crescendo AI News](https://www.crescendo.ai/news/latest-ai-news-and-updates)).
+
+I want to be careful here, because the temptation is to call this either heroic or theatrical. Having sat in enough boardrooms where "safety" was the convenient cover for missing a quarter, I'll reserve final judgment. But the precedent itself is real, and it matters. We've been arguing for a decade about whether labs would ever voluntarily slow a capable model. Now we have an existence proof.
+
+Anthropic also rolled out **"dreaming"** at its Code with Claude event on May 6 — a technique where autonomous agents review prior sessions, identify patterns in their own mistakes, and adjust between runs ([Let's Data Science](https://letsdatascience.com/blog/anthropic-dreaming-claude-managed-agents-self-improving-may-6)). If you've spent any time deploying agents in production, you know the single biggest failure mode isn't intelligence — it's that they forget what they learned yesterday. Dreaming, if it works at scale, addresses that directly. I'm cautiously interested.
+
+## The OpenAI–Microsoft divorce that wasn't a divorce
+
+Quietly nestled inside the noise: Microsoft and OpenAI restructured their partnership. Microsoft's license to OpenAI IP is now **non-exclusive**, and OpenAI is free to serve its products across any cloud ([Crescendo AI News](https://www.crescendo.ai/news/latest-ai-news-and-updates)). OpenAI simultaneously stood up the **OpenAI Deployment Company** — a new entity backed by more than $4 billion in initial investment, focused on helping enterprises actually operationalize AI in their day-to-day work ([OpenAI](https://openai.com/index/openai-launches-the-deployment-company/)).
+
+I've watched this dance for thirty years — Sun and Oracle, IBM and Red Hat, Microsoft and Nokia. Distribution alliances always start exclusive and end open. What's interesting here is that OpenAI didn't get pushed; it leveraged its way out. That tells you who has gravity right now.
+
+## The silicon story: Rubin, Helios, and a quiet neuromorphic revival
+
+If you only read consumer tech press, you'd think the AI hardware story is "NVIDIA, the end." It isn't, not anymore.
+
+NVIDIA's **Rubin** platform — announced earlier this year, with Rubin CPX scheduled for end-of-2026 — promises 8 exaflops of AI compute in a single rack, paired with the Vera CPU and 100TB of HBM4 memory. NVIDIA's own claim is 7.5x the performance of the GB300 NVL72 systems shipping today, with a 10x reduction in inference token cost and 4x fewer GPUs needed to train MoE models versus Blackwell ([NVIDIA Investor Relations](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Kicks-Off-the-Next-Generation-of-AI-With-Rubin--Six-New-Chips-One-Incredible-AI-Supercomputer/default.aspx)). Take vendor benchmark claims with the appropriate dose of salt — I always do — but even a fraction of that is a real generational jump.
+
+AMD's **Helios** rack-scale platform, introduced by Lisa Su at CES 2026 and slated for production this year, is genuinely competitive. The architectural bet is on high-bandwidth memory co-packaging — which, having watched memory bandwidth become *the* binding constraint on inference economics, is the right bet ([All About Circuits](https://www.allaboutcircuits.com/news/ai-chip-race-heats-up-with-intel-nvidia-amds-ces-debuts/)).
+
+And the part nobody talks about enough: **neuromorphic computing** is having a quiet moment. BrainChip just closed $25 million to scale production of its AKD1500 edge AI chip for sensors, medical devices, and wearables ([All About Circuits](https://www.allaboutcircuits.com/news/ai-chip-race-heats-up-with-intel-nvidia-amds-ces-debuts/)). This is not going to displace H200s in hyperscaler racks. But for always-on inference at the edge — the kind that drains a watch battery in two hours today — event-driven spiking architectures finally look like an industrial story rather than a lab curiosity.
+
+Separately, a research group published an approach combining neural networks with symbolic reasoning that reportedly cuts AI energy consumption by up to 100x while improving accuracy ([ScienceDaily](https://www.sciencedaily.com/releases/2026/04/260405003952.htm)). I want to see this replicated independently before I get excited, but if neurosymbolic hybrids deliver even a 10x energy reduction in production workloads, that reshapes the data center power conversation we're all currently losing.
+
+The macro number: the global AI chip market is projected to grow from roughly $87.6 billion in 2026 to $670.2 billion by 2036 ([GlobeNewswire](https://www.globenewswire.com/news-release/2026/05/08/3291168/28124/en/Global-AI-Chip-Market-to-Soar-to-670-2-Billion-by-2036-Amid-Generative-AI-Boom.html)). I've learned to discount ten-year TAM forecasts by about half — but even half of that is a once-in-a-generation infrastructure cycle.
+
+## Sovereign AI stopped being a slogan
+
+This is the shift I want my readers to internalize most. **Sovereign AI** has moved from theoretical to operational. Across the Asia-Pacific, government investment priority for sovereign AI has jumped from seventh place to second in a single year. Nearly half of APAC government agencies are now actively evaluating sovereign AI; more than a third are running pilots ([Asia Biz Today](https://www.asiabiztoday.com/2026/05/13/asia-pacific-governments-accelerate-sovereign-ai-push-as-national-security-skills-and-trust-take-centre-stage/)).
+
+Analysts now project a **20% shift** of cloud infrastructure workloads from global hyperscalers to local sovereign providers — what SiliconANGLE is calling "geopatriation" ([SiliconANGLE](https://siliconangle.com/2026/04/24/geopolitical-pressures-ai-initiatives-drive-enterprise-adoption-sovereign-first-cloud-strategy/)). France is leaning into Mistral. Gulf sovereign wealth funds, collectively managing roughly $6 trillion, deployed $66 billion into AI and digitalization last year. British Columbia is building data center clusters and explicitly framing them as sovereign infrastructure ([National Observer](https://www.nationalobserver.com/2026/05/13/news/bcs-new-data-centre-cluster-sparks-new-discussion-sovereign-ai-push)).
+
+I've consulted across regulated industries on three continents. Every CIO I've spoken with this month is quietly asking the same question: *if my AI vendor's home country sanctions mine tomorrow, what happens to my workloads?* That question used to be paranoia. Now it's risk management.
+
+## The agentic enterprise stopped being a slide
+
+ServiceNow's Knowledge 2026 conference was where the agent narrative finally got concrete numbers. Their **Autonomous Workforce** — AI specialists spanning IT, CRM, HR, finance, legal, procurement, and security — is already resolving 91% of cases across the customer base without human reassignment ([Fortune](https://fortune.com/2026/05/05/servicenow-knowledge-2026-autonomous-workforce-microsoft-nvidia-ai-announcements/)). That's the kind of statistic I would have laughed out of a vendor meeting two years ago. I'm not laughing now.
+
+Microsoft's 2026 Work Trend Index, released this month, analyzed over 100,000 anonymized Copilot conversations and found **49% support cognitive work** — analysis, problem-solving, evaluation — rather than rote drafting ([Microsoft WorkLab](https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization)). That distinction matters because it's the difference between AI as a typewriter and AI as a thinking partner.
+
+The IBM 2026 CEO Study found that **76% of surveyed organizations now have a Chief AI Officer**, up from 26% in 2025. Meta announced 2026 AI capex of $115–135 billion, roughly double 2025 ([Crescendo AI News](https://www.crescendo.ai/news/latest-ai-news-and-updates)). Gartner is projecting that 40% of enterprise apps will ship task-specific AI agents this year, up from under 5% in 2025 ([Gartner](https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025)).
+
+## My take, after thirty years
+
+Here's what nobody on a keynote stage will tell you: we are not in the steep part of the S-curve anymore — we are in the **awkward middle**. The capability is real. The benchmarks are real. The capex is real. But the organizational muscle to absorb it is *not* yet real for most enterprises, and that gap is where the next two years will be won or lost.
+
+If I were advising a board today — and I am, several — I'd say three things. First, stop chasing models. The model layer is commoditizing faster than any layer I've watched in thirty years; bet on workflows, data, and judgment. Second, take sovereign AI seriously even if you're not regulated; the regulatory perimeter is moving toward you. Third, the agent transition is not a tooling exercise — it's an org design exercise. The companies that win will rewrite their org charts, not just their procurement contracts.
+
+The arc bent in the last four weeks. It didn't snap. But it bent.
+
+* * *
+
+*Tarry Singh has spent thirty years at the intersection of enterprise software, AI, and data infrastructure across financial services, energy, healthcare, and the public sector. Follow at* [*tarrysingh.com*](http://tarrysingh.com)*.*
+
+## Sources
+
+-   [Anthropic — Introducing Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7)
+    
+-   [OpenAI — Launching the Deployment Company](https://openai.com/index/openai-launches-the-deployment-company/)
+    
+-   [Crescendo AI News — Latest AI Developments](https://www.crescendo.ai/news/latest-ai-news-and-updates)
+    
+-   [Let's Data Science — Anthropic Dreaming for Claude Agents](https://letsdatascience.com/blog/anthropic-dreaming-claude-managed-agents-self-improving-may-6)
+    
+-   [LM Council — AI Model Benchmarks May 2026](https://lmcouncil.ai/benchmarks)
+    
+-   [NVIDIA Investor Relations — Rubin Platform Announcement](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Kicks-Off-the-Next-Generation-of-AI-With-Rubin--Six-New-Chips-One-Incredible-AI-Supercomputer/default.aspx)
+    
+-   [All About Circuits — AI Chip Race at CES 2026](https://www.allaboutcircuits.com/news/ai-chip-race-heats-up-with-intel-nvidia-amds-ces-debuts/)
+    
+-   [ScienceDaily — 100x AI Energy Reduction Research](https://www.sciencedaily.com/releases/2026/04/260405003952.htm)
+    
+-   [GlobeNewswire — Global AI Chip Market Projection](https://www.globenewswire.com/news-release/2026/05/08/3291168/28124/en/Global-AI-Chip-Market-to-Soar-to-670-2-Billion-by-2036-Amid-Generative-AI-Boom.html)
+    
+-   [SiliconANGLE — Sovereign-First Cloud Strategy](https://siliconangle.com/2026/04/24/geopolitical-pressures-ai-initiatives-drive-enterprise-adoption-sovereign-first-cloud-strategy/)
+    
+-   [Asia Biz Today — APAC Sovereign AI Push](https://www.asiabiztoday.com/2026/05/13/asia-pacific-governments-accelerate-sovereign-ai-push-as-national-security-skills-and-trust-take-centre-stage/)
+    
+-   [National Observer — BC Data Centre Cluster](https://www.nationalobserver.com/2026/05/13/news/bcs-new-data-centre-cluster-sparks-new-discussion-sovereign-ai-push)
+    
+-   [Fortune — ServiceNow Knowledge 2026 Autonomous Workforce](https://fortune.com/2026/05/05/servicenow-knowledge-2026-autonomous-workforce-microsoft-nvidia-ai-announcements/)
+    
+-   [Microsoft WorkLab — 2026 Work Trend Index](https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization)
+    
+-   [Gartner — Enterprise Apps with Task-Specific AI Agents](https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025)
