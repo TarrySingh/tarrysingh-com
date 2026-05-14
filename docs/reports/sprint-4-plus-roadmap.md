@@ -1,7 +1,7 @@
 # Sprint 4+ roadmap — Studio Editor v2 and beyond
 
 **Status:** planning · maintained alongside the main status report
-**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 + Sprint 4.5 + Sprint 5.5 all code-complete; Sprint 6 next on the queue)
+**Last updated:** 2026-05-15 (Sprint 6 mobile UX shipped overnight; Sprint 7 version history next)
 **Parent doc:** [`dispatches-status-report.md`](./dispatches-status-report.md)
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -28,7 +28,7 @@ roadmap-deck slop.
 | ~~**Sprint 4.5**~~ | ~~Frontmatter surface — `theme: studio` palette variant · `tags` row under post header · `/blog/tag/<tag>` index~~ | ~1 day | **Shipped 2026-05-14** — 3 commits, closes SP3-08 + SP3-09. See *Sprint 4.5 — shipped* below. |
 | ~~**Sprint 5**~~ | ~~AI-rendered hero images~~ | ~4 days | **Shipped 2026-05-14** — code-complete, pending Tarry-side UAT + `REPLICATE_API_TOKEN` env. See *Sprint 5 — shipped* below. |
 | ~~**Sprint 5.5**~~ | ~~Reader-side subscribe nudges — six experiments~~ | ~2–3 days | **Shipped 2026-05-14** — all 6 experiments + surveillance-free counters table. See *Sprint 5.5 — shipped* below. |
-| **Sprint 6** | Mobile-first writing UX | ~3 days | Independent. The first long flight or train write-session forces it. |
+| ~~**Sprint 6**~~ | ~~Mobile-first writing UX~~ | ~3 days | **Shipped 2026-05-15** — sticky touch toolbar, header reflow, preview overlay, 44×44 tap targets. See *Sprint 6 — shipped* below. |
 | **Sprint 7** | Version-history surface | ~3 days | Independent. Reads from git via Octokit. Becomes valuable once 10+ Dispatches exist. |
 | **Sprint 8** | Linked editing for the Synaptic plate library | ~5–7 days | The largest lift. Plates are hand-coded SVG components; "edit copy in the studio" needs a shape contract per plate. |
 | **Sprint 9+ (defer)** | Real-time collaborative editing | ~5 days | Single-user editor — multiplayer is not on the critical path. Revisit only if a guest writer joins. |
@@ -511,7 +511,34 @@ reader did what.
 
 ---
 
-## Sprint 6 — Mobile-first writing UX
+## Sprint 6 — shipped 2026-05-15
+
+**Window:** ~1 hour overnight. Branch `claude/sprint-6` → PR (pending merge).
+
+### What landed
+
+Two commits, ~290 lines of `StudioEditor.tsx` reshaped for sub-md viewports without touching the desktop layout meaningfully:
+
+| Piece | Commit | Result |
+|---|---|---|
+| Sticky touch toolbar | `1359eaa` | New `<TouchToolbar>` renders only when `matchMedia("(pointer: coarse)")` matches. Holds H2 / H3 / B / I / code / blockquote / bullet / numbered / link / image / undo / redo, each as a 44×44 button (Apple HIG floor). Fixed to bottom of viewport with `env(safe-area-inset-bottom)` padding so it sits above the iOS Safari home-indicator. backdrop-blur on the cream-paper tone keeps the studio register on mobile. Why this matters: markdown shortcuts (`##` → H2, `**bold**`, `> quote`) fail on most mobile keyboards because autocorrect intercepts the surrounding characters; the toolbar replaces them on touch surfaces and reuses Tiptap's commands so the resulting HTML is identical to keyboard input. |
+| Header reflow + preview overlay + padding | `d03558e` | Header buttons collapse to icon-style on mobile (← Studio · 💾 · 👁 · Publish), each ≥ 44 px tall. SaveBadge collapses to a single character (●/↻/✓/✗) with full text in `title=` for screen readers. Word-count moves from header to an inline strip above the editor on mobile. Container padding chain shrinks `p-6 md:p-7|8` → `p-4 sm:p-6 md:p-7|8`. Title input scales `text-2xl sm:text-3xl md:text-4xl`. AI panel grid stacks single → 2-col sm → 3-col md, all buttons `h-11`. **Preview pane becomes a full-screen overlay on mobile** (z-30 below the header), with a Close pill at the top; desktop unchanged (inline aside in the grid at lg+). |
+
+### Live state (2026-05-15, code-complete)
+
+- **Build:** `next build` green; `/studio/editor` route weight basically unchanged (~140 B route + ~250 kB First Load JS).
+- **No new env vars; no migrations.** Pure responsive CSS + a new client component.
+- **Pending Tarry-side UAT:** open `/studio/editor` on a phone — type a title, exercise the touch toolbar (H2/B/I/code/link/image), drop an image from camera roll, swipe to the preview overlay, publish. Verify the toolbar sits above the iOS keyboard, not under.
+
+### Deliberate non-goals (deferred)
+
+- **Drag-and-drop reordering of frontmatter blocks.** Out of scope. Frontmatter is small.
+- **Per-block insert menu (slash command).** A markdown-shortcut + touch toolbar combo covers the cases. Slash menu is a Sprint 8+ increment if a real use case appears.
+- **Native iOS shortcuts integration (Shortcuts.app).** Out of scope for v1.
+
+---
+
+## Sprint 6 — Mobile-first writing UX (original plan — preserved for audit)
 
 **What.** The Studio Editor is desktop-only in v1. Sprint 6 makes
 it usable on a phone (writing a Dispatch while travelling, or a

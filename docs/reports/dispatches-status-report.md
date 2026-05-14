@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 + Sprint 4.5 + Sprint 5.5 all code-complete in one evening; 7 sprints shipped, ~30 micro-commits; Sprint 6 next)
+**Last updated:** 2026-05-15 (Sprint 6 shipped overnight; 8 sprints in main, ~32 micro-commits in 24 h; Sprint 7 next)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -504,5 +504,6 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Sprint 5 — AI-rendered hero images | code-complete 2026-05-14 — 4 commits on `claude/sprint-5`; aiHeroPrompt + Replicate FLUX schnell adapter + chained `POST /api/studio/ai/hero` route + Generate-hero pill with Use/Regenerate/Edit-prompt preview; `next build` green | technical-side complete; pending Tarry-side `REPLICATE_API_TOKEN` env + UAT |
 | Sprint 4.5 — `theme: studio` variant + tags surface | code-complete 2026-05-14 — 3 commits on `claude/sprint-4.5`; closes SP3-08 (theme palette) + SP3-09 (tags row + /blog/tag/[tag] index + sitemap); `next build` green with 3 tag routes statically generated | technical-side complete; pending Tarry-side UAT |
 | Sprint 5.5 — reader-side subscribe nudges (6 experiments) | code-complete 2026-05-14 — 8 commits on `claude/sprint-5.5`; surveillance-free counters table + `/api/nudge/log` + 6 experiments (passkey autofill · 2nd-visit cookie · reading-progress milestone · quiet exit-intent · highlight-to-share · AI-baked footer card via `npm run blog:bake-nudge`); voice-lock acceptance criterion holds for all 6 | technical-side complete; pending Tarry-side UAT (open /blog twice, scroll a long post past 60%, etc.) |
+| Sprint 6 — mobile-first writing UX | code-complete 2026-05-15 — 2 commits on `claude/sprint-6`; sticky `<TouchToolbar>` on `(pointer: coarse)` viewports (H2/H3/B/I/code/blockquote/lists/link/image/undo/redo, 44×44 buttons, `env(safe-area-inset-bottom)`); header reflow with icon-mode buttons under sm; SaveBadge collapses to single-glyph; word-count strip moves inline; preview pane becomes full-screen overlay on mobile (desktop unchanged); container padding loosens `p-6 md:p-7|8` → `p-4 sm:p-6 md:p-7|8`; AI panel grid stacks; title scales `text-2xl sm:text-3xl md:text-4xl` | technical-side complete; pending Tarry-side UAT on a phone |
 
 — *the studio*
