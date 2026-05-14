@@ -9,6 +9,7 @@ import Placeholder from "@tiptap/extension-placeholder"
 import CharacterCount from "@tiptap/extension-character-count"
 import LinkExt from "@tiptap/extension-link"
 import Typography from "@tiptap/extension-typography"
+import Image from "@tiptap/extension-image"
 import { marked } from "marked"
 import { htmlToMarkdown } from "@/lib/studio/serialize"
 import type { AIFrontmatterSuggestion } from "@/lib/studio/ai"
@@ -49,6 +50,11 @@ type FrontmatterAIStatus =
   | { kind: "done"; suggestion: AIFrontmatterSuggestion; thinking?: string }
   | { kind: "error"; message: string; hint?: string; wordCount?: number }
 
+type UploadStatus =
+  | { kind: "idle" }
+  | { kind: "uploading"; filename: string; queued: number; total: number }
+  | { kind: "error"; message: string; hint?: string }
+
 const AUTOSAVE_DELAY_MS = 4000
 
 const CATEGORIES: DispatchCategory[] = ["Essays", "Notes", "Studio"]
@@ -69,6 +75,8 @@ export function StudioEditor({
   const [showThinking, setShowThinking] = useState(false)
   const [rewriteInstruction, setRewriteInstruction] = useState("")
   const [frontmatterAIStatus, setFrontmatterAIStatus] = useState<FrontmatterAIStatus>({ kind: "idle" })
+  const [uploadStatus, setUploadStatus] = useState<UploadStatus>({ kind: "idle" })
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const initialHtml = useMemo(
     () => (initialBody ? marked.parse(initialBody, { async: false }) as string : ""),
@@ -86,6 +94,13 @@ export function StudioEditor({
         placeholder: "Open with the claim. A reader who doesn't scroll past should still know what you're saying.",
       }),
       CharacterCount.configure({ limit: 100000 }),
+      Image.configure({
+        inline: false,
+        allowBase64: false,
+        HTMLAttributes: {
+          class: "studio-image",
+        },
+      }),
     ],
     content: initialHtml,
     immediatelyRender: false,
@@ -268,6 +283,108 @@ export function StudioEditor({
     } catch (err) {
       setAIStatus({ kind: "error", message: err instanceof Error ? err.message : "network_error" })
     }
+  }
+
+  // Upload one or more image files to /api/studio/upload, then insert
+  // each at the current cursor position. Used by drop, paste, and the
+  // click-to-pick toolbar button. Files arrive in user-perceived order.
+  const uploadAndInsertImagesRef = useRef<(files: File[]) => Promise<void>>(
+    async () => {},
+  )
+
+  async function uploadAndInsertImages(files: File[]) {
+    if (!editor || files.length === 0) return
+    const imageFiles = files.filter((f) => f.type.startsWith("image/"))
+    if (imageFiles.length === 0) return
+    for (let i = 0; i < imageFiles.length; i++) {
+      const file = imageFiles[i]
+      setUploadStatus({
+        kind: "uploading",
+        filename: file.name,
+        queued: i,
+        total: imageFiles.length,
+      })
+      const form = new FormData()
+      form.append("file", file)
+      form.append("alt", file.name.replace(/\.[a-z0-9]+$/i, ""))
+      try {
+        const res = await fetch("/api/studio/upload", {
+          method: "POST",
+          body: form,
+        })
+        const j = await res.json()
+        if (!res.ok || !j.ok) {
+          setUploadStatus({
+            kind: "error",
+            message: j.error ?? `upload_failed_${res.status}`,
+            hint: j.hint,
+          })
+          return // bail on first failure; queued files don't auto-retry
+        }
+        editor.chain().focus().setImage({ src: j.url, alt: j.alt || file.name }).run()
+      } catch (err) {
+        setUploadStatus({
+          kind: "error",
+          message: err instanceof Error ? err.message : "network_error",
+        })
+        return
+      }
+    }
+    setUploadStatus({ kind: "idle" })
+    triggerAutosave()
+  }
+
+  // Keep the ref pointing at the latest closure so the editor.view.dom
+  // listeners below always call up-to-date editor state.
+  useEffect(() => {
+    uploadAndInsertImagesRef.current = uploadAndInsertImages
+  })
+
+  // Wire native drop/paste on the editor DOM. Tiptap's editorProps
+  // handleDrop/handlePaste would also work, but the ref-via-closure
+  // dance there is uglier than this useEffect.
+  useEffect(() => {
+    if (!editor) return
+    const dom = editor.view.dom
+
+    function onDrop(e: DragEvent) {
+      const files = Array.from(e.dataTransfer?.files ?? [])
+      const images = files.filter((f) => f.type.startsWith("image/"))
+      if (images.length === 0) return
+      e.preventDefault()
+      void uploadAndInsertImagesRef.current(images)
+    }
+
+    function onPaste(e: ClipboardEvent) {
+      const items = Array.from(e.clipboardData?.items ?? [])
+      const files: File[] = []
+      for (const item of items) {
+        if (item.kind === "file" && item.type.startsWith("image/")) {
+          const f = item.getAsFile()
+          if (f) files.push(f)
+        }
+      }
+      if (files.length === 0) return
+      e.preventDefault()
+      void uploadAndInsertImagesRef.current(files)
+    }
+
+    dom.addEventListener("drop", onDrop)
+    dom.addEventListener("paste", onPaste)
+    return () => {
+      dom.removeEventListener("drop", onDrop)
+      dom.removeEventListener("paste", onPaste)
+    }
+  }, [editor])
+
+  function onPickImage() {
+    fileInputRef.current?.click()
+  }
+
+  function onFileInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(e.target.files ?? [])
+    e.target.value = "" // allow re-picking the same file
+    if (files.length > 0) void uploadAndInsertImages(files)
   }
 
   async function onSuggestFrontmatter() {
@@ -453,7 +570,19 @@ export function StudioEditor({
             />
 
             <div className="rounded-2xl border border-navy-200/80 bg-white p-6 md:p-8">
+              <EditorToolbar
+                onPickImage={onPickImage}
+                uploadStatus={uploadStatus}
+              />
               <EditorContent editor={editor} />
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/png,image/jpeg,image/webp,image/svg+xml,image/gif,image/avif"
+                multiple
+                hidden
+                onChange={onFileInputChange}
+              />
             </div>
 
             <AIPanel
@@ -542,6 +671,21 @@ export function StudioEditor({
           background: linear-gradient(90deg, transparent, rgba(180,134,11,0.35), transparent);
           margin: 2em 0;
         }
+        .studio-prose img,
+        .studio-image {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          margin: 1.6em auto;
+          border-radius: 12px;
+          border: 1px solid #e2e8f0;
+          box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+        }
+        .studio-prose .ProseMirror-selectednode.studio-image,
+        .studio-prose img.ProseMirror-selectednode {
+          outline: 2px solid #b45309;
+          outline-offset: 4px;
+        }
         .studio-prose .is-empty::before {
           color: #94a3b8;
           font-style: italic;
@@ -558,6 +702,54 @@ export function StudioEditor({
 // ────────────────────────────────────────────────────────────────────
 // Sub-components
 // ────────────────────────────────────────────────────────────────────
+
+function EditorToolbar({
+  onPickImage,
+  uploadStatus,
+}: {
+  onPickImage: () => void
+  uploadStatus: UploadStatus
+}) {
+  const mono = { fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" } as const
+  const isUploading = uploadStatus.kind === "uploading"
+  return (
+    <div className="-mt-2 mb-4 flex items-center gap-3 border-b border-navy-100 pb-3">
+      <button
+        type="button"
+        onClick={onPickImage}
+        disabled={isUploading}
+        title="Drop, paste, or click to upload an image (PNG / JPEG / WebP / SVG / GIF / AVIF, max 8 MiB)"
+        className="rounded-full border border-navy-200 bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50 disabled:opacity-50"
+        style={mono}
+      >
+        {isUploading ? "Uploading…" : "+ Image"}
+      </button>
+      <span
+        className="text-[10px] tracking-wide text-navy-400"
+        style={mono}
+      >
+        drop · paste · click — Supabase Storage, content-addressed CDN
+      </span>
+      <span className="flex-1" />
+      {isUploading ? (
+        <span
+          className="text-[10px] uppercase tracking-[0.22em] text-gold-700"
+          style={mono}
+        >
+          {uploadStatus.queued + 1}/{uploadStatus.total} · {uploadStatus.filename}
+        </span>
+      ) : null}
+      {uploadStatus.kind === "error" ? (
+        <span
+          className="text-[10px] uppercase tracking-[0.22em] text-rose-600"
+          style={mono}
+        >
+          ✗ {uploadStatus.hint ?? uploadStatus.message}
+        </span>
+      ) : null}
+    </div>
+  )
+}
 
 function SaveBadge({ status }: { status: SaveStatus }) {
   const mono = { fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" } as const
