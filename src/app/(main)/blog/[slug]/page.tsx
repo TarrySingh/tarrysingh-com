@@ -16,6 +16,7 @@ import { mdxComponents } from "@/lib/blog/mdx-components"
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
 import { ReadingMilestoneNudge } from "@/components/blog/ReadingMilestoneNudge"
 import { QuietExitIntent } from "@/components/blog/QuietExitIntent"
+import { HighlightToShare } from "@/components/blog/HighlightToShare"
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -189,6 +190,8 @@ export default async function BlogPostPage({
         </div>
         {/* Sprint 5.5.2 — reading-progress milestone. Only mounts on long posts. */}
         <ReadingMilestoneNudge slug={post.slug} wordCount={post.wordCount} />
+        {/* Sprint 5.5.3 — highlight-to-share floating chip */}
+        <HighlightToShare slug={post.slug} />
       </section>
 
       {/* Footer: cartouche + LinkedIn link */}
