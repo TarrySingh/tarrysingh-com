@@ -1,15 +1,18 @@
 # Sprint 4+ roadmap — Studio Editor v2 and beyond
 
 **Status:** planning · maintained alongside the main status report
-**Last updated:** 2026-05-13 (initial filing)
+**Last updated:** 2026-05-14 (Sprint 3 closed; Sprint 4.5 + Sprint 5.5 added — theme/tags surface, reader-side subscribe nudges)
 **Parent doc:** [`dispatches-status-report.md`](./dispatches-status-report.md)
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
 Sprint 3 shipped a Studio Editor MVP that earns its keep on day one:
-a Tiptap-based composer behind Basic Auth, Claude Opus 4.7-extended
-on Continue + Rewrite, one-click Publish-to-main via Octokit. Seven
-features were deliberately deferred to keep the MVP honest. This
-document plans them out in execution order.
+a Tiptap-based composer behind Basic Auth, Claude Opus extended-thinking
+(`claude-opus-4-6` · 4K thinking tokens) on Continue + Rewrite,
+one-click Publish-to-main via Octokit. Seven core features were
+deliberately deferred to keep the MVP honest; Stage B UAT then
+surfaced two small frontmatter-surface gaps (theme · tags) plus a
+new reader-side track (subscribe-nudges). This document plans them
+out in execution order.
 
 The voice of the planning: short. Each item gets four short
 paragraphs — *what*, *shape*, *estimate*, *dependencies*. No
@@ -22,7 +25,9 @@ roadmap-deck slop.
 | Sprint | Deliverable | Weight | Why this order |
 |---|---|---|---|
 | **Sprint 4** | AI-suggested frontmatter · Image upload (Supabase Storage) | ~3 days | Both are small + standalone; image upload unblocks Sprint 5. |
+| **Sprint 4.5** | Frontmatter surface — `theme: studio` palette variant · `tags` row under post header · `/blog/tag/<tag>` index | ~1 day | Tiny finish-the-job pass: both fields are *parsed* already (SP3-08, SP3-09 in the UAT results); only the rendering is missing. Drop in before image work to keep voice momentum. |
 | **Sprint 5** | AI-rendered hero images | ~4 days | Depends on image upload (Sprint 4). High creative leverage per Dispatch. |
+| **Sprint 5.5** | Reader-side subscribe nudges (writer-track #1) — six experiments | ~2–3 days | Independent of Studio Editor work. First reader-side track in the backlog — earns the studio its subscribers without surveillance affordances. Pairs naturally with the Sprint 4.5 tags surface for tag-aware nudges. |
 | **Sprint 6** | Mobile-first writing UX | ~3 days | Independent. The first long flight or train write-session forces it. |
 | **Sprint 7** | Version-history surface | ~3 days | Independent. Reads from git via Octokit. Becomes valuable once 10+ Dispatches exist. |
 | **Sprint 8** | Linked editing for the Synaptic plate library | ~5–7 days | The largest lift. Plates are hand-coded SVG components; "edit copy in the studio" needs a shape contract per plate. |
@@ -94,6 +99,66 @@ setup, the upload endpoint, and binding to Tiptap.
 
 ---
 
+## Sprint 4.5 — Frontmatter surface (theme + tags)
+
+The Studio Editor *parses* `theme` and `tags` from frontmatter, but
+neither field is rendered yet on the post or the blog index. Both
+were caught at Stage B post-B8 and filed as SP3-08 + SP3-09 in
+`sprint-3-uat-results.md`. This is a tiny finish-the-job sprint —
+1 day total, two small deliverables.
+
+### 4.5.1 `theme: studio` palette variant
+
+**What.** When `frontmatter.theme === "studio"`, the post renders
+on the cream-paper + indigo + copper palette (the same palette
+used on `/synaptic/*`), instead of the default editorial-white
+palette used by the existing two seed posts. The author opts in
+per-Dispatch; the default stays neutral.
+
+**Shape.** In `src/app/(main)/blog/[slug]/page.tsx`, branch on
+`post.frontmatter.theme` and apply either the default class
+chain or a `theme-studio` class on the article root. Tokens
+live in `src/styles/themes.css` (new file). Two variants only
+for v1: `default` (current look) and `studio` (cream paper +
+midnight indigo body + copper hairline rules).
+
+**Estimate.** 2–3 h. Most of the work is restraint — keep the
+studio variant from drifting into something flashier than the
+existing `/synaptic/*` plates.
+
+**Dependencies.** None.
+
+### 4.5.2 Tags surface
+
+**What.** Render `frontmatter.tags` as a Plex Mono small-caps row
+under the post header (and a small `· tag` chip row at the foot
+of each `/blog` index card). Bonus: a per-tag index at
+`/blog/tag/<tag>` showing every Dispatch tagged with that tag.
+
+**Shape.** Three small changes:
+1. **Post header** — under the existing `category · date · reading-time`
+   line, add a `tags?.length ? <TagsRow tags={tags} /> : null` block.
+   The component renders each tag as a Plex Mono uppercase chip
+   linking to `/blog/tag/<slug>`.
+2. **Index card** — the existing `/blog` card gains a discreet
+   `tags?.slice(0, 3)` row below the excerpt.
+3. **Per-tag index** — new route `/blog/tag/[tag]/page.tsx` that
+   reuses the existing `/blog` index component, filtered.
+   Updates `sitemap.xml` to include the per-tag pages.
+
+**Estimate.** 4–5 h. Mostly UI + a small sitemap addition.
+
+**Dependencies.** None. Tags are already in frontmatter.
+
+### 4.5.3 Studio AI follow-up
+
+While the surface is live, run one quick QA pass: open the published
+Dispatch in the editor, add `theme: studio`, add three tags, click
+Save, watch the production reload, confirm both surfaces render
+correctly. This is the Sprint 4.5 acceptance test.
+
+---
+
 ## Sprint 5 — AI-rendered hero images
 
 **What.** A "Generate hero" button in the frontmatter form. Claude
@@ -134,6 +199,185 @@ engineering for studio-voice consistency.
 - Sprint 4.2 (image upload) — the generated PNG/WebP goes through that pipe.
 - `REPLICATE_API_TOKEN` (or whichever provider wins) on Vercel.
 - Budget consideration: FLUX.1 [schnell] is ~$0.003/image, SDXL ~$0.005. Negligible at one hero per Dispatch.
+
+---
+
+## Sprint 5.5 — Reader-side subscribe nudges (writer-track #1)
+
+**What.** The first reader-side track in the backlog. Sprint 1
+shipped a McKinsey-style static newsletter card + bottom-right
+Peek slide-up. Sprint 5.5 layers six small experiments on top —
+each designed to earn its subscriber the way the studio earns
+its words: by being interesting, not by being loud. **No dark
+patterns. No surveillance affordances.** The newsletter pipeline
+remains tracking-pixel-off, click-tracking-off (Sprint 2 rule).
+
+Six experiments, each a separate increment that ships independently.
+
+### 5.5.1 AI-personalised footer card
+
+**What.** When a reader reaches the foot of a Dispatch, a
+contextual card surfaces — written by Claude in the studio voice,
+referencing the *specific argument* of the piece they just read.
+Not "subscribe for more like this." More like *"If the argument
+held — Tuesday's Dispatch carries it forward. Cream paper,
+no tracking pixels, one click."*
+
+**Shape.** Build-time generation, not runtime — keeps the page
+static. A new step in `scripts/blog/promote.mjs`: when a Dispatch
+ships, fire `POST /api/studio/ai/nudge-card` with the post body;
+Claude returns a 60–90 word card; that card is baked into the
+`.mdx` as a closing block. Token budget: 1500 thinking, 200
+output. Tone-locked by the studio system prompt.
+
+**Estimate.** 1 day. The API route is small; the prompt-engineering
+pass is most of the cost.
+
+**Dependencies.** None. Builds on Sprint 3's AI plumbing unchanged.
+
+### 5.5.2 Reading-progress milestone nudge
+
+**What.** As a reader passes 60 % of a long Dispatch (>1500
+words), a small inline nudge surfaces at the next paragraph
+break — *"You've made it through the middle. The argument
+turns from here. If you want the next one in your inbox: …"*
+with a single-input form. Fires once per session per Dispatch.
+
+**Shape.** New `<ReadingMilestoneNudge>` client component that
+mounts on long posts only. Uses IntersectionObserver on a target
+paragraph at the 60 % offset; on first crossing, slides the
+nudge in. localStorage flag `tch:nudge:<slug>` prevents repeat
+shows. Subscribe POST hits the existing `/api/newsletter/subscribe`
+endpoint — same HMAC bridge, same fail-safe log-only fallback,
+zero new auth.
+
+**Estimate.** Half a day. One component + a small instrumentation
+in `blog/[slug]/page.tsx`.
+
+**Dependencies.** None.
+
+### 5.5.3 Highlight-to-share
+
+**What.** When a reader selects ≥ 15 chars of text in a Dispatch,
+a small floating chip surfaces above the selection — *"Share
+this line"* (one click → opens a clean intent URL with the
+quote + canonical URL pre-filled, no tracking params; default
+target = LinkedIn share intent with the studio voice intact).
+Optional: *"Quote in next Roundup"* button that POSTs the
+selection to a new `/api/digest/reader-quotes` endpoint, queueing
+the quote (with consented attribution) for possible inclusion
+in the Monthly Roundup.
+
+**Shape.** New `<HighlightToShare>` client component using
+`document.onselectionchange`. The chip is Plex Mono small-caps,
+copper underline — same visual register as the studio. The
+quote-to-Roundup endpoint stores `{quote, sourceSlug, optionalEmail}`
+in a new Supabase table `reader_quotes` (no email by default —
+that field surfaces only if the reader explicitly opts to be
+credited). Plain client-side highlight → share fires zero
+network calls until the user clicks.
+
+**Estimate.** 1 day. Component + endpoint + table.
+
+**Dependencies.** Supabase write access (already in place).
+
+### 5.5.4 Quiet exit-intent (desktop only, scroll-up only)
+
+**What.** Most "exit-intent" pop-ups are dark patterns. This one
+isn't. On desktop only, if a reader scrolls up rapidly from
+≥ 80 % of a Dispatch toward the top (signalling "I'm leaving
+but want to remember"), a discreet inline pill slides in at the
+top-right corner: *"Bookmark this — or take the studio with
+you."* Two CTAs: a copy-to-clipboard share link, and a Subscribe
+field. Fires once per browser, ever (localStorage `tch:exit-intent:fired`).
+
+**Shape.** New `<QuietExitIntent>` client component. Watches
+`scrollY` velocity; trips only on rapid upward scroll from deep
+reading position. No mouse-leave detection (that's the dark-pattern
+variant). No mobile equivalent — on mobile, the existing Peek
+already does the job. localStorage flag is permanent until the
+reader subscribes or explicitly dismisses.
+
+**Estimate.** Half a day.
+
+**Dependencies.** None.
+
+### 5.5.5 Second-visit recognizer
+
+**What.** A returning reader on their 2nd or 3rd visit (anonymous,
+no auth) sees a single subtle line at the top of `/blog`: *"You've
+been here before. The next Dispatch — Tuesday, no spam."* with
+a single-line subscribe form. Detects 2nd-visit via a long-life
+first-party cookie set on first arrival. No cross-site tracking.
+No fingerprinting.
+
+**Shape.** Middleware sets `tch:visit-count` cookie (HTTP-only,
+SameSite=Lax, 365-day expiry). `/blog/page.tsx` reads the cookie
+on render, branches the hero copy on count ∈ {1, 2, 3+}. After
+subscribe, the cookie flips to `tch:subscribed=1` and the line
+permanently disappears (replaced by the published-cadence line
+*"Next plate ships <date>."*).
+
+**Estimate.** Half a day. Cookie logic + a single `<ReturningReaderHero>`
+component.
+
+**Dependencies.** None.
+
+### 5.5.6 Passkey-style subscribe pill (mobile)
+
+**What.** On mobile, the bottom-right Peek slide-up gains a
+WebAuthn / native autofill hint so that on Safari iOS, the
+email field surfaces the system's "Sign in with Apple" /
+hidden-relay flow. Two taps from "I want this" to subscribed.
+No password. No account. The hidden-relay email lives in
+RealAI-CRM as the canonical `CrmContact.email`; if the reader
+later unsubscribes, the relay flow on Apple's side honours it.
+
+**Shape.** Add `autocomplete="email webauthn"` + `inputmode="email"`
+to the subscribe input. The native autofill chip surfaces over
+the keyboard. On iOS 17+, "Hide My Email" surfaces alongside.
+This is *one HTML attribute change* — the studio's job is to
+make the path easy, not to build a passkey runtime.
+
+**Estimate.** 1 hour. Almost entirely a one-attribute change
+plus a small label adjustment.
+
+**Dependencies.** None.
+
+### 5.5 — Sequencing + measurement
+
+Run the six experiments in this order, not all at once:
+
+1. **5.5.6 first** (one hour; lowest cost; mobile path improves immediately).
+2. **5.5.5** (second-visit recognizer — cookie infra benefits later experiments).
+3. **5.5.1** (AI-personalised footer card — high-leverage per Dispatch).
+4. **5.5.2** (reading-progress milestone — pairs well with the AI footer).
+5. **5.5.3** (highlight-to-share — adds reader voice to the studio).
+6. **5.5.4** (quiet exit-intent — last because it's the riskiest
+   on a voice-and-aesthetics axis; ship only if the prior five
+   have moved the subscribe rate honestly).
+
+**Measurement (no surveillance).** Server-side counters only.
+Each nudge endpoint increments a Supabase row counter
+`{nudgeType, slug, date}`. The studio reads aggregate counts
+weekly — never per-reader trails. No analytics SDK. No GA.
+No Plausible. Just `count(*)` on the same database row that
+the subscribe-form POST already writes to.
+
+**Acceptance criterion (for all six).** Each experiment is
+allowed to ship only if a 1-paragraph dispatch-voice description
+of *why a reader would subscribe through this nudge* can be
+written without using a single verb from {convert, optimise,
+acquire, capture, monetise}. If the description can't be
+written, the experiment doesn't ship. The studio earns its
+subscribers; it does not harvest them.
+
+**Dependencies.**
+- All six route through the existing `/api/newsletter/subscribe`
+  pipeline — no new auth, no new HMAC keys.
+- Sprint 4.5 tags surface unlocks a per-tag variant of 5.5.1
+  ("more like this tag"); ship 4.5 first or accept that 5.5.1
+  is tagless for the first iteration.
 
 ---
 
