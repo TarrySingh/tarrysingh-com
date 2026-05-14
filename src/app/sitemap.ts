@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next"
-import { getAllPosts } from "@/lib/blog/posts"
+import { getAllPosts, getAllTags } from "@/lib/blog/posts"
 
 const SITE = "https://tarrysingh.com"
 
@@ -24,5 +24,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...postRoutes]
+  // Sprint 4.5 — per-tag index pages (/blog/tag/<tag>) for every tag
+  // that appears on at least one published Dispatch.
+  const tags = await getAllTags()
+  const tagRoutes: MetadataRoute.Sitemap = tags.map(({ tag }) => ({
+    url: `${SITE}/blog/tag/${encodeURIComponent(tag)}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.5,
+  }))
+
+  return [...staticRoutes, ...postRoutes, ...tagRoutes]
 }
