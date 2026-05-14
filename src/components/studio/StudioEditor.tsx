@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { useEditor, EditorContent } from "@tiptap/react"
+import { useEditor, EditorContent, type Editor } from "@tiptap/react"
 import StarterKit from "@tiptap/starter-kit"
 import Placeholder from "@tiptap/extension-placeholder"
 import CharacterCount from "@tiptap/extension-character-count"
@@ -617,7 +617,10 @@ export function StudioEditor({
         ) : null}
       </header>
 
-      <main className="mx-auto max-w-6xl px-6 pt-8 pb-24 lg:px-8">
+      {/* Sprint 6 — sticky touch toolbar (mobile only) */}
+      <TouchToolbar editor={editor} onPickImage={onPickImage} />
+
+      <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-6 sm:pt-8 pb-36 sm:pb-24 lg:px-8">
         <div className={`grid gap-8 ${showPreview ? "lg:grid-cols-[1fr_1fr]" : "lg:grid-cols-[1fr]"}`}>
           {/* — composer — */}
           <section className="space-y-6">
@@ -773,6 +776,184 @@ export function StudioEditor({
 // ────────────────────────────────────────────────────────────────────
 // Sub-components
 // ────────────────────────────────────────────────────────────────────
+
+/**
+ * Sprint 6 — sticky touch toolbar.
+ *
+ * Renders only when the viewport is touch-driven (matchMedia
+ * `pointer: coarse`). Holds H2 / H3 / bold / italic / blockquote /
+ * code / link / undo / redo / image. Each button is 44×44 minimum
+ * (Apple HIG floor). Markdown shortcuts (`##` → H2, `**bold**`, etc.)
+ * fail on most mobile keyboards because autocorrect intercepts the
+ * surrounding characters — this toolbar replaces the shortcuts on
+ * touch surfaces.
+ *
+ * Fixed to the bottom of the viewport, sitting above the iOS Safari
+ * keyboard via env(safe-area-inset-bottom).
+ */
+function TouchToolbar({
+  editor,
+  onPickImage,
+}: {
+  editor: Editor | null
+  onPickImage: () => void
+}) {
+  const [touchMode, setTouchMode] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return
+    const mql = window.matchMedia("(pointer: coarse)")
+    const update = () => setTouchMode(mql.matches)
+    update()
+    mql.addEventListener("change", update)
+    return () => mql.removeEventListener("change", update)
+  }, [])
+
+  if (!touchMode || !editor) return null
+  // Hoisted to local so nested arrow functions get narrowed-non-null.
+  const ed: Editor = editor
+
+  const isActive = (name: string, attrs?: Record<string, unknown>) =>
+    ed.isActive(name, attrs)
+
+  const btnClass = (active: boolean) =>
+    [
+      "inline-flex h-11 w-11 items-center justify-center rounded-lg border text-[12px] font-semibold",
+      "transition-colors",
+      active
+        ? "border-gold-400 bg-gold-50 text-gold-700"
+        : "border-navy-200 bg-white text-navy-700 hover:bg-navy-50",
+    ].join(" ")
+
+  const onLink = () => {
+    const previous = (ed.getAttributes("link").href as string | undefined) ?? ""
+    const url = window.prompt("Link URL", previous)
+    if (url === null) return
+    if (url === "") {
+      ed.chain().focus().extendMarkRange("link").unsetLink().run()
+      return
+    }
+    ed.chain().focus().extendMarkRange("link").setLink({ href: url }).run()
+  }
+
+  return (
+    <div
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-navy-200/80 bg-[rgba(251,247,236,0.96)] backdrop-blur-md md:hidden"
+      style={{
+        paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 0.4rem)",
+      }}
+      role="toolbar"
+      aria-label="Editor formatting toolbar"
+    >
+      <div className="flex items-center gap-1.5 overflow-x-auto px-3 py-2">
+        <button
+          type="button"
+          aria-label="Heading 2"
+          onClick={() => ed.chain().focus().toggleHeading({ level: 2 }).run()}
+          className={btnClass(isActive("heading", { level: 2 }))}
+          style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+        >
+          H2
+        </button>
+        <button
+          type="button"
+          aria-label="Heading 3"
+          onClick={() => ed.chain().focus().toggleHeading({ level: 3 }).run()}
+          className={btnClass(isActive("heading", { level: 3 }))}
+          style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+        >
+          H3
+        </button>
+        <span className="h-6 w-px shrink-0 bg-navy-200" />
+        <button
+          type="button"
+          aria-label="Bold"
+          onClick={() => ed.chain().focus().toggleBold().run()}
+          className={btnClass(isActive("bold"))}
+        >
+          <strong>B</strong>
+        </button>
+        <button
+          type="button"
+          aria-label="Italic"
+          onClick={() => ed.chain().focus().toggleItalic().run()}
+          className={btnClass(isActive("italic"))}
+        >
+          <em>I</em>
+        </button>
+        <button
+          type="button"
+          aria-label="Inline code"
+          onClick={() => ed.chain().focus().toggleCode().run()}
+          className={btnClass(isActive("code"))}
+        >
+          {"</>"}
+        </button>
+        <span className="h-6 w-px shrink-0 bg-navy-200" />
+        <button
+          type="button"
+          aria-label="Blockquote"
+          onClick={() => ed.chain().focus().toggleBlockquote().run()}
+          className={btnClass(isActive("blockquote"))}
+        >
+          &ldquo;
+        </button>
+        <button
+          type="button"
+          aria-label="Bullet list"
+          onClick={() => ed.chain().focus().toggleBulletList().run()}
+          className={btnClass(isActive("bulletList"))}
+        >
+          •
+        </button>
+        <button
+          type="button"
+          aria-label="Numbered list"
+          onClick={() => ed.chain().focus().toggleOrderedList().run()}
+          className={btnClass(isActive("orderedList"))}
+        >
+          1.
+        </button>
+        <span className="h-6 w-px shrink-0 bg-navy-200" />
+        <button
+          type="button"
+          aria-label="Link"
+          onClick={onLink}
+          className={btnClass(isActive("link"))}
+        >
+          🔗
+        </button>
+        <button
+          type="button"
+          aria-label="Insert image"
+          onClick={onPickImage}
+          className={btnClass(false)}
+        >
+          🖼
+        </button>
+        <span className="h-6 w-px shrink-0 bg-navy-200" />
+        <button
+          type="button"
+          aria-label="Undo"
+          onClick={() => ed.chain().focus().undo().run()}
+          disabled={!ed.can().undo()}
+          className={btnClass(false) + " disabled:opacity-40"}
+        >
+          ↶
+        </button>
+        <button
+          type="button"
+          aria-label="Redo"
+          onClick={() => ed.chain().focus().redo().run()}
+          disabled={!ed.can().redo()}
+          className={btnClass(false) + " disabled:opacity-40"}
+        >
+          ↷
+        </button>
+      </div>
+    </div>
+  )
+}
 
 function EditorToolbar({
   onPickImage,
