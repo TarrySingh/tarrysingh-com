@@ -1,7 +1,7 @@
 # Sprint 4+ roadmap — Studio Editor v2 and beyond
 
 **Status:** planning · maintained alongside the main status report
-**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 both code-complete pending UAT; Sprint 4.5 / 5.5 / 6 still on the queue)
+**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 + Sprint 4.5 all code-complete; Sprint 5.5 next on the queue)
 **Parent doc:** [`dispatches-status-report.md`](./dispatches-status-report.md)
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -25,7 +25,7 @@ roadmap-deck slop.
 | Sprint | Deliverable | Weight | Why this order |
 |---|---|---|---|
 | ~~**Sprint 4**~~ | ~~AI-suggested frontmatter · Image upload (Supabase Storage)~~ | ~3 days | **Shipped 2026-05-14** — code-complete, pending Tarry-side UAT. See *Sprint 4 — shipped* below. |
-| **Sprint 4.5** | Frontmatter surface — `theme: studio` palette variant · `tags` row under post header · `/blog/tag/<tag>` index | ~1 day | Tiny finish-the-job pass: both fields are *parsed* already (SP3-08, SP3-09 in the UAT results); only the rendering is missing. Drop in before image work to keep voice momentum. |
+| ~~**Sprint 4.5**~~ | ~~Frontmatter surface — `theme: studio` palette variant · `tags` row under post header · `/blog/tag/<tag>` index~~ | ~1 day | **Shipped 2026-05-14** — 3 commits, closes SP3-08 + SP3-09. See *Sprint 4.5 — shipped* below. |
 | ~~**Sprint 5**~~ | ~~AI-rendered hero images~~ | ~4 days | **Shipped 2026-05-14** — code-complete, pending Tarry-side UAT + `REPLICATE_API_TOKEN` env. See *Sprint 5 — shipped* below. |
 | **Sprint 5.5** | Reader-side subscribe nudges (writer-track #1) — six experiments | ~2–3 days | Independent of Studio Editor work. First reader-side track in the backlog — earns the studio its subscribers without surveillance affordances. Pairs naturally with the Sprint 4.5 tags surface for tag-aware nudges. |
 | **Sprint 6** | Mobile-first writing UX | ~3 days | Independent. The first long flight or train write-session forces it. |
@@ -60,6 +60,32 @@ What follows is the per-item breakdown.
 - **Image crop / resize / rotate** — out of MVP. Crop happens in the host OS preview tool, or via Sprint 5's AI-rendered flow which produces the right aspect ratio at gen time.
 - **Width / height in upload response** — `next/image` reads intrinsic dimensions at build time; the upload response doesn't need to carry them.
 - **Per-Dispatch image gallery / library view** — drag-and-drop UX assumes the author drops what they need at the moment they need it. A future "studio assets" view could surface previously-uploaded images for reuse — out of Sprint 4 scope.
+
+---
+
+## Sprint 4.5 — shipped 2026-05-14
+
+**Window:** ~1 hour after Sprint 5 close. Branch `claude/sprint-4.5` → PR (pending merge).
+
+### What landed
+
+Three commits, closes SP3-08 + SP3-09 from the Stage B follow-ups.
+
+| Piece | Commit | Result |
+|---|---|---|
+| `theme: studio` variant + post-header tags row | `11dda01` | `/blog/[slug]` reads `post.theme` and switches the article shell + header background. New `.theme-studio` block in `globals.css` overrides the palette tokens (paper #fbf7ec, ink, copper, hairline) so `.prose-tarry` headings, links, blockquote rule, and `hr` gradient sit in the studio register. Tags chip row renders above the title — rounded-full Plex-Mono small-caps, each chip a `<Link>` to `/blog/tag/<tag>`. |
+| Tag chips on `/blog` index cards | `56b2d93` | Same chip pattern under each card's excerpt, capped at 4 tags so a heavily-tagged post doesn't blow card height. Inherits the group-hover transition so the whole card still feels like one tap target. |
+| `/blog/tag/[tag]` index route + sitemap | `953b527` | New helpers `getAllTags()` + `getPostsByTag()` in `src/lib/blog/posts.ts`. Static params enumerate every tag (URI-encoded). Custom hero: "Filed under *tag*. N Dispatches carry this tag." Reuses the index card markup. 404s on unknown tags. `sitemap.xml` gains a tag-routes section at priority 0.5, weekly changefreq. |
+
+### Live state (2026-05-14, code-complete)
+
+- **Build:** `/blog/tag/design`, `/blog/tag/memphis`, `/blog/tag/plates` are statically generated. New `/blog/tag/[tag]` route appears in the routes list at 177 B.
+- **No new env vars; no migrations.** Pure UI + routing work on top of existing posts.
+- **Pending Tarry-side UAT:** open a draft in `/studio/editor`, set `theme: studio` + add 3 tags, save → publish → confirm the cream-paper variant renders + tags route resolves.
+
+### Why it shipped fast
+
+Both fields were already in the frontmatter pipeline (`src/lib/blog/posts.ts` parses them; the studio editor saves them; the publish handler writes them to `.mdx`). SP3-08/09 was purely a rendering gap. Sprint 4.5 closed it in one hour.
 
 ---
 
