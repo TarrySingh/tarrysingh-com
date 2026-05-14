@@ -11,6 +11,7 @@ import LinkExt from "@tiptap/extension-link"
 import Typography from "@tiptap/extension-typography"
 import { marked } from "marked"
 import { htmlToMarkdown } from "@/lib/studio/serialize"
+import type { AIFrontmatterSuggestion } from "@/lib/studio/ai"
 import {
   type DispatchFrontmatter,
   type DispatchCategory,
@@ -42,6 +43,12 @@ type AIStatus =
   | { kind: "done"; output: string; thinking?: string; action: "continue" | "rewrite" }
   | { kind: "error"; message: string }
 
+type FrontmatterAIStatus =
+  | { kind: "idle" }
+  | { kind: "running" }
+  | { kind: "done"; suggestion: AIFrontmatterSuggestion; thinking?: string }
+  | { kind: "error"; message: string; hint?: string; wordCount?: number }
+
 const AUTOSAVE_DELAY_MS = 4000
 
 const CATEGORIES: DispatchCategory[] = ["Essays", "Notes", "Studio"]
@@ -61,6 +68,7 @@ export function StudioEditor({
   const [showPreview, setShowPreview] = useState(false)
   const [showThinking, setShowThinking] = useState(false)
   const [rewriteInstruction, setRewriteInstruction] = useState("")
+  const [frontmatterAIStatus, setFrontmatterAIStatus] = useState<FrontmatterAIStatus>({ kind: "idle" })
 
   const initialHtml = useMemo(
     () => (initialBody ? marked.parse(initialBody, { async: false }) as string : ""),
@@ -262,6 +270,52 @@ export function StudioEditor({
     }
   }
 
+  async function onSuggestFrontmatter() {
+    if (!editor) return
+    const body = htmlToMarkdown(editor.getHTML())
+    setFrontmatterAIStatus({ kind: "running" })
+    try {
+      const res = await fetch("/api/studio/ai/frontmatter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: frontmatter.title, body }),
+      })
+      const j = await res.json()
+      if (!res.ok || !j.ok) {
+        setFrontmatterAIStatus({
+          kind: "error",
+          message: j.error ?? `ai_failed_${res.status}`,
+          hint: j.hint,
+          wordCount: j.wordCount,
+        })
+        return
+      }
+      setFrontmatterAIStatus({ kind: "done", suggestion: j.suggestion, thinking: j.thinking })
+    } catch (err) {
+      setFrontmatterAIStatus({
+        kind: "error",
+        message: err instanceof Error ? err.message : "network_error",
+      })
+    }
+  }
+
+  function applyFrontmatterSuggestion() {
+    if (frontmatterAIStatus.kind !== "done") return
+    const s = frontmatterAIStatus.suggestion
+    setFrontmatter((prev) => ({
+      ...prev,
+      category: s.category,
+      excerpt: s.excerpt,
+      tags: s.tags,
+    }))
+    triggerAutosave()
+    setFrontmatterAIStatus({ kind: "idle" })
+  }
+
+  function dismissFrontmatterSuggestion() {
+    setFrontmatterAIStatus({ kind: "idle" })
+  }
+
   async function onAIRewrite() {
     if (!editor) return
     const { from, to } = editor.state.selection
@@ -392,6 +446,10 @@ export function StudioEditor({
               }}
               frontmatter={frontmatter}
               setFm={setFm}
+              frontmatterAIStatus={frontmatterAIStatus}
+              onSuggestFrontmatter={onSuggestFrontmatter}
+              applyFrontmatterSuggestion={applyFrontmatterSuggestion}
+              dismissFrontmatterSuggestion={dismissFrontmatterSuggestion}
             />
 
             <div className="rounded-2xl border border-navy-200/80 bg-white p-6 md:p-8">
@@ -517,27 +575,68 @@ function FrontmatterForm({
   setSlug,
   frontmatter,
   setFm,
+  frontmatterAIStatus,
+  onSuggestFrontmatter,
+  applyFrontmatterSuggestion,
+  dismissFrontmatterSuggestion,
 }: {
   slug: string
   setSlug: (s: string) => void
   frontmatter: DispatchFrontmatter
   setFm: <K extends keyof DispatchFrontmatter>(k: K, v: DispatchFrontmatter[K]) => void
+  frontmatterAIStatus: FrontmatterAIStatus
+  onSuggestFrontmatter: () => void
+  applyFrontmatterSuggestion: () => void
+  dismissFrontmatterSuggestion: () => void
 }) {
+  const isSuggesting = frontmatterAIStatus.kind === "running"
   return (
     <div className="rounded-2xl border border-navy-200/80 bg-white p-6 md:p-7 space-y-4">
-      <div>
-        <label className="block text-[10px] uppercase tracking-[0.28em] text-navy-400 mb-2"
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex-1">
+          <label className="block text-[10px] uppercase tracking-[0.28em] text-navy-400 mb-2"
+            style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+          >Title</label>
+          <input
+            type="text"
+            value={frontmatter.title}
+            onChange={(e) => setFm("title", e.target.value)}
+            placeholder="The piece begins with the claim."
+            className="w-full bg-transparent text-3xl md:text-4xl tracking-tight focus:outline-none text-navy-900"
+            style={{ fontFamily: "var(--font-display), 'Gloock', serif" }}
+          />
+        </div>
+        <button
+          type="button"
+          onClick={onSuggestFrontmatter}
+          disabled={isSuggesting}
+          title="Ask Claude to propose category, excerpt, and tags from the body. Needs at least 200 words."
+          className="mt-7 shrink-0 rounded-full border border-gold-300 bg-gold-50/60 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-700 transition-colors hover:bg-gold-100 disabled:opacity-50"
           style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
-        >Title</label>
-        <input
-          type="text"
-          value={frontmatter.title}
-          onChange={(e) => setFm("title", e.target.value)}
-          placeholder="The piece begins with the claim."
-          className="w-full bg-transparent text-3xl md:text-4xl tracking-tight focus:outline-none text-navy-900"
-          style={{ fontFamily: "var(--font-display), 'Gloock', serif" }}
-        />
+        >
+          {isSuggesting ? "Thinking…" : "✨ Suggest frontmatter"}
+        </button>
       </div>
+
+      {frontmatterAIStatus.kind === "error" ? (
+        <div
+          className="rounded-md border border-rose-200 bg-rose-50/60 p-3 text-xs text-rose-700"
+          style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+        >
+          {frontmatterAIStatus.message === "body_too_short" && frontmatterAIStatus.hint
+            ? frontmatterAIStatus.hint
+            : frontmatterAIStatus.message}
+        </div>
+      ) : null}
+
+      {frontmatterAIStatus.kind === "done" ? (
+        <FrontmatterSuggestionBlock
+          suggestion={frontmatterAIStatus.suggestion}
+          current={frontmatter}
+          onApply={applyFrontmatterSuggestion}
+          onDismiss={dismissFrontmatterSuggestion}
+        />
+      ) : null}
 
       <div className="grid grid-cols-2 gap-4">
         <div>
@@ -738,6 +837,106 @@ function AIPanel({
           </pre>
         </details>
       ) : null}
+    </div>
+  )
+}
+
+function FrontmatterSuggestionBlock({
+  suggestion,
+  current,
+  onApply,
+  onDismiss,
+}: {
+  suggestion: AIFrontmatterSuggestion
+  current: DispatchFrontmatter
+  onApply: () => void
+  onDismiss: () => void
+}) {
+  const mono = { fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" } as const
+  const serif = { fontFamily: "var(--font-serif), 'IBM Plex Serif', serif" } as const
+  const currentTags = current.tags ?? []
+  const categoryChanges = current.category !== suggestion.category
+  const excerptChanges = current.excerpt !== suggestion.excerpt
+  const tagsChanges =
+    currentTags.length !== suggestion.tags.length ||
+    !currentTags.every((t, i) => t === suggestion.tags[i])
+
+  return (
+    <div className="rounded-xl border border-gold-200 bg-gold-50/30 p-4">
+      <div className="mb-3 flex items-center gap-3">
+        <span
+          className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-700"
+          style={mono}
+        >
+          ✨ Suggestion
+        </span>
+        <span className="h-px flex-1 bg-gold-200" />
+        <button
+          type="button"
+          onClick={onApply}
+          className="rounded-full border border-gold-400 bg-navy-900 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-navy-800"
+          style={mono}
+        >
+          Apply all
+        </button>
+        <button
+          type="button"
+          onClick={onDismiss}
+          className="rounded-full border border-navy-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-navy-600 transition-colors hover:bg-navy-50"
+          style={mono}
+        >
+          Dismiss
+        </button>
+      </div>
+
+      <dl className="space-y-3 text-sm">
+        <div>
+          <dt className="text-[10px] uppercase tracking-[0.22em] text-navy-400" style={mono}>
+            Category {categoryChanges ? <span className="text-gold-600">· change</span> : <span className="text-navy-300">· unchanged</span>}
+          </dt>
+          <dd className="mt-1 text-navy-800" style={mono}>
+            {categoryChanges ? (
+              <>
+                <span className="text-navy-400 line-through">{current.category}</span>{" "}
+                <span className="text-navy-300">→</span>{" "}
+                <span className="font-semibold">{suggestion.category}</span>
+              </>
+            ) : (
+              suggestion.category
+            )}
+          </dd>
+        </div>
+        <div>
+          <dt className="text-[10px] uppercase tracking-[0.22em] text-navy-400" style={mono}>
+            Excerpt ({suggestion.excerpt.length} chars) {excerptChanges ? <span className="text-gold-600">· change</span> : <span className="text-navy-300">· unchanged</span>}
+          </dt>
+          <dd className="mt-1 italic text-navy-700" style={serif}>
+            {suggestion.excerpt}
+          </dd>
+        </div>
+        <div>
+          <dt className="text-[10px] uppercase tracking-[0.22em] text-navy-400" style={mono}>
+            Tags {tagsChanges ? <span className="text-gold-600">· change</span> : <span className="text-navy-300">· unchanged</span>}
+          </dt>
+          <dd className="mt-1 flex flex-wrap gap-1.5">
+            {suggestion.tags.map((t) => (
+              <span
+                key={t}
+                className="rounded-full border border-navy-200 bg-white px-2 py-0.5 text-[10px] uppercase tracking-[0.18em] text-navy-700"
+                style={mono}
+              >
+                {t}
+              </span>
+            ))}
+          </dd>
+        </div>
+      </dl>
+      <p
+        className="mt-3 text-[10px] uppercase tracking-[0.22em] text-navy-400"
+        style={mono}
+      >
+        "Apply all" overwrites the three fields above. Title + slug are untouched.
+      </p>
     </div>
   )
 }
