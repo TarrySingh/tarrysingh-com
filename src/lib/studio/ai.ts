@@ -57,9 +57,28 @@ interface RewriteInput {
   surroundingContext: string
 }
 
+interface FrontmatterInput {
+  title: string
+  body: string
+}
+
 interface AIResult {
   ok: true
   output: string
+  thinking?: string
+  inputTokens: number
+  outputTokens: number
+}
+
+export interface AIFrontmatterSuggestion {
+  category: "Essays" | "Notes" | "Studio"
+  excerpt: string
+  tags: string[]
+}
+
+interface AIFrontmatterResult {
+  ok: true
+  suggestion: AIFrontmatterSuggestion
   thinking?: string
   inputTokens: number
   outputTokens: number
@@ -175,6 +194,153 @@ Return only the rewritten passage in Markdown. Do not echo the original. Do not 
       error: "ai_call_failed",
       ...(debug ? { debug: message, modelUsed: model } : {}),
     } as AIError
+  }
+}
+
+/**
+ * Suggest `{category, excerpt, tags}` from a Dispatch's `{title, body}`.
+ *
+ * Used by the Studio Editor's "Suggest" buttons in FrontmatterForm —
+ * removes the most-skipped step in publishing (Sprint 4.1 in the
+ * roadmap; see `docs/reports/sprint-4-plus-roadmap.md`).
+ *
+ * Returns Markdown-free strings; the route handler is responsible
+ * for client-side display. Tags are lowercase dash-separated phrases.
+ * Category is one of the three Dispatch categories.
+ *
+ * Token budget: 1500 thinking, 512 output (tighter than continue/rewrite).
+ */
+export async function aiFrontmatter(
+  input: FrontmatterInput,
+): Promise<AIFrontmatterResult | AIError> {
+  const client = getClient()
+  if (!client) return { ok: false, error: "ai_unconfigured" }
+
+  const { model } = modelConfig()
+  const thinkingTokens = Math.min(
+    Number(process.env.STUDIO_AI_THINKING_TOKENS) || DEFAULT_THINKING_TOKENS,
+    1500,
+  )
+  const maxTokens = 512
+
+  const userPrompt = `Read this Dispatch and propose its frontmatter.
+
+TITLE: ${input.title || "(untitled)"}
+
+BODY:
+
+${input.body}
+
+Return STRICT JSON only — no prose, no markdown fences. The shape is:
+
+{
+  "category": "Essays" | "Notes" | "Studio",
+  "excerpt": "80–300 character editorial pull-quote that reads as the studio's own voice. Plex-Serif rhythm. No SaaS slop. One italic close is allowed but not required.",
+  "tags": ["lowercase-dash-separated", "..."] // 3–5 tags, drawn from the body's actual subject matter
+}
+
+Category guidance:
+  - "Essays" = long-form argumentative prose; carries a thesis.
+  - "Notes" = working notes from the studio; smaller scale, more observational.
+  - "Studio" = process / craft / tool reflections; how the work gets made.
+
+Return JSON only. No code fences. No preamble.`
+
+  try {
+    const msg = await client.messages.create({
+      model,
+      max_tokens: maxTokens + thinkingTokens,
+      thinking: { type: "enabled", budget_tokens: thinkingTokens },
+      system: STUDIO_SYSTEM_PROMPT,
+      messages: [{ role: "user", content: userPrompt }],
+    })
+    const textBlocks = msg.content.filter(
+      (b): b is Anthropic.Messages.TextBlock => b.type === "text",
+    )
+    const thinkingBlocks = msg.content.filter(
+      (b): b is Anthropic.Messages.ThinkingBlock => b.type === "thinking",
+    )
+    const raw = textBlocks.map((b) => b.text).join("\n").trim()
+    const suggestion = parseFrontmatterJSON(raw)
+    if (!suggestion) {
+      console.error(
+        JSON.stringify({
+          tag: "studio.ai.frontmatter_parse_error",
+          model,
+          raw: raw.slice(0, 500),
+        }),
+      )
+      const debug = process.env.STUDIO_AI_DEBUG === "1"
+      return {
+        ok: false,
+        error: "ai_frontmatter_parse_error",
+        ...(debug ? { debug: raw.slice(0, 500), modelUsed: model } : {}),
+      } as AIError
+    }
+    return {
+      ok: true,
+      suggestion,
+      thinking: thinkingBlocks.map((b) => b.thinking).join("\n").trim() || undefined,
+      inputTokens: msg.usage.input_tokens,
+      outputTokens: msg.usage.output_tokens,
+    }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    console.error(JSON.stringify({ tag: "studio.ai.frontmatter_error", model, error: message }))
+    const debug = process.env.STUDIO_AI_DEBUG === "1"
+    return {
+      ok: false,
+      error: "ai_call_failed",
+      ...(debug ? { debug: message, modelUsed: model } : {}),
+    } as AIError
+  }
+}
+
+/**
+ * Parse the model's JSON reply defensively. Strips code fences if present,
+ * validates required keys + types + value domains. Returns null on any
+ * shape mismatch — the route handler surfaces `ai_frontmatter_parse_error`.
+ */
+function parseFrontmatterJSON(raw: string): AIFrontmatterSuggestion | null {
+  let trimmed = raw.trim()
+  // Strip ```json ... ``` or ``` ... ``` wrappers if the model adds them.
+  if (trimmed.startsWith("```")) {
+    trimmed = trimmed.replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/i, "").trim()
+  }
+  // Some models add a preamble or trailing prose around the JSON. Find
+  // the first { … last } and parse that.
+  const first = trimmed.indexOf("{")
+  const last = trimmed.lastIndexOf("}")
+  if (first === -1 || last === -1 || last <= first) return null
+  const jsonSlice = trimmed.slice(first, last + 1)
+  let parsed: unknown
+  try {
+    parsed = JSON.parse(jsonSlice)
+  } catch {
+    return null
+  }
+  if (!parsed || typeof parsed !== "object") return null
+  const p = parsed as Record<string, unknown>
+  const category = p.category
+  const excerpt = p.excerpt
+  const tags = p.tags
+  if (
+    category !== "Essays" &&
+    category !== "Notes" &&
+    category !== "Studio"
+  ) {
+    return null
+  }
+  if (typeof excerpt !== "string" || excerpt.length < 20) return null
+  if (!Array.isArray(tags)) return null
+  const tagsClean = tags
+    .filter((t): t is string => typeof t === "string" && t.trim().length > 0)
+    .map((t) => t.trim().toLowerCase().replace(/\s+/g, "-"))
+    .slice(0, 5)
+  return {
+    category,
+    excerpt: excerpt.trim(),
+    tags: tagsClean,
   }
 }
 
