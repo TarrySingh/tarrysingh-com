@@ -23,6 +23,9 @@ export interface BlogPostMeta extends BlogFrontmatter {
   slug: string
   readingTimeText: string
   readingTimeMinutes: number
+  /** Word count from the `reading-time` library — used to gate
+   *  Sprint 5.5.2 reading-milestone nudge (only fires on ≥ 1500 words). */
+  wordCount: number
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -73,6 +76,7 @@ function parseFrontmatter(raw: string, slug: string): BlogPost {
     tags: fm.tags ?? [],
     readingTimeText: rt.text,
     readingTimeMinutes: Math.max(1, Math.round(rt.minutes)),
+    wordCount: rt.words,
     body: content,
   }
 }
@@ -99,6 +103,7 @@ export async function getAllPosts(): Promise<BlogPostMeta[]> {
       tags: post.tags,
       readingTimeText: post.readingTimeText,
       readingTimeMinutes: post.readingTimeMinutes,
+      wordCount: post.wordCount,
     })
   }
 
