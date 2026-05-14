@@ -62,6 +62,12 @@ interface FrontmatterInput {
   body: string
 }
 
+interface HeroPromptInput {
+  title: string
+  excerpt?: string
+  category?: "Essays" | "Notes" | "Studio"
+}
+
 interface AIResult {
   ok: true
   output: string
@@ -79,6 +85,14 @@ export interface AIFrontmatterSuggestion {
 interface AIFrontmatterResult {
   ok: true
   suggestion: AIFrontmatterSuggestion
+  thinking?: string
+  inputTokens: number
+  outputTokens: number
+}
+
+interface AIHeroPromptResult {
+  ok: true
+  prompt: string
   thinking?: string
   inputTokens: number
   outputTokens: number
@@ -287,6 +301,95 @@ Return JSON only. No code fences. No preamble.`
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err)
     console.error(JSON.stringify({ tag: "studio.ai.frontmatter_error", model, error: message }))
+    const debug = process.env.STUDIO_AI_DEBUG === "1"
+    return {
+      ok: false,
+      error: "ai_call_failed",
+      ...(debug ? { debug: message, modelUsed: model } : {}),
+    } as AIError
+  }
+}
+
+/**
+ * Synthesise an image-generation prompt for a Dispatch hero image
+ * (Sprint 5). Output is a 60–100 word natural-language prompt
+ * targeting an editorial-illustration image-gen model (FLUX.1 or SDXL).
+ *
+ * Constraints baked into the prompt instruction:
+ *   - studio palette (cream paper, midnight indigo, copper)
+ *   - editorial-illustration register (NOT photoreal, NOT SaaS gradients,
+ *     NOT pixar-cute, NOT stock-photo cliches)
+ *   - 16:9 aspect, hero-image framing
+ *   - no human faces (avoids the photoreal-human uncanny valley)
+ *
+ * Token budget: 1500 thinking, 256 output — short, focused.
+ */
+export async function aiHeroPrompt(
+  input: HeroPromptInput,
+): Promise<AIHeroPromptResult | AIError> {
+  const client = getClient()
+  if (!client) return { ok: false, error: "ai_unconfigured" }
+
+  const { model } = modelConfig()
+  const thinkingTokens = Math.min(
+    Number(process.env.STUDIO_AI_THINKING_TOKENS) || DEFAULT_THINKING_TOKENS,
+    1500,
+  )
+  const maxTokens = 256
+
+  const heroSystem = `You are an art director writing an image-generation prompt for the hero image of a Tarry Singh Dispatch on tarrysingh.com.
+
+VISUAL VOICE (non-negotiable):
+
+  - Studio palette only: cream paper (#fbf7ec), midnight indigo (#0d1b3d), copper accent (#b45309), occasional warm gold and rose. No teal-blue corporate gradients, no neon, no rainbows.
+  - Editorial illustration register: think McKinsey commissioned-illustration, scientific working-drawing, NYT op-ed cartouche. Hatching, line weight variation, restrained palette.
+  - NO photoreal humans. NO photoreal anything. NO Pixar-cute. NO stock-photo cliches (suits, handshakes, lightbulbs, gears). NO SaaS-marketing aesthetics.
+  - NO text in the image. NO captions. NO labels. (The post template adds the title separately.)
+  - Aspect ratio: 16:9 hero composition. Subject central; framing leaves a quiet zone in the upper-left or upper-right where a title could float.
+  - Honest about the subject — if the Dispatch argues something specific, the image carries that argument visually, not generically.
+
+OUTPUT FORMAT:
+
+  - A single 60–100 word natural-language image-gen prompt in plain text. No quotes. No preamble. No "Here is the prompt:". No mention of word count or aspect ratio in the output (the gen call handles those separately).
+  - Begin with the subject + medium + light, then add palette, register, and one specific compositional detail.
+  - End with negative-prompt-style exclusions ONLY if essential.`
+
+  const userPrompt = `Compose a hero-image prompt for this Dispatch:
+
+TITLE: ${input.title || "(untitled)"}
+EXCERPT: ${input.excerpt || "(no excerpt yet)"}
+CATEGORY: ${input.category || "Notes"}
+
+Return only the image-gen prompt. Plain text. No commentary.`
+
+  try {
+    const msg = await client.messages.create({
+      model,
+      max_tokens: maxTokens + thinkingTokens,
+      thinking: { type: "enabled", budget_tokens: thinkingTokens },
+      system: heroSystem,
+      messages: [{ role: "user", content: userPrompt }],
+    })
+    const textBlocks = msg.content.filter(
+      (b): b is Anthropic.Messages.TextBlock => b.type === "text",
+    )
+    const thinkingBlocks = msg.content.filter(
+      (b): b is Anthropic.Messages.ThinkingBlock => b.type === "thinking",
+    )
+    const prompt = textBlocks.map((b) => b.text).join("\n").trim()
+    if (!prompt) {
+      return { ok: false, error: "ai_empty_prompt" }
+    }
+    return {
+      ok: true,
+      prompt,
+      thinking: thinkingBlocks.map((b) => b.thinking).join("\n").trim() || undefined,
+      inputTokens: msg.usage.input_tokens,
+      outputTokens: msg.usage.output_tokens,
+    }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    console.error(JSON.stringify({ tag: "studio.ai.hero_prompt_error", model, error: message }))
     const debug = process.env.STUDIO_AI_DEBUG === "1"
     return {
       ok: false,
