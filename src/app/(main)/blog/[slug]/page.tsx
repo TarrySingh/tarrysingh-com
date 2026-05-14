@@ -62,10 +62,21 @@ export default async function BlogPostPage({
   const post = await getPost(slug)
   if (!post) notFound()
 
+  const isStudioTheme = post.theme === "studio"
+  // Studio variant: cream paper + the same Synaptic palette tokens. Editorial
+  // (default) keeps the gradient-to-white background the existing seed posts use.
+  // SP3-08 from the Sprint 3 UAT — the field was parsed but not rendered.
+  const articleClass = isStudioTheme
+    ? "theme-studio bg-[#fbf7ec]"
+    : "theme-editorial bg-white"
+  const headerClass = isStudioTheme
+    ? "relative pt-28 md:pt-36 pb-10 md:pb-14"
+    : "relative bg-gradient-to-b from-navy-50/40 to-white pt-28 md:pt-36 pb-10 md:pb-14"
+
   return (
-    <article className="bg-white">
+    <article className={articleClass}>
       {/* Article header */}
-      <header className="relative bg-gradient-to-b from-navy-50/40 to-white pt-28 md:pt-36 pb-10 md:pb-14">
+      <header className={headerClass}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <Link
             href="/blog"
@@ -112,6 +123,23 @@ export default async function BlogPostPage({
               {post.readingTimeMinutes} min read
             </span>
           </div>
+
+          {post.tags && post.tags.length > 0 ? (
+            <div className="mb-5 flex flex-wrap items-center gap-1.5">
+              {post.tags.map((tag) => (
+                <Link
+                  key={tag}
+                  href={`/blog/tag/${encodeURIComponent(tag)}`}
+                  className="rounded-full border border-navy-200 bg-white/60 px-2.5 py-0.5 text-[10px] uppercase tracking-[0.22em] text-navy-600 transition-colors hover:border-gold-400 hover:text-gold-700"
+                  style={{
+                    fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+                  }}
+                >
+                  {tag}
+                </Link>
+              ))}
+            </div>
+          ) : null}
 
           <h1
             className="text-3xl md:text-5xl text-navy-900 tracking-tight leading-[1.1] mb-6"
