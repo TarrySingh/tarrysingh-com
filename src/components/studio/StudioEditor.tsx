@@ -653,7 +653,7 @@ function AIPanel({
         <span className="text-[10px] uppercase tracking-[0.22em] text-navy-300"
           style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
         >
-          Claude Opus 4.7-extended · 4K thinking
+          Claude Opus · 4K extended thinking
         </span>
       </div>
 
