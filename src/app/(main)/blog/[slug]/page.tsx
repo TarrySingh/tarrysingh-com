@@ -15,6 +15,7 @@ import {
 import { mdxComponents } from "@/lib/blog/mdx-components"
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
 import { ReadingMilestoneNudge } from "@/components/blog/ReadingMilestoneNudge"
+import { QuietExitIntent } from "@/components/blog/QuietExitIntent"
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -231,9 +232,11 @@ export default async function BlogPostPage({
           </div>
         </div>
 
-        <div className="mt-10">
+        <div id="newsletter" className="mt-10 scroll-mt-24">
           <NewsletterCard variant="compact" />
         </div>
+        {/* Sprint 5.5.4 — quiet exit-intent (desktop scroll-up only) */}
+        <QuietExitIntent slug={post.slug} />
 
         <div className="mt-12 flex items-center gap-4 text-navy-300">
           <div className="h-px flex-1 bg-navy-100" />
