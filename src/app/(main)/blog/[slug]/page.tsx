@@ -14,6 +14,7 @@ import {
 } from "@/lib/blog/posts"
 import { mdxComponents } from "@/lib/blog/mdx-components"
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
+import { ReadingMilestoneNudge } from "@/components/blog/ReadingMilestoneNudge"
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -185,6 +186,8 @@ export default async function BlogPostPage({
             }}
           />
         </div>
+        {/* Sprint 5.5.2 — reading-progress milestone. Only mounts on long posts. */}
+        <ReadingMilestoneNudge slug={post.slug} wordCount={post.wordCount} />
       </section>
 
       {/* Footer: cartouche + LinkedIn link */}
