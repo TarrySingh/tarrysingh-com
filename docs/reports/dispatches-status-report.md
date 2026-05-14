@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-13 (Sprint 3 Stage A UAT PASS 9/9 · Stage B pending Tarry-side in-browser run · Sprint 2 closed earlier the same day)
+**Last updated:** 2026-05-14 (Sprint 3 closed — Stage A 9/9 PASS · Stage B 10/10 PASS · first real Dispatch live at `/blog/four-weeks-that-bent-the-ai-arc`)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -70,13 +70,13 @@ continues.
 **Window:** 2026-05-13 → 2026-05-13 (single multi-hour cycle, both repos)
 **Outcome:** all three Outstanding items shipped + UAT-tested. Closed.
 
-### Sprint 3 — Studio Editor (in progress)
+### Sprint 3 — Studio Editor (closed 2026-05-14)
 
-**Window:** 2026-05-13 → TBD
+**Window:** 2026-05-13 → 2026-05-14 (single 36-hour cycle: ship → Stage A 9/9 → Stage B 10/10 → first real Dispatch live)
 **Goal:** a 2026-grade WYSIWYG composer at `/studio/*` so Tarry can
-write a Dispatch in a browser, ask Claude Opus 4.7-extended-thinking
-(4K tokens) for help on Continue + Rewrite, and Publish straight to
-`main` with one click.
+write a Dispatch in a browser, ask Claude Opus extended-thinking
+(`claude-opus-4-6` · 4K thinking tokens) for help on Continue +
+Rewrite, and Publish straight to `main` with one click.
 
 | Component | What landed |
 |---|---|
@@ -89,11 +89,18 @@ write a Dispatch in a browser, ask Claude Opus 4.7-extended-thinking
 | AI Rewrite | `POST /api/studio/ai/rewrite` — same model, rewrites the editor selection with optional instruction. Surrounding context is passed for tone reference but not rewritten. |
 | Thinking trace | Collapsible "Thinking trace" reveal in the AI panel — shows the extended-thinking output beneath the response in mono. |
 
-**Live state (2026-05-13):** code shipped; env vars set on Vercel (`STUDIO_USER`, `STUDIO_PASS`, `STUDIO_GITHUB_TOKEN`, `ANTHROPIC_API_KEY`, `STUDIO_AI_MODEL=claude-opus-4-6`, `STUDIO_AI_DEBUG=1` *temporary*); Supabase migration applied to project `agentify` (`ijmkekioxhfcinkjckju`); **Stage A UAT PASS 9/9 on 2026-05-13** ([results](./sprint-3-uat-results.md)). Stage B (10 in-browser steps) is the only remaining gate — queued for Tarry's morning run with fresh eyes. Once Stage B closes, clear `STUDIO_AI_DEBUG=1` from Vercel.
+**Live state (2026-05-14, closed):** code shipped + UAT-tested + first real Dispatch published end-to-end.
 
-**What's deliberately not in Sprint 3 (deferred to v2+):** AI-rendered hero images · image upload / crop / paste-from-clipboard · real-time collaborative editing · mobile-first writing UX · version-history surface · AI-suggested frontmatter · linked editing for the Synaptic plate library.
+- **Stage A (wire-level, Claude):** **9/9 PASS** 2026-05-13. Three follow-up issues caught + fixed mid-flight — bogus default model id (PR #7), Vercel runtime log truncation hiding the real Anthropic error (PR #8 added `STUDIO_AI_DEBUG=1`), pre-rotation API key (filed runbook at `docs/runbooks/api-key-rotation.md`).
+- **Stage B (in-browser, Tarry):** **10/10 PASS** 2026-05-14. Four more follow-up issues caught + fixed mid-flight — aspirational UI label dropped (PR #11), autosave stale-closure (PR #12), autosave-on-mount overwrote a 387-word draft (PR #13 critical), no trash button on draft cards (PR #14). Every fix carries a `caught at <step>` trail in the commit log.
+- **First real Dispatch:** *"Four Weeks That Bent the AI Arc"* (commit `36c3357`) is live at [`/blog/four-weeks-that-bent-the-ai-arc`](https://www.tarrysingh.com/blog/four-weeks-that-bent-the-ai-arc), surfaced in `/blog/rss.xml`, and the draft row was correctly deleted from Supabase after publish (`studio_drafts` `count: 0`).
+- **Env vars on Vercel (`tarrysingh-com-zdmb`):** `STUDIO_USER`, `STUDIO_PASS`, `STUDIO_GITHUB_TOKEN`, `ANTHROPIC_API_KEY` (post-rotation), `STUDIO_AI_MODEL=claude-opus-4-6`, `STUDIO_AI_THINKING_TOKENS=4000`. **Pending Tarry-side housekeeping:** clear `STUDIO_AI_DEBUG=1` — diagnostic-only flag from Stage A.
+- **Supabase migration:** `2026-05-13-studio-drafts.sql` applied to project `agentify` (`ijmkekioxhfcinkjckju`).
+- **UAT artefacts:** [`sprint-3-uat-plan.md`](./sprint-3-uat-plan.md) · [`sprint-3-uat-results.md`](./sprint-3-uat-results.md) · `.docx` mirror of each generated via `npm run reports:uat-{plan,results}:docx`.
 
-These seven items are sequenced and sized in [`sprint-4-plus-roadmap.md`](./sprint-4-plus-roadmap.md) — read it cold to know what's coming and in what order.
+**What's deliberately not in Sprint 3 (deferred to v2+):** AI-rendered hero images · image upload / crop / paste-from-clipboard · real-time collaborative editing · mobile-first writing UX · version-history surface · AI-suggested frontmatter · linked editing for the Synaptic plate library · `theme: studio` palette variant · `tags` surface on post + index · reader-side subscribe nudges (six experiments).
+
+These items are sequenced and sized in [`sprint-4-plus-roadmap.md`](./sprint-4-plus-roadmap.md) — Sprint 4.5 picks up the theme/tags surface SP3-08/SP3-09 caught at Stage B post-B8; Sprint 5.5 is the new reader-side track. Read it cold to know what's coming and in what order.
 
 See *Outstanding work* (closed for Sprint 2) and *UAT plan*.
 
@@ -450,6 +457,6 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 |--------|------|--------|
 | Sprint 1 — Microsites + Newsletter MVP | 2026-05-13 | Tarry Singh ✓ (smoke test passed) |
 | Sprint 2 — Cadences & publishing rhythm | closed 2026-05-13 — all cross-repo cadence work shipped, publishing tooling verified, empty-posts production UAT passed, digest URL rewrite shipped | technical-side complete; pending only Tarry Stage B (phone-screen reads of the 3 Welcome emails + first Monthly Roundup on 2026-06-01) |
-| Sprint 3 — Studio Editor (WYSIWYG + Claude Opus 4.7-extended AI + one-click publish) | kicked off 2026-05-13 | in progress |
+| Sprint 3 — Studio Editor (WYSIWYG + Claude Opus extended-thinking AI + one-click publish) | closed 2026-05-14 — Stage A 9/9 + Stage B 10/10 PASS; 7 follow-up fixes caught + shipped mid-flight; first real Dispatch *"Four Weeks That Bent the AI Arc"* live at `/blog/four-weeks-that-bent-the-ai-arc` | Tarry Singh ✓ Stage B (2026-05-14) · Claude ✓ Stage A (2026-05-13) |
 
 — *the studio*
