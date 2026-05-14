@@ -13,6 +13,7 @@ import Image from "@tiptap/extension-image"
 import { marked } from "marked"
 import { htmlToMarkdown } from "@/lib/studio/serialize"
 import type { AIFrontmatterSuggestion } from "@/lib/studio/ai"
+import { HistoryPane } from "./HistoryPane"
 import {
   type DispatchFrontmatter,
   type DispatchCategory,
@@ -93,6 +94,7 @@ export function StudioEditor({
   const [uploadStatus, setUploadStatus] = useState<UploadStatus>({ kind: "idle" })
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [heroAIStatus, setHeroAIStatus] = useState<HeroAIStatus>({ kind: "idle" })
+  const [showHistory, setShowHistory] = useState(false)
 
   const initialHtml = useMemo(
     () => (initialBody ? marked.parse(initialBody, { async: false }) as string : ""),
@@ -579,6 +581,17 @@ export function StudioEditor({
             <span className="sm:hidden text-base">{showPreview ? "✕" : "👁"}</span>
             <span className="hidden sm:inline">{showPreview ? "Hide preview" : "Preview"}</span>
           </button>
+          {slug ? (
+            <button
+              onClick={() => setShowHistory(true)}
+              aria-label="Version history"
+              title="Version history"
+              className="hidden md:inline-flex h-11 min-w-[44px] items-center justify-center rounded-full border border-navy-200 bg-white px-3 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50"
+              style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+            >
+              History
+            </button>
+          ) : null}
           <button
             onClick={() => void save()}
             disabled={saveStatus.kind === "saving"}
@@ -627,6 +640,20 @@ export function StudioEditor({
 
       {/* Sprint 6 — sticky touch toolbar (mobile only) */}
       <TouchToolbar editor={editor} onPickImage={onPickImage} />
+
+      {/* Sprint 7 — version-history pane (toggled from header) */}
+      {showHistory && slug ? (
+        <HistoryPane
+          slug={slug}
+          onClose={() => setShowHistory(false)}
+          onReverted={() => {
+            // Drop the pane; the parent could refetch the draft body here,
+            // but for v1 we let Tarry reload the editor manually so a partial
+            // unsaved edit isn't silently wiped.
+            setShowHistory(false)
+          }}
+        />
+      ) : null}
 
       <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-6 sm:pt-8 pb-36 sm:pb-24 lg:px-8">
         {/* Sprint 6 — mobile word-count strip (header hides this below md) */}
