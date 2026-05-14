@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 + Sprint 4.5 all code-complete; Sprint 5.5 reader-side nudges in flight)
+**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 + Sprint 4.5 + Sprint 5.5 all code-complete in one evening; 7 sprints shipped, ~30 micro-commits; Sprint 6 next)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -482,6 +482,9 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | AI-suggested frontmatter (Sprint 4.1) | `src/lib/studio/ai.ts:aiFrontmatter`, `src/app/api/studio/ai/frontmatter/route.ts` |
 | Image upload route (Sprint 4.2) | `src/app/api/studio/upload/route.ts` |
 | AI-rendered hero pipeline (Sprint 5) | `src/lib/studio/ai.ts:aiHeroPrompt`, `src/lib/studio/image-gen.ts`, `src/app/api/studio/ai/hero/route.ts` |
+| Reader-side nudges (Sprint 5.5) | `src/components/blog/{ReturningReaderHero,ReadingMilestoneNudge,QuietExitIntent,HighlightToShare}.tsx`, `src/lib/nudge/log.ts`, `src/app/api/nudge/log/route.ts`, `docs/migrations/2026-05-14-nudge-events.sql` |
+| AI-baked footer card (Sprint 5.5.1) | `src/lib/studio/ai.ts:aiNudgeCard`, `scripts/blog/bake-nudge-card.mjs`, `content/blog/_nudges/<slug>.md`, `src/lib/blog/posts.ts:getNudgeCard` |
+| Tag surface (Sprint 4.5) | `src/app/(main)/blog/tag/[tag]/page.tsx`, `src/lib/blog/posts.ts:{getAllTags,getPostsByTag}` |
 | API key rotation runbook | `docs/runbooks/api-key-rotation.md` |
 | Newsletter pipeline source | `src/lib/crm/`, `src/components/blog/`, `src/app/(main)/blog/unsubscribe/` |
 | Blog reader + MDX components | `src/lib/blog/`, `src/app/(main)/blog/` |
@@ -500,5 +503,6 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Sprint 4 — AI-suggested frontmatter + image upload | code-complete 2026-05-14 — 7 commits on `claude/sprint-4`; Supabase Storage bucket applied; `next build` green; AI frontmatter route + Suggest pill in editor; drop/paste/click upload through `/api/studio/upload`; Sprint 5 next | technical-side complete; pending Tarry-side UAT |
 | Sprint 5 — AI-rendered hero images | code-complete 2026-05-14 — 4 commits on `claude/sprint-5`; aiHeroPrompt + Replicate FLUX schnell adapter + chained `POST /api/studio/ai/hero` route + Generate-hero pill with Use/Regenerate/Edit-prompt preview; `next build` green | technical-side complete; pending Tarry-side `REPLICATE_API_TOKEN` env + UAT |
 | Sprint 4.5 — `theme: studio` variant + tags surface | code-complete 2026-05-14 — 3 commits on `claude/sprint-4.5`; closes SP3-08 (theme palette) + SP3-09 (tags row + /blog/tag/[tag] index + sitemap); `next build` green with 3 tag routes statically generated | technical-side complete; pending Tarry-side UAT |
+| Sprint 5.5 — reader-side subscribe nudges (6 experiments) | code-complete 2026-05-14 — 8 commits on `claude/sprint-5.5`; surveillance-free counters table + `/api/nudge/log` + 6 experiments (passkey autofill · 2nd-visit cookie · reading-progress milestone · quiet exit-intent · highlight-to-share · AI-baked footer card via `npm run blog:bake-nudge`); voice-lock acceptance criterion holds for all 6 | technical-side complete; pending Tarry-side UAT (open /blog twice, scroll a long post past 60%, etc.) |
 
 — *the studio*

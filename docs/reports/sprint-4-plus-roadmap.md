@@ -1,7 +1,7 @@
 # Sprint 4+ roadmap — Studio Editor v2 and beyond
 
 **Status:** planning · maintained alongside the main status report
-**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 + Sprint 4.5 all code-complete; Sprint 5.5 next on the queue)
+**Last updated:** 2026-05-14 (Sprint 4 + Sprint 5 + Sprint 4.5 + Sprint 5.5 all code-complete; Sprint 6 next on the queue)
 **Parent doc:** [`dispatches-status-report.md`](./dispatches-status-report.md)
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -27,7 +27,7 @@ roadmap-deck slop.
 | ~~**Sprint 4**~~ | ~~AI-suggested frontmatter · Image upload (Supabase Storage)~~ | ~3 days | **Shipped 2026-05-14** — code-complete, pending Tarry-side UAT. See *Sprint 4 — shipped* below. |
 | ~~**Sprint 4.5**~~ | ~~Frontmatter surface — `theme: studio` palette variant · `tags` row under post header · `/blog/tag/<tag>` index~~ | ~1 day | **Shipped 2026-05-14** — 3 commits, closes SP3-08 + SP3-09. See *Sprint 4.5 — shipped* below. |
 | ~~**Sprint 5**~~ | ~~AI-rendered hero images~~ | ~4 days | **Shipped 2026-05-14** — code-complete, pending Tarry-side UAT + `REPLICATE_API_TOKEN` env. See *Sprint 5 — shipped* below. |
-| **Sprint 5.5** | Reader-side subscribe nudges (writer-track #1) — six experiments | ~2–3 days | Independent of Studio Editor work. First reader-side track in the backlog — earns the studio its subscribers without surveillance affordances. Pairs naturally with the Sprint 4.5 tags surface for tag-aware nudges. |
+| ~~**Sprint 5.5**~~ | ~~Reader-side subscribe nudges — six experiments~~ | ~2–3 days | **Shipped 2026-05-14** — all 6 experiments + surveillance-free counters table. See *Sprint 5.5 — shipped* below. |
 | **Sprint 6** | Mobile-first writing UX | ~3 days | Independent. The first long flight or train write-session forces it. |
 | **Sprint 7** | Version-history surface | ~3 days | Independent. Reads from git via Octokit. Becomes valuable once 10+ Dispatches exist. |
 | **Sprint 8** | Linked editing for the Synaptic plate library | ~5–7 days | The largest lift. Plates are hand-coded SVG components; "edit copy in the studio" needs a shape contract per plate. |
@@ -463,6 +463,51 @@ subscribers; it does not harvest them.
 - Sprint 4.5 tags surface unlocks a per-tag variant of 5.5.1
   ("more like this tag"); ship 4.5 first or accept that 5.5.1
   is tagless for the first iteration.
+
+---
+
+## Sprint 5.5 — shipped 2026-05-14
+
+**Window:** ~2 hours after Sprint 4.5 close. Branch `claude/sprint-5.5` → PR (pending merge).
+
+### What landed
+
+All six reader-side subscribe-nudge experiments + the shared
+surveillance-free measurement infrastructure. Eight commits, voice-
+locked: every experiment ships only if it can be described without
+{convert, optimise, acquire, capture, monetise} — and each one is.
+
+| # | Commit | Experiment | Result |
+|---|---|---|---|
+| 0 | `de3e43b` | **Counters infra** | New Supabase table `nudge_events (id, nudge_type, slug?, event, created_at)`. `POST /api/nudge/log` increments. Fire-and-forget client helper `src/lib/nudge/log.ts` with `keepalive: true`. Stores nothing reader-identifying — aggregate `count(*)` queries only. |
+| 1 | `9148819` | **5.5.6 Passkey autocomplete** | `autoComplete="email"` → `"email webauthn"` on both NewsletterCard + NewsletterPeek. Surfaces Safari iOS 17+ passkey + "Hide My Email" relay; Chrome Android passkeys. Two taps. |
+| 2 | `db0e921` | **5.5.5 Returning-reader recognizer** | `<ReturningReaderHero>` client component on `/blog`. First-party cookie `tch:visit-count`, 1-year max-age. 1st visit silent; 2nd+ visit shows a rounded chip near the top with variant copy and a Subscribe ↓ pill that smooth-scrolls to `#newsletter`. |
+| 3 | `500af88` | **5.5.2 Reading milestone** | `<ReadingMilestoneNudge>` on `/blog/[slug]`. Only mounts on `wordCount ≥ 1500`. Listens to scroll; fires once when `(scrollY + viewport) / scrollHeight ≥ 0.6`. Fixed bottom-center card with email + Subscribe. Submits with `source: "blog-reading-milestone"`. `localStorage tch:milestone:<slug>` prevents repeats. |
+| 4 | `aceada0` | **5.5.4 Quiet exit-intent** | `<QuietExitIntent>` on `/blog/[slug]`. **Not** a mouse-leave dark pattern. Gated on `pointer: fine` (desktop only) + deep reading position (≥ 55%) + rapid upward scroll (≥ 280 px / 250 ms). Top-right card with Copy link + Subscribe ↓ + Dismiss. Permanent `localStorage tch:exit-intent:fired` flag. |
+| 5 | `fc7d3c5` | **5.5.3 Highlight-to-share** | `<HighlightToShare>` on `/blog/[slug]`. Listens to `selectionchange` within `.prose-tarry`; on ≥ 15 chars selected, floats a chip above the selection with **Share on LinkedIn** (opens share-offsite popup) and **Copy quote** (clipboards `"<quote>"\n\n— <url>`). Hides on scroll, on collapse, on outside-click. |
+| 6 | `7869977` | **5.5.1 AI footer card (build-time bake)** | `aiNudgeCard()` in `src/lib/studio/ai.ts`; new `scripts/blog/bake-nudge-card.mjs` (`npm run blog:bake-nudge <slug>` or `-- --all`). Bakes a 60–90 word studio-voice card referencing the specific argument of the piece into `content/blog/_nudges/<slug>.md`. `/blog/[slug]` renders the card in a gold-bordered aside under the kicker *"If the argument held"*, above the existing compact NewsletterCard. Build-time only — keeps the page fully static. ~$0.01 per Dispatch. |
+
+### Voice-lock acceptance criterion
+
+Each experiment ships only if its purpose can be described in one
+paragraph without `{convert, optimise, acquire, capture, monetise}`.
+All six pass. Server-side counters only — no GA, no Plausible, no
+tracking pixels. Aggregate `count(*)` over `nudge_events` answers
+"which nudge moved the subscribe rate" without ever knowing which
+reader did what.
+
+### Live state (2026-05-14, code-complete)
+
+- **Supabase migration:** [`2026-05-14-nudge-events.sql`](../migrations/2026-05-14-nudge-events.sql) applied to `agentify`. Indexes on `(nudge_type, event, created_at)` + partial `(slug)` index.
+- **No new env vars.** All experiments reuse existing infrastructure: `/api/newsletter/subscribe` (Sprint 1), `/api/nudge/log` (this sprint), `ANTHROPIC_API_KEY` (Sprint 3).
+- **Build:** `next build` green; new `/api/nudge/log` route present.
+- **Pending Tarry-side UAT:** open `/blog` twice (verify 2nd-visit chip); open a long Dispatch and scroll to 60% (verify milestone card); on desktop, scroll deep then scroll rapidly upward (verify exit-intent); select 15+ chars (verify highlight chip); run `npm run blog:bake-nudge four-weeks-that-bent-the-ai-arc` then refresh the post (verify the AI card renders above the newsletter card).
+
+### Deliberate non-goals (deferred)
+
+- **5.5.3.1 — Roundup quote queue.** A "Quote in next Roundup" button on the highlight-to-share chip that POSTs to a new `reader_quotes` Supabase table; periodically curated into the Monthly Roundup. Adds a moderation step; out of v1 scope.
+- **Per-tag variant of 5.5.1.** Bake a tag-aware card variant once Sprint 4.5's `tags` surface is being used heavily.
+- **Nudge-effectiveness dashboard.** A future `/studio/nudges` admin view that surfaces the aggregate counts. The data is there now (Supabase + `count(*)` queries); the UI is a future sprint.
 
 ---
 
