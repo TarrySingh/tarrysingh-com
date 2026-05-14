@@ -131,3 +131,34 @@ export function formatPostDate(iso: string): string {
     year: "numeric",
   })
 }
+
+/**
+ * Return all unique tags across the (non-draft) post tree, sorted by
+ * post count desc then alpha. Used by /blog/tag/[tag] (Sprint 4.5) +
+ * by sitemap.xml to emit per-tag pages.
+ */
+export async function getAllTags(): Promise<Array<{ tag: string; count: number }>> {
+  const posts = await getAllPosts()
+  const counts = new Map<string, number>()
+  for (const p of posts) {
+    for (const t of p.tags ?? []) {
+      counts.set(t, (counts.get(t) ?? 0) + 1)
+    }
+  }
+  return Array.from(counts.entries())
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => (b.count - a.count) || a.tag.localeCompare(b.tag))
+}
+
+/**
+ * Filter posts by tag (case-insensitive). Returns the same metadata
+ * shape as getAllPosts so /blog/tag/[tag] can reuse the index card
+ * markup unchanged.
+ */
+export async function getPostsByTag(tag: string): Promise<BlogPostMeta[]> {
+  const posts = await getAllPosts()
+  const t = tag.trim().toLowerCase()
+  return posts.filter((p) =>
+    (p.tags ?? []).some((tt) => tt.trim().toLowerCase() === t),
+  )
+}
