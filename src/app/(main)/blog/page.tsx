@@ -127,6 +127,22 @@ export default async function BlogIndex() {
                   >
                     {post.excerpt}
                   </p>
+                  {post.tags && post.tags.length > 0 ? (
+                    <div className="mb-4 flex flex-wrap gap-1.5">
+                      {post.tags.slice(0, 4).map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-navy-100 bg-white px-2 py-0.5 text-[9.5px] uppercase tracking-[0.22em] text-navy-500 group-hover:border-gold-300 group-hover:text-navy-700 transition-colors"
+                          style={{
+                            fontFamily:
+                              "var(--font-mono), 'IBM Plex Mono', monospace",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
                   <span
                     className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.2em] text-navy-500 group-hover:text-navy-900 transition-colors"
                     style={{
