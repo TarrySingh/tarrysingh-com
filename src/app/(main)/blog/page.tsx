@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { getAllPosts, formatPostDate, type BlogPostMeta } from "@/lib/blog/posts"
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
+import { ReturningReaderHero } from "@/components/blog/ReturningReaderHero"
 
 export const metadata: Metadata = {
   title: "Dispatches — Tarry Singh",
@@ -53,6 +54,7 @@ export default async function BlogIndex() {
             whatever I happen to be building. No newsletter cadence, no
             content calendar. Posts when they are ready.
           </p>
+          <ReturningReaderHero />
         </div>
       </section>
 
@@ -161,7 +163,10 @@ export default async function BlogIndex() {
       </section>
 
       {/* Newsletter card */}
-      <section className="max-w-3xl mx-auto px-6 lg:px-8 pb-14 md:pb-20">
+      <section
+        id="newsletter"
+        className="max-w-3xl mx-auto px-6 lg:px-8 pb-14 md:pb-20 scroll-mt-24"
+      >
         <NewsletterCard variant="wide" />
       </section>
 
