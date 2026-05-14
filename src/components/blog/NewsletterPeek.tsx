@@ -199,7 +199,9 @@ export function NewsletterPeek() {
             id="dispatches-peek-email"
             type="email"
             inputMode="email"
-            autoComplete="email"
+            // Sprint 5.5.6 — see NewsletterCard.tsx for the rationale.
+            // Surfaces the native passkey / Hide-My-Email path on iOS 17+.
+            autoComplete="email webauthn"
             required
             placeholder="you@quiet-mailbox.com"
             value={email}
