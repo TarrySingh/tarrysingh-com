@@ -99,11 +99,22 @@ export function StudioEditor({
   const charCount = editor?.storage.characterCount?.characters?.() ?? 0
   const readingTimeMin = Math.max(1, Math.round(wordCount / 220))
 
-  // Autosave — debounced.
+  // Autosave — debounced. The trigger has empty deps so it stays
+  // referentially stable (otherwise editor.on("update", handler)
+  // would re-subscribe on every render). The save() function is
+  // routed through a ref so the timer always calls the *latest*
+  // version with up-to-date slug + frontmatter — avoids the
+  // stale-closure bug that silently aborted Stage B B4.
   const autosaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const saveRef = useRef<(opts?: { silent?: boolean }) => Promise<boolean>>(
+    () => Promise.resolve(false),
+  )
   const triggerAutosave = useCallback(() => {
     if (autosaveTimer.current) clearTimeout(autosaveTimer.current)
-    autosaveTimer.current = setTimeout(() => void save({ silent: true }), AUTOSAVE_DELAY_MS)
+    autosaveTimer.current = setTimeout(
+      () => void saveRef.current({ silent: true }),
+      AUTOSAVE_DELAY_MS,
+    )
   }, [])
 
   useEffect(() => {
@@ -168,6 +179,12 @@ export function StudioEditor({
     },
     [slug, frontmatter, getCurrentBodyMarkdown, initialSlug, router],
   )
+
+  // Keep saveRef pointing at the latest save() so debounced autosave
+  // timers don't fire with stale slug/frontmatter values.
+  useEffect(() => {
+    saveRef.current = save
+  }, [save])
 
   async function onPublish() {
     const saved = await save({ silent: false })
