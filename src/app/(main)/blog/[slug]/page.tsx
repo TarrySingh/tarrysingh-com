@@ -5,11 +5,13 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import remarkGfm from "remark-gfm"
+import { marked } from "marked"
 import { ArrowLeft, Linkedin } from "lucide-react"
 import {
   formatPostDate,
   getAllPosts,
   getPost,
+  getNudgeCard,
   type BlogPostMeta,
 } from "@/lib/blog/posts"
 import { mdxComponents } from "@/lib/blog/mdx-components"
@@ -64,6 +66,10 @@ export default async function BlogPostPage({
   const { slug } = await params
   const post = await getPost(slug)
   if (!post) notFound()
+
+  // Sprint 5.5.1 — AI-baked footer nudge card, if one was generated
+  // at publish time via `npm run blog:bake-nudge <slug>`.
+  const nudgeCard = await getNudgeCard(slug)
 
   const isStudioTheme = post.theme === "studio"
   // Studio variant: cream paper + the same Synaptic palette tokens. Editorial
@@ -235,6 +241,34 @@ export default async function BlogPostPage({
           </div>
         </div>
 
+        {nudgeCard ? (
+          <aside
+            className="mt-10 rounded-2xl border border-gold-200 bg-gold-50/40 p-6 md:p-8"
+            aria-label="Footer nudge card"
+            data-nudge="footer-card"
+          >
+            <div className="mb-3 flex items-center gap-3">
+              <span
+                className="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-700"
+                style={{
+                  fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+                }}
+              >
+                If the argument held
+              </span>
+              <span className="h-px flex-1 bg-gold-200" />
+            </div>
+            <div
+              className="text-base md:text-lg leading-[1.78] text-navy-800 [&_p]:mb-3 [&_p:last-child]:mb-0 [&_em]:italic [&_strong]:font-semibold"
+              style={{
+                fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
+              }}
+              dangerouslySetInnerHTML={{
+                __html: marked.parse(nudgeCard, { async: false }) as string,
+              }}
+            />
+          </aside>
+        ) : null}
         <div id="newsletter" className="mt-10 scroll-mt-24">
           <NewsletterCard variant="compact" />
         </div>
