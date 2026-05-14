@@ -55,6 +55,21 @@ type UploadStatus =
   | { kind: "uploading"; filename: string; queued: number; total: number }
   | { kind: "error"; message: string; hint?: string }
 
+type HeroAIStatus =
+  | { kind: "idle" }
+  | { kind: "running" }
+  | {
+      kind: "done"
+      url: string
+      prompt: string
+      model: string
+      provider: string
+      durationMs: number
+      bytesUploaded: number
+      thinking?: string
+    }
+  | { kind: "error"; message: string; hint?: string }
+
 const AUTOSAVE_DELAY_MS = 4000
 
 const CATEGORIES: DispatchCategory[] = ["Essays", "Notes", "Studio"]
@@ -77,6 +92,7 @@ export function StudioEditor({
   const [frontmatterAIStatus, setFrontmatterAIStatus] = useState<FrontmatterAIStatus>({ kind: "idle" })
   const [uploadStatus, setUploadStatus] = useState<UploadStatus>({ kind: "idle" })
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const [heroAIStatus, setHeroAIStatus] = useState<HeroAIStatus>({ kind: "idle" })
 
   const initialHtml = useMemo(
     () => (initialBody ? marked.parse(initialBody, { async: false }) as string : ""),
@@ -433,6 +449,57 @@ export function StudioEditor({
     setFrontmatterAIStatus({ kind: "idle" })
   }
 
+  async function onGenerateHero(customPrompt?: string) {
+    setHeroAIStatus({ kind: "running" })
+    try {
+      const res = await fetch("/api/studio/ai/hero", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: frontmatter.title,
+          excerpt: frontmatter.excerpt || undefined,
+          category: frontmatter.category,
+          customPrompt: customPrompt || undefined,
+        }),
+      })
+      const j = await res.json()
+      if (!res.ok || !j.ok) {
+        setHeroAIStatus({
+          kind: "error",
+          message: j.error ?? `hero_failed_${res.status}`,
+          hint: j.hint,
+        })
+        return
+      }
+      setHeroAIStatus({
+        kind: "done",
+        url: j.url,
+        prompt: j.prompt,
+        model: j.model,
+        provider: j.provider,
+        durationMs: j.durationMs,
+        bytesUploaded: j.bytesUploaded,
+        thinking: j.thinking,
+      })
+    } catch (err) {
+      setHeroAIStatus({
+        kind: "error",
+        message: err instanceof Error ? err.message : "network_error",
+      })
+    }
+  }
+
+  function applyHero() {
+    if (heroAIStatus.kind !== "done") return
+    setFrontmatter((prev) => ({ ...prev, hero: heroAIStatus.url }))
+    triggerAutosave()
+    setHeroAIStatus({ kind: "idle" })
+  }
+
+  function dismissHero() {
+    setHeroAIStatus({ kind: "idle" })
+  }
+
   async function onAIRewrite() {
     if (!editor) return
     const { from, to } = editor.state.selection
@@ -567,6 +634,10 @@ export function StudioEditor({
               onSuggestFrontmatter={onSuggestFrontmatter}
               applyFrontmatterSuggestion={applyFrontmatterSuggestion}
               dismissFrontmatterSuggestion={dismissFrontmatterSuggestion}
+              heroAIStatus={heroAIStatus}
+              onGenerateHero={onGenerateHero}
+              applyHero={applyHero}
+              dismissHero={dismissHero}
             />
 
             <div className="rounded-2xl border border-navy-200/80 bg-white p-6 md:p-8">
@@ -771,6 +842,10 @@ function FrontmatterForm({
   onSuggestFrontmatter,
   applyFrontmatterSuggestion,
   dismissFrontmatterSuggestion,
+  heroAIStatus,
+  onGenerateHero,
+  applyHero,
+  dismissHero,
 }: {
   slug: string
   setSlug: (s: string) => void
@@ -780,6 +855,10 @@ function FrontmatterForm({
   onSuggestFrontmatter: () => void
   applyFrontmatterSuggestion: () => void
   dismissFrontmatterSuggestion: () => void
+  heroAIStatus: HeroAIStatus
+  onGenerateHero: (customPrompt?: string) => void
+  applyHero: () => void
+  dismissHero: () => void
 }) {
   const isSuggesting = frontmatterAIStatus.kind === "running"
   return (
@@ -887,7 +966,7 @@ function FrontmatterForm({
           More frontmatter (hero, theme, tags, linkedin_url)
         </summary>
         <div className="mt-4 grid grid-cols-2 gap-4">
-          <div>
+          <div className="col-span-2">
             <label className="block text-[10px] uppercase tracking-[0.28em] text-navy-400 mb-2"
               style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
             >Hero image URL</label>
@@ -895,9 +974,16 @@ function FrontmatterForm({
               type="text"
               value={frontmatter.hero ?? ""}
               onChange={(e) => setFm("hero", e.target.value)}
-              placeholder="/blog/hero-name.png"
+              placeholder="/blog/hero-name.png or paste/generate below"
               className="w-full rounded-md border border-navy-200 px-3 py-2 text-sm text-navy-900 focus:outline-none focus:border-gold-400"
               style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+            />
+            <HeroGeneratorBlock
+              heroAIStatus={heroAIStatus}
+              onGenerateHero={onGenerateHero}
+              applyHero={applyHero}
+              dismissHero={dismissHero}
+              hasTitle={frontmatter.title.trim().length > 0}
             />
           </div>
           <div>
@@ -1129,6 +1215,165 @@ function FrontmatterSuggestionBlock({
       >
         "Apply all" overwrites the three fields above. Title + slug are untouched.
       </p>
+    </div>
+  )
+}
+
+function HeroGeneratorBlock({
+  heroAIStatus,
+  onGenerateHero,
+  applyHero,
+  dismissHero,
+  hasTitle,
+}: {
+  heroAIStatus: HeroAIStatus
+  onGenerateHero: (customPrompt?: string) => void
+  applyHero: () => void
+  dismissHero: () => void
+  hasTitle: boolean
+}) {
+  const mono = { fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" } as const
+  const serif = { fontFamily: "var(--font-serif), 'IBM Plex Serif', serif" } as const
+
+  const [showPromptEditor, setShowPromptEditor] = useState(false)
+  const [draftPrompt, setDraftPrompt] = useState("")
+
+  const isRunning = heroAIStatus.kind === "running"
+  const isDone = heroAIStatus.kind === "done"
+
+  // When a generation completes, pre-fill the prompt editor with the
+  // prompt that produced it — so "Edit prompt" gives the author the
+  // current studio-voice prompt as a starting point, not a blank slate.
+  useEffect(() => {
+    if (heroAIStatus.kind === "done") {
+      setDraftPrompt(heroAIStatus.prompt)
+    } else if (heroAIStatus.kind === "idle") {
+      setShowPromptEditor(false)
+      setDraftPrompt("")
+    }
+  }, [heroAIStatus])
+
+  return (
+    <div className="mt-3 space-y-3">
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          onClick={() => onGenerateHero()}
+          disabled={isRunning || !hasTitle}
+          title={hasTitle ? "Synthesise a prompt + generate the hero image (FLUX schnell ~5–10 s, ~$0.003)" : "Add a title first."}
+          className="rounded-full border border-gold-300 bg-gold-50/60 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-700 transition-colors hover:bg-gold-100 disabled:opacity-50 disabled:cursor-not-allowed"
+          style={mono}
+        >
+          {isRunning ? "Generating…" : "✨ Generate hero"}
+        </button>
+        {isDone ? (
+          <>
+            <button
+              type="button"
+              onClick={applyHero}
+              className="rounded-full border border-gold-400 bg-navy-900 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-navy-800"
+              style={mono}
+            >
+              Use it
+            </button>
+            <button
+              type="button"
+              onClick={() => onGenerateHero()}
+              className="rounded-full border border-navy-200 bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50"
+              style={mono}
+            >
+              Regenerate
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowPromptEditor((v) => !v)}
+              className="rounded-full border border-navy-200 bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50"
+              style={mono}
+            >
+              {showPromptEditor ? "Hide prompt" : "Edit prompt"}
+            </button>
+            <button
+              type="button"
+              onClick={dismissHero}
+              className="rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-navy-500 transition-colors hover:text-navy-700"
+              style={mono}
+            >
+              Dismiss
+            </button>
+          </>
+        ) : null}
+        <span className="flex-1" />
+        {!isRunning && !isDone ? (
+          <span className="text-[10px] tracking-wide text-navy-400" style={mono}>
+            Claude proposes a prompt · FLUX schnell renders · 16:9 hero · uploaded to Supabase
+          </span>
+        ) : null}
+        {isRunning ? (
+          <span className="text-[10px] uppercase tracking-[0.22em] text-gold-700" style={mono}>
+            Synthesising prompt → rendering → uploading…
+          </span>
+        ) : null}
+      </div>
+
+      {heroAIStatus.kind === "error" ? (
+        <div
+          className="rounded-md border border-rose-200 bg-rose-50/60 p-3 text-xs text-rose-700"
+          style={mono}
+        >
+          ✗ {heroAIStatus.hint ?? heroAIStatus.message}
+        </div>
+      ) : null}
+
+      {isDone ? (
+        <div className="rounded-xl border border-gold-200 bg-white p-3">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={heroAIStatus.url}
+            alt="Generated hero preview"
+            className="block w-full rounded-md"
+            style={{ aspectRatio: "16 / 9", objectFit: "cover" }}
+          />
+          <p
+            className="mt-3 text-[11px] italic leading-relaxed text-navy-700"
+            style={serif}
+          >
+            {heroAIStatus.prompt}
+          </p>
+          <p
+            className="mt-2 text-[9px] uppercase tracking-[0.22em] text-navy-400"
+            style={mono}
+          >
+            {heroAIStatus.provider} · {heroAIStatus.model} · {Math.round(heroAIStatus.durationMs / 100) / 10}s · {(heroAIStatus.bytesUploaded / 1024).toFixed(1)} KiB
+          </p>
+        </div>
+      ) : null}
+
+      {isDone && showPromptEditor ? (
+        <div className="space-y-2">
+          <label
+            className="block text-[10px] uppercase tracking-[0.28em] text-navy-400"
+            style={mono}
+          >
+            Custom prompt (Regenerate with this prompt uses your edit verbatim)
+          </label>
+          <textarea
+            value={draftPrompt}
+            onChange={(e) => setDraftPrompt(e.target.value)}
+            rows={4}
+            className="w-full rounded-md border border-navy-200 px-3 py-2 text-sm italic text-navy-700 focus:outline-none focus:border-gold-400 resize-y"
+            style={serif}
+          />
+          <button
+            type="button"
+            onClick={() => onGenerateHero(draftPrompt)}
+            disabled={isRunning || !draftPrompt.trim()}
+            className="rounded-full border border-gold-400 bg-navy-900 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-navy-800 disabled:opacity-50"
+            style={mono}
+          >
+            Regenerate with this prompt
+          </button>
+        </div>
+      ) : null}
     </div>
   )
 }
