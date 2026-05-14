@@ -1,7 +1,7 @@
 # Sprint 4+ roadmap — Studio Editor v2 and beyond
 
 **Status:** planning · maintained alongside the main status report
-**Last updated:** 2026-05-15 (Sprint 6 mobile UX shipped overnight; Sprint 7 version history next)
+**Last updated:** 2026-05-15 (Sprint 6 + Sprint 7 both shipped overnight; 9 sprints in main, ~36 commits in 24 h; Sprint 8 next)
 **Parent doc:** [`dispatches-status-report.md`](./dispatches-status-report.md)
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -29,7 +29,7 @@ roadmap-deck slop.
 | ~~**Sprint 5**~~ | ~~AI-rendered hero images~~ | ~4 days | **Shipped 2026-05-14** — code-complete, pending Tarry-side UAT + `REPLICATE_API_TOKEN` env. See *Sprint 5 — shipped* below. |
 | ~~**Sprint 5.5**~~ | ~~Reader-side subscribe nudges — six experiments~~ | ~2–3 days | **Shipped 2026-05-14** — all 6 experiments + surveillance-free counters table. See *Sprint 5.5 — shipped* below. |
 | ~~**Sprint 6**~~ | ~~Mobile-first writing UX~~ | ~3 days | **Shipped 2026-05-15** — sticky touch toolbar, header reflow, preview overlay, 44×44 tap targets. See *Sprint 6 — shipped* below. |
-| **Sprint 7** | Version-history surface | ~3 days | Independent. Reads from git via Octokit. Becomes valuable once 10+ Dispatches exist. |
+| ~~**Sprint 7**~~ | ~~Version-history surface~~ | ~3 days | **Shipped 2026-05-15** — `src/lib/studio/history.ts` + 3 API routes + `<HistoryPane>` in editor with revert. See *Sprint 7 — shipped* below. |
 | **Sprint 8** | Linked editing for the Synaptic plate library | ~5–7 days | The largest lift. Plates are hand-coded SVG components; "edit copy in the studio" needs a shape contract per plate. |
 | **Sprint 9+ (defer)** | Real-time collaborative editing | ~5 days | Single-user editor — multiplayer is not on the critical path. Revisit only if a guest writer joins. |
 
@@ -571,7 +571,35 @@ restructures.
 
 ---
 
-## Sprint 7 — Version-history surface
+## Sprint 7 — shipped 2026-05-15
+
+**Window:** ~45 min after Sprint 6 close. Branch `claude/sprint-7` → PR (pending merge).
+
+### What landed
+
+Three commits, four new files, three new routes. No new env vars (reuses `STUDIO_GITHUB_TOKEN` from Sprint 3 publish).
+
+| Layer | Commit | Result |
+|---|---|---|
+| **History lib** | `43a1959` | `src/lib/studio/history.ts` — three helpers: `listHistory(slug)` returns the last 20 commits touching `content/blog/<slug>.mdx` (sha + shortSha + message + author + date + htmlUrl); `getFileAtCommit(slug, sha)` returns the .mdx as it existed at that commit (base64-decoded); `revertToCommit(slug, sha)` fetches old contents + current sha, creates a NEW commit on main with restored content via `octokit.repos.createOrUpdateFileContents`. Mirror of the publish.ts shape: same Octokit client, same `STUDIO_GITHUB_TOKEN`, same fail-closed error pattern. |
+| **API routes** | `faf8904` | `GET /api/studio/history?slug=<slug>` (list), `GET /api/studio/history/file?slug=<slug>&sha=<sha>` (file at sha, with defensive `/^[a-f0-9]{4,64}$/i` regex on the sha), `POST /api/studio/revert` body `{slug, sha}` (returns `newCommitSha` + `newCommitUrl` on success, 409 `no_change` if revert is a no-op). All inherit the existing `/api/studio/*` middleware auth gate. `maxDuration = 30` on revert (Octokit usually 1–3 s). |
+| **UI** | `75d980d` | `src/components/studio/HistoryPane.tsx` — full-screen overlay client component. Two-column grid: scrolling commit list on the left (cards with shortSha, date, message, author, "View on GitHub ↗", "Revert to here") + snapshot pane on the right (read-only `<pre>` showing the .mdx at the selected SHA). Revert flow: confirm prompt → POST → success banner with the new commit URL + "Vercel deploys in ~90 s" note. Friendly hints for the two common errors: `not_found` ("publish it first to start tracking versions") and `github_unconfigured` ("set STUDIO_GITHUB_TOKEN on Vercel"). Toggled by a "History" pill in the editor header (hidden < md — desktop-side tool). |
+
+### Live state (2026-05-15, code-complete)
+
+- **Build:** three new routes (`/api/studio/history`, `/api/studio/history/file`, `/api/studio/revert`) all green at 223 B route + ~102 kB First Load JS.
+- **No new env vars; no migrations.** Reuses `STUDIO_GITHUB_TOKEN` from Sprint 3 publish.
+- **Pending Tarry-side UAT:** open a published Dispatch in `/studio/editor/<slug>`, click History → list of commits surfaces, click one → snapshot loads, click Revert → confirm → new commit lands on main.
+
+### Deliberate non-goals (deferred to Sprint 7.1)
+
+- **Token- or line-level diff highlighting.** v1 surfaces side-by-side raw text — honest enough for a single-editor workflow. `diff2html` or a hand-rolled Myers-diff lands as a follow-up if the side-by-side view feels insufficient in practice.
+- **Multi-file history (Synaptic plates).** History today only covers `content/blog/<slug>.mdx`. The plate library editing (Sprint 8) will extend the lib to cover `src/lib/synaptic/plate-snapshots.json` when that ships.
+- **Restoring drafts (Supabase `studio_drafts` history).** Supabase doesn't track row history; out of scope. Sprint 7 covers post-publish history on git only.
+
+---
+
+## Sprint 7 — Version-history surface (original plan — preserved for audit)
 
 **What.** Every Publish creates a commit on `main`. Every edit
 post-publish is another commit. A version-history sidebar in the
