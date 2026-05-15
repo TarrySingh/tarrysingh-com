@@ -10,8 +10,7 @@ import CharacterCount from "@tiptap/extension-character-count"
 import LinkExt from "@tiptap/extension-link"
 import Typography from "@tiptap/extension-typography"
 import Image from "@tiptap/extension-image"
-import { marked } from "marked"
-import { htmlToMarkdown } from "@/lib/studio/serialize"
+import { htmlToMarkdown, markdownToEditorHtml } from "@/lib/studio/serialize"
 import type { AIFrontmatterSuggestion } from "@/lib/studio/ai"
 import { HistoryPane } from "./HistoryPane"
 import {
@@ -97,7 +96,7 @@ export function StudioEditor({
   const [showHistory, setShowHistory] = useState(false)
 
   const initialHtml = useMemo(
-    () => (initialBody ? marked.parse(initialBody, { async: false }) as string : ""),
+    () => markdownToEditorHtml(initialBody),
     [initialBody],
   )
 
@@ -295,7 +294,7 @@ export function StudioEditor({
         return
       }
       // Insert at cursor.
-      const insertHtml = marked.parse(j.output, { async: false }) as string
+      const insertHtml = markdownToEditorHtml(j.output)
       editor.chain().focus().insertContent(insertHtml).run()
       setAIStatus({ kind: "done", output: j.output, thinking: j.thinking, action: "continue" })
     } catch (err) {
@@ -531,7 +530,7 @@ export function StudioEditor({
         setAIStatus({ kind: "error", message: j.error ?? `ai_failed_${res.status}` })
         return
       }
-      const replaceHtml = marked.parse(j.output, { async: false }) as string
+      const replaceHtml = markdownToEditorHtml(j.output)
       editor.chain().focus().deleteRange({ from, to }).insertContent(replaceHtml).run()
       setAIStatus({ kind: "done", output: j.output, thinking: j.thinking, action: "rewrite" })
     } catch (err) {
