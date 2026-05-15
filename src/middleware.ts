@@ -15,6 +15,20 @@ const PANORAIMA_PREFIX = "/experiments/panoraima"
 const STUDIO_PREFIX = "/studio"
 const STUDIO_API_PREFIX = "/api/studio"
 
+// Sprint — auto-publish pipeline. Two studio API endpoints use their
+// own auth model (HMAC for ingest, signed token for approve) instead
+// of Basic Auth because:
+//   - the LaunchAgent calling /api/studio/ingest is unattended and
+//     shouldn't have to embed STUDIO_USER/STUDIO_PASS
+//   - the approval email click on /api/studio/approve lands in a
+//     fresh browser session that won't have Basic Auth cached
+// These prefixes bypass the studio Basic Auth gate but still go
+// through the rest of middleware.
+const STUDIO_API_HMAC_PATHS = [
+  "/api/studio/ingest",
+  "/api/studio/approve",
+]
+
 function unauthorizedResponse(realm: string): NextResponse {
   return new NextResponse("Authentication required.", {
     status: 401,
@@ -62,8 +76,14 @@ export function middleware(request: NextRequest) {
     pathname.startsWith(STUDIO_PREFIX) ||
     pathname.startsWith(STUDIO_API_PREFIX)
   ) {
-    if (!checkBasicAuth(request, "STUDIO_USER", "STUDIO_PASS")) {
-      return unauthorizedResponse("Studio")
+    // HMAC/signed-token-authenticated studio endpoints bypass Basic Auth.
+    const usesHmacAuth = STUDIO_API_HMAC_PATHS.some((p) =>
+      pathname === p || pathname.startsWith(p + "/"),
+    )
+    if (!usesHmacAuth) {
+      if (!checkBasicAuth(request, "STUDIO_USER", "STUDIO_PASS")) {
+        return unauthorizedResponse("Studio")
+      }
     }
     const res = NextResponse.next()
     res.headers.set("X-Robots-Tag", "noindex, nofollow")
