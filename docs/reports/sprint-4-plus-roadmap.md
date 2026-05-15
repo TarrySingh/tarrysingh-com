@@ -1,7 +1,7 @@
 # Sprint 4+ roadmap — Studio Editor v2 and beyond
 
 **Status:** planning · maintained alongside the main status report
-**Last updated:** 2026-05-15 (Sprint 5.6 local-FLUX-via-ComfyUI shipped during UAT — "kill SaaS, build it ourselves" for the case where compute is actually the cost)
+**Last updated:** 2026-05-16 (Sprint 9 auto-publish pipeline shipped overnight; 5 new files + 2 routes + middleware patch + LaunchAgent template + runbook)
 **Parent doc:** [`dispatches-status-report.md`](./dispatches-status-report.md)
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -463,6 +463,58 @@ subscribers; it does not harvest them.
 - Sprint 4.5 tags surface unlocks a per-tag variant of 5.5.1
   ("more like this tag"); ship 4.5 first or accept that 5.5.1
   is tagless for the first iteration.
+
+---
+
+## Sprint 9 — shipped 2026-05-16 · Auto-publish pipeline
+
+**Window:** overnight after Tarry approved the plan at bedtime. Branch `claude/sprint-auto-publish-pipeline` → PR pending merge for Tarry to UAT in the afternoon.
+
+### What landed
+
+Five new files + two API routes + middleware bypass + LaunchAgent template + 25-section runbook. Wires together existing studio primitives (no changes to `aiFrontmatter` / `upsertDraft` / `publishDispatch` / `signPayload`) into a self-driving loop.
+
+| Layer | File | Result |
+|---|---|---|
+| 1 (local) | `scripts/ingest/watch-tarry-blogs.mjs` | Node watcher. Polls `~/Documents/Claude/Projects/Tarry-Blogs/` every 60 s via mtime; tracks state in `~/.tarrysingh-watch-state.json`. For each new `.md`, signs body with `STUDIO_INGEST_SECRET` (HMAC-SHA256), POSTs to `/api/studio/ingest` with `X-Ingest-Signature` header. Idempotent — 409 from server treated as "already ingested". One JSON log line per event. |
+| 1 (local) | `docs/runbooks/com.tarrysingh.studio.blog-watch.plist.example` | LaunchAgent template — `RunAtLoad: true`, `KeepAlive: true`, `ThrottleInterval: 60`, log path `~/Library/Logs/studio-blog-watch.log`. Reads secret from chmod-600 `~/.tarrysingh-watch.env` via `STUDIO_WATCH_ENV_FILE`. Same shape as the Sprint 5.6 comfy plist. |
+| 2 (cloud) | `src/lib/studio/ingest.ts` | `parseDailyArticle({filename, content})` — strips `YYYY-MM-DD_` prefix from filename → slug; extracts first H1 → title (removed from body so the `/blog/<slug>` template doesn't double-render); strips `*By Tarry Singh — Date*` byline; collapses 3+ blank lines to 2. Returns stable error codes (`no_h1_title`, `body_too_short`, etc.) for friendly 422s. |
+| 2 (cloud) | `src/app/api/studio/ingest/route.ts` | POST handler. Verifies HMAC + 5-min replay window → `parseDailyArticle` → `aiFrontmatter` → `upsertDraft` → mints approval token → `sendApprovalEmail` → 200 with draft slug + email id. Every failure path has a stable error code; HMAC failures are timing-safe. |
+| 3 (cloud) | `src/lib/studio/email.ts` | `sendApprovalEmail()` — Resend SDK direct on this repo (independent of CRM's Resend). Studio-voice HTML template: cream paper, Gloock title, Plex Serif italic excerpt, Plex Mono small-caps kicker, copper hairline, two CTAs (navy "Publish now" + white "Preview in editor"). Plain-text fallback. Fail-closed 503 when `RESEND_API_KEY` unset. |
+| 4 (cloud) | `src/lib/studio/approval-token.ts` | `makeApprovalToken({slug}, secret)` + `verifyApprovalToken(token, secret, ttlSeconds=72h)`. Format: `<b64url(slug)>.<issuedMs>.<hexSig>`. Timing-safe HMAC comparison. TTL enforced server-side. |
+| 4 (cloud) | `src/app/api/studio/approve/route.ts` | GET handler. Verify token (sig + TTL) → `getDraft` → `publishDispatch` → `deleteDraft` (non-fatal). Renders minimal HTML page (not JSON) since this URL is opened by browser click. 410 on expired, 409 on slug-already-live, 404 on draft-not-found, 200 with success page + canonical URLs. |
+| 5 | `src/middleware.ts` (patch) | Two HMAC paths (`/api/studio/ingest`, `/api/studio/approve`) bypass the studio Basic Auth gate. They have their own auth model (HMAC + signed token). Other `/api/studio/*` routes remain Basic-Auth-gated. |
+| docs | `docs/runbooks/auto-publish-pipeline.md` | 25-section runbook: architecture diagram, env vars (3 required + 2 optional), step-by-step setup (`openssl rand` + Vercel env + Resend domain verify + LaunchAgent install + smoke test), operating modes table, 8 failure modes with fixes, design rationale. |
+
+### Live state (2026-05-16, code-complete, awaiting Tarry-side env setup)
+
+- **`next build` green** — `/api/studio/ingest` + `/api/studio/approve` at 227 B route weight.
+- **Type-check + watcher syntax-check** both clean.
+- **No new migrations** — reuses existing `studio_drafts` Supabase table.
+- **Three new env vars on Vercel** (Tarry-side): `STUDIO_INGEST_SECRET`, `STUDIO_APPROVAL_SECRET`, `RESEND_API_KEY`. Two optional overrides documented.
+- **One new local env file** (Tarry-side): `~/.tarrysingh-watch.env` chmod 600 with `STUDIO_INGEST_URL` + `STUDIO_INGEST_SECRET`.
+- **One npm dep added**: `resend ^4.x` for direct transactional sends from this repo.
+
+### Pending Tarry-side UAT (~10 min the afternoon after merge)
+
+Per the runbook's smoke section:
+1. Mint two HMAC secrets via `openssl rand -hex 32`; paste both on Vercel + the ingest one into `~/.tarrysingh-watch.env`
+2. Verify `tarrysingh.com` on Resend (DNS records on Vercel domain settings)
+3. Install + load the LaunchAgent (3 commands: `cp` + `sed` + `launchctl load`)
+4. Drop a synthetic `2026-05-XX_pipeline-smoke-test.md` into the watch dir
+5. Within 60 s, expect email at `tarry.singh@deepkapha.com`
+6. Click **Publish now** → `/blog/pipeline-smoke-test` live in ~90 s
+7. `git rm` the test post + delete source file
+
+### Deliberate non-goals (deferred)
+
+- **Hero image auto-gen at ingestion.** Skipped — adds Replicate cost OR requires Mac+ComfyUI awake at watcher fire-time. Tarry can manually generate via Sprint 5 / 5.6 in the editor after preview. Sprint 9.1 follow-up if desired.
+- **Stale-approval digest email.** A future micro-sprint can email Tarry a weekly digest of drafts older than 7 days that haven't been approved.
+- **Web UI for ingest-state.** Currently visible via `~/.tarrysingh-watch-state.json` on the Mac + `~/Library/Logs/studio-blog-watch.log`. Adding a `/studio/agent` page that surfaces the watcher's state is a Sprint 9.2 if useful.
+
+### Why this sprint
+
+Removes the daily friction of moving Claude-Cowork articles into the live site by hand. The studio earns its keep when the publish loop is as low-effort as the writing loop already is.
 
 ---
 

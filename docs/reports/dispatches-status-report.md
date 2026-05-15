@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-15 (Sprint 5.6 local-FLUX-via-ComfyUI provider shipped during UAT; 10 sprints in main, ~40 micro-commits in 24 h; Sprint 8 next)
+**Last updated:** 2026-05-16 (Sprint 9 auto-publish pipeline code-complete overnight — 11 sprints in main; PR pending Tarry-side env setup + UAT)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -483,6 +483,8 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Image upload route (Sprint 4.2) | `src/app/api/studio/upload/route.ts` |
 | AI-rendered hero pipeline (Sprint 5) | `src/lib/studio/ai.ts:aiHeroPrompt`, `src/lib/studio/image-gen.ts`, `src/app/api/studio/ai/hero/route.ts` |
 | Local FLUX runbook (Sprint 5.6) | `docs/runbooks/local-flux-comfy.md` |
+| Auto-publish pipeline (Sprint 9) source | `src/lib/studio/{ingest,email,approval-token}.ts`, `src/app/api/studio/{ingest,approve}/route.ts`, `scripts/ingest/watch-tarry-blogs.mjs` |
+| Auto-publish runbook (Sprint 9) | `docs/runbooks/auto-publish-pipeline.md`, `docs/runbooks/com.tarrysingh.studio.blog-watch.plist.example` |
 | Reader-side nudges (Sprint 5.5) | `src/components/blog/{ReturningReaderHero,ReadingMilestoneNudge,QuietExitIntent,HighlightToShare}.tsx`, `src/lib/nudge/log.ts`, `src/app/api/nudge/log/route.ts`, `docs/migrations/2026-05-14-nudge-events.sql` |
 | AI-baked footer card (Sprint 5.5.1) | `src/lib/studio/ai.ts:aiNudgeCard`, `scripts/blog/bake-nudge-card.mjs`, `content/blog/_nudges/<slug>.md`, `src/lib/blog/posts.ts:getNudgeCard` |
 | Tag surface (Sprint 4.5) | `src/app/(main)/blog/tag/[tag]/page.tsx`, `src/lib/blog/posts.ts:{getAllTags,getPostsByTag}` |
@@ -510,5 +512,6 @@ Local smoke-test 2026-05-13 (verified against branch HEAD `174cf1d`):
 | Sprint 6 — mobile-first writing UX | code-complete 2026-05-15 — 2 commits on `claude/sprint-6`; sticky `<TouchToolbar>` on `(pointer: coarse)` viewports (H2/H3/B/I/code/blockquote/lists/link/image/undo/redo, 44×44 buttons, `env(safe-area-inset-bottom)`); header reflow with icon-mode buttons under sm; SaveBadge collapses to single-glyph; word-count strip moves inline; preview pane becomes full-screen overlay on mobile (desktop unchanged); container padding loosens `p-6 md:p-7|8` → `p-4 sm:p-6 md:p-7|8`; AI panel grid stacks; title scales `text-2xl sm:text-3xl md:text-4xl` | technical-side complete; pending Tarry-side UAT on a phone |
 | Sprint 7 — version-history surface | code-complete 2026-05-15 — 3 commits on `claude/sprint-7`; `src/lib/studio/history.ts` (listHistory + getFileAtCommit + revertToCommit, same Octokit + STUDIO_GITHUB_TOKEN pattern as publish.ts); 3 routes (`/api/studio/history`, `/api/studio/history/file`, `/api/studio/revert`); `<HistoryPane>` overlay with commit list + snapshot pane + per-commit Revert action; toggled from a "History" pill in the editor header (desktop md+ only) | technical-side complete; pending Tarry-side UAT (open a published Dispatch, click History, revert one) |
 | Sprint 5.6 — local FLUX via ComfyUI provider | code-complete 2026-05-15 — 2 commits on `claude/sprint-5.6-local-flux`; adapter pattern earns its keep — new `local-comfy` provider in `image-gen.ts` routes hero generation to a ComfyUI server on Tarry's Mac (zero per-image cost, ~30–90 s/image, dev-mode only); 7-node FLUX-schnell workflow embedded; new runbook at `docs/runbooks/local-flux-comfy.md` covers one-time install (ComfyUI + flux1-schnell-fp8.safetensors checkpoint); env-var switch `STUDIO_IMAGE_GEN_PROVIDER=local-comfy` in `.env.local`; Vercel production keeps Replicate fallback for travel-mode | technical-side complete; pending Tarry-side install + UAT |
+| Sprint 9 — auto-publish pipeline | code-complete 2026-05-16 — 5 commits on `claude/sprint-auto-publish-pipeline`; daily Claude-Cowork articles in `~/Documents/Claude/Projects/Tarry-Blogs/` get picked up by a LaunchAgent → POST to new `/api/studio/ingest` (HMAC) → `aiFrontmatter` auto-suggests + applies → draft created → Resend email with "Publish now" + "Preview in editor" CTAs lands at `tarry.singh@deepkapha.com` → one click on the new `/api/studio/approve?token=…` (signed-token, 72 h TTL) commits to main; reuses `upsertDraft` / `aiFrontmatter` / `publishDispatch` unchanged; middleware bypasses the two HMAC paths from Basic Auth | code + runbook ready; pending Tarry-side: 3 Vercel env vars + Resend domain verify + LaunchAgent load + UAT |
 
 — *the studio*
