@@ -68,7 +68,7 @@ type HeroAIStatus =
       bytesUploaded: number
       thinking?: string
     }
-  | { kind: "error"; message: string; hint?: string }
+  | { kind: "error"; message: string; hint?: string; debug?: string }
 
 const AUTOSAVE_DELAY_MS = 4000
 
@@ -469,6 +469,7 @@ export function StudioEditor({
           kind: "error",
           message: j.error ?? `hero_failed_${res.status}`,
           hint: j.hint,
+          debug: j.debug,
         })
         return
       }
@@ -1596,10 +1597,15 @@ function HeroGeneratorBlock({
 
       {heroAIStatus.kind === "error" ? (
         <div
-          className="rounded-md border border-rose-200 bg-rose-50/60 p-3 text-xs text-rose-700"
+          className="rounded-md border border-rose-200 bg-rose-50/60 p-3 text-xs text-rose-700 space-y-1"
           style={mono}
         >
-          ✗ {heroAIStatus.hint ?? heroAIStatus.message}
+          <div>✗ {heroAIStatus.hint ?? heroAIStatus.message}</div>
+          {heroAIStatus.debug ? (
+            <div className="break-all text-[10px] text-rose-500 normal-case tracking-normal">
+              {heroAIStatus.debug}
+            </div>
+          ) : null}
         </div>
       ) : null}
 

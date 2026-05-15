@@ -90,11 +90,12 @@ async function generateHeroReplicate(
       output_format: outputFormat,
       output_quality: 92,
       num_outputs: 1,
-      // flux-schnell uses these defaults; SDXL would use different keys
-      // but the failure case is "model rejects unknown input" not
-      // catastrophic — surfaces via image_gen_create_failed.
-      go_fast: true,
-      megapixels: "1",
+      // NOTE: keep this set minimal. Replicate's predictions endpoint
+      // rejects ANY unknown input key with 422 — caught at Sprint 5 UAT
+      // 2026-05-15. flux-schnell's documented inputs are: prompt,
+      // aspect_ratio, num_outputs, output_format, output_quality, seed,
+      // disable_safety_checker. SDXL would use different keys; the
+      // provider switch is the place to fork the input schema.
     },
   }
   if (model.includes(":")) {
