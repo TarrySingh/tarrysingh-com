@@ -27,9 +27,14 @@ cd ~
 git clone https://github.com/comfyanonymous/ComfyUI.git
 cd ComfyUI
 
-# Python 3.10+ recommended. Use venv to keep deps isolated.
-python3 -m venv venv
+# IMPORTANT — Python 3.11 or 3.12. NOT 3.13+ — PyTorch doesn't ship
+# wheels for newer Pythons yet (caught 2026-05-15 during the first
+# install: pip errors with "No matching distribution found for torch").
+brew install python@3.12         # safe no-op if already installed
+python3.12 -m venv venv
 source venv/bin/activate
+python --version                 # should say Python 3.12.x
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
@@ -37,13 +42,13 @@ On Apple Silicon the requirements.txt installs the right PyTorch with MPS (Metal
 
 ### 2. Download the FLUX schnell checkpoint
 
-The all-in-one fp8 .safetensors weighs ~12 GB and includes the UNet + CLIP + VAE so the studio's workflow doesn't need separate loaders.
+The all-in-one fp8 .safetensors weighs **~16 GB** (verified during the first install; earlier docs said 12 GB) and includes the UNet + CLIP + VAE so the studio's workflow doesn't need separate loaders.
 
 ```bash
 # Inside ComfyUI/
 cd models/checkpoints
 
-# Download the fp8 quantised all-in-one. ~12 GB. Save as the exact
+# Download the fp8 quantised all-in-one. ~16 GB. Save as the exact
 # filename the studio adapter expects (override via STUDIO_LOCAL_COMFY_CKPT
 # if you prefer a different file).
 curl -L -o flux1-schnell-fp8.safetensors \
@@ -51,6 +56,8 @@ curl -L -o flux1-schnell-fp8.safetensors \
 ```
 
 If `curl` rate-limits, do it through your browser; Hugging Face occasionally requires you to accept the model card before download (FLUX schnell is non-commercial-friendly but you may need to click through).
+
+**RAM sizing note.** The fp8 checkpoint needs ~16 GB unified RAM to load comfortably. On a 32 GB+ M-series Mac it's fine. On a 16 GB Mac the fp8 swaps heavily; use a GGUF-quantised variant instead — `flux1-schnell-Q4_K_S.gguf` (~6 GB) runs cleanly on 16 GB. To use a GGUF you'll also need `ComfyUI-GGUF` custom nodes installed (one extra `git clone` into `custom_nodes/`).
 
 ### 3. Run ComfyUI
 
@@ -126,9 +133,10 @@ curl http://127.0.0.1:8188/system_stats | jq .
 
 | Symptom | Cause | Fix |
 |---|---|---|
+| `ERROR: No matching distribution found for torch` during pip install | Python too new (3.13+); PyTorch wheels stop at 3.12 as of 2026-05 | `brew install python@3.12` then `rm -rf venv && python3.12 -m venv venv` and reinstall. |
 | `image_gen_local_unreachable` | ComfyUI not running, or different port | Start ComfyUI; check port matches `STUDIO_LOCAL_COMFY_URL`. |
 | `image_gen_create_failed` with node_errors mentioning the checkpoint | FLUX schnell .safetensors not in `models/checkpoints/`, or filename mismatch | Move/rename to `flux1-schnell-fp8.safetensors`, or set `STUDIO_LOCAL_COMFY_CKPT` to whatever you have. |
-| `image_gen_timeout` | First-run model loading > 180 s, or Mac is under heavy load | Run ComfyUI once before starting `npm run dev` so the model is already loaded; or close memory-hungry apps. |
+| `image_gen_timeout` | First-run model loading > 180 s, or Mac is under heavy load | Run ComfyUI once before starting `npm run dev` so the model is already loaded; or close memory-hungry apps. On 16 GB Macs the fp8 checkpoint may swap badly — switch to GGUF (see RAM sizing note in step 2). |
 | Output quality looks worse than Replicate | Different sampler / steps / cfg config — the workflow defaults to flux-schnell-recommended (4 steps, cfg 1.0, euler / simple). Tweaking these in `image-gen.ts:FLUX_SCHNELL_WORKFLOW` will diverge from the studio voice. | Leave the defaults; if you need a different style, set `STUDIO_LOCAL_COMFY_CKPT` to a different FLUX variant (flux-dev for higher quality at 20+ steps). |
 | Image too small / wrong ratio | `STUDIO_IMAGE_GEN_ASPECT` controls dimensions; supported: 16:9 (default), 3:2, 4:3, 1:1, 9:16. FLUX requires multiples of 16. | Set the env var to one of the listed ratios. |
 
