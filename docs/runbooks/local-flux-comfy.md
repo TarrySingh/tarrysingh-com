@@ -33,6 +33,7 @@ source venv/bin/activate
 python --version
 pip install --upgrade pip
 pip install -r requirements.txt
+pip install --upgrade torch torchvision torchaudio
 pip install "numpy<2"
 ```
 
@@ -40,7 +41,8 @@ pip install "numpy<2"
 
 - `brew install python@3.12` — PyTorch wheels stop at Python 3.12 (as of 2026-05). System `python3` on macOS resolves to 3.13/3.14 in newer installs; that triggers `ERROR: No matching distribution found for torch`.
 - `python3.12 -m venv venv` — pin the venv to 3.12 explicitly, not `python3`.
-- `pip install "numpy<2"` — PyTorch's compiled extensions were built against NumPy 1.x; pip auto-installs NumPy 2.4.5 (latest) which is ABI-incompatible. Without this pin, `python main.py` crashes on `import torch` with *"A module that was compiled using NumPy 1.x cannot be run in NumPy 2.4.5"*. Caught 2026-05-15 during the first install.
+- `pip install --upgrade torch torchvision torchaudio` — ComfyUI's bundled `comfy_kitchen` requires `torch.library.custom_op` which was added in PyTorch 2.4. The requirements.txt doesn't always pin torch high enough; the explicit upgrade pulls the latest stable (~2.7/2.8 in May 2026) with Apple Silicon MPS support. Without this, `python main.py` crashes with *"AttributeError: module 'torch.library' has no attribute 'custom_op'"*. Caught 2026-05-15 during the first install.
+- `pip install "numpy<2"` — PyTorch's compiled extensions were built against NumPy 1.x; pip auto-installs NumPy 2.4.5 (latest) which is ABI-incompatible. **Run this LAST** — if you upgrade torch after, it may re-pull NumPy 2.x. Without the pin, `python main.py` crashes on `import torch` with *"A module that was compiled using NumPy 1.x cannot be run in NumPy 2.4.5"*. Caught 2026-05-15 during the first install.
 
 On Apple Silicon the requirements.txt installs the right PyTorch with MPS (Metal) acceleration automatically. No CUDA needed.
 
@@ -189,6 +191,7 @@ curl http://127.0.0.1:8188/system_stats | jq .
 |---|---|---|
 | `ERROR: No matching distribution found for torch` during pip install | Python too new (3.13+); PyTorch wheels stop at 3.12 as of 2026-05 | `brew install python@3.12` then `rm -rf venv && python3.12 -m venv venv` and reinstall. |
 | `python main.py` crashes on `import torch` with *"A module that was compiled using NumPy 1.x cannot be run in NumPy 2.4.5"* | NumPy 2.x ABI break — PyTorch's compiled extensions were built against NumPy 1.x | `pip install "numpy<2"` inside the venv. The previous-step `pip install -r requirements.txt` doesn't pin NumPy. |
+| `python main.py` crashes deep in `comfy_kitchen` with *"AttributeError: module 'torch.library' has no attribute 'custom_op'"* | Torch too old — ComfyUI's `comfy_kitchen` needs `torch.library.custom_op` from PyTorch 2.4+ | `pip install --upgrade torch torchvision torchaudio` inside the venv. Re-run `pip install "numpy<2"` after if the torch upgrade re-pulled NumPy 2.x. |
 | `ERROR: Invalid requirement: '#': Expected package name at the start of dependency specifier` | Pasted a multi-line block that had `#` comments inline; zsh's `interactive_comments` is off, so pip got `#` as an argument | Re-run the command without the trailing comment, or `setopt interactive_comments` in `~/.zshrc` once. |
 | `image_gen_local_unreachable` | ComfyUI not running, or different port | Start ComfyUI; check port matches `STUDIO_LOCAL_COMFY_URL`. |
 | `image_gen_create_failed` with node_errors mentioning the checkpoint | FLUX schnell .safetensors not in `models/checkpoints/`, or filename mismatch | Move/rename to `flux1-schnell-fp8.safetensors`, or set `STUDIO_LOCAL_COMFY_CKPT` to whatever you have. |
