@@ -21,24 +21,48 @@ This runbook covers the **one-time setup** of ComfyUI + FLUX schnell + the env s
 
 ### 1. Clone + install ComfyUI
 
-Plain copy-paste (no inline comments — zsh's `interactive_comments` can be off on some configs, which makes the `#` get parsed as a command argument):
+**Apple Silicon precheck — confirm arm64 Homebrew exists.** If you migrated from an Intel Mac, your Homebrew is at `/usr/local/` and is x86_64 (Rosetta). PyTorch dropped Intel macOS wheels after 2.2.x, so an Intel-Homebrew Python caps you at torch 2.2.x — which is too old for current ComfyUI. **You need arm64 Homebrew at `/opt/homebrew/`.**
+
+```bash
+file $(which python3.12) 2>/dev/null || echo "python3.12 not yet installed"
+```
+
+If the output says `x86_64` (or python3.12 is not yet installed and you came from an Intel Mac), install arm64 Homebrew first:
+
+```bash
+arch                                  # confirm shell is arm64
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+The installer auto-detects your arm64 shell and lays Homebrew down at `/opt/homebrew/`. It coexists fine with the older `/usr/local/` install; nothing is broken or removed.
+
+Once arm64 Homebrew is up, the full plain-copy-paste install (no inline comments — zsh's `interactive_comments` can be off on some configs, which makes the `#` get parsed as a command argument):
 
 ```bash
 cd ~
 git clone https://github.com/comfyanonymous/ComfyUI.git
 cd ComfyUI
-brew install python@3.12
-python3.12 -m venv venv
+/opt/homebrew/bin/brew install python@3.12
+file /opt/homebrew/bin/python3.12
+/opt/homebrew/bin/python3.12 -m venv venv
 source venv/bin/activate
-python --version
+python -c "import platform; print(platform.machine())"
 pip install --upgrade pip
 pip install -r requirements.txt
-pip install --upgrade torch torchvision torchaudio
+pip install --no-cache-dir torch torchvision torchaudio
 pip install "numpy<2"
 ```
 
+The `file` and `platform.machine()` lines are smoke-tests. Expected output:
+- `file /opt/homebrew/bin/python3.12` → `Mach-O 64-bit executable arm64`
+- `print(platform.machine())` → `arm64`
+
+If either says `x86_64`, your venv is using the wrong Python — `rm -rf venv` and rebuild with the explicit `/opt/homebrew/bin/python3.12` path.
+
 **Why each step matters:**
 
+- **arm64 Homebrew at `/opt/homebrew/`** — Intel Macs use `/usr/local/` Homebrew; M-series Macs need `/opt/homebrew/`. If you migrated from Intel, both exist and `which python3.12` may resolve to the x86_64 one, which limits PyTorch to ≤ 2.2.x. Caught 2026-05-15 during the first install — pip's compatible wheel tags showed `x86_64 / intel / universal2` only, no `arm64`. Use the explicit `/opt/homebrew/bin/python3.12` path until you're sure your PATH puts arm64 first.
 - `brew install python@3.12` — PyTorch wheels stop at Python 3.12 (as of 2026-05). System `python3` on macOS resolves to 3.13/3.14 in newer installs; that triggers `ERROR: No matching distribution found for torch`.
 - `python3.12 -m venv venv` — pin the venv to 3.12 explicitly, not `python3`.
 - `pip install --upgrade torch torchvision torchaudio` — ComfyUI's bundled `comfy_kitchen` requires `torch.library.custom_op` which was added in PyTorch 2.4. The requirements.txt doesn't always pin torch high enough; the explicit upgrade pulls the latest stable (~2.7/2.8 in May 2026) with Apple Silicon MPS support. Without this, `python main.py` crashes with *"AttributeError: module 'torch.library' has no attribute 'custom_op'"*. Caught 2026-05-15 during the first install.
@@ -189,6 +213,7 @@ curl http://127.0.0.1:8188/system_stats | jq .
 
 | Symptom | Cause | Fix |
 |---|---|---|
+| `ERROR: No matching distribution found for torch>=2.5` with available versions capped at 2.2.x | x86_64 Python (Rosetta Homebrew at `/usr/local/`). PyTorch dropped Intel macOS wheels after 2.2.x. Confirm with `file $(which python3.12)` — if it says `x86_64`, that's the cause. | Install arm64 Homebrew at `/opt/homebrew/` (see Apple Silicon precheck), rebuild venv with `/opt/homebrew/bin/python3.12`. |
 | `ERROR: No matching distribution found for torch` during pip install | Python too new (3.13+); PyTorch wheels stop at 3.12 as of 2026-05 | `brew install python@3.12` then `rm -rf venv && python3.12 -m venv venv` and reinstall. |
 | `python main.py` crashes on `import torch` with *"A module that was compiled using NumPy 1.x cannot be run in NumPy 2.4.5"* | NumPy 2.x ABI break — PyTorch's compiled extensions were built against NumPy 1.x | `pip install "numpy<2"` inside the venv. The previous-step `pip install -r requirements.txt` doesn't pin NumPy. |
 | `python main.py` crashes deep in `comfy_kitchen` with *"AttributeError: module 'torch.library' has no attribute 'custom_op'"* | Torch too old — ComfyUI's `comfy_kitchen` needs `torch.library.custom_op` from PyTorch 2.4+ | `pip install --upgrade torch torchvision torchaudio` inside the venv. Re-run `pip install "numpy<2"` after if the torch upgrade re-pulled NumPy 2.x. |
