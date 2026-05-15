@@ -21,22 +21,26 @@ This runbook covers the **one-time setup** of ComfyUI + FLUX schnell + the env s
 
 ### 1. Clone + install ComfyUI
 
+Plain copy-paste (no inline comments — zsh's `interactive_comments` can be off on some configs, which makes the `#` get parsed as a command argument):
+
 ```bash
-# Pick a stable home — somewhere outside the tarrysingh-com repo.
 cd ~
 git clone https://github.com/comfyanonymous/ComfyUI.git
 cd ComfyUI
-
-# IMPORTANT — Python 3.11 or 3.12. NOT 3.13+ — PyTorch doesn't ship
-# wheels for newer Pythons yet (caught 2026-05-15 during the first
-# install: pip errors with "No matching distribution found for torch").
-brew install python@3.12         # safe no-op if already installed
+brew install python@3.12
 python3.12 -m venv venv
 source venv/bin/activate
-python --version                 # should say Python 3.12.x
+python --version
 pip install --upgrade pip
 pip install -r requirements.txt
+pip install "numpy<2"
 ```
+
+**Why each step matters:**
+
+- `brew install python@3.12` — PyTorch wheels stop at Python 3.12 (as of 2026-05). System `python3` on macOS resolves to 3.13/3.14 in newer installs; that triggers `ERROR: No matching distribution found for torch`.
+- `python3.12 -m venv venv` — pin the venv to 3.12 explicitly, not `python3`.
+- `pip install "numpy<2"` — PyTorch's compiled extensions were built against NumPy 1.x; pip auto-installs NumPy 2.4.5 (latest) which is ABI-incompatible. Without this pin, `python main.py` crashes on `import torch` with *"A module that was compiled using NumPy 1.x cannot be run in NumPy 2.4.5"*. Caught 2026-05-15 during the first install.
 
 On Apple Silicon the requirements.txt installs the right PyTorch with MPS (Metal) acceleration automatically. No CUDA needed.
 
@@ -184,6 +188,8 @@ curl http://127.0.0.1:8188/system_stats | jq .
 | Symptom | Cause | Fix |
 |---|---|---|
 | `ERROR: No matching distribution found for torch` during pip install | Python too new (3.13+); PyTorch wheels stop at 3.12 as of 2026-05 | `brew install python@3.12` then `rm -rf venv && python3.12 -m venv venv` and reinstall. |
+| `python main.py` crashes on `import torch` with *"A module that was compiled using NumPy 1.x cannot be run in NumPy 2.4.5"* | NumPy 2.x ABI break — PyTorch's compiled extensions were built against NumPy 1.x | `pip install "numpy<2"` inside the venv. The previous-step `pip install -r requirements.txt` doesn't pin NumPy. |
+| `ERROR: Invalid requirement: '#': Expected package name at the start of dependency specifier` | Pasted a multi-line block that had `#` comments inline; zsh's `interactive_comments` is off, so pip got `#` as an argument | Re-run the command without the trailing comment, or `setopt interactive_comments` in `~/.zshrc` once. |
 | `image_gen_local_unreachable` | ComfyUI not running, or different port | Start ComfyUI; check port matches `STUDIO_LOCAL_COMFY_URL`. |
 | `image_gen_create_failed` with node_errors mentioning the checkpoint | FLUX schnell .safetensors not in `models/checkpoints/`, or filename mismatch | Move/rename to `flux1-schnell-fp8.safetensors`, or set `STUDIO_LOCAL_COMFY_CKPT` to whatever you have. |
 | `image_gen_timeout` | First-run model loading > 180 s, or Mac is under heavy load | Run ComfyUI once before starting `npm run dev` so the model is already loaded; or close memory-hungry apps. On 16 GB Macs the fp8 checkpoint may swap badly — switch to GGUF (see RAM sizing note in step 2). |
