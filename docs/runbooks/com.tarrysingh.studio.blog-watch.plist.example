@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Sprint — auto-publish pipeline.
+
+  This LaunchAgent runs the daily-article watcher on every macOS login.
+  It tails ~/Documents/Claude/Projects/Tarry-Blogs/ for new .md files
+  written by the Claude-Cowork scheduled task and POSTs each new one
+  to https://www.tarrysingh.com/api/studio/ingest.
+
+  Install:
+    cp docs/runbooks/com.tarrysingh.studio.blog-watch.plist.example \
+       ~/Library/LaunchAgents/com.tarrysingh.studio.blog-watch.plist
+    sed -i '' "s/USERNAME/$(whoami)/g" \
+       ~/Library/LaunchAgents/com.tarrysingh.studio.blog-watch.plist
+    # Set the secret + URL in the env file before loading (the watcher
+    # reads it via STUDIO_WATCH_ENV_FILE):
+    cat > ~/.tarrysingh-watch.env <<EOF
+    STUDIO_INGEST_URL=https://www.tarrysingh.com/api/studio/ingest
+    STUDIO_INGEST_SECRET=<paste the same value as on Vercel>
+    EOF
+    chmod 600 ~/.tarrysingh-watch.env
+    launchctl load ~/Library/LaunchAgents/com.tarrysingh.studio.blog-watch.plist
+
+  Smoke:
+    tail -f ~/Library/Logs/studio-blog-watch.log
+    launchctl list | grep blog-watch    # PID non-zero, exit status 0
+
+  Stop:
+    launchctl unload ~/Library/LaunchAgents/com.tarrysingh.studio.blog-watch.plist
+
+  Restart (after editing the env file or the watcher script):
+    launchctl kickstart -k gui/$(id -u)/com.tarrysingh.studio.blog-watch
+
+  See docs/runbooks/auto-publish-pipeline.md for full setup.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.tarrysingh.studio.blog-watch</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/node</string>
+        <string>/Users/USERNAME/Documents/GitHub/tarrysingh-com/scripts/ingest/watch-tarry-blogs.mjs</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/USERNAME/Documents/GitHub/tarrysingh-com</string>
+
+    <!--
+      Where the watcher reads STUDIO_INGEST_URL and STUDIO_INGEST_SECRET
+      from. NOT committed to git; chmod 600.
+    -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>STUDIO_WATCH_ENV_FILE</key>
+        <string>/Users/USERNAME/.tarrysingh-watch.env</string>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
+
+    <!-- Run at login + every subsequent login. -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- Auto-restart on crash. The watcher's main loop is forever, so a
+         clean exit is unexpected — KeepAlive: true catches that case. -->
+    <key>KeepAlive</key>
+    <true/>
+
+    <!-- Throttle restarts so a broken env file doesn't tight-loop. -->
+    <key>ThrottleInterval</key>
+    <integer>60</integer>
+
+    <!-- One JSON log line per event; tail with jq:
+           tail -f ~/Library/Logs/studio-blog-watch.log | jq . -->
+    <key>StandardOutPath</key>
+    <string>/Users/USERNAME/Library/Logs/studio-blog-watch.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/USERNAME/Library/Logs/studio-blog-watch.log</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>
