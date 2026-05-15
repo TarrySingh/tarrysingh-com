@@ -97,6 +97,56 @@ Watch the ComfyUI terminal: you'll see model loading on the first call (~5–15 
 
 ---
 
+## Auto-start ComfyUI on login (recommended)
+
+Once the manual run in step 3 has worked at least once, set up a **LaunchAgent** so macOS keeps ComfyUI running 24/7. Set-and-forget: ~200 MB RAM idle, the 16 GB model loads on first request, unloads under memory pressure. The studio UI just talks to `127.0.0.1:8188` whenever — no need to keep a terminal open.
+
+### Install
+
+```bash
+# 1. Copy the template into LaunchAgents/
+cp docs/runbooks/com.tarrysingh.studio.comfy.plist.example \
+   ~/Library/LaunchAgents/com.tarrysingh.studio.comfy.plist
+
+# 2. Replace USERNAME with your macOS short username everywhere in the file.
+#    Get the short username:
+whoami
+# Then either edit the file by hand, or run (BSD sed — works on macOS):
+USER_SHORT=$(whoami)
+sed -i '' "s/USERNAME/$USER_SHORT/g" \
+  ~/Library/LaunchAgents/com.tarrysingh.studio.comfy.plist
+
+# 3. Load it. ComfyUI starts immediately + every subsequent login.
+launchctl load ~/Library/LaunchAgents/com.tarrysingh.studio.comfy.plist
+
+# 4. Verify it's running.
+curl http://127.0.0.1:8188/system_stats | jq .  # should return JSON
+launchctl list | grep com.tarrysingh.studio.comfy   # should show a PID
+tail -f ~/Library/Logs/studio-comfy.log              # stream the logs
+```
+
+If `launchctl list` shows a PID of `-` or non-zero exit status, check the log file — usually a path mismatch (USERNAME not substituted, or ComfyUI lives somewhere other than `~/ComfyUI`).
+
+### Common ops
+
+| Need | Command |
+|---|---|
+| Stop ComfyUI temporarily | `launchctl unload ~/Library/LaunchAgents/com.tarrysingh.studio.comfy.plist` |
+| Start again | `launchctl load ~/Library/LaunchAgents/com.tarrysingh.studio.comfy.plist` |
+| Restart (after updating ComfyUI or weights) | `launchctl kickstart -k gui/$(id -u)/com.tarrysingh.studio.comfy` |
+| Permanently remove | `launchctl unload …plist && rm ~/Library/LaunchAgents/com.tarrysingh.studio.comfy.plist` |
+| Stream logs | `tail -f ~/Library/Logs/studio-comfy.log` |
+| Check if running | `launchctl list \| grep comfy` or `curl 127.0.0.1:8188/system_stats` |
+
+### What this gives you
+
+- **No terminal needed.** Close every terminal, restart your Mac — ComfyUI is back on `127.0.0.1:8188` within a few seconds of login.
+- **Auto-restart on crash.** `KeepAlive = true` means if ComfyUI's Python process dies for any reason, macOS restarts it within 10 s.
+- **Centralised logs.** Everything goes to `~/Library/Logs/studio-comfy.log` — no scrollback to lose.
+- **Studio editor stays simple.** The `image-gen.ts` adapter just hits `localhost:8188`. When ComfyUI is up (which is "always" with the LaunchAgent), gen works. When it's not (e.g. you've manually `launchctl unload`-ed for maintenance), the editor surfaces `image_gen_local_unreachable` with the actual error body.
+
+---
+
 ## Operating modes
 
 The studio works in three modes, depending on `.env.local` / Vercel env config:
