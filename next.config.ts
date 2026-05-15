@@ -1,7 +1,38 @@
 import type { NextConfig } from "next";
 
+// Sprint 4.2 follow-up — allow next/image to optimise + serve images
+// from Supabase Storage. The Studio Editor uploads in-body images
+// (and Sprint 5 hero images) to the `studio-uploads` bucket; the
+// published Dispatches reference those URLs and `next/image` rejects
+// any external hostname not explicitly allow-listed. Caught at
+// Sprint 4.2 UAT 2026-05-15: the .mdx was fine, the URL was fine
+// (HTTP 200), but the rendered page showed a broken-image placeholder
+// because mdx-components.tsx's <Img> uses next/image.
+//
+// Hostname is derived from SUPABASE_URL at build time so a different
+// Supabase project (e.g. a fork) just works without editing this file.
+// Static fallback matches the agentify project used by production.
+const SUPABASE_HOST = (() => {
+  try {
+    return new URL(
+      process.env.SUPABASE_URL ?? "https://ijmkekioxhfcinkjckju.supabase.co",
+    ).hostname
+  } catch {
+    return "ijmkekioxhfcinkjckju.supabase.co"
+  }
+})()
+
 const nextConfig: NextConfig = {
   serverExternalPackages: ["stripe"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: SUPABASE_HOST,
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
+  },
   // The legacy parts of the repo (jobs, experiments, panoraima, ui/*)
   // carry ~14 pre-existing lint errors that the previously-broken
   // eslint flat-config was silently passing. Fixing eslint.config.mjs
