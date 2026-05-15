@@ -1,7 +1,7 @@
 # Sprint 4+ roadmap — Studio Editor v2 and beyond
 
 **Status:** planning · maintained alongside the main status report
-**Last updated:** 2026-05-15 (Sprint 6 + Sprint 7 both shipped overnight; 9 sprints in main, ~36 commits in 24 h; Sprint 8 next)
+**Last updated:** 2026-05-15 (Sprint 5.6 local-FLUX-via-ComfyUI shipped during UAT — "kill SaaS, build it ourselves" for the case where compute is actually the cost)
 **Parent doc:** [`dispatches-status-report.md`](./dispatches-status-report.md)
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -463,6 +463,34 @@ subscribers; it does not harvest them.
 - Sprint 4.5 tags surface unlocks a per-tag variant of 5.5.1
   ("more like this tag"); ship 4.5 first or accept that 5.5.1
   is tagless for the first iteration.
+
+---
+
+## Sprint 5.6 — shipped 2026-05-15
+
+**Window:** ~30 min during Sprint 5 UAT. Branch `claude/sprint-5.6-local-flux` → PR (pending merge).
+
+### What landed
+
+A second provider for the hero-gen adapter: **local FLUX via ComfyUI**. The pattern of building image gen as a provider-agnostic adapter (Sprint 5) earned its keep — adding the local-comfy branch was a single-function addition + an env-var switch.
+
+| Piece | Result |
+|---|---|
+| `image-gen.ts` | New `generateHeroLocalComfy(prompt)` branch. Same return shape as the Replicate provider. Embeds a 7-node ComfyUI workflow JSON template (`CheckpointLoaderSimple` → `CLIPTextEncode ×2` → `EmptyLatentImage` → `KSampler @ 4 steps / cfg 1.0 / euler / simple` → `VAEDecode` → `SaveImage`) — the documented flux-schnell-recommended config. `aspectToWidthHeight()` maps "16:9" → 1024×576 (and four other ratios). Random seed per call so Regenerate produces fresh output. Pipeline: POST `/prompt` → poll `/history/<id>` every 1.5 s for up to 180 s → GET `/view?filename=…` → return bytes. |
+| Env switch | `STUDIO_IMAGE_GEN_PROVIDER=local-comfy` + optional `STUDIO_LOCAL_COMFY_URL` + `STUDIO_LOCAL_COMFY_CKPT`. Documented in `.env.example` with explicit warning that this is dev-mode only (Vercel production can't reach localhost). |
+| Runbook | [`docs/runbooks/local-flux-comfy.md`](../runbooks/local-flux-comfy.md) — one-time setup: `git clone ComfyUI` → `pip install -r requirements.txt` → `curl flux1-schnell-fp8.safetensors` (~12 GB) → `python main.py --listen 127.0.0.1 --port 8188`. Plus operating-modes table (local / cloud / hybrid), smoke-test commands, and the 5 failure modes with fixes. |
+
+### The "kill SaaS" framing — when it does and doesn't apply
+
+Sprint 1 → 5 killed four pieces of *platform rent*: blog CMS (Studio Editor), newsletter platform (realai-crm + Resend), analytics (`nudge_events` table), image hosting (Supabase Storage). Each replacement is thin — the original cost was middleware markup, not the underlying resource.
+
+Image gen at $0.003 per FLUX schnell render on Replicate is **metered compute**, not platform rent. The cost is GPU electricity + orchestration. You can't kill the compute, but you can relocate it onto hardware you already own. That's what Sprint 5.6 enables.
+
+The savings are pennies for our volume (~10 heroes/month, ~$0.36/year on Replicate). The win isn't financial — it's *not adding another vendor to the standing tab*. When you're traveling without your Mac, the Replicate adapter remains the right fallback at $0.003/image.
+
+### Future Sprint 5.6.1 (deferred)
+
+- **Tailscale tunnel exposure** so production Vercel can reach the home Mac. Lets the iOS PWA edit-and-publish flow gen heroes from anywhere while the desk Mac is awake. Adds setup complexity; deferred until there's a real need.
 
 ---
 
