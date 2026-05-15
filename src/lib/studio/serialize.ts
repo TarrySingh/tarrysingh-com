@@ -1,4 +1,5 @@
 import TurndownService from "turndown"
+import { marked } from "marked"
 import type { DispatchFrontmatter } from "./types"
 
 /**
@@ -35,6 +36,38 @@ td.addRule("fencedCodeWithLang", {
 
 export function htmlToMarkdown(html: string): string {
   return td.turndown(html)
+}
+
+/**
+ * Lift solo `<img>` elements out of the `<p>` wrappers `marked` puts
+ * around them. Tiptap's Image extension is configured `inline: false`
+ * (block node) so an `<img>` nested inside a paragraph is rejected by
+ * the ProseMirror schema and silently dropped on load. Standalone
+ * markdown images (`![alt](url)` on their own line) emit `<p><img></p>`
+ * by default — this unwraps them.
+ *
+ * Caught at Sprint 4.2 UAT (2026-05-15): image survived save, vanished
+ * on refresh. Save side was fine (Turndown emitted `![alt](url)`
+ * correctly); the load side dropped the node because of the schema
+ * mismatch.
+ */
+export function unwrapStandaloneImages(html: string): string {
+  return html.replace(
+    /<p>\s*(<img\b[^>]*\/?>)\s*<\/p>/g,
+    "$1",
+  )
+}
+
+/**
+ * Markdown → Tiptap-ready HTML. Wraps `marked.parse` + the standalone-
+ * image unwrap fix above. Use this everywhere the editor needs HTML
+ * from saved markdown (initial load, AI Continue output, AI Rewrite
+ * output) so the round-trip preserves embedded images.
+ */
+export function markdownToEditorHtml(markdown: string): string {
+  if (!markdown) return ""
+  const raw = marked.parse(markdown, { async: false }) as string
+  return unwrapStandaloneImages(raw)
 }
 
 /**
