@@ -1,50 +1,15 @@
 "use client"
 
 import { useState } from "react"
-
-type Sector = {
-  id: string
-  label: string
-  body: string
-}
-
-const SECTORS: ReadonlyArray<Sector> = [
-  {
-    id: "industrial",
-    label: "Industrial manipulation",
-    body: "Multi-degree-of-freedom manipulators for assembly, machining and inspection lines — the substrate of every modern factory.",
-  },
-  {
-    id: "service",
-    label: "Service robotics",
-    body: "Robots that share space with humans outside the factory: domestic, retail, hospitality, and assistive systems.",
-  },
-  {
-    id: "aerial",
-    label: "Aerial robotics",
-    body: "UAVs and aerial manipulators — load-bearing flight under shared control. PRISMA pioneered tethered cooperative aerial manipulation.",
-  },
-  {
-    id: "surgical",
-    label: "Surgical robotics",
-    body: "Tele-operated and shared-autonomy systems for needle insertion, suturing and tissue handling — the original test-bed for haptic active constraints.",
-  },
-  {
-    id: "haptic",
-    label: "Haptic shared control",
-    body: "Low-bandwidth supervisory signals reshape a high-DOF autonomous controller into qualitatively different behaviours — the architectural primitive SYMPHONY transposes.",
-  },
-  {
-    id: "hri",
-    label: "Human–robot interaction",
-    body: "The cognitive and communicative layer of shared autonomy: when to defer, when to ask, when to refuse — the auditability question SYMPHONY inherits.",
-  },
-  {
-    id: "planning",
-    label: "Motion planning",
-    body: "Real-time path planning under contact constraints — the substrate that downstream control sits on top of.",
-  },
-]
+import {
+  SICILIANO_ARIA_LABEL,
+  SICILIANO_AWARDS_BYLINE,
+  SICILIANO_AWARDS_STRIP,
+  SICILIANO_CENTRE_LABEL,
+  SICILIANO_CENTRE_MOTTO,
+  SICILIANO_DEFAULT_HINT,
+  SICILIANO_SECTORS,
+} from "@/lib/synaptic/siciliano-rose-content"
 
 const VW = 600
 const VH = 660
@@ -70,8 +35,8 @@ function sectorPath(i: number, n: number, rIn: number, rOut: number) {
 
 export function SicilianoRose() {
   const [hover, setHover] = useState<number | null>(null)
-  const n = SECTORS.length
-  const active = hover !== null ? SECTORS[hover] : null
+  const n = SICILIANO_SECTORS.length
+  const active = hover !== null ? SICILIANO_SECTORS[hover] : null
 
   return (
     <figure className="syn-symphony">
@@ -90,7 +55,7 @@ export function SicilianoRose() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="Siciliano / PRISMA seven-sector rose — industrial manipulation, service, aerial, surgical, haptic shared control, human-robot interaction, motion planning. ERC Advanced Grant holder and Engelberger laureate; lab motto 'Keep the gradient'."
+          aria-label={SICILIANO_ARIA_LABEL}
         >
           {/* concentric guide circles */}
           {[0.4, 0.6, 0.8, 1.0].map((f) => (
@@ -106,7 +71,7 @@ export function SicilianoRose() {
           ))}
 
           {/* sector slices */}
-          {SECTORS.map((s, i) => {
+          {SICILIANO_SECTORS.map((s, i) => {
             const isHover = hover === i
             return (
               <g
@@ -176,7 +141,7 @@ export function SicilianoRose() {
             fill="#f4c482"
             style={{ letterSpacing: "0.06em" }}
           >
-            PRISMA
+            {SICILIANO_CENTRE_LABEL}
           </text>
           <text
             x={CX}
@@ -187,7 +152,7 @@ export function SicilianoRose() {
             fontSize={11}
             fill="rgba(220,200,160,0.8)"
           >
-            Keep the gradient.
+            {SICILIANO_CENTRE_MOTTO}
           </text>
 
           {/* awards strip below the rose */}
@@ -201,7 +166,7 @@ export function SicilianoRose() {
               fill="rgba(220,200,160,0.78)"
               letterSpacing={2}
             >
-              ERC ADVANCED GRANT  ·  ENGELBERGER AWARD  ·  CREATE / UNINA
+              {SICILIANO_AWARDS_STRIP}
             </text>
             <text
               x={0}
@@ -212,7 +177,7 @@ export function SicilianoRose() {
               fontSize={12}
               fill="rgba(220,200,160,0.55)"
             >
-              Bruno Siciliano · director, PRISMA Lab · O3 lead, SYMPHONY
+              {SICILIANO_AWARDS_BYLINE}
             </text>
           </g>
         </svg>
@@ -239,11 +204,7 @@ export function SicilianoRose() {
             </>
           ) : (
             <span style={{ color: "var(--ink-dim)" }}>
-              PRISMA Lab spans seven domains of robotics. Hover any sector
-              for the slice and what it brings to SYMPHONY. The haptic
-              shared-control sector is the architectural primitive being
-              transposed — the rest of the rose is the pedigree the lab
-              brings to bear on it.
+              {SICILIANO_DEFAULT_HINT}
             </span>
           )}
         </div>
