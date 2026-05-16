@@ -47,7 +47,12 @@ const MODULATORS: ReadonlyArray<Modulator> = [
 ]
 
 const VW = 1400
-const VH = 760
+// VH used to be 760 to make room for an in-SVG modulator detail card,
+// but that card overlapped L6 / White matter / the 5-HT beam at small
+// widths. The card now lives in HTML below the SVG (see Sprint 8 fix),
+// so the SVG can shrink to fit just the column + four beams + their
+// labels (the 5-HT row sits at y≈578).
+const VH = 640
 
 export function RamaswamyCortexHero() {
   const [hover, setHover] = useState<Modulator["id"] | null>(null)
@@ -306,64 +311,54 @@ export function RamaswamyCortexHero() {
             )
           })}
 
-          {/* active modulator side detail card */}
-          {(() => {
-            const PX = 60
-            const PW = VW - 2 * PX
-            const PH = 170
-            const PAD = 32
-            const IW = PW - 2 * PAD
-            return (
-              <g transform={`translate(${PX}, ${VH - PH - 24})`}>
-                <rect
-                  x={0}
-                  y={0}
-                  width={PW}
-                  height={PH}
-                  rx={10}
-                  fill="rgba(13,16,39,0.85)"
-                  stroke={active.color}
-                  strokeOpacity={0.55}
-                  strokeWidth={1.2}
-                />
-                <text
-                  x={PAD}
-                  y={30}
-                  fontFamily="var(--font-mono), 'IBM Plex Mono', monospace"
-                  fontSize={12}
-                  letterSpacing={3}
-                  fill="rgba(220,200,160,0.65)"
-                >
-                  MODULATOR · {active.name.toUpperCase()}
-                </text>
-                <text
-                  x={PAD}
-                  y={70}
-                  fontFamily="var(--font-display), Gloock, serif"
-                  fontSize={28}
-                  fill={active.color}
-                  letterSpacing={1}
-                >
-                  {active.full}
-                </text>
-                <foreignObject x={PAD} y={86} width={IW} height={PH - 100}>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
-                      fontSize: "15px",
-                      lineHeight: 1.55,
-                      color: "var(--ink-cool)",
-                      wordWrap: "break-word",
-                      overflowWrap: "anywhere",
-                    }}
-                  >
-                    {active.body}
-                  </div>
-                </foreignObject>
-              </g>
-            )
-          })()}
         </svg>
+
+        {/* Active-modulator detail panel — lives in HTML below the SVG so it
+            never overlaps L6 / White matter / the 5-HT beam (regression
+            spotted during Sprint 8 UAT on /synaptic/symphony/ramaswamy). */}
+        <div
+          className="border-t px-6 py-5"
+          style={{
+            borderColor: `${active.color}55`,
+            background: "rgba(13,16,39,0.6)",
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+              fontSize: 12,
+              letterSpacing: "0.25em",
+              color: "rgba(220,200,160,0.65)",
+              textTransform: "uppercase",
+            }}
+          >
+            Modulator · {active.name}
+          </div>
+          <div
+            style={{
+              fontFamily: "var(--font-display), Gloock, serif",
+              fontSize: 28,
+              letterSpacing: "0.02em",
+              color: active.color,
+              marginTop: 6,
+              lineHeight: 1.1,
+            }}
+          >
+            {active.full}
+          </div>
+          <p
+            style={{
+              fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
+              fontSize: "0.98rem",
+              lineHeight: 1.55,
+              color: "var(--ink-cool)",
+              marginTop: 10,
+              maxWidth: "72ch",
+            }}
+          >
+            {active.body}
+          </p>
+        </div>
       </div>
     </figure>
   )
