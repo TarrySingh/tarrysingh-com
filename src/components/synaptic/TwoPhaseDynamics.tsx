@@ -1,6 +1,28 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import {
+  TWO_PHASE_ARIA_AWAKE,
+  TWO_PHASE_ARIA_SLEEP,
+  TWO_PHASE_AWAKE_CAPTION,
+  TWO_PHASE_AWAKE_SUB,
+  TWO_PHASE_AWAKE_TITLE,
+  TWO_PHASE_AXIS_AWAKE_X,
+  TWO_PHASE_AXIS_AWAKE_Y,
+  TWO_PHASE_AXIS_SLEEP_X,
+  TWO_PHASE_AXIS_SLEEP_Y,
+  TWO_PHASE_BANNER,
+  TWO_PHASE_BTN_AWAKE,
+  TWO_PHASE_BTN_SLEEP,
+  TWO_PHASE_FOOTER,
+  TWO_PHASE_KICKER,
+  TWO_PHASE_LEAD,
+  TWO_PHASE_PHASE_LABEL,
+  TWO_PHASE_SLEEP_CAPTION,
+  TWO_PHASE_SLEEP_SUB,
+  TWO_PHASE_SLEEP_TITLE,
+  TWO_PHASE_TITLE,
+} from "@/lib/synaptic/two-phase-dynamics-content"
 
 type Phase = "awake" | "sleep"
 
@@ -29,7 +51,7 @@ function AwakeWave({ t, active }: { t: number; active: boolean }) {
       viewBox={`0 0 ${WAVE_VW} ${WAVE_VH}`}
       className="block h-auto w-full"
       role="img"
-      aria-label="Awake-phase waveform — sparse, sharp event-driven spikes."
+      aria-label={TWO_PHASE_ARIA_AWAKE}
     >
       <defs>
         <filter id="syn-tp-glow-amber" x="-20%" y="-20%" width="140%" height="160%">
@@ -71,7 +93,7 @@ function AwakeWave({ t, active }: { t: number; active: boolean }) {
         fill="rgba(220,200,160,0.65)"
         letterSpacing={3}
       >
-        T · MILLISECONDS · INPUT-LOCKED
+        {TWO_PHASE_AXIS_AWAKE_X}
       </text>
       <text
         x={WAVE_VW - 20}
@@ -82,7 +104,7 @@ function AwakeWave({ t, active }: { t: number; active: boolean }) {
         fill="rgba(220,200,160,0.55)"
         letterSpacing={2}
       >
-        ENERGY ∝ Σ EVENTS
+        {TWO_PHASE_AXIS_AWAKE_Y}
       </text>
     </svg>
   )
@@ -116,7 +138,7 @@ function SleepWave({ t, active }: { t: number; active: boolean }) {
       viewBox={`0 0 ${WAVE_VW} ${WAVE_VH}`}
       className="block h-auto w-full"
       role="img"
-      aria-label="Sleep-phase waveform — smooth slow oscillations interspersed with fast sharp-wave ripples."
+      aria-label={TWO_PHASE_ARIA_SLEEP}
     >
       <line
         x1={10}
@@ -156,7 +178,7 @@ function SleepWave({ t, active }: { t: number; active: boolean }) {
         fill="rgba(220,200,160,0.65)"
         letterSpacing={3}
       >
-        T · MINUTES · INTRINSIC DYNAMICS
+        {TWO_PHASE_AXIS_SLEEP_X}
       </text>
       <text
         x={WAVE_VW - 20}
@@ -167,7 +189,7 @@ function SleepWave({ t, active }: { t: number; active: boolean }) {
         fill="rgba(220,200,160,0.55)"
         letterSpacing={2}
       >
-        ENERGY ≈ CONSTANT · LOW
+        {TWO_PHASE_AXIS_SLEEP_Y}
       </text>
     </svg>
   )
@@ -217,7 +239,7 @@ export function TwoPhaseDynamics() {
                 color: "rgba(220,200,160,0.85)",
               }}
             >
-              PLATE M-II · MMXXVI · FIG. 1.2.b
+              {TWO_PHASE_KICKER}
             </p>
             <p
               className="syn-mono"
@@ -227,7 +249,7 @@ export function TwoPhaseDynamics() {
                 color: "rgba(220,200,160,0.65)",
               }}
             >
-              ONLINE EVENT-DRIVEN ↔ OFFLINE REPLAY-DRIVEN
+              {TWO_PHASE_BANNER}
             </p>
           </div>
           <hr
@@ -248,15 +270,13 @@ export function TwoPhaseDynamics() {
               margin: 0,
             }}
           >
-            Two-phase dynamics
+            {TWO_PHASE_TITLE}
           </h3>
           <p
             className="syn-italic-caption mt-3"
             style={{ color: "var(--ink-cool)", maxWidth: "72ch" }}
           >
-            One physical substrate runs in two regimes. Online events drive
-            sparse, salient computation. Offline intrinsic dynamics replay
-            and consolidate — without external input.
+            {TWO_PHASE_LEAD}
           </p>
         </div>
 
@@ -266,7 +286,7 @@ export function TwoPhaseDynamics() {
             className="syn-small-caps"
             style={{ color: "var(--ink-dim)" }}
           >
-            Phase
+            {TWO_PHASE_PHASE_LABEL}
           </span>
           <div className="flex flex-1 items-center justify-center gap-3">
             <button
@@ -288,7 +308,7 @@ export function TwoPhaseDynamics() {
                 fontWeight: phase === "awake" ? 700 : 400,
               }}
             >
-              Awake · event-driven
+              {TWO_PHASE_BTN_AWAKE}
             </button>
             <button
               type="button"
@@ -307,7 +327,7 @@ export function TwoPhaseDynamics() {
                 fontWeight: phase === "sleep" ? 700 : 400,
               }}
             >
-              Sleep · replay-driven
+              {TWO_PHASE_BTN_SLEEP}
             </button>
           </div>
         </div>
@@ -335,7 +355,7 @@ export function TwoPhaseDynamics() {
                   color: "#e8b87a",
                 }}
               >
-                AWAKE · EVENT-DRIVEN
+                {TWO_PHASE_AWAKE_TITLE}
               </p>
               <p
                 className="syn-mono"
@@ -345,7 +365,7 @@ export function TwoPhaseDynamics() {
                   color: "rgba(220,200,160,0.55)",
                 }}
               >
-                online inference
+                {TWO_PHASE_AWAKE_SUB}
               </p>
             </div>
             <div className="mt-3">
@@ -355,8 +375,7 @@ export function TwoPhaseDynamics() {
               className="syn-italic-caption mt-3"
               style={{ fontSize: "0.9rem", color: "var(--ink-cool)" }}
             >
-              Sparse, salient spikes propagate through CA3 → CA1. Energy is
-              spent only on novelty.
+              {TWO_PHASE_AWAKE_CAPTION}
             </p>
           </div>
 
@@ -381,7 +400,7 @@ export function TwoPhaseDynamics() {
                   color: "#e5a896",
                 }}
               >
-                SLEEP · REPLAY-DRIVEN
+                {TWO_PHASE_SLEEP_TITLE}
               </p>
               <p
                 className="syn-mono"
@@ -391,7 +410,7 @@ export function TwoPhaseDynamics() {
                   color: "rgba(220,200,160,0.55)",
                 }}
               >
-                offline consolidation
+                {TWO_PHASE_SLEEP_SUB}
               </p>
             </div>
             <div className="mt-3">
@@ -401,8 +420,7 @@ export function TwoPhaseDynamics() {
               className="syn-italic-caption mt-3"
               style={{ fontSize: "0.9rem", color: "var(--ink-cool)" }}
             >
-              Intrinsic dynamics replay and consolidate. Memristive thresholds
-              shift; redundant weights fade; salient patterns are reinforced.
+              {TWO_PHASE_SLEEP_CAPTION}
             </p>
           </div>
         </div>
@@ -418,8 +436,7 @@ export function TwoPhaseDynamics() {
             lineHeight: 1.5,
           }}
         >
-          One substrate, two regimes. The chip never stops learning — but it
-          stops paying for it during sleep.
+          {TWO_PHASE_FOOTER}
         </div>
       </div>
     </figure>
