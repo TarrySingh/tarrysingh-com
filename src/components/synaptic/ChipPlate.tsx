@@ -3,8 +3,10 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import {
   CHIP_ANNOTATIONS,
+  CHIP_ARIA_LABEL,
   CHIP_CB0,
   CHIP_CB1,
+  CHIP_HINT,
   CHIP_INTENSITIES,
   CHIP_N,
   CHIP_STEP,
@@ -132,7 +134,7 @@ export function ChipPlate({
         viewBox="0 0 1000 1000"
         className="block h-auto w-full"
         role="img"
-        aria-label="MEMPHIS chip plate — a ceramic-substrate hippocampal-memristive die. A 22×22 memristor crossbar with a CA3↔CA1 module at its centre; amber on the warm flank, rose on the cool flank; six annotation anchors naming the architectural elements."
+        aria-label={CHIP_ARIA_LABEL}
       >
         <defs>
           <radialGradient id="syn-chip-halo-teal" cx="50%" cy="50%" r="60%">
@@ -498,7 +500,7 @@ export function ChipPlate({
         className="syn-small-caps mt-3 text-center"
         style={{ color: "var(--ink-dim)" }}
       >
-        Click any numbered anchor to inspect its role
+        {CHIP_HINT}
       </p>
 
       {/* active annotation panel */}
