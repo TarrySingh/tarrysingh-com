@@ -1,0 +1,307 @@
+import { createSign } from "node:crypto"
+
+/**
+ * Sprint 9.1 — minimal Google Drive REST client for the auto-publish
+ * cron. Uses a service-account JWT → access-token exchange → REST
+ * call flow, intentionally avoiding the `googleapis` dependency
+ * (which bundles every Google client we don't use).
+ *
+ * The cron only needs two surfaces:
+ *   1. List files in a specific folder with `modifiedTime` filtering
+ *      so we can poll for "newer than last seen" without scanning the
+ *      whole folder every tick.
+ *   2. Download a single file's raw bytes (UTF-8 markdown).
+ *
+ * Env (read at call-time, not module-load, so Vercel preview/prod can
+ * share config without runtime crashes when one var is missing):
+ *
+ *   GOOGLE_DRIVE_SA_CLIENT_EMAIL     service-account email
+ *                                      (e.g. tarrysingh-drive-poller@…iam.gserviceaccount.com)
+ *   GOOGLE_DRIVE_SA_PRIVATE_KEY      PEM-encoded RSA private key from the
+ *                                      service-account JSON; newlines may
+ *                                      be `\n` literal (Vercel UI does that)
+ *                                      and are normalised here.
+ *   GOOGLE_DRIVE_INGEST_FOLDER_ID    folder ID to poll (the Cowork target)
+ */
+
+const TOKEN_ENDPOINT = "https://oauth2.googleapis.com/token"
+const DRIVE_API = "https://www.googleapis.com/drive/v3"
+const SCOPE = "https://www.googleapis.com/auth/drive.readonly"
+// JWT lifetime per Google's spec is 3600 s max. Cache the access
+// token in-module so successive cron invocations within the same
+// warm Lambda reuse it instead of round-tripping every tick.
+const TOKEN_LIFETIME_SECONDS = 3600
+const TOKEN_SAFETY_WINDOW_SECONDS = 60
+
+interface CachedToken {
+  accessToken: string
+  expiresAtMs: number
+}
+let cachedToken: CachedToken | null = null
+
+export interface DriveConfig {
+  clientEmail: string
+  privateKey: string
+  folderId: string
+}
+
+export interface DriveFile {
+  id: string
+  name: string
+  mimeType: string
+  /** ISO 8601 string, e.g. "2026-05-16T17:14:23.456Z". */
+  modifiedTime: string
+  /** Drive-side md5; useful for de-dup if Tarry re-uploads identical bytes. */
+  md5Checksum?: string
+  size?: string
+}
+
+export type DriveError =
+  | { ok: false; error: "missing_env"; var: string }
+  | { ok: false; error: "auth_failed"; debug: string }
+  | { ok: false; error: "drive_request_failed"; status: number; debug: string }
+  | { ok: false; error: "private_key_malformed"; debug: string }
+
+function readConfig(): DriveConfig | DriveError {
+  const clientEmail = process.env.GOOGLE_DRIVE_SA_CLIENT_EMAIL
+  const privateKeyRaw = process.env.GOOGLE_DRIVE_SA_PRIVATE_KEY
+  const folderId = process.env.GOOGLE_DRIVE_INGEST_FOLDER_ID
+  if (!clientEmail) return { ok: false, error: "missing_env", var: "GOOGLE_DRIVE_SA_CLIENT_EMAIL" }
+  if (!privateKeyRaw) return { ok: false, error: "missing_env", var: "GOOGLE_DRIVE_SA_PRIVATE_KEY" }
+  if (!folderId) return { ok: false, error: "missing_env", var: "GOOGLE_DRIVE_INGEST_FOLDER_ID" }
+  // Vercel UI stores newlines as the literal two-char sequence \n.
+  // Normalise both forms back to real newlines so node:crypto can
+  // parse the PEM. Idempotent.
+  const privateKey = privateKeyRaw.replace(/\\n/g, "\n").trim()
+  if (!privateKey.includes("BEGIN PRIVATE KEY") && !privateKey.includes("BEGIN RSA PRIVATE KEY")) {
+    return {
+      ok: false,
+      error: "private_key_malformed",
+      debug: "Private key does not contain a PEM header. Check Vercel env var has the full PEM block.",
+    }
+  }
+  return { clientEmail, privateKey, folderId }
+}
+
+function b64url(buf: Buffer): string {
+  return buf
+    .toString("base64")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "")
+}
+
+/**
+ * Build a JWT signed with the service account's RSA private key,
+ * exchange it at the token endpoint for an OAuth2 access token,
+ * cache for ~59 minutes.
+ */
+async function getAccessToken(
+  config: DriveConfig,
+): Promise<{ ok: true; token: string } | DriveError> {
+  const now = Date.now()
+  if (cachedToken && cachedToken.expiresAtMs > now + TOKEN_SAFETY_WINDOW_SECONDS * 1000) {
+    return { ok: true, token: cachedToken.accessToken }
+  }
+
+  const iat = Math.floor(now / 1000)
+  const exp = iat + TOKEN_LIFETIME_SECONDS
+  const header = b64url(Buffer.from(JSON.stringify({ alg: "RS256", typ: "JWT" }), "utf8"))
+  const claim = b64url(
+    Buffer.from(
+      JSON.stringify({
+        iss: config.clientEmail,
+        scope: SCOPE,
+        aud: TOKEN_ENDPOINT,
+        iat,
+        exp,
+      }),
+      "utf8",
+    ),
+  )
+  const signingInput = `${header}.${claim}`
+
+  let signature: string
+  try {
+    const signer = createSign("RSA-SHA256")
+    signer.update(signingInput, "utf8")
+    signer.end()
+    signature = b64url(signer.sign(config.privateKey))
+  } catch (err) {
+    return {
+      ok: false,
+      error: "private_key_malformed",
+      debug: err instanceof Error ? err.message : String(err),
+    }
+  }
+  const jwt = `${signingInput}.${signature}`
+
+  const body = new URLSearchParams({
+    grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+    assertion: jwt,
+  })
+
+  let res: Response
+  try {
+    res = await fetch(TOKEN_ENDPOINT, {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: body.toString(),
+    })
+  } catch (err) {
+    return {
+      ok: false,
+      error: "auth_failed",
+      debug: err instanceof Error ? err.message : String(err),
+    }
+  }
+  if (!res.ok) {
+    const text = await res.text().catch(() => "")
+    return {
+      ok: false,
+      error: "auth_failed",
+      debug: `Token endpoint returned ${res.status}: ${text.slice(0, 240)}`,
+    }
+  }
+  const json = (await res.json()) as { access_token?: string; expires_in?: number }
+  if (!json.access_token) {
+    return {
+      ok: false,
+      error: "auth_failed",
+      debug: "Token response missing access_token.",
+    }
+  }
+  cachedToken = {
+    accessToken: json.access_token,
+    expiresAtMs: now + (json.expires_in ?? TOKEN_LIFETIME_SECONDS) * 1000,
+  }
+  return { ok: true, token: json.access_token }
+}
+
+/**
+ * List markdown files in the configured folder, optionally filtered
+ * by `modifiedTime > sinceIso` — that's the high-water mark the cron
+ * tracks per Sprint 9.1's idempotency story (see
+ * `studio_drive_ingest_log` table).
+ *
+ * Results are sorted by `modifiedTime` ascending so the cron processes
+ * the oldest first and never misses one if the page boundary changes.
+ */
+export async function listMarkdownFilesInFolder(options?: {
+  /** Skip files modified at or before this ISO timestamp. */
+  sinceIso?: string
+  /** Max files per call (Drive caps at 1000; we default to 50). */
+  pageSize?: number
+}): Promise<{ ok: true; files: DriveFile[] } | DriveError> {
+  const cfg = readConfig()
+  if ("error" in cfg) return cfg
+
+  const tokenRes = await getAccessToken(cfg)
+  if ("error" in tokenRes) return tokenRes
+
+  // Drive's q syntax: filter by parent folder + mimeType + modifiedTime.
+  // We accept both `text/markdown` and `text/plain` because Google
+  // sometimes detects .md as plain text. Service-account uploads from
+  // Claude-Cowork land as text/markdown but be defensive.
+  const qParts = [
+    `'${cfg.folderId}' in parents`,
+    "trashed = false",
+    "(mimeType = 'text/markdown' or mimeType = 'text/plain' or mimeType = 'application/octet-stream')",
+  ]
+  if (options?.sinceIso) {
+    qParts.push(`modifiedTime > '${options.sinceIso}'`)
+  }
+  const q = qParts.join(" and ")
+
+  const params = new URLSearchParams({
+    q,
+    pageSize: String(options?.pageSize ?? 50),
+    orderBy: "modifiedTime asc",
+    fields: "files(id,name,mimeType,modifiedTime,md5Checksum,size)",
+    spaces: "drive",
+  })
+
+  const url = `${DRIVE_API}/files?${params.toString()}`
+  let res: Response
+  try {
+    res = await fetch(url, {
+      headers: { authorization: `Bearer ${tokenRes.token}` },
+    })
+  } catch (err) {
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: 0,
+      debug: err instanceof Error ? err.message : String(err),
+    }
+  }
+  if (!res.ok) {
+    const text = await res.text().catch(() => "")
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: res.status,
+      debug: text.slice(0, 240),
+    }
+  }
+  const json = (await res.json()) as { files?: DriveFile[] }
+  return { ok: true, files: json.files ?? [] }
+}
+
+/**
+ * Download a single file's raw UTF-8 content. We assume the file is
+ * .md (the cron filters by mimeType before calling this) so binary
+ * concerns don't apply.
+ */
+export async function downloadFileContent(
+  fileId: string,
+): Promise<{ ok: true; content: string } | DriveError> {
+  const cfg = readConfig()
+  if ("error" in cfg) return cfg
+
+  const tokenRes = await getAccessToken(cfg)
+  if ("error" in tokenRes) return tokenRes
+
+  const url = `${DRIVE_API}/files/${encodeURIComponent(fileId)}?alt=media`
+  let res: Response
+  try {
+    res = await fetch(url, {
+      headers: { authorization: `Bearer ${tokenRes.token}` },
+    })
+  } catch (err) {
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: 0,
+      debug: err instanceof Error ? err.message : String(err),
+    }
+  }
+  if (!res.ok) {
+    const text = await res.text().catch(() => "")
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: res.status,
+      debug: text.slice(0, 240),
+    }
+  }
+  const content = await res.text()
+  return { ok: true, content }
+}
+
+/**
+ * Health check / smoke test — returns whether the service account can
+ * authenticate AND see the folder. Used by the cron's GET handler so
+ * Tarry can curl it once after configuring env vars to verify wiring
+ * without writing a draft.
+ */
+export async function pingDrive(): Promise<
+  | { ok: true; folderId: string; visibleFiles: number }
+  | DriveError
+> {
+  const cfg = readConfig()
+  if ("error" in cfg) return cfg
+  const list = await listMarkdownFilesInFolder({ pageSize: 5 })
+  if (!list.ok) return list
+  return { ok: true, folderId: cfg.folderId, visibleFiles: list.files.length }
+}
