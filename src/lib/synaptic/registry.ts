@@ -41,6 +41,14 @@ export const PLATE_REGISTRY: ReadonlyArray<PlateRegistryEntry> = [
     group: "memphis",
     previewPath: "/synaptic/memphis",
   },
+  {
+    id: "two-phase-dynamics",
+    displayName: "Two-Phase Dynamics · Memphis",
+    contentPath: "src/lib/synaptic/two-phase-dynamics-content.ts",
+    slots: ["captions", "prose"],
+    group: "memphis",
+    previewPath: "/synaptic/memphis",
+  },
 ]
 
 export function getPlateEntry(id: string): PlateRegistryEntry | null {
