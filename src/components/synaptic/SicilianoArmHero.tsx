@@ -1,51 +1,15 @@
 "use client"
 
 import { useState } from "react"
-
-type Pose = {
-  id: string
-  label: string
-  task: string
-  body: string
-  /** Joint angles for the four-link arm: shoulder, upper, fore, wrist */
-  angles: [number, number, number, number]
-  color: string
-}
-
-const POSES: ReadonlyArray<Pose> = [
-  {
-    id: "needle",
-    label: "Needle grasp",
-    task: "Surgical · low-force pickup",
-    body: "Active constraints prevent contact above 0.5 N at the tip. The autonomous controller plans the trajectory; the supervisor's narrow scalar caps the force budget.",
-    angles: [-10, 20, 60, -30],
-    color: "#f4c482",
-  },
-  {
-    id: "dual",
-    label: "Dual-arm manipulation",
-    task: "Industrial · coordinated grasp",
-    body: "Two high-DOF arms slaved to a single descending signal — the supervisor names the coordination frame, not the individual joint targets.",
-    angles: [10, -20, 80, 40],
-    color: "#e5a896",
-  },
-  {
-    id: "cut",
-    label: "Teleoperated cut",
-    task: "Surgical · gated motion",
-    body: "Cutting motion gated by a haptic operator — autonomous trajectory blends with a real-time corrective input, producing safe progress through tissue.",
-    angles: [-20, 50, -30, 20],
-    color: "#6cb4c2",
-  },
-  {
-    id: "uav",
-    label: "Aerial manipulation",
-    task: "UAV · load-bearing flight",
-    body: "Tethered cooperative aerial manipulation — a flight controller adapts to a payload it cannot fully measure under a low-bandwidth admittance signal.",
-    angles: [-30, -40, -50, -10],
-    color: "#a698d4",
-  },
-]
+import {
+  SICILIANO_ARM_ARIA_LABEL,
+  SICILIANO_ARM_BANNER,
+  SICILIANO_ARM_KICKER,
+  SICILIANO_ARM_SUPERVISOR_LABEL,
+  SICILIANO_ARM_TASKS_LABEL,
+  SICILIANO_ARM_TITLE,
+  SICILIANO_POSES,
+} from "@/lib/synaptic/siciliano-arm-hero-content"
 
 const VW = 1400
 const VH = 760
@@ -75,7 +39,7 @@ export function SicilianoArmHero() {
   const [hover, setHover] = useState<string | null>(null)
   const [pinned, setPinned] = useState<string>("needle")
   const activeId = hover ?? pinned
-  const active = POSES.find((p) => p.id === activeId) ?? POSES[0]
+  const active = SICILIANO_POSES.find((p) => p.id === activeId) ?? SICILIANO_POSES[0]
 
   const baseCx = 460
   const baseCy = 560
@@ -100,7 +64,7 @@ export function SicilianoArmHero() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="Siciliano arm hero — a four-link manipulator at the centre, with a low-bandwidth supervisory signal descending from above. Four task poses (needle grasp, dual-arm, teleoperated cut, aerial) show how a single controller adopts qualitatively distinct behaviours under a narrow scalar input. The architectural primitive SYMPHONY transposes."
+          aria-label={SICILIANO_ARM_ARIA_LABEL}
         >
           <defs>
             <radialGradient id="syn-sa-bg" cx="50%" cy="50%" r="70%">
@@ -129,7 +93,7 @@ export function SicilianoArmHero() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            PLATE VIII · MMXXVI · CREATE / PRISMA · SICILIANO
+            {SICILIANO_ARM_KICKER}
           </text>
           <text
             x={60}
@@ -139,7 +103,7 @@ export function SicilianoArmHero() {
             fill="var(--ink)"
             letterSpacing={2}
           >
-            One controller, four task behaviours
+            {SICILIANO_ARM_TITLE}
           </text>
           <line x1={60} x2={VW - 60} y1={92} y2={92} stroke="rgba(220,200,160,0.35)" strokeWidth={0.8} />
           <text
@@ -151,7 +115,7 @@ export function SicilianoArmHero() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.7)"
           >
-            HAPTIC SHARED CONTROL · ARCHITECTURAL PRIMARY
+            {SICILIANO_ARM_BANNER}
           </text>
 
           {/* supervisor channel (descending) */}
@@ -165,7 +129,7 @@ export function SicilianoArmHero() {
               letterSpacing={3}
               fill="rgba(200,184,255,0.85)"
             >
-              SUPERVISOR · LOW-BANDWIDTH SCALAR
+              {SICILIANO_ARM_SUPERVISOR_LABEL}
             </text>
             <rect
               x={baseCx - 4}
@@ -193,7 +157,7 @@ export function SicilianoArmHero() {
           </g>
 
           {/* arm — render ghosts of other poses faintly */}
-          {POSES.map((p) => {
+          {SICILIANO_POSES.map((p) => {
             if (p.id === active.id) return null
             const { path, joints } = armPath(baseCx, baseCy, p.angles)
             return (
@@ -261,9 +225,9 @@ export function SicilianoArmHero() {
               letterSpacing={3}
               fill="rgba(220,200,160,0.65)"
             >
-              TASK TOKENS
+              {SICILIANO_ARM_TASKS_LABEL}
             </text>
-            {POSES.map((p, i) => {
+            {SICILIANO_POSES.map((p, i) => {
               const isActive = activeId === p.id
               return (
                 <g

@@ -73,6 +73,14 @@ export const PLATE_REGISTRY: ReadonlyArray<PlateRegistryEntry> = [
     group: "symphony",
     previewPath: "/synaptic/symphony",
   },
+  {
+    id: "siciliano-arm-hero",
+    displayName: "Siciliano Arm Hero · Symphony",
+    contentPath: "src/lib/synaptic/siciliano-arm-hero-content.ts",
+    slots: ["annotations", "captions"],
+    group: "symphony",
+    previewPath: "/synaptic/symphony/siciliano",
+  },
 ]
 
 export function getPlateEntry(id: string): PlateRegistryEntry | null {
