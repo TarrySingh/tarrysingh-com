@@ -220,6 +220,102 @@ export function RamaswamyCortexHero() {
                     })}
                   </g>
                 ) : null}
+                {/* L1 molecular layer — tangential axons + dendritic tufts
+                    of underlying pyramidals reaching up. No cell bodies
+                    (the molecular layer is just neuropil + arbours). */}
+                {l.id === "L1" ? (
+                  <g opacity={0.55} stroke="rgba(108,180,194,0.85)" fill="none">
+                    {Array.from({ length: 6 }).map((_, k) => {
+                      const px = colCx - colW / 2 + 26 + k * 38
+                      const py = l.y + l.h / 2 + 10
+                      return (
+                        <g key={`tuft-${k}`}>
+                          {/* tangential dash */}
+                          <line
+                            x1={px - 14}
+                            y1={py + 2}
+                            x2={px + 14}
+                            y2={py + 2}
+                            strokeWidth={0.9}
+                          />
+                          {/* small tuft branching up */}
+                          <path
+                            d={`M ${px} ${py + 2} L ${px} ${py - 12} M ${px} ${py - 12} L ${px - 7} ${py - 20} M ${px} ${py - 12} L ${px + 7} ${py - 20} M ${px} ${py - 12} L ${px} ${py - 22}`}
+                            strokeWidth={1}
+                          />
+                        </g>
+                      )
+                    })}
+                  </g>
+                ) : null}
+                {/* L6 multiform — a mixed-cell layer: inverted pyramidals
+                    (apex pointing DOWN toward WM) plus fusiform/spindle
+                    cells. Densest layer in cortex; deserves more than an
+                    empty box. */}
+                {l.id === "L6" ? (
+                  <g opacity={0.7}>
+                    {/* 3 inverted pyramidals on the left */}
+                    {[0, 1, 2].map((k) => {
+                      const px = colCx - colW / 2 + 26 + k * 36
+                      const py = l.y + 16
+                      return (
+                        <g key={`inv-${k}`} stroke="rgba(108,180,194,0.85)" fill="none">
+                          <path
+                            d={`M ${px} ${py + 4} L ${px} ${py + 32} M ${px - 10} ${py + 26} L ${px} ${py + 34} L ${px + 10} ${py + 26} M ${px} ${py + 34} L ${px - 6} ${py + 44} M ${px} ${py + 34} L ${px + 6} ${py + 44}`}
+                            strokeWidth={1.1}
+                          />
+                          <circle
+                            cx={px}
+                            cy={py + 4}
+                            r={3.5}
+                            fill="#6cb4c2"
+                            stroke="#0d1027"
+                            strokeWidth={0.7}
+                          />
+                        </g>
+                      )
+                    })}
+                    {/* 3 fusiform / spindle cells on the right */}
+                    {[0, 1, 2].map((k) => {
+                      const px = colCx - colW / 2 + 152 + k * 28
+                      const py = l.y + l.h / 2 - 2
+                      return (
+                        <g key={`fus-${k}`} stroke="rgba(108,180,194,0.7)" fill="none">
+                          <line
+                            x1={px}
+                            y1={py - 22}
+                            x2={px}
+                            y2={py + 22}
+                            strokeWidth={1}
+                          />
+                          <line
+                            x1={px - 6}
+                            y1={py - 18}
+                            x2={px + 6}
+                            y2={py - 18}
+                            strokeWidth={0.8}
+                          />
+                          <line
+                            x1={px - 5}
+                            y1={py + 18}
+                            x2={px + 5}
+                            y2={py + 18}
+                            strokeWidth={0.8}
+                          />
+                          <ellipse
+                            cx={px}
+                            cy={py}
+                            rx={2}
+                            ry={4.5}
+                            fill="#6cb4c2"
+                            stroke="#0d1027"
+                            strokeWidth={0.6}
+                          />
+                        </g>
+                      )
+                    })}
+                  </g>
+                ) : null}
               </g>
             ))}
             {/* column outer-edge gold ornament */}
