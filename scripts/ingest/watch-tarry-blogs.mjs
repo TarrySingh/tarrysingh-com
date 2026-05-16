@@ -42,6 +42,12 @@ const DEFAULT_WATCH_DIR = join(homedir(), "Documents", "Claude", "Projects", "Ta
 const DEFAULT_STATE_FILE = join(homedir(), ".tarrysingh-watch-state.json")
 const DEFAULT_INTERVAL = 60
 
+// Only files whose basename starts with `YYYY-MM-DD_` are daily-article
+// candidates. Anything else in the watch dir (`scheduled-blog-prompt.md`,
+// `README.md`, scratch notes the LaunchAgent shouldn't autopublish) is
+// skipped at the scan stage so it never gets a draft + email.
+const DATED_ARTICLE_RE = /^\d{4}-\d{2}-\d{2}_[a-z0-9][a-z0-9-]*\.mdx?$/i
+
 function loadEnvFile() {
   const path = process.env.STUDIO_WATCH_ENV_FILE
   if (!path) return
@@ -94,6 +100,10 @@ async function listMarkdownFiles(dir) {
   for (const name of entries) {
     if (!name.endsWith(".md") && !name.endsWith(".mdx")) continue
     if (name.startsWith(".") || name.startsWith("_")) continue
+    // Hard gate: only `YYYY-MM-DD_kebab.md(x)` is a real daily article.
+    // Catches the Claude-Cowork prompt file, README scratch, anything
+    // that drops into the watch dir without the date prefix.
+    if (!DATED_ARTICLE_RE.test(name)) continue
     const full = join(dir, name)
     const s = await stat(full).catch(() => null)
     if (!s || !s.isFile()) continue

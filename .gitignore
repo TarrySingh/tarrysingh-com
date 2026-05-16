@@ -45,3 +45,4 @@ next-env.d.ts
 # (contents extracted to docs/synaptic/, design/, proposals/, .claude/commands/)
 /tch-v2/
 /synaptic-cartography-handover-bundle-v2.zip
+.env*.local
