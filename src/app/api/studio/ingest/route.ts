@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createHmac, timingSafeEqual } from "node:crypto"
-import { parseDailyArticle } from "@/lib/studio/ingest"
-import { aiFrontmatter } from "@/lib/studio/ai"
-import { upsertDraft } from "@/lib/studio/drafts-store"
-import { sendApprovalEmail } from "@/lib/studio/email"
-import { makeApprovalToken } from "@/lib/studio/approval-token"
-import type { DispatchFrontmatter } from "@/lib/studio/types"
+import { processArticle } from "@/lib/studio/process-article"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -15,17 +10,18 @@ export const maxDuration = 60
 /**
  * Sprint — auto-publish pipeline. POST /api/studio/ingest
  *
- * Receives a daily-article payload from the local watcher, runs the
- * full ingestion pipeline:
+ * Receives a daily-article payload from the local LaunchAgent watcher
+ * (scripts/ingest/watch-tarry-blogs.mjs) and runs it through the
+ * shared `processArticle` pipeline.
  *
  *   1. Verify HMAC signature (X-Ingest-Signature header).
  *   2. Verify timestamp within 5 minutes (replay protection).
- *   3. Parse the article (slug, title, body extracted from filename + H1).
- *   4. Call aiFrontmatter() to get suggested {category, excerpt, tags}.
- *   5. Upsert into studio_drafts (or 409 if the slug already exists).
- *   6. Mint a signed approval token (72 h TTL).
- *   7. Send the "preview ready" email via Resend.
- *   8. Return 200 with the draft slug + email id.
+ *   3. Hand off to processArticle({filename, content, origin}).
+ *
+ * Sprint 9.1 — the heavy lifting (parse → ai → upsert → token → email)
+ * has been hoisted to `src/lib/studio/process-article.ts` so the new
+ * /api/cron/ingest-drive route (Vercel cron polling Google Drive)
+ * can share the exact same downstream behaviour.
  *
  * Auth is HMAC-only — this route is exempted from the Basic Auth gate
  * in src/middleware.ts because the local LaunchAgent doesn't carry
@@ -123,122 +119,98 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  // ── 3. Parse article ────────────────────────────────────────────
-  const parsed = parseDailyArticle({ filename, content })
-  if (!parsed.ok) {
-    return NextResponse.json(parsed, { status: 422 })
-  }
-  const { slug, title, body, wordCount } = parsed
-
-  // ── 4. AI frontmatter ───────────────────────────────────────────
-  const fm = await aiFrontmatter({ title, body })
-  if (!fm.ok) {
-    const status = fm.error === "ai_unconfigured" ? 503 : 502
-    console.error(
-      JSON.stringify({ tag: "studio.ingest.ai_frontmatter_failed", slug, error: fm.error }),
-    )
-    return NextResponse.json(fm, { status })
-  }
-
-  const today = new Date().toISOString().slice(0, 10)
-  const frontmatter: DispatchFrontmatter = {
-    title,
-    date: today,
-    category: fm.suggestion.category,
-    excerpt: fm.suggestion.excerpt,
-    theme: "editorial",
-    draft: true,
-    tags: fm.suggestion.tags,
-    hero: "",
-    linkedin_url: "",
-  }
-
-  // ── 5. Upsert into Supabase ─────────────────────────────────────
-  try {
-    await upsertDraft({
-      slug,
-      frontmatter,
-      body,
-      updatedAt: new Date().toISOString(),
-    })
-  } catch (err) {
-    const message = err instanceof Error ? err.message : String(err)
-    console.error(
-      JSON.stringify({ tag: "studio.ingest.upsert_failed", slug, error: message }),
-    )
-    return NextResponse.json(
-      { ok: false, error: "draft_upsert_failed" },
-      { status: 502 },
-    )
-  }
-
-  // ── 6. Mint approval token ──────────────────────────────────────
-  const approvalSecret = process.env.STUDIO_APPROVAL_SECRET
-  if (!approvalSecret) {
-    return NextResponse.json(
-      {
-        ok: false,
-        error: "approval_unconfigured",
-        hint: "Set STUDIO_APPROVAL_SECRET on the Vercel project.",
-      },
-      { status: 503 },
-    )
-  }
-  const approvalToken = makeApprovalToken({ slug }, approvalSecret)
-
-  // ── 7. Send email ───────────────────────────────────────────────
+  // ── 3. Hand off to the shared pipeline ──────────────────────────
   const origin = new URL(req.url).origin
-  const previewUrl = `${origin}/studio/editor/${encodeURIComponent(slug)}`
-  const approveUrl = `${origin}/api/studio/approve?token=${encodeURIComponent(approvalToken)}`
+  const result = await processArticle({ filename, content, origin })
 
-  const emailRes = await sendApprovalEmail({
-    slug,
-    title,
-    excerpt: fm.suggestion.excerpt,
-    category: fm.suggestion.category,
-    wordCount,
-    previewUrl,
-    approveUrl,
-  })
-  if (!emailRes.ok) {
-    // Draft is already in Supabase; the email failure is recoverable
-    // (Tarry can publish manually). Surface a 502 but include the draft
-    // slug so the caller can log and retry the email separately.
+  if (!result.ok) {
+    // Map shared-helper stage → HTTP status, keeping the legacy
+    // response shape the LaunchAgent watcher already logs.
+    if (result.stage === "parse") {
+      return NextResponse.json(
+        { ok: false, error: result.error },
+        { status: 422 },
+      )
+    }
+    if (result.stage === "ai_frontmatter") {
+      const status = result.error === "ai_unconfigured" ? 503 : 502
+      console.error(
+        JSON.stringify({
+          tag: "studio.ingest.ai_frontmatter_failed",
+          slug: result.slug,
+          error: result.error,
+        }),
+      )
+      return NextResponse.json(
+        { ok: false, error: result.error },
+        { status },
+      )
+    }
+    if (result.stage === "upsert") {
+      console.error(
+        JSON.stringify({
+          tag: "studio.ingest.upsert_failed",
+          slug: result.slug,
+          error: result.error,
+        }),
+      )
+      return NextResponse.json(
+        { ok: false, error: "draft_upsert_failed" },
+        { status: 502 },
+      )
+    }
+    if (result.stage === "approval_secret_missing") {
+      return NextResponse.json(
+        {
+          ok: false,
+          error: "approval_unconfigured",
+          hint: "Set STUDIO_APPROVAL_SECRET on the Vercel project.",
+        },
+        { status: 503 },
+      )
+    }
+    // stage === "email" — draft is already in Supabase; the email
+    // failure is recoverable (Tarry can publish manually). Surface a
+    // 502 but include the draft slug so the caller can log and retry.
     console.error(
-      JSON.stringify({ tag: "studio.ingest.email_failed", slug, error: emailRes.error }),
+      JSON.stringify({
+        tag: "studio.ingest.email_failed",
+        slug: result.slug,
+        error: result.error,
+      }),
     )
     return NextResponse.json(
       {
         ok: false,
-        error: emailRes.error,
-        slug,
-        previewUrl,
-        approveUrl,
-        debug: emailRes.debug,
+        error: result.error,
+        slug: result.slug,
+        previewUrl: result.previewUrl,
+        approveUrl: result.approveUrl,
+        debug: result.debug,
       },
       { status: 502 },
     )
   }
 
-  // ── 8. Done ─────────────────────────────────────────────────────
+  // ── 4. Done ─────────────────────────────────────────────────────
   console.log(
     JSON.stringify({
       tag: "studio.ingest.ok",
-      slug,
-      wordCount,
-      emailId: emailRes.emailId,
+      slug: result.slug,
+      wordCount: result.wordCount,
+      emailId: result.emailId,
     }),
   )
   return NextResponse.json({
     ok: true,
-    slug,
-    title,
-    wordCount,
-    category: fm.suggestion.category,
-    excerpt: fm.suggestion.excerpt,
-    tags: fm.suggestion.tags,
-    previewUrl,
-    approveUrl,
-    emailId: emailRes.emailId,
+    slug: result.slug,
+    title: result.title,
+    wordCount: result.wordCount,
+    category: result.category,
+    excerpt: result.excerpt,
+    tags: result.tags,
+    previewUrl: result.previewUrl,
+    approveUrl: result.approveUrl,
+    emailId: result.emailId,
   })
 }
