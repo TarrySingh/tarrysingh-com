@@ -32,7 +32,7 @@ export interface PlateCaption {
 
 /**
  * One block of essay prose (multiple paragraphs). Pages around the
- * plates (`src/app/synaptic/*/page.tsx`) store their `<p>` blocks here.
+ * plates (each src/app/synaptic/SLUG/page.tsx) store their `<p>` blocks here.
  */
 export interface ProseBlock {
   id: string
@@ -48,7 +48,7 @@ export interface PlateContent {
   displayName: string
   /** aria-label / overall accessibility caption. */
   ariaLabel?: string
-  /** "Click any numbered anchor…"-style helper microcopy. */
+  /** Click-an-anchor style helper microcopy. */
   hint?: string
   annotations?: PlateAnnotation[]
   captions?: PlateCaption[]
