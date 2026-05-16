@@ -52,7 +52,13 @@ export function SicilianoRose() {
         }}
       >
         <svg
-          viewBox={`0 0 ${VW} ${VH}`}
+          // Widen the viewBox horizontally so the longest sector labels
+          // ("INDUSTRIAL MANIPULATION", "HUMAN–ROBOT INTERACTION",
+          // "HAPTIC SHARED CONTROL") no longer clip off the left + right
+          // edges. Rose still renders centred — we just give text room.
+          // Fix spotted during Sprint 8 UAT on /synaptic/symphony/siciliano
+          // and the home-page surfacing of the same card.
+          viewBox={`-220 0 ${VW + 440} ${VH}`}
           className="block h-auto w-full"
           role="img"
           aria-label={SICILIANO_ARIA_LABEL}
