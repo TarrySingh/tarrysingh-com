@@ -7,6 +7,18 @@ export type ChipAnnotation = {
   color: string
 }
 
+/**
+ * Top-level chip-plate microcopy. Sprint 8 surfaces these in
+ * `/studio/synaptic` alongside the six annotations below.
+ */
+export const CHIP_ARIA_LABEL =
+  "MEMPHIS chip plate — a ceramic-substrate hippocampal-memristive die. A 22×22 memristor crossbar with a CA3↔CA1 module at its centre; amber on the warm flank, rose on the cool flank; six annotation anchors naming the architectural elements."
+
+export const CHIP_HINT =
+  "Click any numbered anchor to inspect its role"
+
+export const CHIP_DISPLAY_NAME = "Chip Plate · Memphis"
+
 export const CHIP_ANNOTATIONS: ReadonlyArray<ChipAnnotation> = [
   {
     id: "01",
