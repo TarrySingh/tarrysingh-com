@@ -1,64 +1,16 @@
 "use client"
 
 import { useState } from "react"
-
-type Beat = {
-  year: number
-  label: string
-  detail: string
-  weight?: "primary" | "secondary"
-}
-
-const BEATS: ReadonlyArray<Beat> = [
-  {
-    year: 2005,
-    label: "Blue Brain begins",
-    detail:
-      "EPFL launches the Blue Brain Project — the first attempt to reconstruct a cortical column at biological fidelity.",
-  },
-  {
-    year: 2008,
-    label: "PhD in computational neuroscience",
-    detail:
-      "Joins EPFL as a doctoral researcher on the digital reconstruction of microcircuits.",
-    weight: "secondary",
-  },
-  {
-    year: 2015,
-    label: "Cortical-column reconstruction",
-    detail:
-      "Co-author on the first complete cortical-microcircuit reconstruction at biological scale — Cell, 2015.",
-    weight: "primary",
-  },
-  {
-    year: 2018,
-    label: "Independent group",
-    detail:
-      "Establishes own group on biologically-grounded artificial neural networks.",
-    weight: "secondary",
-  },
-  {
-    year: 2022,
-    label: "Mei · Muller · Ramaswamy",
-    detail:
-      "Trends in Neurosciences (2022) — the four-scale neuromodulatory framework that SYMPHONY transposes from continuous perceptual signals to discrete symbolic activations.",
-    weight: "primary",
-  },
-  {
-    year: 2024,
-    label: "Newcastle chair",
-    detail:
-      "Takes the chair in Computational Neuroscience at Newcastle University's School of Computing.",
-    weight: "secondary",
-  },
-  {
-    year: 2026,
-    label: "SYMPHONY · O2 lead",
-    detail:
-      "Leads Objective O2 — the implementation of the four-scale neuromodulatory mechanism on the substrate produced by O1. M18 decision milestone.",
-    weight: "primary",
-  },
-]
+import {
+  RAMASWAMY_BEATS,
+  RAMASWAMY_COLUMN_BOTTOM_LABEL,
+  RAMASWAMY_COLUMN_KICKER,
+  RAMASWAMY_COLUMN_TOP_LABEL,
+  RAMASWAMY_NEUROMOD_BEAM_LABELS,
+  RAMASWAMY_NEUROMOD_KICKER,
+  RAMASWAMY_PEDIGREE_ARIA_LABEL,
+  RAMASWAMY_PEDIGREE_DEFAULT_HINT,
+} from "@/lib/synaptic/ramaswamy-pedigree-content"
 
 const VW = 900
 const VH = 460
@@ -67,7 +19,7 @@ const TRACK_Y = 280
 
 export function RamaswamyPedigree() {
   const [hover, setHover] = useState<number | null>(null)
-  const active = hover !== null ? BEATS[hover] : null
+  const active = hover !== null ? RAMASWAMY_BEATS[hover] : null
 
   const xForYear = (y: number) =>
     PAD_X + ((y - 2005) / (2026 - 2005)) * (VW - 2 * PAD_X)
@@ -89,7 +41,7 @@ export function RamaswamyPedigree() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="Ramaswamy / Blue Brain pedigree — a timeline from 2005 to 2026 marking the Blue Brain Project, the 2015 cortical-microcircuit reconstruction, the 2022 Mei, Muller and Ramaswamy four-scale neuromodulation paper, and the 2026 SYMPHONY O2 lead."
+          aria-label={RAMASWAMY_PEDIGREE_ARIA_LABEL}
         >
           {/* cortical-column glyph (top) */}
           <g transform="translate(60, 30)">
@@ -114,7 +66,7 @@ export function RamaswamyPedigree() {
               fill="rgba(220,200,160,0.7)"
               letterSpacing={1.5}
             >
-              L1
+              {RAMASWAMY_COLUMN_TOP_LABEL}
             </text>
             <text
               x={130}
@@ -124,7 +76,7 @@ export function RamaswamyPedigree() {
               fill="rgba(220,200,160,0.7)"
               letterSpacing={1.5}
             >
-              L6
+              {RAMASWAMY_COLUMN_BOTTOM_LABEL}
             </text>
             <text
               x={0}
@@ -134,17 +86,17 @@ export function RamaswamyPedigree() {
               fill="rgba(220,200,160,0.55)"
               letterSpacing={2}
             >
-              CORTICAL COLUMN · L1–L6
+              {RAMASWAMY_COLUMN_KICKER}
             </text>
           </g>
 
           {/* neuromodulator beams down the right side */}
           <g transform={`translate(${VW - 220}, 30)`}>
             {[
-              { y: 0, c: "#f4c482", label: "Ach" },
-              { y: 30, c: "#e5a896", label: "DA" },
-              { y: 60, c: "#6cb4c2", label: "NE" },
-              { y: 90, c: "#a698d4", label: "5-HT" },
+              { y: 0, c: "#f4c482", label: RAMASWAMY_NEUROMOD_BEAM_LABELS[0] },
+              { y: 30, c: "#e5a896", label: RAMASWAMY_NEUROMOD_BEAM_LABELS[1] },
+              { y: 60, c: "#6cb4c2", label: RAMASWAMY_NEUROMOD_BEAM_LABELS[2] },
+              { y: 90, c: "#a698d4", label: RAMASWAMY_NEUROMOD_BEAM_LABELS[3] },
             ].map((b) => (
               <g key={b.label}>
                 <line
@@ -177,7 +129,7 @@ export function RamaswamyPedigree() {
               fill="rgba(220,200,160,0.55)"
               letterSpacing={2}
             >
-              NEUROMODULATOR BEAMS
+              {RAMASWAMY_NEUROMOD_KICKER}
             </text>
           </g>
 
@@ -216,7 +168,7 @@ export function RamaswamyPedigree() {
           </text>
 
           {/* beats */}
-          {BEATS.map((b, i) => {
+          {RAMASWAMY_BEATS.map((b, i) => {
             const x = xForYear(b.year)
             const isHover = hover === i
             const isPrimary = b.weight === "primary"
@@ -307,10 +259,7 @@ export function RamaswamyPedigree() {
             </>
           ) : (
             <span style={{ color: "var(--ink-dim)" }}>
-              Two decades of biologically-grounded neuroscience, ending in
-              SYMPHONY's O2. Hover any beat for the source and the role it
-              plays in the proposal. Primary beats — Cell 2015, TINS 2022 —
-              are the load-bearing citations.
+              {RAMASWAMY_PEDIGREE_DEFAULT_HINT}
             </span>
           )}
         </div>

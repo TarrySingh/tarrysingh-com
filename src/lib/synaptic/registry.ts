@@ -81,6 +81,14 @@ export const PLATE_REGISTRY: ReadonlyArray<PlateRegistryEntry> = [
     group: "symphony",
     previewPath: "/synaptic/symphony/siciliano",
   },
+  {
+    id: "ramaswamy-pedigree",
+    displayName: "Ramaswamy Pedigree · Symphony",
+    contentPath: "src/lib/synaptic/ramaswamy-pedigree-content.ts",
+    slots: ["annotations", "captions"],
+    group: "symphony",
+    previewPath: "/synaptic/symphony/ramaswamy",
+  },
 ]
 
 export function getPlateEntry(id: string): PlateRegistryEntry | null {
