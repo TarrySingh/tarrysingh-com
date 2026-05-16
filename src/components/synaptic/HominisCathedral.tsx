@@ -1,38 +1,14 @@
 "use client"
 
 import { useState } from "react"
-
-type Pillar = {
-  id: string
-  capital: string
-  shaft: string
-  body: string
-  color: string
-}
-
-const PILLARS: ReadonlyArray<Pillar> = [
-  {
-    id: "situated",
-    capital: "I",
-    shaft: "Situated",
-    body: "Foundation models that read the world they are deployed into — industrial-automation logs, EU regulatory text, multi-lingual scientific corpora — not just the open web. Trained on context that matches the substrate they will be embedded in.",
-    color: "#f4c482",
-  },
-  {
-    id: "auditable",
-    capital: "II",
-    shaft: "Auditable",
-    body: "Every output is traceable to a substrate region, every adaptation to a task token. Compositional control surfaces, bounded behaviour, and external evaluation built into the development loop, not bolted on after release.",
-    color: "#e5a896",
-  },
-  {
-    id: "compute",
-    capital: "III",
-    shaft: "Compute-aware",
-    body: "Built on EuroHPC allocation time at Leonardo (CINECA, Bologna). Designed to run within the energy and the time budget of European public infrastructure — not against it.",
-    color: "#6cb4c2",
-  },
-]
+import {
+  HOMINIS_CATHEDRAL_ARIA_LABEL,
+  HOMINIS_CATHEDRAL_DEFAULT_HINT,
+  HOMINIS_FOUNDATION_LABEL,
+  HOMINIS_PEDIMENT_TAGLINE,
+  HOMINIS_PEDIMENT_TITLE,
+  HOMINIS_PILLARS,
+} from "@/lib/synaptic/hominis-cathedral-content"
 
 const VW = 720
 const VH = 720
@@ -57,7 +33,7 @@ export function HominisCathedral() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="Hominis cathedral — three pillars (situated · auditable · compute-aware) standing on the Leonardo / CINECA EuroHPC foundation, with a Hominis pediment above."
+          aria-label={HOMINIS_CATHEDRAL_ARIA_LABEL}
         >
           <defs>
             <linearGradient id="syn-hom-marble" x1="0" y1="0" x2="0" y2="1">
@@ -102,7 +78,7 @@ export function HominisCathedral() {
             fill="#5a4a8a"
             style={{ letterSpacing: "0.08em" }}
           >
-            HOMINIS
+            {HOMINIS_PEDIMENT_TITLE}
           </text>
           <text
             x={VW / 2}
@@ -113,7 +89,7 @@ export function HominisCathedral() {
             letterSpacing={2.5}
             fill="rgba(90,70,48,0.85)"
           >
-            FOUNDATION MODELS FOR THE REAL WORLD
+            {HOMINIS_PEDIMENT_TAGLINE}
           </text>
 
           {/* architrave */}
@@ -128,7 +104,7 @@ export function HominisCathedral() {
           />
 
           {/* three pillars */}
-          {PILLARS.map((p, i) => {
+          {HOMINIS_PILLARS.map((p, i) => {
             const cellW = (VW - 100) / 3
             const x = 50 + i * cellW + cellW / 2
             const top = 252
@@ -250,7 +226,7 @@ export function HominisCathedral() {
             letterSpacing={4}
             fill="#f5e8cc"
           >
-            LEONARDO  ·  CINECA  ·  EUROHPC
+            {HOMINIS_FOUNDATION_LABEL}
           </text>
 
           {/* ground */}
@@ -280,7 +256,7 @@ export function HominisCathedral() {
         >
           {hover ? (
             (() => {
-              const p = PILLARS.find((x) => x.id === hover)
+              const p = HOMINIS_PILLARS.find((x) => x.id === hover)
               if (!p) return null
               return (
                 <>
@@ -296,10 +272,7 @@ export function HominisCathedral() {
             })()
           ) : (
             <span style={{ color: "var(--ink-dim)" }}>
-              Hominis stands on three pillars and a EuroHPC foundation.
-              Hover any pillar to read the property it represents. The
-              cathedral metaphor is deliberate: a foundation model meant
-              to last is built like a cathedral, not a sprint.
+              {HOMINIS_CATHEDRAL_DEFAULT_HINT}
             </span>
           )}
         </div>

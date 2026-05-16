@@ -57,6 +57,14 @@ export const PLATE_REGISTRY: ReadonlyArray<PlateRegistryEntry> = [
     group: "symphony",
     previewPath: "/synaptic/symphony/siciliano",
   },
+  {
+    id: "hominis-cathedral",
+    displayName: "Hominis Cathedral · Symphony",
+    contentPath: "src/lib/synaptic/hominis-cathedral-content.ts",
+    slots: ["annotations", "captions"],
+    group: "symphony",
+    previewPath: "/synaptic/symphony",
+  },
 ]
 
 export function getPlateEntry(id: string): PlateRegistryEntry | null {
