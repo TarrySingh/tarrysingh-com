@@ -1,46 +1,15 @@
 "use client"
 
 import { useState } from "react"
-
-type Waypoint = {
-  id: string
-  numeral: string
-  label: string
-  body: string
-  x: number
-  height: number
-  color: string
-}
-
-const WAYPOINTS: ReadonlyArray<Waypoint> = [
-  {
-    id: "representation",
-    numeral: "I",
-    label: "Representation",
-    body: "A single substrate capable of holding an industrial-scale codebase coherently — structural, behavioural, historical and rationale layers unified on one graph. The first requirement of the long-term vision.",
-    x: 0.22,
-    height: 0.62,
-    color: "#f4c482",
-  },
-  {
-    id: "reconfiguration",
-    numeral: "II",
-    label: "Reconfiguration",
-    body: "A mechanism for reconfiguring that representation on demand without rebuilding it — multi-scale neuromodulation transposed from cortex to code. The tallest peak; the hardest claim.",
-    x: 0.5,
-    height: 0.92,
-    color: "#a698d4",
-  },
-  {
-    id: "audit",
-    numeral: "III",
-    label: "Narrow control surface",
-    body: "A scalar task-baton interface, deliberately bounded, so the substrate is composable, auditable, and traceable — Siciliano-school shared control transposed into software.",
-    x: 0.78,
-    height: 0.7,
-    color: "#6cb4c2",
-  },
-]
+import {
+  VISION_HORIZON_ARIA_LABEL,
+  VISION_HORIZON_BANNER,
+  VISION_HORIZON_FOOTER,
+  VISION_HORIZON_KICKER,
+  VISION_HORIZON_PANEL_KICKER_PREFIX,
+  VISION_HORIZON_TITLE,
+  VISION_WAYPOINTS,
+} from "@/lib/synaptic/vision-horizon-content"
 
 const VW = 1400
 const VH = 900
@@ -50,12 +19,13 @@ export function VisionHorizon() {
   const [hover, setHover] = useState<string | null>(null)
   const [pinned, setPinned] = useState<string>("reconfiguration")
   const activeId = hover ?? pinned
-  const active = WAYPOINTS.find((w) => w.id === activeId) ?? WAYPOINTS[1]
+  const active =
+    VISION_WAYPOINTS.find((w) => w.id === activeId) ?? VISION_WAYPOINTS[1]
 
   // Build ridge curve through endpoints + waypoints
   const ridgePts = [
     { x: 0, y: HORIZON_Y - VH * 0.05 },
-    ...WAYPOINTS.map((w) => ({
+    ...VISION_WAYPOINTS.map((w) => ({
       x: w.x * VW,
       y: HORIZON_Y - w.height * (VH - HORIZON_Y) - 80,
     })),
@@ -105,7 +75,7 @@ export function VisionHorizon() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="SYMPHONY vision horizon — a panoramic landscape with three peaks marking the three minimal requirements of the long-term vision: a coherent representation, a reconfiguration mechanism, and a narrow auditable control surface."
+          aria-label={VISION_HORIZON_ARIA_LABEL}
         >
           <defs>
             <linearGradient id="syn-vh-sky" x1="0" y1="0" x2="0" y2="1">
@@ -148,7 +118,7 @@ export function VisionHorizon() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            PLATE I · MMXXVI · VISION
+            {VISION_HORIZON_KICKER}
           </text>
           <text
             x={60}
@@ -158,7 +128,7 @@ export function VisionHorizon() {
             fill="var(--ink)"
             letterSpacing={2}
           >
-            The long-term vision
+            {VISION_HORIZON_TITLE}
           </text>
           <line x1={60} x2={VW - 60} y1={92} y2={92} stroke="rgba(220,200,160,0.35)" strokeWidth={0.8} />
           <text
@@ -170,13 +140,13 @@ export function VisionHorizon() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.7)"
           >
-            THREE MINIMAL REQUIREMENTS · §1.1
+            {VISION_HORIZON_BANNER}
           </text>
 
           {/* distant moon / glow above the central peak */}
           <circle
-            cx={WAYPOINTS[1].x * VW}
-            cy={HORIZON_Y - WAYPOINTS[1].height * (VH - HORIZON_Y) - 200}
+            cx={VISION_WAYPOINTS[1].x * VW}
+            cy={HORIZON_Y - VISION_WAYPOINTS[1].height * (VH - HORIZON_Y) - 200}
             r={260}
             fill="url(#syn-vh-moon)"
             opacity={0.35}
@@ -223,7 +193,7 @@ export function VisionHorizon() {
           />
 
           {/* waypoint peaks */}
-          {WAYPOINTS.map((w) => {
+          {VISION_WAYPOINTS.map((w) => {
             const peakX = w.x * VW
             const peakY = HORIZON_Y - w.height * (VH - HORIZON_Y) - 80
             const isActive = activeId === w.id
@@ -310,7 +280,7 @@ export function VisionHorizon() {
                   letterSpacing={3}
                   fill={isActive ? "var(--ink)" : "rgba(220,200,160,0.7)"}
                 >
-                  {String(WAYPOINTS.indexOf(w) + 1).padStart(2, "0")} ·{" "}
+                  {String(VISION_WAYPOINTS.indexOf(w) + 1).padStart(2, "0")} ·{" "}
                   {w.label.toUpperCase()}
                 </text>
               </g>
@@ -367,7 +337,7 @@ export function VisionHorizon() {
                   letterSpacing={3}
                   fill="rgba(220,200,160,0.65)"
                 >
-                  REQUIREMENT · {active.numeral}
+                  {VISION_HORIZON_PANEL_KICKER_PREFIX} · {active.numeral}
                 </text>
                 <text
                   x={INNER_PAD}
@@ -414,7 +384,7 @@ export function VisionHorizon() {
             lineHeight: 1.5,
           }}
         >
-          The vision requires, minimally, three things. The substrate is either the bridge by 2030 or the gap is permanent.
+          {VISION_HORIZON_FOOTER}
         </div>
       </div>
     </figure>

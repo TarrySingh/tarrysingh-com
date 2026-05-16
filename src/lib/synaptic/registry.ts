@@ -65,6 +65,14 @@ export const PLATE_REGISTRY: ReadonlyArray<PlateRegistryEntry> = [
     group: "symphony",
     previewPath: "/synaptic/symphony",
   },
+  {
+    id: "vision-horizon",
+    displayName: "Vision Horizon · Symphony",
+    contentPath: "src/lib/synaptic/vision-horizon-content.ts",
+    slots: ["annotations", "captions"],
+    group: "symphony",
+    previewPath: "/synaptic/symphony",
+  },
 ]
 
 export function getPlateEntry(id: string): PlateRegistryEntry | null {
