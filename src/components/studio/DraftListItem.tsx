@@ -72,7 +72,7 @@ export function DraftListItem({ draft }: Props) {
     <li className="relative">
       <Link
         href={`/studio/editor/${draft.slug}`}
-        className="group block rounded-xl border border-navy-200/80 bg-white p-5 pr-16 transition-all duration-200 hover:border-gold-400 hover:bg-white hover:shadow-[0_1px_0_rgba(15,23,42,0.04)]"
+        className="group block rounded-xl border border-navy-200/80 bg-white p-4 pr-[68px] sm:p-5 sm:pr-16 transition-all duration-200 hover:border-gold-400 hover:bg-white hover:shadow-[0_1px_0_rgba(15,23,42,0.04)]"
       >
         <div className="mb-2 flex items-center gap-3">
           <span
@@ -132,14 +132,14 @@ export function DraftListItem({ draft }: Props) {
         disabled={isPending}
         aria-label={`Delete draft "${draft.frontmatter.title || draft.slug}"`}
         title="Delete draft"
-        className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-navy-200/70 bg-white text-navy-400 transition-colors hover:border-rose-300 hover:bg-rose-50 hover:text-rose-600 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute right-3 top-3 inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy-200/70 bg-white text-navy-400 transition-colors hover:border-rose-300 hover:bg-rose-50 hover:text-rose-600 disabled:opacity-50 disabled:cursor-not-allowed sm:right-4 sm:top-4"
       >
         <Trash2 className="h-4 w-4" />
       </button>
 
       {error ? (
         <p
-          className="absolute right-4 top-14 rounded bg-rose-50 px-2 py-1 text-[10px] text-rose-700"
+          className="absolute right-3 top-[60px] rounded bg-rose-50 px-2 py-1 text-[10px] text-rose-700 sm:right-4 sm:top-16"
           style={{
             fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
           }}

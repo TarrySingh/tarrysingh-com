@@ -40,9 +40,12 @@ export default async function StudioHome() {
         background: "linear-gradient(180deg, #fbf7ec 0%, #f5efe1 100%)",
       }}
     >
-      <main className="mx-auto max-w-3xl px-6 pt-20 pb-24 lg:px-8">
-        <header className="mb-12">
-          <div className="mb-5 flex items-center gap-3">
+      <main className="mx-auto max-w-3xl px-4 pt-12 pb-24 sm:px-6 sm:pt-20 lg:px-8">
+        <header className="mb-10 sm:mb-12">
+          {/* Kicker row — stacks on phone so the pill never crushes
+              the "Studio · Dispatches" kicker, then reflows into one
+              row at sm: (640 px+). */}
+          <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center">
             <span
               className="text-[10.5px] font-semibold uppercase tracking-[0.32em] text-gold-700"
               style={{
@@ -51,10 +54,10 @@ export default async function StudioHome() {
             >
               Studio · Dispatches
             </span>
-            <span className="h-px flex-1 bg-navy-200/60" />
+            <span className="hidden h-px flex-1 bg-navy-200/60 sm:block" />
             <Link
               href="/studio/editor"
-              className="rounded-full border border-gold-400 bg-navy-900 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-navy-800"
+              className="inline-flex min-h-[44px] items-center justify-center self-start rounded-full border border-gold-400 bg-navy-900 px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-navy-800 sm:self-auto"
               style={{
                 fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
               }}
@@ -105,7 +108,7 @@ export default async function StudioHome() {
             </p>
             <Link
               href="/studio/editor"
-              className="inline-flex items-center gap-2 rounded-full border border-navy-200 bg-white px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50"
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-navy-200 bg-white px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50"
               style={{
                 fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
               }}
