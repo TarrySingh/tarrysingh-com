@@ -30,8 +30,11 @@ roadmap-deck slop.
 | ~~**Sprint 5.5**~~ | ~~Reader-side subscribe nudges — six experiments~~ | ~2–3 days | **Shipped 2026-05-14** — all 6 experiments + surveillance-free counters table. See *Sprint 5.5 — shipped* below. |
 | ~~**Sprint 6**~~ | ~~Mobile-first writing UX~~ | ~3 days | **Shipped 2026-05-15** — sticky touch toolbar, header reflow, preview overlay, 44×44 tap targets. See *Sprint 6 — shipped* below. |
 | ~~**Sprint 7**~~ | ~~Version-history surface~~ | ~3 days | **Shipped 2026-05-15** — `src/lib/studio/history.ts` + 3 API routes + `<HistoryPane>` in editor with revert. See *Sprint 7 — shipped* below. |
+| ~~**Sprint 9**~~ | ~~Auto-publish pipeline — local LaunchAgent + ingest + approve + email~~ | ~1.5 days | **Shipped 2026-05-15/16** — first two autonomous Dispatches live (`309a362` agent-stack, `6f30ce5` agent-teams). See *Sprint 9 — shipped* below. |
+| ~~**Sprint 9.1**~~ | ~~Drive cron backup (laptop-off resilience)~~ | ~half day | **Shipped 2026-05-16** — cloud-side ready; awaiting Tarry-side GCP service-account + Vercel env (~15 min, per runbook). See *Sprint 9.1 — shipped* below. |
 | **Sprint 8** | Linked editing for the Synaptic plate library | ~5–7 days | The largest lift. Plates are hand-coded SVG components; "edit copy in the studio" needs a shape contract per plate. |
-| **Sprint 9+ (defer)** | Real-time collaborative editing | ~5 days | Single-user editor — multiplayer is not on the critical path. Revisit only if a guest writer joins. |
+| **Studio mobile** | Ultra-mobile-friendly editor responsiveness (post Sprint 9.1) | ~1–2 days | Tarry surfaced this during the Sprint 9 close — the editor should feel native on phone for emergency Dispatches from the road. |
+| **Real-time collab (defer)** | Multiplayer editing | ~5 days | Single-user editor — multiplayer is not on the critical path. Revisit only if a guest writer joins. |
 
 What follows is the per-item breakdown.
 
@@ -466,9 +469,9 @@ subscribers; it does not harvest them.
 
 ---
 
-## Sprint 9 — shipped 2026-05-16 · Auto-publish pipeline
+## Sprint 9 — shipped 2026-05-15/16 · Auto-publish pipeline
 
-**Window:** overnight after Tarry approved the plan at bedtime. Branch `claude/sprint-auto-publish-pipeline` → PR pending merge for Tarry to UAT in the afternoon.
+**Window:** overnight 2026-05-15 → afternoon 2026-05-16. Branch `claude/sprint-auto-publish-pipeline` merged to main. **Two autonomous Dispatches went live on 2026-05-16** — `309a362` (the-agent-stack-just-became-a-standard) and `6f30ce5` (agent-teams-vs-human-teams) — closing the sprint's UAT loop.
 
 ### What landed
 
@@ -515,6 +518,62 @@ Per the runbook's smoke section:
 ### Why this sprint
 
 Removes the daily friction of moving Claude-Cowork articles into the live site by hand. The studio earns its keep when the publish loop is as low-effort as the writing loop already is.
+
+### Post-ship hotfix — watcher filter
+
+**Commit `dc270e4` (2026-05-16, ~19:00 local).** During the UAT cycle, the LaunchAgent picked up `scheduled-blog-prompt.md` — the Cowork prompt file that *generates* the daily articles — and ran it through the parser as if it were a real Dispatch. The H1 was valid markdown and the body was long enough; a one-click Publish would have committed the meta-prompt to `/blog`.
+
+Fixed by adding `DATED_ARTICLE_RE` (`^\d{4}-\d{2}-\d{2}_[a-z0-9][a-z0-9-]*\.mdx?$`) at the scan stage in `scripts/ingest/watch-tarry-blogs.mjs`. Only files matching the Claude-Cowork filename convention proceed to ingest; anything else is silently skipped. LaunchAgent reloaded (PID 61756) with the fix live. The leaked draft was deleted from `studio_drafts` post-cleanup.
+
+The same filter is mirrored in the Sprint 9.1 cron route so both backup paths reject the prompt file identically.
+
+---
+
+## Sprint 9.1 — shipped 2026-05-16 · Drive cron backup (laptop-off path)
+
+**Window:** ~2 hours the evening of 2026-05-16, immediately after the Sprint 9 hotfix. Six micro-commits straight to main (`432c36b` → `d29d511`). **Cloud-side code-complete; awaiting ~15 min of Tarry-side GCP + Vercel provisioning** before the cron starts firing.
+
+### Why this sprint
+
+Sprint 9's LaunchAgent watcher only fires when Tarry's Mac is on. Claude-Cowork writes its daily article to the `tarry-daily-blogs` Google Drive folder regardless of laptop state — but if the laptop is off / asleep / in transit, no LaunchAgent runs, no email lands. Sprint 9.1 adds a second mover: a Vercel cron that polls the same Drive folder and runs articles through the same `processArticle()` pipeline. Whichever path fires first wins; the other no-ops via slug/file-id dedup.
+
+### What landed
+
+| Layer | File | Result |
+|---|---|---|
+| Shared | `src/lib/studio/process-article.ts` | `processArticle({filename, content, origin})` — extracts the parse → AI → upsert → token → email pipeline that previously lived inline in `/api/studio/ingest`. Both the HMAC route and the new cron route call this so downstream behaviour stays identical. Discriminated-union result so each caller maps failure stage → its own HTTP status. |
+| Refactor | `src/app/api/studio/ingest/route.ts` | Behaviour-preserving refactor — HMAC + replay-window verification stays here; the heavy lifting moves to `processArticle`. Same JSON shapes + status codes as before; the LaunchAgent log format is unchanged. |
+| Drive client | `src/lib/drive/client.ts` | Zero-dep Google Drive REST client. JWT bearer ([service-account](https://cloud.google.com/iam/docs/service-account-overview) → access-token exchange) using `node:crypto` + native `fetch`. Surfaces: `listMarkdownFilesInFolder({sinceIso, pageSize})`, `downloadFileContent(fileId)`, `pingDrive()` for smoke tests. Token cached in-module across warm Lambda invocations. Avoids the ~3 MB `googleapis` bundle hit. |
+| Idempotency table | `docs/migrations/2026-05-16-studio-drive-ingest-log.sql` | New `studio_drive_ingest_log` table — one row per Drive `file_id` with `modified_time_iso` high-water mark + status enum (`ingested` / `skipped` / `failed`). Separate from `studio_drafts.slug` because the draft row is deleted after publish; without this, a second cron tick would re-ingest the same article and email Tarry twice. |
+| Helper | `src/lib/studio/drive-ingest-log.ts` | `getDriveIngest`, `getHighWaterModifiedTime`, `recordDriveIngest`. Service-role-key client. Used by the cron route. |
+| Cron route | `src/app/api/cron/ingest-drive/route.ts` | GET + POST handlers (Vercel cron fires as GET). Auth: `Authorization: Bearer ${CRON_SECRET}` — Vercel auto-injects this on cron-triggered requests; same header lets Tarry curl-smoke-test from a terminal. Pipeline: read high-water → list Drive files newer than that → filter `YYYY-MM-DD_*.md` → for each new file check log → download + `processArticle` → record outcome. `?ping=1` returns a zero-side-effect health snapshot (auth + folder share + visible-file count). `maxDuration=300`. |
+| Schedule | `vercel.json` | `*/15 * * * *` — 15-min cadence. The Vercel Pro plan (DK AI Lab — see `CLAUDE.md`) allows minute-precision crons. |
+| Runbook | `docs/runbooks/google-drive-cron-setup.md` | 8-step setup runbook: Supabase migration, GCP project + Drive API enable + service account + JSON key, Drive folder share (Viewer), five Vercel env vars (`GOOGLE_DRIVE_SA_CLIENT_EMAIL`, `GOOGLE_DRIVE_SA_PRIVATE_KEY`, `GOOGLE_DRIVE_INGEST_FOLDER_ID`, `CRON_SECRET`, `SITE_ORIGIN`), `?ping=1` smoke test, first real tick + pre-seed strategy, Vercel cron-dashboard verification, optional LaunchAgent unload. Includes a failure-mode triage table + operating-cost line (~$0.05–0.10/day Anthropic + 96 free Vercel cron invocations/day). |
+
+### Live state (2026-05-16, cloud-side code-complete)
+
+- **`next build` green** — `/api/cron/ingest-drive` + the lib + the migration + `vercel.json` all on main.
+- **Type-check + lint clean** on every new file.
+- **One new Supabase table** (Tarry-side): apply `docs/migrations/2026-05-16-studio-drive-ingest-log.sql` via SQL editor.
+- **Five new Vercel env vars** (Tarry-side): the four GCP/Drive vars + `CRON_SECRET` (Vercel auto-injects it on cron requests once set) + `SITE_ORIGIN=https://www.tarrysingh.com`.
+- **One Google Cloud one-time setup** (Tarry-side): GCP project + Drive API + service account + JSON key + share `tarry-daily-blogs` folder with the SA email (Viewer).
+- **No new npm deps** — zero-dep Drive client.
+- **The cron is dormant** until the env vars land — it 401s harmlessly on every tick until `CRON_SECRET` is set, then auth succeeds and `missing_env` covers the rest.
+
+### UAT plan (2026-05-17 morning)
+
+1. Drop a synthetic `2026-05-17_pipeline-smoke-test.md` into the `tarry-daily-blogs` Drive folder.
+2. Within 16 min one email lands at `tarry.singh@deepkapha.com` — *from* either path (LaunchAgent or cron); whichever fires first wins.
+3. Click **Publish now** → `/blog/pipeline-smoke-test` live in ~90 s.
+4. Inspect `studio_drive_ingest_log` row: status=`ingested`, slug+emailId populated.
+5. Verify Vercel cron dashboard shows the next-fire time advancing every 15 min.
+6. `git rm content/blog/pipeline-smoke-test.mdx` + delete the Drive file.
+
+### Deliberate non-goals (deferred)
+
+- **Drive-to-S3 mirror.** Not needed — Drive's CDN is fine for a tiny markdown-only folder.
+- **Per-file ingest UI.** The `studio_drive_ingest_log` table is grep-able from the Supabase dashboard. A future `/studio/cron` admin page could surface the last 50 ticks; not on the critical path.
+- **Cron-side retry.** A 502 from Anthropic or Resend = the row is logged as `failed` and the next cron tick won't retry (file_id is in the log). Manual recovery via the Studio Editor at `/studio/editor/<slug>` is the fallback. Auto-retry would need exponential backoff + dead-letter; out of v1 scope.
 
 ---
 

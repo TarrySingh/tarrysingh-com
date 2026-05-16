@@ -1,7 +1,7 @@
 # tarrysingh.com · Dispatches launch — status report
 
 **Document status:** living. Updated at the end of each sprint.
-**Last updated:** 2026-05-16 (Sprint 9 auto-publish pipeline code-complete overnight — 11 sprints in main; PR pending Tarry-side env setup + UAT)
+**Last updated:** 2026-05-16 evening (Sprint 9 closed — two autonomous Dispatches live; Sprint 9.1 cloud-side complete + dormant pending Tarry-side GCP provisioning; 12 sprints in main)
 **Editor of record:** Tarry Singh · maintained by Claude Code sessions
 **Repo:** [github.com/TarrySingh/tarrysingh-com](https://github.com/TarrySingh/tarrysingh-com)
 
@@ -138,6 +138,40 @@ These items are sequenced and sized in [`sprint-4-plus-roadmap.md`](./sprint-4-p
 - **Pending Tarry-side UAT:** set the Replicate token → click "✨ Generate hero" on a real Dispatch → exercise Use / Regenerate / Edit-prompt → confirm the resulting URL renders correctly on the published `/blog/<slug>` post.
 
 See *Outstanding work* (closed for Sprint 2) and *UAT plan*.
+
+> Sprints 5.5 / 5.6 / 6 / 7 shipped between 2026-05-14 and 2026-05-15 — detailed in [`docs/reports/sprint-4-plus-roadmap.md`](./sprint-4-plus-roadmap.md). The next thorough refresh of this status report will backfill them. Sprint 8 (Synaptic plate-library editing) remains parked.
+
+### Sprint 9 — Auto-publish pipeline (closed 2026-05-16)
+
+**Window:** overnight 2026-05-15 → afternoon 2026-05-16. Eight new files + middleware bypass + LaunchAgent + 25-section runbook (`docs/runbooks/auto-publish-pipeline.md`). Pipeline: Claude-Cowork writes daily Markdown → LaunchAgent on the Mac POSTs HMAC-signed payload to `/api/studio/ingest` → parser + `aiFrontmatter` + draft upsert → Resend approval email with a 72-h signed token → one click on **Publish now** commits `content/blog/<slug>.mdx` to main → Vercel ships.
+
+**Live state (2026-05-16):**
+- Two autonomous Dispatches published end-to-end via the loop: `309a362` *the-agent-stack-just-became-a-standard* and `6f30ce5` *agent-teams-vs-human-teams*.
+- LaunchAgent installed + loaded; running PID 61756.
+- Resend apex `tarrysingh.com` verified (SPF + DKIM + return-path); `STUDIO_APPROVAL_FROM` = `Studio · Dispatches <studio@tarrysingh.com>`.
+- All four Sprint-9 env vars set on Vercel (`STUDIO_INGEST_SECRET`, `STUDIO_APPROVAL_SECRET`, `RESEND_API_KEY`, `STUDIO_APPROVAL_EMAIL`).
+- Post-ship hotfix `dc270e4`: watcher filter `^YYYY-MM-DD_*.md$` — caught a leak of the Cowork prompt file (`scheduled-blog-prompt.md`) that had passed the original parser. Leaked draft cleaned from `studio_drafts` via service-role delete; the filter is now mirrored in the Sprint 9.1 cron route.
+
+### Sprint 9.1 — Drive cron backup (closed 2026-05-16, dormant)
+
+**Window:** ~2 hours the evening of 2026-05-16. Six micro-commits to main (`432c36b` → `d29d511`). Adds a second mover so the pipeline survives a laptop-off day.
+
+**What landed:**
+- Shared `processArticle()` helper (`src/lib/studio/process-article.ts`) — both the HMAC ingest route and the new cron route call the same parse → AI → upsert → token → email pipeline.
+- Zero-dep Google Drive REST client (`src/lib/drive/client.ts`) — service-account JWT bearer using `node:crypto`; avoids the ~3 MB `googleapis` bundle.
+- `studio_drive_ingest_log` Supabase table + helper — idempotency key is `(file_id, modified_time_iso)`, survives draft publish.
+- `/api/cron/ingest-drive` route with `?ping=1` smoke endpoint; auth via Vercel-injected `Authorization: Bearer ${CRON_SECRET}`.
+- `vercel.json` registering `*/15 * * * *` schedule on the DK AI Lab Pro plan.
+- Setup runbook `docs/runbooks/google-drive-cron-setup.md` walks Tarry through the ~15 min of GCP + Vercel + Supabase clicks.
+
+**Pending Tarry-side provisioning** (the cron is 401-dormant until these land):
+1. Apply `docs/migrations/2026-05-16-studio-drive-ingest-log.sql` to Supabase.
+2. Create GCP project + enable Drive API + create `tarrysingh-drive-poller` service account + download JSON key.
+3. Share `tarry-daily-blogs` Drive folder (`1NZ0GQ0_h8gItriWMLUrRkNiZV8Hlg0yC`) with the SA email (Viewer).
+4. Paste five env vars on Vercel: SA email, SA private key, folder ID, `CRON_SECRET`, `SITE_ORIGIN`. Redeploy.
+5. Smoke test: `curl -H "Authorization: Bearer $CRON_SECRET" 'https://www.tarrysingh.com/api/cron/ingest-drive?ping=1'`.
+
+UAT runs the morning of 2026-05-17 against a synthetic article in the Drive folder; expected outcome is one email lands within 16 min regardless of laptop state.
 
 ---
 
