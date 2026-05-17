@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { usePathname } from "next/navigation"
 import { X } from "lucide-react"
 
 type Status = "idle" | "loading" | "sent" | "error"
@@ -30,10 +31,20 @@ export function NewsletterPeek() {
   const [status, setStatus] = useState<Status>("idle")
   const [message, setMessage] = useState("")
   const wrapperRef = useRef<HTMLDivElement | null>(null)
+  const pathname = usePathname()
+  // Suppress on /blog/<slug> routes — those mount the TarryPeekABoo
+  // mascot (right-edge sliding peek) instead. Two peeks fighting for
+  // the corner reads as noise.
+  const isDispatchRoute =
+    typeof pathname === "string" &&
+    pathname.startsWith("/blog/") &&
+    pathname !== "/blog/unsubscribe" &&
+    !pathname.startsWith("/blog/tag/")
 
   // Mount-time eligibility + scroll listener.
   useEffect(() => {
     if (typeof window === "undefined") return
+    if (isDispatchRoute) return
 
     // Honour an existing dismissal.
     try {
@@ -76,7 +87,7 @@ export function NewsletterPeek() {
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+  }, [isDispatchRoute])
 
   function persistDismissal() {
     try {
