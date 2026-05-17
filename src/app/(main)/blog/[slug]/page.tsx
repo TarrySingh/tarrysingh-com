@@ -19,6 +19,7 @@ import { NewsletterCard } from "@/components/blog/NewsletterCard"
 import { ReadingMilestoneNudge } from "@/components/blog/ReadingMilestoneNudge"
 import { QuietExitIntent } from "@/components/blog/QuietExitIntent"
 import { HighlightToShare } from "@/components/blog/HighlightToShare"
+import { TarryPeekABoo } from "@/components/blog/TarryPeekABoo"
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -269,6 +270,10 @@ export default async function BlogPostPage({
             />
           </aside>
         ) : null}
+        {/* Josh-Comeau-style mascot — Tarry pops in at the foot of
+            every Dispatch with an inline subscribe pill. Photo cutout
+            today; swap to an illustrated SVG by passing `src` later. */}
+        <TarryPeekABoo slug={post.slug} />
         <div id="newsletter" className="mt-10 scroll-mt-24">
           <NewsletterCard variant="compact" />
         </div>
