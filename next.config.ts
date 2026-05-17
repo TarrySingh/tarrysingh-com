@@ -62,6 +62,16 @@ const nextConfig: NextConfig = {
           source: "/api/digest/this-month.json",
           destination: "/api/digest/this-month",
         },
+        // Sprint 6.5 sibling rewrite — same convention for the weekly
+        // digest endpoint consumed by the RealAI-CRM "Tarrysingh Weekly
+        // Dispatches" cadence (Monday 09:00 UTC). Without this, the
+        // documented `/api/digest/this-week.json` URL 404s because the
+        // App-Router route file at src/app/api/digest/this-week/route.ts
+        // serves `/api/digest/this-week` (no extension).
+        {
+          source: "/api/digest/this-week.json",
+          destination: "/api/digest/this-week",
+        },
       ],
     };
   },
