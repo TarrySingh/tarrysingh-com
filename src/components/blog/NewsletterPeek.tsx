@@ -7,9 +7,11 @@ type Status = "idle" | "loading" | "sent" | "error"
 
 const STORAGE_KEY = "dispatches.peek.dismissedAt"
 const DISMISS_WINDOW_MS = 30 * 24 * 60 * 60 * 1000 // 30 days
-const SCROLL_THRESHOLD = 0.6 // fraction of total document height
-const MIN_SCROLL_PX = 600 // also require an absolute floor so very short
-//                          pages don't fire immediately on a tiny scroll
+const SCROLL_THRESHOLD = 0.6 // fraction of the scrollable distance consumed
+const MIN_SCROLLABLE_PX = 240 // only fire on pages with real scrollable
+//                              content; tiny landing-style pages skip the
+//                              peek entirely (they have no "middle" to
+//                              reach).
 
 /**
  * Studio-voice peek card — the small companion to the wide
@@ -46,19 +48,25 @@ export function NewsletterPeek() {
       // localStorage might be disabled; treat as fresh.
     }
 
-    // Trigger when the reader has scrolled past 60 % of the total
-    // document height (and ≥ 600 px so very short pages don't fire
-    // immediately). Document height is measured live each tick because
-    // lazy-loaded sections / images can extend it as the visitor
-    // scrolls.
+    // Trigger when the reader has consumed 60 % of the scrollable
+    // distance — i.e. they've actually read 60 % of the way through,
+    // independent of how tall the page is. The earlier "scrolled
+    // bottom past 60 % of doc height" measure was unfair to short
+    // Dispatches: a 1200-px Notes piece hit 60 % at scrollY ≈ 0 and
+    // got swallowed by the MIN_SCROLL_PX floor — so the peek silently
+    // never fired on short posts.
+    //
+    // Re-measure docHeight each tick because lazy-loaded sections +
+    // images can extend it as the visitor scrolls.
     const onScroll = () => {
-      const scrolled = window.scrollY + window.innerHeight
       const docHeight = Math.max(
         document.documentElement.scrollHeight,
         document.body.scrollHeight,
       )
-      const ratio = docHeight > 0 ? scrolled / docHeight : 0
-      if (ratio >= SCROLL_THRESHOLD && window.scrollY >= MIN_SCROLL_PX) {
+      const scrollable = docHeight - window.innerHeight
+      if (scrollable < MIN_SCROLLABLE_PX) return
+      const progress = window.scrollY / scrollable
+      if (progress >= SCROLL_THRESHOLD) {
         setVisible(true)
         window.removeEventListener("scroll", onScroll)
       }
