@@ -131,12 +131,13 @@ export function TarryPeekABoo({
 
   if (!visible) return null
 
-  // When tucked: ~55 % of the avatar pokes out from the edge.
+  // When tucked: ~70 % of the avatar pokes out from the edge (Tarry's
+  // face fully visible; only the back of the head behind the edge).
   // When expanded: the whole avatar + speech bubble slide fully in.
   const isRight = side === "right"
   const tuckedTransform = isRight
-    ? "translateX(45%)"
-    : "translateX(-45%)"
+    ? "translateX(30%)"
+    : "translateX(-30%)"
   const expandedTransform = "translateX(0)"
   const transform = expanded ? expandedTransform : tuckedTransform
 
@@ -221,11 +222,16 @@ export function TarryPeekABoo({
         </button>
 
         {/* The speech-bubble panel — only mounted/visible when expanded
-            so it doesn't capture pointer events while tucked. */}
+            so it doesn't capture pointer events while tucked.
+            Width is the smaller of 320 px and (viewport − avatar − gap
+            − safety-margin) so the bubble never extends past the
+            opposite viewport edge on mobile. */}
         {expanded ? (
           <div
-            className="relative w-[320px] rounded-2xl border border-navy-200/80 bg-white p-4 shadow-[0_18px_44px_-22px_rgba(15,23,42,0.4),0_2px_4px_rgba(15,23,42,0.06)]"
+            className="relative rounded-2xl border border-navy-200/80 bg-white p-4 shadow-[0_18px_44px_-22px_rgba(15,23,42,0.4),0_2px_4px_rgba(15,23,42,0.06)]"
             style={{
+              // 112 (avatar) + 12 (gap) + 16 (edge margin) = 140 px
+              width: "min(320px, calc(100vw - 140px))",
               animation:
                 "syn-mascot-rise 320ms cubic-bezier(0.22,1,0.36,1) both",
             }}
