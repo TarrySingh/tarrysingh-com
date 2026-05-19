@@ -105,6 +105,64 @@ function isBylineLine(line: string): boolean {
 }
 
 /**
+ * Read a YAML frontmatter block from the head of the file, if present.
+ *
+ * Recognised shape:
+ *
+ *   ---
+ *   title: "Some title"        ← only the `title` key is required;
+ *   date:  2026-05-19           others are tolerated + ignored
+ *   ...
+ *   ---
+ *   …body starts here…
+ *
+ * We don't pull a full YAML parser in for one field — the daily-article
+ * frontmatter is always a flat key:value list. `title:` may be wrapped
+ * in single or double quotes or bare; whitespace tolerated.
+ *
+ * Returns null if no leading `---` block exists or the block carries no
+ * `title:` field. In that case the caller falls back to H1 scanning.
+ */
+function extractFrontmatter(
+  lines: readonly string[],
+): { title: string; bodyStartIndex: number } | null {
+  // Find the first non-blank line. Frontmatter must start at the top.
+  let i = 0
+  while (i < lines.length && lines[i].trim() === "") i++
+  if (i >= lines.length || lines[i].trim() !== "---") return null
+  const openIdx = i
+  // Scan forward for the closing `---`.
+  let closeIdx = -1
+  for (let j = openIdx + 1; j < lines.length; j++) {
+    if (lines[j].trim() === "---") {
+      closeIdx = j
+      break
+    }
+  }
+  if (closeIdx === -1) return null
+
+  let title = ""
+  for (let j = openIdx + 1; j < closeIdx; j++) {
+    const m = lines[j].match(/^\s*title\s*:\s*(.+?)\s*$/i)
+    if (m) {
+      let raw = m[1].trim()
+      // Strip surrounding quotes.
+      if (
+        (raw.startsWith('"') && raw.endsWith('"')) ||
+        (raw.startsWith("'") && raw.endsWith("'"))
+      ) {
+        raw = raw.slice(1, -1)
+      }
+      title = raw.trim()
+      break
+    }
+  }
+  if (!title) return null
+
+  return { title, bodyStartIndex: closeIdx + 1 }
+}
+
+/**
  * Collapse 3+ consecutive blank lines to 2; trim ends; remove leading
  * blank lines.
  */
@@ -136,24 +194,44 @@ export function parseDailyArticle(
     return { ok: false, error: "invalid_slug" }
   }
 
-  // Split into lines, find the first H1 (canonical title).
+  // Two supported source-file formats:
+  //
+  //   Format A (original): `# Title` H1 on a line, optional `*By …*`
+  //                        byline, then body.
+  //   Format B (new):      YAML frontmatter (`---` … `---`) carrying
+  //                        `title: "…"` (plus optional date / domain /
+  //                        sources), then body. Claude Cowork started
+  //                        emitting this on 2026-05-19.
+  //
+  // We try B first (cheap regex), and only fall back to scanning for
+  // an H1 if no frontmatter block is present at the very top.
   const lines = input.content.replace(/\r\n/g, "\n").split("\n")
-  let h1Index = -1
+  let bodyStartIndex = 0
   let title = ""
-  for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(/^#\s+(.+?)\s*$/)
-    if (m) {
-      h1Index = i
-      title = m[1].trim()
-      break
+
+  const fm = extractFrontmatter(lines)
+  if (fm) {
+    title = fm.title
+    bodyStartIndex = fm.bodyStartIndex
+  } else {
+    // Format A — scan for the first `# Title` line.
+    let h1Index = -1
+    for (let i = 0; i < lines.length; i++) {
+      const m = lines[i].match(/^#\s+(.+?)\s*$/)
+      if (m) {
+        h1Index = i
+        title = m[1].trim()
+        break
+      }
     }
-  }
-  if (h1Index === -1 || !title) {
-    return { ok: false, error: "no_h1_title" }
+    if (h1Index === -1 || !title) {
+      return { ok: false, error: "no_h1_title" }
+    }
+    bodyStartIndex = h1Index + 1
   }
 
-  // Body = everything AFTER the H1 line, with byline removed.
-  const tail = lines.slice(h1Index + 1)
+  // Body = everything AFTER the title source, with byline removed.
+  const tail = lines.slice(bodyStartIndex)
   const tailFiltered: string[] = []
   let droppedByline = false
   for (const line of tail) {
