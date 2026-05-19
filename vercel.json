@@ -8,6 +8,14 @@
     {
       "path": "/api/cron/heartbeat",
       "schedule": "30 10 * * *"
+    },
+    {
+      "path": "/api/cron/daily-brief-prompt",
+      "schedule": "0 21 * * *"
+    },
+    {
+      "path": "/api/cron/daily-brief-prompt",
+      "schedule": "0 22 * * *"
     }
   ]
 }
