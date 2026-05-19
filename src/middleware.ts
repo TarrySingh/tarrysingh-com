@@ -30,6 +30,14 @@ const STUDIO_API_HMAC_PATHS = [
   // Silent-failure alert posted by the LaunchAgent watcher after N
   // consecutive ingest failures. Same HMAC auth as /api/studio/ingest.
   "/api/studio/alert",
+  // Daily-brief loop — all three carry their own signed-token or
+  // bearer auth (not Basic-Auth), and the email flow opens them in a
+  // fresh browser session that won't have Basic-Auth cached.
+  "/api/studio/brief/submit",
+  "/api/studio/brief/decline",
+  "/api/studio/brief/today",
+  // The Yes-button form page itself.
+  "/studio/brief",
 ]
 
 function unauthorizedResponse(realm: string): NextResponse {
