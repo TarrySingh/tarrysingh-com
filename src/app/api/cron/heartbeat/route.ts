@@ -38,6 +38,41 @@ export const maxDuration = 60
 const DEFAULT_TO = "tarry.singh@deepkapha.com"
 const DEFAULT_FROM = "Studio · Dispatches <studio@tarrysingh.com>"
 
+/**
+ * External watchdog ping (healthchecks.io / cronitor / equivalent).
+ *
+ * Closes the last silent-failure gap: if Vercel cron itself stops
+ * firing — outage, project paused, schedule mis-parse — neither the
+ * watcher alert nor the heartbeat email runs, and you'd never know.
+ * A third-party uptime monitor expecting a ping every 24 h sends its
+ * own alert when no ping arrives in the grace window.
+ *
+ * Set HEARTBEAT_PING_URL to the unique check URL from your provider.
+ * We append `/fail` when the heartbeat detected a silent failure so
+ * the watchdog distinguishes "ran but found nothing" from "ran clean".
+ * Fire-and-forget: the cron does not block on this ping; a watchdog
+ * outage shouldn't itself break the heartbeat.
+ */
+async function pingWatchdog(state: "ok" | "fail"): Promise<void> {
+  const base = process.env.HEARTBEAT_PING_URL
+  if (!base) return
+  const url = state === "fail" ? `${base.replace(/\/$/, "")}/fail` : base
+  try {
+    await fetch(url, {
+      method: "GET",
+      signal: AbortSignal.timeout(8000),
+    })
+  } catch (err) {
+    console.error(
+      JSON.stringify({
+        tag: "studio.heartbeat.watchdog_ping_failed",
+        state,
+        error: err instanceof Error ? err.message : String(err),
+      }),
+    )
+  }
+}
+
 function isAuthorized(req: NextRequest): boolean {
   const secret = process.env.CRON_SECRET
   if (!secret) return false
@@ -238,6 +273,7 @@ async function handleTick(req: NextRequest) {
         latestCommit: commits.commits[0]?.sha,
       }),
     )
+    await pingWatchdog("ok")
     return NextResponse.json({
       ok: true,
       green: true,
@@ -273,6 +309,10 @@ async function handleTick(req: NextRequest) {
     draftError: drafts.error,
     commitError: commits.error,
   })
+  // Tell the watchdog the heartbeat detected a problem so the
+  // external monitor logs a fail event (in addition to receiving its
+  // expected daily ping). Most providers count this as a "down".
+  await pingWatchdog("fail")
   return NextResponse.json({
     ok: alert.ok,
     green: false,
