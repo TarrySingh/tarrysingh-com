@@ -48,6 +48,14 @@ const DEFAULT_INTERVAL = 60
 // skipped at the scan stage so it never gets a draft + email.
 const DATED_ARTICLE_RE = /^\d{4}-\d{2}-\d{2}_[a-z0-9][a-z0-9-]*\.mdx?$/i
 
+// Silent-failure guard. After N consecutive non-2xx responses on the
+// same file, POST a one-shot alert email and back that file off to
+// `BACKOFF_MS` retries instead of the default 60 s tick. Previous
+// behaviour was retry-forever-every-minute which is exactly how the
+// 2026-05-19 YAML-frontmatter regression went unnoticed for 6 hours.
+const FAILURE_THRESHOLD = 3
+const BACKOFF_MS = 15 * 60 * 1000 // 15 minutes once alerted
+
 function loadEnvFile() {
   const path = process.env.STUDIO_WATCH_ENV_FILE
   if (!path) return
@@ -72,9 +80,26 @@ function readState(path) {
     return {
       lastMtimeMs: typeof data.lastMtimeMs === "number" ? data.lastMtimeMs : 0,
       seenFiles: Array.isArray(data.seenFiles) ? new Set(data.seenFiles) : new Set(),
+      failureCounts:
+        typeof data.failureCounts === "object" && data.failureCounts !== null
+          ? { ...data.failureCounts }
+          : {},
+      nextRetryAt:
+        typeof data.nextRetryAt === "object" && data.nextRetryAt !== null
+          ? { ...data.nextRetryAt }
+          : {},
+      alertedFiles: Array.isArray(data.alertedFiles)
+        ? new Set(data.alertedFiles)
+        : new Set(),
     }
   } catch {
-    return { lastMtimeMs: 0, seenFiles: new Set() }
+    return {
+      lastMtimeMs: 0,
+      seenFiles: new Set(),
+      failureCounts: {},
+      nextRetryAt: {},
+      alertedFiles: new Set(),
+    }
   }
 }
 
@@ -85,6 +110,9 @@ async function writeState(path, state) {
       {
         lastMtimeMs: state.lastMtimeMs,
         seenFiles: Array.from(state.seenFiles),
+        failureCounts: state.failureCounts ?? {},
+        nextRetryAt: state.nextRetryAt ?? {},
+        alertedFiles: Array.from(state.alertedFiles ?? []),
         savedAt: new Date().toISOString(),
       },
       null,
@@ -137,6 +165,33 @@ async function postIngest({ url, secret, filename, content }) {
   return { status: res.status, json }
 }
 
+/**
+ * POST the silent-failure alert endpoint with the same HMAC scheme
+ * as /api/studio/ingest. Returns true on 2xx, false otherwise — caller
+ * decides what to do.
+ */
+async function postAlert({ ingestUrl, secret, payload }) {
+  // Derive the alert URL by string-substitution rather than a separate
+  // env var: STUDIO_INGEST_URL is the only base the user holds.
+  const alertUrl = ingestUrl.replace(/\/ingest(\/)?$/, "/alert$1")
+  if (alertUrl === ingestUrl) return false
+  const body = JSON.stringify({ ...payload, timestamp: Date.now() })
+  const signature = createHmac("sha256", secret).update(body, "utf8").digest("hex")
+  try {
+    const res = await fetch(alertUrl, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-ingest-signature": signature,
+      },
+      body,
+    })
+    return res.status >= 200 && res.status < 300
+  } catch {
+    return false
+  }
+}
+
 function log(level, msg, extra) {
   const line = JSON.stringify({
     ts: new Date().toISOString(),
@@ -159,11 +214,18 @@ async function tick({ url, secret, watchDir, statePath }) {
   }
   const state = readState(statePath)
   const files = await listMarkdownFiles(watchDir)
+  const now = Date.now()
   let newHighWater = state.lastMtimeMs
-  let processedAny = false
+  let stateDirty = false
   for (const f of files) {
     if (f.mtimeMs <= state.lastMtimeMs) continue
     if (state.seenFiles.has(f.name)) continue
+    // Silent-failure guard — once a file has triggered an alert, it
+    // moves to a 15-min backoff. Until that window passes, skip silently
+    // so we don't hammer the endpoint and don't spam log lines.
+    const retryAt = state.nextRetryAt[f.name]
+    if (typeof retryAt === "number" && retryAt > now) continue
+
     log("info", "ingest_attempt", { filename: f.name, mtimeMs: f.mtimeMs })
     let content
     try {
@@ -172,43 +234,69 @@ async function tick({ url, secret, watchDir, statePath }) {
       log("error", "read_failed", { filename: f.name, error: String(err) })
       continue
     }
+
+    let res
     try {
-      const res = await postIngest({ url, secret, filename: f.name, content })
-      if (res.status >= 200 && res.status < 300) {
-        log("info", "ingest_ok", {
-          filename: f.name,
-          status: res.status,
-          slug: res.json.slug,
-          emailId: res.json.emailId,
-        })
-        state.seenFiles.add(f.name)
-        if (f.mtimeMs > newHighWater) newHighWater = f.mtimeMs
-        processedAny = true
-      } else if (res.status === 409) {
-        log("info", "ingest_already_exists", {
-          filename: f.name,
-          slug: res.json.slug,
-        })
-        // Treat as success for state-tracking purposes.
-        state.seenFiles.add(f.name)
-        if (f.mtimeMs > newHighWater) newHighWater = f.mtimeMs
-        processedAny = true
-      } else {
-        log("error", "ingest_failed", {
-          filename: f.name,
-          status: res.status,
-          body: res.json,
-        })
-        // Don't mark as seen — try again next tick.
-      }
+      res = await postIngest({ url, secret, filename: f.name, content })
     } catch (err) {
       log("error", "ingest_exception", {
         filename: f.name,
         error: err instanceof Error ? err.message : String(err),
       })
+      continue
+    }
+
+    if ((res.status >= 200 && res.status < 300) || res.status === 409) {
+      log("info", res.status === 409 ? "ingest_already_exists" : "ingest_ok", {
+        filename: f.name,
+        status: res.status,
+        slug: res.json?.slug,
+        emailId: res.json?.emailId,
+      })
+      state.seenFiles.add(f.name)
+      // Clear failure tracking on success.
+      if (state.failureCounts[f.name]) delete state.failureCounts[f.name]
+      if (state.nextRetryAt[f.name]) delete state.nextRetryAt[f.name]
+      if (state.alertedFiles.has(f.name)) state.alertedFiles.delete(f.name)
+      if (f.mtimeMs > newHighWater) newHighWater = f.mtimeMs
+      stateDirty = true
+      continue
+    }
+
+    // Non-2xx, non-409 → ingest failure.
+    const count = (state.failureCounts[f.name] ?? 0) + 1
+    state.failureCounts[f.name] = count
+    log("error", "ingest_failed", {
+      filename: f.name,
+      status: res.status,
+      attempt: count,
+      body: res.json,
+    })
+    stateDirty = true
+
+    if (count >= FAILURE_THRESHOLD && !state.alertedFiles.has(f.name)) {
+      // One-shot alert for this failure streak — back off so we don't
+      // keep hammering the endpoint.
+      const alerted = await postAlert({
+        ingestUrl: url,
+        secret,
+        payload: {
+          filename: f.name,
+          error: res.json?.error ?? "unknown",
+          status: res.status,
+          attemptCount: count,
+          lastBody: JSON.stringify(res.json ?? {}).slice(0, 280),
+        },
+      })
+      log(alerted ? "info" : "error", alerted ? "alert_sent" : "alert_send_failed", {
+        filename: f.name,
+        attempt: count,
+      })
+      state.alertedFiles.add(f.name)
+      state.nextRetryAt[f.name] = now + BACKOFF_MS
     }
   }
-  if (processedAny) {
+  if (stateDirty) {
     state.lastMtimeMs = newHighWater
     await writeState(statePath, state).catch((err) =>
       log("error", "state_write_failed", { error: String(err) }),
