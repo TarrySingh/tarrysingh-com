@@ -3,6 +3,7 @@ import { sendBriefPromptEmail } from "@/lib/studio/email"
 import { makeBriefToken } from "@/lib/studio/brief-token"
 import {
   amsterdamDateTomorrow,
+  getBrief,
   upsertPendingBrief,
 } from "@/lib/studio/daily-brief"
 
@@ -79,6 +80,29 @@ async function handleTick(req: NextRequest) {
 
   // We're sending the evening prompt for TOMORROW's Dispatch.
   const forDate = amsterdamDateTomorrow()
+
+  // If a row already exists for that date and Tarry has ALREADY
+  // decided (yes/no) — usually because the route was force-fired
+  // earlier in the day — skip the email. A second prompt for the
+  // same date would just create the chance of a No click overwriting
+  // a Yes decision.
+  const existing = await getBrief(forDate)
+  if (existing && existing.decision !== "pending") {
+    console.log(
+      JSON.stringify({
+        tag: "studio.brief_cron.already_decided",
+        forDate,
+        decision: existing.decision,
+      }),
+    )
+    return NextResponse.json({
+      ok: true,
+      skipped: true,
+      reason: "already_decided",
+      forDate,
+      decision: existing.decision,
+    })
+  }
 
   try {
     await upsertPendingBrief(forDate)
