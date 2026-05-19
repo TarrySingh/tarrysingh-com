@@ -27,6 +27,9 @@ const STUDIO_API_PREFIX = "/api/studio"
 const STUDIO_API_HMAC_PATHS = [
   "/api/studio/ingest",
   "/api/studio/approve",
+  // Silent-failure alert posted by the LaunchAgent watcher after N
+  // consecutive ingest failures. Same HMAC auth as /api/studio/ingest.
+  "/api/studio/alert",
 ]
 
 function unauthorizedResponse(realm: string): NextResponse {
