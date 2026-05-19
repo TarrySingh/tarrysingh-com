@@ -199,6 +199,164 @@ function renderText(input: SendApprovalEmailInput): string {
   ].join("\n")
 }
 
+// ───────────────────────── Brief-prompt email ─────────────────────────
+
+export interface SendBriefPromptInput {
+  /** Amsterdam-local target date (YYYY-MM-DD) the brief is for. */
+  forDate: string
+  /** Form URL: …/studio/brief/<date>?token=… */
+  yesUrl: string
+  /** Decline URL: …/api/studio/brief/decline?token=… */
+  noUrl: string
+  /** Override recipient. Defaults to STUDIO_APPROVAL_EMAIL. */
+  to?: string
+}
+
+function renderBriefPromptHtml(input: SendBriefPromptInput): string {
+  const pretty = new Date(`${input.forDate}T00:00:00Z`).toLocaleDateString(
+    "en-GB",
+    {
+      timeZone: "Europe/Amsterdam",
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+    },
+  )
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Anything to shape tomorrow's Dispatch?</title>
+    <style>
+      body { margin: 0; padding: 0; background: #fbf7ec; }
+      .wrap { max-width: 560px; margin: 0 auto; padding: 32px 24px 48px; }
+      .kicker {
+        font-family: 'IBM Plex Mono', ui-monospace, monospace;
+        font-size: 10.5px; letter-spacing: 0.32em; text-transform: uppercase;
+        color: #b45309; font-weight: 600;
+      }
+      .rule { border: 0; height: 1px; background: rgba(180,134,11,0.22); margin: 16px 0 24px; }
+      h1 {
+        font-family: Gloock, Georgia, serif; font-weight: 400;
+        font-size: 28px; line-height: 1.18; color: #0d1b3d; margin: 0 0 12px;
+      }
+      .meta {
+        font-family: 'IBM Plex Mono', ui-monospace, monospace;
+        font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+        color: rgba(13,27,61,0.55); margin: 0 0 22px;
+      }
+      .body {
+        font-family: 'IBM Plex Serif', Georgia, serif;
+        font-size: 16px; line-height: 1.6; color: #1e2a4a; margin: 0 0 24px;
+      }
+      .cta-row { margin: 24px 0 28px; }
+      .cta {
+        display: inline-block; padding: 11px 20px; border-radius: 999px;
+        font-family: 'IBM Plex Mono', ui-monospace, monospace;
+        font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+        text-decoration: none; font-weight: 600; margin-right: 10px;
+      }
+      .cta-yes  { background: #0d1b3d; color: #fff !important; border: 1px solid #b45309; }
+      .cta-no   { background: #fff;    color: #0d1b3d !important; border: 1px solid rgba(13,27,61,0.18); }
+      .footer { margin-top: 28px; padding-top: 18px; border-top: 1px solid rgba(180,134,11,0.18);
+        font-family: 'IBM Plex Serif', Georgia, serif; font-style: italic;
+        font-size: 13px; color: rgba(13,27,61,0.55); line-height: 1.55; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="kicker">Studio · Tomorrow's Dispatch</div>
+      <hr class="rule" />
+      <h1>Anything you want me to fold into ${escapeHtml(pretty)}'s piece?</h1>
+      <p class="meta">For ${escapeHtml(input.forDate)} · written ~09:00 Amsterdam</p>
+      <p class="body">
+        News, links, a paper, a memo from the day &mdash; anything you'd like
+        the morning's article to take seriously. Click <strong>Yes</strong>
+        and you'll get a small form. Click <strong>No</strong> and the
+        rotation runs untouched.
+      </p>
+      <div class="cta-row">
+        <a class="cta cta-yes" href="${escapeHtml(input.yesUrl)}">Yes &middot; add a brief</a>
+        <a class="cta cta-no" href="${escapeHtml(input.noUrl)}">No &middot; use the default</a>
+      </div>
+      <p class="footer">
+        Link valid for 30 hours. If you do nothing, the morning job
+        runs as if you said no.
+      </p>
+    </div>
+  </body>
+</html>`
+}
+
+function renderBriefPromptText(input: SendBriefPromptInput): string {
+  return [
+    "Studio · Tomorrow's Dispatch",
+    "—",
+    "",
+    `Anything to fold into the morning piece for ${input.forDate}?`,
+    "",
+    "Yes — add a brief:",
+    input.yesUrl,
+    "",
+    "No — use the default rotation:",
+    input.noUrl,
+    "",
+    "Link valid for 30 hours. Silence = no.",
+  ].join("\n")
+}
+
+/** Sends the evening brief-prompt email. Same fail-closed contract as
+ *  sendApprovalEmail — 503-shape when Resend is not configured. */
+export async function sendBriefPromptEmail(
+  input: SendBriefPromptInput,
+): Promise<SendApprovalEmailResult> {
+  const client = getClient()
+  if (!client) {
+    return {
+      ok: false,
+      error: "email_unconfigured",
+      debug: "RESEND_API_KEY not set on the Vercel project.",
+    }
+  }
+  const to = input.to || process.env.STUDIO_APPROVAL_EMAIL || DEFAULT_TO
+  const from = process.env.STUDIO_APPROVAL_FROM || DEFAULT_FROM
+  const subject = `Tomorrow's Dispatch · anything to fold in? (${input.forDate})`
+  try {
+    const res = await client.emails.send({
+      from,
+      to: [to],
+      subject,
+      html: renderBriefPromptHtml(input),
+      text: renderBriefPromptText(input),
+      headers: {
+        "X-Entity-Ref-ID": `studio-brief-${input.forDate}-${Date.now()}`,
+      },
+    })
+    if (res.error || !res.data?.id) {
+      console.error(
+        JSON.stringify({
+          tag: "studio.brief_email.send_error",
+          forDate: input.forDate,
+          error: res.error,
+        }),
+      )
+      return { ok: false, error: "email_send_failed" }
+    }
+    return { ok: true, emailId: res.data.id }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    console.error(
+      JSON.stringify({
+        tag: "studio.brief_email.send_exception",
+        forDate: input.forDate,
+        error: message,
+      }),
+    )
+    return { ok: false, error: "email_send_failed" }
+  }
+}
+
 /**
  * Send the approval email. Fail-closed when RESEND_API_KEY is unset
  * (returns 503-shape; route handler propagates as 503 + a note about
