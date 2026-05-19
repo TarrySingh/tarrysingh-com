@@ -205,10 +205,16 @@ ${args.commitError ? `<p><strong>GitHub note:</strong> <code>${esc(args.commitEr
       },
     })
     if (res.error || !res.data?.id) {
-      return {
-        ok: false,
-        error: typeof res.error === "string" ? res.error : JSON.stringify(res.error),
-      }
+      // Resend's `res.error` is an ErrorResponse-or-null union; just
+      // serialise whatever it is.
+      const errAny: unknown = res.error
+      const errMsg =
+        typeof errAny === "string"
+          ? errAny
+          : errAny
+            ? JSON.stringify(errAny)
+            : "no_email_id_returned"
+      return { ok: false, error: errMsg }
     }
     return { ok: true, emailId: res.data.id }
   } catch (err) {
