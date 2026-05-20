@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from "next/server"
 import { verifyApprovalToken } from "@/lib/studio/approval-token"
 import { getDraft, deleteDraft } from "@/lib/studio/drafts-store"
 import { publishDispatch } from "@/lib/studio/publish"
-import { deleteFilesBySlugInFolder } from "@/lib/drive/client"
+import {
+  deleteFileByNameInFolder,
+  deleteFilesBySlugInFolder,
+} from "@/lib/drive/client"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -207,6 +210,32 @@ export async function GET(req: NextRequest) {
     console.warn(
       JSON.stringify({
         tag: "studio.approve.drive_cleanup_failed",
+        slug,
+        error: err instanceof Error ? err.message : String(err),
+      }),
+    )
+  }
+
+  // Also trash the daily-brief mirror file if one was filed for the
+  // article's date. Cowork's MCP has no delete/move capability so it
+  // can't clean up after itself; do it here instead. Best-effort.
+  try {
+    const briefFilename = `_brief-${draft.frontmatter.date}.md`
+    const r = await deleteFileByNameInFolder(briefFilename)
+    console.log(
+      JSON.stringify({
+        tag: "studio.approve.drive_brief_cleanup",
+        slug,
+        briefFilename,
+        ok: r.ok,
+        deleted: r.ok ? r.deleted : undefined,
+        error: r.ok ? undefined : r.error,
+      }),
+    )
+  } catch (err) {
+    console.warn(
+      JSON.stringify({
+        tag: "studio.approve.drive_brief_cleanup_failed",
         slug,
         error: err instanceof Error ? err.message : String(err),
       }),

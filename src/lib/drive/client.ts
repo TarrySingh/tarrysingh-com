@@ -476,11 +476,21 @@ export async function deleteFilesBySlugInFolder(
   const names: string[] = []
   let deleted = 0
   for (const f of matches) {
+    // Use trash (PATCH trashed=true), not permanent delete (DELETE),
+    // because the SA is only Editor on the folder — Editors can trash
+    // owner-other files but cannot permanent-delete them. Trash is
+    // recoverable for 30 days; permanent-delete only fires when the
+    // owner empties the trash. From the cron's POV the file is gone
+    // either way (`trashed = false` query excludes it).
     const r = await fetch(`${DRIVE_API}/files/${encodeURIComponent(f.id)}`, {
-      method: "DELETE",
-      headers: { authorization: `Bearer ${tokenRes.token}` },
+      method: "PATCH",
+      headers: {
+        authorization: `Bearer ${tokenRes.token}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ trashed: true }),
     })
-    if (r.ok || r.status === 204) {
+    if (r.ok) {
       deleted++
       names.push(f.name)
     }
@@ -531,11 +541,17 @@ export async function deleteFileByNameInFolder(
   const ids = (json.files ?? []).map((f) => f.id)
   let deleted = 0
   for (const id of ids) {
+    // Trash, not permanent delete — SA is Editor on the folder, not
+    // owner, so DELETE fails on owner-other files. Trash works.
     const r = await fetch(`${DRIVE_API}/files/${encodeURIComponent(id)}`, {
-      method: "DELETE",
-      headers: { authorization: `Bearer ${tokenRes.token}` },
+      method: "PATCH",
+      headers: {
+        authorization: `Bearer ${tokenRes.token}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ trashed: true }),
     })
-    if (r.ok || r.status === 204) deleted++
+    if (r.ok) deleted++
   }
   return { ok: true, deleted }
 }
