@@ -52,6 +52,14 @@ export const maxDuration = 300
 
 const DATED_ARTICLE_RE = /^\d{4}-\d{2}-\d{2}_[a-z0-9][a-z0-9-]*\.mdx?$/i
 
+// Defence in depth — if the studio_drive_ingest_log table somehow gets
+// wiped or fails to write, the high-water filter returns null and the
+// cron lists every file in the folder. Without this floor, every old
+// already-published article gets re-ingested on the first tick. The
+// floor catches that: files older than this window are silently
+// skipped regardless of what the log says.
+const HARD_AGE_FLOOR_MS = 48 * 60 * 60 * 1000 // 48 hours
+
 interface CronResultLine {
   file_id: string
   filename: string
@@ -133,6 +141,27 @@ async function processOne(
   file: DriveFile,
   origin: string,
 ): Promise<CronResultLine> {
+  // 0. Hard age floor — never ingest files older than HARD_AGE_FLOOR_MS,
+  //    regardless of high-water state. Protects against catastrophic
+  //    log-wipe scenarios that would otherwise replay every old file.
+  const fileAgeMs = Date.now() - Date.parse(file.modifiedTime)
+  if (Number.isFinite(fileAgeMs) && fileAgeMs > HARD_AGE_FLOOR_MS) {
+    await recordDriveIngest({
+      fileId: file.id,
+      filename: file.name,
+      modifiedTimeIso: file.modifiedTime,
+      status: "skipped",
+      failureReason: "older_than_age_floor",
+    }).catch(() => {})
+    return {
+      file_id: file.id,
+      filename: file.name,
+      modifiedTime: file.modifiedTime,
+      action: "skipped_filter",
+      reason: "older_than_age_floor",
+    }
+  }
+
   // 1. Filter — skip non-dated filenames silently (Cowork's
   //    prompt file, scratch READMEs, etc).
   if (!DATED_ARTICLE_RE.test(file.name)) {
