@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { verifyApprovalToken } from "@/lib/studio/approval-token"
 import { getDraft, deleteDraft } from "@/lib/studio/drafts-store"
 import { publishDispatch } from "@/lib/studio/publish"
+import { deleteFilesBySlugInFolder } from "@/lib/drive/client"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -177,6 +178,35 @@ export async function GET(req: NextRequest) {
     console.warn(
       JSON.stringify({
         tag: "studio.approve.draft_delete_failed",
+        slug,
+        error: err instanceof Error ? err.message : String(err),
+      }),
+    )
+  }
+
+  // Also delete the Drive source file so the Drive cron / watcher can't
+  // re-ingest it later. Net invariant: a published article never sits in
+  // the tarry-daily-blogs folder. Slug-based search (any `*_<slug>.md`)
+  // because the filename's date prefix may not match draft.frontmatter.date.
+  // The local Mac copy gets garbage-collected by Drive desktop sync
+  // mirroring the delete within ~60 s. Non-fatal — the post is live
+  // regardless.
+  try {
+    const r = await deleteFilesBySlugInFolder(slug)
+    console.log(
+      JSON.stringify({
+        tag: "studio.approve.drive_cleanup",
+        slug,
+        ok: r.ok,
+        deleted: r.ok ? r.deleted : undefined,
+        names: r.ok ? r.names : undefined,
+        error: r.ok ? undefined : r.error,
+      }),
+    )
+  } catch (err) {
+    console.warn(
+      JSON.stringify({
+        tag: "studio.approve.drive_cleanup_failed",
         slug,
         error: err instanceof Error ? err.message : String(err),
       }),

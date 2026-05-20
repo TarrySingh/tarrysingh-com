@@ -426,7 +426,70 @@ export async function upsertTextFileInFolder(args: {
 }
 
 /**
- * Delete any file in the folder matching `name`. No-op if absent.
+ * Delete every file in the folder whose name ends `_<slug>.md` (any
+ * date prefix). The publish flow calls this after the .mdx commits
+ * to main, so a published article never sits in the source folder
+ * waiting for a future cron to re-ingest it.
+ */
+export async function deleteFilesBySlugInFolder(
+  slug: string,
+): Promise<{ ok: true; deleted: number; names: string[] } | DriveError> {
+  const cfg = readConfig()
+  if ("error" in cfg) return cfg
+  const tokenRes = await getAccessToken(cfg)
+  if ("error" in tokenRes) return tokenRes
+
+  const safeSlug = slug.replace(/'/g, "\\'")
+  const lookupParams = new URLSearchParams({
+    q: `'${cfg.folderId}' in parents and name contains '_${safeSlug}.md' and trashed = false`,
+    fields: "files(id,name)",
+    pageSize: "10",
+  })
+  let lookupRes: Response
+  try {
+    lookupRes = await fetch(`${DRIVE_API}/files?${lookupParams}`, {
+      headers: { authorization: `Bearer ${tokenRes.token}` },
+    })
+  } catch (err) {
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: 0,
+      debug: err instanceof Error ? err.message : String(err),
+    }
+  }
+  if (!lookupRes.ok) {
+    const text = await lookupRes.text().catch(() => "")
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: lookupRes.status,
+      debug: text.slice(0, 240),
+    }
+  }
+  const json = (await lookupRes.json()) as { files?: { id: string; name: string }[] }
+  // The `name contains '_<slug>.md'` filter can match unintended files
+  // (e.g. a different slug whose name happens to contain ours). Tighten
+  // with a regex check that the name ENDS with `_<slug>.md`.
+  const suffix = `_${slug}.md`
+  const matches = (json.files ?? []).filter((f) => f.name.endsWith(suffix))
+  const names: string[] = []
+  let deleted = 0
+  for (const f of matches) {
+    const r = await fetch(`${DRIVE_API}/files/${encodeURIComponent(f.id)}`, {
+      method: "DELETE",
+      headers: { authorization: `Bearer ${tokenRes.token}` },
+    })
+    if (r.ok || r.status === 204) {
+      deleted++
+      names.push(f.name)
+    }
+  }
+  return { ok: true, deleted, names }
+}
+
+/**
+ * Delete any file in the folder matching `name` exactly. No-op if absent.
  * Used by the decline endpoint to clean up a stale brief file.
  */
 export async function deleteFileByNameInFolder(
