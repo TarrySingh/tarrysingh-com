@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { verifyBriefToken } from "@/lib/studio/brief-token"
 import { setBriefDecision } from "@/lib/studio/daily-brief"
+import { upsertTextFileInFolder } from "@/lib/drive/client"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -66,15 +67,50 @@ export async function POST(req: NextRequest) {
     )
   }
 
+  // Mirror the brief into the Drive folder Cowork already reads every
+  // morning, so its prompt can pick it up via the Drive MCP. Filename
+  // is `_brief-<for_date>.md` — leading underscore exempts it from the
+  // watcher/cron's `^YYYY-MM-DD_` ingest filter.
+  const driveFile = `_brief-${verify.payload.forDate}.md`
+  const driveContent = [
+    "# Tarry's brief for " + verify.payload.forDate,
+    "",
+    `_Filed via /studio/brief on ${new Date().toISOString()}_`,
+    "",
+    "---",
+    "",
+    brief,
+    "",
+  ].join("\n")
+  const drive = await upsertTextFileInFolder({
+    name: driveFile,
+    content: driveContent,
+  })
+  if (!drive.ok) {
+    // The brief IS in Supabase already — Drive mirror failure is
+    // non-fatal; just log loud so the heartbeat / Tarry notices.
+    console.error(
+      JSON.stringify({
+        tag: "studio.brief.drive_mirror_failed",
+        forDate: verify.payload.forDate,
+        error: drive.error,
+        debug: "debug" in drive ? drive.debug : undefined,
+      }),
+    )
+  }
+
   console.log(
     JSON.stringify({
       tag: "studio.brief.submitted",
       forDate: verify.payload.forDate,
       length: brief.length,
+      driveOk: drive.ok,
+      driveFileId: drive.ok ? drive.fileId : undefined,
     }),
   )
   return NextResponse.json({
     ok: true,
     forDate: verify.payload.forDate,
+    driveMirror: drive.ok ? "ok" : "failed",
   })
 }

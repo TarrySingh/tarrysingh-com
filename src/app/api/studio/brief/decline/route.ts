@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { verifyBriefToken } from "@/lib/studio/brief-token"
 import { setBriefDecision } from "@/lib/studio/daily-brief"
+import { deleteFileByNameInFolder } from "@/lib/drive/client"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -39,6 +40,18 @@ const SUCCESS_HTML = (forDate: string) => `<!doctype html>
 
 async function handle(forDate: string) {
   await setBriefDecision(forDate, "no")
+  // Best-effort cleanup of any stale brief file in Drive so Cowork
+  // doesn't pick up yesterday's brief on a no-day. Non-fatal.
+  const r = await deleteFileByNameInFolder(`_brief-${forDate}.md`)
+  if (!r.ok) {
+    console.error(
+      JSON.stringify({
+        tag: "studio.brief.drive_decline_cleanup_failed",
+        forDate,
+        error: r.error,
+      }),
+    )
+  }
 }
 
 export async function GET(req: NextRequest) {

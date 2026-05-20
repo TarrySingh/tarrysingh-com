@@ -26,7 +26,12 @@ import { createSign } from "node:crypto"
 
 const TOKEN_ENDPOINT = "https://oauth2.googleapis.com/token"
 const DRIVE_API = "https://www.googleapis.com/drive/v3"
-const SCOPE = "https://www.googleapis.com/auth/drive.readonly"
+const DRIVE_UPLOAD_API = "https://www.googleapis.com/upload/drive/v3"
+// Full `drive` scope so the SA can write to the shared folder. The
+// folder was created by Tarry and shared with the SA as Editor; the
+// narrower `drive.file` scope wouldn't apply because the folder
+// isn't SA-owned.
+const SCOPE = "https://www.googleapis.com/auth/drive"
 // JWT lifetime per Google's spec is 3600 s max. Cache the access
 // token in-module so successive cron invocations within the same
 // warm Lambda reuse it instead of round-tripping every tick.
@@ -304,4 +309,170 @@ export async function pingDrive(): Promise<
   const list = await listMarkdownFilesInFolder({ pageSize: 5 })
   if (!list.ok) return list
   return { ok: true, folderId: cfg.folderId, visibleFiles: list.files.length }
+}
+
+/**
+ * Upsert a small UTF-8 text file in the configured folder by name.
+ *
+ * Behaviour:
+ *   - If a file with `name` already exists in the folder, its content
+ *     is replaced (PATCH /upload/.../files/{id}).
+ *   - Otherwise a new file is created (POST /upload/.../files).
+ *
+ * Used by the daily-brief loop to transport Tarry's brief into a
+ * place Cowork's Drive MCP can read — Cowork has no direct HTTP fetch,
+ * so the brief endpoint mirrors the brief into the same folder Cowork
+ * already scans every morning.
+ */
+export async function upsertTextFileInFolder(args: {
+  name: string
+  content: string
+  mimeType?: string
+}): Promise<{ ok: true; fileId: string } | DriveError> {
+  const cfg = readConfig()
+  if ("error" in cfg) return cfg
+  const tokenRes = await getAccessToken(cfg)
+  if ("error" in tokenRes) return tokenRes
+
+  const mime = args.mimeType ?? "text/markdown"
+
+  // 1. Look up existing file by name in the folder.
+  const lookupParams = new URLSearchParams({
+    q: `'${cfg.folderId}' in parents and name = '${args.name.replace(/'/g, "\\'")}' and trashed = false`,
+    fields: "files(id,name)",
+    pageSize: "5",
+  })
+  let lookupRes: Response
+  try {
+    lookupRes = await fetch(`${DRIVE_API}/files?${lookupParams}`, {
+      headers: { authorization: `Bearer ${tokenRes.token}` },
+    })
+  } catch (err) {
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: 0,
+      debug: err instanceof Error ? err.message : String(err),
+    }
+  }
+  if (!lookupRes.ok) {
+    const text = await lookupRes.text().catch(() => "")
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: lookupRes.status,
+      debug: text.slice(0, 240),
+    }
+  }
+  const lookupJson = (await lookupRes.json()) as { files?: { id: string }[] }
+  const existing = lookupJson.files?.[0]
+
+  // 2. Multipart payload — Drive's combined metadata + media pattern.
+  const boundary = `boundary_${Math.random().toString(36).slice(2)}`
+  const metadata = existing
+    ? { name: args.name, mimeType: mime }
+    : { name: args.name, parents: [cfg.folderId], mimeType: mime }
+  const body =
+    `--${boundary}\r\n` +
+    `Content-Type: application/json; charset=UTF-8\r\n\r\n` +
+    `${JSON.stringify(metadata)}\r\n` +
+    `--${boundary}\r\n` +
+    `Content-Type: ${mime}\r\n\r\n` +
+    `${args.content}\r\n` +
+    `--${boundary}--`
+
+  const url = existing
+    ? `${DRIVE_UPLOAD_API}/files/${encodeURIComponent(existing.id)}?uploadType=multipart`
+    : `${DRIVE_UPLOAD_API}/files?uploadType=multipart`
+  const method = existing ? "PATCH" : "POST"
+
+  let upRes: Response
+  try {
+    upRes = await fetch(url, {
+      method,
+      headers: {
+        authorization: `Bearer ${tokenRes.token}`,
+        "content-type": `multipart/related; boundary=${boundary}`,
+      },
+      body,
+    })
+  } catch (err) {
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: 0,
+      debug: err instanceof Error ? err.message : String(err),
+    }
+  }
+  if (!upRes.ok) {
+    const text = await upRes.text().catch(() => "")
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: upRes.status,
+      debug: text.slice(0, 240),
+    }
+  }
+  const json = (await upRes.json()) as { id?: string }
+  if (!json.id) {
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: upRes.status,
+      debug: "upload response missing file id",
+    }
+  }
+  return { ok: true, fileId: json.id }
+}
+
+/**
+ * Delete any file in the folder matching `name`. No-op if absent.
+ * Used by the decline endpoint to clean up a stale brief file.
+ */
+export async function deleteFileByNameInFolder(
+  name: string,
+): Promise<{ ok: true; deleted: number } | DriveError> {
+  const cfg = readConfig()
+  if ("error" in cfg) return cfg
+  const tokenRes = await getAccessToken(cfg)
+  if ("error" in tokenRes) return tokenRes
+
+  const lookupParams = new URLSearchParams({
+    q: `'${cfg.folderId}' in parents and name = '${name.replace(/'/g, "\\'")}' and trashed = false`,
+    fields: "files(id)",
+    pageSize: "10",
+  })
+  let lookupRes: Response
+  try {
+    lookupRes = await fetch(`${DRIVE_API}/files?${lookupParams}`, {
+      headers: { authorization: `Bearer ${tokenRes.token}` },
+    })
+  } catch (err) {
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: 0,
+      debug: err instanceof Error ? err.message : String(err),
+    }
+  }
+  if (!lookupRes.ok) {
+    const text = await lookupRes.text().catch(() => "")
+    return {
+      ok: false,
+      error: "drive_request_failed",
+      status: lookupRes.status,
+      debug: text.slice(0, 240),
+    }
+  }
+  const json = (await lookupRes.json()) as { files?: { id: string }[] }
+  const ids = (json.files ?? []).map((f) => f.id)
+  let deleted = 0
+  for (const id of ids) {
+    const r = await fetch(`${DRIVE_API}/files/${encodeURIComponent(id)}`, {
+      method: "DELETE",
+      headers: { authorization: `Bearer ${tokenRes.token}` },
+    })
+    if (r.ok || r.status === 204) deleted++
+  }
+  return { ok: true, deleted }
 }
