@@ -3467,11 +3467,31 @@
     "other_docs": [
       "Agenda PMB + PMC 20 March 2026.docx",
       "PANORAIMA Project Board Meeting (PC's) 11.30-12.30 CET (LC's join at 12.00).docx",
+      "Transcript   ANORAIMA Project Board Meeting (PC's) 11.30-12.30 CET (LC's join at 12.00) (1).docx",
       "WP1 - Project Management Board.pptx"
     ],
     "partners": {
       "BME": {
-        "submitted": false
+        "submitted": true,
+        "file": "BME LC Progress Report 20 March 2026.docx",
+        "activities": [
+          "WP3 T2 András Gézsi participated in Health track towards LE reveal",
+          "WP3 T3 Dorottya and Hédi lead and worked on Media track towards LE list",
+          "WP3 T4 Edit, Tamás, Anikó, Krisztina involved leads and involved in Law & Compliance. Training is being delivered.",
+          "(see WP3 leader report)",
+          "Industry, Business partners;  Academic institutions; Innovators; Investors; EU institutions; Other International Organisation (UN, OECD, etc.); National authorities; Regional authorities; Local authorities; Research communities; Specific us",
+          "Regional; National; International | Social Media; Press release; Media article; Print materials (brochure, leaflet, posters, stickers, banners etc.); Newsletter; Interview; Video; TV/Radio; Event (conference, meeting, workshop, internet deb",
+          "Conferences; Meetings; Education and training events; Clustering activities; Collaboration with EU-funded projects; Other scientific collaboration, Other (namely …) | Industry, Business partners; EU Institutions; Scientists; Education/train",
+          "Regional; National; International | Delivered/ongoing (until …)"
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP1",
+          "WP3",
+          "WP4"
+        ],
+        "excerpt": "WP1: Laci and Mihály’s involvement in mgmt. Mihály involvement in advisory board proposal",
+        "word_count": 1233
       },
       "CeADAR": {
         "submitted": true,
@@ -3766,7 +3786,9 @@
       "Open issues and notes.pptx",
       "Programme Worksprint athens March 2026.xlsx",
       "Summary_WSAthens_March2026.docx",
-      "WS ATHENS UNIWA attendence.xlsx"
+      "WS ATHENS UNIWA attendence.xlsx",
+      "Worksprint Athens transcript part 1 (raw).docx",
+      "Worksprint Athens transcript part 2 (raw).docx"
     ],
     "partners": {
       "BME": {
@@ -3826,11 +3848,31 @@
     "dirname": "2026-04-17 PMC",
     "has_progress_reports": true,
     "other_docs": [
-      "Agenda PMC 17 April 2026.docx"
+      "Agenda PMC 17 April 2026.docx",
+      "Transcript PANORAIMA PMC Meeting Local Coordinators 12.00-13.30 CEST.docx"
     ],
     "partners": {
       "BME": {
-        "submitted": false
+        "submitted": true,
+        "file": "BME LC Progress Report 17 April 2026.docx",
+        "activities": [
+          "WP3 T1 Béla’s team worked in 6 sub-groups, merged the results, delivered in Athens",
+          "WP3 T2 András Gézsi participated in Health track, managing BME invilvement",
+          "WP3 T3 Dorottya and Hédi lead and worked on Media track started working on Lesson Plans",
+          "WP3 T4 Edit, Tamás, Anikó, Krisztina involved leads and involved in Law & Compliance. Training is being delivered.",
+          "(see WP3 leader report)",
+          "Industry, Business partners;  Academic institutions; Innovators; Investors; EU institutions; Other International Organisation (UN, OECD, etc.); National authorities; Regional authorities; Local authorities; Research communities; Specific us",
+          "Regional; National; International | Social Media; Press release; Media article; Print materials (brochure, leaflet, posters, stickers, banners etc.); Newsletter; Interview; Video; TV/Radio; Event (conference, meeting, workshop, internet deb",
+          "Conferences; Meetings; Education and training events; Clustering activities; Collaboration with EU-funded projects; Other scientific collaboration, Other (namely …) | Industry, Business partners; EU Institutions; Scientists; Education/train"
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP1",
+          "WP3",
+          "WP4"
+        ],
+        "excerpt": "WP1: Laci and Mihály’s involvement in mgmt. Mihály involvement in advisory board proposal",
+        "word_count": 1238
       },
       "CeADAR": {
         "submitted": true,
@@ -3979,7 +4021,29 @@
         "word_count": 1622
       },
       "QTICS": {
-        "submitted": false
+        "submitted": true,
+        "file": "QTICS_LC Progress Report_17 April_2026.docx",
+        "activities": [
+          "WP3 tasks, QTICS is involved in:",
+          "Task 3.2. Design in Healthcare & Life Sciences Track",
+          "Task 3.3. Design in Media & Culture Track",
+          "Task 3.4. Design in Law & Compliance Track",
+          "QTICS actively participated in discussions related to WP3 and helped compile the Master Lists of the Tracks in which QTICS is participating.",
+          "Task 3.2. Design in Healthcare & Life Sciences Track:",
+          "QTICS attended the weekly H&LS track meetings regularly. These meetings focused on clarifying the roles of authors, co-authors and reviewers, and model of collaboration. QTICS accepted reviewer tasks for nine learning events. The group also",
+          "Task 3.3. Design in Media & Culture Track:"
+        ],
+        "challenges": [
+          "Training Day 3: Requirements for high-risk AI systems",
+          "Training Day 4: Risk assessment and risk management",
+          "A major ongoing issue is that, although there are many related meetings, they are not necessarily sufficiently effective."
+        ],
+        "wp_focus": [
+          "WP3",
+          "WP6"
+        ],
+        "excerpt": "QTICS actively participated in discussions related to WP3 and helped compile the Master Lists of the Tracks in which QTICS is participating.",
+        "word_count": 2004
       },
       "SU": {
         "submitted": true,
@@ -4131,9 +4195,253 @@
         ],
         "challenges": [
           "Does any of  the partners encounter challenges in delivering (e.g.  participation, contributions to assigned tasks, discussions or meetings, delivering input).  Is clear what the reason is, potential consequences are, and are there ideas on",
+          "Items not completed due to partial attendance — domain lead assignments, individual commitments, and the risks section — were carried forward to Hamburg (11–12 June). The updated plan was circulated for consortium review, with slots request",
           "Nothing planned for this work sprint, Micky to deal with any issues that may pop-up.",
-          "Weekly and bi-weekly meetings are organized within the clusters and the team leads in a WP7 meeting to monitor progress, challenges and need for cross-cluster activities and support.",
-          "WP1 needs to join in on the discussions about the member circles, agreements, risk management etc. for growing the consortium. We will plan and prepare a session in Hamburg."
+          "Weekly and bi-weekly meetings are organized within the clusters and the team leads in a WP7 meeting to monitor progress, challenges and need for cross-cluster activities and support."
+        ],
+        "excerpt": "Overview of the progress of this Work Package towards the objectives of the project"
+      }
+    }
+  },
+  {
+    "id": "2026-05",
+    "label": "May 2026",
+    "title": "PMB + PMC Meeting",
+    "type": "pmc",
+    "date": "2026-05-22",
+    "dirname": "2026-05-22 PMB-PMC",
+    "has_progress_reports": true,
+    "other_docs": [
+      "Agenda PMB + PMC 22 May 2026.docx",
+      "HU LC Progress Report.docx",
+      "WP4 Leader Progress Report.docx"
+    ],
+    "partners": {
+      "BME": {
+        "submitted": false
+      },
+      "CeADAR": {
+        "submitted": true,
+        "file": "CeADAR LC Progress Report.docx",
+        "activities": [
+          "Aditya Grover (CDR) – Health & Life Sciences track, the main task accomplished was transferring the learning event details that we are reviewing from the shared spreadsheet into the wiki, for each LE topic and adding the wiki page link to t",
+          "Aditya Grover – Active in T7.3 in cluster C and contributing to the workshop organized by Ivo regarding market engagement and providing initial feedback on the structure of D7.3 plan.",
+          "Met with Marieke and Micky regarding cluster C work done with respect to the research agenda and gained a better understanding of the activities done by CeADAR in 2025.",
+          "A brief explanation of cluster F and its objectives was also presented and that further discussion will take place in Hamburg",
+          "It is unsure if CeADAR can take leadership of cluster F as it involves decision making at board level and could be beyond the scope of CeADAR’s role in the project.",
+          "The review of the learning outcomes of each LE assigned to us has begun and will gain traction in the coming weeks. CeADAR will review each one assigned to them.",
+          "Aditya Grover – LE reviewer",
+          "Progressing on the continuous market engagement and shaping D7.3 with the relevant partners."
+        ],
+        "challenges": [],
+        "wp_focus": [],
+        "excerpt": "Aditya Grover (CDR) – Health & Life Sciences track, the main task accomplished was transferring the learning event details that we are reviewing from the shared spreadsheet into the wiki, for each LE topic and adding the wiki page link to them back in the spreadsheet to facilitate course development by the authors",
+        "word_count": 1400
+      },
+      "CNR": {
+        "submitted": true,
+        "file": "CNR_LC Progress Report_21_05_2026.docx",
+        "activities": [
+          "● Luigi Barbato contributed to the definition and refinement of the Learning Events (LES), with a specific focus on the “Human-Centered AI” section. He supported the structuring of learning activities and the alignment of content across the",
+          "● Marco Pota contributed to the “Sector-specific profile design: Healthcare & Life Sciences” activities, supporting both the definition of job roles and the structuring of the Learning Events (LES) schedule. In particular, he contributed to",
+          "● Francesco Gargiulo contributed to the definition and alignment of job roles and the Learning Events (LES) schedule, supporting coordination across tracks and ensuring consistency of outputs through active participation in online meetings.",
+          "Minor coordination challenges emerged due to the need to align inputs across multiple partners and tracks. These were addressed through regular meetings, structured follow-ups, and continuous information exchange among participants. No sign",
+          "For Task Cluster E “Brand Identity and Online Presence”, Emilio Greco and Francesco Gargiulo contributed to internal coordination activities and content development. In particular, Emilio Greco supported the update and improvement of websit",
+          "In addition, Francesco Gargiulo and Massimo Esposito contributed to the preparation and facilitation of the workshops within the four-phase market research initiative. This included supporting the definition of objectives and expected outco",
+          "Current activities depend on continued alignment and timely input from WP leaders and partners, particularly regarding job role validation and the consolidation of Learning Events across tracks.",
+          "The team will contribute to the further development and refinement of the horizontal track, focusing on improving the structure and consistency of the Learning Events (LES). Luigi Barbato will actively participate in weekly meetings, provid"
+        ],
+        "challenges": [
+          "No major challenges have been encountered. Activities are progressing as planned, with effective collaboration across partners.",
+          "No major challenges have been identified."
+        ],
+        "wp_focus": [
+          "WP7"
+        ],
+        "excerpt": "● Luigi Barbato contributed to the definition and refinement of the Learning Events (LES), with a specific focus on the “Human-Centered AI” section. He supported the structuring of learning activities and the alignment of content across the horizontal track through active participation in online meetings.",
+        "word_count": 1430
+      },
+      "ENEA": {
+        "submitted": false
+      },
+      "ESI": {
+        "submitted": false
+      },
+      "HAW": {
+        "submitted": true,
+        "file": "LC Progress Report HAW 04-05-2026.docx",
+        "activities": [
+          "Alena Störmer: worked intensively on the shaping of LE proposals in Media & Culture (with Frauke Schade/ Katharina Jeorgakopoulos) and in Horizontal on LEs for HCAI topics. She also supported the work in WP 3.7.",
+          "Susanne Draheim: worked on WP 3.7 and supported the LE shaping in Media & Culture and Healthcare & Lifesciences.",
+          "Kai von Luck:  worked on WP 3.7 and supported the LE shaping in Horizontal. He attended the Athen’s meeting.",
+          "The ongoing institutional cost-cutting and reform process at HAW Hamburg makes it somewhat challenging to implement curriculum reform initiatives such as those required for PANORAIMA. Many decision-makers are heavily involved in these refor",
+          "We are continuing to work on finding alternatives to Erasmus+ funding.",
+          "Regarding WP 3.7 we are continuing to work on obtaining the necessary information from our partners regarding their respective study programmes to assess the extent to which accreditation processes will take place and how these should be su",
+          "Susanne Draheim/ Kai von Luck, supported by Alena Störmer",
+          "Alena Störmer: Progress: Took part in planning and coordination of Hamburg meeting. Wrote lesson plan for assigned horizontal LE, assisted in development of further M&C lesson plans. Reviewed assigned M&C lesson plans. Started development o"
+        ],
+        "challenges": [
+          "Ahmad Khalidi: Progress WP4: Took part in the weekly horizontal, H&L and the ttt (introducing the process of mitigating LEs into the Wiki) meetings. Developed the learning outcomes for multiple LEs in horizontal and H&L, transfer them to th"
+        ],
+        "wp_focus": [
+          "WP3",
+          "WP4"
+        ],
+        "excerpt": "Ahmad Khalidi: worked intensively on the shaping of LE proposals in Healthcare & Lifesciences.",
+        "word_count": 1694
+      },
+      "HU": {
+        "submitted": false
+      },
+      "KPI": {
+        "submitted": false
+      },
+      "NAT": {
+        "submitted": true,
+        "file": "NAT LC Progress Report 21-05-2026.docx",
+        "activities": [
+          "T7. Cluster A – Community Building and Social Media",
+          "Maintained content tracking by keeping an up-to-date registry of planned and completed publication dates, ensuring broad coverage, avoiding duplication, and adjusting social-media reach targets as needed. (Maurice - Nathean)",
+          "Defining setup of RAISE-U vs PANORAIMA & HCAIM LinkedIn accounts (Maurice – Nathean / Micky – HU)",
+          "Set up the RAISE-U LinkedIn account, incl trouble shooting with LinkedIn customer service (Maurice Lynch – Nathean).",
+          "Continuously supported LinkedIn administration and posting, including reviewing content, preparing posts, and ensuring continuity of the posting schedule across contributors. (Maurice – Nathean)",
+          "Set up a schedule for rotating editorship of the internal mailings (Maurice – Nathean)",
+          "It is unsure if Nathean can take leadership of cluster F as it involves decision making at board level and could be beyond the scope of Nathean’s role in the project.",
+          "The WP4 lead (Meike) is providing that support"
+        ],
+        "challenges": [
+          "All authors/partners need to confirm which assigned learning events they can develop, which can be completed by mid-July, who is responsible, and where there are likely gaps or delivery risks.",
+          "Resolve specific outstanding issues",
+          "As track lead, Nathean managed partner coordination and issue resolution. This included clarifying author and reviewer roles, explaining that authors would act as practical leads for individual learning events, addressing questions about mi"
+        ],
+        "wp_focus": [
+          "WP3",
+          "WP4",
+          "WP7"
+        ],
+        "excerpt": "Maintained content tracking by keeping an up-to-date registry of planned and completed publication dates, ensuring broad coverage, avoiding duplication, and adjusting social-media reach targets as needed. (Maurice - Nathean)",
+        "word_count": 1735
+      },
+      "QTICS": {
+        "submitted": true,
+        "file": "QTICS_LC Progress Report_21 May_2026.docx",
+        "activities": [
+          "WP3 tasks, QTICS is involved in:",
+          "Task 3.2. Design in Healthcare & Life Sciences Track",
+          "Task 3.3. Design in Media & Culture Track",
+          "Task 3.4. Design in Law & Compliance Track",
+          "QTICS actively contributed to the preparation, review and coordination of Lesson Plans for several Learning Events across the participating tracks.",
+          "Task 3.2. Design in Healthcare & Life Sciences Track:",
+          "QTICS continued collaboration with university partners within the Healthcare & Life Sciences Track, particularly in Learning Events related to AI ethics, governance, clinical decision-making and regulatory compliance.",
+          "QTICS undertook reviewer and contributor roles in 9 Learning Events within the track, supporting the alignment of the planned content with practical regulatory, governance and healthcare-related expectations."
+        ],
+        "challenges": [
+          "QTICS started the preparation and coordination of the Lesson Plan (LP) documents for planned Learning Events. QTICS undertook co-author and reviewer roles in 7 Learning Events related to AI governance, AI risk management, GDPR, cybersecurit",
+          "Training Day 3: Requirements for high-risk AI systems",
+          "Training Day 4: Risk assessment and risk management",
+          "Consortium members currently have different perspectives regarding the possible use of AI-supported approaches in the preparation of Learning Event materials, particularly concerning methodology, quality assurance and review processes."
+        ],
+        "wp_focus": [
+          "WP3",
+          "WP6"
+        ],
+        "excerpt": "QTICS actively contributed to the preparation, review and coordination of Lesson Plans for several Learning Events across the participating tracks.",
+        "word_count": 2373
+      },
+      "SU": {
+        "submitted": true,
+        "file": "SU LC Progress Report 21-05-2026.docx",
+        "activities": [
+          "Attending the WP 3 &WP 4 LC and task leaders meetings (Dafina Petkova).",
+          "Four internal meetings for discussing the tasks across the tracks.",
+          "Participation in the regular track meetings.",
+          "Intensive work on finalising the lesson plans for the assigned LEs.",
+          "Intensive work on finalising the lesson plans for the assigned LEs (Kalinka Kaloyanova).",
+          "Intensive work on finalising the lesson plans for the assigned LEs",
+          "Attending the meetings for WP7.",
+          "Participation in all activities planned for WP 3."
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP3",
+          "WP4",
+          "WP6",
+          "WP7"
+        ],
+        "excerpt": "Attending the WP 3 &WP 4 LC and task leaders meetings (Dafina Petkova).",
+        "word_count": 1390
+      },
+      "TUD": {
+        "submitted": true,
+        "file": "TU Dublin LC Progress Report.docx",
+        "activities": [
+          "Health – 8 LEs – Musfira, Mary Henrick, Na Li 5 LEs to be completed (we still must decide).",
+          "Media and Culture – Na Li, 8 LEs (reviewed pilot 2026), Lesson Plan all completed.",
+          "Industry, Business partners;  Academic institutions; Innovators; Investors; EU institutions; Other International Organisation (UN, OECD, etc.); National authorities; Regional authorities; Local authorities; Research communities; Specific us",
+          "Regional; National; International | Social Media; Press release; Media article; Print materials (brochure, leaflet, posters, stickers, banners etc.); Newsletter; Interview; Video; TV/Radio; Event (conference, meeting, workshop, internet deb",
+          "Conferences; Meetings; Education and training events; Clustering activities; Collaboration with EU-funded projects; Other scientific collaboration, Other (namely …) | Industry, Business partners; EU Institutions; Scientists; Education/train",
+          "Regional; National; International | Delivered/ongoing (until …)"
+        ],
+        "challenges": [
+          "Problem – transferring them to the wiki is a challenge - will decide how to address this by 22nd May.",
+          "Work Package 7 – Automate the systems . Fernando - Technical Domain support (fixing DNA problem) – PANORAIMA and Raise U,  John Stantaun  - News and Events, test for form notification."
+        ],
+        "wp_focus": [],
+        "excerpt": "Health – 8 LEs – Musfira, Mary Henrick, Na Li 5 LEs to be completed (we still must decide).",
+        "word_count": 1245
+      },
+      "UniNa": {
+        "submitted": false
+      },
+      "UNIWA": {
+        "submitted": false
+      },
+      "RealAI": {
+        "submitted": true,
+        "file": "LC Progress Report - Real AI-May 2026.docx",
+        "activities": [
+          "RAI, led by Tarry Singh, has committed to 65+ activities for the upcoming period to author, co-author and review across all five tracks — Horizontal, Management & Finance, Healthcare & Lifesciences, Law & Compliance, and Media & Culture. Ov",
+          "Tarry Singh, T Maiti, and other Real AI colleagues have since provided additional support, especially to new consortium members regarding material that has been created during HCAIM across several tracks, including Management & Finance, Law",
+          "In addition, RAI participated actively and consistently across all consortium meetings, ensuring seamless knowledge transfer drawing on our organisation's industry expertise in AI and digital skills.",
+          "Over the reporting period, RAI has held multiple coordination meetings to stay aligned with the lesson plans and learning materials being produced in the tracks where we participate as authors or reviewers. We are continuously reviewing the",
+          "Additional note on WP2 – market research planning",
+          "Ivaylo Gueorguiev has been leading several sessions for the second iteration of market research, and to date we have run two productive mood-card workshops to capture lessons learned, identify what should be done going forward, and explore",
+          "RAI has also participated alongside the WP2 lead in market-resource planning sessions to ensure that the lessons learned over the past 18 months are carried into the next market-research cycle. By the end of 2027 the market will have shifte",
+          "RealAI took part in the previos Athens meeting virtually to support the track leaders who are directly involved in three of the vertical tracks (Management & Finance, Law & Compliance, and Media & Culture), actively helping to shape the rig"
+        ],
+        "challenges": [
+          "RAI - A significant challenge has been the large volume of learning events emerging across multiple work packages, as of today there are over 350+ events, this is a significant undertaking.",
+          "Following is a carry-over from previous month but needs to be stressed since this remains a pressing challenge before actual development work begins.",
+          "This has involved extensive back-and-forth between the WP3 team and the industry vertical track leaders to synchronise content and ensure that learning events created within the vertical tracks do not duplicate or conflict with those develo",
+          "This coordination challenge has been managed through ongoing dialogue and structured review, and has not materially harmed progress to date — though it remains an area requiring continued attention."
+        ],
+        "wp_focus": [
+          "WP2",
+          "WP3",
+          "WP4",
+          "WP7"
+        ],
+        "excerpt": "RAI, led by Tarry Singh, has committed to 65+ activities for the upcoming period to author, co-author and review across all five tracks — Horizontal, Management & Finance, Healthcare & Lifesciences, Law & Compliance, and Media & Culture. Over the past month, RAI has been working alongside the coordinators of all tasks ",
+        "word_count": 2868
+      }
+    },
+    "wp_reports": {
+      "WP7": {
+        "file": "WP7 Leader Progress Report 20260522.docx",
+        "partner": null,
+        "activities": [
+          "Progress Report Work Package 7",
+          "Overview of the progress of this Work Package towards the objectives of the project",
+          "Work Package Leader: Micky Lammertink",
+          "Summary of progress of the activities of the Work Package that you are leading",
+          "In relation to the sprint planning",
+          "In relation to the monthly planning;",
+          "Add the (link) to the latest Action Plan in Annex 1 below/end of this document (or upload separately) - Have any changes been made to the Action Plan since last Progress report? If so: describe/indicate",
+          "Is the planning/progress in any way ‘in danger’ as compared to the original planning? Is this expected to happen? If so, explain. Any ideas on how to ‘repair’ this? What is needed for that?"
+        ],
+        "challenges": [
+          "Does any of  the partners encounter challenges in delivering (e.g.  participation, contributions to assigned tasks, discussions or meetings, delivering input).  Is clear what the reason is, potential consequences are, and are there ideas on",
+          "Awaiting scale-up framework from WP1 before activities can take off."
         ],
         "excerpt": "Overview of the progress of this Work Package towards the objectives of the project"
       }
@@ -4148,6 +4456,7 @@
     "dirname": "2026-06-11 WS Hamburg 11 and 12 June 2026",
     "has_progress_reports": false,
     "other_docs": [
+      "Programme Hamburg  Worksprint June 2026.xlsx",
       "WS Hamburg attendence.xlsx"
     ],
     "partners": {
@@ -4209,6 +4518,8 @@
     "has_progress_reports": false,
     "other_docs": [
       "Preferences dates Review Meeting 1.xlsx",
+      "Invitation response.docx",
+      "Invitation to a Project Review or Check or Progress Meeting.pdf",
       "WP1 - Project Management Board.pptx",
       "Project Review Guidance_Coordinator_V2.docx",
       "periodic-report_dep_en_template.docx",

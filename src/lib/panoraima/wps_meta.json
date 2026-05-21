@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T15:36:43Z",
+  "generated_at": "2026-05-21T18:32:47Z",
   "wps": [
     {
       "wp": "WP2",
@@ -50,14 +50,26 @@
       "color": "#06b6d4",
       "emoji": "📚",
       "description": "Define the learning events and competence profiles that anchor the PANORAIMA curriculum.",
-      "status": "unseen",
+      "status": "active",
       "stats": {
-        "total_files": 0,
-        "by_ext": {},
-        "by_type": {},
+        "total_files": 45,
+        "size_mb": 266,
+        "by_ext": {
+          ".xlsx": 28,
+          ".docx": 5,
+          ".pptx": 3,
+          ".ods": 1,
+          ".mp4": 5,
+          ".pdf": 2,
+          ".potx": 1
+        },
+        "by_type": {
+          "other": 44,
+          "presentation": 1
+        },
         "by_region": {}
       },
-      "task_count": 0,
+      "task_count": 1,
       "deliverable_count": 0
     },
     {
@@ -67,14 +79,25 @@
       "color": "#10b981",
       "emoji": "🛠",
       "description": "Design lesson plans and run the cross-university pilots that validate the curriculum.",
-      "status": "unseen",
+      "status": "active",
       "stats": {
-        "total_files": 0,
-        "by_ext": {},
-        "by_type": {},
+        "total_files": 116,
+        "size_mb": 26,
+        "by_ext": {
+          ".docx": 84,
+          ".pdf": 18,
+          ".xlsx": 4,
+          ".pptx": 7,
+          ".odp": 1,
+          ".potx": 2
+        },
+        "by_type": {
+          "other": 112,
+          "template": 4
+        },
         "by_region": {}
       },
-      "task_count": 0,
+      "task_count": 1,
       "deliverable_count": 0
     },
     {
@@ -84,9 +107,10 @@
       "color": "#f59e0b",
       "emoji": "🧪",
       "description": "Ensure assessment quality and accreditation readiness across the consortium.",
-      "status": "unseen",
+      "status": "empty",
       "stats": {
         "total_files": 0,
+        "size_mb": 0,
         "by_ext": {},
         "by_type": {},
         "by_region": {}
@@ -101,11 +125,16 @@
       "color": "#ef4444",
       "emoji": "⚖",
       "description": "Weave responsible AI practice into every track and deliverable.",
-      "status": "unseen",
+      "status": "sparse",
       "stats": {
-        "total_files": 0,
-        "by_ext": {},
-        "by_type": {},
+        "total_files": 2,
+        "size_mb": 1,
+        "by_ext": {
+          ".pptx": 2
+        },
+        "by_type": {
+          "other": 2
+        },
         "by_region": {}
       },
       "task_count": 0,
@@ -118,12 +147,41 @@
       "color": "#d946ef",
       "emoji": "📣",
       "description": "Amplify PANORAIMA's reach through clusters for social media, student recruitment, knowledge exchange and brand.",
-      "status": "unseen",
+      "status": "active",
       "stats": {
-        "total_files": 0,
-        "by_ext": {},
-        "by_type": {},
-        "by_region": {}
+        "total_files": 375,
+        "size_mb": 905,
+        "by_ext": {
+          ".docx": 77,
+          ".pptx": 32,
+          ".dotx": 7,
+          ".pdf": 48,
+          ".xlsx": 19,
+          ".odt": 1,
+          ".webloc": 1,
+          ".heic": 9,
+          ".jpg": 51,
+          ".potx": 4,
+          ".xlsm": 3,
+          ".png": 69,
+          ".psd": 13,
+          ".ai": 4,
+          ".ttf": 19,
+          ".txt": 2,
+          ".jpeg": 7,
+          ".svg": 8,
+          ".ase": 1
+        },
+        "by_type": {
+          "other": 317,
+          "template": 28,
+          "presentation": 21,
+          "research": 8,
+          "deliverable": 1
+        },
+        "by_region": {
+          "Germany": 1
+        }
       },
       "task_count": 0,
       "deliverable_count": 0
