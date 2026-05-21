@@ -476,20 +476,25 @@ export async function deleteFilesBySlugInFolder(
   const names: string[] = []
   let deleted = 0
   for (const f of matches) {
-    // Use trash (PATCH trashed=true), not permanent delete (DELETE),
-    // because the SA is only Editor on the folder — Editors can trash
-    // owner-other files but cannot permanent-delete them. Trash is
-    // recoverable for 30 days; permanent-delete only fires when the
-    // owner empties the trash. From the cron's POV the file is gone
-    // either way (`trashed = false` query excludes it).
-    const r = await fetch(`${DRIVE_API}/files/${encodeURIComponent(f.id)}`, {
-      method: "PATCH",
-      headers: {
-        authorization: `Bearer ${tokenRes.token}`,
-        "content-type": "application/json",
+    // Use PATCH removeParents to take the file OUT of the folder.
+    // Why not trash or DELETE: Drive trash is owner-only on My Drive
+    // (the SA is writer-on-folder, not owner-of-file → 403). Permanent
+    // DELETE is also owner-only. removeParents only needs writer-on-
+    // folder, which the SA has. The file leaves the folder; the
+    // owner can still find it via Drive search. Ingest cron's
+    // `'<folderId>' in parents` query stops returning it — only
+    // invariant that matters.
+    const r = await fetch(
+      `${DRIVE_API}/files/${encodeURIComponent(f.id)}?removeParents=${encodeURIComponent(cfg.folderId)}`,
+      {
+        method: "PATCH",
+        headers: {
+          authorization: `Bearer ${tokenRes.token}`,
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({}),
       },
-      body: JSON.stringify({ trashed: true }),
-    })
+    )
     if (r.ok) {
       deleted++
       names.push(f.name)
@@ -541,16 +546,20 @@ export async function deleteFileByNameInFolder(
   const ids = (json.files ?? []).map((f) => f.id)
   let deleted = 0
   for (const id of ids) {
-    // Trash, not permanent delete — SA is Editor on the folder, not
-    // owner, so DELETE fails on owner-other files. Trash works.
-    const r = await fetch(`${DRIVE_API}/files/${encodeURIComponent(id)}`, {
-      method: "PATCH",
-      headers: {
-        authorization: `Bearer ${tokenRes.token}`,
-        "content-type": "application/json",
+    // PATCH removeParents — see deleteFilesBySlugInFolder for the
+    // full rationale. Trash + permanent-delete are both owner-only on
+    // My Drive; removeParents only needs writer-on-folder.
+    const r = await fetch(
+      `${DRIVE_API}/files/${encodeURIComponent(id)}?removeParents=${encodeURIComponent(cfg.folderId)}`,
+      {
+        method: "PATCH",
+        headers: {
+          authorization: `Bearer ${tokenRes.token}`,
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({}),
       },
-      body: JSON.stringify({ trashed: true }),
-    })
+    )
     if (r.ok) deleted++
   }
   return { ok: true, deleted }
