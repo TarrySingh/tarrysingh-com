@@ -8,7 +8,7 @@ import {
   downloadFileContent,
   upsertTextFileInFolder,
 } from "@/lib/drive/client"
-import { amsterdamDateToday } from "@/lib/studio/daily-brief"
+import { amsterdamDateToday, getBrief } from "@/lib/studio/daily-brief"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -118,22 +118,43 @@ async function handleTick(req: NextRequest) {
     })
   }
 
-  // 2. Is there a brief file for today?
-  const briefFile = list.files.find((f) => f.name === `_brief-${today}.md`)
+  // 2. Find today's brief — Drive first (Cowork's transport), then
+  //    fall back to Supabase (the canonical store). The Drive mirror
+  //    occasionally fails silently; Supabase is the source of truth.
   let brief = ""
+  let briefSource: "drive" | "supabase" | "none" = "none"
+
+  const briefFile = list.files.find((f) => f.name === `_brief-${today}.md`)
   if (briefFile) {
     const dl = await downloadFileContent(briefFile.id)
     if (dl.ok) {
-      // The brief file has a header + `---` separator + body. Strip the
-      // header. If parsing fails, just use the whole content.
+      // Brief file shape: header + `---` separator + body. Take last segment.
       const split = dl.content.split(/^---\s*$/m)
       brief = (split.length >= 2 ? split[split.length - 1] : dl.content).trim()
+      briefSource = "drive"
     } else {
       console.error(
         JSON.stringify({
           tag: "studio.backup_writer.brief_download_failed",
           briefFile: briefFile.name,
           error: dl.error,
+        }),
+      )
+    }
+  }
+
+  if (!brief) {
+    // Drive miss — fall back to Supabase row. Covers the case where
+    // the submit endpoint's Drive mirror failed silently last night.
+    const row = await getBrief(today)
+    if (row && row.decision === "yes" && row.brief.trim()) {
+      brief = row.brief.trim()
+      briefSource = "supabase"
+      console.log(
+        JSON.stringify({
+          tag: "studio.backup_writer.brief_supabase_fallback",
+          today,
+          length: brief.length,
         }),
       )
     }
@@ -201,7 +222,7 @@ async function handleTick(req: NextRequest) {
       sourcesUsed: result.sourcesUsed,
       modelUsed: result.modelUsed,
       durationMs,
-      briefUsed: brief.length > 0,
+      briefSource,
       driveFileId: up.fileId,
     }),
   )
@@ -216,6 +237,7 @@ async function handleTick(req: NextRequest) {
     modelUsed: result.modelUsed,
     durationMs,
     briefUsed: brief.length > 0,
+    briefSource,
     driveFileId: up.fileId,
   })
 }

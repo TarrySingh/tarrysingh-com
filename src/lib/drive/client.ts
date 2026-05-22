@@ -329,6 +329,36 @@ export async function upsertTextFileInFolder(args: {
   content: string
   mimeType?: string
 }): Promise<{ ok: true; fileId: string } | DriveError> {
+  // Retry the whole operation up to 3 times with backoff. Drive
+  // multipart upload occasionally returns 5xx or hits transient
+  // network timeouts; the brief-mirror failure on 2026-05-21 21:34
+  // UTC went silent because there was no retry layer.
+  let lastError: DriveError | null = null
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    const r = await upsertTextFileInFolderOnce(args)
+    if (r.ok) return r
+    lastError = r
+    // Don't retry config / private-key errors — they won't change.
+    if (r.error === "missing_env" || r.error === "private_key_malformed") {
+      return r
+    }
+    // Don't retry 4xx (except 429); they're our fault.
+    if ("status" in r && r.status >= 400 && r.status < 500 && r.status !== 429) {
+      return r
+    }
+    if (attempt < 3) {
+      const backoffMs = 500 * attempt * attempt // 500, 2000 ms
+      await new Promise((resolve) => setTimeout(resolve, backoffMs))
+    }
+  }
+  return lastError as DriveError
+}
+
+async function upsertTextFileInFolderOnce(args: {
+  name: string
+  content: string
+  mimeType?: string
+}): Promise<{ ok: true; fileId: string } | DriveError> {
   const cfg = readConfig()
   if ("error" in cfg) return cfg
   const tokenRes = await getAccessToken(cfg)
