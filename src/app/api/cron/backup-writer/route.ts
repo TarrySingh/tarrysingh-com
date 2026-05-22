@@ -6,9 +6,9 @@ import {
 import {
   listMarkdownFilesInFolder,
   downloadFileContent,
-  upsertTextFileInFolder,
 } from "@/lib/drive/client"
 import { amsterdamDateToday, getBrief } from "@/lib/studio/daily-brief"
+import { processArticle } from "@/lib/studio/process-article"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -185,31 +185,47 @@ async function handleTick(req: NextRequest) {
     )
   }
 
-  // 4. Upload to Drive. The watcher / Drive cron then ingests it
-  //    naturally on the next 15-min tick.
+  // 4. Hand off directly to processArticle. We bypass Drive entirely
+  //    on the backup-writer path because Google service accounts have
+  //    zero personal storage quota — they cannot CREATE new files in a
+  //    My-Drive folder shared with them, only modify existing files.
+  //    The article goes straight into studio_drafts where it would have
+  //    ended up after a Drive cron ingest anyway, and the approval
+  //    email fires immediately. No detour.
+  const origin =
+    process.env.SITE_ORIGIN ||
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    new URL(req.url).origin
   const filename = `${today}_${result.slug}.md`
-  const up = await upsertTextFileInFolder({
-    name: filename,
+  const processed = await processArticle({
+    filename,
     content: result.body,
+    origin,
   })
-  if (!up.ok) {
+
+  if (!processed.ok) {
     console.error(
       JSON.stringify({
-        tag: "studio.backup_writer.upload_failed",
+        tag: "studio.backup_writer.process_failed",
         filename,
-        error: up.error,
-        debug: "debug" in up ? up.debug : undefined,
+        stage: processed.stage,
+        error: processed.error,
+        durationMs,
       }),
     )
     return NextResponse.json(
       {
         ok: false,
-        error: "drive_upload_failed",
+        error: `process_${processed.stage}`,
+        detail: processed.error,
         filename,
         title: result.title,
-        debug: "debug" in up ? up.debug : undefined,
+        slug: result.slug,
+        previewUrl: processed.previewUrl,
+        approveUrl: processed.approveUrl,
+        debug: processed.debug,
       },
-      { status: 502 },
+      { status: processed.stage === "email" ? 502 : 500 },
     )
   }
 
@@ -223,7 +239,8 @@ async function handleTick(req: NextRequest) {
       modelUsed: result.modelUsed,
       durationMs,
       briefSource,
-      driveFileId: up.fileId,
+      slug: processed.slug,
+      emailId: processed.emailId,
     }),
   )
 
@@ -231,14 +248,16 @@ async function handleTick(req: NextRequest) {
     ok: true,
     today,
     filename,
-    title: result.title,
-    slug: result.slug,
+    title: processed.title,
+    slug: processed.slug,
     sourcesUsed: result.sourcesUsed,
     modelUsed: result.modelUsed,
     durationMs,
     briefUsed: brief.length > 0,
     briefSource,
-    driveFileId: up.fileId,
+    emailId: processed.emailId,
+    previewUrl: processed.previewUrl,
+    approveUrl: processed.approveUrl,
   })
 }
 
