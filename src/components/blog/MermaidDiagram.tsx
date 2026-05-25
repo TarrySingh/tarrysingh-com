@@ -100,23 +100,20 @@ export function MermaidDiagram({ code, caption }: Props) {
           },
           themeCSS: `
             /*
-             * Node label sizing — 2026-05-26 bump.
-             * Mermaid's default of ~12-14 px renders too small once the
-             * SVG is scaled down to fit a max-w-3xl (768 px) article
-             * column, especially in diagrams whose natural layout is
-             * wide (e.g. multi-row failure-chain subgraphs at ~1100 px
-             * natural width get scaled to ~60 % and the text drops to
-             * 8-9 px). 18 px on the natural render gives ~12 px after
-             * the worst-case scale-down and reads cleanly; the
-             * organogram-style short-label diagrams have narrow natural
-             * width so they don't scale down — they render at 18 px,
-             * which sits comfortably in the editorial register.
+             * Node label sizing — 2026-05-26 round 2.
+             * 18 px wasn't enough for the wide multi-row diagrams once
+             * the SVG scaled down to fit even the new lg/xl breakout
+             * width. 20 px on the natural render + the figure breakout
+             * (see <figure className=…>) gives ~17 px effective inside
+             * the three-ways failure-chain diagram on xl screens and
+             * 20 px native on diagrams that fit the column natively
+             * (org graph, PE compounding).
              */
             .nodeLabel, .edgeLabel, .label, foreignObject div {
               font-family: 'IBM Plex Serif', Georgia, serif !important;
             }
             .nodeLabel, foreignObject div {
-              font-size: 18px !important;
+              font-size: 20px !important;
               line-height: 1.4 !important;
             }
             .edgeLabel {
@@ -175,7 +172,17 @@ export function MermaidDiagram({ code, caption }: Props) {
 
   return (
     <figure
-      className="my-10 rounded-xl border border-gold-200/60 bg-[#fdfaf2] p-4 sm:p-5"
+      // Breakout — at lg (1024 px+) the figure pulls 48 px outside the
+      // max-w-3xl (768 px) article column on each side, at xl (1280 px+)
+      // it pulls 96 px outside. Net widths: 768 → 864 → 960 px. Gives
+      // wide diagrams (multi-row failure chains, multi-portco grids)
+      // enough horizontal room that the SVG scale-down doesn't crush
+      // the labels. Studio editor preview-pane width is also lg+, but
+      // its preview container is narrower than the article column, so
+      // the same -mx values would extend the figure beyond the pane.
+      // The overflow is fine for layout purposes (preview is for
+      // editing readability, not pixel-perfect production match).
+      className="my-10 rounded-xl border border-gold-200/60 bg-[#fdfaf2] p-4 sm:p-5 lg:-mx-12 xl:-mx-24"
       style={{ boxShadow: "0 1px 0 rgba(180,134,11,0.08)" }}
     >
       {error ? (
