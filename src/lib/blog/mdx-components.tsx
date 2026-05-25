@@ -2,6 +2,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { highlight } from "./shiki"
+import { MermaidDiagram } from "@/components/blog/MermaidDiagram"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -143,6 +144,18 @@ async function Pre(props: ComponentPropsWithoutRef<"pre">) {
     const className = child.props?.className ?? ""
     const lang = className.replace(/^language-/, "") || "text"
     const code = flatten(child.props?.children).replace(/\n$/, "")
+    // Mermaid fenced blocks render as diagrams, not syntax-highlighted code.
+    // The first line of the source can optionally be `%% caption: ...` and
+    // we'll lift it out as the figcaption (one-sentence italic below the
+    // diagram, per Sprint 10 rules).
+    if (lang === "mermaid") {
+      const captionMatch = code.match(/^%%\s*caption:\s*(.+?)\s*$/m)
+      const caption = captionMatch ? captionMatch[1] : undefined
+      const cleaned = captionMatch
+        ? code.replace(captionMatch[0], "").replace(/^\n+/, "")
+        : code
+      return <MermaidDiagram code={cleaned} caption={caption} />
+    }
     const html = await highlight(code, lang)
     return (
       <div
