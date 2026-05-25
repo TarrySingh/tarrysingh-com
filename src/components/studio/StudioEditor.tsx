@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { useEditor, EditorContent, type Editor } from "@tiptap/react"
@@ -12,6 +12,7 @@ import Typography from "@tiptap/extension-typography"
 import Image from "@tiptap/extension-image"
 import { htmlToMarkdown, markdownToEditorHtml } from "@/lib/studio/serialize"
 import type { AIFrontmatterSuggestion } from "@/lib/studio/ai"
+import { MermaidDiagram } from "@/components/blog/MermaidDiagram"
 import { HistoryPane } from "./HistoryPane"
 import {
   type DispatchFrontmatter,
@@ -1663,6 +1664,74 @@ function HeroGeneratorBlock({
   )
 }
 
+// Sprint 10 follow-up — render `<pre><code class="language-mermaid">…</code></pre>`
+// blocks in the editor preview as live Mermaid diagrams, matching the
+// published /blog/<slug> rendering path. Marked emits HTML-entity-encoded
+// content inside the code block; we decode it, lift any `%% caption: …`
+// first line (same convention as src/lib/blog/mdx-components.tsx), and
+// mount the existing MermaidDiagram component in place. Non-mermaid HTML
+// stays on the dangerouslySetInnerHTML path so we don't have to re-walk
+// the rest of marked's output as React.
+const MERMAID_BLOCK_RE = /<pre><code class="language-mermaid">([\s\S]*?)<\/code><\/pre>/g
+
+function decodeHtmlEntities(html: string): string {
+  return html
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x27;/g, "'")
+}
+
+function extractCaption(code: string): { code: string; caption?: string } {
+  const m = code.match(/^%%\s*caption:\s*(.+?)\s*$/m)
+  if (!m) return { code }
+  const cleaned = code.replace(m[0], "").replace(/^\n+/, "")
+  return { code: cleaned, caption: m[1] }
+}
+
+function renderBodyWithMermaid(bodyHtml: string): ReactNode {
+  // Quick path: nothing mermaid-shaped — keep the original behaviour so
+  // nothing else regresses for ordinary Dispatches.
+  if (!bodyHtml.includes('class="language-mermaid"')) {
+    return <div className="studio-prose" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+  }
+
+  const parts: ReactNode[] = []
+  let lastIdx = 0
+  let i = 0
+  // RegExp.exec on a /g regex is stateful; reset before walking.
+  MERMAID_BLOCK_RE.lastIndex = 0
+  let match: RegExpExecArray | null
+  while ((match = MERMAID_BLOCK_RE.exec(bodyHtml)) !== null) {
+    if (match.index > lastIdx) {
+      parts.push(
+        <div
+          key={`html-${i}`}
+          className="studio-prose"
+          dangerouslySetInnerHTML={{ __html: bodyHtml.slice(lastIdx, match.index) }}
+        />,
+      )
+    }
+    const decoded = decodeHtmlEntities(match[1]).trim()
+    const { code, caption } = extractCaption(decoded)
+    parts.push(<MermaidDiagram key={`mermaid-${i}`} code={code} caption={caption} />)
+    lastIdx = match.index + match[0].length
+    i++
+  }
+  if (lastIdx < bodyHtml.length) {
+    parts.push(
+      <div
+        key={`html-${i}`}
+        className="studio-prose"
+        dangerouslySetInnerHTML={{ __html: bodyHtml.slice(lastIdx) }}
+      />,
+    )
+  }
+  return <>{parts}</>
+}
+
 function PreviewPane({
   title,
   excerpt,
@@ -1709,7 +1778,7 @@ function PreviewPane({
         </p>
       ) : null}
 
-      <div className="studio-prose" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      {renderBodyWithMermaid(bodyHtml)}
     </div>
   )
 }
