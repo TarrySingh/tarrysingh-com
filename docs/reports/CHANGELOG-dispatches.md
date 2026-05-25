@@ -116,6 +116,15 @@ All three failure paths must die simultaneously to silence you.
 - 93 seconds, 11 inline citations, draft in Supabase, approval email landed.
 - Mac was unplugged the entire time. Pure cloud path.
 
+### 2026-05-23 morning · same-day duplicate emails on Mac-on day
+
+- 2026-05-22 Mac-on day produced TWO Dispatch emails (09:47 + 11:01 Amsterdam).
+- Root cause: at 09:45 Amsterdam when backup-writer fired, Cowork hadn't finished yet → backup-writer saw no Drive article → wrote its own. Cowork finished ~10:30, Drive cron ingested it at 11:00 → second draft + second email.
+- Two-layer fix shipped (`4a65d11`):
+  1. **processArticle dedup** — new soft-failure stage `duplicate`. Before upserting a draft, query `studio_drafts` for any row where `frontmatter.date = today (UTC)`. If found with a different slug, return `duplicate` with the existing slug. All three callers (HMAC ingest / Drive cron / backup-writer) map `duplicate` → 200 with `skipped: true`.
+  2. **Backup-writer delayed** — moved from 09:45 to 10:45 Amsterdam. Cron schedule `45 7 + 45 8` UTC → `45 8 + 45 9` UTC. Gives Cowork 105 min head start (09:00 → 10:45) vs the previous 45 min.
+- Belt and braces: even if Cowork runs past 10:45, the dedup ensures only one draft + one email per day.
+
 ---
 
 ## Known limitations / future work
