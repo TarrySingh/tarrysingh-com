@@ -45,21 +45,18 @@ Edges break in three ways. They are *broken* when a handoff is well-defined but 
 flowchart TB
   subgraph BROKEN["Broken — handoff defined, nobody executes"]
     direction LR
-    B1["Marketing emits MQL"] --> B2["Salesperson never reads inbox"]
-    B2 --> B3["Lead ages out · 0% conversion"]
+    B1["Marketing emits MQL"] --> B2["Salesperson never reads inbox"] --> B3["Lead ages out · 0% conversion"]
   end
   subgraph IGNORED["Ignored — handoff documented, never wired"]
     direction LR
-    I1["Legal drafts GDPR clause"] --> I2["Sits in SharePoint · 9 months"]
-    I2 --> I3["EU launch violates DPA"]
+    I1["Legal drafts GDPR clause"] --> I2["Sits in SharePoint · 9 months"] --> I3["EU launch violates DPA"]
   end
   subgraph INCOMPLETE["Incomplete — handoff fires, receiving system can't act"]
     direction LR
-    N1["CS ticket fires with new field"] --> N2["CRM stores it"]
-    N2 --> N3["Support tool can't render"]
-    N3 --> N4["Resolution time 3x baseline"]
+    N1["CS ticket fires with new field"] --> N2["CRM stores it"] --> N3["Support tool can't render"] --> N4["Resolution time 3x baseline"]
   end
-
+  BROKEN ~~~ IGNORED
+  IGNORED ~~~ INCOMPLETE
 ```
 
 ### The fifteen-thousand-tool census
