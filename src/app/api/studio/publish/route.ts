@@ -55,10 +55,15 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "invalid_frontmatter" }, { status: 422 })
   }
 
+  // If the draft was loaded from an already-published .mdx via the
+  // /studio/editor/[slug] reopen path, frontmatter.was_published will
+  // be true. publishDispatch then runs the in-place update branch
+  // instead of the create branch.
   const result = await publishDispatch({
     slug,
     frontmatter: fm,
     body: draft.body,
+    allowOverwrite: fm.was_published === true,
   })
 
   if (!result.ok) {

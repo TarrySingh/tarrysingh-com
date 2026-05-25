@@ -293,6 +293,27 @@ export default async function BlogPostPage({
           </Link>
           <div className="h-px flex-1 bg-navy-100" />
         </div>
+
+        {/*
+          Edit pill — public link but the target route is Basic-Auth
+          gated by the studio middleware, so only Tarry can act on it.
+          The studio/editor/[slug] page auto-reopens any published post
+          into a draft via reopenPublished(), so this is a one-click
+          edit loop for live posts. Plain <a> rather than next/link to
+          avoid prefetching the gated route on hover.
+        */}
+        <div className="mt-6 flex justify-end">
+          <a
+            href={`/studio/editor/${post.slug}`}
+            rel="nofollow noopener"
+            className="text-[10px] font-medium uppercase tracking-[0.28em] text-navy-300 hover:text-gold-700 transition-colors"
+            style={{
+              fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+            }}
+          >
+            Edit this post →
+          </a>
+        </div>
       </section>
     </article>
   )

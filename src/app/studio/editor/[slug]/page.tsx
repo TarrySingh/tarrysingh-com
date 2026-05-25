@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { StudioEditor } from "@/components/studio/StudioEditor"
 import { getDraft } from "@/lib/studio/drafts-store"
+import { reopenPublished } from "@/lib/studio/reopen"
 
 export const dynamic = "force-dynamic"
 
@@ -16,8 +17,35 @@ export default async function EditDispatchPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const draft = await getDraft(slug)
-  if (!draft) notFound()
+  let draft = await getDraft(slug)
+
+  // No live draft → try the "edit published" path. reopenPublished
+  // reads content/blog/<slug>.mdx, parses frontmatter+body, and
+  // upserts a draft row marked frontmatter.was_published=true so
+  // /api/studio/publish will update the existing file in place rather
+  // than reject as slug_already_exists. If the .mdx doesn't exist
+  // either, we 404. Either way the editor sees a real draft when it
+  // mounts.
+  if (!draft) {
+    const reopen = await reopenPublished(slug)
+    if (reopen.ok) {
+      draft = reopen.draft
+    } else if (reopen.error === "not_published" || reopen.error === "invalid_slug") {
+      notFound()
+    } else {
+      // parse_failed / save_failed — surface as 404 rather than 500,
+      // we don't want to leak server detail to a Basic-Auth-gated page.
+      console.error(
+        JSON.stringify({
+          tag: "studio.editor.reopen_failed",
+          slug,
+          error: reopen.error,
+          debug: reopen.debug,
+        }),
+      )
+      notFound()
+    }
+  }
 
   return (
     <StudioEditor

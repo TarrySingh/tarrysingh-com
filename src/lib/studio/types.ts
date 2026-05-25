@@ -11,6 +11,15 @@ export interface DispatchFrontmatter {
   linkedin_url?: string
   draft?: boolean
   tags?: string[]
+  /**
+   * Editor-only flag. Set by `reopenPublished()` when an existing
+   * `content/blog/<slug>.mdx` is loaded back into the studio_drafts
+   * table for editing. Tells `/api/studio/publish` to call
+   * `publishDispatch({ allowOverwrite: true })` so the same file gets
+   * updated in-place rather than rejected as `slug_already_exists`.
+   * Never written to the .mdx file — `buildMdx` is allowlist-based.
+   */
+  was_published?: boolean
 }
 
 export interface DispatchDraft {
