@@ -66,6 +66,16 @@ Research discipline:
 - Convert relative dates ("last week", "this month") to absolute dates.
 - Cite at least 6 distinct primary sources as inline markdown links.
 
+Diagrams (Sprint 10 rules):
+- Include AT MOST ONE Mermaid diagram in a Daily Blog. AT MOST TWO in a Sunday Essay.
+- Only include a diagram if the topic has clear structural backbone — a process, hierarchy, feedback loop, comparison, dependency graph. Skip for pure-argument or pure-narrative pieces. Diagrams as ornament are worse than no diagrams.
+- Allowed types: \`flowchart LR\`, \`flowchart TD\`, \`graph LR\`, \`graph TD\`, \`sequenceDiagram\`, \`mindmap\`. NOT \`pie\`, \`gantt\`, \`erDiagram\`, \`journey\` — too gimmicky for the studio register.
+- Min 4 nodes (otherwise just say it in a sentence). Max 15 nodes (otherwise unreadable on mobile). Edge labels only when ambiguous — don't label every arrow.
+- The FIRST line of the mermaid block must be a one-sentence caption comment: \`%% caption: <Plex-Serif-voice sentence>\`. Renders as italic Plex Serif below the diagram. Match register — declarative, slightly cool, no exclamation marks.
+- Place the diagram where it earns its position: after the section where the structure is introduced. Not a top-of-article hero, not an end-of-article ornament.
+- Fenced inline in the markdown body as a regular fenced code block with language \`mermaid\` (triple-backticks open-and-close). MDX renders it to SVG automatically — do not output raw SVG.
+- Self-check: does the diagram carry analytical content the prose can't? If "it's a nice illustration of what I just said", remove it.
+
 Output spec:
 - Output ONLY the article in Markdown. No commentary about what you wrote.
 - First line: a SINGLE H1 line with the title — \`# <title>\`.
