@@ -99,18 +99,36 @@ export function MermaidDiagram({ code, caption }: Props) {
             wrap: true,
           },
           themeCSS: `
+            /*
+             * Node label sizing — 2026-05-26 bump.
+             * Mermaid's default of ~12-14 px renders too small once the
+             * SVG is scaled down to fit a max-w-3xl (768 px) article
+             * column, especially in diagrams whose natural layout is
+             * wide (e.g. multi-row failure-chain subgraphs at ~1100 px
+             * natural width get scaled to ~60 % and the text drops to
+             * 8-9 px). 18 px on the natural render gives ~12 px after
+             * the worst-case scale-down and reads cleanly; the
+             * organogram-style short-label diagrams have narrow natural
+             * width so they don't scale down — they render at 18 px,
+             * which sits comfortably in the editorial register.
+             */
             .nodeLabel, .edgeLabel, .label, foreignObject div {
               font-family: 'IBM Plex Serif', Georgia, serif !important;
             }
+            .nodeLabel, foreignObject div {
+              font-size: 18px !important;
+              line-height: 1.4 !important;
+            }
             .edgeLabel {
               font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
-              font-size: 11.5px !important;
+              font-size: 12px !important;
               letter-spacing: 0.06em !important;
               color: rgba(13, 27, 61, 0.72) !important;
             }
-            .cluster-label .nodeLabel {
+            .cluster-label .nodeLabel,
+            .cluster-label foreignObject div {
               font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
-              font-size: 11px !important;
+              font-size: 12px !important;
               letter-spacing: 0.22em !important;
               text-transform: uppercase !important;
               color: #b45309 !important;
@@ -157,7 +175,7 @@ export function MermaidDiagram({ code, caption }: Props) {
 
   return (
     <figure
-      className="my-10 rounded-xl border border-gold-200/60 bg-[#fdfaf2] p-6 sm:p-8"
+      className="my-10 rounded-xl border border-gold-200/60 bg-[#fdfaf2] p-4 sm:p-5"
       style={{ boxShadow: "0 1px 0 rgba(180,134,11,0.08)" }}
     >
       {error ? (
