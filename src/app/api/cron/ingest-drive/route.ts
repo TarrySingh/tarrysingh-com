@@ -229,6 +229,24 @@ async function processOne(
   })
 
   if (!result.ok) {
+    // Soft skip — another writer already shipped today's Dispatch.
+    if (result.stage === "duplicate") {
+      await recordDriveIngest({
+        fileId: file.id,
+        filename: file.name,
+        modifiedTimeIso: file.modifiedTime,
+        status: "skipped",
+        slug: result.slug ?? null,
+        failureReason: "already_have_draft_for_today",
+      }).catch(() => {})
+      return {
+        file_id: file.id,
+        filename: file.name,
+        modifiedTime: file.modifiedTime,
+        action: "skipped_unchanged",
+        slug: result.slug,
+      }
+    }
     // "draft is in Supabase, email failed" still counts as a
     // partial-ingest from the cron's perspective — log status=failed
     // with the slug so Tarry can pick it up manually.

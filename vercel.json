@@ -19,11 +19,11 @@
     },
     {
       "path": "/api/cron/backup-writer",
-      "schedule": "45 7 * * *"
+      "schedule": "45 8 * * *"
     },
     {
       "path": "/api/cron/backup-writer",
-      "schedule": "45 8 * * *"
+      "schedule": "45 9 * * *"
     }
   ]
 }

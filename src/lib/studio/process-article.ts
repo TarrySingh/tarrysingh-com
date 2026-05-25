@@ -3,6 +3,7 @@ import { aiFrontmatter } from "./ai"
 import { upsertDraft } from "./drafts-store"
 import { sendApprovalEmail } from "./email"
 import { makeApprovalToken } from "./approval-token"
+import { createServiceClient } from "@/lib/supabase/server"
 import type { DispatchFrontmatter } from "./types"
 
 /**
@@ -53,6 +54,14 @@ export type ProcessArticleResult =
       emailId: string
     }
   | {
+      // Soft-success "we already have a Dispatch for today" — caller
+      // should treat as a no-op and return 200 with a skipped flag.
+      ok: false
+      stage: "duplicate"
+      error: "already_have_draft_for_today"
+      slug: string
+    }
+  | {
       ok: false
       stage:
         | "parse"
@@ -80,6 +89,55 @@ export async function processArticle(
     return { ok: false, stage: "parse", error: parsed.error }
   }
   const { slug, title, body, wordCount } = parsed
+
+  // ── 1.5. Same-day dedup ───────────────────────────────────────────
+  //
+  // Multiple writers (Cowork on Mac + backup-writer on Vercel + Drive
+  // cron) can all converge on the same day. Without this check, a slow
+  // Cowork run can race the 09:45-Amsterdam backup-writer and both
+  // succeed, producing two drafts + two approval emails.
+  //
+  // Rule: if a draft already exists whose frontmatter.date matches
+  // today's UTC date, this is the second writer — return a soft
+  // "duplicate" so the caller can no-op cleanly. First writer wins.
+  const todayUtc = new Date().toISOString().slice(0, 10)
+  try {
+    const sb = createServiceClient()
+    const { data: existing, error: dedupErr } = await sb
+      .from("studio_drafts")
+      .select("slug, frontmatter")
+      .filter("frontmatter->>date", "eq", todayUtc)
+      .limit(1)
+    if (!dedupErr && existing && existing.length > 0) {
+      const existingSlug = (existing[0] as { slug: string }).slug
+      if (existingSlug !== slug) {
+        console.log(
+          JSON.stringify({
+            tag: "studio.processArticle.duplicate_skip",
+            todayUtc,
+            existingSlug,
+            attemptedSlug: slug,
+          }),
+        )
+        return {
+          ok: false,
+          stage: "duplicate",
+          error: "already_have_draft_for_today",
+          slug: existingSlug,
+        }
+      }
+      // Same slug — fall through to upsert which will update the existing row.
+    }
+  } catch (err) {
+    // Dedup lookup failure is non-fatal — better to risk a duplicate
+    // than to lose the article entirely.
+    console.warn(
+      JSON.stringify({
+        tag: "studio.processArticle.dedup_lookup_failed",
+        error: err instanceof Error ? err.message : String(err),
+      }),
+    )
+  }
 
   // ── 2. AI frontmatter ─────────────────────────────────────────────
   const fm = await aiFrontmatter({ title, body })

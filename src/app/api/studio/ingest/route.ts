@@ -126,6 +126,17 @@ export async function POST(req: NextRequest) {
   if (!result.ok) {
     // Map shared-helper stage → HTTP status, keeping the legacy
     // response shape the LaunchAgent watcher already logs.
+    if (result.stage === "duplicate") {
+      // Soft success — another writer already produced today's
+      // Dispatch. Return 200 so the LaunchAgent / Drive cron mark
+      // the file as handled and stop retrying.
+      return NextResponse.json({
+        ok: true,
+        skipped: true,
+        reason: "already_have_draft_for_today",
+        slug: result.slug,
+      })
+    }
     if (result.stage === "parse") {
       return NextResponse.json(
         { ok: false, error: result.error },

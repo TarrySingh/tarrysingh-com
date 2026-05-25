@@ -71,11 +71,18 @@ async function handleTick(req: NextRequest) {
   const force = url.searchParams.get("force") === "1"
   const hour = amsterdamHour()
 
-  // Window: fire once a day around 09:45 Amsterdam. Two cron entries
-  // (07:45 UTC summer / 08:45 UTC winter) each call this; only the
-  // one whose Amsterdam clock reads 09 actually proceeds. `?force=1`
-  // bypasses for manual testing.
-  if (!force && hour !== 9) {
+  // Window: fire once a day around 10:45 Amsterdam. Two cron entries
+  // (08:45 UTC in summer / 09:45 UTC in winter) each call this; only
+  // the one whose Amsterdam clock reads 10 actually proceeds.
+  // ?force=1 bypasses for manual testing.
+  //
+  // Why 10:45 and not 09:45: Cowork on Mac starts at 09:00 Amsterdam
+  // and typically takes 45-90 min for the full research + write cycle
+  // (web searches, citation discipline, anti-LLM-smell passes). At
+  // 10:45 we're past Cowork's normal completion window, so the Drive
+  // check reliably catches Cowork's article if Mac was on. If Mac was
+  // off, no Drive article exists and we proceed.
+  if (!force && hour !== 10) {
     return NextResponse.json({
       ok: true,
       skipped: true,
@@ -204,6 +211,25 @@ async function handleTick(req: NextRequest) {
   })
 
   if (!processed.ok) {
+    // Soft skip — another writer beat us. Common race: Cowork finishes
+    // around the same time backup-writer fires. Log + return 200.
+    if (processed.stage === "duplicate") {
+      console.log(
+        JSON.stringify({
+          tag: "studio.backup_writer.duplicate_skip",
+          today,
+          existingSlug: processed.slug,
+          attemptedSlug: result.slug,
+          durationMs,
+        }),
+      )
+      return NextResponse.json({
+        ok: true,
+        skipped: true,
+        reason: "already_have_draft_for_today",
+        existingSlug: processed.slug,
+      })
+    }
     console.error(
       JSON.stringify({
         tag: "studio.backup_writer.process_failed",
@@ -221,9 +247,11 @@ async function handleTick(req: NextRequest) {
         filename,
         title: result.title,
         slug: result.slug,
-        previewUrl: processed.previewUrl,
-        approveUrl: processed.approveUrl,
-        debug: processed.debug,
+        previewUrl:
+          "previewUrl" in processed ? processed.previewUrl : undefined,
+        approveUrl:
+          "approveUrl" in processed ? processed.approveUrl : undefined,
+        debug: "debug" in processed ? processed.debug : undefined,
       },
       { status: processed.stage === "email" ? 502 : 500 },
     )
