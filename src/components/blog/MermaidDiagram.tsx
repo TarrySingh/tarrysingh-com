@@ -122,15 +122,25 @@ export function MermaidDiagram({ code, caption }: Props) {
         if (containerRef.current) {
           containerRef.current.innerHTML = result.svg
           // Make the SVG fluid + accessibility-friendly.
+          //
+          // Mermaid emits SVG with a fixed `width` attribute (e.g.
+          // width="640") which caps the diagram at its natural laid-out
+          // size — so an 800-px diagram sits at 800 px inside a 1000-px
+          // figure with empty margins either side. We strip the width
+          // and height attributes and let the viewBox + width:100%
+          // scale the diagram up to the figure's content area, which
+          // also enlarges the node labels for readability. Captioned
+          // 2026-05-26 after Tarry called out small diagrams in the
+          // editor preview.
           const svg = containerRef.current.querySelector("svg")
           if (svg) {
             svg.setAttribute("role", "img")
             svg.setAttribute("aria-label", caption ?? "Diagram")
-            svg.style.maxWidth = "100%"
+            svg.removeAttribute("width")
+            svg.removeAttribute("height")
+            svg.style.width = "100%"
             svg.style.height = "auto"
-            svg.removeAttribute("style")
             svg.style.maxWidth = "100%"
-            svg.style.height = "auto"
           }
         }
         setRendered(true)
