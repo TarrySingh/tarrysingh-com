@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getDraft, deleteDraft } from "@/lib/studio/drafts-store"
 import { publishDispatch } from "@/lib/studio/publish"
+import { deleteFilesBySlugInFolder } from "@/lib/drive/client"
 import { SLUG_RE } from "@/lib/studio/types"
 
 export const runtime = "nodejs"
@@ -81,6 +82,25 @@ export async function POST(req: NextRequest) {
     await deleteDraft(slug)
   } catch (err) {
     console.warn(JSON.stringify({ tag: "studio.publish.draft_delete_failed", slug, error: err instanceof Error ? err.message : String(err) }))
+  }
+
+  // Best-effort Drive cleanup — unlink any source file in the
+  // tarry-daily-blogs folder matching `*_<slug>.md`. The email-approve
+  // route already does this; the studio-editor publish path used not
+  // to, which left a stale `YYYY-MM-DD_<slug>.md` in Drive that the
+  // backup writer would then mistake for today's article and skip,
+  // suppressing the next morning's Dispatch email.
+  // Caught on 2026-05-26 when no Dispatch arrived after publishing
+  // the previous day's essay via the studio-editor button.
+  try {
+    const dr = await deleteFilesBySlugInFolder(slug)
+    if (!dr.ok) {
+      console.warn(JSON.stringify({ tag: "studio.publish.drive_unlink_failed", slug, error: dr.error, debug: "debug" in dr ? dr.debug : undefined }))
+    } else {
+      console.log(JSON.stringify({ tag: "studio.publish.drive_unlinked", slug, deleted: dr.deleted, names: dr.names }))
+    }
+  } catch (err) {
+    console.warn(JSON.stringify({ tag: "studio.publish.drive_unlink_threw", slug, error: err instanceof Error ? err.message : String(err) }))
   }
 
   return NextResponse.json(result)

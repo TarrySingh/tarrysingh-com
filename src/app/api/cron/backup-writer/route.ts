@@ -1,3 +1,5 @@
+import fs from "node:fs/promises"
+import path from "node:path"
 import { NextRequest, NextResponse } from "next/server"
 import {
   aiBackupWriter,
@@ -71,18 +73,27 @@ async function handleTick(req: NextRequest) {
   const force = url.searchParams.get("force") === "1"
   const hour = amsterdamHour()
 
-  // Window: fire once a day around 10:45 Amsterdam. Two cron entries
-  // (08:45 UTC in summer / 09:45 UTC in winter) each call this; only
-  // the one whose Amsterdam clock reads 10 actually proceeds.
-  // ?force=1 bypasses for manual testing.
+  // Window: fire between 10:00 and 11:59 Amsterdam local. Two cron
+  // entries (08:45 UTC in summer / 09:45 UTC in winter) each call
+  // this. The wider 2-hour gate (was: strict hour === 10) lets the
+  // SECOND tick run today as a fallback if the first one failed —
+  // we widened the window on 2026-05-26 after the first tick was
+  // silently skipped by the existing-article filename check, leaving
+  // Tarry without a Dispatch. ?force=1 bypasses entirely.
   //
-  // Why 10:45 and not 09:45: Cowork on Mac starts at 09:00 Amsterdam
-  // and typically takes 45-90 min for the full research + write cycle
-  // (web searches, citation discipline, anti-LLM-smell passes). At
-  // 10:45 we're past Cowork's normal completion window, so the Drive
-  // check reliably catches Cowork's article if Mac was on. If Mac was
-  // off, no Drive article exists and we proceed.
-  if (!force && hour !== 10) {
+  // Why 10:00-11:59 and not earlier: Cowork on Mac starts at 09:00
+  // Amsterdam and typically takes 45-90 min for the full research +
+  // write cycle. At 10:00 we're at the early edge of Cowork's normal
+  // completion window; by 12:00 we're well past it. If Mac was off,
+  // no Drive article exists and we proceed.
+  //
+  // The downside of widening: in summer the second cron tick (09:45
+  // UTC = 11:45 Amsterdam = hour 11) now also runs, even though the
+  // first tick already wrote today's article. processArticle's
+  // same-day dedup catches the duplicate before commit, but we burn
+  // ~$0.50 of Anthropic tokens on the wasted AI call. Acceptable
+  // cost for the guarantee that a missed first tick has a retry.
+  if (!force && (hour < 10 || hour > 11)) {
     return NextResponse.json({
       ok: true,
       skipped: true,
@@ -109,20 +120,61 @@ async function handleTick(req: NextRequest) {
     (f) => DATED_ARTICLE_RE.test(f.name) && f.name.startsWith(`${today}_`),
   )
   if (existingToday) {
+    // Bug surfaced 2026-05-26: yesterday's published essay's Drive
+    // source was named `2026-05-26_companies-are-workflows-...md`
+    // (the rotation date was for the next day's slot). The studio
+    // editor publish path didn't clean up the Drive source, so when
+    // today's backup writer ran it saw "2026-05-26_..." in Drive and
+    // skipped as "article_already_exists" — leaving Tarry without a
+    // Dispatch.
+    //
+    // Fix: extract the slug from the filename and check whether
+    // `content/blog/<slug>.mdx` exists. If it does, the Drive file is
+    // stale (its content is already published); treat as no-op and
+    // proceed with writing a fresh article for today. If the .mdx
+    // doesn't exist, the Drive file represents in-progress work
+    // (Cowork mid-cycle, or a manual upload we shouldn't clobber),
+    // so we skip as before.
+    const slugMatch = existingToday.name.match(/^\d{4}-\d{2}-\d{2}_(.+)\.mdx?$/i)
+    const fileSlug = slugMatch?.[1]
+    let isStale = false
+    if (fileSlug) {
+      const publishedPath = path.join(process.cwd(), "content", "blog", `${fileSlug}.mdx`)
+      try {
+        await fs.access(publishedPath)
+        isStale = true
+      } catch {
+        isStale = false
+      }
+    }
+
+    if (!isStale) {
+      console.log(
+        JSON.stringify({
+          tag: "studio.backup_writer.skipped",
+          reason: "article_already_exists",
+          existing: existingToday.name,
+          today,
+        }),
+      )
+      return NextResponse.json({
+        ok: true,
+        skipped: true,
+        reason: "article_already_exists",
+        existingFile: existingToday.name,
+      })
+    }
+
     console.log(
       JSON.stringify({
-        tag: "studio.backup_writer.skipped",
-        reason: "article_already_exists",
+        tag: "studio.backup_writer.proceed_through_stale_drive_file",
         existing: existingToday.name,
+        slug: fileSlug,
         today,
+        note: "drive_file_matches_today_prefix_but_slug_already_in_content_blog",
       }),
     )
-    return NextResponse.json({
-      ok: true,
-      skipped: true,
-      reason: "article_already_exists",
-      existingFile: existingToday.name,
-    })
+    // Fall through to article generation below.
   }
 
   // 2. Find today's brief — Drive first (Cowork's transport), then
