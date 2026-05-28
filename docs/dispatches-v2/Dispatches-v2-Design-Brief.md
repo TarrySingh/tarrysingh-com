@@ -3,7 +3,7 @@
 > **Purpose:** a research-backed brief to hand to Claude Design (and then build in `tarrysingh-com`) for a radical visual reinvention of the Dispatches blog.
 > **Mandate (Tarry, 2026-05-25):** **Bold reinvention** · study **all four editorial archetypes** · scope is the **full platform upgrade** (visual + reading experience + new features).
 > **Author:** research + synthesis pass.
-> **Status:** planning. No code yet — this brief precedes design.
+> **Status:** **design-direction locked 2026-05-28** (§10 decisions resolved; §2 audit + §7 roadmap verified against code). §9 prompt ready to hand to Claude Design. No code yet — this brief precedes design.
 
 ---
 
@@ -84,7 +84,7 @@ For flagship deep-tech essays: a per-post `layout: feature` that unlocks Pudding
 
 ## 5. Design tokens — consolidate, then expand
 
-**First, unify** the three navies + two golds into one token set (single source of truth in `design/tokens.css`, consumed via Tailwind theme extension — kill the inline `style={{}}` reskin tax).
+**First, unify.** Verified against code 2026-05-28: the fragmentation is *worse* than "three navies + two golds." Navies: `#0A1628` (tailwind `navy.900`), `#0d1b3d` (`--ink` in `globals.css`), `rgb(15,23,42)` (prose). Accents: the full Tailwind `gold.*` 50–900 scale (`gold-700 #9A7740` is what components reference) **plus** `tokens.css` `--gold #b89256` + `--copper #c98e4f` **plus** `#b45309` rust hardcoded across 9 source files (MermaidDiagram, approval emails, studio chrome). **Canonical pick for v2: navy `#0d1b3d`, rust `#b45309` (already the most-used), one gold.** Single source of truth in `design/tokens.css`, consumed via Tailwind theme extension — kill the inline `style={{}}` reskin tax.
 
 Proposed core palette (keeps the studio DNA, adds the dark register):
 
@@ -100,7 +100,7 @@ Proposed core palette (keeps the studio DNA, adds the dark register):
 - `--font-display` — **Gloock**, `clamp(2.5rem, 6vw, 6.5rem)` for covers; `clamp(2rem, 4vw, 3.5rem)` for post h1.
 - `--font-serif` — **IBM Plex Serif**, body `1.0625rem / 1.6`.
 - `--font-mono` — **IBM Plex Mono**, the signature `0.22em` uppercase micro-labels. *Keep — it's a signature.*
-- `--font-sans` — evaluate replacing **Inter** with a more characterful grotesque (e.g. a Söhne/Suisse-class face, or IBM Plex Sans for family cohesion) for UI chrome.
+- `--font-sans` — **IBM Plex Sans** (locked §10.3), replacing Inter. Completes the Plex family (serif body + mono labels + sans chrome); free via `next/font`; a tighter, more intentional system than a paid grotesque, and `--font-sans` keeps a future swap a one-line change.
 
 ---
 
@@ -120,11 +120,11 @@ Decision needed from Tarry, but #1 is the strong default — it makes the blog a
 Phased so we ship visible wins fast, platform depth after.
 
 ### Phase 1 — Visual core (the "stunning" you can see in week one)
-- Consolidate tokens; introduce dark "Front" register.
+- Consolidate tokens (canonical navy `#0d1b3d` + rust `#b45309` + one gold); introduce dark "Front" register; swap UI sans Inter → IBM Plex Sans.
+- **Build the slug-deterministic sumi-e plate generator first** — every card and hero depends on it (hash slug → seed → SVG/canvas ink-wash; build-time, no model cost).
 - Redesign `/blog` index → flagship hero + editorial grid + Notes stream + category lenses.
-- Redesign post header (architectural Gloock, rendered hero image, refined meta).
-- Wire generative sumi-e cover plates.
-- Dynamic OG image per post (currently absent — big shareability win).
+- Redesign post header (architectural Gloock, rendered hero image, refined meta, `Part N of M · [Series]` breadcrumb).
+- Dynamic OG image per post via `next/og` `ImageResponse` (Satori) — native on Next 15 / Vercel, no caveat. Big shareability win.
 
 ### Phase 2 — Reading experience
 - Auto-TOC + reading-progress rail.
@@ -135,12 +135,14 @@ Phased so we ship visible wins fast, platform depth after.
 - View Transitions: list-card title → post title morph.
 
 ### Phase 3 — Platform
-- **Search** — client-side (Pagefind or FlexSearch over the MDX index; no backend needed).
-- **Audio versions** — TTS-generated narration per essay (ties to the "studio" identity; on-brand for long reads).
+- **Search** — client-side **FlexSearch** over a build-time JSON index of the MDX (preferred over Pagefind for a ~21-post corpus: no built-HTML crawl step, fully under our control, less build wiring). No backend.
 - **Scrollytelling `layout: feature`** for tentpole pieces.
 - **Archive / Explore** view — by year, by series, by category.
 - **Web mentions** + RSS/JSON-feed upgrade.
-- Dark-mode toggle on the read (Front is dark by default; Read defaults light, toggle to dark).
+
+### v2.1 backlog (explicitly out of v2 — per §10 locks)
+- **Audio versions** — TTS-generated narration per essay (ties to the "studio" identity). Heaviest pipeline: generation + storage + player + publish-flow hook + per-essay cost. Cleanly bolt-on-able later with zero rework.
+- **Dark-toggle-on-read** — Front is dark by default and Read is light by default in v2; letting the reader flip the Read to dark needs an SSR-safe theme provider (avoid the flash-of-wrong-theme) and isn't load-bearing for the visual mandate.
 
 ---
 
@@ -150,31 +152,56 @@ Phased so we ship visible wins fast, platform depth after.
 - **Fluid type** via `clamp()` — no breakpoint soup.
 - **View Transitions API** + **CSS scroll-driven animations** — native, zero-JS-lib motion; respects `prefers-reduced-motion`.
 - **Keep MDX file-based** — it's working; add `series`, render `hero`, add `layout` to frontmatter.
-- **Pagefind** for static search (indexes at build, tiny runtime).
+- **FlexSearch** over a build-time JSON index for static search (chosen over Pagefind for this corpus size — see §7 Phase 3).
 - Delete the `" 2.tsx"` copy cruft.
 - Everything stays on the current Next 15 / Vercel stack — no migration.
 
 ---
 
-## 9. Ready-to-paste Claude Design prompt
+## 9. Ready-to-paste Claude Design prompt *(tightened to the §10 locks, 2026-05-28)*
 
-> Design **Dispatches v2** — a radical visual reinvention of a deep-tech essayist's blog (tarrysingh.com/blog). Keep the existing "studio voice" soul: Gloock display serif, IBM Plex Serif body, IBM Plex Mono uppercase micro-labels (`0.22em` tracking), cream paper `#fbf7ec`, navy ink `#0d1b3d`, rust `#b45309`, gold hairlines. **Reinvent boldly around that core.**
+> Design **Dispatches v2** — a radical visual reinvention of a deep-tech essayist's blog (tarrysingh.com/blog). Protect the existing "studio voice" soul and reinvent boldly around it.
 >
-> Deliver three registers sharing one type/color system:
-> 1. **"The Front"** — a dark, art-directed `/blog` index (deep-ink canvas `#0b1020`, cream + rust accents). A full-bleed flagship-essay hero with oversized fluid Gloock title; an editorial grid of Essay cards with sumi-e ink-wash cover plates; a compact "Notes" stream column; category filter chips (Essays / Notes / Studio).
-> 2. **"The Read"** — a light, bookish essay page. Sacred 65ch serif measure, architectural Gloock h1, rendered hero image, Tufte-style margin sidenotes, auto table-of-contents, slim reading-progress rail, refined code/quote blocks. Calm, timeless, Stripe-Press/Craig-Mod-grade craft.
-> 3. **"The Set Piece"** — an opt-in scrollytelling feature layout (Pudding-style pinned visual + scrolling narrative) for tentpole deep-tech essays.
+> **Type & colour core — one source of truth (the current build fragments three navies and 3+ gold/rust values; collapse to a single token set):**
+> - Display **Gloock**, fluid `clamp()`. Body **IBM Plex Serif**. Micro-labels **IBM Plex Mono**, uppercase `0.22em` tracking (a signature — keep). UI chrome **IBM Plex Sans** (completes the Plex family; replaces Inter).
+> - **Light "Read" palette:** paper cream `#fbf7ec`, ink navy `#0d1b3d`, **one** accent rust `#b45309`, **one** gold hairline. Retire the duplicate navies/golds.
+> - **Dark "Front" palette:** deep ink `#0b1020`, warm cream text `#f6ead0`, brightened rust `#e8954a`, gold `#c9a96e`.
 >
-> North-stars: Stripe Press, Craig Mod, Every.to, The Verge (2023), Linear blog, The Pudding, Gwern. 2026 craft: fluid `clamp()` display type that fills the viewport, broken editorial grids, images that bleed, restrained scroll-driven motion. The reading column stays pristine; the chrome gets bold. Show light + dark, desktop + mobile, index + post + feature.
+> **Deliver three registers sharing that system:**
+> 1. **"The Front"** — a **dark**, art-directed `/blog` index. Full-bleed flagship-essay hero (oversized fluid Gloock title over imagery, mono kicker). An editorial grid of Essay cards, each carrying a **slug-deterministic generative sumi-e ink-wash cover plate** — unique-but-coherent per post, same brush / ink / sun aesthetic as the studio's approval emails and weekly dispatch header. A compact "Notes" stream column (Verge-style second register). Category filter chips (Essays / Notes / Studio).
+> 2. **"The Read"** — a **light**, bookish essay page. Sacred 65ch serif measure, architectural Gloock h1, **rendered hero image** (the field exists, wire it), Tufte-style margin sidenotes, auto TOC, slim reading-progress rail, refined code/quote blocks, drop-cap option for flagship essays. Stripe-Press / Craig-Mod-grade calm. A `Part N of M · [Series] →` breadcrumb in the meta and a quiet "Continue this series" rail at the foot — **no loud series chips**.
+> 3. **"The Set Piece"** — an opt-in scrollytelling feature layout (Pudding-style pinned visual + scroll-driven narrative + full-bleed diagram sequences) for tentpole deep-tech essays.
+>
+> **Series (a quiet second axis, ⟂ category):** Sovereign & Geopolitical AI · AI in the Enterprise *(verticals: financial services, healthcare, energy, manufacturing, education, mobility + emerging: humanoid robotics, robotaxis, multiomics)* · The Build · Workforce & Human Ingenuity · The Economics of AI.
+>
+> **North-stars:** Stripe Press, Craig Mod, Every.to, The Verge (2023), Linear blog, The Pudding, Gwern. **2026 craft:** fluid `clamp()` display that fills the viewport, broken/asymmetric editorial grids, images that bleed, pull-quotes that break the measure, restrained scroll-driven motion + View Transitions **as progressive enhancement** (must degrade to normal nav). The reading column stays pristine; the chrome gets bold.
+>
+> **Out of scope for v2 (do not design):** audio narration and dark-toggle-on-read — both v2.1.
+>
+> Show **light + dark, desktop + mobile, index + post + feature.**
 
 ---
 
-## 10. Open decisions for Tarry
+## 10. Decisions — LOCKED (2026-05-28)
 
-1. **Cover art direction** — generative sumi-e (recommended, on-brand) vs Synaptic abstract vs commissioned per-flagship?
-2. **Dark-as-default for the Front** — yes (recommended) or keep everything light?
-3. **UI sans** — replace Inter with a characterful grotesque, or keep for cohesion?
-4. **Audio versions** — in scope for v2 or a v2.1 follow-on?
-5. **Series taxonomy** — what are the 3-5 series/columns you'd actually group essays under? (This shapes the IA.)
+All five resolved with Tarry. These are constraints now, not options.
 
-Once you've reacted to §10, I'll lock the brief and we hand §9 to Claude Design.
+1. **Cover art — generative sumi-e, slug-deterministic.** Each post auto-derives a unique-but-coherent ink-wash plate seeded from its slug (hash → seed → SVG/canvas brush strokes). Zero per-post labour, scales to the daily cadence, unifies blog + approval emails + weekly dispatch into one studio. Synaptic abstract = secondary texture for the `Studio` category; commissioned/AI hero reserved for the 2–3 tentpole Set Pieces a year. **This is the single highest-priority Phase 1 component — every card and hero depends on it; prototype the generator first.**
+2. **Dark Front / light Read.** Dark art-directed index ("The Front"); essays stay cream-paper light ("The Read"). Dark-toggle-*on-read* deferred to v2.1. `darkMode:["class"]` is already wired in `tailwind.config.ts`.
+3. **UI sans — IBM Plex Sans.** Completes the Plex family (serif body + mono labels + sans chrome) — a tighter system than Inter-the-default. `--font-sans` swaps Inter → `IBM_Plex_Sans` in `fonts.ts` + `layout.tsx` during the token refactor.
+4. **Audio (TTS narration) — deferred to v2.1.** Out of v2 scope; struck from Phase 3 (see §7). Bolts on later with zero rework.
+5. **Series taxonomy — five series, quiet grouping.**
+
+   The five (series is a second axis ⟂ category — this is what fixes the 19/21 "Essays" skew):
+   1. **Sovereign & Geopolitical AI** — EU AI Act, export controls, sovereign compute, BRICS+ alignment, talent flows.
+   2. **AI in the Enterprise** — the vertical-industries series, ~10 verticals. **Established:** Financial Services · Healthcare · Energy · Manufacturing · Education · Transportation & Mobility. **Emerging:** Humanoid Robotics · RoboTaxis / Autonomous Mobility · MultiOmics & Computational Biology (+ headroom to add, e.g. Defense / Dual-Use, AgTech). *(Education here = AI deployed across the education industry; the human-capital/skills angle lives in series 4 — same word, two lenses.)*
+   3. **The Build** — design patterns, HPC + AI infrastructure, agent architectures. The deep-technical register; natural home of the Set Pieces.
+   4. **Workforce & Human Ingenuity** — reskilling, upskilling, productivity measurement, the AI-literacy thread.
+   5. **The Economics of AI** — capex cycles, hyperscaler spend vs NPV, M&A, the debt stack (technical + AI-slop + cost overhang).
+
+   **Grouping = quiet, but two touchpoints (the session-depth lever):**
+   - **Top of post:** a small `Part N of M · [Series] →` breadcrumb in the meta line. This plants the "part of something bigger" hook *before* the reader finishes — empirically the stronger lever for continuation than a foot-only rail.
+   - **Foot of post:** a "Continue this series" rail (next-in-series + related Dispatches), the quiet grouping Tarry asked for.
+   - Series get **minimal landing pages** (reached from the breadcrumb; good for SEO + the binge-reader) but are **not** promoted as top-nav filter chips. Category chips (Essays / Notes / Studio) stay on the Front; series stays quiet.
+
+§9 below is tightened to these locks and ready to hand to Claude Design.
