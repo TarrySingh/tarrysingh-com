@@ -42,21 +42,82 @@ Edges break in three ways. They are *broken* when a handoff is well-defined but 
 
 ```mermaid
 %% caption: Every "alignment issue" a board hears about is one of these three failure modes in disguise.
-flowchart TB
-  subgraph BROKEN["Broken — handoff defined, nobody executes"]
-    direction LR
-    B1["Marketing emits MQL"] --> B2["Salesperson never reads inbox"] --> B3["Lead ages out · 0% conversion"]
+%%{init:{"theme":"base","themeVariables":{"primaryColor":"#E8EEF4","primaryBorderColor":"#5B9BD5","primaryTextColor":"#003366","lineColor":"#5B9BD5","fontFamily":"Segoe UI, Helvetica Neue, Arial, sans-serif","fontSize":"13px","edgeLabelBackground":"#FFFFFF"}}}%%
+flowchart LR
+  subgraph BROKEN[" "]
+    direction TB
+    B_H["BROKEN EDGE"]
+    B_DESC["Handoff is defined.\nNo one executes it."]
+    B1(["Marketing"])
+    B2(["Sales inbox"])
+    B1 -- "MQL email ✉️" --> B2
+    B3["Lead sits unread\nfor 14 days"]
+    B2 -. "never opened" .-> B3
+    B_H ~~~ B_DESC
+    B_DESC ~~~ B1
   end
-  subgraph IGNORED["Ignored — handoff documented, never wired"]
-    direction LR
-    I1["Legal drafts GDPR clause"] --> I2["Sits in SharePoint · 9 months"] --> I3["EU launch violates DPA"]
+
+  subgraph IGNORED[" "]
+    direction TB
+    I_H["IGNORED EDGE"]
+    I_DESC["Handoff exists in a doc.\nNowhere else."]
+    I1(["Legal"])
+    I2(["Product launch"])
+    I1 -- "GDPR clause\nin SharePoint" --> I2
+    I3["9 months later:\nEU launch violates it"]
+    I2 -. "never read" .-> I3
+    I_H ~~~ I_DESC
+    I_DESC ~~~ I1
   end
-  subgraph INCOMPLETE["Incomplete — handoff fires, receiving system can't act"]
-    direction LR
-    N1["CS ticket fires with new field"] --> N2["CRM stores it"] --> N3["Support tool can't render"] --> N4["Resolution time 3x baseline"]
+
+  subgraph INCOMPLETE[" "]
+    direction TB
+    IC_H["INCOMPLETE EDGE"]
+    IC_DESC["Handoff fires. Receiver\ncannot act on it."]
+    IC1(["CS ticket"])
+    IC2(["CRM record"])
+    IC1 -- "custom field\npayload" --> IC2
+    IC3["Support agent's tool\ncannot render the field"]
+    IC2 -. "field unknown" .-> IC3
+    IC_H ~~~ IC_DESC
+    IC_DESC ~~~ IC1
   end
+
+  subgraph TAKEAWAY[" "]
+    direction TB
+    T_H["EVERY 'ALIGNMENT ISSUE'\nIS ONE OF THESE THREE"]
+    T1["The bottleneck is not talent or capital."]
+    T2["It is the edges between the nodes\nand the vendors squatting on them."]
+    T_H ~~~ T1
+    T1 ~~~ T2
+  end
+
   BROKEN ~~~ IGNORED
   IGNORED ~~~ INCOMPLETE
+  INCOMPLETE --> TAKEAWAY
+
+  classDef headerRed fill:#B71C1C,stroke:#B71C1C,color:#FFFFFF,font-weight:bold,font-size:15px
+  classDef headerAmber fill:#E65100,stroke:#E65100,color:#FFFFFF,font-weight:bold,font-size:15px
+  classDef headerOrange fill:#F57F17,stroke:#F57F17,color:#FFFFFF,font-weight:bold,font-size:15px
+  classDef descNode fill:#FFF8E1,stroke:#F57F17,stroke-width:1px,color:#003366,font-size:12px
+  classDef deptNode fill:#E8EEF4,stroke:#5B9BD5,stroke-width:2px,color:#003366,font-size:13px
+  classDef failNode fill:#FFEBEE,stroke:#B71C1C,stroke-width:2px,color:#B71C1C,font-size:12px,font-weight:bold
+  classDef takeawayHeader fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:14px
+  classDef takeawayNode fill:#FFFFFF,stroke:#5B9BD5,stroke-width:1.5px,color:#003366,font-size:13px,font-weight:bold
+
+  class B_H headerRed
+  class I_H headerAmber
+  class IC_H headerOrange
+  class B_DESC,I_DESC,IC_DESC descNode
+  class B1,B2,I1,I2,IC1,IC2 deptNode
+  class B3,I3,IC3 failNode
+  class T_H takeawayHeader
+  class T1,T2 takeawayNode
+
+  style BROKEN fill:#FFEBEE,stroke:#B71C1C,stroke-width:2px,rx:8
+  style IGNORED fill:#FFF3E0,stroke:#E65100,stroke-width:2px,rx:8
+  style INCOMPLETE fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,rx:8
+  style TAKEAWAY fill:#E8EEF4,stroke:#003366,stroke-width:2px,rx:8
 ```
 
 ### The fifteen-thousand-tool census
@@ -66,6 +127,113 @@ What is harder to admit is that the modern enterprise has spent the last decade 
 I would bet against any chief marketing officer who responds to this with "we already consolidated last year." The consolidation rarely outlasts the procurement cycle that follows it; somebody in a regional office discovers a new point tool and the count starts climbing again.
 
 ## Vendor sprawl is the visible form of edge debt
+
+```mermaid
+%% caption: Before: sixty to two hundred tools per department, half the seats idle. After: a unified data layer and an agent that orchestrates the workflows that remain.
+%%{init:{"theme":"base","themeVariables":{"primaryColor":"#E8EEF4","primaryBorderColor":"#5B9BD5","primaryTextColor":"#003366","lineColor":"#5B9BD5","fontFamily":"Segoe UI, Helvetica Neue, Arial, sans-serif","fontSize":"13px","edgeLabelBackground":"#FFFFFF"}}}%%
+flowchart TD
+  subgraph BEFORE[" "]
+    direction TB
+    BEF_H["BEFORE — VENDOR SPRAWL"]
+    BEF_STAT["60–200 tools per department\n$21M/yr unused licences\n52.7% seats idle"]
+
+    subgraph BF_MKT[" "]
+      BM_H["Marketing · 60–100 tools"]
+      BM1["CDP"] --- BM2["Automation"] --- BM3["Attribution"]
+      BM4["CMS"] --- BM5["ABM"] --- BM6["SEO suite"]
+      BM7["3× social listening"] --- BM8["4× analytics"] --- BM9["Influencer tool"]
+      BM_H ~~~ BM1
+      BM1 ~~~ BM4
+      BM4 ~~~ BM7
+    end
+
+    subgraph BF_SALES[" "]
+      BS_H["Sales · 80–200 tools"]
+      BS1["CRM"] --- BS2["Outreach/\nSalesloft"] --- BS3["Gong"]
+      BS4["Clari"] --- BS5["Highspot/\nSeismic"] --- BS6["ZoomInfo"]
+      BS7["LinkedIn\nSales Nav"] --- BS8["CPQ"] --- BS9["Regional\npoint tools"]
+      BS_H ~~~ BS1
+      BS1 ~~~ BS4
+      BS4 ~~~ BS7
+    end
+
+    BEF_H ~~~ BEF_STAT
+    BEF_STAT ~~~ BF_MKT
+  end
+
+  subgraph TRANSFORM[" "]
+    direction TB
+    TR_H["THE TRANSFORMATION"]
+    TR1["Step 1\nMap the workflow graph"]
+    TR2["Step 2\nIdentify broken, ignored\nand incomplete edges"]
+    TR3["Step 3\nCull vendors that don't\nserve a real workflow"]
+    TR4["Step 4\nDeploy agent orchestration\non the pruned graph"]
+    TR_H ~~~ TR1
+    TR1 --> TR2 --> TR3 --> TR4
+  end
+
+  subgraph AFTER[" "]
+    direction TB
+    AFT_H["AFTER — AGENT ORCHESTRATION"]
+
+    subgraph AF_CORE[" "]
+      AC_H["Unified Data Layer"]
+      AC1["3–5 systems\nof record"]
+      AC2["Agent\norchestration\nlayer"]
+      AC3["Operators\ndo creative work\nnot tool translation"]
+      AC_H ~~~ AC1
+      AC1 --> AC2 --> AC3
+    end
+
+    subgraph AF_RESULT[" "]
+      AR_H["RESULT"]
+      AR1["30–50% fewer vendors"]
+      AR2["Headcount stays — role changes"]
+      AR3["Cycle time: months → weeks"]
+      AR4["Continuous graph monitoring"]
+      AR_H ~~~ AR1
+      AR1 ~~~ AR2
+      AR2 ~~~ AR3
+      AR3 ~~~ AR4
+    end
+
+    AFT_H ~~~ AF_CORE
+  end
+
+  BEFORE --> TRANSFORM --> AFTER
+
+  classDef titleNode fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:16px
+  classDef statNode fill:#FFEBEE,stroke:#B71C1C,stroke-width:1.5px,color:#B71C1C,font-size:13px,font-weight:bold
+  classDef deptHeader fill:#5B9BD5,stroke:#5B9BD5,color:#FFFFFF,font-weight:bold,font-size:13px
+  classDef toolNode fill:#FFFFFF,stroke:#BDBDBD,stroke-width:1px,color:#616161,font-size:11px
+  classDef transformHeader fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:15px
+  classDef stepNode fill:#E8EEF4,stroke:#5B9BD5,stroke-width:2px,color:#003366,font-size:13px,font-weight:bold
+  classDef afterTitle fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:16px
+  classDef coreHeader fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF,font-weight:bold,font-size:13px
+  classDef coreNode fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-size:13px
+  classDef resultHeader fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF,font-weight:bold,font-size:14px
+  classDef resultNode fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-size:13px,font-weight:bold
+
+  class BEF_H titleNode
+  class BEF_STAT statNode
+  class BM_H,BS_H deptHeader
+  class BM1,BM2,BM3,BM4,BM5,BM6,BM7,BM8,BM9,BS1,BS2,BS3,BS4,BS5,BS6,BS7,BS8,BS9,BS9 toolNode
+  class TR_H transformHeader
+  class TR1,TR2,TR3,TR4 stepNode
+  class AFT_H afterTitle
+  class AC_H coreHeader
+  class AC1,AC2,AC3 coreNode
+  class AR_H resultHeader
+  class AR1,AR2,AR3,AR4 resultNode
+
+  style BEFORE fill:#FFF3E0,stroke:#E65100,stroke-width:2px,rx:8
+  style BF_MKT fill:#FFEBEE,stroke:#BDBDBD,stroke-width:1px,rx:6
+  style BF_SALES fill:#FFEBEE,stroke:#BDBDBD,stroke-width:1px,rx:6
+  style TRANSFORM fill:#E8EEF4,stroke:#003366,stroke-width:2px,rx:8
+  style AFTER fill:#E8F5E9,stroke:#1B5E20,stroke-width:2px,rx:8
+  style AF_CORE fill:#C8E6C9,stroke:#2E7D32,stroke-width:1.5px,rx:6
+  style AF_RESULT fill:#C8E6C9,stroke:#2E7D32,stroke-width:1.5px,rx:6
+```
 
 ### The numbers, plainly
 
@@ -152,28 +320,119 @@ Run the numbers, conservatively. Take the 33,000 actively held operating compani
 The capital cost of running an agentic audit on a $200 million-revenue mid-market company sits in the low six figures today and is falling fast. The labour cost is one to three operating-partner FTEs. The cost-to-recovery ratio is not subtle. This is one of those rare cases where a back-of-envelope return calculation underestimates the actual case, because the audit also compresses the diligence cycle on the *next* acquisition, and the playbook compounds across the book.
 
 ```mermaid
-%% caption: The audit playbook compounds — each portfolio company refines a shared artifact that drops diligence cost and time on the next. Numbers are illustrative.
-flowchart TB
-  subgraph CoA["Co A · Year 1 of program"]
-    A1["Acquire"] --> A2["Audit · $300k · 12 wks"]
-    A2 --> A3["Cull 40% of vendors"]
-    A3 --> A4["+180bp EBITDA"]
-  end
-  subgraph CoB["Co B · Year 2"]
-    B1["Acquire"] --> B2["Audit · $180k · 6 wks"]
-    B2 --> B3["Cull 35%"]
-    B3 --> B4["+220bp EBITDA"]
-  end
-  subgraph CoC["Co C · Year 3"]
-    C1["Acquire"] --> C2["Audit · $90k · 3 wks"]
-    C2 --> C3["Cull 45%"]
-    C3 --> C4["+260bp EBITDA"]
-  end
-  A2 -. "refines" .-> PB[("Playbook artifact")]
-  B2 -. "refines" .-> PB
-  PB -. "accelerates" .-> B2
-  PB -. "accelerates" .-> C2
+%% caption: The audit playbook compounds — acquire, audit, optimise, exit; then the same artifact ports to the next company, and the arithmetic scales across the held book.
+%%{init:{"theme":"base","themeVariables":{"primaryColor":"#E8EEF4","primaryBorderColor":"#5B9BD5","primaryTextColor":"#003366","lineColor":"#5B9BD5","fontFamily":"Segoe UI, Helvetica Neue, Arial, sans-serif","fontSize":"13px","edgeLabelBackground":"#FFFFFF"}}}%%
+flowchart TD
+  subgraph SPONSOR[" "]
+    direction TB
+    SP_H["PE SPONSOR — AGENTIC AUDIT PLAYBOOK"]
 
+    subgraph ACQUIRE[" "]
+      direction TB
+      ACQ_H["ACQUIRE"]
+      A1["Due diligence\non target company"]
+      A2["Map the workflow graph\nin diligence — not after"]
+      A3["Price the inefficiency\ninto the bid"]
+      ACQ_H ~~~ A1
+      A1 --> A2 --> A3
+    end
+
+    subgraph AUDIT[" "]
+      direction TB
+      AUD_H["AUDIT"]
+      AU1["Deploy agent layer\non Day 1 of ownership"]
+      AU2["Surface broken, ignored\nand incomplete edges"]
+      AU3["Generate real-time\npunchlist for OpPartner"]
+      AUD_H ~~~ AU1
+      AU1 --> AU2 --> AU3
+    end
+
+    subgraph OPTIMISE[" "]
+      direction TB
+      OPT_H["OPTIMISE"]
+      O1["Cull vendors\nthat don't serve workflows"]
+      O2["Re-architect edges\nnot just nodes"]
+      O3["Compress cycle time:\nmonths → weeks"]
+      OPT_H ~~~ O1
+      O1 --> O2 --> O3
+    end
+
+    subgraph EXIT[" "]
+      direction TB
+      EX_H["EXIT"]
+      E1["Higher EBITDA margin\n= higher exit multiple"]
+      E2["Clean graph\nde-risks buyer diligence"]
+      E3["Playbook ports\nto next portfolio co"]
+      EX_H ~~~ E1
+      E1 --> E2 --> E3
+    end
+
+    ACQUIRE --> AUDIT --> OPTIMISE --> EXIT
+    SP_H ~~~ ACQUIRE
+  end
+
+  subgraph COMPOUND[" "]
+    direction TB
+    CP_H["THE COMPOUNDING EFFECT"]
+
+    subgraph PORTFOLIO[" "]
+      direction LR
+      PF1["PortCo 1\nPlaybook v1"]
+      PF2["PortCo 2\nPlaybook v1.1"]
+      PF3["PortCo 3\nPlaybook v1.2"]
+      PF4["PortCo N\nPlaybook vN"]
+      PF1 --> PF2 --> PF3 -. "..." .-> PF4
+    end
+
+    CP_STAT["Each audit refines a shared artifact.\nDiligence cost ↓ · Accuracy ↑ · Time-to-value ↓"]
+    CP_H ~~~ PORTFOLIO
+    PORTFOLIO ~~~ CP_STAT
+  end
+
+  subgraph MATH[" "]
+    direction TB
+    MA_H["THE ARITHMETIC"]
+    MA1["33,000 PE-backed operating cos globally"]
+    MA2["Median revenue $150M–$300M per co"]
+    MA3["1pp margin uplift across the book ="]
+    MA4["$50–100B/yr recoverable EBITDA"]
+    MA_H ~~~ MA1
+    MA1 ~~~ MA2
+    MA2 ~~~ MA3
+    MA3 ~~~ MA4
+  end
+
+  EXIT -. "playbook\ncompounds" .-> COMPOUND
+  COMPOUND --> MATH
+
+  classDef titleNode fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:17px
+  classDef phaseHeader fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:14px
+  classDef actionNode fill:#FFFFFF,stroke:#5B9BD5,stroke-width:1.5px,color:#003366,font-size:12px
+  classDef portcoNode fill:#E8EEF4,stroke:#5B9BD5,stroke-width:2px,color:#003366,font-size:12px,font-weight:bold
+  classDef compoundHeader fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF,font-weight:bold,font-size:15px
+  classDef compoundStat fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-size:13px,font-weight:bold
+  classDef mathHeader fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:14px
+  classDef mathNode fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#003366,font-size:13px
+  classDef mathBig fill:#F57F17,stroke:#F57F17,color:#FFFFFF,font-weight:bold,font-size:15px
+
+  class SP_H titleNode
+  class ACQ_H,AUD_H,OPT_H,EX_H phaseHeader
+  class A1,A2,A3,AU1,AU2,AU3,O1,O2,O3,E1,E2,E3 actionNode
+  class PF1,PF2,PF3,PF4 portcoNode
+  class CP_H compoundHeader
+  class CP_STAT compoundStat
+  class MA_H mathHeader
+  class MA1,MA2,MA3 mathNode
+  class MA4 mathBig
+
+  style SPONSOR fill:#F0F4F8,stroke:#5B9BD5,stroke-width:2px,rx:8
+  style ACQUIRE fill:#E8EEF4,stroke:#5B9BD5,stroke-width:1.5px,rx:6
+  style AUDIT fill:#E8EEF4,stroke:#5B9BD5,stroke-width:1.5px,rx:6
+  style OPTIMISE fill:#E8EEF4,stroke:#5B9BD5,stroke-width:1.5px,rx:6
+  style EXIT fill:#E8EEF4,stroke:#5B9BD5,stroke-width:1.5px,rx:6
+  style COMPOUND fill:#E8F5E9,stroke:#1B5E20,stroke-width:2px,rx:8
+  style PORTFOLIO fill:#C8E6C9,stroke:#2E7D32,stroke-width:1.5px,rx:6
+  style MATH fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,rx:8
 ```
 
 ### Three structural advantages
