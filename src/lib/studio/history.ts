@@ -147,6 +147,67 @@ export async function getFileAtCommit(
   }
 }
 
+export type CommitDiffResult =
+  | {
+      ok: true
+      sha: string
+      additions: number
+      deletions: number
+      status: string
+      patch: string
+    }
+  | { ok: false; error: "github_unconfigured" | "github_api_error" | "not_found" }
+
+/**
+ * The unified diff for `content/blog/<slug>.mdx` introduced by a single
+ * commit — i.e. *what changed* in that publish/update, vs the previous
+ * version. Powers the History pane's diff view. On-demand (one call per
+ * commit the user expands) so we never fan out 20 getCommit calls.
+ */
+export async function getCommitDiff(
+  slug: string,
+  sha: string,
+): Promise<CommitDiffResult> {
+  const octokit = getOctokit()
+  if (!octokit) return { ok: false, error: "github_unconfigured" }
+
+  try {
+    const res = await octokit.repos.getCommit({
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      ref: sha,
+    })
+    const files = res.data.files ?? []
+    const target = files.find((f) => f.filename === pathFor(slug))
+    if (!target) {
+      // listHistory only surfaces commits that touched this path, so a
+      // missing file here means the commit is a merge/rename edge case.
+      return { ok: false, error: "not_found" }
+    }
+    return {
+      ok: true,
+      sha,
+      additions: target.additions ?? 0,
+      deletions: target.deletions ?? 0,
+      status: target.status ?? "modified",
+      patch: target.patch ?? "",
+    }
+  } catch (err) {
+    const status = (err as { status?: number }).status
+    if (status === 404) return { ok: false, error: "not_found" }
+    console.error(
+      JSON.stringify({
+        tag: "studio.history.diff_error",
+        slug,
+        sha,
+        status,
+        error: err instanceof Error ? err.message : String(err),
+      }),
+    )
+    return { ok: false, error: "github_api_error" }
+  }
+}
+
 export async function revertToCommit(
   slug: string,
   sha: string,

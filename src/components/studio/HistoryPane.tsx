@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, type CSSProperties } from "react"
 
 interface HistoryCommit {
   sha: string
@@ -38,6 +38,19 @@ type RevertStatus =
   | { kind: "ok"; newCommitSha: string; newCommitUrl: string }
   | { kind: "error"; message: string }
 
+type DiffStatus =
+  | { kind: "idle" }
+  | { kind: "loading"; sha: string }
+  | {
+      kind: "ok"
+      sha: string
+      additions: number
+      deletions: number
+      status: string
+      patch: string
+    }
+  | { kind: "error"; sha: string; message: string }
+
 function formatDateRelative(iso: string): string {
   if (!iso) return "unknown date"
   try {
@@ -74,6 +87,10 @@ export function HistoryPane({ slug, onClose, onReverted }: Props) {
   const [selectedSha, setSelectedSha] = useState<string | null>(null)
   const [fileStatus, setFileStatus] = useState<FileStatus>({ kind: "idle" })
   const [revertStatus, setRevertStatus] = useState<RevertStatus>({ kind: "idle" })
+  const [diffStatus, setDiffStatus] = useState<DiffStatus>({ kind: "idle" })
+  // Default to the diff ("what changed") — that's the granular view;
+  // Snapshot (full file at that commit) is one toggle away.
+  const [view, setView] = useState<"diff" | "snapshot">("diff")
 
   // Initial fetch — list commits.
   useEffect(() => {
@@ -135,6 +152,47 @@ export function HistoryPane({ slug, onClose, onReverted }: Props) {
       .catch((err) => {
         if (cancelled) return
         setFileStatus({
+          kind: "error",
+          sha: selectedSha,
+          message: err instanceof Error ? err.message : "network_error",
+        })
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [selectedSha, slug])
+
+  // Fetch the diff — what this commit changed vs its parent — on select.
+  useEffect(() => {
+    if (!selectedSha) return
+    let cancelled = false
+    setDiffStatus({ kind: "loading", sha: selectedSha })
+    fetch(
+      `/api/studio/history/diff?slug=${encodeURIComponent(slug)}&sha=${encodeURIComponent(selectedSha)}`,
+    )
+      .then(async (res) => {
+        const j = await res.json().catch(() => ({}))
+        if (cancelled) return
+        if (!res.ok || !j.ok) {
+          setDiffStatus({
+            kind: "error",
+            sha: selectedSha,
+            message: j.error ?? `diff_failed_${res.status}`,
+          })
+          return
+        }
+        setDiffStatus({
+          kind: "ok",
+          sha: selectedSha,
+          additions: j.additions ?? 0,
+          deletions: j.deletions ?? 0,
+          status: j.status ?? "modified",
+          patch: j.patch ?? "",
+        })
+      })
+      .catch((err) => {
+        if (cancelled) return
+        setDiffStatus({
           kind: "error",
           sha: selectedSha,
           message: err instanceof Error ? err.message : "network_error",
@@ -362,50 +420,166 @@ export function HistoryPane({ slug, onClose, onReverted }: Props) {
               ) : null}
             </section>
 
-            {/* — selected file preview — */}
+            {/* — selected commit: diff (what changed) or full snapshot — */}
             <section>
-              <h2
-                className="mb-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-navy-400"
-                style={mono}
-              >
-                Snapshot
-              </h2>
+              <div className="mb-3 flex flex-wrap items-center gap-3">
+                <h2
+                  className="text-[10px] font-semibold uppercase tracking-[0.28em] text-navy-400"
+                  style={mono}
+                >
+                  {selectedSha ? "What changed" : "Detail"}
+                </h2>
+                {selectedSha ? (
+                  <>
+                    <div className="inline-flex overflow-hidden rounded-full border border-navy-200">
+                      <button
+                        type="button"
+                        onClick={() => setView("diff")}
+                        className={`px-3 py-1 text-[9.5px] font-semibold uppercase tracking-[0.18em] transition-colors ${view === "diff" ? "bg-navy-900 text-white" : "bg-white text-navy-600 hover:bg-navy-50"}`}
+                        style={mono}
+                      >
+                        Diff
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setView("snapshot")}
+                        className={`px-3 py-1 text-[9.5px] font-semibold uppercase tracking-[0.18em] transition-colors ${view === "snapshot" ? "bg-navy-900 text-white" : "bg-white text-navy-600 hover:bg-navy-50"}`}
+                        style={mono}
+                      >
+                        Snapshot
+                      </button>
+                    </div>
+                    {diffStatus.kind === "ok" ? (
+                      <span className="text-[10px] tracking-wide" style={mono}>
+                        <span className="text-emerald-600">+{diffStatus.additions}</span>
+                        <span className="text-navy-300"> / </span>
+                        <span className="text-rose-600">−{diffStatus.deletions}</span>
+                        <span className="text-navy-300"> lines</span>
+                      </span>
+                    ) : null}
+                  </>
+                ) : null}
+              </div>
+
               {!selectedSha ? (
                 <div
                   className="rounded-lg border border-dashed border-navy-200 bg-white/40 p-6 text-center"
                   style={serif}
                 >
                   <p className="text-sm italic text-navy-500">
-                    Pick a commit on the left to see the Dispatch as it
-                    existed then.
+                    Pick a commit on the left to see what changed — or
+                    switch to Snapshot for the full Dispatch as it existed
+                    then.
                   </p>
                 </div>
               ) : null}
-              {fileStatus.kind === "loading" ? (
-                <p className="text-xs text-navy-500" style={mono}>
-                  Fetching {fileStatus.sha.slice(0, 7)}…
-                </p>
+
+              {/* Diff view — what this commit added/removed */}
+              {selectedSha && view === "diff" ? (
+                <>
+                  {diffStatus.kind === "loading" ? (
+                    <p className="text-xs text-navy-500" style={mono}>
+                      Loading diff for {diffStatus.sha.slice(0, 7)}…
+                    </p>
+                  ) : null}
+                  {diffStatus.kind === "error" ? (
+                    <div
+                      className="rounded-md border border-rose-200 bg-rose-50 p-4 text-xs text-rose-700"
+                      style={mono}
+                    >
+                      ✗ {diffStatus.message}
+                    </div>
+                  ) : null}
+                  {diffStatus.kind === "ok" ? (
+                    diffStatus.patch ? (
+                      <DiffBlock patch={diffStatus.patch} mono={mono} />
+                    ) : (
+                      <p className="text-xs italic text-navy-500" style={serif}>
+                        No textual diff for this commit (it may be the
+                        initial publish with no prior version, or a
+                        non-content change).
+                      </p>
+                    )
+                  ) : null}
+                </>
               ) : null}
-              {fileStatus.kind === "error" ? (
-                <div
-                  className="rounded-md border border-rose-200 bg-rose-50 p-4 text-xs text-rose-700"
-                  style={mono}
-                >
-                  ✗ {fileStatus.message}
-                </div>
-              ) : null}
-              {fileStatus.kind === "ok" ? (
-                <pre
-                  className="max-h-[calc(100vh-14rem)] overflow-auto rounded-lg border border-navy-200 bg-white p-4 text-[12px] leading-relaxed text-navy-800 whitespace-pre-wrap"
-                  style={mono}
-                >
-                  {fileStatus.content}
-                </pre>
+
+              {/* Snapshot view — full file as of this commit */}
+              {selectedSha && view === "snapshot" ? (
+                <>
+                  {fileStatus.kind === "loading" ? (
+                    <p className="text-xs text-navy-500" style={mono}>
+                      Fetching {fileStatus.sha.slice(0, 7)}…
+                    </p>
+                  ) : null}
+                  {fileStatus.kind === "error" ? (
+                    <div
+                      className="rounded-md border border-rose-200 bg-rose-50 p-4 text-xs text-rose-700"
+                      style={mono}
+                    >
+                      ✗ {fileStatus.message}
+                    </div>
+                  ) : null}
+                  {fileStatus.kind === "ok" ? (
+                    <pre
+                      className="max-h-[calc(100vh-16rem)] overflow-auto rounded-lg border border-navy-200 bg-white p-4 text-[12px] leading-relaxed text-navy-800 whitespace-pre-wrap"
+                      style={mono}
+                    >
+                      {fileStatus.content}
+                    </pre>
+                  ) : null}
+                </>
               ) : null}
             </section>
           </div>
         </div>
       </div>
+    </div>
+  )
+}
+
+/**
+ * Renders a unified-diff patch with GitHub-style line colouring:
+ * added lines green, removed lines red, hunk headers gold, file
+ * headers muted. Read-only — the actual revert happens via the
+ * "Revert to here" button on each commit.
+ */
+function DiffBlock({ patch, mono }: { patch: string; mono: CSSProperties }) {
+  const lines = patch.split("\n")
+  return (
+    <div
+      className="max-h-[calc(100vh-16rem)] overflow-auto rounded-lg border border-navy-200 bg-white py-2 text-[12px] leading-relaxed"
+      style={mono}
+    >
+      {lines.map((line, i) => {
+        let cls = "text-navy-700"
+        let bg = ""
+        if (line.startsWith("@@")) {
+          cls = "text-gold-700"
+          bg = "bg-gold-50"
+        } else if (
+          line.startsWith("diff ") ||
+          line.startsWith("index ") ||
+          line.startsWith("+++") ||
+          line.startsWith("---")
+        ) {
+          cls = "text-navy-400"
+        } else if (line.startsWith("+")) {
+          cls = "text-emerald-700"
+          bg = "bg-emerald-50/60"
+        } else if (line.startsWith("-")) {
+          cls = "text-rose-700"
+          bg = "bg-rose-50/60"
+        }
+        return (
+          <div
+            key={i}
+            className={`whitespace-pre-wrap break-words px-4 ${cls} ${bg}`}
+          >
+            {line || " "}
+          </div>
+        )
+      })}
     </div>
   )
 }
