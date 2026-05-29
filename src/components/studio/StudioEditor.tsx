@@ -545,6 +545,68 @@ export function StudioEditor({
     return editor.getHTML()
   }, [editor])
 
+  // Sprint 11 — resizable composer/preview split (lg+ only).
+  // `splitPct` = width of the composer pane as a % of the row; the
+  // preview takes the rest. Persisted to localStorage so the layout
+  // sticks across sessions. Clamped to 30–75 so neither pane can
+  // collapse to an unreadable ribbon (the old fixed 1fr_1fr is why
+  // the preview sometimes felt like a narrow tall column).
+  const SPLIT_MIN = 30
+  const SPLIT_MAX = 75
+  const splitContainerRef = useRef<HTMLDivElement | null>(null)
+  const [splitPct, setSplitPct] = useState(50)
+  const [splitDragging, setSplitDragging] = useState(false)
+  const splitPctRef = useRef(splitPct)
+  splitPctRef.current = splitPct
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("studio:splitPct")
+      if (saved) {
+        const n = Number(saved)
+        if (Number.isFinite(n)) setSplitPct(Math.min(SPLIT_MAX, Math.max(SPLIT_MIN, n)))
+      }
+    } catch {
+      /* localStorage unavailable — keep the 50% default */
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!splitDragging) return
+    function onMove(e: PointerEvent) {
+      const el = splitContainerRef.current
+      if (!el) return
+      const rect = el.getBoundingClientRect()
+      if (rect.width === 0) return
+      const pct = ((e.clientX - rect.left) / rect.width) * 100
+      setSplitPct(Math.min(SPLIT_MAX, Math.max(SPLIT_MIN, Math.round(pct))))
+    }
+    function onUp() {
+      setSplitDragging(false)
+      try {
+        localStorage.setItem("studio:splitPct", String(splitPctRef.current))
+      } catch {
+        /* ignore */
+      }
+    }
+    window.addEventListener("pointermove", onMove)
+    window.addEventListener("pointerup", onUp)
+    return () => {
+      window.removeEventListener("pointermove", onMove)
+      window.removeEventListener("pointerup", onUp)
+    }
+  }, [splitDragging])
+
+  // Double-click the divider to reset to a clean 50/50.
+  const resetSplit = useCallback(() => {
+    setSplitPct(50)
+    try {
+      localStorage.setItem("studio:splitPct", "50")
+    } catch {
+      /* ignore */
+    }
+  }, [])
+
   return (
     <div
       className="min-h-screen"
@@ -665,9 +727,13 @@ export function StudioEditor({
           <span>{wordCount} words · {readingTimeMin} min</span>
           <span>{charCount} chars</span>
         </div>
-        <div className={`grid gap-6 sm:gap-8 ${showPreview ? "lg:grid-cols-[1fr_1fr]" : "lg:grid-cols-[1fr]"}`}>
+        <div
+          ref={splitContainerRef}
+          className={`${showPreview ? "lg:flex lg:items-start" : ""} ${splitDragging ? "select-none" : ""}`}
+          style={showPreview ? ({ "--split": `${splitPct}%` } as React.CSSProperties) : undefined}
+        >
           {/* — composer — */}
-          <section className="space-y-6">
+          <section className={showPreview ? "space-y-6 lg:min-w-0 lg:shrink-0 lg:grow-0 lg:basis-[var(--split)] lg:pr-4" : "space-y-6"}>
             <FrontmatterForm
               slug={slug}
               setSlug={(s) => {
@@ -714,11 +780,28 @@ export function StudioEditor({
             />
           </section>
 
-          {/* — live preview — desktop: side pane; mobile: full-screen overlay */}
+          {/* — live preview — desktop: resizable side pane; mobile: full-screen overlay */}
           {showPreview ? (
             <>
-              {/* Desktop: inline aside in the grid (lg+) */}
-              <aside className="hidden lg:block space-y-6">
+              {/* Drag handle — lg+ only. Drag to resize, double-click to reset 50/50. */}
+              <div
+                role="separator"
+                aria-orientation="vertical"
+                aria-label="Resize editor and preview"
+                title="Drag to resize · double-click to reset"
+                onPointerDown={(e) => {
+                  e.preventDefault()
+                  setSplitDragging(true)
+                }}
+                onDoubleClick={resetSplit}
+                className="group hidden lg:flex lg:w-4 lg:shrink-0 lg:cursor-col-resize lg:self-stretch items-center justify-center"
+              >
+                <span
+                  className={`h-16 w-1 rounded-full transition-colors ${splitDragging ? "bg-gold-500" : "bg-navy-200 group-hover:bg-gold-400"}`}
+                />
+              </div>
+              {/* Desktop: preview grows to fill the remaining width */}
+              <aside className="hidden lg:block lg:grow lg:basis-0 lg:min-w-0 space-y-6">
                 <PreviewPane
                   title={frontmatter.title}
                   excerpt={frontmatter.excerpt}
