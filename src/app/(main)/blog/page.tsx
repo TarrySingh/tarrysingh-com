@@ -1,194 +1,275 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 import { getAllPosts, formatPostDate, type BlogPostMeta } from "@/lib/blog/posts"
+import { getAllSeriesWithCounts } from "@/lib/blog/series-queries"
+import { type SeriesKey } from "@/lib/blog/series"
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
-import { ReturningReaderHero } from "@/components/blog/ReturningReaderHero"
+import { PlateCover } from "@/components/blog/PlateCover"
+import { FrontControls } from "@/components/blog/FrontControls"
 
 export const metadata: Metadata = {
   title: "Dispatches — Tarry Singh",
   description:
-    "Notes and essays from the studio. Infrequent, opinionated, and quietly written.",
+    "Field notes and essays from the studio — AI strategy, deep-tech architecture, and the economics underneath. Infrequent, opinionated, quietly written.",
   openGraph: {
     title: "Dispatches — Tarry Singh",
     description:
-      "Notes and essays from the studio. Infrequent, opinionated, and quietly written.",
+      "Field notes and essays from the studio — AI strategy, deep-tech architecture, and the economics underneath.",
     type: "website",
   },
 }
 
+const mono = {
+  fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+} as const
+const display = {
+  fontFamily: "var(--font-display), 'Gloock', serif",
+} as const
+const serif = {
+  fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
+} as const
+
 const categoryAccent: Record<BlogPostMeta["category"], string> = {
-  Essays: "bg-gold-500",
-  Notes: "bg-blue-500",
-  Studio: "bg-rose-500",
+  Essays: "#c98e4f",
+  Notes: "#849cc8",
+  Studio: "#e5a896",
+}
+
+function MetaRow({ post }: { post: BlogPostMeta }) {
+  return (
+    <div className="flex flex-wrap items-center gap-2.5">
+      <span
+        className="inline-block h-1.5 w-1.5 rounded-full"
+        style={{ background: categoryAccent[post.category] }}
+      />
+      <span
+        className="text-[10.5px] font-semibold uppercase tracking-[0.22em]"
+        style={{ ...mono, color: "rgba(246,234,208,0.7)" }}
+      >
+        {post.category}
+      </span>
+      <span style={{ color: "rgba(246,234,208,0.3)" }}>·</span>
+      <time
+        className="text-[10.5px] tracking-wide"
+        style={{ ...mono, color: "rgba(246,234,208,0.5)" }}
+        dateTime={post.date}
+      >
+        {formatPostDate(post.date)}
+      </time>
+      <span style={{ color: "rgba(246,234,208,0.3)" }}>·</span>
+      <span
+        className="text-[10.5px] tracking-wide"
+        style={{ ...mono, color: "rgba(246,234,208,0.5)" }}
+      >
+        {post.readingTimeMinutes} min
+      </span>
+    </div>
+  )
 }
 
 export default async function BlogIndex() {
   const posts = await getAllPosts()
+  const flagship = posts.find((p) => p.category === "Essays") ?? posts[0]
+  const gridPosts = posts.filter(
+    (p) => p.slug !== flagship?.slug && p.category !== "Notes",
+  )
+  const notes = posts.filter((p) => p.category === "Notes")
+  const seriesCounts = await getAllSeriesWithCounts()
+  const activeSeries: SeriesKey[] = seriesCounts
+    .filter((s) => s.count > 0)
+    .map((s) => s.key)
 
   return (
-    <div className="bg-white">
-      {/* Header */}
-      <section className="relative bg-gradient-to-b from-navy-50/50 to-white pt-28 md:pt-36 pb-6 md:pb-10">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <span
-            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-[0.22em] text-gold-600 border border-gold-200 bg-gold-50 mb-6"
-            style={{
-              fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
-            }}
-          >
-            Dispatches
-          </span>
-          <h1
-            className="text-4xl md:text-5xl text-navy-900 mb-5 tracking-tight"
-            style={{ fontFamily: "var(--font-display), 'Gloock', serif" }}
-          >
-            Quietly written. Infrequent.
-          </h1>
-          <p
-            className="text-base md:text-lg text-navy-600 leading-relaxed"
-            style={{ fontFamily: "var(--font-serif), 'IBM Plex Serif', serif" }}
-          >
-            Notes from the studio — essays on AI strategy, on the craft of
-            drawing speculative architectures, and the occasional dispatch from
-            whatever I happen to be building. No newsletter cadence, no
-            content calendar. Posts when they are ready.
-          </p>
-          <ReturningReaderHero />
+    <div
+      data-theme="front"
+      style={{ background: "#0c1828", color: "#f6ead0", minHeight: "100vh" }}
+    >
+      {/* Masthead */}
+      <section className="relative mx-auto max-w-6xl px-6 pt-28 md:pt-36 pb-8 lg:px-8">
+        <span
+          className="text-[11px] font-semibold uppercase tracking-[0.32em]"
+          style={{ ...mono, color: "#c98e4f" }}
+        >
+          Dispatches
+        </span>
+        <h1
+          className="mt-4 max-w-2xl text-4xl md:text-6xl tracking-tight"
+          style={{ ...display, lineHeight: 1.05 }}
+        >
+          Field notes from the studio.
+        </h1>
+        <p
+          className="mt-5 max-w-xl text-base md:text-lg leading-relaxed"
+          style={{ ...serif, color: "rgba(246,234,208,0.66)" }}
+        >
+          Essays on AI strategy, the architecture of agent systems, and the
+          economics underneath — drawn as working plates. No cadence, no
+          content calendar. Posts when they are ready.
+        </p>
+        <div className="mt-8">
+          <FrontControls activeSeries={activeSeries} />
         </div>
       </section>
 
-      {/* Posts list */}
-      <section className="max-w-3xl mx-auto px-6 lg:px-8 py-12 md:py-16">
-        {posts.length === 0 ? (
-          <p
-            className="text-sm text-navy-500 italic"
-            style={{ fontFamily: "var(--font-serif), 'IBM Plex Serif', serif" }}
+      {/* Flagship hero */}
+      {flagship ? (
+        <section className="mx-auto max-w-6xl px-6 pb-12 lg:px-8">
+          <Link
+            href={`/blog/${flagship.slug}`}
+            className="group relative block overflow-hidden rounded-2xl"
+            style={{ border: "1px solid rgba(201,142,79,0.25)" }}
           >
-            No posts yet. The first plate is on the desk.
-          </p>
-        ) : (
-          <ul className="space-y-10">
-            {posts.map((post) => (
-              <li key={post.slug}>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="group block border-b border-navy-100/70 pb-10 last:border-0"
+            <div className="relative" style={{ aspectRatio: "21 / 9" }}>
+              <PlateCover
+                slug={flagship.slug}
+                cover={flagship.cover}
+                register={undefined}
+                detail="full"
+                width={1400}
+                height={600}
+                className="absolute inset-0 h-full w-full"
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(12,24,40,0) 35%, rgba(12,24,40,0.55) 70%, rgba(12,24,40,0.92) 100%)",
+                }}
+              />
+              <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
+                <MetaRow post={flagship} />
+                <h2
+                  className="mt-3 max-w-3xl text-3xl md:text-5xl tracking-tight transition-colors group-hover:text-[#f4c482]"
+                  style={{ ...display, lineHeight: 1.06 }}
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full ${
-                        categoryAccent[post.category]
-                      }`}
-                    />
-                    <span
-                      className="text-[11px] font-semibold uppercase tracking-[0.22em] text-navy-400"
+                  {flagship.title}
+                </h2>
+                <p
+                  className="mt-3 hidden max-w-2xl text-base leading-relaxed md:block"
+                  style={{ ...serif, color: "rgba(246,234,208,0.72)" }}
+                >
+                  {flagship.excerpt}
+                </p>
+              </div>
+            </div>
+          </Link>
+        </section>
+      ) : null}
+
+      {/* Grid + Notes stream */}
+      <section className="mx-auto max-w-6xl px-6 pb-16 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1fr_300px]">
+          {/* Essay / Studio grid */}
+          <div>
+            <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2">
+              {gridPosts.map((post) => (
+                <article
+                  key={post.slug}
+                  data-card
+                  data-category={post.category}
+                  data-series={post.series?.key ?? ""}
+                >
+                  <Link href={`/blog/${post.slug}`} className="group block">
+                    <div
+                      className="mb-4 overflow-hidden rounded-xl"
                       style={{
-                        fontFamily:
-                          "var(--font-mono), 'IBM Plex Mono', monospace",
+                        aspectRatio: "3 / 2",
+                        border: "1px solid rgba(201,142,79,0.2)",
                       }}
                     >
-                      {post.category}
-                    </span>
-                    <span className="text-navy-200">·</span>
-                    <time
-                      className="text-[11px] font-medium tracking-wide text-navy-400"
-                      style={{
-                        fontFamily:
-                          "var(--font-mono), 'IBM Plex Mono', monospace",
-                      }}
-                      dateTime={post.date}
-                    >
-                      {formatPostDate(post.date)}
-                    </time>
-                    <span className="text-navy-200">·</span>
-                    <span
-                      className="text-[11px] tracking-wide text-navy-400"
-                      style={{
-                        fontFamily:
-                          "var(--font-mono), 'IBM Plex Mono', monospace",
-                      }}
-                    >
-                      {post.readingTimeMinutes} min read
-                    </span>
-                  </div>
-                  <h2
-                    className="text-2xl md:text-3xl text-navy-900 mb-3 tracking-tight group-hover:text-gold-700 transition-colors"
-                    style={{
-                      fontFamily: "var(--font-display), 'Gloock', serif",
-                    }}
-                  >
-                    {post.title}
-                  </h2>
-                  <p
-                    className="text-[1rem] leading-[1.75] text-navy-600 mb-4 max-w-2xl"
-                    style={{
-                      fontFamily:
-                        "var(--font-serif), 'IBM Plex Serif', serif",
-                    }}
-                  >
-                    {post.excerpt}
-                  </p>
-                  {post.tags && post.tags.length > 0 ? (
-                    <div className="mb-4 flex flex-wrap gap-1.5">
-                      {post.tags.slice(0, 4).map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-navy-100 bg-white px-2 py-0.5 text-[9.5px] uppercase tracking-[0.22em] text-navy-500 group-hover:border-gold-300 group-hover:text-navy-700 transition-colors"
-                          style={{
-                            fontFamily:
-                              "var(--font-mono), 'IBM Plex Mono', monospace",
-                          }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                      <PlateCover
+                        slug={post.slug}
+                        cover={post.cover}
+                        detail="card"
+                        width={600}
+                        height={400}
+                        className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
                     </div>
-                  ) : null}
-                  <span
-                    className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.2em] text-navy-500 group-hover:text-navy-900 transition-colors"
-                    style={{
-                      fontFamily:
-                        "var(--font-mono), 'IBM Plex Mono', monospace",
-                    }}
+                    <MetaRow post={post} />
+                    <h3
+                      className="mt-2.5 text-xl md:text-2xl tracking-tight transition-colors group-hover:text-[#f4c482]"
+                      style={{ ...display, lineHeight: 1.12 }}
+                    >
+                      {post.title}
+                    </h3>
+                    <p
+                      className="mt-2 text-[0.95rem] leading-[1.7]"
+                      style={{ ...serif, color: "rgba(246,234,208,0.62)" }}
+                    >
+                      {post.excerpt.length > 150
+                        ? post.excerpt.slice(0, 150).trimEnd() + "…"
+                        : post.excerpt}
+                    </p>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Notes stream */}
+          {notes.length > 0 ? (
+            <aside className="lg:border-l lg:pl-8" style={{ borderColor: "rgba(246,234,208,0.12)" }}>
+              <p
+                className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em]"
+                style={{ ...mono, color: "rgba(246,234,208,0.45)" }}
+              >
+                Notes
+              </p>
+              <ul className="space-y-6">
+                {notes.map((post) => (
+                  <li
+                    key={post.slug}
+                    data-card
+                    data-category={post.category}
+                    data-series={post.series?.key ?? ""}
                   >
-                    Read
-                    <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
+                    <Link href={`/blog/${post.slug}`} className="group block">
+                      <time
+                        className="text-[10px] uppercase tracking-[0.22em]"
+                        style={{ ...mono, color: "rgba(246,234,208,0.45)" }}
+                        dateTime={post.date}
+                      >
+                        {formatPostDate(post.date)}
+                      </time>
+                      <h3
+                        className="mt-1.5 text-base leading-snug transition-colors group-hover:text-[#f4c482]"
+                        style={{ ...serif, color: "rgba(246,234,208,0.9)" }}
+                      >
+                        {post.title}
+                      </h3>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          ) : null}
+        </div>
       </section>
 
-      {/* Newsletter card */}
+      {/* Newsletter + footer */}
       <section
         id="newsletter"
-        className="max-w-3xl mx-auto px-6 lg:px-8 pb-14 md:pb-20 scroll-mt-24"
+        className="mx-auto max-w-3xl px-6 pb-14 lg:px-8 scroll-mt-24"
       >
         <NewsletterCard variant="wide" />
       </section>
-
-      {/* Footer marker */}
-      <section className="max-w-3xl mx-auto px-6 lg:px-8 pb-20 md:pb-28">
-        <div className="flex items-center gap-4 text-navy-300">
-          <div className="h-px flex-1 bg-navy-100" />
+      <section className="mx-auto max-w-6xl px-6 pb-20 lg:px-8">
+        <div className="flex items-center gap-4" style={{ color: "rgba(246,234,208,0.3)" }}>
+          <div className="h-px flex-1" style={{ background: "rgba(246,234,208,0.12)" }} />
           <span
             className="text-[10px] font-semibold uppercase tracking-[0.32em]"
-            style={{
-              fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
-            }}
+            style={mono}
           >
             Dispatches · feed at{" "}
             <Link
               href="/blog/rss.xml"
-              className="text-navy-500 hover:text-gold-700 transition-colors"
+              className="transition-colors hover:text-[#c98e4f]"
             >
               /blog/rss.xml
             </Link>
           </span>
-          <div className="h-px flex-1 bg-navy-100" />
+          <div className="h-px flex-1" style={{ background: "rgba(246,234,208,0.12)" }} />
         </div>
       </section>
     </div>
