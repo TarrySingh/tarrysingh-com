@@ -5,7 +5,7 @@ import Anthropic from "@anthropic-ai/sdk"
  * Continue / Rewrite buttons.
  *
  * Defaults:
- *   - Model:           claude-opus-4-5-20250929 (override via STUDIO_AI_MODEL)
+ *   - Model:           claude-opus-4-8 (override via STUDIO_AI_MODEL)
  *   - Thinking budget: 4000 tokens (override via STUDIO_AI_THINKING_TOKENS)
  *   - Max output:      2048 tokens (override via STUDIO_AI_MAX_TOKENS)
  *
@@ -15,11 +15,14 @@ import Anthropic from "@anthropic-ai/sdk"
  * close per page. No SaaS slop. No surveillance vocabulary.
  */
 
-// SDK 0.79.0 supports: claude-opus-4-6, claude-opus-4-5, claude-opus-4-5-20251101,
-// claude-opus-4-1, claude-opus-4-1-20250805, plus the sonnet/haiku tiers. The
-// SDK's Model type also accepts `(string & {})`, so newer model IDs work too —
-// override via STUDIO_AI_MODEL when a fresher Opus ships.
-const DEFAULT_MODEL = "claude-opus-4-6"
+// The SDK's Model type also accepts `(string & {})`, so newer model IDs work
+// even when the typed enum predates them — override via STUDIO_AI_MODEL when a
+// fresher Opus ships. Bumped 2026-05-29 after the frontmatter call started
+// failing with ai_call_failed (likely a claude-opus-4-6 retirement); 4-8 is the
+// current Opus. NOTE: runtime is driven by the STUDIO_AI_MODEL env var, which
+// overrides this default — kept in step so an unset env never falls back to a
+// retired model.
+const DEFAULT_MODEL = "claude-opus-4-8"
 const DEFAULT_THINKING_TOKENS = 4000
 const DEFAULT_MAX_TOKENS = 2048
 
