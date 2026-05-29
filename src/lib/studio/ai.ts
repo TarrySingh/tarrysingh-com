@@ -17,11 +17,13 @@ import Anthropic from "@anthropic-ai/sdk"
 
 // The SDK's Model type also accepts `(string & {})`, so newer model IDs work
 // even when the typed enum predates them — override via STUDIO_AI_MODEL when a
-// fresher Opus ships. Bumped 2026-05-29 after the frontmatter call started
-// failing with ai_call_failed (likely a claude-opus-4-6 retirement); 4-8 is the
-// current Opus. NOTE: runtime is driven by the STUDIO_AI_MODEL env var, which
-// overrides this default — kept in step so an unset env never falls back to a
-// retired model.
+// fresher Opus ships. Set to 4-8 on 2026-05-29. Two things bit us that day,
+// for the record: (1) a monthly Anthropic API usage limit tipped over and
+// blocked all calls until raised; (2) opus-4-8 rejects the old
+// `thinking: { type: "enabled" }` form (see the call sites below) — that's
+// why the explicit thinking block is gone. NOTE: runtime is driven by the
+// STUDIO_AI_MODEL env var, which overrides this default — kept in step so an
+// unset env never falls back to a stale model.
 const DEFAULT_MODEL = "claude-opus-4-8"
 const DEFAULT_THINKING_TOKENS = 4000
 const DEFAULT_MAX_TOKENS = 2048
@@ -166,7 +168,15 @@ Return Markdown only.`
     const msg = await client.messages.create({
       model,
       max_tokens: maxTokens + thinkingTokens,
-      thinking: { type: "enabled", budget_tokens: thinkingTokens },
+      // NOTE (2026-05-29): claude-opus-4-8 rejects the old
+      // `thinking: { type: "enabled", budget_tokens }` form with
+      // `ai_call_failed` — it wants the new adaptive thinking API
+      // (`thinking: { type: "adaptive" }` + `output_config.effort`),
+      // which @anthropic-ai/sdk 0.79 doesn't type yet. Dropping the
+      // explicit thinking block until we bump the SDK; these calls run
+      // fine without it (frontmatter is a structured-extraction task,
+      // and the parser already tolerates the model's output). The
+      // max_tokens above keeps generous output headroom regardless.
       system: STUDIO_SYSTEM_PROMPT,
       messages: [{ role: "user", content: userPrompt }],
     })
@@ -211,7 +221,15 @@ Return only the rewritten passage in Markdown. Do not echo the original. Do not 
     const msg = await client.messages.create({
       model,
       max_tokens: maxTokens + thinkingTokens,
-      thinking: { type: "enabled", budget_tokens: thinkingTokens },
+      // NOTE (2026-05-29): claude-opus-4-8 rejects the old
+      // `thinking: { type: "enabled", budget_tokens }` form with
+      // `ai_call_failed` — it wants the new adaptive thinking API
+      // (`thinking: { type: "adaptive" }` + `output_config.effort`),
+      // which @anthropic-ai/sdk 0.79 doesn't type yet. Dropping the
+      // explicit thinking block until we bump the SDK; these calls run
+      // fine without it (frontmatter is a structured-extraction task,
+      // and the parser already tolerates the model's output). The
+      // max_tokens above keeps generous output headroom regardless.
       system: STUDIO_SYSTEM_PROMPT,
       messages: [{ role: "user", content: userPrompt }],
     })
@@ -281,7 +299,15 @@ Return JSON only. No code fences. No preamble.`
     const msg = await client.messages.create({
       model,
       max_tokens: maxTokens + thinkingTokens,
-      thinking: { type: "enabled", budget_tokens: thinkingTokens },
+      // NOTE (2026-05-29): claude-opus-4-8 rejects the old
+      // `thinking: { type: "enabled", budget_tokens }` form with
+      // `ai_call_failed` — it wants the new adaptive thinking API
+      // (`thinking: { type: "adaptive" }` + `output_config.effort`),
+      // which @anthropic-ai/sdk 0.79 doesn't type yet. Dropping the
+      // explicit thinking block until we bump the SDK; these calls run
+      // fine without it (frontmatter is a structured-extraction task,
+      // and the parser already tolerates the model's output). The
+      // max_tokens above keeps generous output headroom regardless.
       system: STUDIO_SYSTEM_PROMPT,
       messages: [{ role: "user", content: userPrompt }],
     })
@@ -376,7 +402,15 @@ Return only the card text. No commentary. No preamble.`
     const msg = await client.messages.create({
       model,
       max_tokens: maxTokens + thinkingTokens,
-      thinking: { type: "enabled", budget_tokens: thinkingTokens },
+      // NOTE (2026-05-29): claude-opus-4-8 rejects the old
+      // `thinking: { type: "enabled", budget_tokens }` form with
+      // `ai_call_failed` — it wants the new adaptive thinking API
+      // (`thinking: { type: "adaptive" }` + `output_config.effort`),
+      // which @anthropic-ai/sdk 0.79 doesn't type yet. Dropping the
+      // explicit thinking block until we bump the SDK; these calls run
+      // fine without it (frontmatter is a structured-extraction task,
+      // and the parser already tolerates the model's output). The
+      // max_tokens above keeps generous output headroom regardless.
       system: STUDIO_SYSTEM_PROMPT,
       messages: [{ role: "user", content: userPrompt }],
     })
@@ -465,7 +499,15 @@ Return only the image-gen prompt. Plain text. No commentary.`
     const msg = await client.messages.create({
       model,
       max_tokens: maxTokens + thinkingTokens,
-      thinking: { type: "enabled", budget_tokens: thinkingTokens },
+      // NOTE (2026-05-29): claude-opus-4-8 rejects the old
+      // `thinking: { type: "enabled", budget_tokens }` form with
+      // `ai_call_failed` — it wants the new adaptive thinking API
+      // (`thinking: { type: "adaptive" }` + `output_config.effort`),
+      // which @anthropic-ai/sdk 0.79 doesn't type yet. Dropping the
+      // explicit thinking block until we bump the SDK; these calls run
+      // fine without it (frontmatter is a structured-extraction task,
+      // and the parser already tolerates the model's output). The
+      // max_tokens above keeps generous output headroom regardless.
       system: heroSystem,
       messages: [{ role: "user", content: userPrompt }],
     })
