@@ -1,0 +1,60 @@
+name: Plate covers
+
+# Generate slug-deterministic plate covers at publish time.
+#
+# When a new/changed essay lands in content/blog/, render any missing
+# public/blog/covers/<slug>.png with the same plate-engine the browser
+# uses, then commit it back. Vercel's git integration redeploys on that
+# commit, so the cover catches up within ~a minute of an auto-published
+# post. Existing covers are never regenerated (the script skips them),
+# so this is a no-op until genuinely new content arrives.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/blog/**"
+      - "src/lib/blog/plate-engine.ts"
+      - "scripts/plates/render-covers.ts"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regenerate ALL covers (overwrite existing)"
+        type: boolean
+        default: false
+
+# Never let two cover runs race on the same branch.
+concurrency:
+  group: plate-covers-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  covers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Render covers
+        run: npm run covers ${{ inputs.force && '-- --force' || '' }}
+
+      - name: Commit any new covers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/blog/covers
+          if git diff --staged --quiet; then
+            echo "No new covers to commit."
+          else
+            git commit -m "chore(covers): generate plate covers [skip ci]"
+            git push
+          fi

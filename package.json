@@ -14,6 +14,7 @@
     "blog:audit": "node scripts/blog/audit.mjs",
     "blog:promote": "node scripts/blog/promote.mjs",
     "blog:bake-nudge": "node scripts/blog/bake-nudge-card.mjs",
+    "covers": "tsx scripts/plates/render-covers.ts",
     "reports:status:docx": "node scripts/reports/build-status-docx.mjs",
     "reports:uat-plan:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-plan.md",
     "reports:uat-results:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-results.md"
@@ -95,6 +96,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "^1.0.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22",
     "@types/react": "^19",
@@ -105,6 +107,7 @@
     "eslint-config-next": "^15.5.13",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.11",
+    "tsx": "^4.22.3",
     "typescript": "^5"
   }
 }
