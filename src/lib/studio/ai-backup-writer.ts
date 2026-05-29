@@ -160,9 +160,24 @@ Write the article now. 1,400–1,600 words. Use web_search to ground every factu
 
   let response: Anthropic.Messages.Message
   try {
-    response = await client.messages.create({
+    // Adaptive extended thinking — ON here because this is the
+    // first-time generator: it writes a full 1,400–1,600-word Dispatch
+    // from scratch, which is exactly where deep reasoning earns its
+    // keep (per the principle: thinking for first drafts, not for the
+    // editor's incremental continue/rewrite/frontmatter fixes).
+    //
+    // opus-4-8 uses the new adaptive thinking API
+    // (`thinking: { type: "adaptive" }` + `output_config.effort`); the
+    // old `enabled`/`budget_tokens` form is rejected. @anthropic-ai/sdk
+    // 0.79 doesn't type these fields yet but forwards them at runtime
+    // (verified), so we cast the params. `effort: "high"` = maximum
+    // reasoning for the from-scratch write. Bump the SDK later to drop
+    // the cast.
+    const createParams = {
       model,
       max_tokens: DEFAULT_MAX_TOKENS,
+      thinking: { type: "adaptive" },
+      output_config: { effort: "high" },
       tools: [
         {
           type: "web_search_20250305",
@@ -172,7 +187,8 @@ Write the article now. 1,400–1,600 words. Use web_search to ground every factu
       ],
       system: VOICE_SYSTEM_PROMPT,
       messages: [{ role: "user", content: userPrompt }],
-    })
+    } as unknown as Parameters<typeof client.messages.create>[0]
+    response = (await client.messages.create(createParams)) as Anthropic.Messages.Message
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err)
     console.error(
