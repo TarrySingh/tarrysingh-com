@@ -196,6 +196,24 @@ function Img(props: ComponentPropsWithoutRef<"img">) {
   )
 }
 
+// Dispatches v2 — Tufte-style margin note. Inline span so it's valid
+// inside a <p>; CSS floats it into the right gutter on xl, and collapses
+// to an inline italic aside on narrower viewports (see globals.css).
+function Sidenote(props: ComponentPropsWithoutRef<"span">) {
+  return <span {...props} role="note" className="read-sidenote" />
+}
+
+// Dispatches v2 — pull-quote that breaks the measure. Standalone block.
+function PullQuote(props: ComponentPropsWithoutRef<"aside">) {
+  return (
+    <aside
+      {...props}
+      className="read-pullquote"
+      style={{ fontFamily: "var(--font-serif), 'IBM Plex Serif', serif" }}
+    />
+  )
+}
+
 export const mdxComponents = {
   h1: H1,
   h2: H2,
@@ -209,4 +227,6 @@ export const mdxComponents = {
   code: InlineCode,
   pre: Pre,
   img: Img,
+  Sidenote,
+  PullQuote,
 }

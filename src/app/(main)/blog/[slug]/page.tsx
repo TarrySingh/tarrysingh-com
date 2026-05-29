@@ -21,6 +21,9 @@ import { QuietExitIntent } from "@/components/blog/QuietExitIntent"
 import { HighlightToShare } from "@/components/blog/HighlightToShare"
 import { TarryPeekABoo } from "@/components/blog/TarryPeekABoo"
 import { ReadModeToggle } from "@/components/blog/ReadModeToggle"
+import { ReadRail } from "@/components/blog/ReadRail"
+import { SERIES } from "@/lib/blog/series"
+import { getPostsBySeries } from "@/lib/blog/series-queries"
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -72,6 +75,19 @@ export default async function BlogPostPage({
   // Sprint 5.5.1 — AI-baked footer nudge card, if one was generated
   // at publish time via `npm run blog:bake-nudge <slug>`.
   const nudgeCard = await getNudgeCard(slug)
+
+  // Dispatches v2 — series context (gated; renders nothing until a post
+  // carries `series` via the #9 backfill / the editor). Siblings power
+  // the masthead breadcrumb + the "Continue the series" foot.
+  const seriesMeta = post.series ? SERIES[post.series.key] : null
+  const seriesPosts = post.series
+    ? (await getPostsBySeries(post.series.key)).filter(
+        (p) => p.slug !== post.slug,
+      )
+    : []
+  // Hero cover — explicit bespoke only for now; Phase 2 wires the
+  // slug-deterministic /blog/covers/<slug>.png default.
+  const coverSrc = post.cover || post.hero || null
 
   const isStudioTheme = post.theme === "studio"
   // Dispatches v2 — "The Read" unifies on a cream paper surface driven by
@@ -178,6 +194,20 @@ export default async function BlogPostPage({
             </div>
           ) : null}
 
+          {post.series && seriesMeta ? (
+            <Link
+              href={`/blog/series/${post.series.key}`}
+              data-read-meta
+              className="mb-4 inline-block text-[11px] font-semibold uppercase tracking-[0.22em] text-navy-400 hover:text-gold-700 transition-colors"
+              style={{
+                fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+              }}
+            >
+              {seriesMeta.name} · Part {post.series.part}
+              {post.series.total ? ` of ${post.series.total}` : ""}
+            </Link>
+          ) : null}
+
           <h1
             data-read-title
             className="text-3xl md:text-5xl text-navy-900 tracking-tight leading-[1.1] mb-6"
@@ -195,11 +225,32 @@ export default async function BlogPostPage({
           >
             {post.excerpt}
           </p>
+
+          {coverSrc ? (
+            <div
+              data-read-hair
+              className="mt-8 overflow-hidden rounded-xl"
+              style={{
+                aspectRatio: "21 / 9",
+                border: "1px solid var(--read-hair, rgba(13,27,61,0.12))",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={coverSrc}
+                alt=""
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ) : null}
         </div>
       </header>
 
       {/* Body */}
       <section className="max-w-3xl mx-auto px-6 lg:px-8 pb-10 md:pb-16">
+        {/* TOC + scroll-progress rail (client island; reads the rendered headings) */}
+        <ReadRail />
         <div className="prose-tarry">
           <MDXRemote
             source={post.body}
@@ -270,6 +321,55 @@ export default async function BlogPostPage({
             ) : null}
           </div>
         </div>
+
+        {post.series && seriesMeta && seriesPosts.length > 0 ? (
+          <nav
+            aria-label="More in this series"
+            data-read-hair
+            className="mt-10 border-t border-navy-100 pt-8"
+          >
+            <p
+              data-read-meta
+              className="mb-4 text-[10px] font-semibold uppercase tracking-[0.32em] text-navy-400"
+              style={{
+                fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+              }}
+            >
+              Continue · {seriesMeta.name}
+            </p>
+            <ul className="space-y-3">
+              {seriesPosts.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/blog/${p.slug}`}
+                    className="group flex items-baseline gap-3"
+                  >
+                    <span
+                      data-read-meta
+                      className="shrink-0 text-[11px] uppercase tracking-[0.2em] text-navy-400"
+                      style={{
+                        fontFamily:
+                          "var(--font-mono), 'IBM Plex Mono', monospace",
+                      }}
+                    >
+                      Part {p.series?.part}
+                    </span>
+                    <span
+                      data-read-excerpt
+                      className="text-base text-navy-800 group-hover:text-gold-700 transition-colors"
+                      style={{
+                        fontFamily:
+                          "var(--font-serif), 'IBM Plex Serif', serif",
+                      }}
+                    >
+                      {p.title}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ) : null}
 
         {nudgeCard ? (
           <aside

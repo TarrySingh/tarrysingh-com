@@ -689,3 +689,50 @@ html {
   padding: 0.05em 0.12em 0 0;
   color: var(--read-accent);
 }
+
+/* Tufte margin sidenote. Inline italic aside by default (mobile); floats
+   into the right gutter on xl where there's room beside the 768px column. */
+.read-sidenote {
+  display: block;
+  margin: 1.1em 0;
+  padding-left: 0.9em;
+  border-left: 2px solid var(--read-accent-soft, rgba(180, 83, 9, 0.45));
+  font-family: var(--font-serif), "IBM Plex Serif", serif;
+  font-size: 0.86em;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--read-fg-muted, rgba(13, 27, 61, 0.62));
+}
+@media (min-width: 1280px) {
+  .read-sidenote {
+    float: right;
+    clear: right;
+    width: 200px;
+    margin: 0.3em -232px 0.6em 0;
+    padding-left: 0;
+    border-left: 0;
+    font-style: normal;
+    font-size: 0.8em;
+    text-align: left;
+  }
+}
+
+/* Pull-quote that breaks the measure — a beat between sections. */
+.read-pullquote {
+  margin: 2.2em 0;
+  padding: 0.2em 0;
+  border-top: 1px solid var(--read-hair, rgba(13, 27, 61, 0.12));
+  border-bottom: 1px solid var(--read-hair, rgba(13, 27, 61, 0.12));
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  line-height: 1.32;
+  font-style: italic;
+  color: var(--read-fg, #0d1b3d);
+}
+@media (min-width: 1024px) {
+  .read-pullquote {
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
