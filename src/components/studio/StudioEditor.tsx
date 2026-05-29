@@ -71,7 +71,12 @@ type HeroAIStatus =
     }
   | { kind: "error"; message: string; hint?: string; debug?: string }
 
-const AUTOSAVE_DELAY_MS = 4000
+// Near-instant autosave: save ~1s after the last keystroke. Short
+// enough to feel continuous (you never lose work mid-edit), long
+// enough not to hammer the save endpoint on every character. The
+// empty-body guard in save() still prevents an autosave from wiping a
+// draft. (Was 4000ms — tightened Sprint 11 per the live-edit ask.)
+const AUTOSAVE_DELAY_MS = 1000
 
 const CATEGORIES: DispatchCategory[] = ["Essays", "Notes", "Studio"]
 
@@ -244,7 +249,16 @@ export function StudioEditor({
   async function onPublish() {
     const saved = await save({ silent: false })
     if (!saved) return
-    if (!confirm(`Publish "${frontmatter.title}" to www.tarrysingh.com/blog/${slug}?\n\nThis commits straight to main.`)) {
+    // Streamlined "Update live" path: an already-published post reopened
+    // via Edit-this-post carries was_published=true. Updating it is a
+    // deliberate one-tap action — the content is already public, so skip
+    // the confirm dialog. A first-time publish to a brand-new
+    // /blog/<slug> still confirms, since that exposes a new public URL.
+    const isUpdate = frontmatter.was_published === true
+    if (
+      !isUpdate &&
+      !confirm(`Publish "${frontmatter.title}" to www.tarrysingh.com/blog/${slug}?\n\nThis commits straight to main.`)
+    ) {
       return
     }
     setPublishStatus({ kind: "publishing" })
@@ -627,6 +641,15 @@ export function StudioEditor({
           </Link>
           <span className="hidden sm:inline-block h-4 w-px bg-navy-200/60" />
           <SaveBadge status={saveStatus} />
+          {frontmatter.was_published ? (
+            <span
+              className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-gold-300 bg-gold-50/70 px-2.5 py-1 text-[9.5px] font-semibold uppercase tracking-[0.18em] text-gold-700"
+              style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+              title="Editing a published post. Edits autosave to the draft; click Update live to push them to the blog."
+            >
+              ● Live post
+            </span>
+          ) : null}
           <span className="flex-1" />
           <span
             className="hidden md:inline-block text-[10px] uppercase tracking-[0.22em] text-navy-400"
@@ -668,11 +691,30 @@ export function StudioEditor({
           <button
             onClick={() => void onPublish()}
             disabled={publishStatus.kind === "publishing"}
-            aria-label={publishStatus.kind === "publishing" ? "Publishing…" : "Publish"}
+            aria-label={
+              publishStatus.kind === "publishing"
+                ? frontmatter.was_published
+                  ? "Updating live post…"
+                  : "Publishing…"
+                : frontmatter.was_published
+                  ? "Update live post"
+                  : "Publish"
+            }
+            title={
+              frontmatter.was_published
+                ? "Commit your edits to the live post (one tap, no re-confirm)"
+                : "Publish to the blog"
+            }
             className="inline-flex h-11 items-center justify-center rounded-full border border-gold-400 bg-navy-900 px-3 sm:px-4 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-navy-800 disabled:opacity-50"
             style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
           >
-            {publishStatus.kind === "publishing" ? "Publishing…" : "Publish"}
+            {publishStatus.kind === "publishing"
+              ? frontmatter.was_published
+                ? "Updating…"
+                : "Publishing…"
+              : frontmatter.was_published
+                ? "Update live"
+                : "Publish"}
           </button>
         </div>
         {publishStatus.kind === "published" ? (
@@ -680,7 +722,7 @@ export function StudioEditor({
             className="mx-auto max-w-6xl px-6 pb-3 lg:px-8 text-xs"
             style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
           >
-            <span className="text-gold-700">✓ Published</span>
+            <span className="text-gold-700">{frontmatter.was_published ? "✓ Updated live post" : "✓ Published"}</span>
             <span className="text-navy-300"> · </span>
             <a href={publishStatus.blogUrl} target="_blank" rel="noopener noreferrer" className="text-navy-700 underline decoration-gold-300 hover:decoration-gold-500">
               {publishStatus.blogUrl}
