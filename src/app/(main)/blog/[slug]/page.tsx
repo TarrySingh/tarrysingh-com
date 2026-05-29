@@ -38,6 +38,10 @@ export async function generateMetadata({
   const { slug } = await params
   const post = await getPost(slug)
   if (!post) return { title: "Not found" }
+  // Every post carries a slug-deterministic plate cover; an explicit
+  // bespoke `cover` in frontmatter wins. Resolved absolute via the root
+  // layout's metadataBase so social scrapers accept it.
+  const ogImage = post.cover || `/blog/covers/${slug}.png`
   return {
     title: `${post.title} — Tarry Singh`,
     description: post.excerpt,
@@ -46,13 +50,13 @@ export async function generateMetadata({
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
-      images: post.hero ? [{ url: post.hero }] : undefined,
+      images: [{ url: ogImage, width: 1800, height: 1200, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: post.hero ? [post.hero] : undefined,
+      images: [ogImage],
     },
   }
 }
