@@ -1,17 +1,14 @@
-import { getAllPosts, type BlogPostMeta } from "./posts"
-
 /**
- * Dispatches v2 — Series axis.
+ * Dispatches v2 — Series axis (pure data, no server deps).
  *
  * A "series" is a second organising axis perpendicular to category
  * (Essays / Notes / Studio). Posts opt in via frontmatter:
  *
  *   series: { key: "economics", part: 3, total: 6 }
  *
- * The five series were locked in the design brief. This registry is the
- * single source of truth for their display names + taglines; the Front
- * filter, the Series landing pages, and the per-post "Part N of M"
- * breadcrumb all read from here.
+ * IMPORTANT: this module is import-safe from CLIENT components (the
+ * studio editor imports SERIES/SERIES_KEYS). Keep it free of `node:fs`
+ * / posts.ts — the fs-using query helpers live in series-queries.ts.
  */
 
 export type SeriesKey =
@@ -79,34 +76,4 @@ export function isSeriesKey(value: unknown): value is SeriesKey {
 
 export function getSeries(key: SeriesKey): SeriesMeta {
   return SERIES[key]
-}
-
-/**
- * All posts in a series, ordered by `part` ascending (not by date —
- * a series reads in narrative order).
- */
-export async function getPostsBySeries(
-  key: SeriesKey,
-): Promise<BlogPostMeta[]> {
-  const posts = await getAllPosts()
-  return posts
-    .filter((p) => p.series?.key === key)
-    .sort((a, b) => (a.series?.part ?? 0) - (b.series?.part ?? 0))
-}
-
-/** Every series with its current post count (zero-count series included). */
-export async function getAllSeriesWithCounts(): Promise<
-  Array<SeriesMeta & { count: number }>
-> {
-  const posts = await getAllPosts()
-  return SERIES_KEYS.map((key) => ({
-    ...SERIES[key],
-    count: posts.filter((p) => p.series?.key === key).length,
-  }))
-}
-
-/** The "Notes" stream — posts in the existing Notes category. */
-export async function getNotes(): Promise<BlogPostMeta[]> {
-  const posts = await getAllPosts()
-  return posts.filter((p) => p.category === "Notes")
 }

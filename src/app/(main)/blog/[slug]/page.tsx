@@ -20,6 +20,7 @@ import { ReadingMilestoneNudge } from "@/components/blog/ReadingMilestoneNudge"
 import { QuietExitIntent } from "@/components/blog/QuietExitIntent"
 import { HighlightToShare } from "@/components/blog/HighlightToShare"
 import { TarryPeekABoo } from "@/components/blog/TarryPeekABoo"
+import { ReadModeToggle } from "@/components/blog/ReadModeToggle"
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -73,31 +74,53 @@ export default async function BlogPostPage({
   const nudgeCard = await getNudgeCard(slug)
 
   const isStudioTheme = post.theme === "studio"
-  // Studio variant: cream paper + the same Synaptic palette tokens. Editorial
-  // (default) keeps the gradient-to-white background the existing seed posts use.
-  // SP3-08 from the Sprint 3 UAT — the field was parsed but not rendered.
-  const articleClass = isStudioTheme
-    ? "theme-studio bg-[#fbf7ec]"
-    : "theme-editorial bg-white"
-  const headerClass = isStudioTheme
-    ? "relative pt-28 md:pt-36 pb-10 md:pb-14"
-    : "relative bg-gradient-to-b from-navy-50/40 to-white pt-28 md:pt-36 pb-10 md:pb-14"
+  // Dispatches v2 — "The Read" unifies on a cream paper surface driven by
+  // the light/dark tokens ([data-read-mode] in globals.css). The legacy
+  // theme-studio / theme-editorial class is kept for light-mode colour
+  // continuity, but the background now comes from --read-bg so the dark
+  // toggle flips the whole surface. Drop-cap on Essays only.
+  const articleClass = [
+    isStudioTheme ? "theme-studio" : "theme-editorial",
+    post.category === "Essays" ? "read-dropcap" : "",
+  ]
+    .filter(Boolean)
+    .join(" ")
+  const headerClass = "relative pt-28 md:pt-36 pb-10 md:pb-14"
 
   return (
-    <article className={articleClass}>
+    <article
+      id="read-root"
+      data-read-mode="light"
+      suppressHydrationWarning
+      className={articleClass}
+    >
+      {/* No-flash: apply the stored read-mode before the body paints.
+          Runs as the parser reaches it (read-root is already open). React
+          keeps data-read-mode="light" but never re-controls this
+          server-rendered element, so the imperative flip is safe. */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html:
+            "(function(){try{var m=localStorage.getItem('dispatch-read-mode');if(m==='dark'){var r=document.getElementById('read-root');if(r)r.setAttribute('data-read-mode','dark')}}catch(e){}})()",
+        }}
+      />
       {/* Article header */}
       <header className={headerClass}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-navy-400 hover:text-navy-900 transition-colors mb-8"
-            style={{
-              fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
-            }}
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Dispatches
-          </Link>
+          <div className="mb-8 flex items-center justify-between gap-4">
+            <Link
+              href="/blog"
+              data-read-kicker
+              className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-navy-400 hover:text-navy-900 transition-colors"
+              style={{
+                fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+              }}
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              Dispatches
+            </Link>
+            <ReadModeToggle />
+          </div>
 
           <div className="flex items-center gap-3 mb-5">
             <span
@@ -106,6 +129,7 @@ export default async function BlogPostPage({
               }`}
             />
             <span
+              data-read-meta
               className="text-[11px] font-semibold uppercase tracking-[0.22em] text-navy-400"
               style={{
                 fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
@@ -113,8 +137,9 @@ export default async function BlogPostPage({
             >
               {post.category}
             </span>
-            <span className="text-navy-200">·</span>
+            <span data-read-meta className="text-navy-200">·</span>
             <time
+              data-read-meta
               className="text-[11px] tracking-wide text-navy-400"
               style={{
                 fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
@@ -123,8 +148,9 @@ export default async function BlogPostPage({
             >
               {formatPostDate(post.date)}
             </time>
-            <span className="text-navy-200">·</span>
+            <span data-read-meta className="text-navy-200">·</span>
             <span
+              data-read-meta
               className="text-[11px] tracking-wide text-navy-400"
               style={{
                 fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
@@ -140,6 +166,7 @@ export default async function BlogPostPage({
                 <Link
                   key={tag}
                   href={`/blog/tag/${encodeURIComponent(tag)}`}
+                  data-read-pill
                   className="rounded-full border border-navy-200 bg-white/60 px-2.5 py-0.5 text-[10px] uppercase tracking-[0.22em] text-navy-600 transition-colors hover:border-gold-400 hover:text-gold-700"
                   style={{
                     fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
@@ -152,6 +179,7 @@ export default async function BlogPostPage({
           ) : null}
 
           <h1
+            data-read-title
             className="text-3xl md:text-5xl text-navy-900 tracking-tight leading-[1.1] mb-6"
             style={{ fontFamily: "var(--font-display), 'Gloock', serif" }}
           >
@@ -159,6 +187,7 @@ export default async function BlogPostPage({
           </h1>
 
           <p
+            data-read-excerpt
             className="text-lg md:text-xl text-navy-600 leading-relaxed italic"
             style={{
               fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",

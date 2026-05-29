@@ -3,23 +3,20 @@
 import { useEffect, useId, useRef, useState } from "react"
 
 /**
- * Sprint 10 — in-blog diagram rendering for Dispatches.
+ * Sprint 10 / Dispatches v2 — in-blog diagram rendering.
  *
- * Renders a Mermaid source string to SVG, client-side, with the
- * Synaptic-cream studio palette so diagrams feel like plates and not
- * GitHub-issue charts.
+ * Renders a Mermaid source string to SVG, client-side, in the Synaptic
+ * studio palette so diagrams read like plates, not GitHub-issue charts.
  *
- * Used by mdx-components.tsx via the auto-wired Pre/code path —
- * triple-backtick `mermaid` fenced blocks in a .mdx become this
- * component at render time.
+ * v2: two palettes (light cream / dark navy) chosen from the nearest
+ * `[data-read-mode]` ancestor (The Read's light/dark toggle). A
+ * MutationObserver re-themes the diagram live when the reader flips the
+ * toggle — zero per-post work; the publish flow's on-the-fly ```mermaid
+ * emission is untouched.
  *
  * Mermaid is lazy-loaded so the ~280 kB ES module only ships on pages
- * that actually have a diagram. Lazy import keeps the rest of /blog
- * fast.
- *
- * Errors render as a small editorial-looking fallback (the source as
- * a mono code block + the parse error) rather than a blank space —
- * Tarry should be able to spot a malformed diagram in preview.
+ * that actually have a diagram. Errors render as a small editorial
+ * fallback (source + parse error) rather than a blank space.
  */
 
 interface Props {
@@ -28,33 +25,28 @@ interface Props {
   caption?: string
 }
 
-// Studio-palette tokens (mirror src/app/globals.css)
-const STUDIO_THEME_VARIABLES = {
-  // Backgrounds
+type ReadMode = "light" | "dark"
+
+// Light palette — the cream studio register (mirrors globals.css).
+const LIGHT_THEME_VARIABLES = {
   background: "#fbf7ec",
   mainBkg: "#fdfaf2",
   secondBkg: "#f6efd9",
   tertiaryBkg: "#efe4c0",
-  // Text / lines
   primaryColor: "#fdfaf2",
   primaryTextColor: "#0d1b3d",
   primaryBorderColor: "#b45309",
   lineColor: "rgba(13,27,61,0.4)",
   textColor: "#0d1b3d",
-  // Nodes
   nodeBkg: "#fdfaf2",
   nodeBorder: "#b45309",
   nodeTextColor: "#0d1b3d",
-  // Clusters / subgraphs
   clusterBkg: "rgba(180,134,11,0.06)",
   clusterBorder: "rgba(180,134,11,0.35)",
-  // Edge labels
   edgeLabelBackground: "#fbf7ec",
-  // Notes
   noteBkgColor: "#fffaf0",
   noteBorderColor: "#b45309",
   noteTextColor: "#0d1b3d",
-  // Sequence diagrams
   actorBkg: "#fdfaf2",
   actorBorder: "#b45309",
   actorTextColor: "#0d1b3d",
@@ -63,16 +55,92 @@ const STUDIO_THEME_VARIABLES = {
   labelBoxBkgColor: "#fdfaf2",
   labelBoxBorderColor: "#b45309",
   labelTextColor: "#0d1b3d",
-  // Mindmap
   mindmapBkg: "#fdfaf2",
 } as const
 
+// Dark palette — warm navy + cream + brightened copper (The Read dark).
+const DARK_THEME_VARIABLES = {
+  background: "#0c1828",
+  mainBkg: "#14223b",
+  secondBkg: "#1b2b47",
+  tertiaryBkg: "#22344f",
+  primaryColor: "#14223b",
+  primaryTextColor: "#f6ead0",
+  primaryBorderColor: "#e8a44a",
+  lineColor: "rgba(246,234,208,0.4)",
+  textColor: "#f6ead0",
+  nodeBkg: "#14223b",
+  nodeBorder: "#e8a44a",
+  nodeTextColor: "#f6ead0",
+  clusterBkg: "rgba(232,164,74,0.08)",
+  clusterBorder: "rgba(232,164,74,0.4)",
+  edgeLabelBackground: "#0c1828",
+  noteBkgColor: "#1b2b47",
+  noteBorderColor: "#e8a44a",
+  noteTextColor: "#f6ead0",
+  actorBkg: "#14223b",
+  actorBorder: "#e8a44a",
+  actorTextColor: "#f6ead0",
+  signalColor: "rgba(246,234,208,0.55)",
+  signalTextColor: "#f6ead0",
+  labelBoxBkgColor: "#14223b",
+  labelBoxBorderColor: "#e8a44a",
+  labelTextColor: "#f6ead0",
+  mindmapBkg: "#14223b",
+} as const
+
+function themeCSSFor(mode: ReadMode): string {
+  const edge = mode === "dark" ? "rgba(246,234,208,0.72)" : "rgba(13,27,61,0.72)"
+  const clusterLabel = mode === "dark" ? "#e8a44a" : "#b45309"
+  return `
+    .nodeLabel, .edgeLabel, .label, foreignObject div {
+      font-family: 'IBM Plex Serif', Georgia, serif !important;
+    }
+    .nodeLabel, foreignObject div {
+      font-size: 20px !important;
+      line-height: 1.4 !important;
+    }
+    .edgeLabel {
+      font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+      font-size: 12px !important;
+      letter-spacing: 0.06em !important;
+      color: ${edge} !important;
+    }
+    .cluster-label .nodeLabel,
+    .cluster-label foreignObject div {
+      font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+      font-size: 12px !important;
+      letter-spacing: 0.22em !important;
+      text-transform: uppercase !important;
+      color: ${clusterLabel} !important;
+    }
+  `
+}
+
 export function MermaidDiagram({ code, caption }: Props) {
-  const id = useId().replace(/:/g, "")
+  const baseId = useId().replace(/:/g, "")
   const containerRef = useRef<HTMLDivElement | null>(null)
+  const figureRef = useRef<HTMLElement | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [rendered, setRendered] = useState(false)
+  const [mode, setMode] = useState<ReadMode>("light")
+  const renderSeq = useRef(0)
 
+  // Track the nearest [data-read-mode] ancestor + re-theme on its change.
+  useEffect(() => {
+    const root = figureRef.current?.closest(
+      "[data-read-mode]",
+    ) as HTMLElement | null
+    const apply = () =>
+      setMode(root?.getAttribute("data-read-mode") === "dark" ? "dark" : "light")
+    apply()
+    if (!root) return
+    const obs = new MutationObserver(apply)
+    obs.observe(root, { attributes: true, attributeFilter: ["data-read-mode"] })
+    return () => obs.disconnect()
+  }, [])
+
+  // Render (and re-render when code or mode changes).
   useEffect(() => {
     let cancelled = false
     async function run() {
@@ -81,72 +149,32 @@ export function MermaidDiagram({ code, caption }: Props) {
         mermaid.initialize({
           startOnLoad: false,
           theme: "base",
-          themeVariables: STUDIO_THEME_VARIABLES,
-          fontFamily:
-            "'IBM Plex Serif', Georgia, serif",
-          flowchart: {
-            curve: "basis",
-            padding: 18,
-            htmlLabels: true,
-          },
+          themeVariables:
+            mode === "dark" ? DARK_THEME_VARIABLES : LIGHT_THEME_VARIABLES,
+          fontFamily: "'IBM Plex Serif', Georgia, serif",
+          flowchart: { curve: "basis", padding: 18, htmlLabels: true },
           sequence: {
-            actorFontFamily:
-              "'IBM Plex Mono', ui-monospace, monospace",
+            actorFontFamily: "'IBM Plex Mono', ui-monospace, monospace",
             actorFontSize: 13,
-            messageFontFamily:
-              "'IBM Plex Serif', Georgia, serif",
+            messageFontFamily: "'IBM Plex Serif', Georgia, serif",
             messageFontSize: 14,
             wrap: true,
           },
-          themeCSS: `
-            /*
-             * Node label sizing — 2026-05-26 round 2.
-             * 18 px wasn't enough for the wide multi-row diagrams once
-             * the SVG scaled down to fit even the new lg/xl breakout
-             * width. 20 px on the natural render + the figure breakout
-             * (see <figure className=…>) gives ~17 px effective inside
-             * the three-ways failure-chain diagram on xl screens and
-             * 20 px native on diagrams that fit the column natively
-             * (org graph, PE compounding).
-             */
-            .nodeLabel, .edgeLabel, .label, foreignObject div {
-              font-family: 'IBM Plex Serif', Georgia, serif !important;
-            }
-            .nodeLabel, foreignObject div {
-              font-size: 20px !important;
-              line-height: 1.4 !important;
-            }
-            .edgeLabel {
-              font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
-              font-size: 12px !important;
-              letter-spacing: 0.06em !important;
-              color: rgba(13, 27, 61, 0.72) !important;
-            }
-            .cluster-label .nodeLabel,
-            .cluster-label foreignObject div {
-              font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
-              font-size: 12px !important;
-              letter-spacing: 0.22em !important;
-              text-transform: uppercase !important;
-              color: #b45309 !important;
-            }
-          `,
+          themeCSS: themeCSSFor(mode),
         })
-        const result = await mermaid.render(`mermaid-${id}`, code.trim())
+        // Bump the render id each pass so a re-theme never collides with
+        // the previous render's element ids in the document.
+        renderSeq.current += 1
+        const result = await mermaid.render(
+          `mermaid-${baseId}-${renderSeq.current}`,
+          code.trim(),
+        )
         if (cancelled) return
         if (containerRef.current) {
           containerRef.current.innerHTML = result.svg
-          // Make the SVG fluid + accessibility-friendly.
-          //
-          // Mermaid emits SVG with a fixed `width` attribute (e.g.
-          // width="640") which caps the diagram at its natural laid-out
-          // size — so an 800-px diagram sits at 800 px inside a 1000-px
-          // figure with empty margins either side. We strip the width
-          // and height attributes and let the viewBox + width:100%
-          // scale the diagram up to the figure's content area, which
-          // also enlarges the node labels for readability. Captioned
-          // 2026-05-26 after Tarry called out small diagrams in the
-          // editor preview.
+          // Strip the fixed width/height so the viewBox + width:100%
+          // scale the diagram to the figure's content area (also enlarges
+          // node labels for readability).
           const svg = containerRef.current.querySelector("svg")
           if (svg) {
             svg.setAttribute("role", "img")
@@ -159,6 +187,7 @@ export function MermaidDiagram({ code, caption }: Props) {
           }
         }
         setRendered(true)
+        setError(null)
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err)
         if (!cancelled) setError(message)
@@ -168,37 +197,37 @@ export function MermaidDiagram({ code, caption }: Props) {
     return () => {
       cancelled = true
     }
-  }, [code, id, caption])
+  }, [code, caption, baseId, mode])
+
+  const dark = mode === "dark"
 
   return (
     <figure
-      // Breakout — at lg (1024 px+) the figure pulls 48 px outside the
-      // max-w-3xl (768 px) article column on each side, at xl (1280 px+)
-      // it pulls 96 px outside. Net widths: 768 → 864 → 960 px. Gives
-      // wide diagrams (multi-row failure chains, multi-portco grids)
-      // enough horizontal room that the SVG scale-down doesn't crush
-      // the labels. Studio editor preview-pane width is also lg+, but
-      // its preview container is narrower than the article column, so
-      // the same -mx values would extend the figure beyond the pane.
-      // The overflow is fine for layout purposes (preview is for
-      // editing readability, not pixel-perfect production match).
-      className="my-10 rounded-xl border border-gold-200/60 bg-[#fdfaf2] p-4 sm:p-5 lg:-mx-12 xl:-mx-24"
-      style={{ boxShadow: "0 1px 0 rgba(180,134,11,0.08)" }}
+      ref={figureRef}
+      data-read-surface
+      // Breakout — at lg/xl the figure pulls outside the max-w-3xl
+      // column (48/96 px each side) so wide diagrams get room.
+      className="my-10 rounded-xl border p-4 sm:p-5 lg:-mx-12 xl:-mx-24"
+      style={{
+        background: dark ? "#11203a" : "#fdfaf2",
+        borderColor: dark ? "rgba(232,164,74,0.25)" : "rgba(180,134,11,0.18)",
+        boxShadow: dark
+          ? "0 1px 0 rgba(232,164,74,0.08)"
+          : "0 1px 0 rgba(180,134,11,0.08)",
+      }}
     >
       {error ? (
         <div
-          className="text-xs text-rose-700"
-          style={{
-            fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
-          }}
+          className="text-xs text-rose-600"
+          style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
         >
           <p className="mb-2 font-semibold">Mermaid render error:</p>
-          <pre className="overflow-x-auto whitespace-pre-wrap rounded bg-rose-50 p-3">
+          <pre className="overflow-x-auto whitespace-pre-wrap rounded bg-rose-50 p-3 text-rose-700">
             {error}
           </pre>
           <details className="mt-2 opacity-70">
             <summary>Source</summary>
-            <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded bg-rose-50 p-3 text-[10.5px]">
+            <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded bg-rose-50 p-3 text-[10.5px] text-rose-700">
               {code}
             </pre>
           </details>
@@ -212,10 +241,11 @@ export function MermaidDiagram({ code, caption }: Props) {
       )}
       {caption && !error ? (
         <figcaption
-          className="mt-4 text-center text-[0.9rem] italic text-navy-600"
+          className="mt-4 text-center text-[0.9rem] italic"
           style={{
             fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
             lineHeight: 1.55,
+            color: dark ? "rgba(246,234,208,0.66)" : "rgba(13,27,61,0.6)",
           }}
         >
           {caption}

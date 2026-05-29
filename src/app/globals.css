@@ -557,3 +557,135 @@ html {
 .theme-studio header [data-category-label] {
   color: var(--ink-muted);
 }
+
+/* ────────────────────────────────────────────────────────────────────
+   Dispatches v2 — "The Read" dark/light theming.
+
+   The Read defaults to LIGHT (the existing cream/white look is
+   untouched, so all 22 live posts render identically in light mode —
+   zero regression). A `data-read-mode="dark"` attribute on the
+   <article id="read-root"> flips a small set of semantic tokens and
+   overrides the body colours for dark mode. Mermaid re-themes off the
+   same attribute (see MermaidDiagram.tsx). Scoping everything under
+   [data-read-mode="dark"] means the rest of the site chrome is
+   unaffected.
+   ──────────────────────────────────────────────────────────────────── */
+[data-read-mode] {
+  /* light defaults — semantic tokens for The Read */
+  --read-bg: #fbf7ec;
+  --read-fg: #0d1b3d;
+  --read-fg-muted: rgba(13, 27, 61, 0.62);
+  --read-fg-soft: rgba(13, 27, 61, 0.42);
+  --read-accent: #b45309;
+  --read-accent-soft: rgba(180, 83, 9, 0.45);
+  --read-hair: rgba(13, 27, 61, 0.12);
+  --read-surface: rgba(13, 27, 61, 0.03);
+  --read-surface-border: rgba(13, 27, 61, 0.1);
+}
+[data-read-mode="dark"] {
+  /* dark "Synaptic" register — warm navy + cream + brightened copper */
+  --read-bg: #0c1828;
+  --read-fg: #f6ead0;
+  --read-fg-muted: rgba(246, 234, 208, 0.66);
+  --read-fg-soft: rgba(246, 234, 208, 0.44);
+  --read-accent: #e8a44a;
+  --read-accent-soft: rgba(232, 164, 74, 0.5);
+  --read-hair: rgba(246, 234, 208, 0.14);
+  --read-surface: rgba(246, 234, 208, 0.05);
+  --read-surface-border: rgba(246, 234, 208, 0.12);
+}
+
+/* Smooth the flip (but not on first paint / reduced motion). */
+[data-read-mode] {
+  transition: background-color 320ms var(--ease-paper, ease),
+    color 320ms var(--ease-paper, ease);
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-read-mode] {
+    transition: none;
+  }
+}
+
+/* Article surface follows the mode. */
+[data-read-mode] {
+  background-color: var(--read-bg);
+  color: var(--read-fg);
+}
+
+/* — Dark-mode body overrides. Light mode keeps the existing utility
+     colours untouched; these only bite when data-read-mode="dark". — */
+[data-read-mode="dark"] .prose-tarry,
+[data-read-mode="dark"] .prose-tarry p,
+[data-read-mode="dark"] .prose-tarry li,
+[data-read-mode="dark"] .prose-tarry ul,
+[data-read-mode="dark"] .prose-tarry ol {
+  color: var(--read-fg-muted);
+}
+[data-read-mode="dark"] .prose-tarry h1,
+[data-read-mode="dark"] .prose-tarry h2,
+[data-read-mode="dark"] .prose-tarry h3,
+[data-read-mode="dark"] .prose-tarry strong {
+  color: var(--read-fg);
+}
+[data-read-mode="dark"] .prose-tarry em {
+  color: var(--read-fg);
+}
+[data-read-mode="dark"] .prose-tarry a {
+  color: var(--read-accent);
+  text-decoration-color: var(--read-accent-soft);
+}
+[data-read-mode="dark"] .prose-tarry blockquote {
+  border-left-color: var(--read-accent);
+  color: var(--read-fg-muted);
+}
+[data-read-mode="dark"] .prose-tarry code {
+  background: var(--read-surface);
+  color: var(--read-fg);
+  border-color: var(--read-surface-border);
+}
+[data-read-mode="dark"] .prose-tarry pre,
+[data-read-mode="dark"] .prose-tarry [class*="shiki"],
+[data-read-mode="dark"] .prose-tarry pre > div {
+  background: #0a1422 !important;
+  border-color: var(--read-surface-border);
+}
+[data-read-mode="dark"] .prose-tarry hr {
+  background: linear-gradient(90deg, transparent, var(--read-hair), transparent);
+}
+[data-read-mode="dark"] .prose-tarry img,
+[data-read-mode="dark"] .prose-tarry .studio-image {
+  border-color: var(--read-surface-border);
+}
+
+/* Header + meta + footer chrome in dark mode (the page sets these via
+   navy utility classes; override by scope). */
+[data-read-mode="dark"] [data-read-kicker],
+[data-read-mode="dark"] [data-read-meta] {
+  color: var(--read-fg-soft);
+}
+[data-read-mode="dark"] [data-read-title] {
+  color: var(--read-fg);
+}
+[data-read-mode="dark"] [data-read-excerpt] {
+  color: var(--read-fg-muted);
+}
+[data-read-mode="dark"] [data-read-hair] {
+  background-color: var(--read-hair);
+  border-color: var(--read-hair);
+}
+[data-read-mode="dark"] [data-read-pill] {
+  color: var(--read-fg-muted);
+  border-color: var(--read-surface-border);
+  background: var(--read-surface);
+}
+
+/* Drop-cap — flagship Essays only (not Notes). First letter of the
+   first paragraph after the body opens. */
+.read-dropcap .prose-tarry > p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-display), "Gloock", serif;
+  font-size: 3.4em;
+  line-height: 0.78;
+  padding: 0.05em 0.12em 0 0;
+  color: var(--read-accent);
+}
