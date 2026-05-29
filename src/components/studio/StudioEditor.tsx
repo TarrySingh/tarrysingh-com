@@ -13,6 +13,7 @@ import Image from "@tiptap/extension-image"
 import { htmlToMarkdown, markdownToEditorHtml } from "@/lib/studio/serialize"
 import type { AIFrontmatterSuggestion } from "@/lib/studio/ai"
 import { MermaidDiagram } from "@/components/blog/MermaidDiagram"
+import { SERIES, SERIES_KEYS, type SeriesKey } from "@/lib/blog/series"
 import { HistoryPane } from "./HistoryPane"
 import {
   type DispatchFrontmatter,
@@ -1369,7 +1370,7 @@ function FrontmatterForm({
         <summary className="cursor-pointer text-[10px] uppercase tracking-[0.28em] text-navy-400 hover:text-navy-700"
           style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
         >
-          More frontmatter (hero, theme, tags, linkedin_url)
+          More frontmatter (hero, theme, series, cover, tags, linkedin_url)
         </summary>
         <div className="mt-4 grid grid-cols-2 gap-4">
           <div className="col-span-2">
@@ -1405,6 +1406,68 @@ function FrontmatterForm({
               <option value="editorial">editorial (default)</option>
               <option value="studio">studio</option>
             </select>
+          </div>
+          <div className="col-span-2 grid grid-cols-[1fr_auto] gap-3">
+            <div>
+              <label className="block text-[10px] uppercase tracking-[0.28em] text-navy-400 mb-2"
+                style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+              >Series</label>
+              <select
+                value={frontmatter.series?.key ?? ""}
+                onChange={(e) => {
+                  const key = e.target.value
+                  if (!key) {
+                    setFm("series", undefined)
+                    return
+                  }
+                  setFm("series", {
+                    key: key as SeriesKey,
+                    part: frontmatter.series?.part ?? 1,
+                    ...(frontmatter.series?.total ? { total: frontmatter.series.total } : {}),
+                  })
+                }}
+                className="w-full rounded-md border border-navy-200 bg-white px-3 py-2 text-sm text-navy-900 focus:outline-none focus:border-gold-400"
+                style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+              >
+                <option value="">— none —</option>
+                {SERIES_KEYS.map((k) => (
+                  <option key={k} value={k}>{SERIES[k].name}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-[10px] uppercase tracking-[0.28em] text-navy-400 mb-2"
+                style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+              >Part</label>
+              <input
+                type="number"
+                min={1}
+                disabled={!frontmatter.series}
+                value={frontmatter.series?.part ?? ""}
+                onChange={(e) => {
+                  if (!frontmatter.series) return
+                  setFm("series", {
+                    ...frontmatter.series,
+                    part: Math.max(1, Number(e.target.value) || 1),
+                  })
+                }}
+                className="w-20 rounded-md border border-navy-200 px-3 py-2 text-sm text-navy-900 focus:outline-none focus:border-gold-400 disabled:opacity-40"
+                style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+              />
+            </div>
+          </div>
+          <div className="col-span-2">
+            <label className="block text-[10px] uppercase tracking-[0.28em] text-navy-400 mb-2"
+              style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+            >Cover PNG (optional — omit for slug-deterministic cover)</label>
+            <input
+              type="text"
+              value={frontmatter.cover ?? ""}
+              onChange={(e) => setFm("cover", e.target.value || undefined)}
+              placeholder="/blog/covers/<slug>.bespoke.png"
+              className="w-full rounded-md border border-navy-200 px-3 py-2 text-sm text-navy-900 focus:outline-none focus:border-gold-400"
+              style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+            />
           </div>
           <div className="col-span-2">
             <label className="block text-[10px] uppercase tracking-[0.28em] text-navy-400 mb-2"

@@ -1,3 +1,5 @@
+import type { SeriesRef } from "@/lib/blog/series"
+
 export type DispatchCategory = "Essays" | "Notes" | "Studio"
 export type DispatchTheme = "editorial" | "studio"
 
@@ -11,6 +13,10 @@ export interface DispatchFrontmatter {
   linkedin_url?: string
   draft?: boolean
   tags?: string[]
+  /** Series axis (Dispatches v2). Emitted to .mdx by buildMdx. */
+  series?: SeriesRef
+  /** Explicit bespoke cover PNG path; omit for slug-deterministic cover. */
+  cover?: string
   /**
    * Editor-only flag. Set by `reopenPublished()` when an existing
    * `content/blog/<slug>.mdx` is loaded back into the studio_drafts

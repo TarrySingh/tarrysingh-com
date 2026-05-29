@@ -2,6 +2,7 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import matter from "gray-matter"
 import readingTime from "reading-time"
+import { isSeriesKey, type SeriesRef } from "./series"
 
 export type BlogCategory = "Essays" | "Notes" | "Studio"
 
@@ -17,6 +18,10 @@ export interface BlogFrontmatter {
   linkedin_url?: string
   draft?: boolean
   tags?: string[]
+  /** Series axis (Dispatches v2). See src/lib/blog/series.ts. */
+  series?: SeriesRef
+  /** Explicit bespoke cover PNG path. Omit → slug-deterministic cover. */
+  cover?: string
 }
 
 export interface BlogPostMeta extends BlogFrontmatter {
@@ -74,10 +79,35 @@ function parseFrontmatter(raw: string, slug: string): BlogPost {
     linkedin_url: fm.linkedin_url,
     draft: fm.draft ?? false,
     tags: fm.tags ?? [],
+    series: parseSeries(fm.series, slug),
+    cover: typeof fm.cover === "string" ? fm.cover : undefined,
     readingTimeText: rt.text,
     readingTimeMinutes: Math.max(1, Math.round(rt.minutes)),
     wordCount: rt.words,
     body: content,
+  }
+}
+
+/**
+ * Lenient series parser — accepts `{ key, part, total? }`, warns and
+ * ignores anything malformed rather than throwing (a bad series field
+ * shouldn't 500 the whole blog).
+ */
+function parseSeries(raw: unknown, slug: string): SeriesRef | undefined {
+  if (raw == null) return undefined
+  if (typeof raw !== "object") {
+    console.warn(`[blog] ${slug}.mdx: \`series\` must be an object {key, part}; ignoring.`)
+    return undefined
+  }
+  const s = raw as { key?: unknown; part?: unknown; total?: unknown }
+  if (!isSeriesKey(s.key) || typeof s.part !== "number") {
+    console.warn(`[blog] ${slug}.mdx: \`series\` needs a valid key + numeric part; ignoring.`)
+    return undefined
+  }
+  return {
+    key: s.key,
+    part: s.part,
+    ...(typeof s.total === "number" ? { total: s.total } : {}),
   }
 }
 
@@ -101,6 +131,8 @@ export async function getAllPosts(): Promise<BlogPostMeta[]> {
       linkedin_url: post.linkedin_url,
       draft: post.draft,
       tags: post.tags,
+      series: post.series,
+      cover: post.cover,
       readingTimeText: post.readingTimeText,
       readingTimeMinutes: post.readingTimeMinutes,
       wordCount: post.wordCount,

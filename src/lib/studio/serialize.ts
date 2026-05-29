@@ -88,6 +88,13 @@ export function buildMdx(fm: DispatchFrontmatter, body: string): string {
   if (fm.tags && fm.tags.length > 0) {
     lines.push(`tags: [${fm.tags.map((t) => JSON.stringify(t)).join(", ")}]`)
   }
+  if (fm.cover) lines.push(`cover: ${JSON.stringify(fm.cover)}`)
+  if (fm.series) {
+    const s = fm.series
+    const parts = [`key: ${JSON.stringify(s.key)}`, `part: ${s.part}`]
+    if (typeof s.total === "number") parts.push(`total: ${s.total}`)
+    lines.push(`series: { ${parts.join(", ")} }`)
+  }
   lines.push("---")
   lines.push("")
   lines.push(body.trim())
