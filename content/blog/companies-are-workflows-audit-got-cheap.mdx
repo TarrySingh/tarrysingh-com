@@ -43,7 +43,6 @@ Edges break in three ways. They are *broken* when a handoff is well-defined but 
 
 ```mermaid
 %% caption: Every "alignment issue" a board hears about is one of these three failure modes in disguise.
-%%{init:{"theme":"base","themeVariables":{"primaryColor":"#E8EEF4","primaryBorderColor":"#5B9BD5","primaryTextColor":"#003366","lineColor":"#5B9BD5","fontFamily":"Segoe UI, Helvetica Neue, Arial, sans-serif","fontSize":"13px","edgeLabelBackground":"#FFFFFF"}}}%%
 flowchart LR
   subgraph BROKEN[" "]
     direction TB
@@ -97,28 +96,28 @@ flowchart LR
   IGNORED ~~~ INCOMPLETE
   INCOMPLETE --> TAKEAWAY
 
-  classDef headerRed fill:#B71C1C,stroke:#B71C1C,color:#FFFFFF,font-weight:bold,font-size:15px
-  classDef headerAmber fill:#E65100,stroke:#E65100,color:#FFFFFF,font-weight:bold,font-size:15px
-  classDef headerOrange fill:#F57F17,stroke:#F57F17,color:#FFFFFF,font-weight:bold,font-size:15px
-  classDef descNode fill:#FFF8E1,stroke:#F57F17,stroke-width:1px,color:#003366,font-size:12px
-  classDef deptNode fill:#E8EEF4,stroke:#5B9BD5,stroke-width:2px,color:#003366,font-size:13px
-  classDef failNode fill:#FFEBEE,stroke:#B71C1C,stroke-width:2px,color:#B71C1C,font-size:12px,font-weight:bold
-  classDef takeawayHeader fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:14px
-  classDef takeawayNode fill:#FFFFFF,stroke:#5B9BD5,stroke-width:1.5px,color:#003366,font-size:13px,font-weight:bold
+  classDef hdrRose fill:#cf7d5a,stroke:#cf7d5a,color:#0c1828,font-weight:bold
+  classDef hdrCopper fill:#c98e4f,stroke:#c98e4f,color:#0c1828,font-weight:bold
+  classDef hdrCool fill:#849cc8,stroke:#849cc8,color:#0c1828,font-weight:bold
+  classDef hdrViolet fill:#a698d4,stroke:#a698d4,color:#0c1828,font-weight:bold
+  classDef descNode stroke:#849cc8,stroke-width:1px
+  classDef deptNode stroke:#c98e4f,stroke-width:1.5px
+  classDef failNode stroke:#cf7d5a,stroke-width:1.5px,font-weight:bold
+  classDef takeawayNode stroke:#a698d4,stroke-width:1.5px,font-weight:bold
 
-  class B_H headerRed
-  class I_H headerAmber
-  class IC_H headerOrange
+  class B_H hdrRose
+  class I_H hdrCopper
+  class IC_H hdrCool
   class B_DESC,I_DESC,IC_DESC descNode
   class B1,B2,I1,I2,IC1,IC2 deptNode
   class B3,I3,IC3 failNode
-  class T_H takeawayHeader
+  class T_H hdrViolet
   class T1,T2 takeawayNode
 
-  style BROKEN fill:#FFEBEE,stroke:#B71C1C,stroke-width:2px,rx:8
-  style IGNORED fill:#FFF3E0,stroke:#E65100,stroke-width:2px,rx:8
-  style INCOMPLETE fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,rx:8
-  style TAKEAWAY fill:#E8EEF4,stroke:#003366,stroke-width:2px,rx:8
+  style BROKEN fill:none,stroke:#cf7d5a,stroke-width:1.5px,rx:8
+  style IGNORED fill:none,stroke:#c98e4f,stroke-width:1.5px,rx:8
+  style INCOMPLETE fill:none,stroke:#849cc8,stroke-width:1.5px,rx:8
+  style TAKEAWAY fill:none,stroke:#a698d4,stroke-width:2px,rx:8
 ```
 
 ### The fifteen-thousand-tool census
@@ -131,7 +130,6 @@ I would bet against any chief marketing officer who responds to this with "we al
 
 ```mermaid
 %% caption: Before: sixty to two hundred tools per department, half the seats idle. After: a unified data layer and an agent that orchestrates the workflows that remain.
-%%{init:{"theme":"base","themeVariables":{"primaryColor":"#E8EEF4","primaryBorderColor":"#5B9BD5","primaryTextColor":"#003366","lineColor":"#5B9BD5","fontFamily":"Segoe UI, Helvetica Neue, Arial, sans-serif","fontSize":"13px","edgeLabelBackground":"#FFFFFF"}}}%%
 flowchart TD
   subgraph BEFORE[" "]
     direction TB
@@ -203,37 +201,32 @@ flowchart TD
 
   BEFORE --> TRANSFORM --> AFTER
 
-  classDef titleNode fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:16px
-  classDef statNode fill:#FFEBEE,stroke:#B71C1C,stroke-width:1.5px,color:#B71C1C,font-size:13px,font-weight:bold
-  classDef deptHeader fill:#5B9BD5,stroke:#5B9BD5,color:#FFFFFF,font-weight:bold,font-size:13px
-  classDef toolNode fill:#FFFFFF,stroke:#BDBDBD,stroke-width:1px,color:#616161,font-size:11px
-  classDef transformHeader fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:15px
-  classDef stepNode fill:#E8EEF4,stroke:#5B9BD5,stroke-width:2px,color:#003366,font-size:13px,font-weight:bold
-  classDef afterTitle fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:16px
-  classDef coreHeader fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF,font-weight:bold,font-size:13px
-  classDef coreNode fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-size:13px
-  classDef resultHeader fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF,font-weight:bold,font-size:14px
-  classDef resultNode fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-size:13px,font-weight:bold
+  classDef hdrRose fill:#cf7d5a,stroke:#cf7d5a,color:#0c1828,font-weight:bold
+  classDef hdrCopper fill:#c98e4f,stroke:#c98e4f,color:#0c1828,font-weight:bold
+  classDef hdrCool fill:#849cc8,stroke:#849cc8,color:#0c1828,font-weight:bold
+  classDef hdrTeal fill:#5fa6b4,stroke:#5fa6b4,color:#0c1828,font-weight:bold
+  classDef statNode stroke:#cf7d5a,stroke-width:1.5px,font-weight:bold
+  classDef toolNode stroke:#849cc8,stroke-width:1px
+  classDef stepNode stroke:#c98e4f,stroke-width:1.5px,font-weight:bold
+  classDef goodNode stroke:#5fa6b4,stroke-width:1.5px
 
-  class BEF_H titleNode
+  class BEF_H hdrRose
   class BEF_STAT statNode
-  class BM_H,BS_H deptHeader
-  class BM1,BM2,BM3,BM4,BM5,BM6,BM7,BM8,BM9,BS1,BS2,BS3,BS4,BS5,BS6,BS7,BS8,BS9,BS9 toolNode
-  class TR_H transformHeader
+  class BM_H,BS_H hdrCool
+  class BM1,BM2,BM3,BM4,BM5,BM6,BM7,BM8,BM9,BS1,BS2,BS3,BS4,BS5,BS6,BS7,BS8,BS9 toolNode
+  class TR_H hdrCopper
   class TR1,TR2,TR3,TR4 stepNode
-  class AFT_H afterTitle
-  class AC_H coreHeader
-  class AC1,AC2,AC3 coreNode
-  class AR_H resultHeader
-  class AR1,AR2,AR3,AR4 resultNode
+  class AFT_H hdrTeal
+  class AC_H,AR_H hdrTeal
+  class AC1,AC2,AC3,AR1,AR2,AR3,AR4 goodNode
 
-  style BEFORE fill:#FFF3E0,stroke:#E65100,stroke-width:2px,rx:8
-  style BF_MKT fill:#FFEBEE,stroke:#BDBDBD,stroke-width:1px,rx:6
-  style BF_SALES fill:#FFEBEE,stroke:#BDBDBD,stroke-width:1px,rx:6
-  style TRANSFORM fill:#E8EEF4,stroke:#003366,stroke-width:2px,rx:8
-  style AFTER fill:#E8F5E9,stroke:#1B5E20,stroke-width:2px,rx:8
-  style AF_CORE fill:#C8E6C9,stroke:#2E7D32,stroke-width:1.5px,rx:6
-  style AF_RESULT fill:#C8E6C9,stroke:#2E7D32,stroke-width:1.5px,rx:6
+  style BEFORE fill:none,stroke:#cf7d5a,stroke-width:1.5px,rx:8
+  style BF_MKT fill:none,stroke:#849cc8,stroke-width:1px,rx:6
+  style BF_SALES fill:none,stroke:#849cc8,stroke-width:1px,rx:6
+  style TRANSFORM fill:none,stroke:#c98e4f,stroke-width:1.5px,rx:8
+  style AFTER fill:none,stroke:#5fa6b4,stroke-width:1.5px,rx:8
+  style AF_CORE fill:none,stroke:#5fa6b4,stroke-width:1px,rx:6
+  style AF_RESULT fill:none,stroke:#5fa6b4,stroke-width:1px,rx:6
 ```
 
 ### The numbers, plainly
@@ -322,7 +315,6 @@ The capital cost of running an agentic audit on a $200 million-revenue mid-marke
 
 ```mermaid
 %% caption: The audit playbook compounds — acquire, audit, optimise, exit; then the same artifact ports to the next company, and the arithmetic scales across the held book.
-%%{init:{"theme":"base","themeVariables":{"primaryColor":"#E8EEF4","primaryBorderColor":"#5B9BD5","primaryTextColor":"#003366","lineColor":"#5B9BD5","fontFamily":"Segoe UI, Helvetica Neue, Arial, sans-serif","fontSize":"13px","edgeLabelBackground":"#FFFFFF"}}}%%
 flowchart TD
   subgraph SPONSOR[" "]
     direction TB
@@ -406,34 +398,31 @@ flowchart TD
   EXIT -. "playbook\ncompounds" .-> COMPOUND
   COMPOUND --> MATH
 
-  classDef titleNode fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:17px
-  classDef phaseHeader fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:14px
-  classDef actionNode fill:#FFFFFF,stroke:#5B9BD5,stroke-width:1.5px,color:#003366,font-size:12px
-  classDef portcoNode fill:#E8EEF4,stroke:#5B9BD5,stroke-width:2px,color:#003366,font-size:12px,font-weight:bold
-  classDef compoundHeader fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF,font-weight:bold,font-size:15px
-  classDef compoundStat fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20,font-size:13px,font-weight:bold
-  classDef mathHeader fill:#003366,stroke:#003366,color:#FFFFFF,font-weight:bold,font-size:14px
-  classDef mathNode fill:#FFF8E1,stroke:#F57F17,stroke-width:1.5px,color:#003366,font-size:13px
-  classDef mathBig fill:#F57F17,stroke:#F57F17,color:#FFFFFF,font-weight:bold,font-size:15px
+  classDef hdrCopper fill:#c98e4f,stroke:#c98e4f,color:#0c1828,font-weight:bold
+  classDef hdrTeal fill:#5fa6b4,stroke:#5fa6b4,color:#0c1828,font-weight:bold
+  classDef actionNode stroke:#849cc8,stroke-width:1.5px
+  classDef portcoNode stroke:#a698d4,stroke-width:1.5px,font-weight:bold
+  classDef statNode stroke:#5fa6b4,stroke-width:1.5px,font-weight:bold
+  classDef mathNode stroke:#c98e4f,stroke-width:1.5px
 
-  class SP_H titleNode
-  class ACQ_H,AUD_H,OPT_H,EX_H phaseHeader
+  class SP_H hdrCopper
+  class ACQ_H,AUD_H,OPT_H,EX_H hdrCopper
   class A1,A2,A3,AU1,AU2,AU3,O1,O2,O3,E1,E2,E3 actionNode
   class PF1,PF2,PF3,PF4 portcoNode
-  class CP_H compoundHeader
-  class CP_STAT compoundStat
-  class MA_H mathHeader
+  class CP_H hdrTeal
+  class CP_STAT statNode
+  class MA_H hdrCopper
   class MA1,MA2,MA3 mathNode
-  class MA4 mathBig
+  class MA4 hdrCopper
 
-  style SPONSOR fill:#F0F4F8,stroke:#5B9BD5,stroke-width:2px,rx:8
-  style ACQUIRE fill:#E8EEF4,stroke:#5B9BD5,stroke-width:1.5px,rx:6
-  style AUDIT fill:#E8EEF4,stroke:#5B9BD5,stroke-width:1.5px,rx:6
-  style OPTIMISE fill:#E8EEF4,stroke:#5B9BD5,stroke-width:1.5px,rx:6
-  style EXIT fill:#E8EEF4,stroke:#5B9BD5,stroke-width:1.5px,rx:6
-  style COMPOUND fill:#E8F5E9,stroke:#1B5E20,stroke-width:2px,rx:8
-  style PORTFOLIO fill:#C8E6C9,stroke:#2E7D32,stroke-width:1.5px,rx:6
-  style MATH fill:#FFF8E1,stroke:#F57F17,stroke-width:2px,rx:8
+  style SPONSOR fill:none,stroke:#c98e4f,stroke-width:1.5px,rx:8
+  style ACQUIRE fill:none,stroke:#849cc8,stroke-width:1px,rx:6
+  style AUDIT fill:none,stroke:#849cc8,stroke-width:1px,rx:6
+  style OPTIMISE fill:none,stroke:#849cc8,stroke-width:1px,rx:6
+  style EXIT fill:none,stroke:#849cc8,stroke-width:1px,rx:6
+  style COMPOUND fill:none,stroke:#5fa6b4,stroke-width:1.5px,rx:8
+  style PORTFOLIO fill:none,stroke:#a698d4,stroke-width:1px,rx:6
+  style MATH fill:none,stroke:#c98e4f,stroke-width:1.5px,rx:8
 ```
 
 ### Three structural advantages
