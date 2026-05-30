@@ -22,6 +22,7 @@ import { HighlightToShare } from "@/components/blog/HighlightToShare"
 import { TarryPeekABoo } from "@/components/blog/TarryPeekABoo"
 import { ReadModeToggle } from "@/components/blog/ReadModeToggle"
 import { ReadRail } from "@/components/blog/ReadRail"
+import { SetPiece } from "@/components/blog/SetPiece"
 import { SERIES } from "@/lib/blog/series"
 import { getPostsBySeries } from "@/lib/blog/series-queries"
 
@@ -76,6 +77,10 @@ export default async function BlogPostPage({
   const { slug } = await params
   const post = await getPost(slug)
   if (!post) notFound()
+
+  // Dispatches v2 — The Set Piece register. Opt-in via `theme: "setpiece"`;
+  // the scroll-driven feature replaces The Read for this post.
+  if (post.theme === "setpiece") return <SetPiece post={post} />
 
   // Sprint 5.5.1 — AI-baked footer nudge card, if one was generated
   // at publish time via `npm run blog:bake-nudge <slug>`.

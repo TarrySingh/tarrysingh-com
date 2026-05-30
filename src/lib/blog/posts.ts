@@ -6,7 +6,7 @@ import { isSeriesKey, type SeriesRef } from "./series"
 
 export type BlogCategory = "Essays" | "Notes" | "Studio"
 
-export type BlogTheme = "editorial" | "studio"
+export type BlogTheme = "editorial" | "studio" | "setpiece"
 
 export interface BlogFrontmatter {
   title: string
