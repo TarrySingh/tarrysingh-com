@@ -5,6 +5,7 @@ category: "Essays"
 excerpt: "Any 2026 production agent stack without the three-layer caching pattern — engine prefix cache, API prompt cache, gateway semantic cache — is carrying a 30–60% avoidable inference bill. The pattern isn't subtle; it's just rarely implemented in the right order."
 draft: false
 tags: ["inference economics", "caching", "finops", "llmops", "agents"]
+series: { key: "build", part: 5 }
 ---
 
 A few weeks ago I was reviewing the production architecture for a customer-dispute agent one of our engineers had inherited from a partner team. Latency was bad. The token bill was worse. I scrolled through the routing code for forty seconds and asked the question I have asked too many times this year: where is the cache.
