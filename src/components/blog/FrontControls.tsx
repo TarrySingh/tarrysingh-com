@@ -41,7 +41,7 @@ export function FrontControls({
 
   function chipClass(active: boolean) {
     return [
-      "inline-flex h-8 items-center rounded-full border px-3 text-[10px] font-semibold uppercase tracking-[0.2em] transition-colors",
+      "inline-flex h-8 items-center rounded-full border px-3 text-[10px] font-semibold uppercase tracking-[0.2em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98e4f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0c1828]",
       active
         ? "border-[#c98e4f] bg-[#c98e4f]/15 text-[#f4c482]"
         : "border-[rgba(246,234,208,0.18)] text-[rgba(246,234,208,0.6)] hover:text-[#f6ead0] hover:border-[rgba(246,234,208,0.4)]",
@@ -56,6 +56,7 @@ export function FrontControls({
             key={c}
             type="button"
             onClick={() => setCat(c)}
+            aria-pressed={cat === c}
             className={chipClass(cat === c)}
             style={mono}
           >
@@ -66,7 +67,7 @@ export function FrontControls({
       {activeSeries.length > 0 ? (
         <div className="flex flex-wrap items-center gap-2">
           <span
-            className="text-[10px] uppercase tracking-[0.22em] text-[rgba(246,234,208,0.4)]"
+            className="text-[10px] uppercase tracking-[0.22em] text-[rgba(246,234,208,0.55)]"
             style={mono}
           >
             Series
@@ -74,6 +75,7 @@ export function FrontControls({
           <button
             type="button"
             onClick={() => setSeries("all")}
+            aria-pressed={series === "all"}
             className={chipClass(series === "all")}
             style={mono}
           >
@@ -84,6 +86,7 @@ export function FrontControls({
               key={k}
               type="button"
               onClick={() => setSeries(k)}
+              aria-pressed={series === k}
               className={chipClass(series === k)}
               style={mono}
             >

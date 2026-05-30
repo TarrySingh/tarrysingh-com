@@ -42,8 +42,9 @@ export function ReadModeToggle() {
       onClick={toggle}
       data-read-pill
       aria-label={mode === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+      aria-pressed={mode === "dark"}
       title={mode === "dark" ? "Light mode" : "Dark mode"}
-      className="inline-flex h-9 items-center gap-1.5 rounded-full border border-navy-200 bg-white/60 px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-navy-500 transition-colors hover:text-navy-900"
+      className="inline-flex h-9 items-center gap-1.5 rounded-full border border-navy-200 bg-white/60 px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-navy-500 transition-colors hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-1"
       style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
     >
       <span aria-hidden="true">{mode === "dark" ? "☼" : "☾"}</span>
