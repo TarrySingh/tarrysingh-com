@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { highlight } from "./shiki"
 import { MermaidDiagram } from "@/components/blog/MermaidDiagram"
+import { SymphonySubstrate } from "@/components/blog/SymphonySubstrate"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -229,4 +230,5 @@ export const mdxComponents = {
   img: Img,
   Sidenote,
   PullQuote,
+  SymphonySubstrate,
 }
