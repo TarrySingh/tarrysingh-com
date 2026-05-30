@@ -589,6 +589,13 @@ export function SetPiece({ post }: { post: BlogPostMeta }) {
             Read the full essay →
           </Link>
           <Link
+            href="/synaptic/symphony"
+            className="rounded-full border px-6 py-3 text-sm transition-colors hover:bg-[#c98e4f] hover:text-[#0c1828]"
+            style={{ ...mono, borderColor: "rgba(201,142,79,0.5)", color: cream }}
+          >
+            The proposal →
+          </Link>
+          <Link
             href="/blog"
             className="rounded-full border px-6 py-3 text-sm transition-colors hover:bg-[#c98e4f] hover:text-[#0c1828]"
             style={{ ...mono, borderColor: "rgba(201,142,79,0.5)", color: cream }}
