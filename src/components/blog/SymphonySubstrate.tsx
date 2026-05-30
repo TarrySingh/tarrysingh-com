@@ -82,7 +82,10 @@ export function SymphonySubstrate() {
   const layoutRef = useRef<Node[][]>(buildLayout())
   // current per-node activation (animated), and the target.
   const actRef = useRef<number[][]>(STRATA.map((_, li) => layoutRef.current[li].map(() => 0)))
-  const focusRef = useRef({ cur: TASKS[0].focus, target: TASKS[0].focus })
+  const focusRef = useRef<{ cur: number; target: number }>({
+    cur: TASKS[0].focus,
+    target: TASKS[0].focus,
+  })
   const rafRef = useRef(0)
   const [task, setTask] = useState(0)
   const [mode, setMode] = useState<Mode>("light")
@@ -121,7 +124,6 @@ export function SymphonySubstrate() {
     focusRef.current.target = focus
     let raf = 0
     const dur = 620
-    // no Date.now in this env constraint context? component runs in browser — performance.now is fine.
     let t0 = 0
     const step = (ts: number) => {
       if (!t0) t0 = ts
