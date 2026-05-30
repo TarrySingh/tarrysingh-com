@@ -4,6 +4,9 @@ import Image from "next/image"
 import { highlight } from "./shiki"
 import { MermaidDiagram } from "@/components/blog/MermaidDiagram"
 import { SymphonySubstrate } from "@/components/blog/SymphonySubstrate"
+import { ComprehensionGap } from "@/components/blog/ComprehensionGap"
+import { StatisticalCeiling } from "@/components/blog/StatisticalCeiling"
+import { ConsortiumConstellation } from "@/components/blog/ConsortiumConstellation"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -231,4 +234,7 @@ export const mdxComponents = {
   Sidenote,
   PullQuote,
   SymphonySubstrate,
+  ComprehensionGap,
+  StatisticalCeiling,
+  ConsortiumConstellation,
 }

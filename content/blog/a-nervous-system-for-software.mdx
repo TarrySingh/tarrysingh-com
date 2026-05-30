@@ -5,12 +5,14 @@ category: "Essays"
 excerpt: "The full argument behind the comprehension gap. Why we cannot close it by enlarging the engineer; why both the statistical and the structural approaches hit a ceiling this decade; what it means to give a codebase a nervous system instead; and why it takes four disciplines that almost never share a project to find out. The SYMPHONY thesis, in long form."
 theme: "editorial"
 tags: ["neuromodulation", "code comprehension", "substrate", "software architecture", "sovereign ai", "symphony"]
-draft: true
+draft: false
 ---
 
 For seventy years we have built artefacts faster than we can read them. That sentence sounds like a complaint about discipline. It is not. It is a statement about arithmetic, and arithmetic does not care how good your engineers are.
 
 A system you could once hold in a single head — read end to end, reason about over an afternoon — became, across the software-eats-everything decades, an artefact whose internal complexity outran any individual's comprehension by something on the order of four orders of magnitude. The exact figure is almost beside the point. What matters is the shape of the two curves. Complexity climbs, on a log scale, roughly exponentially. Human comprehension — the amount one person can actually hold in mind — grows, at best, linearly. Plot them together and you do not get a lag that the next tool closes. You get a wedge that opens wider every year. Software entropy is not a metaphor borrowed from physics for color. It is the lived condition of every codebase old enough to have outlived the people who wrote it.
+
+<ComprehensionGap />
 
 We have answered that divergence the only way we knew how: by enlarging the engineer. More abstraction. More tooling. More documentation laid over an artefact that keeps getting larger underneath the documentation. Every wave of developer tooling — the IDE, the architecture diagram, the static analyser, the AI pair-programmer — has been, at bottom, a way of making one human able to attend to more. It works, locally and temporarily, the way a ladder works against a rising tide. The tide is the complexity curve. No ladder closes a gap that grows three orders of magnitude faster than you can climb it.
 
@@ -31,6 +33,8 @@ So the timing is not opportunistic. The dominant approach is hitting a measurabl
 Machine code understanding today divides into two families. Each is genuinely impressive. Each has a ceiling we can already see from here.
 
 The first family is **statistical** — the large-language-model agents. They set the public headline numbers, and the headlines are striking. But independent re-evaluation tells a different story than the leaderboard. Work published at ICSE 2025 Companion showed that once you strip out the instances resolved through solution leakage or passed by weak test cases, the measured resolution rate of a leading SWE-agent configuration falls from 12.47% to 3.97%. A parallel result, SWE-Bench+, replicated the effect: SWE-agent 1.0 with Claude 3.5 dropped from 57.6% to 31.8% on Verified once the contaminated instances were filtered out. The number you trust depends entirely on how hard you are willing to look. And underneath the contamination problem sits a harder, more permanent one: context. Industrial codebases routinely run to millions of tokens; production context windows remain in the low hundreds of thousands; retrieval augmentation hands the model local relevance with no system-level coherence. Today's LLM agents are, to put it plainly, pattern-matchers with short memories. They are remarkable at the patch in front of them and structurally incapable of holding a durable, navigable model of the system they are changing. Adding parameters does not give them memory. It makes them more fluent forgetters.
+
+<StatisticalCeiling />
 
 The second family is **structural** — the static analysers (SonarQube, PMD, the inspections built into every serious IDE), the architecture-recovery tools, the ArchiMate-derived knowledge graphs. These do something the statistical family cannot: they capture what is *explicitly* there. Call graphs. Dependency edges. Type hierarchies. Declared interfaces. They are precise, auditable, and they do not hallucinate. But they recover the *what* and never the *why*. The design rationale — the reason a boundary sits where it sits, the context in which a decision was the right one, the constraint that is no longer written down anywhere — is the hardest tier of software knowledge to externalise. It has been recognised as such since Avgeriou and colleagues named it in 2007, and it remains the tier no structural tool can reach, for the simple reason that it was never written into the source in the first place.
 
@@ -93,6 +97,8 @@ Four domains, one shape of problem: systems that have become collectively unread
 Here is the part that makes SYMPHONY a research programme rather than a product roadmap, and it is the part I am proudest of.
 
 The proof of principle requires the genuine integration of four disciplines: the computational neuroscience of cortical neuromodulation; robot manipulation with haptic shared control; software engineering and architecture recovery; and foundation-model engineering with a sovereign, human-centric orientation. The first two are biological and biomechanical. The second two are symbolic and computational. The shortest path between any two of them runs through at least two intermediate fields. It is a deliberately uncomfortable combination — and it is the only combination that supplies what the test demands.
+
+<ConsortiumConstellation />
 
 **Newcastle, and the Blue Brain heritage, formalised.** Sri Ramaswamy's group contributes the formal four-scale framework for context-dependent reconfiguration of a fixed network — the mathematical template SYMPHONY transposes from cortex to code. Without it, the project would have no principled model for *how* a substrate's activation regime should change in response to a task, and would fall back on hand-engineered routing heuristics — exactly the incremental tinkering that frontier research funding is not meant to support. Newcastle also runs the human side: a pre-registered, ethics-governed user study, stratified across gender, career stage and native-language proficiency, with a non-inferiority margin built in specifically to catch deskilling before it becomes a deployment pattern.
 
