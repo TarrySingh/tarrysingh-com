@@ -582,7 +582,7 @@ export function SetPiece({ post }: { post: BlogPostMeta }) {
         </p>
         <div className="mt-12 flex flex-wrap justify-center gap-5">
           <Link
-            href="/synaptic/memphis"
+            href="/blog/a-nervous-system-for-software"
             className="rounded-full border px-6 py-3 text-sm transition-colors hover:bg-[#c98e4f] hover:text-[#0c1828]"
             style={{ ...mono, borderColor: "rgba(201,142,79,0.5)", color: cream }}
           >

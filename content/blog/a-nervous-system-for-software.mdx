@@ -1,0 +1,91 @@
+---
+title: "A Nervous System for Software"
+date: "2026-05-30"
+category: "Essays"
+excerpt: "The full argument behind the comprehension gap: why we cannot close it by enlarging the engineer, why both the statistical and the structural approaches hit a ceiling this decade, and what it means to give a codebase a nervous system instead — the SYMPHONY thesis, in long form."
+theme: "editorial"
+tags: ["neuromodulation", "code comprehension", "substrate", "neuromorphic", "software architecture", "symphony"]
+draft: true
+---
+
+For fifty years the systems we build have grown faster than our capacity to hold them in mind. That sentence sounds like a complaint about discipline. It is not. It is a statement about arithmetic.
+
+A system you could once hold in a single head — read end to end, reason about in an afternoon — became, over the software-eats-everything decades, an artefact whose internal complexity outran any individual's comprehension by something on the order of four orders of magnitude. The headline number is almost beside the point. What matters is the shape of the two curves: complexity climbing on a log scale, comprehension nearly flat. The wedge between them is not a temporary lag that the next tool closes. It is structural, and it is still opening.
+
+We have answered that divergence the only way we knew how — by enlarging the engineer. More abstraction. More tooling. More documentation laid over an artefact that keeps getting larger underneath it. Every wave of developer tooling, from the IDE to the architecture diagram to the AI pair-programmer, has been a way of making one human able to attend to more. It has worked, locally and temporarily, the way a ladder works against a rising tide. The tide is the complexity curve. No ladder closes a gap that grows three orders of magnitude faster than you can climb.
+
+This essay makes one claim and then defends it: **the gap will not be closed by making engineers bigger. It will be closed, if it is closed at all, by reshaping the substrate they navigate.** That is the thesis of a research programme I have been building, called SYMPHONY, and the rest of this is the argument for it — what is actually broken, why the two dominant fixes both hit a ceiling this decade, and what it means, concretely, to give a codebase a nervous system.
+
+## Two families, two ceilings
+
+Machine code understanding today divides into two families. Each is impressive. Each has a ceiling we can already see.
+
+The first family is **statistical** — the large-language-model agents. They set the public headline performance, and the headlines are genuinely striking: in December 2025 Claude Opus 4.5 became the first model to cross 80% on SWE-bench Verified, at 80.9%. If you stopped reading there, you would conclude the problem is nearly solved.
+
+It is not, and the way it is not solved is instructive. Independent re-evaluation published at ICSE 2025 Companion showed that once you strip out the instances resolved through solution leakage or passed by weak test cases, the measured resolution rate of a leading agent configuration falls from 12.47% to 3.97%. A parallel result, SWE-Bench+, replicated the effect: SWE-agent with Claude 3.5 dropped from 57.6% to 31.8% on Verified once the contaminated instances were filtered. The number you trust depends entirely on how hard you look. And there is a second, harder constraint underneath the contamination one: context. Industrial codebases routinely run to millions of tokens; production context windows remain in the low hundreds of thousands; retrieval augmentation hands the model local relevance with no system-level coherence. Today's LLM agents are, to put it plainly, pattern-matchers with short memories. They are remarkable at the patch in front of them and structurally incapable of holding a durable, navigable model of the system they are changing.
+
+The second family is **structural** — static analysis (SonarQube, PMD, the inspections built into every serious IDE), architecture-recovery tools, the ArchiMate-derived knowledge graphs. These do something the statistical family cannot: they capture what is *explicitly* there. Call graphs. Dependency edges. Type hierarchies. Declared interfaces. They are precise, auditable, and they do not hallucinate. But they recover the *what* and never the *why*. The design rationale — the reason a boundary sits where it sits, the context in which a decision was the right one — is the hardest tier of software knowledge to externalise. It has been recognised as such since Avgeriou and colleagues named it in 2007, and it remains the tier no structural tool can reach, because it was never written into the source in the first place.
+
+So one family knows everything that is said and nothing about why; the other guesses fluently and forgets immediately. Neither is on a trajectory to close the comprehension gap by scaling alone. Adding parameters to the first does not give it memory. Adding rules to the second does not give it rationale.
+
+## The biological turn
+
+The interesting move is not to pick a side. It is to notice that biology solved a structurally identical problem a very long time ago, and to ask what its solution would look like transposed into code.
+
+The brain does not enlarge the neuron to handle a harder task. It keeps a fixed underlying network and *reconfigures what that network foregrounds* in response to a small, slow, descending signal. Neuromodulation in the mammalian cortex works this way. So does descending corticospinal modulation in the vertebrate motor system. In both, a low-bandwidth control signal — nothing like the bandwidth of the network it steers — produces qualitatively different, task-appropriate activation patterns from one and the same substrate.
+
+This is not a metaphor I am reaching for. It is a mechanism that has been formalised. Mei, Muller and Ramaswamy, writing in *Trends in Neurosciences* in 2022, set out a four-scale framework for integrating neuromodulation into deep networks — adjusting hyperparameters, scaling connectivity through plasticity, modulating specific neurons, and reconfiguring dendritic computation — and showed in simulation that artificial neuromodulation buys exactly three things: higher task reward, faster learning, and reduced catastrophic forgetting. Those three properties are not a wish list. They are the precise inverse of the three failure modes that limit code understanding: interference between tasks, the cost of exhaustive re-evaluation, and the need for a memory that persists and yet stays responsive to context.
+
+The same principle shows up in a completely different setting, which is what convinced me it generalises. Siciliano and colleagues' haptic shared-control programme takes a high-degrees-of-freedom autonomous robot controller and shapes it, in real time, through a low-bandwidth human input — a haptic active constraint. Surgical needle grasping, dual-arm manipulation, teleoperated cutting: qualitatively different behaviours, obtained not by rewriting the controller but by reshaping its operating regime with a thin descending signal. A small input. A large, structured response. The same architectural idea as cortical neuromodulation, demonstrated in hardware, in a physical domain.
+
+Two independent fields, perceptual-cognitive and motor-physical, converging on the same answer: **you do not scale the network to meet the task. You keep the substrate and modulate it.**
+
+## What SYMPHONY actually is
+
+SYMPHONY is the attempt to carry that principle into a domain where, as far as I can find, no one has taken it: software itself.
+
+Concretely, it is a neuromimetic knowledge substrate for software systems — a representation in which the elements of a codebase (modules, functions, data flows, contracts, tests, commit history, design decisions) are nodes in a multi-scale network whose activation patterns are reconfigured, on demand, by task-specific neuromodulatory signals. In plainer terms: a representation of code that behaves less like a document to be re-read and more like a nervous system that foregrounds the structures relevant to the task in front of you.
+
+Think of it stratigraphically — as a cross-section rather than a diagram. Four layers, stacked. At the bedrock, **Structure**: the modules and functions, the call and dependency edges, everything the static tools already recover. Above it, **Behaviour**: the tests, the contracts, the live signal of execution. Above that, **History**: the commits and the decisions, the patina of time. And at the top, the warmest and hardest layer to articulate, **Rationale**: design intent, the *why* — the tier Avgeriou warned us never makes it into the source. SYMPHONY's first departure is to hold all four in a single graph-resident representation built for activation-based retrieval, not query-based retrieval. Not four tools whose outputs you reconcile by hand. One substrate.
+
+Down through all four layers runs a thin vertical column — the neuromodulatory signal, the conductor's baton. When you declare a task — *localise this bug*, *assess the blast radius of this change*, *find refactoring candidates*, *onboard onto this module* — the baton does not rebuild the graph. It changes what each layer foregrounds. A small subset of nodes lights warmly: the subnetwork relevant to *this* task. The rest of the structure rests in cool half-light, present but not competing for your attention. Same substrate. Different harmonies.
+
+## Three advances, stated precisely
+
+It is easy to make a claim like that sound like vapour, so let me be exact about what is new. Three specific advances separate SYMPHONY from everything adjacent to it.
+
+**One — multi-layer extraction into a single substrate.** Existing pipelines give you either one view (a static-analysis output, a dependency diagram, an architecture knowledge graph) or a separate document corpus (READMEs, commit messages, issue trackers) handled apart from the code. SYMPHONY unifies the structural, behavioural, historical and rationale layers in one graph built for activation-based retrieval.
+
+**Two — context-dependent activation.** No existing representation of a codebase alters its own salience profile in response to your declared task. SYMPHONY's substrate holds a single state of the system but surfaces different subnetworks depending on an externally specified task token, using the four-scale neuromodulatory primitives of Mei, Muller and Ramaswamy as the mathematical template.
+
+**Three — low-bandwidth task control.** This is the one I care about most, because it is the one that makes the thing governable. Borrowing from Siciliano's haptic shared-control architecture, the task interface is deliberately *narrow* — a small set of scalar modulatory signals, not a prompt window. That narrowness is not a limitation; it is the point. A behaviour produced by a handful of bounded, named, scalar controls is composable, auditable, and bounded. It is the precise opposite of the unbounded prompt-response surface of a current LLM agent, and it is the property that would let a substrate like this ever be trusted inside a regulated industry.
+
+Those three advances, in sequence, supply the three things the long-term vision minimally requires: a representation that can hold an industrial-scale codebase coherently, a way to reconfigure it on demand without rebuilding it, and a control surface you can audit. Succeeding at SYMPHONY is not sufficient for the vision. It is the decisive enabling condition for it.
+
+## The honest uncertainty
+
+I would not trust this essay if it did not have a place where it admits what could be wrong, so here it is.
+
+Multi-scale neuromodulation is demonstrated in perceptual and motor domains — domains of continuous signals and embodied feedback. Source code is none of those things. Its signals are discrete, hierarchical, linguistic. The single critical uncertainty in the whole programme is whether the biological principle *transfers* across that gap — whether a mechanism evolved for continuous sensorimotor control does anything useful when the substrate it modulates is a symbolic graph of a software system. This is not a matter of engineering polish. It is a real scientific question, and it is allowed to come back "no."
+
+What makes it a research programme rather than a manifesto is that the question is built to be answered. SYMPHONY is organised around five objectives over thirty-six months, each with a numeric threshold and a decision milestone, each with a stated fallback if the threshold is missed. Build the four-layer extraction pipeline and prove ≥90% function and ≥80% dependency coverage on two real codebases — one large open-source system, one production industrial-automation codebase. Implement the neuromodulatory reconfiguration and show statistically significant, task-appropriate subnetwork activation across at least three distinct engineering tasks. Derive the narrow scalar control interface and demonstrate sub-500-millisecond task switching that preserves the underlying state. Benchmark the whole substrate against three named baselines — a frontier LLM agent, a best-in-class static-analysis-plus-knowledge-graph pipeline, and an LLM-with-retrieval baseline — on a pre-registered protocol, and clear it by a margin that is declared in advance. And — the objective I am least willing to drop — run an equitable-access user study: does a task-adaptive substrate measurably shorten the path to a first correct change for under-represented engineers, *without* a deskilling cost to their retention thirty days later. If a benefit can only be bought at the price of long-term understanding, that is a finding, and it changes how you deploy.
+
+Each of those has an alternative written next to it for the case where it fails. That is what distinguishes a hypothesis you can stand behind from a story you merely like.
+
+## The second curve
+
+There is a second curve that makes the first one urgent, and it is the reason the substrate argument does not end at software.
+
+Every gap you close has a price measured in joules. The substrate that finally attends to the right thing must also be a substrate that can *afford* to attend, and on that axis today's machine intelligence sits roughly six orders of magnitude above the brain it imitates. Transformer inference on a GPU costs on the order of a nanojoule per event. The best neuromorphic silicon we have — Loihi, TrueNorth — buys back two orders of magnitude. Mammalian cortex runs at something like a hundred femtojoules per synaptic event: not the next increment down, the actual target. The hardware substrate I work on, MEMPHIS, aims below biology — a self-organising memristive fabric under ten femtojoules, five orders of magnitude from where we started.
+
+I draw the energy curve next to the comprehension curve deliberately, because they are the same argument twice. In software, you do not close the gap by making the engineer read more; you reshape the representation they navigate. In hardware, you do not close the gap by spending more energy per thought; you reshape the substrate the thinking runs on. Knowledge substrate, energy substrate — the same move, made at two layers of the stack. Enlarge nothing. Reshape the ground.
+
+## Same substrate, different harmonies
+
+The comprehension gap is real, it is structural, and the instinct that has carried us this far — make the engineer bigger, give them more tools, more context, more model — is the instinct that cannot close it, because it scales the wrong term in the equation.
+
+The alternative is older than software. Keep one substrate. Let a small, slow, auditable signal decide which part of it is in the light. Let the codebase behave like a nervous system instead of a library. It may not transfer from the brain to the graph — that is the honest uncertainty, and it is the thing the next thirty-six months are built to settle. But if it does, the way out of the gap was never to read faster.
+
+It was to close the gap not by enlarging the engineer, but by reshaping the substrate they navigate.
+
+*Same substrate. Different harmonies.*
