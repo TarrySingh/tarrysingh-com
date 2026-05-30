@@ -1,4 +1,19 @@
-import { Gloock, IBM_Plex_Serif, IBM_Plex_Mono } from "next/font/google"
+import {
+  Gloock,
+  IBM_Plex_Sans,
+  IBM_Plex_Serif,
+  IBM_Plex_Mono,
+} from "next/font/google"
+
+// UI chrome (nav, buttons, controls) — completes the IBM Plex superfamily
+// alongside Serif (body) + Mono (labels), replacing Inter so the whole
+// site shares one type voice with the Dispatches Synaptic register.
+export const synapticSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+})
 
 export const synapticDisplay = Gloock({
   subsets: ["latin"],

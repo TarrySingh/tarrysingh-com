@@ -136,7 +136,8 @@ export default {
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "var(--font-sans)",
+          "IBM Plex Sans",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",

@@ -1,10 +1,12 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { synapticDisplay, synapticSerif, synapticMono } from "./fonts"
+import {
+  synapticSans,
+  synapticDisplay,
+  synapticSerif,
+  synapticMono,
+} from "./fonts"
 import "./globals.css"
 import { Providers } from "@/components/providers"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tarrysingh.com"),
@@ -24,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.className} ${synapticDisplay.variable} ${synapticSerif.variable} ${synapticMono.variable}`}
+      className={`${synapticSans.className} ${synapticSans.variable} ${synapticDisplay.variable} ${synapticSerif.variable} ${synapticMono.variable}`}
     >
       <body>{children}</body>
     </html>
