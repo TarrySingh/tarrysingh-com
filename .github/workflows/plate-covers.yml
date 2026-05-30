@@ -45,7 +45,10 @@ jobs:
       - run: npm ci
 
       - name: Render covers
-        run: npm run covers ${{ inputs.force && '-- --force' || '' }}
+        # `github.event.inputs` is always safe to read (null on push); the
+        # bare `inputs` context does not exist on push and was killing the
+        # job at startup before any step ran.
+        run: npm run covers ${{ github.event.inputs.force == 'true' && '-- --force' || '' }}
 
       - name: Commit any new covers
         run: |
