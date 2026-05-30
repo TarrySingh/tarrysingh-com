@@ -72,11 +72,37 @@ export default async function SeriesLandingPage({
   const posts = await getPostsBySeries(key)
   if (posts.length === 0) notFound()
 
+  const SITE = "https://tarrysingh.com"
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: meta.name,
+    description: meta.tagline,
+    url: `${SITE}/blog/series/${key}`,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      numberOfItems: posts.length,
+      itemListElement: posts.map((p, i) => ({
+        "@type": "ListItem",
+        position: p.series?.part ?? i + 1,
+        url: `${SITE}/blog/${p.slug}`,
+        name: p.title,
+      })),
+    },
+  }
+
   return (
     <div
       data-theme="front"
       style={{ background: "#0c1828", color: "#f6ead0", minHeight: "100vh" }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(collectionLd).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* Masthead */}
       <section className="mx-auto max-w-4xl px-6 pt-28 md:pt-36 pb-10 lg:px-8">
         <Link

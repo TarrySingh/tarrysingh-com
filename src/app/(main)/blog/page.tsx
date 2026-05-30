@@ -79,11 +79,31 @@ export default async function BlogIndex() {
     .filter((s) => s.count > 0)
     .map((s) => s.key)
 
+  const blogLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Dispatches — Tarry Singh",
+    description:
+      "Field notes and essays from the studio — AI strategy, deep-tech architecture, and the economics underneath.",
+    url: "https://tarrysingh.com/blog",
+    author: {
+      "@type": "Person",
+      name: "Tarry Singh",
+      url: "https://tarrysingh.com",
+    },
+  }
+
   return (
     <div
       data-theme="front"
       style={{ background: "#0c1828", color: "#f6ead0", minHeight: "100vh" }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(blogLd).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* Masthead */}
       <section className="relative mx-auto max-w-6xl px-6 pt-28 md:pt-36 pb-8 lg:px-8">
         <span
@@ -212,7 +232,7 @@ export default async function BlogIndex() {
             <aside className="lg:border-l lg:pl-8" style={{ borderColor: "rgba(246,234,208,0.12)" }}>
               <p
                 className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em]"
-                style={{ ...mono, color: "rgba(246,234,208,0.45)" }}
+                style={{ ...mono, color: "rgba(246,234,208,0.55)" }}
               >
                 Notes
               </p>
@@ -227,7 +247,7 @@ export default async function BlogIndex() {
                     <Link href={`/blog/${post.slug}`} className="group block">
                       <time
                         className="text-[10px] uppercase tracking-[0.22em]"
-                        style={{ ...mono, color: "rgba(246,234,208,0.45)" }}
+                        style={{ ...mono, color: "rgba(246,234,208,0.55)" }}
                         dateTime={post.date}
                       >
                         {formatPostDate(post.date)}

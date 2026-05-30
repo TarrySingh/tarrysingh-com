@@ -93,6 +93,54 @@ export default async function BlogPostPage({
   // slug-deterministic /blog/covers/<slug>.png default.
   const coverSrc = post.cover || post.hero || null
 
+  // Dispatches v2 — structured data. Image is the canonical plate cover
+  // (always present), made absolute for crawlers; breadcrumb mirrors the
+  // on-page trail Home › Dispatches › [Series] › Post.
+  const SITE = "https://tarrysingh.com"
+  const canonical = `${SITE}/blog/${slug}`
+  const rawImage = post.cover || `/blog/covers/${slug}.png`
+  const schemaImage = rawImage.startsWith("http") ? rawImage : `${SITE}${rawImage}`
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    image: schemaImage,
+    url: canonical,
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+    author: { "@type": "Person", name: "Tarry Singh", url: SITE },
+    publisher: { "@type": "Person", name: "Tarry Singh", url: SITE },
+    articleSection: post.category,
+    ...(post.tags && post.tags.length ? { keywords: post.tags.join(", ") } : {}),
+    ...(post.wordCount ? { wordCount: post.wordCount } : {}),
+  }
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Dispatches", item: `${SITE}/blog` },
+      ...(post.series && seriesMeta
+        ? [
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: seriesMeta.name,
+              item: `${SITE}/blog/series/${post.series.key}`,
+            },
+          ]
+        : []),
+      {
+        "@type": "ListItem",
+        position: post.series && seriesMeta ? 4 : 3,
+        name: post.title,
+        item: canonical,
+      },
+    ],
+  }
+
   const isStudioTheme = post.theme === "studio"
   // Dispatches v2 — "The Read" unifies on a cream paper surface driven by
   // the light/dark tokens ([data-read-mode] in globals.css). The legacy
@@ -122,6 +170,18 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{
           __html:
             "(function(){try{var m=localStorage.getItem('dispatch-read-mode');if(m==='dark'){var r=document.getElementById('read-root');if(r)r.setAttribute('data-read-mode','dark')}}catch(e){}})()",
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbLd).replace(/</g, "\\u003c"),
         }}
       />
       {/* Article header */}
