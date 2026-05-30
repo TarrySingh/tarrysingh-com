@@ -726,6 +726,54 @@ export default function SymphonyPage() {
               25 pages · .docx · 7.6 MB · EU portal submission
             </span>
           </a>
+          <Link
+            href="/blog/a-nervous-system-for-software"
+            className="syn-display inline-flex flex-col items-center gap-2 rounded-2xl border p-8 transition-opacity hover:opacity-90"
+            style={{
+              borderColor: "rgba(255,210,150,0.45)",
+              background:
+                "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              fontSize: "1.6rem",
+              color: "var(--symphony-amber-hi)",
+              letterSpacing: "var(--track-display)",
+              lineHeight: 1.2,
+            }}
+          >
+            Read the essay
+            <span aria-hidden style={{ fontSize: "1.2rem" }}>→</span>
+            <span
+              className="syn-small-caps pt-2"
+              style={{ color: "var(--ink-dim)" }}
+            >
+              A Nervous System for Software · the long-form argument
+            </span>
+          </Link>
+          <Link
+            href="/blog/the-comprehension-gap"
+            className="syn-display inline-flex flex-col items-center gap-2 rounded-2xl border p-8 transition-opacity hover:opacity-90"
+            style={{
+              borderColor: "rgba(200,180,255,0.35)",
+              background:
+                "linear-gradient(180deg, rgba(28,38,80,0.85), rgba(14,20,45,0.92))",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              fontSize: "1.6rem",
+              color: "var(--symphony-violet-hi)",
+              letterSpacing: "var(--track-display)",
+              lineHeight: 1.2,
+            }}
+          >
+            The Set Piece
+            <span aria-hidden style={{ fontSize: "1.2rem" }}>→</span>
+            <span
+              className="syn-small-caps pt-2"
+              style={{ color: "var(--ink-dim)" }}
+            >
+              The Comprehension Gap · scroll-driven feature
+            </span>
+          </Link>
         </div>
       </section>
 
