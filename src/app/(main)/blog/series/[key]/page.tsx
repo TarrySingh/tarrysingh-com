@@ -44,6 +44,7 @@ export async function generateMetadata({
   return {
     title: `${meta.name} — Dispatches — Tarry Singh`,
     description: meta.tagline,
+    alternates: { canonical: `/blog/series/${key}` },
     openGraph: {
       title: meta.name,
       description: meta.tagline,

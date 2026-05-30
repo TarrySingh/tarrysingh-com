@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Dispatches — Tarry Singh",
   description:
     "Field notes and essays from the studio — AI strategy, deep-tech architecture, and the economics underneath. Infrequent, opinionated, quietly written.",
+  alternates: { canonical: "/blog" },
   openGraph: {
     title: "Dispatches — Tarry Singh",
     description:

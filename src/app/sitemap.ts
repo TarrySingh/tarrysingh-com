@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { getAllPosts, getAllTags } from "@/lib/blog/posts"
+import { getAllSeriesWithCounts } from "@/lib/blog/series-queries"
 
 const SITE = "https://tarrysingh.com"
 
@@ -24,6 +25,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
+  // Dispatches v2 — series landing pages, for every series with ≥1 post.
+  const series = await getAllSeriesWithCounts()
+  const seriesRoutes: MetadataRoute.Sitemap = series
+    .filter((s) => s.count > 0)
+    .map((s) => ({
+      url: `${SITE}/blog/series/${s.key}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    }))
+
   // Sprint 4.5 — per-tag index pages (/blog/tag/<tag>) for every tag
   // that appears on at least one published Dispatch.
   const tags = await getAllTags()
@@ -34,5 +46,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }))
 
-  return [...staticRoutes, ...postRoutes, ...tagRoutes]
+  return [...staticRoutes, ...postRoutes, ...seriesRoutes, ...tagRoutes]
 }
