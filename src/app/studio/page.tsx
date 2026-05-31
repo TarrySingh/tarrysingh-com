@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { listDrafts } from "@/lib/studio/drafts-store"
+import { isPublished } from "@/lib/studio/reopen"
 import { DraftListItem } from "@/components/studio/DraftListItem"
 
 export const dynamic = "force-dynamic"
@@ -28,7 +29,14 @@ export default async function StudioHome() {
   let drafts: Awaited<ReturnType<typeof listDrafts>> = []
   let loadError: string | null = null
   try {
-    drafts = await listDrafts()
+    const all = await listDrafts()
+    // The desk holds only unpublished work. A draft whose slug is already
+    // live on /blog isn't a draft — it's on the wall; its row is a
+    // leftover from editing or a best-effort post-publish cleanup that
+    // didn't run. Hide those so the dashboard matches its own promise.
+    // (Live posts stay editable directly at /studio/editor/<slug>.)
+    const live = await Promise.all(all.map((d) => isPublished(d.slug)))
+    drafts = all.filter((_, i) => !live[i])
   } catch (err) {
     loadError = err instanceof Error ? err.message : "drafts_unavailable"
   }
