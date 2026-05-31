@@ -64,6 +64,15 @@ export default async function StudioHome() {
             </span>
             <span className="hidden h-px flex-1 bg-navy-200/60 sm:block" />
             <Link
+              href="/studio/synaptic"
+              className="inline-flex min-h-[44px] items-center justify-center self-start rounded-full border border-navy-200 bg-white px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-navy-700 transition-colors hover:bg-navy-50 sm:self-auto"
+              style={{
+                fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+              }}
+            >
+              Synaptic plates →
+            </Link>
+            <Link
               href="/studio/editor"
               className="inline-flex min-h-[44px] items-center justify-center self-start rounded-full border border-gold-400 bg-navy-900 px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition-colors hover:bg-navy-800 sm:self-auto"
               style={{
