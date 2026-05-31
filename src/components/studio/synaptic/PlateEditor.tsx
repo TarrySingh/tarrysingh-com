@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import type { PlateContent } from "@/lib/synaptic/types"
 import type { SlotCategory } from "@/lib/synaptic/registry"
@@ -56,6 +56,14 @@ export function PlateEditor({
 
   // Skip autosave on the mount render and on programmatic resets (discard).
   const suppressSave = useRef(true)
+
+  // Some plates' items carry a subtitle (chip/arm/vision/hominis); others
+  // (rose sectors, ramaswamy beats) don't. Decide once from the initial load
+  // so the field doesn't vanish mid-edit when cleared.
+  const showAnnotationSubtitles = useMemo(
+    () => (initialContent.annotations ?? []).some((a) => (a.subtitle ?? "") !== ""),
+    [initialContent],
+  )
 
   useEffect(() => {
     if (suppressSave.current) {
@@ -363,7 +371,7 @@ export function PlateEditor({
                     >
                       <div className="mb-3 flex items-center gap-2">
                         <span
-                          className="flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-semibold text-white"
+                          className="inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full px-2 text-[11px] font-semibold text-white"
                           style={{ fontFamily: MONO, background: a.color || "#c98e4f" }}
                         >
                           {a.id}
@@ -389,16 +397,18 @@ export function PlateEditor({
                             }
                           />
                         </FieldRow>
-                        <FieldRow label="Subtitle">
-                          <input
-                            className={inputCls}
-                            style={{ fontFamily: SERIF }}
-                            value={a.subtitle}
-                            onChange={(e) =>
-                              updateAnnotation(a.id, "subtitle", e.target.value)
-                            }
-                          />
-                        </FieldRow>
+                        {showAnnotationSubtitles && (
+                          <FieldRow label="Subtitle">
+                            <input
+                              className={inputCls}
+                              style={{ fontFamily: SERIF }}
+                              value={a.subtitle}
+                              onChange={(e) =>
+                                updateAnnotation(a.id, "subtitle", e.target.value)
+                              }
+                            />
+                          </FieldRow>
+                        )}
                         <FieldRow label="Body">
                           <textarea
                             className={inputCls}

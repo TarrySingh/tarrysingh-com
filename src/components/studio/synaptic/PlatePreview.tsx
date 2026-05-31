@@ -67,7 +67,7 @@ export function PlatePreview({
             {content.annotations.map((a) => (
               <li key={a.id} className="flex gap-3">
                 <span
-                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold"
+                  className="mt-0.5 inline-flex h-6 min-w-[1.5rem] shrink-0 items-center justify-center rounded-full px-2 text-[11px] font-semibold"
                   style={{
                     fontFamily: MONO,
                     color: "#0c1828",

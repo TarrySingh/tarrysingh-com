@@ -1,17 +1,15 @@
 /**
- * Sprint 8 — adapter round-trip test:
+ * Sprint 8 — adapter round-trip tests for every editor-ready plate:
  *   npx tsx src/lib/synaptic/editor/adapters.test.ts
  *
- * Proves the ChipPlate adapter loads the committed module into PlateContent and
- * serializes it back without losing values or the code-owned tail.
+ * For each registered plate: load() → PlateContent, serialize() back into the
+ * real module source, and assert (a) it's stable, (b) an edit persists, and
+ * (c) code-owned values (colours, angles, years, weights, geometry) survive.
  */
 import { readFileSync } from "node:fs"
-import { fileURLToPath } from "node:url"
-import { dirname, join } from "node:path"
+import { join } from "node:path"
+import { PLATE_REGISTRY } from "../registry"
 import { getAdapter, isEditorReady } from "./adapters"
-
-const here = dirname(fileURLToPath(import.meta.url))
-const src = readFileSync(join(here, "..", "chipplate-data.ts"), "utf8")
 
 let passed = 0
 let failed = 0
@@ -25,44 +23,55 @@ function ok(name: string, cond: boolean, extra?: string) {
   }
 }
 
-const a = getAdapter("chip-plate")
-ok("chip-plate is editor-ready", a !== null && isEditorReady("chip-plate"))
-ok("unextracted plate has no adapter", getAdapter("two-phase-dynamics") === null)
+// Code-owned tokens that must survive a no-edit round-trip, per plate.
+const PRESERVE: Record<string, string[]> = {
+  "chip-plate": ["computeIntensities", "CHIP_N = 22", "{ x: 330, y: 240 }", "#e8b87a"],
+  "two-phase-dynamics": ["ONLINE EVENT-DRIVEN", "Σ EVENTS"],
+  "siciliano-rose": ["SicilianoSector", "Keep the gradient", "id: \"haptic\""],
+  "hominis-cathedral": ["#6cb4c2", "capital: \"III\"", "EUROHPC"],
+  "vision-horizon": ["#a698d4", "x: 0.5", "height: 0.92"],
+  "siciliano-arm-hero": ["[-10, 20, 60, -30]", "#f4c482", "angles:"],
+  "ramaswamy-pedigree": ["year: 2005", "year: 2022", "\"primary\"", "RamaswamyBeat"],
+}
 
-if (a) {
-  const loaded = a.load()
-  console.log("load():")
-  ok("6 annotations", loaded.annotations?.length === 6)
-  ok("displayName", loaded.displayName === "Chip Plate · Memphis")
-  ok("ariaLabel", (loaded.ariaLabel ?? "").startsWith("MEMPHIS chip plate"))
-  ok("hint", loaded.hint === "Click any numbered anchor to inspect its role")
-  ok(
-    "annotation carries anchor + color",
-    !!loaded.annotations?.[0].anchor && !!loaded.annotations?.[0].color,
-  )
+for (const entry of PLATE_REGISTRY) {
+  console.log(`\n${entry.id}:`)
+  const adapter = getAdapter(entry.id)
+  ok("editor-ready", adapter !== null && isEditorReady(entry.id))
+  if (!adapter) continue
 
-  console.log("serialize() round-trip (no edits):")
-  const out = a.serialize(loaded, src)
-  for (const id of ["01", "02", "03", "04", "05", "06"]) {
-    ok(`annotation ${id} present`, out.includes(`id: "${id}"`))
+  const src = readFileSync(join(process.cwd(), entry.contentPath), "utf8")
+  const loaded = adapter.load()
+  ok("load() has a displayName", typeof loaded.displayName === "string" && loaded.displayName.length > 0)
+
+  const slotCount =
+    (loaded.annotations?.length ?? 0) +
+    (loaded.captions?.length ?? 0) +
+    (loaded.prose?.length ?? 0)
+  ok("load() surfaces editable slots", slotCount > 0, `slots=${slotCount}`)
+
+  // No-edit round-trip preserves code-owned tokens.
+  const out = adapter.serialize(loaded, src)
+  for (const token of PRESERVE[entry.id] ?? []) {
+    ok(`preserves \`${token}\``, out.includes(token))
   }
-  ok("computeIntensities preserved", out.includes("export function computeIntensities()"))
-  ok("CHIP_INTENSITIES preserved", out.includes("export const CHIP_INTENSITIES = computeIntensities()"))
-  ok("ChipAnnotation type preserved", out.includes("export type ChipAnnotation"))
-  ok("anchors preserved (inline)", out.includes("anchor: { x: 330, y: 240 }"))
-  ok(
-    "re-serialize is stable",
-    a.serialize(a.load(), out) === out,
-  )
 
-  console.log("serialize() with an edit:")
-  const edited = a.load()
-  edited.annotations![0].body = "EDIT — associative recall, rewritten."
-  edited.hint = "Tap a marker."
-  const out2 = a.serialize(edited, src)
-  ok("edited body present", out2.includes("EDIT — associative recall, rewritten."))
-  ok("edited hint present", /CHIP_HINT =\s*"Tap a marker\."/.test(out2))
-  ok("tail still intact after edit", out2.includes("export const CHIP_INTENSITIES = computeIntensities()"))
+  // Idempotent: serializing the reloaded content reproduces the same output.
+  ok("re-serialize is stable", adapter.serialize(adapter.load(), out) === out)
+
+  // An edit persists. Prefer an annotation; fall back to a caption.
+  const edited = adapter.load()
+  const MARK = "ZZ_EDIT_MARK"
+  if (edited.annotations && edited.annotations.length > 0) {
+    edited.annotations[0].body = `${MARK} body`
+    const out2 = adapter.serialize(edited, src)
+    ok("annotation edit persists", out2.includes(`${MARK} body`))
+    ok("edit keeps code-owned tokens", (PRESERVE[entry.id] ?? []).every((t) => out2.includes(t)))
+  } else if (edited.captions && edited.captions.length > 0) {
+    edited.captions[0].text = `${MARK} caption`
+    const out2 = adapter.serialize(edited, src)
+    ok("caption edit persists", out2.includes(`${MARK} caption`))
+  }
 }
 
 console.log(`\n${passed} passed, ${failed} failed`)
