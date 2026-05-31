@@ -143,6 +143,10 @@ interface TsLiteralOpts {
   inlineSmallObjects?: boolean
   /** Max keys for an inlined object (default 2). */
   inlineMaxKeys?: number
+  /** Render small all-primitive arrays on one line (e.g. `[-10, 20, 60, -30]`). */
+  inlineSmallArrays?: boolean
+  /** Max items for an inlined array (default 6). */
+  inlineMaxItems?: number
   /** Indent unit (default two spaces). */
   indentUnit?: string
 }
@@ -186,6 +190,13 @@ export function tsLiteral(
 
   if (Array.isArray(value)) {
     if (value.length === 0) return "[]"
+    if (
+      opts.inlineSmallArrays &&
+      value.length <= (opts.inlineMaxItems ?? 6) &&
+      value.every((v) => isPrimitive(v))
+    ) {
+      return `[${value.map((v) => tsLiteral(v as TsValue, opts, 0)).join(", ")}]`
+    }
     const items = value
       .map((v) => `${padIn}${tsLiteral(v as TsValue, opts, level + 1)},`)
       .join("\n")

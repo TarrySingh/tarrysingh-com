@@ -102,6 +102,14 @@ console.log("tsLiteral (authoring style):")
   ok("trailing comma on entries", /color: "#e8b87a",\n/.test(lit))
   ok("emoji/unicode-safe string round-trip", tsLiteral("a · b") === '"a · b"')
   ok("drops undefined keys", !tsLiteral({ a: 1, b: undefined } as TsValue).includes("b"))
+  ok(
+    "inlines small primitive arrays",
+    tsLiteral([-10, 20, 60, -30], { inlineSmallArrays: true }) === "[-10, 20, 60, -30]",
+  )
+  ok(
+    "keeps object arrays multiline",
+    tsLiteral([{ a: 1 }], { inlineSmallArrays: true }).includes("\n"),
+  )
 }
 
 console.log("full annotation-array swap (the Publish path):")
