@@ -114,3 +114,22 @@ export async function reopenPublished(rawSlug: string): Promise<ReopenOutcome> {
 
   return { ok: true, draft }
 }
+
+/**
+ * Is this slug already live on main? The canonical content lives at
+ * content/blog/<slug>.mdx, so its existence — not a draft-row flag — is
+ * the truth source for the editor's Publish-vs-Update-live decision. A
+ * draft row that predates the `was_published` flag, or a pipeline draft
+ * that `deleteDraft` failed to clean up after publish, would otherwise
+ * mislabel a live post as a fresh publish and fail as slug_already_exists.
+ */
+export async function isPublished(rawSlug: string): Promise<boolean> {
+  const slug = rawSlug.trim()
+  if (!slug || !SLUG_RE.test(slug)) return false
+  try {
+    await fs.access(path.join(CONTENT_DIR, `${slug}.mdx`))
+    return true
+  } catch {
+    return false
+  }
+}

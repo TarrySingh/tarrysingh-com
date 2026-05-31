@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { StudioEditor } from "@/components/studio/StudioEditor"
 import { getDraft } from "@/lib/studio/drafts-store"
-import { reopenPublished } from "@/lib/studio/reopen"
+import { reopenPublished, isPublished } from "@/lib/studio/reopen"
 
 export const dynamic = "force-dynamic"
 
@@ -44,6 +44,18 @@ export default async function EditDispatchPage({
         }),
       )
       notFound()
+    }
+  }
+
+  // Truth, not load-path: if the slug is already live on main, this is an
+  // in-place update — even when the draft came from getDraft (a lingering
+  // pipeline draft, or one predating the was_published flag) rather than
+  // the reopen path. Without this, the editor offers "Publish" and the
+  // commit fails as slug_already_exists.
+  if (!draft.frontmatter.was_published && (await isPublished(slug))) {
+    draft = {
+      ...draft,
+      frontmatter: { ...draft.frontmatter, was_published: true },
     }
   }
 
