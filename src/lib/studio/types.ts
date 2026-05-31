@@ -1,7 +1,7 @@
 import type { SeriesRef } from "@/lib/blog/series"
 
 export type DispatchCategory = "Essays" | "Notes" | "Studio"
-export type DispatchTheme = "editorial" | "studio"
+export type DispatchTheme = "editorial" | "studio" | "setpiece"
 
 export interface DispatchFrontmatter {
   title: string

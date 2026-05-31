@@ -5,6 +5,7 @@ import {
   type DispatchCategory,
   SLUG_RE,
 } from "@/lib/studio/types"
+import { isSeriesKey, type SeriesRef } from "@/lib/blog/series"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -21,6 +22,16 @@ const ALLOWED_CATEGORIES: ReadonlySet<DispatchCategory> = new Set([
   "Studio",
 ])
 
+/** Lenient SeriesRef validator — keep a well-formed series, drop garbage. */
+function parseSeriesRef(value: unknown): SeriesRef | undefined {
+  if (typeof value !== "object" || value === null) return undefined
+  const s = value as Record<string, unknown>
+  if (!isSeriesKey(s.key) || typeof s.part !== "number") return undefined
+  const ref: SeriesRef = { key: s.key, part: s.part }
+  if (typeof s.total === "number") ref.total = s.total
+  return ref
+}
+
 function parseFrontmatter(value: unknown): DispatchFrontmatter | null {
   if (typeof value !== "object" || value === null) return null
   const v = value as Record<string, unknown>
@@ -34,10 +45,22 @@ function parseFrontmatter(value: unknown): DispatchFrontmatter | null {
     category: v.category as DispatchCategory,
     excerpt: v.excerpt,
     hero: typeof v.hero === "string" ? v.hero : undefined,
-    theme: v.theme === "studio" ? "studio" : "editorial",
+    theme:
+      v.theme === "studio"
+        ? "studio"
+        : v.theme === "setpiece"
+          ? "setpiece"
+          : "editorial",
     linkedin_url: typeof v.linkedin_url === "string" ? v.linkedin_url : undefined,
     draft: typeof v.draft === "boolean" ? v.draft : true,
     tags: Array.isArray(v.tags) ? (v.tags as unknown[]).filter((t): t is string => typeof t === "string") : [],
+    // Preserve the Dispatches-v2 fields the editor can carry. Dropping
+    // these here silently wiped a post's series/cover on every studio
+    // edit, and — fatally — lost was_published, so updating a live post
+    // was rejected as slug_already_exists.
+    series: parseSeriesRef(v.series),
+    cover: typeof v.cover === "string" ? v.cover : undefined,
+    was_published: v.was_published === true ? true : undefined,
   }
 }
 

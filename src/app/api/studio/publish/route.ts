@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getDraft, deleteDraft } from "@/lib/studio/drafts-store"
 import { publishDispatch } from "@/lib/studio/publish"
+import { isPublished } from "@/lib/studio/reopen"
 import { deleteFilesBySlugInFolder } from "@/lib/drive/client"
 import { SLUG_RE } from "@/lib/studio/types"
 
@@ -56,15 +57,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "invalid_frontmatter" }, { status: 422 })
   }
 
-  // If the draft was loaded from an already-published .mdx via the
-  // /studio/editor/[slug] reopen path, frontmatter.was_published will
-  // be true. publishDispatch then runs the in-place update branch
-  // instead of the create branch.
+  // Allow the in-place update branch whenever the post is already live —
+  // derived from reality (the .mdx on disk), not just the was_published
+  // flag, which can be dropped on the editor→save→draft round-trip. This
+  // is what stops a legitimate "Update live" from failing as
+  // slug_already_exists.
   const result = await publishDispatch({
     slug,
     frontmatter: fm,
     body: draft.body,
-    allowOverwrite: fm.was_published === true,
+    allowOverwrite: fm.was_published === true || (await isPublished(slug)),
   })
 
   if (!result.ok) {
