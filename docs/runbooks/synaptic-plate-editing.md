@@ -1,8 +1,9 @@
 # Synaptic plate-editing flow
 
 **Status:** reference
-**Last verified:** 2026-05-31 — editor shipped (commits `0c60162` → `c08fc9c`),
-build green on Vercel, routes confirmed Basic-Auth-gated in production.
+**Last verified:** 2026-05-31 — editor shipped + all 7 registered plates wired
+(commits `0c60162` → `81fafc6`), build green on Vercel, routes confirmed
+Basic-Auth-gated in production.
 **Scope:** how `/studio/synaptic` edits the copy that rides on the Synaptic
 plate components, and how Publish writes it back to the live site.
 
@@ -38,7 +39,11 @@ exports flat `TWO_PHASE_*` scalars; …). A **`PlateAdapter`**
 
 A plate is **editor-ready iff it has an adapter.** The index lists every
 registry plate but only opens the ready ones. **Adding a plate = one adapter**
-— no UI change.
+— no UI change. All 7 registered plates are wired today: ChipPlate as an
+explicit reference adapter, the other six via a declarative `makeAdapter`
+factory (scalars → `displayName`/`ariaLabel`/`hint`/captions; one typed item
+array → annotations, merged back on serialize so code-owned fields — colour,
+angles, x/height, numeral, year, weight — stay untouched).
 
 ### Surgical serialization (the safe part)
 
@@ -110,9 +115,10 @@ draft; the editor only exposes the prose (`title`/`subtitle`/`body`).
 
 1. The extraction lands the plate's content module + registers it in
    `registry.ts` (extraction work).
-2. Add a `PlateAdapter` in `adapters.ts`: `load()` assembles `PlateContent`
-   from the module's exports; `serialize()` calls `replaceExportInitializer`
-   for each editable export. Add it to the `ADAPTERS` map.
+2. Add an adapter in `adapters.ts` and register it in `ADAPTERS`. For the
+   common shape (named scalars + one typed item array) use `makeAdapter` with a
+   declarative mapping; for anything unusual (like ChipPlate's anchored
+   annotations) write `load()`/`serialize()` explicitly.
 3. That's it — the index shows it as editor-ready and the form renders the
    registry's `slots`.
 
