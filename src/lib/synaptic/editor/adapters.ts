@@ -36,6 +36,9 @@ import * as sicArm from "../siciliano-arm-hero-content"
 import * as ramaswamy from "../ramaswamy-pedigree-content"
 import * as plani from "../planisphere-data"
 import * as uprobotics from "../uprobotics-factory-hero-content"
+import * as ca3Ca1 from "../ca3-ca1-circuit-content"
+import * as energyGradient from "../energy-gradient-content"
+import * as stdpWindow from "../stdp-window-content"
 
 export interface PlateAdapter {
   /** Registry id this adapter serves. */
@@ -439,10 +442,89 @@ const uproboticsAdapter = makeAdapter("uprobotics-factory-hero", uprobotics as u
   },
 })
 
+const ca3Ca1Adapter = makeAdapter("ca3-ca1-circuit", ca3Ca1 as unknown as Record<string, unknown>, {
+  scalars: [
+    { exportName: "CA3CA1_DISPLAY_NAME", as: "displayName" },
+    { exportName: "CA3CA1_ARIA_LABEL", as: "ariaLabel" },
+    { exportName: "CA3CA1_KICKER", as: "caption", captionId: "kicker" },
+    { exportName: "CA3CA1_CIRCUIT_LABEL", as: "caption", captionId: "circuit-label" },
+    { exportName: "CA3CA1_TITLE", as: "caption", captionId: "title" },
+    { exportName: "CA3CA1_LEGEND_LABEL", as: "caption", captionId: "legend-label" },
+    { exportName: "CA3CA1_LEGEND_INPUT", as: "caption", captionId: "legend-input" },
+    { exportName: "CA3CA1_LEGEND_OUTPUT", as: "caption", captionId: "legend-output" },
+    { exportName: "CA3CA1_LEGEND_MODULATORY", as: "caption", captionId: "legend-modulatory" },
+    { exportName: "CA3CA1_PANEL_LABEL", as: "caption", captionId: "panel-label" },
+    { exportName: "CA3CA1_FOOTER", as: "caption", captionId: "footer" },
+  ],
+  array: {
+    exportName: "CA3CA1_SPOTS",
+    idField: "id",
+    titleField: "label",
+    subtitleField: "subtitle",
+    bodyField: "body",
+    colorField: "color",
+    order: ["id", "label", "subtitle", "body", "x", "y", "color"],
+  },
+})
+
+const energyGradientAdapter = makeAdapter("energy-gradient", energyGradient as unknown as Record<string, unknown>, {
+  scalars: [
+    { exportName: "ENERGY_DISPLAY_NAME", as: "displayName" },
+    { exportName: "ENERGY_ARIA_LABEL", as: "ariaLabel" },
+    { exportName: "ENERGY_PLATE_MARKER", as: "caption", captionId: "plate-marker" },
+    { exportName: "ENERGY_HEADER_EYEBROW", as: "caption", captionId: "header-eyebrow" },
+    { exportName: "ENERGY_TITLE", as: "caption", captionId: "title" },
+    { exportName: "ENERGY_PER_EVENT_LABEL", as: "caption", captionId: "per-event-label" },
+    { exportName: "ENERGY_BENCHMARK_LABEL", as: "caption", captionId: "benchmark-label" },
+    { exportName: "ENERGY_SWEEP_LABEL", as: "caption", captionId: "sweep-label" },
+    { exportName: "ENERGY_TIER_LABEL_PREFIX", as: "caption", captionId: "tier-label-prefix" },
+    { exportName: "ENERGY_CAPTION", as: "caption", captionId: "caption" },
+  ],
+  array: {
+    exportName: "ENERGY_TIERS",
+    idField: "id",
+    titleField: "label",
+    subtitleField: "detail",
+    bodyField: "source",
+    colorField: "color",
+    order: ["id", "label", "detail", "energy", "era", "color", "source"],
+  },
+})
+
+const stdpWindowAdapter = makeAdapter("stdp-window", stdpWindow as unknown as Record<string, unknown>, {
+  scalars: [
+    { exportName: "STDP_DISPLAY_NAME", as: "displayName" },
+    { exportName: "STDP_ARIA_LABEL", as: "ariaLabel" },
+    { exportName: "STDP_KICKER", as: "caption", captionId: "kicker" },
+    { exportName: "STDP_HEADER_RIGHT", as: "caption", captionId: "header-right" },
+    { exportName: "STDP_TITLE", as: "caption", captionId: "title" },
+    { exportName: "STDP_X_AXIS_LABEL", as: "caption", captionId: "x-axis-label" },
+    { exportName: "STDP_Y_AXIS_LABEL", as: "caption", captionId: "y-axis-label" },
+    { exportName: "STDP_LTP_REGION_LABEL", as: "caption", captionId: "ltp-region-label" },
+    { exportName: "STDP_LTD_REGION_LABEL", as: "caption", captionId: "ltd-region-label" },
+    { exportName: "STDP_SPIKE_PAIR_LABEL", as: "caption", captionId: "spike-pair-label" },
+    { exportName: "STDP_PRE_LABEL", as: "caption", captionId: "pre-label" },
+    { exportName: "STDP_POST_LABEL", as: "caption", captionId: "post-label" },
+    { exportName: "STDP_MS_SUFFIX", as: "caption", captionId: "ms-suffix" },
+    { exportName: "STDP_PANEL_REGIME_LABEL", as: "caption", captionId: "panel-regime-label" },
+    { exportName: "STDP_REGIME_LTP_NAME", as: "caption", captionId: "regime-ltp-name" },
+    { exportName: "STDP_REGIME_LTD_NAME", as: "caption", captionId: "regime-ltd-name" },
+    { exportName: "STDP_REGIME_LTP_SUBTITLE", as: "caption", captionId: "regime-ltp-subtitle" },
+    { exportName: "STDP_REGIME_LTD_SUBTITLE", as: "caption", captionId: "regime-ltd-subtitle" },
+    { exportName: "STDP_DT_READOUT_LABEL", as: "caption", captionId: "dt-readout-label" },
+    { exportName: "STDP_MS_UNIT", as: "caption", captionId: "ms-unit" },
+    { exportName: "STDP_DW_READOUT_LABEL", as: "caption", captionId: "dw-readout-label" },
+    { exportName: "STDP_FOOTER_CAPTION", as: "caption", captionId: "footer-caption" },
+  ],
+})
+
 const ADAPTERS: Record<string, PlateAdapter> = {
   [chipPlateAdapter.plateId]: chipPlateAdapter,
   [planisphereAdapter.plateId]: planisphereAdapter,
   [uproboticsAdapter.plateId]: uproboticsAdapter,
+  [ca3Ca1Adapter.plateId]: ca3Ca1Adapter,
+  [energyGradientAdapter.plateId]: energyGradientAdapter,
+  [stdpWindowAdapter.plateId]: stdpWindowAdapter,
   [twoPhaseAdapter.plateId]: twoPhaseAdapter,
   [sicilianoRoseAdapter.plateId]: sicilianoRoseAdapter,
   [hominisCathedralAdapter.plateId]: hominisCathedralAdapter,

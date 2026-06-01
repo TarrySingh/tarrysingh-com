@@ -1,6 +1,29 @@
 "use client"
 
 import { useState } from "react"
+import {
+  STDP_ARIA_LABEL,
+  STDP_KICKER,
+  STDP_HEADER_RIGHT,
+  STDP_TITLE,
+  STDP_X_AXIS_LABEL,
+  STDP_Y_AXIS_LABEL,
+  STDP_LTP_REGION_LABEL,
+  STDP_LTD_REGION_LABEL,
+  STDP_SPIKE_PAIR_LABEL,
+  STDP_PRE_LABEL,
+  STDP_POST_LABEL,
+  STDP_MS_SUFFIX,
+  STDP_PANEL_REGIME_LABEL,
+  STDP_REGIME_LTP_NAME,
+  STDP_REGIME_LTD_NAME,
+  STDP_REGIME_LTP_SUBTITLE,
+  STDP_REGIME_LTD_SUBTITLE,
+  STDP_DT_READOUT_LABEL,
+  STDP_MS_UNIT,
+  STDP_DW_READOUT_LABEL,
+  STDP_FOOTER_CAPTION,
+} from "@/lib/synaptic/stdp-window-content"
 
 /**
  * Classic spike-timing-dependent plasticity window:
@@ -81,7 +104,7 @@ export function StdpWindow() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="STDP window — spike-timing dependent plasticity. Pre-before-post (Δt > 0) potentiates the synapse; post-before-pre (Δt < 0) depresses it. The exponential window is the learning primitive that MEMPHIS demands the memristive substrate produce intrinsically."
+          aria-label={STDP_ARIA_LABEL}
         >
           <defs>
             <radialGradient id="syn-stdp-bg" cx="50%" cy="50%" r="70%">
@@ -119,7 +142,7 @@ export function StdpWindow() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            PLATE M-I · MMXXVI · FIG. 1.2.a
+            {STDP_KICKER}
           </text>
           <text
             x={VW - PAD_LEFT}
@@ -130,7 +153,7 @@ export function StdpWindow() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.65)"
           >
-            SPIKE-TIMING DEPENDENT PLASTICITY · Δw vs Δt
+            {STDP_HEADER_RIGHT}
           </text>
           <line
             x1={PAD_LEFT}
@@ -149,7 +172,7 @@ export function StdpWindow() {
             fill="var(--ink)"
             letterSpacing={1.5}
           >
-            STDP — the learning primitive
+            {STDP_TITLE}
           </text>
 
           {/* shaded LTP / LTD half-planes */}
@@ -222,7 +245,7 @@ export function StdpWindow() {
             fill="rgba(220,200,160,0.55)"
             letterSpacing={2}
           >
-            Δt · MS (t_post − t_pre)
+            {STDP_X_AXIS_LABEL}
           </text>
 
           {/* y-axis labels */}
@@ -261,7 +284,7 @@ export function StdpWindow() {
             fill="rgba(220,200,160,0.55)"
             letterSpacing={2}
           >
-            Δw
+            {STDP_Y_AXIS_LABEL}
           </text>
 
           {/* LTP / LTD region labels */}
@@ -274,7 +297,7 @@ export function StdpWindow() {
             fill="#ffd596"
             letterSpacing={4}
           >
-            LTP · PRE → POST · POTENTIATION
+            {STDP_LTP_REGION_LABEL}
           </text>
           <text
             x={PAD_LEFT + (ZERO_X - PAD_LEFT) / 2}
@@ -285,7 +308,7 @@ export function StdpWindow() {
             fill="#e5a896"
             letterSpacing={4}
           >
-            LTD · POST → PRE · DEPRESSION
+            {STDP_LTD_REGION_LABEL}
           </text>
 
           {/* curve */}
@@ -351,7 +374,7 @@ export function StdpWindow() {
               letterSpacing={2.5}
               fill="rgba(220,200,160,0.65)"
             >
-              SPIKE PAIR · t_pre · t_post
+              {STDP_SPIKE_PAIR_LABEL}
             </text>
             {/* synapse visual */}
             {(() => {
@@ -393,7 +416,7 @@ export function StdpWindow() {
                     fill="#6cb4c2"
                     letterSpacing={2}
                   >
-                    PRE
+                    {STDP_PRE_LABEL}
                   </text>
                   {/* post spike */}
                   <line
@@ -413,7 +436,7 @@ export function StdpWindow() {
                     fill={ltp ? "#ffd596" : "#e5a896"}
                     letterSpacing={2}
                   >
-                    POST
+                    {STDP_POST_LABEL}
                   </text>
                   {/* timing arrow */}
                   <line
@@ -434,7 +457,7 @@ export function StdpWindow() {
                     letterSpacing={2}
                   >
                     Δt = {dt > 0 ? "+" : ""}
-                    {dt.toFixed(1)} MS
+                    {dt.toFixed(1)} {STDP_MS_SUFFIX}
                   </text>
                 </g>
               )
@@ -461,7 +484,7 @@ export function StdpWindow() {
               letterSpacing={3}
               fill="rgba(220,200,160,0.65)"
             >
-              CURRENT REGIME
+              {STDP_PANEL_REGIME_LABEL}
             </text>
             <text
               x={PANEL_PAD}
@@ -471,7 +494,7 @@ export function StdpWindow() {
               fill={ltp ? "#ffd596" : "#e5a896"}
               letterSpacing={1}
             >
-              {ltp ? "Potentiation" : "Depression"}
+              {ltp ? STDP_REGIME_LTP_NAME : STDP_REGIME_LTD_NAME}
             </text>
             <text
               x={PANEL_PAD}
@@ -481,7 +504,7 @@ export function StdpWindow() {
               fontSize={13}
               fill="rgba(220,200,160,0.75)"
             >
-              {ltp ? "LTP · pre before post" : "LTD · post before pre"}
+              {ltp ? STDP_REGIME_LTP_SUBTITLE : STDP_REGIME_LTD_SUBTITLE}
             </text>
             <line
               x1={PANEL_PAD}
@@ -499,7 +522,7 @@ export function StdpWindow() {
               letterSpacing={2}
               fill="rgba(220,200,160,0.55)"
             >
-              Δt · t_post − t_pre
+              {STDP_DT_READOUT_LABEL}
             </text>
             <text
               x={PANEL_PAD}
@@ -512,7 +535,7 @@ export function StdpWindow() {
               {dt > 0 ? "+" : ""}
               {dt.toFixed(1)}
               <tspan fontSize={18} fill="rgba(220,200,160,0.7)">
-                {" "}ms
+                {" "}{STDP_MS_UNIT}
               </tspan>
             </text>
             <text
@@ -523,7 +546,7 @@ export function StdpWindow() {
               letterSpacing={2}
               fill="rgba(220,200,160,0.55)"
             >
-              Δw · weight change
+              {STDP_DW_READOUT_LABEL}
             </text>
             <text
               x={PANEL_PAD}
@@ -583,8 +606,7 @@ export function StdpWindow() {
             lineHeight: 1.5,
           }}
         >
-          Scrub the curve. The substrate that learns is the one whose
-          devices already obey this window — without an external trainer.
+          {STDP_FOOTER_CAPTION}
         </div>
       </div>
     </figure>

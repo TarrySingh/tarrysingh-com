@@ -1,73 +1,19 @@
 "use client"
 
 import { useState } from "react"
-
-type Spot = {
-  id: string
-  label: string
-  subtitle: string
-  body: string
-  x: number
-  y: number
-  color: string
-}
-
-const SPOTS: ReadonlyArray<Spot> = [
-  {
-    id: "ec",
-    label: "Entorhinal cortex",
-    subtitle: "the input gateway",
-    body: "Cortical sensory streams enter the hippocampus through the entorhinal cortex. Layer II projects to the dentate gyrus and CA3; layer III bypasses to CA1. This is where the system first decides what is novel.",
-    x: 140,
-    y: 200,
-    color: "#c98e4f",
-  },
-  {
-    id: "dg",
-    label: "Dentate gyrus",
-    subtitle: "pattern separation",
-    body: "A sparse, expansion-coding bottleneck that turns near-identical inputs into distinct representations. The substrate's mechanism for orthogonalising memories so they do not interfere.",
-    x: 320,
-    y: 280,
-    color: "#f4c482",
-  },
-  {
-    id: "ca3",
-    label: "CA3 · recurrent collaterals",
-    subtitle: "associative pattern completion",
-    body: "Dense recurrent connectivity implementing an auto-associative attractor network. Partial cues retrieve full stored patterns. The 'sea horse' of the hippocampus — the place where Hebb's primitive lives in the loop.",
-    x: 560,
-    y: 360,
-    color: "#e8b87a",
-  },
-  {
-    id: "schaffer",
-    label: "Schaffer collaterals",
-    subtitle: "CA3 → CA1 read-out path",
-    body: "The axon bundle that carries CA3's reconstructed pattern to CA1. STDP at these synapses is the most-studied learning rule in mammalian biology — the canonical primitive MEMPHIS demands from the memristive devices.",
-    x: 760,
-    y: 360,
-    color: "#ffd596",
-  },
-  {
-    id: "ca1",
-    label: "CA1 · pyramidal layer",
-    subtitle: "novelty detection · read-out",
-    body: "Compares CA3's reconstructed prediction against current entorhinal input. Mismatch drives novelty and replay. The system's natural error signal — without an external loss function.",
-    x: 920,
-    y: 280,
-    color: "#e5a896",
-  },
-  {
-    id: "modulator",
-    label: "Neuromodulatory bus",
-    subtitle: "prioritisation · gain · gating",
-    body: "Slow, broadcast signals — analogues of dopamine, acetylcholine, noradrenaline — modulate plasticity gain globally. Set what the system pays attention to and what it commits to long-term memory.",
-    x: 600,
-    y: 540,
-    color: "#a698d4",
-  },
-]
+import {
+  CA3CA1_ARIA_LABEL,
+  CA3CA1_KICKER,
+  CA3CA1_CIRCUIT_LABEL,
+  CA3CA1_TITLE,
+  CA3CA1_LEGEND_LABEL,
+  CA3CA1_LEGEND_INPUT,
+  CA3CA1_LEGEND_OUTPUT,
+  CA3CA1_LEGEND_MODULATORY,
+  CA3CA1_PANEL_LABEL,
+  CA3CA1_FOOTER,
+  CA3CA1_SPOTS as SPOTS,
+} from "@/lib/synaptic/ca3-ca1-circuit-content"
 
 const VW = 1200
 const VH = 820
@@ -113,7 +59,7 @@ export function Ca3Ca1Circuit() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="CA3 ↔ CA1 hippocampal circuit — entorhinal cortex input, dentate gyrus pattern separation, CA3 recurrent collaterals, Schaffer collaterals, CA1 pyramidal layer, and neuromodulatory bus."
+          aria-label={CA3CA1_ARIA_LABEL}
         >
           <defs>
             <radialGradient id="syn-ca-bg" cx="50%" cy="50%" r="70%">
@@ -137,7 +83,7 @@ export function Ca3Ca1Circuit() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            PLATE M-III · MMXXVI · FIG. 1.2.c
+            {CA3CA1_KICKER}
           </text>
           <text
             x={VW - 60}
@@ -148,7 +94,7 @@ export function Ca3Ca1Circuit() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.65)"
           >
-            CA3 ↔ CA1 HIPPOCAMPAL CIRCUIT
+            {CA3CA1_CIRCUIT_LABEL}
           </text>
           <line
             x1={60}
@@ -166,7 +112,7 @@ export function Ca3Ca1Circuit() {
             fill="var(--ink)"
             letterSpacing={1.5}
           >
-            The circuit MEMPHIS reproduces
+            {CA3CA1_TITLE}
           </text>
 
           {/* horizontal flow lane (decorative) */}
@@ -322,7 +268,7 @@ export function Ca3Ca1Circuit() {
               letterSpacing={3}
               fill="rgba(220,200,160,0.65)"
             >
-              EDGE LEGEND
+              {CA3CA1_LEGEND_LABEL}
             </text>
             <g transform="translate(0, 22)">
               <line x1={0} x2={40} y1={0} y2={0} stroke="#c98e4f" strokeWidth={2} />
@@ -334,7 +280,7 @@ export function Ca3Ca1Circuit() {
                 letterSpacing={2}
                 fill="rgba(220,200,160,0.7)"
               >
-                INPUT · EC → ·
+                {CA3CA1_LEGEND_INPUT}
               </text>
               <line x1={170} x2={210} y1={0} y2={0} stroke="#e5a896" strokeWidth={2} />
               <text
@@ -345,7 +291,7 @@ export function Ca3Ca1Circuit() {
                 letterSpacing={2}
                 fill="rgba(220,200,160,0.7)"
               >
-                CA3 → CA1 OUTPUT
+                {CA3CA1_LEGEND_OUTPUT}
               </text>
               <line x1={400} x2={440} y1={0} y2={0} stroke="#a698d4" strokeWidth={2} />
               <text
@@ -356,7 +302,7 @@ export function Ca3Ca1Circuit() {
                 letterSpacing={2}
                 fill="rgba(220,200,160,0.7)"
               >
-                NEUROMODULATORY
+                {CA3CA1_LEGEND_MODULATORY}
               </text>
             </g>
           </g>
@@ -382,7 +328,7 @@ export function Ca3Ca1Circuit() {
               letterSpacing={3}
               fill="rgba(220,200,160,0.65)"
             >
-              CIRCUIT NODE
+              {CA3CA1_PANEL_LABEL}
             </text>
             <foreignObject x={24} y={48} width={272} height={88}>
               <div
@@ -441,8 +387,7 @@ export function Ca3Ca1Circuit() {
             lineHeight: 1.5,
           }}
         >
-          Six circuit motifs — six device-co-design constraints. The substrate
-          succeeds when it reproduces all six in silicon.
+          {CA3CA1_FOOTER}
         </div>
       </div>
     </figure>

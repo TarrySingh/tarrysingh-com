@@ -34,6 +34,9 @@ const PRESERVE: Record<string, string[]> = {
   "ramaswamy-pedigree": ["year: 2005", "year: 2022", "\"primary\"", "RamaswamyBeat"],
   "symphony-planisphere": ["wedgePath", "VIEW = 800", "seedPositions", "LOCALISATION", "RATIONALE"],
   "uprobotics-factory-hero": ["#f4c482", "y: 280", "y: 580", "UpRoboticsStream"],
+  "ca3-ca1-circuit": ["x: 140", "#c98e4f", "type Spot"],
+  "energy-gradient": ["type Tier", "#849cc8", "millions of years"],
+  "stdp-window": ["PLATE M-I", "Δw"],
 }
 
 for (const entry of PLATE_REGISTRY) {

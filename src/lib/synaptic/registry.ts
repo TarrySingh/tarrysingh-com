@@ -105,6 +105,30 @@ export const PLATE_REGISTRY: ReadonlyArray<PlateRegistryEntry> = [
     group: "symphony",
     previewPath: "/synaptic/symphony/uprobotics",
   },
+  {
+    id: "ca3-ca1-circuit",
+    displayName: "CA3–CA1 Circuit · Memphis",
+    contentPath: "src/lib/synaptic/ca3-ca1-circuit-content.ts",
+    slots: ["annotations", "captions"],
+    group: "memphis",
+    previewPath: "/synaptic/memphis",
+  },
+  {
+    id: "energy-gradient",
+    displayName: "Energy Gradient · Memphis",
+    contentPath: "src/lib/synaptic/energy-gradient-content.ts",
+    slots: ["annotations", "captions"],
+    group: "memphis",
+    previewPath: "/synaptic/memphis",
+  },
+  {
+    id: "stdp-window",
+    displayName: "STDP Window · Memphis",
+    contentPath: "src/lib/synaptic/stdp-window-content.ts",
+    slots: ["captions"],
+    group: "memphis",
+    previewPath: "/synaptic/memphis",
+  },
 ]
 
 export function getPlateEntry(id: string): PlateRegistryEntry | null {

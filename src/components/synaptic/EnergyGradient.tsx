@@ -1,59 +1,18 @@
 "use client"
 
 import { useState } from "react"
-
-type Tier = {
-  id: string
-  label: string
-  detail: string
-  energy: number // femtojoules per synaptic event
-  era: string
-  color: string
-  source: string
-}
-
-const TIERS: ReadonlyArray<Tier> = [
-  {
-    id: "gpu",
-    label: "GPU AI",
-    detail: "transformer inference",
-    energy: 1_000_000, // ~1 nJ
-    era: "2023–2026",
-    color: "#849cc8",
-    source:
-      "Foundation-model inference on H100-class accelerators — roughly 1 nJ per equivalent synaptic operation, six orders of magnitude above the biological benchmark.",
-  },
-  {
-    id: "loihi",
-    label: "Loihi · TrueNorth",
-    detail: "state-of-the-art neuromorphic",
-    energy: 10_000, // ~10 pJ
-    era: "2014–2024",
-    color: "#a698d4",
-    source:
-      "Intel Loihi 2 and IBM TrueNorth — current best-in-class digital neuromorphic hardware. Per-event energies hover at ~10 pJ.",
-  },
-  {
-    id: "biology",
-    label: "Biology",
-    detail: "mammalian cortex",
-    energy: 100,
-    era: "millions of years",
-    color: "#6cb4c2",
-    source:
-      "Mammalian synaptic event — the benchmark every neuromorphic effort is measured against. ~100 fJ per event in cortex.",
-  },
-  {
-    id: "memphis",
-    label: "MEMPHIS",
-    detail: "target · self-organising memristive",
-    energy: 10,
-    era: "2026 → 2029 (target)",
-    color: "#ffd596",
-    source:
-      "MEMPHIS target: < 10 fJ per synaptic event for 100×100 nm² memristive devices — three orders below Loihi/TrueNorth and approaching biology.",
-  },
-]
+import {
+  ENERGY_ARIA_LABEL,
+  ENERGY_PLATE_MARKER,
+  ENERGY_HEADER_EYEBROW,
+  ENERGY_TITLE,
+  ENERGY_PER_EVENT_LABEL,
+  ENERGY_BENCHMARK_LABEL,
+  ENERGY_SWEEP_LABEL,
+  ENERGY_TIER_LABEL_PREFIX,
+  ENERGY_CAPTION,
+  ENERGY_TIERS as TIERS,
+} from "@/lib/synaptic/energy-gradient-content"
 
 // Log scale: position each tier based on log10 of its energy
 const MIN_LOG = Math.log10(1) // 1 fJ
@@ -115,7 +74,7 @@ export function EnergyGradient() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="Energy gradient — femtojoules per synaptic event. GPU AI at ~1 nJ, Loihi/TrueNorth at ~10 pJ, mammalian biology at ~100 fJ, MEMPHIS target below 10 fJ. Six orders of magnitude separate today's foundation-model inference from the biological benchmark."
+          aria-label={ENERGY_ARIA_LABEL}
         >
           <defs>
             <radialGradient id="syn-eg-bg" cx="50%" cy="50%" r="70%">
@@ -151,7 +110,7 @@ export function EnergyGradient() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            PLATE M-V · MMXXVI · FIG. 2.1.a
+            {ENERGY_PLATE_MARKER}
           </text>
           <text
             x={VW - PAD_LEFT}
@@ -162,7 +121,7 @@ export function EnergyGradient() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.65)"
           >
-            ENERGY PER SYNAPTIC EVENT · LOG SCALE
+            {ENERGY_HEADER_EYEBROW}
           </text>
           <line
             x1={PAD_LEFT}
@@ -181,7 +140,7 @@ export function EnergyGradient() {
             fill="var(--ink)"
             letterSpacing={1.5}
           >
-            The energy gradient
+            {ENERGY_TITLE}
           </text>
 
           {/* y-axis decadal gridlines */}
@@ -222,7 +181,7 @@ export function EnergyGradient() {
             letterSpacing={2}
             fill="rgba(220,200,160,0.55)"
           >
-            PER EVENT
+            {ENERGY_PER_EVENT_LABEL}
           </text>
 
           {/* biology benchmark guide line */}
@@ -249,7 +208,7 @@ export function EnergyGradient() {
                   fill="#6cb4c2"
                   letterSpacing={2}
                 >
-                  BIOLOGICAL BENCHMARK ≈ 100 fJ
+                  {ENERGY_BENCHMARK_LABEL}
                 </text>
               </>
             )
@@ -387,7 +346,7 @@ export function EnergyGradient() {
                   fill="#c98e4f"
                   letterSpacing={3}
                 >
-                  − 5 ORDERS OF MAGNITUDE
+                  {ENERGY_SWEEP_LABEL}
                 </text>
               </g>
             )
@@ -414,7 +373,7 @@ export function EnergyGradient() {
               letterSpacing={3}
               fill="rgba(220,200,160,0.65)"
             >
-              TIER · {active.label.toUpperCase()}
+              {ENERGY_TIER_LABEL_PREFIX}{active.label.toUpperCase()}
             </text>
             <foreignObject x={PANEL_PAD} y={50} width={PANEL_INNER_W} height={68}>
               <div
@@ -482,9 +441,7 @@ export function EnergyGradient() {
             lineHeight: 1.5,
           }}
         >
-          MEMPHIS targets the biological benchmark — not the next neuromorphic
-          increment. Five orders of magnitude separate it from today&rsquo;s
-          GPU-borne foundation-model inference.
+          {ENERGY_CAPTION}
         </div>
       </div>
     </figure>
