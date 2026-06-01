@@ -1,50 +1,16 @@
 "use client"
 
 import { useState } from "react"
-
-type Modulator = {
-  id: "ach" | "da" | "ne" | "ht"
-  name: string
-  full: string
-  body: string
-  color: string
-  y: number
-}
-
-const MODULATORS: ReadonlyArray<Modulator> = [
-  {
-    id: "ach",
-    name: "Ach",
-    full: "Acetylcholine",
-    body: "Attention and uncertainty. Modulates the gain of cortical processing under attentional demand — the model's primary substrate for surfacing salient sub-networks.",
-    color: "#f4c482",
-    y: 200,
-  },
-  {
-    id: "da",
-    name: "DA",
-    full: "Dopamine",
-    body: "Reward and plasticity. Reshapes synaptic weights based on prediction-error signals — the substrate's mechanism for learning-without-retraining.",
-    color: "#e5a896",
-    y: 320,
-  },
-  {
-    id: "ne",
-    name: "NE",
-    full: "Noradrenaline",
-    body: "Arousal and neural gain. Sets the network's overall responsiveness — Symphony's hyperparameter-scale modulator.",
-    color: "#6cb4c2",
-    y: 440,
-  },
-  {
-    id: "ht",
-    name: "5-HT",
-    full: "Serotonin",
-    body: "Temporal discounting and tonic state. Tunes how strongly far-temporal signals weigh into the present activation — for code: how much history matters under this task.",
-    color: "#a698d4",
-    y: 560,
-  },
-]
+import {
+  RAMASWAMY_CORTEX_ARIA_LABEL,
+  RAMASWAMY_CORTEX_KICKER,
+  RAMASWAMY_CORTEX_TITLE,
+  RAMASWAMY_CORTEX_BANNER,
+  RAMASWAMY_CORTEX_MODULATOR_LABEL,
+  RAMASWAMY_CORTEX_MODULATORS as MODULATORS,
+  RAMASWAMY_CORTEX_LAYERS as LAYERS,
+  type Modulator,
+} from "@/lib/synaptic/ramaswamy-cortex-hero-content"
 
 const VW = 1400
 // VH used to be 760 to make room for an in-SVG modulator detail card,
@@ -59,16 +25,6 @@ export function RamaswamyCortexHero() {
   const [pinned, setPinned] = useState<Modulator["id"]>("ach")
   const activeId = hover ?? pinned
   const active = MODULATORS.find((m) => m.id === activeId) ?? MODULATORS[0]
-
-  // Layers L1–L6, top to bottom
-  const LAYERS = [
-    { id: "L1", y: 130, h: 60, label: "Layer I", sub: "molecular" },
-    { id: "L2/3", y: 198, h: 110, label: "Layer II / III", sub: "pyramidal" },
-    { id: "L4", y: 312, h: 80, label: "Layer IV", sub: "granular" },
-    { id: "L5", y: 396, h: 110, label: "Layer V", sub: "pyramidal" },
-    { id: "L6", y: 510, h: 90, label: "Layer VI", sub: "multiform" },
-    { id: "WM", y: 604, h: 40, label: "White matter", sub: "axonal" },
-  ] as const
 
   const colCx = 380
   const colW = 240
@@ -91,7 +47,7 @@ export function RamaswamyCortexHero() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="Ramaswamy cortex hero — a cortical column reconstructed in cross-section across six layers, with four neuromodulator beams (acetylcholine, dopamine, noradrenaline, serotonin) sweeping horizontally through it. The mathematical primary source for SYMPHONY's mechanism."
+          aria-label={RAMASWAMY_CORTEX_ARIA_LABEL}
         >
           <defs>
             <radialGradient id="syn-rh-bg" cx="50%" cy="50%" r="70%">
@@ -124,7 +80,7 @@ export function RamaswamyCortexHero() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            PLATE VII · MMXXVI · NEWCASTLE / RAMASWAMY
+            {RAMASWAMY_CORTEX_KICKER}
           </text>
           <text
             x={60}
@@ -134,7 +90,7 @@ export function RamaswamyCortexHero() {
             fill="var(--ink)"
             letterSpacing={2}
           >
-            A column, four modulators, twenty years
+            {RAMASWAMY_CORTEX_TITLE}
           </text>
           <line x1={60} x2={VW - 60} y1={92} y2={92} stroke="rgba(220,200,160,0.35)" strokeWidth={0.8} />
           <text
@@ -146,7 +102,7 @@ export function RamaswamyCortexHero() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.7)"
           >
-            MATHEMATICAL PRIMARY · MEI · MULLER · RAMASWAMY 2022
+            {RAMASWAMY_CORTEX_BANNER}
           </text>
 
           {/* cortical column — left side */}
@@ -428,7 +384,7 @@ export function RamaswamyCortexHero() {
               textTransform: "uppercase",
             }}
           >
-            Modulator · {active.name}
+            {RAMASWAMY_CORTEX_MODULATOR_LABEL} · {active.name}
           </div>
           <div
             style={{

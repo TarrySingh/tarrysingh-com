@@ -1,49 +1,21 @@
 "use client"
 
 import { useState } from "react"
-
-type Row = {
-  id: string
-  label: string
-  detail: string
-  headline: number
-  filtered: number
-  date: string
-  source: string
-}
-
-const ROWS: ReadonlyArray<Row> = [
-  {
-    id: "opus45",
-    label: "Claude Opus 4.5",
-    detail: "first across the 80 % line",
-    headline: 80.9,
-    filtered: 80.9,
-    date: "Dec 2025",
-    source:
-      "Anthropic announcement (December 2025). No independent re-evaluation has been published yet; the filtered bar is provisional.",
-  },
-  {
-    id: "sweagent10",
-    label: "SWE-agent 1.0 · Claude 3.5",
-    detail: "headline vs. filtered",
-    headline: 57.6,
-    filtered: 31.8,
-    date: "Mar 2026",
-    source:
-      "SWE-Bench+ at ICLR 2026 — filters solution leakage and weak test cases.",
-  },
-  {
-    id: "sweagentlead",
-    label: "SWE-agent · leading config",
-    detail: "headline vs. re-evaluated",
-    headline: 12.47,
-    filtered: 3.97,
-    date: "May 2025",
-    source:
-      "ICSE 2025 Companion · stripping solution leakage from a leading SWE-agent configuration.",
-  },
-]
+import {
+  STAT_CEILING_ARIA_LABEL,
+  STAT_CEILING_PLATE_MARKER,
+  STAT_CEILING_BANNER,
+  STAT_CEILING_TITLE,
+  STAT_CEILING_Y_AXIS_LABEL,
+  STAT_CEILING_CEILING_LABEL,
+  STAT_CEILING_LEGEND_HEADLINE,
+  STAT_CEILING_LEGEND_FILTERED,
+  STAT_CEILING_SERIES_HEADLINE,
+  STAT_CEILING_SERIES_FILTERED,
+  STAT_CEILING_EMPTY_STATE,
+  STAT_CEILING_FOOTER,
+  STAT_CEILING_ROWS as ROWS,
+} from "@/lib/synaptic/statistical-ceiling-content"
 
 const VW = 1200
 const VH = 820
@@ -91,7 +63,7 @@ export function StatisticalCeiling() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="The statistical ceiling — SWE-bench Verified headline scores against independent re-evaluation."
+          aria-label={STAT_CEILING_ARIA_LABEL}
         >
           <defs>
             <linearGradient id="syn-sc-bg" x1="0" y1="0" x2="0" y2="1">
@@ -127,7 +99,7 @@ export function StatisticalCeiling() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            PLATE V · MMXXVI · FIG. 1.2.b
+            {STAT_CEILING_PLATE_MARKER}
           </text>
           <text
             x={VW - PAD_LEFT}
@@ -138,7 +110,7 @@ export function StatisticalCeiling() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.65)"
           >
-            SWE-BENCH VERIFIED · HEADLINE vs FILTERED
+            {STAT_CEILING_BANNER}
           </text>
           {/* hairline beneath the marker row */}
           <line
@@ -158,7 +130,7 @@ export function StatisticalCeiling() {
             fill="var(--ink)"
             letterSpacing={1.5}
           >
-            The statistical ceiling
+            {STAT_CEILING_TITLE}
           </text>
 
           {/* y-axis gridlines */}
@@ -197,7 +169,7 @@ export function StatisticalCeiling() {
             fill="rgba(220,200,160,0.55)"
             letterSpacing={2}
           >
-            % RESOLVED
+            {STAT_CEILING_Y_AXIS_LABEL}
           </text>
 
           {/* 80 % ceiling band */}
@@ -228,7 +200,7 @@ export function StatisticalCeiling() {
             fill="#ffd596"
             letterSpacing={2}
           >
-            HEADLINE CEILING ≈ 80 %
+            {STAT_CEILING_CEILING_LABEL}
           </text>
 
           {/* bar groups */}
@@ -397,7 +369,7 @@ export function StatisticalCeiling() {
               fill="rgba(220,200,160,0.78)"
               letterSpacing={2}
             >
-              HEADLINE
+              {STAT_CEILING_LEGEND_HEADLINE}
             </text>
             <rect x={130} y={-10} width={14} height={14} fill="url(#syn-sc-filt)" />
             <text
@@ -408,7 +380,7 @@ export function StatisticalCeiling() {
               fill="rgba(220,200,160,0.78)"
               letterSpacing={2}
             >
-              INDEPENDENTLY RE-EVALUATED
+              {STAT_CEILING_LEGEND_FILTERED}
             </text>
           </g>
 
@@ -462,7 +434,9 @@ export function StatisticalCeiling() {
                   fontSize={13}
                   fill="var(--symphony-amber)"
                 >
-                  {sel?.series === "h" ? "Headline score" : "After filtering"}
+                  {sel?.series === "h"
+                    ? STAT_CEILING_SERIES_HEADLINE
+                    : STAT_CEILING_SERIES_FILTERED}
                 </text>
                 <text
                   x={PANEL_PAD}
@@ -520,9 +494,7 @@ export function StatisticalCeiling() {
                     color: "var(--ink-cool)",
                   }}
                 >
-                  Three SWE-bench Verified configurations, three headlines, three
-                  independent re-evaluations. Hover or click any bar to inspect
-                  the measurement and its citation.
+                  {STAT_CEILING_EMPTY_STATE}
                 </div>
               </foreignObject>
             )}
@@ -540,8 +512,7 @@ export function StatisticalCeiling() {
             lineHeight: 1.5,
           }}
         >
-          The headline number is a ceiling, not a result. SYMPHONY is not a scaling bet — it is an
-          architectural bet built on the failure mode this chart names.
+          {STAT_CEILING_FOOTER}
         </div>
       </div>
     </figure>

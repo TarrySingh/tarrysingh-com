@@ -1,38 +1,17 @@
 "use client"
 
 import { useState } from "react"
-
-type Pillar = {
-  id: string
-  capital: string
-  shaft: string
-  body: string
-  color: string
-}
-
-const PILLARS: ReadonlyArray<Pillar> = [
-  {
-    id: "situated",
-    capital: "I",
-    shaft: "Situated",
-    body: "Foundation models that read the world they are deployed into — industrial-automation logs, EU regulatory text, multi-lingual scientific corpora — not just the open web. Trained on the context that matches the substrate they will be embedded in. The model knows where it is.",
-    color: "#f4c482",
-  },
-  {
-    id: "auditable",
-    capital: "II",
-    shaft: "Auditable",
-    body: "Every output is traceable to a substrate region; every adaptation to a task token. Compositional control surfaces, bounded behaviour, and external evaluation built into the development loop, not bolted on after release. The model shows its work.",
-    color: "#e5a896",
-  },
-  {
-    id: "compute",
-    capital: "III",
-    shaft: "Compute-aware",
-    body: "Built on EuroHPC allocation time at Leonardo (CINECA, Bologna). Designed to run within the energy and the time budget of European public infrastructure — not against it. Per-paper tCO₂e reporting; absolute compute-budget caps declared in the DMP.",
-    color: "#6cb4c2",
-  },
-]
+import {
+  HOMINIS_HERO_ARIA_LABEL,
+  HOMINIS_HERO_STUDIO_HEADER,
+  HOMINIS_HERO_TITLE,
+  HOMINIS_HERO_TAGLINE,
+  HOMINIS_HERO_WORDMARK,
+  HOMINIS_HERO_WORDMARK_SUBTITLE,
+  HOMINIS_HERO_FOUNDATION_LABEL,
+  HOMINIS_HERO_FOUNDATION_CAPTION,
+  HOMINIS_HERO_PILLARS as PILLARS,
+} from "@/lib/synaptic/hominis-hero-content"
 
 const VW = 1400
 const VH = 820
@@ -72,7 +51,7 @@ export function HominisHero() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="Hominis cathedral — three pillars (situated · auditable · compute-aware) standing on the Leonardo / CINECA EuroHPC foundation, beneath a pediment carrying the HOMINIS wordmark."
+          aria-label={HOMINIS_HERO_ARIA_LABEL}
         >
           <defs>
             <radialGradient id="syn-hh-bg" cx="50%" cy="50%" r="70%">
@@ -110,7 +89,7 @@ export function HominisHero() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            PLATE VI · MMXXVI · REAL AI / TARRY · COORDINATOR
+            {HOMINIS_HERO_STUDIO_HEADER}
           </text>
           <text
             x={60}
@@ -120,7 +99,7 @@ export function HominisHero() {
             fill="var(--ink)"
             letterSpacing={2}
           >
-            Hominis cathedral
+            {HOMINIS_HERO_TITLE}
           </text>
           <line x1={60} x2={VW - 60} y1={92} y2={92} stroke="rgba(220,200,160,0.35)" strokeWidth={0.8} />
           <text
@@ -132,7 +111,7 @@ export function HominisHero() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.7)"
           >
-            FOUNDATION MODELS FOR THE REAL WORLD
+            {HOMINIS_HERO_TAGLINE}
           </text>
 
           {/* starfield */}
@@ -168,7 +147,7 @@ export function HominisHero() {
             fill="#5a4a8a"
             letterSpacing={6}
           >
-            HOMINIS
+            {HOMINIS_HERO_WORDMARK}
           </text>
           <text
             x={cx}
@@ -179,7 +158,7 @@ export function HominisHero() {
             letterSpacing={5}
             fill="rgba(90,70,48,0.85)"
           >
-            FOUNDATION MODELS FOR THE REAL WORLD
+            {HOMINIS_HERO_WORDMARK_SUBTITLE}
           </text>
           {/* triglyph dots on pediment */}
           {Array.from({ length: 9 }).map((_, k) => (
@@ -363,7 +342,7 @@ export function HominisHero() {
             fill="#f5e8cc"
             letterSpacing={4}
           >
-            LEONARDO · CINECA · EUROHPC
+            {HOMINIS_HERO_FOUNDATION_LABEL}
           </text>
           <text
             x={cx}
@@ -374,7 +353,7 @@ export function HominisHero() {
             fontSize={13}
             fill="rgba(200,184,255,0.7)"
           >
-            European public compute · Bologna
+            {HOMINIS_HERO_FOUNDATION_CAPTION}
           </text>
 
           {/* active pillar detail panel at bottom */}

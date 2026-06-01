@@ -1,93 +1,21 @@
 "use client"
 
 import { useMemo, useState } from "react"
-
-type Era = {
-  year: number
-  complexity: number
-  comprehension: number
-  era: string
-  detail: string
-  source?: string
-}
-
-const ERAS: ReadonlyArray<Era> = [
-  {
-    year: 1970,
-    complexity: 1,
-    comprehension: 1,
-    era: "Structured programming",
-    detail:
-      "A single author can hold the whole system in their head. ALGOL, early Pascal, IBM mainframe departments of ~10 engineers.",
-    source: "Brooks · The Mythical Man-Month · 1975",
-  },
-  {
-    year: 1980,
-    complexity: 5.6,
-    comprehension: 1.1,
-    era: "Modularity",
-    detail:
-      "C, early C++, Unix tools, module systems. Teams of dozens. The first time the codebase outruns any one person.",
-  },
-  {
-    year: 1990,
-    complexity: 32,
-    comprehension: 1.15,
-    era: "Object orientation",
-    detail:
-      "Smalltalk, C++, Java. Class hierarchies grow faster than the people maintaining them. Architecture-recovery research begins.",
-    source: "Avgeriou et al. · 2007",
-  },
-  {
-    year: 2000,
-    complexity: 180,
-    comprehension: 1.2,
-    era: "Open source · web stacks",
-    detail:
-      "Hundreds of dependencies per project. The composability problem and the readability problem split.",
-  },
-  {
-    year: 2010,
-    complexity: 1000,
-    comprehension: 1.25,
-    era: "Microservices · cloud",
-    detail:
-      "The readable subsystem disappears. A request crosses a dozen services, none of which any single engineer fully owns.",
-  },
-  {
-    year: 2020,
-    complexity: 5700,
-    comprehension: 1.28,
-    era: "LLM coding agents",
-    detail:
-      "GitHub Copilot, then everything else. Code-completion ubiquitous; comprehension of unfamiliar code still hard.",
-  },
-  {
-    year: 2025,
-    complexity: 16000,
-    comprehension: 1.3,
-    era: "The ceiling becomes visible",
-    detail:
-      "Claude Opus 4.5 crosses 80 % SWE-bench Verified · ICSE 2025 / ICLR 2026 re-evaluations collapse the same numbers to single digits and 30 %.",
-    source: "ICSE 2025 Companion · ICLR 2026 SWE-Bench+",
-  },
-  {
-    year: 2026,
-    complexity: 22600,
-    comprehension: 1.31,
-    era: "SYMPHONY enters",
-    detail:
-      "EIC Pathfinder 2026. Neuromimetic knowledge substrate begins — not a scaling bet but an architectural one.",
-  },
-  {
-    year: 2030,
-    complexity: 45000,
-    comprehension: 1.32,
-    era: "Projection",
-    detail:
-      "If the trend holds, software complexity reaches 45 000× the 1970 baseline. Human comprehension is essentially unchanged. The substrate is either the bridge by then or the gap is permanent.",
-  },
-]
+import {
+  COMPREHENSION_ARIA_LABEL,
+  COMPREHENSION_PLATE_MARKER,
+  COMPREHENSION_HEADER_EYEBROW,
+  COMPREHENSION_TITLE,
+  COMPREHENSION_LOG_SCALE_LABEL,
+  COMPREHENSION_LEGEND_COMPLEXITY,
+  COMPREHENSION_LEGEND_COMPREHENSION,
+  COMPREHENSION_LEGEND_GAP,
+  COMPREHENSION_PANEL_YEAR_PREFIX,
+  COMPREHENSION_PANEL_COMPLEXITY_LABEL,
+  COMPREHENSION_PANEL_COMPREHENSION_LABEL,
+  COMPREHENSION_FOOTER,
+  COMPREHENSION_ERAS as ERAS,
+} from "@/lib/synaptic/comprehension-gap-content"
 
 const VW = 1200
 const VH = 820
@@ -163,7 +91,7 @@ export function ComprehensionGap() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="The comprehension gap — software-system complexity grows roughly exponentially from 1970 to 2030 while individual human comprehension capacity stays nearly flat."
+          aria-label={COMPREHENSION_ARIA_LABEL}
         >
           <defs>
             <linearGradient id="syn-gap-bg" x1="0" y1="0" x2="0" y2="1">
@@ -195,7 +123,7 @@ export function ComprehensionGap() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            PLATE IV · MMXXVI · FIG. 1.2.a
+            {COMPREHENSION_PLATE_MARKER}
           </text>
           <text
             x={VW - PAD_LEFT}
@@ -206,7 +134,7 @@ export function ComprehensionGap() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.65)"
           >
-            COMPLEXITY × COMPREHENSION · 1970 → 2030
+            {COMPREHENSION_HEADER_EYEBROW}
           </text>
           <line
             x1={PAD_LEFT}
@@ -225,7 +153,7 @@ export function ComprehensionGap() {
             fill="var(--ink)"
             letterSpacing={1.5}
           >
-            The comprehension gap
+            {COMPREHENSION_TITLE}
           </text>
 
           {/* y-axis log gridlines */}
@@ -271,7 +199,7 @@ export function ComprehensionGap() {
             letterSpacing={2}
             fill="rgba(220,200,160,0.55)"
           >
-            LOG SCALE
+            {COMPREHENSION_LOG_SCALE_LABEL}
           </text>
 
           {/* gap shaded area */}
@@ -422,7 +350,7 @@ export function ComprehensionGap() {
               letterSpacing={2}
               fill="rgba(220,200,160,0.78)"
             >
-              SYSTEM COMPLEXITY
+              {COMPREHENSION_LEGEND_COMPLEXITY}
             </text>
             <line x1={224} x2={252} y1={0} y2={0} stroke="url(#syn-gap-comp)" strokeWidth={2.2} />
             <text
@@ -433,7 +361,7 @@ export function ComprehensionGap() {
               letterSpacing={2}
               fill="rgba(220,200,160,0.78)"
             >
-              HUMAN COMPREHENSION
+              {COMPREHENSION_LEGEND_COMPREHENSION}
             </text>
             <rect x={500} y={-8} width={18} height={14} fill="url(#syn-gap-fill)" />
             <text
@@ -444,7 +372,7 @@ export function ComprehensionGap() {
               letterSpacing={2}
               fill="rgba(220,200,160,0.78)"
             >
-              THE GAP
+              {COMPREHENSION_LEGEND_GAP}
             </text>
           </g>
 
@@ -468,7 +396,7 @@ export function ComprehensionGap() {
               letterSpacing={3}
               fill="rgba(220,200,160,0.65)"
             >
-              YEAR · {active.year}
+              {COMPREHENSION_PANEL_YEAR_PREFIX}{active.year}
             </text>
             <foreignObject
               x={PANEL_PAD}
@@ -495,7 +423,7 @@ export function ComprehensionGap() {
                 letterSpacing={2}
                 fill="rgba(220,200,160,0.55)"
               >
-                COMPLEXITY
+                {COMPREHENSION_PANEL_COMPLEXITY_LABEL}
               </text>
               <text
                 y={32}
@@ -514,7 +442,7 @@ export function ComprehensionGap() {
                 letterSpacing={2}
                 fill="rgba(220,200,160,0.55)"
               >
-                COMPREHENSION
+                {COMPREHENSION_PANEL_COMPREHENSION_LABEL}
               </text>
               <text
                 y={32}
@@ -579,7 +507,7 @@ export function ComprehensionGap() {
             lineHeight: 1.5,
           }}
         >
-          SYMPHONY closes the gap not by enlarging the engineer, but by reshaping the substrate they navigate.
+          {COMPREHENSION_FOOTER}
         </div>
       </div>
     </figure>

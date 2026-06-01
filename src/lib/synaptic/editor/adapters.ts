@@ -39,6 +39,12 @@ import * as uprobotics from "../uprobotics-factory-hero-content"
 import * as ca3Ca1 from "../ca3-ca1-circuit-content"
 import * as energyGradient from "../energy-gradient-content"
 import * as stdpWindow from "../stdp-window-content"
+import * as comprehensionGap from "../comprehension-gap-content"
+import * as consortiumGraph from "../consortium-graph-content"
+import * as hominisHero from "../hominis-hero-content"
+import * as ramaswamyCortex from "../ramaswamy-cortex-hero-content"
+import * as statisticalCeiling from "../statistical-ceiling-content"
+import * as substrateScales from "../substrate-scales-content"
 
 export interface PlateAdapter {
   /** Registry id this adapter serves. */
@@ -518,6 +524,188 @@ const stdpWindowAdapter = makeAdapter("stdp-window", stdpWindow as unknown as Re
   ],
 })
 
+const comprehensionGapAdapter = makeAdapter("comprehension-gap", comprehensionGap as unknown as Record<string, unknown>, {
+  scalars: [
+    { exportName: "COMPREHENSION_DISPLAY_NAME", as: "displayName" },
+    { exportName: "COMPREHENSION_ARIA_LABEL", as: "ariaLabel" },
+    { exportName: "COMPREHENSION_PLATE_MARKER", as: "caption", captionId: "plate-marker" },
+    { exportName: "COMPREHENSION_HEADER_EYEBROW", as: "caption", captionId: "header-eyebrow" },
+    { exportName: "COMPREHENSION_TITLE", as: "caption", captionId: "title" },
+    { exportName: "COMPREHENSION_LOG_SCALE_LABEL", as: "caption", captionId: "log-scale-label" },
+    { exportName: "COMPREHENSION_LEGEND_COMPLEXITY", as: "caption", captionId: "legend-complexity" },
+    { exportName: "COMPREHENSION_LEGEND_COMPREHENSION", as: "caption", captionId: "legend-comprehension" },
+    { exportName: "COMPREHENSION_LEGEND_GAP", as: "caption", captionId: "legend-gap" },
+    { exportName: "COMPREHENSION_PANEL_YEAR_PREFIX", as: "caption", captionId: "panel-year-prefix" },
+    { exportName: "COMPREHENSION_PANEL_COMPLEXITY_LABEL", as: "caption", captionId: "panel-complexity-label" },
+    { exportName: "COMPREHENSION_PANEL_COMPREHENSION_LABEL", as: "caption", captionId: "panel-comprehension-label" },
+    { exportName: "COMPREHENSION_FOOTER", as: "caption", captionId: "footer" },
+  ],
+  array: {
+    exportName: "COMPREHENSION_ERAS",
+    idField: "year",
+    titleField: "era",
+    bodyField: "detail",
+    order: ["year", "complexity", "comprehension", "era", "detail", "source"],
+  },
+})
+
+const consortiumGraphAdapter = makeAdapter("consortium-graph", consortiumGraph as unknown as Record<string, unknown>, {
+  scalars: [
+    { exportName: "CONSORTIUM_DISPLAY_NAME", as: "displayName" },
+    { exportName: "CONSORTIUM_ARIA_LABEL", as: "ariaLabel" },
+    { exportName: "CONSORTIUM_KICKER", as: "caption", captionId: "kicker" },
+    { exportName: "CONSORTIUM_TITLE", as: "caption", captionId: "title" },
+    { exportName: "CONSORTIUM_BANNER", as: "caption", captionId: "banner" },
+    { exportName: "CONSORTIUM_PANEL_LABEL", as: "caption", captionId: "panel-label" },
+    { exportName: "CONSORTIUM_ROLE_LABEL", as: "caption", captionId: "role-label" },
+    { exportName: "CONSORTIUM_COORDINATOR_LABEL", as: "caption", captionId: "coordinator-label" },
+  ],
+  array: {
+    exportName: "CONSORTIUM_PARTNERS",
+    idField: "id",
+    titleField: "name",
+    subtitleField: "role",
+    bodyField: "body",
+    colorField: "color",
+    order: ["id", "name", "affiliation", "country", "countryCode", "city", "role", "objective", "body", "pos", "color", "isCoordinator"],
+  },
+})
+
+const hominisHeroAdapter = makeAdapter("hominis-hero", hominisHero as unknown as Record<string, unknown>, {
+  scalars: [
+    { exportName: "HOMINIS_HERO_DISPLAY_NAME", as: "displayName" },
+    { exportName: "HOMINIS_HERO_ARIA_LABEL", as: "ariaLabel" },
+    { exportName: "HOMINIS_HERO_STUDIO_HEADER", as: "caption", captionId: "studio-header" },
+    { exportName: "HOMINIS_HERO_TITLE", as: "caption", captionId: "title" },
+    { exportName: "HOMINIS_HERO_TAGLINE", as: "caption", captionId: "tagline" },
+    { exportName: "HOMINIS_HERO_WORDMARK", as: "caption", captionId: "wordmark" },
+    { exportName: "HOMINIS_HERO_WORDMARK_SUBTITLE", as: "caption", captionId: "wordmark-subtitle" },
+    { exportName: "HOMINIS_HERO_FOUNDATION_LABEL", as: "caption", captionId: "foundation-label" },
+    { exportName: "HOMINIS_HERO_FOUNDATION_CAPTION", as: "caption", captionId: "foundation-caption" },
+  ],
+  array: {
+    exportName: "HOMINIS_HERO_PILLARS",
+    idField: "id",
+    titleField: "shaft",
+    subtitleField: "capital",
+    bodyField: "body",
+    colorField: "color",
+    order: ["id", "capital", "shaft", "body", "color"],
+  },
+})
+
+const ramaswamyCortexAdapter = makeAdapter("ramaswamy-cortex-hero", ramaswamyCortex as unknown as Record<string, unknown>, {
+  scalars: [
+    { exportName: "RAMASWAMY_CORTEX_DISPLAY_NAME", as: "displayName" },
+    { exportName: "RAMASWAMY_CORTEX_ARIA_LABEL", as: "ariaLabel" },
+    { exportName: "RAMASWAMY_CORTEX_KICKER", as: "caption", captionId: "kicker" },
+    { exportName: "RAMASWAMY_CORTEX_TITLE", as: "caption", captionId: "title" },
+    { exportName: "RAMASWAMY_CORTEX_BANNER", as: "caption", captionId: "banner" },
+    { exportName: "RAMASWAMY_CORTEX_MODULATOR_LABEL", as: "caption", captionId: "modulator-label" },
+  ],
+  array: {
+    exportName: "RAMASWAMY_CORTEX_MODULATORS",
+    idField: "id",
+    titleField: "name",
+    subtitleField: "full",
+    bodyField: "body",
+    colorField: "color",
+    order: ["id", "name", "full", "body", "color", "y"],
+  },
+})
+
+const statisticalCeilingAdapter = makeAdapter("statistical-ceiling", statisticalCeiling as unknown as Record<string, unknown>, {
+  scalars: [
+    { exportName: "STAT_CEILING_DISPLAY_NAME", as: "displayName" },
+    { exportName: "STAT_CEILING_ARIA_LABEL", as: "ariaLabel" },
+    { exportName: "STAT_CEILING_PLATE_MARKER", as: "caption", captionId: "plate-marker" },
+    { exportName: "STAT_CEILING_BANNER", as: "caption", captionId: "banner" },
+    { exportName: "STAT_CEILING_TITLE", as: "caption", captionId: "title" },
+    { exportName: "STAT_CEILING_Y_AXIS_LABEL", as: "caption", captionId: "y-axis-label" },
+    { exportName: "STAT_CEILING_CEILING_LABEL", as: "caption", captionId: "ceiling-label" },
+    { exportName: "STAT_CEILING_LEGEND_HEADLINE", as: "caption", captionId: "legend-headline" },
+    { exportName: "STAT_CEILING_LEGEND_FILTERED", as: "caption", captionId: "legend-filtered" },
+    { exportName: "STAT_CEILING_SERIES_HEADLINE", as: "caption", captionId: "series-headline" },
+    { exportName: "STAT_CEILING_SERIES_FILTERED", as: "caption", captionId: "series-filtered" },
+    { exportName: "STAT_CEILING_EMPTY_STATE", as: "caption", captionId: "empty-state" },
+    { exportName: "STAT_CEILING_FOOTER", as: "caption", captionId: "footer" },
+  ],
+  array: {
+    exportName: "STAT_CEILING_ROWS",
+    idField: "id",
+    titleField: "label",
+    subtitleField: "detail",
+    bodyField: "source",
+    order: ["id", "label", "detail", "headline", "filtered", "date", "source"],
+  },
+})
+
+// SubstrateScales — custom: SUBSTRATE_CELLS is a nested Record<LayerKey,
+// Record<ScaleKey, {title,body}>>, flattened to annotations keyed `layer·scale`.
+// The 4 layer + 4 scale axis labels stay code-owned for now (preserved on
+// serialize); the 16 cell title/bodies + the 5 scalars are editable.
+const SUBSTRATE_CELL_SEP = "·"
+const substrateScalesAdapter: PlateAdapter = {
+  plateId: "substrate-scales",
+  load() {
+    const cells = substrateScales.SUBSTRATE_CELLS as unknown as Record<string, Record<string, { title: string; body: string }>>
+    const layerKeys = substrateScales.SUBSTRATE_LAYERS.map((l) => l.key as string)
+    const scaleKeys = substrateScales.SUBSTRATE_SCALES.map((s) => s.key as string)
+    const annotations: PlateAnnotation[] = []
+    for (const L of layerKeys) {
+      for (const S of scaleKeys) {
+        const cell = cells[L][S]
+        annotations.push({ id: `${L}${SUBSTRATE_CELL_SEP}${S}`, title: cell.title, subtitle: "", body: cell.body })
+      }
+    }
+    return {
+      displayName: substrateScales.SUBSTRATE_DISPLAY_NAME,
+      ariaLabel: substrateScales.SUBSTRATE_ARIA_LABEL,
+      captions: [
+        { id: "plate-kicker", text: substrateScales.SUBSTRATE_PLATE_KICKER },
+        { id: "title", text: substrateScales.SUBSTRATE_TITLE },
+        { id: "subtitle", text: substrateScales.SUBSTRATE_SUBTITLE },
+        { id: "citation", text: substrateScales.SUBSTRATE_CITATION },
+        { id: "footer", text: substrateScales.SUBSTRATE_FOOTER },
+      ],
+      annotations,
+    }
+  },
+  serialize(content, currentSrc) {
+    let out = currentSrc
+    const cap = new Map((content.captions ?? []).map((c) => [c.id, c.text]))
+    if (typeof content.displayName === "string") out = replaceExportInitializer(out, "SUBSTRATE_DISPLAY_NAME", tsLiteral(content.displayName))
+    if (typeof content.ariaLabel === "string") out = replaceExportInitializer(out, "SUBSTRATE_ARIA_LABEL", tsLiteral(content.ariaLabel))
+    const scalarExports: [string, string][] = [
+      ["SUBSTRATE_PLATE_KICKER", "plate-kicker"],
+      ["SUBSTRATE_TITLE", "title"],
+      ["SUBSTRATE_SUBTITLE", "subtitle"],
+      ["SUBSTRATE_CITATION", "citation"],
+      ["SUBSTRATE_FOOTER", "footer"],
+    ]
+    for (const [exp, id] of scalarExports) {
+      const v = cap.get(id)
+      if (typeof v === "string") out = replaceExportInitializer(out, exp, tsLiteral(v))
+    }
+    if (content.annotations && content.annotations.length > 0) {
+      const cellsOrig = substrateScales.SUBSTRATE_CELLS as unknown as Record<string, Record<string, { title: string; body: string }>>
+      const byId = new Map(content.annotations.map((a) => [a.id, a]))
+      const layerKeys = substrateScales.SUBSTRATE_LAYERS.map((l) => l.key as string)
+      const scaleKeys = substrateScales.SUBSTRATE_SCALES.map((s) => s.key as string)
+      const cells: Record<string, Record<string, { title: string; body: string }>> = {}
+      for (const L of layerKeys) {
+        cells[L] = {}
+        for (const S of scaleKeys) {
+          const a = byId.get(`${L}${SUBSTRATE_CELL_SEP}${S}`)
+          cells[L][S] = { title: a?.title ?? cellsOrig[L][S].title, body: a?.body ?? cellsOrig[L][S].body }
+        }
+      }
+      out = replaceExportInitializer(out, "SUBSTRATE_CELLS", tsLiteral(cells as unknown as TsValue, { inlineSmallObjects: true }))
+    }
+    return out
+  },
+}
+
 const ADAPTERS: Record<string, PlateAdapter> = {
   [chipPlateAdapter.plateId]: chipPlateAdapter,
   [planisphereAdapter.plateId]: planisphereAdapter,
@@ -525,6 +713,12 @@ const ADAPTERS: Record<string, PlateAdapter> = {
   [ca3Ca1Adapter.plateId]: ca3Ca1Adapter,
   [energyGradientAdapter.plateId]: energyGradientAdapter,
   [stdpWindowAdapter.plateId]: stdpWindowAdapter,
+  [comprehensionGapAdapter.plateId]: comprehensionGapAdapter,
+  [consortiumGraphAdapter.plateId]: consortiumGraphAdapter,
+  [hominisHeroAdapter.plateId]: hominisHeroAdapter,
+  [ramaswamyCortexAdapter.plateId]: ramaswamyCortexAdapter,
+  [statisticalCeilingAdapter.plateId]: statisticalCeilingAdapter,
+  [substrateScalesAdapter.plateId]: substrateScalesAdapter,
   [twoPhaseAdapter.plateId]: twoPhaseAdapter,
   [sicilianoRoseAdapter.plateId]: sicilianoRoseAdapter,
   [hominisCathedralAdapter.plateId]: hominisCathedralAdapter,

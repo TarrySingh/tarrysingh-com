@@ -37,6 +37,12 @@ const PRESERVE: Record<string, string[]> = {
   "ca3-ca1-circuit": ["x: 140", "#c98e4f", "type Spot"],
   "energy-gradient": ["type Tier", "#849cc8", "millions of years"],
   "stdp-window": ["PLATE M-I", "Δw"],
+  "comprehension-gap": ["year: 1970", "complexity: 1", "type Era"],
+  "consortium-graph": ["isCoordinator: true", "CONSORTIUM_EDGES", "type Partner"],
+  "hominis-hero": ["#f4c482", "id: \"situated\"", "HominisPillar"],
+  "ramaswamy-cortex-hero": ["y: 200", "RAMASWAMY_CORTEX_LAYERS", "Layer I"],
+  "statistical-ceiling": ["headline: 80.9", "filtered: 31.8", "StatCeilingRow"],
+  "substrate-scales": ["SUBSTRATE_LAYERS", "η", "Hyperparameter"],
 }
 
 for (const entry of PLATE_REGISTRY) {
