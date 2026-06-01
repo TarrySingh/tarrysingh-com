@@ -97,6 +97,14 @@ export const PLATE_REGISTRY: ReadonlyArray<PlateRegistryEntry> = [
     group: "symphony",
     previewPath: "/synaptic/symphony",
   },
+  {
+    id: "uprobotics-factory-hero",
+    displayName: "UP Robotics Factory Hero · Symphony",
+    contentPath: "src/lib/synaptic/uprobotics-factory-hero-content.ts",
+    slots: ["annotations", "captions"],
+    group: "symphony",
+    previewPath: "/synaptic/symphony/uprobotics",
+  },
 ]
 
 export function getPlateEntry(id: string): PlateRegistryEntry | null {

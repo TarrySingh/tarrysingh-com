@@ -35,6 +35,7 @@ import * as vision from "../vision-horizon-content"
 import * as sicArm from "../siciliano-arm-hero-content"
 import * as ramaswamy from "../ramaswamy-pedigree-content"
 import * as plani from "../planisphere-data"
+import * as uprobotics from "../uprobotics-factory-hero-content"
 
 export interface PlateAdapter {
   /** Registry id this adapter serves. */
@@ -414,9 +415,34 @@ const planisphereAdapter: PlateAdapter = {
   },
 }
 
+const uproboticsAdapter = makeAdapter("uprobotics-factory-hero", uprobotics as unknown as Record<string, unknown>, {
+  scalars: [
+    { exportName: "UPROBOTICS_DISPLAY_NAME", as: "displayName" },
+    { exportName: "UPROBOTICS_ARIA_LABEL", as: "ariaLabel" },
+    { exportName: "UPROBOTICS_KICKER", as: "caption", captionId: "kicker" },
+    { exportName: "UPROBOTICS_TITLE", as: "caption", captionId: "title" },
+    { exportName: "UPROBOTICS_EVAL_LABEL", as: "caption", captionId: "eval-label" },
+    { exportName: "UPROBOTICS_CABINET_LABEL", as: "caption", captionId: "cabinet-label" },
+    { exportName: "UPROBOTICS_MANIPULATOR_LABEL", as: "caption", captionId: "manipulator-label" },
+    { exportName: "UPROBOTICS_LINE_LABEL", as: "caption", captionId: "line-label" },
+    { exportName: "UPROBOTICS_SUBSTRATE_LABEL", as: "caption", captionId: "substrate-label" },
+    { exportName: "UPROBOTICS_SUBSTRATE_CAPTION", as: "caption", captionId: "substrate-caption" },
+  ],
+  array: {
+    exportName: "UPROBOTICS_STREAMS",
+    idField: "id",
+    titleField: "label",
+    subtitleField: "detail",
+    bodyField: "body",
+    colorField: "color",
+    order: ["id", "label", "detail", "body", "color", "y"],
+  },
+})
+
 const ADAPTERS: Record<string, PlateAdapter> = {
   [chipPlateAdapter.plateId]: chipPlateAdapter,
   [planisphereAdapter.plateId]: planisphereAdapter,
+  [uproboticsAdapter.plateId]: uproboticsAdapter,
   [twoPhaseAdapter.plateId]: twoPhaseAdapter,
   [sicilianoRoseAdapter.plateId]: sicilianoRoseAdapter,
   [hominisCathedralAdapter.plateId]: hominisCathedralAdapter,

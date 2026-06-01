@@ -1,51 +1,18 @@
 "use client"
 
 import { useState } from "react"
-
-type Stream = {
-  id: string
-  label: string
-  detail: string
-  body: string
-  color: string
-  /** y position of the entry into the substrate (centre) */
-  y: number
-}
-
-const STREAMS: ReadonlyArray<Stream> = [
-  {
-    id: "plc",
-    label: "PLC code",
-    detail: "ladder logic · IEC 61131-3",
-    body: "Ladder diagrams, structured text and function block diagrams from the programmable-logic controllers that run the line. Decades of authorship, rare in-line comments, and the constraint that the system must be predictable in real time.",
-    color: "#f4c482",
-    y: 280,
-  },
-  {
-    id: "robot",
-    label: "Robot programs",
-    detail: "manipulator · cell · gripper",
-    body: "Robot-program files for the manipulators and end-effectors — motion routines, path libraries, calibration files. Often vendor-specific dialects (KRL · KAREL · RAPID · URScript), often touched by many engineers over a system's life.",
-    color: "#e5a896",
-    y: 380,
-  },
-  {
-    id: "scada",
-    label: "SCADA configs",
-    detail: "supervisory · HMI · alarms",
-    body: "Supervisory-control configurations, HMI screens, alarm databases, historian tags. The layer that operators see — the one that survives engineer turnover but rarely gets documentation.",
-    color: "#6cb4c2",
-    y: 480,
-  },
-  {
-    id: "logs",
-    label: "Maintenance logs",
-    detail: "events · faults · repairs",
-    body: "Years of maintenance-engineer log entries — fault descriptions, repair notes, replacement-part references. The closest thing the system has to its own rationale layer; supplies half of the O4 held-out task instances.",
-    color: "#a698d4",
-    y: 580,
-  },
-]
+import {
+  UPROBOTICS_ARIA_LABEL,
+  UPROBOTICS_KICKER,
+  UPROBOTICS_TITLE,
+  UPROBOTICS_EVAL_LABEL,
+  UPROBOTICS_CABINET_LABEL,
+  UPROBOTICS_MANIPULATOR_LABEL,
+  UPROBOTICS_LINE_LABEL,
+  UPROBOTICS_SUBSTRATE_LABEL,
+  UPROBOTICS_SUBSTRATE_CAPTION,
+  UPROBOTICS_STREAMS as STREAMS,
+} from "@/lib/synaptic/uprobotics-factory-hero-content"
 
 const VW = 1400
 const VH = 760
@@ -78,7 +45,7 @@ export function UpRoboticsFactoryHero() {
           viewBox={`0 0 ${VW} ${VH}`}
           className="block h-auto w-full"
           role="img"
-          aria-label="UP Robotics factory hero — an industrial-automation cell on the left, with four data streams (PLC code, robot programs, SCADA configs, maintenance logs) flowing into the SYMPHONY substrate on the right. The codebase that the O1 pipeline and the O4 benchmark have to survive contact with."
+          aria-label={UPROBOTICS_ARIA_LABEL}
         >
           <defs>
             <radialGradient id="syn-up-bg" cx="50%" cy="50%" r="70%">
@@ -119,7 +86,7 @@ export function UpRoboticsFactoryHero() {
             letterSpacing={4}
             fill="rgba(220,200,160,0.85)"
           >
-            UP ROBOTICS · ZAGREB · INDUSTRIAL DEMONSTRATOR
+            {UPROBOTICS_KICKER}
           </text>
           <text
             x={60}
@@ -129,7 +96,7 @@ export function UpRoboticsFactoryHero() {
             fill="var(--ink)"
             letterSpacing={2}
           >
-            The codebase that survives contact
+            {UPROBOTICS_TITLE}
           </text>
           <line x1={60} x2={VW - 60} y1={92} y2={92} stroke="rgba(220,200,160,0.35)" strokeWidth={0.8} />
           <text
@@ -141,7 +108,7 @@ export function UpRoboticsFactoryHero() {
             letterSpacing={3}
             fill="rgba(220,200,160,0.7)"
           >
-            O1 CORPUS · O4 EVALUATION HALF
+            {UPROBOTICS_EVAL_LABEL}
           </text>
 
           {/* factory floor (left side) */}
@@ -200,7 +167,7 @@ export function UpRoboticsFactoryHero() {
                 letterSpacing={2.5}
                 fill="rgba(220,200,160,0.7)"
               >
-                PLC CABINET
+                {UPROBOTICS_CABINET_LABEL}
               </text>
             </g>
 
@@ -231,7 +198,7 @@ export function UpRoboticsFactoryHero() {
                 letterSpacing={2.5}
                 fill="rgba(220,200,160,0.7)"
               >
-                MANIPULATOR CELL
+                {UPROBOTICS_MANIPULATOR_LABEL}
               </text>
             </g>
 
@@ -251,7 +218,7 @@ export function UpRoboticsFactoryHero() {
                 letterSpacing={2.5}
                 fill="rgba(220,200,160,0.7)"
               >
-                LINE
+                {UPROBOTICS_LINE_LABEL}
               </text>
             </g>
           </g>
@@ -334,7 +301,7 @@ export function UpRoboticsFactoryHero() {
               letterSpacing={3}
               fill="rgba(200,184,255,0.85)"
             >
-              SYMPHONY SUBSTRATE
+              {UPROBOTICS_SUBSTRATE_LABEL}
             </text>
             <text
               x={subCx}
@@ -345,7 +312,7 @@ export function UpRoboticsFactoryHero() {
               fontSize={14}
               fill="rgba(220,200,160,0.7)"
             >
-              Half of the held-out task instances · O4
+              {UPROBOTICS_SUBSTRATE_CAPTION}
             </text>
           </g>
 
