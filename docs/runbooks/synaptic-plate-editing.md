@@ -1,9 +1,9 @@
 # Synaptic plate-editing flow
 
 **Status:** reference
-**Last verified:** 2026-05-31 — editor shipped + all 7 registered plates wired
-(commits `0c60162` → `81fafc6`), build green on Vercel, routes confirmed
-Basic-Auth-gated in production.
+**Last verified:** 2026-06-01 — editor shipped + the entire Synaptic library
+extracted and wired (18 plates; commits `0c60162` → `d42fc55`), build green on
+Vercel, routes confirmed Basic-Auth-gated in production.
 **Scope:** how `/studio/synaptic` edits the copy that rides on the Synaptic
 plate components, and how Publish writes it back to the live site.
 
@@ -39,11 +39,16 @@ exports flat `TWO_PHASE_*` scalars; …). A **`PlateAdapter`**
 
 A plate is **editor-ready iff it has an adapter.** The index lists every
 registry plate but only opens the ready ones. **Adding a plate = one adapter**
-— no UI change. All 7 registered plates are wired today: ChipPlate as an
-explicit reference adapter, the other six via a declarative `makeAdapter`
-factory (scalars → `displayName`/`ariaLabel`/`hint`/captions; one typed item
-array → annotations, merged back on serialize so code-owned fields — colour,
-angles, x/height, numeral, year, weight — stay untouched).
+— no UI change. All 18 plates in the library are wired today. Most go through
+the declarative `makeAdapter` factory (scalars → `displayName`/`ariaLabel`/
+`hint`/captions; one typed item array → annotations, merged back on serialize
+so code-owned fields — colour, angles, x/height, numeral, year, weight — stay
+untouched). Three irregular plates use **custom** adapters: ChipPlate (anchored
+annotations), the Symphony planisphere (three editable arrays — objectives,
+sectors, rings), and SubstrateScales (a nested `Record` of 16 cells flattened
+to annotations keyed `layer·scale`). For plates with more than one prose array
+(ConsortiumGraph, RamaswamyCortexHero), the factory exposes the primary array
+and preserves the secondary one untouched.
 
 ### Surgical serialization (the safe part)
 
