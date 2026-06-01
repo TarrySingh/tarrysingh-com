@@ -1,3 +1,6 @@
+/** Editor display name (Sprint 8). Surfaced in /studio/synaptic. */
+export const PLANISPHERE_DISPLAY_NAME = "Symphony Planisphere · Symphony"
+
 export type Ring = {
   numeral: string
   name: string

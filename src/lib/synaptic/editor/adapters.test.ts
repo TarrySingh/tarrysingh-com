@@ -32,6 +32,7 @@ const PRESERVE: Record<string, string[]> = {
   "vision-horizon": ["#a698d4", "x: 0.5", "height: 0.92"],
   "siciliano-arm-hero": ["[-10, 20, 60, -30]", "#f4c482", "angles:"],
   "ramaswamy-pedigree": ["year: 2005", "year: 2022", "\"primary\"", "RamaswamyBeat"],
+  "symphony-planisphere": ["wedgePath", "VIEW = 800", "seedPositions", "LOCALISATION", "RATIONALE"],
 }
 
 for (const entry of PLATE_REGISTRY) {

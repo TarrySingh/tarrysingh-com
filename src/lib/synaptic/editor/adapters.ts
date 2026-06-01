@@ -34,6 +34,7 @@ import * as hominis from "../hominis-cathedral-content"
 import * as vision from "../vision-horizon-content"
 import * as sicArm from "../siciliano-arm-hero-content"
 import * as ramaswamy from "../ramaswamy-pedigree-content"
+import * as plani from "../planisphere-data"
 
 export interface PlateAdapter {
   /** Registry id this adapter serves. */
@@ -347,8 +348,75 @@ const ramaswamyPedigreeAdapter = makeAdapter("ramaswamy-pedigree", ramaswamy as 
   },
 })
 
+// ---------------------------------------------------------------------------
+// Symphony planisphere — custom adapter (three editable arrays: the O1–O5
+// objectives, the 12 task sectors, the 4 layer rings). Shared by the
+// Planisphere + SymphonyStudio components, both rendering planisphere-data.ts.
+// ---------------------------------------------------------------------------
+
+const SECTOR_CAPTION = (task: string) => `Sector · ${task}`
+const RING_CAPTION = (name: string) => `Ring · ${name}`
+
+const planisphereAdapter: PlateAdapter = {
+  plateId: "symphony-planisphere",
+  load() {
+    return {
+      displayName: plani.PLANISPHERE_DISPLAY_NAME,
+      // O1–O5 objectives map cleanly to annotations.
+      annotations: plani.OBJECTIVES.map((o) => ({
+        id: o.id,
+        title: o.title,
+        subtitle: o.subtitle,
+        body: o.body,
+      })),
+      // Sector blurbs + ring sub-labels are the rest of the editable copy;
+      // their structural fields (task/mod, numeral/colour/radii) ride along.
+      captions: [
+        ...plani.SECTORS.map((s) => ({ id: SECTOR_CAPTION(s.task), text: s.blurb })),
+        ...plani.RINGS.map((r) => ({ id: RING_CAPTION(r.name), text: r.sub })),
+      ],
+    }
+  },
+  serialize(content, currentSrc) {
+    let out = currentSrc
+    if (typeof content.displayName === "string") {
+      out = replaceExportInitializer(out, "PLANISPHERE_DISPLAY_NAME", tsLiteral(content.displayName))
+    }
+    if (content.annotations && content.annotations.length > 0) {
+      const items: TsValue = content.annotations.map((a) => ({
+        id: a.id,
+        title: a.title,
+        subtitle: a.subtitle,
+        body: a.body,
+      }))
+      out = replaceExportInitializer(out, "OBJECTIVES", tsLiteral(items))
+    }
+    if (content.captions && content.captions.length > 0) {
+      const cap = new Map(content.captions.map((c) => [c.id, c.text]))
+      const sectors: TsValue = plani.SECTORS.map((s) => ({
+        id: s.id,
+        task: s.task,
+        blurb: cap.get(SECTOR_CAPTION(s.task)) ?? s.blurb,
+        mod: s.mod,
+      }))
+      out = replaceExportInitializer(out, "SECTORS", tsLiteral(sectors))
+      const rings: TsValue = plani.RINGS.map((r) => ({
+        numeral: r.numeral,
+        name: r.name,
+        sub: cap.get(RING_CAPTION(r.name)) ?? r.sub,
+        color: r.color,
+        rIn: r.rIn,
+        rOut: r.rOut,
+      }))
+      out = replaceExportInitializer(out, "RINGS", tsLiteral(rings))
+    }
+    return out
+  },
+}
+
 const ADAPTERS: Record<string, PlateAdapter> = {
   [chipPlateAdapter.plateId]: chipPlateAdapter,
+  [planisphereAdapter.plateId]: planisphereAdapter,
   [twoPhaseAdapter.plateId]: twoPhaseAdapter,
   [sicilianoRoseAdapter.plateId]: sicilianoRoseAdapter,
   [hominisCathedralAdapter.plateId]: hominisCathedralAdapter,

@@ -89,6 +89,14 @@ export const PLATE_REGISTRY: ReadonlyArray<PlateRegistryEntry> = [
     group: "symphony",
     previewPath: "/synaptic/symphony/ramaswamy",
   },
+  {
+    id: "symphony-planisphere",
+    displayName: "Symphony Planisphere · Symphony",
+    contentPath: "src/lib/synaptic/planisphere-data.ts",
+    slots: ["annotations", "captions"],
+    group: "symphony",
+    previewPath: "/synaptic/symphony",
+  },
 ]
 
 export function getPlateEntry(id: string): PlateRegistryEntry | null {
