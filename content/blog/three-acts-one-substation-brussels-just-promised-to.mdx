@@ -7,55 +7,51 @@ draft: false
 tags: ["eu-tech-sovereignty", "datacentre-capacity", "grid-power", "ai-infrastructure", "energy-policy"]
 ---
 
-On Wednesday 3 June 2026, the European Commission did the thing it does best — it shipped a package. The European Technological Sovereignty Package, to be precise. 
+On Wednesday 3 June 2026, the European Commission did the thing it does best — it shipped a package. The European Technological Sovereignty Package, to be precise.
 
 The Commission presented a set of measures to strengthen Europe's capacity in semiconductors, AI, cloud and open source, including two legislative proposals — the Chips Act 2.0 and the Cloud and AI Development Act — as well as the Open Source Strategy and a Strategic Roadmap for Digitalisation and AI in Energy.
 
-The framing is geopolitical and, for once, honest about the starting position. 
+The framing is geopolitical and, for once, honest about the starting position.
 
 The European Union currently relies on non-EU countries for over 80% of key digital products, services, infrastructure and intellectual property.
 
- Von der Leyen's line about not wanting anyone to hold a "kill switch" over Europe's hospitals and grids made the headlines. Fine. I've sat through enough sovereignty speeches to know the speech is the easy part.
+Von der Leyen's line about not wanting anyone to hold a "kill switch" over Europe's hospitals and grids made the headlines. Fine. I've sat through enough sovereignty speeches to know the speech is the easy part.
 
-Here's the number that should make a board pause. 
+Here's the number that should make a board pause.
 
 The act aims to triple European data centre capacity over the next five to seven years.
 
- Triple. In a region where 
-
-the average time to obtain a permit and the related environmental authorisations for building a datacentre often lies upwards of 48 months.
+Triple. In a region where the average time to obtain a permit and the related environmental authorisations for building a datacentre often lies upwards of 48 months.
 
 I want to be clear about what I think, up front: the tripling target is not a capacity problem dressed as a policy problem. It's a power problem dressed as a permitting problem. And if I were on the board of a hyperscaler or a colocation developer weighing European sites against everywhere else, I would bet against this target landing on its stated timeline — not because Brussels lacks will, but because the binding constraint sits in a substation queue that no portal can clear.
 
 ## the arithmetic nobody on the podium read out
 
-Start with the demand the act is chasing. 
+Start with the demand the act is chasing.
 
-McKinsey estimates total datacentre demand in Europe will grow from some 10 GW in IT load in 2024 to 35 GW by 2030, with the bulk of this demand increase fuelled by AI, which is why the Commission set the goal to triple the EU's data centre capacity over the next 5-7 years.
+McKinsey estimates total datacenter demand in Europe will grow from some 10 GW in IT load in 2024 to 35 GW by 2030, with the bulk of this demand increase fuelled by AI, which is why the Commission set the goal to triple the EU's data centre capacity over the next 5-7 years.
 
- The tripling target isn't ambition for its own sake — it's the Commission trying to keep pace with a load curve that's already running.
+The tripling target isn't ambition for its own sake — it's the Commission trying to keep pace with a load curve that's already running.
 
-Now the supply reality. The IEA's latest read, published this spring, is not subtle. 
+Now the supply reality. The IEA's latest read, published this spring, is not subtle.
 
 Electricity demand from data centres soared by 17% in 2025, well outpacing growth in global electricity demand of 3%, and consumption from data centres is set to double by 2030, with power use from those focused on AI poised to triple.
 
- The agency is blunt about where the friction is: 
+The agency is blunt about where the friction is: planning and regulatory systems are being stretched by the wave of project applications for data centres, amid a broader trend of rapid load growth and electrification.
 
-planning and regulatory systems are being stretched by the wave of project applications for data centres, amid a broader trend of rapid load growth and electrification.
-
-The grid operators themselves have stopped being polite about it. ENTSO-E, the body that represents Europe's transmission system operators, published a report at the end of April that reads like a warning shot. 
+The grid operators themselves have stopped being polite about it. ENTSO-E, the body that represents Europe's transmission system operators, published a report at the end of April that reads like a warning shot.
 
 Individual campuses can reach several hundred megawatts, and clusters in concentrated regions can exceed one gigawatt, comparable to the dimensions of European frequency reserves.
 
- Read that again. A single AI campus is now sized like a chunk of the continent's emergency balancing capacity. And these loads don't behave like a steel mill. 
+Read that again. A single AI campus is now sized like a chunk of the continent's emergency balancing capacity. And these loads don't behave like a steel mill.
 
 Even when the grid is operating normally, data centres can act as a source of disturbance, because their power consumption is driven by internal software logic rather than external conditions, so the resulting fluctuations are invisible to conventional monitoring and difficult to anticipate in operational planning.
 
-This is the part that gets lost in the sovereignty theatre. The thing slowing Europe down isn't only red tape. It's physics and lead times. Dublin and Amsterdam have had construction moratoriums precisely because local grids hit the wall, and in Ireland datacentres already draw more than a fifth of national electricity. The IEA's diagnosis cuts the other way from Brussels' optimism: even where developers reach for onsite gas to skip the queue, 
+This is the part that gets lost in the sovereignty theatre. The thing slowing Europe down isn't only red tape. It's physics and lead times. Dublin and Amsterdam have had construction moratoriums precisely because local grids hit the wall, and in Ireland datacentres already draw more than a fifth of national electricity. The IEA's diagnosis cuts the other way from Brussels' optimism: even where developers reach for onsite gas to skip the queue,
 
 providing reliable onsite gas-fired electricity to meet critical and variable data centre load requires overbuilding onsite generation infrastructure by 30% to 70% relative to demand.
 
- There's no free lane.
+There's no free lane.
 
 ```mermaid
 %% caption: Three instruments published on one day, each pulling on the same constrained asset.
@@ -67,62 +63,63 @@ flowchart TD
   G --> E[Grid stability:<br/>GW-scale software-driven load]
   D --> F[Actual deployable capacity]
   E --> F
+
 ```
 
 ## the green strings that fight the speed pledge
 
-The Commission knows the grid is the choke point, which is why the package tries to bribe its way past it. 
+The Commission knows the grid is the choke point, which is why the package tries to bribe its way past it.
 
 Reuters noted that data centres built with European-manufactured chips or with reduced energy footprints would qualify for priority grid connections and lower network fees under an expedited permitting pathway proposed by the Commission.
 
- Sensible on paper. The catch: those same green conditions are exactly what slows projects down.
+Sensible on paper. The catch: those same green conditions are exactly what slows projects down.
 
-Consider what's already on the statute books. Under the recast Energy Efficiency Directive, 
+Consider what's already on the statute books. Under the recast Energy Efficiency Directive,
 
 data centres with IT power demand of 500 kW or greater must report annually on their energy performance and the key sustainability indicators — Power Usage Effectiveness, Water Usage Effectiveness, Energy Reuse Factor and Renewable Energy Factor.
 
- That reporting cycle just turned. As Sweden's energy agency spells out, 
+That reporting cycle just turned. As Sweden's energy agency spells out,
 
 reporting in the EU database had to be completed by 15 May 2026, with the data covering the full year 2025.
 
- And the Commission timed a Data Centre Energy Efficiency Package — which 
+And the Commission timed a Data Centre Energy Efficiency Package — which
 
 introduces a rating scheme for data centres in Europe and launches the work on minimum performance standards
 
- — to land alongside the sovereignty package itself.
+— to land alongside the sovereignty package itself.
 
 Germany has gone further and faster. Its Energy Efficiency Act imposes 100% renewable electricity by January 2027, mandatory waste-heat reuse and PUE caps. Good policy for the climate. But every one of those obligations adds cost and calendar time to a build at the precise moment the Cloud and AI Development Act wants shovels moving. You cannot floor the accelerator and stand on the brake and then act surprised that the car lurches.
 
 ## the energy roadmap is the quiet adult in the room
 
-The most useful document of the three got the least airtime. 
+The most useful document of the three got the least airtime.
 
 Published on 3 June 2026, the Strategic Roadmap for Digitalisation and AI in the energy sector aims to accelerate the rollout of digital solutions, including European sovereign AI models, in areas such as electricity grid optimisation and demand-side flexibility, and it covers the sustainable integration of data centres within the EU energy system.
 
- Translation: make the datacentres themselves part of the grid solution rather than only a load on it.
+Translation: make the datacentres themselves part of the grid solution rather than only a load on it.
 
-To its credit, this is being built with the people who actually run the wires. 
+To its credit, this is being built with the people who actually run the wires.
 
 Fourteen European associations signed a Declaration of Intent and six companies a Declaration of Support, and the event launched the "AI.grids" project to develop EU sovereign AI models together with 48 partners including grid operators and research institutes to improve the management and planning of energy grids.
 
- Co-locating compute with renewables, treating datacentre demand as flexible, mapping grid capacity transparently — these are the levers that matter. They're also slow, unglamorous and dependent on TSO–DSO coordination that has eluded Europe for two decades.
+Co-locating compute with renewables, treating datacentre demand as flexible, mapping grid capacity transparently — these are the levers that matter. They're also slow, unglamorous and dependent on TSO–DSO coordination that has eluded Europe for two decades.
 
 ## what I'd actually push for
 
-If I were advising on this — and Real AI sits across exactly these decisions for enterprises siting European compute — I would stop treating "permitting" as the headline metric and start treating the interconnection queue and firm-power timeline as the gating item, because that's where projects die quietly. The sovereignty tiers are a separate fight; 
+If I were advising on this — and Real AI sits across exactly these decisions for enterprises siting European compute — I would stop treating "permitting" as the headline metric and start treating the interconnection queue and firm-power timeline as the gating item, because that's where projects die quietly. The sovereignty tiers are a separate fight;
 
 Virkkunen has already conceded it will be challenging for US companies to reach the highest sovereignty tiers because the US Cloud Act creates a structural barrier.
 
- That's a defensible industrial-policy choice. Just don't pretend it doesn't narrow the field of who can finance 35 GW.
+That's a defensible industrial-policy choice. Just don't pretend it doesn't narrow the field of who can finance 35 GW.
 
-And the comparison that should sit on every desk in the Berlaymont: 
+And the comparison that should sit on every desk in the Berlaymont:
 
 the US is on track to triple its datacentre capacity between 2024 and 2028, adding more than 55 GW of critical IT power.
 
- America is doing in four years what Europe is proposing to attempt in five-to-seven, from a far larger base, with cheaper power and a grid culture that says yes first and litigates later.
+America is doing in four years what Europe is proposing to attempt in five-to-seven, from a far larger base, with cheaper power and a grid culture that says yes first and litigates later.
 
 Europe's answer can't be a faster portal. It has to be power — clean, firm, fast — and a grid that treats a one-gigawatt AI campus as a dispatchable asset, not a guest who keeps tripping the fuses. The package names the right problems. The substations will decide whether any of it ships.
 
----
+* * *
 
 Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
