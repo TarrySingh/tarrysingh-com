@@ -143,12 +143,12 @@ export default function SynapticPage() {
       {/* featured project cards */}
       <section className="syn-column pt-20">
         <div className="space-y-3 pb-12 text-center">
-          <SmallCaps>The two finished plates</SmallCaps>
+          <SmallCaps>Three cartographies</SmallCaps>
           <h2 className="syn-display mx-auto" style={sectionHeading}>
             Pick a thread
           </h2>
         </div>
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-10 lg:grid-cols-3">
           <Link
             href="/synaptic/symphony"
             className="syn-symphony group block focus-visible:outline-none"
@@ -254,6 +254,61 @@ export default function SynapticPage() {
                   style={{ color: "var(--ink-dim)" }}
                 >
                   EIC Pathfinder 2026 · May 2026
+                </p>
+              </figcaption>
+            </figure>
+          </Link>
+
+          <Link
+            href="/synaptic/software-3"
+            className="syn-software-3 group block focus-visible:outline-none"
+          >
+            <figure>
+              <Image
+                src="/blog/covers/software-3-0-age-of-hyper-automation.png"
+                alt="Software 3.0 — the 2040 planisphere, hero of the /synaptic/software-3 gallery."
+                width={1200}
+                height={630}
+                sizes="(min-width: 1024px) 30vw, 100vw"
+                className="block h-auto w-full rounded-[var(--radius-card)] transition-opacity group-hover:opacity-90"
+              />
+              <figcaption className="pt-6">
+                <SmallCaps>Plate III · the gallery</SmallCaps>
+                <h3
+                  className="syn-display mt-3"
+                  style={{
+                    fontSize: "2.6rem",
+                    color: "var(--ink)",
+                    lineHeight: 1,
+                    letterSpacing: "var(--track-display)",
+                    margin: 0,
+                  }}
+                >
+                  SOFTWARE 3.0{" "}
+                  <span style={{ color: "var(--sw3-accent)" }}>→</span>
+                </h3>
+                <p
+                  className="syn-italic-caption mt-3"
+                  style={{ color: "var(--sw3-accent-hi)" }}
+                >
+                  The age of hyper-automation — a map to 2040
+                </p>
+                <p
+                  style={{
+                    color: "var(--ink-cool)",
+                    marginTop: "0.8rem",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Fifteen interactive instruments at full size — the 2040
+                  planisphere, the silver thread, the convergence. The living
+                  companion to the flagship essay.
+                </p>
+                <p
+                  className="syn-small-caps mt-5"
+                  style={{ color: "var(--ink-dim)" }}
+                >
+                  Essay companion · June 2026
                 </p>
               </figcaption>
             </figure>
