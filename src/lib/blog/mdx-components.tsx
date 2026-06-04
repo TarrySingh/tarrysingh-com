@@ -14,6 +14,10 @@ import { OutputPerPerson } from "@/components/blog/OutputPerPerson"
 import { HumanoidAdoption } from "@/components/blog/HumanoidAdoption"
 import { GenomeCostCurve } from "@/components/blog/GenomeCostCurve"
 import { AbundanceProjection } from "@/components/blog/AbundanceProjection"
+import { ThreeErasOfSoftware } from "@/components/blog/ThreeErasOfSoftware"
+import { AILongArc } from "@/components/blog/AILongArc"
+import { FirmMorph } from "@/components/blog/FirmMorph"
+import { OffWorldStack } from "@/components/blog/OffWorldStack"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -251,4 +255,8 @@ export const mdxComponents = {
   HumanoidAdoption,
   GenomeCostCurve,
   AbundanceProjection,
+  ThreeErasOfSoftware,
+  AILongArc,
+  FirmMorph,
+  OffWorldStack,
 }
