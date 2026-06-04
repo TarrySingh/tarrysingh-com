@@ -283,6 +283,64 @@ html {
   );
 }
 
+/* ── Software 3.0 — copper/gold gallery (companion to the flagship essay).
+   Same starfield + grain as every syn-root; a slightly warmer indigo
+   backdrop, and a copper→gold accent (the essay's own signature) so it is
+   visually distinct from SYMPHONY (violet) and MEMPHIS (amber). ── */
+.syn-software-3 {
+  --bg-deep: #0a0a1e;
+  --bg-mid: #171633;
+  --project-accent: #b45309;
+  --project-accent-hi: #f4c482;
+  --sw3-accent: #e8a44a;
+  --sw3-accent-hi: #f4c482;
+  --sw3-copper: #c2691c;
+  --sw3-hair: rgba(232, 164, 74, 0.28);
+}
+.syn-software-3.syn-root {
+  background-color: #0a0a1e;
+  background-image: radial-gradient(
+    ellipse at center 38%,
+    #221f4a 0%,
+    #171633 28%,
+    #0e0d24 64%,
+    #0a0a1e 100%
+  );
+}
+
+/* The blog plates render inside a PlateFrame <figure data-read-surface> that
+   carries breakout negative margins (lg:-mx-12 xl:-mx-24) tuned for the narrow
+   blog column. Inside a wide gallery wrapper we cancel them with one rule —
+   no edits to any of the 13 shared plate components. */
+.syn-software-3 .sw3-gallery > figure[data-read-surface] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Hero rise + lazy/scroll fade-in — compositor-only, reduced-motion safe. */
+@keyframes sw3-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sw3-hero-rise {
+  animation: sw3-rise 820ms var(--ease-paper, cubic-bezier(0.33, 0, 0.2, 1)) both;
+}
+.sw3-fade-in {
+  animation: sw3-rise 640ms var(--ease-paper, cubic-bezier(0.33, 0, 0.2, 1)) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sw3-hero-rise,
+  .sw3-fade-in {
+    animation: none;
+  }
+}
+
 /* Fixed starfield layer behind everything inside a syn-root page. */
 .syn-root::before {
   content: "";
