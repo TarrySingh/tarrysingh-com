@@ -9,6 +9,11 @@ import { StatisticalCeiling } from "@/components/blog/StatisticalCeiling"
 import { ConsortiumConstellation } from "@/components/blog/ConsortiumConstellation"
 import { TwentyFortyPlanisphere } from "@/components/blog/TwentyFortyPlanisphere"
 import { CostOfIntelligence } from "@/components/blog/CostOfIntelligence"
+import { ComputePricePerformance } from "@/components/blog/ComputePricePerformance"
+import { OutputPerPerson } from "@/components/blog/OutputPerPerson"
+import { HumanoidAdoption } from "@/components/blog/HumanoidAdoption"
+import { GenomeCostCurve } from "@/components/blog/GenomeCostCurve"
+import { AbundanceProjection } from "@/components/blog/AbundanceProjection"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -241,4 +246,9 @@ export const mdxComponents = {
   ConsortiumConstellation,
   TwentyFortyPlanisphere,
   CostOfIntelligence,
+  ComputePricePerformance,
+  OutputPerPerson,
+  HumanoidAdoption,
+  GenomeCostCurve,
+  AbundanceProjection,
 }
