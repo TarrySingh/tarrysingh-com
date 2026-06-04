@@ -5,6 +5,7 @@ import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { JumpNav } from "@/components/synaptic/JumpNav"
+import { FullDeck } from "@/components/synaptic/FullDeck"
 
 import { TwentyFortyPlanisphere } from "@/components/blog/TwentyFortyPlanisphere"
 import { ThreeErasOfSoftware } from "@/components/blog/ThreeErasOfSoftware"
@@ -32,6 +33,7 @@ const SECTIONS = [
   { id: "biology", label: "VI · Biology" },
   { id: "off-world", label: "VII · Off-World" },
   { id: "abundance", label: "VIII · Abundance" },
+  { id: "deck", label: "IX · Full Deck" },
 ] as const
 
 const ESSAY = "/blog/software-3-0-age-of-hyper-automation"
@@ -109,7 +111,7 @@ export default function Software3Page() {
       </header>
 
       {/* ── Hero — the title block + the 2040 Planisphere ─────────── */}
-      <section className="sw3-hero-rise">
+      <section id="top" className="sw3-hero-rise">
         <div className="syn-column pt-16 text-center">
           <SmallCaps>Plate I · The instrument</SmallCaps>
           <h1
@@ -348,7 +350,25 @@ export default function Software3Page() {
         </Stage>
       </Room>
 
-      {/* DECK — the "full deck" contact sheet mounts here (next build step). */}
+      {/* ── IX · The full deck — the contact-sheet wall ───────────── */}
+      <section id="deck" className="syn-column pt-32">
+        <SmallCaps>IX · The full deck</SmallCaps>
+        <p
+          className="mt-6"
+          style={{
+            color: "var(--ink-cool)",
+            fontSize: "var(--text-body)",
+            lineHeight: 1.6,
+            maxWidth: "62ch",
+          }}
+        >
+          Fifteen instruments, one wall. Every plate in the gallery — tap a card
+          to jump straight to it.
+        </p>
+        <div className="mt-10">
+          <FullDeck />
+        </div>
+      </section>
 
       {/* ── Dossier ───────────────────────────────────────────────── */}
       <section className="syn-column pb-8 pt-32 text-center">

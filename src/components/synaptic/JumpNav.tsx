@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react"
 
+import { scrollToSection } from "./scrollToSection"
+
 type Section = { id: string; label: string }
 
 export function JumpNav({
@@ -50,23 +52,10 @@ export function JumpNav({
             key={s.id}
             href={`#${s.id}`}
             onClick={(e) => {
-              const el = document.getElementById(s.id)
-              if (!el) return
+              if (!document.getElementById(s.id)) return
               e.preventDefault()
-              // On the tall syn pages the <html> element is the scroller, but a
-              // bare #fragment link (and CSS scroll-behavior:smooth over a very
-              // long distance) does not reliably move it. Force an instant jump
-              // on the scrolling element — proven robust across these pages.
-              const scroller = (document.scrollingElement ||
-                document.documentElement) as HTMLElement
-              const top =
-                el.getBoundingClientRect().top + scroller.scrollTop - 16
-              const prev = scroller.style.scrollBehavior
-              scroller.style.scrollBehavior = "auto"
-              scroller.scrollTop = top
-              scroller.style.scrollBehavior = prev
+              scrollToSection(s.id)
               setActive(s.id)
-              window.history.replaceState(null, "", `#${s.id}`)
             }}
             className="syn-mono py-0.5 transition-colors"
             style={{
