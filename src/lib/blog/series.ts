@@ -17,6 +17,7 @@ export type SeriesKey =
   | "build"
   | "workforce"
   | "economics"
+  | "software-3"
 
 /** The shape carried in a post's frontmatter. */
 export interface SeriesRef {
@@ -63,6 +64,12 @@ export const SERIES: Record<SeriesKey, SeriesMeta> = {
     name: "The Economics of AI",
     tagline:
       "Capex cycles, hyperscaler spend, M&A, and the debt stack underneath the boom.",
+  },
+  "software-3": {
+    key: "software-3",
+    name: "Software 3.0",
+    tagline:
+      "Intent becomes the program, agents become the workforce, and automation crosses from the screen into the world. The most plausible breathtaking future, mapped to 2040.",
   },
 }
 
