@@ -120,8 +120,8 @@ function buildLayout() {
       const ja = ang + (rnd() - 0.5) * 0.16
       firms.push({
         center: {
-          x: CX + Math.cos(ja) * jr * 1.42, // widen horizontally for the 16:10 stage
-          y: CY + Math.sin(ja) * jr,
+          x: Math.round((CX + Math.cos(ja) * jr * 1.42) * 100) / 100, // widen horizontally for the 16:10 stage
+          y: Math.round((CY + Math.sin(ja) * jr) * 100) / 100,
         },
         r: ring.r,
       })
@@ -162,7 +162,7 @@ function buildLayout() {
     const rr = special ? 0 : rnd() * cl.r * 0.34
     humans.push({
       a: aPos,
-      b: { x: cl.center.x + Math.cos(ang) * rr, y: cl.center.y + Math.sin(ang) * rr },
+      b: { x: Math.round((cl.center.x + Math.cos(ang) * rr) * 100) / 100, y: Math.round((cl.center.y + Math.sin(ang) * rr) * 100) / 100 },
       firm,
       special,
     })
@@ -193,7 +193,7 @@ function buildLayout() {
     }
     agents.push({
       a: aPos,
-      b: { x: cl.center.x + Math.cos(phase) * radius, y: cl.center.y + Math.sin(phase) * radius },
+      b: { x: Math.round((cl.center.x + Math.cos(phase) * radius) * 100) / 100, y: Math.round((cl.center.y + Math.sin(phase) * radius) * 100) / 100 },
       firm,
       phase,
       radius,

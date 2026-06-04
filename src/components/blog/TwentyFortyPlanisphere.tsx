@@ -84,9 +84,13 @@ const FILAMENTS: { from: string; to: string }[] = [
 function deg2rad(d: number) {
   return (d * Math.PI) / 180
 }
+// Quantise to 2 decimals (0.01 of a 920px viewBox — visually exact) so the
+// SSR-serialised coordinate strings match the client's byte-for-byte and we
+// never trip a float-precision hydration mismatch on this SSR'd SVG.
+const q = (n: number) => Math.round(n * 100) / 100
 function polar(r: number, deg: number): [number, number] {
   const a = deg2rad(deg)
-  return [CX + r * Math.cos(a), CY + r * Math.sin(a)]
+  return [q(CX + r * Math.cos(a)), q(CY + r * Math.sin(a))]
 }
 function yearToAngle(year: number): number {
   return A_START + ((year - Y0) / (Y1 - Y0)) * A_SWEEP

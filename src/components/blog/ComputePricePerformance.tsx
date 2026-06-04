@@ -9,7 +9,7 @@
  *
  * The instrument insists on three readings:
  *   • the HISTORICAL ramp (1900 → 2026, solid) — electromechanical to GPUs;
- *   • the 2023 HUMAN-BRAIN crossover (≈10¹⁶ cps for $1,000), a labelled node
+ *   • the ~2020 HUMAN-BRAIN crossover (≈10¹⁶ cps for $1,000), a labelled node
  *     sat on a horizontal guide — the moment a grand's worth of silicon meets
  *     one human cortex;
  *   • the PROJECTION (2026 → 2045, dashed) climbing to the "all human brains"
@@ -60,7 +60,7 @@ const SERIES: Pt[] = [
   { year: 1965, cps: 1e3, era: "Transistor" },
   { year: 1985, cps: 1e5, era: "Integrated circuit" },
   { year: 2000, cps: 1e8, era: "Microprocessor" },
-  { year: 2023, cps: 1e16, era: "One human brain · for $1,000" },
+  { year: 2020, cps: 1e16, era: "One human brain · for $1,000" },
   { year: 2026, cps: 3e16, era: "You are here" },
   { year: 2045, cps: 1e26, era: "All human brains · the singularity", proj: true },
 ]
@@ -68,7 +68,7 @@ const SERIES: Pt[] = [
 // guides
 const BRAIN = 1e16 // one human brain ≈ 10^16 cps
 const ALL_BRAINS = 1e26 // ~all human brains combined
-const BRAIN_PT = SERIES.find((d) => d.year === 2023)!
+const BRAIN_PT = SERIES.find((d) => d.year === 2020)!
 const HERE_PT = SERIES.find((d) => d.year === 2026)!
 const SING_PT = SERIES.find((d) => d.year === 2045)!
 
@@ -163,7 +163,7 @@ export function ComputePricePerformance() {
             {Math.round(aYear)} · {activePt.era}
           </strong>{" "}
           — ≈{fmtCps(aCps)} for $1,000{aProj ? " (projection)" : ""}. From electromechanical
-          relays to a grand&rsquo;s worth of silicon meeting one human cortex in ~2023, climbing
+          relays to a grand&rsquo;s worth of silicon meeting one human cortex around 2020 on Kurzweil&rsquo;s mark, climbing
           toward the singularity. Trajectory right, dates contested; order-of-magnitude only.
           Source: Kurzweil, <span style={{ fontStyle: "italic" }}>The Singularity Is Nearer</span>{" "}
           (2024) — skeptics cite S-curve saturation.
@@ -183,7 +183,7 @@ export function ComputePricePerformance() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none select-none"
         role="img"
-        aria-label="Computing power per constant $1,000 plotted on a logarithmic scale from 1900 to 2045, rising from about ten-to-the-minus-five calculations per second to ten-to-the-sixteenth around 2023 — roughly one human brain for a thousand dollars — and projected, dashed and contested, to ten-to-the-twenty-sixth by 2045, the scale of all human brains combined, marked as the singularity. The straight diagonal of the log plot is Kurzweil's Law of Accelerating Returns. Order-of-magnitude, illustrative."
+        aria-label="Computing power per constant $1,000 plotted on a logarithmic scale from 1900 to 2045, rising from about ten-to-the-minus-five calculations per second to ten-to-the-sixteenth around 2020 — roughly one human brain for a thousand dollars — and projected, dashed and contested, to ten-to-the-twenty-sixth by 2045, the scale of all human brains combined, marked as the singularity. The straight diagonal of the log plot is Kurzweil's Law of Accelerating Returns. Order-of-magnitude, illustrative."
         onPointerMove={onMove}
       >
         <defs>
@@ -350,7 +350,7 @@ export function ComputePricePerformance() {
         {SERIES.map((d) => {
           const cx = xFor(d.year)
           const cy = yFor(d.cps)
-          const hero = d.year === 2023 || d.year === 2045 || d.year === 2026
+          const hero = d.year === 2020 || d.year === 2045 || d.year === 2026
           return (
             <circle
               key={d.year}
@@ -364,7 +364,7 @@ export function ComputePricePerformance() {
           )
         })}
 
-        {/* 2023 human-brain crossover — the hero node */}
+        {/* ~2020 human-brain crossover — the hero node */}
         {(() => {
           const cx = xFor(BRAIN_PT.year)
           const cy = yFor(BRAIN_PT.cps)
@@ -381,7 +381,7 @@ export function ComputePricePerformance() {
                 fontSize={13}
                 fill={p.ink}
               >
-                2023 · human-brain crossover
+                ~2020 · human-brain crossover
               </text>
             </g>
           )

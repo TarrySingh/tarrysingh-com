@@ -95,12 +95,14 @@ function rAtTheta(theta: number): number {
 function spiralPoint(year: number): [number, number] {
   const th = yearToTheta(year)
   const r = rAtTheta(th)
-  return [CX + r * Math.cos(th), CY + r * Math.sin(th)]
+  // Quantise the trig output so the SSR string matches the client byte-for-byte
+  // (Node and Chrome V8 can differ by 1 ULP in Math.cos/sin → hydration mismatch).
+  return [Math.round((CX + r * Math.cos(th)) * 100) / 100, Math.round((CY + r * Math.sin(th)) * 100) / 100]
 }
 /** unit outward normal at a year (points away from the core) — for label offsets. */
 function outwardNormal(year: number): [number, number] {
   const th = yearToTheta(year)
-  return [Math.cos(th), Math.sin(th)]
+  return [Math.round(Math.cos(th) * 1e4) / 1e4, Math.round(Math.sin(th) * 1e4) / 1e4]
 }
 
 /** Sample the spiral between two years into an SVG polyline `d`. */

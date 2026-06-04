@@ -196,8 +196,8 @@ function intentLayout(): Slot[] {
     const ang = (-Math.PI * 0.86) + (a / (AGENTS - 1)) * (Math.PI * 1.18)
     agentAngles.push(ang)
     slots.push({
-      x: cx + Math.cos(ang) * AGENT_R,
-      y: cy + Math.sin(ang) * AGENT_R * 0.82,
+      x: Math.round((cx + Math.cos(ang) * AGENT_R) * 100) / 100,
+      y: Math.round((cy + Math.sin(ang) * AGENT_R * 0.82) * 100) / 100,
       r: 8.5,
       op: 1,
       tone: "violet",
@@ -215,8 +215,8 @@ function intentLayout(): Slot[] {
     const ang = base + spread
     const rr = TOOL_R + (k >= 5 ? 30 : 0)
     slots.push({
-      x: cx + Math.cos(ang) * rr,
-      y: cy + Math.sin(ang) * rr * 0.82,
+      x: Math.round((cx + Math.cos(ang) * rr) * 100) / 100,
+      y: Math.round((cy + Math.sin(ang) * rr * 0.82) * 100) / 100,
       r: 3.6,
       op: 0.78,
       tone: "rose",
