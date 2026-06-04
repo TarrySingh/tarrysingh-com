@@ -145,16 +145,52 @@ I do not want to wave the cost away as if it were free of weight. The night shif
 
 ## Biology becomes engineering
 
-{/* ~1,500w — multi-omics, the genome cost curve, AI drug discovery, longevity. */}
+The pattern of this essay is that cheap intelligence reaches one shell further out each year — from code, to models, to agents, to robots — and the fourth shell is the one inside us. Biology is turning into an engineering discipline, and it is doing so on the back of a cost curve even steeper than the one for intelligence.
+
+Sequencing a human genome cost about 2.7 billion dollars in 2003 — the Human Genome Project, a decade of work and an international consortium. By 2023 it cost roughly two hundred dollars. As I write, it is slipping under a hundred, and ARK projects it reaching the price of a sandwich — a dollar to ten — by 2030. That is a ten-billion-fold collapse in two decades, which is *faster than Moore's Law*, and it is the sentence geneticists tend to say with a kind of vertigo. The figure plots the real curve against the Moore's-Law line it long ago left behind. When the cost of reading a thing falls by ten orders of magnitude, the thing stops being a science and becomes a *substrate* — something you read as casually as you would a log file.
+
 <GenomeCostCurve />
+
+Reading is only half of it. *Writing* DNA — synthesis — has fallen a hundred-thousand-fold already, with a further ten-million-fold drop projected by 2030. Read cheaply and write cheaply, and biology becomes a read-write medium: an information technology with the same deflationary physics as everything else in this essay. And the genome is merely the first layer. The real frontier is *multi-omics* — reading not just the genome but the proteome, the transcriptome and the metabolome, the entire molecular state of a living cell at once — where the performance you get per dollar is projected to improve a thousandfold by the end of the decade.
+
+Now fold the intelligence back in. The same deep-learning wave that produced language models also produced AlphaFold, the system from DeepMind that effectively cracked the fifty-year-old problem of predicting how a protein folds from its sequence — work recognised with the 2024 Nobel Prize in *Chemistry*, the sister prize to Hinton's in Physics, awarded in the very same year.<Sidenote>That two of one year's science Nobels went, in effect, to neural networks is not a coincidence. It is the tide coming in.</Sidenote> The loop this closes is the important thing. An AI proposes a molecule; cheap multi-omics reads what it actually does in a cell; and — the callback to embodiment — robotic wet-labs run the experiments without a human at the bench, so the system that *designs* an intervention can also *test* it, around the clock, and learn from the result. ARK's figures for AI-designed drugs are the kind that quietly reset an industry: roughly four times cheaper to develop, from about $2.4 billion down toward $0.6 billion; some forty percent faster to market; five times the return on research and development.
+
+What this adds up to is the deflation arriving at the most personal frontier there is — health, and perhaps the length of a life. Molecular diagnostics that detect a cancer from a blood draw and then monitor it continuously; screening an order of magnitude more productive; one-shot genetic cures for conditions that used to be *managed*, expensively, across a lifetime. The clinician in Nairobi reading a whole genome over her morning coffee was not a rhetorical flourish. She is the leading edge of medicine becoming an information service, and being priced like one.
+
+I want to be heavier with the honesty here than anywhere else in the essay, because biology has gates that silicon does not. The cost curve itself is the least controversial in the whole deck — the genomics industry agrees on its shape, and only the dollar-to-ten endpoint is ARK's extrapolation rather than measurement. But a cheaper genome does not settle *who is allowed to act on what it says* — the insurer, the employer, the state — and that is a fight cheap sequencing makes more urgent, not less. Worse, cheap DNA synthesis is dual-use in the most literal sense the word has: the same falling cost that lets a small team design a cancer therapy lets an ever-smaller team design a pathogen. Biosecurity is the one place in this essay where I believe the abundance is running genuinely ahead of our institutions' capacity to govern it, and I will not pretend otherwise. The right posture toward engineered biology is not the breathless one. It is the posture you would take toward fire: indispensable, and never to be left unattended.
+
+From bits, to atoms, to cells — three frontiers where cheap intelligence has crossed off the screen and into the substance of the world. There is one frontier left, and it is the one that looks most absurd written down, which is precisely why I want to handle it with the most care. The industrial base is beginning to leave the planet.
 
 
 ## The industrial base goes off-world
 
-{/* ~1,700w — orbital AI data centres → lunar ISRU → Mars/terraforming long horizon (sober). */}
+The instinct to roll your eyes at the phrase "data centres in space" is a healthy guard against hype, and a poor guard against a real trend. So let me give you the trend with the hype filtered out, because the filtering is the whole job in this section, and the credibility of everything I have argued depends on my doing it honestly.
+
+The realistic off-world stack of 2040 is three things and no more: orbital computation at pilot scale, the first genuine footholds on the Moon, and — at the very edge of plausibility — the first human bootprints on Mars. Everything past that — lunar industry at scale, a Martian settlement, terraforming — is a centuries-long arc that I will name as aspiration and not forecast. The figure below encodes exactly that honesty as a fading of the light: the higher you climb, the fainter the marks, until Mars and terraforming are barely there at all.
+
+Start with the part that is realer than it sounds. Putting computation in orbit is not insane, and the reasons are mundane physics and economics. In the right orbit the sun never sets, so the power is continuous and free of clouds and night; there is no water to cool with, but the vacuum itself radiates heat away; and launch costs are falling toward two hundred dollars a kilogram by the mid-2030s, which is Google's own stated threshold for the economics to close. And it has already begun — not in a press release about 2050, but in hardware. In November 2025 a startup called Starcloud put the first data-centre-class processor, an NVIDIA H100, into orbit and ran a model on it; in the same month Google unveiled Project Suncatcher, a design for constellations of solar-powered TPU satellites, with prototypes due to fly in 2027.
+
 <OffWorldStack />
 
-{/* MERMAID: the hyper-automation stack — intent → agents → tools → robots → world */}
+But the honesty is the point, and the hard limits here are physics rather than pessimism. Cooling is the wall: in vacuum, heat can leave only by radiation, and a single megawatt of computing demands thousands of square metres of radiator to shed it. Latency rules out anything but training and batch work — you will not serve a chatbot from orbit. Radiation flips bits and degrades components, and servicing a failed machine is, for now, essentially impossible. Google's own engineers list four such hurdles before they list a single triumph, which tells you that the companies are considerably more sober than the coverage of them. The orbital data centre of 2040 is therefore a real but *niche* thing — training runs humming on uninterrupted sunlight, at the margin of the industry — and not a replacement for the grid below.
+
+The Moon is closer and more contested. Artemis II carried a crew around it in April 2026, the first to make that trip since Apollo; the first landing has already slipped to Artemis IV around 2028 and will very likely slip again; China is targeting a crewed landing by 2029 or 2030; and a lunar station that makes its own oxygen and water from the regolith is a 2030s goal at *demonstration* scale. The Moon of 2040 is a place humans have returned to and begun, tentatively, to use. It is not yet an industrial base, and you should distrust anyone who tells you it is.
+
+Mars demands the discipline of saying no. SpaceX, in early 2026, quietly deprioritised Mars in favour of the Moon and pushed its timeline back by years, and every Mars date its founder has offered since 2016 has slipped past. The sober estimate is that the first human bootprints on Mars are, at the most optimistic, a roughly-2040 aspiration that NASA itself labels "audacious" and has funded no real path toward. And *terraforming* — remaking Mars into something Earth-like — is not a question for 2040 or even 2100: the most careful study we have, by Bruce Jakosky and Christopher Edwards in 2018, found that mobilising all the accessible carbon dioxide on the entire planet would not raise the pressure even a tenth of the way to breathable, and concluded, flatly, that it "is not possible using present-day technology." Let that be the honesty anchor for the whole essay. The off-world stack inside our window is compute in orbit and a first set of lunar footholds. It is not a second home for the species, and I am not going to pretend it is to make the ending sweeter.
+
+So why include the frontier at all, hedged as it is? Because the *direction* is real and already past its first proof — a rack of processors has trained a model on sunlight in orbit; that genuinely happened — and because it completes the logic of everything before it. Hyper-automation is what unlocks the off-world frontier, for the simple reason that agents and robots can build and operate where humans cannot cheaply go. It is the same conversion that runs through the entire essay — cheap intelligence plus cheap energy into cheap physical work — now applied to the most hostile environment there is. The industrial base extends beyond Earth not because we suddenly grew braver, but because automation grew cheaper.
+
+```mermaid
+flowchart TB
+  I["INTENT<br/>you state it"] --> A["AGENTS<br/>compose the work"]
+  A --> T["TOOLS · CODE<br/>the digital economy"]
+  A --> R["ROBOTS<br/>the physical economy"]
+  R --> B["BIOLOGY<br/>cells as a substrate"]
+  R --> O["OFF-WORLD<br/>orbit · the Moon · (Mars)"]
+  %% caption: One gesture — a stated intent — reaching one shell further out each year.
+```
+
+Five frontiers, one gesture, all of it running on the same two curves. Which leaves the question this essay has been circling from its first paragraph and can no longer put off. If intelligence — and then a great deal of the physical world downstream of it — is genuinely collapsing toward zero marginal cost, what kind of economy does that make? And, more pointedly: who does it make it *for*?
 
 ## The near-zero-marginal-cost economy
 
