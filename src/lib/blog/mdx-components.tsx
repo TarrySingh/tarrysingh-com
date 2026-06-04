@@ -7,6 +7,7 @@ import { SymphonySubstrate } from "@/components/blog/SymphonySubstrate"
 import { ComprehensionGap } from "@/components/blog/ComprehensionGap"
 import { StatisticalCeiling } from "@/components/blog/StatisticalCeiling"
 import { ConsortiumConstellation } from "@/components/blog/ConsortiumConstellation"
+import { TwentyFortyPlanisphere } from "@/components/blog/TwentyFortyPlanisphere"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -237,4 +238,5 @@ export const mdxComponents = {
   ComprehensionGap,
   StatisticalCeiling,
   ConsortiumConstellation,
+  TwentyFortyPlanisphere,
 }
