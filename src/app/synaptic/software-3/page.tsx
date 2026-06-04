@@ -5,7 +5,6 @@ import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { JumpNav } from "@/components/synaptic/JumpNav"
-import { LazyMount } from "@/components/synaptic/LazyMount"
 
 import { TwentyFortyPlanisphere } from "@/components/blog/TwentyFortyPlanisphere"
 import { ThreeErasOfSoftware } from "@/components/blog/ThreeErasOfSoftware"
@@ -21,6 +20,7 @@ import { GenomeCostCurve } from "@/components/blog/GenomeCostCurve"
 import { OffWorldStack } from "@/components/blog/OffWorldStack"
 import { AbundanceProjection } from "@/components/blog/AbundanceProjection"
 import { SilverThread } from "@/components/blog/SilverThread"
+import { Convergence } from "@/components/blog/Convergence"
 
 const SECTIONS = [
   { id: "thread", label: "· The Silver Thread" },
@@ -36,22 +36,21 @@ const SECTIONS = [
 
 const ESSAY = "/blog/software-3-0-age-of-hyper-automation"
 
-/** A wide, breakout-neutralised stage for one instrument. */
+/** A wide, breakout-neutralised stage for one instrument. Rendered eagerly
+ *  (like the blog) so section anchors land precisely — `minHeight` is accepted
+ *  for call-site intent but no longer reserves a lazy placeholder. */
 function Stage({
-  minHeight,
   max = 1280,
   children,
 }: {
-  minHeight: number
+  minHeight?: number
   max?: number
   children: ReactNode
 }) {
   return (
-    <LazyMount minHeight={minHeight}>
-      <div className="sw3-gallery mx-auto w-full px-2 sm:px-4" style={{ maxWidth: max }}>
-        {children}
-      </div>
-    </LazyMount>
+    <div className="sw3-gallery mx-auto w-full px-2 sm:px-4" style={{ maxWidth: max }}>
+      {children}
+    </div>
   )
 }
 
@@ -344,7 +343,9 @@ export default function Software3Page() {
         <Stage minHeight={620}>
           <AbundanceProjection />
         </Stage>
-        {/* FINALE — "The Convergence" mounts here (next build step). */}
+        <Stage minHeight={660}>
+          <Convergence />
+        </Stage>
       </Room>
 
       {/* DECK — the "full deck" contact sheet mounts here (next build step). */}
