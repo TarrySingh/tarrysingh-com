@@ -4,7 +4,7 @@
  * The genome-cost curve — $ to sequence one whole human genome, on a log-y.
  *
  * The once-in-a-generation collapse: ~$2.7B (2003) → sub-$100 (2024), a
- * ten-billion-fold (10¹⁰) fall in ~20 years — and visibly *faster than Moore's
+ * ten-million-fold (~10⁷) fall in ~20 years — and visibly *faster than Moore's
  * Law*. To prove that, a faint Moore counterfactual starts at the 2003 point
  * and halves every two years; by 2024 it still sits orders of magnitude above
  * the real curve. The wedge between them is shaded "faster than Moore."
@@ -174,7 +174,7 @@ export function GenomeCostCurve() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none"
         role="img"
-        aria-label="The cost to sequence one whole human genome fell from about $2.7 billion in 2003 to under $100 in 2024 — a ten-billion-fold collapse in roughly twenty years, faster than Moore's Law. A faint Moore's-Law counterfactual line, halving every two years from the 2003 point, stays thousands of times above the real curve by 2024; the wedge between them is the genome's faster-than-Moore lead. ARK projects roughly $1 to $10 per genome by 2030."
+        aria-label="The cost to sequence one whole human genome fell from about $2.7 billion in 2003 to under $100 in 2024 — a roughly ten-million-fold collapse in twenty years, faster than Moore's Law. A faint Moore's-Law counterfactual line, halving every two years from the 2003 point, stays thousands of times above the real curve by 2024; the wedge between them is the genome's faster-than-Moore lead. ARK projects roughly $1 to $10 per genome by 2030."
         onPointerMove={onMove}
       >
         <defs>

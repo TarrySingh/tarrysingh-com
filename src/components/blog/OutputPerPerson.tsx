@@ -8,7 +8,7 @@
  * growth has been roughly flat for a century (~1.5% → ~3.1%/yr). From 2026 it
  * FORKS into three expert projections to 2030 that disagree by 2–4×:
  *
- *   • ARK (bull)        → 7.3%  — disruptive-innovation inflection
+ *   • ARK (bull)        → >7% (7–10%) — disruptive-innovation inflection
  *   • IMF / consensus   → ~3.1% — flat baseline
  *   • Acemoglu (bear)   → ~3.2% — only +1.1% GDP over 10yr → a small bump
  *
@@ -96,9 +96,9 @@ const FORKS: Fork[] = [
     label: "ARK · bull",
     source: "ARK Big Ideas 2025",
     figure:
-      "ARK (bull): a disruptive-innovation inflection drives global real GDP growth to 7.3% by 2030.",
+      "ARK (bull): a disruptive-innovation inflection drives global real GDP growth past 7% — ARK floats a 7–10% range — by 2030, against a ~3% long-run average.",
     tone: "gold",
-    endLabel: "7.3%",
+    endLabel: "7–10%",
     pts: [
       { year: 2024, v: 3.1 },
       { year: 2026, v: 3.6 },
@@ -233,7 +233,7 @@ export function OutputPerPerson() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full"
         role="img"
-        aria-label="The fork in the forecast. Global real GDP growth was roughly flat for a century — about 1.5 percent per year in 1900 rising to 3.1 percent in 2024. From 2026 three expert projections diverge sharply to 2030: ARK's bull case reaches 7.3 percent, the IMF and consensus baseline stays near 3.1 percent, and Acemoglu's skeptic case rises only slightly to 3.2 percent. The wedge between the bull case and the baseline is shaded as the disagreement. Even credible experts differ by two to fourfold."
+        aria-label="The fork in the forecast. Global real GDP growth was roughly flat for a century — about 1.5 percent per year in 1900 rising to 3.1 percent in 2024. From 2026 three expert projections diverge sharply to 2030: ARK's bull case reaches past 7 percent — a 7-to-10 percent range — the IMF and consensus baseline stays near 3.1 percent, and Acemoglu's skeptic case rises only slightly to 3.2 percent. The wedge between the bull case and the baseline is shaded as the disagreement. Even credible experts differ by two to fourfold."
       >
         <defs>
           <linearGradient id="opp-wedge" x1="0" y1="0" x2="0" y2="1">
