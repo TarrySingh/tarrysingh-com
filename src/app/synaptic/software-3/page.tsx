@@ -20,8 +20,10 @@ import { RobotaxiCostPerMile } from "@/components/blog/RobotaxiCostPerMile"
 import { GenomeCostCurve } from "@/components/blog/GenomeCostCurve"
 import { OffWorldStack } from "@/components/blog/OffWorldStack"
 import { AbundanceProjection } from "@/components/blog/AbundanceProjection"
+import { SilverThread } from "@/components/blog/SilverThread"
 
 const SECTIONS = [
+  { id: "thread", label: "· The Silver Thread" },
   { id: "eras", label: "I · Three Eras" },
   { id: "long-arc", label: "II · The Long Arc" },
   { id: "curves", label: "III · Two Curves" },
@@ -150,7 +152,41 @@ export default function Software3Page() {
         </div>
       </section>
 
-      {/* OVERTURE — "The Silver Thread" mounts here (next build step). */}
+      {/* ── Overture — The Silver Thread (the flagship new centerpiece) ── */}
+      <section id="thread" className="pt-24">
+        <div className="syn-column space-y-6 text-center">
+          <SmallCaps>Plate II · The silver thread</SmallCaps>
+          <h2
+            className="syn-display mx-auto"
+            style={{
+              fontSize: "clamp(1.9rem, 4.5vw, 3.25rem)",
+              lineHeight: 1.06,
+              color: "var(--ink)",
+            }}
+          >
+            One intent, cascading outward
+          </h2>
+          <p
+            style={{
+              color: "var(--ink-cool)",
+              fontSize: "var(--text-body)",
+              lineHeight: 1.6,
+              maxWidth: "62ch",
+              marginInline: "auto",
+            }}
+          >
+            The whole essay in one gesture. A single stated intent at the apex,
+            its signal descending and branching through six frontiers, reaching
+            one shell further every year. This is the thread the rings are strung
+            on — the silver lining of the title.
+          </p>
+        </div>
+        <div className="mt-10">
+          <Stage minHeight={780} max={1180}>
+            <SilverThread />
+          </Stage>
+        </div>
+      </section>
 
       <div className="syn-column">
         <Hairline className="my-20" />
