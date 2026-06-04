@@ -18,6 +18,8 @@ import { ThreeErasOfSoftware } from "@/components/blog/ThreeErasOfSoftware"
 import { AILongArc } from "@/components/blog/AILongArc"
 import { FirmMorph } from "@/components/blog/FirmMorph"
 import { OffWorldStack } from "@/components/blog/OffWorldStack"
+import { EnergyScissors } from "@/components/blog/EnergyScissors"
+import { RobotaxiCostPerMile } from "@/components/blog/RobotaxiCostPerMile"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -259,4 +261,6 @@ export const mdxComponents = {
   AILongArc,
   FirmMorph,
   OffWorldStack,
+  EnergyScissors,
+  RobotaxiCostPerMile,
 }
