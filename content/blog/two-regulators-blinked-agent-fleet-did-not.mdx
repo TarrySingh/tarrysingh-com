@@ -1,0 +1,66 @@
+---
+title: "Two Regulators Blinked. The Agent Fleet Did Not."
+date: "2026-06-06"
+category: "Essays"
+excerpt: "Two regulators blinked on the AI question in a single five-month window. The largest banks did not stop deploying. The gap between those two facts is the most important live risk in financial services right now."
+draft: false
+tags: ["model-risk-management", "agentic-ai", "bank-supervision", "eu-ai-act", "ai-slop-debt"]
+---
+
+# Two Regulators Blinked. The Agent Fleet Did Not.
+
+Two weeks apart, the regulators that matter most to AI in banking made the same move. On April 17, 2026, the Federal Reserve, the OCC and the FDIC issued [SR 26-2](https://www.federalreserve.gov/supervisionreg/srletters/SR2602.pdf), the first overhaul of US model risk management guidance since SR 11-7 in 2011 — and explicitly placed generative AI and agentic AI outside the scope of the new framework, parking them in a forthcoming request for information ([FDIC press release](https://www.fdic.gov/news/press-releases/2026/agencies-issue-revised-model-risk-guidance), [OCC Bulletin 2026-13](https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html)). Three weeks later, on May 7, the European Council and Parliament reached political agreement on a Digital Omnibus deferring the EU AI Act's use-based high-risk obligations from August 2026 to December 2027 ([Council of the EU press release](https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/), [Gibson Dunn analysis](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/)).
+
+Two regulators. One five-month window. Both blinked on the AI question.
+
+The banks did not.
+
+## what the US guidance actually rescinded
+
+SR 11-7 was the most-cited document in bank AI governance for fifteen years. It defined a model, fixed the validator's job, named the risk owner. SR 26-2 keeps the architecture and strips the prescription — principles-based, risk-tiered, scaled to banks above thirty billion dollars in total assets, and ([per Sullivan & Cromwell's reading](https://www.sullcrom.com/insights/memo/2026/April/OCC-Fed-FDIC-Issue-Revised-Guidance-Model-Risk-Management)) carrying no enforceable standards on its own. That is not necessarily a weakening. Principles-based supervision can bite harder than prescription when the supervisor wants to bite. What is new is the carve-out: the agencies wrote, in plain language, that generative and agentic systems are "models" but that because they are novel and rapidly evolving, they sit outside the scope, with a separate RFI to follow. That is the part the bank lawyers I have read this week are still digesting.
+
+I read it as honest, in a particular way. The framework that worked for scorecards, PD/LGD models and Monte Carlo VaR does not fit a non-deterministic agent that calls tools, mutates state, and learns nothing between calls but its own context window. The regulators are saying so out loud. The unintended message — and I think it is genuinely unintended — is that for the most consequential new class of risk in a generation, US bank examiners have just declared their existing playbook off-piste and have not yet written the new one. The RFI will close that gap, eventually. Banks deploying today do not have the luxury of waiting for it.
+
+## what brussels did
+
+The EU move was different in form, same in effect. The Digital Omnibus, agreed May 7 ([White & Case alert](https://www.whitecase.com/insight-alert/eu-agrees-digital-omnibus-deal-simplify-ai-rules), [Inside Privacy summary](https://www.insideprivacy.com/artificial-intelligence/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions/)), gives Annex III high-risk providers — credit scoring, AML risk profiling, insurance pricing, automated decisioning that affects access to credit — an extra sixteen months before the rulebook fully clicks. Financial supervisors, who had been quietly furious about the original August 2026 deadline because their own guidance pipelines were not ready, got their breathing room. Banks got theirs too. Vendors selling AI Act readiness saw a useful quarter of pipeline disappear.
+
+What did not get extended is the politics. The carve-outs holding financial institutions under national rather than EU AI Office supervision remained ([Linklaters' read](https://financialregulation.linklaters.com/post/102lw5y/eu-authorities-weigh-up-impact-of-ai-regulation-on-financial-services)). So a European bank running a generative agent for credit memo drafting is now answering to three concurrent regimes: domestic financial supervision, the EU AI Act on the new timeline, and whatever the European Banking Authority eventually says about model risk in guidance that has been promised for over a year and is still in draft.
+
+That is not deregulation. It is a regulatory queue.
+
+## what the banks are actually running
+
+Now look at the deployment side, because this is where the gap shows.
+
+JPMorgan Chase has its LLM Suite live on roughly 200,000 employee desktops, supported by what the firm has guided to as an eighteen-billion-dollar annual technology budget ([emerj's writeup](https://emerj.com/artificial-intelligence-at-jpmorgan-chase/)). Treat the productivity claims carefully — investment-banking deck generation in thirty seconds is the kind of vignette that sounds better in a press tour than in a measured time-and-motion study — but the deployment number itself is hard to argue with.
+
+Citigroup has trained 4,000 "AI stewards," equipped 182,000 employees with generative AI tools, and just launched an agentic AI pilot covering about 5,000 colleagues ([Banking Dive's recent reporting](https://www.bankingdive.com/news/banks-ai-push-accelerates-jpmorgan-stanley-citi-bny-goldman-security-worries/817923/)). Wells Fargo's Fargo assistant, now upgraded to Google's Gemini 2.0 Flash, has logged over 200 million autonomous customer interactions. Goldman Sachs has named Anthropic's Claude as the engine for accounting and compliance automation, with CIO Marco Argenti describing the systems as "digital co-workers" — a phrase he chose, I assume, with full awareness of how the labor side reads it.
+
+Industry-wide, NVIDIA's 2026 State of AI in Financial Services survey ([blog summary](https://blogs.nvidia.com/blog/ai-in-financial-services-survey-2026/), [full report](https://www.nvidia.com/en-us/industries/finance/ai-financial-services-report/)) — 800-plus respondents, treat as vendor-tilted but directionally useful — puts agentic AI deployment or assessment at 42% of firms, with 21% saying they have agents in production. Morgan Stanley research projects roughly $740 billion of AI capex industry-wide in 2026 ([Morgan Stanley Insights](https://www.morganstanley.com/insights/articles/ai-capex-740-billion-banking-opportunity)). Whether the firm-level returns justify that figure is a separate argument; the deployment curve is not.
+
+So: the supervisors have explicitly removed agentic AI from prescription on one side of the Atlantic and pushed the binding clock out by sixteen months on the other, in the same five-month window during which the largest US banks have put generative AI on six-figure desktop counts and started moving agents from pilot into limited production.
+
+## the supervisor's dilemma, restated
+
+Here is the part I would put on a CRO's desk.
+
+Under the old SR 11-7 logic, an examiner walked in, asked for the model inventory, the validation evidence, the use limits and the override log, and could tell within a day whether the bank had its house in order. That examiner walking into a bank in late 2026 has none of those instruments calibrated for an agent. There is no canonical inventory of agent invocations. There is no validation framework that survives a model swap from one Claude version to the next, or from Claude to Gemini, without a redo. Override logs from a tool-using agent are observable, but the underlying decision path mostly is not. The bank that wants to look governed can look governed by old criteria while running something the old criteria do not measure.
+
+That is the substance of what I keep calling, publicly, **AI slop debt** — the accumulating liability of half-finished POCs, unevaluated agent fleets, RAG systems with no clear owner, prompt sprawl across business units, and orphaned fine-tunes nobody can reproduce. In a bank, that debt sits inside a chartered institution with regulatory capital against it. It is a slow-burn fuse on a balance sheet, not a sandbox experiment. The newly published [Deloitte analysis on agentic AI risks in banking](https://www.deloitte.com/us/en/insights/industry/financial-services/agentic-ai-risks-banking.html) reaches the same conclusion through a different door: the existing controls do not see the new exposures, and the new exposures are accruing now.
+
+## what I would actually do
+
+If I sat on a US bank's risk committee tomorrow, three things.
+
+First, do not wait for the RFI. Build the AI model risk framework on the assumption that SR 26-2's principles, plus the still-extant supervisory expectations on operational risk and third-party risk, plus the firm's own fiduciary obligations, are the de facto regime. Bake in inventory, validation, monitoring, override telemetry, kill-switch testing. The agencies will publish something eventually. The firm that has already done the work will not have to retrofit at deadline pressure, and will have a far stronger hand in the consultation when it comes.
+
+Second, write the generative-AI use boundary out loud. Not in a press release. In a board-ratified policy with named owners. Which decisions can an agent make autonomously? Which require a human in the loop? Which are off-limits regardless of model capability? This document is the single highest-leverage thing a bank can produce this quarter. Almost none I have read have it in defensible form. The ones that do tend to have a CRO who has been through a serious model-validation finding and has no interest in repeating it for agents.
+
+Third, fund the inventory. The fastest way to be in trouble in 2027 is to not know how many agents you have, what they touch, and which vendor stack they sit on. The cheapest place to lose this argument is at the point of an unexpected supervisory question. The expensive place is in front of a customer, a regulator and a judge at the same time.
+
+Two regulators blinked. The agent fleet did not. The gap between those two facts is the most important live risk in financial services right now, and the firms that close it on their own initiative will look very different, in three years, from those that wait for the supervisor to do it for them.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io), an Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.*
