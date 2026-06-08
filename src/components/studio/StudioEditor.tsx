@@ -11,6 +11,7 @@ import LinkExt from "@tiptap/extension-link"
 import Typography from "@tiptap/extension-typography"
 import Image from "@tiptap/extension-image"
 import { htmlToMarkdown, markdownToEditorHtml } from "@/lib/studio/serialize"
+import katex from "katex"
 import type { AIFrontmatterSuggestion } from "@/lib/studio/ai"
 import { MermaidDiagram } from "@/components/blog/MermaidDiagram"
 import { SERIES, SERIES_KEYS, type SeriesKey } from "@/lib/blog/series"
@@ -557,7 +558,7 @@ export function StudioEditor({
 
   const previewHtml = useMemo(() => {
     if (!editor) return ""
-    return editor.getHTML()
+    return renderMathInHtml(editor.getHTML())
   }, [editor])
 
   // Sprint 11 — resizable composer/preview split (lg+ only).
@@ -1870,6 +1871,39 @@ function decodeHtmlEntities(html: string): string {
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&#x27;/g, "'")
+}
+
+// Render the editor's protected math — ```math fenced blocks and `$…$` inline
+// code — as KaTeX in the preview, matching the published /blog render. Pure
+// string transform on the Tiptap HTML; a no-op for posts without math.
+function renderMathInHtml(html: string): string {
+  if (!html.includes("language-math") && !/<code>\$[^$<]+\$<\/code>/.test(html)) {
+    return html
+  }
+  let out = html.replace(
+    /<pre><code class="language-math">([\s\S]*?)<\/code><\/pre>/g,
+    (m, tex: string) => {
+      try {
+        return `<div class="katex-block">${katex.renderToString(
+          decodeHtmlEntities(tex).trim(),
+          { displayMode: true, throwOnError: false },
+        )}</div>`
+      } catch {
+        return m
+      }
+    },
+  )
+  out = out.replace(/<code>\$([^$<]+?)\$<\/code>/g, (m, tex: string) => {
+    try {
+      return katex.renderToString(decodeHtmlEntities(tex), {
+        displayMode: false,
+        throwOnError: false,
+      })
+    } catch {
+      return m
+    }
+  })
+  return out
 }
 
 function extractCaption(code: string): { code: string; caption?: string } {

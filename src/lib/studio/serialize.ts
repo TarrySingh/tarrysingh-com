@@ -30,8 +30,23 @@ td.addRule("fencedCodeWithLang", {
       .split(" ")
       .find((c) => c.startsWith("language-"))
       ?.replace("language-", "") ?? ""
-    return `\n\n\`\`\`${language}\n${code.textContent ?? ""}\n\`\`\`\n\n`
+    const text = code.textContent ?? ""
+    // Math blocks round-trip back to $$…$$. The editor holds them as a
+    // ```math fenced code block so marked (load) and Turndown (save) treat
+    // the LaTeX as literal text and never mangle underscores/backslashes.
+    if (language === "math") return `\n\n$$\n${text}\n$$\n\n`
+    return `\n\n\`\`\`${language}\n${text}\n\`\`\`\n\n`
   },
+})
+
+// Inline math is held in the editor as `$…$` inside a <code> mark; emit it
+// back as bare $…$ (no backticks) so KaTeX renders it on the published post.
+td.addRule("inlineMath", {
+  filter: (node) =>
+    node.nodeName === "CODE" &&
+    node.parentNode?.nodeName !== "PRE" &&
+    /^\$[^$]+\$$/.test(node.textContent ?? ""),
+  replacement: (_content, node) => node.textContent ?? "",
 })
 
 export function htmlToMarkdown(html: string): string {
@@ -64,9 +79,32 @@ export function unwrapStandaloneImages(html: string): string {
  * from saved markdown (initial load, AI Continue output, AI Rewrite
  * output) so the round-trip preserves embedded images.
  */
+/**
+ * Protect LaTeX math from marked/Turndown mangling on the editor round-trip.
+ * Block `$$…$$` becomes a ```math fenced code block (literal, unparsed); inline
+ * `$…$` that actually contains LaTeX is wrapped in a `code` mark keeping its `$`
+ * delimiters. Gated on the presence of a block `$$` so ordinary posts (incl.
+ * ones that mention currency like "$5") are completely untouched. The reverse
+ * mapping lives in the Turndown rules above (fencedCodeWithLang + inlineMath).
+ */
+export function protectMathForEditor(markdown: string): string {
+  if (!markdown.includes("$$")) return markdown
+  let out = markdown.replace(
+    /\$\$([\s\S]+?)\$\$/g,
+    (_m, tex: string) => `\n\n\`\`\`math\n${tex.trim()}\n\`\`\`\n\n`,
+  )
+  // Inside a math post (it has `$$`), treat $…$ as math when it looks like
+  // LaTeX or is a short symbol like $A$, $x$, $R^2$ — but leave longer plain
+  // spans (e.g. a stray "$5 to $") alone.
+  out = out.replace(/\$([^$\n]+?)\$/g, (m, tex: string) =>
+    /[\\^_{}]/.test(tex) || tex.length <= 3 ? `\`$${tex}$\`` : m,
+  )
+  return out
+}
+
 export function markdownToEditorHtml(markdown: string): string {
   if (!markdown) return ""
-  const raw = marked.parse(markdown, { async: false }) as string
+  const raw = marked.parse(protectMathForEditor(markdown), { async: false }) as string
   return unwrapStandaloneImages(raw)
 }
 

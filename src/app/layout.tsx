@@ -6,6 +6,7 @@ import {
   synapticMono,
 } from "./fonts"
 import "./globals.css"
+import "katex/dist/katex.min.css"
 import { Providers } from "@/components/providers"
 
 export const metadata: Metadata = {

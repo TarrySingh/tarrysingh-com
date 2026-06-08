@@ -5,6 +5,8 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import remarkGfm from "remark-gfm"
+import remarkMath from "remark-math"
+import rehypeKatex from "rehype-katex"
 import { marked } from "marked"
 import { ArrowLeft, Linkedin } from "lucide-react"
 import {
@@ -327,7 +329,7 @@ export default async function BlogPostPage({
             components={mdxComponents}
             options={{
               mdxOptions: {
-                remarkPlugins: [remarkGfm],
+                remarkPlugins: [remarkGfm, remarkMath],
                 rehypePlugins: [
                   rehypeSlug,
                   [
@@ -340,6 +342,7 @@ export default async function BlogPostPage({
                       },
                     },
                   ],
+                  rehypeKatex,
                 ],
               },
             }}
