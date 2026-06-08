@@ -21,6 +21,12 @@ import { OffWorldStack } from "@/components/blog/OffWorldStack"
 import { EnergyScissors } from "@/components/blog/EnergyScissors"
 import { RobotaxiCostPerMile } from "@/components/blog/RobotaxiCostPerMile"
 import { Callout, OpsTriad, TransportResidual } from "@/components/blog/DiscoveryKit"
+import {
+  EuropeConvergenceMap,
+  EuropeMovers,
+  EuropeScissor,
+  EuropeChips,
+} from "@/components/blog/EuropeKit"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -310,4 +316,8 @@ export const mdxComponents = {
   Callout,
   OpsTriad,
   TransportResidual,
+  EuropeConvergenceMap,
+  EuropeMovers,
+  EuropeScissor,
+  EuropeChips,
 }
