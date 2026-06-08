@@ -20,6 +20,7 @@ import { FirmMorph } from "@/components/blog/FirmMorph"
 import { OffWorldStack } from "@/components/blog/OffWorldStack"
 import { EnergyScissors } from "@/components/blog/EnergyScissors"
 import { RobotaxiCostPerMile } from "@/components/blog/RobotaxiCostPerMile"
+import { Callout, OpsTriad, TransportResidual } from "@/components/blog/DiscoveryKit"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -231,6 +232,46 @@ function PullQuote(props: ComponentPropsWithoutRef<"aside">) {
   )
 }
 
+function DataTable(props: ComponentPropsWithoutRef<"table">) {
+  return (
+    <div
+      className="my-8 overflow-x-auto rounded-md"
+      style={{ border: "1px solid var(--read-surface-border)" }}
+    >
+      <table
+        {...props}
+        className="w-full text-[0.9rem]"
+        style={{ borderCollapse: "collapse", fontFamily: "var(--font-serif), serif" }}
+      />
+    </div>
+  )
+}
+
+function Th(props: ComponentPropsWithoutRef<"th">) {
+  return (
+    <th
+      {...props}
+      className="px-3.5 py-2.5 text-left text-[10.5px] font-semibold uppercase tracking-[0.08em]"
+      style={{
+        fontFamily: "var(--font-mono), monospace",
+        color: "var(--read-fg-muted)",
+        background: "var(--read-surface)",
+        borderBottom: "1.5px solid var(--read-surface-border)",
+      }}
+    />
+  )
+}
+
+function Td(props: ComponentPropsWithoutRef<"td">) {
+  return (
+    <td
+      {...props}
+      className="px-3.5 py-2.5"
+      style={{ color: "var(--read-fg)", borderBottom: "1px solid var(--read-hair)" }}
+    />
+  )
+}
+
 export const mdxComponents = {
   h1: H1,
   h2: H2,
@@ -263,4 +304,10 @@ export const mdxComponents = {
   OffWorldStack,
   EnergyScissors,
   RobotaxiCostPerMile,
+  table: DataTable,
+  th: Th,
+  td: Td,
+  Callout,
+  OpsTriad,
+  TransportResidual,
 }
