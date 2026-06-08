@@ -2,42 +2,17 @@
 title: "The Two Europes: Why the Map of Decline Is Upside Down"
 date: "2026-06-09"
 category: "Essays"
-excerpt: "We argue about Europe versus the rest of the world. The real divergence is inside Europe — a converging East and a stalling West — and the country-by-country map of who is rising and who is falling is almost the exact opposite of the one in your head."
+excerpt: "Part 1 took apart the chart everyone shares. But every version of it treats Europe as one line — and Europe is at least two economies, a converging East and a stalling West, moving in opposite directions. The country-by-country map of who's rising and who's declining is almost the exact opposite of the one in your head. Part 2 of The Real Map of Europe."
 draft: false
 tags: ["Europe", "economics", "convergence", "sovereign AI", "strategic autonomy", "geopolitics"]
+series: { key: "real-map-europe", part: 2, total: 2 }
 ---
 
-Every few months a chart goes around that tells you Europe is finished. Four lines, three decades, a story so clean it barely needs a caption: the United States holds the line, China rockets up, and Europe slides from a quarter of the world economy to a fifteenth. The former Italian prime minister Giorgia Meloni put the European half of it plainly — in 1990 the then-twelve-member club was about 26 percent of world GDP; today the twenty-seven-member Union is around 16 percent, while the US is still near 26. The bloc got bigger and its slice got smaller. People share the chart with a little funeral emoji and move on.
+In [Part 1](/blog/the-chart-is-wrong) I took apart the chart everyone shares — the one where Europe slides from a quarter of the world economy to a fifteenth. The numbers on it were wrong; the trend was real; and the honest scoreboard, once every figure was fixed, still showed a Europe that was smaller than it used to be, behind the United States on output per person, and ahead of or behind China depending on which ruler you picked up.
 
-I build agentic AI systems for a living, in Europe, and I can't switch off the habit of checking a number before I believe it. So I went and pulled the actual figures behind the "Europe versus the world" story. The trend is real. The slice really has shrunk. But the chart commits a quieter, more interesting error than getting a decimal wrong. It treats "Europe" as a single economy — one line, one trajectory, one fate.
+But every chart in that piece — the corrected ones included — committed the same quiet error. It treated "Europe" as a single line. One number, one trajectory, one fate.
 
-It isn't one economy. But before I take the average apart, look at the picture everyone's actually fighting about.
-
-## First, the scoreboard everyone argues about
-
-Here's the global board — Europe's share of world output against the United States, China, and everyone else, across three decades. Drag the toggle.
-
-<GdpShareChart />
-
-That toggle is the whole trick, and most people sharing the viral chart don't know it's there. Measure every economy at **market exchange rates** — the nominal view — and the US is the clear number one near 26 percent, China sits *below* the European Union, and its slice peaked back in 2021. Switch to **purchasing power parity**, which adjusts for the fact that a haircut or a bowl of noodles costs a fraction as much in Chengdu as in Munich, and the order inverts: China becomes the world's largest economy, the US and EU below it. Same year, same countries, opposite headline. Nobody is lying. They're holding different rulers.
-
-That one choice settles arguments people don't know they're having. Take China's rise, the thing everyone treats as a one-way escalator:
-
-<ChinaPeakChart />
-
-At market rates it didn't keep climbing — it topped out near 18.5 percent in 2021 and has slipped since, on a weaker yuan, a property hangover and stretches of outright deflation. The relentless-rise story is a purchasing-power story. In the currency the world actually trades in, China already peaked. Both true; different rulers.
-
-<RankFlipChart />
-
-There's the entire argument in one frame: the same three economies, ranked one way by market value and the opposite way by real output. The honest answer to "who's the biggest economy" is a question — biggest at *what*?
-
-And Europe? On the measure that actually tracks how well people live — real output per person, each economy in its own constant prices — Europe has been quietly slipping behind the United States for two decades:
-
-<PerCapitaChart />
-
-The two lines tracked together until 2008, then the US pulled away while the euro area double-dipped through 2011–2013. Today American real output per head is up about 38 percent since 2000; the EU's, about 24. A real gap, pointing the wrong way — though nowhere near the "Europe is half of America" headlines you'll see, which are nominal market-FX comparisons flattered by a strong dollar and a weak euro. The honest version is a moderate, persistent lag, not a collapse.
-
-So that's the scoreboard: Europe smaller than it was, behind the US, above or below China depending on which ruler you pick up. It's all true, and it's all beside the point — because every one of those charts makes the same mistake. It treats "Europe" as a single line. And Europe isn't one economy. It's at least two, moving in opposite directions, and when you average them into one falling line you destroy the most important fact on the continent.
+It isn't one economy. It's at least two, moving in opposite directions, and when you average them into a single falling line you destroy the most important fact on the continent.
 
 ## The continent that stopped being one number
 
@@ -45,7 +20,7 @@ Here is the move that the world-versus-Europe chart can't make, because it only 
 
 The cleanest way to do that is to stop using dollars and world-GDP shares — which bounce around with the euro–dollar exchange rate and with how fast China is growing this quarter — and use a ruler that's internal to Europe. Eurostat publishes exactly that: each country's GDP per capita measured in purchasing power standards, indexed so that the EU average is exactly 100. Above 100 means richer than the European average; below means poorer. It strips out the currency noise and the price-level differences, and it asks one honest question: relative to your neighbours, are you gaining ground or losing it?
 
-Then you do the thing the funeral-chart never does. You don't look at the level in a single year. You look at the *change* — where each country sat in 2004, when the great eastern enlargement began, and where it sits in 2024, twenty years later. That difference, country by country, is the real map of Europe. And it looks nothing like the one everyone argues about.
+Then you do the thing the doom-chart never does. You don't look at the level in a single year. You look at the *change* — where each country sat in 2004, when the great eastern enlargement began, and where it sits in 2024, twenty years later. That difference, country by country, is the real map of Europe. And it looks nothing like the one everyone argues about.
 
 <EuropeChips />
 
@@ -59,7 +34,7 @@ Green is a country that climbed toward the European average over those twenty ye
 
 Romania went from 35 to 78 — from barely a third of the European average to better than three-quarters of it, in a single generation. Poland went from 51 to 80. Lithuania climbed from 53 to 89, Bulgaria from 35 to 66, the rest of the Baltics and the Visegrád countries close behind. These aren't rounding errors. They are the fastest sustained convergence of living standards anywhere in the developed world this century, and they happened on the supposedly declining continent.
 
-Now find the red. France slid from 111 to 99 — from a tenth above the European average to just below it. Italy fell from 108 to 97. Spain dropped from 101 to 92. Austria gave up sixteen points, Finland and Sweden each gave up seven. And Greece — Greece collapsed from 97 to 70, a twenty-seven-point fall, the steepest on the continent. The countries that *founded* the European project, the ones the funeral-chart imagines when it says "Europe," are the ones losing ground inside it.
+Now find the red. France slid from 111 to 99 — from a tenth above the European average to just below it. Italy fell from 108 to 97. Spain dropped from 101 to 92. Austria gave up sixteen points, Finland and Sweden each gave up seven. And Greece — Greece collapsed from 97 to 70, a twenty-seven-point fall, the steepest on the continent. The countries that *founded* the European project, the ones the doom-chart imagines when it says "Europe," are the ones losing ground inside it.
 
 Rank the moves and the divide is even starker.
 
@@ -91,7 +66,7 @@ Pull the camera back to twenty years of motion and you can watch the two Europes
 
 <EuropeScissor />
 
-That widening, then closing, gap is the most important thing the funeral-charts never show you. When the eastern members joined, their average sat below half of the European mean. Today it's near 80 percent and still climbing. Central and Eastern Europe as a whole went from 43 percent of the EU average in 2004 to 69 percent by 2023. That is the single largest peaceful convergence of incomes in modern European history — hundreds of millions of people hauled from the post-communist wreckage to within sight of Western living standards, inside one political and legal union, without a war or a conquest. If a development economist had predicted it in 1995 they'd have been laughed out of the room.
+That widening, then closing, gap is the most important thing the doom-charts never show you. When the eastern members joined, their average sat below half of the European mean. Today it's near 80 percent and still climbing. Central and Eastern Europe as a whole went from 43 percent of the EU average in 2004 to 69 percent by 2023. That is the single largest peaceful convergence of incomes in modern European history — hundreds of millions of people hauled from the post-communist wreckage to within sight of Western living standards, inside one political and legal union, without a war or a conquest. If a development economist had predicted it in 1995 they'd have been laughed out of the room.
 
 And underneath it, the southern line sags. The scissor isn't just the East rising. It's the East rising *while the South sinks toward it* — Italy and Greece drifting down to meet Poland and the Baltics drifting up. Sometime in the next decade, on current trajectories, Warsaw passes Lisbon and Athens for good, if it hasn't already. The map of "rich Europe" and "poor Europe" that every Western European over forty carries in their head is quietly being redrawn, and almost nobody has updated the picture.
 
@@ -107,17 +82,11 @@ The channels are concrete, not abstract. Slovakia became the largest per-capita 
 
 The South got stuck for the mirror-image reason. It had the single market without the safety valve. For a country like Italy, the euro removed the one tool a stagnating economy has always used to claw back competitiveness — a weaker currency. You can't devalue the euro from Rome. So the adjustment that would once have happened in the exchange rate had to happen in wages, jobs and a decade of grinding internal deflation instead, and politically that adjustment mostly didn't happen at all. Italy spent twenty years not-quite-reforming and not-quite-devaluing, and the flat line on the chart is the result.
 
-And the West — the comfortable core — has a third problem, the one Mario Draghi's competitiveness report was honest enough to name. Strip out information and communications technology and European productivity roughly matched the United States across 2000–2019. Europe didn't fall behind at everything. It fell behind at the one thing that compounds: digital technology. Four of the world's top fifty tech firms are European — four, not forty. Around 70 percent of the world's foundational AI models have been built in the US since 2017. The core didn't collapse; it missed the single most important industry of the era, and it's now paying the interest.
-
-The clearest single picture of that miss is the long arc of European productivity against the American benchmark:
-
-<ProductivityChart />
-
-Europe spent the post-war decades closing the gap — output per hour climbing from under half the US level in 1960 to about 95 percent by the mid-1990s. Near parity. And then, right as the digital era began, it stalled and slid back below 80 percent. Read that shape carefully, because it's the engine under every GDP number in this essay. A continent that closes a fifty-year gap and then reopens a fifth of it in thirty isn't having a bad year. It's having a bad era — and the era is defined by exactly the technology it didn't build.
+And the West — the comfortable core — has a third problem, the one Mario Draghi's competitiveness report was honest enough to name. Strip out information and communications technology and European productivity roughly matched the United States across 2000–2019. Europe didn't fall behind at everything. It fell behind at the one thing that compounds: digital technology. Four of the world's top fifty tech firms are European — four, not forty. Around 70 percent of the world's foundational AI models have been built in the US since 2017. The core didn't collapse; it missed the single most important industry of the era, and it's now paying the interest. (Part 1 has the long arc of that productivity miss in a single chart — output per hour against the US, near-parity in the 1990s, back below 80% today.)
 
 ## The catch in the catch-up
 
-Before I get triumphant about the East, the same discipline that made me suspicious of the funeral-chart makes me suspicious of the boom. There are two catches in the catch-up, and an honest map has to show both.
+Before I get triumphant about the East, the same discipline that made me suspicious of the doom-chart makes me suspicious of the boom. There are two catches in the catch-up, and an honest map has to show both.
 
 The first is hiding in the denominator. The metric is GDP per *capita* — output divided by people — and one fast way to raise a ratio is to shrink what's underneath it. The East didn't just produce more; it exported people. After accession, the borders opened and the young and ambitious went west to earn western wages. Romania, Bulgaria, the Baltics and Croatia have lost extraordinary shares of their populations since 2007 — Latvia, Lithuania and Bulgaria are among the fastest-shrinking countries on the planet, having given up a fifth or more of their people in a generation. Some of the dazzling per-capita convergence is real, hard-won productivity. Some of it is simply that the *capita* emptied out. A village where the productive young have left for Munich will post a rising output-per-remaining-resident and call it progress, and the index can't tell the difference. The convergence is real; it is also, in part, a measurement of who's left.
 
