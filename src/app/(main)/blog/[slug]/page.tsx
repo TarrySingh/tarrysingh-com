@@ -88,6 +88,11 @@ export default async function BlogPostPage({
   // at publish time via `npm run blog:bake-nudge <slug>`.
   const nudgeCard = await getNudgeCard(slug)
 
+  // Math (KaTeX) is opt-in per post, gated on the presence of block `$$` math.
+  // This keeps currency like "$700 billion" in economics posts from ever being
+  // parsed as math. The studio serializer gates on the same `$$` signal.
+  const hasMath = post.body.includes("$$")
+
   // Dispatches v2 — series context (gated; renders nothing until a post
   // carries `series` via the #9 backfill / the editor). Siblings power
   // the masthead breadcrumb + the "Continue the series" foot.
@@ -329,7 +334,7 @@ export default async function BlogPostPage({
             components={mdxComponents}
             options={{
               mdxOptions: {
-                remarkPlugins: [remarkGfm, remarkMath],
+                remarkPlugins: hasMath ? [remarkGfm, remarkMath] : [remarkGfm],
                 rehypePlugins: [
                   rehypeSlug,
                   [
@@ -342,7 +347,7 @@ export default async function BlogPostPage({
                       },
                     },
                   ],
-                  rehypeKatex,
+                  ...(hasMath ? [rehypeKatex] : []),
                 ],
               },
             }}
