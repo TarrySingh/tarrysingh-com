@@ -18,7 +18,7 @@
  * RankFlipChart, ProductivityChart, PerCapitaChart.
  */
 
-import { useEffect, useId, useRef } from "react"
+import { useEffect, useId, useRef, type ReactNode } from "react"
 
 /* ------------------------------------------------------------------ helpers */
 const SVGNS = "http://www.w3.org/2000/svg"
@@ -97,6 +97,12 @@ const EC_CSS = `
 .ec-dyn{margin-top:16px;padding:12px 15px;border-radius:11px;background:rgba(32,64,223,.08);border:1px solid rgba(79,104,255,.22);font-size:.92rem;line-height:1.5;color:#e9edf7}
 .ec-dyn b{color:#4f68ff}
 @media (max-width:560px){.ec-tip{min-width:124px}}
+.ec-meta{margin-bottom:2px}
+.ec-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7f9bff;font-weight:600;margin-bottom:8px}
+.ec-title{margin:0;font-family:var(--font-display),"Gloock","Fraunces",serif;font-size:1.22rem;font-weight:600;letter-spacing:-.01em;line-height:1.15;color:#e9edf7}
+.ec-sub{margin:5px 0 0;font-size:.84rem;color:#98a2bd;line-height:1.45}
+.ec-cap{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.09);font-size:.82rem;line-height:1.5;color:#98a2bd}
+.ec-cap b{color:#e9edf7;font-weight:600}
 `
 
 function useEcStyles() {
@@ -658,11 +664,29 @@ function useChart(render: (fig: HTMLElement, uid: string) => void, uid: string) 
   return ref
 }
 
+function EcMeta({ kicker, title, sub }: { kicker: string; title: string; sub: string }) {
+  return (
+    <div className="ec-meta">
+      <div className="ec-kicker">{kicker}</div>
+      <h3 className="ec-title">{title}</h3>
+      <p className="ec-sub">{sub}</p>
+    </div>
+  )
+}
+function EcCap({ children }: { children: ReactNode }) {
+  return <figcaption className="ec-cap">{children}</figcaption>
+}
+
 export function GdpShareChart() {
   const uid = useId().replace(/:/g, "")
   const ref = useChart(renderGdpShare, uid)
   return (
     <figure className="ec" data-ec-id={uid} ref={ref}>
+      <EcMeta
+        kicker="Share of world GDP · 1990 → 2024"
+        title="One world, two answers"
+        sub="Percent of world output. Drag the toggle — market exchange rates versus purchasing power."
+      />
       <div className="ec-head">
         <div className="ec-toggle" role="tablist" aria-label="GDP measure">
           <span className="ec-pill" />
@@ -680,6 +704,12 @@ export function GdpShareChart() {
       </div>
       <div className="ec-legend" />
       <div className="ec-dyn" />
+      <EcCap>
+        Two legitimate questions, two rulers. <b>Nominal</b> (market FX) asks who
+        holds financial weight; <b>PPP</b> (price-adjusted) asks who produces real
+        volume. Most arguments about “the biggest economy” are really two people
+        using different rulers and mistaking it for disagreement.
+      </EcCap>
     </figure>
   )
 }
@@ -689,9 +719,20 @@ export function ChinaPeakChart() {
   const ref = useChart(renderChinaPeak, uid)
   return (
     <figure className="ec" data-ec-id={uid} ref={ref}>
+      <EcMeta
+        kicker="China's share of world GDP · market exchange rates"
+        title="China already peaked"
+        sub="Percent of world output, nominal — the rise everyone assumes is still climbing."
+      />
       <div className="ec-box">
         <svg viewBox="0 0 440 280" role="img" aria-label="China's nominal GDP share over time" />
       </div>
+      <EcCap>
+        At market rates China's slice topped out near <b>18.5% in 2021</b> and has
+        slipped to about 16.6% since — on a weaker yuan, a property hangover and
+        stretches of deflation. The relentless-rise story is a purchasing-power
+        story; in the currency the world trades in, the peak is already behind us.
+      </EcCap>
     </figure>
   )
 }
@@ -701,9 +742,19 @@ export function RankFlipChart() {
   const ref = useChart(renderRankFlip, uid)
   return (
     <figure className="ec" data-ec-id={uid} ref={ref}>
+      <EcMeta
+        kicker="Share of world GDP, 2024 · nominal vs PPP"
+        title="Who's biggest depends on the ruler"
+        sub="The same three economies, ranked by market value and by real output."
+      />
       <div className="ec-box">
         <svg viewBox="0 0 440 280" role="img" aria-label="Nominal versus PPP shares in 2024" />
       </div>
+      <EcCap>
+        Flip from nominal to PPP and the order inverts: the <b>US leads on market
+        value</b>, <b>China on real volume</b>, the EU trails on both. Same year,
+        same countries, opposite headline — biggest at <i>what</i>?
+      </EcCap>
     </figure>
   )
 }
@@ -713,9 +764,20 @@ export function ProductivityChart() {
   const ref = useChart(renderProductivity, uid)
   return (
     <figure className="ec" data-ec-id={uid} ref={ref}>
+      <EcMeta
+        kicker="EU labour productivity vs the US · 1960 → 2024"
+        title="Caught up, then slipped back"
+        sub="Output per hour, US = 100 — the engine under every GDP number here."
+      />
       <div className="ec-box">
         <svg viewBox="0 0 900 340" role="img" aria-label="EU labour productivity relative to the US, 1960 to 2024" />
       </div>
+      <EcCap>
+        European productivity climbed from under half the US level after the war to
+        about <b>95% by the mid-1990s</b> — near parity — then stalled and fell back
+        below <b>80%</b>, largely an information-technology story. The level isn't
+        the alarm. The slope is. (Draghi, 2024.)
+      </EcCap>
     </figure>
   )
 }
@@ -725,6 +787,11 @@ export function PerCapitaChart() {
   const ref = useChart(renderPerCapita, uid)
   return (
     <figure className="ec" data-ec-id={uid} ref={ref}>
+      <EcMeta
+        kicker="Real GDP per capita · index, 2000 = 100"
+        title="The honest gap: real, but modest"
+        sub="Output per person, each economy in its own constant prices. EU vs US."
+      />
       <div className="ec-legend ec-legend-static">
         <span className="ec-lg">
           <span className="ec-sw" style={{ background: "#4178f2" }} />
@@ -738,6 +805,13 @@ export function PerCapitaChart() {
       <div className="ec-box">
         <svg viewBox="0 0 900 360" role="img" aria-label="Real GDP per capita index, EU vs US, 2000 to 2024" />
       </div>
+      <EcCap>
+        The two tracked together until 2008, then the US pulled ahead while the euro
+        area double-dipped through 2011–2013. By 2024 American output per head is up
+        about <b>+38%</b> since 2000, the EU's about <b>+24%</b> — a real gap, but
+        nowhere near the “Europe is half of America” headlines, which are nominal
+        market-FX comparisons flattered by a strong dollar.
+      </EcCap>
     </figure>
   )
 }
