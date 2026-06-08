@@ -27,6 +27,13 @@ import {
   EuropeScissor,
   EuropeChips,
 } from "@/components/blog/EuropeKit"
+import {
+  GdpShareChart,
+  ChinaPeakChart,
+  RankFlipChart,
+  ProductivityChart,
+  PerCapitaChart,
+} from "@/components/blog/WorldEconomyKit"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -320,4 +327,9 @@ export const mdxComponents = {
   EuropeMovers,
   EuropeScissor,
   EuropeChips,
+  GdpShareChart,
+  ChinaPeakChart,
+  RankFlipChart,
+  ProductivityChart,
+  PerCapitaChart,
 }
