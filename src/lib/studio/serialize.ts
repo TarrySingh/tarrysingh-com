@@ -34,7 +34,7 @@ td.addRule("fencedCodeWithLang", {
     // Math blocks round-trip back to $$…$$. The editor holds them as a
     // ```math fenced code block so marked (load) and Turndown (save) treat
     // the LaTeX as literal text and never mangle underscores/backslashes.
-    if (language === "math") return `\n\n$$\n${text}\n$$\n\n`
+    if (language === "math") return `\n\n$$\n${text.trim()}\n$$\n\n`
     return `\n\n\`\`\`${language}\n${text}\n\`\`\`\n\n`
   },
 })
