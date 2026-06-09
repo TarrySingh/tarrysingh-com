@@ -20,7 +20,7 @@ interface Entitlement {
 // Where "book a cohort / buy" sends people until Stripe is wired (Phase 2).
 const BOOKING_URL = "https://www.earthscan.io/book-a-meeting"
 
-const HAEntitlement: Entitlement = {
+export const HAEntitlement: Entitlement = {
   demo: true, // ← set false in production so content stays locked until purchase
   has(sku) {
     if (typeof window === "undefined") return false
