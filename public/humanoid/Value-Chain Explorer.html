@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Value-Chain Explorer — The Humanoid Ascendancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper-dark:#15151a; --paper-dark-2:#1d1d24; --paper-dark-3:#25262e;
+  --ink-on-dark:#f4f2ec; --ink-dim:rgba(244,242,236,0.62); --ink-faint:rgba(244,242,236,0.40);
+  --rule-dark:rgba(244,242,236,0.16); --rule-dark-2:rgba(244,242,236,0.30);
+  --accent:#2040df; --accent-2:#3a59e8; --accent-3:#6f86f0;
+  --font-sans:"Geist","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-mono:"IBM Plex Mono","SF Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(0.22,0.61,0.36,1);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;height:100%;background:var(--paper-dark);color:var(--ink-on-dark);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;}
+#root{height:100vh;}
+.loading{display:flex;align-items:center;justify-content:center;height:100vh;font-family:var(--font-mono);color:var(--ink-faint);letter-spacing:.1em;}
+
+.app{display:flex;flex-direction:column;height:100vh;overflow:hidden;
+  background-image:linear-gradient(var(--rule-dark) 1px,transparent 1px),linear-gradient(90deg,var(--rule-dark) 1px,transparent 1px);
+  background-size:96px 96px;background-position:center;}
+.app::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 38% 42%,transparent 0%,var(--paper-dark) 78%);pointer-events:none;}
+
+/* top bar */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:22px 38px;border-bottom:1px solid var(--rule-dark);position:relative;z-index:2;flex:0 0 auto;}
+.brand{display:flex;align-items:baseline;gap:16px;}
+.brand .tick{width:30px;height:5px;background:var(--accent);display:inline-block;transform:translateY(-3px);}
+.brand h1{font-size:21px;font-weight:600;letter-spacing:-0.01em;margin:0;}
+.brand .sub{font-family:var(--font-mono);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-faint);}
+.lenswrap{display:flex;align-items:center;gap:18px;}
+.lenslabel{font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);}
+.seg{display:flex;border:1px solid var(--rule-dark-2);border-radius:2px;overflow:hidden;}
+.seg button{appearance:none;background:transparent;border:none;color:var(--ink-dim);font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;padding:9px 16px;cursor:pointer;transition:background var(--ease) .2s,color var(--ease) .2s;border-right:1px solid var(--rule-dark);}
+.seg button:last-child{border-right:none;}
+.seg button:hover{color:var(--ink-on-dark);}
+.seg button.on{background:var(--accent);color:#fff;}
+
+/* main */
+.main{flex:1 1 auto;display:flex;min-height:0;position:relative;z-index:1;}
+.stagewrap{flex:1 1 56%;display:flex;align-items:center;justify-content:center;position:relative;min-width:0;}
+.hint{position:absolute;top:30px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);transition:opacity .4s;}
+
+/* humanoid stage */
+.figure{position:relative;width:400px;height:740px;}
+.part{position:absolute;background:var(--paper-dark-2);border:1px solid var(--rule-dark-2);cursor:pointer;
+  transition:background .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease);}
+.part:hover{border-color:var(--accent-3);}
+.part.sel{border-color:var(--accent-2);box-shadow:0 0 0 1px var(--accent-2),0 0 34px rgba(32,64,223,0.45);z-index:3;}
+.part.dim{opacity:0.5;}
+.plabel{position:absolute;left:50%;top:-30px;transform:translateX(-50%);white-space:nowrap;font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-3);opacity:0;transition:opacity .2s;pointer-events:none;}
+.zone:hover .plabel,.zone.sel .plabel{opacity:1;}
+.spine{position:absolute;left:199px;top:118px;width:1px;height:210px;background:var(--rule-dark);pointer-events:none;}
+
+/* connector readout line from figure to panel */
+.readout{position:absolute;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:var(--ink-faint);}
+
+/* detail panel */
+.panel{flex:0 0 460px;border-left:1px solid var(--rule-dark);background:rgba(21,21,26,0.72);backdrop-filter:blur(6px);display:flex;flex-direction:column;min-height:0;}
+.panel-inner{padding:38px 40px;overflow-y:auto;flex:1 1 auto;}
+.panel-inner::-webkit-scrollbar{width:0;}
+.pcat{font-family:var(--font-mono);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);}
+.ptitle{font-size:40px;font-weight:600;letter-spacing:-0.025em;line-height:1.02;margin:14px 0 0;}
+.pshare{display:flex;align-items:baseline;gap:14px;margin:30px 0 4px;}
+.pshare .n{font-size:72px;font-weight:600;letter-spacing:-0.04em;line-height:0.9;color:var(--accent);}
+.pshare .u{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);max-width:14ch;line-height:1.5;}
+.pbar{height:6px;background:var(--paper-dark-3);margin:18px 0 32px;position:relative;}
+.pbar .fill{height:100%;background:var(--accent);transition:width .4s var(--ease);}
+.block{margin-bottom:28px;}
+.block h4{font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 12px;font-weight:500;}
+.block p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-on-dark);}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-size:13px;padding:6px 12px;border:1px solid var(--rule-dark-2);border-radius:2px;color:var(--ink-dim);font-family:var(--font-mono);letter-spacing:0.02em;}
+.geo{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13px;letter-spacing:0.06em;color:var(--ink-on-dark);}
+.riskdot{width:10px;height:10px;border-radius:50%;background:var(--accent);}
+.bottleneck{border-left:2px solid var(--accent);padding:4px 0 4px 18px;}
+.bottleneck p{color:var(--ink-dim);}
+
+/* intro state */
+.intro .lead{font-size:26px;font-weight:500;line-height:1.28;letter-spacing:-0.015em;margin:0 0 22px;}
+.intro .lead .accent{color:var(--accent);}
+.intro .body{font-size:16px;line-height:1.55;color:var(--ink-dim);margin:0 0 18px;}
+.intro .cue{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);margin-top:8px;}
+
+/* bottom BOM bar */
+.bom{flex:0 0 auto;border-top:1px solid var(--rule-dark);padding:18px 38px 20px;position:relative;z-index:2;background:rgba(21,21,26,0.6);}
+.bomhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+.bomhead .t{font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);}
+.bomhead .actu{font-family:var(--font-mono);font-size:12px;letter-spacing:0.06em;color:var(--ink-dim);}
+.bomhead .actu b{color:var(--accent);}
+.bombar{display:flex;height:34px;gap:2px;}
+.bomseg{position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .2s,transform .2s var(--ease);overflow:hidden;}
+.bomseg:hover{transform:translateY(-2px);}
+.bomseg .pct{font-family:var(--font-mono);font-size:12px;font-weight:600;color:#fff;}
+.bomseg .nm{position:absolute;bottom:-19px;left:0;font-family:var(--font-mono);font-size:10px;letter-spacing:0.04em;color:var(--ink-faint);white-space:nowrap;opacity:0;transition:opacity .2s;}
+.bomseg.sel .nm,.bomseg:hover .nm{opacity:1;}
+
+.foot{flex:0 0 auto;display:flex;justify-content:space-between;padding:10px 38px 14px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:var(--ink-faint);text-transform:uppercase;border-top:1px solid var(--rule-dark);background:var(--paper-dark);}
+.foot a{color:var(--ink-dim);text-decoration:none;}
+.foot a:hover{color:var(--accent-3);}
+
+@media (max-width:1080px){
+  .panel{flex-basis:380px;}
+  .figure{transform:scale(0.82);}
+}
+</style>
+</head>
+<body>
+<div id="root"><div class="loading">Loading the value chain…</div></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="explorer-data.js"></script>
+<script type="text/babel" src="explorer-app.jsx"></script>
+</body>
+</html>

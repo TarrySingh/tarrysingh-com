@@ -140,3 +140,39 @@ export function SectionMap() {
     </div>
   )
 }
+
+/* ---------- Incident-response decision tree (workshop teaser) ---------- */
+const IR_STEPS: { k: string; t: string; d: string }[] = [
+  { k: "Immediate Action", t: "2 min", d: "Activate E-Stop, evacuate workers, secure the perimeter." },
+  { k: "Assessment", t: "5 min", d: "Document the scene, check for injuries, identify the failure mode." },
+  { k: "Technical Response", t: "10 min", d: "Download robot logs, isolate affected systems, preserve evidence." },
+  { k: "Stakeholder Comms", t: "5 min", d: "Notify management, safety team, vendor, and regulators as needed." },
+  { k: "Root-Cause Analysis", t: "15 min", d: "5-Why analysis, system-log review, component inspection." },
+]
+
+export function DecisionTree() {
+  const [step, setStep] = useState(0)
+  const done = step >= IR_STEPS.length - 1
+  return (
+    <div className="dt">
+      <div className="dt-scenario">
+        <div className="dt-tag">Workshop simulation · Safety breach</div>
+        <p className="dt-desc">A Figure 02 on the assembly line detects unusual resistance handling a door panel but keeps operating with increasing force — exceeding the safety threshold by <span className="accent">150%</span> — without triggering an emergency stop. Two workers are in proximity. <strong>Walk the response protocol.</strong></p>
+      </div>
+      <div className="dt-flow">
+        {IR_STEPS.map((s, i) => (
+          <button key={i} className={"dt-step" + (i <= step ? " active" : "") + (i === step ? " current" : "")} onClick={() => setStep(i)}>
+            <span className="dt-num">{i + 1}</span>
+            <span className="dt-k">{s.k}<em>{s.t}</em></span>
+            <span className="dt-d">{s.d}</span>
+          </button>
+        ))}
+      </div>
+      <div className="dt-ctrl">
+        <button className="dt-btn" disabled={step === 0} onClick={() => setStep((s) => Math.max(0, s - 1))}>← Back</button>
+        <div className="dt-prog">{Math.min(step + 1, IR_STEPS.length)} / {IR_STEPS.length}</div>
+        <button className="dt-btn primary" disabled={done} onClick={() => setStep((s) => Math.min(IR_STEPS.length - 1, s + 1))}>{done ? "Protocol complete ✓" : "Next step →"}</button>
+      </div>
+    </div>
+  )
+}
