@@ -1,0 +1,128 @@
+/* The Humanoid Ascendancy — scoped design system, ported verbatim from the
+   reference canvas. EVERY rule is scoped under .ha-root so this dark microsite
+   never leaks into the rest of tarrysingh.com (globals.css / Tailwind preflight
+   stay untouched outside this tree). This is the Phase-1 SLICE subset; it grows
+   as each section is ported. Tokens + fonts on .ha-root; @keyframes hoisted. */
+
+.ha-root {
+  --paper-dark: #15151a; --paper-dark-2: #1d1d24; --paper-dark-3: #25262e;
+  --ink: #f4f2ec; --ink-dim: rgba(244, 242, 236, 0.62); --ink-faint: rgba(244, 242, 236, 0.40);
+  --rule: rgba(244, 242, 236, 0.16); --rule-2: rgba(244, 242, 236, 0.30);
+  --accent: #2040df; --accent-2: #3a59e8; --accent-3: #6f86f0; --accent-soft: rgba(32, 64, 223, 0.13);
+  --c-blue: #3a59e8; --c-violet: #7b61ff; --c-cyan: #22b8cf; --c-green: #2bb673; --c-amber: #f0a830; --c-red: #ff5a5f; --c-magenta: #c061f0;
+  --pos: #2bb673; --neg: #ff5a5f;
+  --font-display: var(--font-ha-display), "Space Grotesk", sans-serif;
+  --font-sans: var(--font-ha-sans), "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-ha-mono), "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --maxw: 1280px;
+  background: var(--paper-dark); color: var(--ink); font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased; min-height: 100vh; position: relative;
+}
+.ha-root * { box-sizing: border-box; }
+.ha-root a { color: inherit; text-decoration: none; }
+.ha-root .accent { color: var(--accent-3); }
+.ha-root .mono { font-family: var(--font-mono); }
+
+/* ---- sticky nav ---- */
+.ha-root .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; backdrop-filter: blur(6px); background: rgba(18, 18, 22, 0.88); border-bottom: 1px solid transparent; transition: border-color .3s, background .3s; }
+.ha-root .nav.scrolled { border-bottom-color: var(--rule); }
+.ha-root .nav .logo { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
+.ha-root .nav .logo .tk { width: 24px; height: 5px; background: var(--accent); }
+.ha-root .nav .links { display: flex; gap: 30px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-dim); }
+.ha-root .nav .links a { transition: color .2s; }
+.ha-root .nav .links a:hover { color: var(--ink); }
+.ha-root .nav-prog { position: absolute; left: 0; bottom: -1px; height: 2px; background: var(--accent); transition: width .12s linear; }
+@media (max-width: 860px) { .ha-root .nav .links { display: none; } }
+
+/* ---- layout ---- */
+.ha-root .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 40px; }
+.ha-root section { position: relative; }
+.ha-root .eyebrow { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--chap, var(--accent-3)); display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+.ha-root .eyebrow::before { content: ""; width: 34px; height: 4px; background: var(--chap, var(--accent)); }
+.ha-root .sec-h { font-family: var(--font-display); font-size: 54px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.04; margin: 0 0 20px; max-width: 24ch; text-wrap: balance; }
+.ha-root .band .sec-h::after { content: ""; display: block; width: 60px; height: 4px; background: var(--chap, var(--accent)); margin-top: 24px; border-radius: 2px; }
+.ha-root .sec-sub { font-size: 22px; line-height: 1.5; color: var(--ink-dim); max-width: 62ch; margin: 0; }
+.ha-root .band { padding: 120px 0; border-top: 1px solid var(--rule); }
+.ha-root .band.tight { padding: 96px 0; }
+.ha-root .band .accent { color: var(--chap, var(--accent-3)); }
+
+/* ---- hero ---- */
+.ha-root .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 40px 80px; position: relative; overflow: hidden; }
+.ha-root .hero .grid-bg { position: absolute; inset: 0; background-image: linear-gradient(var(--rule) 1px, transparent 1px), linear-gradient(90deg, var(--rule) 1px, transparent 1px); background-size: 80px 80px; opacity: 0.5; -webkit-mask-image: radial-gradient(ellipse at 30% 40%, #000, transparent 75%); mask-image: radial-gradient(ellipse at 30% 40%, #000, transparent 75%); }
+.ha-root .hero-inner { max-width: var(--maxw); margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+.ha-root .hero .kick { font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 34px; display: flex; gap: 16px; align-items: center; }
+.ha-root .hero .kick .tk { width: 54px; height: 6px; background: var(--accent); }
+.ha-root .hero h1 { font-family: var(--font-display); font-size: clamp(56px, 9vw, 140px); font-weight: 600; letter-spacing: -0.04em; line-height: 0.92; margin: 0; }
+.ha-root .hero .lede { font-size: clamp(22px, 2.4vw, 38px); line-height: 1.34; max-width: 24ch; margin: 40px 0 0; font-weight: 400; }
+.ha-root .hero .scrollcue { margin-top: 64px; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); display: flex; align-items: center; gap: 12px; }
+.ha-root .hero .scrollcue .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: ha-pulse 2s var(--ease) infinite; }
+@keyframes ha-pulse { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+
+/* ---- section map (ToC) ---- */
+.ha-root .smap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 56px; }
+.ha-root .smap-card { position: relative; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 22px; align-items: baseline; padding: 28px 30px; border: 1px solid var(--rule); background: var(--paper-dark-2); transition: border-color .25s, background .25s, transform .25s; }
+.ha-root .smap-card:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateY(-2px); }
+.ha-root .smap-n { grid-row: 1/3; font-family: var(--font-mono); font-size: 20px; color: var(--accent-3); }
+.ha-root .smap-t { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.015em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ha-root .smap-tag { font-style: normal; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border: 1px solid var(--rule-2); color: var(--ink-dim); }
+.ha-root .smap-tag.t-interactive { color: var(--c-cyan); border-color: color-mix(in srgb, var(--c-cyan) 50%, transparent); }
+.ha-root .smap-tag.t-live { color: var(--c-amber); border-color: color-mix(in srgb, var(--c-amber) 50%, transparent); }
+.ha-root .smap-tag.t-premium { color: var(--c-amber); border-color: var(--c-amber); background: color-mix(in srgb, var(--c-amber) 12%, transparent); }
+.ha-root .smap-tag.t-read { color: var(--ink-faint); }
+.ha-root .smap-s { grid-column: 2; font-size: 16px; color: var(--ink-dim); margin-top: 4px; }
+.ha-root .smap-arrow { position: absolute; right: 26px; top: 26px; color: var(--ink-faint); transition: color .2s, transform .2s; }
+.ha-root .smap-card:hover .smap-arrow { color: var(--accent-3); transform: translateX(4px); }
+@media (max-width: 760px) { .ha-root .smap { grid-template-columns: 1fr; } }
+
+/* ---- market model ---- */
+.ha-root .mm { display: grid; grid-template-columns: 1.55fr 1fr; gap: 36px; margin-top: 56px; align-items: stretch; }
+.ha-root .mm-chart { background: var(--paper-dark-2); border: 1px solid var(--rule); padding: 20px 24px; display: flex; align-items: center; }
+.ha-root .mm-chart svg { width: 100%; height: auto; }
+.ha-root .mm-axis { font-family: var(--font-mono); font-size: 15px; fill: var(--ink-faint); letter-spacing: 0.04em; }
+.ha-root .mm-pt { font-family: var(--font-mono); font-size: 21px; font-weight: 600; fill: var(--ink); }
+.ha-root .mm-panel { display: flex; flex-direction: column; }
+.ha-root .mm-readout { border: 1px solid var(--rule); background: var(--paper-dark-2); padding: 24px 26px; margin-bottom: 22px; }
+.ha-root .mm-k { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); }
+.ha-root .mm-big { font-family: var(--font-display); font-size: 72px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; color: var(--accent-3); margin-top: 8px; }
+.ha-root .mm-sub { font-size: 16px; color: var(--ink-dim); margin-top: 10px; }
+.ha-root .mm-ctrl { margin-bottom: 20px; }
+.ha-root .mm-lab { display: flex; justify-content: space-between; font-size: 15px; color: var(--ink-dim); margin-bottom: 12px; font-family: var(--font-mono); letter-spacing: 0.02em; }
+.ha-root .mm-lab span { color: var(--ink); font-weight: 600; }
+.ha-root input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 4px; background: var(--paper-dark-3); outline: none; cursor: pointer; }
+.ha-root input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); border: 3px solid var(--paper-dark); box-shadow: 0 0 0 1px var(--accent); }
+.ha-root input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: var(--accent); border: 3px solid var(--paper-dark); }
+.ha-root .mm-scn { display: flex; gap: 8px; margin-top: 12px; }
+.ha-root .mm-scn.five { flex-wrap: wrap; }
+.ha-root .mm-scn.five .mm-btn { flex: 1 1 30%; }
+.ha-root .mm-btn { flex: 1; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 11px 8px; background: transparent; border: 1px solid var(--rule-2); color: var(--ink-dim); cursor: pointer; transition: all .2s; }
+.ha-root .mm-btn:hover { color: var(--ink); border-color: var(--accent-3); }
+.ha-root .mm-btn.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.ha-root .mm-note { margin-top: 14px; font-size: 14px; color: var(--ink-faint); line-height: 1.5; font-family: var(--font-mono); letter-spacing: 0.02em; }
+@media (max-width: 880px) { .ha-root .mm { grid-template-columns: 1fr; } }
+
+/* ---- sticky chapter rail ---- */
+.ha-root .crail { position: fixed; top: 50%; left: 24px; transform: translateY(-50%); z-index: 40; display: flex; flex-direction: column; gap: 3px; }
+@media (max-width: 1180px) { .ha-root .crail { display: none; } }
+.ha-root .crail-item { display: flex; align-items: center; gap: 12px; background: transparent; border: none; cursor: pointer; padding: 5px 0; text-align: left; }
+.ha-root .crail-tick { width: 26px; height: 2px; background: var(--rule-2); transition: all .3s; flex: 0 0 auto; }
+.ha-root .crail-item.on .crail-tick { width: 40px; background: var(--cc, var(--accent)); }
+.ha-root .crail-item:hover .crail-tick { background: var(--ink-dim); }
+.ha-root .crail-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); opacity: 0; transform: translateX(-6px); transition: all .3s; white-space: nowrap; }
+.ha-root .crail-item.on .crail-label { color: var(--ink); }
+.ha-root .crail:hover .crail-label, .ha-root .crail-item.on .crail-label { opacity: 1; transform: none; }
+
+/* ---- reveal on scroll ---- */
+.ha-root .reveal { opacity: 0; transform: translateY(30px); filter: blur(4px); transition: opacity .8s var(--ease), transform .8s var(--ease), filter .8s var(--ease); will-change: opacity, transform; }
+.ha-root .reveal.in { opacity: 1; transform: none; filter: none; }
+@media (prefers-reduced-motion: reduce) { .ha-root .reveal { opacity: 1; transform: none; filter: none; transition: none; } }
+
+/* ---- mobile polish ---- */
+@media (max-width: 680px) {
+  .ha-root .wrap { padding: 0 22px; }
+  .ha-root .band { padding: 72px 0; }
+  .ha-root .sec-h { font-size: 34px; }
+  .ha-root .hero { padding: 96px 22px 64px; }
+  .ha-root .hero .lede { font-size: 21px; }
+  .ha-root .nav { padding: 14px 22px; }
+}

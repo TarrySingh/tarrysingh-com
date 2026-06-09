@@ -6,6 +6,20 @@ import { NewsletterFooter } from "@/components/blog/NewsletterFooter"
 
 const experiments = [
   {
+    title: "The Humanoid Ascendancy",
+    tagline: "Interactive Field Guide · Embodied AI · June 2026.",
+    description:
+      "A McKinsey-grade field guide to the humanoid-robotics industry — a live market model, a clickable value chain, a US·China·Korea supply-chain war map, ROI labs, and a hands-on workshop. The whole story of embodied AI in one explorable, dark-canvas microsite.",
+    to: "/humanoid",
+    tag: "Field Guide · Embodied AI",
+    tech: "Next.js, React, inline SVG, Space Grotesk / Geist",
+    icon: Bot,
+    gradient: "from-blue-500/8 to-indigo-500/8",
+    accent: "bg-blue-500",
+    isNew: true,
+    date: "Jun 2026",
+  },
+  {
     title: "MEMPHIS",
     tagline: "Synaptic Cartography · Plate I · the chip.",
     description:
