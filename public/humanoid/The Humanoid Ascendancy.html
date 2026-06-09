@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Humanoid Ascendancy — Tarry Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* ============================================================
+   THE HUMANOID ASCENDANCY — deck system (self-contained)
+   ============================================================ */
+:root{
+  --paper-dark:#15151a; --paper-dark-2:#1d1d24; --paper-dark-3:#25262e;
+  --paper:#f3efe7; --paper-2:#e9e3d7;
+  --ink:#16161a; --ink-on-dark:#f4f2ec;
+  --ink-dim:rgba(244,242,236,0.62); --ink-faint:rgba(244,242,236,0.40);
+  --ink-paper-dim:rgba(22,22,26,0.58); --ink-paper-faint:rgba(22,22,26,0.40);
+  --rule-dark:rgba(244,242,236,0.16); --rule-dark-2:rgba(244,242,236,0.30);
+  --rule-paper:rgba(22,22,26,0.16); --rule-paper-2:rgba(22,22,26,0.28);
+  --accent:#2040df; --accent-2:#3a59e8; --accent-3:#5a74ec;
+  --accent-soft:rgba(32,64,223,0.14); --accent-on-paper:#2040df;
+  --type-display:122px; --type-mega:128px; --type-h1:62px; --type-h2:42px;
+  --type-lead:38px; --type-body:31px; --type-small:25px; --type-caption:24px; --type-micro:17px;
+  --pad-x:120px; --pad-top:92px; --pad-bottom:74px;
+  --font-sans:"Geist","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-mono:"IBM Plex Mono","SF Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(0.22,0.61,0.36,1);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;height:100%;background:#000;}
+deck-stage:not(:defined){visibility:hidden;}
+
+/* ---------- base slide ---------- */
+.slide{
+  box-sizing:border-box; padding:var(--pad-top) var(--pad-x) var(--pad-bottom);
+  display:flex; flex-direction:column; overflow:hidden;
+  font-family:var(--font-sans); background:var(--paper-dark); color:var(--ink-on-dark);
+  font-feature-settings:"ss01","cv01"; -webkit-font-smoothing:antialiased;
+}
+.slide.paper{background:var(--paper); color:var(--ink);}
+.accent{color:var(--accent);}
+.slide.paper .accent{color:var(--accent-on-paper);}
+
+/* eyebrow / kicker */
+.eyebrow{
+  font-family:var(--font-mono); font-size:var(--type-caption); font-weight:500;
+  letter-spacing:0.24em; text-transform:uppercase; color:var(--ink-dim);
+  display:flex; align-items:center; gap:18px;
+}
+.eyebrow .tick{width:34px; height:4px; background:var(--accent); display:inline-block;}
+.slide.paper .eyebrow{color:var(--ink-paper-dim);}
+
+/* action title */
+.atitle{
+  font-weight:600; font-size:var(--type-h1); line-height:1.04; letter-spacing:-0.022em;
+  margin:26px 0 0; max-width:25ch; text-wrap:balance;
+}
+.atitle.tight{max-width:20ch;}
+.atitle.wide{max-width:30ch;}
+
+/* body text */
+.lead{font-size:var(--type-lead); line-height:1.34; font-weight:400; letter-spacing:-0.01em; max-width:30ch; color:var(--ink-on-dark);}
+.slide.paper .lead{color:var(--ink);}
+.body{font-size:var(--type-body); line-height:1.42; font-weight:400; max-width:34ch; color:var(--ink-dim);}
+.slide.paper .body{color:var(--ink-paper-dim);}
+.dim{color:var(--ink-dim);} .slide.paper .dim{color:var(--ink-paper-dim);}
+
+/* layout helpers */
+.grow{flex:1 1 auto; min-height:0;}
+.row{display:flex; gap:64px;}
+.col{display:flex; flex-direction:column;}
+.between{justify-content:space-between;}
+.center-v{justify-content:center;}
+
+/* footer chrome */
+.foot{
+  margin-top:auto; padding-top:22px; border-top:1px solid var(--rule-dark);
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:var(--font-mono); font-size:var(--type-micro); letter-spacing:0.08em;
+  color:var(--ink-faint); text-transform:uppercase;
+}
+.slide.paper .foot{border-top-color:var(--rule-paper); color:var(--ink-paper-faint);}
+.foot .mark{color:var(--ink-dim);}
+.slide.paper .foot .mark{color:var(--ink-paper-dim);}
+
+/* ---------- cover ---------- */
+.cover{padding:0; position:relative; justify-content:flex-start;}
+.cover .frame{position:absolute; inset:56px; border:1px solid var(--rule-dark); pointer-events:none;}
+.cover .ctop{position:absolute; left:var(--pad-x); top:120px; right:var(--pad-x); display:flex; justify-content:space-between; align-items:baseline;}
+.cover .chead{position:absolute; left:var(--pad-x); top:392px;}
+.cover .ctick{display:inline-block; width:64px; height:6px; background:var(--accent); margin-bottom:30px;}
+.cover .display{font-weight:600; font-size:var(--type-display); line-height:0.94; letter-spacing:-0.035em; margin:0; white-space:nowrap;}
+.cover .cidea{position:absolute; left:var(--pad-x); top:728px; max-width:1180px; font-size:40px; line-height:1.32; letter-spacing:-0.01em;}
+.cover .cfoot{position:absolute; left:var(--pad-x); right:var(--pad-x); bottom:96px; display:flex; justify-content:space-between; align-items:flex-end; font-family:var(--font-mono); font-size:21px; letter-spacing:0.06em; color:var(--ink-dim); padding-top:22px; border-top:1px solid var(--rule-dark);}
+.cover .cfoot .mk{color:var(--ink-on-dark); letter-spacing:0.2em; text-transform:uppercase;}
+.cover .cfoot span{white-space:nowrap;}
+
+/* ---------- divider ---------- */
+.divider{justify-content:flex-end; position:relative;}
+.divider .pno{font-family:var(--font-mono); font-size:24px; letter-spacing:0.3em; text-transform:uppercase; color:var(--accent); margin-bottom:30px;}
+.divider .ptitle{font-weight:600; font-size:84px; line-height:1.02; letter-spacing:-0.03em; max-width:24ch; margin:0;}
+.divider .pmeta{margin-top:40px; font-family:var(--font-mono); font-size:var(--type-caption); letter-spacing:0.06em; color:var(--ink-dim); max-width:60ch; line-height:1.6;}
+.divider .pindex{position:absolute; right:var(--pad-x); top:var(--pad-top); font-family:var(--font-mono); font-size:200px; font-weight:300; line-height:0.8; color:rgba(244,242,236,0.05); letter-spacing:-0.04em;}
+
+/* ---------- big figure ---------- */
+.figwrap{display:flex; align-items:baseline; gap:40px; margin-top:8px;}
+.bigfig{font-weight:600; font-size:var(--type-mega); letter-spacing:-0.04em; line-height:0.86; color:var(--accent);}
+.bigfig.ink{color:var(--ink-on-dark);} .slide.paper .bigfig.ink{color:var(--ink);}
+.figunit{font-family:var(--font-mono); font-size:var(--type-small); letter-spacing:0.1em; color:var(--ink-dim); text-transform:uppercase;}
+
+/* stat band */
+.statband{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid var(--rule-dark);}
+.statband .st{padding:36px 36px 36px 0; border-right:1px solid var(--rule-dark);}
+.statband .st:last-child{border-right:none;}
+.statband .sn{font-weight:600; font-size:64px; letter-spacing:-0.03em; line-height:1; color:var(--ink-on-dark);}
+.statband .sn .accent{color:var(--accent);}
+.statband .sl{margin-top:16px; font-size:var(--type-small); line-height:1.3; color:var(--ink-dim); max-width:22ch;}
+.statband .sk{font-family:var(--font-mono); font-size:var(--type-micro); letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:14px;}
+.slide.paper .statband, .slide.paper .statband .st{border-color:var(--rule-paper);}
+.slide.paper .statband .sn{color:var(--ink);} .slide.paper .statband .sl{color:var(--ink-paper-dim);}
+
+/* ---------- exhibits / charts ---------- */
+.exkick{font-family:var(--font-mono); font-size:var(--type-caption); letter-spacing:0.22em; text-transform:uppercase; color:var(--accent);}
+.source{font-family:var(--font-mono); font-size:var(--type-micro); letter-spacing:0.05em; color:var(--ink-faint); line-height:1.5;}
+.slide.paper .source{color:var(--ink-paper-faint);}
+
+/* segmented bar */
+.scaleline{display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:var(--type-micro); color:var(--ink-faint); letter-spacing:0.08em; border-bottom:1px solid var(--rule-dark); padding-bottom:10px;}
+.segbar{display:flex; height:150px; margin-top:18px; border:1px solid var(--rule-dark);}
+.segbar .seg{position:relative; border-right:1px solid var(--paper-dark); display:flex; align-items:flex-end; padding:16px 18px;}
+.segbar .seg:last-child{border-right:none;}
+.seg .sv{font-family:var(--font-mono); font-size:22px; font-weight:600; color:#fff;}
+.seg.neutral{background:var(--paper-dark-3);} .seg.neutral .sv{color:var(--ink-on-dark);}
+
+/* simple data table */
+.dtable{width:100%; border-collapse:collapse; font-size:var(--type-small);}
+.dtable th{font-family:var(--font-mono); font-weight:500; font-size:var(--type-micro); letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); text-align:left; padding:0 22px 16px 0; border-bottom:1px solid var(--rule-dark-2); vertical-align:bottom;}
+.dtable td{padding:20px 22px 20px 0; border-bottom:1px solid var(--rule-dark); color:var(--ink-on-dark); vertical-align:top; line-height:1.3;}
+.dtable tr:last-child td{border-bottom:none;}
+.dtable td.lead-cell{font-weight:600;}
+.dtable td .sub{display:block; color:var(--ink-faint); font-size:var(--type-micro); font-family:var(--font-mono); margin-top:6px; letter-spacing:0.04em;}
+.dtable .num{font-family:var(--font-mono); font-variant-numeric:tabular-nums;}
+.dtable .hot{color:var(--accent); font-weight:600;}
+.slide.paper .dtable th{color:var(--ink-paper-faint); border-bottom-color:var(--rule-paper-2);}
+.slide.paper .dtable td{color:var(--ink); border-bottom-color:var(--rule-paper);}
+
+/* horizontal bars (forecast etc) */
+.hbars{display:flex; flex-direction:column; gap:22px; margin-top:8px;}
+.hbar{display:grid; grid-template-columns:240px 1fr 150px; align-items:center; gap:24px;}
+.hbar .hlab{font-size:var(--type-small); color:var(--ink-on-dark);}
+.hbar .hlab .sub{display:block; font-family:var(--font-mono); font-size:var(--type-micro); color:var(--ink-faint); margin-top:4px; letter-spacing:0.04em;}
+.hbar .htrack{height:26px; background:var(--paper-dark-2); position:relative;}
+.hbar .hfill{height:100%; background:var(--accent);}
+.hbar .hfill.muted{background:var(--paper-dark-3);}
+.hbar .hval{font-family:var(--font-mono); font-size:var(--type-small); font-variant-numeric:tabular-nums; text-align:right; color:var(--ink-on-dark);}
+.slide.paper .hbar .htrack{background:var(--paper-2);}
+
+/* callout figure block */
+.callout{display:flex; align-items:baseline; gap:34px;}
+.callout .big{font-size:108px; font-weight:600; letter-spacing:-0.04em; color:var(--accent); line-height:0.86;}
+.callout .ctxt{font-size:32px; line-height:1.32; max-width:30ch; color:var(--ink-on-dark);}
+.slide.paper .callout .ctxt{color:var(--ink);}
+
+/* two-up panels */
+.panels{display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid var(--rule-dark);}
+.panels.three{grid-template-columns:repeat(3,1fr);}
+.panel{padding:40px 44px 40px 0; border-right:1px solid var(--rule-dark);}
+.panel:last-child{border-right:none;}
+.panel .ph{font-family:var(--font-mono); font-size:var(--type-micro); letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:18px;}
+.panel .pt{font-size:30px; font-weight:600; letter-spacing:-0.015em; line-height:1.12; margin-bottom:14px;}
+.panel .pb{font-size:var(--type-small); line-height:1.4; color:var(--ink-dim);}
+.slide.paper .panels, .slide.paper .panel{border-color:var(--rule-paper);}
+.slide.paper .panel .pb{color:var(--ink-paper-dim);}
+
+/* quote */
+.quote{font-weight:500; font-size:58px; line-height:1.18; letter-spacing:-0.02em; max-width:24ch;}
+.quote .accent{color:var(--accent);}
+.qattr{margin-top:48px; font-family:var(--font-mono); font-size:var(--type-caption); letter-spacing:0.06em; color:var(--ink-dim);}
+
+/* value-chain spine (reused from cover C) */
+.vc{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:8px;}
+.vc .vnode{border:1px solid var(--rule-dark-2); background:var(--paper-dark-2); padding:34px 36px; position:relative;}
+.vc .vnode.hot{border-color:var(--accent); background:var(--accent-soft);}
+.vc .vlab{font-family:var(--font-mono); font-size:var(--type-micro); letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-dim);}
+.vc .vnode.hot .vlab{color:var(--accent);}
+.vc .vval{font-size:34px; font-weight:600; letter-spacing:-0.02em; margin:14px 0 12px;}
+.vc .vsub{font-size:var(--type-small); line-height:1.36; color:var(--ink-dim);}
+.vc .vshare{position:absolute; right:36px; top:34px; font-family:var(--font-mono); font-size:var(--type-small); color:var(--ink-faint);}
+.vc .vnode.hot .vshare{color:var(--accent);}
+
+/* list */
+.deflist{display:flex; flex-direction:column; gap:0;}
+.deflist .di{display:grid; grid-template-columns:64px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--rule-dark); align-items:start;}
+.deflist .di:last-child{border-bottom:1px solid var(--rule-dark);}
+.deflist .dn{font-family:var(--font-mono); font-size:var(--type-small); color:var(--accent); padding-top:4px;}
+.deflist .dt{font-size:30px; font-weight:600; letter-spacing:-0.015em; margin-bottom:8px;}
+.deflist .dd{font-size:var(--type-small); line-height:1.4; color:var(--ink-dim); max-width:60ch;}
+.slide.paper .deflist .di{border-color:var(--rule-paper);}
+.slide.paper .deflist .dd{color:var(--ink-paper-dim);}
+
+/* entrance animation — transform-only so content is never blank in
+   capture/print/throttled states (opacity stays 1 throughout) */
+@media (prefers-reduced-motion:no-preference){
+  [data-deck-active] .anim{animation:rise .6s var(--ease) both;}
+  [data-deck-active] .anim-2{animation:rise .6s var(--ease) .08s both;}
+  [data-deck-active] .anim-3{animation:rise .6s var(--ease) .16s both;}
+  [data-deck-active] .anim-4{animation:rise .6s var(--ease) .24s both;}
+  @keyframes rise{from{transform:translateY(24px);} to{transform:none;}}
+}
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+
+  <!-- 01 · COVER -->
+  <section class="slide cover" data-screen-label="Cover">
+    <div class="frame"></div>
+    <div class="ctop">
+      <div class="eyebrow" style="color:var(--ink-dim)">Embodied AI · Global Market Deep&nbsp;Dive</div>
+      <div class="eyebrow" style="color:var(--ink-dim)">As of June 2026</div>
+    </div>
+    <div class="chead anim">
+      <span class="ctick"></span>
+      <h1 class="display">The Humanoid<br/>Ascendancy</h1>
+    </div>
+    <div class="cidea anim-2">
+      <p style="margin:0">The race won't be won by whoever builds the best robot — it'll be won by whoever controls <span class="accent">its muscles.</span> <span class="dim">A value-chain analysis of the new industrial frontier.</span></p>
+    </div>
+    <div class="cfoot">
+      <span class="mk">Tarry Singh</span>
+      <span>tarrysingh.com — Embodied AI / 01</span>
+    </div>
+  </section>
+
+  <!-- 02 · THESIS -->
+  <section class="slide" data-screen-label="The argument">
+    <div class="eyebrow anim"><span class="tick"></span>The argument</div>
+    <div class="grow col center-v">
+      <p class="anim-2" style="font-weight:500; font-size:64px; line-height:1.2; letter-spacing:-0.025em; max-width:24ch; margin:0;">
+        Embodied AI is the next computing platform. But the decisive value won't sit in the robot — it will sit in <span class="accent">the supply chain that builds its body.</span>
+      </p>
+      <p class="lead anim-3 dim" style="margin-top:48px; max-width:46ch; font-size:var(--type-body);">
+        Whoever controls the actuators, the sensors, and the foundation models — the picks and shovels of the humanoid gold rush — captures the decade. This deck follows that argument from market to machine to map.
+      </p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Tarry Singh · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 03 · AGENDA -->
+  <section class="slide" data-screen-label="Agenda">
+    <div class="eyebrow anim"><span class="tick"></span>What this deck answers</div>
+    <h1 class="atitle anim-2">Three questions decide who wins the humanoid decade.</h1>
+    <div class="grow"></div>
+    <div class="deflist anim-3">
+      <div class="di"><div class="dn">Q1</div><div><div class="dt">Is the market real — and how big?</div><div class="dd">Parts I. The inflection, the forecasts, the flywheel of capital. <span class="accent">Today ~16,000 units; by 2050 a $5 trillion prize.</span></div></div></div>
+      <div class="di"><div class="dn">Q2</div><div><div class="dt">Where does the value actually concentrate?</div><div class="dd">Parts II–III. Brain, body, integrator — and why the body is the bottleneck and the beachhead is the factory floor.</div></div></div>
+      <div class="di"><div class="dn">Q3</div><div><div class="dt">Who controls it, and what could break it?</div><div class="dd">Parts IV–VI. The US–China–Korea race for the supply chain, the human element, and what investors, leaders and policymakers should do.</div></div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Tarry Singh · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 04 · EXECUTIVE SUMMARY -->
+  <section class="slide" data-screen-label="Executive summary">
+    <div class="eyebrow anim"><span class="tick"></span>Executive summary · June 2026</div>
+    <h1 class="atitle anim-2 wide">By mid-2026, humanoids crossed from demo to deployment.</h1>
+    <div class="grow"></div>
+    <div class="statband anim-3">
+      <div class="st"><div class="sk">Installed base, 2025</div><div class="sn">~16<span class="accent">k</span></div><div class="sl">Humanoids installed worldwide — still tiny, but real revenue.</div></div>
+      <div class="st"><div class="sk">Market leader value</div><div class="sn">$39<span class="accent">B</span></div><div class="sl">Figure AI's valuation — up 15× in nineteen months.</div></div>
+      <div class="st"><div class="sk">Actuators / BOM</div><div class="sn">~53<span class="accent">%</span></div><div class="sl">Share of a humanoid's hardware cost — the muscles.</div></div>
+      <div class="st"><div class="sk">2050 TAM (Morgan Stanley)</div><div class="sn">$5<span class="accent">T</span></div><div class="sl">Revised up from $3T; over one billion machines.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: Counterpoint, Morgan Stanley, company filings · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 05 · PART I DIVIDER -->
+  <section class="slide divider" data-screen-label="Part I">
+    <div class="pindex">I</div>
+    <div class="pno anim">Part One</div>
+    <h2 class="ptitle anim-2">The market is real, but the prize is the supply chain.</h2>
+    <p class="pmeta anim-3">The dawn of the humanoid era — the inflection, the forecasts, and the flywheel of capital pulling the industry forward.</p>
+    <div class="foot" style="margin-top:64px"><span class="mark">The Humanoid Ascendancy</span><span>05 / 60 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 06 · INFLECTION -->
+  <section class="slide" data-screen-label="The inflection">
+    <div class="eyebrow anim"><span class="tick"></span>The inflection</div>
+    <h1 class="atitle anim-2 wide">In 2025 the conversation moved from "what if" to "how soon."</h1>
+    <div class="grow"></div>
+    <div class="row anim-3">
+      <p class="body" style="max-width:40ch">The catalyst was not one breakthrough but a convergence: mature robotic mechanics meeting multimodal AI. At CES 2025, NVIDIA's Jensen Huang spent nearly 40 minutes on physical AI, sharing the stage with 14 humanoids — a signal that re-rated the entire sector.</p>
+      <p class="body" style="max-width:40ch">By CES 2026, that signal had become a product launch: Boston Dynamics unveiled the production Atlas, Figure was shipping Figure 03, and "embodied AI" had moved from an investment thesis to a deployment timeline.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: NVIDIA CES 2025–26 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 07 · BROWNFIELD ADVANTAGE -->
+  <section class="slide" data-screen-label="Why the human form">
+    <div class="eyebrow anim"><span class="tick"></span>The case for the human form</div>
+    <h1 class="atitle anim-2">The humanoid wins because the world is already built for it.</h1>
+    <div class="grow"></div>
+    <div class="panels three anim-3">
+      <div class="panel"><div class="ph">Brownfield</div><div class="pt">No retrofit required</div><div class="pb">Specialized robots demand costly changes to the workplace. A humanoid uses the same doors, stairs, and tools we do — lowering the barrier to entry.</div></div>
+      <div class="panel"><div class="ph">General-purpose</div><div class="pt">One platform, many tasks</div><div class="pb">The human hand is a universal tool. A machine that replicates it can do many jobs without a suite of bespoke end-effectors.</div></div>
+      <div class="panel"><div class="ph">Addressable market</div><div class="pt">Built for human spaces</div><div class="pb">Factories, warehouses, hospitals, homes — all designed around the human body. The form factor is the addressable market.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 08 · ~16,000 UNITS -->
+  <section class="slide" data-screen-label="Installed base">
+    <div class="eyebrow anim"><span class="tick"></span>Where we actually are</div>
+    <h1 class="atitle anim-2 wide">Today the market is tiny — about 16,000 robots were installed in 2025.</h1>
+    <div class="grow center-v">
+      <div class="figwrap anim-3">
+        <span class="bigfig">~16,000</span>
+        <span class="figunit">units installed<br/>worldwide, 2025</span>
+      </div>
+      <p class="body anim-3" style="margin-top:40px; max-width:52ch">Real revenue, real deployments — but a rounding error against the long-run vision. The five largest suppliers accounted for roughly 73% of installations, and four of those five shipped from China.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Counterpoint Research, Jan 2026 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 09 · FORECAST TABLE -->
+  <section class="slide" data-screen-label="Forecasts diverge">
+    <div class="eyebrow anim"><span class="tick"></span>Exhibit · Market forecasts compared</div>
+    <h1 class="atitle anim-2 wide">The forecasts disagree by 6× — and the disagreement is the real signal.</h1>
+    <div class="grow" style="margin-top:48px">
+      <table class="dtable anim-3">
+        <thead><tr><th style="width:30%">Research firm</th><th>2025 market</th><th>Forecast horizon</th><th>Forecast value</th><th>CAGR</th></tr></thead>
+        <tbody>
+          <tr><td class="lead-cell">MarketsandMarkets</td><td class="num">$3.0B</td><td class="num">2030</td><td class="num">$15.3B</td><td class="num">39%</td></tr>
+          <tr><td class="lead-cell">Goldman Sachs</td><td class="num">—</td><td class="num">2035</td><td class="num">$38B</td><td class="num">—</td></tr>
+          <tr><td class="lead-cell">Research Nester</td><td class="num">$4.4B</td><td class="num">2035</td><td class="num num">$82B</td><td class="num">44%</td></tr>
+          <tr><td class="lead-cell">Coherent Market Insights</td><td class="num">$4.3B</td><td class="num">2032</td><td class="num">$70B</td><td class="num">49%</td></tr>
+          <tr><td class="lead-cell hot">GlobeNewswire (aggressive)</td><td class="num">$3.0B</td><td class="num">2035</td><td class="num hot">$243B</td><td class="num hot">49%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source anim-4" style="max-width:80ch; margin-bottom:18px">The spread doesn't reflect doubt about the destination — it reflects uncertainty about timing. Aggressive forecasts assume non-linear breakthroughs in actuator cost, battery density, and AI reliability. The market's path is hostage to specific technical milestones.</p>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: MarketsandMarkets, Goldman Sachs, Research Nester, CMI · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 10 · $5T TAM -->
+  <section class="slide" data-screen-label="$5T TAM">
+    <div class="eyebrow anim"><span class="tick"></span>The long-run prize</div>
+    <h1 class="atitle anim-2 wide">Morgan Stanley just doubled the prize — to a $5 trillion market by 2050.</h1>
+    <div class="grow center-v">
+      <div class="callout anim-3">
+        <span class="big">$5T</span>
+        <span class="ctxt">Morgan Stanley's revised 2050 total addressable market — up from $3 trillion, driven by over one billion humanoids and a higher per-unit value.</span>
+      </div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Morgan Stanley Research, "Humanoid 100" · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 11 · 1B–20B MACHINES -->
+  <section class="slide" data-screen-label="One billion machines">
+    <div class="eyebrow anim"><span class="tick"></span>The scale of the vision</div>
+    <h1 class="atitle anim-2">The long-run vision spans one billion to twenty billion machines.</h1>
+    <div class="grow"></div>
+    <div class="statband anim-3" style="grid-template-columns:repeat(3,1fr)">
+      <div class="st"><div class="sk">Morgan Stanley · 2050</div><div class="sn">1<span class="accent">B+</span></div><div class="sl">Humanoids in operation — 302M in China, 78M in the US.</div></div>
+      <div class="st"><div class="sk">Elon Musk · vision</div><div class="sn">10–20<span class="accent">B</span></div><div class="sl">Musk's projection — more humanoids than people.</div></div>
+      <div class="st"><div class="sk">Per-unit cost · 2024</div><div class="sn">~$200<span class="accent">k</span></div><div class="sl">Falling fast toward a mass-market target.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: Morgan Stanley; Tesla · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 12 · FLYWHEEL -->
+  <section class="slide" data-screen-label="Investment flywheel">
+    <div class="eyebrow anim"><span class="tick"></span>The innovation flywheel</div>
+    <h1 class="atitle anim-2">Capital is compounding into an innovation flywheel.</h1>
+    <div class="grow"></div>
+    <div class="deflist anim-3">
+      <div class="di"><div class="dn">01</div><div><div class="dt">Capital funds aggressive R&amp;D and talent</div><div class="dd">Mega-rounds let pure-plays out-hire and out-spend, compressing development timelines.</div></div></div>
+      <div class="di"><div class="dn">02</div><div><div class="dt">R&amp;D produces visible breakthroughs</div><div class="dd">New VLA models, in-house actuators, and live factory pilots de-risk the thesis.</div></div></div>
+      <div class="di"><div class="dn">03</div><div><div class="dt">Breakthroughs attract still more capital</div><div class="dd">Each milestone re-rates valuations — and the cycle accelerates.</div></div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 13 · FIGURE 15X -->
+  <section class="slide" data-screen-label="Figure 15x">
+    <div class="eyebrow anim"><span class="tick"></span>Exhibit · Figure AI valuation</div>
+    <h1 class="atitle anim-2 wide">Figure's valuation rose 15× in nineteen months.</h1>
+    <div class="grow center-v" style="gap:40px">
+      <div class="hbars anim-3" style="max-width:1500px">
+        <div class="hbar"><div class="hlab">Series B<span class="sub">Feb 2024 · $675M raised</span></div><div class="htrack"><div class="hfill muted" style="width:6.6%"></div></div><div class="hval">$2.6B</div></div>
+        <div class="hbar"><div class="hlab">Series C<span class="sub">Sep 2025 · $1B+ raised</span></div><div class="htrack"><div class="hfill" style="width:100%"></div></div><div class="hval">$39B</div></div>
+      </div>
+      <p class="body anim-4" style="max-width:56ch">Led by Parkway Venture Capital with Brookfield, NVIDIA, Intel, Qualcomm, Salesforce and T-Mobile. Total capital raised: ~$1.9B — the best-funded pure-play in the field.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Figure AI, Sep 2025 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 14 · MEGA-ROUNDS -->
+  <section class="slide" data-screen-label="Mega-rounds">
+    <div class="eyebrow anim"><span class="tick"></span>Exhibit · The 2025–26 funding wave</div>
+    <h1 class="atitle anim-2 wide">The mega-rounds put real money behind the thesis.</h1>
+    <div class="grow" style="margin-top:40px">
+      <table class="dtable anim-3">
+        <thead><tr><th style="width:26%">Company</th><th>Round</th><th>Amount</th><th>Lead / notable backers</th><th>Valuation</th></tr></thead>
+        <tbody>
+          <tr><td class="lead-cell">Figure AI <span class="sub">US</span></td><td>Series C · Sep 2025</td><td class="num hot">$1B+</td><td>Parkway, Brookfield, NVIDIA, Intel</td><td class="num">$39B</td></tr>
+          <tr><td class="lead-cell">Apptronik <span class="sub">US</span></td><td>Series A-X · Feb 2026</td><td class="num">$520M</td><td>Google, Mercedes-Benz, Jabil</td><td class="num">~$5B</td></tr>
+          <tr><td class="lead-cell">UBTech <span class="sub">China</span></td><td>Financing · Sep 2025</td><td class="num">$1B</td><td>State-linked &amp; strategic</td><td class="num">—</td></tr>
+          <tr><td class="lead-cell">Agility Robotics <span class="sub">US</span></td><td>Growth · 2024</td><td class="num">$400M</td><td>Existing &amp; strategic</td><td class="num">—</td></tr>
+          <tr><td class="lead-cell">LimX · Neura · Leju <span class="sub">CN / DE</span></td><td>2025–26</td><td class="num">$200M+</td><td>Regional &amp; strategic</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: company announcements, The Robot Report · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 15 · TECH GIANTS -->
+  <section class="slide" data-screen-label="Why giants fund">
+    <div class="eyebrow anim"><span class="tick"></span>Symbiotic ecosystems</div>
+    <h1 class="atitle anim-2">The tech giants are funding robots to own the next computing platform.</h1>
+    <div class="grow"></div>
+    <div class="panels three anim-3">
+      <div class="panel"><div class="ph">NVIDIA</div><div class="pt">Sells the brains</div><div class="pb">Chips and the Isaac simulation stack that train and run the robots — exposure to every integrator at once.</div></div>
+      <div class="panel"><div class="ph">Microsoft · Google</div><div class="pt">Sell the cloud &amp; models</div><div class="pb">Azure compute, and Google DeepMind's Gemini Robotics foundation models powering multiple platforms.</div></div>
+      <div class="panel"><div class="ph">Amazon · Mercedes</div><div class="pt">Buy the first-mover edge</div><div class="pb">Strategic adopters get a head start deploying automation against their own labor and efficiency problems.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 16 · PART II DIVIDER -->
+  <section class="slide divider" data-screen-label="Part II">
+    <div class="pindex">II</div>
+    <div class="pno anim">Part Two</div>
+    <h2 class="ptitle anim-2">A humanoid is a brain, a body, and an integrator.</h2>
+    <p class="pmeta anim-3">Anatomy of the machine — and why value concentrates unevenly across the three layers of the value chain.</p>
+    <div class="foot" style="margin-top:64px"><span class="mark">The Humanoid Ascendancy</span><span>16 / 60 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 17 · VALUE-CHAIN MAP -->
+  <section class="slide" data-screen-label="Value chain map">
+    <div class="eyebrow anim"><span class="tick"></span>The value chain</div>
+    <h1 class="atitle anim-2 wide">Value splits three ways — and it concentrates unevenly.</h1>
+    <div class="grow center-v">
+      <div class="vc anim-3">
+        <div class="vnode"><div class="vshare">~20%</div><div class="vlab">The Brain</div><div class="vval">Software &amp; chips</div><div class="vsub">Foundation models, perception, planning, AI accelerators. High margin, few winners.</div></div>
+        <div class="vnode hot"><div class="vshare">~50%</div><div class="vlab">The Body — the muscles</div><div class="vval">Actuators &amp; sensors</div><div class="vsub">The mechanical bottleneck. Half the cost, the hardest to source, the contested ground.</div></div>
+        <div class="vnode"><div class="vshare">assembly</div><div class="vlab">The Integrator</div><div class="vval">The robot maker</div><div class="vsub">Tesla, Figure, Agility, Boston Dynamics. Brand and data, but thin without the chain.</div></div>
+      </div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Framework: Morgan Stanley "Humanoid 100" · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 18 · LLM → VLA -->
+  <section class="slide" data-screen-label="LLM to VLA">
+    <div class="eyebrow anim"><span class="tick"></span>The Brain · foundation models</div>
+    <h1 class="atitle anim-2 wide">The brain evolved from language models to vision-language-action models.</h1>
+    <div class="grow"></div>
+    <div class="row anim-3">
+      <p class="body" style="max-width:42ch">An LLM reads and writes text. A <span class="accent">Vision-Language-Action (VLA)</span> model interprets multimodal input — sight, language, touch — and turns it into motor commands. "Put the apples in the basket" decomposes into perception, planning, and control.</p>
+      <p class="body" style="max-width:42ch">This is the difference between a chatbot and a worker. The VLA is what lets a humanoid generalize to tasks it was never explicitly programmed to do — the capability unlock behind the 2025–26 step-change.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 19 · TWO PHILOSOPHIES -->
+  <section class="slide" data-screen-label="Platform vs vertical">
+    <div class="eyebrow anim"><span class="tick"></span>The strategic divergence</div>
+    <h1 class="atitle anim-2">Two philosophies are fighting for the brain.</h1>
+    <div class="grow"></div>
+    <div class="panels anim-3">
+      <div class="panel"><div class="ph">Horizontal platform</div><div class="pt">NVIDIA — the open OS</div><div class="pb">Project GR00T is a general foundation model for many robots, trained in Isaac Sim. NVIDIA aims to be the AI operating system for the whole industry — Agility, Boston Dynamics and others as partners.</div></div>
+      <div class="panel"><div class="ph">Vertical integration</div><div class="pt">Tesla &amp; Figure — the closed stack</div><div class="pb">Peak performance comes from a bespoke AI tightly coupled to bespoke hardware. Figure exited its OpenAI partnership in Feb 2025 to build Helix in-house; Tesla extends its FSD stack to Optimus.</div></div>
+    </div>
+    <p class="source anim-4" style="margin-top:28px">A re-run of PC (Microsoft/Intel platform) vs. Apple (integrated). The winner decides where the value pools.</p>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 20 · GEMINI ROBOTICS -->
+  <section class="slide" data-screen-label="Gemini Robotics">
+    <div class="eyebrow anim"><span class="tick"></span>The new third force</div>
+    <h1 class="atitle anim-2 wide">A third force arrived: Google's Gemini Robotics now powers two leading robots.</h1>
+    <div class="grow center-v">
+      <p class="lead anim-3" style="max-width:40ch; font-size:46px">Google DeepMind's <span class="accent">Gemini Robotics</span> foundation models are integrated into Boston Dynamics' Atlas <span class="dim">and</span> Apptronik's Apollo.</p>
+      <p class="body anim-4" style="margin-top:36px; max-width:60ch">It reshapes the platform-vs-vertical map: a second horizontal brain provider, but one tied to the world's deepest AI research and willing to embed directly in partners' hardware. Atlas can reportedly learn a new industrial task in under a day.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: CES 2026; Boston Dynamics; Apptronik · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 21 · FIGURE HELIX -->
+  <section class="slide" data-screen-label="Figure Helix">
+    <div class="eyebrow anim"><span class="tick"></span>Case study · Figure's Helix</div>
+    <h1 class="atitle anim-2">Figure bet the company on building its brain in-house.</h1>
+    <div class="grow"></div>
+    <div class="panels three anim-3">
+      <div class="panel"><div class="ph">Architecture</div><div class="pt">One net, three layers</div><div class="pb">Helix 02 unifies walking, balance and manipulation. Layers S0 (control), S1 (visuomotor), S2 (reasoning) run on low-power onboard GPUs — no cloud required.</div></div>
+      <div class="panel"><div class="ph">Project Go-Big</div><div class="pt">Trained on human video</div><div class="pb">First-person video from Brookfield's 100,000 homes. Demonstrated zero-shot transfer: a robot navigating a home from "go to the fridge" with no robot-specific data.</div></div>
+      <div class="panel"><div class="ph">Thesis</div><div class="pt">"Vertically integrate"</div><div class="pb">Adcock: to solve embodied AI at scale, you must own the AI and the body. The bet that off-the-shelf models won't be good enough.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Figure AI, 2025–26 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 22 · POWER-LATENCY / NEUROMORPHIC -->
+  <section class="slide" data-screen-label="Power-latency">
+    <div class="eyebrow anim"><span class="tick"></span>The power-latency dilemma</div>
+    <h1 class="atitle anim-2 wide">Power, not intelligence, limits how long a humanoid can work.</h1>
+    <div class="grow"></div>
+    <div class="row anim-3">
+      <p class="body" style="max-width:42ch">Real-time autonomy runs on power-hungry GPUs, throttling battery life and uptime — a top complaint in early industrial pilots. The fix may be architectural, not chemical.</p>
+      <p class="body" style="max-width:42ch"><span class="accent">Neuromorphic computing</span> — Intel's Loihi 2, IBM's NorthPole — fuses memory and compute in brain-inspired, event-driven chips. Orders of magnitude more efficient for the sparse, asynchronous data of robotics. Still research-stage, but decisive for long-run viability.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: Intel; IBM Research · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 23 · SEMICONDUCTOR BACKBONE -->
+  <section class="slide" data-screen-label="Semiconductor backbone">
+    <div class="eyebrow anim"><span class="tick"></span>The semiconductor backbone</div>
+    <h1 class="atitle anim-2">Every robot brain still runs on the same short list of chips.</h1>
+    <div class="grow"></div>
+    <div class="deflist anim-3">
+      <div class="di"><div class="dn">Compute</div><div><div class="dt">NVIDIA · Qualcomm · Intel</div><div class="dd">High-performance GPUs and edge AI accelerators for training and onboard inference.</div></div></div>
+      <div class="di"><div class="dn">Vision</div><div><div class="dt">Ambarella · Mobileye</div><div class="dd">Specialized vision processors interpreting the robot's camera streams.</div></div></div>
+      <div class="di"><div class="dn">Memory</div><div><div class="dt">Micron · SK Hynix · Samsung</div><div class="dd">High-bandwidth memory feeding the models.</div></div></div>
+      <div class="di"><div class="dn">Make</div><div><div class="dt">TSMC · Synopsys · Cadence · Arm</div><div class="dd">Foundry, EDA software, and the licensed architectures underneath it all.</div></div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Morgan Stanley "Humanoid 100" · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 24 · HERO EXHIBIT · ACTUATOR BOM -->
+  <section class="slide" data-screen-label="Actuator BOM exhibit">
+    <div class="exkick anim">Exhibit · Bill of materials, Tesla Optimus Gen 2</div>
+    <h1 class="atitle anim-2 wide" style="margin-top:22px; max-width:32ch">The body, not the brain, is the bottleneck — actuators are half the cost.</h1>
+    <div class="grow center-v" style="margin-top:8px">
+      <div class="anim-3" style="margin-top:8px">
+        <div class="scaleline"><span>0%</span><span>SHARE OF BILL OF MATERIALS</span><span>100%</span></div>
+        <div class="segbar">
+          <div class="seg" style="flex-basis:20.3%; background:var(--accent)"><span class="sv">20.3</span></div>
+          <div class="seg" style="flex-basis:20.2%; background:var(--accent-2)"><span class="sv">20.2</span></div>
+          <div class="seg" style="flex-basis:12.6%; background:var(--accent-3)"><span class="sv">12.6</span></div>
+          <div class="seg neutral" style="flex-basis:46.9%"><span class="sv">46.9</span></div>
+        </div>
+        <div style="display:flex; margin-top:22px; font-family:var(--font-mono); font-size:var(--type-micro)">
+          <div style="flex-basis:20.3%"><div style="color:var(--ink-faint)">A1</div><div style="color:#8fa0ff; font-family:var(--font-sans); font-size:24px; font-weight:500; margin-top:8px">Frameless torque motors</div></div>
+          <div style="flex-basis:20.2%"><div style="color:var(--ink-faint)">A2</div><div style="color:#8fa0ff; font-family:var(--font-sans); font-size:24px; font-weight:500; margin-top:8px">Planetary roller screws</div></div>
+          <div style="flex-basis:12.6%"><div style="color:var(--ink-faint)">A3</div><div style="color:#8fa0ff; font-family:var(--font-sans); font-size:24px; font-weight:500; margin-top:8px">Harmonic drives</div></div>
+          <div style="flex-basis:46.9%"><div style="color:var(--ink-faint)">—</div><div style="color:var(--ink-on-dark); font-family:var(--font-sans); font-size:24px; font-weight:500; margin-top:8px">Everything else: brain, sensors, battery, structure, hands</div></div>
+        </div>
+      </div>
+      <div class="callout anim-4" style="margin-top:56px">
+        <span class="big">53%</span>
+        <span class="ctxt">Of a humanoid's hardware cost is its actuators. Whoever drives that cost down — or controls its supply — sets the pace of the entire industry.</span>
+      </div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Morgan Stanley "Humanoid 100." Optimus Gen 2: 28 actuators, 50 DoF · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 25 · ANATOMY OF AN ACTUATOR -->
+  <section class="slide" data-screen-label="Actuator anatomy">
+    <div class="eyebrow anim"><span class="tick"></span>Inside the muscle</div>
+    <h1 class="atitle anim-2 wide">An actuator is three hard parts: a screw, a reducer, and a motor.</h1>
+    <div class="grow" style="margin-top:40px">
+      <table class="dtable anim-3">
+        <thead><tr><th style="width:22%">Component</th><th>Does what</th><th>Leaders</th><th>The catch</th></tr></thead>
+        <tbody>
+          <tr><td class="lead-cell">Planetary roller screw <span class="sub">linear</span></td><td>Pushes &amp; pulls (legs, torso)</td><td>SKF, NSK, Hengli, Beite</td><td class="hot">$1,350–2,700 each; supply-constrained</td></tr>
+          <tr><td class="lead-cell">Harmonic drive <span class="sub">rotary</span></td><td>Zero-backlash joint rotation</td><td>Harmonic Drive Systems, LeaderDrive</td><td>Lower shock tolerance</td></tr>
+          <tr><td class="lead-cell">Cycloidal drive <span class="sub">rotary</span></td><td>High-torque, shock-resistant</td><td>Nabtesco, Sumitomo</td><td>Heavier, more backlash</td></tr>
+          <tr><td class="lead-cell">Frameless torque motor <span class="sub">core</span></td><td>Converts current to motion</td><td>Kollmorgen, TQ, Inovance</td><td>Needs thermal management</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Morgan Stanley "Humanoid 100" · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 26 · SUPPLY-CHAIN VULNERABILITY -->
+  <section class="slide" data-screen-label="Actuator vulnerability">
+    <div class="eyebrow anim"><span class="tick"></span>The strategic vulnerability</div>
+    <h1 class="atitle anim-2 wide">The hardest part to buy is also the one the West doesn't make.</h1>
+    <div class="grow center-v">
+      <p class="lead anim-3" style="max-width:38ch; font-size:46px">The best high-load screws are expensive, scarce, and increasingly made in <span class="accent">China.</span></p>
+      <p class="body anim-4" style="margin-top:36px; max-width:62ch">Harmonic reducers are led by Japan; routing components through China can trigger tariffs. Western developers face a direct dependency on a strategic competitor for the single most critical subsystem — a structural drag on their cost and pace of innovation.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Morgan Stanley; industry analysis · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 27 · SENSORY SYSTEM -->
+  <section class="slide" data-screen-label="Sensory system">
+    <div class="eyebrow anim"><span class="tick"></span>Perception</div>
+    <h1 class="atitle anim-2">To act safely, a robot must first perceive — vision, force, and touch.</h1>
+    <div class="grow"></div>
+    <div class="panels three anim-3">
+      <div class="panel"><div class="ph">Vision · the debate</div><div class="pt">LiDAR + camera vs. camera-only</div><div class="pb">Most developers fuse LiDAR and cameras for robust depth. Tesla bets on camera-only — cheaper hardware, far heavier compute, weaker in poor conditions.</div></div>
+      <div class="panel"><div class="ph">Force &amp; torque</div><div class="pt">6-axis sensing at wrists &amp; ankles</div><div class="pb">Enables compliant control — adjusting grip on a fragile object, balancing on uneven ground. Led by ATI (Novanta) and Hypersen.</div></div>
+      <div class="panel"><div class="ph">Touch · the frontier</div><div class="pt">Robotic skin</div><div class="pb">High-resolution tactile arrays sensing pressure, temperature and slip — the final gap between robotic and human dexterity.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 28 · PART III DIVIDER -->
+  <section class="slide divider" data-screen-label="Part III">
+    <div class="pindex">III</div>
+    <div class="pno anim">Part Three</div>
+    <h2 class="ptitle anim-2">Adoption is pragmatic: factories first, homes last.</h2>
+    <p class="pmeta anim-3">Humanoids at work — the phased rollout through structured environments where the business case is clearest and the risk is lowest.</p>
+    <div class="foot" style="margin-top:64px"><span class="mark">The Humanoid Ascendancy</span><span>28 / 60 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 29 · CRAWL WALK RUN -->
+  <section class="slide" data-screen-label="Crawl walk run">
+    <div class="eyebrow anim"><span class="tick"></span>The adoption pattern</div>
+    <h1 class="atitle anim-2">Adoption follows a "crawl, walk, run" path through structured work.</h1>
+    <div class="grow"></div>
+    <div class="deflist anim-3">
+      <div class="di"><div class="dn">Crawl</div><div><div class="dt">One high-pain, repetitive task</div><div class="dd">Move empty totes; insert a sheet-metal part. Prove reliability and safety in a low-risk role first.</div></div></div>
+      <div class="di"><div class="dn">Walk</div><div><div class="dt">Integrate into existing systems</div><div class="dd">Connect to the warehouse or manufacturing execution system. The hard part is the workflow, not the robot.</div></div></div>
+      <div class="di"><div class="dn">Run</div><div><div class="dt">Expand to adjacent tasks &amp; fleets</div><div class="dd">Use the learnings to broaden scope — and let robots dispatch other robots.</div></div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 30 · MANUFACTURING BEACHHEAD -->
+  <section class="slide" data-screen-label="Manufacturing beachhead">
+    <div class="eyebrow anim"><span class="tick"></span>Beachhead one · manufacturing</div>
+    <h1 class="atitle anim-2">The factory floor is the first beachhead.</h1>
+    <div class="grow center-v">
+      <p class="lead anim-3" style="max-width:36ch">Automotive plants are structured, repetitive, and acutely short of labor — the clearest business case in the industry.</p>
+      <p class="body anim-4" style="margin-top:36px; max-width:60ch">Every major integrator is targeting the same ground: BMW, Mercedes-Benz, Hyundai/Kia, Tesla, and a wave of Chinese OEMs. The task list is deliberately narrow — part sequencing, material handling, body-shop insertion — chosen to prove ROI before broadening scope.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 31 · FIGURE BMW PILOT -->
+  <section class="slide" data-screen-label="Figure BMW pilot">
+    <div class="eyebrow anim"><span class="tick"></span>Exhibit · Figure 02 × BMW Spartanburg</div>
+    <h1 class="atitle anim-2 wide">Figure's BMW pilot ran for eleven months and built 30,000 cars.</h1>
+    <div class="grow"></div>
+    <div class="statband anim-3">
+      <div class="st"><div class="sk">Duration</div><div class="sn">11<span class="accent"> mo</span></div><div class="sl">Continuous run on the X3 line, completed Nov 2025.</div></div>
+      <div class="st"><div class="sk">Vehicles supported</div><div class="sn">30<span class="accent">k+</span></div><div class="sl">BMW X3 vehicles produced with robot assistance.</div></div>
+      <div class="st"><div class="sk">Parts handled</div><div class="sn">90<span class="accent">k+</span></div><div class="sl">Sheet-metal parts placed into fixtures.</div></div>
+      <div class="st"><div class="sk">Operating hours</div><div class="sn">1,250</div><div class="sl">Logged before the generation was retired for Figure 03.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Figure AI / BMW, Nov 2025 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 32 · HYUNDAI ATLAS -->
+  <section class="slide" data-screen-label="Hyundai Atlas">
+    <div class="eyebrow anim"><span class="tick"></span>Titan play · Boston Dynamics Atlas</div>
+    <h1 class="atitle anim-2 wide">Hyundai committed 25,000 Atlas robots to its own plants.</h1>
+    <div class="grow"></div>
+    <div class="row anim-3" style="align-items:flex-end; gap:80px">
+      <div class="figwrap" style="flex-direction:column; gap:0; align-items:flex-start">
+        <span class="bigfig">25,000</span>
+        <span class="figunit" style="margin-top:14px">Atlas units committed across<br/>Hyundai &amp; Kia — 83% of capacity</span>
+      </div>
+      <p class="body" style="max-width:42ch">The production Atlas debuted at CES 2026 — 56 degrees of freedom, 50 kg payload, autonomous battery swap, Gemini Robotics inside. Hyundai is investing $26B in US operations and a 30,000-unit/year factory by 2028. Crucially, Hyundai Mobis makes the actuators: the first fully vertically integrated humanoid supply chain.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: Boston Dynamics; Hyundai, CES 2026 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 33 · TESLA OPTIMUS -->
+  <section class="slide" data-screen-label="Tesla Optimus">
+    <div class="eyebrow anim"><span class="tick"></span>Vertical play · Tesla Optimus</div>
+    <h1 class="atitle anim-2 wide">Tesla is converting a car factory into a robot factory.</h1>
+    <div class="grow center-v">
+      <p class="lead anim-3" style="max-width:40ch">In early 2026 Tesla moved to wind down Model S/X at Fremont and repurpose the line for <span class="accent">Optimus.</span></p>
+      <p class="body anim-4" style="margin-top:36px; max-width:62ch">Roughly 800–1,000 units already work inside Tesla's own factories — a closed loop for data and iteration. The bet is that controlling FSD-derived AI, chip design, and manufacturing together drives Optimus toward a $20–30k mass-market price. External deployment is slated for later in 2026.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: Tesla; press reports, 2025–26 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 34 · CHINA FACTORY BLITZ -->
+  <section class="slide" data-screen-label="China factory blitz">
+    <div class="eyebrow anim"><span class="tick"></span>The China lane</div>
+    <h1 class="atitle anim-2">China is deploying humanoids on its lines faster than anyone.</h1>
+    <div class="grow"></div>
+    <div class="panels three anim-3">
+      <div class="panel"><div class="ph">UBTech · Walker S</div><div class="pt">Multi-OEM pilots</div><div class="pb">Deployed across BYD, Dongfeng and Nio factory logistics. $1B raised in Sep 2025 to scale.</div></div>
+      <div class="panel"><div class="ph">BYD</div><div class="pt">In-house ambition</div><div class="pb">Aggressive internal deployment targets across its enormous manufacturing base.</div></div>
+      <div class="panel"><div class="ph">AgiBot · Unitree</div><div class="pt">Volume &amp; price</div><div class="pb">AgiBot shipped 10,000+ units by Mar 2026; Unitree's G1 starts near $13,500 — undercutting the West.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: company reports, 2025–26 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 35 · AGILITY DIGIT -->
+  <section class="slide" data-screen-label="Agility Digit">
+    <div class="eyebrow anim"><span class="tick"></span>Beachhead two · logistics</div>
+    <h1 class="atitle anim-2 wide">The warehouse is the second beachhead — Digit has moved 100,000 totes.</h1>
+    <div class="grow center-v">
+      <div class="callout anim-3">
+        <span class="big">100k+</span>
+        <span class="ctxt">Totes moved by Agility's Digit at GXO Logistics — widely considered the first commercial humanoid deployment, now joined by Mercado Libre in Texas.</span>
+      </div>
+      <p class="body anim-4" style="margin-top:40px; max-width:64ch">Agility's model differs from the vertical players: a Robots-as-a-Service subscription and a partner ecosystem. Its Arc cloud platform now lets Digit dispatch autonomous mobile robots — robots coordinating robots.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Agility Robotics / GXO · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 36 · HEALTHCARE -->
+  <section class="slide" data-screen-label="Healthcare">
+    <div class="eyebrow anim"><span class="tick"></span>The human-centric frontier</div>
+    <h1 class="atitle anim-2">Healthcare and the home are the prize, and the hardest to reach.</h1>
+    <div class="grow"></div>
+    <div class="panels three anim-3">
+      <div class="panel"><div class="ph">Hospital logistics</div><div class="pt">Giving time back</div><div class="pb">Diligent Robotics' Moxi fetches supplies and samples — returning 600+ hours to care teams in months.</div></div>
+      <div class="panel"><div class="ph">Rehabilitation</div><div class="pt">Patient, consistent</div><div class="pb">Robots guide repetitive therapy exercises and keep patients engaged, freeing therapists for higher-level care.</div></div>
+      <div class="panel"><div class="ph">Elder care</div><div class="pt">Demographic pull</div><div class="pb">Aging populations in Japan, China and the West create powerful demand for companionship and monitoring.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: Diligent Robotics; industry reports · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 37 · THE HOME -->
+  <section class="slide" data-screen-label="The home">
+    <div class="eyebrow anim"><span class="tick"></span>The trillion-dollar question</div>
+    <div class="grow center-v">
+      <p class="quote anim-2">The home is the trillion-dollar question <span class="accent">no one has answered yet.</span></p>
+      <p class="body anim-3" style="margin-top:40px; max-width:64ch">Figure is training Helix on human video from 100,000 homes; 1X offers its Neo home robot for $499/month. But unstructured domestic environments demand a reliability no one has shown. The home is where the largest market and the hardest problem meet.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: Figure AI; 1X Technologies · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 38 · DEPLOYMENT SCORECARD -->
+  <section class="slide" data-screen-label="Deployment scorecard">
+    <div class="eyebrow anim"><span class="tick"></span>Exhibit · Deployment scorecard, mid-2026</div>
+    <h1 class="atitle anim-2 wide">A scorecard of who is deployed, where, and doing what.</h1>
+    <div class="grow" style="margin-top:36px">
+      <table class="dtable anim-3">
+        <thead><tr><th style="width:20%">Robot</th><th>Maker</th><th>Customer</th><th>Task</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="lead-cell">Figure 03</td><td>Figure AI</td><td>BMW; UPS (reported)</td><td>Body-shop, commercial</td><td class="hot">Scaling — ~240/mo</td></tr>
+          <tr><td class="lead-cell">Atlas</td><td>Boston Dynamics</td><td>Hyundai; Google DeepMind</td><td>Part sequencing</td><td>Production committed</td></tr>
+          <tr><td class="lead-cell">Optimus</td><td>Tesla</td><td>Tesla (internal)</td><td>Material handling</td><td>Internal · ext. 2026</td></tr>
+          <tr><td class="lead-cell">Digit</td><td>Agility</td><td>GXO; Mercado Libre</td><td>Tote handling</td><td class="hot">Commercial</td></tr>
+          <tr><td class="lead-cell">Apollo</td><td>Apptronik</td><td>Mercedes-Benz; GXO; Jabil</td><td>Logistics, assembly</td><td>Pilots</td></tr>
+          <tr><td class="lead-cell">Walker S</td><td>UBTech</td><td>BYD; Dongfeng; Nio</td><td>Factory logistics</td><td>Pilots</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: company announcements, mid-2026 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 39 · PART IV DIVIDER -->
+  <section class="slide divider" data-screen-label="Part IV">
+    <div class="pindex">IV</div>
+    <div class="pno anim">Part Four</div>
+    <h2 class="ptitle anim-2">The real contest is geopolitical.</h2>
+    <p class="pmeta anim-3">The competitive and geopolitical arena — a commercial race among integrators, set against a US–China–Korea battle for the supply chain.</p>
+    <div class="foot" style="margin-top:64px"><span class="mark">The Humanoid Ascendancy</span><span>39 / 60 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 40 · TITANS VS STARTUPS -->
+  <section class="slide" data-screen-label="Titans vs startups">
+    <div class="eyebrow anim"><span class="tick"></span>The integrators</div>
+    <h1 class="atitle anim-2">The field divides into incumbent titans and venture-backed pure-plays.</h1>
+    <div class="grow"></div>
+    <div class="panels anim-3">
+      <div class="panel"><div class="ph">The titans</div><div class="pt">Scale, supply, a captive use case</div><div class="pb">Tesla bends its manufacturing and FSD data toward Optimus. Hyundai pairs Boston Dynamics' locomotion with its own factories and actuator supply. They start with distribution others must buy.</div></div>
+      <div class="panel"><div class="ph">The pure-plays</div><div class="pt">Speed, focus, fresh capital</div><div class="pb">Figure, Agility, Apptronik and Sanctuary move fast on a single mission. They win on agility and partnerships — and live or die by access to capital and components.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 41 · SPEC SHOWDOWN -->
+  <section class="slide" data-screen-label="Spec showdown">
+    <div class="eyebrow anim"><span class="tick"></span>Exhibit · The leading platforms, head-to-head</div>
+    <h1 class="atitle anim-2 wide">Head-to-head, the leading robots are converging on the same spec.</h1>
+    <div class="grow" style="margin-top:36px">
+      <table class="dtable anim-3">
+        <thead><tr><th style="width:18%">Platform</th><th>Payload</th><th>Runtime</th><th>Vision</th><th>AI brain</th><th>Target price</th></tr></thead>
+        <tbody>
+          <tr><td class="lead-cell">Tesla Optimus</td><td class="num">~20 kg</td><td class="num">~2 h</td><td>Cameras only</td><td>FSD / in-house</td><td class="num hot">$20–30k</td></tr>
+          <tr><td class="lead-cell">Figure 03</td><td class="num">~20 kg</td><td class="num">~5 h</td><td>RGB cameras</td><td>Helix (in-house)</td><td class="num">$130k+ / RaaS</td></tr>
+          <tr><td class="lead-cell">Atlas</td><td class="num hot">50 kg</td><td class="num">batt. swap</td><td>LiDAR + depth</td><td>Gemini Robotics</td><td class="num">$150k+ (est.)</td></tr>
+          <tr><td class="lead-cell">Agility Digit</td><td class="num">~16 kg</td><td class="num">~4 h</td><td>2D/3D + LiDAR</td><td>Agility Arc</td><td>RaaS</td></tr>
+          <tr><td class="lead-cell">Apptronik Apollo</td><td class="num">~25 kg</td><td class="num">swap packs</td><td>Cameras</td><td>Gemini Robotics</td><td class="num">sub-$50k</td></tr>
+          <tr><td class="lead-cell">Unitree G1</td><td class="num">light</td><td class="num">~2 h</td><td>LiDAR + cam</td><td>In-house</td><td class="num hot">$13.5–16k</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: company specs &amp; estimates, mid-2026 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 42 · PLATFORM VS INTEGRATED -->
+  <section class="slide" data-screen-label="Platform vs integrated">
+    <div class="eyebrow anim"><span class="tick"></span>Where value pools</div>
+    <div class="grow center-v">
+      <p class="quote anim-2">The platform-vs-integrated war will decide <span class="accent">where the value pools.</span></p>
+      <p class="body anim-3" style="margin-top:40px; max-width:64ch">If the open platform wins, NVIDIA and Google capture value as the brains for everyone. If vertical integration wins, the market consolidates around a few players — Tesla, Figure, Hyundai — who own their entire stack. Either way, the integrator alone, without a brain or a body it controls, is the most exposed position on the board.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 43 · CHINA OWNS THE CHAIN -->
+  <section class="slide" data-screen-label="China owns the chain">
+    <div class="eyebrow anim"><span class="tick"></span>Exhibit · The geopolitical fact</div>
+    <h1 class="atitle anim-2 wide">China already controls the humanoid value chain.</h1>
+    <div class="grow center-v">
+      <div class="row anim-3" style="gap:120px; align-items:flex-start">
+        <div><div class="bigfig">56%</div><div class="figunit" style="display:block; margin-top:18px; max-width:18ch">of value-chain companies are based in China</div></div>
+        <div><div class="bigfig">77%</div><div class="figunit" style="display:block; margin-top:18px; max-width:18ch">of integrators are Chinese</div></div>
+      </div>
+      <p class="body anim-4" style="margin-top:48px; max-width:64ch">This is the structural fact behind the whole thesis. Western developers can design the best robot and still depend on a strategic competitor for the components that make it move.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Morgan Stanley "Humanoid 100" · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 44 · 4 OF 5 SUPPLIERS -->
+  <section class="slide" data-screen-label="Suppliers China">
+    <div class="eyebrow anim"><span class="tick"></span>Exhibit · 2025 installations by supplier origin</div>
+    <h1 class="atitle anim-2 wide">Four of the world's five top suppliers shipped from China in 2025.</h1>
+    <div class="grow center-v">
+      <div class="hbars anim-3" style="max-width:1500px">
+        <div class="hbar"><div class="hlab">Top-5 suppliers<span class="sub">share of all installations</span></div><div class="htrack"><div class="hfill" style="width:73%"></div></div><div class="hval">73%</div></div>
+        <div class="hbar"><div class="hlab">Chinese among top-5<span class="sub">four of the five leaders</span></div><div class="htrack"><div class="hfill" style="width:80%"></div></div><div class="hval">4 / 5</div></div>
+      </div>
+      <p class="body anim-4" style="margin-top:44px; max-width:64ch">Concentration plus geography: the installed base is dominated by a handful of suppliers, and the center of gravity sits in China — across both robots and the components inside them.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Counterpoint Research, Jan 2026 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 45 · CHINA VS AMERICA -->
+  <section class="slide" data-screen-label="China vs America">
+    <div class="eyebrow anim"><span class="tick"></span>Two strategies</div>
+    <h1 class="atitle anim-2">Two strategies collide: China's state plan vs. America's market.</h1>
+    <div class="grow"></div>
+    <div class="panels anim-3">
+      <div class="panel"><div class="ph">China · top-down</div><div class="pt">State-directed mobilization</div><div class="pb">Five-Year Plans, state-backed funds, a "1 Million AI Robots" target, and provincial subsidies. Risks misallocation — but enables rapid scaling and a deep component base.</div></div>
+      <div class="panel"><div class="ph">United States · market-led</div><div class="pt">Decentralized innovation</div><div class="pb">The CHIPS Act revitalizes semiconductors; robotics funding is diffuse across NSF and DoD. Fosters breakthroughs and agility — but leaves mid-stream hardware exposed.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: national policy documents · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 46 · KOREA WILDCARD -->
+  <section class="slide" data-screen-label="Korea wildcard">
+    <div class="eyebrow anim"><span class="tick"></span>The wildcard</div>
+    <h1 class="atitle anim-2 wide">Korea is the wildcard — it owns its robot's supply chain end-to-end.</h1>
+    <div class="grow center-v">
+      <p class="lead anim-3" style="max-width:40ch">Hyundai controls the platform (Boston Dynamics), the actuators (<span class="accent">Mobis</span>), and the deployment site — a model no rival can match.</p>
+      <p class="body anim-4" style="margin-top:36px; max-width:62ch">With Hyundai Mobis supplying actuators that are 60%+ of material cost, Hyundai sidesteps the dependency that constrains every other Western player — and Korea already has the world's highest robot density. Vertical integration as national strategy.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: Hyundai; IFR · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 47 · SUPPLY CHAIN BATTLEFIELD -->
+  <section class="slide" data-screen-label="Battlefield">
+    <div class="eyebrow anim"><span class="tick"></span>The takeaway</div>
+    <div class="grow center-v">
+      <p class="quote anim-2">The supply chain, not the showroom, is <span class="accent">the real battlefield.</span></p>
+      <p class="body anim-3" style="margin-top:40px; max-width:64ch">The captivating race between Tesla, Figure and Boston Dynamics plays out on stage. The decisive contest happens upstream — in actuators, reducers, rare-earth magnets, and the foundation models. Whoever secures those secures the decade.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 48 · PART V DIVIDER -->
+  <section class="slide divider" data-screen-label="Part V">
+    <div class="pindex">V</div>
+    <div class="pno anim">Part Five</div>
+    <h2 class="ptitle anim-2">The human element decides acceptance.</h2>
+    <p class="pmeta anim-3">Labor, trust, and ethics — the factors that will determine whether the technology is welcomed or resisted.</p>
+    <div class="foot" style="margin-top:64px"><span class="mark">The Humanoid Ascendancy</span><span>48 / 60 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 49 · DISPLACEMENT VS CREATION -->
+  <section class="slide" data-screen-label="Labor displacement">
+    <div class="eyebrow anim"><span class="tick"></span>The future of labor</div>
+    <h1 class="atitle anim-2 wide">Automation will displace some work and create work that doesn't exist yet.</h1>
+    <div class="grow center-v">
+      <div class="figwrap anim-3"><span class="bigfig">~13%</span><span class="figunit">of US jobs face high<br/>displacement risk near-term</span></div>
+      <p class="body anim-4" style="margin-top:40px; max-width:64ch">The roles most at risk are routinized and physical — exactly what the first wave targets. But history says technology destroys and creates: the challenge is managing the transition through reskilling, not pretending it won't happen.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: SHRM · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 50 · NEW JOBS -->
+  <section class="slide" data-screen-label="New jobs">
+    <div class="eyebrow anim"><span class="tick"></span>The work that appears</div>
+    <h1 class="atitle anim-2">The robot economy invents new jobs: fleet managers, pilots, trainers.</h1>
+    <div class="grow"></div>
+    <div class="deflist anim-3">
+      <div class="di"><div class="dn">01</div><div><div class="dt">Robot fleet managers &amp; remote "pilots"</div><div class="dd">Supervising and teleoperating fleets across sites — the air-traffic control of embodied labor.</div></div></div>
+      <div class="di"><div class="dn">02</div><div><div class="dt">Maintenance technicians &amp; integrators</div><div class="dd">Keeping hardware running and wiring robots into enterprise systems.</div></div></div>
+      <div class="di"><div class="dn">03</div><div><div class="dt">AI trainers &amp; data analysts</div><div class="dd">Curating demonstrations and interpreting the data streams fleets generate.</div></div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 51 · LABOR BACKLASH -->
+  <section class="slide" data-screen-label="Labor backlash">
+    <div class="eyebrow anim"><span class="tick"></span>The backlash, already here</div>
+    <h1 class="atitle anim-2 wide">The labor backlash has already begun — a union blocked Atlas.</h1>
+    <div class="grow center-v">
+      <p class="lead anim-3" style="max-width:42ch">In January 2026 Korea's Metal Workers' Union declared Atlas would not enter Hyundai plants <span class="accent">without a labor agreement.</span></p>
+      <p class="body anim-4" style="margin-top:36px; max-width:62ch">The union cited Atlas's ~$145k unit cost as evidence management sees it as a labor-cost tool, and flagged the summer 2026 contract talks as the escalation point. Change management is not a footnote — it is a gating risk.</p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Source: Korean Metal Workers' Union, Jan 2026 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 52 · TRUST & SAFETY -->
+  <section class="slide" data-screen-label="Trust and safety">
+    <div class="eyebrow anim"><span class="tick"></span>Building trust</div>
+    <h1 class="atitle anim-2">Trust is the gating asset, and safety standards are still being written.</h1>
+    <div class="grow"></div>
+    <div class="panels anim-3">
+      <div class="panel"><div class="ph">Standards in flux</div><div class="pt">ISO 25785-1 is still in draft</div><div class="pb">The first safety standard for dynamically-stable walking robots — written by Agility, Boston Dynamics and A3 — isn't expected until 2026–27. Until then, OSHA has no humanoid-specific rules.</div></div>
+      <div class="panel"><div class="ph">Accountability</div><div class="pt">A fragile asset</div><div class="pb">A 2025 lawsuit alleged a Figure robot was strong enough to fracture a skull. One high-profile failure could set the industry back years — making safety the foremost imperative.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Sources: ISO; A3; court filings · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 53 · BIAS PRIVACY HRI -->
+  <section class="slide" data-screen-label="Ethics">
+    <div class="eyebrow anim"><span class="tick"></span>The quieter risks</div>
+    <h1 class="atitle anim-2">Bias, privacy, and over-trust are the quieter risks to manage.</h1>
+    <div class="grow"></div>
+    <div class="panels three anim-3">
+      <div class="panel"><div class="ph">Bias</div><div class="pt">Models inherit our data</div><div class="pb">A robot trained on narrow data performs unevenly across people. Diverse data and audits are not optional.</div></div>
+      <div class="panel"><div class="ph">Privacy</div><div class="pt">Mobile sensor platforms</div><div class="pb">Cameras and microphones on legs collect vast personal data. Encryption, consent and transparency are obligations.</div></div>
+      <div class="panel"><div class="ph">Over-trust</div><div class="pt">Automation bias</div><div class="pb">People defer to machines even when wrong. A robot should always be legible as a machine, with honest limits.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 54 · PART VI DIVIDER -->
+  <section class="slide divider" data-screen-label="Part VI">
+    <div class="pindex">VI</div>
+    <div class="pno anim">Part Six</div>
+    <h2 class="ptitle anim-2">What to do.</h2>
+    <p class="pmeta anim-3">Strategic outlook — concrete recommendations for investors, corporate leaders, and policymakers navigating the ascendancy.</p>
+    <div class="foot" style="margin-top:64px"><span class="mark">The Humanoid Ascendancy</span><span>54 / 60 · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 55 · FOR INVESTORS -->
+  <section class="slide" data-screen-label="For investors">
+    <div class="eyebrow anim"><span class="tick"></span>For investors</div>
+    <h1 class="atitle anim-2">Buy the picks and shovels, not just the robots.</h1>
+    <div class="grow"></div>
+    <div class="deflist anim-3">
+      <div class="di"><div class="dn">01</div><div><div class="dt">Own the enabling technology</div><div class="dd">Actuators (Harmonic Drive, Nabtesco, SKF), sensors (Novanta/ATI), and the AI platform layer (NVIDIA) — the de-risked exposure every integrator must buy.</div></div></div>
+      <div class="di"><div class="dn">02</div><div><div class="dt">Judge integrators on ecosystem, not specs</div><div class="dd">Access to capital, anchor customers (BMW, Hyundai), and a viable model — direct sales vs. Robots-as-a-Service.</div></div></div>
+      <div class="di"><div class="dn">03</div><div><div class="dt">Watch the milestones, not the hype</div><div class="dd">Actuator cost, battery density, and AI uptime are the variables that move the whole curve.</div></div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 56 · FOR CORPORATE LEADERS -->
+  <section class="slide" data-screen-label="For corporate leaders">
+    <div class="eyebrow anim"><span class="tick"></span>For corporate leaders</div>
+    <h1 class="atitle anim-2">Start small, prove ROI, then scale.</h1>
+    <div class="grow"></div>
+    <div class="panels three anim-3">
+      <div class="panel"><div class="ph">Start small</div><div class="pt">Pick one painful task</div><div class="pb">Don't wait for a general-purpose robot. Deploy against one repetitive, ergonomically hard bottleneck and build internal expertise.</div></div>
+      <div class="panel"><div class="ph">Integrate</div><div class="pt">The robot is the easy part</div><div class="pb">The real work is wiring it into your WMS/MES and data flows. Partner with experienced systems integrators.</div></div>
+      <div class="panel"><div class="ph">Prepare people</div><div class="pt">Augment, don't blindside</div><div class="pb">Communicate early, train for new roles, and create pathways into fleet management and maintenance.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 57 · FOR POLICYMAKERS -->
+  <section class="slide" data-screen-label="For policymakers">
+    <div class="eyebrow anim"><span class="tick"></span>For policymakers</div>
+    <h1 class="atitle anim-2">Secure the domestic supply chain.</h1>
+    <div class="grow"></div>
+    <div class="deflist anim-3">
+      <div class="di"><div class="dn">01</div><div><div class="dt">Fund the components, not just the chips</div><div class="dd">Extend CHIPS-style incentives to motors, reducers and sensors — the mid-stream vulnerability.</div></div></div>
+      <div class="di"><div class="dn">02</div><div><div class="dt">Coordinate national R&amp;D</div><div class="dd">Re-energize a cross-agency robotics strategy from basic research to applied deployment.</div></div></div>
+      <div class="di"><div class="dn">03</div><div><div class="dt">Invest in people and write agile rules</div><div class="dd">Fund reskilling at scale, and co-develop safety and ethics frameworks before a vacuum erodes public trust.</div></div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 58 · THREE RISKS -->
+  <section class="slide" data-screen-label="Three risks">
+    <div class="eyebrow anim"><span class="tick"></span>What could derail it</div>
+    <h1 class="atitle anim-2">Three risks could still derail the ascendancy.</h1>
+    <div class="grow"></div>
+    <div class="panels three anim-3">
+      <div class="panel"><div class="ph">Geopolitical</div><div class="pt">A supply-chain shock</div><div class="pb">A US–China rupture in actuators or rare-earth magnets could stall Western integrators overnight.</div></div>
+      <div class="panel"><div class="ph">Technical</div><div class="pt">A wall on cost or power</div><div class="pb">If actuator cost or battery uptime fails to improve, the optimistic forecasts simply don't arrive.</div></div>
+      <div class="panel"><div class="ph">Regulatory</div><div class="pt">A trust-breaking incident</div><div class="pb">One high-profile safety failure could trigger restrictive rules and a public backlash.</div></div>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>tarrysingh.com</span></div>
+  </section>
+
+  <!-- 59 · BOTTOM LINE -->
+  <section class="slide" data-screen-label="Bottom line">
+    <div class="eyebrow anim"><span class="tick"></span>The bottom line</div>
+    <div class="grow center-v">
+      <p class="anim-2" style="font-weight:500; font-size:64px; line-height:1.2; letter-spacing:-0.025em; max-width:25ch; margin:0;">
+        The robots will get the headlines. <span class="accent">The supply chain will get the returns.</span>
+      </p>
+      <p class="lead anim-3 dim" style="margin-top:44px; max-width:48ch; font-size:var(--type-body)">
+        Embodied AI is real, and the deployment has begun. But the durable advantage belongs to whoever owns the muscles — the actuators, the sensors, and the models that move them. Own the muscles, own the decade.
+      </p>
+    </div>
+    <div class="foot"><span class="mark">The Humanoid Ascendancy</span><span>Tarry Singh · tarrysingh.com</span></div>
+  </section>
+
+  <!-- 60 · CLOSE -->
+  <section class="slide cover" data-screen-label="Close">
+    <div class="frame"></div>
+    <div class="ctop">
+      <div class="eyebrow" style="color:var(--ink-dim)">The Humanoid Ascendancy</div>
+      <div class="eyebrow" style="color:var(--ink-dim)">June 2026</div>
+    </div>
+    <div class="chead anim" style="top:322px">
+      <span class="ctick"></span>
+      <h1 class="display" style="font-size:104px">Explore the value<br/>chain yourself.</h1>
+    </div>
+    <div class="cidea anim-2" style="top:600px; max-width:1280px">
+      <p style="margin:0; font-size:34px; line-height:1.4">An interactive companion lets you click through the anatomy of a humanoid — brain, body, and joints — to see component costs, suppliers, and bottlenecks. <a href="Value-Chain Explorer.html" style="color:var(--accent); text-decoration:none; border-bottom:2px solid var(--accent)">Open the Value-Chain Explorer →</a></p>
+      <p style="margin:22px 0 0; font-size:var(--type-caption); font-family:var(--font-mono); color:var(--ink-faint); letter-spacing:0.04em; line-height:1.7">Sources — Morgan Stanley "The Humanoid 100"; Counterpoint Research; Goldman Sachs; company announcements (Figure AI, Boston Dynamics, Tesla, Apptronik, Agility, UBTech); CES 2026. Figures actualized to June 2026.</p>
+    </div>
+    <div class="cfoot">
+      <span class="mk">Tarry Singh</span>
+      <span>tarrysingh.com — Embodied AI / 60</span>
+    </div>
+  </section>
+
+</deck-stage>
+<script src="deck-stage.js"></script>
+
+<!-- ── Tweaks panel ── -->
+<div id="tweak-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const { useTweaks, TweaksPanel, TweakSection, TweakSlider, TweakRadio, TweakColor } = window;
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "#ff4d2e",
+  "titleSize": 62,
+  "density": "regular"
+}/*EDITMODE-END*/;
+const DENSITY = { compact:{x:96,top:80}, regular:{x:120,top:92}, wide:{x:152,top:108} };
+function DeckTweaks(){
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(() => {
+    const r = document.documentElement.style;
+    r.setProperty('--accent', t.accent);
+    r.setProperty('--accent-2', `color-mix(in srgb, ${t.accent}, #ffffff 16%)`);
+    r.setProperty('--accent-3', `color-mix(in srgb, ${t.accent}, #ffffff 34%)`);
+    r.setProperty('--type-h1', t.titleSize + 'px');
+    const d = DENSITY[t.density] || DENSITY.regular;
+    r.setProperty('--pad-x', d.x + 'px');
+    r.setProperty('--pad-top', d.top + 'px');
+  }, [t]);
+  return (
+    <TweaksPanel>
+      <TweakSection label="Accent" />
+      <TweakColor label="Accent hue" value={t.accent}
+        options={['#2040df','#2563eb','#ff4d2e','#00d6a4']}
+        onChange={(v)=>setTweak('accent', v)} />
+      <TweakSection label="Layout" />
+      <TweakSlider label="Title size" value={t.titleSize} min={52} max={76} step={1} unit="px"
+        onChange={(v)=>setTweak('titleSize', v)} />
+      <TweakRadio label="Margins" value={t.density}
+        options={['compact','regular','wide']}
+        onChange={(v)=>setTweak('density', v)} />
+    </TweaksPanel>
+  );
+}
+ReactDOM.createRoot(document.getElementById('tweak-root')).render(<DeckTweaks/>);
+</script>
+</body>
+</html>

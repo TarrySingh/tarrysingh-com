@@ -46,3 +46,8 @@ next-env.d.ts
 /tch-v2/
 /synaptic-cartography-handover-bundle-v2.zip
 .env*.local
+
+# Humanoid Ascendancy handover bundle — design reference only.
+# Ported into src/app/humanoid + src/components/humanoid (+ public/humanoid).
+# The source bundle (HTML/JSX decks, 120MB full-deck PNGs) stays out of git.
+/docs/humanoid-robotics/

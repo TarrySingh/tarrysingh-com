@@ -1,0 +1,60 @@
+/* ============================================================
+   THE HUMANOID ASCENDANCY — Design Tokens
+   One ink, one paper (warm), one deep-charcoal dark, ONE accent.
+   Type: Geist (display/body grotesque) + IBM Plex Mono (data only).
+   ============================================================ */
+
+:root {
+  /* ---- Surfaces: dark (default) ---- */
+  --paper-dark:    #15151a;   /* deep charcoal — primary surface */
+  --paper-dark-2:  #1d1d24;   /* raised panel */
+  --paper-dark-3:  #25262e;   /* hairline-fill / exhibit ground */
+
+  /* ---- Surfaces: paper (warm off-white) ---- */
+  --paper:         #f3efe7;   /* warm off-white */
+  --paper-2:       #ece7dc;   /* raised paper */
+
+  /* ---- Ink ---- */
+  --ink:           #16161a;   /* near-black ink (on paper) */
+  --ink-on-dark:   #f4f2ec;   /* warm off-white ink (on charcoal) */
+  --ink-dim:       rgba(244,242,236,0.62);
+  --ink-faint:     rgba(244,242,236,0.40);
+  --ink-paper-dim: rgba(22,22,26,0.60);
+
+  /* ---- Hairlines ---- */
+  --rule-dark:     rgba(244,242,236,0.16);
+  --rule-dark-2:   rgba(244,242,236,0.28);
+  --rule-paper:    rgba(22,22,26,0.16);
+
+  /* ---- The single accent: electric royal blue ---- */
+  --accent:        #2040df;
+  --accent-ink:    #ffffff;
+  --accent-soft:   rgba(32,64,223,0.14);
+
+  /* ---- Type scale @ 1920×1080 ---- */
+  --type-display:  148px;  /* cover */
+  --type-mega:     96px;   /* huge single figures */
+  --type-h1:       64px;   /* slide action title */
+  --type-h2:       44px;
+  --type-body:     32px;
+  --type-lead:     38px;
+  --type-small:    26px;
+  --type-caption:  21px;   /* mono metadata */
+  --type-micro:    17px;
+
+  /* ---- Spacing (4 / 8 scale) ---- */
+  --pad-x:         120px;
+  --pad-top:       92px;
+  --pad-bottom:    80px;
+  --gap-title:     44px;
+  --gap-item:      24px;
+  --gap-tight:     12px;
+
+  /* ---- Fonts ---- */
+  --font-sans: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur:  260ms;
+}
