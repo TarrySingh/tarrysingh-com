@@ -18,6 +18,7 @@ export type SeriesKey =
   | "workforce"
   | "economics"
   | "software-3"
+  | "real-map-europe"
 
 /** The shape carried in a post's frontmatter. */
 export interface SeriesRef {
@@ -70,6 +71,12 @@ export const SERIES: Record<SeriesKey, SeriesMeta> = {
     name: "Software 3.0",
     tagline:
       "Intent becomes the program, agents become the workforce, and automation crosses from the screen into the world. The most plausible breathtaking future, mapped to 2040.",
+  },
+  "real-map-europe": {
+    key: "real-map-europe",
+    name: "The Real Map of Europe",
+    tagline:
+      "Two readings of Europe's economy — the global scoreboard everyone argues about, and the divergence inside the continent that the single average hides.",
   },
 }
 
