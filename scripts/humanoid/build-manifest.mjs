@@ -51,25 +51,38 @@ const nonEmpty = (a) => Array.isArray(a) && a.length > 0
  * Matches money, percents/ranges, multipliers, big counts, ISO refs,
  * year ranges, ± tolerances. Single pass; records carry no prior braces.
  */
-const HL_RE = /(\$[\d.,]+\s?[BMKk]?\b(?:\s?(?:billion|million|trillion))?|±?[\d.,]+\s?(?:–|—|-|to)\s?[\d.,]+\s?%|[\d.,]+\s?%|[\d.,]+\s?[x×]\b|\b\d{1,3}(?:,\d{3})+\+?|ISO(?:\/TS)?\s?[\d:.-]+|\b(?:19|20)\d{2}\s?[–—-]\s?(?:19|20)?\d{2}\b|±\s?[\d.]+\s?\w+)/g
-const autoHl = (t) => (typeof t === "string" ? t.replace(HL_RE, "{{$1}}") : t)
+const HL_RE = /(\$[\d.,]+\s?[BMKk]?\b(?:\s?(?:billion|million|trillion))?|±?[\d.,]+\s?(?:–|—|-|to)\s?[\d.,]+\s?%|[\d.,]+\s?%|[\d.,]+(?:\s?[x×]\s?[\d.,]+)+[x×]?|[\d.,]+\s?[x×]\b|\b\d{1,3}(?:,\d{3})+\+?|ISO(?:\/TS)?\s?[\d:.-]+|\b(?:19|20)\d{2}\s?[–—-]\s?(?:19|20)?\d{2}\b|±\s?[\d.]+\s?\w+)/g
+const autoHl = (t) =>
+  typeof t === "string"
+    ? t.replace(HL_RE, "{{$1}}").replace(/\}\}(\s*)\{\{/g, "$1").replace(/\{\{\s*\}\}/g, "")
+    : t
 
 /* ---------------- design-bar scrubbers ---------------- */
 // Trailing source chip-tags glued onto sentences, e.g. " [Fast-Track | Centralized]".
-const CHIP_RE = /\s*\[[^[\]]*\|[^[\]]*\]\s*$/
-// Title prefixes that leak the source widget framing.
-const TITLE_PREFIX_RE = /^(?:Interactive\s+Data|Data\s+Chart|Interactive\s+Visuali[sz]ation|Interactive\s+Map|Interactive|Chart|Visualization)\s*[:—-]\s*/i
+const CHIP_BRACKET_RE = /\s*\[[^[\]]*\|[^[\]]*\]\s*$/
+// Source chip/logo rows transcribed inline: "… Tags: A, B, C" / "[chips] A, B" / "Badges: …".
+const CHIP_LABEL_RE = /[\s;.,—–-]*\b(?:Tags?|Chips?|Badges?|Logos?|Pills?|Icons?)\s*:\s*.*$/i
+const CHIP_BRACKET_PREFIX_RE = /^\s*\[(?:chips?|badges?|logos?|tags?)\]\s*/i
+// Dangling "see the other field" transcription pointers.
+const POINTER_RE = /\b(?:see (?:the )?(?:table|timeline|chart|figure)(?:\s+(?:field|above|below|left|right))?|transcribed in (?:the )?\w+ field|values? in (?:the )?\w+ field)\b/i
+// Title prefixes that leak the source widget/layout framing.
+const TITLE_PREFIX_RE = /^(?:Interactive\s+Data|Data\s+Chart|Interactive\s+Visuali[sz]ation|Interactive\s+Map|Two[\s-]Column\s+Comparative|Comparative\s+(?:Analysis|Table)|Side[\s-]by[\s-]side|Interactive|Chart|Visualization|Diagram)\s*[:—-]\s*/i
 // Bullets/foots that are scraped UI narration, not content.
 const UI_NARRATION_RE = /^(?:hover|click|drag|toggle|zoom|adjust|select|tap|scroll|legend\b|legend:|the chart (?:shows|displays|above|below)|chart shows|dashed (?:line|vertical|zero)|x-?axis|y-?axis|bars? (?:show|represent)|colou?r(?:ed)? (?:bar|line|coded)|grey\/|\(grey\)|\(colou?red\)|interactive (?:map|visuali|chart|dashboard|panel)|adjust parameters|use the slider)/i
-const CLIP_NOTE_RE = /\((?:text )?(?:clipped|truncated|cut off|not visible|partially)[^)]*\)|\[(?:row )?truncated[^\]]*\]|\[chart[^\]]*\]/gi
+const CLIP_NOTE_RE = /\((?:text )?(?:clipped|truncated|cut off|not visible|partially|small print|approx\.?|estimated|unlabel|un-kickered)[^)]*\)|\[(?:row )?truncated[^\]]*\]|\[chart[^\]]*\]/gi
+// numbered process lead: "1." / "2)" / "Step 3:" / "1. Interface Mapping"
+const NUM_LEAD_RE = /^\s*(?:step\s*)?\d+\s*[.)\]:-]\s*/i
 
 const scrubText = (t) => {
   if (typeof t !== "string") return t
-  let s = t.replace(CLIP_NOTE_RE, "").replace(CHIP_RE, "").trim()
-  s = s.replace(/\s{2,}/g, " ").replace(/\s+([.,;:])/g, "$1")
+  let s = t.replace(CHIP_BRACKET_PREFIX_RE, "").replace(CLIP_NOTE_RE, "").replace(CHIP_LABEL_RE, "").replace(CHIP_BRACKET_RE, "").trim()
+  s = s.replace(/\s{2,}/g, " ").replace(/\s+([.,;:])/g, "$1").replace(/[\s;,]+$/, "")
   return s
 }
 const scrubTitle = (t) => (typeof t === "string" ? t.replace(TITLE_PREFIX_RE, "").trim() : t)
+const scrubKicker = (k) => (typeof k === "string" ? k.replace(/\s*\([^)]*\)\s*$/, "").trim() : k)
+const stripNumLead = (s) => (typeof s === "string" ? s.replace(NUM_LEAD_RE, "").trim() : s)
+const isPointer = (t) => typeof t === "string" && POINTER_RE.test(t)
 const isUiNarration = (t) => typeof t === "string" && UI_NARRATION_RE.test(t.trim())
 const isEmptyish = (t) => !t || (typeof t === "string" && t.replace(/[\s—–-]/g, "").length < 2)
 
@@ -139,20 +152,21 @@ function convert(r, ctx) {
       return { kind: "divider", ...base, chap: ctx.chap, numeral, part: `Part ${numeral}`, title, topics: topics.slice(0, 8) }
     }
     case "bullets":
-      return { kind: "bullets", ...base, title, bullets: cleanBullets(r.bullets), ...(r.callout ? { callout: { k: cleanStr(r.callout.k) || "Insight", text: autoHl(scrubText(cleanStr(r.callout.text))) || "" } } : {}) }
+      if (bulletsAreNumberedProcess(r.bullets)) { note(r.src, "numbered bullets → flow"); return bulletsToFlow(r, base, title) }
+      return { kind: "bullets", ...base, title, bullets: cleanBullets(r.bullets), ...(r.callout ? { callout: { k: scrubKicker(cleanStr(r.callout.k)) || "Insight", text: autoHl(scrubText(cleanStr(r.callout.text))) || "" } } : {}) }
     case "stats": {
       const stats = (r.stats ?? []).map((st) => ({ big: cleanStr(st.big), lab: cleanStr(st.lab) })).filter((st) => st.big)
       if (!stats.length) { note(r.src, "stats archetype with no stats — bullets fallback"); return convertFallback(r, base, title) }
       return { kind: "stats", ...base, title, stats, ...(nonEmpty(r.body) ? { body: r.body.map((t) => autoHl(cleanStr(t))) } : {}), ...(r.callout?.text ? { foot: cleanStr(r.callout.text) } : {}) }
     }
     case "diagram": {
-      const steps = (r.bullets ?? []).map((b, j) => ({ k: cleanStr(b.lead) || `Stage ${j + 1}`, d: autoHl(cleanStr(b.text)) || "" })).filter((st) => st.d || st.k)
-      if (steps.length >= 2) return { kind: "flow", ...base, title, ...(nonEmpty(r.body) ? { sub: cleanStr(r.body[0]) } : {}), steps: steps.slice(0, 6), ...(r.callout?.text ? { foot: cleanStr(r.callout.text) } : {}) }
+      const steps = (r.bullets ?? []).map((b, j) => ({ k: scrubText(stripNumLead(cleanStr(b.lead))) || `Stage ${j + 1}`, d: autoHl(scrubText(stripNumLead(cleanStr(b.text)))) || "" })).filter((st) => st.d || st.k)
+      if (steps.length >= 2) return { kind: "flow", ...base, title, ...(nonEmpty(r.body) ? { sub: cleanStr(r.body[0]) } : {}), steps: steps.slice(0, 6), ...(r.callout?.text ? { foot: scrubText(cleanStr(r.callout.text)) } : {}) }
       note(r.src, "diagram without steps — bullets fallback")
       return convertFallback(r, base, title)
     }
     case "twoPanel": {
-      const side = (p, accent) => ({ name: cleanStr(p?.name) || "", tag: cleanStr(p?.tag) || "", accent, rows: (p?.rows ?? []).map((row) => ({ t: cleanStr(row.t) || "", items: (row.items ?? []).map(([m, t]) => [["+", "−", "~"].includes(m) ? m : "~", scrubText(cleanStr(t))]).filter(([, t]) => !isEmptyish(t)) })).filter((row) => row.t || row.items.length), ...(p?.ex ? { ex: scrubText(cleanStr(p.ex)) } : {}) })
+      const side = (p, accent) => ({ name: cleanStr(p?.name) || "", tag: cleanStr(p?.tag) || "", accent, rows: (p?.rows ?? []).map((row) => ({ t: cleanStr(row.t) || "", items: (row.items ?? []).map(([m, t]) => [["+", "−", "~"].includes(m) ? m : "~", scrubText(cleanStr(t))]).filter(([, t]) => !isEmptyish(t) && !isPointer(t)) })).filter((row) => row.t || row.items.length), ...(p?.ex ? { ex: scrubText(cleanStr(p.ex)) } : {}) })
       const L = side(r.twoPanel?.L, "var(--c-blue)"), R = side(r.twoPanel?.R, "var(--c-amber)")
       if (!L.rows.length && !R.rows.length) { note(r.src, "twoPanel with no usable rows — flag for redraw"); return needsRedraw(r, base, title) }
       return { kind: "twoPanel", ...base, title, ...(nonEmpty(r.body) ? { sub: cleanStr(r.body[0]) } : {}), L, R }
@@ -178,7 +192,7 @@ function convert(r, ctx) {
       return needsRedraw(r, base, title, statish)
     }
     case "quote":
-      return { kind: "bullets", ...base, title, bullets: [], callout: { k: cleanStr(r.callout?.k) || "—", text: autoHl(cleanStr(r.callout?.text)) || autoHl(cleanStr(r.body?.[0])) || "" } }
+      return { kind: "bullets", ...base, title, bullets: [], callout: { k: scrubKicker(cleanStr(r.callout?.k)) || "—", text: autoHl(scrubText(cleanStr(r.callout?.text))) || autoHl(scrubText(cleanStr(r.body?.[0]))) || "" } }
     default: {
       note(r.src, `archetype "${r.archetype}" → bullets fallback`)
       return convertFallback(r, base, title)
@@ -186,17 +200,36 @@ function convert(r, ctx) {
   }
 }
 
-// scrub a bullet list: drop UI-narration + empty, strip chips, highlight stats
+// scrub a bullet list: drop UI-narration/pointers/empty, strip chips, highlight stats
 function cleanBullets(arr) {
   return (arr ?? [])
     .map((b) => ({ lead: scrubText(cleanStr(b.lead)) || "", text: scrubText(cleanStr(b.text)) || "" }))
-    .filter((b) => !isUiNarration(b.text) && !isUiNarration(b.lead) && !(isEmptyish(b.text) && isEmptyish(b.lead)))
+    .filter((b) => !isUiNarration(b.text) && !isUiNarration(b.lead) && !isPointer(b.text) && !(isEmptyish(b.text) && isEmptyish(b.lead)))
     .map((b) => ({ lead: b.lead, text: autoHl(b.text) }))
+}
+
+// numbered-process bullets ("1. Map", "2) Test") → a designed step-flow
+function bulletsAreNumberedProcess(arr) {
+  const b = (arr ?? []).filter((x) => !isEmptyish(cleanStr(x.lead)) || !isEmptyish(cleanStr(x.text)))
+  if (b.length < 3) return false
+  const numbered = b.filter((x) => NUM_LEAD_RE.test(cleanStr(x.lead) || "") || NUM_LEAD_RE.test(cleanStr(x.text) || "")).length
+  return numbered >= Math.ceil(b.length * 0.6)
+}
+function bulletsToFlow(r, base, title) {
+  const steps = (r.bullets ?? [])
+    .map((b) => {
+      const lead = stripNumLead(scrubText(cleanStr(b.lead)) || "")
+      const text = stripNumLead(scrubText(cleanStr(b.text)) || "")
+      return { k: lead || text.split(/[.:—-]/)[0].slice(0, 40), d: autoHl(lead && text ? text : text || lead) }
+    })
+    .filter((s) => s.k || s.d)
+    .slice(0, 6)
+  return { kind: "flow", ...base, title, ...(nonEmpty(r.body) ? { sub: cleanStr(r.body[0]) } : {}), steps, ...(r.callout?.text ? { foot: scrubText(cleanStr(r.callout.text)) } : {}) }
 }
 
 function convertFallback(r, base, title) {
   const bullets = nonEmpty(r.bullets) ? cleanBullets(r.bullets) : cleanBullets((r.body ?? []).map((t) => ({ lead: "", text: t })))
-  return { kind: "bullets", ...base, title, bullets, ...(r.callout ? { callout: { k: cleanStr(r.callout.k) || "Insight", text: autoHl(scrubText(cleanStr(r.callout.text))) || "" } } : {}) }
+  return { kind: "bullets", ...base, title, bullets, ...(r.callout ? { callout: { k: scrubKicker(cleanStr(r.callout.k)) || "Insight", text: autoHl(scrubText(cleanStr(r.callout.text))) || "" } } : {}) }
 }
 
 // Pages whose source data couldn't be salvaged mechanically: queue the src
@@ -277,7 +310,7 @@ for (let k = 0; k < records.length; k++) {
       ...(ctx.chap ? { chap: ctx.chap } : {}),
       ...(r.eyebrow ? { eyebrow: cleanStr(r.eyebrow) } : {}),
       ...(r.locked ? { locked: true } : {}),
-      title: cleanStr(r.title) || INSTRUMENT_TITLES[inst[1]],
+      title: scrubTitle(cleanStr(r.title)) || INSTRUMENT_TITLES[inst[1]],
       ...(nonEmpty(r.body) ? { sub: cleanStr(r.body[0]) } : {}),
       instrument: inst[1],
       replaces: span,

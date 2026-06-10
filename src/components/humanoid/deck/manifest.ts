@@ -454,23 +454,23 @@ export const SLIDES: Slide[] = [
     "steps": [
       {
         "k": "Technology Maturity",
-        "d": "Current limitations in hardware and software reliability: Actuator cost and durability remains 5-{{7x}} above viable mass-market level; Battery life limited to 2-8 hours in most models; AI reliability in edge cases (unstructured environments). Tags: Short Battery Life, Actuator Costs, AI Robustness"
+        "d": "Current limitations in hardware and software reliability: Actuator cost and durability remains 5-{{7x}} above viable mass-market level; Battery life limited to 2-8 hours in most models; AI reliability in edge cases (unstructured environments)"
       },
       {
         "k": "Cost Barriers",
-        "d": "Price points remain prohibitive for most applications: Current models: {{$100,000}}-{{$250,000 }}per unit; Economic viability threshold: {{$20,000}}-{{$35,000 }}for most use cases; 8-14 month ROI currently achievable only in niche applications. Tags: High CAPEX, Limited ROI Cases"
+        "d": "Price points remain prohibitive for most applications: Current models: {{$100,000}}-{{$250,000 }}per unit; Economic viability threshold: {{$20,000}}-{{$35,000 }}for most use cases; 8-14 month ROI currently achievable only in niche applications"
       },
       {
         "k": "Workforce Integration",
-        "d": "Human-robot collaboration challenges: Employee resistance and fear of job displacement; Skills gap in robot management and maintenance; Workflow redesign and systems integration complexity. Tags: Change Resistance, Skills Gap"
+        "d": "Human-robot collaboration challenges: Employee resistance and fear of job displacement; Skills gap in robot management and maintenance; Workflow redesign and systems integration complexity"
       },
       {
         "k": "Regulatory Hurdles",
-        "d": "Evolving compliance landscape: Inconsistent safety standards across regions; Liability and insurance frameworks still developing; AI regulation in physical embodied systems. Tags: Regional Inconsistency, Liability Uncertainty"
+        "d": "Evolving compliance landscape: Inconsistent safety standards across regions; Liability and insurance frameworks still developing; AI regulation in physical embodied systems"
       },
       {
         "k": "Public Trust",
-        "d": "Social acceptance challenges: Media amplification of failures and incidents; Privacy concerns around continuous sensing; Cultural variations in robot acceptance. Tags: Privacy Issues, Media Perception"
+        "d": "Social acceptance challenges: Media amplification of failures and incidents; Privacy concerns around continuous sensing; Cultural variations in robot acceptance"
       }
     ],
     "foot": "Cost and technology maturity represent the most immediate barriers to overcome through innovation and scale. Public trust and regulatory hurdles require proactive industry-wide action to prevent future bottlenecks."
@@ -958,10 +958,6 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "~",
-              "Badges: NVIDIA GR00T/Isaac, Microsoft Azure AI, Google Cloud Robotics"
-            ],
-            [
-              "~",
               "NVIDIA's GR00T N1: Universal foundation model for embodied AI with Isaac Sim platform for training across diverse robot partners including Agility, Sanctuary AI, and Boston Dynamics."
             ]
           ]
@@ -1023,10 +1019,6 @@ export const SLIDES: Slide[] = [
         {
           "t": "Case Examples",
           "items": [
-            [
-              "~",
-              "Badges: Tesla Optimus, Figure AI, 1X"
-            ],
             [
               "~",
               "Figure AI: Initially partnered with OpenAI but pivoted to in-house AI development in early 2025. Their pivot signals belief that optimized, in-house AI is necessary for superior performance and reliability."
@@ -1250,7 +1242,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Vendor badges: Intel, IBM, BrainChip, SynSense, GrAI Matter Labs"
+      "ex": "Vendor"
     }
   },
   {
@@ -1582,7 +1574,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Metric chips: 99.97% availability target; < 30 min downtime/month"
+              "Metric"
             ]
           ]
         },
@@ -1607,7 +1599,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: Boston Dynamics, Kawasaki Robotics, ABB"
+              "Company"
             ]
           ]
         },
@@ -1632,7 +1624,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: NVIDIA, Infineon, BlackBerry QNX"
+              "Company"
             ]
           ]
         }
@@ -1665,7 +1657,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: Siemens, GE Digital, C3.ai"
+              "Company"
             ]
           ]
         },
@@ -1690,7 +1682,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: AWS IoT, Microsoft Azure, Agility Arc"
+              "Company"
             ]
           ]
         },
@@ -1715,7 +1707,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Metric chips: 13-27% performance improvement; 30% reduction in downtime"
+              "Metric"
             ]
           ]
         }
@@ -1875,7 +1867,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: Tesla, Hyundai, ABB, FANUC"
+              "Company"
             ]
           ]
         },
@@ -1950,7 +1942,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: Figure AI, Agility Robotics, Sanctuary AI, Apptronik"
+              "Company"
             ]
           ]
         },
@@ -2043,7 +2035,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: Tesla ($20K target), Sanctuary AI, Boston Dynamics ($150K+)"
+              "Company"
             ]
           ]
         },
@@ -2068,7 +2060,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: Agility Robotics, Apptronik, UBTECH"
+              "Company"
             ]
           ]
         },
@@ -2093,7 +2085,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: Figure AI, Diligent Robotics, Fourier Intelligence"
+              "Company"
             ]
           ]
         }
@@ -2126,7 +2118,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Pairing chips: BMW/Figure, Hyundai/Boston Dynamics, Tesla/in-house"
+              "Pairing"
             ]
           ]
         },
@@ -2151,7 +2143,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: Diligent Robotics, Fourier Intelligence, SoftBank Robotics"
+              "Company"
             ]
           ]
         },
@@ -2176,7 +2168,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Pairing chips: Agility/Amazon, Apptronik/Mercedes, UBTECH/BYD"
+              "Pairing"
             ]
           ]
         }
@@ -2744,10 +2736,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Establish sovereign capability for precision mechanical components"
-            ],
-            [
-              "~",
-              "Tags: CHIPS Act Extension, Critical Minerals Initiative, Manufacturing USA"
             ]
           ]
         },
@@ -2765,10 +2753,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Establish public-private partnership model for pre-commercial research"
-            ],
-            [
-              "~",
-              "Tags: NSF AI Directorate, DARPA Robotics, Advanced Manufacturing Office"
             ]
           ]
         },
@@ -2786,10 +2770,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Create sandbox environments for testing novel applications"
-            ],
-            [
-              "~",
-              "Tags: NIST, ISO TC 299, Regulatory Sandboxes"
             ]
           ]
         }
@@ -2815,10 +2795,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Reform higher education to emphasize human-machine collaboration skills"
-            ],
-            [
-              "~",
-              "Tags: Department of Labor, Community College Partnerships, Industry Credentialing"
             ]
           ]
         },
@@ -2836,10 +2812,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Create dedicated cybersecurity standards for robotics systems"
-            ],
-            [
-              "~",
-              "Tags: BIS Export Controls, CFIUS, CISA"
             ]
           ]
         },
@@ -2857,10 +2829,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Create shared ethical frameworks for humanoid deployment"
-            ],
-            [
-              "~",
-              "Tags: EU AI Act Alignment, US-Japan Digital Trade, Quad Tech Initiative"
             ]
           ]
         }
@@ -4066,10 +4034,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Workplace safety: 40-60% reduction in ergonomic injuries ($25K-$75K savings per incident)"
-            ],
-            [
-              "~",
-              "Chips: NPV Model / Monte Carlo Simulation / Real Options Analysis"
             ]
           ]
         },
@@ -4091,10 +4055,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Change management: Structured communication plan and stakeholder mapping"
-            ],
-            [
-              "~",
-              "Chips: Workforce Planning / Change Readiness / Talent Development"
             ]
           ]
         }
@@ -4128,10 +4088,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Technical roadmap: Upgrade path, backward compatibility guarantees"
-            ],
-            [
-              "~",
-              "Chips: Risk Scoring / Vendor Due Diligence / SWOT Analysis"
             ]
           ]
         },
@@ -4157,10 +4113,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Ethics & AI governance: Emerging EU AI Act, NIST AI Risk Management Framework"
-            ],
-            [
-              "~",
-              "Chips: Regulatory Tracking / Compliance Verification / Third-Party Certification"
             ]
           ]
         },
@@ -4186,10 +4138,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Regulatory engagement: Proactive participation in standards development"
-            ],
-            [
-              "~",
-              "Chips: Risk Transfer / Business Continuity / Contingency Planning"
             ]
           ]
         }
@@ -4231,7 +4179,7 @@ export const SLIDES: Slide[] = [
     "src": 79,
     "chap": "var(--c-cyan)",
     "eyebrow": "TECHNOLOGY FORECAST",
-    "title": "Data Chart: Technology Roadmap (2025–2030)",
+    "title": "Technology Roadmap (2025–2030)",
     "sub": "Anticipated breakthroughs and milestone targets for humanoid robotics",
     "instrument": "deploy-timeline",
     "replaces": "Replaces source slide 79"
@@ -4392,7 +4340,7 @@ export const SLIDES: Slide[] = [
     "src": 87,
     "chap": "var(--c-cyan)",
     "eyebrow": "BUSINESS MODEL ANALYSIS",
-    "title": "Two Column Comparative: RaaS vs. Direct Robot Sales Models",
+    "title": "RaaS vs. Direct Robot Sales Models",
     "sub": "Strategic analysis of business approaches, target segments, and performance metrics for humanoid robotics commercialization",
     "L": {
       "name": "Robots-as-a-Service (RaaS)",
@@ -4463,10 +4411,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "SMEs without specialized robotics expertise"
-            ],
-            [
-              "~",
-              "Chips: Agility Robotics / Boston Dynamics / UBTECH"
             ]
           ]
         },
@@ -4479,7 +4423,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "First-year ROI: 63% (small print — could read 65%)"
+              "First-year ROI: 63%"
             ],
             [
               "~",
@@ -4559,10 +4503,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Organizations with data sovereignty requirements"
-            ],
-            [
-              "~",
-              "Chips: Tesla / Figure AI / Sanctuary AI"
             ]
           ]
         },
@@ -4792,38 +4732,36 @@ export const SLIDES: Slide[] = [
     "replaces": "Replaces source slide 93"
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 94,
     "chap": "var(--c-cyan)",
     "eyebrow": "WORKSHOP: MODULE 4",
     "locked": true,
     "title": "Fine-Tuning AI Models for Humanoids",
-    "bullets": [
+    "sub": "Step-by-step methodology for adapting pre-trained foundation models to specific industrial applications",
+    "steps": [
       {
-        "lead": "1. Select Base Foundation Model",
-        "text": "Evaluate NVIDIA's GR00T, OpenAI's VLA, or custom models based on your specific requirements for dexterity, speed, and task complexity. Consider computational requirements and model size constraints."
+        "k": "Select Base Foundation Model",
+        "d": "Evaluate NVIDIA's GR00T, OpenAI's VLA, or custom models based on your specific requirements for dexterity, speed, and task complexity. Consider computational requirements and model size constraints."
       },
       {
-        "lead": "2. Collect Task-Specific Training Data",
-        "text": "Gather high-quality demonstration data through either teleoperation, human demonstration recording, or simulation. Aim for 50-100 demonstrations per task with varied environmental conditions."
+        "k": "Collect Task-Specific Training Data",
+        "d": "Gather high-quality demonstration data through either teleoperation, human demonstration recording, or simulation. Aim for 50-100 demonstrations per task with varied environmental conditions."
       },
       {
-        "lead": "3. Implement Reinforcement Learning from Human Feedback",
-        "text": "Use RLHF techniques to refine model performance based on operator feedback. Create reward functions aligned with task success metrics and safety constraints."
+        "k": "Implement Reinforcement Learning from Human Feedback",
+        "d": "Use RLHF techniques to refine model performance based on operator feedback. Create reward functions aligned with task success metrics and safety constraints."
       },
       {
-        "lead": "4. Calibrate Sensor-to-Action Mappings",
-        "text": "Fine-tune the model's perception-action loops by calibrating input from cameras, LiDAR, and force/torque sensors to robotic actions with precise timing synchronization."
+        "k": "Calibrate Sensor-to-Action Mappings",
+        "d": "Fine-tune the model's perception-action loops by calibrating input from cameras, LiDAR, and force/torque sensors to robotic actions with precise timing synchronization."
       },
       {
-        "lead": "5. Optimize for Deployment Hardware",
-        "text": "Apply quantization, pruning, and knowledge distillation techniques to optimize model for on-board compute constraints while maintaining performance thresholds."
+        "k": "Optimize for Deployment Hardware",
+        "d": "Apply quantization, pruning, and knowledge distillation techniques to optimize model for on-board compute constraints while maintaining performance thresholds."
       }
     ],
-    "callout": {
-      "k": "Workshop Exercise",
-      "text": "Participants will use Isaac Sim and NVIDIA's GR00T APIs to fine-tune a pre-trained model for a part-picking task, focusing on grasp stability and cycle time optimization."
-    }
+    "foot": "Participants will use Isaac Sim and NVIDIA's GR00T APIs to fine-tune a pre-trained model for a part-picking task, focusing on grasp stability and cycle time optimization."
   },
   {
     "kind": "table",
@@ -4967,7 +4905,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Pairing chips: Figure 02 x BMW · UBTECH Walker S x BYD"
+              "Pairing"
             ]
           ]
         },
@@ -5050,7 +4988,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Pairing chips: Atlas x Hyundai · Tesla Optimus Gen2 · Apptronik Apollo x Mercedes"
+              "Pairing"
             ]
           ]
         },
@@ -5179,7 +5117,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Company chips: Amazon · GXO · Agility Robotics · 6 River Systems"
+              "Company"
             ]
           ]
         }
@@ -5250,7 +5188,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Vendor chips: Manhattan Associates · Blue Yonder · Körber Supply Chain"
+              "Vendor"
             ]
           ]
         }
@@ -5284,10 +5222,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Continuous rehabilitation exercise supervision"
-            ],
-            [
-              "−",
-              "Badges: Clinical Certification · Fall Prevention"
             ]
           ]
         },
@@ -5305,10 +5239,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Fall detection and emergency response"
-            ],
-            [
-              "−",
-              "Badges: HIPAA Compliance · EMR Integration"
             ]
           ]
         },
@@ -5333,7 +5263,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Vendor chips: Epic · Cerner · Meditech"
+              "Vendor"
             ]
           ]
         }
@@ -5366,7 +5296,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Vendor chips: Diligent Robotics · Aethon"
+              "Vendor"
             ]
           ]
         },
@@ -5384,10 +5314,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Air quality monitoring and filtration"
-            ],
-            [
-              "−",
-              "Badges: Infection Control · Sterilization"
             ]
           ]
         },
@@ -5412,7 +5338,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Vendor chips: SoftBank · Hanson Robotics"
+              "Vendor"
             ]
           ]
         }
@@ -5527,10 +5453,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "CE Marking: Required certification confirming safety, health, and environmental standards"
-            ],
-            [
-              "~",
-              "Tags: ISO 10218-1/2, ISO/TS 15066, ISO/TR 9241-810, GDPR"
             ]
           ]
         },
@@ -5548,10 +5470,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "NIST RMF: Risk Management Framework guiding robotics development"
-            ],
-            [
-              "~",
-              "Tags: ANSI/RIA R15.08, ANSI/UL 1740, NFPA 79, FCC Part 15"
             ]
           ]
         },
@@ -5569,10 +5487,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "South Korea: K-Robot certification and intelligent robot industry promotion"
-            ],
-            [
-              "~",
-              "Tags: GB/T 20867, GB/T 33863, JIS B 8433, KS B ISO 10218"
             ]
           ]
         }
@@ -5602,10 +5516,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Data Privacy: Processing activities, consent mechanisms, data security"
-            ],
-            [
-              "~",
-              "Tags: Self-certification, Third-party verification, Continuous monitoring"
             ]
           ]
         },
@@ -5710,10 +5620,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Industry adopters: End-users providing domain knowledge and validation environments"
-            ],
-            [
-              "~",
-              "Tags: NVIDIA Ecosystem, Agility Partner Network, Microsoft Robotics"
             ]
           ]
         },
@@ -5731,10 +5637,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Open innovation frameworks with shared IP models"
-            ],
-            [
-              "~",
-              "Tags: EU Robotics Horizon, Stanford-SenseTime, Japan Robot Revolution"
             ]
           ]
         },
@@ -5777,10 +5679,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Tight integration: Complete optimization of hardware-software interface"
-            ],
-            [
-              "~",
-              "Tags: Tesla Optimus, Figure AI (post-OpenAI), Boston Dynamics"
             ]
           ]
         },
@@ -5798,10 +5696,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "In-house production: Building manufacturing capability for critical components"
-            ],
-            [
-              "~",
-              "Tags: Hyundai-Boston Dynamics, Tesla Gigafactory, BYD Robotics Division"
             ]
           ]
         },
@@ -5888,7 +5782,7 @@ export const SLIDES: Slide[] = [
       },
       {
         "lead": "Market Trajectory:",
-        "text": "Soft robotics component market projected to grow from {{$688M}} (2025) to {{$3.2B}} by 2030, with CAGR of {{36%}}, outpacing traditional actuator market growth by {{2.7x}}."
+        "text": "Soft robotics component market projected to grow from {{$688M}} (2025) to {{$3.2B}} by 2030, with CAGR of {{36%}}, outpacing traditional actuator market growth by {{2.7x.}}"
       }
     ],
     "callout": {
@@ -6029,10 +5923,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Disadvantages: High cost ($1,350-$2,700 per unit), heat generation, supply chain bottleneck"
-            ],
-            [
-              "~",
-              "Tags: SKF, Rollvis, NSK, Shanghai Beite"
             ]
           ]
         },
@@ -6050,10 +5940,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Disadvantages: Lower torsional stiffness, reduced load capacity under shock conditions, premium pricing"
-            ],
-            [
-              "~",
-              "Tags: Harmonic Drive Systems, LeaderDrive, Nidec"
             ]
           ]
         },
@@ -6071,10 +5957,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Disadvantages: Larger and heavier than harmonic drives, has backlash (0.5-3 arc-min), lower precision"
-            ],
-            [
-              "~",
-              "Tags: Nabtesco, Sumitomo, Cone Drive"
             ]
           ]
         }
@@ -6164,10 +6046,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Solid-state: Early adoption by Boston Dynamics in Atlas Electric (350+ Wh/kg)"
-            ],
-            [
-              "~",
-              "Tags: CATL, LG Energy, QuantumScape, Tesla"
             ]
           ]
         },
@@ -6185,10 +6063,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Predictive analytics for state-of-charge estimation"
-            ],
-            [
-              "~",
-              "Tags: Tesla BMS, Boston Dynamics, Delta Electronics"
             ]
           ]
         }
@@ -6214,10 +6088,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Hybrid Approach: Boston Dynamics implements both strategies with priority on hot-swap"
-            ],
-            [
-              "~",
-              "Tags: Agility Robotics, Figure AI, Tesla"
             ]
           ]
         },
@@ -6388,10 +6258,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Process redesign: Consulting services for workflow optimization"
-            ],
-            [
-              "~",
-              "Tags: Tesla, Boston Dynamics, Figure AI"
             ]
           ]
         },
@@ -6455,10 +6321,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Continuous support: Technical assistance from provider team"
-            ],
-            [
-              "~",
-              "Tags: Agility Robotics, Sanctuary AI, Apptronik"
             ]
           ]
         },
@@ -6624,10 +6486,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Early supplier development: Technology transfer and capacity building with emerging vendors"
-            ],
-            [
-              "~",
-              "Tags: Tesla, Boston Dynamics, Figure AI"
             ]
           ]
         }
@@ -6657,10 +6515,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Southeast Asia: Emerging alternative for component diversification"
-            ],
-            [
-              "~",
-              "Tags: Hyundai/Boston, Foxconn, Magna"
             ]
           ]
         },
@@ -6711,26 +6565,28 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 127,
     "chap": "var(--c-cyan)",
     "eyebrow": "WORKSHOP MODULE",
     "locked": true,
     "title": "Advanced System Integration Workshop",
-    "bullets": [
+    "sub": "Step-by-step blueprint for R&D teams to implement end-to-end humanoid robotics systems",
+    "steps": [
       {
-        "lead": "1. Interface Mapping & Architecture",
-        "text": "Create comprehensive interface diagrams connecting actuators, sensors, middleware, and AI systems; Document API contracts between subsystems with data models, protocols, and failure handling; Implement synchronization mechanisms for real-time control loops and sensor fusion. Tags: UML Diagrams, API Specifications, Message Sequence Charts"
+        "k": "Interface Mapping & Architecture",
+        "d": "Create comprehensive interface diagrams connecting actuators, sensors, middleware, and AI systems; Document API contracts between subsystems with data models, protocols, and failure handling; Implement synchronization mechanisms for real-time control loops and sensor fusion"
       },
       {
-        "lead": "3. Verification & Testing Routines",
-        "text": "Establish end-to-end test procedures for verifying system integration across all components; Implement performance benchmarks for latency, throughput, and resource utilization; Design fault injection tests to verify system resilience and graceful degradation. Tags: Gtest/GMock, Integration Fixtures, Chaos Engineering"
+        "k": "Middleware Selection & Configuration",
+        "d": "Select appropriate middleware framework (ROS2, Isaac, NVIDIA Omniverse) based on application requirements; Configure message brokers and pub/sub architecture for high-throughput, low-latency data exchange; Implement shared memory mechanisms for large data structures (point clouds, images, maps)"
+      },
+      {
+        "k": "Verification & Testing Routines",
+        "d": "Establish end-to-end test procedures for verifying system integration across all components; Implement performance benchmarks for latency, throughput, and resource utilization; Design fault injection tests to verify system resilience and graceful degradation"
       }
     ],
-    "callout": {
-      "k": "Workshop tip",
-      "text": "Iterative integration is key. Begin with simulated environments before hardware deployment, and implement continuous integration pipelines that verify interfaces at every code change."
-    }
+    "foot": "Iterative integration is key. Begin with simulated environments before hardware deployment, and implement continuous integration pipelines that verify interfaces at every code change."
   },
   {
     "kind": "case",
@@ -6790,10 +6646,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Both: Stringent safety standards equivalent to ISO 10218 and JIS B 8433 compliance"
-            ],
-            [
-              "~",
-              "Tags: METI, KATS, JIS B 8433"
             ]
           ]
         },
@@ -6815,10 +6667,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "UIs must be fully localized with documentation in native languages"
-            ],
-            [
-              "~",
-              "Tags: Toyota, Mitsubishi, Hyundai, Samsung"
             ]
           ]
         },
@@ -6840,10 +6688,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Establish technical support centers with native engineers in Tokyo and Seoul"
-            ],
-            [
-              "~",
-              "Tags: Fanuc, Kawasaki, Naver Labs, LG Electronics"
             ]
           ]
         }
@@ -6873,10 +6717,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Manufacturing licenses through MIIT necessary for local production"
-            ],
-            [
-              "~",
-              "Tags: CCC, CAC, MIIT"
             ]
           ]
         },
@@ -6898,10 +6738,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Consider component manufacturing in China while protecting core IP"
-            ],
-            [
-              "~",
-              "Tags: Guangdong, Shanghai, Shenzhen"
             ]
           ]
         },
@@ -6923,10 +6759,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Component-level partnerships with emerging players like LeaderDrive"
-            ],
-            [
-              "~",
-              "Tags: BYD, SAIC, UBTECH, LeaderDrive"
             ]
           ]
         }
@@ -6960,10 +6792,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "GDPR: Strict data protection for user interactions and environmental sensing"
-            ],
-            [
-              "~",
-              "Tags: CE, ISO/TS 15066, ISO 10218-1/2"
             ]
           ]
         },
@@ -7027,10 +6855,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Component Specialists: Schaeffler, Festo – precision actuators and pneumatics"
-            ],
-            [
-              "~",
-              "Tags: BMW, Siemens, Bosch, KUKA, Schaeffler"
             ]
           ]
         },
@@ -7355,7 +7179,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Vendor chips: SoftBank Robotics, Diligent Robotics, Hanson Robotics, UBTECH"
+              "Vendor"
             ]
           ]
         }
@@ -7388,7 +7212,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Vendor chips: Diligent Robotics, Aeolus Robotics, Figure AI Health"
+              "Vendor"
             ]
           ]
         },
@@ -7413,7 +7237,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Vendor chips: SoftBank Robotics, Rethink Robotics, Fourier Intelligence"
+              "Vendor"
             ]
           ]
         },
@@ -7438,7 +7262,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Vendor chips: Hanson Robotics, Labrador Systems, Toyota HSR, UBTECH"
+              "Vendor"
             ]
           ]
         }
@@ -7548,10 +7372,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Service contracts can be negotiated with inflation protection clauses"
-            ],
-            [
-              "~",
-              "Chips: Agility Robotics, Boston Dynamics, Figure AI"
             ]
           ]
         },
@@ -7647,10 +7467,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Asset utilization rates critical for maintaining positive ROI"
-            ],
-            [
-              "~",
-              "Chips: Tesla Optimus, Traditional OEMs, Corporate leasing"
             ]
           ]
         },
@@ -7712,7 +7528,7 @@ export const SLIDES: Slide[] = [
       }
     ],
     "callout": {
-      "k": "Key finding (un-kickered yellow box)",
+      "k": "Key finding",
       "text": "Companies achieving the highest ROI from humanoid deployments invested {{15-18%}} of their total robotics budget in workforce development programs."
     }
   },
@@ -7837,7 +7653,7 @@ export const SLIDES: Slide[] = [
       }
     ],
     "callout": {
-      "k": "Participant note (un-kickered yellow box)",
+      "k": "Participant note",
       "text": "Participants should arrive with specific legacy workflow documentation from their organization to maximize the hands-on value of this sprint workshop."
     }
   },
@@ -7954,10 +7770,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Decision path: First evaluate use case criticality, then financial return, then technical readiness"
-            ],
-            [
-              "~",
-              "Chips: Process Mapping, Value Stream Analysis, Pain Point Ranking"
             ]
           ]
         },
@@ -7983,10 +7795,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Phase 4: Fleet scaling and advanced capabilities (18+ months)"
-            ],
-            [
-              "~",
-              "Chips: Stage-Gates, Success Metrics, Agile Planning"
             ]
           ]
         },
@@ -8012,10 +7820,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Regulatory: Proactive compliance strategy, policy monitoring framework"
-            ],
-            [
-              "~",
-              "Chips: Contingency Plans, Pilot Testing, Incremental Scaling"
             ]
           ]
         }
@@ -8156,10 +7960,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "EU: AI Act (2024) creates tiered risk categories with strict liability for high-risk applications and mandatory insurance requirements"
-            ],
-            [
-              "~",
-              "Chips: EU AI Act, US NIST, IEEE"
             ]
           ]
         },
@@ -8181,10 +7981,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Human oversight requirements and \"kill switch\" regulations"
-            ],
-            [
-              "~",
-              "Chips: TÜV SÜD, UL Solutions, ISO/TC 299"
             ]
           ]
         },
@@ -8206,10 +8002,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Strict physical separation requirements in early deployments"
-            ],
-            [
-              "~",
-              "Chips: OSHA, EU-OSHA, ANSI/RIA"
             ]
           ]
         }
@@ -8239,10 +8031,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "South Korea: \"Robot Ethics Charter\" with shared liability model"
-            ],
-            [
-              "~",
-              "Chips: MIIT, METI, KATS"
             ]
           ]
         },
@@ -8264,10 +8052,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Emphasis on socially harmonious deployment over individual rights protection"
-            ],
-            [
-              "~",
-              "Chips: CAAI, JSR, China Ethics Committee"
             ]
           ]
         },
@@ -8289,10 +8073,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Regional data localization requirements with security backdoors"
-            ],
-            [
-              "~",
-              "Chips: CAC, PIPC, PPC Japan"
             ]
           ]
         }
@@ -8456,10 +8236,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "2030+: Generalized manipulation primitives with contextual reasoning"
-            ],
-            [
-              "~",
-              "Chips: NVIDIA GR00T, Anthropic, Google DeepMind"
             ]
           ]
         },
@@ -8477,10 +8253,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "2030: Dynamic scene generation from natural language descriptions"
-            ],
-            [
-              "~",
-              "Chips: NVIDIA Isaac, Unity Industrial, AWS RoboMaker"
             ]
           ]
         },
@@ -8498,10 +8270,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "2030+: Causal reasoning for novel task inference"
-            ],
-            [
-              "~",
-              "Chips: OpenAI, Meta AI, Cohere"
             ]
           ]
         }
@@ -8527,10 +8295,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "2030: Bidirectional implicit intent recognition without explicit commands"
-            ],
-            [
-              "~",
-              "Chips: SoftBank, Figure AI, Intuition Robotics"
             ]
           ]
         },
@@ -8548,10 +8312,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "2030+: Full autonomous fleet orchestration with minimal supervision"
-            ],
-            [
-              "~",
-              "Chips: Boston Dynamics, Agility Robotics, Tesla"
             ]
           ]
         },
@@ -8569,10 +8329,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "2030: Self-verifying ethical behavior with human oversight"
-            ],
-            [
-              "~",
-              "Chips: Universal Robots, Anthropic, Intel"
             ]
           ]
         }
@@ -8773,10 +8529,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "ROS-Industrial: Factory automation extensions for industrial applications"
-            ],
-            [
-              "~",
-              "Chips: ROS Noetic, ROS 2 Humble, Nav2"
             ]
           ]
         },
@@ -8794,10 +8546,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Collision detection and avoidance in complex environments"
-            ],
-            [
-              "~",
-              "Chips: MoveIt 2, OpenRAVE, PyRobot"
             ]
           ]
         },
@@ -8815,10 +8563,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "RTAB-Map: Real-time appearance-based mapping"
-            ],
-            [
-              "~",
-              "Chips: OpenCV 4.8, PCL 1.13, OpenVINO"
             ]
           ]
         }
@@ -8844,10 +8588,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Figure API: Figure's low-latency control interfaces"
-            ],
-            [
-              "~",
-              "Chips: NVIDIA, Boston Dynamics, Figure AI, Tesla"
             ]
           ]
         },
@@ -8869,10 +8609,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Benchmark against ISO/TS 15066 collision limits for human-robot collaboration"
-            ],
-            [
-              "~",
-              "Chips: Safety PLC, SMACH, Behavior Trees"
             ]
           ]
         },
@@ -8894,10 +8630,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Design for operation in variable lighting and weather conditions"
-            ],
-            [
-              "~",
-              "Chips: Intel RealSense, Velodyne, Ouster"
             ]
           ]
         }
@@ -9076,10 +8808,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "SB-3 Continuous improvement: Robot-collected data enables ongoing optimization"
-            ],
-            [
-              "~",
-              "Chips: Lead time: -30% | Throughput: +25% | First pass yield: +40%"
             ]
           ]
         }
@@ -9134,10 +8862,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Andean Region: Fragmented regulations requiring country-specific compliance strategies"
-            ],
-            [
-              "~",
-              "Chips: ISO 10218, USMCA, ANBT, INMETRO"
             ]
           ]
         },
@@ -9180,10 +8904,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Entry nodes: São Paulo industrial belt, Manaus Free Zone"
-            ],
-            [
-              "~",
-              "Chips: TOTVS, WEG, Embraer, FAPESP"
             ]
           ]
         },
@@ -9201,10 +8921,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Entry nodes: Monterrey, Juárez-El Paso manufacturing corridor"
-            ],
-            [
-              "~",
-              "Chips: Softtek, CANIETI, Ternium"
             ]
           ]
         },
@@ -9222,10 +8938,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Caribbean basin: Managed service model through Panama-based operations"
-            ],
-            [
-              "~",
-              "Chips: Grupo Sura, U. de Chile, COPRED"
             ]
           ]
         }
@@ -9325,10 +9037,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Shape memory alloys: Self-adapting finger joints mimicking human musculature"
-            ],
-            [
-              "~",
-              "Chips: Soft Robotics, OnRobot, RightHand Robotics"
             ]
           ]
         },
@@ -9346,10 +9054,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Distributed pressure sensing across hand surface (100-500 sensing points)"
-            ],
-            [
-              "~",
-              "Chips: SynTouch, ATI Industrial, BeBop Sensors, Shadow Robot"
             ]
           ]
         },
@@ -9400,21 +9104,12 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Piezoelectric: Dynamic force and vibration detection for slip prevention"
-            ],
-            [
-              "~",
-              "Chips: SynTouch, GelSight, TacTip, HaptX"
             ]
           ]
         },
         {
           "t": "Leading Vendors & Patent Landscape — Market positioning by specialty and patent strength:",
-          "items": [
-            [
-              "~",
-              "See table (transcribed in table field)"
-            ]
-          ]
+          "items": []
         }
       ],
       "ex": "Patent insight: 2024-2025 has seen 247% growth in patent filings for tactile sensing in humanoids, with China now accounting for 42% of global applications, challenging US historical leadership in gripper technology."
@@ -9437,7 +9132,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "AWS RoboMaker: Simulation, CI/CD, fleet management [badge: High Integration]"
+              "AWS RoboMaker: Simulation, CI/CD, fleet management ["
             ],
             [
               "+",
@@ -9445,15 +9140,11 @@ export const SLIDES: Slide[] = [
             ],
             [
               "+",
-              "Microsoft Azure Robotics: IoT Hub integration, Digital Twins, AI model deployment [badge: High Enterprise]"
+              "Microsoft Azure Robotics: IoT Hub integration, Digital Twins, AI model deployment ["
             ],
             [
               "+",
               "Google Cloud Robotics: Kubernetes-based orchestration, TensorFlow integration"
-            ],
-            [
-              "~",
-              "Chips: AWS, NVIDIA, Microsoft, Google, Siemens"
             ]
           ]
         },
@@ -9462,7 +9153,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "Edge processing: Local inference minimizes latency (5-20ms) [badge: Lowest Latency]"
+              "Edge processing: Local inference minimizes latency (5-20ms) ["
             ],
             [
               "~",
@@ -9470,11 +9161,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "−",
-              "Cloud-only: Full cloud processing with 5G/Wi-Fi 6E (250-500ms) [badge: Medium Latency]"
-            ],
-            [
-              "~",
-              "Chips: Verizon, AWS Wavelength, Azure Edge"
+              "Cloud-only: Full cloud processing with 5G/Wi-Fi 6E (250-500ms) ["
             ]
           ]
         },
@@ -9496,10 +9183,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Siemens: Industrial-first approach, deep OT knowledge"
-            ],
-            [
-              "~",
-              "Chips: Accenture, Deloitte, Infosys"
             ]
           ]
         }
@@ -9516,7 +9199,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "SAP Integration: Digital Core APIs, predictive maintenance, IoT Hub [badge: Leader]"
+              "SAP Integration: Digital Core APIs, predictive maintenance, IoT Hub ["
             ],
             [
               "+",
@@ -9529,10 +9212,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Custom middleware: ROS-Enterprise bridges, message queuing systems"
-            ],
-            [
-              "~",
-              "Chips: SAP, Oracle, Rockwell, Siemens"
             ]
           ]
         },
@@ -9549,15 +9228,11 @@ export const SLIDES: Slide[] = [
             ],
             [
               "+",
-              "Quality assurance integration: Defect detection with MES tracking [badge: Growing Area]"
+              "Quality assurance integration: Defect detection with MES tracking ["
             ],
             [
               "+",
               "Maintenance integration: Predictive alerts from robot telemetry"
-            ],
-            [
-              "~",
-              "Chips: BMW, Amazon, Bosch"
             ]
           ]
         },
@@ -9579,10 +9254,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Multi-robot coordination: 30-40% efficiency gain in shared spaces"
-            ],
-            [
-              "~",
-              "Chips: McKinsey, BCG, Deloitte"
             ]
           ]
         }
@@ -9649,10 +9320,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Investors: Revenue growth acceleration, margin expansion, and payback periods"
-            ],
-            [
-              "~",
-              "Chips: CEO, CFO, COO, Board"
             ]
           ]
         },
@@ -9741,10 +9408,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Linked to Amazon's broader strategic automation roadmap"
-            ],
-            [
-              "~",
-              "Chips: Board approval within 4 weeks | 24-month ROI target"
             ]
           ]
         },
@@ -9796,34 +9459,32 @@ export const SLIDES: Slide[] = [
     ]
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 167,
     "chap": "var(--c-cyan)",
     "eyebrow": "WORKSHOP MODULE",
     "locked": true,
     "title": "Advanced Workshop: De-risking the Component Pipeline",
-    "bullets": [
+    "sub": "Hands-on exercises for building resilient supply chains in humanoid robotics",
+    "steps": [
       {
-        "lead": "Step 1: Vendor Audit Protocol",
-        "text": "Develop comprehensive scoring systems for evaluating actuator suppliers across technical capability, financial stability, and geopolitical risk factors. [Exercise] Supplier Risk Matrix Development: Map 3 tiers of suppliers for critical components; Develop weighted scoring criteria (30 min); Evaluate real-world actuator suppliers using matrix"
+        "k": "Vendor Audit Protocol",
+        "d": "Develop comprehensive scoring systems for evaluating actuator suppliers across technical capability, financial stability, and geopolitical risk factors. [Exercise] Supplier Risk Matrix Development: Map 3 tiers of suppliers for critical components; Develop weighted scoring criteria (30 min); Evaluate real-world actuator suppliers using matrix"
       },
       {
-        "lead": "Step 2: Contract Structuring",
-        "text": "Craft flexible, responsive contract frameworks that include contingency clauses, priority allocation guarantees, and technology roadmap alignment. [Template] Adaptive Contract Framework: Volume-flexible pricing tiers with guaranteed minimums; Force majeure redefined for component shortages; Technology evolution alignment clauses"
+        "k": "Contract Structuring",
+        "d": "Craft flexible, responsive contract frameworks that include contingency clauses, priority allocation guarantees, and technology roadmap alignment. [Template] Adaptive Contract Framework: Volume-flexible pricing tiers with guaranteed minimums; Force majeure redefined for component shortages; Technology evolution alignment clauses"
       },
       {
-        "lead": "Step 3: Inventory Risk Scoring",
-        "text": "Build dynamic inventory models that optimize holdings based on component criticality, lead times, and geopolitical risk exposure. [Simulation] Supply Chain Disruption Response: Actuator shortage scenario response planning; Semiconductor export restriction simulation; Cross-border shipping disruption mitigation"
+        "k": "Inventory Risk Scoring",
+        "d": "Build dynamic inventory models that optimize holdings based on component criticality, lead times, and geopolitical risk exposure. [Simulation] Supply Chain Disruption Response: Actuator shortage scenario response planning; Semiconductor export restriction simulation; Cross-border shipping disruption mitigation"
       },
       {
-        "lead": "Step 4: Supply Chain Digitization",
-        "text": "Implement digital twin supply chain visualization tools for end-to-end visibility, predictive risk alerts, and scenario modeling. [Demo] Digital Twin Supply Chain Platform: Real-time tracking of critical component pipeline; Alternate sourcing visualization with cost/risk impact; Regulatory change impact simulation tools"
+        "k": "Supply Chain Digitization",
+        "d": "Implement digital twin supply chain visualization tools for end-to-end visibility, predictive risk alerts, and scenario modeling. [Demo] Digital Twin Supply Chain Platform: Real-time tracking of critical component pipeline; Alternate sourcing visualization with cost/risk impact; Regulatory change impact simulation tools"
       }
     ],
-    "callout": {
-      "k": "Workshop Outcome",
-      "text": "Each participant team will develop a component criticality framework and actionable contingency playbook for their organization's top 5 supply chain vulnerabilities."
-    }
+    "foot": "Each participant team will develop a component criticality framework and actionable contingency playbook for their organization's top 5 supply chain vulnerabilities."
   },
   {
     "kind": "bullets",
@@ -9922,7 +9583,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Case Example: Hyundai Robotics Labs — Created Boston Dynamics spin-out division with autonomy, separate branding, and dedicated resources while maintaining corporate backing. Resulted in 4 new humanoid prototypes in 18 months. | Case Example: NVIDIA Robotics Sprint Program — 12-week accelerated development cycle reduced time-to-prototype for edge AI applications by 65%, generating 8 new robotics patents from internal teams in 2024. | Strategic insight: Companies that embed startup-like cultures report 3.8x higher retention rates among top technical talent and generate 42% more patents per R&D dollar than traditional siloed approaches. [Chips: Hyundai, Google X, Microsoft Garage / NVIDIA, Samsung, Figure AI]"
+      "ex": "Case Example: Hyundai Robotics Labs — Created Boston Dynamics spin-out division with autonomy, separate branding, and dedicated resources while maintaining corporate backing. Resulted in 4 new humanoid prototypes in 18 months. | Case Example: NVIDIA Robotics Sprint Program — 12-week accelerated development cycle reduced time-to-prototype for edge AI applications by 65%, generating 8 new robotics patents from internal teams in 2024. | Strategic insight: Companies that embed startup-like cultures report 3.8x higher retention rates among top technical talent and generate 42% more patents per R&D dollar than traditional siloed approaches. ["
     },
     "R": {
       "name": "Internal Venture Funding Models",
@@ -9951,24 +9612,24 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "~",
-              "Innovation velocity: Time from concept to MVP — chip: -40% YoY"
+              "Innovation velocity: Time from concept to MVP"
             ],
             [
               "~",
-              "Project graduation rate: % of projects reaching market — chip: 25-30%"
+              "Project graduation rate: % of projects reaching market"
             ],
             [
               "~",
-              "Financial returns: 3-year ROI on innovation investments — chip: 3.2-4.5x"
+              "Financial returns: 3-year ROI on innovation investments"
             ],
             [
               "~",
-              "Talent metrics: Retention rate of participants vs non-participants — chip: +65%"
+              "Talent metrics: Retention rate of participants vs non-participants"
             ]
           ]
         }
       ],
-      "ex": "Case Example: Amazon's Lab126 + Internal Accelerator — Combined internal technical laboratory with $150M annual internal venture fund, produced Agility Robotics partnership and warehouse automation patents valued at $1.2B. | Case Example: Toyota Research Institute — $1B innovation fund for robotics and AI created dual-track careers for researchers and intrapreneurs, generating 4 successful spin-outs and 7 internally deployed technologies. | Strategic insight: Successful robotics organizations are adopting venture capital models internally, with 40% of 2025's leading innovations coming from internal ventures rather than traditional R&D departments. [Chips: Amazon, GE Ventures, Intel Capital]"
+      "ex": "Case Example: Amazon's Lab126 + Internal Accelerator — Combined internal technical laboratory with $150M annual internal venture fund, produced Agility Robotics partnership and warehouse automation patents valued at $1.2B. | Case Example: Toyota Research Institute — $1B innovation fund for robotics and AI created dual-track careers for researchers and intrapreneurs, generating 4 successful spin-outs and 7 internally deployed technologies. | Strategic insight: Successful robotics organizations are adopting venture capital models internally, with 40% of 2025's leading innovations coming from internal ventures rather than traditional R&D departments. ["
     }
   },
   {
@@ -10035,7 +9696,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Selection framework: Partnership model choice should align with strategic goals (time-to-market, IP protection, capital efficiency), capability gaps, and regulatory constraints in target markets. [Chips: Hyundai × Boston Dynamics, Sony × SoftBank / NVIDIA × Robotics Startups, ARM × Chipmakers / Open Robotics Foundation, EU Robotics Alliance, ROS Industrial Consortium]"
+      "ex": "Selection framework: Partnership model choice should align with strategic goals (time-to-market, IP protection, capital efficiency), capability gaps, and regulatory constraints in target markets. ["
     },
     "R": {
       "name": "Success Factors & Case Studies",
@@ -10200,7 +9861,7 @@ export const SLIDES: Slide[] = [
       },
       {
         "lead": "Key implementation challenges",
-        "text": "Current limitations include size constraints (most quantum sensors require vacuum chambers and cooling), power consumption (5-10W vs. 50-100mW for MEMS), and production costs (estimated at {{$5,000}}-{{25,000}} per sensor module)."
+        "text": "Current limitations include size constraints (most quantum sensors require vacuum chambers and cooling), power consumption (5-10W vs. 50-100mW for MEMS), and production costs."
       },
       {
         "lead": "Miniaturization roadmap",
@@ -10316,7 +9977,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Strategic insight: Traditional actuator technology is hitting fundamental physical limits. Cost reduction pathways focused on manufacturing efficiency rather than breakthrough designs. [Chips: Harmonic Drive, SKF, Kollmorgen, Nabtesco]"
+      "ex": "Strategic insight: Traditional actuator technology is hitting fundamental physical limits. Cost reduction pathways focused on manufacturing efficiency rather than breakthrough designs. ["
     },
     "R": {
       "name": "Biomimetic Actuators",
@@ -10383,7 +10044,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Strategic insight: Early commercialization beginning with hybrid systems. Full biomimetic actuators will disrupt market by 2028-2030 with dramatic weight reduction and higher DOF capabilities. [Chips: SRI International, Harvard SEAS, Tokyo Institute, ETH Zurich]"
+      "ex": "Strategic insight: Early commercialization beginning with hybrid systems. Full biomimetic actuators will disrupt market by 2028-2030 with dramatic weight reduction and higher DOF capabilities. ["
     }
   },
   {
@@ -10548,7 +10209,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Strategic insight: Early adopters focused on high-value specialty crops (berries, tree fruits) show 14-month ROI versus 30+ months for broad acre crops. [Chips: John Deere, Apptronik, AgriBot / North America, Western Europe, Japan / Figure AI, Sanctuary AI]"
+      "ex": "Strategic insight: Early adopters focused on high-value specialty crops (berries, tree fruits) show 14-month ROI versus 30+ months for broad acre crops. ["
     },
     "R": {
       "name": "Challenges",
@@ -10607,7 +10268,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Strategic insight: RaaS (Robots-as-a-Service) models with integrated maintenance packages showing 3.2x higher adoption rates than direct purchase among mid-sized farms. [Chips: EU, United States, Japan / XAG Robotics, Kubota, AGCO / Starlink, John Deere Connected Support]"
+      "ex": "Strategic insight: RaaS (Robots-as-a-Service) models with integrated maintenance packages showing 3.2x higher adoption rates than direct purchase among mid-sized farms. ["
     }
   },
   {
@@ -10656,7 +10317,7 @@ export const SLIDES: Slide[] = [
     "src": 182,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Table: Regional Regulation Landscape",
+    "title": "Regional Regulation Landscape",
     "columns": [
       "Region",
       "Testing",
@@ -10871,10 +10532,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Engagement approach: Proactive participation in regulatory development"
-            ],
-            [
-              "~",
-              "Tags: ISO/IEC, EU AI Act, FDA, NIST"
             ]
           ]
         },
@@ -10892,10 +10549,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Academic partnerships: R&D collaborations with local research institutions"
-            ],
-            [
-              "~",
-              "Tags: System Integrators, Industry OEMs, Local Distributors"
             ]
           ]
         },
@@ -10913,10 +10566,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Labor relation strategies: Market-appropriate workforce transition models"
-            ],
-            [
-              "~",
-              "Tags: Local AI Fine-tuning, UX Research, Cultural Consultants"
             ]
           ]
         }
@@ -10942,10 +10591,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "China model: Hardware excellence, component manufacturing, and cost optimization"
-            ],
-            [
-              "~",
-              "Tags: European Union, North America, China, Japan/Korea"
             ]
           ]
         },
@@ -10963,10 +10608,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Regional assembly: Final integration near end markets with localized testing"
-            ],
-            [
-              "~",
-              "Tags: Component Mapping, Alternative Suppliers, Local Content Requirements"
             ]
           ]
         },
@@ -10984,10 +10625,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Asia-Pacific: Production volume growth (>30%), localization rate (>60%)"
-            ],
-            [
-              "~",
-              "Tags: Case Studies, Benchmark Data, Regional KPIs"
             ]
           ]
         }
@@ -10996,76 +10633,72 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 188,
     "chap": "var(--c-cyan)",
     "eyebrow": "WORKSHOP: MODULE 4",
     "locked": true,
     "title": "Workshop Module: Designing for Manufacturability",
-    "bullets": [
+    "sub": "Hands-on techniques for R&D teams developing scalable humanoid production",
+    "steps": [
       {
-        "lead": "01. Bill-of-Materials Optimization — Component consolidation framework:",
-        "text": "Techniques to reduce part count by {{30-45%}} through functional integration and modular design principles."
+        "k": "Bill-of-Materials Optimization — Component consolidation framework:",
+        "d": "Techniques to reduce part count by {{30-45%}} through functional integration and modular design principles."
       },
       {
-        "lead": "01. Bill-of-Materials Optimization — Material selection matrix:",
-        "text": "Cost vs. performance trade-off analysis for critical components (actuators, structural elements, electronics housings)."
+        "k": "Bill-of-Materials Optimization — Material selection matrix:",
+        "d": "Cost vs. performance trade-off analysis for critical components (actuators, structural elements, electronics housings)."
       },
       {
-        "lead": "02. Supply Chain Risk Mapping — Dependency visualization:",
-        "text": "Methodology for mapping critical component dependencies, regional concentrations, and geopolitical vulnerabilities."
+        "k": "Supply Chain Risk Mapping — Dependency visualization:",
+        "d": "Methodology for mapping critical component dependencies, regional concentrations, and geopolitical vulnerabilities."
       },
       {
-        "lead": "02. Supply Chain Risk Mapping — Resilience strategy toolkit:",
-        "text": "Multi-sourcing models, buffer inventory calculations, and alternative material qualification processes."
+        "k": "Supply Chain Risk Mapping — Resilience strategy toolkit:",
+        "d": "Multi-sourcing models, buffer inventory calculations, and alternative material qualification processes."
       },
       {
-        "lead": "03. Cost-Down Engineering — Design for Assembly (DFA):",
-        "text": "Simplified assembly techniques to reduce labor hours by up to {{60%}} through orientation standardization and fastener reduction."
+        "k": "Cost-Down Engineering — Design for Assembly (DFA):",
+        "d": "Simplified assembly techniques to reduce labor hours by up to {{60%}} through orientation standardization and fastener reduction."
       },
       {
-        "lead": "03. Cost-Down Engineering — Scale economies planning:",
-        "text": "Roadmap for progressive cost reduction through volume manufacturing, focusing on high-value actuator systems."
+        "k": "Cost-Down Engineering — Scale economies planning:",
+        "d": "Roadmap for progressive cost reduction through volume manufacturing, focusing on high-value actuator systems."
       }
     ],
-    "callout": {
-      "k": "Hands-On Exercise",
-      "text": "Using the provided BOM template and cost structure data, teams will redesign a humanoid arm subassembly to achieve {{30%}} cost reduction while maintaining performance specifications. Apply DFA principles and supply chain risk mitigation strategies."
-    }
+    "foot": "Using the provided BOM template and cost structure data, teams will redesign a humanoid arm subassembly to achieve 30% cost reduction while maintaining performance specifications. Apply DFA principles and supply chain risk mitigation strategies."
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 189,
     "chap": "var(--c-cyan)",
     "eyebrow": "WORKSHOP: AI INTEGRATION",
     "locked": true,
     "title": "Workshop Exercise: AI Integration & Testing",
-    "bullets": [
+    "sub": "Hands-on walkthrough for selecting, integrating, and tuning AI modules in humanoid robotics",
+    "steps": [
       {
-        "lead": "1. Module Selection & Compatibility Analysis",
-        "text": "Evaluate foundation models based on: Inference latency requirements (<10ms for real-time control); Hardware compatibility (NVIDIA Jetson, Intel NUC, custom SoC); Task-specific performance benchmarks"
+        "k": "Module Selection & Compatibility Analysis",
+        "d": "Evaluate foundation models based on: Inference latency requirements (<10ms for real-time control); Hardware compatibility (NVIDIA Jetson, Intel NUC, custom SoC); Task-specific performance benchmarks"
       },
       {
-        "lead": "2. Integration Framework Configuration",
-        "text": "Set up the robotics middleware layer: Configure ROS2/Isaac framework communication protocols; Establish sensor data pipelines to AI perception modules; Implement safety override mechanisms for autonomous actions"
+        "k": "Integration Framework Configuration",
+        "d": "Set up the robotics middleware layer: Configure ROS2/Isaac framework communication protocols; Establish sensor data pipelines to AI perception modules; Implement safety override mechanisms for autonomous actions"
       },
       {
-        "lead": "3. Performance Tuning & Benchmarking",
-        "text": "Optimize for operational conditions: Run quantization to balance accuracy vs. processing speed; Perform thermal profiling under sustained workloads; Measure power consumption across operational scenarios"
+        "k": "Performance Tuning & Benchmarking",
+        "d": "Optimize for operational conditions: Run quantization to balance accuracy vs. processing speed; Perform thermal profiling under sustained workloads; Measure power consumption across operational scenarios"
       },
       {
-        "lead": "4. Validation & Edge Case Testing",
-        "text": "Stress test integrated system with: Adversarial input conditions (poor lighting, sensor noise); Hardware fault injection scenarios; Multi-system interaction simulations"
+        "k": "Validation & Edge Case Testing",
+        "d": "Stress test integrated system with: Adversarial input conditions (poor lighting, sensor noise); Hardware fault injection scenarios; Multi-system interaction simulations"
       },
       {
-        "lead": "Key Performance Metrics to Measure",
-        "text": "Inference latency under load (<20ms target); Success rate in varied lighting (>{{90%}}); Power efficiency (operations per watt); Graceful degradation under resource constraints"
+        "k": "Key Performance Metrics to Measure",
+        "d": "Inference latency under load (<20ms target); Success rate in varied lighting (>{{90%}}); Power efficiency (operations per watt); Graceful degradation under resource constraints"
       }
     ],
-    "callout": {
-      "k": "Hands-On Exercise",
-      "text": "Select and integrate a vision-language model for tool manipulation task: 1. Download reference code from workshop repository 2. Configure perception pipeline for tool recognition 3. Implement feedback loop using force/torque sensors 4. Test and optimize for 3 different environmental conditions — Time allocation: 90 minutes. Required equipment: Test humanoid arm station, NVIDIA Jetson AGX Orin developer kit, USB camera, workshop software package"
-    }
+    "foot": "Select and integrate a vision-language model for tool manipulation task: 1. Download reference code from workshop repository 2. Configure perception pipeline for tool recognition 3. Implement feedback loop using force/torque sensors 4. Test and optimize for 3 different environmental conditions — Time allocation: 90 minutes. Required equipment: Test humanoid arm station, NVIDIA Jetson AGX Orin developer kit, USB camera, workshop software package"
   },
   {
     "kind": "twoPanel",
@@ -11097,10 +10730,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Node 4: Safety and regulatory compliance assessment"
-            ],
-            [
-              "~",
-              "Tags: CFO, CTO, Operations"
             ]
           ]
         },
@@ -11118,10 +10747,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Integration depth: Standalone operation or full IT/OT systems integration"
-            ],
-            [
-              "~",
-              "Tags: Operations VP, IT Director"
             ]
           ]
         },
@@ -11143,10 +10768,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Data security and privacy considerations"
-            ],
-            [
-              "~",
-              "Tags: Risk Officer, HR Director, CISO"
             ]
           ]
         }
@@ -11480,10 +11101,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Model-Based RL: Learning environment dynamics for more efficient learning"
-            ],
-            [
-              "~",
-              "Tags: PPO / SAC / TD3 / REDQ"
             ]
           ]
         },
@@ -11501,10 +11118,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Multi-objective reward structures for safety constraints"
-            ],
-            [
-              "~",
-              "Tags: Tesla / NVIDIA / DeepMind"
             ]
           ]
         },
@@ -11522,10 +11135,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "GAIL: Generative adversarial imitation learning"
-            ],
-            [
-              "~",
-              "Tags: Boston Dynamics / Figure AI / Covariant"
             ]
           ]
         }
@@ -11551,10 +11160,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Progressive Sim2Real: Gradually introducing real-world complexity"
-            ],
-            [
-              "~",
-              "Tags: NVIDIA Isaac / OpenAI / MuJoCo / PyBullet"
             ]
           ]
         },
@@ -11572,10 +11177,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Meta-learning: Learning to learn across tasks"
-            ],
-            [
-              "~",
-              "Tags: DAGGER / ICM / MAML / InfoGAIN"
             ]
           ]
         },
@@ -11597,10 +11198,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Few-shot adaptation capabilities"
-            ],
-            [
-              "~",
-              "Tags: NVIDIA GR00T / Figure AI Helix / Tesla FSD"
             ]
           ]
         }
@@ -11758,7 +11355,7 @@ export const SLIDES: Slide[] = [
     "src": 200,
     "chap": "var(--c-cyan)",
     "eyebrow": "MANUFACTURING EXCELLENCE",
-    "title": "Comparative Table: Manufacturing Approaches",
+    "title": "Manufacturing Approaches",
     "sub": "Side-by-side analysis of Western vs. Asia-based manufacturing processes for advanced robotics",
     "L": {
       "name": "Western Manufacturing",
@@ -11779,10 +11376,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Challenge: Extensive validation cycles add 30-45% to timeline"
-            ],
-            [
-              "~",
-              "Tags: Six Sigma / Statistical Process Control"
             ]
           ]
         },
@@ -11800,10 +11393,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Strength: Higher automation reduces long-term variable costs"
-            ],
-            [
-              "~",
-              "Tags: Highly Automated / Capital Intensive"
             ]
           ]
         },
@@ -11821,10 +11410,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Strength: More adaptive to low-volume, high-mix production"
-            ],
-            [
-              "~",
-              "Tags: Modular Production / Digital Twin Integration"
             ]
           ]
         }
@@ -11850,10 +11435,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Trend: Chinese facilities rapidly closing quality gap via automation"
-            ],
-            [
-              "~",
-              "Tags: Regional Specialization / Mixed QC Models"
             ]
           ]
         },
@@ -11871,10 +11452,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Strength: Vertical integration of supply chains reduces logistics costs"
-            ],
-            [
-              "~",
-              "Tags: Subsidized Infrastructure / State Support"
             ]
           ]
         },
@@ -11892,10 +11469,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Challenge: Less flexible for rapid design iterations"
-            ],
-            [
-              "~",
-              "Tags: Mass Production Oriented / Component Clustering"
             ]
           ]
         }
@@ -12167,10 +11740,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Best for: Core markets with strong IP protection and available capital"
-            ],
-            [
-              "~",
-              "Tags: US: Favorable / EU: Moderate / APAC: Challenging"
             ]
           ]
         },
@@ -12188,10 +11757,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Best for: Complex regulatory markets with strong local players (China, Japan)"
-            ],
-            [
-              "~",
-              "Tags: US: Case-specific / EU: Advantageous / APAC: Often Required"
             ]
           ]
         },
@@ -12209,10 +11774,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Best for: Secondary markets; capital-constrained companies; hardware commoditization"
-            ],
-            [
-              "~",
-              "Tags: US: Less Common / EU: Growing Approach / APAC: Strategic Option"
             ]
           ]
         }
@@ -12395,10 +11956,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Strict IP protection and closed architecture"
-            ],
-            [
-              "~",
-              "Tags: Tesla / Figure AI / Boston Dynamics"
             ]
           ]
         },
@@ -12474,10 +12031,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Strategic partnerships across the value chain"
-            ],
-            [
-              "~",
-              "Tags: Agility Robotics / UBTECH / Apptronik / Sanctuary AI"
             ]
           ]
         },
@@ -12717,7 +12270,7 @@ export const SLIDES: Slide[] = [
     "src": 212,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC PARTNERSHIP MODELS",
-    "title": "Comparative Table: Strategic Partnership Models",
+    "title": "Strategic Partnership Models",
     "sub": "Analysis of value creation, risk sharing, and ROI across robotics industry partnerships",
     "L": {
       "name": "Deep Integration Models",
@@ -13011,7 +12564,7 @@ export const SLIDES: Slide[] = [
     "src": 217,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Analysis: Robotics Security Protocols",
+    "title": "Robotics Security Protocols",
     "sub": "Side-by-side comparison of Western and Chinese cybersecurity frameworks for robotics",
     "L": {
       "name": "Western Security Frameworks",
@@ -13035,7 +12588,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Standards chips: IEC 62443-4-1 · IEC 62443-4-2 · IEC 62443-3-3"
+              "Standards"
             ],
             [
               "~",
@@ -13060,7 +12613,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Standards chips: SP 800-53 · RMF · FISMA"
+              "Standards"
             ],
             [
               "~",
@@ -13113,7 +12666,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Standards chips: MLPS 2.0 · GB/T 22239-2019"
+              "Standards"
             ],
             [
               "−",
@@ -13138,7 +12691,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Standards chips: GB/T 40854 (draft) · TC260"
+              "Standards"
             ]
           ]
         }
@@ -13412,7 +12965,7 @@ export const SLIDES: Slide[] = [
     "src": 225,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Table: Global ESG Regulations",
+    "title": "Global ESG Regulations",
     "sub": "Side-by-side analysis of regulatory requirements and implications for robotics manufacturers",
     "L": {
       "name": "United States",
@@ -13433,10 +12986,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Material ESG factors affecting business operations"
-            ],
-            [
-              "~",
-              "Chips: GHG Emissions · Climate Risk · Financial Impact"
             ]
           ]
         },
@@ -13458,10 +13007,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Product lifecycle management disclosure requirements"
-            ],
-            [
-              "~",
-              "Chips: Deployment Impact · Workforce Metrics · Supply Chain"
             ]
           ]
         },
@@ -13508,10 +13053,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Double materiality assessment (impact on company & environment)"
-            ],
-            [
-              "~",
-              "Chips: Climate Mitigation · Circular Economy · Social Safeguards"
             ]
           ]
         },
@@ -13533,10 +13074,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Green Factory initiative integration with robotics"
-            ],
-            [
-              "~",
-              "Chips: Energy Efficiency · Resource Conservation · Industrial Integration"
             ]
           ]
         },
@@ -14157,7 +13694,7 @@ export const SLIDES: Slide[] = [
     "src": 238,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC REGULATION",
-    "title": "Comparative Table: Global AI Ethics Approaches",
+    "title": "Global AI Ethics Approaches",
     "sub": "Side-by-side analysis of major regulatory frameworks governing AI in robotics (2025 update)",
     "L": {
       "name": "Western Regulatory Approaches",
@@ -14331,7 +13868,7 @@ export const SLIDES: Slide[] = [
       },
       {
         "lead": "Self-Healing Composites:",
-        "text": "Carbon-fiber reinforced polymers with microcapsule healing agents can autonomously repair micro-fractures, extending service life by up to {{3x}}. Applied in critical stress areas of Figure AI's latest prototype."
+        "text": "Carbon-fiber reinforced polymers with microcapsule healing agents can autonomously repair micro-fractures, extending service life by up to {{3x.}} Applied in critical stress areas of Figure AI's latest prototype."
       },
       {
         "lead": "Multifunctional Structures:",
@@ -14460,7 +13997,7 @@ export const SLIDES: Slide[] = [
     "src": 244,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Table: Regulatory Harmonization",
+    "title": "Regulatory Harmonization",
     "sub": "Analysis of international efforts toward regulatory convergence for humanoid robotics",
     "L": {
       "name": "Global Standards Organizations",
@@ -14481,10 +14018,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "ISO 13482: Personal care robots (amended 2024 for more advanced AI)"
-            ],
-            [
-              "~",
-              "Chips: ISO/TC 299 · ISO/JTC 1/SC 42"
             ]
           ]
         },
@@ -14502,10 +14035,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "IEC 62443: Industrial automation and control systems security"
-            ],
-            [
-              "~",
-              "Chips: IEC/TC 44 · IEC/TC 65"
             ]
           ]
         },
@@ -14523,10 +14052,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "ISO/DIS 8373-10: Draft standard for humanoid-specific terminology and performance metrics (2025)"
-            ],
-            [
-              "~",
-              "Chips: WTO TBT · OECD AI Policy"
             ]
           ]
         }
@@ -14556,10 +14081,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Alignment with ISO standards: High"
-            ],
-            [
-              "~",
-              "Chips: NIST · ANSI · UL · OSHA"
             ]
           ]
         },
@@ -14581,10 +14102,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Alignment with ISO standards: High"
-            ],
-            [
-              "~",
-              "Chips: EC · CEN · CENELEC"
             ]
           ]
         },
@@ -14606,10 +14123,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "India: Emerging BIS standards (adoption in progress) — Low"
-            ],
-            [
-              "~",
-              "Chips: SAC/China · JISC/Japan · KATS/Korea · BIS/India"
             ]
           ]
         }
@@ -14922,7 +14435,7 @@ export const SLIDES: Slide[] = [
     "src": 250,
     "chap": "var(--c-cyan)",
     "eyebrow": "WORKSHOP MODULE",
-    "title": "Comparative Table: Human-Robot Integration Models",
+    "title": "Human-Robot Integration Models",
     "sub": "Side-by-side evaluation of frameworks for teamwork, safety, and productivity in mixed environments",
     "L": {
       "name": "Collaborative Integration",
@@ -14943,10 +14456,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Human-Supervised Autonomy: Human workers oversee semi-autonomous robot operations"
-            ],
-            [
-              "~",
-              "Chips: Universal Robots · KUKA · ABB"
             ]
           ]
         },
@@ -15014,10 +14523,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Remote Supervision: Control room monitoring of multiple robots via centralized dashboards"
-            ],
-            [
-              "~",
-              "Chips: Boston Dynamics · Figure AI · Tesla Optimus"
             ]
           ]
         },
@@ -15435,7 +14940,7 @@ export const SLIDES: Slide[] = [
     "src": 259,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Analysis: Upskilling Models",
+    "title": "Upskilling Models",
     "sub": "Side-by-side comparison of workforce development programs in global robotics hubs (2025)",
     "L": {
       "name": "Western Approaches",
@@ -15460,10 +14965,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Union involvement: High"
-            ],
-            [
-              "~",
-              "Tags: Fraunhofer Society, TU Munich, INRIA"
             ]
           ]
         },
@@ -15485,10 +14986,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Union involvement: Low"
-            ],
-            [
-              "~",
-              "Tags: CMU Robotics, Stanford HAI, MIT CSAIL"
             ]
           ]
         },
@@ -15535,10 +15032,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "State coordination: Very High"
-            ],
-            [
-              "~",
-              "Tags: Tsinghua University, SIASUN, Guangdong Robotics Hub"
             ]
           ]
         },
@@ -15560,10 +15053,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "State coordination: Medium"
-            ],
-            [
-              "~",
-              "Tags: FANUC Academy, Kawada Robotics, University of Tokyo"
             ]
           ]
         },
@@ -15654,7 +15143,7 @@ export const SLIDES: Slide[] = [
       }
     ],
     "callout": {
-      "k": "Financing Mix Evolution (2023-2025)",
+      "k": "Financing Mix Evolution",
       "text": "Market is shifting from equity-dominated capital structures toward blended models incorporating debt and project financing. This shift is enabled by increasing revenue predictability and asset value stability as the robotics sector matures."
     }
   },
@@ -15663,7 +15152,7 @@ export const SLIDES: Slide[] = [
     "src": 263,
     "chap": "var(--c-cyan)",
     "eyebrow": "FINANCIAL ANALYSIS",
-    "title": "Comparative Table: Financing Options",
+    "title": "Financing Options",
     "sub": "Strategic analysis of financing models for humanoid robotics ventures and deployments",
     "L": {
       "name": "Private Capital Models",
@@ -15675,7 +15164,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "~",
-              "Early-stage funding: Seed to Series B for R&D and prototype development [badge: High Risk]"
+              "Early-stage funding: Seed to Series B for R&D and prototype development ["
             ],
             [
               "~",
@@ -15684,10 +15173,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Strategic corporate investors: Tech giants securing strategic access to technology"
-            ],
-            [
-              "~",
-              "Tags: Figure AI ($2.6B), Apptronik ($403M), 1X Technologies"
             ]
           ]
         },
@@ -15696,7 +15181,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "Monthly subscription fee ($3,500-$8,000/robot/month) [badge: Lower Entry Barrier]"
+              "Monthly subscription fee ($3,500-$8,000/robot/month) ["
             ],
             [
               "+",
@@ -15704,11 +15189,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "−",
-              "Data sharing for continuous improvement across fleet [badge: Privacy Concerns]"
-            ],
-            [
-              "~",
-              "Tags: Agility Robotics, Sanctuary AI, Unitree"
+              "Data sharing for continuous improvement across fleet ["
             ]
           ]
         },
@@ -15717,7 +15198,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "−",
-              "SPACs: Rapid public market access (slowing in 2025) [badge: Increased Scrutiny]"
+              "SPACs: Rapid public market access (slowing in 2025) ["
             ],
             [
               "+",
@@ -15726,10 +15207,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Strategic JVs: Shared investment for specific use cases"
-            ],
-            [
-              "~",
-              "Tags: Boston Dynamics, Vicarious, Fourier Intelligence"
             ]
           ]
         }
@@ -15746,7 +15223,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "R&D tax credits: 12-25% credit rate depending on jurisdiction [badge: Non-dilutive]"
+              "R&D tax credits: 12-25% credit rate depending on jurisdiction ["
             ],
             [
               "+",
@@ -15755,10 +15232,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Regional incentives: Manufacturing location subsidies and workforce development"
-            ],
-            [
-              "~",
-              "Tags: US CHIPS Act, EU Horizon Europe, China's 1M Robots Plan"
             ]
           ]
         },
@@ -15767,7 +15240,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "Performance bonds: Guarantees for robot reliability [badge: Builds Trust]"
+              "Performance bonds: Guarantees for robot reliability ["
             ],
             [
               "+",
@@ -15775,11 +15248,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "−",
-              "Risk-sharing pools: Industry-wide consortiums for catastrophic events [badge: Limited History]"
-            ],
-            [
-              "~",
-              "Tags: Munich Re, Allianz, Lloyd's of London"
+              "Risk-sharing pools: Industry-wide consortiums for catastrophic events ["
             ]
           ]
         },
@@ -15797,10 +15266,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "University partnerships: Talent development and research commercialization"
-            ],
-            [
-              "~",
-              "Tags: Japan Robotics Alliance, European Robotics League, CMU Robotics Institute"
             ]
           ]
         }
@@ -16106,7 +15571,7 @@ export const SLIDES: Slide[] = [
     "src": 270,
     "chap": "var(--c-cyan)",
     "eyebrow": "MANUFACTURING STRATEGY",
-    "title": "Comparative Table: Global Manufacturing Consortia",
+    "title": "Global Manufacturing Consortia",
     "sub": "Analysis of consortium models, shared investment strategies, and technology transfer in robotics manufacturing",
     "L": {
       "name": "Western Consortia Models",
@@ -16127,10 +15592,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Open membership tiers: Flexible participation models based on investment"
-            ],
-            [
-              "~",
-              "Tags: Advanced Robotics Manufacturing Institute, EU Robotics PPP"
             ]
           ]
         },
@@ -16148,10 +15609,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Project-based funding rather than entity-level investment"
-            ],
-            [
-              "~",
-              "Tags: MassRobotics, CHIPS Act Funding, Horizon Europe"
             ]
           ]
         },
@@ -16169,10 +15626,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Emphasis on defensive patent strategies"
-            ],
-            [
-              "~",
-              "Tags: Boston Dynamics-Hyundai Model, Figure-BMW Alliance, MIT Robotics Consortium"
             ]
           ]
         }
@@ -16198,10 +15651,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Korea model: Chaebol-led initiatives with government backing"
-            ],
-            [
-              "~",
-              "Tags: China Robotics Alliance, Japan Robot Association, K-Robotics"
             ]
           ]
         },
@@ -16223,10 +15672,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Guaranteed procurement contracts from public entities"
-            ],
-            [
-              "~",
-              "Tags: China Industrial Fund, Guangdong Robotics Fund, Japan Strategic Innovation Fund"
             ]
           ]
         },
@@ -16244,10 +15689,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Focus on manufacturing process innovation over product IP"
-            ],
-            [
-              "~",
-              "Tags: LeaderDrive Consortium, UBTECH Manufacturing Alliance, Harmonic Drive Japan"
             ]
           ]
         }
@@ -16256,57 +15697,39 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 271,
     "chap": "var(--c-cyan)",
     "eyebrow": "IMPLEMENTATION STRATEGY",
     "title": "Breakthrough Technology Integration: Deployment Playbook",
-    "bullets": [
+    "sub": "Structured methodology for integrating next-generation components into existing robotics systems",
+    "steps": [
       {
-        "lead": "1. PRE-INTEGRATION ASSESSMENT — Legacy System Audit",
-        "text": "Conduct comprehensive mapping of existing workflows, dependencies, and performance baselines"
+        "k": "PRE-INTEGRATION ASSESSMENT — Legacy System Audit",
+        "d": "Conduct comprehensive mapping of existing workflows, dependencies, and performance baselines"
       },
       {
-        "lead": "1. PRE-INTEGRATION ASSESSMENT — Gap Analysis",
-        "text": "Identify technical, compatibility, and integration bottlenecks that could impede next-gen components"
+        "k": "PRE-INTEGRATION ASSESSMENT — Gap Analysis",
+        "d": "Identify technical, compatibility, and integration bottlenecks that could impede next-gen components"
       },
       {
-        "lead": "2. TECHNOLOGY SELECTION & COMPATIBILITY ANALYSIS — Component Evaluation Matrix",
-        "text": "Benchmark next-gen sensors, actuators, and AI models against compatibility, performance, and TCO"
+        "k": "TECHNOLOGY SELECTION & COMPATIBILITY ANALYSIS — Component Evaluation Matrix",
+        "d": "Benchmark next-gen sensors, actuators, and AI models against compatibility, performance, and TCO"
       },
       {
-        "lead": "2. TECHNOLOGY SELECTION & COMPATIBILITY ANALYSIS — API/Interface Development",
-        "text": "Design custom middleware for integrating modern components with legacy systems"
+        "k": "TECHNOLOGY SELECTION & COMPATIBILITY ANALYSIS — API/Interface Development",
+        "d": "Design custom middleware for integrating modern components with legacy systems"
       },
       {
-        "lead": "3. PILOT INTEGRATION & TESTING — Controlled Environment Testing",
-        "text": "Implement digital twins for simulating integration outcomes"
+        "k": "PILOT INTEGRATION & TESTING — Controlled Environment Testing",
+        "d": "Implement digital twins for simulating integration outcomes"
       },
       {
-        "lead": "3. PILOT INTEGRATION & TESTING — Failure Mode Analysis",
-        "text": "Document edge cases and develop mitigation strategies for integration challenges"
-      },
-      {
-        "lead": "4. SCALING & FULL DEPLOYMENT — Phased Roll-Out Strategy",
-        "text": "Progressive deployment across production environments with rollback contingencies"
-      },
-      {
-        "lead": "4. SCALING & FULL DEPLOYMENT — Workforce Readiness",
-        "text": "Technical training and process documentation for maintenance teams and operators"
-      },
-      {
-        "lead": "5. CONTINUOUS OPTIMIZATION — Performance Monitoring",
-        "text": "Deploy ML-powered analytics to track KPIs and identify optimization opportunities"
-      },
-      {
-        "lead": "5. CONTINUOUS OPTIMIZATION — Iterative Improvement Cycles",
-        "text": "Establish 90-day review cadence for fine-tuning integration parameters"
+        "k": "PILOT INTEGRATION & TESTING — Failure Mode Analysis",
+        "d": "Document edge cases and develop mitigation strategies for integration challenges"
       }
     ],
-    "callout": {
-      "k": "Best Practice",
-      "text": "Begin with sensor integration before actuators, as perception systems can operate in parallel with legacy motion systems during transition periods."
-    }
+    "foot": "Begin with sensor integration before actuators, as perception systems can operate in parallel with legacy motion systems during transition periods."
   },
   {
     "kind": "bullets",
@@ -16461,7 +15884,7 @@ export const SLIDES: Slide[] = [
     "src": 277,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC IMPLEMENTATION",
-    "title": "Comparative Table: Implementation Strategies",
+    "title": "Implementation Strategies",
     "columns": [
       "Dimension",
       "In-House Approach — Full internal development & deployment",
@@ -16605,10 +16028,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Heavy load capacity and repetitive task reliability are critical metrics"
-            ],
-            [
-              "~",
-              "Tags: BMW, Tesla, Hyundai, BYD"
             ]
           ]
         }
@@ -16676,10 +16095,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Regulatory compliance and extensive testing lengthen deployment cycles"
-            ],
-            [
-              "~",
-              "Tags: Reduced staff burnout, Patient satisfaction, Error reduction"
             ]
           ]
         }
@@ -17155,7 +16570,7 @@ export const SLIDES: Slide[] = [
     "src": 289,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC PARTNERSHIPS",
-    "title": "Comparative Table: Strategic Partnership Models",
+    "title": "Strategic Partnership Models",
     "sub": "Evaluating partnership structures by risk, IP management, and returns in humanoid robotics",
     "L": {
       "name": "Consortia & Open Innovation",
@@ -17239,7 +16654,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Return Profile tags: NVIDIA AI Alliance, Agility Partner Network, Open Source Robotics Foundation. Licensing Models tags: ARM robotics IP, NVIDIA Isaac platform, Boston Dynamics Spot SDK."
+      "ex": "Return Profile"
     },
     "R": {
       "name": "Co-Development & JV Models",
@@ -17331,7 +16746,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Co-Development tags: Figure AI + BMW, Apptronik + Mercedes, UBTECH + BYD. Joint Venture tags: Hyundai + Boston Dynamics, Sony-Honda Mobility, Foxconn + Luxshare Robotics."
+      "ex": "Co-Development"
     }
   },
   {
@@ -17726,7 +17141,7 @@ export const SLIDES: Slide[] = [
     "src": 296,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Analysis: Global Expansion Blueprints",
+    "title": "Global Expansion Blueprints",
     "sub": "Market entry strategies for humanoid robotics across major growth regions",
     "L": {
       "name": "Lower Risk Approaches",
@@ -17981,7 +17396,7 @@ export const SLIDES: Slide[] = [
     "src": 301,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Table: Regulatory Navigation by Region",
+    "title": "Regulatory Navigation by Region",
     "columns": [
       "Region",
       "Posture",
@@ -18239,7 +17654,7 @@ export const SLIDES: Slide[] = [
     "chap": "var(--c-cyan)",
     "eyebrow": "WORKSHOP APPROACHES",
     "locked": true,
-    "title": "Comparative Table: Workshop Approaches to Technical Upskilling",
+    "title": "Workshop Approaches to Technical Upskilling",
     "sub": "Evaluating on-the-job, digital bootcamps, and academic-industry joint labs for robotics workforce development",
     "L": {
       "name": "Traditional & Digital Approaches",
@@ -18585,7 +18000,7 @@ export const SLIDES: Slide[] = [
     "src": 315,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Table: Transformation Success Enablers",
+    "title": "Transformation Success Enablers",
     "sub": "Side-by-side analysis of critical factors in successful vs. failed robotics transformation projects",
     "L": {
       "name": "Successful Transformations",
@@ -18877,7 +18292,7 @@ export const SLIDES: Slide[] = [
     "src": 319,
     "chap": "var(--c-cyan)",
     "eyebrow": "FINANCIAL ANALYSIS",
-    "title": "Comparative Analysis: Financial Engineering Strategies",
+    "title": "Financial Engineering Strategies",
     "sub": "Optimizing capital structures for robotics ventures at different growth stages",
     "L": {
       "name": "Public Market Strategies",
@@ -19090,37 +18505,35 @@ export const SLIDES: Slide[] = [
     "foot": "Per-unit bill-of-materials falls 42% from $60k (2025) to $24k (2030) on actuator and sensor optimization, lifting average gross margin from 15% to 28%."
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 321,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
     "title": "Regulatory Harmonization Strategies Framework",
-    "bullets": [
+    "sub": "Step-by-step playbook for aligning global compliance across multinational humanoid deployments",
+    "steps": [
       {
-        "lead": "1. Global Regulatory Mapping",
-        "text": "Create comprehensive map of robotics and AI regulations across target markets with jurisdiction-specific requirements for safety standards (ISO/IEC), data privacy, liability frameworks, and export controls."
+        "k": "Global Regulatory Mapping",
+        "d": "Create comprehensive map of robotics and AI regulations across target markets with jurisdiction-specific requirements for safety standards (ISO/IEC), data privacy, liability frameworks, and export controls."
       },
       {
-        "lead": "2. Compliance Gap Analysis",
-        "text": "Identify divergences between jurisdictional requirements and develop a matrix highlighting critical gaps. Prioritize based on deployment timeline, market importance, and regulatory risk exposure."
+        "k": "Compliance Gap Analysis",
+        "d": "Identify divergences between jurisdictional requirements and develop a matrix highlighting critical gaps. Prioritize based on deployment timeline, market importance, and regulatory risk exposure."
       },
       {
-        "lead": "3. Common Compliance Core Development",
-        "text": "Engineer a standardized compliance architecture that satisfies the most stringent requirements across regions. Implement modular design to accommodate jurisdiction-specific adaptations while maintaining operational consistency."
+        "k": "Common Compliance Core Development",
+        "d": "Engineer a standardized compliance architecture that satisfies the most stringent requirements across regions. Implement modular design to accommodate jurisdiction-specific adaptations while maintaining operational consistency."
       },
       {
-        "lead": "4. Proactive Regulator Engagement",
-        "text": "Establish direct communication channels with regulatory bodies in key markets. Demonstrate technology capabilities, share safety data, and contribute to standards development to influence favorable regulatory outcomes."
+        "k": "Proactive Regulator Engagement",
+        "d": "Establish direct communication channels with regulatory bodies in key markets. Demonstrate technology capabilities, share safety data, and contribute to standards development to influence favorable regulatory outcomes."
       },
       {
-        "lead": "5. Compliance Monitoring & Adaptation System",
-        "text": "Implement real-time compliance monitoring across global deployments. Establish rapid response protocols for regulatory changes and create feedback loops between operations, legal, and engineering teams."
+        "k": "Compliance Monitoring & Adaptation System",
+        "d": "Implement real-time compliance monitoring across global deployments. Establish rapid response protocols for regulatory changes and create feedback loops between operations, legal, and engineering teams."
       }
     ],
-    "callout": {
-      "k": "Key Success Factors",
-      "text": "Cross-functional compliance teams • Regulatory intelligence systems • Standardized documentation protocols • Local partners with regulatory expertise"
-    }
+    "foot": "Cross-functional compliance teams • Regulatory intelligence systems • Standardized documentation protocols • Local partners with regulatory expertise"
   },
   {
     "kind": "table",
@@ -19330,7 +18743,7 @@ export const SLIDES: Slide[] = [
     "src": 327,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Table: Innovation Ecosystem Maturity",
+    "title": "Innovation Ecosystem Maturity",
     "columns": [
       "Metric",
       "Silicon Valley",
@@ -19591,73 +19004,39 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 333,
     "chap": "var(--c-cyan)",
     "eyebrow": "FINAL CONCLUSION",
     "title": "Humanoid Industry's Next Frontier",
-    "bullets": [
+    "sub": "Final summary of the global humanoid robotics landscape and strategic imperatives",
+    "steps": [
       {
-        "lead": "Anticipated Challenges — Supply chain dependencies",
-        "text": "Actuator bottlenecks and geopolitical fragmentation"
+        "k": "Anticipated Challenges — Supply chain dependencies",
+        "d": "Actuator bottlenecks and geopolitical fragmentation"
       },
       {
-        "lead": "Anticipated Challenges — Workforce transition",
-        "text": "Skills gaps and organizational change management"
+        "k": "Anticipated Challenges — Workforce transition",
+        "d": "Skills gaps and organizational change management"
       },
       {
-        "lead": "Anticipated Challenges — Regulatory uncertainty",
-        "text": "Fragmented global standards and liability frameworks"
+        "k": "Anticipated Challenges — Regulatory uncertainty",
+        "d": "Fragmented global standards and liability frameworks"
       },
       {
-        "lead": "Anticipated Challenges — Integration complexity",
-        "text": "Enterprise system compatibility and workflow redesign"
+        "k": "Anticipated Challenges — Integration complexity",
+        "d": "Enterprise system compatibility and workflow redesign"
       },
       {
-        "lead": "1. Secure strategic component supply chains",
-        "text": "Diversify actuator sourcing and invest in domestic manufacturing capabilities"
+        "k": "Secure strategic component supply chains",
+        "d": "Diversify actuator sourcing and invest in domestic manufacturing capabilities"
       },
       {
-        "lead": "2. Develop phased implementation roadmaps",
-        "text": "Start with specific, high-value tasks before expanding to broader applications"
-      },
-      {
-        "lead": "3. Establish cross-functional robotics teams",
-        "text": "Blend mechanical, software, AI, and operations expertise for integrated solutions"
-      },
-      {
-        "lead": "4. Invest in workforce upskilling programs",
-        "text": "Develop talent pipelines for robot operators, integrators, and maintainers"
-      },
-      {
-        "lead": "5. Engage actively in regulatory development",
-        "text": "Shape emerging standards rather than reacting to them"
-      },
-      {
-        "lead": "6. Adopt flexible financial models",
-        "text": "Consider RaaS alongside capital expenditure to optimize cash flow and risk"
-      },
-      {
-        "lead": "7. Build strategic ecosystem partnerships",
-        "text": "Foster relationships with integrators, component suppliers, and AI developers"
-      },
-      {
-        "lead": "8. Establish ethical AI governance frameworks",
-        "text": "Ensure responsible deployment with human-centered design principles"
-      },
-      {
-        "lead": "9. Create digital twins before physical deployment",
-        "text": "Simulate integration and optimize workflows virtually"
-      },
-      {
-        "lead": "10. Develop scenario-based roadmaps to 2035",
-        "text": "Plan for multiple technology and market evolution paths"
+        "k": "Develop phased implementation roadmaps",
+        "d": "Start with specific, high-value tasks before expanding to broader applications"
       }
     ],
-    "callout": {
-      "k": "Closing statement",
-      "text": "The humanoid robotics revolution represents not just a technological shift but a fundamental reimagining of human-machine collaboration. Organizations that strategically embrace this transformation—balancing innovation with responsible deployment—will define the next era of global industry."
-    }
+    "foot": "The humanoid robotics revolution represents not just a technological shift but a fundamental reimagining of human-machine collaboration. Organizations that strategically embrace this transformation—balancing innovation with responsible deployment—will define the next era of global industry."
   },
   {
     "kind": "bullets",
@@ -19716,7 +19095,7 @@ export const SLIDES: Slide[] = [
     "src": 336,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC ANALYSIS",
-    "title": "Comparative Table: Leading Corporate Strategies",
+    "title": "Leading Corporate Strategies",
     "sub": "Side-by-side analysis of success models from top robotics companies in 2025",
     "L": {
       "name": "Incumbent Titans",
@@ -19740,7 +19119,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] Tesla/Optimus, Hyundai/Boston Dynamics, Samsung, Honda"
+              "Tesla/Optimus, Hyundai/Boston Dynamics, Samsung, Honda"
             ]
           ]
         },
@@ -19765,7 +19144,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] 5-10 year horizon, Internal funding, Captive deployment"
+              "5-10 year horizon, Internal funding, Captive deployment"
             ]
           ]
         },
@@ -19786,7 +19165,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] Direct sales, $80K-$150K price point, Integrated solutions"
+              "Direct sales, $80K-$150K price point, Integrated solutions"
             ]
           ]
         }
@@ -19819,7 +19198,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] Figure AI, Agility Robotics, Apptronik, Sanctuary AI"
+              "Figure AI, Agility Robotics, Apptronik, Sanctuary AI"
             ]
           ]
         },
@@ -19840,7 +19219,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] $2B-$40B valuations, VC + Strategic, 2-3 year runway"
+              "$2B-$40B valuations, VC + Strategic, 2-3 year runway"
             ]
           ]
         },
@@ -19861,7 +19240,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] RaaS $3K-$8K monthly, Channel partners, Sector specialization"
+              "RaaS $3K-$8K monthly, Channel partners, Sector specialization"
             ]
           ]
         }
@@ -19922,47 +19301,36 @@ export const SLIDES: Slide[] = [
     "foot": "Tesla and FigureAI capture share through 2035 as the top five consolidate from ~58% to ~75% and the long tail thins."
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 338,
     "chap": "var(--c-cyan)",
     "eyebrow": "IMPLEMENTATION GUIDE",
     "title": "Advanced Implementation Guide: Platform Integration",
-    "bullets": [
+    "sub": "Systematic approach for seamless integration of humanoid robots with existing enterprise systems",
+    "steps": [
       {
-        "lead": "1. Infrastructure Assessment & Gap Analysis",
-        "text": "Audit current IT/OT architecture, identify integration points, legacy constraints, and security vulnerabilities. Create comprehensive system map highlighting current state vs. future requirements."
+        "k": "Infrastructure Assessment & Gap Analysis",
+        "d": "Audit current IT/OT architecture, identify integration points, legacy constraints, and security vulnerabilities. Create comprehensive system map highlighting current state vs. future requirements."
       },
       {
-        "lead": "2. Middleware Layer Development",
-        "text": "Implement abstraction layer between humanoid control systems and legacy platforms. Develop APIs and protocol translators (OPC-UA, MQTT, REST) to standardize data exchange."
+        "k": "Middleware Layer Development",
+        "d": "Implement abstraction layer between humanoid control systems and legacy platforms. Develop APIs and protocol translators (OPC-UA, MQTT, REST) to standardize data exchange."
       },
       {
-        "lead": "3. Data Architecture Implementation",
-        "text": "Configure data pipelines, time-series databases, and edge processing for real-time telemetry. Implement data lake architecture for unstructured robot perception data (vision, audio, tactile)."
+        "k": "Data Architecture Implementation",
+        "d": "Configure data pipelines, time-series databases, and edge processing for real-time telemetry. Implement data lake architecture for unstructured robot perception data (vision, audio, tactile)."
       },
       {
-        "lead": "4. Real-Time Analytics Integration",
-        "text": "Deploy streaming analytics framework with dashboard visualizations. Implement monitoring systems for operational KPIs and automated anomaly detection with predefined alert thresholds."
+        "k": "Real-Time Analytics Integration",
+        "d": "Deploy streaming analytics framework with dashboard visualizations. Implement monitoring systems for operational KPIs and automated anomaly detection with predefined alert thresholds."
       },
       {
-        "lead": "5. Enterprise System Synchronization",
-        "text": "Ensure bidirectional data flow between humanoid fleets and enterprise systems (ERP, MES, WMS). Implement change management procedures for version control and conflict resolution."
+        "k": "Enterprise System Synchronization",
+        "d": "Ensure bidirectional data flow between humanoid fleets and enterprise systems (ERP, MES, WMS). Implement change management procedures for version control and conflict resolution."
       },
       {
-        "lead": "6. Testing & Validation Protocol",
-        "text": "Conduct staged integration testing: unit, system, regression, and load testing. Validate end-to-end data flows, latency parameters, and recovery mechanisms through simulated failure scenarios."
-      },
-      {
-        "lead": "Critical Success Factors — Change Management",
-        "text": "Implement governance board and clear communication plan before technical integration begins"
-      },
-      {
-        "lead": "Critical Success Factors — Security-First Design",
-        "text": "Apply zero-trust architecture principles with hardware security modules and air-gapped networks"
-      },
-      {
-        "lead": "Critical Success Factors — Phased Rollout",
-        "text": "Follow \"data first, control later\" approach, beginning with read-only access before write permissions"
+        "k": "Testing & Validation Protocol",
+        "d": "Conduct staged integration testing: unit, system, regression, and load testing. Validate end-to-end data flows, latency parameters, and recovery mechanisms through simulated failure scenarios."
       }
     ]
   },
@@ -19971,7 +19339,7 @@ export const SLIDES: Slide[] = [
     "src": 339,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Table: Platform Integration Challenges",
+    "title": "Platform Integration Challenges",
     "sub": "Issues, technical debt, and breakthrough solutions in platform integration across industries",
     "L": {
       "name": "Integration Challenges & Technical Debt",
@@ -19995,7 +19363,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] Manufacturing, Automotive, Energy"
+              "Manufacturing, Automotive, Energy"
             ]
           ]
         },
@@ -20016,7 +19384,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] Logistics, Healthcare, Manufacturing"
+              "Logistics, Healthcare, Manufacturing"
             ]
           ]
         },
@@ -20037,7 +19405,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] Healthcare, Energy, Defense"
+              "Healthcare, Energy, Defense"
             ]
           ]
         }
@@ -20066,7 +19434,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] Automotive, Manufacturing"
+              "Automotive, Manufacturing"
             ]
           ]
         },
@@ -20087,7 +19455,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] Logistics, Retail, Healthcare"
+              "Logistics, Retail, Healthcare"
             ]
           ]
         },
@@ -20108,7 +19476,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "[chips] Energy, Healthcare, Cross-industry"
+              "Energy, Healthcare, Cross-industry"
             ]
           ]
         }
@@ -20269,7 +19637,7 @@ export const SLIDES: Slide[] = [
     "src": 343,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
-    "title": "Comparative Table: Leadership Approaches & Impact",
+    "title": "Leadership Approaches & Impact",
     "sub": "Contrasting centralized vs. decentralized transformation programs in humanoid robotics adoption",
     "L": {
       "name": "Centralized Transformation",
@@ -20348,7 +19716,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "~",
-              "[chips] Hyundai-Boston Dynamics, BYD Automation, Foxconn Tech Group"
+              "Hyundai-Boston Dynamics, BYD Automation, Foxconn Tech Group"
             ],
             [
               "~",
@@ -20436,7 +19804,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "~",
-              "[chips] Amazon Fulfillment, Mercedes-Benz Production, GXO Logistics"
+              "Amazon Fulfillment, Mercedes-Benz Production, GXO Logistics"
             ],
             [
               "~",
@@ -20670,7 +20038,7 @@ export const SLIDES: Slide[] = [
     "src": 348,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC PARTNERSHIPS",
-    "title": "Comparative Table: Partnership Ecosystem Development",
+    "title": "Partnership Ecosystem Development",
     "sub": "Analytical view of ecosystem-building models in humanoid robotics - long-term ROI and resilience analysis",
     "L": {
       "name": "Open & Consortium Models",
@@ -21167,7 +20535,7 @@ export const SLIDES: Slide[] = [
     "src": 358,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC ANALYSIS",
-    "title": "Comparative Table: Final Risk/Reward Scenarios",
+    "title": "Final Risk/Reward Scenarios",
     "sub": "Evaluating best-case, baseline, and stress-case scenarios across key impact domains",
     "L": {
       "name": "Technology & Financial Scenarios",
@@ -21303,10 +20671,6 @@ export const SLIDES: Slide[] = [
             ],
             [
               "+",
-              "Chips: 13M new jobs created | +8% productivity growth | Success rate: 85%"
-            ],
-            [
-              "+",
               "Key outcome: Humanoid adoption broadly viewed as positive economic and social force"
             ]
           ]
@@ -21328,10 +20692,6 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Chips: 8M jobs displaced | 9M new roles created | Success rate: 60%"
-            ],
-            [
-              "~",
               "Key outcome: Mixed societal response with sector-specific benefits and challenges"
             ]
           ]
@@ -21350,10 +20710,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Policy failure: Regulatory fragmentation and ineffective interventions"
-            ],
-            [
-              "−",
-              "Chips: 21M jobs displaced | 7M new roles created | Success rate: 35%"
             ],
             [
               "−",
@@ -21445,7 +20801,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Facilitator Tips",
-      "text": "Use the \"{{3×}}{{3×}}3\" rule to ensure alignment: Each team should identify 3 key insights, 3 potential pilots, and 3 critical stakeholders for successful implementation. Push teams to be specific about success metrics and resource requirements."
+      "text": "Use the \"{{3×3×3}}\" rule to ensure alignment: Each team should identify 3 key insights, 3 potential pilots, and 3 critical stakeholders for successful implementation. Push teams to be specific about success metrics and resource requirements."
     }
   },
   {
@@ -21548,7 +20904,7 @@ export const SLIDES: Slide[] = [
     "src": 362,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC INNOVATION",
-    "title": "Comparative Table: Innovation Models & Ecosystem Impact",
+    "title": "Innovation Models & Ecosystem Impact",
     "sub": "Key outcomes for startups, incumbents, and national economies based on innovation approach",
     "L": {
       "name": "Open Innovation Model",
@@ -21754,72 +21110,46 @@ export const SLIDES: Slide[] = [
     "foot": "Humanoid deployment nets a $7.4T annual gain by 2030, led by $4.2T in productivity and $3.8T in new market value."
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 364,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC OPERATIONS",
     "title": "Global Expansion: Investment and Localization Playbook",
-    "bullets": [
+    "sub": "Step-by-step guide for entering new markets with humanoid robotics technology",
+    "steps": [
       {
-        "lead": "PHASE 1: MARKET ASSESSMENT & ENTRY STRATEGY",
-        "text": ""
+        "k": "PHASE 1: MARKET ASSESSMENT & ENTRY STRATEGY",
+        "d": "PHASE 1: MARKET ASSESSMENT & ENTRY STRATEGY"
       },
       {
-        "lead": "1. Conduct regional compliance mapping",
-        "text": "Analyze regulatory environments for robotics across safety standards (ISO/IEC), export controls, and AI governance frameworks specific to each target market."
+        "k": "Conduct regional compliance mapping",
+        "d": "Analyze regulatory environments for robotics across safety standards (ISO/IEC), export controls, and AI governance frameworks specific to each target market."
       },
       {
-        "lead": "2. Evaluate entry models",
-        "text": "Compare direct subsidiary vs. joint venture vs. licensing approaches based on IP protection needs, capital requirements, and market knowledge gaps."
+        "k": "Evaluate entry models",
+        "d": "Compare direct subsidiary vs. joint venture vs. licensing approaches based on IP protection needs, capital requirements, and market knowledge gaps."
       },
       {
-        "lead": "3. Develop investment structures",
-        "text": "Create tiered investment model with pilot phases, success-based capital deployment gates, and risk mitigation strategies for each target region."
+        "k": "Develop investment structures",
+        "d": "Create tiered investment model with pilot phases, success-based capital deployment gates, and risk mitigation strategies for each target region."
       },
       {
-        "lead": "PHASE 2: PRODUCT LOCALIZATION & ADAPTATION",
-        "text": ""
+        "k": "PHASE 2: PRODUCT LOCALIZATION & ADAPTATION",
+        "d": "PHASE 2: PRODUCT LOCALIZATION & ADAPTATION"
       },
       {
-        "lead": "1. Technical compliance adaptation",
-        "text": "Modify hardware/software to meet local certification requirements (e.g., CE marking for EU, CCC for China, UL for US) and data sovereignty laws."
-      },
-      {
-        "lead": "2. Cultural calibration",
-        "text": "Adapt AI interfaces, safety behaviors, and interaction protocols to regional expectations and workplace cultures through localized training data."
-      },
-      {
-        "lead": "3. Supply chain localization",
-        "text": "Identify regional component suppliers, establish local assembly capabilities, and develop logistics infrastructure to support regional operations."
-      },
-      {
-        "lead": "PHASE 3: PARTNERSHIP DEVELOPMENT & ECOSYSTEM BUILDING",
-        "text": ""
-      },
-      {
-        "lead": "1. Strategic alliance formation",
-        "text": "Develop tiered partnership framework including technology partners, system integrators, and industry-specific solution providers for each market."
-      },
-      {
-        "lead": "2. Knowledge transfer program",
-        "text": "Establish certification processes for local partners, create technical academies, and develop region-specific support documentation."
-      },
-      {
-        "lead": "3. Local innovation hubs",
-        "text": "Create regional R&D centers that collaborate with universities and tech clusters to adapt core technology to local market requirements."
+        "k": "Technical compliance adaptation",
+        "d": "Modify hardware/software to meet local certification requirements (e.g., CE marking for EU, CCC for China, UL for US) and data sovereignty laws."
       }
     ],
-    "callout": {
-      "k": "Success Factor",
-      "text": "Companies achieving >{{30%}} ROI on international expansion maintain a 70:30 ratio of global standardization to local customization, preserving core technology while adapting to regional market requirements."
-    }
+    "foot": "Companies achieving >30% ROI on international expansion maintain a 70:30 ratio of global standardization to local customization, preserving core technology while adapting to regional market requirements."
   },
   {
     "kind": "twoPanel",
     "src": 365,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC PARTNERSHIPS",
-    "title": "Comparative Table: Partnership Archetypes—Pros & Cons",
+    "title": "Partnership Archetypes—Pros & Cons",
     "sub": "Analysis of partnership models for global robotics scale—key tradeoffs and strategic considerations",
     "L": {
       "name": "Strategic Integration Models",
