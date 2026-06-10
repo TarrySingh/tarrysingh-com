@@ -94,6 +94,7 @@ export function DeckViewer() {
   useEffect(() => {
     const q = new URLSearchParams(window.location.search)
     if (q.get("print") === "1") { setPrintMode(true); return }
+    if (q.get("grid") === "1") setGrid(true)
     const n = q.get("s") ? parseInt(q.get("s") as string, 10) : NaN
     if (!isNaN(n) && n >= 1 && n <= total) setI(n - 1)
     // eslint-disable-next-line react-hooks/exhaustive-deps
