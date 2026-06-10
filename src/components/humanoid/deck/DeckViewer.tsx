@@ -30,27 +30,30 @@ function useFullPackage(): [boolean, () => void] {
   return [ok, () => HAEntitlement.grant("full-package")]
 }
 
+/**
+ * The deck's workshop pages ARE the full curriculum — strictly guard-railed:
+ * no sneak peek, and the slide content is not rendered behind the gate at all
+ * (no blurred free view). Always → Stripe.
+ */
 function DeckGate({ children }: { children: ReactNode }) {
   const [ok, grant] = useFullPackage()
   const buy = async () => { await HAEntitlement.checkout("full-package") }
+  if (ok) return <div className="gate open"><div className="gate-content">{children}</div></div>
   return (
-    <div className={"gate " + (ok ? "open" : "locked")}>
-      <div className="gate-content">{children}</div>
-      {!ok && (
-        <div className="gate-overlay">
-          <div className="gate-card">
-            <div className="gate-lock" />
-            <div className="gate-k">Workshop module</div>
-            <h3 className="gate-t">This page is part of the premium workshop</h3>
-            <p className="gate-d">The 60 hands-on workshop pages unlock with the full package — together with the labs, the certification track, and download access.</p>
-            <div className="gate-btns">
-              {HAEntitlement.demo && <button className="gate-btn ghost" onClick={grant}>Preview (demo)</button>}
-              <button className="gate-btn" onClick={buy}>Unlock the full package ↗</button>
-            </div>
-            <div className="gate-note">Licensed per cohort · tarrysingh.com</div>
+    <div className="gate locked hard">
+      <div className="gate-overlay">
+        <div className="gate-card">
+          <div className="gate-lock" />
+          <div className="gate-k">Workshop module · full curriculum</div>
+          <h3 className="gate-t">This page is part of the premium curriculum</h3>
+          <p className="gate-d">The 60 hands-on workshop pages come with the full package — together with the labs, the certification track, and download access.</p>
+          <div className="gate-btns">
+            {HAEntitlement.demo && <button className="gate-btn ghost" onClick={grant}>Preview (demo)</button>}
+            <button className="gate-btn" onClick={buy}>Get the full package ↗</button>
           </div>
+          <div className="gate-note">Licensed per cohort · tarrysingh.com</div>
         </div>
-      )}
+      </div>
     </div>
   )
 }

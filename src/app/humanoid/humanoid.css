@@ -461,6 +461,17 @@
 .ha-root .gate-btn:hover { transform: translateY(-1px); }
 .ha-root .gate-btn.ghost:hover { color: var(--ink); border-color: var(--ink-dim); }
 .ha-root .gate-note { margin-top: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.04em; }
+/* strictly guard-railed: no blurred free view behind the card */
+.ha-root .gate.hard { min-height: 320px; }
+.ha-root .gate.hard .gate-overlay { background: var(--paper-dark-2); }
+/* sneak-peek nudge bar (shown while a peek is revealed) */
+.ha-root .gate-peekbar { position: absolute; top: 0; left: 0; right: 0; z-index: 8; display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 8px 16px; background: color-mix(in srgb, var(--c-amber) 16%, var(--paper-dark-2)); border-bottom: 1px solid var(--c-amber);
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-amber); }
+.ha-root .gate-peekbar button { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.04em; text-transform: uppercase; padding: 5px 14px;
+  background: var(--c-amber); color: #1a1205; border: 0; font-weight: 600; cursor: pointer; }
+.ha-root .gate-peekbar button:hover { filter: brightness(1.08); }
+.ha-root .gate-peekbar + .gate-content { padding-top: 46px; }
 
 /* ---- Growth Drivers ---- */
 .ha-root .gd { margin-top: 48px; }

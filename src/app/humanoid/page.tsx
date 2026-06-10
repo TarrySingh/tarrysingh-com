@@ -219,7 +219,7 @@ export default function HumanoidPage() {
             </div>
           </Reveal>
           <Reveal>
-            <Gate sku="workshop" cta="Unlock workshop" title="The hands-on workshop is premium" desc="Unlock the live Actuator Selection Lab and the incident-response simulator — plus the full certification track below. Preview them now, or license a cohort for your team." note="Workshop + certification · licensed per cohort · tarrysingh.com">
+            <Gate sku="workshop" peekable cta="Get the workshop" title="The hands-on workshop is premium" desc="The live Actuator Selection Lab and the incident-response simulator. Take a sneak peek — three tries — then license a cohort for your team." note="Workshop + certification · licensed per cohort · tarrysingh.com">
               <div style={{ marginTop: 8 }}>
                 <div className="eyebrow" style={{ marginBottom: 20 }}>Module 1 · Live bench</div>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: 34, fontWeight: 600, letterSpacing: "-0.02em", margin: "0 0 10px" }}>Actuator Selection Lab</h3>
@@ -240,7 +240,7 @@ export default function HumanoidPage() {
             <p className="sec-sub">Step through the workshop curriculum — foundations, technical core, deployment, safety, and the capstone certification. Preview it, or license a cohort.</p>
           </Reveal>
           <Reveal>
-            <Gate sku="certification" cta="Unlock certification" kind="Premium certification" title="The certification track is premium" desc="Unlock the full five-stage curriculum, the capstone deliverables, and the dual-track credential. Preview it now, or license certification for your team." note="Certification · valid 3 years · dual-track (Technical / Executive) · tarrysingh.com">
+            <Gate sku="certification" peekable cta="Get certification" kind="Premium certification" title="The certification track is premium" desc="The full five-stage curriculum, the capstone deliverables, and the dual-track credential. Take a sneak peek — three tries — then license certification for your team." note="Certification · valid 3 years · dual-track (Technical / Executive) · tarrysingh.com">
               <CertStepper />
             </Gate>
           </Reveal>
