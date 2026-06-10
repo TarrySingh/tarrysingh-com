@@ -1540,7 +1540,7 @@ export const SLIDES: Slide[] = [
       },
       {
         "lead": "Emerging industry standards:",
-        "text": "ROS2 for control software, URDF for mechanical specifications, and OpenAI's Gym for simulation environments forming the backbone of standardization efforts."
+        "text": "ROS2 for control software, URDF for mechanical specifications, and Gymnasium (the maintained successor to OpenAI Gym) for simulation environments forming the backbone of standardization efforts."
       },
       {
         "lead": "Supply chain resilience:",
@@ -1565,7 +1565,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Quote",
-      "text": "\"Standardization is not stifling innovation—it's accelerating it. Companies focusing on their core differentiators while leveraging standard modules for non-critical functions are innovating faster and with lower capital requirements.\" — Dr. Elena Matsuda, Director of Robotics Standards Consortium (RSC)"
+      "text": "\"Standardization is not stifling innovation—it's accelerating it. Companies focusing on their core differentiators while leveraging standard modules for non-critical functions are innovating faster and with lower capital requirements.\""
     }
   },
   {
@@ -21965,38 +21965,30 @@ export const SLIDES: Slide[] = [
     "kind": "bullets",
     "src": 372,
     "chap": "var(--c-cyan)",
-    "eyebrow": "ACKNOWLEDGMENTS",
-    "title": "Contributor Biographies",
+    "eyebrow": "ABOUT THIS REPORT",
+    "title": "Authorship & method",
     "bullets": [
       {
-        "lead": "Dr. Emily Chen — Lead Technical Analyst, Robotics AI",
-        "text": "Former head of AI Research at Boston Dynamics with 15+ years in robotic motion planning. PhD in Computer Science from MIT with specialization in embodied AI systems."
+        "lead": "Author",
+        "text": "Tarry Singh — AI researcher, advisor, and founder. This report pairs original analysis with hands-on tooling: every chart on these pages is a live, manipulable instrument rather than a static figure."
       },
       {
-        "lead": "Marcus Johnson — Financial Markets Analyst",
-        "text": "Former Managing Director at Goldman Sachs covering emerging technology. MBA from Harvard Business School with expertise in technology valuations and venture capital dynamics."
+        "lead": "Method",
+        "text": "Figures are source-pinned to published analyst research — Morgan Stanley, Goldman Sachs, Counterpoint, MarketsandMarkets, Research Nester, Coherent Market — plus company filings, pilot disclosures, and primary technical documentation."
       },
       {
-        "lead": "Dr. Hiroshi Tanaka — Hardware Systems Architect",
-        "text": "Former CTO at Toyota Robotics with 20+ years experience in mechanical systems. Led development teams for humanoid actuator systems and energy-efficient motion control."
+        "lead": "The living edition",
+        "text": "Unlike a static deck, these pages are rebuilt natively for the web and refreshed as the industry moves — the {{2026}} edition actualizes the original July-2025 research baseline."
       },
       {
-        "lead": "Sarah Lindquist — Manufacturing & Supply Chain Expert",
-        "text": "Chief Strategy Officer at Advanced Materials Inc. Specialized in actuator production systems and global supply chain resilience. Helped scale manufacturing from 5K to 500K units."
-      },
-      {
-        "lead": "Li Wei — Asia-Pacific Market Specialist",
-        "text": "Partner at China Innovation Partners. Expert in APAC robotics ecosystems with particular focus on policy frameworks and manufacturing clusters in Shenzhen and Tokyo."
-      },
-      {
-        "lead": "Prof. Daniel Rodriguez — Workshop Facilitator, Ethics",
-        "text": "Chair of Robotics Ethics at Stanford. Leading researcher on AI governance frameworks and author of \"The Embodied Future: Ethics in Humanoid Design\" (2024)."
-      },
-      {
-        "lead": "Editorial & Research Support Team",
-        "text": "Maria Gonzalez, Lead Editor • Robert Khanna, Data Analytics Lead • James Wilson, Research Coordinator • Ana Petrova, Design Lead • Miguel Santos, Technical Specialist"
+        "lead": "Workshops & certification",
+        "text": "The 60 workshop pages, the hands-on labs, and the dual-track certification are delivered as in-company cohorts — see the package page or tarrysingh.com."
       }
-    ]
+    ],
+    "callout": {
+      "k": "Note",
+      "text": "This page replaces the source deck's contributor listing, which carried illustrative personas rather than verified individuals."
+    }
   },
   {
     "kind": "table",
