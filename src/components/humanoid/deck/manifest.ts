@@ -18924,97 +18924,119 @@ export const SLIDES: Slide[] = [
     ]
   },
   {
-    "kind": "bullets",
+    "kind": "table",
     "src": 332,
     "chap": "var(--c-cyan)",
-    "eyebrow": "STRATEGIC PLANNING",
+    "eyebrow": "Strategic Planning",
     "title": "Comprehensive Action Plan Checklist",
-    "bullets": [
-      {
-        "lead": "Technology Strategy & Integration",
-        "text": "Establish cross-functional AI-Robotics taskforce [Technical]"
-      },
-      {
-        "lead": "Technology Strategy & Integration",
-        "text": "Develop multi-phase actuator sourcing strategy to mitigate supply chain risk [Technical]"
-      },
-      {
-        "lead": "Technology Strategy & Integration",
-        "text": "Create digital twin of factory environment for virtual deployment testing [Technical]"
-      },
-      {
-        "lead": "Technology Strategy & Integration",
-        "text": "Implement unified fleet management architecture for all robotic systems [Technical]"
-      },
-      {
-        "lead": "Business & Financial Planning",
-        "text": "Conduct sensitivity analysis on RaaS vs. direct purchase models [Executive]"
-      },
-      {
-        "lead": "Business & Financial Planning",
-        "text": "Establish KPI dashboard for humanoid implementation ROI tracking [Executive]"
-      },
-      {
-        "lead": "Business & Financial Planning",
-        "text": "Develop phased investment plan for 3-5 year rollout with stage gates [Executive]"
-      },
-      {
-        "lead": "Business & Financial Planning",
-        "text": "Identify tax incentives and government subsidies for automation investments [Executive]"
-      },
-      {
-        "lead": "Regulatory & Compliance",
-        "text": "Perform region-specific regulatory assessment for deployment locations [Technical]"
-      },
-      {
-        "lead": "Regulatory & Compliance",
-        "text": "Establish AI ethics review board with clear governance structure [Executive]"
-      },
-      {
-        "lead": "Workforce & Change Management",
-        "text": "Develop comprehensive robotics upskilling program for existing staff [Executive]"
-      },
-      {
-        "lead": "Workforce & Change Management",
-        "text": "Create detailed change management communications plan for all stakeholders [Executive]"
-      },
-      {
-        "lead": "Workforce & Change Management",
-        "text": "Establish robotics center of excellence with clear career pathways [Executive]"
-      },
-      {
-        "lead": "Workforce & Change Management",
-        "text": "Implement train-the-trainer program for humanoid operation and maintenance [Technical]"
-      },
-      {
-        "lead": "Implementation Roadmap",
-        "text": "Launch pilot project with high-visibility, medium-complexity use case [Technical]"
-      },
-      {
-        "lead": "Implementation Roadmap",
-        "text": "Establish comprehensive validation protocol for safety and performance [Technical]"
-      },
-      {
-        "lead": "Implementation Roadmap",
-        "text": "Create phased scaling plan from single-task to multi-task deployment [Technical]"
-      },
-      {
-        "lead": "Implementation Roadmap",
-        "text": "Implement quarterly executive steering committee for transformation governance [Executive]"
-      },
-      {
-        "lead": "Ecosystem & Partnerships",
-        "text": "Establish strategic partnerships with key integrators and component suppliers [Executive]"
-      },
-      {
-        "lead": "Ecosystem & Partnerships",
-        "text": "Join industry consortia focused on standards development and regulatory advocacy [Executive]"
-      }
+    "columns": [
+      "Workstream",
+      "Action Item",
+      "Owner"
     ],
-    "callout": {
-      "k": "Success Factor",
-      "text": "Implementation requires tight coordination between technical and executive workstreams with clear accountability and regular progress reviews against established metrics"
-    }
+    "rows": [
+      [
+        "Technology Strategy & Integration",
+        "Establish cross-functional AI-Robotics taskforce",
+        "Technical"
+      ],
+      [
+        "Technology Strategy & Integration",
+        "Develop multi-phase actuator sourcing strategy to mitigate supply chain risk",
+        "Technical"
+      ],
+      [
+        "Technology Strategy & Integration",
+        "Create digital twin of factory environment for virtual deployment testing",
+        "Technical"
+      ],
+      [
+        "Technology Strategy & Integration",
+        "Implement unified fleet management architecture for all robotic systems",
+        "Technical"
+      ],
+      [
+        "Business & Financial Planning",
+        "Conduct sensitivity analysis on RaaS vs. direct purchase models",
+        "Executive"
+      ],
+      [
+        "Business & Financial Planning",
+        "Establish KPI dashboard for humanoid implementation ROI tracking",
+        "Executive"
+      ],
+      [
+        "Business & Financial Planning",
+        "Develop phased investment plan for 3-5 year rollout with stage gates",
+        "Executive"
+      ],
+      [
+        "Business & Financial Planning",
+        "Identify tax incentives and government subsidies for automation investments",
+        "Executive"
+      ],
+      [
+        "Regulatory & Compliance",
+        "Perform region-specific regulatory assessment for deployment locations",
+        "Technical"
+      ],
+      [
+        "Regulatory & Compliance",
+        "Establish AI ethics review board with clear governance structure",
+        "Executive"
+      ],
+      [
+        "Workforce & Change Management",
+        "Develop comprehensive robotics upskilling program for existing staff",
+        "Executive"
+      ],
+      [
+        "Workforce & Change Management",
+        "Create detailed change management communications plan for all stakeholders",
+        "Executive"
+      ],
+      [
+        "Workforce & Change Management",
+        "Establish robotics center of excellence with clear career pathways",
+        "Executive"
+      ],
+      [
+        "Workforce & Change Management",
+        "Implement train-the-trainer program for humanoid operation and maintenance",
+        "Technical"
+      ],
+      [
+        "Implementation Roadmap",
+        "Launch pilot project with high-visibility, medium-complexity use case",
+        "Technical"
+      ],
+      [
+        "Implementation Roadmap",
+        "Establish comprehensive validation protocol for safety and performance",
+        "Technical"
+      ],
+      [
+        "Implementation Roadmap",
+        "Create phased scaling plan from single-task to multi-task deployment",
+        "Technical"
+      ],
+      [
+        "Implementation Roadmap",
+        "Implement quarterly executive steering committee for transformation governance",
+        "Executive"
+      ],
+      [
+        "Ecosystem & Partnerships",
+        "Establish strategic partnerships with key integrators and component suppliers",
+        "Executive"
+      ],
+      [
+        "Ecosystem & Partnerships",
+        "Join industry consortia focused on standards development and regulatory advocacy",
+        "Executive"
+      ]
+    ],
+    "foot": "Implementation requires tight coordination between technical and executive workstreams with clear accountability and regular progress reviews against established metrics."
   },
   {
     "kind": "flow",
