@@ -458,7 +458,7 @@ export const SLIDES: Slide[] = [
       },
       {
         "k": "Cost Barriers",
-        "d": "Price points remain prohibitive for most applications: Current models: {{$100,000}}-{{$250,000}}per unit; Economic viability threshold: {{$20,000}}-{{$35,000}}for most use cases; 8-14 month ROI currently achievable only in niche applications"
+        "d": "Price points remain prohibitive for most applications: Current models: {{$100,000}}-{{$250,000}} per unit; Economic viability threshold: {{$20,000}}-{{$35,000}} for most use cases; 8-14 month ROI currently achievable only in niche applications"
       },
       {
         "k": "Workforce Integration",
@@ -2253,7 +2253,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Tipping point",
-      "text": "The market tipping point for widespread adoption will occur when service robots achieve the \"triple-eight\" benchmark: 8-hour runtime, 8 reliable functions, and {{$8,000}}price point. Elder care applications lead adoption curves due to acute labor shortages and strong ROI potential"
+      "text": "The market tipping point for widespread adoption will occur when service robots achieve the \"triple-eight\" benchmark: 8-hour runtime, 8 reliable functions, and {{$8,000}} price point. Elder care applications lead adoption curves due to acute labor shortages and strong ROI potential"
     }
   },
   {
@@ -3685,7 +3685,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Deployment Best Practices From Leading Implementers",
-      "text": "Start with augmentation, not replacement: . Validate in simulation first: . Implement buddy system: . Weekly optimization cycles:"
+      "text": ": . : . Implement buddy system: . :"
     }
   },
   {
@@ -6118,7 +6118,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Benchmark finding",
-      "text": "Leading humanoid manufacturers have found that every {{$1}}invested in advanced QA systems returns {{$4.7}}in reduced warranty claims and field failures, while decreasing time-to-market by {{26%}} through parallel validation processes"
+      "text": "Leading humanoid manufacturers have found that every {{$1}} invested in advanced QA systems returns {{$4.7}} in reduced warranty claims and field failures, while decreasing time-to-market by {{26%}} through parallel validation processes"
     }
   },
   {
@@ -16645,8 +16645,7 @@ export const SLIDES: Slide[] = [
             ]
           ]
         }
-      ],
-      "ex": "Return Profile"
+      ]
     },
     "R": {
       "name": "Co-Development & JV Models",
@@ -16737,8 +16736,7 @@ export const SLIDES: Slide[] = [
             ]
           ]
         }
-      ],
-      "ex": "Co-Development"
+      ]
     }
   },
   {

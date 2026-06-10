@@ -51,7 +51,7 @@ const nonEmpty = (a) => Array.isArray(a) && a.length > 0
  * Matches money, percents/ranges, multipliers, big counts, ISO refs,
  * year ranges, ± tolerances. Single pass; records carry no prior braces.
  */
-const HL_RE = /(\$[\d.,]+\s?[BMKk]?\b(?:\s?(?:billion|million|trillion))?|±?[\d.,]+\s?(?:–|—|-|to)\s?[\d.,]+\s?%|[\d.,]+\s?%|[\d.,]+(?:\s?[x×]\s?[\d.,]+)+[x×]?|[\d.,]+\s?[x×]\b|\b\d{1,3}(?:,\d{3})+\+?|ISO(?:\/TS)?\s?[\d:.-]+|\b(?:19|20)\d{2}\s?[–—-]\s?(?:19|20)?\d{2}\b|±\s?[\d.]+\s?\w+)/g
+const HL_RE = /(\$[\d.,]+(?:\s?[BMKk]\b|\s?(?:billion|million|trillion)\b)?|±?[\d.,]+\s?(?:–|—|-|to)\s?[\d.,]+\s?%|[\d.,]+\s?%|[\d.,]+(?:\s?[x×]\s?[\d.,]+)+[x×]?|[\d.,]+\s?[x×]\b|\b\d{1,3}(?:,\d{3})+\+?|ISO(?:\/TS)?\s?[\d:.-]+|\b(?:19|20)\d{2}\s?[–—-]\s?(?:19|20)?\d{2}\b|±\s?[\d.]+\s?\w+)/g
 const autoHl = (t) =>
   typeof t === "string"
     ? t.replace(HL_RE, "{{$1}}").replace(/\{\{\s*(.*?)\s*\}\}/g, "{{$1}}").replace(/\}\}(\s*)\{\{/g, "$1").replace(/\{\{\s*\}\}/g, "")
@@ -186,7 +186,8 @@ function convert(r, ctx) {
             t: cleanStr(row.t) || "",
             items: (row.items ?? []).map(([m, t]) => [["+", "−", "~"].includes(m) ? m : "~", scrubText(cleanStr(t))]).filter(([, t]) => !isEmptyish(t) && !isPointer(t) && !isHeaderWord(t)),
           })).filter((row) => row.items.length), // a row with no items is a dangling header — drop it
-          ...(ex && !isHeaderWord(ex) && !isPointer(ex) ? { ex } : {}),
+          // ex is a strategic-insight sentence; a 1-3 word stub (echoing a row title) is an artifact
+          ...(ex && ex.split(/\s+/).length >= 4 && !isPointer(ex) ? { ex } : {}),
         }
       }
       const L = side(r.twoPanel?.L, "var(--c-blue)"), R = side(r.twoPanel?.R, "var(--c-amber)")
@@ -260,13 +261,19 @@ function bulletsToFlow(r, base, title) {
 // build a callout, stripping any verbatim restatement of the page's own bullets
 function makeCallout(c, bullets) {
   if (!c) return null
-  let text = autoHl(scrubText(cleanStr(c.text))) || ""
+  const rawText = scrubText(cleanStr(c.text)) || ""
+  // garbled "Lead: . Lead2: . Lead3:" callouts — glued bullet leads with empty bodies → drop
+  const emptyColon = (rawText.match(/:\s*[.;]/g) || []).length
+  if (emptyColon >= 2) return null
+  let text = autoHl(rawText)
+  // strip verbatim restatements of the page's own bullet text OR leads
   for (const b of bullets) {
-    const probe = b.text
-    if (probe && probe.length > 28 && text.includes(probe)) text = text.split(probe).join(" ")
+    for (const probe of [b.text, b.lead].filter((p) => p && p.length > 22)) {
+      if (text.includes(probe)) text = text.split(probe).join(" ")
+    }
   }
   text = text.replace(/\s{2,}/g, " ").replace(/^[\s.;,—–-]+|[\s.;,—–-]+$/g, "").trim()
-  if (isEmptyish(text)) return null
+  if (isEmptyish(text) || text.split(/\s+/).length < 4) return null
   return { k: scrubKicker(cleanStr(c.k)) || "Insight", text }
 }
 
