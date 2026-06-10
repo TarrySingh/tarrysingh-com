@@ -15,7 +15,7 @@ import { Fragment, type CSSProperties, type ReactNode } from "react"
 import type {
   Slide, TitleSlide, DividerSlide, BulletsSlide, StatsSlide,
   TwoPanelSlide, CaseSlide, TableSlide, TimelineSlide, InstrumentSlide,
-  PanelSide, PanelMark,
+  ChartSlide, PanelSide, PanelMark,
 } from "./types"
 import { MarketModel } from "@/components/humanoid/charts"
 import { MarketConcentration } from "@/components/humanoid/content"
@@ -252,6 +252,81 @@ function Instrument({ s }: { s: InstrumentSlide }) {
   )
 }
 
+/* ---------- 10 · generic native chart ---------- */
+const CHART_FALLBACK = ["var(--c-blue)", "var(--c-cyan)", "var(--c-violet)", "var(--c-green)", "var(--c-amber)", "var(--c-red)", "var(--c-magenta)", "#9aa0ae"]
+const chartColor = (d: { color?: string }, i: number) => d.color ?? CHART_FALLBACK[i % CHART_FALLBACK.length]
+
+function ChartBody({ s }: { s: ChartSlide }) {
+  const max = Math.max(...s.data.map((d) => d.value), 1)
+  if (s.ctype === "donut") {
+    const total = s.data.reduce((a, d) => a + d.value, 0) || 1
+    const R = 130, r = 82, cx = 150, cy = 150
+    let acc = 0
+    const arcs = s.data.map((d, i) => {
+      const a0 = (acc / total) * 2 * Math.PI - Math.PI / 2
+      acc += d.value
+      const a1 = (acc / total) * 2 * Math.PI - Math.PI / 2
+      const large = a1 - a0 > Math.PI ? 1 : 0
+      const p = (ang: number, rad: number): [number, number] => [cx + rad * Math.cos(ang), cy + rad * Math.sin(ang)]
+      const [x0, y0] = p(a0, R), [x1, y1] = p(a1, R), [x2, y2] = p(a1, r), [x3, y3] = p(a0, r)
+      return { d, i, path: `M${x0},${y0} A${R},${R} 0 ${large} 1 ${x1},${y1} L${x2},${y2} A${r},${r} 0 ${large} 0 ${x3},${y3} Z` }
+    })
+    return (
+      <div className="hd-chart hd-donutwrap">
+        <svg viewBox="0 0 300 300" className="hd-donut">
+          {arcs.map((a) => (
+            <path key={a.i} d={a.path} fill={chartColor(a.d, a.i)} stroke="var(--paper-dark-2)" strokeWidth="1.5" />
+          ))}
+        </svg>
+        <div className="hd-chart-legend">
+          {s.data.map((d, i) => (
+            <div className="hd-cl" key={i}>
+              <i style={{ background: chartColor(d, i) }} />
+              <span className="hd-cl-lab">{d.label}{d.note && <em> · {d.note}</em>}</span>
+              <span className="hd-cl-val">{d.value}{s.unit ?? "%"}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+  if (s.ctype === "hbar") {
+    return (
+      <div className="hd-chart hd-hbars">
+        {s.data.map((d, i) => (
+          <div className="hd-hbar hd-in" key={i} style={stag(2 + i * 0.6)}>
+            <span className="hd-hbar-lab">{d.label}{d.note && <em>{d.note}</em>}</span>
+            <span className="hd-hbar-track"><span className="hd-hbar-fill" style={{ width: `${(d.value / max) * 100}%`, background: chartColor(d, i) }} /></span>
+            <span className="hd-hbar-val">{d.value}{s.unit ?? ""}</span>
+          </div>
+        ))}
+      </div>
+    )
+  }
+  return (
+    <div className="hd-chart hd-vbars">
+      {s.data.map((d, i) => (
+        <div className="hd-vbar hd-in" key={i} style={stag(2 + i * 0.6)}>
+          <span className="hd-vbar-val">{d.value}{s.unit ?? ""}</span>
+          <span className="hd-vbar-col"><span className="hd-vbar-fill" style={{ height: `${(d.value / max) * 100}%`, background: chartColor(d, i) }} /></span>
+          <span className="hd-vbar-lab">{d.label}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function Chart({ s }: { s: ChartSlide }) {
+  return (
+    <SlideChrome slide={s}>
+      <h2 className="hd-h hd-in" style={stag(1)}>{s.title}</h2>
+      {s.sub && <p className="hd-sub hd-in" style={stag(1.5)}>{s.sub}</p>}
+      <div className="hd-in" style={stag(2)}><ChartBody s={s} /></div>
+      {s.foot && <div className="hd-srcline hd-in" style={stag(3)}>{s.foot}</div>}
+    </SlideChrome>
+  )
+}
+
 /* ---------- dispatcher ---------- */
 export function renderSlide(s: Slide): ReactNode {
   switch (s.kind) {
@@ -264,5 +339,6 @@ export function renderSlide(s: Slide): ReactNode {
     case "table": return <Table s={s} />
     case "timeline": return <Timeline s={s} />
     case "instrument": return <Instrument s={s} />
+    case "chart": return <Chart s={s} />
   }
 }

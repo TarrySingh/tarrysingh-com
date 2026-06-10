@@ -127,6 +127,21 @@ export interface InstrumentSlide extends SlideBase {
   instrument: InstrumentKey
 }
 
+/**
+ * Generic native chart for data slides no live instrument absorbs.
+ * Bar, ranked horizontal bars, and donut cover the deck's remaining
+ * static-chart grammar; values are the transcribed source figures.
+ */
+export interface ChartSlide extends SlideBase {
+  kind: "chart"
+  title: string
+  sub?: string
+  ctype: "bar" | "hbar" | "donut"
+  unit?: string
+  data: { label: string; value: number; color?: string; note?: string }[]
+  foot?: string
+}
+
 export type Slide =
   | TitleSlide
   | DividerSlide
@@ -137,6 +152,7 @@ export type Slide =
   | TableSlide
   | TimelineSlide
   | InstrumentSlide
+  | ChartSlide
 
 export interface TocGroup {
   label: string

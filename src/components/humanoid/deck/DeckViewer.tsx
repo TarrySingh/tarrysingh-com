@@ -4,14 +4,17 @@
  * The Living Report — present-mode deck viewer.
  *
  * One slide at a time on a 16:9 stage. ←/→/Space/PageUp/PageDown step,
- * Home/End jump, C toggles the contents drawer, Esc closes it. The
- * current position syncs to ?s=N (deep-linkable); the stage remounts
- * per slide so each turn plays its entrance cascade. Workshop slides
- * render behind the gold gate until the full-package entitlement is
- * granted (same seam as the canvas; demo mode for Phase A/B).
+ * Home/End jump, C toggles the contents drawer, G the grid overview,
+ * Esc closes either. Position syncs to ?s=N (deep-linkable); the stage
+ * remounts per slide so each turn plays its entrance cascade. Workshop
+ * slides render behind the gold gate until the full-package entitlement
+ * is granted (same seam as the canvas; demo mode until Stripe lands).
+ * ?print=1 renders every page stacked and opens the print dialog —
+ * the whole curated deck to PDF in one go.
  */
 
 import { useState, useEffect, useCallback, type ReactNode, type CSSProperties } from "react"
+import type { Slide } from "./types"
 import { SLIDES, TOC, DECK_TITLE, DECK_EDITION } from "./manifest"
 import { renderSlide } from "./templates"
 import { HAEntitlement } from "@/components/humanoid/entitlement"
@@ -52,40 +55,74 @@ function DeckGate({ children }: { children: ReactNode }) {
   )
 }
 
+function slideLabel(s: Slide): string {
+  switch (s.kind) {
+    case "title": return s.title.replace("\n", " ")
+    case "divider": return `${s.part} — ${s.title}`
+    case "case": return `${s.robot} at ${s.co}`
+    default: return s.title
+  }
+}
+
+/* ---------- print mode: every page stacked, then the print dialog ---------- */
+function PrintDeck() {
+  useEffect(() => {
+    document.documentElement.closest("html")
+    const t = setTimeout(() => window.print(), 1400)
+    return () => clearTimeout(t)
+  }, [])
+  return (
+    <div className="hd-print">
+      {SLIDES.map((s, n) => (
+        <div className="hd-stagewrap" key={n}>
+          {s.locked ? <DeckGate>{renderSlide(s)}</DeckGate> : renderSlide(s)}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export function DeckViewer() {
   const total = SLIDES.length
   const [i, setI] = useState(0)
   const [toc, setToc] = useState(false)
+  const [grid, setGrid] = useState(false)
+  const [printMode, setPrintMode] = useState(false)
   const [entitled] = useFullPackage()
 
-  // read ?s= on mount; keep the URL in sync as the reader moves
+  // read ?s= / ?print= on mount; keep ?s= in sync as the reader moves
   useEffect(() => {
-    const p = new URLSearchParams(window.location.search).get("s")
-    const n = p ? parseInt(p, 10) : NaN
+    const q = new URLSearchParams(window.location.search)
+    if (q.get("print") === "1") { setPrintMode(true); return }
+    const n = q.get("s") ? parseInt(q.get("s") as string, 10) : NaN
     if (!isNaN(n) && n >= 1 && n <= total) setI(n - 1)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   useEffect(() => {
-    window.history.replaceState(null, "", `?s=${i + 1}`)
-  }, [i])
+    if (!printMode) window.history.replaceState(null, "", `?s=${i + 1}`)
+  }, [i, printMode])
 
   const go = useCallback((n: number) => setI(Math.max(0, Math.min(total - 1, n))), [total])
 
   useEffect(() => {
+    if (printMode) return
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return
       switch (e.key) {
-        case "ArrowRight": case " ": case "PageDown": e.preventDefault(); setToc(false); go(i + 1); break
-        case "ArrowLeft": case "PageUp": e.preventDefault(); setToc(false); go(i - 1); break
+        case "ArrowRight": case " ": case "PageDown": e.preventDefault(); setToc(false); setGrid(false); go(i + 1); break
+        case "ArrowLeft": case "PageUp": e.preventDefault(); setToc(false); setGrid(false); go(i - 1); break
         case "Home": e.preventDefault(); go(0); break
         case "End": e.preventDefault(); go(total - 1); break
-        case "c": case "C": setToc((t) => !t); break
-        case "Escape": setToc(false); break
+        case "c": case "C": setGrid(false); setToc((t) => !t); break
+        case "g": case "G": case "t": case "T": setToc(false); setGrid((g) => !g); break
+        case "Escape": setToc(false); setGrid(false); break
       }
     }
     window.addEventListener("keydown", onKey)
     return () => window.removeEventListener("keydown", onKey)
-  }, [i, go, total])
+  }, [i, go, total, printMode])
+
+  if (printMode) return <PrintDeck />
 
   const slide = SLIDES[i]
   const chap = slide.chap ?? "var(--accent)"
@@ -97,7 +134,8 @@ export function DeckViewer() {
         <a className="hd-brand" href="/humanoid"><span className="tk" />{DECK_TITLE}<em>{DECK_EDITION}</em></a>
         <div className="hd-top-right">
           <span className="hd-count">{String(i + 1).padStart(2, "0")} / {total}</span>
-          <button className="hd-btn" onClick={() => setToc((t) => !t)}>Contents <span className="hd-key">C</span></button>
+          <button className="hd-btn" onClick={() => { setToc(false); setGrid((g) => !g) }}>Grid <span className="hd-key">G</span></button>
+          <button className="hd-btn" onClick={() => { setGrid(false); setToc((t) => !t) }}>Contents <span className="hd-key">C</span></button>
         </div>
         <div className="hd-prog" style={{ width: `${((i + 1) / total) * 100}%`, background: chap }} />
       </div>
@@ -110,6 +148,29 @@ export function DeckViewer() {
         <button className="hd-arrow hd-next" onClick={() => go(i + 1)} disabled={i === total - 1} aria-label="Next slide">→</button>
       </div>
 
+      {grid && (
+        <div className="hd-grid">
+          <div className="hd-grid-head">
+            <span className="hd-grid-title">All pages</span>
+            <button className="hd-btn" onClick={() => setGrid(false)}>Close <span className="hd-key">Esc</span></button>
+          </div>
+          <div className="hd-grid-cells">
+            {SLIDES.map((s, n) => (
+              <button
+                key={n}
+                className={"hd-cell" + (n === i ? " on" : "")}
+                style={{ "--cc": s.chap ?? "var(--accent)" } as CSSProperties}
+                onClick={() => { go(n); setGrid(false) }}
+              >
+                <span className="hd-cell-n"><span>{String(n + 1).padStart(2, "0")}</span><span className="hd-cell-kind">{s.kind}</span></span>
+                <span className="hd-cell-t">{slideLabel(s)}</span>
+                {s.locked && !entitled && <span className="hd-cell-lock">locked</span>}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className={"hd-drawer" + (toc ? " open" : "")}>
         <div className="hd-drawer-head">
           <span>Contents</span>
@@ -120,22 +181,17 @@ export function DeckViewer() {
             <div className="hd-toc-label">{g.label}</div>
             {g.slides.map((n) => {
               const s = SLIDES[n]
-              const t =
-                s.kind === "title" ? s.title.replace("\n", " ") :
-                s.kind === "divider" ? `${s.part} — ${s.title}` :
-                s.kind === "case" ? `${s.robot} at ${s.co}` :
-                s.title
               return (
                 <button key={n} className={"hd-toc-item" + (n === i ? " on" : "")} onClick={() => { go(n); setToc(false) }}>
                   <span className="hd-toc-n">{String(n + 1).padStart(2, "0")}</span>
-                  <span className="hd-toc-t">{t}</span>
+                  <span className="hd-toc-t">{slideLabel(s)}</span>
                   {s.locked && !entitled && <span className="hd-toc-lock">locked</span>}
                 </button>
               )
             })}
           </div>
         ))}
-        <div className="hd-drawer-foot">← → navigate · C contents · vertical slice — 10 of ~280 pages</div>
+        <div className="hd-drawer-foot">← → navigate · G grid · C contents · ?print=1 for PDF</div>
       </div>
       {toc && <button className="hd-scrim" onClick={() => setToc(false)} aria-label="Close contents" />}
     </div>

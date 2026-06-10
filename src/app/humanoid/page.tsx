@@ -286,7 +286,7 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">The package · Get it &amp; take it with you</div>
             <h2 className="sec-h">The executive deck is free. The full curriculum is the package.</h2>
-            <p className="sec-sub">Start with the 60-slide narrative at no cost. The hands-on labs and the certification track unlock with the full package — and the complete 375-slide workshop deck arrives, as native pages, in the next release.</p>
+            <p className="sec-sub">Start with the 60-slide narrative at no cost — and browse the complete report as <a href="/humanoid/deck" style={{ color: "var(--c-amber)", textDecoration: "underline", textUnderlineOffset: 4 }}>native, living pages</a>. The hands-on labs, the certification track, and the 60 workshop pages unlock together with the full package.</p>
           </Reveal>
           <Reveal>
             <div className="pkg">
