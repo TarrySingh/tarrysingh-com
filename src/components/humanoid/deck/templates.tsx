@@ -185,7 +185,7 @@ function Case({ s }: { s: CaseSlide }) {
           <div className="acs-task hd-in" style={stag(2)}><div className="acs-lab">The task</div><p>{s.task}</p></div>
           <div className="acs-res hd-in" style={stag(3)}><div className="acs-lab">Results</div><ul>{s.results.map((r, i) => <li key={i}>{r}</li>)}</ul></div>
         </div>
-        <div className="acs-roi hd-in" style={stag(4)}><span className="acs-roilab">ROI</span>{s.roi}</div>
+        {s.roi && <div className="acs-roi hd-in" style={stag(4)}><span className="acs-roilab">ROI</span>{s.roi}</div>}
       </div>
     </SlideChrome>
   )

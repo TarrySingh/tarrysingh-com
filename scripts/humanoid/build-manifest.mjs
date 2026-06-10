@@ -73,12 +73,18 @@ const CLIP_NOTE_RE = /\((?:text )?(?:clipped|truncated|cut off|not visible|parti
 // numbered process lead: "1." / "2)" / "Step 3:" / "1. Interface Mapping"
 const NUM_LEAD_RE = /^\s*(?:step\s*)?\d+\s*[.)\]:-]\s*/i
 
+// Single-word leftover source-table column headers that get glued on as items.
+const HEADER_WORD_RE = /^(?:Metric|Company|Companies|Vendor|Vendors|Pairing|Pairings|Score|Scores|Rating|Ratings|Status|Value|Values|Type|Types|Category|Categories|Example|Examples|Region|Regions|Year|Years|Tier|Tiers|Level|Levels|Stage|Stages|Note|Notes|Detail|Details)$/i
+
 const scrubText = (t) => {
   if (typeof t !== "string") return t
   let s = t.replace(CHIP_BRACKET_PREFIX_RE, "").replace(CLIP_NOTE_RE, "").replace(CHIP_LABEL_RE, "").replace(CHIP_BRACKET_RE, "").trim()
+  s = s.replace(/\s*[[(]\s*$/, "") // dangling open bracket/paren artifact
   s = s.replace(/\s{2,}/g, " ").replace(/\s+([.,;:])/g, "$1").replace(/[\s;,]+$/, "")
   return s
 }
+// is this twoPanel item just a stray header word with no real content?
+const isHeaderWord = (t) => typeof t === "string" && HEADER_WORD_RE.test(t.trim())
 const scrubTitle = (t) => (typeof t === "string" ? t.replace(TITLE_PREFIX_RE, "").trim() : t)
 const scrubKicker = (k) => (typeof k === "string" ? k.replace(/\s*\([^)]*\)\s*$/, "").trim() : k)
 const stripNumLead = (s) => (typeof s === "string" ? s.replace(NUM_LEAD_RE, "").trim() : s)
@@ -166,14 +172,25 @@ function convert(r, ctx) {
       return convertFallback(r, base, title)
     }
     case "twoPanel": {
-      const side = (p, accent) => ({ name: cleanStr(p?.name) || "", tag: cleanStr(p?.tag) || "", accent, rows: (p?.rows ?? []).map((row) => ({ t: cleanStr(row.t) || "", items: (row.items ?? []).map(([m, t]) => [["+", "−", "~"].includes(m) ? m : "~", scrubText(cleanStr(t))]).filter(([, t]) => !isEmptyish(t) && !isPointer(t)) })).filter((row) => row.t || row.items.length), ...(p?.ex ? { ex: scrubText(cleanStr(p.ex)) } : {}) })
+      const side = (p, accent) => {
+        const ex = scrubText(cleanStr(p?.ex))
+        return {
+          name: cleanStr(p?.name) || "", tag: cleanStr(p?.tag) || "", accent,
+          rows: (p?.rows ?? []).map((row) => ({
+            t: cleanStr(row.t) || "",
+            items: (row.items ?? []).map(([m, t]) => [["+", "−", "~"].includes(m) ? m : "~", scrubText(cleanStr(t))]).filter(([, t]) => !isEmptyish(t) && !isPointer(t) && !isHeaderWord(t)),
+          })).filter((row) => row.items.length), // a row with no items is a dangling header — drop it
+          ...(ex && !isHeaderWord(ex) && !isPointer(ex) ? { ex } : {}),
+        }
+      }
       const L = side(r.twoPanel?.L, "var(--c-blue)"), R = side(r.twoPanel?.R, "var(--c-amber)")
       if (!L.rows.length && !R.rows.length) { note(r.src, "twoPanel with no usable rows — flag for redraw"); return needsRedraw(r, base, title) }
       return { kind: "twoPanel", ...base, title, ...(nonEmpty(r.body) ? { sub: cleanStr(r.body[0]) } : {}), L, R }
     }
     case "case": {
       const c = r.caseStudy ?? {}
-      return { kind: "case", ...base, co: cleanStr(c.co) || "", robot: cleanStr(c.robot) || title, site: cleanStr(c.site) || "", task: cleanStr(c.task) || "", results: (c.results ?? []).map(cleanStr), roi: cleanStr(c.roi) || "" }
+      const roi = scrubText(cleanStr(c.roi)) || ""
+      return { kind: "case", ...base, co: cleanStr(c.co) || "", robot: cleanStr(c.robot) || title, site: cleanStr(c.site) || "", task: scrubText(cleanStr(c.task)) || "", results: (c.results ?? []).map((x) => scrubText(cleanStr(x))).filter((x) => !isEmptyish(x)), roi }
     }
     case "table":
       return { kind: "table", ...base, title, columns: (r.table?.columns ?? []).map((c) => cleanStr(c) ?? ""), rows: (r.table?.rows ?? []).map((row) => row.map((cell) => { const s = scrubText(cleanStr(cell)); return isEmptyish(s) ? "—" : s })), ...(r.callout?.text ? { foot: scrubText(cleanStr(r.callout.text)) } : {}) }
@@ -200,11 +217,18 @@ function convert(r, ctx) {
   }
 }
 
-// scrub a bullet list: drop UI-narration/pointers/empty, strip chips, highlight stats
+// scrub a bullet list: drop UI-narration/pointers/empty, strip chips, highlight stats.
+// A bullet with a lead but empty text is a dangling header → fold the lead into
+// the text so it reads as a line, not an orphan "Heading:".
 function cleanBullets(arr) {
   return (arr ?? [])
-    .map((b) => ({ lead: scrubText(cleanStr(b.lead)) || "", text: scrubText(cleanStr(b.text)) || "" }))
-    .filter((b) => !isUiNarration(b.text) && !isUiNarration(b.lead) && !isPointer(b.text) && !(isEmptyish(b.text) && isEmptyish(b.lead)))
+    .map((b) => {
+      let lead = scrubText(cleanStr(b.lead)) || "", text = scrubText(cleanStr(b.text)) || ""
+      if (text && isEmptyish(lead)) lead = ""
+      if (!text && lead) { text = lead; lead = "" } // fold lead-only into text
+      return { lead, text }
+    })
+    .filter((b) => !isUiNarration(b.text) && !isUiNarration(b.lead) && !isPointer(b.text) && !isEmptyish(b.text))
     .map((b) => ({ lead: b.lead, text: autoHl(b.text) }))
 }
 

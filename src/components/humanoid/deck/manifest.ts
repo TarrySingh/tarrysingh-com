@@ -1241,8 +1241,7 @@ export const SLIDES: Slide[] = [
             ]
           ]
         }
-      ],
-      "ex": "Vendor"
+      ]
     }
   },
   {
@@ -1571,10 +1570,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Independent safety controllers: Separate from main computing stack"
-            ],
-            [
-              "~",
-              "Metric"
             ]
           ]
         },
@@ -1596,10 +1591,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Distributed power systems with segmented battery arrays"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         },
@@ -1621,10 +1612,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Physical authentication measures for maintenance access"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         }
@@ -1654,10 +1641,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Thermal mapping: Hotspot identification for proactive component replacement"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         },
@@ -1679,10 +1662,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Remote diagnostic capabilities with operator assistance"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         },
@@ -1704,10 +1683,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Performance metrics tracking with deviation alerts"
-            ],
-            [
-              "~",
-              "Metric"
             ]
           ]
         }
@@ -1864,10 +1839,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Built-in use cases: Internal deployment opportunities for testing and refinement"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         },
@@ -1939,10 +1910,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Partnership ecosystem: Strategic alliances with tech giants and adopters"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         },
@@ -2032,10 +1999,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "High barrier to entry due to significant upfront investment"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         },
@@ -2057,10 +2020,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Higher total cost of ownership over extended periods"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         },
@@ -2082,10 +2041,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Complex accounting with split capex/opex considerations"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         }
@@ -2115,10 +2070,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Critical features: Enterprise integration, AI customization, 24/7 support"
-            ],
-            [
-              "~",
-              "Pairing"
             ]
           ]
         },
@@ -2140,10 +2091,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Critical features: Regulatory compliance, application-specific training, domain expertise"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         },
@@ -2165,10 +2112,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Critical features: Quick deployment, minimal integration, predictable costs"
-            ],
-            [
-              "~",
-              "Pairing"
             ]
           ]
         }
@@ -4916,10 +4859,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Quality inspection: Visual checks of welds and assembly"
-            ],
-            [
-              "~",
-              "Pairing"
             ]
           ]
         },
@@ -4999,10 +4938,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Quality verification: Functional testing and inspections"
-            ],
-            [
-              "~",
-              "Pairing"
             ]
           ]
         },
@@ -5128,10 +5063,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Legacy WMS compatibility often requires middleware"
-            ],
-            [
-              "~",
-              "Company"
             ]
           ]
         }
@@ -5199,10 +5130,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Performance analytics dashboard for robot fleet"
-            ],
-            [
-              "~",
-              "Vendor"
             ]
           ]
         }
@@ -5274,10 +5201,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Care team coordination support"
-            ],
-            [
-              "~",
-              "Vendor"
             ]
           ]
         }
@@ -5307,10 +5230,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Linen and waste management"
-            ],
-            [
-              "~",
-              "Vendor"
             ]
           ]
         },
@@ -5349,10 +5268,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Companionship and engagement for isolated patients"
-            ],
-            [
-              "~",
-              "Vendor"
             ]
           ]
         }
@@ -7190,10 +7105,6 @@ export const SLIDES: Slide[] = [
             [
               "−",
               "Barriers: High initial cost ($150K-$300K per unit), regulatory complexity, integration challenges"
-            ],
-            [
-              "~",
-              "Vendor"
             ]
           ]
         }
@@ -7223,10 +7134,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Surgical assistance: Tool handling, patient positioning (emerging)"
-            ],
-            [
-              "~",
-              "Vendor"
             ]
           ]
         },
@@ -7248,10 +7155,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Cognitive engagement: Therapy adherence through interactive sessions"
-            ],
-            [
-              "~",
-              "Vendor"
             ]
           ]
         },
@@ -7273,10 +7176,6 @@ export const SLIDES: Slide[] = [
             [
               "~",
               "Activities of Daily Living (ADLs): Feeding assistance, household tasks"
-            ],
-            [
-              "~",
-              "Vendor"
             ]
           ]
         }
@@ -9141,10 +9040,6 @@ export const SLIDES: Slide[] = [
               "Piezoelectric: Dynamic force and vibration detection for slip prevention"
             ]
           ]
-        },
-        {
-          "t": "Leading Vendors & Patent Landscape — Market positioning by specialty and patent strength:",
-          "items": []
         }
       ],
       "ex": "Patent insight: 2024-2025 has seen 247% growth in patent filings for tactile sensing in humanoids, with China now accounting for 42% of global applications, challenging US historical leadership in gripper technology."
@@ -9167,7 +9062,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "AWS RoboMaker: Simulation, CI/CD, fleet management ["
+              "AWS RoboMaker: Simulation, CI/CD, fleet management"
             ],
             [
               "+",
@@ -9175,7 +9070,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "+",
-              "Microsoft Azure Robotics: IoT Hub integration, Digital Twins, AI model deployment ["
+              "Microsoft Azure Robotics: IoT Hub integration, Digital Twins, AI model deployment"
             ],
             [
               "+",
@@ -9188,7 +9083,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "Edge processing: Local inference minimizes latency (5-20ms) ["
+              "Edge processing: Local inference minimizes latency (5-20ms)"
             ],
             [
               "~",
@@ -9196,7 +9091,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "−",
-              "Cloud-only: Full cloud processing with 5G/Wi-Fi 6E (250-500ms) ["
+              "Cloud-only: Full cloud processing with 5G/Wi-Fi 6E (250-500ms)"
             ]
           ]
         },
@@ -9234,7 +9129,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "SAP Integration: Digital Core APIs, predictive maintenance, IoT Hub ["
+              "SAP Integration: Digital Core APIs, predictive maintenance, IoT Hub"
             ],
             [
               "+",
@@ -9263,7 +9158,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "+",
-              "Quality assurance integration: Defect detection with MES tracking ["
+              "Quality assurance integration: Defect detection with MES tracking"
             ],
             [
               "+",
@@ -9710,7 +9605,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Case Example: Hyundai Robotics Labs — Created Boston Dynamics spin-out division with autonomy, separate branding, and dedicated resources while maintaining corporate backing. Resulted in 4 new humanoid prototypes in 18 months. | Case Example: NVIDIA Robotics Sprint Program — 12-week accelerated development cycle reduced time-to-prototype for edge AI applications by 65%, generating 8 new robotics patents from internal teams in 2024. | Strategic insight: Companies that embed startup-like cultures report 3.8x higher retention rates among top technical talent and generate 42% more patents per R&D dollar than traditional siloed approaches. ["
+      "ex": "Case Example: Hyundai Robotics Labs — Created Boston Dynamics spin-out division with autonomy, separate branding, and dedicated resources while maintaining corporate backing. Resulted in 4 new humanoid prototypes in 18 months. | Case Example: NVIDIA Robotics Sprint Program — 12-week accelerated development cycle reduced time-to-prototype for edge AI applications by 65%, generating 8 new robotics patents from internal teams in 2024. | Strategic insight: Companies that embed startup-like cultures report 3.8x higher retention rates among top technical talent and generate 42% more patents per R&D dollar than traditional siloed approaches."
     },
     "R": {
       "name": "Internal Venture Funding Models",
@@ -9756,7 +9651,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Case Example: Amazon's Lab126 + Internal Accelerator — Combined internal technical laboratory with $150M annual internal venture fund, produced Agility Robotics partnership and warehouse automation patents valued at $1.2B. | Case Example: Toyota Research Institute — $1B innovation fund for robotics and AI created dual-track careers for researchers and intrapreneurs, generating 4 successful spin-outs and 7 internally deployed technologies. | Strategic insight: Successful robotics organizations are adopting venture capital models internally, with 40% of 2025's leading innovations coming from internal ventures rather than traditional R&D departments. ["
+      "ex": "Case Example: Amazon's Lab126 + Internal Accelerator — Combined internal technical laboratory with $150M annual internal venture fund, produced Agility Robotics partnership and warehouse automation patents valued at $1.2B. | Case Example: Toyota Research Institute — $1B innovation fund for robotics and AI created dual-track careers for researchers and intrapreneurs, generating 4 successful spin-outs and 7 internally deployed technologies. | Strategic insight: Successful robotics organizations are adopting venture capital models internally, with 40% of 2025's leading innovations coming from internal ventures rather than traditional R&D departments."
     }
   },
   {
@@ -9823,7 +9718,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Selection framework: Partnership model choice should align with strategic goals (time-to-market, IP protection, capital efficiency), capability gaps, and regulatory constraints in target markets. ["
+      "ex": "Selection framework: Partnership model choice should align with strategic goals (time-to-market, IP protection, capital efficiency), capability gaps, and regulatory constraints in target markets."
     },
     "R": {
       "name": "Success Factors & Case Studies",
@@ -10104,7 +9999,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Strategic insight: Traditional actuator technology is hitting fundamental physical limits. Cost reduction pathways focused on manufacturing efficiency rather than breakthrough designs. ["
+      "ex": "Strategic insight: Traditional actuator technology is hitting fundamental physical limits. Cost reduction pathways focused on manufacturing efficiency rather than breakthrough designs."
     },
     "R": {
       "name": "Biomimetic Actuators",
@@ -10171,7 +10066,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Strategic insight: Early commercialization beginning with hybrid systems. Full biomimetic actuators will disrupt market by 2028-2030 with dramatic weight reduction and higher DOF capabilities. ["
+      "ex": "Strategic insight: Early commercialization beginning with hybrid systems. Full biomimetic actuators will disrupt market by 2028-2030 with dramatic weight reduction and higher DOF capabilities."
     }
   },
   {
@@ -10336,7 +10231,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Strategic insight: Early adopters focused on high-value specialty crops (berries, tree fruits) show 14-month ROI versus 30+ months for broad acre crops. ["
+      "ex": "Strategic insight: Early adopters focused on high-value specialty crops (berries, tree fruits) show 14-month ROI versus 30+ months for broad acre crops."
     },
     "R": {
       "name": "Challenges",
@@ -10395,7 +10290,7 @@ export const SLIDES: Slide[] = [
           ]
         }
       ],
-      "ex": "Strategic insight: RaaS (Robots-as-a-Service) models with integrated maintenance packages showing 3.2x higher adoption rates than direct purchase among mid-sized farms. ["
+      "ex": "Strategic insight: RaaS (Robots-as-a-Service) models with integrated maintenance packages showing 3.2x higher adoption rates than direct purchase among mid-sized farms."
     }
   },
   {
@@ -15300,7 +15195,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "~",
-              "Early-stage funding: Seed to Series B for R&D and prototype development ["
+              "Early-stage funding: Seed to Series B for R&D and prototype development"
             ],
             [
               "~",
@@ -15317,7 +15212,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "Monthly subscription fee ($3,500-$8,000/robot/month) ["
+              "Monthly subscription fee ($3,500-$8,000/robot/month)"
             ],
             [
               "+",
@@ -15325,7 +15220,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "−",
-              "Data sharing for continuous improvement across fleet ["
+              "Data sharing for continuous improvement across fleet"
             ]
           ]
         },
@@ -15334,7 +15229,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "−",
-              "SPACs: Rapid public market access (slowing in 2025) ["
+              "SPACs: Rapid public market access (slowing in 2025)"
             ],
             [
               "+",
@@ -15359,7 +15254,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "R&D tax credits: 12-25% credit rate depending on jurisdiction ["
+              "R&D tax credits: 12-25% credit rate depending on jurisdiction"
             ],
             [
               "+",
@@ -15376,7 +15271,7 @@ export const SLIDES: Slide[] = [
           "items": [
             [
               "+",
-              "Performance bonds: Guarantees for robot reliability ["
+              "Performance bonds: Guarantees for robot reliability"
             ],
             [
               "+",
@@ -15384,7 +15279,7 @@ export const SLIDES: Slide[] = [
             ],
             [
               "−",
-              "Risk-sharing pools: Industry-wide consortiums for catastrophic events ["
+              "Risk-sharing pools: Industry-wide consortiums for catastrophic events"
             ]
           ]
         },
@@ -21450,8 +21345,8 @@ export const SLIDES: Slide[] = [
     "title": "Regulatory Compliance Post-2025: What's Next?",
     "bullets": [
       {
-        "lead": "Emerging Standards",
-        "text": ""
+        "lead": "",
+        "text": "Emerging Standards"
       },
       {
         "lead": "ISO/IEC 42001",
@@ -21466,8 +21361,8 @@ export const SLIDES: Slide[] = [
         "text": "New legal frameworks defining responsibility boundaries between manufacturers, integrators, and operators"
       },
       {
-        "lead": "Global Alignment Efforts",
-        "text": ""
+        "lead": "",
+        "text": "Global Alignment Efforts"
       },
       {
         "lead": "International Robotics Forum (IRF)",
