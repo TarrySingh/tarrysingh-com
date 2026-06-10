@@ -50,7 +50,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "For industry leaders, the primary challenge is not the robot itself but its integration into existing enterprise IT and operational workflows."
+      "text": "For industry leaders, the primary challenge is not the robot itself but its integration into existing enterprise IT and operational workflows"
     }
   },
   {
@@ -284,7 +284,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "The winner of the humanoid race may not be determined by technological superiority alone, but by who can secure reliable access to critical components while navigating the emerging geopolitical constraints."
+      "text": "The winner of the humanoid race may not be determined by technological superiority alone, but by who can secure reliable access to critical components while navigating the emerging geopolitical constraints"
     }
   },
   {
@@ -355,7 +355,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "Hands-on workshop format includes practical exercises, component evaluation, and collaborative design challenges to solve real-world implementation problems."
+      "text": "Hands-on workshop format includes practical exercises, component evaluation, and collaborative design challenges to solve real-world implementation problems"
     }
   },
   {
@@ -458,7 +458,7 @@ export const SLIDES: Slide[] = [
       },
       {
         "k": "Cost Barriers",
-        "d": "Price points remain prohibitive for most applications: Current models: {{$100,000}}-{{$250,000 }}per unit; Economic viability threshold: {{$20,000}}-{{$35,000 }}for most use cases; 8-14 month ROI currently achievable only in niche applications"
+        "d": "Price points remain prohibitive for most applications: Current models: {{$100,000}}-{{$250,000}}per unit; Economic viability threshold: {{$20,000}}-{{$35,000}}for most use cases; 8-14 month ROI currently achievable only in niche applications"
       },
       {
         "k": "Workforce Integration",
@@ -1488,7 +1488,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "The race to optimize manufacturing processes is as critical as core robot technology development—companies that master high-volume production will gain decisive cost advantages in mass-market adoption."
+      "text": "The race to optimize manufacturing processes is as critical as core robot technology development—companies that master high-volume production will gain decisive cost advantages in mass-market adoption"
     }
   },
   {
@@ -1720,7 +1720,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic Integration Insight",
-      "text": "Leading organizations are establishing dedicated \"Integration Centers of Excellence\" (ICoE) that bridge IT, OT, and business units to orchestrate humanoid adoption. These cross-functional teams reduce integration costs by {{30-45%}} and accelerate deployment timelines by up to {{60%}}."
+      "text": "Leading organizations are establishing dedicated \"Integration Centers of Excellence\" (ICoE) that bridge IT, OT, and business units to orchestrate humanoid adoption. These cross-functional teams reduce integration costs by {{30-45%}} and accelerate deployment timelines by up to {{60%}}"
     }
   },
   {
@@ -2253,7 +2253,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Tipping point",
-      "text": "The market tipping point for widespread adoption will occur when service robots achieve the \"triple-eight\" benchmark: 8-hour runtime, 8 reliable functions, and {{$8,000 }}price point. Elder care applications lead adoption curves due to acute labor shortages and strong ROI potential."
+      "text": "The market tipping point for widespread adoption will occur when service robots achieve the \"triple-eight\" benchmark: 8-hour runtime, 8 reliable functions, and {{$8,000}}price point. Elder care applications lead adoption curves due to acute labor shortages and strong ROI potential"
     }
   },
   {
@@ -2601,7 +2601,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "SHRM finding",
-      "text": "The window for effective reskilling is narrowing. SHRM analysis indicates that organizations that delay workforce planning until after humanoid deployment face {{2.7x}} higher employee displacement rates and {{32%}} higher transition costs."
+      "text": "The window for effective reskilling is narrowing. SHRM analysis indicates that organizations that delay workforce planning until after humanoid deployment face {{2.7x}} higher employee displacement rates and {{32%}} higher transition costs"
     }
   },
   {
@@ -2650,7 +2650,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Trust warning",
-      "text": "Public trust is a fragile asset in robotics adoption. A single high-profile safety incident or evident algorithmic bias could set the entire industry back years and trigger reactive overregulation."
+      "text": "Public trust is a fragile asset in robotics adoption. A single high-profile safety incident or evident algorithmic bias could set the entire industry back years and trigger reactive overregulation"
     }
   },
   {
@@ -2817,49 +2817,38 @@ export const SLIDES: Slide[] = [
     ]
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 61,
     "chap": "var(--c-violet)",
     "eyebrow": "STRATEGIC IMPLICATIONS",
     "title": "Roadmap to Trust: Frameworks for Public Acceptance",
-    "bullets": [
+    "steps": [
       {
-        "lead": "Phase 1: Transparency Foundations — Explainable AI Documentation",
-        "text": "Publish clear, accessible information about robot decision-making processes, capabilities, and limitations."
+        "k": "Transparency Foundations — Explainable AI Documentation",
+        "d": "Publish clear, accessible information about robot decision-making processes, capabilities, and limitations."
       },
       {
-        "lead": "Phase 1: Transparency Foundations — Safety Testing Disclosures",
-        "text": "Openly share safety testing protocols, failure rates, and continuous improvement processes."
+        "k": "Transparency Foundations — Safety Testing Disclosures",
+        "d": "Openly share safety testing protocols, failure rates, and continuous improvement processes."
       },
       {
-        "lead": "Phase 2: Stakeholder Engagement — Multi-stakeholder Governance",
-        "text": "Include labor, industry, academia, and public representatives in robotics deployment decisions."
+        "k": "Stakeholder Engagement — Multi-stakeholder Governance",
+        "d": "Include labor, industry, academia, and public representatives in robotics deployment decisions."
       },
       {
-        "lead": "Phase 2: Stakeholder Engagement — Workforce Transition Partnerships",
-        "text": "Collaborate with educational institutions and unions to create upskilling pathways."
+        "k": "Stakeholder Engagement — Workforce Transition Partnerships",
+        "d": "Collaborate with educational institutions and unions to create upskilling pathways."
       },
       {
-        "lead": "Phase 3: Responsive Frameworks — Incident Response Protocols",
-        "text": "Establish transparent, rapid response procedures for addressing robot failures or accidents."
+        "k": "Responsive Frameworks — Incident Response Protocols",
+        "d": "Establish transparent, rapid response procedures for addressing robot failures or accidents."
       },
       {
-        "lead": "Phase 3: Responsive Frameworks — Accountability Mechanisms",
-        "text": "Implement clear liability frameworks and compensation systems for affected stakeholders."
-      },
-      {
-        "lead": "Phase 4: Trust Metrics — Public Sentiment Tracking",
-        "text": "Monitor acceptance across demographics and regions, with regular reporting to leadership."
-      },
-      {
-        "lead": "Phase 4: Trust Metrics — Industry Certification Standards",
-        "text": "Develop third-party verification of ethical design, safety, and societal impact."
+        "k": "Responsive Frameworks — Accountability Mechanisms",
+        "d": "Implement clear liability frameworks and compensation systems for affected stakeholders."
       }
     ],
-    "callout": {
-      "k": "Closing insight",
-      "text": "Trust is not simply a technical challenge—it is a social license that must be earned through consistent actions, transparent communication, and genuine stakeholder inclusion. Early adopters who lead in trust-building will capture both market and regulatory advantages."
-    }
+    "foot": "Trust is not simply a technical challenge—it is a social license that must be earned through consistent actions, transparent communication, and genuine stakeholder inclusion. Early adopters who lead in trust-building will capture both market and regulatory advantages."
   },
   {
     "kind": "divider",
@@ -3592,7 +3581,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop Outcomes",
-      "text": "Participants will leave with a customized production strategy template, supplier evaluation framework, and scaling roadmap tailored to their specific humanoid robot implementation plans."
+      "text": "Participants will leave with a customized production strategy template, supplier evaluation framework, and scaling roadmap tailored to their specific humanoid robot implementation plans"
     }
   },
   {
@@ -3646,7 +3635,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Critical Insight",
-      "text": "The most successful humanoid deployments implement continuous validation throughout the development cycle rather than treating testing as a final gate. This \"test-driven development\" approach reduces rework by {{64%}} according to case studies."
+      "text": "The most successful humanoid deployments implement continuous validation throughout the development cycle rather than treating testing as a final gate. This \"test-driven development\" approach reduces rework by {{64%}} according to case studies"
     }
   },
   {
@@ -3696,7 +3685,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Deployment Best Practices From Leading Implementers",
-      "text": "Start with augmentation, not replacement: BMW's Figure AI deployment preserved all jobs while enhancing capacity. Validate in simulation first: Tesla's digital twins reduce physical deployment risks by {{67%}}. Implement buddy system: Amazon pairs human experts with Agility's robots during first 90 days. Weekly optimization cycles: Hyundai reported {{41%}} efficiency gain through rapid iteration"
+      "text": "Start with augmentation, not replacement: . Validate in simulation first: . Implement buddy system: . Weekly optimization cycles:"
     }
   },
   {
@@ -3730,7 +3719,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Case Study: BMW Spartanburg ERP Integration",
-      "text": "BMW's integration of Figure AI robots required custom middleware development to bridge SAP ERP with Figure's control systems. The solution: containerized microservices architecture using ROS2 (Robot Operating System) with MQTT protocol for real-time data exchange. Integration reduced deployment time from 9 months to 6 weeks while maintaining {{99.97%}} system reliability."
+      "text": "BMW's integration of Figure AI robots required custom middleware development to bridge SAP ERP with Figure's control systems. The solution: containerized microservices architecture using ROS2 (Robot Operating System) with MQTT protocol for real-time data exchange. Integration reduced deployment time from 9 months to 6 weeks while maintaining {{99.97%}} system reliability"
     }
   },
   {
@@ -3903,7 +3892,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop Exercise",
-      "text": "Participants will develop a comprehensive QA checklist for their specific use case, identifying critical failure modes and establishing quantitative acceptance criteria."
+      "text": "Participants will develop a comprehensive QA checklist for their specific use case, identifying critical failure modes and establishing quantitative acceptance criteria"
     }
   },
   {
@@ -4102,7 +4091,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key Risk Management Insight",
-      "text": "The most successful humanoid deployments implement a phased risk management approach: starting with isolated, non-critical tasks before expanding to integrated workflows. This creates {{62%}} reduction in deployment failures compared to \"big bang\" implementation strategies."
+      "text": "The most successful humanoid deployments implement a phased risk management approach: starting with isolated, non-critical tasks before expanding to integrated workflows. This creates {{62%}} reduction in deployment failures compared to \"big bang\" implementation strategies"
     }
   },
   {
@@ -4179,7 +4168,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Best Practice",
-      "text": "Begin compliance planning during design phase rather than retrofit requirements post-development. Establish international regulatory intelligence function to monitor evolving standards."
+      "text": "Begin compliance planning during design phase rather than retrofit requirements post-development. Establish international regulatory intelligence function to monitor evolving standards"
     }
   },
   {
@@ -4226,7 +4215,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "VC Red Flag",
-      "text": "Over {{80%}} of failed robotics startups underestimated supply chain complexity and hardware iteration costs. Ensure {{2.5x}} projected capital requirements for hardware development cycles."
+      "text": "Over {{80%}} of failed robotics startups underestimated supply chain complexity and hardware iteration costs. Ensure {{2.5x}} projected capital requirements for hardware development cycles"
     }
   },
   {
@@ -4514,7 +4503,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic Insight",
-      "text": "The companies that solve VLA model safety verification and the \"sim2real gap\" by 2027 will gain insurmountable competitive advantages in deployment scale and capabilities."
+      "text": "The companies that solve VLA model safety verification and the \"sim2real gap\" by 2027 will gain insurmountable competitive advantages in deployment scale and capabilities"
     }
   },
   {
@@ -4552,7 +4541,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop Outcome",
-      "text": "Each team will develop a comprehensive incident response protocol for their organization, identifying specific roles, communication channels, and documentation requirements for humanoid robot safety breaches."
+      "text": "Each team will develop a comprehensive incident response protocol for their organization, identifying specific roles, communication channels, and documentation requirements for humanoid robot safety breaches"
     }
   },
   {
@@ -4605,7 +4594,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Best Practice",
-      "text": "Leading organizations establish a dedicated \"Center of Excellence\" for humanoid robotics, with cross-functional representation from operations, HR, and IT. This team drives standardized onboarding, harvests learnings across deployments, and develops internal talent pipelines."
+      "text": "Leading organizations establish a dedicated \"Center of Excellence\" for humanoid robotics, with cross-functional representation from operations, HR, and IT. This team drives standardized onboarding, harvests learnings across deployments, and develops internal talent pipelines"
     }
   },
   {
@@ -5667,7 +5656,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Outlook",
-      "text": "The consumer humanoid market is expected to follow the \"Tesla Model\" of staged adoption: initially targeting premium markets with high-end capabilities, then achieving mass-market penetration through iterative cost reduction and feature standardization."
+      "text": "The consumer humanoid market is expected to follow the \"Tesla Model\" of staged adoption: initially targeting premium markets with high-end capabilities, then achieving mass-market penetration through iterative cost reduction and feature standardization"
     }
   },
   {
@@ -5704,7 +5693,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic Implication",
-      "text": "Humanoid manufacturers incorporating soft components face {{40%}} lower regulatory barriers for human-collaborative environments, offering significant time-to-market advantage in healthcare and service sectors."
+      "text": "Humanoid manufacturers incorporating soft components face {{40%}} lower regulatory barriers for human-collaborative environments, offering significant time-to-market advantage in healthcare and service sectors"
     }
   },
   {
@@ -5741,7 +5730,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Analyst view",
-      "text": "According to Morgan Stanley analysis, organizations implementing fleet-scale humanoid deployments will require a 1:10 ratio of robotics orchestration engineers to maintain operational excellence—creating an entirely new job category estimated at {{100,000+}} positions globally by 2030."
+      "text": "According to Morgan Stanley analysis, organizations implementing fleet-scale humanoid deployments will require a 1:10 ratio of robotics orchestration engineers to maintain operational excellence—creating an entirely new job category estimated at {{100,000+}} positions globally by 2030"
     }
   },
   {
@@ -6071,7 +6060,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "Safety-critical humanoid software now requires formal verification methods—mathematical proofs that the system cannot enter unsafe states—a practice adopted from aerospace that has become standard in 2025 deployments."
+      "text": "Safety-critical humanoid software now requires formal verification methods—mathematical proofs that the system cannot enter unsafe states—a practice adopted from aerospace that has become standard in 2025 deployments"
     }
   },
   {
@@ -6096,7 +6085,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "Tesla's vertical integration model combines all three advanced manufacturing approaches, reducing production cost per Optimus robot by an estimated {{38%}} between Gen 1 and Gen 2 models."
+      "text": "Tesla's vertical integration model combines all three advanced manufacturing approaches, reducing production cost per Optimus robot by an estimated {{38%}} between Gen 1 and Gen 2 models"
     }
   },
   {
@@ -6129,7 +6118,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Benchmark finding",
-      "text": "Leading humanoid manufacturers have found that every {{$1 }}invested in advanced QA systems returns {{$4.7 }}in reduced warranty claims and field failures, while decreasing time-to-market by {{26%}} through parallel validation processes."
+      "text": "Leading humanoid manufacturers have found that every {{$1}}invested in advanced QA systems returns {{$4.7}}in reduced warranty claims and field failures, while decreasing time-to-market by {{26%}} through parallel validation processes"
     }
   },
   {
@@ -6302,7 +6291,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Synthesis",
-      "text": "The most successful implementations leverage hybrid approaches that combine simulated and real-world data, with closed-loop feedback systems that continually refine models based on deployment outcomes."
+      "text": "The most successful implementations leverage hybrid approaches that combine simulated and real-world data, with closed-loop feedback systems that continually refine models based on deployment outcomes"
     }
   },
   {
@@ -6332,7 +6321,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop takeaway",
-      "text": "Effective fine-tuning strategies combine hardware-specific optimization with domain-adapted foundation models, allowing for rapid task acquisition with minimal real-world data requirements."
+      "text": "Effective fine-tuning strategies combine hardware-specific optimization with domain-adapted foundation models, allowing for rapid task acquisition with minimal real-world data requirements"
     }
   },
   {
@@ -6526,16 +6515,15 @@ export const SLIDES: Slide[] = [
     "chap": "var(--c-cyan)",
     "eyebrow": "CASE STUDY",
     "co": "Tesla",
-    "robot": "Optimus (Gen 1, Gen 2)",
-    "site": "Fremont factory, Giga Texas, all Tesla factories",
-    "task": "Factory operations; robots building robots on a partially automated production line",
+    "robot": "Optimus Gen 2",
+    "site": "Fremont & Giga Texas, USA",
+    "task": "In-house material handling, parts sequencing, and self-assembly trials on Tesla's own production lines — the first humanoid deployed by its own maker at automotive scale.",
     "results": [
-      "Optimus development accelerated by 2.7x compared to industry averages",
-      "Manual assembly hours reduced by 43%; build precision improved by 28%",
-      "Proprietary actuator design reduced unit costs by 37%, improved torque density by 22%",
-      "65% of core perception architecture shared with vehicle autopilot"
+      "1,000+ Optimus units operating across Tesla facilities by end-2025",
+      "Proprietary actuators and FSD-derived perception stack shared with the vehicle programme",
+      "Vertical integration: Tesla designs the robot, the AI, and the factory it works in"
     ],
-    "roi": ""
+    "roi": "Targets a sub-$20–30k unit cost at scale — the most aggressive cost curve in the industry; ~65% of the perception architecture shared with Autopilot."
   },
   {
     "kind": "twoPanel",
@@ -6847,7 +6835,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Field guidance",
-      "text": "Effective troubleshooting requires a multi-layer isolation approach—always verify hardware before suspecting software, and component-level issues before system integration problems."
+      "text": "Effective troubleshooting requires a multi-layer isolation approach—always verify hardware before suspecting software, and component-level issues before system integration problems"
     }
   },
   {
@@ -6917,7 +6905,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Frontier outlook",
-      "text": "While general quantum advantage remains years away, near-term quantum applications in simulation and optimization offer immediate benefits for robot training and supply chain management, creating a competitive edge for early adopters."
+      "text": "While general quantum advantage remains years away, near-term quantum applications in simulation and optimization offer immediate benefits for robot training and supply chain management, creating a competitive edge for early adopters"
     }
   },
   {
@@ -7496,7 +7484,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Success Factor",
-      "text": "Organizations that invest {{20%}}+ of their humanoid deployment budget in change management activities report {{3.2x}} higher ROI than those focused solely on technical implementation."
+      "text": "Organizations that invest {{20%}}+ of their humanoid deployment budget in change management activities report {{3.2x}} higher ROI than those focused solely on technical implementation"
     }
   },
   {
@@ -7576,7 +7564,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Participant note",
-      "text": "Participants should arrive with specific legacy workflow documentation from their organization to maximize the hands-on value of this sprint workshop."
+      "text": "Participants should arrive with specific legacy workflow documentation from their organization to maximize the hands-on value of this sprint workshop"
     }
   },
   {
@@ -8066,7 +8054,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop Deliverable",
-      "text": "Each team will produce a comprehensive Component Supply Risk Mitigation Plan that they can immediately implement at their organizations."
+      "text": "Each team will produce a comprehensive Component Supply Risk Mitigation Plan that they can immediately implement at their organizations"
     }
   },
   {
@@ -8288,7 +8276,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic recommendation",
-      "text": "Organizations planning large-scale deployments (50+ robots) should invest in fleet orchestration capabilities now, even for initial small deployments, to avoid costly retrofitting and ensure long-term scalability."
+      "text": "Organizations planning large-scale deployments (50+ robots) should invest in fleet orchestration capabilities now, even for initial small deployments, to avoid costly retrofitting and ensure long-term scalability"
     }
   },
   {
@@ -8318,7 +8306,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "WORKSHOP OUTCOMES",
-      "text": "Participants will develop a functional motion control module for basic humanoid tasks using industry-standard tools and frameworks. All code will be compatible with ROS 2 and major humanoid platforms."
+      "text": "Participants will develop a functional motion control module for basic humanoid tasks using industry-standard tools and frameworks. All code will be compatible with ROS 2 and major humanoid platforms"
     }
   },
   {
@@ -8901,7 +8889,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "India's unique \"Production-Linked Incentive\" (PLI) scheme creates a compelling case for early market entry with local manufacturing partnerships rather than direct exports—potentially offering {{15-25%}} total cost advantage over five-year horizon."
+      "text": "India's unique \"Production-Linked Incentive\" (PLI) scheme creates a compelling case for early market entry with local manufacturing partnerships rather than direct exports—potentially offering {{15-25%}} total cost advantage over five-year horizon"
     }
   },
   {
@@ -8930,7 +8918,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Edge-Cloud Continuum",
-      "text": "Leading integrators are moving to hybrid architectures where robots perform real-time perception, planning, and control at the edge while offloading data-intensive training, simulation, and fleet coordination to the cloud."
+      "text": "Leading integrators are moving to hybrid architectures where robots perform real-time perception, planning, and control at the edge while offloading data-intensive training, simulation, and fleet coordination to the cloud"
     }
   },
   {
@@ -9543,7 +9531,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop Exercise: R&D Portfolio Balancing",
-      "text": "Participants will apply these frameworks to evaluate a simulated humanoid robotics R&D portfolio of 10 projects with limited resources. Teams must optimize for maximum strategic value while managing technical and market risks."
+      "text": "Participants will apply these frameworks to evaluate a simulated humanoid robotics R&D portfolio of 10 projects with limited resources. Teams must optimize for maximum strategic value while managing technical and market risks"
     }
   },
   {
@@ -9888,7 +9876,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic assessment",
-      "text": "While full quantum sensor integration remains 3-5 years from mass commercialization, organizations investing now in pilot programs gain critical implementation expertise and first-mover advantage in ultra-precision robotics applications."
+      "text": "While full quantum sensor integration remains 3-5 years from mass commercialization, organizations investing now in pilot programs gain critical implementation expertise and first-mover advantage in ultra-precision robotics applications"
     }
   },
   {
@@ -10120,7 +10108,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Callout",
-      "text": "Construction represents one of the least digitized and most labor-intensive global industries, creating a significant opportunity for humanoid robotics—but successful deployment requires weather-hardened designs and construction-specific AI training."
+      "text": "Construction represents one of the least digitized and most labor-intensive global industries, creating a significant opportunity for humanoid robotics—but successful deployment requires weather-hardened designs and construction-specific AI training"
     }
   },
   {
@@ -10294,15 +10282,15 @@ export const SLIDES: Slide[] = [
       },
       {
         "lead": "AI Act:",
-        "text": "World's most comprehensive AI regulation, categorizing humanoid robots as high-risk systems requiring rigorous conformity assessments, technical documentation, and continuous risk monitoring. Mandates transparency disclosures to users and liability insurance. [EU badge]"
+        "text": "World's most comprehensive AI regulation, categorizing humanoid robots as high-risk systems requiring rigorous conformity assessments, technical documentation, and continuous risk monitoring. Mandates transparency disclosures to users and liability insurance."
       },
       {
         "lead": "Safety Policies:",
-        "text": "China's \"Robot Safety Management Regulations\" (2024) and \"AI Security Framework\" mandate real-name registration of all industrial humanoids, required safety certifications, and continuous monitoring. Strategic advantage for domestic manufacturers with streamlined compliance processes. [CN badge]"
+        "text": "China's \"Robot Safety Management Regulations\" (2024) and \"AI Security Framework\" mandate real-name registration of all industrial humanoids, required safety certifications, and continuous monitoring. Strategic advantage for domestic manufacturers with streamlined compliance processes."
       },
       {
         "lead": "NIST Initiatives:",
-        "text": "\"AI Risk Management Framework\" (AI RMF 1.0) and \"Collaborative Robot Systems Safety Standards\" provide voluntary guidelines rather than hard regulations. Focus on performance benchmarking, transparency, and ethical considerations. Partnership-based approach with industry. [US badge]"
+        "text": "\"AI Risk Management Framework\" (AI RMF 1.0) and \"Collaborative Robot Systems Safety Standards\" provide voluntary guidelines rather than hard regulations. Focus on performance benchmarking, transparency, and ethical considerations. Partnership-based approach with industry."
       },
       {
         "lead": "Divergent Approaches:",
@@ -10476,7 +10464,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "The strategic divergence between horizontal AI platforms (NVIDIA) and vertically integrated models (Tesla, Figure AI) is creating fundamentally different approaches to embodied intelligence, with profound implications for system performance, integration complexity, and market structure."
+      "text": "The strategic divergence between horizontal AI platforms (NVIDIA) and vertically integrated models (Tesla, Figure AI) is creating fundamentally different approaches to embodied intelligence, with profound implications for system performance, integration complexity, and market structure"
     }
   },
   {
@@ -10513,7 +10501,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "The manufacturers that achieve the fastest time-to-market and highest reliability are those that have deeply integrated big data feedback loops from deployed robots back into their design and production processes."
+      "text": "The manufacturers that achieve the fastest time-to-market and highest reliability are those that have deeply integrated big data feedback loops from deployed robots back into their design and production processes"
     }
   },
   {
@@ -11047,7 +11035,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Real-World Example: Figure 02 Integration Challenge",
-      "text": "When Figure AI engineers integrated their custom actuators with NVIDIA's GR00T AI platform, timing discrepancies between predicted and actual motor responses created oscillation in fine manipulation tasks. The solution involved implementing a dynamic compensation layer that adapted to the physical characteristics of each robot instance, improving precision by {{43%}}."
+      "text": "When Figure AI engineers integrated their custom actuators with NVIDIA's GR00T AI platform, timing discrepancies between predicted and actual motor responses created oscillation in fine manipulation tasks. The solution involved implementing a dynamic compensation layer that adapted to the physical characteristics of each robot instance, improving precision by {{43%}}"
     }
   },
   {
@@ -11296,7 +11284,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key Insight",
-      "text": "The most successful humanoid robot teams maintain a 1:3 ratio between perception engineers and data quality/tooling engineers, acknowledging that model performance is determined more by data excellence than algorithmic innovation."
+      "text": "The most successful humanoid robot teams maintain a 1:3 ratio between perception engineers and data quality/tooling engineers, acknowledging that model performance is determined more by data excellence than algorithmic innovation"
     }
   },
   {
@@ -11357,7 +11345,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "CASE STUDY",
-      "text": "Tesla's Optimus production achieved {{42%}} reduction in assembly time and {{66%}} decrease in defect rates by implementing modular design principles and digital work instructions with in-line verification."
+      "text": "Tesla's Optimus production achieved {{42%}} reduction in assembly time and {{66%}} decrease in defect rates by implementing modular design principles and digital work instructions with in-line verification"
     }
   },
   {
@@ -11860,7 +11848,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Closing insight",
-      "text": "The most successful financial models in humanoid robotics incorporate both traditional manufacturing metrics and software-style recurring revenue dynamics, reflecting the hybrid nature of the business."
+      "text": "The most successful financial models in humanoid robotics incorporate both traditional manufacturing metrics and software-style recurring revenue dynamics, reflecting the hybrid nature of the business"
     }
   },
   {
@@ -12144,7 +12132,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Convergence Alert",
-      "text": "Neural-Quantum Integration is emerging as the most transformative frontier, potentially enabling robots with intuitive physics understanding and {{100x}} faster decision-making by 2028."
+      "text": "Neural-Quantum Integration is emerging as the most transformative frontier, potentially enabling robots with intuitive physics understanding and {{100x}} faster decision-making by 2028"
     }
   },
   {
@@ -12292,7 +12280,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Success factor",
-      "text": "Partnerships that systematically address the full spectrum of adoption barriers—technical, commercial, and regulatory—outperform those focused solely on technology integration."
+      "text": "Partnerships that systematically address the full spectrum of adoption barriers—technical, commercial, and regulatory—outperform those focused solely on technology integration"
     }
   },
   {
@@ -12495,7 +12483,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "Companies that approach humanoid robotics as a comprehensive transformation initiative rather than a technology deployment will achieve 3-{{5x}} greater ROI and more sustainable competitive advantage."
+      "text": "Companies that approach humanoid robotics as a comprehensive transformation initiative rather than a technology deployment will achieve 3-{{5x}} greater ROI and more sustainable competitive advantage"
     }
   },
   {
@@ -12537,7 +12525,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop note",
-      "text": "Workshop participants will build a functional predictive maintenance system for a simplified actuator test bed using provided sensor data and cloud analytics tools."
+      "text": "Workshop participants will build a functional predictive maintenance system for a simplified actuator test bed using provided sensor data and cloud analytics tools"
     }
   },
   {
@@ -12618,10 +12606,6 @@ export const SLIDES: Slide[] = [
             ],
             [
               "~",
-              "Standards"
-            ],
-            [
-              "~",
               "Compliance focus: Component certification through independent labs, documented security architecture"
             ]
           ]
@@ -12640,10 +12624,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "Updates: Revision 5 (2020) added supply chain risk and privacy controls"
-            ],
-            [
-              "~",
-              "Standards"
             ],
             [
               "~",
@@ -12695,10 +12675,6 @@ export const SLIDES: Slide[] = [
               "National security: Strong focus on data sovereignty and control"
             ],
             [
-              "~",
-              "Standards"
-            ],
-            [
               "−",
               "Risk concern: Government inspection requirements may expose IP and operational data"
             ]
@@ -12718,10 +12694,6 @@ export const SLIDES: Slide[] = [
             [
               "+",
               "AI Security Rules: Additional requirements for AI-powered humanoids"
-            ],
-            [
-              "~",
-              "Standards"
             ]
           ]
         }
@@ -12755,7 +12727,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Cost Trend Analysis",
-      "text": "Advanced material costs are decreasing at {{18-22%}} annually as adoption scales. By 2027, high-performance composites are projected to reach cost parity with traditional materials for {{40%}} of humanoid components, driven by manufacturing innovation and supply chain maturation."
+      "text": "Advanced material costs are decreasing at {{18-22%}} annually as adoption scales. By 2027, high-performance composites are projected to reach cost parity with traditional materials for {{40%}} of humanoid components, driven by manufacturing innovation and supply chain maturation"
     }
   },
   {
@@ -12780,7 +12752,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key insight",
-      "text": "Material innovation is becoming a critical competitive differentiator, with manufacturers securing exclusive access to advanced alloys through vertical integration or strategic partnerships. Cost premium +{{18%}} vs standard titanium, {{22%}} weight reduction in critical joints, +{{15%}} energy efficiency, 9-14 mo ROI via extended uptime."
+      "text": "Material innovation is becoming a critical competitive differentiator, with manufacturers securing exclusive access to advanced alloys through vertical integration or strategic partnerships. Cost premium +{{18%}} vs standard titanium, {{22%}} weight reduction in critical joints, +{{15%}} energy efficiency, 9-14 mo ROI via extended uptime"
     }
   },
   {
@@ -12809,7 +12781,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic Insight",
-      "text": "For humanoid robotics manufacturers, digital twins deliver the greatest ROI when focused on high-value, constrained components like PRS actuators and specialized chips. Companies implementing twins report {{42%}} faster response to supply disruptions and {{28%}} lower safety stock requirements."
+      "text": "For humanoid robotics manufacturers, digital twins deliver the greatest ROI when focused on high-value, constrained components like PRS actuators and specialized chips. Companies implementing twins report {{42%}} faster response to supply disruptions and {{28%}} lower safety stock requirements"
     }
   },
   {
@@ -12896,7 +12868,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Leadership assessment finding",
-      "text": "{{73%}} of successful robotics initiatives were led by executives who combined technical understanding with exceptional stakeholder management and communication skills."
+      "text": "{{73%}} of successful robotics initiatives were led by executives who combined technical understanding with exceptional stakeholder management and communication skills"
     }
   },
   {
@@ -12933,7 +12905,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "Leading organizations are creating internal robotics academies with hands-on labs and simulated production environments, reducing time-to-proficiency by up to {{65%}} compared to traditional training methods."
+      "text": "Leading organizations are creating internal robotics academies with hands-on labs and simulated production environments, reducing time-to-proficiency by up to {{65%}} compared to traditional training methods"
     }
   },
   {
@@ -13179,7 +13151,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Best Practice",
-      "text": "Leading innovation labs maintain a 70/20/10 portfolio approach — {{70%}} incremental improvements, {{20%}} adjacent innovations, and {{10%}} transformative research to balance short-term deliverables with breakthrough potential."
+      "text": "Leading innovation labs maintain a 70/20/10 portfolio approach — {{70%}} incremental improvements, {{20%}} adjacent innovations, and {{10%}} transformative research to balance short-term deliverables with breakthrough potential"
     }
   },
   {
@@ -13213,7 +13185,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "Finance teams must translate robotic performance metrics into financial language that resonates with executive decision-makers. This workshop provides the tools to build compelling business cases for humanoid robot investments."
+      "text": "Finance teams must translate robotic performance metrics into financial language that resonates with executive decision-makers. This workshop provides the tools to build compelling business cases for humanoid robot investments"
     }
   },
   {
@@ -13250,7 +13222,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "For humanoid robotics innovators, early IP portfolio mapping to market applications is critical—our analysis shows companies with formal technology transfer processes achieve {{43%}} faster time-to-market and {{2.7x}} higher licensing revenue."
+      "text": "For humanoid robotics innovators, early IP portfolio mapping to market applications is critical—our analysis shows companies with formal technology transfer processes achieve {{43%}} faster time-to-market and {{2.7x}} higher licensing revenue"
     }
   },
   {
@@ -13441,7 +13413,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "Most successful robotics collaborations deploy hybrid IP models that balance open innovation with strategic protection, achieving {{3.2x}} faster commercialization than traditional closed R&D approaches."
+      "text": "Most successful robotics collaborations deploy hybrid IP models that balance open innovation with strategic protection, achieving {{3.2x}} faster commercialization than traditional closed R&D approaches"
     }
   },
   {
@@ -13600,7 +13572,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "Scalability is the primary challenge in fleet management—pilot programs with 5-10 robots rarely reveal the complexity that emerges when scaling to 50+ units, where network contention, charging infrastructure, and traffic management become critical bottlenecks."
+      "text": "Scalability is the primary challenge in fleet management—pilot programs with 5-10 robots rarely reveal the complexity that emerges when scaling to 50+ units, where network contention, charging infrastructure, and traffic management become critical bottlenecks"
     }
   },
   {
@@ -13705,7 +13677,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Insight",
-      "text": "Leading organizations are integrating ethics into governance structures before deployment rather than as a response to incidents. This proactive approach is becoming a competitive differentiator in both consumer and B2B markets."
+      "text": "Leading organizations are integrating ethics into governance structures before deployment rather than as a response to incidents. This proactive approach is becoming a competitive differentiator in both consumer and B2B markets"
     }
   },
   {
@@ -13900,7 +13872,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic Implication",
-      "text": "Advanced materials are unlocking a new performance frontier for humanoids, with a projected {{30%}} increase in operational time and {{40%}} reduction in maintenance costs by 2028. Companies with materials science capabilities have distinct competitive advantage."
+      "text": "Advanced materials are unlocking a new performance frontier for humanoids, with a projected {{30%}} increase in operational time and {{40%}} reduction in maintenance costs by 2028. Companies with materials science capabilities have distinct competitive advantage"
     }
   },
   {
@@ -14008,7 +13980,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic Implications",
-      "text": "CFOs and finance leaders should evaluate how these emerging financial instruments can de-risk robotics investments, potentially reducing the effective cost of capital by {{15-25%}} and enabling faster scaling of humanoid deployments."
+      "text": "CFOs and finance leaders should evaluate how these emerging financial instruments can de-risk robotics investments, potentially reducing the effective cost of capital by {{15-25%}} and enabling faster scaling of humanoid deployments"
     }
   },
   {
@@ -14183,7 +14155,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Critical Success Factor",
-      "text": "Top-performing accelerators achieve {{3.2x}} higher commercialization rates by focusing on early industrial partner alignment rather than pure technological advancement."
+      "text": "Top-performing accelerators achieve {{3.2x}} higher commercialization rates by focusing on early industrial partner alignment rather than pure technological advancement"
     }
   },
   {
@@ -14349,7 +14321,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Benchmark finding",
-      "text": "The battery energy density threshold of 500 Wh/kg represents a critical inflection point for humanoid robotics, enabling the 8+ hour runtime necessary for full-shift industrial applications without battery swapping."
+      "text": "The battery energy density threshold of 500 Wh/kg represents a critical inflection point for humanoid robotics, enabling the 8+ hour runtime necessary for full-shift industrial applications without battery swapping"
     }
   },
   {
@@ -14694,7 +14666,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Critical Insight",
-      "text": "The winners of the humanoid robotics revolution will not necessarily be those with the most advanced technology, but those who master the integration of robotics into their operational workflows, organizational culture, and business model."
+      "text": "The winners of the humanoid robotics revolution will not necessarily be those with the most advanced technology, but those who master the integration of robotics into their operational workflows, organizational culture, and business model"
     }
   },
   {
@@ -14784,7 +14756,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "The integration of these advanced components enables a virtuous innovation cycle: better sensors feed more data to AI chips, which control more capable actuators, expanding the range of tasks humanoids can perform reliably."
+      "text": "The integration of these advanced components enables a virtuous innovation cycle: better sensors feed more data to AI chips, which control more capable actuators, expanding the range of tasks humanoids can perform reliably"
     }
   },
   {
@@ -14951,7 +14923,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key takeaway",
-      "text": "Leading organizations are moving beyond one-time training to establish continuous learning ecosystems where employees regularly rotate between operational and technical roles to maintain both contextual and technological competency."
+      "text": "Leading organizations are moving beyond one-time training to establish continuous learning ecosystems where employees regularly rotate between operational and technical roles to maintain both contextual and technological competency"
     }
   },
   {
@@ -15126,7 +15098,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic recommendation",
-      "text": "Establish regional centers of excellence with localized R&D capabilities to navigate regulatory environments and adapt to distinct market requirements—particularly critical for EU (safety standards) and China (data sovereignty)."
+      "text": "Establish regional centers of excellence with localized R&D capabilities to navigate regulatory environments and adapt to distinct market requirements—particularly critical for EU (safety standards) and China (data sovereignty)"
     }
   },
   {
@@ -15163,7 +15135,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Financing Mix Evolution",
-      "text": "Market is shifting from equity-dominated capital structures toward blended models incorporating debt and project financing. This shift is enabled by increasing revenue predictability and asset value stability as the robotics sector matures."
+      "text": "Market is shifting from equity-dominated capital structures toward blended models incorporating debt and project financing. This shift is enabled by increasing revenue predictability and asset value stability as the robotics sector matures"
     }
   },
   {
@@ -15326,7 +15298,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic recommendation",
-      "text": "Invest in \"compliance by design\" practices that incorporate regulatory requirements from target markets at the earliest development stages rather than retrofitting later."
+      "text": "Invest in \"compliance by design\" practices that incorporate regulatory requirements from target markets at the earliest development stages rather than retrofitting later"
     }
   },
   {
@@ -15413,7 +15385,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key takeaway",
-      "text": "The convergence of these research streams is accelerating the robotics innovation cycle from 36 months to 14-18 months. Organizations with robust research partnerships across all three sectors are seeing {{2.5x}} faster time-to-deployment for breakthrough technologies."
+      "text": "The convergence of these research streams is accelerating the robotics innovation cycle from 36 months to 14-18 months. Organizations with robust research partnerships across all three sectors are seeing {{2.5x}} faster time-to-deployment for breakthrough technologies"
     }
   },
   {
@@ -15582,7 +15554,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Leading practice",
-      "text": "Tesla's closed-loop manufacturing system combines all three methodologies, enabling {{93%}} reduction in production ramp time for Optimus Gen 2 versus Gen 1."
+      "text": "Tesla's closed-loop manufacturing system combines all three methodologies, enabling {{93%}} reduction in production ramp time for Optimus Gen 2 versus Gen 1"
     }
   },
   {
@@ -15780,7 +15752,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic framework for successful partnerships",
-      "text": "Clear IP ownership agreements, defined value creation metrics, complementary capability matching, and executive-level championship."
+      "text": "Clear IP ownership agreements, defined value creation metrics, complementary capability matching, and executive-level championship"
     }
   },
   {
@@ -15808,35 +15780,36 @@ export const SLIDES: Slide[] = [
     ]
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 274,
     "chap": "var(--c-cyan)",
     "eyebrow": "TECHNICAL IMPLEMENTATION",
     "title": "Technical Implementation Guide: Deploying at Scale",
-    "bullets": [
+    "sub": "Systematic approach for scaling humanoid robotics from pilot to enterprise-wide deployment in production environments.",
+    "steps": [
       {
-        "lead": "Phase 1: Deployment Planning & Infrastructure",
-        "text": "Establish network infrastructure with redundant connectivity and segmented security zones"
+        "k": "Deployment Planning & Infrastructure",
+        "d": "Establish network infrastructure with redundant connectivity and segmented security zones"
       },
       {
-        "lead": "Phase 1: Deployment Planning & Infrastructure",
-        "text": "Configure edge computing resources for real-time processing and fallback autonomy"
+        "k": "Deployment Planning & Infrastructure",
+        "d": "Configure edge computing resources for real-time processing and fallback autonomy"
       },
       {
-        "lead": "Phase 2: Integration & Workflow Mapping",
-        "text": "Implement API gateways for secure communication between robots, MES, and ERP systems"
+        "k": "Integration & Workflow Mapping",
+        "d": "Implement API gateways for secure communication between robots, MES, and ERP systems"
       },
       {
-        "lead": "Phase 2: Integration & Workflow Mapping",
-        "text": "Develop data standardization protocols for real-time metrics and operational telemetry"
+        "k": "Integration & Workflow Mapping",
+        "d": "Develop data standardization protocols for real-time metrics and operational telemetry"
       },
       {
-        "lead": "Phase 3: Fleet Management & Operational Excellence",
-        "text": "Deploy centralized orchestration platform for task allocation and scheduling"
+        "k": "Fleet Management & Operational Excellence",
+        "d": "Deploy centralized orchestration platform for task allocation and scheduling"
       },
       {
-        "lead": "Phase 3: Fleet Management & Operational Excellence",
-        "text": "Implement continuous improvement feedback loops with automated KPI tracking"
+        "k": "Fleet Management & Operational Excellence",
+        "d": "Implement continuous improvement feedback loops with automated KPI tracking"
       }
     ]
   },
@@ -16179,7 +16152,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Synthesis",
-      "text": "These convergent breakthroughs across AI, sensing, actuation, and control mark 2025 as the inflection point where humanoid robots transition from laboratory curiosities to practical industrial tools with measurable ROI."
+      "text": "These convergent breakthroughs across AI, sensing, actuation, and control mark 2025 as the inflection point where humanoid robots transition from laboratory curiosities to practical industrial tools with measurable ROI"
     }
   },
   {
@@ -16240,7 +16213,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "Leading robotics adopters implement multi-horizon planning frameworks that balance near-term ROI with long-term strategic positioning. Successful organizations dedicate {{15-20%}} of robotics budgets to scenario planning and flexibility reserves."
+      "text": "Leading robotics adopters implement multi-horizon planning frameworks that balance near-term ROI with long-term strategic positioning. Successful organizations dedicate {{15-20%}} of robotics budgets to scenario planning and flexibility reserves"
     }
   },
   {
@@ -16298,7 +16271,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Takeaway",
-      "text": "Participants will leave with a complete integration playbook applicable to their specific industry context, including templates for technical documentation, rollout planning, and operational metrics."
+      "text": "Participants will leave with a complete integration playbook applicable to their specific industry context, including templates for technical documentation, rollout planning, and operational metrics"
     }
   },
   {
@@ -16459,7 +16432,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop exercise",
-      "text": "Participants will develop scenario-based financial models using real-world assumptions from their industries, with Monte Carlo simulations to establish confidence intervals for ROI projections."
+      "text": "Participants will develop scenario-based financial models using real-world assumptions from their industries, with Monte Carlo simulations to establish confidence intervals for ROI projections"
     }
   },
   {
@@ -16536,7 +16509,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Best Practice: Compliance by Design",
-      "text": "Integrate compliance requirements into product development cycles from the earliest stages. Include regulatory specialists in technical design reviews to eliminate costly retrofits later."
+      "text": "Integrate compliance requirements into product development cycles from the earliest stages. Include regulatory specialists in technical design reviews to eliminate costly retrofits later"
     }
   },
   {
@@ -16581,7 +16554,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key insight",
-      "text": "Industry leaders establish standardized technology transfer protocols that facilitate rapid scaling from lab prototype to mass production while maintaining quality and performance standards."
+      "text": "Industry leaders establish standardized technology transfer protocols that facilitate rapid scaling from lab prototype to mass production while maintaining quality and performance standards"
     }
   },
   {
@@ -17081,7 +17054,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Final imperative",
-      "text": "The winners in the humanoid robotics revolution will be those who combine technological excellence with superior integration capabilities, regulatory foresight, and human-centered deployment strategies. The time to act is now—as the market approaches mass commercialization by 2030, early movers will establish insurmountable competitive advantages."
+      "text": "The winners in the humanoid robotics revolution will be those who combine technological excellence with superior integration capabilities, regulatory foresight, and human-centered deployment strategies. The time to act is now—as the market approaches mass commercialization by 2030, early movers will establish insurmountable competitive advantages"
     }
   },
   {
@@ -17115,7 +17088,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key insight",
-      "text": "The most successful integrations leverage bidirectional data flows where humanoids enhance digital twins with real-time physical insights while digital twins provide system-wide contextual awareness to humanoids."
+      "text": "The most successful integrations leverage bidirectional data flows where humanoids enhance digital twins with real-time physical insights while digital twins provide system-wide contextual awareness to humanoids"
     }
   },
   {
@@ -17152,7 +17125,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key insight",
-      "text": "The most successful robotics transformations are led by executives who understand that technology is only {{30%}} of the challenge—the remaining {{70%}} involves culture change, workforce development, and process redesign."
+      "text": "The most successful robotics transformations are led by executives who understand that technology is only {{30%}} of the challenge—the remaining {{70%}} involves culture change, workforce development, and process redesign"
     }
   },
   {
@@ -17325,7 +17298,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key insight",
-      "text": "Leaders achieving cost excellence are seeing {{22-25%}} higher EBITDA margins compared to industry average, primarily through integrated financial and operational strategies rather than isolated cost-cutting measures."
+      "text": "Leaders achieving cost excellence are seeing {{22-25%}} higher EBITDA margins compared to industry average, primarily through integrated financial and operational strategies rather than isolated cost-cutting measures"
     }
   },
   {
@@ -17358,7 +17331,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Portfolio balance",
-      "text": "Organizations that successfully commercialize robotics research maintain a 70:20:10 innovation portfolio balance: {{70%}} incremental improvements, {{20%}} adjacent market applications, and {{10%}} transformational breakthroughs."
+      "text": "Organizations that successfully commercialize robotics research maintain a 70:20:10 innovation portfolio balance: {{70%}} incremental improvements, {{20%}} adjacent market applications, and {{10%}} transformational breakthroughs"
     }
   },
   {
@@ -17407,7 +17380,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key insight",
-      "text": "Successful ecosystem orchestration requires balancing intellectual property protection with open collaboration—structured frameworks with clear boundaries enable both innovation velocity and value capture."
+      "text": "Successful ecosystem orchestration requires balancing intellectual property protection with open collaboration—structured frameworks with clear boundaries enable both innovation velocity and value capture"
     }
   },
   {
@@ -17507,11 +17480,11 @@ export const SLIDES: Slide[] = [
         "d": "Opportunity Assessment → Solution Design → Pilot Implementation → Scale Evaluation → Enterprise Rollout"
       },
       {
-        "k": "Phase 1: Foundation (6-12 months)",
+        "k": "Foundation (6-12 months)",
         "d": "Establish governance structure, build technical capabilities, identify high-ROI use cases, and run initial pilots."
       },
       {
-        "k": "Phase 2: Acceleration (12-24 months)",
+        "k": "Acceleration (12-24 months)",
         "d": "Scale successful pilots, standardize deployment frameworks, build analytics capabilities, and integrate with enterprise systems."
       }
     ],
@@ -17584,7 +17557,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop Exercise",
-      "text": "Participants map their organization's current robotics capability gaps and design optimal cross-functional team structure for their specific deployment scenarios."
+      "text": "Participants map their organization's current robotics capability gaps and design optimal cross-functional team structure for their specific deployment scenarios"
     }
   },
   {
@@ -17920,7 +17893,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key insight",
-      "text": "The organizations most successful in humanoid rollouts have established a dedicated \"Uncertainty Management Office\" with direct reporting lines to C-suite leadership and board-level oversight."
+      "text": "The organizations most successful in humanoid rollouts have established a dedicated \"Uncertainty Management Office\" with direct reporting lines to C-suite leadership and board-level oversight"
     }
   },
   {
@@ -17953,7 +17926,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic Priority",
-      "text": "Develop a dynamic regulatory monitoring system with quarterly impact assessments and compliance roadmap updates. Critical for maintaining market access and avoiding costly remediation."
+      "text": "Develop a dynamic regulatory monitoring system with quarterly impact assessments and compliance roadmap updates. Critical for maintaining market access and avoiding costly remediation"
     }
   },
   {
@@ -17990,7 +17963,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Final Directive: The Path Forward",
-      "text": "Humanoid robotics represents a transformative opportunity comparable to the early internet and mobile computing revolutions. Organizations that combine strategic vision with pragmatic implementation will capture disproportionate value in this next industrial frontier."
+      "text": "Humanoid robotics represents a transformative opportunity comparable to the early internet and mobile computing revolutions. Organizations that combine strategic vision with pragmatic implementation will capture disproportionate value in this next industrial frontier"
     }
   },
   {
@@ -18032,7 +18005,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key insight",
-      "text": "Successful enterprise-wide implementation requires simultaneous advancement across all three phases—stakeholder alignment must continue throughout technical scaling and resource allocation decisions."
+      "text": "Successful enterprise-wide implementation requires simultaneous advancement across all three phases—stakeholder alignment must continue throughout technical scaling and resource allocation decisions"
     }
   },
   {
@@ -18299,7 +18272,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Executive Success Criteria: Post-Launch Phase",
-      "text": "Months 1-3 Stabilization — Focus on reliability, uptime metrics, and initial workflow integration. Months 4-9 Optimization — Performance enhancements, process refinement, staff proficiency. Months 10-12 Expansion — Scope extension, additional use cases, full integration."
+      "text": "Months 1-3 Stabilization — Focus on reliability, uptime metrics, and initial workflow integration. Months 4-9 Optimization — Performance enhancements, process refinement, staff proficiency. Months 10-12 Expansion — Scope extension, additional use cases, full integration"
     }
   },
   {
@@ -18324,7 +18297,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Blended Financial Model Strategy",
-      "text": "Leaders are increasingly adopting hybrid financial approaches—deploying direct sales for mature markets, leasing for emerging markets, and RaaS for innovation-focused customers—creating a balanced portfolio that maximizes both short-term returns and long-term enterprise value growth."
+      "text": "Leaders are increasingly adopting hybrid financial approaches—deploying direct sales for mature markets, leasing for emerging markets, and RaaS for innovation-focused customers—creating a balanced portfolio that maximizes both short-term returns and long-term enterprise value growth"
     }
   },
   {
@@ -18775,7 +18748,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Key insight",
-      "text": "Successful humanoid robotics partnerships are those that establish clear IP boundaries while maintaining sufficient flexibility to pursue unexpected innovation opportunities as technology and market conditions evolve."
+      "text": "Successful humanoid robotics partnerships are those that establish clear IP boundaries while maintaining sufficient flexibility to pursue unexpected innovation opportunities as technology and market conditions evolve"
     }
   },
   {
@@ -18849,7 +18822,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop Objective",
-      "text": "Participants will develop and present a tailored strategic implementation plan for humanoid robotics within their organizations, leveraging key insights from previous modules to create a realistic, phased approach."
+      "text": "Participants will develop and present a tailored strategic implementation plan for humanoid robotics within their organizations, leveraging key insights from previous modules to create a realistic, phased approach"
     }
   },
   {
@@ -19040,7 +19013,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Success Factor",
-      "text": "Implementation requires tight coordination between technical and executive workstreams with clear accountability and regular progress reviews against established metrics."
+      "text": "Implementation requires tight coordination between technical and executive workstreams with clear accountability and regular progress reviews against established metrics"
     }
   },
   {
@@ -19640,7 +19613,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Workshop Exercise",
-      "text": "Working in cross-functional groups, participants will develop a 24-month deployment plan for a fleet of 50+ humanoid robots in their organization, including risk mitigation strategies and phased implementation roadmap."
+      "text": "Working in cross-functional groups, participants will develop a 24-month deployment plan for a fleet of 50+ humanoid robots in their organization, including risk mitigation strategies and phased implementation roadmap"
     }
   },
   {
@@ -19669,7 +19642,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Common success factors",
-      "text": "Cross-functional governance, phased implementation, substantial upskilling investment, and a human-robot collaboration focus recur across every leader."
+      "text": "Cross-functional governance, phased implementation, substantial upskilling investment, and a human-robot collaboration focus recur across every leader"
     }
   },
   {
@@ -20004,7 +19977,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "Companies that achieve \"compliance by design\" in {{2026-2027}} will gain 9-12 month market entry advantages in heavily regulated sectors like healthcare and critical infrastructure."
+      "text": "Companies that achieve \"compliance by design\" in {{2026-2027}} will gain 9-12 month market entry advantages in heavily regulated sectors like healthcare and critical infrastructure"
     }
   },
   {
@@ -20037,7 +20010,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic Insight",
-      "text": "The most successful robotics investors will employ dynamic financial models that adapt quarterly to emerging data on component costs, deployment success rates, and regulatory developments—requiring integration between financial and technical teams."
+      "text": "The most successful robotics investors will employ dynamic financial models that adapt quarterly to emerging data on component costs, deployment success rates, and regulatory developments—requiring integration between financial and technical teams"
     }
   },
   {
@@ -20070,7 +20043,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Critical Hurdles to International Expansion",
-      "text": "Divergent technical standards requiring costly recertification. Data sovereignty laws restricting AI model training & deployment. Supply chain localization requirements ({{30-70%}} local content). Intellectual property protection gaps in high-growth markets."
+      "text": "Divergent technical standards requiring costly recertification. Data sovereignty laws restricting AI model training & deployment. Supply chain localization requirements ({{30-70%}} local content). Intellectual property protection gaps in high-growth markets"
     }
   },
   {
@@ -20289,7 +20262,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Benchmark finding",
-      "text": "Organizations with 3+ certified team members report {{42%}} higher success rates in robotics implementation and {{67%}} faster time-to-value compared to non-certified teams."
+      "text": "Organizations with 3+ certified team members report {{42%}} higher success rates in robotics implementation and {{67%}} faster time-to-value compared to non-certified teams"
     }
   },
   {
@@ -20366,7 +20339,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Final conclusion",
-      "text": "The ultimate sustainable advantage in the humanoid era will belong to organizations that master not just technological leadership, but the orchestration of complex ecosystems integrating human talent, digital infrastructure, and physical assets across global value chains."
+      "text": "The ultimate sustainable advantage in the humanoid era will belong to organizations that master not just technological leadership, but the orchestration of complex ecosystems integrating human talent, digital infrastructure, and physical assets across global value chains"
     }
   },
   {
@@ -20395,7 +20368,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "The humanoid robotics revolution is not simply a technological transformation, but a strategic imperative requiring cross-functional leadership. Organizations that develop clear governance structures, strategic roadmaps, and agile implementation frameworks will capture disproportionate value in this emerging ecosystem."
+      "text": "The humanoid robotics revolution is not simply a technological transformation, but a strategic imperative requiring cross-functional leadership. Organizations that develop clear governance structures, strategic roadmaps, and agile implementation frameworks will capture disproportionate value in this emerging ecosystem"
     }
   },
   {
@@ -20432,7 +20405,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "For C-suite leaders and policymakers, the {{2025-2030}} window represents the critical period to establish strategic positioning. Early movers who deploy at scale before 2030 will capture disproportionate market share and talent."
+      "text": "For C-suite leaders and policymakers, the {{2025-2030}} window represents the critical period to establish strategic positioning. Early movers who deploy at scale before 2030 will capture disproportionate market share and talent"
     }
   },
   {
@@ -20567,7 +20540,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Critical Success Factor",
-      "text": "Successful integrations maintain a continuous feedback loop between technical and business stakeholders throughout the deployment lifecycle, not just at project initiation."
+      "text": "Successful integrations maintain a continuous feedback loop between technical and business stakeholders throughout the deployment lifecycle, not just at project initiation"
     }
   },
   {
@@ -20841,7 +20814,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Facilitator Tips",
-      "text": "Use the \"{{3×3×3}}\" rule to ensure alignment: Each team should identify 3 key insights, 3 potential pilots, and 3 critical stakeholders for successful implementation. Push teams to be specific about success metrics and resource requirements."
+      "text": "Use the \"{{3×3×3}}\" rule to ensure alignment: Each team should identify 3 key insights, 3 potential pilots, and 3 critical stakeholders for successful implementation. Push teams to be specific about success metrics and resource requirements"
     }
   },
   {
@@ -21158,8 +21131,8 @@ export const SLIDES: Slide[] = [
     "sub": "Step-by-step guide for entering new markets with humanoid robotics technology",
     "steps": [
       {
-        "k": "PHASE 1: MARKET ASSESSMENT & ENTRY STRATEGY",
-        "d": "PHASE 1: MARKET ASSESSMENT & ENTRY STRATEGY"
+        "k": "MARKET ASSESSMENT & ENTRY STRATEGY",
+        "d": "MARKET ASSESSMENT & ENTRY STRATEGY"
       },
       {
         "k": "Conduct regional compliance mapping",
@@ -21174,8 +21147,8 @@ export const SLIDES: Slide[] = [
         "d": "Create tiered investment model with pilot phases, success-based capital deployment gates, and risk mitigation strategies for each target region."
       },
       {
-        "k": "PHASE 2: PRODUCT LOCALIZATION & ADAPTATION",
-        "d": "PHASE 2: PRODUCT LOCALIZATION & ADAPTATION"
+        "k": "PRODUCT LOCALIZATION & ADAPTATION",
+        "d": "PRODUCT LOCALIZATION & ADAPTATION"
       },
       {
         "k": "Technical compliance adaptation",
@@ -21343,7 +21316,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Access Instructions",
-      "text": "All tools are available via the workshop portal at robotics-workshop.genspark.ai/toolkit using your workshop credentials. Enterprise customers can request white-labeled versions with organizational branding and customized workflows."
+      "text": "All tools are available via the workshop portal at robotics-workshop.genspark.ai/toolkit using your workshop credentials. Enterprise customers can request white-labeled versions with organizational branding and customized workflows"
     }
   },
   {
@@ -21396,7 +21369,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic insight",
-      "text": "Organizations that proactively engage with regulatory development rather than waiting for finalized rules will gain significant first-mover advantages in the {{2026-2030}} expansion phase."
+      "text": "Organizations that proactively engage with regulatory development rather than waiting for finalized rules will gain significant first-mover advantages in the {{2026-2030}} expansion phase"
     }
   },
   {
@@ -21450,7 +21423,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Strategic Insight",
-      "text": "By 2035, {{78%}} of robotics innovation will emerge from these established clusters, with inter-cluster collaboration networks driving cross-pollination of technologies. Organizations without presence in at least two major clusters risk innovation isolation."
+      "text": "By 2035, {{78%}} of robotics innovation will emerge from these established clusters, with inter-cluster collaboration networks driving cross-pollination of technologies. Organizations without presence in at least two major clusters risk innovation isolation"
     }
   },
   {
@@ -21597,7 +21570,7 @@ export const SLIDES: Slide[] = [
     ],
     "callout": {
       "k": "Special thanks",
-      "text": "Special thanks to the executives, engineers, and visionaries who participated in our interview program and shared their insights about the future of humanoid robotics."
+      "text": "Special thanks to the executives, engineers, and visionaries who participated in our interview program and shared their insights about the future of humanoid robotics"
     }
   },
   {

@@ -54,7 +54,7 @@ const nonEmpty = (a) => Array.isArray(a) && a.length > 0
 const HL_RE = /(\$[\d.,]+\s?[BMKk]?\b(?:\s?(?:billion|million|trillion))?|±?[\d.,]+\s?(?:–|—|-|to)\s?[\d.,]+\s?%|[\d.,]+\s?%|[\d.,]+(?:\s?[x×]\s?[\d.,]+)+[x×]?|[\d.,]+\s?[x×]\b|\b\d{1,3}(?:,\d{3})+\+?|ISO(?:\/TS)?\s?[\d:.-]+|\b(?:19|20)\d{2}\s?[–—-]\s?(?:19|20)?\d{2}\b|±\s?[\d.]+\s?\w+)/g
 const autoHl = (t) =>
   typeof t === "string"
-    ? t.replace(HL_RE, "{{$1}}").replace(/\}\}(\s*)\{\{/g, "$1").replace(/\{\{\s*\}\}/g, "")
+    ? t.replace(HL_RE, "{{$1}}").replace(/\{\{\s*(.*?)\s*\}\}/g, "{{$1}}").replace(/\}\}(\s*)\{\{/g, "$1").replace(/\{\{\s*\}\}/g, "")
     : t
 
 /* ---------------- design-bar scrubbers ---------------- */
@@ -63,6 +63,8 @@ const CHIP_BRACKET_RE = /\s*\[[^[\]]*\|[^[\]]*\]\s*$/
 // Source chip/logo rows transcribed inline: "… Tags: A, B, C" / "[chips] A, B" / "Badges: …".
 const CHIP_LABEL_RE = /[\s;.,—–-]*\b(?:Tags?|Chips?|Badges?|Logos?|Pills?|Icons?)\s*:\s*.*$/i
 const CHIP_BRACKET_PREFIX_RE = /^\s*\[(?:chips?|badges?|logos?|tags?)\]\s*/i
+// inline single-bracket visual tags anywhere: "[EU badge]", "[CN flag]", "[icon]"
+const SINGLE_TAG_RE = /\s*\[[^\][]*\b(?:badges?|icons?|flags?|logos?|pills?|chips?)\]\s*/gi
 // Dangling "see the other field" transcription pointers.
 const POINTER_RE = /\b(?:see (?:the )?(?:table|timeline|chart|figure)(?:\s+(?:field|above|below|left|right))?|transcribed in (?:the )?\w+ field|values? in (?:the )?\w+ field)\b/i
 // Title prefixes that leak the source widget/layout framing.
@@ -70,15 +72,15 @@ const TITLE_PREFIX_RE = /^(?:Interactive\s+Data|Data\s+Chart|Interactive\s+Visua
 // Bullets/foots that are scraped UI narration, not content.
 const UI_NARRATION_RE = /^(?:hover|click|drag|toggle|zoom|adjust|select|tap|scroll|legend\b|legend:|the chart (?:shows|displays|above|below)|chart shows|dashed (?:line|vertical|zero)|x-?axis|y-?axis|bars? (?:show|represent)|colou?r(?:ed)? (?:bar|line|coded)|grey\/|\(grey\)|\(colou?red\)|interactive (?:map|visuali|chart|dashboard|panel)|adjust parameters|use the slider)/i
 const CLIP_NOTE_RE = /\((?:text )?(?:clipped|truncated|cut off|not visible|partially|small print|approx\.?|estimated|unlabel|un-kickered)[^)]*\)|\[(?:row )?truncated[^\]]*\]|\[chart[^\]]*\]/gi
-// numbered process lead: "1." / "2)" / "Step 3:" / "1. Interface Mapping"
-const NUM_LEAD_RE = /^\s*(?:step\s*)?\d+\s*[.)\]:-]\s*/i
+// numbered/phased process lead: "1." / "2)" / "Step 3:" / "Phase 1:" / "Stage 2 -"
+const NUM_LEAD_RE = /^\s*(?:(?:phase|stage|step|module|tier|level)\s*)?\d+\s*[.)\]:-]\s*/i
 
 // Single-word leftover source-table column headers that get glued on as items.
-const HEADER_WORD_RE = /^(?:Metric|Company|Companies|Vendor|Vendors|Pairing|Pairings|Score|Scores|Rating|Ratings|Status|Value|Values|Type|Types|Category|Categories|Example|Examples|Region|Regions|Year|Years|Tier|Tiers|Level|Levels|Stage|Stages|Note|Notes|Detail|Details)$/i
+const HEADER_WORD_RE = /^(?:Metric|Company|Companies|Vendor|Vendors|Pairing|Pairings|Score|Scores|Rating|Ratings|Status|Value|Values|Type|Types|Category|Categories|Example|Examples|Region|Regions|Year|Years|Tier|Tiers|Level|Levels|Stage|Stages|Note|Notes|Detail|Details|Standard|Standards|Framework|Frameworks|Protocol|Protocols|Application|Applications|Approach|Approaches|Feature|Features)$/i
 
 const scrubText = (t) => {
   if (typeof t !== "string") return t
-  let s = t.replace(CHIP_BRACKET_PREFIX_RE, "").replace(CLIP_NOTE_RE, "").replace(CHIP_LABEL_RE, "").replace(CHIP_BRACKET_RE, "").trim()
+  let s = t.replace(CHIP_BRACKET_PREFIX_RE, "").replace(SINGLE_TAG_RE, " ").replace(CLIP_NOTE_RE, "").replace(CHIP_LABEL_RE, "").replace(CHIP_BRACKET_RE, "").trim()
   s = s.replace(/\s*[[(]\s*$/, "") // dangling open bracket/paren artifact
   s = s.replace(/\s{2,}/g, " ").replace(/\s+([.,;:])/g, "$1").replace(/[\s;,]+$/, "")
   return s
@@ -158,9 +160,12 @@ function convert(r, ctx) {
       const topics = (r.bullets ?? []).map((b, j) => ({ n: b.lead || `${ctx.section}.${j + 1}`, t: b.text || b.lead }))
       return { kind: "divider", ...base, chap: ctx.chap, numeral, part: `Part ${numeral}`, title, topics: topics.slice(0, 8) }
     }
-    case "bullets":
+    case "bullets": {
       if (bulletsAreNumberedProcess(r.bullets)) { note(r.src, "numbered bullets → flow"); return bulletsToFlow(r, base, title) }
-      return { kind: "bullets", ...base, title, bullets: cleanBullets(r.bullets), ...(r.callout ? { callout: { k: scrubKicker(cleanStr(r.callout.k)) || "Insight", text: autoHl(scrubText(cleanStr(r.callout.text))) || "" } } : {}) }
+      const bl = cleanBullets(r.bullets)
+      const callout = makeCallout(r.callout, bl)
+      return { kind: "bullets", ...base, title, bullets: bl, ...(callout ? { callout } : {}) }
+    }
     case "stats": {
       const stats = (r.stats ?? []).map((st) => ({ big: cleanStr(st.big), lab: cleanStr(st.lab) })).filter((st) => st.big)
       if (!stats.length) { note(r.src, "stats archetype with no stats — bullets fallback"); return convertFallback(r, base, title) }
@@ -250,6 +255,19 @@ function bulletsToFlow(r, base, title) {
     .filter((s) => s.k || s.d)
     .slice(0, 6)
   return { kind: "flow", ...base, title, ...(nonEmpty(r.body) ? { sub: cleanStr(r.body[0]) } : {}), steps, ...(r.callout?.text ? { foot: scrubText(cleanStr(r.callout.text)) } : {}) }
+}
+
+// build a callout, stripping any verbatim restatement of the page's own bullets
+function makeCallout(c, bullets) {
+  if (!c) return null
+  let text = autoHl(scrubText(cleanStr(c.text))) || ""
+  for (const b of bullets) {
+    const probe = b.text
+    if (probe && probe.length > 28 && text.includes(probe)) text = text.split(probe).join(" ")
+  }
+  text = text.replace(/\s{2,}/g, " ").replace(/^[\s.;,—–-]+|[\s.;,—–-]+$/g, "").trim()
+  if (isEmptyish(text)) return null
+  return { k: scrubKicker(cleanStr(c.k)) || "Insight", text }
 }
 
 function convertFallback(r, base, title) {
