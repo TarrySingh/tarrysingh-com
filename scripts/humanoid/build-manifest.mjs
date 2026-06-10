@@ -94,19 +94,25 @@ try {
 } catch { /* no redraw dir yet */ }
 const overrideCount = Object.keys(overrides).length
 
-/** "Label: 23%" / "Label — 41" / {label,value} → ChartSlide data rows */
+/** "Label: 23%" / "Label — 41" / "Phase 1: Pilot: 42" → ChartSlide data rows.
+ * Robust to labels containing their own colon: the value is the TRAILING
+ * number of each segment; everything before it (minus the separator) is the
+ * label. Primary segment split on ';', fallback ',' only when no ';'. */
 function parseChartData(chart) {
   const rows = []
-  const push = (label, raw) => {
-    const m = String(raw).match(/-?\d+(?:[.,]\d+)?/)
-    if (m && label) rows.push({ label: String(label).trim(), value: parseFloat(m[0].replace(",", ".")) })
+  const seen = new Set()
+  const pushSeg = (seg) => {
+    const m = String(seg).match(/^(.*?)[\s:=—–-]+(-?[\d][\d.,]*)\s*%?\+?$/)
+    if (!m) return
+    const label = m[1].replace(/[:\-–—\s]+$/, "").trim()
+    const value = parseFloat(m[2].replace(/,/g, ""))
+    if (label && Number.isFinite(value) && !seen.has(label)) { seen.add(label); rows.push({ label, value }) }
   }
   for (const s of chart?.series ?? []) {
     if (typeof s === "object" && s !== null && "points" in s) {
       const pts = String(s.points)
-      const pairs = pts.split(/[;,]/).map((p) => p.split(/[:=—–]/)).filter((p) => p.length >= 2)
-      if (pairs.length >= 2) pairs.forEach(([l, v]) => push(l, v))
-      else push(s.name, pts)
+      const segs = pts.includes(";") ? pts.split(";") : pts.split(",")
+      segs.forEach(pushSeg)
     }
   }
   return rows
@@ -243,6 +249,7 @@ for (const r of records) {
 
 for (let k = 0; k < records.length; k++) {
   const r = overrides[records[k].src] ? { ...records[k], ...overrides[records[k].src] } : records[k]
+  if (r.drop) { dropped.push(r.src); continue } // redraw fleet marked this page redundant
   if (mergedAway.has(r.src)) {
     // fold into the nearest previous kept page when shapes allow
     const target = out[out.length - 1]
