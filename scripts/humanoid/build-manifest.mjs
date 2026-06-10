@@ -26,7 +26,7 @@ import { fileURLToPath } from "node:url"
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..")
 const EXT = join(ROOT, "docs", "humanoid-robotics", "extraction")
-const OUT_TS = join(ROOT, "src", "components", "humanoid", "deck", "manifest.full.ts")
+const OUT_TS = join(ROOT, "src", "components", "humanoid", "deck", "manifest.ts")
 const OUT_ATTN = join(EXT, "attention.json")
 
 /* ---------------- load ---------------- */
@@ -44,6 +44,15 @@ const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI"
 
 const cleanStr = (s) => (typeof s === "string" ? s.trim() : s)
 const nonEmpty = (a) => Array.isArray(a) && a.length > 0
+
+/**
+ * Design bar: auto-highlight stat phrases as {{...}} so every page gets
+ * the chapter-accent "blue number" treatment instead of grey text walls.
+ * Matches money, percents/ranges, multipliers, big counts, ISO refs,
+ * year ranges, ± tolerances. Single pass; records carry no prior braces.
+ */
+const HL_RE = /(\$[\d.,]+\s?[BMKk]?\b(?:\s?(?:billion|million|trillion))?|±?[\d.,]+\s?(?:–|—|-|to)\s?[\d.,]+\s?%|[\d.,]+\s?%|[\d.,]+\s?[x×]\b|\b\d{1,3}(?:,\d{3})+\+?|ISO(?:\/TS)?\s?[\d:.-]+|\b(?:19|20)\d{2}\s?[–—-]\s?(?:19|20)?\d{2}\b|±\s?[\d.]+\s?\w+)/g
+const autoHl = (t) => (typeof t === "string" ? t.replace(HL_RE, "{{$1}}") : t)
 
 /** "Label: 23%" / "Label — 41" / {label,value} → ChartSlide data rows */
 function parseChartData(chart) {
@@ -84,9 +93,18 @@ function convert(r, ctx) {
       return { kind: "divider", ...base, chap: ctx.chap, numeral, part: `Part ${numeral}`, title, topics: topics.slice(0, 8) }
     }
     case "bullets":
-      return { kind: "bullets", ...base, title, bullets: (r.bullets ?? []).map((b) => ({ lead: cleanStr(b.lead) || "", text: cleanStr(b.text) || "" })), ...(r.callout ? { callout: { k: cleanStr(r.callout.k) || "Insight", text: cleanStr(r.callout.text) || "" } } : {}) }
-    case "stats":
-      return { kind: "stats", ...base, title, stats: (r.stats ?? []).map((st) => ({ big: cleanStr(st.big), lab: cleanStr(st.lab) })), ...(nonEmpty(r.body) ? { body: r.body.map(cleanStr) } : {}), ...(r.callout?.text ? { foot: cleanStr(r.callout.text) } : {}) }
+      return { kind: "bullets", ...base, title, bullets: (r.bullets ?? []).map((b) => ({ lead: cleanStr(b.lead) || "", text: autoHl(cleanStr(b.text)) || "" })), ...(r.callout ? { callout: { k: cleanStr(r.callout.k) || "Insight", text: autoHl(cleanStr(r.callout.text)) || "" } } : {}) }
+    case "stats": {
+      const stats = (r.stats ?? []).map((st) => ({ big: cleanStr(st.big), lab: cleanStr(st.lab) })).filter((st) => st.big)
+      if (!stats.length) { note(r.src, "stats archetype with no stats — bullets fallback"); return convertFallback(r, base, title) }
+      return { kind: "stats", ...base, title, stats, ...(nonEmpty(r.body) ? { body: r.body.map((t) => autoHl(cleanStr(t))) } : {}), ...(r.callout?.text ? { foot: cleanStr(r.callout.text) } : {}) }
+    }
+    case "diagram": {
+      const steps = (r.bullets ?? []).map((b, j) => ({ k: cleanStr(b.lead) || `Stage ${j + 1}`, d: autoHl(cleanStr(b.text)) || "" })).filter((st) => st.d || st.k)
+      if (steps.length >= 2) return { kind: "flow", ...base, title, ...(nonEmpty(r.body) ? { sub: cleanStr(r.body[0]) } : {}), steps: steps.slice(0, 6), ...(r.callout?.text ? { foot: cleanStr(r.callout.text) } : {}) }
+      note(r.src, "diagram without steps — bullets fallback")
+      return convertFallback(r, base, title)
+    }
     case "twoPanel": {
       const side = (p, accent) => ({ name: cleanStr(p?.name) || "", tag: cleanStr(p?.tag) || "", accent, rows: (p?.rows ?? []).map((row) => ({ t: cleanStr(row.t) || "", items: (row.items ?? []).map(([m, t]) => [["+", "−", "~"].includes(m) ? m : "~", cleanStr(t)]) })), ...(p?.ex ? { ex: cleanStr(p.ex) } : {}) })
       return { kind: "twoPanel", ...base, title, ...(nonEmpty(r.body) ? { sub: cleanStr(r.body[0]) } : {}), L: side(r.twoPanel?.L, "var(--c-blue)"), R: side(r.twoPanel?.R, "var(--c-amber)") }
@@ -96,7 +114,7 @@ function convert(r, ctx) {
       return { kind: "case", ...base, co: cleanStr(c.co) || "", robot: cleanStr(c.robot) || title, site: cleanStr(c.site) || "", task: cleanStr(c.task) || "", results: (c.results ?? []).map(cleanStr), roi: cleanStr(c.roi) || "" }
     }
     case "table":
-      return { kind: "table", ...base, title, columns: (r.table?.columns ?? []).map(cleanStr), rows: (r.table?.rows ?? []).map((row) => row.map(cleanStr)), ...(r.callout?.text ? { foot: cleanStr(r.callout.text) } : {}) }
+      return { kind: "table", ...base, title, columns: (r.table?.columns ?? []).map((c) => cleanStr(c) ?? ""), rows: (r.table?.rows ?? []).map((row) => row.map((cell) => cleanStr(cell) ?? "—")), ...(r.callout?.text ? { foot: cleanStr(r.callout.text) } : {}) }
     case "timeline":
       return { kind: "timeline", ...base, title, stops: (r.timeline ?? []).map((t) => ({ when: cleanStr(t.when), what: cleanStr(t.what), detail: cleanStr(t.detail) })) }
     case "chart": {
@@ -109,13 +127,19 @@ function convert(r, ctx) {
       return { kind: "bullets", ...base, title, bullets: (r.chart?.annotations ?? r.body ?? []).map((t) => ({ lead: "", text: cleanStr(t) })), callout: { k: "Hand-polish", text: "Chart pending native rebuild (see attention.json)." } }
     }
     case "quote":
-      return { kind: "bullets", ...base, title, bullets: [], callout: { k: cleanStr(r.callout?.k) || "—", text: cleanStr(r.callout?.text) || cleanStr(r.body?.[0]) || "" } }
+      return { kind: "bullets", ...base, title, bullets: [], callout: { k: cleanStr(r.callout?.k) || "—", text: autoHl(cleanStr(r.callout?.text)) || autoHl(cleanStr(r.body?.[0])) || "" } }
     default: {
       note(r.src, `archetype "${r.archetype}" → bullets fallback`)
-      const bullets = nonEmpty(r.bullets) ? r.bullets.map((b) => ({ lead: cleanStr(b.lead) || "", text: cleanStr(b.text) || "" })) : (r.body ?? []).map((t) => ({ lead: "", text: cleanStr(t) }))
-      return { kind: "bullets", ...base, title, bullets, ...(r.callout ? { callout: { k: cleanStr(r.callout.k) || "Insight", text: cleanStr(r.callout.text) || "" } } : {}) }
+      return convertFallback(r, base, title)
     }
   }
+}
+
+function convertFallback(r, base, title) {
+  const bullets = nonEmpty(r.bullets)
+    ? r.bullets.map((b) => ({ lead: cleanStr(b.lead) || "", text: autoHl(cleanStr(b.text)) || "" }))
+    : (r.body ?? []).map((t) => ({ lead: "", text: autoHl(cleanStr(t)) }))
+  return { kind: "bullets", ...base, title, bullets, ...(r.callout ? { callout: { k: cleanStr(r.callout.k) || "Insight", text: autoHl(cleanStr(r.callout.text)) || "" } } : {}) }
 }
 
 /* ---------------- curation walk ---------------- */
@@ -139,6 +163,12 @@ const ctx = { section: 0, chap: undefined }
 const out = []
 const mergedAway = new Set()
 
+/* Design bar: each live instrument appears at most once per section and
+   three times across the whole deck — repeats render as native charts/
+   content instead of the same widget over and over. */
+const instGlobal = {}
+let instSection = {}
+
 // pre-pass: register merge targets
 for (const r of records) {
   const m = /^merge-with:(\d+)/.exec(r.curation ?? "")
@@ -159,8 +189,11 @@ for (let k = 0; k < records.length; k++) {
     }
     continue
   }
+  if (r.archetype === "divider") instSection = {} // new section → fresh instrument budget
   const inst = /^instrument:([a-z-]+)/.exec(r.curation ?? "")
-  if (inst && INSTRUMENT_TITLES[inst[1]]) {
+  if (inst && INSTRUMENT_TITLES[inst[1]] && !instSection[inst[1]] && (instGlobal[inst[1]] ?? 0) < 3) {
+    instSection[inst[1]] = true
+    instGlobal[inst[1]] = (instGlobal[inst[1]] ?? 0) + 1
     // collapse the consecutive run with the same instrument suggestion
     let end = k
     while (end + 1 < records.length && (records[end + 1].curation ?? "").startsWith(`instrument:${inst[1]}`)) end++
