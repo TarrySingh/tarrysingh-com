@@ -20,7 +20,7 @@ interface Entitlement {
 // Where "book a cohort / buy" sends people until Stripe is wired (Phase 2).
 const BOOKING_URL = "https://www.earthscan.io/book-a-meeting"
 
-const HAEntitlement: Entitlement = {
+export const HAEntitlement: Entitlement = {
   demo: true, // ← set false in production so content stays locked until purchase
   has(sku) {
     if (typeof window === "undefined") return false
@@ -96,8 +96,9 @@ export function PremiumDownloads() {
   if (open) {
     return (
       <div className="pkg-cta unlocked">
-        <div className="pkg-note done">✓ Full package unlocked — workshop, certification &amp; downloads are open.</div>
-        <div className="pkg-note">The complete 375-slide deck is being rebuilt as native pages — it ships, with downloads, in the next release.</div>
+        <a className="pkg-btn gold" href="/humanoid/deck">Open the full deck — native ↗</a>
+        <a className="pkg-btn ghost" href="/humanoid/deck?print=1">Print / save as PDF</a>
+        <div className="pkg-note done">✓ Full package unlocked — the workshop pages, labs, certification &amp; downloads are open.</div>
       </div>
     )
   }
@@ -105,7 +106,8 @@ export function PremiumDownloads() {
     <div className="pkg-cta">
       <button className="pkg-btn gold" onClick={buy}>Unlock the full package ↗</button>
       {HAEntitlement.demo && <button className="pkg-btn ghost" onClick={() => HAEntitlement.grant("full-package")}>Preview (demo)</button>}
-      <div className="pkg-note">Unlocks the hands-on labs, certification — and, in the next release, the full 375-slide deck + download access.</div>
+      <a className="pkg-btn ghost" href="/humanoid/deck">Browse the deck — workshop pages locked ↗</a>
+      <div className="pkg-note">The full deck is native now — every page rebuilt, the data live. The 60 workshop pages, the labs and certification unlock together.</div>
     </div>
   )
 }
