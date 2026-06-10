@@ -10853,93 +10853,56 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "timeline",
+    "kind": "table",
     "src": 191,
     "chap": "var(--c-cyan)",
-    "eyebrow": "FUTURE OUTLOOK",
-    "title": "2030–2035 Technology Roadmap: Humanoid Robotics",
-    "stops": [
-      {
-        "when": "2030",
-        "what": "3x power density increase through novel materials and motor topologies",
-        "detail": "Hardware Evolution — Actuator Technologies"
-      },
-      {
-        "when": "2032",
-        "what": "50% cost reduction in PRS through scaled manufacturing",
-        "detail": "Hardware Evolution — Actuator Technologies"
-      },
-      {
-        "when": "2035",
-        "what": "Biomimetic artificial muscles with human-equivalent strength-to-weight",
-        "detail": "Hardware Evolution — Actuator Technologies"
-      },
-      {
-        "when": "2031",
-        "what": "Sub-millimeter spatial accuracy with miniaturized solid-state LiDAR",
-        "detail": "Hardware Evolution — Perception Systems"
-      },
-      {
-        "when": "2033",
-        "what": "Full-body tactile sensing with pressure resolution matching human skin",
-        "detail": "Hardware Evolution — Perception Systems"
-      },
-      {
-        "when": "2031",
-        "what": "Solid-state batteries with 500 Wh/kg enabling 12+ hour operation",
-        "detail": "Hardware Evolution — Power Systems"
-      },
-      {
-        "when": "2034",
-        "what": "Rapid wireless charging (80% in 15 minutes) for continuous operation",
-        "detail": "Hardware Evolution — Power Systems"
-      },
-      {
-        "when": "2030",
-        "what": "Human-level dexterity for 90% of common manipulation tasks",
-        "detail": "Software & Economics — AI Capabilities"
-      },
-      {
-        "when": "2032",
-        "what": "Zero-shot learning from demonstration with 95% success rate",
-        "detail": "Software & Economics — AI Capabilities"
-      },
-      {
-        "when": "2035",
-        "what": "Neuromorphic computing systems with 100x power efficiency",
-        "detail": "Software & Economics — AI Capabilities"
-      },
-      {
-        "when": "2030",
-        "what": "$30K unit cost through component standardization",
-        "detail": "Software & Economics — Cost Reduction Trajectory"
-      },
-      {
-        "when": "2033",
-        "what": "$15K unit cost through scaled production (>500K units/year)",
-        "detail": "Software & Economics — Cost Reduction Trajectory"
-      },
-      {
-        "when": "2035",
-        "what": "$10K consumer-viable price point enabling mass-market adoption",
-        "detail": "Software & Economics — Cost Reduction Trajectory"
-      },
-      {
-        "when": "2031",
-        "what": "50% of automotive manufacturing with humanoid integration",
-        "detail": "Software & Economics — Adoption Scenarios"
-      },
-      {
-        "when": "2034",
-        "what": "Healthcare applications reach 30% market penetration",
-        "detail": "Software & Economics — Adoption Scenarios"
-      },
-      {
-        "when": "2035",
-        "what": "Consumer market emergence (1.2M units/year)",
-        "detail": "Software & Economics — Adoption Scenarios"
-      }
-    ]
+    "eyebrow": "Future Outlook",
+    "title": "Technology Roadmap: Humanoid Robotics, 2030–2035",
+    "columns": [
+      "Track",
+      "2030–31",
+      "2032–33",
+      "2034–35"
+    ],
+    "rows": [
+      [
+        "Actuators",
+        "3x power density via novel materials and motor topologies (2030)",
+        "50% cost reduction in PRS through scaled manufacturing (2032)",
+        "Biomimetic artificial muscles at human-equivalent strength-to-weight (2035)"
+      ],
+      [
+        "Perception",
+        "Sub-millimetre spatial accuracy with miniaturised solid-state LiDAR (2031)",
+        "Full-body tactile sensing with pressure resolution matching human skin (2033)",
+        "Perception stack matured into production sensing fabric (2035)"
+      ],
+      [
+        "Power",
+        "Solid-state batteries at 500 Wh/kg enabling 12+ hour operation (2031)",
+        "Rapid wireless charging: 80% in 15 minutes for continuous operation (2034)",
+        "Continuous-duty power proven for around-the-clock fleets (2035)"
+      ],
+      [
+        "AI",
+        "Human-level dexterity for 90% of common manipulation tasks (2030)",
+        "Zero-shot learning from demonstration at 95% success rate (2032)",
+        "Neuromorphic computing systems with 100x power efficiency (2035)"
+      ],
+      [
+        "Cost",
+        "$30K unit cost through component standardisation (2030)",
+        "$15K unit cost through scaled production at >500K units/year (2033)",
+        "$10K consumer-viable price point enabling mass-market adoption (2035)"
+      ],
+      [
+        "Adoption",
+        "50% of automotive manufacturing runs humanoid integration (2031)",
+        "Healthcare applications reach 30% market penetration (2034)",
+        "Consumer-market emergence at 1.2M units/year (2035)"
+      ]
+    ],
+    "foot": "Industry consensus puts the $10,000 price point as the threshold for mainstream commercial viability — positive ROI within 12 months for most industrial applications, and the start of consumer adoption."
   },
   {
     "kind": "instrument",
@@ -12909,58 +12872,28 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "bullets",
+    "kind": "flow",
     "src": 224,
     "chap": "var(--c-cyan)",
-    "eyebrow": "WORKSHOP: SUSTAINABILITY",
+    "eyebrow": "Workshop · Sustainability",
     "locked": true,
     "title": "Sustainability Frameworks for Robotics",
-    "bullets": [
+    "sub": "Guided workshop for implementing environmental sustainability in humanoid robotics",
+    "steps": [
       {
-        "lead": "Boundary Setting:",
-        "text": "Define lifecycle stages (materials, manufacturing, use, end-of-life) and component inventory for assessment scope."
+        "k": "Footprint Assessment",
+        "d": "Set lifecycle boundaries across manufacturing, use and end-of-life, collect material, energy and maintenance data, then benchmark the carbon footprint against industry norms to find hotspots."
       },
       {
-        "lead": "Data Collection:",
-        "text": "Material composition, energy profiles, operational patterns, maintenance requirements."
+        "k": "Circular Design",
+        "d": "Engineer for disassembly with modular, documented connections, swap in recyclable material alternatives, and embed a blockchain-based digital material passport for end-of-life recovery."
       },
       {
-        "lead": "Benchmark Analysis:",
-        "text": "Compare footprint to industry standards and identify hotspots in the lifecycle."
-      },
-      {
-        "lead": "Design for Disassembly:",
-        "text": "Create modular systems with standardized connections and documented disassembly protocols."
-      },
-      {
-        "lead": "Materials Selection:",
-        "text": "Identify recyclable alternatives for key components with clear material labeling system."
-      },
-      {
-        "lead": "Digital Material Passport:",
-        "text": "Implement blockchain-based component tracking for end-of-life recovery."
-      },
-      {
-        "lead": "Regulatory Mapping:",
-        "text": "Document applicable environmental regulations by region (EU Taxonomy, SEC disclosure requirements, China Green Cert)."
-      },
-      {
-        "lead": "KPI Development:",
-        "text": "Establish measurable sustainability metrics aligned with GRI standards and SASB materiality matrix."
-      },
-      {
-        "lead": "Reporting Structure:",
-        "text": "Create integrated reporting template compatible with TCFD and CDP frameworks."
-      },
-      {
-        "lead": "Workshop Implementation Guide",
-        "text": "Participants: Cross-functional teams from engineering, procurement, regulatory compliance · Duration: 4-hour module with 2-hour follow-up session · Deliverables: Sustainability roadmap, material selection guidelines, ESG reporting template"
-      },
-      {
-        "lead": "Key Benefits:",
-        "text": "Reduced regulatory risk · Market differentiation · Lower lifecycle costs · Investor appeal"
+        "k": "ESG Reporting",
+        "d": "Map applicable regulations by region (EU Taxonomy, SEC disclosure), develop GRI- and SASB-aligned KPIs, and stand up an integrated reporting structure compatible with TCFD and CDP frameworks."
       }
-    ]
+    ],
+    "foot": "Participants: cross-functional teams from engineering, procurement and regulatory compliance · Duration: 4-hour module plus a 2-hour follow-up session · Deliverables: sustainability roadmap, material selection guidelines and ESG reporting template."
   },
   {
     "kind": "twoPanel",
@@ -15756,28 +15689,109 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "timeline",
+    "kind": "table",
     "src": 273,
     "chap": "var(--c-cyan)",
     "eyebrow": "STRATEGIC ROADMAP",
     "title": "Action Plan: Scaling to 2030 and Beyond",
-    "stops": [
-      {
-        "when": "Phase 1: Near-term (2025-2027)",
-        "what": "Six tagged actions (EXEC/ENG/INV)",
-        "detail": "[EXEC] Establish dedicated robotics innovation center with clear KPIs and governance | [ENG] Pilot focused use cases in controlled environments; prioritize ROI-positive applications | [INV] Secure actuator supply chain through strategic partnerships and investments | [EXEC] Implement workforce upskilling program with robotics-specific pathways | [ENG] Develop digital twin architecture for fleet management and monitoring | [EXEC] Create regulatory compliance roadmap aligned with regional frameworks"
-      },
-      {
-        "when": "Phase 2: Mid-term (2027-2030)",
-        "what": "Six tagged actions (EXEC/ENG/INV)",
-        "detail": "[EXEC] Scale successful pilots to full production; establish cross-functional centers of excellence | [ENG] Implement advanced AI training programs using real-world operational data | [INV] Diversify component portfolio with next-gen actuators and sensors | [ENG] Transition from task-specific to multi-purpose humanoid deployments | [EXEC] Develop human-robot collaboration frameworks and safety protocols | [INV] Structure financial models for fleet expansion and technology refreshes"
-      },
-      {
-        "when": "Phase 3: Long-term (2030-2035)",
-        "what": "Six tagged actions (EXEC/ENG/INV)",
-        "detail": "[EXEC] Transform to AI-native organization with robotics at core business model | [ENG] Deploy autonomous multi-robot systems with swarm intelligence capabilities | [INV] Establish robotics innovation fund focusing on frontier technologies | [ENG] Integrate quantum computing for next-gen motion planning and simulation | [EXEC] Lead industry standardization and open-source platform development | [INV] Deploy humanoids in emerging markets and new industry verticals"
-      }
-    ]
+    "columns": [
+      "Horizon",
+      "Action",
+      "Owner"
+    ],
+    "rows": [
+      [
+        "2025-2027",
+        "Establish a dedicated robotics innovation center with clear KPIs and governance",
+        "Executive"
+      ],
+      [
+        "2025-2027",
+        "Pilot focused use cases in controlled environments, prioritizing ROI-positive applications",
+        "Engineering"
+      ],
+      [
+        "2025-2027",
+        "Secure the actuator supply chain through strategic partnerships and investments",
+        "Investment"
+      ],
+      [
+        "2025-2027",
+        "Implement a workforce upskilling program with robotics-specific pathways",
+        "Executive"
+      ],
+      [
+        "2025-2027",
+        "Develop a digital-twin architecture for fleet management and monitoring",
+        "Engineering"
+      ],
+      [
+        "2025-2027",
+        "Create a regulatory compliance roadmap aligned with regional frameworks",
+        "Executive"
+      ],
+      [
+        "2027-2030",
+        "Scale successful pilots to full production and establish cross-functional centers of excellence",
+        "Executive"
+      ],
+      [
+        "2027-2030",
+        "Implement advanced AI training programs using real-world operational data",
+        "Engineering"
+      ],
+      [
+        "2027-2030",
+        "Diversify the component portfolio with next-gen actuators and sensors",
+        "Investment"
+      ],
+      [
+        "2027-2030",
+        "Transition from task-specific to multi-purpose humanoid deployments",
+        "Engineering"
+      ],
+      [
+        "2027-2030",
+        "Develop human-robot collaboration frameworks and safety protocols",
+        "Executive"
+      ],
+      [
+        "2027-2030",
+        "Structure financial models for fleet expansion and technology refreshes",
+        "Investment"
+      ],
+      [
+        "2030-2035",
+        "Transform into an AI-native organization with robotics at the core business model",
+        "Executive"
+      ],
+      [
+        "2030-2035",
+        "Deploy autonomous multi-robot systems with swarm-intelligence capabilities",
+        "Engineering"
+      ],
+      [
+        "2030-2035",
+        "Establish a robotics innovation fund focusing on frontier technologies",
+        "Investment"
+      ],
+      [
+        "2030-2035",
+        "Integrate quantum computing for next-gen motion planning and simulation",
+        "Engineering"
+      ],
+      [
+        "2030-2035",
+        "Lead industry standardization and open-source platform development",
+        "Executive"
+      ],
+      [
+        "2030-2035",
+        "Deploy humanoids in emerging markets and new industry verticals",
+        "Investment"
+      ]
+    ],
+    "foot": "Sustain regulatory engagement and compliance monitoring, prioritize cybersecurity and ethical AI governance, build modular architectures for incremental adoption, and balance hardware innovation against software and AI advances."
   },
   {
     "kind": "flow",
