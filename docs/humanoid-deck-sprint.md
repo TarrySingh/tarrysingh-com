@@ -44,3 +44,15 @@ deck searchable, responsive, on-brand, and *live*.
 ## Phase-2 hooks (unchanged)
 The 60 workshop pages gate on the same `HAEntitlement` seam as the canvas —
 when Stripe lands, `demo:false` + server-verified `has()` lock them for real.
+
+## Design bar (Tarry's directive, 10 Jun)
+**No page ships as transcribed text.** The transcription records are capture
+only; every rendered page must be *designed*:
+- Chart clusters → the 13 live interactive instruments.
+- Remaining data slides → native animated ChartSlide (bar / hbar / donut).
+- Multi-facet slides → TabsSlide (real in-page tab switchers).
+- Process/architecture slides → FlowSlide (native step-flow diagrams).
+- Numeric bullet walls → promoted to stat bands / ranked bars in hand-polish
+  (assembler flags candidates into attention.json).
+- Phase C ends with a visual-QA fleet pass scoring every page on one
+  question — "designed, or merely transcribed?" — failures get redrawn.
