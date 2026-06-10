@@ -18,8 +18,12 @@ import type {
   ChartSlide, PanelSide, PanelMark,
 } from "./types"
 import { MarketModel } from "@/components/humanoid/charts"
-import { MarketConcentration } from "@/components/humanoid/content"
+import { GrowthDrivers, AppCaseStudies, MarketConcentration } from "@/components/humanoid/content"
+import { DeploymentTimeline, ValueSankey } from "@/components/humanoid/flows"
+import { SpecComparator, ROICalculator } from "@/components/humanoid/tools"
 import { WarMap } from "@/components/humanoid/tools2"
+import { ComparativeFramework, TechDeepDive } from "@/components/humanoid/frameworks"
+import { EcosystemGraph, CaseStudyMap } from "@/components/humanoid/network"
 
 /* ---------- inline stat highlights: {{...}} → accent ---------- */
 export function hl(text: string): ReactNode {
@@ -230,10 +234,20 @@ function Timeline({ s }: { s: TimelineSlide }) {
 }
 
 /* ---------- 9 · live instrument ---------- */
-const INSTRUMENTS: Partial<Record<InstrumentSlide["instrument"], () => ReactNode>> = {
+const INSTRUMENTS: Record<InstrumentSlide["instrument"], () => ReactNode> = {
   "market-model": () => <MarketModel />,
   "concentration": () => <MarketConcentration />,
   "war-map": () => <WarMap />,
+  "spec-comparator": () => <SpecComparator />,
+  "roi": () => <ROICalculator />,
+  "sankey": () => <ValueSankey />,
+  "ecosystem": () => <EcosystemGraph />,
+  "deploy-timeline": () => <DeploymentTimeline />,
+  "frameworks": () => <ComparativeFramework />,
+  "tech-deep-dive": () => <TechDeepDive />,
+  "app-cases": () => <AppCaseStudies />,
+  "growth-drivers": () => <GrowthDrivers />,
+  "case-study-map": () => <CaseStudyMap />,
 }
 
 function Instrument({ s }: { s: InstrumentSlide }) {
