@@ -1,11 +1,20 @@
 "use client"
 
 /**
- * The single premium-gating seam (ported from the reference canvas).
- * Phase 1 runs in DEMO mode: "Preview (demo)" grants locally so the gated
- * Workshop + Certification + package are explorable. Phase 2 swaps `has()`
- * (server-verified JWT) and `checkout()` (Stripe Checkout) — nothing else
- * on the page changes. `full-package` unlocks everything.
+ * The single premium-gating seam.
+ *
+ * PRODUCTION-SAFE BY DEFAULT: there is NO free unlock. `demo` is off unless
+ * NEXT_PUBLIC_HA_DEMO === "1" (a local/dev-only escape hatch), so the
+ * "Preview (demo)" buttons never render in production and `grant()` is a
+ * no-op unless demo is explicitly on. Every buy path goes to Stripe.
+ *
+ * Stripe: set per-SKU Payment Link URLs as env vars on the project
+ * (NEXT_PUBLIC_STRIPE_LINK_*). `checkout()` sends the buyer straight to the
+ * Stripe hosted payment page and NEVER grants access locally. If a link is
+ * not configured it falls back to the booking page — it never silently
+ * unlocks. (Post-payment entitlement provisioning — webhook → store →
+ * server-verified `has()` — is Phase 2; until then `has()` only returns true
+ * for a demo grant in a dev build.)
  */
 
 import { useState, useEffect, type ReactNode } from "react"
@@ -17,11 +26,22 @@ interface Entitlement {
   checkout(sku: string): Promise<boolean>
 }
 
-// Where "book a cohort / buy" sends people until Stripe is wired (Phase 2).
+// Dev-only preview. Unset / "0" in production → demo is off, content stays locked.
+const DEMO = process.env.NEXT_PUBLIC_HA_DEMO === "1"
+
+// High-touch sales fallback when a Stripe Payment Link is not configured.
 const BOOKING_URL = "https://www.earthscan.io/book-a-meeting"
 
+// Stripe Payment Links (public URLs — safe to inline; NOT secret keys).
+// Create them in the Stripe dashboard and paste as env vars on the project.
+const STRIPE_LINKS: Record<string, string | undefined> = {
+  "full-package": process.env.NEXT_PUBLIC_STRIPE_LINK_FULL,
+  "workshop": process.env.NEXT_PUBLIC_STRIPE_LINK_WORKSHOP || process.env.NEXT_PUBLIC_STRIPE_LINK_FULL,
+  "certification": process.env.NEXT_PUBLIC_STRIPE_LINK_CERTIFICATION || process.env.NEXT_PUBLIC_STRIPE_LINK_FULL,
+}
+
 export const HAEntitlement: Entitlement = {
-  demo: true, // ← set false in production so content stays locked until purchase
+  demo: DEMO,
   has(sku) {
     if (typeof window === "undefined") return false
     try {
@@ -32,12 +52,16 @@ export const HAEntitlement: Entitlement = {
     }
   },
   grant(sku) {
+    // Hard guard: never grant access outside an explicit dev demo build.
+    if (!this.demo) return
     try { sessionStorage.setItem("ha-ent:" + sku, "1") } catch { /* ignore */ }
     try { window.dispatchEvent(new Event("ha-entitlement-change")) } catch { /* ignore */ }
   },
   async checkout(sku) {
-    if (this.demo) { this.grant(sku); return true }
-    // Phase 2: open Stripe Checkout for `sku`, resolve true only on confirmed payment.
+    // Always send to payment — never grant locally.
+    const link = STRIPE_LINKS[sku] ?? STRIPE_LINKS["full-package"]
+    if (link) { window.location.href = link; return false }
+    // No Stripe link configured yet → high-touch booking, still no free unlock.
     window.open(BOOKING_URL, "_blank", "noopener")
     return false
   },
@@ -74,7 +98,7 @@ export function Gate({
             <p className="gate-d">{desc}</p>
             <div className="gate-btns">
               {HAEntitlement.demo && <button className="gate-btn ghost" onClick={() => HAEntitlement.grant(sku)}>Preview (demo)</button>}
-              <button className="gate-btn" onClick={buy}>{cta || "Unlock access"} ↗</button>
+              <button className="gate-btn" onClick={buy}>{cta || "Get access"} ↗</button>
             </div>
             <div className="gate-note">{note || "Live workshops & certification — licensed per cohort."}</div>
           </div>
@@ -104,10 +128,10 @@ export function PremiumDownloads() {
   }
   return (
     <div className="pkg-cta">
-      <button className="pkg-btn gold" onClick={buy}>Unlock the full package ↗</button>
+      <button className="pkg-btn gold" onClick={buy}>Get the full package ↗</button>
       {HAEntitlement.demo && <button className="pkg-btn ghost" onClick={() => HAEntitlement.grant("full-package")}>Preview (demo)</button>}
       <a className="pkg-btn ghost" href="/humanoid/deck">Browse the deck — workshop pages locked ↗</a>
-      <div className="pkg-note">The full deck is native now — every page rebuilt, the data live. The 60 workshop pages, the labs and certification unlock together.</div>
+      <div className="pkg-note">The full deck is native now — every page rebuilt, the data live. The 60 workshop pages, the labs and certification unlock on purchase.</div>
     </div>
   )
 }
