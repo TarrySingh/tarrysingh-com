@@ -11,11 +11,11 @@
  *  - SlideChrome provides the eyebrow / footer frame + source trace.
  */
 
-import { Fragment, type CSSProperties, type ReactNode } from "react"
+import { Fragment, useState, type CSSProperties, type ReactNode } from "react"
 import type {
   Slide, TitleSlide, DividerSlide, BulletsSlide, StatsSlide,
   TwoPanelSlide, CaseSlide, TableSlide, TimelineSlide, InstrumentSlide,
-  ChartSlide, PanelSide, PanelMark,
+  ChartSlide, TabsSlide, FlowSlide, PanelSide, PanelMark,
 } from "./types"
 import { MarketModel } from "@/components/humanoid/charts"
 import { GrowthDrivers, AppCaseStudies, MarketConcentration } from "@/components/humanoid/content"
@@ -341,6 +341,68 @@ function Chart({ s }: { s: ChartSlide }) {
   )
 }
 
+/* ---------- 11 · interactive tabs ---------- */
+function Tabs({ s }: { s: TabsSlide }) {
+  const [active, setActive] = useState(0)
+  const t = s.tabs[active]
+  return (
+    <SlideChrome slide={s}>
+      <h2 className="hd-h hd-in" style={stag(1)}>{s.title}</h2>
+      {s.sub && <p className="hd-sub hd-in" style={stag(1.5)}>{s.sub}</p>}
+      <div className="hd-tabbar hd-in" style={stag(2)}>
+        {s.tabs.map((tab, i) => (
+          <button key={i} className={"hd-tab" + (i === active ? " on" : "")} onClick={() => setActive(i)}>{tab.label}</button>
+        ))}
+      </div>
+      <div className="hd-tabpanel" key={active}>
+        {t.stats && (
+          <div className="hd-stats hd-tabstats">
+            {t.stats.map((st, i) => (
+              <div className="hd-stat hd-in" key={i} style={stag(0.5 + i * 0.6)}>
+                <span className="hd-stat-big">{st.big}</span>
+                <span className="hd-stat-lab">{st.lab}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        {t.bullets && (
+          <div className="hd-lis">
+            {t.bullets.map((b, i) => (
+              <div className="hd-li hd-in" key={i} style={stag(0.5 + i * 0.6)}>
+                <span className="hd-tick" />
+                <p>{b.lead && <b>{b.lead}: </b>}{hl(b.text)}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        {t.note && <div className="hd-srcline hd-in" style={stag(2.5)}>{t.note}</div>}
+      </div>
+    </SlideChrome>
+  )
+}
+
+/* ---------- 12 · step flow ---------- */
+function Flow({ s }: { s: FlowSlide }) {
+  return (
+    <SlideChrome slide={s}>
+      <h2 className="hd-h hd-in" style={stag(1)}>{s.title}</h2>
+      {s.sub && <p className="hd-sub hd-in" style={stag(1.5)}>{s.sub}</p>}
+      <div className="hd-flow">
+        {s.steps.map((st, i) => (
+          <div className="hd-step hd-in" key={i} style={stag(2 + i * 0.8)}>
+            <span className="hd-step-n">{String(i + 1).padStart(2, "0")}</span>
+            <span className="hd-step-k">{st.k}</span>
+            <p className="hd-step-d">{hl(st.d)}</p>
+            {st.stat && <span className="hd-step-stat">{st.stat}</span>}
+            {i < s.steps.length - 1 && <span className="hd-step-arrow" aria-hidden>→</span>}
+          </div>
+        ))}
+      </div>
+      {s.foot && <div className="hd-srcline hd-in" style={stag(3 + s.steps.length)}>{s.foot}</div>}
+    </SlideChrome>
+  )
+}
+
 /* ---------- dispatcher ---------- */
 export function renderSlide(s: Slide): ReactNode {
   switch (s.kind) {
@@ -354,5 +416,7 @@ export function renderSlide(s: Slide): ReactNode {
     case "timeline": return <Timeline s={s} />
     case "instrument": return <Instrument s={s} />
     case "chart": return <Chart s={s} />
+    case "tabs": return <Tabs s={s} />
+    case "flow": return <Flow s={s} />
   }
 }

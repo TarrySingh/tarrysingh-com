@@ -142,6 +142,34 @@ export interface ChartSlide extends SlideBase {
   foot?: string
 }
 
+/**
+ * In-page interactive tabs for multi-facet source slides (e.g. one slide
+ * carrying cost / specs / supply views becomes a real tab switcher).
+ */
+export interface TabsSlide extends SlideBase {
+  kind: "tabs"
+  title: string
+  sub?: string
+  tabs: {
+    label: string
+    bullets?: Bullet[]
+    stats?: { big: string; lab: string }[]
+    note?: string
+  }[]
+}
+
+/**
+ * Native step-flow for process / architecture slides — numbered stages
+ * with connecting rail, each optionally carrying a key stat.
+ */
+export interface FlowSlide extends SlideBase {
+  kind: "flow"
+  title: string
+  sub?: string
+  steps: { k: string; d: string; stat?: string }[]
+  foot?: string
+}
+
 export type Slide =
   | TitleSlide
   | DividerSlide
@@ -153,6 +181,8 @@ export type Slide =
   | TimelineSlide
   | InstrumentSlide
   | ChartSlide
+  | TabsSlide
+  | FlowSlide
 
 export interface TocGroup {
   label: string
