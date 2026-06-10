@@ -229,3 +229,22 @@
   .ha-root .hd-print .hd-stagewrap { page-break-after: always; break-after: page; border: none; margin: 0 auto; }
   .ha-root.hd-printroot { background: #15151a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* ---- interactive tabs ---- */
+.ha-root .hd-tabbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.ha-root .hd-tab { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 11px 20px;
+  background: var(--paper-dark-3); border: 1px solid var(--rule); color: var(--ink-dim); cursor: pointer; transition: all .2s; }
+.ha-root .hd-tab:hover { color: var(--ink); }
+.ha-root .hd-tab.on { background: var(--chap, var(--accent)); border-color: var(--chap, var(--accent)); color: #fff; }
+.ha-root .hd-tabstats { margin-bottom: 18px; }
+
+/* ---- step flow ---- */
+.ha-root .hd-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin-top: 12px; align-items: stretch; }
+.ha-root .hd-step { position: relative; border: 1px solid var(--rule); border-top: 3px solid var(--chap, var(--accent));
+  background: rgba(244, 242, 236, 0.025); padding: 18px 20px 16px; display: flex; flex-direction: column; gap: 8px; }
+.ha-root .hd-step-n { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--chap, var(--accent-3)); }
+.ha-root .hd-step-k { font-family: var(--font-display); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); line-height: 1.15; }
+.ha-root .hd-step-d { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-dim); flex: 1; }
+.ha-root .hd-step-stat { font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--chap, var(--accent-3)); padding-top: 8px; border-top: 1px solid var(--rule); }
+.ha-root .hd-step-arrow { position: absolute; right: -14px; top: 50%; transform: translateY(-50%); z-index: 2; color: var(--chap, var(--accent-3)); font-size: 15px; }
+@media (max-width: 820px) { .ha-root .hd-step-arrow { display: none; } }
