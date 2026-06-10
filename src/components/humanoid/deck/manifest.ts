@@ -4799,77 +4799,91 @@ export const SLIDES: Slide[] = [
     "foot": "Implement automated self-calibration routines that execute during robot downtime to minimize maintenance-related production stoppages. For critical applications, develop sensor fusion redundancy that maintains operation even when individual sensors require recalibration."
   },
   {
-    "kind": "bullets",
+    "kind": "twoPanel",
     "src": 96,
     "chap": "var(--c-cyan)",
     "eyebrow": "WORKSHOP MODULE",
     "locked": true,
-    "title": "System Optimization: Battery, Thermals, & Runtime",
-    "bullets": [
-      {
-        "lead": "Advanced Power Management Strategies:",
-        "text": "Extending the typical 2-4 hour runtime of current humanoids"
-      },
-      {
-        "lead": "",
-        "text": "Dynamic task prioritization based on power states (reduce {{13-18%}} energy usage)"
-      },
-      {
-        "lead": "",
-        "text": "Automated power-saving modes during idle periods with rapid wake-up protocols"
-      },
-      {
-        "lead": "",
-        "text": "Intelligent charging station location planning to minimize workflow disruptions"
-      },
-      {
-        "lead": "Thermal Load Balancing Architecture:",
-        "text": "Critical for high-torque actuators and GPU-driven AI"
-      },
-      {
-        "lead": "",
-        "text": "Distributed cooling systems with targeted airflow to high-heat components"
-      },
-      {
-        "lead": "",
-        "text": "Thermal throttling algorithms coordinated with task planning (preventing {{67%}} of overheating failures)"
-      },
-      {
-        "lead": "",
-        "text": "Phase-change materials for passive cooling in critical joint assemblies"
-      },
-      {
-        "lead": "Sensor-Driven Predictive Maintenance:",
-        "text": "Extending service intervals by {{41%}}"
-      },
-      {
-        "lead": "",
-        "text": "Real-time vibration analysis to detect early actuator wear patterns"
-      },
-      {
-        "lead": "",
-        "text": "Current draw monitoring with anomaly detection for electrical system health"
-      },
-      {
-        "lead": "",
-        "text": "Digital twin simulations to predict maintenance needs from operating history"
-      },
-      {
-        "lead": "Self-Learning Runtime Optimization:",
-        "text": "Continuous system performance tuning"
-      },
-      {
-        "lead": "",
-        "text": "Automated task sequence optimization based on energy efficiency patterns"
-      },
-      {
-        "lead": "",
-        "text": "Motion path refinement using reinforcement learning ({{15%}} efficiency gain)"
-      }
-    ],
-    "callout": {
-      "k": "Case Study",
-      "text": "Figure AI's 02 robot achieved an 8+ hour runtime through a combination of these optimization strategies, significantly outperforming competitors averaging 2-4 hour operational windows."
+    "title": "System Optimization: Battery, Thermals & Runtime",
+    "L": {
+      "name": "Energy & Thermal Control",
+      "tag": "Extending runtime",
+      "accent": "var(--c-blue)",
+      "rows": [
+        {
+          "t": "Advanced Power Management",
+          "items": [
+            [
+              "~",
+              "Dynamic task prioritization based on power states reduces energy usage 13-18%"
+            ],
+            [
+              "+",
+              "Automated power-saving modes during idle periods with rapid wake-up protocols"
+            ],
+            [
+              "+",
+              "Intelligent charging-station location planning minimizes workflow disruptions"
+            ]
+          ]
+        },
+        {
+          "t": "Thermal Load Balancing",
+          "items": [
+            [
+              "+",
+              "Distributed cooling systems with targeted airflow to high-heat components"
+            ],
+            [
+              "~",
+              "Thermal-throttling algorithms coordinated with task planning prevent 67% of overheating failures"
+            ],
+            [
+              "+",
+              "Phase-change materials for passive cooling in critical joint assemblies"
+            ]
+          ]
+        }
+      ],
+      "ex": "Power and thermal control compound: high-torque actuators and GPU-driven AI are the dominant heat and drain sources, so they share a coordinated budget."
+    },
+    "R": {
+      "name": "Maintenance & Runtime Tuning",
+      "tag": "Sustaining uptime",
+      "accent": "var(--c-amber)",
+      "rows": [
+        {
+          "t": "Sensor-Driven Predictive Maintenance",
+          "items": [
+            [
+              "+",
+              "Real-time vibration analysis detects early actuator wear patterns"
+            ],
+            [
+              "+",
+              "Current-draw monitoring with anomaly detection for electrical system health"
+            ],
+            [
+              "~",
+              "Digital-twin simulations extend service intervals by 41%"
+            ]
+          ]
+        },
+        {
+          "t": "Self-Learning Runtime Optimization",
+          "items": [
+            [
+              "+",
+              "Automated task-sequence optimization based on energy-efficiency patterns"
+            ],
+            [
+              "~",
+              "Motion-path refinement via reinforcement learning yields 15% efficiency gain"
+            ]
+          ]
+        }
+      ],
+      "ex": "Predictive maintenance and runtime learning push the typical 2-4 hour humanoid window past 8 hours — Figure AI's 02 robot proved it, outpacing competitors stuck at 2-4 hour operational windows."
     }
   },
   {
@@ -6575,15 +6589,15 @@ export const SLIDES: Slide[] = [
     "steps": [
       {
         "k": "Interface Mapping & Architecture",
-        "d": "Create comprehensive interface diagrams connecting actuators, sensors, middleware, and AI systems; Document API contracts between subsystems with data models, protocols, and failure handling; Implement synchronization mechanisms for real-time control loops and sensor fusion"
+        "d": "Create interface diagrams connecting actuators, sensors, middleware, and AI systems; document API contracts between subsystems (data models, protocols, failure handling); implement synchronization mechanisms for real-time control loops and sensor fusion. Tools: UML diagrams, API specifications, message-sequence charts."
       },
       {
         "k": "Middleware Selection & Configuration",
-        "d": "Select appropriate middleware framework (ROS2, Isaac, NVIDIA Omniverse) based on application requirements; Configure message brokers and pub/sub architecture for high-throughput, low-latency data exchange; Implement shared memory mechanisms for large data structures (point clouds, images, maps)"
+        "d": "Select the appropriate middleware framework (ROS2, Isaac, NVIDIA Omniverse) based on application requirements; configure message brokers and pub/sub architecture for high-throughput, low-latency data exchange; implement shared-memory mechanisms for large data structures (point clouds, images, maps). Stack: ROS2, ZeroMQ, DDS, NVIDIA Isaac."
       },
       {
         "k": "Verification & Testing Routines",
-        "d": "Establish end-to-end test procedures for verifying system integration across all components; Implement performance benchmarks for latency, throughput, and resource utilization; Design fault injection tests to verify system resilience and graceful degradation"
+        "d": "Establish end-to-end test procedures for verifying system integration across all components; implement performance benchmarks for latency, throughput, and resource utilization; design fault-injection tests to verify system resilience and graceful degradation. Tools: Ghost/QMock, integration fixtures, chaos engineering."
       }
     ],
     "foot": "Iterative integration is key. Begin with simulated environments before hardware deployment, and implement continuous integration pipelines that verify interfaces at every code change."
@@ -7508,29 +7522,50 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "bullets",
+    "kind": "table",
     "src": 141,
     "chap": "var(--c-cyan)",
     "eyebrow": "WORKFORCE STRATEGY",
-    "title": "Workforce Transformation: Upskilling for Robot Collaboration",
-    "bullets": [
-      {
-        "lead": "Line Workers",
-        "text": "Basic robot interaction safety protocols; Operational oversight and anomaly recognition; Basic troubleshooting & issue escalation; Certified Humanoid Operator (CHO) credentials; Cross-skilling to robot maintenance roles"
-      },
-      {
-        "lead": "Technical Engineers",
-        "text": "Robotics systems integration; AI/ML model fine-tuning workshops; Motion sequence programming; Advanced diagnostics & maintenance; Multi-robot orchestration training"
-      },
-      {
-        "lead": "Middle Management",
-        "text": "Strategic workforce planning; Change management certification; Hybrid team leadership techniques; ROI assessment & productivity metrics; Employee transition counseling"
-      }
+    "title": "Workforce Transformation: Upskilling Curriculum by Role",
+    "columns": [
+      "Curriculum tier",
+      "Line Workers",
+      "Technical Engineers",
+      "Middle Management"
     ],
-    "callout": {
-      "k": "Key finding",
-      "text": "Companies achieving the highest ROI from humanoid deployments invested {{15-18%}} of their total robotics budget in workforce development programs."
-    }
+    "rows": [
+      [
+        "Foundational",
+        "Basic robot interaction & safety protocols",
+        "Robotics systems integration",
+        "Strategic workforce planning"
+      ],
+      [
+        "Operational",
+        "Operational oversight & anomaly recognition",
+        "AI/ML model fine-tuning workshops",
+        "Change-management certification"
+      ],
+      [
+        "Advanced",
+        "Basic troubleshooting & issue escalation",
+        "Motion-sequence programming",
+        "Hybrid team-leadership techniques"
+      ],
+      [
+        "Specialized",
+        "Certified Humanoid Operator (CHO) credentials",
+        "Advanced diagnostics & maintenance",
+        "ROI assessment & productivity metrics"
+      ],
+      [
+        "Strategic",
+        "Cross-skilling to robot-maintenance roles",
+        "Multi-robot orchestration training",
+        "Employee transition counseling"
+      ]
+    ],
+    "foot": "A 12-week structured framework with assessment benchmarks, beginning with pilot groups (10-15%) and scaling to the full workforce. Companies achieving the highest ROI from humanoid deployments invested 15-18% of their total robotics budget in workforce development, often via partnerships with technical colleges to create portable credentials recognizable across the manufacturing sector."
   },
   {
     "kind": "bullets",
@@ -9262,37 +9297,129 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "bullets",
+    "kind": "twoPanel",
     "src": 164,
     "chap": "var(--c-cyan)",
     "eyebrow": "EXECUTIVE TOOL",
     "title": "Strategic Robotics Roadmap Canvas",
-    "bullets": [
-      {
-        "lead": "",
-        "text": "Fill-in-the-blank template for executives to develop a comprehensive multi-year robotics strategy"
-      },
-      {
-        "lead": "",
-        "text": "Strategic Priorities — Our top 3 robotics priorities for the next 3 years: 1. ______ 2. ______ 3. ______ | Target ROI threshold: ______% within ______ months"
-      },
-      {
-        "lead": "",
-        "text": "Key Performance Indicators — Metrics that will define success: Operational: ______ Financial: ______ Quality: ______ Workforce: ______"
-      },
-      {
-        "lead": "",
-        "text": "Key Milestones — Q1 2026: ______ Q3 2026: ______ Q1 2027: ______ Q4 2027: ______"
-      },
-      {
-        "lead": "",
-        "text": "Risk Mitigation Plans — Key Risk / Mitigation Strategy: Supply chain disruption ______ | Technology obsolescence ______ | Workforce resistance ______ | Regulatory changes ______"
-      },
-      {
-        "lead": "",
-        "text": "Resource Allocation — CapEx Budget: $______ OpEx Budget: $______ Headcount: ______"
-      }
-    ]
+    "sub": "Fill-in-the-blank template for executives to develop a comprehensive multi-year robotics strategy",
+    "L": {
+      "name": "Strategy & Targets",
+      "tag": "Define the direction",
+      "accent": "var(--c-blue)",
+      "rows": [
+        {
+          "t": "Strategic Priorities",
+          "items": [
+            [
+              "~",
+              "Priority 1 for the next 3 years"
+            ],
+            [
+              "~",
+              "Priority 2 for the next 3 years"
+            ],
+            [
+              "~",
+              "Priority 3 for the next 3 years"
+            ],
+            [
+              "~",
+              "Target ROI threshold (%) within N months"
+            ]
+          ]
+        },
+        {
+          "t": "Key Performance Indicators",
+          "items": [
+            [
+              "~",
+              "Operational: metric that defines operational success"
+            ],
+            [
+              "~",
+              "Financial: metric that defines financial success"
+            ],
+            [
+              "~",
+              "Quality: metric that defines quality success"
+            ],
+            [
+              "~",
+              "Workforce: metric that defines workforce success"
+            ]
+          ]
+        },
+        {
+          "t": "Resource Allocation",
+          "items": [
+            [
+              "~",
+              "CapEx budget ($)"
+            ],
+            [
+              "~",
+              "OpEx budget ($)"
+            ],
+            [
+              "~",
+              "Headcount commitment"
+            ]
+          ]
+        }
+      ],
+      "ex": "Fill in priorities, KPI targets, and budget envelopes first — they anchor every downstream milestone and mitigation."
+    },
+    "R": {
+      "name": "Execution & Risk",
+      "tag": "Stage the rollout",
+      "accent": "var(--c-amber)",
+      "rows": [
+        {
+          "t": "Key Milestones",
+          "items": [
+            [
+              "~",
+              "Q1 2026 deliverable"
+            ],
+            [
+              "~",
+              "Q3 2026 deliverable"
+            ],
+            [
+              "~",
+              "Q1 2027 deliverable"
+            ],
+            [
+              "~",
+              "Q4 2027 deliverable"
+            ]
+          ]
+        },
+        {
+          "t": "Risk Mitigation Plans",
+          "items": [
+            [
+              "~",
+              "Supply-chain disruption → mitigation strategy"
+            ],
+            [
+              "~",
+              "Technology obsolescence → mitigation strategy"
+            ],
+            [
+              "~",
+              "Workforce resistance → mitigation strategy"
+            ],
+            [
+              "~",
+              "Regulatory changes → mitigation strategy"
+            ]
+          ]
+        }
+      ],
+      "ex": "Each named risk pairs with an explicit mitigation; milestones are dated quarterly so progress is auditable against the 3-year priority set."
+    }
   },
   {
     "kind": "twoPanel",
@@ -11854,48 +11981,68 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "chart",
+    "kind": "table",
     "src": 206,
     "chap": "var(--c-cyan)",
     "eyebrow": "FINANCIAL ANALYSIS",
     "title": "Investor ROI Across Business Models",
-    "sub": "Sensitivity analysis of key variables affecting humanoid robotics profitability and cash flows",
-    "ctype": "bar",
-    "data": [
-      {
-        "label": "+38% /",
-        "value": 42
-      },
-      {
-        "label": "+32% /",
-        "value": 28
-      },
-      {
-        "label": "+20% /",
-        "value": 25
-      },
-      {
-        "label": "+35% /",
-        "value": 18
-      },
-      {
-        "label": "+16% /",
-        "value": 24
-      },
-      {
-        "label": "+12% /",
-        "value": 14
-      },
-      {
-        "label": "+22% /",
-        "value": 8
-      },
-      {
-        "label": "+10% /",
-        "value": 15
-      }
+    "columns": [
+      "Sensitivity Factor (RaaS Model)",
+      "ROI Upside",
+      "ROI Downside",
+      "Net Swing"
     ],
-    "foot": "Interactive tabs: RaaS Model / Direct Sales / Leasing (RaaS active) · Sources: McKinsey Analysis, Morgan Stanley, industry expert interviews"
+    "rows": [
+      [
+        "Actuator Cost",
+        "+38%",
+        "-42%",
+        "80 pts"
+      ],
+      [
+        "Service Lifetime",
+        "+32%",
+        "-28%",
+        "60 pts"
+      ],
+      [
+        "Subscription Price",
+        "+35%",
+        "-18%",
+        "53 pts"
+      ],
+      [
+        "Uptime Percentage",
+        "+16%",
+        "-24%",
+        "40 pts"
+      ],
+      [
+        "Maintenance Frequency",
+        "+20%",
+        "-25%",
+        "45 pts"
+      ],
+      [
+        "Labor Displacement",
+        "+22%",
+        "-8%",
+        "30 pts"
+      ],
+      [
+        "Onboarding Time",
+        "+10%",
+        "-15%",
+        "25 pts"
+      ],
+      [
+        "Cloud Computing Cost",
+        "+12%",
+        "-14%",
+        "26 pts"
+      ]
+    ],
+    "foot": "Actuator cost is the single most sensitive variable, swinging 5-year ROI by ±42%. Positive cash flow turns on reaching 5,000+ units of production volume, and RaaS outperforms Direct Sales in high-interest-rate environments. Figures are the RaaS-model sensitivity case; Direct Sales and Leasing share the same factor set with shallower swings."
   },
   {
     "kind": "bullets",
@@ -13415,45 +13562,34 @@ export const SLIDES: Slide[] = [
     }
   },
   {
-    "kind": "bullets",
+    "kind": "table",
     "src": 231,
     "chap": "var(--c-cyan)",
     "eyebrow": "TECHNOLOGY DEEP DIVE",
-    "title": "Next-Gen Manufacturing: Automation and AI Integration",
-    "bullets": [
-      {
-        "lead": "AI-driven process improvements:",
-        "text": "Smart factories are implementing digital twin simulations paired with generative AI models for real-time optimization, reducing waste by {{32-47%}} and increasing throughput by {{28%}} in early adopters. These systems continuously learn from production data, suggesting improvements without manual reprogramming."
-      },
-      {
-        "lead": "Adaptive robotics infrastructure:",
-        "text": "The integration of humanoids with existing collaborative robots (cobots) and AMRs creates heterogeneous fleets that dynamically allocate tasks based on capabilities. Humanoids handle complex, variable tasks while specialized robots manage routine operations, creating a tiered automation ecosystem."
-      },
-      {
-        "lead": "Factory-of-the-future regional deployments:",
-        "text": ""
-      },
-      {
-        "lead": "North America",
-        "text": "Focused on flexibility and high-mix/low-volume manufacturing. Tesla's Austin Gigafactory and BMW's Spartanburg plant pioneering humanoid integration with legacy systems."
-      },
-      {
-        "lead": "Europe",
-        "text": "Leading in sustainability metrics and worker-robot collaboration frameworks. Mercedes-Benz Factory 56 implementing Apptronik's Apollo robots for ergonomic task automation."
-      },
-      {
-        "lead": "East Asia",
-        "text": "Highest density deployments and scale. BYD's commitment to {{20,000}} humanoid units by 2026 represents the world's largest planned implementation."
-      },
-      {
-        "lead": "Enterprise systems integration:",
-        "text": "Modern factories are implementing unified middleware platforms that bridge legacy MES/ERP systems with robotic fleets. Open-source ROS2 and industry-specific protocols like OPC-UA are being extended with specialized APIs for humanoid communication and task allocation."
-      }
+    "title": "Factory-of-the-Future Regional Deployments",
+    "columns": [
+      "Region",
+      "Manufacturing Focus",
+      "Flagship Deployments"
     ],
-    "callout": {
-      "k": "Insight",
-      "text": "The competitive advantage in next-gen manufacturing is shifting from hardware capabilities to the sophistication of AI orchestration systems that optimize mixed human-robot workflows and predict maintenance needs before they impact production."
-    }
+    "rows": [
+      [
+        "North America",
+        "Flexibility and high-mix / low-volume manufacturing",
+        "Tesla's Austin Gigafactory and BMW's Spartanburg plant pioneering humanoid integration with legacy systems"
+      ],
+      [
+        "Europe",
+        "Sustainability metrics and worker–robot collaboration frameworks",
+        "Mercedes-Benz Factory 56 deploying Apptronik's Apollo robots for ergonomic task automation"
+      ],
+      [
+        "East Asia",
+        "Highest deployment density and scale",
+        "BYD's commitment to 20,000 humanoid units by 2026 — the world's largest planned implementation"
+      ]
+    ],
+    "foot": "Next-gen manufacturing is shifting from hardware capability to the sophistication of AI orchestration systems that optimise mixed human–robot workflows and predict maintenance needs before they impact production. Each region is differentiating on a distinct axis — North America on flexibility, Europe on sustainability and collaboration, East Asia on raw scale."
   },
   {
     "kind": "table",
@@ -15459,7 +15595,7 @@ export const SLIDES: Slide[] = [
         "8.5"
       ],
       [
-        "Japan",
+        "South Korea",
         "—",
         "—",
         "—",
@@ -15467,7 +15603,7 @@ export const SLIDES: Slide[] = [
         "7.3"
       ],
       [
-        "South Korea",
+        "Japan",
         "—",
         "—",
         "—",
@@ -15491,20 +15627,20 @@ export const SLIDES: Slide[] = [
         "6.8"
       ],
       [
-        "United Kingdom",
-        "—",
-        "—",
-        "—",
-        "—",
-        "6.3"
-      ],
-      [
         "Israel",
         "—",
         "—",
         "—",
         "—",
         "6.8"
+      ],
+      [
+        "United Kingdom",
+        "—",
+        "—",
+        "—",
+        "—",
+        "6.3"
       ],
       [
         "India",
@@ -15515,7 +15651,7 @@ export const SLIDES: Slide[] = [
         "6.3"
       ]
     ],
-    "foot": "China's coordinated national strategy and direct investment in robotics supply chain gives it a competitive edge over the U.S. despite America's innovation and capital advantages. This underscores the critical role of industrial policy in emerging high-tech industries."
+    "foot": "China's coordinated national strategy and direct investment in the robotics supply chain give it a competitive edge over the U.S. innovation and capital advantages — underscoring the role of industrial policy in emerging high-tech industries. Scores are composite assessments (1 = low to 10 = high competitive positioning) from McKinsey Global Institute, expert interviews, and quantitative metrics."
   },
   {
     "kind": "bullets",
