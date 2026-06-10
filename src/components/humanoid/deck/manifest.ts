@@ -2865,35 +2865,23 @@ export const SLIDES: Slide[] = [
     "kind": "divider",
     "src": 62,
     "chap": "var(--c-red)",
-    "eyebrow": "HANDS-ON WORKSHOP",
+    "eyebrow": "Hands-On Workshop",
     "locked": true,
     "numeral": "VI",
     "part": "Part VI",
     "title": "Module 1: Technical Foundations",
     "topics": [
       {
-        "n": "1.1 Actuator Selection & Integration",
-        "t": "Practical exercises in matching actuator types to specific use cases"
+        "n": "1.1",
+        "t": "Actuator Selection & Integration"
       },
       {
-        "n": "1.2 AI Model Development",
-        "t": "Building & deploying foundation models for robotic control"
+        "n": "1.2",
+        "t": "AI Model Development"
       },
       {
-        "n": "1.3 Sensor Fusion Systems",
-        "t": "Designing robust perception arrays for autonomous operation"
-      },
-      {
-        "n": "Robotics Engineers",
-        "t": "Hardware integration specialists, mechanical designers"
-      },
-      {
-        "n": "AI/ML Developers",
-        "t": "Vision system architects, natural language processing experts"
-      },
-      {
-        "n": "R&D Leaders",
-        "t": "Technical directors, innovation managers, strategic planners"
+        "n": "1.3",
+        "t": "Sensor Fusion Systems"
       }
     ]
   },
@@ -15462,8 +15450,8 @@ export const SLIDES: Slide[] = [
     "kind": "table",
     "src": 268,
     "chap": "var(--c-cyan)",
-    "eyebrow": "STRATEGIC ANALYSIS",
-    "title": "Global Competitiveness Scorecard: Top Robotics Markets",
+    "eyebrow": "GEOPOLITICS",
+    "title": "Global Competitiveness Scorecard",
     "columns": [
       "Nation",
       "Innovation Capacity",
@@ -15490,7 +15478,7 @@ export const SLIDES: Slide[] = [
         "8.5"
       ],
       [
-        "South Korea",
+        "Japan",
         "—",
         "—",
         "—",
@@ -15498,7 +15486,7 @@ export const SLIDES: Slide[] = [
         "7.3"
       ],
       [
-        "Japan",
+        "South Korea",
         "—",
         "—",
         "—",
@@ -15546,7 +15534,7 @@ export const SLIDES: Slide[] = [
         "6.3"
       ]
     ],
-    "foot": "China's coordinated national strategy and direct investment in the robotics supply chain give it a competitive edge over the U.S. innovation and capital advantages — underscoring the role of industrial policy in emerging high-tech industries. Scores are composite assessments (1 = low to 10 = high competitive positioning) from McKinsey Global Institute, expert interviews, and quantitative metrics."
+    "foot": "China leads on industrial policy (10) and market scaling (9), edging out the U.S. (8.5) whose top-ranked innovation and capital access can't offset weaker state coordination — policy, not invention alone, decides the lead. Scores are composite 1-10 (low to high) competitive assessments."
   },
   {
     "kind": "bullets",
@@ -17640,20 +17628,41 @@ export const SLIDES: Slide[] = [
     "foot": "Financial models should capture both direct cost savings and strategic value creation: productivity enhancement (40%), labor optimization (35%), quality improvement (15%), and flexibility premium (10%)."
   },
   {
-    "kind": "case",
+    "kind": "table",
     "src": 306,
     "chap": "var(--c-cyan)",
-    "eyebrow": "CASE STUDIES",
-    "co": "CP Group & Figure AI (SOUTHEAST ASIA); Vale Mining & Boston Dynamics (LATAM); Dangote Industries & Agility (EMEA)",
-    "robot": "Figure humanoids; Atlas; Digit",
-    "site": "Rice processing facilities, Thailand; mining sites, Brazil; cement production, Nigeria",
-    "task": "Agricultural automation; autonomous hazardous-mining inspection; manufacturing integration",
-    "results": [
-      "CP Group & Figure AI: Agricultural Automation in Thailand — Deployment: 75 Figure humanoids deployed across rice processing facilities in 2024-2025. Results: 32% reduction in processing costs, 41% improvement in worker safety metrics. Key Innovation: Modified end effectors for high-humidity environments with specialized grippers for delicate handling.",
-      "Vale Mining & Boston Dynamics: Autonomous Inspection in Brazil — Deployment: Fleet of 24 Atlas units for hazardous mining inspection and safety scanning across 3 sites. Results: Zero safety incidents in first year, 89% reduction in exposure hours for human workers. Key Innovation: Rapid reprogramming system allowing for task adaptation based on daily mining conditions.",
-      "Dangote Industries & Agility: Manufacturing Integration in Nigeria — Deployment: 45 Digit robots working alongside 200+ human workers in cement production. Results: 28% productivity increase, successful upskilling of 150 local technicians. Key Innovation: Hybrid RaaS/ownership model reducing capital burden while building maintenance capability."
+    "eyebrow": "Case Studies",
+    "title": "Emerging Market Breakthroughs: Three Humanoid Deployments",
+    "columns": [
+      "Company",
+      "Robot",
+      "Site / Region",
+      "Application",
+      "Result"
     ],
-    "roi": ""
+    "rows": [
+      [
+        "CP Group & Figure AI",
+        "75 Figure humanoids",
+        "Rice processing facilities, Thailand",
+        "Agricultural automation",
+        "32% lower processing costs, 41% better worker safety"
+      ],
+      [
+        "Vale Mining & Boston Dynamics",
+        "24 Atlas units",
+        "3 mining sites, Brazil",
+        "Autonomous inspection",
+        "Zero safety incidents in year one, 89% fewer human exposure hours"
+      ],
+      [
+        "Dangote Industries & Agility",
+        "45 Digit robots",
+        "Cement production, Nigeria",
+        "Manufacturing integration",
+        "28% productivity gain, 150 local technicians upskilled"
+      ]
+    ]
   },
   {
     "kind": "stats",
@@ -19522,43 +19531,43 @@ export const SLIDES: Slide[] = [
     "eyebrow": "FINANCIAL ANALYSIS",
     "title": "Implementation Cost vs. Benefit by Deployment Type",
     "columns": [
-      "Metric",
-      "Automotive Mfg",
-      "Warehouse Logistics",
-      "Healthcare",
-      "Retail Ops"
+      "Deployment Type",
+      "TCO ($M)",
+      "Annual Savings ($M)",
+      "Efficiency Gain",
+      "Payback"
     ],
     "rows": [
       [
-        "TCO ($ million)",
+        "Automotive Manufacturing",
         "4.2",
-        "3.8",
-        "5.1",
-        "3.5"
+        "3.6",
+        "38%",
+        "14 mo"
       ],
       [
-        "Annual Cost Savings (%)",
-        "5.1",
-        "4.3",
+        "Warehouse Logistics",
         "3.8",
-        "3.0"
-      ],
-      [
-        "Efficiency Improvement (%)",
-        "4.3",
-        "5.1",
         "3.1",
-        "3.7"
+        "42%",
+        "16 mo"
       ],
       [
-        "Payback Period (months)",
-        "3.0",
-        "3.9",
+        "Healthcare Facilities",
         "5.1",
-        "4.3"
+        "2.9",
+        "29%",
+        "21 mo"
+      ],
+      [
+        "Retail Operations",
+        "3.5",
+        "2.4",
+        "27%",
+        "18 mo"
       ]
     ],
-    "foot": "Automotive posts the best ROI with a ~14-month payback, while warehouse fleets deliver the highest efficiency gain at 42%; RaaS cuts TCO ~31% versus direct ownership."
+    "foot": "Automotive posts the best ROI with the fastest ~14-month payback, while warehouse mixed-fleet operations deliver the highest efficiency gain at 42%. Across deployments, lower TCO correlates with faster payback, and a RaaS model cuts TCO by ~31% versus direct ownership."
   },
   {
     "kind": "bullets",
