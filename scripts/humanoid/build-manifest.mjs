@@ -90,7 +90,8 @@ const scrubKicker = (k) => (typeof k === "string" ? k.replace(/\s*\([^)]*\)\s*$/
 const stripNumLead = (s) => (typeof s === "string" ? s.replace(NUM_LEAD_RE, "").trim() : s)
 const isPointer = (t) => typeof t === "string" && POINTER_RE.test(t)
 const isUiNarration = (t) => typeof t === "string" && UI_NARRATION_RE.test(t.trim())
-const isEmptyish = (t) => !t || (typeof t === "string" && t.replace(/[\s—–-]/g, "").length < 2)
+// empty only when blank or pure dash/bullet punctuation — a lone digit ("9") is real content
+const isEmptyish = (t) => !t || (typeof t === "string" && /^[\s—–\-•·.:;]*$/.test(t))
 
 // chart-data sanity: real distribution, not years/identical/placeholder
 const allSame = (xs) => xs.length > 0 && xs.every((v) => v === xs[0])
