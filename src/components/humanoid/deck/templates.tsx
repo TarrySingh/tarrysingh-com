@@ -102,7 +102,7 @@ function Bullets({ s }: { s: BulletsSlide }) {
         {s.bullets.map((b, i) => (
           <div className="hd-li hd-in" key={i} style={stag(2 + i)}>
             <span className="hd-tick" />
-            <p><b>{b.lead}:</b> {hl(b.text)}</p>
+            <p>{b.lead && <b>{b.lead.replace(/:$/, "")}: </b>}{hl(b.text)}</p>
           </div>
         ))}
       </div>
@@ -370,7 +370,7 @@ function Tabs({ s }: { s: TabsSlide }) {
             {t.bullets.map((b, i) => (
               <div className="hd-li hd-in" key={i} style={stag(0.5 + i * 0.6)}>
                 <span className="hd-tick" />
-                <p>{b.lead && <b>{b.lead}: </b>}{hl(b.text)}</p>
+                <p>{b.lead && <b>{b.lead.replace(/:$/, "")}: </b>}{hl(b.text)}</p>
               </div>
             ))}
           </div>

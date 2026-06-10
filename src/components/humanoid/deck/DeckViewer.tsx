@@ -192,7 +192,7 @@ export function DeckViewer() {
             })}
           </div>
         ))}
-        <div className="hd-drawer-foot">← → navigate · G grid · C contents · ?print=1 for PDF</div>
+        <div className="hd-drawer-foot">← → navigate · G grid · C contents · ?print=1 for PDF<br />{total} native pages, rebuilt from all 375 source slides · every figure traces to its source</div>
       </div>
       {toc && <button className="hd-scrim" onClick={() => setToc(false)} aria-label="Close contents" />}
     </div>
