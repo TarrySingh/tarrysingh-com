@@ -1,0 +1,138 @@
+---
+title: "Brussels finally wrote sovereignty into a statute. The graveyard it's walking into is well-marked."
+date: "2026-06-11"
+category: "Essays"
+excerpt: "Brussels has finally written sovereignty into binding law, and the top rungs of CADA's ladder are built so a US-domiciled parent cannot reach them. On the law, I'd take the over. On the timeline, I'd take the under — heavily."
+draft: false
+tags: ["digital-sovereignty", "cloud-act", "eu-regulation", "hyperscalers", "ai-infrastructure"]
+---
+
+On 3 June, the European Commission did the thing it has been threatening to do for the better part of a decade. It put a number on dependence and then proposed a law to shrink it. 
+
+The European Commission presented the European technological sovereignty package, a set of measures to strengthen the EU's capacity in semiconductors, artificial intelligence, cloud and open source.
+
+ 
+
+The package brings together two legislative proposals — the Chips Act 2.0 and the Cloud and AI Development Act — alongside an EU Open Source Strategy and a Strategic Roadmap for Digitalisation and AI in Energy.
+
+I've sat through enough of these launches to know the gap between a Commission communication and a running data centre. So let me be precise about what is actually new here — and what is theatre.
+
+## the number that triggered the law
+
+Start with the diagnosis, because the Commission's own figures are the most honest part of the document. 
+
+The communication states the EU remains structurally reliant on non-EU providers for more than 80% of digital products, services, infrastructure and intellectual property, that Europe produces only around 10% of global semiconductors, and that more than 70% of the EU cloud market is held by three US hyperscalers.
+
+That last figure is the one that keeps European CISOs awake. 
+
+Microsoft, Google and Amazon Web Services together hold 70% of the European market, with local providers mustering a mere 15% collectively.
+
+ Eight years of "digital sovereignty" rhetoric, and the curve went the wrong way.
+
+## what CADA actually does
+
+The centrepiece is the Cloud and AI Development Act, or CADA. Strip away the press-release verbs and it does one structurally significant thing: it builds a classification system into procurement law. 
+
+The Act defines cloud and AI sovereignty comprising four assurance levels, to be used by public sector bodies based on their risk assessments.
+
+ 
+
+Cloud service providers can be recognised under this framework by Member States after undergoing an audit.
+
+The teeth are at the top of the ladder. 
+
+Level 2 requires providers to demonstrate independence from third countries and transparency over their software supply chain; Level 3 requires providers to be owned and controlled from the EU and meet additional criteria such as personnel citizenship; Level 4 requires full transparency and control over the software supply chain with no interference from a third country.
+
+```mermaid
+%% caption: The assurance ladder is not a quality grade — it is a jurisdiction filter, and the top two rungs are built so a US-domiciled parent cannot reach them.
+flowchart TD
+    A[Public body runs sovereignty risk assessment] --> B{Sensitivity of workload}
+    B -->|Low / public data| L1[Level 1: baseline]
+    B -->|Moderate| L2[Level 2: independence + supply-chain transparency]
+    B -->|Sensitive: banking, energy, health| L3[Level 3: EU ownership + personnel citizenship]
+    B -->|Most critical / state-adjacent| L4[Level 4: full control, no third-country interference]
+    L3 --> X[US hyperscalers structurally excluded]
+    L4 --> X
+```
+
+Read Level 3 again. EU ownership and control, with personnel-citizenship conditions. 
+
+That tier, required for critical public infrastructure, demands EU ownership and control — which structurally excludes AWS, Microsoft Azure, and Google Cloud in their current form.
+
+ Not because anyone alleges wrongdoing, but because of a piece of American legislation.
+
+## the law that wrote this law
+
+The trigger isn't European at all. 
+
+The legal trigger for the entire package is an American one — the Clarifying Lawful Overseas Use of Data Act, passed by Congress in March 2018, which requires any US-incorporated company to hand over data it controls to US law enforcement regardless of where that data is physically stored. A contract clause promising data will remain on European servers does not override a valid US warrant.
+
+This is where the hyperscalers' "sovereign cloud" marketing collides with a courtroom. The most damaging admission didn't come from a regulator — it came from the vendor. 
+
+In June 2025, Microsoft's French subsidiary confirmed under oath at a French Senate hearing that it cannot guarantee data sovereignty against US authorities, even for data stored in France under a French-marketed "sovereign" offering.
+
+Microsoft's counter-argument is statistical, and you should treat it as a vendor argument. 
+
+Microsoft's transparency reports show that disclosures of foreign enterprise content data to US law enforcement constitute 0.008% of the total demands it has received each year since the CLOUD Act was enacted — fewer than one in every 10,000 demands.
+
+ Fine. But sovereignty is not an actuarial question about how often the warrant arrives. It's a question about who holds the legal authority to compel disclosure at all — and the answer, by Microsoft's own sworn testimony, is Washington. Rarity is not the same as immunity.
+
+The industry has noticed which way this points. 
+
+The Computer and Communications Industry Association called the framework "a dangerous recipe for progressive market shutdown" and said the Level 3 and Level 4 requirements are "closed-market requirements dressed up as policy thresholds," with Daniel Friedlaender of CCIA Europe calling it "fragmented discrimination across Europe in 27 different ways."
+
+## why I'd bet against the timeline, not the direction
+
+Here's where my thirty years argue with the Commission's optimism. The direction is right. The execution record is dreadful.
+
+Gaia-X is the ghost in this room. Launched in 2019 as the federated European cloud that would challenge the hyperscalers, it instead invited them in and dissolved into committee. The man who ran it has been blunt about the outcome. 
+
+Francesco Bonfiglio, Gaia-X's former chief executive, notes that the market share of EU providers actually shrank — falling from 26% to 10% between 2017 and 2020, cumulatively.
+
+ His diagnosis is the one Brussels still hasn't internalised: 
+
+the fundamental problem is that European politicians replaced industry in defining "how" to do things instead of focusing on "what" needs to be done.
+
+CADA is a genuine improvement on Gaia-X in one respect — it's binding law, not a voluntary association where the hyperscalers got a seat and quietly steered the thing into a hedge. But binding on whom, and by when? 
+
+The CADA trilogue between Parliament and Council is expected to open in Q3 2026, with final text unlikely before late 2027, meaning the Level 3 ownership requirements remain a proposal that US cloud providers are already lobbying hard against.
+
+ A 2027 statute, member-state transposition after that, audits after that. The workloads it's meant to repatriate will have compounded for years.
+
+And the chips half of the package should temper anyone's enthusiasm. 
+
+Intel's planned €30 billion fab in Magdeburg — the flagship of the original Chips Act — was cancelled in July 2025 after insufficient customer commitments.
+
+ 
+
+The EU's own Court of Auditors forecasts the bloc will reach only 11.7% global chip market share by 2030, against a 20% target, while the US CHIPS Act had already disbursed $33.7 billion in grants by January 2025 versus the EU's €13.75 billion in approved state aid by early 2026.
+
+ Chips Act 2.0 is being sold by the same institution that missed Chips Act 1.0 by half.
+
+## what's different this time, and it's not the law
+
+The thing that might actually move the needle isn't in the legislation. It's the procurement euro finally showing up. 
+
+In April 2026 the Commission awarded a €180 million sovereign cloud contract to four European provider groups — the first procurement procedure to apply explicit sovereignty criteria to cloud services.
+
+ Symbolic, small, but it's demand, not a standard. 
+
+The Parliament made its own gesture, replacing Google with Qwant as its default search engine on 4 June.
+
+ And on the compute side, 
+
+Mistral announced Mistral Compute, a sovereign AI cloud built on 18,000 Nvidia Grace Blackwell systems to host European enterprise workloads without leaning on American or Chinese hyperscalers.
+
+Note the dependency in that last sentence. The "sovereign" cloud runs on Nvidia silicon. Hardware independence remains, for now, a slogan.
+
+The honest external read is the one I keep coming back to. 
+
+Keegan McBride of the Tony Blair Institute warns that a "Europe first" posture risks becoming a trap — genuine tech leadership requires exporting products globally, not just regulating imports. Europe has a strong track record on regulation; its commercial expansion is thinner.
+
+If I were on a European board with regulated workloads, I would not wait for the trilogue. The CLOUD Act exposure is real today, the procurement signal is real today, and the migration timeline for a production AI system is measured in quarters, not weeks. Classify your data, move Tier A and the sensitive part of Tier B to a genuinely EU-controlled provider now, and keep the bulk commodity load wherever it's cheapest. Treat CADA's Level 3 as a procurement requirement that already exists in spirit.
+
+The Commission has written the wall. Whether anyone builds behind it before 2030 is a bet about political will, not legal text. On the law, I'd take the over. On the timeline, I'd take the under — heavily.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
