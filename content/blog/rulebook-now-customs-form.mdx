@@ -1,0 +1,66 @@
+---
+title: "The AI Rulebook Is Now a Customs Form"
+date: "2026-06-11"
+category: "Essays"
+excerpt: "The last forty days of AI regulation were barely about AI. They were about ports, subsidiary structures, export taxes and chips that triangulate their own location. The rulebook is now a customs form."
+draft: false
+tags: ["ai-regulation", "export-controls", "eu-ai-act", "ai-sovereignty", "enterprise-ai-strategy"]
+---
+
+The interesting thing about the last forty days of AI regulation is how little of it was about AI.
+
+It was about ports. Subsidiary structures in Selangor. License conditions filed at the Bureau of Industry and Security. A 25% export tax negotiated as a fee schedule. A draft statute requiring a chip to triangulate its own location against time-of-flight beacons before it can be turned on outside the United States. And a delayed European deadline that has already changed the buying behaviour of every Tier-1 procurement team I talk to.
+
+If you sat in a planning meeting in late April and projected what compliance would look like by August, you almost certainly got the texture wrong. The rules did not converge. They diverged — and they hardened in the places nobody was watching.
+
+## Brussels blinked, but only on paper
+
+On 7 May 2026 the Council, Parliament and Commission reached provisional agreement on the Digital Omnibus on AI. The main visible change: high-risk obligations for standalone Annex III systems push from 2 August 2026 to [2 December 2027](https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/), and Annex I product-embedded high-risk systems push further to 2 August 2028. The national sandbox obligation slips a year. Watermarking under Article 50(2) shifts to 2 December 2026, the same day two new prohibitions — non-consensual intimate AI material and AI-generated CSAM — [become enforceable](https://www.insideprivacy.com/artificial-intelligence/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions/).
+
+This was framed as relief. It is not. It is a redistribution of pressure.
+
+GPAI obligations have been in force since 2 August 2025. The 12-month working period with the AI Office ends in fifty-two days. After that, the Commission can issue requests for information, demand model access, and order recalls. The GPAI Code of Practice is voluntary, but every general counsel I've spoken to in the last fortnight is treating it as the de facto compliance floor. The Omnibus did not move that deadline a single hour.
+
+So the deferral is for product builders. The squeeze on foundation-model providers is intact. The honest reading: Brussels protected its small and mid-market deployers while keeping the gun pointed at the labs.
+
+## Washington stopped pretending the rules were optional
+
+While the Commission was negotiating delays, the US machinery did the opposite — it tightened the screws on rules already on the books.
+
+On 1 June 2026 the Bureau of Industry and Security issued guidance affirming that export-license requirements for advanced AI chips apply to all businesses with a headquarters or parent in China, [including overseas subsidiaries](https://www.aljazeera.com/economy/2026/6/1/us-says-ban-on-ai-chip-shipments-applies-to-chinese-firms-outside-china). This is the Selangor-and-Singapore loophole closing out loud. The guidance went further than enforcement actions normally do — it was an admission, in print, that advanced chips had been making their way to subsidiaries of Chinese AI firms outside the mainland [for nearly a year](https://www.scmp.com/news/world/united-states-canada/article/3355492/us-takes-step-halt-nvidia-ai-chip-shipments-chinese-firms-outside-china). That is a long time. That is an entire training run.
+
+The H200 deal sits beside this awkwardly. On 13 January 2026 BIS published a revised license-review policy permitting case-by-case sales of the H200, AMD MI325X and equivalents to approved Chinese customers, conditional on third-party performance testing, customer screening, and a 25% [export tax](https://www.bis.gov/press-release/department-commerce-revises-license-review-policy-semiconductors-exported-china). The Council on Foreign Relations called the policy [strategically incoherent](https://www.cfr.org/articles/new-ai-chip-export-policy-china-strategically-incoherent-and-unenforceable). I'd put it more bluntly: it is a tariff dressed as a security framework. The 25% tax is not a deterrent — it is revenue capture. If you wanted deterrence, you would not have written the door back open.
+
+Then on 26 March 2026, Congress passed the Chip Security Act. Within 180 days of enactment, Commerce must mandate that every covered AI chip carry a location-verification mechanism before export, reexport, or in-country transfer. The cleanest implementation in the public literature involves the chip pinging geographically dispersed landmark servers and triangulating its own position by time-of-flight, with [country-level accuracy](https://thecyberexpress.com/advanced-ai-chip-chip-security-act/). The Information Technology Industry Council has flagged that mandated location verification will [reshape supplier roadmaps](https://www.itic.org/news-events/techwonk-blog/the-unintended-consequence-of-the-chip-security-act) and create new failure modes — what happens when a chip pings late, or pings from a coordinate the Commerce Department doesn't like? Nobody has answered that yet. But the silicon will ship with the feature anyway, because the alternative is no export license at all.
+
+The Applied Materials fine in February — $252 million for ion implantation equipment routed to China — was the [second-largest penalty in BIS history](https://en.wikipedia.org/wiki/United_States_export_controls_on_AI_chips_and_semiconductors). It made the cost of the compliance failure legible to every CFO in the semiconductor supply chain. That is the thing the export-controls regime had been missing for three years. It now has it.
+
+## The Gulf is buying its way into the conversation
+
+While Europe defers and Washington tightens, the Gulf is building. The Stargate UAE campus — a 1-gigawatt cluster under construction in Abu Dhabi by G42, OpenAI and Oracle — will see its first 200 MW [go live this quarter](https://www.thenationalnews.com/future/technology/2026/01/26/stargate-uae-data-centre-to-cost-more-than-30bn-ai-minister-says/), backed by NVIDIA Grace Blackwell GB300 systems and a stated total spend above $30 billion across 19.2 square kilometres. Saudi Arabia is past $20 billion of committed data-centre capex, with the Hexagon project alone covering 480 MW. The Middle East buildout is not theoretical. It is concrete poured and racks installed.
+
+Notice what this does to the compliance map. A Tier-1 European bank that needs to run frontier inference for an internal copilot now has three roughly equivalent options on the procurement matrix: a European hyperscaler region, a Gulf sovereign campus, or an in-region tenancy on a US hyperscaler operating under the new BIS conditions. Each option has a different regulator, a different export-control surface, a different latency, and a different price. None of them is obviously dominant. That is the difference between this moment and the cloud-region debates of 2018. The regulator-of-record is now a procurement variable, not a footnote.
+
+## India keeps choosing the boundary, not the stack
+
+India chairs BRICS this summer. The IndiaAI mission is funded at $1.2 billion. The "MANAV Vision" articulated at the [India AI Impact Summit](https://impact.indiaai.gov.in/sessions?s=sovereign+AI) in February — Moral, Accountable, National, Accessible, Valid — is not a technical roadmap. It is a posture, and the posture is consistent. India is not trying to own the full silicon-to-model-to-application stack. It is trying to own the interface between citizen and state, anchored in Digital Public Infrastructure and Indic-language models like Bhashini. That is a sharper, cheaper bet than the one Europe has been making, and it deserves to be studied for what it actually is rather than dismissed as a smaller version of the EU strategy. The BRICS New Development Bank's $5 billion digital sovereignty fund is the financing infrastructure attached to that bet.
+
+Here is my stake in the ground: if I were on the board of a multinational with workloads in India, I would not wait for clarity from Brussels or Washington before committing to a sovereign-India deployment tier. The MANAV framing maps cleanly onto enterprise risk language — accountability, validity, accessibility — and the underlying compute is being built. Waiting six quarters for a perfect picture means paying the migration tax twice.
+
+## What this means for an enterprise AI strategy this quarter
+
+Four things, none of them new ideas but all of them now load-bearing:
+
+First, GPAI compliance work that was scoped against a 2 August 2026 high-risk deadline can be re-baselined, but only for downstream product deployment — the foundation-model contracts you sign this summer should reflect Code-of-Practice expectations as a hard floor.
+
+Second, every supply-chain document touching advanced AI silicon needs a corporate-affiliation clause that contemplates the BIS subsidiary guidance. If your vendor's holding structure passes through a jurisdiction now in scope, your license posture changes overnight.
+
+Third, build the location-verification scenario into your inference-platform roadmap. The Chip Security Act will land as a technical requirement on hardware you may already have on order. The chips that arrive twelve months from now will phone home.
+
+Fourth, treat the EU Omnibus deferral as breathing room for product teams and as a sharpening of urgency for governance teams. The honest measurement problem of GPAI compliance — what counts as evaluation, what counts as serious-incident reporting, who owns the documentation pipeline — does not get easier the longer it is deferred. The clock on that one is not slowing down. It is the only clock in the room that isn't.
+
+The rulebook is now a customs form. That is the entire shift.
+
+---
+
+Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
