@@ -7,33 +7,33 @@ draft: false
 tags: ["digital-sovereignty", "cloud-ai-development-act", "hyperscalers", "eu-regulation", "ai-procurement"]
 ---
 
-For a decade Europe argued about digital sovereignty in the abstract. Conferences, white papers, the occasional indignant op-ed when a US law reached across the Atlantic and grabbed something. On 3 June the argument acquired a legal text. 
+For a decade Europe argued about digital sovereignty in the abstract. Conferences, white papers, the occasional indignant op-ed when a US law reached across the Atlantic and grabbed something. On 3 June the argument acquired a legal text.
 
 The European Commission presented the European Technological Sovereignty Package, a set of measures to strengthen Europe's capacity in semiconductors, artificial intelligence, cloud and open source.
 
- At the centre sits the Cloud and AI Development Act — CADA — and inside CADA is the thing that will actually move money: a four-tier sovereignty scale.
+At the centre sits the Cloud and AI Development Act — CADA — and inside CADA is the thing that will actually move money: a four-tier sovereignty scale.
 
 I've sat through enough of these announcements to know the press release is the least interesting part. The interesting part is always the definitions, because definitions decide who wins a tender. So let me skip the continental ambition and go straight to the mechanics.
 
 ## what CADA actually does
 
-Two things, really. The first is a build-out. 
+Two things, really. The first is a build-out.
 
 The proposal aims to triple EU data centre capacity over the next five to seven years and ensure that the Union has the capacity it needs by 2035.
 
- The Commission talks about an estimated €200 billion in mostly private money, faster permitting, better access to energy and land. Fine. We've heard infrastructure targets before and I'd treat the 2035 number the way I treat any decade-out capex promise — as a direction, not a commitment.
+The Commission talks about an estimated €200 billion in mostly private money, faster permitting, better access to energy and land. Fine. We've heard infrastructure targets before and I'd treat the 2035 number the way I treat any decade-out capex promise — as a direction, not a commitment.
 
-The second thing is the one that matters for procurement. 
+The second thing is the one that matters for procurement.
 
 The Cloud and AI Development Act defines cloud and AI sovereignty comprising four assurance levels, to be used by public sector bodies based on their risk assessments, and cloud service providers can be recognised under this framework by Member States, after undergoing an audit.
 
- This is the GDPR move repeated for infrastructure: not a ban, but a graded standard that public bodies must measure their suppliers against.
+This is the GDPR move repeated for infrastructure: not a ban, but a graded standard that public bodies must measure their suppliers against.
 
-The levels climb in strictness. 
+The levels climb in strictness.
 
 At Level 2, providers must demonstrate independence from third countries and transparency over their software supply chain; at Level 3, providers must be owned and controlled from the EU and meet additional criteria, such as personnel citizenship.
 
- Above that sits the tier nobody in Seattle or Redmond wants to read closely. 
+Above that sits the tier nobody in Seattle or Redmond wants to read closely.
 
 The Commission's framework's most critical tier, covering defence, would effectively be reserved for suppliers with EU-made and EU-controlled hardware and software.
 
@@ -45,77 +45,78 @@ flowchart TD
     L3 --> L4[Level 4: defence — EU-made and EU-controlled hardware and software]
     HS[US hyperscaler partitions] -.reach.-> L2
     EU[EU-owned providers / partner clouds] -.reach.-> L3
+
 ```
 
 Read the ladder and you can see the fault line. A US hyperscaler running a structurally separated European entity can plausibly argue its way to Level 2. Level 3 — ownership, control, and citizenship of personnel — is where the corporate parent in Delaware becomes the disqualifying fact. Level 4 is, by design, not for them at all.
 
-## this is not theory — defence already voted
+## this is not theory and defence already voted
 
-The neat thing about CADA is that the market pre-empted it. The strictest tier describes a decision European defence buyers were already making case by case. 
+The neat thing about CADA is that the market pre-empted it. The strictest tier describes a decision European defence buyers were already making case by case.
 
 The Bundeswehr's rejection of Palantir for its military cloud-AI project in favour of European alternatives anticipated level-4 logic before the framework existed.
 
- When a procurement officer in Germany decides that a US-controlled analytics stack can't sit at the centre of military operations, you don't need a regulation to tell you which way sovereignty is trending. CADA just writes down what the buyers concluded on their own.
+When a procurement officer in Germany decides that a US-controlled analytics stack can't sit at the centre of military operations, you don't need a regulation to tell you which way sovereignty is trending. CADA just writes down what the buyers concluded on their own.
 
-And the reason buyers reached that conclusion isn't paranoia. It's an unresolved legal collision. 
+And the reason buyers reached that conclusion isn't paranoia. It's an unresolved legal collision.
 
 The US CLOUD Act requires US companies to produce data stored anywhere in the world upon a valid US government demand, regardless of storage location; GDPR Article 48 prohibits transfers to non-EU authorities on the basis of a foreign court order alone — but it does not prevent those orders from being issued, and it does not compel Microsoft to refuse them, and that structural conflict is not resolved by data residency commitments.
 
- Data residency answers the wrong question. The question is jurisdiction over the entity holding the keys, and a German server farm doesn't change the nationality of the parent company served with a warrant.
+Data residency answers the wrong question. The question is jurisdiction over the entity holding the keys, and a German server farm doesn't change the nationality of the parent company served with a warrant.
 
-The most honest moment in this whole saga came not from a regulator but from a vendor. 
+The most honest moment in this whole saga came not from a regulator but from a vendor.
 
 Microsoft's sovereignty credibility took a public hit in July 2025, when its chief legal officer in France, appearing before the French Senate, was unable to clearly confirm that Microsoft would never hand over EU data to US authorities without consent — a moment that crystallized the limits of technical and contractual safeguards when US jurisdiction still applies.
 
- Every CIO who watched that clip understood the implication immediately. The contracts don't save you. The corporate structure does or it doesn't.
+Every CIO who watched that clip understood the implication immediately. The contracts don't save you. The corporate structure does or it doesn't.
 
 ## the hyperscalers saw it coming, and built partitions
 
-To their credit, the American providers didn't wait. 
+To their credit, the American providers didn't wait.
 
 Amazon Web Services launched its European Sovereign Cloud to general availability, marking a €7.8 billion investment in physically and logically separated infrastructure, now available in Brandenburg, Germany.
 
- The structure is the interesting bit: 
+The structure is the interesting bit:
 
 the infrastructure is managed through dedicated European legal entities established under German law, with EU-resident managing directors, and an advisory board comprised exclusively of EU citizens providing additional oversight on sovereignty matters.
 
- Microsoft went a different route through partner clouds — Bleu in France, Delos in Germany — while keeping its productivity stack inside sovereign controls.
+Microsoft went a different route through partner clouds — Bleu in France, Delos in Germany — while keeping its productivity stack inside sovereign controls.
 
-But here's where I get sceptical, and where every board should. A partition is a real engineering achievement and a partial answer. It is not a clean Level 3. The trade-offs are visible: 
+But here's where I get sceptical, and where every board should. A partition is a real engineering achievement and a partial answer. It is not a clean Level 3. The trade-offs are visible:
 
 around a 15% pricing premium, roughly 90 services versus 240-plus in commercial EU regions, only two availability zones at launch, and missing key services like CloudFront, GPU instances, and most Bedrock models.
 
- For an AI workload that's not a footnote — it's the GPUs. You can have sovereignty or you can have the frontier compute, and at launch you couldn't fully have both on the sovereign partition. And even with EU-resident operators and a German parent, the honest reading is the one InfoQ landed on: 
+For an AI workload that's not a footnote — it's the GPUs. You can have sovereignty or you can have the frontier compute, and at launch you couldn't fully have both on the sovereign partition. And even with EU-resident operators and a German parent, the honest reading is the one InfoQ landed on:
 
 significant questions persist about whether this separation can truly protect against US government data requests.
 
 ## the clause I'd actually be watching
 
-Now the calibrated bet. Everyone is staring at Level 4 because defence is dramatic. Wrong place to look. The variable that decides how much of this package has teeth is buried in the recognition mechanism for foreign providers. 
+Now the calibrated bet. Everyone is staring at Level 4 because defence is dramatic. Wrong place to look. The variable that decides how much of this package has teeth is buried in the recognition mechanism for foreign providers.
 
 The Cloud and AI Development Act includes provisions allowing third countries to be recognised as providing sufficient assurances for certain sovereignty requirements.
 
-That clause is the trapdoor. If I were advising a board with European public-sector exposure, I'd plan on the assumption that the third-country recognition language survives the trilogue in a form generous enough to let well-structured US partitions clear Level 2 and contest the edges of Level 3. The hyperscaler lobby will spend the next eighteen months working precisely those definitions, and the analysts watching closely already say 
+That clause is the trapdoor. If I were advising a board with European public-sector exposure, I'd plan on the assumption that the third-country recognition language survives the trilogue in a form generous enough to let well-structured US partitions clear Level 2 and contest the edges of Level 3. The hyperscaler lobby will spend the next eighteen months working precisely those definitions, and the analysts watching closely already say
 
 what survives in the level-3 recognition clause for third-country providers is the variable to watch.
 
- My stake: the strict reading gets softened, and the practical sovereignty win for most enterprises comes not from the statute but from operational design — customer-held encryption keys, EU-operated entities, the unglamorous controls that make a transfer impact assessment credible regardless of which tier the marketing claims.
+My stake: the strict reading gets softened, and the practical sovereignty win for most enterprises comes not from the statute but from operational design — customer-held encryption keys, EU-operated entities, the unglamorous controls that make a transfer impact assessment credible regardless of which tier the marketing claims.
 
-There's a second reason not to overreact. The Commission itself is managing expectations: 
+There's a second reason not to overreact. The Commission itself is managing expectations:
 
 it has indicated that only a relatively small proportion of public sector workloads may ultimately require the strictest sovereignty requirements.
 
- Translation — most of the market stays open to American providers, and the genuinely ring-fenced slice is narrow. That's pragmatic, and it's also a tell. Brussels wants the political symbolism of sovereignty without the economic shock of evicting the firms that, by one estimate, account for 
+Translation — most of the market stays open to American providers, and the genuinely ring-fenced slice is narrow. That's pragmatic, and it's also a tell. Brussels wants the political symbolism of sovereignty without the economic shock of evicting the firms that, by one estimate, account for
 
 approximately 80 percent of annual professional cloud expenditure in the EU.
 
- You don't unwind that dependency with a four-tier label. You unwind it with a decade of capex you haven't spent yet.
+You don't unwind that dependency with a four-tier label. You unwind it with a decade of capex you haven't spent yet.
 
 ## what I'd do on Monday
 
 Three moves, none of which require waiting for the trilogue.
 
-Map your workloads to the four levels now, before a procurement officer does it for you. The framework codifies expectations that DORA, NIS2 and the AI Act were already pushing toward — 
+Map your workloads to the four levels now, before a procurement officer does it for you. The framework codifies expectations that DORA, NIS2 and the AI Act were already pushing toward —
 
 enterprises with EU public-sector contracting exposure cannot afford to wait for trilogue resolution to begin positioning work.
 
@@ -125,6 +126,6 @@ And treat the GPU gap as a strategic constraint, not a temporary inconvenience. 
 
 The package is real. The ambition is overstated. The clause in the middle is where the money goes. Watch it.
 
----
+* * *
 
 Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
