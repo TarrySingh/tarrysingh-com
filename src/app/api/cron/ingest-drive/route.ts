@@ -8,6 +8,7 @@ import {
 import {
   getDriveIngest,
   getHighWaterModifiedTime,
+  getRetryableFailures,
   recordDriveIngest,
 } from "@/lib/studio/drive-ingest-log"
 import { processArticle } from "@/lib/studio/process-article"
@@ -107,21 +108,27 @@ async function handleTick(req: NextRequest): Promise<NextResponse> {
     )
   }
 
-  if (list.files.length === 0) {
-    return NextResponse.json({
-      ok: true,
-      processed: 0,
-      durationMs: Date.now() - startedAt,
-      sinceIso: sinceIso ?? null,
-    })
-  }
-
   const origin = getOrigin(req)
   const lines: CronResultLine[] = []
 
+  // Normal pass — fresh files newer than the high-water mark.
   for (const file of list.files) {
     const line = await processOne(file, origin)
     lines.push(line)
+  }
+
+  // Cross-tick retry pass — re-attempt recent transient failures (e.g. a
+  // 529 overload that dropped an earlier tick). Bypasses the high-water +
+  // idempotency gates by re-fetching the file by id, so a blip self-heals
+  // on a later tick instead of silently dropping the whole Dispatch.
+  // Runs even when the normal list is empty (the common no-new-file case).
+  const retryables = await getRetryableFailures()
+  for (const row of retryables) {
+    const line = await ingestFile(
+      { id: row.file_id, name: row.filename, modifiedTime: row.modified_time_iso },
+      origin,
+    )
+    lines.push({ ...line, reason: line.reason ? `retry:${line.reason}` : "retry" })
   }
 
   const durationMs = Date.now() - startedAt
@@ -130,6 +137,7 @@ async function handleTick(req: NextRequest): Promise<NextResponse> {
       tag: "studio.cron.tick",
       processed: lines.length,
       ingested: lines.filter((l) => l.action === "ingested").length,
+      retried: retryables.length,
       durationMs,
       sinceIso: sinceIso ?? null,
     }),
@@ -203,7 +211,20 @@ async function processOne(
     }
   }
 
-  // 3. Download + process.
+  return ingestFile(file, origin)
+}
+
+/**
+ * Download + AI-process + record one file. Split out of processOne so the
+ * cross-tick retry pass can call it directly for a known transient-failed
+ * row — bypassing the high-water and idempotency gates (which would
+ * otherwise skip the very file we're trying to retry).
+ */
+async function ingestFile(
+  file: { id: string; name: string; modifiedTime: string },
+  origin: string,
+): Promise<CronResultLine> {
+  // Download + process.
   const dl = await downloadFileContent(file.id)
   if (!dl.ok) {
     await recordDriveIngest({

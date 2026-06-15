@@ -69,6 +69,48 @@ export async function getHighWaterModifiedTime(): Promise<string | null> {
   return (data as { modified_time_iso: string }).modified_time_iso
 }
 
+/**
+ * Transient-failure reasons a later cron tick should RETRY rather than
+ * treat as terminal. A 529 overload, a Drive download blip, or any AI
+ * call failure are expected to clear on their own. Terminal reasons
+ * (no_h1_title, filename_not_dated_article, older_than_age_floor,
+ * already_have_draft_for_today, *_parse_error) never become valid on
+ * retry, so they stay skipped.
+ */
+function isRetryableFailureReason(reason: string | null): boolean {
+  if (!reason) return false
+  return (
+    reason.startsWith("ai_frontmatter:ai_call_failed") ||
+    reason.startsWith("drive_download:") ||
+    /\b(?:overloaded|timeout|429|500|502|503|529|econn|network|fetch failed)\b/i.test(reason)
+  )
+}
+
+/**
+ * Rows that failed on a transient error recently enough to be worth a
+ * retry. Bounded to the last 48h (the cron's hard age floor) so a
+ * permanently-stuck file isn't retried forever. Capped per tick.
+ */
+export async function getRetryableFailures(limit = 5): Promise<DriveIngestRow[]> {
+  const sb = createServiceClient()
+  const cutoffIso = new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString()
+  const { data, error } = await sb
+    .from(TABLE)
+    .select(
+      "file_id,filename,slug,modified_time_iso,status,email_id,failure_reason,first_seen_at,last_seen_at",
+    )
+    .eq("status", "failed")
+    .gte("last_seen_at", cutoffIso)
+    .order("last_seen_at", { ascending: true })
+    .limit(50)
+  if (error) {
+    console.error(JSON.stringify({ tag: "studio.drive_log.retryables_error", error }))
+    return []
+  }
+  const rows = (data as DriveIngestRow[] | null) ?? []
+  return rows.filter((r) => isRetryableFailureReason(r.failure_reason)).slice(0, limit)
+}
+
 export interface RecordIngestInput {
   fileId: string
   filename: string

@@ -131,7 +131,12 @@ interface AIError {
 function getClient(): Anthropic | null {
   const key = process.env.ANTHROPIC_API_KEY
   if (!key) return null
-  return new Anthropic({ apiKey: key })
+  // maxRetries: the SDK retries 429/500/529 with exponential backoff.
+  // The default (2) gives up in a few seconds — too short to ride out a
+  // transient 529 overload, which on 2026-06-15 silently dropped a whole
+  // Dispatch. 5 retries ≈ ~30s of backoff, enough for a brief overload.
+  // A sustained overload is caught by the cron's cross-tick retry pass.
+  return new Anthropic({ apiKey: key, maxRetries: 5 })
 }
 
 function modelConfig() {
