@@ -1,0 +1,58 @@
+---
+title: "The Slop Debt Bill Is Due, and Nobody on the Org Chart Owns It"
+date: "2026-06-15"
+category: "Essays"
+excerpt: "Slop debt is the space between what you pay for AI and what you do not get. The bill is in the inbox; the question is whether the org chart catches up before the auditor does."
+draft: false
+tags: ["slop-debt", "finops", "agentic-ai", "ai-governance", "enterprise-ai"]
+---
+
+# The Slop Debt Bill Is Due, and Nobody on the Org Chart Owns It
+
+The most important line on this year's enterprise cloud invoice is the one nobody can attribute to a specific business outcome. It has been growing every month. It usually appears under "AI/ML services," or under a friendlier euphemism. The people who can name a number for it cannot yet name an owner. That gap — between cost and ownership — is what 2026 has handed to every CFO, head of platform engineering, and audit committee on this side of the AI hype curve. It deserves a name, because if we do not name it we cannot retire it.
+
+I want to give it its proper name and then put it on the balance sheet where it belongs.
+
+*what slop debt actually is*
+
+**AI slop debt** is the accumulating liability of half-finished proofs of concept, unevaluated agent fleets, retrieval-augmented systems with no clear owner, prompt sprawl across business units, unmaintained eval harnesses, and orphaned fine-tunes nobody can reproduce. It sits next to legacy technical debt rather than replacing it. Where classical technical debt was at least a deferred refactor you could point to in the codebase, slop debt is a deferred refactor of a system whose behaviour is governed by a string of natural language and a vector index — neither of which the people on call are confident they fully understand. The category is new. The accounting for it is not.
+
+The FinOps Foundation's [2026 State of FinOps Report](https://data.finops.org/), drawn from over a thousand practitioners managing more than $83 billion in annual cloud spend, found that 98% of respondents now manage AI spend as part of their scope — up from a small minority two years ago. AI cost management is the single most-requested skillset their teams want to add. That is the FinOps community quietly conceding that the practice they built for cloud cost discipline between 2018 and 2022 has been overtaken by a workload whose unit economics nobody fully understands. Tokens, GPU-hours, training-versus-inference, shared model infrastructure — these do not map cleanly onto chargeback frameworks built for EC2.
+
+*the numbers, plainly*
+
+Two figures matter. First, the cost line. The average enterprise AI budget has moved from roughly $1.2 million per year in 2024 to about $7 million in 2026, with inference now accounting for around 85% of that spend, [per AnalyticsWeek's accounting of the inference cost crisis](https://analyticsweek.com/inference-economics-finops-ai-roi-2026/). Unit cost per token has fallen — that is the part vendors will quote you. Volume has risen faster. The total bill is rising because every agentic workflow puts the model in a loop that hits it ten or twenty times for a task that used to be a single round-trip.
+
+Second, the outcome line. A widely-cited MIT report on the state of enterprise AI [found that 95% of GenAI pilots produced no measurable P&L impact](https://www.legal.io/articles/5719519/MIT-Report-Finds-95-of-AI-Pilots-Fail-to-Deliver-ROI-Exposing-GenAI-Divide), based on 52 executive interviews, 153 surveys, and analysis of 300 public deployments. Gartner's June 2025 forecast that [over 40% of agentic AI projects would be cancelled by the end of 2027](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) reads, twelve months on, as conservative rather than alarmist. S&P Global's own work shows 42% of companies abandoned at least one AI initiative in 2025, up from 17% the year before.
+
+The first number is what you pay. The second is what you do not get. The space between them is the slop debt.
+
+*ownership is the hard part*
+
+The temptation when the cloud invoice lands on the table is to treat this as a cost-control problem. It is not. Cost control is downstream. The harder, prior problem is that most of these systems do not have a name on them, and what does not have a name on it cannot be priced, retired, refactored, or improved.
+
+A recent piece of analysis described an emerging taxonomy of *prompt debt, retrieval debt, and evaluation debt* — [worth reading in full](https://www.dataworldbank.net/2026/05/25/why-prompt-debt-retrieval-debt-and-evaluation-debt-are-quietly-reshaping-enterprise-ai-risk/) for the argument that these debts are quieter than the financial one because they show up as degraded model behaviour rather than line items. Prompt debt is the variant prompts spawned across business units that nobody catalogued. Retrieval debt is the RAG index built against a snapshot of last year's documentation. Evaluation debt is the test suite written for the previous model that nobody re-ran when the new one shipped. Each on its own is recoverable. Stacked, they are why so many production agent systems are silently worse this quarter than they were last quarter — and why nobody can prove it.
+
+The metric that matters is not "how many agents do you have deployed." It is "how many of those agents have an accountable owner, a current eval set, and a reproducible config." Zluri's report on shadow AI found that [80% of enterprise AI tools operate unmanaged](https://markets.financialcontent.com/siliconvalley/article/bizwire-2025-6-26-zluri-report-exposes-shadow-ai-epidemic-80-of-enterprise-ai-tools-operate-unmanaged). Netskope's 2026 telemetry puts data-policy violations from AI use at 223 a month for the average enterprise. Those are not adoption numbers. They are numbers about accumulation without governance.
+
+*Microsoft is selling you a meter*
+
+The market response has been predictable: sell enterprises the tooling to count the mess. Microsoft [moved Agent 365 to general availability on May 1, 2026](https://techcommunity.microsoft.com/blog/agent-365-blog/what%E2%80%99s-new-in-agent-365-may-2026/4516340), framed as a unified control plane for AI agents across Windows endpoints, Azure and partner platforms. The pillars are Observe, Govern and Secure. Salesforce Agentforce became a supported partner on May 20. The Work IQ APIs went GA on June 16. Take the vendor framing with the usual skepticism — Microsoft is, after all, the same company that built the SharePoint sprawl most enterprises are still untangling — but the underlying market signal is correct. The platform layer has decided that the next category of enterprise tooling is the registry, observability and runtime-control surface for agents. It would not exist if the spending were not large enough to capitalise on. [Futurum's read](https://futurumgroup.com/insights/microsoft-agent-365-turns-shadow-ai-into-a-governed-asset-class/) is right to call this the moment shadow AI gets turned into a governed asset class. The capability is being sold because nobody had been counting. They had been spending.
+
+*what I would bet against*
+
+Here is the stake. I would bet against more than half of the agentic AI projects approved in the last twelve months making it to a second renewal cycle in their current form. Not because the underlying technology is bad — it is genuinely useful — but because most of these projects were approved on the basis of a projected ROI that is not being measured against, run by teams without a named owner for the eval suite, deployed against retrieval indexes nobody is incrementally refreshing, and billed against a token-consumption pattern that grows nonlinearly with each agent loop the team adds. The Gartner projection of 40% cancellation by 2027 is, in my reading, the floor.
+
+The honest move on a 2026 board is to stop counting deployments and start counting owners. For every agent in production, name the person responsible for its weekly eval score, the budget line that pays for its inference, and the date the retrieval index was last refreshed. If those three answers exist, the agent has a place on the org chart. If they do not, the agent is slop debt waiting to be written off.
+
+Three things to do this quarter:
+
+1. Inventory the agent fleet against an ownership register. Anything without an owner gets a 30-day deprecation notice.
+2. Put inference spend on the same cadence as cloud spend — token budgets, model-routing policy, monthly review with finance, not quarterly with engineering.
+3. Refuse to approve a new agent or RAG system without a stated rubric and an eval owner. Not a benchmark suite. Twenty to fifty real failure cases from production, written in the language the business actually uses.
+
+The bill is in the inbox. The question is whether the org chart catches up before the auditor does.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.*
