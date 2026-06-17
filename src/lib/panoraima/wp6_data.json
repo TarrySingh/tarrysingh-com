@@ -1,0 +1,230 @@
+{
+  "wp": "WP6",
+  "name": "Ethics & Responsible AI",
+  "short": "Ethics",
+  "color": "#ef4444",
+  "emoji": "⚖",
+  "description": "Weave responsible AI practice into every track and deliverable.",
+  "stats": {
+    "total_files": 5,
+    "size_mb": 1,
+    "by_ext": {
+      ".docx": 2,
+      ".pptx": 2,
+      ".xlsx": 1
+    },
+    "by_type": {
+      "other": 5
+    },
+    "by_region": {},
+    "total_words": 1438
+  },
+  "themes": [
+    {
+      "theme": "Regulation",
+      "count": 4
+    },
+    {
+      "theme": "Curriculum",
+      "count": 4
+    },
+    {
+      "theme": "Ethics",
+      "count": 2
+    },
+    {
+      "theme": "Pilot / experiment",
+      "count": 2
+    },
+    {
+      "theme": "Assessment",
+      "count": 2
+    },
+    {
+      "theme": "SME needs",
+      "count": 2
+    },
+    {
+      "theme": "Labour market",
+      "count": 1
+    },
+    {
+      "theme": "Upskilling",
+      "count": 1
+    },
+    {
+      "theme": "Diversity",
+      "count": 1
+    },
+    {
+      "theme": "Collaboration",
+      "count": 1
+    }
+  ],
+  "stakeholders": [
+    {
+      "type": "academia",
+      "count": 4
+    },
+    {
+      "type": "ecosystem",
+      "count": 3
+    },
+    {
+      "type": "sme",
+      "count": 2
+    },
+    {
+      "type": "industry",
+      "count": 1
+    }
+  ],
+  "tasks": [
+    {
+      "id": "unassigned",
+      "title": "Cross-cutting / unassigned",
+      "file_count": 5,
+      "deliverables": []
+    }
+  ],
+  "regions": [],
+  "timeline": [],
+  "findings": [],
+  "primary_deliverable": null,
+  "catalogue": [
+    {
+      "name": "Digital Skills and Jobs platform examples.docx",
+      "rel_path": "Digital Skills and Jobs platform examples.docx",
+      "task": null,
+      "type": "other",
+      "status": null,
+      "region": null,
+      "date": null,
+      "ext": ".docx",
+      "size_kb": 21,
+      "title": "Digital Skills and Jobs platform examples",
+      "excerpt": "Digital Skills and Job Platform · Content examples as inspiration · https://digital-skills-jobs.europa.eu/en/latest/insights/artificial-intelligence-high-stakes-game-what-cost-deep-dive · Self-read (paper like) source of information. Might be a mini-journey, but specifically created for the DSJP. · Digital skills resource",
+      "themes": [
+        "Regulation",
+        "Ethics",
+        "Curriculum"
+      ],
+      "stakeholders": [],
+      "slides_count": 0,
+      "sheets_count": 0,
+      "pages": null,
+      "word_count": 12
+    },
+    {
+      "name": "Overview and preliminary questions - Working sprint @ Naples.pptx",
+      "rel_path": "Overview and preliminary questions - Working sprint @ Naples.pptx",
+      "task": null,
+      "type": "other",
+      "status": null,
+      "region": null,
+      "date": null,
+      "ext": ".pptx",
+      "size_kb": 156,
+      "title": "Overview and preliminary questions Working sprint @ Naples",
+      "excerpt": "Design and deliver short, stand-alone online learning experiences (“mini-journeys”) ranging from 1 to 6 ECTS, focused on Data and AI skills. · Provide open access to these human-centred AI learning materials for all learners, including: · university students, · working professionals, · individuals unable to attend in-person courses at partner universities.",
+      "themes": [
+        "Regulation",
+        "Curriculum",
+        "Pilot / experiment",
+        "Assessment",
+        "Labour market",
+        "SME needs"
+      ],
+      "stakeholders": [
+        "academia",
+        "sme",
+        "ecosystem"
+      ],
+      "slides_count": 13,
+      "sheets_count": 0,
+      "pages": null,
+      "word_count": 924
+    },
+    {
+      "name": "Overview of stand-alone modules.xlsx",
+      "rel_path": "Overview of stand-alone modules.xlsx",
+      "task": null,
+      "type": "other",
+      "status": null,
+      "region": null,
+      "date": null,
+      "ext": ".xlsx",
+      "size_kb": 16,
+      "title": "Overview of stand alone modules",
+      "excerpt": "Name | Institute | Start | Duration | # students expected | # students certified | Type of students | Note | Certification",
+      "themes": [],
+      "stakeholders": [
+        "academia"
+      ],
+      "slides_count": 0,
+      "sheets_count": 1,
+      "pages": null,
+      "word_count": 23
+    },
+    {
+      "name": "WP6 - Athens March 2026.pptx",
+      "rel_path": "WP6 - Athens March 2026.pptx",
+      "task": null,
+      "type": "other",
+      "status": null,
+      "region": null,
+      "date": null,
+      "ext": ".pptx",
+      "size_kb": 969,
+      "title": "WP6 Athens March 2026",
+      "excerpt": "PANORAIMA – WP6 · Working Sprint - Athens | 25-26/03/2026 · Stefano Marrone · Title: Stand-alone & online modules · Duration: M18M14-M48 · Design, develop, and deliver stand-alone (online and/or self-placed) mini learning experiences (1-6 ECTS), termed as \"mini-journeys\" to enhance data and AI education across Europe",
+      "themes": [
+        "Upskilling",
+        "Regulation",
+        "Ethics",
+        "Curriculum"
+      ],
+      "stakeholders": [
+        "academia",
+        "ecosystem"
+      ],
+      "slides_count": 11,
+      "sheets_count": 0,
+      "pages": null,
+      "word_count": 407
+    },
+    {
+      "name": "WP6 - Summary and next steps -May 2026.docx",
+      "rel_path": "WP6 - Summary and next steps -May 2026.docx",
+      "task": null,
+      "type": "other",
+      "status": null,
+      "region": null,
+      "date": null,
+      "ext": ".docx",
+      "size_kb": 41,
+      "title": "WP6 Summary and next steps May 2026",
+      "excerpt": "WP6 – May 2026 · Summary of Current Direction, Emerging Decisions and Next Steps · Introduction",
+      "themes": [
+        "Regulation",
+        "Curriculum",
+        "Pilot / experiment",
+        "Assessment",
+        "Diversity",
+        "Collaboration",
+        "SME needs"
+      ],
+      "stakeholders": [
+        "academia",
+        "industry",
+        "sme",
+        "ecosystem"
+      ],
+      "slides_count": 0,
+      "sheets_count": 0,
+      "pages": null,
+      "word_count": 72
+    }
+  ],
+  "generated_at": "2026-06-17T12:42:38Z"
+}

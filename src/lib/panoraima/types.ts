@@ -69,14 +69,17 @@ export const PARTNERS: PartnerProfile[] = [
 export const PARTNER_BY_CODE: Record<PartnerCode, PartnerProfile> =
   Object.fromEntries(PARTNERS.map(p => [p.code, p])) as Record<PartnerCode, PartnerProfile>
 
+// WP names mirror the authoritative titles in scripts/extract_wp.py (the
+// source for wps_meta.json). WP1 is the project-management layer surfaced as
+// the main consortium dashboard, not a hub work package.
 export const WORK_PACKAGES = [
-  { id: "WP1", name: "Project Management",       color: "#3b82f6", emoji: "⚙" },
-  { id: "WP2", name: "Market & Needs Analysis",   color: "#8b5cf6", emoji: "🔍" },
-  { id: "WP3", name: "Curriculum Design",         color: "#06b6d4", emoji: "📚" },
-  { id: "WP4", name: "Platform Development",      color: "#10b981", emoji: "🛠" },
-  { id: "WP5", name: "Pilots & Evaluation",       color: "#f59e0b", emoji: "🧪" },
-  { id: "WP6", name: "Quality & Ethics",          color: "#ef4444", emoji: "⚖" },
-  { id: "WP7", name: "Dissemination & Exploit.",  color: "#d946ef", emoji: "📣" },
+  { id: "WP1", name: "Project Management",                          color: "#3b82f6", emoji: "⚙" },
+  { id: "WP2", name: "Market & Workforce Needs Analysis",          color: "#8b5cf6", emoji: "🔍" },
+  { id: "WP3", name: "AI Competence Profiles & Learning Outcomes", color: "#06b6d4", emoji: "📚" },
+  { id: "WP4", name: "Curriculum & Pilot Programmes",              color: "#10b981", emoji: "🛠" },
+  { id: "WP5", name: "Quality Assurance",                          color: "#f59e0b", emoji: "🧪" },
+  { id: "WP6", name: "Ethics & Responsible AI",                    color: "#ef4444", emoji: "⚖" },
+  { id: "WP7", name: "Dissemination & Exploitation",              color: "#d946ef", emoji: "📣" },
 ]
 
 export const EVENT_STYLES: Record<EventType, { bg: string; ring: string; label: string; dotColor: string }> = {
