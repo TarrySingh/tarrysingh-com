@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T18:32:47Z",
+  "generated_at": "2026-06-17T12:42:44Z",
   "wps": [
     {
       "wp": "WP2",
@@ -52,11 +52,11 @@
       "description": "Define the learning events and competence profiles that anchor the PANORAIMA curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 45,
+        "total_files": 46,
         "size_mb": 266,
         "by_ext": {
           ".xlsx": 28,
-          ".docx": 5,
+          ".docx": 6,
           ".pptx": 3,
           ".ods": 1,
           ".mp4": 5,
@@ -64,7 +64,7 @@
           ".potx": 1
         },
         "by_type": {
-          "other": 44,
+          "other": 45,
           "presentation": 1
         },
         "by_region": {}
@@ -81,19 +81,29 @@
       "description": "Design lesson plans and run the cross-university pilots that validate the curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 116,
-        "size_mb": 26,
+        "total_files": 234,
+        "size_mb": 257,
         "by_ext": {
-          ".docx": 84,
-          ".pdf": 18,
-          ".xlsx": 4,
-          ".pptx": 7,
+          ".docx": 96,
+          ".pdf": 30,
+          ".xlsx": 6,
+          ".pptx": 50,
           ".odp": 1,
-          ".potx": 2
+          ".potx": 2,
+          ".html": 3,
+          ".md": 3,
+          ".css": 12,
+          ".woff": 3,
+          ".js": 21,
+          ".ipynb": 3,
+          ".zip": 2,
+          ".csv": 2
         },
         "by_type": {
-          "other": 112,
-          "template": 4
+          "other": 221,
+          "template": 8,
+          "presentation": 3,
+          "research": 2
         },
         "by_region": {}
       },
@@ -127,13 +137,15 @@
       "description": "Weave responsible AI practice into every track and deliverable.",
       "status": "sparse",
       "stats": {
-        "total_files": 2,
+        "total_files": 5,
         "size_mb": 1,
         "by_ext": {
-          ".pptx": 2
+          ".docx": 2,
+          ".pptx": 2,
+          ".xlsx": 1
         },
         "by_type": {
-          "other": 2
+          "other": 5
         },
         "by_region": {}
       },
@@ -149,15 +161,15 @@
       "description": "Amplify PANORAIMA's reach through clusters for social media, student recruitment, knowledge exchange and brand.",
       "status": "active",
       "stats": {
-        "total_files": 375,
-        "size_mb": 905,
+        "total_files": 393,
+        "size_mb": 943,
         "by_ext": {
-          ".docx": 77,
-          ".pptx": 32,
-          ".dotx": 7,
-          ".pdf": 48,
-          ".xlsx": 19,
-          ".odt": 1,
+          ".docx": 85,
+          ".pptx": 34,
+          ".dotx": 9,
+          ".pdf": 51,
+          ".xlsx": 21,
+          ".odt": 2,
           ".webloc": 1,
           ".heic": 9,
           ".jpg": 51,
@@ -173,10 +185,10 @@
           ".ase": 1
         },
         "by_type": {
-          "other": 317,
+          "other": 332,
           "template": 28,
-          "presentation": 21,
-          "research": 8,
+          "presentation": 23,
+          "research": 9,
           "deliverable": 1
         },
         "by_region": {

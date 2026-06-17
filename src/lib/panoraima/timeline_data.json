@@ -4214,11 +4214,31 @@
     "other_docs": [
       "Agenda PMB + PMC 22 May 2026.docx",
       "HU LC Progress Report.docx",
+      "Transcript PANORAIMA PMC Meeting Local Coordinators 12.00-13.30 CET.docx",
       "WP4 Leader Progress Report.docx"
     ],
     "partners": {
       "BME": {
-        "submitted": false
+        "submitted": true,
+        "file": "BME LC Progress Report 22 May 2026.docx",
+        "activities": [
+          "WP3 T1 Béla’s team worked in 6 sub-groups, merged the results, delivered in Athens",
+          "WP3 T2 András Gézsi participated in Health track, managing BME invilvement",
+          "WP3 T3 Dorottya and Hédi lead and worked on Media track started working on Lesson Plans",
+          "WP3 T4 Edit, Tamás, Anikó, Krisztina involved leads and involved in Law & Compliance. Training is being delivered.",
+          "(see WP3 leader report)",
+          "Industry, Business partners;  Academic institutions; Innovators; Investors; EU institutions; Other International Organisation (UN, OECD, etc.); National authorities; Regional authorities; Local authorities; Research communities; Specific us",
+          "Regional; National; International | Social Media; Press release; Media article; Print materials (brochure, leaflet, posters, stickers, banners etc.); Newsletter; Interview; Video; TV/Radio; Event (conference, meeting, workshop, internet deb",
+          "Conferences; Meetings; Education and training events; Clustering activities; Collaboration with EU-funded projects; Other scientific collaboration, Other (namely …) | Industry, Business partners; EU Institutions; Scientists; Education/train"
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP1",
+          "WP3",
+          "WP4"
+        ],
+        "excerpt": "WP3 T1 Béla’s team worked in 6 sub-groups, merged the results, delivered in Athens",
+        "word_count": 1232
       },
       "CeADAR": {
         "submitted": true,
@@ -4262,7 +4282,27 @@
         "word_count": 1430
       },
       "ENEA": {
-        "submitted": false
+        "submitted": true,
+        "file": "ENEA Progress Report LC - 2026_05_22.docx",
+        "activities": [
+          "● Gabriele Piantadosi contributed to the definition and refinement of the Learning Events (LEs). Partecipating meeting and supporting the horizontal tracks.",
+          "● Gabriele Piantadosi contributed to the Sector-specific profile design: “Healthcare & Life Sciences”. Main task is the refinement of the content created by the university partners. Moreover ENEA is contributing UNINA in producing material",
+          "Gabriele Piantadosi attended to the WP7 meetings.",
+          "For Task Cluster E “Brand Identity and Online Presence”, ENEA participated in the internal Cluster meetings coordinating the cluster activities with the task of updating the website's pages of the new domains panoraima.eu and raise-u.eu. Ma",
+          "The PANORAIMA website is currently undergoing only minor fixes for integrations related to content presentation",
+          "The RAISE-U website is ready in terms of its overall structure; about 50% of the pages are complete, and the rest are being refined based on feedback from other groups and adjusted gradually. We are also working to improve the overall look",
+          "Over the next phase, we will support the horizontal workstream. Gabriele Piantadosi will join weekly meetings and revise the LEs content.",
+          "The team will support the Healthcare and Life Sciences track by contributing to the definition of AI competencies, refining job roles, and identifying relevant national case studies. In the next phase, ENEA will provide support for the cros"
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP3",
+          "WP4",
+          "WP6",
+          "WP7"
+        ],
+        "excerpt": "● Gabriele Piantadosi contributed to the definition and refinement of the Learning Events (LEs). Partecipating meeting and supporting the horizontal tracks.",
+        "word_count": 1204
       },
       "ESI": {
         "submitted": false
@@ -4291,10 +4331,42 @@
         "word_count": 1694
       },
       "HU": {
-        "submitted": false
+        "submitted": true,
+        "file": "HU LC Progress Report.docx",
+        "activities": [
+          "**Due to personal circumstances I could not fill the last progress report in time, therefore this report will cover a longer period",
+          "Industry, Business partners;  Academic institutions; Innovators; Investors; EU institutions; Other International Organisation (UN, OECD, etc.); National authorities; Regional authorities; Local authorities; Research communities; Specific us",
+          "Regional; National; International | Social Media; Press release; Media article; Print materials (brochure, leaflet, posters, stickers, banners etc.); Newsletter; Interview; Video; TV/Radio; Event (conference, meeting, workshop, internet deb",
+          "Conferences; Meetings; Education and training events; Clustering activities; Collaboration with EU-funded projects; Other scientific collaboration, Other (namely …) | Industry, Business partners; EU Institutions; Scientists; Education/train",
+          "Regional; National; International | Delivered/ongoing (until …)"
+        ],
+        "challenges": [],
+        "wp_focus": [],
+        "excerpt": "**Due to personal circumstances I could not fill the last progress report in time, therefore this report will cover a longer period",
+        "word_count": 1151
       },
       "KPI": {
-        "submitted": false
+        "submitted": true,
+        "file": "KPI LC Progress Report 21.05.2026.docx",
+        "activities": [
+          "Developing Horizontal LE lesson plans (Myroslava Kukhta).",
+          "Attending Wednesday local meetings. Developing lesson plans for the 18 LEs assigned within the track (Maksym Yenin). Peer-reviewing of LEs developed by project partners, providing comments and recommendations regarding the structure, conten",
+          "successful accreditation of the MA Program “Social Data Analytics” (ASD) at KPI. The LEs developed within the project will be implemented into this programme, contributing to the integration of modern international approaches, interdiscipli",
+          "Attending local meeting 30.04, developing lesson plans for the 5 LE’s within the track (Svitlana Bevz, Kostyantyn Popov, Svitlana Podoliak, Oksana Samchynska).",
+          "Attending local meetings 29.04, 6.05, 13.05, 20.05, developing lesson plans for the LEs and updating the LEs information on the Wiki (Olena Butnyk).",
+          "attending teach-the-teacher event 15.05 (Iurii Perga, Maksym Yenin, Myroslava Kukhta, Olena Butnyk, Svitlana Bevz)",
+          "Cluster B – finalizing and distributing input to support local student recruitment (Anna Ishchenko)",
+          "proceeding ongoing communication with partners to support the development of academic mobility and submission of Erasmus+ applications (Ilona Zhovta)"
+        ],
+        "challenges": [
+          "on 15 May 2026, hosted II International Conference: \"USE OF ARTIFICIAL INTELLIGENCE IN PUBLIC ADMINISTRATION: CHALLENGES, OPPORTUNITIES, PROSPECTS\", with the involvement of the Ministry of Digitalization, the National Agency for Public Serv",
+          "II International Conference: \"USE OF ARTIFICIAL INTELLIGENCE IN PUBLIC ADMINISTRATION: CHALLENGES, OPPORTUNITIES, PROSPECTS\" | Conferences; Meetings; Education and training events; Clustering activities; Collaboration with EU-funded project"
+        ],
+        "wp_focus": [
+          "WP7"
+        ],
+        "excerpt": "Attending Wednesday local meetings. Developing lesson plans for the 18 LEs assigned within the track (Maksym Yenin). Peer-reviewing of LEs developed by project partners, providing comments and recommendations regarding the structure, content, learning outcomes, and practical implementation of the sessions. Some of the ",
+        "word_count": 1629
       },
       "NAT": {
         "submitted": true,
@@ -4375,26 +4447,45 @@
         "submitted": true,
         "file": "TU Dublin LC Progress Report.docx",
         "activities": [
-          "Health – 8 LEs – Musfira, Mary Henrick, Na Li 5 LEs to be completed (we still must decide).",
-          "Media and Culture – Na Li, 8 LEs (reviewed pilot 2026), Lesson Plan all completed.",
+          "Health – 8 LEs – Musfira, Mary Henrick, Musfira has Identified 19 LEs for the pilot needed in Sept 2026 for the. Na Li is working on 5 LEs that is assigned to her.",
+          "Media and Culture – (Na Li) All assigned LEs related to pilot are now complete with Lesson Plan.",
+          "Horizontal – 8 LEs were switched from Management and Finance track – work on them is carried out Keith Q and Mary Hendrick",
+          "Law and Compliance – Abdel Salam – Lesson plan on two LEs have been completed and submitted. There are three additional LEs assigned to TU Dublin, work is still in progress.",
+          "Management and Finance – Mary Hendrick, Maurice Martin - working on 35+ learning events. Some LEs are still not assigned.",
+          "John Stauntaun  working on the website - News and Events, test for form notification.",
           "Industry, Business partners;  Academic institutions; Innovators; Investors; EU institutions; Other International Organisation (UN, OECD, etc.); National authorities; Regional authorities; Local authorities; Research communities; Specific us",
-          "Regional; National; International | Social Media; Press release; Media article; Print materials (brochure, leaflet, posters, stickers, banners etc.); Newsletter; Interview; Video; TV/Radio; Event (conference, meeting, workshop, internet deb",
-          "Conferences; Meetings; Education and training events; Clustering activities; Collaboration with EU-funded projects; Other scientific collaboration, Other (namely …) | Industry, Business partners; EU Institutions; Scientists; Education/train",
-          "Regional; National; International | Delivered/ongoing (until …)"
+          "Regional; National; International | Social Media; Press release; Media article; Print materials (brochure, leaflet, posters, stickers, banners etc.); Newsletter; Interview; Video; TV/Radio; Event (conference, meeting, workshop, internet deb"
         ],
         "challenges": [
-          "Problem – transferring them to the wiki is a challenge - will decide how to address this by 22nd May.",
-          "Work Package 7 – Automate the systems . Fernando - Technical Domain support (fixing DNA problem) – PANORAIMA and Raise U,  John Stantaun  - News and Events, test for form notification."
+          "Working to automate the systems . Fernando - Technical Domain support (fixing DNA problem) – PANORAIMA and Raise U,"
         ],
         "wp_focus": [],
-        "excerpt": "Health – 8 LEs – Musfira, Mary Henrick, Na Li 5 LEs to be completed (we still must decide).",
-        "word_count": 1245
+        "excerpt": "Health – 8 LEs – Musfira, Mary Henrick, Musfira has Identified 19 LEs for the pilot needed in Sept 2026 for the. Na Li is working on 5 LEs that is assigned to her.",
+        "word_count": 1290
       },
       "UniNa": {
         "submitted": false
       },
       "UNIWA": {
-        "submitted": false
+        "submitted": true,
+        "file": "UNIWA - LC Progress Report May 2026.docx",
+        "activities": [
+          "Participating in all activities regarding:",
+          "• Participation in MS Teams meetings",
+          "• Discussions on learning events",
+          "• LE planning and development",
+          "Attended WP3, LC meetings (Grigoris Nikolaou)",
+          "Industry, Business partners;  Academic institutions; Innovators; Investors; EU institutions; Other International Organisation (UN, OECD, etc.); National authorities; Regional authorities; Local authorities; Research communities; Specific us",
+          "Regional; National; International | Social Media; Press release; Media article; Print materials (brochure, leaflet, posters, stickers, banners etc.); Newsletter; Interview; Video; TV/Radio; Event (conference, meeting, workshop, internet deb",
+          "Conferences; Meetings; Education and training events; Clustering activities; Collaboration with EU-funded projects; Other scientific collaboration, Other (namely …) | Industry, Business partners; EU Institutions; Scientists; Education/train"
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP3",
+          "WP4"
+        ],
+        "excerpt": "Healthcare & Life Sciences Track (Anna Mavromanoli, Grigoris Nikolaou)",
+        "word_count": 1189
       },
       "RealAI": {
         "submitted": true,
@@ -4426,6 +4517,45 @@
       }
     },
     "wp_reports": {
+      "WP3": {
+        "file": "WP3 Leader Progress Report 2026-may-22.docx",
+        "partner": null,
+        "activities": [
+          "Progress Report Work Package 3",
+          "Overview of the progress of this Work Package towards the objectives of the project",
+          "Work Package Leader: Mihály Héder",
+          "In the Table 1 below, please report the progress of each of the tasks , includingsome explanation",
+          "In the table below, please report the progress of each of the tasks, including some explanation",
+          "Progress per Task + explanation (Table 1)",
+          "Activities in the Work Package that you are leading",
+          "In relation to the sprint planning"
+        ],
+        "challenges": [
+          "Does any of  the partners encounter challenges in delivering (e.g. participation, contributions to assigned tasks, discussions or meetings, delivering input).  Is clear what the reason is, potential consequences are, and are there ideas on"
+        ],
+        "excerpt": "Overview of the progress of this Work Package towards the objectives of the project"
+      },
+      "WP4": {
+        "file": "WP4 Leader Progress Report.docx",
+        "partner": null,
+        "activities": [
+          "Progress Report Work Package 4",
+          "Overview of the progress of this Work Package towards the objectives of the project",
+          "Work Package Leader: Meike Grol",
+          "*Due to personal circumstances I could not fill the last progress report in time, therefore this report will cover a longer period",
+          "In the Table 1 below, please report the progress of each of the tasks, including some explanation",
+          "In the table below, please report the progress of each of the tasks, including some explanation",
+          "Progress per Task + explanation (Table 1)",
+          "Activities in the Work Package that you are leading"
+        ],
+        "challenges": [
+          "Does any of the consortium partners in your track encounter challenges in delivering what was agreed upon (e.g. participation, contributions to assigned tasks, discussions, or meetings, delivering input).  If so, what is the reason and how",
+          "Does any of the partners encounter challenges in delivering (e.g. participation, contributions to assigned tasks, discussions or meetings, delivering input).  Is clear what the reason is, potential consequences are, and are there ideas on h",
+          "Deadlines are approaching fast. Issue is mainly how to deal with reviewing LEs in the horizontal track. How much to involve SMEs? What is exactly their role? Or would we rather divide reviewing among the HEIs?",
+          "As I previously mentioned to you, Meike, my concern is that some HEIs will only deliver the LEs proposed and developed by them (at least in the pilot) because it might be complicated to integrate other LEs into their programs. Hence why I p"
+        ],
+        "excerpt": "Overview of the progress of this Work Package towards the objectives of the project"
+      },
       "WP7": {
         "file": "WP7 Leader Progress Report 20260522.docx",
         "partner": null,
@@ -4441,7 +4571,9 @@
         ],
         "challenges": [
           "Does any of  the partners encounter challenges in delivering (e.g.  participation, contributions to assigned tasks, discussions or meetings, delivering input).  Is clear what the reason is, potential consequences are, and are there ideas on",
-          "Awaiting scale-up framework from WP1 before activities can take off."
+          "Awaiting scale-up framework from WP1 before activities can take off.",
+          "Weekly and bi-weekly meetings are organized within the clusters and the team leads in a WP7 meeting to monitor progress, challenges and need for cross-cluster activities and support.",
+          "WP1 to discuss and decide on Scale-up framework about the member circles, agreements, risk management etc. for growing the consortium. Cluster F will take off after this framework is decided on."
         ],
         "excerpt": "Overview of the progress of this Work Package towards the objectives of the project"
       }
@@ -4456,7 +4588,11 @@
     "dirname": "2026-06-11 WS Hamburg 11 and 12 June 2026",
     "has_progress_reports": false,
     "other_docs": [
+      "Hamburg_WP4_presentation_Meike.pptx",
+      "Hamburg_WP6_ambitions_presentation_Stefano.pptx",
       "Programme Hamburg  Worksprint June 2026.xlsx",
+      "WP6 ambitions executive brief (AI generated).docx",
+      "WP6 ambitions meeting transcript.docx",
       "WS Hamburg attendence.xlsx"
     ],
     "partners": {
@@ -4519,12 +4655,20 @@
     "other_docs": [
       "Preferences dates Review Meeting 1.xlsx",
       "Invitation response.docx",
+      "Review meeting - Project overview.pptx",
       "Invitation to a Project Review or Check or Progress Meeting.pdf",
+      "1st Project Review Meeting attendence.xlsx",
+      "Review meeting - WP7.pptx",
+      "Draft Technical Periodic Report - Part B.docx",
+      "Certificate of fund use - Lumpsum blanco.docx",
+      "Review meeting - WP2 WP7 Market Analysis.pptx",
+      "Draft agenda PANORAIMA review meeting (internal).docx",
       "WP1 - Project Management Board.pptx",
       "Project Review Guidance_Coordinator_V2.docx",
       "periodic-report_dep_en_template.docx",
       "Draft agenda for review meeting (1).docx",
-      "periodic-report_dep_en.pdf"
+      "periodic-report_dep_en.pdf",
+      "WP1 - Project Management Board.pptx"
     ],
     "partners": {},
     "wp_reports": {}
