@@ -4,7 +4,8 @@ import path from "node:path"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import WPDetail from "@/components/panoraima/wps/WPDetail"
-import type { WorkPackageDetail, WpHubMeta } from "@/lib/panoraima/types"
+import WP4Dashboard from "@/components/panoraima/wps/wp4/WP4Dashboard"
+import type { WorkPackageDetail, WpHubMeta, Wp4Registry } from "@/lib/panoraima/types"
 
 interface Props {
   params: Promise<{ wp: string }>
@@ -14,6 +15,12 @@ function loadDetail(wp: string): WorkPackageDetail | null {
   const file = path.join(process.cwd(), `src/lib/panoraima/${wp}_data.json`)
   if (!existsSync(file)) return null
   return JSON.parse(readFileSync(file, "utf-8")) as WorkPackageDetail
+}
+
+function loadWp4Registry(): Wp4Registry | null {
+  const file = path.join(process.cwd(), "src/lib/panoraima/wp4_le_registry.json")
+  if (!existsSync(file)) return null
+  return JSON.parse(readFileSync(file, "utf-8")) as Wp4Registry
 }
 
 function loadHubEntry(wp: string) {
@@ -35,6 +42,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { wp } = await params
+
+  // WP4 has a bespoke learning-materials tool (registry-driven), not the generic view.
+  if (wp === "wp4") {
+    const registry = loadWp4Registry()
+    if (registry) return <WP4Dashboard registry={registry} />
+  }
+
   const detail = loadDetail(wp)
   const entry = loadHubEntry(wp)
 

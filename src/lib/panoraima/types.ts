@@ -755,3 +755,83 @@ export interface Task23Detail {
   catalogue: T23CatalogueEntry[]
   generated_at: string
 }
+
+// ---------------------------------------------------------------------------
+// WP4 tool — Learning Event registry (dashboard · monitor · productivity)
+// ---------------------------------------------------------------------------
+
+export type Wp4Role = "author" | "co-author" | "reviewer"
+
+export interface Wp4MaterialFile {
+  name: string
+  ext: string
+  kb: number
+  date: string
+  rel: string
+}
+
+export interface Wp4RealAIRole {
+  role: Wp4Role
+  recipients: string[]   // emails routed for this role
+}
+
+export interface Wp4LE {
+  code: string
+  track: string
+  title: string
+  lesson_type: string
+  duration: string
+  status: string         // unified display status
+  wiki_status: string    // development | review | missing | ""
+  due_date: string
+  author: string
+  coauthor: string
+  reviewer: string
+  materials: {
+    count: number
+    has: boolean
+    newest: string
+    files: Wp4MaterialFile[]
+    folder: string
+  }
+  lesson_plan: {
+    doc: string
+    rel: string
+    has_meta_block: boolean
+    date: string
+  }
+  wiki_page: string | null
+  realai: {
+    involved: boolean
+    roles: Wp4RealAIRole[]
+  }
+  sources: string[]      // wiki | lesson_plan | registry | materials
+}
+
+export interface Wp4Registry {
+  wp: string
+  title: string
+  tagline: string
+  generated_at: string
+  data_sources: {
+    wiki: { status: string; captured_at?: string; scope?: string; master_list_total?: number }
+    sharepoint: { generated_at?: string; counts?: Record<string, number> }
+  }
+  summary: {
+    total_les: number
+    by_track: Record<string, number>
+    by_status: Record<string, number>
+    with_materials: number
+    materials_pending: number
+    realai: {
+      total: number
+      author: number
+      reviewer: number
+      by_status: Record<string, number>
+      needs_action: number
+    }
+  }
+  les: Wp4LE[]
+  realai_board: Wp4LE[]
+  roster: { name: string; email: string }[]
+}
