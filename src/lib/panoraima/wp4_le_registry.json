@@ -2,7 +2,7 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-06-18T15:21:56.461366Z",
+  "generated_at": "2026-06-18T18:02:58.090660Z",
   "data_sources": {
     "wiki": {
       "status": "live",
@@ -65,22 +65,27 @@
       },
       {
         "name": "Management information — Learning Outcomes",
-        "guidance": "The measurable learning outcomes: what a student can do after this LE. This is core author content.",
+        "guidance": "The measurable learning outcomes: what a student can do after this LE. Core author content.",
         "author_owns": true
       },
       {
         "name": "Expected preparation",
-        "guidance": "Obligatory / optional / reference reading for students, and recommended prep for teachers.",
+        "guidance": "Put references to literature, links to further materials and videos HERE (for students and/or teachers). Include at least some literature / additional sources for EVERY LE — it raises the professional level. (Materials meant to be used DURING the lecture go as links in the slides instead.)",
+        "author_owns": true
+      },
+      {
+        "name": "LEs to be completed before",
+        "guidance": "Cross-references to prerequisite Learning Events go HERE — not in 'Lesson materials'.",
         "author_owns": true
       },
       {
         "name": "Lesson materials",
-        "guidance": "Link to the actual teaching materials (slides, exercises, notebooks) — these live in SharePoint — plus the CC licence note.",
+        "guidance": "ONLY the link of this LE (with its code) pointing to the Utrecht SharePoint folder — NOT the content itself. The actual slides/notebooks live in SharePoint.",
         "author_owns": true
       },
       {
         "name": "Instructions for teachers",
-        "guidance": "The minute-by-minute teaching plan (0–10 min, 10–20 min, …). The single biggest author deliverable.",
+        "guidance": "A DETAILED, step-by-step teaching guide. Teachers of different backgrounds will deliver this, so 1–2 general sentences are NOT enough — give as much concrete guidance as possible (timing, what to say/show, transitions). Dedicate special attention here.",
         "author_owns": true
       },
       {
@@ -115,25 +120,48 @@
         "detail": "Assess whether the material addresses relevant risks, limitations, trade-offs, uncertainty, implementation barriers or ethical issues. Suggest additions where students need a more realistic understanding of what can go wrong or what makes implementation difficult."
       }
     ],
-    "review_process_note": "Log review remarks directly in the SharePoint documents or on the Learning Event's wiki discussion page — never by email — so completed reviews are documented in the right place.",
-    "reviewer_role_summary": "RealAI reviews as the 'Reviewer' role: judge whether materials are credible, current and relevant from a specialist & professional-practice perspective.",
+    "review_process": [
+      {
+        "rule": "Put reviews in the wiki Discussion section of the related LE",
+        "detail": "Not by email — so the review is documented in the right place."
+      },
+      {
+        "rule": "Propose a minor or major revision of the learning material",
+        "detail": "Every review should state whether minor or major revision is needed."
+      },
+      {
+        "rule": "Sign your review with your name (and ideally email)",
+        "detail": "Reviewers may involve colleagues; signing lets authors trace who reviewed and contact them for clarification."
+      },
+      {
+        "rule": "The slides (learning materials) are the PRIMARY review target",
+        "detail": "Lesson plans need lighter review — they're re-evaluated together with the slides. Review the materials first, then re-check the plan against them."
+      }
+    ],
+    "review_process_note": "Post reviews in the wiki Discussion section of the LE (never email), with a minor/major revision suggestion, signed with your name — so authors can trace and contact the reviewer.",
+    "reviewer_role_summary": "RealAI reviews as the 'Reviewer' role: judge whether materials are credible, current and relevant from a specialist & professional-practice perspective. The slides are the primary target; the lesson plan is re-evaluated together with them.",
+    "sharepoint": {
+      "upload_url": "https://hogeschoolutrecht.sharepoint.com/sites/ext_Onderwijs_panoraima/Gedeelde%20documenten/Forms/AllItems.aspx?id=%2Fsites%2Fext%5FOnderwijs%5Fpanoraima%2FGedeelde%20documenten%2FWP4",
+      "template_url": "https://hogeschoolutrecht.sharepoint.com/sites/ext_Onderwijs_panoraima/Gedeelde%20documenten/Forms/AllItems.aspx?id=%2Fsites%2Fext%5FOnderwijs%5Fpanoraima%2FGedeelde%20documenten%2FWP4%2FTemplates",
+      "note": "Learning materials (slides) upload to the Utrecht SharePoint WP4 folder; the PPT template is in its Templates subfolder. No access? Ask the track lead."
+    },
     "claude_howto": [
       {
-        "context": "Wiki (hcaim.bme.hu)",
+        "context": "Wiki (hcaim.bme.hu) — lesson plan",
         "tool": "Claude for Chrome extension",
-        "how": "Open the LE page in Chrome and ask Claude to draft Learning Outcomes, a timed teaching plan, or to summarise the page for review — it reads the page directly. Keep edits on the wiki.",
+        "how": "Open the LE page in Chrome and ask Claude to draft Learning Outcomes, a detailed teacher guide, or literature for 'Expected preparation'. It reads the page directly; keep edits on the wiki.",
         "icon": "globe"
       },
       {
-        "context": "SharePoint material (PPTX / DOCX)",
-        "tool": "Claude inside the file",
-        "how": "Open the slide deck or doc and use Claude in the app to draft slides, exercises, or to review content. Put review remarks directly in the document (comments) — the guidelines require feedback in SharePoint or the LE discussion page, never email.",
+        "context": "SharePoint — slides / materials",
+        "tool": "Claude inside the PPT/DOC",
+        "how": "Upload slides to the Utrecht SharePoint WP4 folder (PPT template in Templates). Use Claude in the deck to draft content + use PPT speaker-notes (remarks) for teach-info you don't want on the slide itself. Make slides self-explanatory — different teachers will deliver them.",
         "icon": "file"
       },
       {
         "context": "Reviewing efficiently",
         "tool": "Claude + the reviewer checklist",
-        "how": "Paste the 4 reviewer checklist points and ask Claude to assess the material against each (practice credibility, current relevance, track/role fit, professional judgement) and draft suggested improvements you can refine.",
+        "how": "Ask Claude to assess the material against the reviewer checklist and draft a minor/major revision suggestion. Then post it (signed, with your name) in the LE's wiki Discussion section.",
         "icon": "check"
       }
     ]
@@ -9610,7 +9638,7 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -9741,7 +9769,7 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -11119,7 +11147,7 @@
         "outcomes_present": true,
         "materials_uploaded": true,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -11288,7 +11316,7 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -11966,7 +11994,7 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -12226,10 +12254,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -12473,10 +12501,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -12644,10 +12672,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -12739,10 +12767,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -12910,10 +12938,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -13157,10 +13185,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -13458,10 +13486,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -17898,10 +17926,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -17993,10 +18021,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -18088,10 +18116,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -19551,7 +19579,7 @@
         "outcomes_present": true,
         "materials_uploaded": true,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -19918,7 +19946,7 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -20011,7 +20039,7 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -20104,7 +20132,7 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -20288,7 +20316,7 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
         "ready_to_review": false
@@ -20889,10 +20917,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -20984,10 +21012,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -21079,10 +21107,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -21174,10 +21202,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -21269,10 +21297,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -21364,10 +21392,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -21459,10 +21487,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -21554,10 +21582,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -21649,10 +21677,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false
@@ -21744,10 +21772,10 @@
         "outcomes_present": true,
         "materials_uploaded": false,
         "wiki_missing": [
-          "Instructions for teachers"
+          "Instructions for teachers (detailed)"
         ],
         "author_needs": [
-          "Instructions for teachers",
+          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
         "ready_to_review": false

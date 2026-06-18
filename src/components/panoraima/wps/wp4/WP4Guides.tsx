@@ -2,7 +2,7 @@
 
 import {
   PenLine, ListChecks, Bot, Globe, FileText, CheckCircle,
-  Sparkles, AlertTriangle, MessageSquare, Chrome,
+  Sparkles, AlertTriangle, Chrome, FolderUp, ExternalLink,
 } from "lucide-react"
 import type {
   Wp4Registry, Wp4TemplateSection, Wp4ReviewerCheck, Wp4ClaudeHowto,
@@ -95,8 +95,10 @@ function HowtoCard({ howto }: { howto: Wp4ClaudeHowto }) {
 }
 
 export default function WP4Guides({ registry }: { registry: Wp4Registry }) {
-  const { template_sections, reviewer_checklist, review_process_note, reviewer_role_summary, claude_howto } =
-    registry.guides
+  const {
+    template_sections, reviewer_checklist, review_process, review_process_note,
+    reviewer_role_summary, sharepoint, claude_howto,
+  } = registry.guides
 
   return (
     <section>
@@ -127,6 +129,26 @@ export default function WP4Guides({ registry }: { registry: Wp4Registry }) {
               <TemplateRow key={`${s.name}-${i}`} section={s} />
             ))}
           </div>
+          {sharepoint?.upload_url && (
+            <div className="mt-4 rounded-lg border border-[#E7E7EA] bg-[#FAFAF9] px-3 py-2.5">
+              <div className="flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#9CA3AF] mb-1.5">
+                <FolderUp className="w-3 h-3" /> Where slides go
+              </div>
+              <p className="text-[11.5px] text-[#6B7280] leading-relaxed">{sharepoint.note}</p>
+              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                <a href={sharepoint.upload_url} target="_blank" rel="noreferrer"
+                   className="inline-flex items-center gap-1 text-[11px] font-medium text-[#16181D] hover:text-[#C0492B]">
+                  <ExternalLink className="w-3 h-3" /> Utrecht SharePoint · WP4
+                </a>
+                {sharepoint.template_url && (
+                  <a href={sharepoint.template_url} target="_blank" rel="noreferrer"
+                     className="inline-flex items-center gap-1 text-[11px] font-medium text-[#16181D] hover:text-[#C0492B]">
+                    <ExternalLink className="w-3 h-3" /> PPT template
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* 2. Reviewer checklist */}
@@ -143,16 +165,26 @@ export default function WP4Guides({ registry }: { registry: Wp4Registry }) {
             ))}
           </div>
 
-          {/* Must-do callout */}
-          <div className="mt-5 rounded-lg px-3 py-2.5" style={{ background: RUST_SOFT }}>
-            <div className="flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color: RUST }}>
+          {/* Review process — the track lead's rules */}
+          <div className="mt-5 rounded-lg px-3 py-3" style={{ background: RUST_SOFT }}>
+            <div className="flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] mb-2" style={{ color: RUST }}>
               <AlertTriangle className="w-3 h-3" />
-              Must do
+              How to file a review
             </div>
-            <p className="mt-1 flex items-start gap-1.5 text-[11.5px] leading-relaxed" style={{ color: RUST }}>
-              <MessageSquare className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
-              <span>{review_process_note}</span>
-            </p>
+            <ul className="space-y-2">
+              {(review_process && review_process.length > 0
+                ? review_process
+                : [{ rule: review_process_note, detail: "" }]
+              ).map((r, i) => (
+                <li key={i} className="flex items-start gap-1.5">
+                  <CheckCircle className="w-3 h-3 flex-shrink-0 mt-0.5" style={{ color: RUST }} />
+                  <span className="text-[11.5px] leading-snug" style={{ color: "#A53C22" }}>
+                    <span className="font-semibold">{r.rule}</span>
+                    {r.detail ? <span className="text-[#6B7280]"> — {r.detail}</span> : null}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

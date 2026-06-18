@@ -846,11 +846,24 @@ export interface Wp4ClaudeHowto {
   icon: string
 }
 
+export interface Wp4ReviewRule {
+  rule: string
+  detail: string
+}
+
+export interface Wp4Sharepoint {
+  upload_url?: string
+  template_url?: string
+  note?: string
+}
+
 export interface Wp4Guides {
   template_sections: Wp4TemplateSection[]
   reviewer_checklist: Wp4ReviewerCheck[]
+  review_process?: Wp4ReviewRule[]
   review_process_note: string
   reviewer_role_summary: string
+  sharepoint?: Wp4Sharepoint
   claude_howto: Wp4ClaudeHowto[]
 }
 
