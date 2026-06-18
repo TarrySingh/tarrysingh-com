@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T12:42:44Z",
+  "generated_at": "2026-06-18T19:10:59Z",
   "wps": [
     {
       "wp": "WP2",
@@ -81,15 +81,15 @@
       "description": "Design lesson plans and run the cross-university pilots that validate the curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 234,
-        "size_mb": 257,
+        "total_files": 235,
+        "size_mb": 258,
         "by_ext": {
           ".docx": 96,
           ".pdf": 30,
           ".xlsx": 6,
           ".pptx": 50,
           ".odp": 1,
-          ".potx": 2,
+          ".potx": 3,
           ".html": 3,
           ".md": 3,
           ".css": 12,
@@ -101,7 +101,7 @@
         },
         "by_type": {
           "other": 221,
-          "template": 8,
+          "template": 9,
           "presentation": 3,
           "research": 2
         },
