@@ -4,8 +4,11 @@ import { useMemo, useState } from "react"
 import {
   X, Search, FileText, Sparkles, FolderOpen, Clock,
   User, UserCheck, UsersRound, CalendarDays, ExternalLink,
+  CheckCircle2, XCircle, AlertCircle, BookOpen, ClipboardCheck,
 } from "lucide-react"
-import type { Wp4Registry, Wp4LE } from "@/lib/panoraima/types"
+import type {
+  Wp4Registry, Wp4LE, Wp4Completeness, Wp4WikiSection,
+} from "@/lib/panoraima/types"
 import {
   TRACK_ORDER, TRACK_COLOR, TRACK_SHORT, statusStyle, ROLE_LABEL, ROLE_COLOR,
 } from "./wp4constants"
@@ -340,6 +343,27 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
             )}
           </div>
 
+          {/* Completeness */}
+          {le.completeness && <CompletenessBlock c={le.completeness} />}
+
+          {/* Wiki content */}
+          {le.wiki_sections && le.wiki_sections.length > 0 && (
+            <div className="space-y-2">
+              <SectionLabel>
+                <span className="inline-flex items-center gap-1.5">
+                  <BookOpen className="w-3 h-3" />
+                  Wiki content
+                  <span className="text-gray-400 font-normal tabular-nums">({le.wiki_sections.length})</span>
+                </span>
+              </SectionLabel>
+              <div className="space-y-2">
+                {le.wiki_sections.map((s, i) => (
+                  <WikiSectionCard key={`${s.name}-${i}`} section={s} />
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Wiki link */}
           {le.wiki_page && (
             <a
@@ -389,6 +413,111 @@ function PersonRow({ icon, role, name }: { icon: React.ReactNode; role: string; 
         <div className={`text-[13px] truncate ${name ? "text-navy-800 font-medium" : "text-gray-300 italic"}`}>
           {name || "unassigned"}
         </div>
+      </div>
+    </div>
+  )
+}
+
+function CompletenessBlock({ c }: { c: Wp4Completeness }) {
+  return (
+    <div className="space-y-2">
+      <SectionLabel>
+        <span className="inline-flex items-center gap-1.5">
+          <ClipboardCheck className="w-3 h-3" />
+          Completeness
+          <span className="text-gray-400 font-normal">
+            {c.is_author ? "· RealAI authors this" : "· RealAI reviews this"}
+          </span>
+        </span>
+      </SectionLabel>
+
+      {c.is_author ? (
+        c.author_needs.length === 0 ? (
+          <div className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-[12px] font-semibold text-emerald-700">
+            <CheckCircle2 className="w-4 h-4" />
+            Complete &#10003;
+          </div>
+        ) : (
+          <div className="space-y-2">
+            <div className="text-[11px] text-gray-500">
+              Still owed by RealAI (as author):
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {c.author_needs.map((need, i) => (
+                <span
+                  key={`${need}-${i}`}
+                  className="inline-flex items-center gap-1 rounded-full border border-gold-200 bg-gold-50 px-2.5 py-1 text-[11px] font-semibold text-gold-700"
+                >
+                  <AlertCircle className="w-3 h-3" />
+                  {need}
+                </span>
+              ))}
+            </div>
+          </div>
+        )
+      ) : (
+        <div className="space-y-2.5">
+          {c.ready_to_review ? (
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-[12px] font-semibold text-emerald-700">
+              <CheckCircle2 className="w-4 h-4" />
+              Ready to review
+            </div>
+          ) : (
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-[12px] font-medium text-gray-500">
+              <AlertCircle className="w-4 h-4 text-gray-400" />
+              Not written yet — nothing to review
+            </div>
+          )}
+          <div className="grid grid-cols-1 gap-1.5">
+            <CheckIndicator ok={c.outcomes_present} label="Learning outcomes present" />
+            <CheckIndicator ok={c.instructions_written} label="Instructions written" />
+            <CheckIndicator ok={c.materials_uploaded} label="Materials uploaded" />
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function CheckIndicator({ ok, label }: { ok: boolean; label: string }) {
+  return (
+    <div className="flex items-center gap-2 text-[12px]">
+      {ok ? (
+        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+      ) : (
+        <XCircle className="w-3.5 h-3.5 text-gray-300 flex-shrink-0" />
+      )}
+      <span className={ok ? "text-navy-800 font-medium" : "text-gray-400"}>{label}</span>
+    </div>
+  )
+}
+
+function WikiSectionCard({ section }: { section: Wp4WikiSection }) {
+  return (
+    <div className="rounded-lg border border-gray-100 overflow-hidden">
+      <div className="flex items-center gap-2 px-3 py-2 bg-gray-50/70 border-b border-gray-100">
+        {section.empty ? (
+          <span className="w-2 h-2 rounded-full bg-gray-300 flex-shrink-0" title="empty" />
+        ) : (
+          <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" title="filled" />
+        )}
+        <span className="flex-1 min-w-0 text-[12px] font-semibold text-navy-800 truncate">
+          {section.name}
+        </span>
+        {!section.empty && (
+          <span className="text-[10px] text-gray-400 tabular-nums flex-shrink-0">
+            {section.len} ch
+          </span>
+        )}
+      </div>
+      <div className="px-3 py-2.5">
+        {section.empty ? (
+          <div className="text-[12px] text-gray-400 italic">— empty —</div>
+        ) : (
+          <div className="max-h-44 overflow-y-auto text-[12px] text-gray-600 leading-relaxed whitespace-pre-line">
+            {section.text}
+          </div>
+        )}
       </div>
     </div>
   )

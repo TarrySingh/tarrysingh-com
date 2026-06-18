@@ -3,9 +3,9 @@
 import { useMemo } from "react"
 import {
   PenLine, Eye, AlertTriangle, FileCheck2, FileX2,
-  ExternalLink, CalendarClock, Sparkles,
+  ExternalLink, CalendarClock, Sparkles, CheckCircle2, ListTodo, Hourglass,
 } from "lucide-react"
-import type { Wp4Registry, Wp4LE } from "@/lib/panoraima/types"
+import type { Wp4Registry, Wp4LE, Wp4Completeness } from "@/lib/panoraima/types"
 import {
   TRACK_COLOR, TRACK_SHORT, statusStyle, ROLE_LABEL, ROLE_COLOR,
 } from "./wp4constants"
@@ -35,18 +35,69 @@ function StatPill({
 }: {
   label: string
   value: number
-  tone: "gold" | "sky" | "rose"
+  tone: "gold" | "sky" | "rose" | "amber" | "emerald"
 }) {
   const toneMap = {
-    gold: { dot: "#c9a96e", text: "text-gold-700", ring: "border-gold-200 bg-gold-50" },
-    sky:  { dot: "#0ea5e9", text: "text-sky-700",  ring: "border-sky-200 bg-sky-50" },
-    rose: { dot: "#f43f5e", text: "text-rose-700", ring: "border-rose-200 bg-rose-50" },
+    gold:    { dot: "#c9a96e", text: "text-gold-700",    ring: "border-gold-200 bg-gold-50" },
+    sky:     { dot: "#0ea5e9", text: "text-sky-700",     ring: "border-sky-200 bg-sky-50" },
+    rose:    { dot: "#f43f5e", text: "text-rose-700",    ring: "border-rose-200 bg-rose-50" },
+    amber:   { dot: "#f59e0b", text: "text-amber-700",   ring: "border-amber-200 bg-amber-50" },
+    emerald: { dot: "#10b981", text: "text-emerald-700", ring: "border-emerald-200 bg-emerald-50" },
   }[tone]
   return (
     <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 ${toneMap.ring}`}>
       <span className="w-2 h-2 rounded-full" style={{ background: toneMap.dot }} />
       <span className={`text-lg font-bold tabular-nums leading-none ${toneMap.text}`}>{value}</span>
       <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-gray-500">{label}</span>
+    </div>
+  )
+}
+
+// Per-card completeness signal: authors see what's outstanding; reviewers see
+// whether the LE is ready for them to pick up.
+function CompletenessRow({
+  completeness, kind,
+}: {
+  completeness: Wp4Completeness
+  kind: "authoring" | "reviewing"
+}) {
+  if (kind === "reviewing") {
+    return completeness.ready_to_review ? (
+      <div className="mt-2.5">
+        <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 border border-emerald-200 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-700">
+          <CheckCircle2 className="w-2.5 h-2.5" />
+          Ready to review
+        </span>
+      </div>
+    ) : (
+      <div className="mt-2.5">
+        <span className="inline-flex items-center gap-1 rounded-full bg-gray-50 border border-gray-200 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gray-400">
+          <Hourglass className="w-2.5 h-2.5" />
+          Awaiting author content
+        </span>
+      </div>
+    )
+  }
+
+  // Authoring column
+  if (completeness.author_needs.length === 0) {
+    return (
+      <div className="mt-2.5 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600">
+        <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" />
+        Complete
+      </div>
+    )
+  }
+
+  return (
+    <div className="mt-2.5 rounded-lg bg-gold-50/70 border border-gold-200 px-2.5 py-1.5">
+      <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider text-gold-700">
+        <ListTodo className="w-3 h-3 flex-shrink-0" />
+        Needs
+      </div>
+      <div className="mt-0.5 text-[11px] font-medium text-gold-800 leading-snug">
+        {completeness.author_needs.join(" · ")}
+      </div>
     </div>
   )
 }
@@ -124,6 +175,11 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
         )}
       </div>
 
+      {/* Completeness — what's outstanding for this LE's role */}
+      {le.completeness && (
+        <CompletenessRow completeness={le.completeness} kind={kind} />
+      )}
+
       {/* Footer: materials + needs-action flag */}
       <div className="mt-3 pt-2.5 border-t border-gray-50 flex items-center justify-between gap-2">
         {le.materials.has ? (
@@ -200,7 +256,8 @@ function BoardColumn({
 }
 
 export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) {
-  const { author, reviewer, needs_action } = registry.summary.realai
+  const { author, reviewer, needs_action, author_todo, ready_to_review } =
+    registry.summary.realai
 
   const board = registry.realai_board
 
@@ -233,6 +290,12 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
         <StatPill label="Authoring" value={author} tone="gold" />
         <StatPill label="Reviewing" value={reviewer} tone="sky" />
         <StatPill label="Needs action" value={needs_action} tone="rose" />
+        {typeof author_todo === "number" && (
+          <StatPill label="LEs needing content" value={author_todo} tone="amber" />
+        )}
+        {typeof ready_to_review === "number" && (
+          <StatPill label="Ready to review" value={ready_to_review} tone="emerald" />
+        )}
         <span className="inline-flex items-center gap-1.5 text-[11px] text-gray-400 ml-1">
           <Sparkles className="w-3.5 h-3.5 text-gold-400" />
           {board.length} LEs on RealAI&apos;s plate

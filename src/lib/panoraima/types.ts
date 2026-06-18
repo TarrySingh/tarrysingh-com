@@ -775,12 +775,30 @@ export interface Wp4RealAIRole {
   recipients: string[]   // emails routed for this role
 }
 
+export interface Wp4WikiSection {
+  name: string
+  len: number
+  empty: boolean
+  text: string
+}
+
+export interface Wp4Completeness {
+  is_author: boolean
+  instructions_written: boolean
+  outcomes_present: boolean
+  materials_uploaded: boolean
+  wiki_missing: string[]
+  author_needs: string[]
+  ready_to_review: boolean
+}
+
 export interface Wp4LE {
   code: string
   track: string
   title: string
   lesson_type: string
   duration: string
+  job_role?: string
   status: string         // unified display status
   wiki_status: string    // development | review | missing | ""
   due_date: string
@@ -801,11 +819,39 @@ export interface Wp4LE {
     date: string
   }
   wiki_page: string | null
+  wiki_sections: Wp4WikiSection[] | null
   realai: {
     involved: boolean
     roles: Wp4RealAIRole[]
   }
+  completeness: Wp4Completeness | null
   sources: string[]      // wiki | lesson_plan | registry | materials
+}
+
+export interface Wp4TemplateSection {
+  name: string
+  guidance: string
+  author_owns: boolean
+}
+
+export interface Wp4ReviewerCheck {
+  title: string
+  detail: string
+}
+
+export interface Wp4ClaudeHowto {
+  context: string
+  tool: string
+  how: string
+  icon: string
+}
+
+export interface Wp4Guides {
+  template_sections: Wp4TemplateSection[]
+  reviewer_checklist: Wp4ReviewerCheck[]
+  review_process_note: string
+  reviewer_role_summary: string
+  claude_howto: Wp4ClaudeHowto[]
 }
 
 export interface Wp4Registry {
@@ -829,8 +875,11 @@ export interface Wp4Registry {
       reviewer: number
       by_status: Record<string, number>
       needs_action: number
+      author_todo?: number
+      ready_to_review?: number
     }
   }
+  guides: Wp4Guides
   les: Wp4LE[]
   realai_board: Wp4LE[]
   roster: { name: string; email: string }[]

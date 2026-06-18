@@ -7,6 +7,8 @@ import type { Wp4Registry } from "@/lib/panoraima/types"
 import { TRACK_ORDER, TRACK_COLOR } from "./wp4constants"
 import WP4Overview from "./WP4Overview"
 import WP4RealAIBoard from "./WP4RealAIBoard"
+import WP4Pipeline from "./WP4Pipeline"
+import WP4Guides from "./WP4Guides"
 import WP4StatusViews from "./WP4StatusViews"
 import WP4Explorer from "./WP4Explorer"
 
@@ -133,6 +135,8 @@ export default function WP4Dashboard({ registry }: Props) {
         <div className="space-y-16 md:space-y-20">
           <section className="animate-fade-up"><WP4Overview registry={registry} /></section>
           <section className="animate-fade-up"><WP4RealAIBoard registry={registry} /></section>
+          <section className="animate-fade-up"><WP4Pipeline registry={registry} /></section>
+          <section className="animate-fade-up"><WP4Guides registry={registry} /></section>
           <section className="animate-fade-up"><WP4StatusViews registry={registry} /></section>
           <section className="animate-fade-up"><WP4Explorer registry={registry} /></section>
 
