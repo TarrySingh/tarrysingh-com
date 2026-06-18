@@ -4,6 +4,11 @@ import { useMemo, useState } from "react"
 import type { PartnerCode, TimelineEvent } from "@/lib/panoraima/types"
 import { PARTNERS, WORK_PACKAGES } from "@/lib/panoraima/types"
 import { wpActivityByEvent } from "./helpers"
+import SectionHeader from "./SectionHeader"
+import {
+  INK, SLATE, MUTE, FAINT, LINE, LINE_SOFT,
+  COBALT_SOFT, COBALT_LINE, WHITE, wpColor,
+} from "./consortiumTokens"
 
 interface Props {
   events: TimelineEvent[]
@@ -39,59 +44,56 @@ export default function WorkPackageLens({ events, onEventClick }: Props) {
 
   return (
     <div>
-      <div className="flex items-end justify-between mb-5">
-        <div>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
-            Work package lens
-          </span>
-          <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
-            Which work packages moved when
-          </h2>
-          <p className="mt-1 text-sm text-gray-500 max-w-xl">
-            Each band shows how many partners reported activity on that WP. Hover a WP name to focus.
-          </p>
-        </div>
-      </div>
+      <SectionHeader
+        index="04"
+        kicker="Work-package lens"
+        title="Where the effort is going"
+        subtitle="Activity across the seven work packages over time."
+      />
 
       <div className="grid md:grid-cols-[200px,1fr] gap-6">
         {/* Legend */}
         <div className="space-y-2">
           {WORK_PACKAGES.map(wp => {
             const dim = focusedWp && focusedWp !== wp.id
+            const active = focusedWp === wp.id
             const total = Object.values(wpPartnerCounts[wp.id] || {}).reduce((a, b) => a + b, 0)
             return (
               <button
                 key={wp.id}
                 onMouseEnter={() => setFocusedWp(wp.id)}
                 onMouseLeave={() => setFocusedWp(null)}
-                className={`w-full text-left rounded-lg border border-gray-100 p-3 transition-all ${
-                  dim ? "opacity-40" : "opacity-100"
-                } ${focusedWp === wp.id ? "bg-navy-50 border-navy-200" : "bg-white hover:bg-gray-50"}`}
+                className="w-full text-left rounded-lg border p-3 transition-all"
+                style={{
+                  opacity: dim ? 0.4 : 1,
+                  borderColor: active ? COBALT_LINE : LINE,
+                  background: active ? COBALT_SOFT : WHITE,
+                }}
               >
                 <div className="flex items-center gap-2">
                   <span
                     className="inline-block w-2.5 h-2.5 rounded-sm"
-                    style={{ background: wp.color }}
+                    style={{ background: wpColor(wp.id) }}
                   />
-                  <span className="font-mono text-xs font-bold text-navy-900">{wp.id}</span>
-                  <span className="ml-auto text-[10px] font-mono text-gray-400">
+                  <span className="font-mono text-xs font-bold tabular-nums" style={{ color: INK }}>{wp.id}</span>
+                  <span className="ml-auto text-[10px] font-mono tabular-nums" style={{ color: FAINT }}>
                     {total}
                   </span>
                 </div>
-                <div className="text-[11px] text-gray-500 mt-1 leading-tight">{wp.name}</div>
+                <div className="text-[11px] mt-1 leading-tight" style={{ color: MUTE }}>{wp.name}</div>
               </button>
             )
           })}
         </div>
 
         {/* Stacked area chart */}
-        <div className="relative rounded-2xl bg-white border border-gray-100 p-6">
+        <div className="relative rounded-xl border p-6" style={{ background: WHITE, borderColor: LINE }}>
           <svg viewBox="0 0 800 280" className="w-full h-auto" preserveAspectRatio="none">
             <defs>
               {WORK_PACKAGES.map(wp => (
                 <linearGradient key={wp.id} id={`grad-${wp.id}`} x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor={wp.color} stopOpacity="0.9" />
-                  <stop offset="100%" stopColor={wp.color} stopOpacity="0.35" />
+                  <stop offset="0%" stopColor={wpColor(wp.id)} stopOpacity="0.9" />
+                  <stop offset="100%" stopColor={wpColor(wp.id)} stopOpacity="0.35" />
                 </linearGradient>
               ))}
             </defs>
@@ -103,14 +105,15 @@ export default function WorkPackageLens({ events, onEventClick }: Props) {
                 x1="0" x2="800"
                 y1={240 - pct * 220}
                 y2={240 - pct * 220}
-                stroke="#f1f5f9"
+                stroke={LINE_SOFT}
                 strokeWidth="1"
               />
             ))}
 
             {/* Plot each WP as a band */}
-            {WORK_PACKAGES.map((wp, wpIdx) => {
+            {WORK_PACKAGES.map((wp) => {
               const dim = focusedWp && focusedWp !== wp.id
+              const stroke = wpColor(wp.id)
               const points = series.map((s, i) => {
                 const val = (s as Record<string, number | string>)[wp.id] as number
                 const x = (i / Math.max(1, series.length - 1)) * 800
@@ -135,13 +138,13 @@ export default function WorkPackageLens({ events, onEventClick }: Props) {
                   }}
                 >
                   <path d={areaD} fill={`url(#grad-${wp.id})`} />
-                  <path d={pathD} fill="none" stroke={wp.color} strokeWidth="1.5" />
+                  <path d={pathD} fill="none" stroke={stroke} strokeWidth="1.5" />
                   {points.map((p, i) => (
                     <circle
                       key={i}
                       cx={p.x} cy={p.y} r={focusedWp === wp.id ? 4 : 2.5}
-                      fill="white"
-                      stroke={wp.color}
+                      fill={WHITE}
+                      stroke={stroke}
                       strokeWidth="1.5"
                       style={{ transition: "r 0.2s" }}
                     />
@@ -155,26 +158,26 @@ export default function WorkPackageLens({ events, onEventClick }: Props) {
               const x = (i / Math.max(1, series.length - 1)) * 800
               return (
                 <g key={s.event}>
-                  <line x1={x} y1={240} x2={x} y2={248} stroke="#cbd5e1" />
+                  <line x1={x} y1={240} x2={x} y2={248} stroke={LINE} />
                   <text
                     x={x}
                     y={268}
                     fontSize="10"
                     fontFamily="monospace"
-                    fill="#64748b"
+                    fill={FAINT}
                     textAnchor="middle"
                     style={{ cursor: "pointer" }}
                     onClick={() => onEventClick(s.event)}
                   >
-                    {s.label.replace(" ", "\u00a0")}
+                    {s.label.replace(" ", " ")}
                   </text>
                 </g>
               )
             })}
           </svg>
-          <div className="mt-3 text-[11px] text-gray-400 text-center">
+          <div className="mt-3 text-[11px] font-mono uppercase tracking-[0.15em] text-center" style={{ color: FAINT }}>
             y-axis: partners active in WP ·{" "}
-            <span className="text-gray-500">click month to open that event</span>
+            <span style={{ color: SLATE }}>click month to open that event</span>
           </div>
         </div>
       </div>

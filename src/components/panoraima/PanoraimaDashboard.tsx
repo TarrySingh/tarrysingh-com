@@ -12,6 +12,10 @@ import WorkPackageLens from "./WorkPackageLens"
 import EventDetailPanel from "./EventDetailPanel"
 import PartnerDrawer from "./PartnerDrawer"
 import { challengeCount, totalSubmissions } from "./helpers"
+import { SURFACE, INK, SLATE, FAINT, COBALT, COBALT_DK } from "./consortiumTokens"
+
+const SECTION_CARD =
+  "animate-fade-up rounded-2xl border border-[#E3E7ED] bg-white p-5 md:p-7 shadow-[0_1px_2px_rgba(10,31,51,0.04)]"
 
 interface Props {
   events: TimelineEvent[]
@@ -61,30 +65,32 @@ export default function PanoraimaDashboard({ events }: Props) {
   }, [openEvent, openPartner])
 
   return (
-    <div className="relative min-h-screen bg-white">
+    <div className="relative min-h-screen" style={{ background: SURFACE }}>
       <HeroSection
         totalEvents={kpi.totalEvents}
         totalSubmissions={kpi.submissions}
         totalChallenges={kpi.challenges}
       />
 
-      {/* Toolbar sits directly on the hero's lower edge; dark-glass pill
-          style keeps contrast whatever the mesh gradient is doing behind it. */}
-      <div className="relative z-20 -mt-24 max-w-7xl mx-auto px-5 md:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-navy-950/60 backdrop-blur-md border border-white/10 shadow-xl px-4 md:px-5 py-3">
+      {/* Toolbar overlaps the hero's lower edge — a crisp white command bar
+          (McKinsey light-on-navy) with a cobalt primary action. */}
+      <div className="relative z-20 -mt-20 max-w-7xl mx-auto px-5 md:px-8">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-white border border-[#E3E7ED] shadow-[0_8px_30px_rgba(5,28,44,0.12)] px-4 md:px-5 py-3">
           <Link
             href="/experiments"
-            className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.15em] transition-colors"
+            style={{ color: SLATE }}
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to experiments
           </Link>
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center gap-2">
             <a
               href="https://cordis.europa.eu/project/id/101201268"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold text-white/80 hover:text-white hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold border border-[#E3E7ED] hover:border-[#C9D4FF] hover:bg-[#EEF2FF] transition-all"
+              style={{ color: INK }}
             >
               <ExternalLink className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">CORDIS record</span>
@@ -92,7 +98,8 @@ export default function PanoraimaDashboard({ events }: Props) {
             </a>
             <a
               href="/experiments/panoraima#data"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold text-white/80 hover:text-white hover:bg-white/10 border border-white/10 hover:border-white/30 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold border border-[#E3E7ED] hover:border-[#C9D4FF] hover:bg-[#EEF2FF] transition-all"
+              style={{ color: INK }}
             >
               <Download className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Download JSON</span>
@@ -101,7 +108,10 @@ export default function PanoraimaDashboard({ events }: Props) {
             <Link
               href="/experiments/panoraima/wps"
               prefetch={false}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-[12px] font-bold bg-gold-500 text-navy-950 hover:bg-gold-400 shadow-lg shadow-gold-500/30 transition-all"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-[12px] font-bold text-white transition-colors"
+              style={{ background: COBALT }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = COBALT_DK)}
+              onMouseLeave={(e) => (e.currentTarget.style.background = COBALT)}
             >
               <Layers className="w-3.5 h-3.5" />
               Work packages
@@ -113,9 +123,9 @@ export default function PanoraimaDashboard({ events }: Props) {
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pb-24 pt-10">
 
-        <div className="space-y-16 md:space-y-20">
+        <div className="space-y-8 md:space-y-10">
           {/* Timeline */}
-          <section className="animate-fade-up">
+          <section className={SECTION_CARD}>
             <EventTimeline
               events={events}
               selectedId={selectedEventId}
@@ -124,7 +134,7 @@ export default function PanoraimaDashboard({ events }: Props) {
           </section>
 
           {/* Consortium Map */}
-          <section className="animate-fade-up">
+          <section className={SECTION_CARD}>
             <ConsortiumMap
               events={events}
               onPartnerSelect={handlePartnerSelect}
@@ -133,7 +143,7 @@ export default function PanoraimaDashboard({ events }: Props) {
           </section>
 
           {/* Submission Matrix */}
-          <section className="animate-fade-up">
+          <section className={SECTION_CARD}>
             <SubmissionMatrix
               events={events}
               onCellClick={handleCellClick}
@@ -145,25 +155,25 @@ export default function PanoraimaDashboard({ events }: Props) {
           </section>
 
           {/* WP Lens */}
-          <section className="animate-fade-up">
+          <section className={SECTION_CARD}>
             <WorkPackageLens events={events} onEventClick={handleEventSelect} />
           </section>
 
           {/* Footer credit */}
-          <footer className="pt-10 border-t border-gray-100">
+          <footer className="pt-8 mt-2 border-t border-[#E3E7ED]">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div>
-                <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold-600 mb-1">
+                <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] mb-1.5" style={{ color: COBALT }}>
                   About this dashboard
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed max-w-xl">
+                <p className="text-sm leading-relaxed max-w-xl" style={{ color: SLATE }}>
                   Auto-generated from the consortium&apos;s monthly progress reports. The pipeline scans
                   DOCX files, extracts activities and challenges, and rebuilds the visualization.
                   A weekly cron job keeps it current.
                 </p>
               </div>
-              <div className="flex items-center gap-3 text-[11px] text-gray-400">
-                <span className="inline-flex items-center gap-1.5">
+              <div className="flex items-center gap-3 text-[11px]" style={{ color: FAINT }}>
+                <span className="inline-flex items-center gap-1.5 font-mono">
                   <Github className="w-3.5 h-3.5" />
                   tarrysingh-com/experiments/panoraima
                 </span>

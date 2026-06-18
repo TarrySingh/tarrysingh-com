@@ -8,6 +8,12 @@ import {
 import type { TimelineEvent, PartnerCode } from "@/lib/panoraima/types"
 import { PARTNERS, EVENT_STYLES, WORK_PACKAGES } from "@/lib/panoraima/types"
 import { formatDate } from "./helpers"
+import {
+  NAVY, INK, SLATE, MUTE, FAINT, LINE, COBALT, COBALT_SOFT, COBALT_LINE,
+  BAD, BAD_SOFT, WARN, WARN_SOFT, wpColor,
+} from "./consortiumTokens"
+
+const COBALT_LIGHT = "#7DA0FF" // light cobalt for text/meta on the navy header band
 
 interface Props {
   event: TimelineEvent | null
@@ -65,9 +71,10 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
       <div
         aria-hidden
         onClick={onClose}
-        className={`fixed inset-0 z-40 bg-navy-950/60 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 backdrop-blur-sm transition-opacity duration-300 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
+        style={{ background: "rgba(5,28,44,0.55)" }}
       />
 
       {/* Panel */}
@@ -78,8 +85,13 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
           open ? "translate-x-0" : "translate-x-full"
         } flex flex-col`}
       >
-        {/* Header */}
-        <div className="relative px-6 md:px-8 pt-7 pb-6 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 text-white overflow-hidden">
+        {/* Header — corporate deep-navy band */}
+        <div
+          className="relative px-6 md:px-8 pt-7 pb-6 text-white overflow-hidden"
+          style={{ background: NAVY }}
+        >
+          {/* cobalt accent rule along the bottom of the header band */}
+          <div aria-hidden className="absolute inset-x-0 bottom-0 h-[3px]" style={{ background: COBALT }} />
           <div
             aria-hidden
             className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-20"
@@ -92,24 +104,24 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
           >
             <X className="w-4 h-4" />
           </button>
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] font-bold mb-2">
-            <span className={`w-2 h-2 rounded-full`} style={{ background: style.dotColor }} />
-            <span className="text-gold-300">{style.label}</span>
+          <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] font-bold mb-2">
+            <span className="w-2 h-2 rounded-full" style={{ background: style.dotColor }} />
+            <span style={{ color: COBALT_LIGHT }}>{style.label}</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-1">{event.title}</h2>
-          <div className="flex items-center gap-4 text-[13px] text-navy-100/80">
-            <span className="inline-flex items-center gap-1.5">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.02em] mb-1">{event.title}</h2>
+          <div className="flex items-center gap-4 text-[13px]" style={{ color: COBALT_LIGHT }}>
+            <span className="inline-flex items-center gap-1.5 tabular-nums">
               <Calendar className="w-3.5 h-3.5" />
               {formatDate(event.date) || "Date TBD"}
             </span>
             {event.has_progress_reports && (
-              <span className="inline-flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-1.5 tabular-nums">
                 <FileText className="w-3.5 h-3.5" />
                 {submitted.length}/15 reports
               </span>
             )}
             {wpKeys.length > 0 && (
-              <span className="inline-flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-1.5 tabular-nums">
                 <Layers className="w-3.5 h-3.5" />
                 {wpKeys.length} WP reports
               </span>
@@ -145,12 +157,12 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
         {/* Body */}
         <div className="flex-1 overflow-y-auto px-6 md:px-8 py-6">
           {!event.has_progress_reports && event.type !== "cancelled" && (
-            <div className="rounded-xl bg-gold-50 border border-gold-100 p-5">
-              <div className="flex items-center gap-2 text-gold-700 font-semibold text-sm mb-1">
+            <div className="rounded-xl border p-5" style={{ background: COBALT_SOFT, borderColor: COBALT_LINE }}>
+              <div className="flex items-center gap-2 font-semibold text-sm mb-1" style={{ color: COBALT }}>
                 <Sparkles className="w-4 h-4" />
                 {event.type === "worksprint" ? "Worksprint" : event.type === "kickoff" ? "Kick-off event" : "Meeting"}
               </div>
-              <p className="text-sm text-navy-800 leading-relaxed">
+              <p className="text-sm leading-relaxed" style={{ color: SLATE }}>
                 {event.type === "worksprint"
                   ? "Face-to-face consortium gathering. Progress reports were not collected during worksprint weeks."
                   : event.type === "kickoff"
@@ -159,11 +171,11 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
               </p>
               {event.other_docs.length > 0 && (
                 <div className="mt-4 space-y-1">
-                  <div className="text-[10px] uppercase tracking-[0.15em] text-gold-700/70 font-bold">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.15em] font-bold" style={{ color: COBALT }}>
                     Shared documents
                   </div>
                   {event.other_docs.map(d => (
-                    <div key={d} className="text-[12px] font-mono text-navy-700/80">· {d}</div>
+                    <div key={d} className="text-[12px] font-mono" style={{ color: SLATE }}>· {d}</div>
                   ))}
                 </div>
               )}
@@ -171,12 +183,12 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
           )}
 
           {event.type === "cancelled" && (
-            <div className="rounded-xl bg-rose-50 border border-rose-200 p-5">
-              <div className="flex items-center gap-2 text-rose-700 font-semibold text-sm mb-1">
+            <div className="rounded-xl border p-5" style={{ background: BAD_SOFT, borderColor: `${BAD}33` }}>
+              <div className="flex items-center gap-2 font-semibold text-sm mb-1" style={{ color: BAD }}>
                 <AlertTriangle className="w-4 h-4" />
                 Cancelled meeting
               </div>
-              <p className="text-sm text-rose-800/80 leading-relaxed">
+              <p className="text-sm leading-relaxed" style={{ color: BAD }}>
                 This PMC meeting was cancelled. Any items were carried forward to the following meeting.
               </p>
             </div>
@@ -186,8 +198,8 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
           {wpKeys.length > 0 && (
             <section className="mb-6">
               <div className="flex items-center gap-2 mb-3">
-                <Presentation className="w-4 h-4 text-navy-600" />
-                <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-navy-900">
+                <Presentation className="w-4 h-4" style={{ color: COBALT }} />
+                <h3 className="font-mono text-sm font-bold uppercase tracking-[0.15em]" style={{ color: INK }}>
                   Work Package Leader Reports
                 </h3>
               </div>
@@ -196,52 +208,58 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
                   const wpReport = event.wp_reports[wpId]
                   const wpMeta = WORK_PACKAGES.find(w => w.id === wpId)
                   const isOpen = wpOpen.has(wpId)
+                  const wpc = wpColor(wpId)
                   return (
                     <div
                       key={wpId}
-                      className="rounded-xl border border-gray-100 overflow-hidden bg-white"
+                      className="rounded-xl border overflow-hidden bg-white"
+                      style={{ borderColor: LINE }}
                     >
                       <button
                         onClick={() => toggleWp(wpId)}
-                        className="w-full px-4 py-3 flex items-center gap-3 hover:bg-gray-50 transition-colors text-left"
+                        className="w-full px-4 py-3 flex items-center gap-3 hover:bg-[#F7F8FA] transition-colors text-left"
                       >
                         <span
                           className="w-2 h-8 rounded-full"
-                          style={{ background: wpMeta?.color || "#999" }}
+                          style={{ background: wpc }}
                         />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="font-mono text-xs font-bold text-navy-900">{wpId}</span>
-                            <span className="text-[11px] text-gray-500">
+                            <span className="font-mono text-xs font-bold" style={{ color: INK }}>{wpId}</span>
+                            <span className="text-[11px]" style={{ color: MUTE }}>
                               {wpMeta?.name}
                             </span>
                           </div>
                           {wpReport.partner && (
-                            <div className="text-[11px] text-gray-400 mt-0.5">
+                            <div className="text-[11px] mt-0.5" style={{ color: FAINT }}>
                               led by {wpReport.partner}
                             </div>
                           )}
                         </div>
                         <ChevronRight
-                          className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? "rotate-90" : ""}`}
+                          className={`w-4 h-4 transition-transform ${isOpen ? "rotate-90" : ""}`}
+                          style={{ color: FAINT }}
                         />
                       </button>
                       {isOpen && (
-                        <div className="px-4 pb-4 pt-0 animate-fade-in border-t border-gray-100">
+                        <div className="px-4 pb-4 pt-0 animate-fade-in border-t" style={{ borderColor: LINE }}>
                           {wpReport.excerpt && (
-                            <p className="mt-3 text-[13px] text-navy-800 italic leading-relaxed border-l-2 border-gold-300 pl-3">
+                            <p
+                              className="mt-3 text-[13px] italic leading-relaxed border-l-2 pl-3"
+                              style={{ color: SLATE, borderColor: COBALT }}
+                            >
                               &ldquo;{wpReport.excerpt}&rdquo;
                             </p>
                           )}
                           {wpReport.activities.length > 0 && (
                             <>
-                              <div className="mt-3 text-[10px] uppercase tracking-[0.15em] text-navy-500 font-bold">
+                              <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.15em] font-bold" style={{ color: FAINT }}>
                                 Activities
                               </div>
                               <ul className="mt-1.5 space-y-1.5">
                                 {wpReport.activities.slice(0, 5).map((a, i) => (
-                                  <li key={i} className="text-[12px] text-navy-800 leading-snug flex gap-2">
-                                    <Activity className="w-3 h-3 text-gold-500 mt-0.5 flex-shrink-0" />
+                                  <li key={i} className="text-[12px] leading-snug flex gap-2" style={{ color: SLATE }}>
+                                    <Activity className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: COBALT }} />
                                     <span>{a}</span>
                                   </li>
                                 ))}
@@ -250,20 +268,24 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
                           )}
                           {wpReport.challenges.length > 0 && (
                             <>
-                              <div className="mt-3 text-[10px] uppercase tracking-[0.15em] text-rose-600 font-bold">
+                              <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.15em] font-bold" style={{ color: BAD }}>
                                 Challenges
                               </div>
                               <ul className="mt-1.5 space-y-1.5">
                                 {wpReport.challenges.slice(0, 3).map((c, i) => (
-                                  <li key={i} className="text-[12px] text-navy-800 leading-snug flex gap-2">
-                                    <AlertTriangle className="w-3 h-3 text-rose-500 mt-0.5 flex-shrink-0" />
+                                  <li
+                                    key={i}
+                                    className="text-[12px] leading-snug flex gap-2 rounded-md px-2 py-1"
+                                    style={{ color: BAD, background: BAD_SOFT }}
+                                  >
+                                    <AlertTriangle className="w-3 h-3 mt-0.5 flex-shrink-0" style={{ color: BAD }} />
                                     <span>{c}</span>
                                   </li>
                                 ))}
                               </ul>
                             </>
                           )}
-                          <div className="mt-3 text-[10px] text-gray-400 font-mono">
+                          <div className="mt-3 text-[10px] font-mono" style={{ color: FAINT }}>
                             {wpReport.file}
                           </div>
                         </div>
@@ -279,9 +301,9 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
           {submitted.length > 0 && (
             <section className="mb-6">
               <div className="flex items-center gap-2 mb-3">
-                <FileText className="w-4 h-4 text-navy-600" />
-                <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-navy-900">
-                  Partner Reports · {submitted.length} of 15
+                <FileText className="w-4 h-4" style={{ color: COBALT }} />
+                <h3 className="font-mono text-sm font-bold uppercase tracking-[0.15em]" style={{ color: INK }}>
+                  Partner Reports · <span className="tabular-nums">{submitted.length} of 15</span>
                 </h3>
               </div>
               <div className="space-y-2">
@@ -292,9 +314,12 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
                   return (
                     <div
                       key={p.code}
-                      className={`rounded-xl border transition-all ${
-                        isOpen ? "border-navy-200 shadow-sm" : "border-gray-100 hover:border-gray-200"
-                      } bg-white`}
+                      className="rounded-xl border transition-all bg-white"
+                      style={
+                        isOpen
+                          ? { borderColor: COBALT_LINE, boxShadow: "0 1px 2px rgba(10,31,51,0.06)" }
+                          : { borderColor: LINE }
+                      }
                     >
                       <button
                         onClick={() => togglePartner(p.code)}
@@ -309,20 +334,20 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
                         />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="font-mono text-xs font-bold text-navy-900">{p.code}</span>
-                            <span className="text-[11px] text-gray-400 truncate">{p.name}</span>
+                            <span className="font-mono text-xs font-bold" style={{ color: INK }}>{p.code}</span>
+                            <span className="text-[11px] truncate" style={{ color: MUTE }}>{p.name}</span>
                           </div>
                           <div className="mt-1 flex items-center gap-1.5 flex-wrap">
                             {wpTags.map(wp => {
-                              const wpMeta = WORK_PACKAGES.find(w => w.id === wp)
+                              const wpc = wpColor(wp)
                               return (
                                 <span
                                   key={wp}
                                   className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono font-bold border"
                                   style={{
-                                    color: wpMeta?.color,
-                                    borderColor: `${wpMeta?.color}40`,
-                                    background: `${wpMeta?.color}0a`,
+                                    color: wpc,
+                                    borderColor: `${wpc}40`,
+                                    background: `${wpc}0a`,
                                   }}
                                 >
                                   {wp}
@@ -332,26 +357,30 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
                           </div>
                         </div>
                         <ChevronRight
-                          className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform ${isOpen ? "rotate-90" : ""}`}
+                          className={`w-4 h-4 flex-shrink-0 transition-transform ${isOpen ? "rotate-90" : ""}`}
+                          style={{ color: FAINT }}
                         />
                       </button>
 
                       {isOpen && (
-                        <div className="px-4 pb-4 pt-0 animate-fade-in border-t border-gray-100">
+                        <div className="px-4 pb-4 pt-0 animate-fade-in border-t" style={{ borderColor: LINE }}>
                           {pdata.excerpt && (
-                            <p className="mt-3 text-[13px] text-navy-800 italic leading-relaxed border-l-2 border-gold-300 pl-3">
+                            <p
+                              className="mt-3 text-[13px] italic leading-relaxed border-l-2 pl-3"
+                              style={{ color: SLATE, borderColor: COBALT }}
+                            >
                               &ldquo;{pdata.excerpt}&rdquo;
                             </p>
                           )}
                           {pdata.activities && pdata.activities.length > 0 && (
                             <>
-                              <div className="mt-3 text-[10px] uppercase tracking-[0.15em] text-navy-500 font-bold flex items-center gap-1">
+                              <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.15em] font-bold flex items-center gap-1" style={{ color: FAINT }}>
                                 <Activity className="w-3 h-3" />
                                 Activities
                               </div>
                               <ul className="mt-2 space-y-1.5">
                                 {pdata.activities.slice(0, 6).map((a, i) => (
-                                  <li key={i} className="text-[12.5px] text-navy-800 leading-snug flex gap-2.5">
+                                  <li key={i} className="text-[12.5px] leading-snug flex gap-2.5" style={{ color: SLATE }}>
                                     <span
                                       className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
                                       style={{ background: p.accent }}
@@ -364,21 +393,25 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
                           )}
                           {pdata.challenges && pdata.challenges.length > 0 && (
                             <>
-                              <div className="mt-3 text-[10px] uppercase tracking-[0.15em] text-rose-600 font-bold flex items-center gap-1">
+                              <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.15em] font-bold flex items-center gap-1" style={{ color: BAD }}>
                                 <AlertTriangle className="w-3 h-3" />
                                 Challenges
                               </div>
                               <ul className="mt-2 space-y-1.5">
                                 {pdata.challenges.slice(0, 3).map((c, i) => (
-                                  <li key={i} className="text-[12.5px] text-navy-800 leading-snug flex gap-2.5">
-                                    <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-rose-500" />
+                                  <li
+                                    key={i}
+                                    className="text-[12.5px] leading-snug flex gap-2.5 rounded-md px-2 py-1"
+                                    style={{ color: BAD, background: BAD_SOFT }}
+                                  >
+                                    <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: BAD }} />
                                     <span>{c}</span>
                                   </li>
                                 ))}
                               </ul>
                             </>
                           )}
-                          <div className="mt-3 text-[10px] text-gray-400 font-mono truncate">
+                          <div className="mt-3 text-[10px] font-mono truncate" style={{ color: FAINT }}>
                             {pdata.file}
                           </div>
                         </div>
@@ -393,18 +426,19 @@ export default function EventDetailPanel({ event, open, onClose, focusedPartner,
           {missed.length > 0 && (
             <section>
               <div className="flex items-center gap-2 mb-3">
-                <AlertTriangle className="w-4 h-4 text-rose-500" />
-                <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-navy-900">
-                  Did not submit · {missed.length}
+                <AlertTriangle className="w-4 h-4" style={{ color: BAD }} />
+                <h3 className="font-mono text-sm font-bold uppercase tracking-[0.15em]" style={{ color: INK }}>
+                  Did not submit · <span className="tabular-nums">{missed.length}</span>
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {missed.map(p => (
                   <span
                     key={p.code}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold bg-rose-50 text-rose-700 border border-rose-100"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold border"
+                    style={{ background: WARN_SOFT, color: WARN, borderColor: `${WARN}33` }}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: WARN }} />
                     {p.code}
                   </span>
                 ))}

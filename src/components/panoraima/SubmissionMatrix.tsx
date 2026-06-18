@@ -3,7 +3,11 @@
 import { useState } from "react"
 import { Check, X } from "lucide-react"
 import { PARTNERS, type PartnerCode, type TimelineEvent } from "@/lib/panoraima/types"
-import { submissionRate } from "./helpers"
+import SectionHeader from "./SectionHeader"
+import {
+  INK, SLATE, MUTE, FAINT, LINE, LINE_SOFT, COBALT,
+  OK, OK_SOFT, BAD, BAD_SOFT,
+} from "./consortiumTokens"
 
 interface Props {
   events: TimelineEvent[]
@@ -21,29 +25,26 @@ export default function SubmissionMatrix({
 
   const reportEvents = events.filter(e => e.has_progress_reports)
 
+  const legend = (
+    <div className="hidden md:flex items-center gap-4 text-[11px]" style={{ color: MUTE }}>
+      <span className="inline-flex items-center gap-1.5">
+        <span className="w-3 h-3 rounded-sm" style={{ background: OK }} /> Submitted
+      </span>
+      <span className="inline-flex items-center gap-1.5">
+        <span className="w-3 h-3 rounded-sm" style={{ background: BAD_SOFT, border: `1px solid ${BAD}` }} /> Missed
+      </span>
+    </div>
+  )
+
   return (
-    <div className="bg-white">
-      <div className="flex items-end justify-between mb-5">
-        <div>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
-            Submission matrix
-          </span>
-          <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
-            Who delivered, and when
-          </h2>
-          <p className="mt-1 text-sm text-gray-500 max-w-xl">
-            {reportEvents.length} reporting periods × 15 partners. Click any cell to jump straight to that report.
-          </p>
-        </div>
-        <div className="hidden md:flex items-center gap-4 text-[11px] text-gray-500">
-          <span className="inline-flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-sm bg-emerald-500" /> Submitted
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-sm bg-rose-100 border border-rose-300" /> Missed
-          </span>
-        </div>
-      </div>
+    <div>
+      <SectionHeader
+        index="03"
+        kicker="Progress reporting"
+        title="Who reported, and when"
+        subtitle="Partner × reporting event. Green = submitted, brick = missed."
+        right={legend}
+      />
 
       <div className="overflow-x-auto -mx-2 px-2 pb-2 pt-4">
         <table className="border-separate border-spacing-[3px] min-w-max">
@@ -65,9 +66,8 @@ export default function SubmissionMatrix({
                         // origin-bottom-left pushed ~33px past the left edge
                         // and clipped the first month's label behind the
                         // white sticky header).
-                        className={`absolute inset-0 flex items-center justify-center rotate-[-45deg] whitespace-nowrap text-[11px] font-mono font-semibold tracking-tight transition-colors ${
-                          isActive ? "text-navy-900" : "text-gray-500 hover:text-navy-700"
-                        }`}
+                        className="absolute inset-0 flex items-center justify-center rotate-[-45deg] whitespace-nowrap text-[11px] font-mono font-semibold tracking-tight transition-colors"
+                        style={{ color: isActive ? INK : MUTE }}
                       >
                         {e.label}
                       </button>
@@ -75,7 +75,12 @@ export default function SubmissionMatrix({
                   </th>
                 )
               })}
-              <th className="w-12 px-2 align-bottom text-[10px] text-gray-400 font-semibold uppercase tracking-wider">∑</th>
+              <th
+                className="w-12 px-2 align-bottom text-[10px] font-mono font-semibold uppercase tracking-[0.15em] tabular-nums"
+                style={{ color: FAINT }}
+              >
+                ∑
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -87,9 +92,8 @@ export default function SubmissionMatrix({
               return (
                 <tr key={partner.code}>
                   <td
-                    className={`sticky left-0 bg-white z-10 pr-2 text-right whitespace-nowrap cursor-pointer ${
-                      partnerActive ? "text-navy-900 font-bold" : "text-gray-600"
-                    }`}
+                    className="sticky left-0 bg-white z-10 pr-2 text-right whitespace-nowrap cursor-pointer"
+                    style={{ color: partnerActive ? INK : SLATE, fontWeight: partnerActive ? 700 : 400 }}
                     onClick={() => onPartnerClick(partner.code)}
                     onMouseEnter={() => setHover({ ...hover, partner: partner.code })}
                     onMouseLeave={() => setHover(null)}
@@ -121,32 +125,44 @@ export default function SubmissionMatrix({
                           aria-label={`${partner.code} on ${e.label}: ${submitted ? "submitted" : "missed"}`}
                           className={`block w-9 h-9 rounded-md transition-all duration-200 ${
                             submitted
-                              ? isHighlight
-                                ? "bg-emerald-500 text-white scale-110 shadow-md shadow-emerald-200"
-                                : "bg-emerald-500/85 text-white hover:scale-105"
-                              : isHighlight
-                                ? "bg-rose-100 border border-rose-300 scale-105"
-                                : "bg-gray-50 border border-gray-100 hover:bg-rose-50"
+                              ? isHighlight ? "text-white scale-110" : "text-white hover:scale-105"
+                              : isHighlight ? "scale-105" : ""
                           }`}
-                          style={{ transformOrigin: "center" }}
+                          style={{
+                            transformOrigin: "center",
+                            background: submitted
+                              ? OK
+                              : isHighlight ? BAD_SOFT : LINE_SOFT,
+                            border: submitted
+                              ? undefined
+                              : isHighlight ? `1px solid ${BAD}` : `1px solid ${LINE}`,
+                            opacity: submitted && !isHighlight ? 0.9 : 1,
+                            boxShadow: submitted && isHighlight ? `0 4px 10px ${OK_SOFT}` : undefined,
+                          }}
                         >
                           <span className="flex items-center justify-center w-full h-full">
-                            {submitted ? <Check className="w-3.5 h-3.5" /> : <X className="w-3 h-3 text-rose-300" />}
+                            {submitted
+                              ? <Check className="w-3.5 h-3.5" />
+                              : <X className="w-3 h-3" style={{ color: BAD }} />}
                           </span>
                         </button>
                       </td>
                     )
                   })}
                   <td className="px-2">
-                    <div className="text-[11px] font-mono font-bold text-navy-700 tabular-nums">
+                    <div className="text-[11px] font-mono font-bold tabular-nums" style={{ color: INK }}>
                       {submitted}
                     </div>
-                    <div className="mt-0.5 h-1 w-10 bg-gray-100 rounded-full overflow-hidden">
+                    <div
+                      className="mt-0.5 h-1 w-10 rounded-full overflow-hidden"
+                      style={{ background: LINE }}
+                    >
                       <div
-                        className={`h-full ${
-                          rate >= 0.9 ? "bg-emerald-500" : rate >= 0.7 ? "bg-gold-500" : "bg-rose-500"
-                        } transition-all duration-500`}
-                        style={{ width: `${rate * 100}%` }}
+                        className="h-full transition-all duration-500"
+                        style={{
+                          width: `${rate * 100}%`,
+                          background: rate >= 0.9 ? OK : rate >= 0.7 ? COBALT : BAD,
+                        }}
                       />
                     </div>
                   </td>
@@ -155,7 +171,10 @@ export default function SubmissionMatrix({
             })}
             {/* Event totals row */}
             <tr>
-              <td className="sticky left-0 bg-white z-10 pr-2 text-right text-[10px] font-bold text-gray-400 uppercase tracking-wider pt-2">
+              <td
+                className="sticky left-0 bg-white z-10 pr-2 text-right text-[10px] font-mono font-bold uppercase tracking-[0.15em] pt-2"
+                style={{ color: FAINT }}
+              >
                 Event ∑
               </td>
               {reportEvents.map(e => {
@@ -163,15 +182,19 @@ export default function SubmissionMatrix({
                 return (
                   <td key={e.id} className="p-0 pt-2">
                     <div className="flex flex-col items-center">
-                      <div className="text-[10px] font-mono font-bold text-navy-700 tabular-nums">
+                      <div className="text-[10px] font-mono font-bold tabular-nums" style={{ color: INK }}>
                         {n}
                       </div>
-                      <div className="mt-0.5 h-1 w-7 bg-gray-100 rounded-full overflow-hidden">
+                      <div
+                        className="mt-0.5 h-1 w-7 rounded-full overflow-hidden"
+                        style={{ background: LINE }}
+                      >
                         <div
-                          className={`h-full ${
-                            n === 15 ? "bg-emerald-500" : n >= 13 ? "bg-gold-500" : "bg-rose-500"
-                          }`}
-                          style={{ width: `${(n / 15) * 100}%` }}
+                          className="h-full"
+                          style={{
+                            width: `${(n / 15) * 100}%`,
+                            background: n === 15 ? OK : n >= 13 ? COBALT : BAD,
+                          }}
                         />
                       </div>
                     </div>
