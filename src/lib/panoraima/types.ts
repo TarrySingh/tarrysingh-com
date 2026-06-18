@@ -869,6 +869,12 @@ export interface Wp4Registry {
     by_status: Record<string, number>
     with_materials: number
     materials_pending: number
+    coverage?: {
+      wiki_total: number
+      with_sharepoint_material: number
+      awaiting_material: number
+      off_wiki: number
+    }
     realai: {
       total: number
       author: number
@@ -882,5 +888,6 @@ export interface Wp4Registry {
   guides: Wp4Guides
   les: Wp4LE[]
   realai_board: Wp4LE[]
+  off_wiki_codes?: string[]
   roster: { name: string; email: string }[]
 }

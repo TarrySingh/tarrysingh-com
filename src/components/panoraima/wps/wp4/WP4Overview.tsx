@@ -81,6 +81,37 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
         })}
       </div>
 
+      {/* Wiki ↔ SharePoint reconciliation — the LE list is the wiki master;
+          SharePoint is where material gets dropped against it. */}
+      {registry.summary.coverage && (
+        <div className="mb-8 rounded-2xl border border-gray-100 bg-gradient-to-br from-navy-50/40 to-white p-5">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] font-bold uppercase tracking-[0.14em] text-navy-500 mb-3">
+            Wiki master <span className="text-gray-300">↔</span> SharePoint material
+          </div>
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="inline-flex items-baseline gap-1.5">
+              <span className="text-2xl font-bold tabular-nums text-navy-900">{registry.summary.coverage.wiki_total}</span>
+              <span className="text-gray-500">Learning Events on the wiki (the canonical list)</span>
+            </span>
+            <span className="text-gray-300">·</span>
+            <span className="inline-flex items-baseline gap-1.5">
+              <span className="text-2xl font-bold tabular-nums text-emerald-600">{registry.summary.coverage.with_sharepoint_material}</span>
+              <span className="text-gray-500">have material dropped in SharePoint</span>
+            </span>
+            <span className="text-gray-300">·</span>
+            <span className="inline-flex items-baseline gap-1.5">
+              <span className="text-2xl font-bold tabular-nums text-amber-600">{registry.summary.coverage.awaiting_material}</span>
+              <span className="text-gray-500">still awaiting material</span>
+            </span>
+          </div>
+          {registry.summary.coverage.off_wiki > 0 && (
+            <div className="mt-3 text-[12px] text-gray-500">
+              <span className="font-semibold text-gray-600">{registry.summary.coverage.off_wiki}</span> draft/planned codes exist in SharePoint registries but aren&apos;t on the wiki master yet — a reconciliation gap to close (ideally the two lists match exactly).
+            </div>
+          )}
+        </div>
+      )}
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* By track */}
         <div className="lg:col-span-2 rounded-3xl border border-gray-100 bg-white p-6 md:p-7 shadow-sm">
