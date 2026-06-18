@@ -860,7 +860,7 @@ export interface Wp4Registry {
   tagline: string
   generated_at: string
   data_sources: {
-    wiki: { status: string; captured_at?: string; scope?: string; master_list_total?: number }
+    wiki: { status: string; captured_at?: string; scope?: string; master_total?: number; master_list_total?: number }
     sharepoint: { generated_at?: string; counts?: Record<string, number> }
   }
   summary: {

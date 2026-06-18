@@ -5,24 +5,24 @@ import {
   Layers, FolderCheck, FileClock, Handshake, AlertTriangle,
 } from "lucide-react"
 import type { Wp4Registry } from "@/lib/panoraima/types"
-import { TRACK_ORDER, TRACK_COLOR, TRACK_SHORT, statusStyle } from "./wp4constants"
+import { TRACK_ORDER, TRACK_COLOR, TRACK_SHORT, statusStyle, RUST } from "./wp4constants"
 
 interface KpiTile {
   label: string
   value: number
   icon: typeof Layers
-  accent: string   // tailwind gradient classes for the top-accent bar + icon tint
+  accent?: boolean   // rust emphasis (reserved for "needs action")
 }
 
 export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
   const { summary } = registry
 
   const kpis: KpiTile[] = [
-    { label: "Total LEs",          value: summary.total_les,           icon: Layers,        accent: "from-sky-500 to-sky-700" },
-    { label: "With materials",     value: summary.with_materials,      icon: FolderCheck,   accent: "from-emerald-500 to-emerald-700" },
-    { label: "Materials pending",  value: summary.materials_pending,   icon: FileClock,     accent: "from-amber-500 to-amber-700" },
-    { label: "RealAI commitments", value: summary.realai.total,        icon: Handshake,     accent: "from-gold-500 to-gold-700" },
-    { label: "Needs action",       value: summary.realai.needs_action, icon: AlertTriangle, accent: "from-rose-500 to-rose-700" },
+    { label: "Total LEs",          value: summary.total_les,           icon: Layers },
+    { label: "With materials",     value: summary.with_materials,      icon: FolderCheck },
+    { label: "Materials pending",  value: summary.materials_pending,   icon: FileClock },
+    { label: "RealAI commitments", value: summary.realai.total,        icon: Handshake },
+    { label: "Needs action",       value: summary.realai.needs_action, icon: AlertTriangle, accent: true },
   ]
 
   // By-track bars — only tracks present in the summary, in canonical order.
@@ -41,39 +41,43 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
 
   return (
     <section>
-      <div className="mb-6">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+      {/* ── Section header ───────────────────────────────────────── */}
+      <div className="mb-8">
+        <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] mb-2" style={{ color: RUST }}>
           Overview
-        </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        </div>
+        <h2 className="text-2xl md:text-[2rem] font-bold tracking-[-0.02em] text-[#16181D]">
           Where WP4 stands
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280] max-w-2xl">
           A live read on the {summary.total_les} Learning Events spread across the four
           curriculum tracks — what has materials, what is pending, and where our
           RealAI authoring &amp; review commitments sit.
         </p>
       </div>
 
-      {/* KPI tiles */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
-        {kpis.map((k) => {
+      {/* ── KPI stat band ────────────────────────────────────────── */}
+      <div className="mb-8 grid grid-cols-2 md:grid-cols-5 border-t border-[#E7E7EA]">
+        {kpis.map((k, i) => {
           const Icon = k.icon
           return (
             <div
               key={k.label}
-              className="relative rounded-2xl overflow-hidden border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-shadow"
+              className={`py-5 ${i > 0 ? "md:border-l border-[#E7E7EA] md:pl-6" : ""}`}
             >
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${k.accent}`} />
-              <div className="flex items-start justify-between gap-2">
-                <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-gray-400 leading-snug">
+              <div className="flex items-center gap-1.5">
+                <Icon
+                  className="w-3.5 h-3.5 flex-shrink-0"
+                  style={{ color: k.accent ? RUST : "#9CA3AF" }}
+                />
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9CA3AF] leading-snug">
                   {k.label}
-                </div>
-                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${k.accent} flex items-center justify-center text-white shadow-sm flex-shrink-0`}>
-                  <Icon className="w-4 h-4" />
-                </div>
+                </span>
               </div>
-              <div className="mt-3 text-3xl font-bold tabular-nums text-navy-900">
+              <div
+                className="mt-2 text-3xl md:text-[2.4rem] leading-none font-bold tabular-nums tracking-[-0.02em] text-[#16181D]"
+                style={k.accent ? { color: RUST } : undefined}
+              >
                 {k.value}
               </div>
             </div>
@@ -81,67 +85,81 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
         })}
       </div>
 
-      {/* Wiki ↔ SharePoint reconciliation — the LE list is the wiki master;
-          SharePoint is where material gets dropped against it. */}
+      {/* ── Wiki ↔ SharePoint reconciliation ─────────────────────────
+          the LE list is the wiki master; SharePoint is where material
+          gets dropped against it. */}
       {registry.summary.coverage && (
-        <div className="mb-8 rounded-2xl border border-gray-100 bg-gradient-to-br from-navy-50/40 to-white p-5">
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] font-bold uppercase tracking-[0.14em] text-navy-500 mb-3">
-            Wiki master <span className="text-gray-300">↔</span> SharePoint material
+        <div className="mb-8 rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 transition-colors hover:border-[#16181D]/20">
+          <div className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9CA3AF] mb-4">
+            Wiki master <span className="text-[#D7D7DB]">↔</span> SharePoint material
           </div>
-          <div className="flex flex-wrap items-center gap-3 text-sm">
-            <span className="inline-flex items-baseline gap-1.5">
-              <span className="text-2xl font-bold tabular-nums text-navy-900">{registry.summary.coverage.wiki_total}</span>
-              <span className="text-gray-500">Learning Events on the wiki (the canonical list)</span>
-            </span>
-            <span className="text-gray-300">·</span>
-            <span className="inline-flex items-baseline gap-1.5">
-              <span className="text-2xl font-bold tabular-nums text-emerald-600">{registry.summary.coverage.with_sharepoint_material}</span>
-              <span className="text-gray-500">have material dropped in SharePoint</span>
-            </span>
-            <span className="text-gray-300">·</span>
-            <span className="inline-flex items-baseline gap-1.5">
-              <span className="text-2xl font-bold tabular-nums text-amber-600">{registry.summary.coverage.awaiting_material}</span>
-              <span className="text-gray-500">still awaiting material</span>
-            </span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#E7E7EA]">
+            <div className="pb-4 sm:pb-0 sm:pr-6">
+              <div className="text-[2.4rem] leading-none font-bold tabular-nums tracking-[-0.02em] text-[#16181D]">
+                {registry.summary.coverage.wiki_total}
+              </div>
+              <div className="mt-2 text-[13px] leading-snug text-[#6B7280]">
+                Learning Events on the wiki <span className="text-[#9CA3AF]">(the canonical list)</span>
+              </div>
+            </div>
+            <div className="py-4 sm:py-0 sm:px-6">
+              <div className="text-[2.4rem] leading-none font-bold tabular-nums tracking-[-0.02em] text-[#16181D]">
+                {registry.summary.coverage.with_sharepoint_material}
+              </div>
+              <div className="mt-2 text-[13px] leading-snug text-[#6B7280]">
+                have material dropped in SharePoint
+              </div>
+            </div>
+            <div className="pt-4 sm:pt-0 sm:pl-6">
+              <div className="text-[2.4rem] leading-none font-bold tabular-nums tracking-[-0.02em]" style={{ color: RUST }}>
+                {registry.summary.coverage.awaiting_material}
+              </div>
+              <div className="mt-2 text-[13px] leading-snug text-[#6B7280]">
+                still awaiting material
+                <span className="ml-1.5 font-mono text-[9px] uppercase tracking-[0.1em] px-2 py-0.5 rounded bg-[#16181D] text-white align-middle">
+                  to reconcile
+                </span>
+              </div>
+            </div>
           </div>
           {registry.summary.coverage.off_wiki > 0 && (
-            <div className="mt-3 text-[12px] text-gray-500">
-              <span className="font-semibold text-gray-600">{registry.summary.coverage.off_wiki}</span> draft/planned codes exist in SharePoint registries but aren&apos;t on the wiki master yet — a reconciliation gap to close (ideally the two lists match exactly).
+            <div className="mt-5 pt-4 border-t border-[#E7E7EA] text-[12px] leading-relaxed text-[#6B7280]">
+              <span className="font-mono font-bold tabular-nums text-[#16181D]">{registry.summary.coverage.off_wiki}</span> draft/planned codes exist in SharePoint registries but aren&apos;t on the wiki master yet — a reconciliation gap to close (ideally the two lists match exactly).
             </div>
           )}
         </div>
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {/* By track */}
-        <div className="lg:col-span-2 rounded-3xl border border-gray-100 bg-white p-6 md:p-7 shadow-sm">
+        {/* ── By track ───────────────────────────────────────────── */}
+        <div className="lg:col-span-2 rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 transition-colors hover:border-[#16181D]/20">
           <div className="flex items-baseline justify-between gap-3 mb-5">
-            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-navy-700">
+            <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#16181D]">
               By track
             </h3>
-            <span className="text-[11px] text-gray-400 font-mono tabular-nums">
+            <span className="font-mono text-[10px] uppercase tracking-[0.12em] tabular-nums text-[#9CA3AF]">
               {trackRows.rows.length} tracks
             </span>
           </div>
-          <ul className="space-y-3">
+          <ul className="space-y-3.5">
             {trackRows.rows.map(({ track, count }) => {
               const color = TRACK_COLOR[track] ?? TRACK_COLOR["Unknown"]
               const widthPct = (count / trackRows.maxCount) * 100
               return (
                 <li key={track} className="flex items-center gap-3">
-                  <span className="w-24 md:w-28 text-[12px] font-semibold text-navy-800 truncate text-right flex-shrink-0">
-                    {TRACK_SHORT[track] ?? track}
+                  <span className="inline-flex items-center gap-1.5 w-24 md:w-32 flex-shrink-0 justify-end">
+                    <span className="w-2 h-2 rounded-[2px] flex-shrink-0" style={{ background: color }} />
+                    <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-[#6B7280] truncate">
+                      {TRACK_SHORT[track] ?? track}
+                    </span>
                   </span>
-                  <div className="flex-1 relative h-7 rounded-lg bg-gray-50 overflow-hidden">
+                  <div className="flex-1 relative h-2 rounded-[2px] bg-[#F1F1F0] overflow-hidden">
                     <div
-                      className="absolute inset-y-0 left-0 rounded-lg transition-all duration-700 ease-out"
-                      style={{
-                        width: `${widthPct}%`,
-                        background: `linear-gradient(90deg, ${color}dd, ${color}aa)`,
-                      }}
+                      className="absolute inset-y-0 left-0 rounded-[2px] transition-all duration-700 ease-out"
+                      style={{ width: `${widthPct}%`, background: color }}
                     />
                   </div>
-                  <span className="w-10 text-right text-[13px] font-bold tabular-nums text-navy-900 flex-shrink-0">
+                  <span className="w-9 text-right font-mono text-[12px] font-bold tabular-nums text-[#16181D] flex-shrink-0">
                     {count}
                   </span>
                 </li>
@@ -150,9 +168,9 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
           </ul>
         </div>
 
-        {/* By status */}
-        <div className="rounded-3xl border border-gray-100 bg-white p-6 md:p-7 shadow-sm">
-          <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-navy-700 mb-5">
+        {/* ── By status ──────────────────────────────────────────── */}
+        <div className="rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 transition-colors hover:border-[#16181D]/20">
+          <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#16181D] mb-5">
             By status
           </h3>
           <ul className="space-y-2.5">
@@ -161,12 +179,12 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
               return (
                 <li key={status} className="flex items-center justify-between gap-3">
                   <span
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold border ${s.bg} ${s.text}`}
+                    className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded border font-mono text-[10px] uppercase tracking-[0.06em] ${s.bg} ${s.text}`}
                   >
-                    <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: s.color }} />
+                    <span className="w-1.5 h-1.5 rounded-[2px] flex-shrink-0" style={{ background: s.color }} />
                     {s.label}
                   </span>
-                  <span className="text-[13px] font-bold tabular-nums text-navy-900 flex-shrink-0">
+                  <span className="font-mono text-[12px] font-bold tabular-nums text-[#16181D] flex-shrink-0">
                     {count}
                   </span>
                 </li>

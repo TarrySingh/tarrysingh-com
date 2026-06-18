@@ -10,7 +10,7 @@ import type {
   Wp4Registry, Wp4LE, Wp4Completeness, Wp4WikiSection,
 } from "@/lib/panoraima/types"
 import {
-  TRACK_ORDER, TRACK_COLOR, TRACK_SHORT, statusStyle, ROLE_LABEL, ROLE_COLOR,
+  RUST, TRACK_ORDER, TRACK_COLOR, TRACK_SHORT, statusStyle, ROLE_LABEL, ROLE_COLOR,
 } from "./wp4constants"
 
 type MaterialsFilter = "all" | "with" | "pending"
@@ -45,40 +45,41 @@ export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
 
   return (
     <section>
-      <div className="mb-5">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+      {/* Section header */}
+      <div className="mb-8">
+        <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] mb-2" style={{ color: RUST }}>
           Explore
-        </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        </div>
+        <h2 className="text-2xl md:text-[2rem] font-bold tracking-[-0.02em] text-[#16181D]">
           Every Learning Event
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280] max-w-2xl">
           Search across all {les.length} LEs by code, title, track, author, reviewer or status.
         </p>
       </div>
 
       {/* Search + filters */}
-      <div className="rounded-2xl bg-white border border-gray-100 p-4 mb-4 space-y-3 shadow-sm">
+      <div className="rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 mb-4 space-y-4">
         <div className="relative">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF] pointer-events-none" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search LEs by code, title, track, author, reviewer, status…"
-            className="w-full pl-10 pr-4 py-2.5 text-sm rounded-lg bg-gray-50 border border-gray-200 focus:border-navy-400 focus:bg-white focus:outline-none transition-colors"
+            className="w-full pl-10 pr-4 py-2.5 text-sm rounded-lg bg-white border border-[#E7E7EA] text-[#16181D] placeholder:text-[#9CA3AF] focus:border-[#C0492B] focus:ring-2 focus:ring-[#C0492B]/15 focus:outline-none transition-colors"
           />
         </div>
 
         <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
           {/* Track */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-gray-400">Track:</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.14em] font-semibold text-[#9CA3AF]">Track</span>
             <Chip active={track === "All"} onClick={() => setTrack("All")}>All</Chip>
             {TRACK_ORDER.map((t) => (
               <Chip key={t} active={track === t} onClick={() => setTrack(t)}>
                 <span
-                  className="w-1.5 h-1.5 rounded-full"
+                  className="w-1.5 h-1.5 rounded-[2px]"
                   style={{ background: TRACK_COLOR[t] ?? TRACK_COLOR.Unknown }}
                 />
                 {TRACK_SHORT[t] ?? t}
@@ -88,7 +89,7 @@ export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
 
           {/* Materials */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-gray-400">Materials:</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.14em] font-semibold text-[#9CA3AF]">Materials</span>
             <Chip active={materials === "all"} onClick={() => setMaterials("all")}>All</Chip>
             <Chip active={materials === "with"} onClick={() => setMaterials("with")}>With files</Chip>
             <Chip active={materials === "pending"} onClick={() => setMaterials("pending")}>Pending</Chip>
@@ -97,29 +98,30 @@ export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
           {/* RealAI toggle */}
           <button
             onClick={() => setRealaiOnly((v) => !v)}
-            className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border transition-colors ${
+            className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-mono text-[10px] uppercase tracking-[0.1em] border transition-colors ${
               realaiOnly
-                ? "bg-gold-500 border-gold-500 text-white"
-                : "bg-white border-gray-200 text-gray-500 hover:border-gold-300"
+                ? "border-transparent text-white"
+                : "bg-white border-[#E7E7EA] text-[#6B7280] hover:border-[#16181D]/20"
             }`}
+            style={realaiOnly ? { background: RUST } : undefined}
           >
             <Sparkles className="w-3 h-3" />
             RealAI only
           </button>
         </div>
 
-        <div className="text-[11px] text-gray-400 font-mono tabular-nums">
+        <div className="font-mono text-[11px] text-[#9CA3AF] tabular-nums">
           Showing {shown.length} of {les.length}
           {filtered.length !== shown.length && (
-            <span className="text-gray-400"> &middot; {filtered.length} match the filter</span>
+            <span> &middot; {filtered.length} match the filter</span>
           )}
         </div>
       </div>
 
       {/* Results list */}
-      <div className="rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-sm divide-y divide-gray-50">
+      <div className="rounded-xl border border-[#E7E7EA] bg-white overflow-hidden divide-y divide-[#E7E7EA]">
         {shown.length === 0 && (
-          <div className="px-5 py-10 text-center text-sm text-gray-400">
+          <div className="px-5 py-10 text-center text-sm text-[#9CA3AF]">
             No Learning Events match your search.
           </div>
         )}
@@ -130,36 +132,39 @@ export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
             <button
               key={le.code}
               onClick={() => setSelected(le)}
-              className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-navy-50/40 transition-colors group"
+              className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-[#FAFAF9] transition-colors group"
             >
               <span
-                className="w-2 h-2 rounded-full flex-shrink-0"
+                className="w-2 h-2 rounded-[2px] flex-shrink-0"
                 style={{ background: dot }}
                 title={le.track}
               />
-              <span className="font-mono text-[11px] font-bold text-navy-700 tabular-nums w-20 flex-shrink-0">
+              <span className="font-mono text-[11px] font-bold text-[#16181D] tabular-nums w-20 flex-shrink-0">
                 {le.code}
               </span>
-              <span className="flex-1 min-w-0 text-sm text-navy-900 font-medium truncate group-hover:text-navy-700">
+              <span className="flex-1 min-w-0 text-sm text-[#16181D] font-medium truncate group-hover:text-[#3F434C]">
                 {le.title || "Untitled"}
               </span>
 
               {le.realai.involved && (
-                <span className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-gold-50 text-gold-700 border border-gold-200 flex-shrink-0">
+                <span
+                  className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-mono text-[9px] uppercase tracking-[0.1em] text-white flex-shrink-0"
+                  style={{ background: RUST }}
+                >
                   <Sparkles className="w-2.5 h-2.5" />
                   RealAI
                 </span>
               )}
 
-              <span className="hidden md:inline-flex items-center gap-1 text-[11px] text-gray-400 tabular-nums w-14 justify-end flex-shrink-0">
+              <span className="hidden md:inline-flex items-center gap-1 font-mono text-[11px] text-[#9CA3AF] tabular-nums w-14 justify-end flex-shrink-0">
                 <FileText className="w-3 h-3" />
                 {le.materials.count}
               </span>
 
               <span
-                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider border ${ss.bg} ${ss.text} flex-shrink-0`}
+                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[9px] uppercase tracking-[0.1em] border ${ss.bg} ${ss.text} flex-shrink-0`}
               >
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: ss.color }} />
+                <span className="w-1.5 h-1.5 rounded-[2px]" style={{ background: ss.color }} />
                 {ss.label}
               </span>
             </button>
@@ -168,7 +173,7 @@ export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
       </div>
 
       {filtered.length > RENDER_CAP && (
-        <div className="mt-4 text-center text-[11px] text-gray-500">
+        <div className="mt-4 text-center font-mono text-[11px] text-[#6B7280]">
           Showing the first {RENDER_CAP} of {filtered.length} matches — refine your search to narrow the list.
         </div>
       )}
@@ -196,8 +201,10 @@ function Chip({
   return (
     <button
       onClick={onClick}
-      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-semibold transition-colors ${
-        active ? "bg-navy-900 text-white" : "bg-gray-50 text-navy-700 hover:bg-gray-100"
+      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-mono text-[10px] uppercase tracking-[0.1em] transition-colors ${
+        active
+          ? "bg-[#16181D] text-white"
+          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
       }`}
     >
       {children}
@@ -212,36 +219,39 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
   return (
     <>
       <div
-        className="fixed inset-0 z-40 bg-navy-950/60 backdrop-blur-sm"
+        className="fixed inset-0 z-40 bg-[#16181D]/40"
         onClick={onClose}
       />
-      <aside className="fixed top-0 bottom-0 right-0 z-50 w-full md:w-[480px] bg-white shadow-2xl flex flex-col animate-[slide-in_0.4s_cubic-bezier(0.22,1,0.36,1)]">
+      <aside className="fixed top-0 bottom-0 right-0 z-50 w-full md:w-[480px] bg-white border-l border-[#E7E7EA] shadow-xl flex flex-col animate-[slide-in_0.4s_cubic-bezier(0.22,1,0.36,1)]">
         {/* Header */}
-        <div className="relative px-6 pt-6 pb-5 bg-navy-950 text-white">
+        <div className="relative px-6 pt-6 pb-5 bg-white border-b border-[#E7E7EA]">
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"
+            className="absolute top-5 right-5 w-9 h-9 rounded-full border border-[#E7E7EA] text-[#6B7280] hover:bg-[#FAFAF9] hover:text-[#16181D] flex items-center justify-center transition"
             aria-label="Close"
           >
             <X className="w-4 h-4" />
           </button>
           <div className="flex items-center gap-2 mb-2">
-            <span className="font-mono text-[11px] font-bold text-gold-300 tabular-nums">{le.code}</span>
-            <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.15em] font-bold text-white/70">
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: trackColor }} />
+            <span className="font-mono text-[11px] font-bold tabular-nums" style={{ color: RUST }}>{le.code}</span>
+            <span className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.14em] font-semibold text-[#6B7280]">
+              <span className="w-1.5 h-1.5 rounded-[2px]" style={{ background: trackColor }} />
               {le.track || "Unknown track"}
             </span>
           </div>
-          <h2 className="text-lg font-bold leading-tight pr-10">{le.title || "Untitled Learning Event"}</h2>
+          <h2 className="text-lg font-bold tracking-[-0.01em] leading-tight text-[#16181D] pr-10">{le.title || "Untitled Learning Event"}</h2>
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <span
-              className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider border ${ss.bg} ${ss.text}`}
+              className={`inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[9px] uppercase tracking-[0.1em] border ${ss.bg} ${ss.text}`}
             >
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: ss.color }} />
+              <span className="w-1.5 h-1.5 rounded-[2px]" style={{ background: ss.color }} />
               {ss.label}
             </span>
             {le.realai.involved && (
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-gold-500/20 text-gold-200 border border-gold-400/40">
+              <span
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[9px] uppercase tracking-[0.1em] text-white"
+                style={{ background: RUST }}
+              >
                 <Sparkles className="w-2.5 h-2.5" />
                 RealAI
               </span>
@@ -250,7 +260,7 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
         </div>
 
         {/* Body */}
-        <div className="flex-1 overflow-y-auto px-6 py-5 space-y-5">
+        <div className="flex-1 overflow-y-auto px-6 py-5 space-y-6">
           {/* Meta grid */}
           <div className="grid grid-cols-2 gap-3">
             <MetaCell label="Lesson type" value={le.lesson_type} icon={<FileText className="w-3 h-3" />} />
@@ -260,7 +270,7 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
           </div>
 
           {/* People */}
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             <SectionLabel>People</SectionLabel>
             <PersonRow icon={<User className="w-3.5 h-3.5" />} role="Author" name={le.author} />
             <PersonRow icon={<UsersRound className="w-3.5 h-3.5" />} role="Co-author" name={le.coauthor} />
@@ -273,20 +283,20 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
               <SectionLabel>RealAI routing</SectionLabel>
               <div className="space-y-1.5">
                 {le.realai.roles.map((r, i) => {
-                  const rc = ROLE_COLOR[r.role] ?? "#94a3b8"
+                  const rc = ROLE_COLOR[r.role] ?? "#6B7280"
                   return (
                     <div
                       key={`${r.role}-${i}`}
-                      className="rounded-lg border border-gray-100 bg-gray-50/60 px-3 py-2"
+                      className="rounded-lg border border-[#E7E7EA] bg-[#FAFAF9] px-3 py-2"
                     >
                       <div className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full" style={{ background: rc }} />
-                        <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: rc }}>
+                        <span className="w-1.5 h-1.5 rounded-[2px]" style={{ background: rc }} />
+                        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: rc }}>
                           {ROLE_LABEL[r.role] ?? r.role}
                         </span>
                       </div>
                       {r.recipients.length > 0 && (
-                        <div className="mt-1 text-[11px] text-gray-600 font-mono break-all leading-relaxed">
+                        <div className="mt-1 text-[11px] text-[#6B7280] font-mono break-all leading-relaxed">
                           {r.recipients.join(", ")}
                         </div>
                       )}
@@ -301,11 +311,11 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
           {le.lesson_plan.doc && (
             <div className="space-y-2">
               <SectionLabel>Lesson plan</SectionLabel>
-              <div className="flex items-center gap-2 rounded-lg border border-gray-100 px-3 py-2">
-                <FileText className="w-3.5 h-3.5 text-gold-500 flex-shrink-0" />
-                <span className="text-[12px] text-navy-800 truncate">{le.lesson_plan.doc}</span>
+              <div className="flex items-center gap-2 rounded-lg border border-[#E7E7EA] px-3 py-2">
+                <FileText className="w-3.5 h-3.5 flex-shrink-0" style={{ color: RUST }} />
+                <span className="text-[12px] text-[#3F434C] truncate">{le.lesson_plan.doc}</span>
                 {le.lesson_plan.date && (
-                  <span className="ml-auto text-[10px] text-gray-400 tabular-nums flex-shrink-0">{le.lesson_plan.date}</span>
+                  <span className="ml-auto font-mono text-[10px] text-[#9CA3AF] tabular-nums flex-shrink-0">{le.lesson_plan.date}</span>
                 )}
               </div>
             </div>
@@ -314,26 +324,26 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
           {/* Material files */}
           <div className="space-y-2">
             <SectionLabel>
-              Material files {le.materials.count > 0 && <span className="text-gray-400 font-normal tabular-nums">({le.materials.count})</span>}
+              Material files {le.materials.count > 0 && <span className="text-[#9CA3AF] font-normal tabular-nums">({le.materials.count})</span>}
             </SectionLabel>
             {le.materials.files.length === 0 ? (
-              <div className="text-[12px] text-gray-400 italic px-1">No material files indexed yet.</div>
+              <div className="text-[12px] text-[#9CA3AF] italic px-1">No material files indexed yet.</div>
             ) : (
               <div className="space-y-1.5">
                 {le.materials.files.map((f, i) => (
                   <div
                     key={`${f.name}-${i}`}
-                    className="flex items-center gap-2 rounded-lg border border-gray-100 px-3 py-2 hover:border-navy-200 transition-colors"
+                    className="flex items-center gap-2 rounded-lg border border-[#E7E7EA] px-3 py-2 hover:border-[#16181D]/20 transition-colors"
                   >
-                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-navy-50 text-[9px] font-bold uppercase text-navy-500 flex-shrink-0">
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-gray-100 font-mono text-[9px] font-bold uppercase text-[#6B7280] flex-shrink-0">
                       {f.ext || "?"}
                     </span>
-                    <span className="flex-1 min-w-0 text-[12px] text-navy-800 truncate">{f.name}</span>
-                    <span className="text-[10px] text-gray-400 tabular-nums flex-shrink-0">
+                    <span className="flex-1 min-w-0 text-[12px] text-[#3F434C] truncate">{f.name}</span>
+                    <span className="font-mono text-[10px] text-[#9CA3AF] tabular-nums flex-shrink-0">
                       {Math.round(f.kb)} KB
                     </span>
                     {f.date && (
-                      <span className="text-[10px] text-gray-400 tabular-nums flex-shrink-0 hidden sm:inline">
+                      <span className="font-mono text-[10px] text-[#9CA3AF] tabular-nums flex-shrink-0 hidden sm:inline">
                         {f.date}
                       </span>
                     )}
@@ -353,7 +363,7 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
                 <span className="inline-flex items-center gap-1.5">
                   <BookOpen className="w-3 h-3" />
                   Wiki content
-                  <span className="text-gray-400 font-normal tabular-nums">({le.wiki_sections.length})</span>
+                  <span className="text-[#9CA3AF] font-normal tabular-nums">({le.wiki_sections.length})</span>
                 </span>
               </SectionLabel>
               <div className="space-y-2">
@@ -370,7 +380,8 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
               href={le.wiki_page}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-sky-600 hover:text-sky-700 transition-colors"
+              className="inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.1em] transition-colors hover:opacity-70"
+              style={{ color: RUST }}
             >
               <ExternalLink className="w-3.5 h-3.5" />
               Open wiki page
@@ -384,7 +395,7 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="text-[10px] uppercase tracking-[0.18em] text-navy-500 font-bold">
+    <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#9CA3AF] font-semibold">
       {children}
     </div>
   )
@@ -392,12 +403,12 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function MetaCell({ label, value, icon }: { label: string; value: string; icon: React.ReactNode }) {
   return (
-    <div className="rounded-lg border border-gray-100 px-3 py-2">
-      <div className="flex items-center gap-1 text-[10px] uppercase tracking-[0.15em] text-gray-400 font-bold">
+    <div className="rounded-lg border border-[#E7E7EA] px-3 py-2">
+      <div className="flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[#9CA3AF] font-semibold">
         {icon}
         {label}
       </div>
-      <div className="mt-0.5 text-[13px] text-navy-800 font-medium tabular-nums">{value || "—"}</div>
+      <div className="mt-0.5 text-[13px] text-[#16181D] font-medium tabular-nums">{value || "—"}</div>
     </div>
   )
 }
@@ -405,12 +416,12 @@ function MetaCell({ label, value, icon }: { label: string; value: string; icon: 
 function PersonRow({ icon, role, name }: { icon: React.ReactNode; role: string; name: string }) {
   return (
     <div className="flex items-center gap-2.5">
-      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-navy-50 text-navy-400 flex-shrink-0">
+      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 text-[#6B7280] flex-shrink-0">
         {icon}
       </span>
       <div className="min-w-0">
-        <div className="text-[10px] uppercase tracking-[0.15em] text-gray-400 font-bold">{role}</div>
-        <div className={`text-[13px] truncate ${name ? "text-navy-800 font-medium" : "text-gray-300 italic"}`}>
+        <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#9CA3AF] font-semibold">{role}</div>
+        <div className={`text-[13px] truncate ${name ? "text-[#16181D] font-medium" : "text-[#C2C5CB] italic"}`}>
           {name || "unassigned"}
         </div>
       </div>
@@ -425,7 +436,7 @@ function CompletenessBlock({ c }: { c: Wp4Completeness }) {
         <span className="inline-flex items-center gap-1.5">
           <ClipboardCheck className="w-3 h-3" />
           Completeness
-          <span className="text-gray-400 font-normal">
+          <span className="text-[#9CA3AF] font-normal normal-case tracking-normal">
             {c.is_author ? "· RealAI authors this" : "· RealAI reviews this"}
           </span>
         </span>
@@ -433,20 +444,21 @@ function CompletenessBlock({ c }: { c: Wp4Completeness }) {
 
       {c.is_author ? (
         c.author_needs.length === 0 ? (
-          <div className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-[12px] font-semibold text-emerald-700">
+          <div className="inline-flex items-center gap-1.5 rounded-lg border border-[#D2E5D9] bg-[#EEF5F0] px-3 py-2 text-[12px] font-semibold text-[#2E6A4B]">
             <CheckCircle2 className="w-4 h-4" />
             Complete &#10003;
           </div>
         ) : (
           <div className="space-y-2">
-            <div className="text-[11px] text-gray-500">
+            <div className="text-[11px] text-[#6B7280]">
               Still owed by RealAI (as author):
             </div>
             <div className="flex flex-wrap gap-1.5">
               {c.author_needs.map((need, i) => (
                 <span
                   key={`${need}-${i}`}
-                  className="inline-flex items-center gap-1 rounded-full border border-gold-200 bg-gold-50 px-2.5 py-1 text-[11px] font-semibold text-gold-700"
+                  className="inline-flex items-center gap-1 rounded border border-[#E9CFC6] bg-[#FBEAE5] px-2.5 py-1 text-[11px] font-semibold"
+                  style={{ color: "#A53C22" }}
                 >
                   <AlertCircle className="w-3 h-3" />
                   {need}
@@ -458,13 +470,13 @@ function CompletenessBlock({ c }: { c: Wp4Completeness }) {
       ) : (
         <div className="space-y-2.5">
           {c.ready_to_review ? (
-            <div className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-[12px] font-semibold text-emerald-700">
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-[#D2E5D9] bg-[#EEF5F0] px-3 py-2 text-[12px] font-semibold text-[#2E6A4B]">
               <CheckCircle2 className="w-4 h-4" />
               Ready to review
             </div>
           ) : (
-            <div className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-[12px] font-medium text-gray-500">
-              <AlertCircle className="w-4 h-4 text-gray-400" />
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-[#E7E7EA] bg-[#FAFAF9] px-3 py-2 text-[12px] font-medium text-[#6B7280]">
+              <AlertCircle className="w-4 h-4 text-[#9CA3AF]" />
               Not written yet — nothing to review
             </div>
           )}
@@ -483,38 +495,38 @@ function CheckIndicator({ ok, label }: { ok: boolean; label: string }) {
   return (
     <div className="flex items-center gap-2 text-[12px]">
       {ok ? (
-        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+        <CheckCircle2 className="w-3.5 h-3.5 text-[#3F7D5E] flex-shrink-0" />
       ) : (
-        <XCircle className="w-3.5 h-3.5 text-gray-300 flex-shrink-0" />
+        <XCircle className="w-3.5 h-3.5 text-[#C2C5CB] flex-shrink-0" />
       )}
-      <span className={ok ? "text-navy-800 font-medium" : "text-gray-400"}>{label}</span>
+      <span className={ok ? "text-[#16181D] font-medium" : "text-[#9CA3AF]"}>{label}</span>
     </div>
   )
 }
 
 function WikiSectionCard({ section }: { section: Wp4WikiSection }) {
   return (
-    <div className="rounded-lg border border-gray-100 overflow-hidden">
-      <div className="flex items-center gap-2 px-3 py-2 bg-gray-50/70 border-b border-gray-100">
+    <div className="rounded-lg border border-[#E7E7EA] overflow-hidden">
+      <div className="flex items-center gap-2 px-3 py-2 bg-[#FAFAF9] border-b border-[#E7E7EA]">
         {section.empty ? (
-          <span className="w-2 h-2 rounded-full bg-gray-300 flex-shrink-0" title="empty" />
+          <span className="w-2 h-2 rounded-[2px] bg-[#C2C5CB] flex-shrink-0" title="empty" />
         ) : (
-          <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" title="filled" />
+          <span className="w-2 h-2 rounded-[2px] bg-[#3F7D5E] flex-shrink-0" title="filled" />
         )}
-        <span className="flex-1 min-w-0 text-[12px] font-semibold text-navy-800 truncate">
+        <span className="flex-1 min-w-0 text-[12px] font-semibold text-[#16181D] truncate">
           {section.name}
         </span>
         {!section.empty && (
-          <span className="text-[10px] text-gray-400 tabular-nums flex-shrink-0">
+          <span className="font-mono text-[10px] text-[#9CA3AF] tabular-nums flex-shrink-0">
             {section.len} ch
           </span>
         )}
       </div>
       <div className="px-3 py-2.5">
         {section.empty ? (
-          <div className="text-[12px] text-gray-400 italic">— empty —</div>
+          <div className="text-[12px] text-[#9CA3AF] italic">— empty —</div>
         ) : (
-          <div className="max-h-44 overflow-y-auto text-[12px] text-gray-600 leading-relaxed whitespace-pre-line">
+          <div className="max-h-44 overflow-y-auto text-[12px] text-[#4F535B] leading-relaxed whitespace-pre-line">
             {section.text}
           </div>
         )}
