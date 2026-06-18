@@ -2,7 +2,7 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-06-18T18:02:58.090660Z",
+  "generated_at": "2026-06-18T18:28:20.775058Z",
   "data_sources": {
     "wiki": {
       "status": "live",
@@ -10,7 +10,7 @@
       "master_total": 455
     },
     "sharepoint": {
-      "generated_at": "2026-06-18T15:17:30.504517Z",
+      "generated_at": "2026-06-18T18:28:20.594367Z",
       "counts": {
         "codes_total": 442,
         "with_materials": 48,
@@ -4747,6 +4747,7 @@
             "ext": "pptx",
             "kb": 1455,
             "date": "2026-06-10",
+            "sha": "1c89363377e6c07e",
             "rel": "4.1 Horizontal/H-137/Literature Review with AI.pptx"
           },
           {
@@ -4754,6 +4755,7 @@
             "ext": "pdf",
             "kb": 965,
             "date": "2026-06-10",
+            "sha": "49c043a9ed479997",
             "rel": "4.1 Horizontal/H-137/Literature Review with AI.pdf"
           }
         ],
@@ -5751,6 +5753,7 @@
             "ext": "pptx",
             "kb": 18782,
             "date": "2026-06-11",
+            "sha": "4007a9ffcbbdb85a",
             "rel": "4.1 Horizontal/H-239/H-239.pptx"
           }
         ],
@@ -5835,6 +5838,7 @@
             "ext": "pptx",
             "kb": 9920,
             "date": "2026-06-11",
+            "sha": "c47290fc1c03beee",
             "rel": "4.1 Horizontal/H-241/H-241.pptx"
           }
         ],
@@ -5881,6 +5885,7 @@
             "ext": "pptx",
             "kb": 4644,
             "date": "2026-06-12",
+            "sha": "6e14e5427ac650dc",
             "rel": "4.1 Horizontal/H-242/H-242.pptx"
           },
           {
@@ -5888,6 +5893,7 @@
             "ext": "docx",
             "kb": 35,
             "date": "2026-06-12",
+            "sha": "39178e3c6085d776",
             "rel": "4.1 Horizontal/H-242/H-242 CARDS.docx"
           }
         ],
@@ -6200,6 +6206,7 @@
             "ext": "xlsx",
             "kb": 15,
             "date": "2026-06-10",
+            "sha": "75ec918414d5e411",
             "rel": "4.1 Horizontal/HC-016/Prompt Log.xlsx"
           },
           {
@@ -6207,6 +6214,7 @@
             "ext": "pptx",
             "kb": 332,
             "date": "2026-06-09",
+            "sha": "3f0d4b14c577e55b",
             "rel": "4.1 Horizontal/HC-016/Slides.pptx"
           }
         ],
@@ -6446,6 +6454,7 @@
             "ext": "pptx",
             "kb": 14162,
             "date": "2026-06-16",
+            "sha": "06ed42d12253db2c",
             "rel": "4.1 Horizontal/HC-022/HC-022_IntroSupervisedLearningLearningMaterials.pptx"
           },
           {
@@ -6453,6 +6462,7 @@
             "ext": "pdf",
             "kb": 203,
             "date": "2026-06-10",
+            "sha": "b4403dd796b77252",
             "rel": "4.1 Horizontal/HC-022/HC-022_ForTeachers_IntroductionToSupervisedLearinng.pdf"
           }
         ],
@@ -6879,6 +6889,7 @@
             "ext": "pptx",
             "kb": 961,
             "date": "2026-06-17",
+            "sha": "abd890048597c1c5",
             "rel": "4.1 Horizontal/HC-034/HC-034-Agentic_Bias.pptx"
           }
         ],
@@ -6964,6 +6975,7 @@
             "ext": "pptx",
             "kb": 410,
             "date": "2026-05-31",
+            "sha": "09745d03477bcf39",
             "rel": "4.1 Horizontal/HC-037/Impact of AI on personal well-being.pptx"
           }
         ],
@@ -7201,6 +7213,7 @@
             "ext": "pptx",
             "kb": 1592,
             "date": "2026-06-11",
+            "sha": "74c60b8d47d3a007",
             "rel": "4.1 Horizontal/HC-072a/HC-072a_IntroductionToQualitativeAnalysisLecture 16.35.53.pptx"
           },
           {
@@ -7208,6 +7221,7 @@
             "ext": "xlsx",
             "kb": 12,
             "date": "2026-05-19",
+            "sha": "ea01f6436c996d44",
             "rel": "4.1 Horizontal/HC-072a/Book.xlsx"
           }
         ],
@@ -7254,6 +7268,7 @@
             "ext": "docx",
             "kb": 221,
             "date": "2026-06-10",
+            "sha": "a906b02212466b33",
             "rel": "4.1 Horizontal/HC-072b/HC-072b_IntroductionToQualitativeAnalysisPractical.docx"
           }
         ],
@@ -7300,6 +7315,7 @@
             "ext": "pptx",
             "kb": 368,
             "date": "2026-06-10",
+            "sha": "0d26914cd7a65f21",
             "rel": "4.1 Horizontal/HC-073a/HC-073a_IntroductionToQuantitativeAnalysisLecture.pptx"
           },
           {
@@ -7307,6 +7323,7 @@
             "ext": "xlsx",
             "kb": 16,
             "date": "2026-05-29",
+            "sha": "fc27b0a56b970e31",
             "rel": "4.1 Horizontal/HC-073a/relatedLEs_and_descriptions.xlsx"
           }
         ],
@@ -7353,6 +7370,7 @@
             "ext": "pdf",
             "kb": 2644,
             "date": "2026-06-10",
+            "sha": "2d5b5c3d4ae1d9a5",
             "rel": "4.1 Horizontal/HC-073b/who-5_english-original4da539d6ed4b49389e3afe47cda2326a.pdf"
           },
           {
@@ -7360,6 +7378,7 @@
             "ext": "docx",
             "kb": 211,
             "date": "2026-06-10",
+            "sha": "5c005a280c74b6f9",
             "rel": "4.1 Horizontal/HC-073b/HC-073b_IntroductionToQuantitativeMethodsPractical.docx"
           }
         ],
@@ -7482,6 +7501,7 @@
             "ext": "pptx",
             "kb": 8437,
             "date": "2026-06-11",
+            "sha": "8b8a83a2e3e9b5e6",
             "rel": "4.1 Horizontal/HC-076a/HC-076a.pptx"
           }
         ],
@@ -7528,6 +7548,7 @@
             "ext": "pptx",
             "kb": 6384,
             "date": "2026-06-11",
+            "sha": "8c7d948c45f9fd44",
             "rel": "4.1 Horizontal/HC-076b/HC-076b.pptx"
           }
         ],
@@ -7650,6 +7671,7 @@
             "ext": "pdf",
             "kb": 306,
             "date": "2026-06-02",
+            "sha": "cb0252a23a7a3f2d",
             "rel": "4.1 Horizontal/HC-148/Presentation HC-148.pdf"
           }
         ],
@@ -7697,6 +7719,7 @@
             "ext": "pdf",
             "kb": 497,
             "date": "2026-06-07",
+            "sha": "eacf90593c099ff0",
             "rel": "4.1 Horizontal/HC-150/Presentation HC-150.pdf"
           }
         ],
@@ -8173,6 +8196,7 @@
             "ext": "pdf",
             "kb": 517,
             "date": "2026-06-10",
+            "sha": "0be93872a22471ba",
             "rel": "4.1 Horizontal/HC-176/HC 176 Data-1 v1.pdf"
           }
         ],
@@ -8490,6 +8514,7 @@
             "ext": "pptx",
             "kb": 470,
             "date": "2026-06-09",
+            "sha": "8ce87525a37929f2",
             "rel": "4.1 Horizontal/HC-195/HC-195-Model_Risk_Management.pptx"
           }
         ],
@@ -8537,6 +8562,7 @@
             "ext": "pptx",
             "kb": 1965,
             "date": "2026-06-06",
+            "sha": "e6dee9961b4c5808",
             "rel": "4.1 Horizontal/HC-199/HC199-Fundamental-Human-Rights-in-the-Use-of-AI.pptx"
           }
         ],
@@ -9183,6 +9209,7 @@
             "ext": "html",
             "kb": 17,
             "date": "2026-06-08",
+            "sha": "b31174bd5a170e4c",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources.html"
           },
           {
@@ -9190,6 +9217,7 @@
             "ext": "html",
             "kb": 24,
             "date": "2026-06-08",
+            "sha": "6ce43e1124b415b4",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions.html"
           },
           {
@@ -9197,6 +9225,7 @@
             "ext": "html",
             "kb": 20,
             "date": "2026-06-08",
+            "sha": "ce6f0a56d9a103bc",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises.html"
           },
           {
@@ -9204,6 +9233,7 @@
             "ext": "css",
             "kb": 420,
             "date": "2026-06-08",
+            "sha": "a20d3d44875fd0fb",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
           },
           {
@@ -9211,6 +9241,7 @@
             "ext": "js",
             "kb": 23,
             "date": "2026-06-08",
+            "sha": "41181eeec6d7ba64",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tippy.umd.min.js"
           },
           {
@@ -9218,6 +9249,7 @@
             "ext": "js",
             "kb": 5,
             "date": "2026-06-08",
+            "sha": "69098e105d990f83",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/anchor.min.js"
           },
           {
@@ -9225,6 +9257,7 @@
             "ext": "css",
             "kb": 3,
             "date": "2026-06-08",
+            "sha": "96d688dbd4c2de66",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css"
           },
           {
@@ -9232,6 +9265,7 @@
             "ext": "js",
             "kb": 19,
             "date": "2026-06-08",
+            "sha": "4d50586b184724d3",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/popper.min.js"
           },
           {
@@ -9239,6 +9273,7 @@
             "ext": "js",
             "kb": 8,
             "date": "2026-06-08",
+            "sha": "e17a1d816e13c082",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/clipboard/clipboard.min.js"
           },
           {
@@ -9246,6 +9281,7 @@
             "ext": "js",
             "kb": 2,
             "date": "2026-06-08",
+            "sha": "a9c226bf70e82eaf",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tabsets/tabsets.js"
           },
           {
@@ -9253,6 +9289,7 @@
             "ext": "css",
             "kb": 97,
             "date": "2026-06-08",
+            "sha": "01253947f506e030",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/bootstrap/bootstrap-icons.css"
           },
           {
@@ -9260,6 +9297,7 @@
             "ext": "js",
             "kb": 78,
             "date": "2026-06-08",
+            "sha": "d2ea6c1e0cabca20",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/bootstrap/bootstrap.min.js"
           },
           {
@@ -9267,6 +9305,7 @@
             "ext": "woff",
             "kb": 176,
             "date": "2026-06-08",
+            "sha": "f55513b7b591cb84",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/bootstrap/bootstrap-icons.woff"
           },
           {
@@ -9274,6 +9313,7 @@
             "ext": "js",
             "kb": 26,
             "date": "2026-06-08",
+            "sha": "4ecb60f215d96b2a",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/quarto.js"
           },
           {
@@ -9281,6 +9321,7 @@
             "ext": "css",
             "kb": 1,
             "date": "2026-06-08",
+            "sha": "5969f497d9158d76",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tippy.css"
           },
           {
@@ -9288,6 +9329,7 @@
             "ext": "js",
             "kb": 2,
             "date": "2026-06-08",
+            "sha": "a9c226bf70e82eaf",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/tabsets/tabsets.js"
           },
           {
@@ -9295,6 +9337,7 @@
             "ext": "css",
             "kb": 1,
             "date": "2026-06-08",
+            "sha": "5969f497d9158d76",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/tippy.css"
           },
           {
@@ -9302,6 +9345,7 @@
             "ext": "js",
             "kb": 23,
             "date": "2026-06-08",
+            "sha": "41181eeec6d7ba64",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/tippy.umd.min.js"
           },
           {
@@ -9309,6 +9353,7 @@
             "ext": "js",
             "kb": 5,
             "date": "2026-06-08",
+            "sha": "69098e105d990f83",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/anchor.min.js"
           },
           {
@@ -9316,6 +9361,7 @@
             "ext": "css",
             "kb": 3,
             "date": "2026-06-08",
+            "sha": "96d688dbd4c2de66",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css"
           },
           {
@@ -9323,6 +9369,7 @@
             "ext": "js",
             "kb": 19,
             "date": "2026-06-08",
+            "sha": "4d50586b184724d3",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/popper.min.js"
           },
           {
@@ -9330,6 +9377,7 @@
             "ext": "css",
             "kb": 97,
             "date": "2026-06-08",
+            "sha": "01253947f506e030",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/bootstrap/bootstrap-icons.css"
           },
           {
@@ -9337,6 +9385,7 @@
             "ext": "js",
             "kb": 78,
             "date": "2026-06-08",
+            "sha": "d2ea6c1e0cabca20",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/bootstrap/bootstrap.min.js"
           },
           {
@@ -9344,6 +9393,7 @@
             "ext": "css",
             "kb": 420,
             "date": "2026-06-08",
+            "sha": "a20d3d44875fd0fb",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
           },
           {
@@ -9351,6 +9401,7 @@
             "ext": "woff",
             "kb": 176,
             "date": "2026-06-08",
+            "sha": "f55513b7b591cb84",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/bootstrap/bootstrap-icons.woff"
           },
           {
@@ -9358,6 +9409,7 @@
             "ext": "js",
             "kb": 26,
             "date": "2026-06-08",
+            "sha": "4ecb60f215d96b2a",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/quarto.js"
           },
           {
@@ -9365,6 +9417,7 @@
             "ext": "js",
             "kb": 8,
             "date": "2026-06-08",
+            "sha": "e17a1d816e13c082",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/clipboard/clipboard.min.js"
           },
           {
@@ -9372,6 +9425,7 @@
             "ext": "js",
             "kb": 19,
             "date": "2026-06-08",
+            "sha": "4d50586b184724d3",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/popper.min.js"
           },
           {
@@ -9379,6 +9433,7 @@
             "ext": "js",
             "kb": 2,
             "date": "2026-06-08",
+            "sha": "a9c226bf70e82eaf",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/tabsets/tabsets.js"
           },
           {
@@ -9386,6 +9441,7 @@
             "ext": "woff",
             "kb": 176,
             "date": "2026-06-08",
+            "sha": "f55513b7b591cb84",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap-icons.woff"
           },
           {
@@ -9393,6 +9449,7 @@
             "ext": "js",
             "kb": 26,
             "date": "2026-06-08",
+            "sha": "4ecb60f215d96b2a",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/quarto.js"
           },
           {
@@ -9400,6 +9457,7 @@
             "ext": "css",
             "kb": 1,
             "date": "2026-06-08",
+            "sha": "5969f497d9158d76",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/tippy.css"
           },
           {
@@ -9407,6 +9465,7 @@
             "ext": "js",
             "kb": 23,
             "date": "2026-06-08",
+            "sha": "41181eeec6d7ba64",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/tippy.umd.min.js"
           },
           {
@@ -9414,6 +9473,7 @@
             "ext": "js",
             "kb": 5,
             "date": "2026-06-08",
+            "sha": "69098e105d990f83",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/anchor.min.js"
           },
           {
@@ -9421,6 +9481,7 @@
             "ext": "css",
             "kb": 3,
             "date": "2026-06-08",
+            "sha": "96d688dbd4c2de66",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css"
           },
           {
@@ -9428,6 +9489,7 @@
             "ext": "js",
             "kb": 8,
             "date": "2026-06-08",
+            "sha": "e17a1d816e13c082",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/clipboard/clipboard.min.js"
           },
           {
@@ -9435,6 +9497,7 @@
             "ext": "css",
             "kb": 97,
             "date": "2026-06-08",
+            "sha": "01253947f506e030",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap-icons.css"
           },
           {
@@ -9442,6 +9505,7 @@
             "ext": "js",
             "kb": 78,
             "date": "2026-06-08",
+            "sha": "d2ea6c1e0cabca20",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap.min.js"
           },
           {
@@ -9449,6 +9513,7 @@
             "ext": "css",
             "kb": 420,
             "date": "2026-06-08",
+            "sha": "a20d3d44875fd0fb",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
           },
           {
@@ -9456,6 +9521,7 @@
             "ext": "pptx",
             "kb": 6534,
             "date": "2026-06-08",
+            "sha": "d03130f530711aa8",
             "rel": "4.2 Health & Lifescience/HL-006/1_tutorial_fair_intro.pptx"
           }
         ],
@@ -10828,6 +10894,7 @@
             "ext": "docx",
             "kb": 208,
             "date": "2026-06-03",
+            "sha": "8a2af9539cedaabd",
             "rel": "4.2 Health & Lifescience/HL-042/Learning-Outcomes-Review-HL-042.docx"
           },
           {
@@ -10835,6 +10902,7 @@
             "ext": "pptx",
             "kb": 8057,
             "date": "2026-05-29",
+            "sha": "ea7f5a13e04d6483",
             "rel": "4.2 Health & Lifescience/HL-042/Slides.pptx"
           }
         ],
@@ -11072,6 +11140,7 @@
             "ext": "pptx",
             "kb": 4548,
             "date": "2026-06-11",
+            "sha": "a30989aa5debfead",
             "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
           },
           {
@@ -11079,6 +11148,7 @@
             "ext": "docx",
             "kb": 34,
             "date": "2026-06-06",
+            "sha": "d2f9e081d5051572",
             "rel": "4.2 Health & Lifescience/HL-048/lessonplan_HL-048-TUD.docx"
           }
         ],
@@ -14053,6 +14123,7 @@
             "ext": "pptx",
             "kb": 6069,
             "date": "2026-06-10",
+            "sha": "c1f609b75b290592",
             "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Practice.pptx"
           }
         ],
@@ -14152,6 +14223,7 @@
             "ext": "pptx",
             "kb": 7406,
             "date": "2026-06-10",
+            "sha": "890bcec8e3394d76",
             "rel": "4.3 Media & Culture/MC-002/MC_002_Social_Networks_Analysis_Lecture.pptx"
           }
         ],
@@ -14198,6 +14270,7 @@
             "ext": "pptx",
             "kb": 5818,
             "date": "2026-06-10",
+            "sha": "92666968352c34b9",
             "rel": "4.3 Media & Culture/MC-003/MC_003_Toxicity_Polarization_Monitoring_Practice.pptx"
           }
         ],
@@ -14297,6 +14370,7 @@
             "ext": "pptx",
             "kb": 4147,
             "date": "2026-06-10",
+            "sha": "c796853630d21955",
             "rel": "4.3 Media & Culture/MC-004/MC_004_Using_AI_in_the_Preparation_of_Social_Programs_and_Projects.pptx"
           }
         ],
@@ -14343,6 +14417,7 @@
             "ext": "pptx",
             "kb": 4157,
             "date": "2026-06-17",
+            "sha": "e3320f82ab217de9",
             "rel": "4.3 Media & Culture/MC-005/MC-005 Social Data Analysis OSINT Fundamentals.pptx"
           }
         ],
@@ -14389,6 +14464,7 @@
             "ext": "pptx",
             "kb": 4160,
             "date": "2026-06-10",
+            "sha": "6f736a3d914b8119",
             "rel": "4.3 Media & Culture/MC-006/MC_006_Sociological_research_of_corruption_indices_and_indicators.pptx"
           }
         ],
@@ -14435,6 +14511,7 @@
             "ext": "pptx",
             "kb": 8078,
             "date": "2026-06-10",
+            "sha": "70a6b76bd56a6f57",
             "rel": "4.3 Media & Culture/MC-007/MC_007_Factor_Analysis_Lecture.pptx"
           }
         ],
@@ -14481,6 +14558,7 @@
             "ext": "pptx",
             "kb": 7561,
             "date": "2026-06-10",
+            "sha": "9cce3e4ce6f14c13",
             "rel": "4.3 Media & Culture/MC-008/MC_008_Media_Consumption_Factor_Analysis_Practice.pptx"
           }
         ],
@@ -14717,6 +14795,7 @@
             "ext": "pptx",
             "kb": 4148,
             "date": "2026-06-10",
+            "sha": "73e93856b5f0f9c9",
             "rel": "4.3 Media & Culture/MC-014/MC_014_Sampling_method_in_sociological_research_of_the_media_docx.pptx"
           }
         ],
@@ -14763,6 +14842,7 @@
             "ext": "pptx",
             "kb": 4500,
             "date": "2026-06-10",
+            "sha": "63bf3e6bfbe145de",
             "rel": "4.3 Media & Culture/MC-015/MC_015_Foundations_of_Mediation_and_Conflict_Dynamics_in_Decision.pptx"
           }
         ],
@@ -14809,6 +14889,7 @@
             "ext": "pptx",
             "kb": 4529,
             "date": "2026-06-10",
+            "sha": "e2eef2c57b19820f",
             "rel": "4.3 Media & Culture/MC-016/MC_016_Mediation_as_a_Structured_Communication_Process_in_Conflict.pptx"
           }
         ],
@@ -14855,6 +14936,7 @@
             "ext": "pptx",
             "kb": 4551,
             "date": "2026-06-10",
+            "sha": "19cc732bc5501ed4",
             "rel": "4.3 Media & Culture/MC-017/MC_017_AI_Supported_Mediation.pptx"
           }
         ],
@@ -14901,6 +14983,7 @@
             "ext": "pptx",
             "kb": 4134,
             "date": "2026-06-17",
+            "sha": "d72ffd5a3ee1287f",
             "rel": "4.3 Media & Culture/MC-018/MC-018 Crisis Communication AI-Driven Response Simulation+.pptx"
           }
         ],
@@ -15175,6 +15258,7 @@
             "ext": "pptx",
             "kb": 2106,
             "date": "2026-06-10",
+            "sha": "431e70912719123c",
             "rel": "4.3 Media & Culture/MC-025/MC-025.pptx"
           }
         ],
@@ -15221,6 +15305,7 @@
             "ext": "pptx",
             "kb": 1211,
             "date": "2026-06-17",
+            "sha": "3d1d521068b9f0a9",
             "rel": "4.3 Media & Culture/MC-026/MC-026.pptx"
           },
           {
@@ -15228,6 +15313,7 @@
             "ext": "ipynb",
             "kb": 139,
             "date": "2026-06-10",
+            "sha": "8a6e69165722e05f",
             "rel": "4.3 Media & Culture/MC-026/MC-026.ipynb"
           }
         ],
@@ -15274,6 +15360,7 @@
             "ext": "pptx",
             "kb": 384,
             "date": "2026-06-10",
+            "sha": "cfa1447e68c224ca",
             "rel": "4.3 Media & Culture/MC-027/MC-027.pptx"
           }
         ],
@@ -15320,6 +15407,7 @@
             "ext": "pptx",
             "kb": 1164,
             "date": "2026-06-10",
+            "sha": "7349552d87caebb7",
             "rel": "4.3 Media & Culture/MC-028/MC-028.pptx"
           },
           {
@@ -15327,6 +15415,7 @@
             "ext": "ipynb",
             "kb": 99,
             "date": "2026-06-10",
+            "sha": "9038bbe6abdb172f",
             "rel": "4.3 Media & Culture/MC-028/MC-028.ipynb"
           }
         ],
@@ -15373,6 +15462,7 @@
             "ext": "pptx",
             "kb": 807,
             "date": "2026-06-10",
+            "sha": "b1608e70e23a6b40",
             "rel": "4.3 Media & Culture/MC-029/MC-029.pptx"
           }
         ],
@@ -15419,6 +15509,7 @@
             "ext": "ipynb",
             "kb": 30,
             "date": "2026-06-10",
+            "sha": "0db84f67280f6353",
             "rel": "4.3 Media & Culture/MC-030/MC-030.ipynb"
           },
           {
@@ -15426,6 +15517,7 @@
             "ext": "csv",
             "kb": 2,
             "date": "2026-06-10",
+            "sha": "4ef86d6b846daec8",
             "rel": "4.3 Media & Culture/MC-030/online_discourse_daily.csv"
           },
           {
@@ -15433,6 +15525,7 @@
             "ext": "csv",
             "kb": 0,
             "date": "2026-06-10",
+            "sha": "15f492f580e1fd87",
             "rel": "4.3 Media & Culture/MC-030/media_coverage_monthly.csv"
           }
         ],
@@ -15479,6 +15572,7 @@
             "ext": "pptx",
             "kb": 370,
             "date": "2026-06-10",
+            "sha": "d434d653ee15d359",
             "rel": "4.3 Media & Culture/MC-031/MC-031.pptx"
           }
         ],
@@ -15525,6 +15619,7 @@
             "ext": "pptx",
             "kb": 392,
             "date": "2026-06-10",
+            "sha": "0d35a228f2652436",
             "rel": "4.3 Media & Culture/MC-032/MC-032.pptx"
           },
           {
@@ -15532,6 +15627,7 @@
             "ext": "zip",
             "kb": 25,
             "date": "2026-06-10",
+            "sha": "b1cdc09943862656",
             "rel": "4.3 Media & Culture/MC-032/MC-032.zip"
           }
         ],
@@ -15882,6 +15978,7 @@
             "ext": "pptx",
             "kb": 12639,
             "date": "2026-06-11",
+            "sha": "9ed0a7cf3985e709",
             "rel": "4.3 Media & Culture/MC-047/MC-047.pptx"
           }
         ],
@@ -16042,6 +16139,7 @@
             "ext": "pptx",
             "kb": 37803,
             "date": "2026-06-10",
+            "sha": "ad68143236d21c96",
             "rel": "4.3 Media & Culture/MC-051/MC-051.pptx"
           }
         ],
@@ -18152,6 +18250,7 @@
             "ext": "pdf",
             "kb": 217,
             "date": "2026-06-10",
+            "sha": "941aeedb1f5388fb",
             "rel": "4.5 Management & Finance/MF-01/MF-01 Basic concepts & Creating Effective Prompts.pdf"
           }
         ],
@@ -18628,6 +18727,7 @@
             "ext": "pdf",
             "kb": 658,
             "date": "2026-06-10",
+            "sha": "9eb2b256048ed955",
             "rel": "4.5 Management & Finance/MF-13/MF-13 - s.pdf"
           }
         ],
@@ -19065,6 +19165,7 @@
             "ext": "docx",
             "kb": 31,
             "date": "2026-05-16",
+            "sha": "ac5323a1a6a6a737",
             "rel": "4.5 Management & Finance/MF-26/lessonplan_MF-26-TUD.docx"
           }
         ],
@@ -19504,6 +19605,7 @@
             "ext": "pptx",
             "kb": 4548,
             "date": "2026-06-11",
+            "sha": "a30989aa5debfead",
             "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
           },
           {
@@ -19511,6 +19613,7 @@
             "ext": "docx",
             "kb": 34,
             "date": "2026-06-06",
+            "sha": "d2f9e081d5051572",
             "rel": "4.2 Health & Lifescience/HL-048/lessonplan_HL-048-TUD.docx"
           }
         ],
@@ -20440,6 +20543,7 @@
             "ext": "pptx",
             "kb": 6069,
             "date": "2026-06-10",
+            "sha": "c1f609b75b290592",
             "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Practice.pptx"
           }
         ],
@@ -20539,6 +20643,7 @@
             "ext": "pptx",
             "kb": 5818,
             "date": "2026-06-10",
+            "sha": "92666968352c34b9",
             "rel": "4.3 Media & Culture/MC-003/MC_003_Toxicity_Polarization_Monitoring_Practice.pptx"
           }
         ],

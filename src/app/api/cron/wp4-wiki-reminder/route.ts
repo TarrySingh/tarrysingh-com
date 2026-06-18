@@ -21,7 +21,9 @@ const TO = "tarry.singh@realai.eu"
 const DASHBOARD = "https://www.tarrysingh.com/experiments/panoraima/wps/wp4"
 
 export async function GET(req: NextRequest) {
-  const authed = req.headers.get("authorization") === `Bearer ${process.env.CRON_SECRET}`
+  // Deny if CRON_SECRET is unset/empty so "Bearer undefined" can't authenticate.
+  const secret = process.env.CRON_SECRET
+  const authed = !!secret && req.headers.get("authorization") === `Bearer ${secret}`
   const test = new URL(req.url).searchParams.get("test") === "1"
   if (!authed && !test) return NextResponse.json({ error: "unauthorized" }, { status: 401 })
 
