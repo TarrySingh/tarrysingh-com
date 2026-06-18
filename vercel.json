@@ -24,6 +24,14 @@
     {
       "path": "/api/cron/backup-writer",
       "schedule": "45 9 * * *"
+    },
+    {
+      "path": "/api/cron/wp4-alerts",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/cron/wp4-wiki-reminder",
+      "schedule": "0 8 * * 1"
     }
   ]
 }
