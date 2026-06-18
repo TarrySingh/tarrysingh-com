@@ -3,6 +3,7 @@
 import { useEffect } from "react"
 import { X, FileText, Calendar, Package, Hash } from "lucide-react"
 import type { WpDeliverable } from "@/lib/panoraima/types"
+import { NAVY, INK, SLATE, MUTE, FAINT, LINE, SURFACE, COBALT } from "../consortiumTokens"
 
 interface Props {
   deliverable: WpDeliverable | null
@@ -31,20 +32,21 @@ export default function DocumentDrawer({ deliverable, open, onClose, wpColor }: 
       <div
         aria-hidden
         onClick={onClose}
-        className={`fixed inset-0 z-40 bg-navy-950/60 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 backdrop-blur-sm transition-opacity duration-300 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
+        style={{ backgroundColor: `${NAVY}99` }}
       />
       <aside
         aria-label="Deliverable"
-        className={`fixed top-0 bottom-0 right-0 z-50 w-full md:w-[560px] bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`fixed top-0 bottom-0 right-0 z-50 w-full md:w-[560px] bg-white border-l border-[#E3E7ED] shadow-xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           open ? "translate-x-0" : "translate-x-full"
         } flex flex-col`}
       >
         <div
           className="relative px-6 md:px-8 pt-7 pb-6 text-white overflow-hidden"
           style={{
-            background: `linear-gradient(135deg, #0A1628 0%, ${wpColor}dd 180%)`,
+            background: `linear-gradient(135deg, ${NAVY} 0%, ${wpColor}dd 180%)`,
           }}
         >
           <div
@@ -59,7 +61,7 @@ export default function DocumentDrawer({ deliverable, open, onClose, wpColor }: 
           >
             <X className="w-4 h-4" />
           </button>
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] font-bold text-gold-300 mb-2">
+          <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] font-bold text-[#7DA0FF] mb-2">
             <Package className="w-3 h-3" />
             {deliverable.id}
             {deliverable.version && (
@@ -95,29 +97,29 @@ export default function DocumentDrawer({ deliverable, open, onClose, wpColor }: 
         <div className="flex-1 overflow-y-auto px-6 md:px-8 py-6">
           {deliverable.excerpt ? (
             <>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-navy-500 font-bold mb-2">
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] font-bold mb-2" style={{ color: FAINT }}>
                 Excerpt
               </div>
-              <p className="text-[14px] leading-relaxed text-navy-800 border-l-2 border-gold-300 pl-4 italic">
+              <p className="text-[14px] leading-relaxed pl-4 italic border-l-2" style={{ color: INK, borderColor: COBALT }}>
                 &ldquo;{deliverable.excerpt}&rdquo;
               </p>
             </>
           ) : (
-            <div className="text-sm text-gray-500 italic">
+            <div className="text-sm italic" style={{ color: MUTE }}>
               No machine-readable excerpt available (this may be a scanned PDF or a binary we
               haven&apos;t indexed yet).
             </div>
           )}
 
           {deliverable.rel_path && (
-            <div className="mt-8 pt-6 border-t border-gray-100">
-              <div className="text-[10px] uppercase tracking-[0.18em] text-navy-500 font-bold mb-2">
+            <div className="mt-8 pt-6 border-t" style={{ borderColor: LINE }}>
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] font-bold mb-2" style={{ color: FAINT }}>
                 Source path (SharePoint)
               </div>
-              <code className="block text-[11px] font-mono text-gray-600 break-all bg-gray-50 px-3 py-2 rounded-md">
+              <code className="block text-[11px] font-mono break-all px-3 py-2 rounded-md" style={{ color: SLATE, backgroundColor: SURFACE }}>
                 PANORAIMA - Documents / WP2 / {deliverable.rel_path}
               </code>
-              <p className="mt-3 text-[11px] text-gray-500 leading-relaxed">
+              <p className="mt-3 text-[11px] leading-relaxed" style={{ color: MUTE }}>
                 Deliverables live on the consortium SharePoint. This dashboard shows the first
                 few paragraphs only — open the file in SharePoint/OneDrive for the full content.
               </p>

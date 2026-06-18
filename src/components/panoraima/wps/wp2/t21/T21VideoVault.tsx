@@ -2,6 +2,7 @@
 
 import { Video, Mic, FileText, ExternalLink } from "lucide-react"
 import type { Task21Detail } from "@/lib/panoraima/types"
+import { COBALT, NAVY_2, SLATE } from "../../../consortiumTokens"
 
 interface Props {
   detail: Task21Detail
@@ -14,9 +15,9 @@ const KIND_LABEL: Record<string, string> = {
 }
 
 const KIND_COLOR: Record<string, string> = {
-  video:      "#ef4444",
-  audio:      "#8b5cf6",
-  transcript: "#0ea5e9",
+  video:      COBALT,
+  audio:      NAVY_2,
+  transcript: SLATE,
 }
 
 export default function T21VideoVault({ detail }: Props) {
@@ -37,13 +38,13 @@ export default function T21VideoVault({ detail }: Props) {
   return (
     <section>
       <div className="mb-5">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6B7686] border border-[#E3E7ED] bg-[#F7F8FA]">
           Video &amp; audio vault
         </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-[#0A1F33]">
           {totalCount} recordings · {(totalMB / 1024).toFixed(1)} GB of primary evidence
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-1 text-sm text-[#51607A] max-w-xl">
           Focus-group and interview recordings aren&apos;t embedded here
           (each file is too large) but live on SharePoint alongside their
           transcripts. The files are classified by session.
@@ -56,10 +57,10 @@ export default function T21VideoVault({ detail }: Props) {
           return (
             <div key={group}>
               <div className="flex items-center gap-3 mb-3">
-                <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-navy-700">
+                <h3 className="font-mono text-sm font-semibold uppercase tracking-[0.15em] text-[#0A1F33]">
                   {group}
                 </h3>
-                <span className="text-[11px] font-mono text-gray-400 tabular-nums">
+                <span className="text-[11px] font-mono text-[#97A0AD] tabular-nums">
                   {items.length} files · {items.reduce((n, i) => n + i.size_mb, 0).toFixed(0)} MB
                 </span>
               </div>
@@ -73,7 +74,7 @@ export default function T21VideoVault({ detail }: Props) {
                       href="https://stichtinghogeschoolutrecht.sharepoint.com/sites/PANORAIMA"
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-xl border border-gray-100 bg-white p-3 hover:bg-navy-50/30 hover:border-navy-200 transition-all flex items-center gap-3 group"
+                      className="rounded-xl border border-[#E3E7ED] bg-white p-3 hover:bg-[#F7F8FA] hover:border-[#C9D4FF] transition-all flex items-center gap-3 group"
                     >
                       <div
                         className="w-10 h-10 rounded-lg flex items-center justify-center text-white flex-shrink-0"
@@ -82,16 +83,16 @@ export default function T21VideoVault({ detail }: Props) {
                         <Icon className="w-4 h-4" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2 text-[10px] font-mono text-gray-400">
-                          <span className="uppercase font-bold">{KIND_LABEL[v.kind]}</span>
+                        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.15em] text-[#97A0AD] tabular-nums">
+                          <span className="font-semibold">{KIND_LABEL[v.kind]}</span>
                           <span>·</span>
                           <span>{v.size_mb} MB</span>
                         </div>
-                        <div className="text-sm font-semibold text-navy-900 leading-tight truncate mt-0.5">
+                        <div className="text-sm font-semibold text-[#0A1F33] leading-tight truncate mt-0.5">
                           {v.session}
                         </div>
                       </div>
-                      <ExternalLink className="w-3.5 h-3.5 text-gray-300 group-hover:text-navy-600 transition-colors flex-shrink-0" />
+                      <ExternalLink className="w-3.5 h-3.5 text-[#97A0AD] group-hover:text-[#2251FF] transition-colors flex-shrink-0" />
                     </a>
                   )
                 })}

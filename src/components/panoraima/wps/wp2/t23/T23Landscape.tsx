@@ -15,25 +15,25 @@ const BAND_META: Record<string, { label: string; icon: typeof CheckCircle; bg: s
   ready: {
     label:   "Ready to go",
     icon:    CheckCircle,
-    bg:      "bg-emerald-50/40",
-    border:  "border-emerald-200",
-    chip:    "bg-emerald-100 text-emerald-800",
+    bg:      "bg-[#E8F3ED]/40",
+    border:  "border-[#1F8A5B]/30",
+    chip:    "bg-[#E8F3ED] text-[#1F8A5B]",
     tagline: "Already accredited; no PANORAIMA assistance needed.",
   },
   coordinating: {
     label:   "Need coordination",
     icon:    Handshake,
-    bg:      "bg-gold-50/30",
-    border:  "border-gold-200",
-    chip:    "bg-gold-100 text-gold-800",
+    bg:      "bg-[#EEF2FF]/40",
+    border:  "border-[#C9D4FF]",
+    chip:    "bg-[#EEF2FF] text-[#2251FF]",
     tagline: "Explicit roadmap or support asked for.",
   },
   waiting: {
     label:   "Awaiting info",
     icon:    Hourglass,
-    bg:      "bg-slate-50/60",
-    border:  "border-slate-200",
-    chip:    "bg-slate-100 text-slate-700",
+    bg:      "bg-[#F7F8FA]",
+    border:  "border-[#E3E7ED]",
+    chip:    "bg-[#EEF1F5] text-[#51607A]",
     tagline: "No action text provided yet; follow-up required.",
   },
 }
@@ -47,9 +47,9 @@ function flagIcon(v: string) {
 }
 
 function flagClass(v: string) {
-  if (v === "yes") return "text-emerald-600 bg-emerald-50 border-emerald-200"
-  if (v === "no")  return "text-rose-600 bg-rose-50 border-rose-200"
-  return "text-gray-400 bg-gray-50 border-gray-200"
+  if (v === "yes") return "text-[#1F8A5B] bg-[#E8F3ED] border-[#1F8A5B]/30"
+  if (v === "no")  return "text-[#C0392B] bg-[#F7E9E6] border-[#C0392B]/30"
+  return "text-[#97A0AD] bg-[#F7F8FA] border-[#E3E7ED]"
 }
 
 function flagLabel(v: string) {
@@ -66,13 +66,13 @@ export default function T23Landscape({ detail }: Props) {
   return (
     <section>
       <div className="mb-6">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2251FF] border border-[#C9D4FF] bg-[#EEF2FF]">
           The accreditation landscape
         </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-[#0A1F33]">
           Where each partner stands
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-1 text-sm text-[#6B7686] max-w-xl">
           Consortium partners grouped by coordination state. Click a card to
           read the full response the partner wrote back to HAW.
         </p>
@@ -87,14 +87,14 @@ export default function T23Landscape({ detail }: Props) {
           return (
             <div key={band}>
               <div className="flex items-center gap-3 mb-3">
-                <Icon className="w-4 h-4 text-navy-500" />
-                <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-navy-800">
+                <Icon className="w-4 h-4 text-[#51607A]" />
+                <h3 className="font-mono text-sm font-bold uppercase tracking-[0.15em] text-[#0A1F33]">
                   {meta.label}
                 </h3>
-                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${meta.chip}`}>
+                <span className={`font-mono text-[10px] font-bold tabular-nums px-2 py-0.5 rounded-full ${meta.chip}`}>
                   {group.length}
                 </span>
-                <span className="text-[11px] text-gray-500 italic">{meta.tagline}</span>
+                <span className="text-[11px] text-[#6B7686] italic">{meta.tagline}</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -109,24 +109,24 @@ export default function T23Landscape({ detail }: Props) {
       {active && (
         <div className="fixed inset-0 z-50 pointer-events-none">
           <div
-            className="absolute inset-0 bg-navy-950/55 pointer-events-auto animate-fade-in"
+            className="absolute inset-0 bg-[#051C2C]/55 pointer-events-auto animate-fade-in"
             onClick={() => setActiveAbbr(null)}
           />
           <div className="absolute right-0 top-0 bottom-0 w-full md:w-[520px] bg-white shadow-2xl pointer-events-auto overflow-y-auto animate-slide-in-right">
-            <div className="sticky top-0 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between gap-4 z-10">
+            <div className="sticky top-0 bg-white border-b border-[#E3E7ED] px-6 py-4 flex items-center justify-between gap-4 z-10">
               <div className="min-w-0">
-                <div className="text-[10px] font-mono font-bold text-navy-400">{active.abbr}</div>
-                <div className="text-base font-bold text-navy-900 leading-tight">
+                <div className="text-[10px] font-mono font-bold uppercase tracking-[0.15em] text-[#2251FF]">{active.abbr}</div>
+                <div className="text-base font-bold text-[#0A1F33] leading-tight">
                   {active.institution}
                 </div>
-                <div className="text-[11px] text-gray-400">{active.country}</div>
+                <div className="text-[11px] text-[#97A0AD]">{active.country}</div>
               </div>
               <button
                 onClick={() => setActiveAbbr(null)}
-                className="p-2 hover:bg-gray-100 rounded-lg"
+                className="p-2 hover:bg-[#F7F8FA] rounded-lg"
                 aria-label="Close"
               >
-                <X className="w-4 h-4 text-gray-500" />
+                <X className="w-4 h-4 text-[#6B7686]" />
               </button>
             </div>
 
@@ -139,15 +139,15 @@ export default function T23Landscape({ detail }: Props) {
               </div>
 
               {/* Programme count */}
-              <div className="rounded-xl border border-gray-100 p-4 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-violet-100 text-violet-700 flex items-center justify-center">
+              <div className="rounded-xl border border-[#E3E7ED] p-4 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-[#EEF2FF] text-[#2251FF] flex items-center justify-center">
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-navy-500">
+                  <div className="font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-[#51607A]">
                     Existing study programmes
                   </div>
-                  <div className="text-2xl font-bold text-navy-900 tabular-nums">
+                  <div className="text-2xl font-bold text-[#0A1F33] tabular-nums">
                     {active.programmes}
                   </div>
                 </div>
@@ -155,30 +155,30 @@ export default function T23Landscape({ detail }: Props) {
 
               {/* Contact */}
               {(active.contact.email || active.contact.phone || active.contact.raw) && (
-                <div className="rounded-xl border border-gray-100 p-4">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-navy-500 mb-2">
+                <div className="rounded-xl border border-[#E3E7ED] p-4">
+                  <div className="font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-[#51607A] mb-2">
                     Contact
                   </div>
                   {active.contact.email && (
-                    <div className="text-[12px] font-mono text-navy-900 break-all">{active.contact.email}</div>
+                    <div className="text-[12px] font-mono text-[#0A1F33] break-all">{active.contact.email}</div>
                   )}
                   {active.contact.phone && (
-                    <div className="mt-0.5 text-[11px] font-mono text-gray-600">{active.contact.phone}</div>
+                    <div className="mt-0.5 text-[11px] font-mono text-[#6B7686]">{active.contact.phone}</div>
                   )}
                 </div>
               )}
 
               {/* Actions */}
-              <div className="rounded-xl border border-gold-200 bg-gold-50/40 p-4">
-                <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold-700 mb-2">
+              <div className="rounded-xl border border-[#C9D4FF] bg-[#EEF2FF]/40 p-4">
+                <div className="font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-[#2251FF] mb-2">
                   Actions required in PANORAIMA — in the partner&apos;s own words
                 </div>
                 {active.action_text ? (
-                  <p className="text-[13px] text-gray-700 leading-relaxed whitespace-pre-line">
+                  <p className="text-[13px] text-[#51607A] leading-relaxed whitespace-pre-line">
                     {active.action_text}
                   </p>
                 ) : (
-                  <p className="text-[13px] italic text-gray-400">
+                  <p className="text-[13px] italic text-[#97A0AD]">
                     No response filed yet.
                   </p>
                 )}
@@ -186,8 +186,8 @@ export default function T23Landscape({ detail }: Props) {
 
               {/* Links */}
               {active.links.length > 0 && (
-                <div className="rounded-xl border border-gray-100 p-4">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-navy-500 mb-2">
+                <div className="rounded-xl border border-[#E3E7ED] p-4">
+                  <div className="font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-[#51607A] mb-2">
                     Reference links
                   </div>
                   <ul className="space-y-2">
@@ -195,7 +195,7 @@ export default function T23Landscape({ detail }: Props) {
                       <li key={i}>
                         <a
                           href={l} target="_blank" rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 text-[12px] text-navy-700 hover:text-navy-900 underline break-all"
+                          className="inline-flex items-center gap-1.5 text-[12px] text-[#2251FF] hover:text-[#1D43D8] underline break-all"
                         >
                           <ExternalLink className="w-3 h-3 flex-shrink-0" />
                           {l}
@@ -234,24 +234,24 @@ function PartnerCard({ p, onOpen }: { p: T23Partner; onOpen: () => void }) {
       <div className="flex items-start justify-between gap-2 mb-3">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
-            <Building2 className="w-3.5 h-3.5 text-navy-400" />
-            <span className="font-mono text-xs font-bold text-navy-900">{p.abbr}</span>
+            <Building2 className="w-3.5 h-3.5 text-[#97A0AD]" />
+            <span className="font-mono text-xs font-bold text-[#0A1F33]">{p.abbr}</span>
             {p.abbr === "HAW" && (
-              <span className="text-[9px] font-bold uppercase tracking-wider text-gold-700 bg-gold-100 border border-gold-300 px-1.5 py-0.5 rounded-full">
+              <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-[#2251FF] bg-[#EEF2FF] border border-[#C9D4FF] px-1.5 py-0.5 rounded-full">
                 Lead
               </span>
             )}
           </div>
-          <div className="mt-1 text-[12px] text-gray-700 leading-tight line-clamp-2">
+          <div className="mt-1 text-[12px] text-[#51607A] leading-tight line-clamp-2">
             {p.institution}
           </div>
-          <div className="mt-0.5 text-[10px] text-gray-400">{p.country}</div>
+          <div className="mt-0.5 text-[10px] text-[#97A0AD]">{p.country}</div>
         </div>
         <div className="flex-shrink-0 text-right">
-          <div className="text-2xl font-bold text-navy-900 tabular-nums leading-none">
+          <div className="text-2xl font-bold text-[#0A1F33] tabular-nums leading-none">
             {p.programmes}
           </div>
-          <div className="text-[9px] uppercase font-bold tracking-wider text-gray-400">
+          <div className="font-mono text-[9px] uppercase font-bold tracking-wider text-[#97A0AD]">
             progs
           </div>
         </div>
@@ -275,7 +275,7 @@ function PartnerCard({ p, onOpen }: { p: T23Partner; onOpen: () => void }) {
       </div>
 
       {p.action_text && (
-        <p className="mt-3 text-[11.5px] text-gray-600 leading-snug italic line-clamp-2 border-l-2 border-gold-300 pl-2.5">
+        <p className="mt-3 text-[11.5px] text-[#6B7686] leading-snug italic line-clamp-2 border-l-2 border-[#C9D4FF] pl-2.5">
           &ldquo;{p.action_text}&rdquo;
         </p>
       )}

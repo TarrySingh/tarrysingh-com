@@ -1,23 +1,29 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { X, Users, Target } from "lucide-react"
+import { X, Users } from "lucide-react"
 import type { Task21Detail, T21RegisterRow } from "@/lib/panoraima/types"
+import {
+  INK, SLATE, MUTE, FAINT, LINE, LINE_SOFT, SURFACE,
+  COBALT, COBALT_SOFT, COBALT_LINE,
+  OK, OK_SOFT, WARN, WARN_SOFT, BAD, BAD_SOFT,
+  NAVY, KICKER, NUM,
+} from "../../../consortiumTokens"
 
 interface Props {
   detail: Task21Detail
 }
 
 const STATUS_COLORS: Record<string, { bg: string; text: string; dot: string }> = {
-  "Contacted":      { bg: "bg-sky-50",      text: "text-sky-800",      dot: "#0ea5e9" },
-  "Accepted":       { bg: "bg-emerald-50",  text: "text-emerald-800",  dot: "#10b981" },
-  "Confirmed":      { bg: "bg-emerald-50",  text: "text-emerald-800",  dot: "#10b981" },
-  "Commitment":     { bg: "bg-gold-50",     text: "text-gold-800",     dot: "#c9a96e" },
-  "No Reply":       { bg: "bg-gray-50",     text: "text-gray-500",     dot: "#9ca3af" },
-  "No reply":       { bg: "bg-gray-50",     text: "text-gray-500",     dot: "#9ca3af" },
-  "Declined":       { bg: "bg-rose-50",     text: "text-rose-700",     dot: "#f43f5e" },
-  "Participated":   { bg: "bg-emerald-100", text: "text-emerald-900",  dot: "#059669" },
-  "Pending":        { bg: "bg-gold-50",     text: "text-gold-700",     dot: "#c9a96e" },
+  "Contacted":      { bg: COBALT_SOFT, text: INK,   dot: COBALT },
+  "Accepted":       { bg: OK_SOFT,     text: OK,    dot: OK },
+  "Confirmed":      { bg: OK_SOFT,     text: OK,    dot: OK },
+  "Commitment":     { bg: WARN_SOFT,   text: WARN,  dot: WARN },
+  "No Reply":       { bg: SURFACE,     text: MUTE,  dot: FAINT },
+  "No reply":       { bg: SURFACE,     text: MUTE,  dot: FAINT },
+  "Declined":       { bg: BAD_SOFT,    text: BAD,   dot: BAD },
+  "Participated":   { bg: OK_SOFT,     text: OK,    dot: OK },
+  "Pending":        { bg: WARN_SOFT,   text: WARN,  dot: WARN },
 }
 
 export default function T21StakeholderMatrix({ detail }: Props) {
@@ -68,14 +74,17 @@ export default function T21StakeholderMatrix({ detail }: Props) {
   return (
     <section>
       <div className="mb-5">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+        <span
+          className={`inline-flex items-center px-2.5 py-0.5 rounded-full ${KICKER} border`}
+          style={{ color: COBALT, borderColor: COBALT_LINE, background: COBALT_SOFT }}
+        >
           Stakeholder register
         </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        <h2 className="mt-2 text-2xl md:text-3xl font-bold" style={{ color: INK }}>
           {rows.length} organisations on the Irish outreach list
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
-          Parsed from <code className="font-mono text-gray-600">Stakeholders Identification_Register.xlsx</code>.
+        <p className="mt-1 text-sm max-w-xl" style={{ color: MUTE }}>
+          Parsed from <code className="font-mono" style={{ color: SLATE }}>Stakeholders Identification_Register.xlsx</code>.
           Combines the focus-group invite list with the parallel surveys sheet.
         </p>
       </div>
@@ -86,22 +95,22 @@ export default function T21StakeholderMatrix({ detail }: Props) {
           const pct = Math.round((n / (rows.length || 1)) * 100)
           const dropoff = i > 0 ? ((Object.values(funnel)[i - 1] - n) / (Object.values(funnel)[i - 1] || 1)) * 100 : null
           return (
-            <div key={stage} className="rounded-xl border border-gray-100 bg-white p-4">
-              <div className="text-[10px] uppercase tracking-[0.15em] font-semibold text-gray-400">
+            <div key={stage} className="rounded-xl border bg-white p-4" style={{ borderColor: LINE }}>
+              <div className="font-mono text-[10px] uppercase tracking-[0.15em] font-semibold" style={{ color: FAINT }}>
                 {i + 1}. {stage}
               </div>
               <div className="mt-1 flex items-baseline gap-2">
-                <span className="text-2xl font-bold tabular-nums text-navy-900">{n}</span>
-                <span className="text-[11px] text-gray-400 tabular-nums">{pct}%</span>
+                <span className={`text-2xl font-bold ${NUM}`} style={{ color: INK }}>{n}</span>
+                <span className={`text-[11px] ${NUM}`} style={{ color: FAINT }}>{pct}%</span>
               </div>
-              <div className="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
+              <div className="mt-2 h-1 rounded-full overflow-hidden" style={{ background: LINE_SOFT }}>
                 <div
-                  className="h-full bg-gradient-to-r from-violet-500 to-gold-500 transition-all duration-700"
-                  style={{ width: `${(n / maxFunnel) * 100}%` }}
+                  className="h-full transition-all duration-700"
+                  style={{ width: `${(n / maxFunnel) * 100}%`, background: COBALT }}
                 />
               </div>
               {dropoff != null && dropoff > 0 && (
-                <div className="mt-1.5 text-[10px] text-rose-500 font-mono">
+                <div className="mt-1.5 text-[10px] font-mono" style={{ color: BAD }}>
                   ↓ {dropoff.toFixed(0)}% drop-off
                 </div>
               )}
@@ -111,13 +120,14 @@ export default function T21StakeholderMatrix({ detail }: Props) {
       </div>
 
       {/* Filters + search */}
-      <div className="rounded-2xl bg-white border border-gray-100 p-4 mb-4 space-y-3">
+      <div className="rounded-2xl bg-white border p-4 mb-4 space-y-3" style={{ borderColor: LINE }}>
         <input
           type="text"
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Search organisations, contacts, notes…"
-          className="w-full px-4 py-2.5 text-sm rounded-lg bg-gray-50 border border-gray-200 focus:border-navy-400 focus:bg-white focus:outline-none transition-colors"
+          className="w-full px-4 py-2.5 text-sm rounded-lg border focus:bg-white focus:outline-none transition-colors"
+          style={{ background: SURFACE, borderColor: LINE, color: INK }}
         />
         <div className="flex flex-wrap gap-3 text-[11px]">
           <FilterGroup
@@ -139,7 +149,7 @@ export default function T21StakeholderMatrix({ detail }: Props) {
             onChange={v => setFilter(f => ({ ...f, status: v }))}
           />
         </div>
-        <div className="text-[11px] text-gray-400 font-mono">
+        <div className="text-[11px] font-mono" style={{ color: FAINT }}>
           {filtered.length} of {rows.length} rows
         </div>
       </div>
@@ -148,29 +158,32 @@ export default function T21StakeholderMatrix({ detail }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
         {filtered.slice(0, 30).map((r, i) => {
           const sc = STATUS_COLORS[r.status ?? ""] ?? {
-            bg: "bg-gray-50", text: "text-gray-600", dot: "#9ca3af",
+            bg: SURFACE, text: MUTE, dot: FAINT,
           }
           return (
             <button
               key={i}
               onClick={() => setSelected(r)}
-              className="text-left rounded-xl border border-gray-100 bg-white p-4 hover:border-navy-200 hover:shadow-sm transition-all"
+              className="text-left rounded-xl border bg-white p-4 hover:shadow-sm transition-all"
+              style={{ borderColor: LINE }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = COBALT_LINE }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = LINE }}
             >
               <div className="flex items-start justify-between gap-2 mb-2">
-                <div className="font-semibold text-navy-900 text-sm leading-tight truncate">
+                <div className="font-semibold text-sm leading-tight truncate" style={{ color: INK }}>
                   {r.org || "—"}
                 </div>
                 <span
-                  className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider border ${sc.bg} ${sc.text} flex-shrink-0`}
-                  style={{ borderColor: `${sc.dot}33` }}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-mono text-[9px] font-bold uppercase tracking-wider border flex-shrink-0"
+                  style={{ background: sc.bg, color: sc.text, borderColor: `${sc.dot}33` }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: sc.dot }} />
                   {r.status || "unknown"}
                 </span>
               </div>
-              <div className="text-[11px] text-gray-500 space-y-0.5">
-                {r.sector && <div>Sector: <span className="font-medium text-navy-700">{r.sector}</span></div>}
-                {r.fg_type && <div>Focus group: <span className="font-medium text-navy-700">{r.fg_type}</span></div>}
+              <div className="text-[11px] space-y-0.5" style={{ color: MUTE }}>
+                {r.sector && <div>Sector: <span className="font-medium" style={{ color: SLATE }}>{r.sector}</span></div>}
+                {r.fg_type && <div>Focus group: <span className="font-medium" style={{ color: SLATE }}>{r.fg_type}</span></div>}
                 {r.panoraima_contact && <div className="truncate">PANORAIMA: {r.panoraima_contact}</div>}
               </div>
             </button>
@@ -178,7 +191,7 @@ export default function T21StakeholderMatrix({ detail }: Props) {
         })}
       </div>
       {filtered.length > 30 && (
-        <div className="mt-4 text-center text-[11px] text-gray-500">
+        <div className="mt-4 text-center text-[11px]" style={{ color: MUTE }}>
           Showing first 30 — narrow your filters to see more.
         </div>
       )}
@@ -187,11 +200,12 @@ export default function T21StakeholderMatrix({ detail }: Props) {
       {selected && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-navy-950/60 backdrop-blur-sm"
+            className="fixed inset-0 z-40 backdrop-blur-sm"
+            style={{ background: `${NAVY}99` }}
             onClick={() => setSelected(null)}
           />
           <aside className="fixed top-0 bottom-0 right-0 z-50 w-full md:w-[480px] bg-white shadow-2xl flex flex-col animate-[slide-in_0.4s_cubic-bezier(0.22,1,0.36,1)]">
-            <div className="relative px-6 pt-6 pb-5 bg-navy-950 text-white">
+            <div className="relative px-6 pt-6 pb-5 text-white" style={{ background: NAVY }}>
               <button
                 onClick={() => setSelected(null)}
                 className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"
@@ -199,7 +213,7 @@ export default function T21StakeholderMatrix({ detail }: Props) {
               >
                 <X className="w-4 h-4" />
               </button>
-              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] font-bold text-gold-300 mb-2">
+              <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] font-bold mb-2" style={{ color: "#7DA0FF" }}>
                 <Users className="w-3 h-3" />
                 Stakeholder
               </div>
@@ -210,10 +224,10 @@ export default function T21StakeholderMatrix({ detail }: Props) {
                 if (!v || k === "org" || k === "") return null
                 return (
                   <div key={k}>
-                    <div className="text-[10px] uppercase tracking-[0.18em] text-navy-500 font-bold mb-1">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.18em] font-bold mb-1" style={{ color: FAINT }}>
                       {k.replace(/_/g, " ")}
                     </div>
-                    <div className="text-sm text-navy-800">{v}</div>
+                    <div className="text-sm" style={{ color: SLATE }}>{v}</div>
                   </div>
                 )
               })}
@@ -246,14 +260,17 @@ function FilterGroup({
 }) {
   return (
     <div className="flex items-center gap-1.5 flex-wrap">
-      <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-gray-400">
+      <span className="font-mono text-[10px] uppercase tracking-[0.15em] font-bold" style={{ color: FAINT }}>
         {label}:
       </span>
       <button
         onClick={() => onChange(undefined)}
-        className={`px-2 py-0.5 rounded text-[10px] font-semibold transition-colors ${
-          !value ? "bg-navy-900 text-white" : "bg-gray-50 text-navy-700 hover:bg-gray-100"
-        }`}
+        className="px-2 py-0.5 rounded font-mono text-[10px] font-semibold uppercase tracking-[0.1em] transition-colors"
+        style={
+          !value
+            ? { background: COBALT, color: "#fff" }
+            : { background: SURFACE, color: SLATE, borderWidth: 1, borderColor: LINE }
+        }
       >
         All
       </button>
@@ -261,9 +278,12 @@ function FilterGroup({
         <button
           key={o}
           onClick={() => onChange(o === value ? undefined : o)}
-          className={`px-2 py-0.5 rounded text-[10px] font-semibold transition-colors ${
-            value === o ? "bg-navy-900 text-white" : "bg-gray-50 text-navy-700 hover:bg-gray-100"
-          }`}
+          className="px-2 py-0.5 rounded font-mono text-[10px] font-semibold uppercase tracking-[0.1em] transition-colors"
+          style={
+            value === o
+              ? { background: COBALT, color: "#fff" }
+              : { background: SURFACE, color: SLATE, borderWidth: 1, borderColor: LINE }
+          }
         >
           {o}
         </button>

@@ -3,17 +3,19 @@
 import { useRef, useState } from "react"
 import { Briefcase, Quote } from "lucide-react"
 import type { Task21Detail } from "@/lib/panoraima/types"
+import { COBALT, NAVY_2, OK, WARN, SLATE, KICKER } from "../../../consortiumTokens"
 
 interface Props {
   detail: Task21Detail
 }
 
+// Restrained corporate categorical set (cobalt-primary, no rainbow).
 const ROLE_PALETTE: Record<string, string> = {
-  "Law & Compliance":           "#ef4444",
-  "Healthcare & Life Sciences": "#10b981",
-  "Media & Culture":            "#f59e0b",
-  "Management & Finance":       "#8b5cf6",
-  "Cross-sectoral":             "#06b6d4",
+  "Law & Compliance":           COBALT,
+  "Healthcare & Life Sciences": OK,
+  "Media & Culture":            WARN,
+  "Management & Finance":       NAVY_2,
+  "Cross-sectoral":             SLATE,
 }
 
 // Skill clusters per role — keyword-based seeds derived from D2.1
@@ -44,13 +46,13 @@ export default function T21EmergingRoles({ detail }: Props) {
   return (
     <section>
       <div className="mb-5">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full ${KICKER} text-[#6B7686] border border-[#E3E7ED] bg-[#F7F8FA]`}>
           Emerging roles
         </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-[#0A1F33]">
           The new π-shaped job roles
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-1 text-sm text-[#51607A] max-w-xl">
           Stakeholders highlighted hybrid roles that bridge domain expertise
           and AI practice. Hover for skill clusters; the highlighted card shows
           the deliverable&apos;s context in which the role appeared.
@@ -100,16 +102,16 @@ function RoleCard({
       onMouseEnter={onEnter}
       onMouseMove={onMouseMove}
       onMouseLeave={() => { onLeave(); setTilt({ x: 0, y: 0 }) }}
-      className="relative rounded-2xl bg-white border border-gray-100 p-5 hover:shadow-lg transition-shadow cursor-pointer"
+      className="relative rounded-2xl bg-white border border-[#E3E7ED] p-5 hover:border-[#C9D4FF] transition-colors cursor-pointer"
       style={{
         transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-        transition: "transform 0.15s ease-out, box-shadow 0.3s",
+        transition: "transform 0.15s ease-out, border-color 0.3s",
       }}
     >
       <div
         aria-hidden
         className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
-        style={{ background: `linear-gradient(90deg, ${color}, ${color}00)` }}
+        style={{ background: color }}
       />
 
       <div className="flex items-center gap-3 mb-3">
@@ -120,11 +122,11 @@ function RoleCard({
           <Briefcase className="w-4 h-4" />
         </div>
         <div className="min-w-0">
-          <div className="font-bold text-navy-900 text-sm truncate">
+          <div className="font-bold text-[#0A1F33] text-sm truncate">
             {role.name}
           </div>
           <div
-            className="text-[10px] font-semibold uppercase tracking-wider"
+            className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em]"
             style={{ color }}
           >
             {role.sector}
@@ -147,12 +149,12 @@ function RoleCard({
       )}
 
       {isFocused && role.context && (
-        <div className="mt-3 pt-3 border-t border-gray-100 animate-fade-in">
-          <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] font-bold text-navy-500 mb-1.5">
+        <div className="mt-3 pt-3 border-t border-[#E3E7ED] animate-fade-in">
+          <div className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.18em] font-bold text-[#6B7686] mb-1.5">
             <Quote className="w-3 h-3" />
             Context in D2.1
           </div>
-          <p className="text-[11.5px] text-gray-600 italic leading-snug line-clamp-4">
+          <p className="text-[11.5px] text-[#51607A] italic leading-snug line-clamp-4">
             &ldquo;{role.context}&rdquo;
           </p>
         </div>

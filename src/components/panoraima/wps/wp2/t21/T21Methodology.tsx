@@ -3,6 +3,20 @@
 import { useState } from "react"
 import { Video, Mic, FileText, Sheet as SheetIcon, Quote } from "lucide-react"
 import type { Task21Detail } from "@/lib/panoraima/types"
+import {
+  NAVY_2,
+  INK,
+  SLATE,
+  MUTE,
+  FAINT,
+  LINE,
+  SURFACE,
+  COBALT,
+  COBALT_SOFT,
+  COBALT_LINE,
+  OK,
+  KICKER,
+} from "../../../consortiumTokens"
 
 interface Props {
   detail: Task21Detail
@@ -35,13 +49,16 @@ export default function T21Methodology({ detail }: Props) {
   return (
     <section>
       <div className="mb-5">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+        <span
+          className={`inline-flex items-center px-2.5 py-0.5 rounded-full ${KICKER}`}
+          style={{ color: COBALT, border: `1px solid ${COBALT_LINE}`, background: COBALT_SOFT }}
+        >
           Methodology
         </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        <h2 className="mt-2 text-2xl md:text-3xl font-bold" style={{ color: INK }}>
           Four countries, four research modes
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-1 text-sm max-w-xl" style={{ color: SLATE }}>
           Each working group designed its own evidence-gathering approach.
           That heterogeneity is a feature — different stakeholder classes
           respond to different instruments.
@@ -56,11 +73,12 @@ export default function T21Methodology({ detail }: Props) {
             <button
               key={k}
               onClick={() => setActive(k)}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl border transition-all ${
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border transition-all"
+              style={
                 isActive
-                  ? "bg-navy-900 text-white border-navy-900 shadow-md"
-                  : "bg-white text-navy-700 border-gray-200 hover:border-navy-200 hover:bg-navy-50"
-              }`}
+                  ? { background: NAVY_2, color: "#FFFFFF", borderColor: NAVY_2 }
+                  : { background: "#FFFFFF", color: SLATE, borderColor: LINE }
+              }
             >
               <span className="text-lg" aria-hidden>{FLAGS[k]}</span>
               <span className="font-semibold text-sm">{COUNTRY_LABELS[k]}</span>
@@ -69,8 +87,14 @@ export default function T21Methodology({ detail }: Props) {
         })}
       </div>
 
-      <div className="rounded-2xl border border-gray-100 bg-white p-6 md:p-8 animate-fade-in">
-        <p className="text-[13px] text-gray-500 leading-relaxed mb-6 border-l-2 border-gold-300 pl-4 italic">
+      <div
+        className="rounded-2xl border bg-white p-6 md:p-8 animate-fade-in"
+        style={{ borderColor: LINE }}
+      >
+        <p
+          className="text-[13px] leading-relaxed mb-6 border-l-2 pl-4 italic"
+          style={{ color: SLATE, borderColor: COBALT }}
+        >
           {METHOD_SUMMARY[active]}
         </p>
 
@@ -96,23 +120,33 @@ function IrelandPanel({ detail }: { detail: Task21Detail }) {
       </div>
       <div className="space-y-3">
         {ie.sessions.map((s, i) => (
-          <div key={i} className="rounded-xl border border-gray-100 p-4 hover:bg-navy-50/30 transition-colors">
+          <div
+            key={i}
+            className="rounded-xl border p-4 transition-colors"
+            style={{ borderColor: LINE }}
+          >
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 text-[11px] text-gray-500 font-mono">
-                  {s.date && <span>{s.date}</span>}
-                  <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-violet-50 text-violet-700">
+                <div className="flex items-center gap-2 text-[11px] font-mono" style={{ color: MUTE }}>
+                  {s.date && <span className="tabular-nums">{s.date}</span>}
+                  <span
+                    className="px-1.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider"
+                    style={{ background: COBALT_SOFT, color: COBALT }}
+                  >
                     {s.kind}
                   </span>
                 </div>
-                <div className="mt-1 font-semibold text-navy-900">{s.focus}</div>
+                <div className="mt-1 font-semibold" style={{ color: INK }}>{s.focus}</div>
                 {s.report_excerpt && (
-                  <p className="mt-2 text-[12.5px] text-gray-600 italic line-clamp-2 border-l-2 border-gold-300 pl-3">
+                  <p
+                    className="mt-2 text-[12.5px] italic line-clamp-2 border-l-2 pl-3"
+                    style={{ color: SLATE, borderColor: COBALT }}
+                  >
                     &ldquo;{s.report_excerpt.slice(0, 180)}…&rdquo;
                   </p>
                 )}
               </div>
-              <div className="flex items-center gap-3 text-[11px] text-gray-400 flex-shrink-0">
+              <div className="flex items-center gap-3 text-[11px] flex-shrink-0" style={{ color: FAINT }}>
                 {s.recording_mb ? (
                   <span className="inline-flex items-center gap-1" title={`${s.recording_mb} MB recording`}>
                     <Video className="w-3.5 h-3.5" /> {s.recording_mb} MB
@@ -147,32 +181,44 @@ function NetherlandsPanel({ detail }: { detail: Task21Detail }) {
         {nl.interviews.map((iv, i) => {
           const initials = iv.interviewee.replace(/([a-z])([A-Z])/g, "$1 $2")
           return (
-            <div key={i} className={`rounded-xl border p-4 transition-colors ${
-              iv.empty ? "border-gray-100 bg-gray-50/50 opacity-70" : "border-gray-100 hover:bg-navy-50/30 bg-white"
-            }`}>
+            <div
+              key={i}
+              className="rounded-xl border p-4 transition-colors"
+              style={{
+                borderColor: LINE,
+                background: iv.empty ? SURFACE : "#FFFFFF",
+                opacity: iv.empty ? 0.7 : 1,
+              }}
+            >
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
+                  style={{ background: NAVY_2 }}
+                >
                   {initials.split(/\s+/).slice(0, 2).map(x => x[0]).join("").toUpperCase().slice(0, 2)}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-semibold text-navy-900 text-sm">
+                  <div className="font-semibold text-sm" style={{ color: INK }}>
                     {initials}
                   </div>
-                  <div className="text-[11px] text-gray-500">
+                  <div className="text-[11px]" style={{ color: MUTE }}>
                     {iv.role ? `${iv.role} · ` : ""}{iv.company}
                   </div>
                   {iv.empty ? (
-                    <div className="mt-2 text-[11px] text-gray-400 italic">
+                    <div className="mt-2 text-[11px] italic" style={{ color: FAINT }}>
                       Folder exists, no interview materials yet.
                     </div>
                   ) : (
                     <>
                       {iv.quotes && iv.quotes.length > 0 && iv.quotes[0] && (
-                        <div className="mt-2 text-[12px] text-gray-700 italic line-clamp-2 border-l-2 border-gold-300 pl-2.5">
+                        <div
+                          className="mt-2 text-[12px] italic line-clamp-2 border-l-2 pl-2.5"
+                          style={{ color: SLATE, borderColor: COBALT }}
+                        >
                           &ldquo;{iv.quotes[0].slice(0, 150)}…&rdquo;
                         </div>
                       )}
-                      <div className="mt-2 flex items-center gap-3 text-[10px] text-gray-400 font-mono">
+                      <div className="mt-2 flex items-center gap-3 text-[10px] font-mono tabular-nums" style={{ color: FAINT }}>
                         {iv.recording_mb ? (
                           <span className="inline-flex items-center gap-1">
                             <Video className="w-3 h-3" /> {iv.recording_mb} MB
@@ -193,12 +239,15 @@ function NetherlandsPanel({ detail }: { detail: Task21Detail }) {
         })}
       </div>
       {nl.consolidated_report_excerpt && (
-        <div className="mt-6 rounded-xl bg-navy-50/50 border border-navy-100 p-4">
-          <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] font-bold text-navy-600 mb-2">
+        <div className="mt-6 rounded-xl border p-4" style={{ background: SURFACE, borderColor: LINE }}>
+          <div
+            className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] font-bold mb-2"
+            style={{ color: COBALT }}
+          >
             <Quote className="w-3 h-3" />
             Consolidated SME qualitative report
           </div>
-          <p className="text-[13px] text-navy-800 italic leading-relaxed line-clamp-4">
+          <p className="text-[13px] italic leading-relaxed line-clamp-4" style={{ color: SLATE }}>
             &ldquo;{nl.consolidated_report_excerpt.slice(0, 400)}…&rdquo;
           </p>
         </div>
@@ -218,17 +267,24 @@ function HamburgPanel({ detail }: { detail: Task21Detail }) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {hb.interviews.map((iv, i) => (
-          <div key={i} className="rounded-xl border border-gray-100 bg-white p-4 hover:bg-navy-50/30 transition-colors">
+          <div
+            key={i}
+            className="rounded-xl border bg-white p-4 transition-colors"
+            style={{ borderColor: LINE }}
+          >
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-500 to-amber-500 flex items-center justify-center text-white font-bold text-sm">
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                style={{ background: NAVY_2 }}
+              >
                 {iv.code}
               </div>
-              <div className="text-[11px] font-mono text-gray-500">
+              <div className="text-[11px] font-mono tabular-nums" style={{ color: MUTE }}>
                 {iv.word_count} words
               </div>
             </div>
             {iv.excerpt && (
-              <p className="text-[12px] text-gray-700 leading-snug italic line-clamp-3">
+              <p className="text-[12px] leading-snug italic line-clamp-3" style={{ color: SLATE }}>
                 &ldquo;{iv.excerpt.slice(0, 180)}…&rdquo;
               </p>
             )}
@@ -236,12 +292,15 @@ function HamburgPanel({ detail }: { detail: Task21Detail }) {
         ))}
       </div>
       {hb.focus_group_excerpt && (
-        <div className="mt-6 rounded-xl bg-navy-50/50 border border-navy-100 p-4">
-          <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] font-bold text-navy-600 mb-2">
+        <div className="mt-6 rounded-xl border p-4" style={{ background: SURFACE, borderColor: LINE }}>
+          <div
+            className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] font-bold mb-2"
+            style={{ color: COBALT }}
+          >
             <Quote className="w-3 h-3" />
             Consolidated focus group report
           </div>
-          <p className="text-[13px] text-navy-800 italic leading-relaxed line-clamp-4">
+          <p className="text-[13px] italic leading-relaxed line-clamp-4" style={{ color: SLATE }}>
             &ldquo;{hb.focus_group_excerpt.slice(0, 400)}…&rdquo;
           </p>
         </div>
@@ -263,36 +322,46 @@ function GreecePanel({ detail }: { detail: Task21Detail }) {
       </div>
       <div className="space-y-3">
         {gr.spreadsheets.map((s, i) => (
-          <div key={i} className="rounded-xl border border-gray-100 bg-white p-4">
+          <div key={i} className="rounded-xl border bg-white p-4" style={{ borderColor: LINE }}>
             <div className="flex items-start justify-between gap-3 mb-3 flex-wrap">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <SheetIcon className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="text-[10px] uppercase tracking-wider font-bold text-emerald-700">
+                  <SheetIcon className="w-3.5 h-3.5" style={{ color: OK }} />
+                  <span
+                    className="font-mono text-[10px] uppercase tracking-wider font-bold"
+                    style={{ color: OK }}
+                  >
                     Spreadsheet
                   </span>
                   {s.wg && (
-                    <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-gold-50 text-gold-700 border border-gold-100 font-semibold">
+                    <span
+                      className="font-mono text-[9px] px-1.5 py-0.5 rounded-full font-semibold"
+                      style={{ background: COBALT_SOFT, color: COBALT, border: `1px solid ${COBALT_LINE}` }}
+                    >
                       GR Working Group
                     </span>
                   )}
                 </div>
-                <div className="font-semibold text-navy-900 text-sm">{s.title}</div>
+                <div className="font-semibold text-sm" style={{ color: INK }}>{s.title}</div>
               </div>
               <div className="text-right flex-shrink-0">
-                <div className="text-2xl font-bold text-navy-900 tabular-nums">{s.row_count}</div>
-                <div className="text-[10px] uppercase text-gray-400 tracking-wider">rows</div>
+                <div className="text-2xl font-bold tabular-nums" style={{ color: INK }}>{s.row_count}</div>
+                <div className="font-mono text-[10px] uppercase tracking-wider" style={{ color: FAINT }}>rows</div>
               </div>
             </div>
             {s.headers.length > 0 && (
               <div className="flex flex-wrap gap-1">
                 {s.headers.slice(0, 8).map((h, hi) => (
-                  <span key={hi} className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-gray-50 border border-gray-100 text-gray-600">
+                  <span
+                    key={hi}
+                    className="text-[10px] font-mono px-1.5 py-0.5 rounded border"
+                    style={{ background: SURFACE, borderColor: LINE, color: SLATE }}
+                  >
                     {h}
                   </span>
                 ))}
                 {s.headers.length > 8 && (
-                  <span className="text-[10px] text-gray-400">+{s.headers.length - 8}</span>
+                  <span className="text-[10px]" style={{ color: FAINT }}>+{s.headers.length - 8}</span>
                 )}
               </div>
             )}
@@ -305,11 +374,14 @@ function GreecePanel({ detail }: { detail: Task21Detail }) {
 
 function Stat({ label, value }: { label: string; value: number }) {
   return (
-    <div className="rounded-lg bg-navy-50/50 border border-navy-100 p-3">
-      <div className="text-[10px] uppercase tracking-[0.15em] font-semibold text-navy-600">
+    <div className="rounded-lg border p-3" style={{ background: SURFACE, borderColor: LINE }}>
+      <div
+        className="font-mono text-[10px] uppercase tracking-[0.15em] font-semibold"
+        style={{ color: MUTE }}
+      >
         {label}
       </div>
-      <div className="text-2xl font-bold text-navy-900 tabular-nums mt-0.5">
+      <div className="text-2xl font-bold tabular-nums mt-0.5" style={{ color: INK }}>
         {value.toLocaleString()}
       </div>
     </div>

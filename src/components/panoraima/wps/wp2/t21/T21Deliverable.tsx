@@ -7,6 +7,9 @@ import {
   ChevronLeft, ChevronRight,
 } from "lucide-react"
 import type { Task21Detail, T21KeyInsight } from "@/lib/panoraima/types"
+import {
+  NAVY, NAVY_2, COBALT, OK, WARN, SLATE,
+} from "../../../consortiumTokens"
 
 interface Props {
   detail: Task21Detail
@@ -21,13 +24,15 @@ const INSIGHT_ICON: Record<string, typeof Zap> = {
   "Ethical & Inclusion Challenges": Shield,
 }
 
+// Restrained corporate set (COBALT primary, then NAVY_2 / OK / WARN / SLATE) —
+// no rainbow. OK reads "uptake/strong", WARN reads "gaps/at-risk".
 const INSIGHT_COLOR: Record<string, string> = {
-  "High AI Uptake": "#10b981",
-  "Diverging Skill Demands": "#8b5cf6",
-  "Cross-Sectoral Gaps": "#f59e0b",
-  "Preferred Learning Formats": "#06b6d4",
-  "Emerging Job Roles": "#ec4899",
-  "Ethical & Inclusion Challenges": "#ef4444",
+  "High AI Uptake": OK,
+  "Diverging Skill Demands": COBALT,
+  "Cross-Sectoral Gaps": WARN,
+  "Preferred Learning Formats": NAVY_2,
+  "Emerging Job Roles": SLATE,
+  "Ethical & Inclusion Challenges": COBALT,
 }
 
 export default function T21Deliverable({ detail }: Props) {
@@ -42,13 +47,13 @@ export default function T21Deliverable({ detail }: Props) {
   return (
     <section>
       <div className="mb-5">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#2251FF] border border-[#C9D4FF] bg-[#EEF2FF]">
           The deliverable
         </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-[#0A1F33]">
           Deliverable 2.1 — Market &amp; Needs Analysis
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-1 text-sm text-[#51607A] max-w-xl">
           The culmination of Task 2.1 — {d.size_kb ? `${(d.size_kb / 1024).toFixed(1)} MB` : ""} PDF,
           published {d.date}. Four draft iterations fed into one release.
         </p>
@@ -56,37 +61,37 @@ export default function T21Deliverable({ detail }: Props) {
 
       {/* Version rail */}
       {versions.length > 0 && (
-        <div className="mb-8 rounded-2xl border border-gray-100 bg-white p-6">
+        <div className="mb-8 rounded-2xl border border-[#E3E7ED] bg-white p-6">
           <div className="flex items-center gap-2 mb-4">
-            <FileText className="w-4 h-4 text-navy-600" />
-            <span className="text-[11px] uppercase tracking-[0.18em] font-bold text-navy-700">
+            <FileText className="w-4 h-4 text-[#6B7686]" />
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] font-semibold text-[#51607A]">
               Version history
             </span>
           </div>
           <div className="relative">
-            <div className="absolute top-4 left-0 right-0 h-[2px] bg-gradient-to-r from-gray-200 via-gold-300 to-gray-200" />
+            <div className="absolute top-4 left-0 right-0 h-[2px] bg-[#E3E7ED]" />
             <div className="relative flex items-start justify-between gap-4">
               {versions.map((v, i) => (
                 <div key={v.file + i} className="flex flex-col items-center min-w-0 flex-1 text-center">
                   <div
                     className={`relative z-10 w-8 h-8 rounded-full flex items-center justify-center ring-4 ring-white ${
-                      v.is_final ? "bg-gold-500" : v.is_archive ? "bg-gray-300" : "bg-navy-700"
+                      v.is_final ? "bg-[#2251FF]" : v.is_archive ? "bg-[#97A0AD]" : "bg-[#0A2540]"
                     }`}
                   >
                     {v.is_final ? (
                       <CheckCircle2 className="w-4 h-4 text-white" />
                     ) : (
-                      <span className="text-[10px] font-mono font-bold text-white">{i + 1}</span>
+                      <span className="text-[10px] font-mono font-bold text-white tabular-nums">{i + 1}</span>
                     )}
                   </div>
-                  <div className="mt-2 text-[11px] font-mono font-semibold text-navy-900">
+                  <div className="mt-2 text-[11px] font-mono font-semibold text-[#0A1F33]">
                     {v.label}
                   </div>
-                  <div className="text-[10px] text-gray-400 truncate max-w-[120px]">
+                  <div className="text-[10px] text-[#97A0AD] truncate max-w-[120px]">
                     {v.file.replace(/\.(pdf|docx)$/i, "").replace(/PANORAIMA_W2-\s*/i, "").slice(0, 40)}
                   </div>
                   {v.size_kb && (
-                    <div className="text-[9px] text-gray-400 font-mono mt-0.5">
+                    <div className="text-[9px] text-[#97A0AD] font-mono tabular-nums mt-0.5">
                       {v.size_kb >= 1024 ? `${(v.size_kb / 1024).toFixed(1)} MB` : `${v.size_kb} KB`}
                     </div>
                   )}
@@ -99,12 +104,12 @@ export default function T21Deliverable({ detail }: Props) {
 
       {/* Big callout with exec summary */}
       {d.executive_summary && (
-        <div className="mb-8 rounded-3xl p-8 md:p-10 relative overflow-hidden shadow-xl"
-             style={{ background: "linear-gradient(135deg, #0A1628 0%, #8b5cf6dd 130%)" }}>
+        <div className="mb-8 rounded-3xl p-8 md:p-10 relative overflow-hidden"
+             style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY_2} 100%)` }}>
           <div aria-hidden className="absolute -top-20 -right-10 w-96 h-96 rounded-full opacity-15"
-               style={{ background: "radial-gradient(#8b5cf6, transparent 60%)" }} />
+               style={{ background: `radial-gradient(${COBALT}, transparent 60%)` }} />
           <div className="relative z-10">
-            <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-gold-300 mb-3">
+            <div className="font-mono text-[10px] uppercase tracking-[0.2em] font-semibold text-[#7DA0FF] mb-3">
               Executive summary
             </div>
             <p className="text-base md:text-lg text-white/95 leading-relaxed max-w-4xl">
@@ -120,7 +125,7 @@ export default function T21Deliverable({ detail }: Props) {
                 href="https://stichtinghogeschoolutrecht.sharepoint.com/sites/PANORAIMA"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[12px] font-bold bg-gold-500 text-navy-950 hover:bg-gold-400 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[12px] font-semibold bg-[#2251FF] text-white hover:bg-[#1D43D8] transition-colors"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
                 Open full report
@@ -134,26 +139,26 @@ export default function T21Deliverable({ detail }: Props) {
       {insights.length > 0 && (
         <div>
           <div className="flex items-end justify-between mb-4 gap-4">
-            <h3 className="text-lg font-bold text-navy-900">
+            <h3 className="text-lg font-bold text-[#0A1F33]">
               Six headline findings
             </h3>
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-mono text-gray-400 tabular-nums">
+              <span className="text-[11px] font-mono text-[#97A0AD] tabular-nums">
                 {activeIdx + 1} / {insights.length}
               </span>
               <button
                 onClick={() => setActiveIdx((i) => (i - 1 + insights.length) % insights.length)}
-                className="w-8 h-8 rounded-full bg-white border border-gray-200 hover:bg-navy-50 transition-colors flex items-center justify-center"
+                className="w-8 h-8 rounded-full bg-white border border-[#E3E7ED] hover:bg-[#EEF2FF] hover:border-[#C9D4FF] transition-colors flex items-center justify-center"
                 aria-label="Previous"
               >
-                <ChevronLeft className="w-4 h-4 text-navy-600" />
+                <ChevronLeft className="w-4 h-4 text-[#51607A]" />
               </button>
               <button
                 onClick={() => setActiveIdx((i) => (i + 1) % insights.length)}
-                className="w-8 h-8 rounded-full bg-white border border-gray-200 hover:bg-navy-50 transition-colors flex items-center justify-center"
+                className="w-8 h-8 rounded-full bg-white border border-[#E3E7ED] hover:bg-[#EEF2FF] hover:border-[#C9D4FF] transition-colors flex items-center justify-center"
                 aria-label="Next"
               >
-                <ChevronRight className="w-4 h-4 text-navy-600" />
+                <ChevronRight className="w-4 h-4 text-[#51607A]" />
               </button>
             </div>
           </div>
@@ -177,15 +182,15 @@ function InsightCard({
   insight, isActive, onClick,
 }: { insight: T21KeyInsight; isActive: boolean; onClick: () => void }) {
   const Icon = INSIGHT_ICON[insight.title] || Zap
-  const color = INSIGHT_COLOR[insight.title] || "#8b5cf6"
+  const color = INSIGHT_COLOR[insight.title] || COBALT
 
   return (
     <button
       onClick={onClick}
       className={`relative text-left rounded-2xl p-5 border transition-all duration-300 overflow-hidden ${
         isActive
-          ? "bg-navy-950 text-white border-navy-950 shadow-xl scale-[1.02]"
-          : "bg-white text-navy-900 border-gray-100 hover:border-gray-200 hover:shadow-md"
+          ? "bg-[#051C2C] text-white border-[#051C2C] shadow-xl scale-[1.02]"
+          : "bg-white text-[#0A1F33] border-[#E3E7ED] hover:border-[#C9D4FF] hover:shadow-md"
       }`}
     >
       {isActive && (
@@ -205,16 +210,16 @@ function InsightCard({
         >
           <Icon className="w-4 h-4" />
         </div>
-        <div className={`text-[10px] uppercase tracking-[0.2em] font-bold mb-1 ${
-          isActive ? "text-gold-300" : "text-gray-400"
+        <div className={`font-mono text-[10px] uppercase tracking-[0.2em] font-semibold mb-1 tabular-nums ${
+          isActive ? "text-[#7DA0FF]" : "text-[#97A0AD]"
         }`}>
           Finding {insight.id}
         </div>
-        <div className={`text-base font-bold mb-2 ${isActive ? "text-white" : "text-navy-900"}`}>
+        <div className={`text-base font-bold mb-2 ${isActive ? "text-white" : "text-[#0A1F33]"}`}>
           {insight.title}
         </div>
         <p className={`text-[12.5px] leading-relaxed line-clamp-5 ${
-          isActive ? "text-navy-100/80" : "text-gray-600"
+          isActive ? "text-white/80" : "text-[#51607A]"
         }`}>
           {insight.body.replace(/^(and\s+|•\s+|eal-world|ks\s+\.+)/i, "")}
         </p>

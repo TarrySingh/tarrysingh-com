@@ -41,10 +41,12 @@ function CornerTicks({ w, h, len = 22, gap = 16, color, opacity }: {
 
 export default function ConsortiumPlate({
   variant = "hero",
+  network = true,
   className,
-}: { variant?: Variant; className?: string }) {
+}: { variant?: Variant; network?: boolean; className?: string }) {
   const H = variant === "hero" ? HERO_H : BAND_H
   const hero = variant === "hero"
+  const showNet = hero && network
 
   // graticule line endpoints in viewBox space
   const vLines = LNGS.map((lng) => {
@@ -58,7 +60,7 @@ export default function ConsortiumPlate({
     return { x1: 0, y1: a.y, x2: VW, y2: b.y, lat }
   })
 
-  const pts = hero
+  const pts = showNet
     ? PARTNERS.slice(0, 15).map((p) => ({ code: p.code, ...projectEurope(p.lat, p.lng, VW, H) }))
     : []
   const arcs: { x1: number; y1: number; x2: number; y2: number; k: string }[] = []
@@ -110,8 +112,8 @@ export default function ConsortiumPlate({
         ))}
       </g>
 
-      {/* consortium network (hero only) */}
-      {hero && (
+      {/* consortium network (hero + network flag) */}
+      {showNet && (
         <>
           <g stroke={COBALT} strokeWidth={1}>
             {arcs.map((a) => (

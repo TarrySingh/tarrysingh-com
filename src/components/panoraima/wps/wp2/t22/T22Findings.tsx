@@ -6,6 +6,10 @@ import {
   Users, FileSignature,
 } from "lucide-react"
 import type { Task22Detail, T22Finding } from "@/lib/panoraima/types"
+import {
+  INK, SLATE, MUTE, FAINT, LINE, SURFACE,
+  COBALT, COBALT_SOFT, COBALT_LINE, KICKER, NUM,
+} from "../../../consortiumTokens"
 
 interface Props {
   detail: Task22Detail
@@ -21,22 +25,11 @@ const ICON: Record<string, typeof Layers> = {
   "file-signature": FileSignature,
 }
 
-const ACCENT_GRADIENTS = [
-  "from-sky-500 to-sky-700",
-  "from-emerald-500 to-emerald-700",
-  "from-violet-500 to-violet-700",
-  "from-amber-500 to-amber-700",
-  "from-rose-500 to-rose-700",
-  "from-teal-500 to-teal-700",
-  "from-gold-500 to-gold-700",
-]
-
 function FindingCard({ finding, index }: { finding: T22Finding; index: number }) {
   const ref = useRef<HTMLDivElement>(null)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
 
   const Icon = ICON[finding.icon] ?? Sparkles
-  const accent = ACCENT_GRADIENTS[index % ACCENT_GRADIENTS.length]
 
   const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const el = ref.current
@@ -56,30 +49,34 @@ function FindingCard({ finding, index }: { finding: T22Finding; index: number })
       style={{ perspective: "900px" }}
     >
       <div
-        className="relative rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl p-6 transition-all duration-200 h-full"
+        className="relative rounded-xl overflow-hidden bg-white border p-6 transition-colors duration-200 h-full hover:border-[#C9D4FF]"
         style={{
+          borderColor: LINE,
           transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
           transformStyle: "preserve-3d",
         }}
       >
-        <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${accent}`} />
+        <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: COBALT }} />
 
         <div className="flex items-start gap-3 mb-3">
-          <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${accent} flex items-center justify-center text-white shadow-md flex-shrink-0`}>
+          <div
+            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 border"
+            style={{ backgroundColor: COBALT_SOFT, borderColor: COBALT_LINE, color: COBALT }}
+          >
             <Icon className="w-5 h-5" />
           </div>
           <div className="min-w-0 flex-1">
-            <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+            <div className={`${KICKER} ${NUM}`} style={{ color: FAINT }}>
               Finding #{index + 1}
             </div>
-            <h3 className="mt-0.5 text-base md:text-lg font-bold text-navy-900 leading-tight">
+            <h3 className="mt-0.5 text-base md:text-lg font-bold leading-tight" style={{ color: INK }}>
               {finding.title}
             </h3>
           </div>
         </div>
 
-        <blockquote className="mt-4 relative pl-4 border-l-2 border-gold-300">
-          <p className="text-[13.5px] text-gray-700 leading-relaxed italic">
+        <blockquote className="mt-4 relative pl-4 border-l-2" style={{ borderColor: COBALT_LINE }}>
+          <p className="text-[13.5px] leading-relaxed italic" style={{ color: SLATE }}>
             &ldquo;{finding.quote}&rdquo;
           </p>
         </blockquote>
@@ -92,15 +89,18 @@ export default function T22Findings({ detail }: Props) {
   const findings = detail.focus_group.findings
 
   return (
-    <section>
+    <section style={{ backgroundColor: SURFACE }} className="rounded-xl p-1">
       <div className="mb-6">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+        <span
+          className={`inline-flex items-center px-2.5 py-0.5 rounded-full border ${KICKER}`}
+          style={{ color: COBALT, borderColor: COBALT_LINE, backgroundColor: COBALT_SOFT }}
+        >
           Distilled findings
         </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        <h2 className="mt-2 text-2xl md:text-3xl font-bold" style={{ color: INK }}>
           What the 17 academics actually said
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-1 text-sm max-w-xl" style={{ color: MUTE }}>
           Each card pulls a verbatim insight from the Interpretation section
           of the Focus Group Report. Hover for subtle 3D parallax.
         </p>

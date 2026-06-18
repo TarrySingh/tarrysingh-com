@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import type { WpThemeCount, WpStakeholderCount } from "@/lib/panoraima/types"
+import { INK, SLATE, FAINT, LINE, SURFACE, NAVY, KICKER } from "../consortiumTokens"
 
 interface Props {
   themes: WpThemeCount[]
@@ -31,57 +32,75 @@ export default function ThemeCloud({ themes, stakeholders, color }: Props) {
     <section>
       <div className="flex items-end justify-between mb-5 gap-4 flex-wrap">
         <div>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+          <span
+            className={`inline-flex items-center px-2.5 py-0.5 rounded-full border ${KICKER}`}
+            style={{ color: FAINT, borderColor: LINE, background: SURFACE }}
+          >
             Corpus analysis
           </span>
-          <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+          <h2 className="mt-2 text-2xl md:text-3xl font-bold" style={{ color: INK }}>
             What the whole corpus talks about
           </h2>
-          <p className="mt-1 text-sm text-gray-500 max-w-xl">
+          <p className="mt-1 text-sm max-w-xl" style={{ color: SLATE }}>
             Keyword distribution across all documents. Toggle to see the stakeholder types
             most frequently referenced across the evidence.
           </p>
         </div>
-        <div className="flex rounded-lg border border-gray-200 bg-white p-0.5 text-[11px] font-semibold">
+        <div
+          className="flex rounded-lg border bg-white p-0.5 font-mono text-[11px] font-semibold uppercase tracking-[0.12em]"
+          style={{ borderColor: LINE }}
+        >
           <button
             onClick={() => setLens("themes")}
-            className={`px-3 py-1 rounded transition-colors ${
-              lens === "themes" ? "bg-navy-900 text-white" : "text-navy-700 hover:bg-navy-50"
-            }`}
+            className="px-3 py-1 rounded transition-colors"
+            style={
+              lens === "themes"
+                ? { background: NAVY, color: "#fff" }
+                : { color: SLATE }
+            }
           >
             Themes
           </button>
           <button
             onClick={() => setLens("stakeholders")}
-            className={`px-3 py-1 rounded transition-colors ${
-              lens === "stakeholders" ? "bg-navy-900 text-white" : "text-navy-700 hover:bg-navy-50"
-            }`}
+            className="px-3 py-1 rounded transition-colors"
+            style={
+              lens === "stakeholders"
+                ? { background: NAVY, color: "#fff" }
+                : { color: SLATE }
+            }
           >
             Stakeholders
           </button>
         </div>
       </div>
 
-      <div className="rounded-2xl bg-white border border-gray-100 p-6 md:p-8">
+      <div className="rounded-2xl bg-white border p-6 md:p-8" style={{ borderColor: LINE }}>
         <div className="space-y-3">
           {data.map((d, i) => {
             const pct = (d.count / max) * 100
             return (
               <div key={d.theme} className="group flex items-center gap-4">
-                <div className="w-32 md:w-44 flex-shrink-0 text-sm font-medium text-navy-900 text-right">
+                <div
+                  className="w-32 md:w-44 flex-shrink-0 text-sm font-medium text-right"
+                  style={{ color: INK }}
+                >
                   {d.theme}
                 </div>
-                <div className="flex-1 relative h-7 bg-gray-50 rounded-md overflow-hidden">
+                <div
+                  className="flex-1 relative h-7 rounded-md overflow-hidden"
+                  style={{ background: SURFACE }}
+                >
                   <div
                     className="h-full rounded-md transition-all duration-700 ease-out"
                     style={{
                       width: `${pct}%`,
-                      background: `linear-gradient(90deg, ${color}ee, ${color}aa)`,
+                      background: color,
                       animationDelay: `${i * 60}ms`,
                     }}
                   />
                   <span
-                    className="absolute inset-y-0 left-3 flex items-center text-[11px] font-mono font-bold text-white mix-blend-difference"
+                    className="absolute inset-y-0 left-3 flex items-center text-[11px] font-mono font-bold tabular-nums text-white mix-blend-difference"
                     style={{ textShadow: "0 0 2px rgba(0,0,0,0.4)" }}
                   >
                     {d.count}

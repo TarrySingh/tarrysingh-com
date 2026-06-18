@@ -3,6 +3,19 @@
 import Link from "next/link"
 import { ArrowRight, FileText, Target, Package, AlertCircle } from "lucide-react"
 import type { WpHubEntry } from "@/lib/panoraima/types"
+import {
+  INK,
+  SLATE,
+  MUTE,
+  FAINT,
+  LINE,
+  SURFACE,
+  OK,
+  OK_SOFT,
+  WARN,
+  WARN_SOFT,
+  wpColor,
+} from "../consortiumTokens"
 
 interface Props {
   entry: WpHubEntry
@@ -19,37 +32,40 @@ export default function WPCard({ entry, delay = 0 }: Props) {
     empty: "Not yet started",
     unseen: "Not yet started",
   }[entry.status]
-  const statusColor = {
-    active: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    sparse: "bg-gold-50 text-gold-700 border-gold-200",
-    empty: "bg-gray-50 text-gray-400 border-gray-200",
-    unseen: "bg-gray-50 text-gray-400 border-gray-200",
+  const statusStyle = {
+    active: { background: OK_SOFT, color: OK, borderColor: OK },
+    sparse: { background: WARN_SOFT, color: WARN, borderColor: WARN },
+    empty: { background: SURFACE, color: FAINT, borderColor: LINE },
+    unseen: { background: SURFACE, color: FAINT, borderColor: LINE },
   }[entry.status]
 
   const totalFiles = entry.stats?.total_files ?? 0
   const byExt = entry.stats?.by_ext ?? {}
 
+  // WP accent derives from the consortium navy→cobalt→teal ramp, not the data hex.
+  const accent = wpColor(entry.wp)
+
   const classNames = [
-    "relative overflow-hidden rounded-2xl border border-gray-100 bg-white",
+    "relative overflow-hidden rounded-2xl border bg-white",
     "p-6 md:p-7 animate-fade-up group",
     disabled ? "opacity-60 cursor-not-allowed" : "premium-card",
   ].join(" ")
 
   const innerContent = (
     <>
-      {/* Colored bar at top */}
+      {/* Accent bar at top */}
       <div
         className="absolute top-0 left-0 right-0 h-1"
-        style={{ background: `linear-gradient(90deg, ${entry.color}, ${entry.color}00)` }}
+        style={{ background: `linear-gradient(90deg, ${accent}, ${accent}00)` }}
       />
 
-      {/* Hover gradient wash */}
+      {/* Hover wash */}
       {!disabled && (
         <div
           aria-hidden
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
           style={{
-            background: `radial-gradient(circle at 20% 0%, ${entry.color}10, transparent 60%)`,
+            background: `radial-gradient(circle at 20% 0%, ${accent}10, transparent 60%)`,
           }}
         />
       )}
@@ -60,27 +76,38 @@ export default function WPCard({ entry, delay = 0 }: Props) {
           <div className="flex items-center gap-3">
             <div
               className="w-11 h-11 rounded-xl flex items-center justify-center text-lg font-semibold text-white"
-              style={{ background: entry.color }}
+              style={{ background: accent }}
             >
               <span aria-hidden>{entry.emoji}</span>
             </div>
             <div>
-              <div className="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-gray-400">
+              <div
+                className="text-[10px] font-mono font-bold uppercase tracking-[0.18em]"
+                style={{ color: FAINT }}
+              >
                 {entry.wp}
               </div>
-              <h3 className="text-lg font-bold text-navy-900 leading-tight">{entry.short}</h3>
+              <h3 className="text-lg font-bold leading-tight" style={{ color: INK }}>
+                {entry.short}
+              </h3>
             </div>
           </div>
           <span
-            className={`inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider border ${statusColor}`}
+            className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider border"
+            style={statusStyle}
           >
             {statusLabel}
           </span>
         </div>
 
         {/* Full name + description */}
-        <div className="text-[11px] text-gray-500 mb-1 font-medium">{entry.name}</div>
-        <p className="text-sm text-gray-600 leading-relaxed mb-5 line-clamp-3 min-h-[60px]">
+        <div className="text-[11px] mb-1 font-medium" style={{ color: MUTE }}>
+          {entry.name}
+        </div>
+        <p
+          className="text-sm leading-relaxed mb-5 line-clamp-3 min-h-[60px]"
+          style={{ color: SLATE }}
+        >
           {entry.description}
         </p>
 
@@ -88,32 +115,44 @@ export default function WPCard({ entry, delay = 0 }: Props) {
         {totalFiles > 0 ? (
           <div className="grid grid-cols-3 gap-3 mb-5">
             <div>
-              <div className="flex items-center gap-1 text-[10px] text-gray-400 font-semibold uppercase tracking-wider">
+              <div
+                className="flex items-center gap-1 text-[10px] font-mono font-semibold uppercase tracking-wider"
+                style={{ color: FAINT }}
+              >
                 <FileText className="w-3 h-3" /> Files
               </div>
-              <div className="mt-0.5 text-lg font-bold text-navy-900 tabular-nums">
+              <div className="mt-0.5 text-lg font-bold tabular-nums" style={{ color: INK }}>
                 {totalFiles}
               </div>
             </div>
             <div>
-              <div className="flex items-center gap-1 text-[10px] text-gray-400 font-semibold uppercase tracking-wider">
+              <div
+                className="flex items-center gap-1 text-[10px] font-mono font-semibold uppercase tracking-wider"
+                style={{ color: FAINT }}
+              >
                 <Target className="w-3 h-3" /> Tasks
               </div>
-              <div className="mt-0.5 text-lg font-bold text-navy-900 tabular-nums">
+              <div className="mt-0.5 text-lg font-bold tabular-nums" style={{ color: INK }}>
                 {entry.task_count}
               </div>
             </div>
             <div>
-              <div className="flex items-center gap-1 text-[10px] text-gray-400 font-semibold uppercase tracking-wider">
+              <div
+                className="flex items-center gap-1 text-[10px] font-mono font-semibold uppercase tracking-wider"
+                style={{ color: FAINT }}
+              >
                 <Package className="w-3 h-3" /> Deliv.
               </div>
-              <div className="mt-0.5 text-lg font-bold text-navy-900 tabular-nums">
+              <div className="mt-0.5 text-lg font-bold tabular-nums" style={{ color: INK }}>
                 {entry.deliverable_count}
               </div>
             </div>
           </div>
         ) : (
-          <div className="flex items-center gap-2 text-[12px] text-gray-500 mb-5">
+          <div
+            className="flex items-center gap-2 text-[12px] mb-5"
+            style={{ color: MUTE }}
+          >
             <AlertCircle className="w-3.5 h-3.5" />
             Source folder empty — awaiting first deliverable
           </div>
@@ -128,21 +167,28 @@ export default function WPCard({ entry, delay = 0 }: Props) {
               .map(([ext, n]) => (
                 <span
                   key={ext}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-mono bg-gray-50 border border-gray-100 text-gray-600"
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-mono border"
+                  style={{ background: SURFACE, borderColor: LINE, color: SLATE }}
                 >
                   <span className="font-semibold tabular-nums">{n}</span>
-                  <span className="text-gray-400">{ext}</span>
+                  <span style={{ color: FAINT }}>{ext}</span>
                 </span>
               ))}
           </div>
         )}
 
         {/* CTA */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+        <div
+          className="flex items-center justify-between pt-4 border-t"
+          style={{ borderColor: LINE }}
+        >
           <span
-            className={`text-[12px] font-semibold uppercase tracking-[0.15em] ${
-              disabled ? "text-gray-300" : "text-gray-400 group-hover:text-navy-900"
-            } transition-colors`}
+            className={`text-[12px] font-mono font-semibold uppercase tracking-[0.15em] transition-colors ${
+              disabled
+                ? ""
+                : "group-hover:!text-[#2251FF]"
+            }`}
+            style={{ color: disabled ? FAINT : MUTE }}
           >
             {disabled && entry.status === "unseen"
               ? "Folder not synced"
@@ -153,14 +199,20 @@ export default function WPCard({ entry, delay = 0 }: Props) {
               : "Open dashboard"}
           </span>
           {!disabled && (
-            <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-navy-900 group-hover:translate-x-0.5 transition-all" />
+            <ArrowRight
+              className="w-4 h-4 transition-all group-hover:translate-x-0.5 group-hover:!text-[#2251FF]"
+              style={{ color: FAINT }}
+            />
           )}
         </div>
       </div>
     </>
   )
 
-  const style = { animationDelay: `${delay}ms` } as React.CSSProperties
+  const style = {
+    animationDelay: `${delay}ms`,
+    borderColor: LINE,
+  } as React.CSSProperties
 
   if (disabled) {
     return (

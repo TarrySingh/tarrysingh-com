@@ -4,6 +4,7 @@ import { useMemo, useState } from "react"
 import Link from "next/link"
 import { ArrowLeft, ExternalLink } from "lucide-react"
 import type { WorkPackageDetail, WpDeliverable, WpQuote } from "@/lib/panoraima/types"
+import { SURFACE, INK, SLATE, COBALT, COBALT_DK, LINE } from "../consortiumTokens"
 import WPHero from "./WPHero"
 import KeyFindings from "./KeyFindings"
 import ThemeCloud from "./ThemeCloud"
@@ -46,7 +47,7 @@ export default function WPDetail({ detail }: Props) {
   const hasThemes = (detail.themes?.length ?? 0) > 0
 
   return (
-    <div className="relative min-h-screen bg-white">
+    <div className="relative min-h-screen" style={{ background: SURFACE }}>
       <WPHero detail={detail} />
 
       <div className="relative z-10 -mt-16 max-w-7xl mx-auto px-5 md:px-8 pb-24">
@@ -54,14 +55,20 @@ export default function WPDetail({ detail }: Props) {
         <div className="flex flex-wrap items-center justify-between gap-3 mb-10">
           <Link
             href="/experiments/panoraima/wps"
-            className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.15em] text-navy-500 hover:text-navy-900 transition-colors"
+            className="group inline-flex items-center gap-2 font-mono text-[12px] font-semibold uppercase tracking-[0.15em] transition-colors"
+            style={{ color: SLATE }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = COBALT_DK)}
+            onMouseLeave={(e) => (e.currentTarget.style.color = SLATE)}
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             All work packages
           </Link>
           <Link
             href="/experiments/panoraima"
-            className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-navy-500 hover:text-navy-900 transition-colors"
+            className="group inline-flex items-center gap-1.5 font-mono text-[12px] font-semibold uppercase tracking-[0.15em] transition-colors"
+            style={{ color: SLATE }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = COBALT_DK)}
+            onMouseLeave={(e) => (e.currentTarget.style.color = SLATE)}
           >
             <ExternalLink className="w-3.5 h-3.5" />
             Consortium view
@@ -135,14 +142,14 @@ export default function WPDetail({ detail }: Props) {
             </section>
           )}
 
-          <footer className="pt-10 border-t border-gray-100">
+          <footer className="pt-10 border-t" style={{ borderColor: LINE }}>
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div>
-                <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold-600 mb-1">
+                <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] mb-1" style={{ color: COBALT }}>
                   About this page
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed max-w-xl">
-                  Auto-generated from the SharePoint <code className="font-mono text-gray-700">{detail.wp}</code> folder
+                <p className="text-sm leading-relaxed max-w-xl" style={{ color: SLATE }}>
+                  Auto-generated from the SharePoint <code className="font-mono" style={{ color: INK }}>{detail.wp}</code> folder
                   on {new Date(detail.generated_at).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}.
                   {detail.stats.total_words
                     ? <> Analysed {detail.stats.total_words.toLocaleString()} words across{" "}

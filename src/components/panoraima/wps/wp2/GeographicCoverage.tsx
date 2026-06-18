@@ -81,24 +81,24 @@ export default function GeographicCoverage({ detail }: Props) {
     <section>
       <div className="flex items-end justify-between mb-5">
         <div>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6B7686] border border-[#E3E7ED] bg-[#F7F8FA]">
             Geographic coverage
           </span>
-          <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+          <h2 className="mt-2 text-2xl md:text-3xl font-bold text-[#0A1F33]">
             Four countries, four stakeholder lenses
           </h2>
-          <p className="mt-1 text-sm text-gray-500 max-w-xl">
+          <p className="mt-1 text-sm text-[#51607A] max-w-xl">
             Where the WP2 focus groups ran. Dot size scales with file volume.
           </p>
         </div>
       </div>
 
-      <div className="relative rounded-2xl overflow-hidden border border-gray-100 h-[420px] bg-white">
+      <div className="relative rounded-2xl overflow-hidden border border-[#E3E7ED] h-[420px] bg-white">
         {!tokenMissing && (
           <div className="absolute top-3 left-3 z-10">
             <button
               onClick={resetView}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold rounded-lg bg-white/95 backdrop-blur shadow-md border border-gray-200 text-navy-700 hover:bg-navy-50 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.15em] rounded-lg bg-white/95 backdrop-blur shadow-md border border-[#E3E7ED] text-[#0A1F33] hover:bg-[#F7F8FA] hover:border-[#C9D4FF] hover:text-[#2251FF] transition-colors"
             >
               <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
@@ -112,9 +112,9 @@ export default function GeographicCoverage({ detail }: Props) {
         {tokenMissing ? (
           <div className="w-full h-full flex items-center justify-center p-6 text-center">
             <div>
-              <div className="text-sm font-semibold text-navy-800">Map unavailable</div>
-              <div className="mt-1 text-xs text-gray-500">
-                <code className="font-mono">NEXT_PUBLIC_MAPBOX_TOKEN</code> missing.
+              <div className="text-sm font-semibold text-[#0A1F33]">Map unavailable</div>
+              <div className="mt-1 text-xs text-[#6B7686]">
+                <code className="font-mono text-[#51607A]">NEXT_PUBLIC_MAPBOX_TOKEN</code> missing.
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function GeographicCoverage({ detail }: Props) {
                       }}
                     />
                     <span
-                      className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-mono font-semibold text-navy-900"
+                      className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-mono font-semibold uppercase tracking-[0.15em] text-[#0A1F33]"
                       style={{
                         top: size / 2 + 4,
                         textShadow:
@@ -213,29 +213,29 @@ export default function GeographicCoverage({ detail }: Props) {
                   const info = regionBreakdown[hovered]
                   return (
                     <div className="px-1 py-0.5 min-w-[200px]">
-                      <div className="text-[10px] uppercase tracking-[0.18em] font-bold text-gold-600 mb-0.5">
+                      <div className="font-mono text-[10px] uppercase tracking-[0.18em] font-semibold text-[#2251FF] mb-0.5">
                         {hovered}
                       </div>
                       <div className="grid grid-cols-2 gap-3 mt-2">
                         <div>
-                          <div className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">
+                          <div className="font-mono text-[10px] text-[#97A0AD] font-semibold uppercase tracking-[0.15em]">
                             Files
                           </div>
-                          <div className="text-lg font-bold tabular-nums text-navy-900">
+                          <div className="text-lg font-bold tabular-nums text-[#0A1F33]">
                             {info.files}
                           </div>
                         </div>
                         <div>
-                          <div className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">
+                          <div className="font-mono text-[10px] text-[#97A0AD] font-semibold uppercase tracking-[0.15em]">
                             Focus groups
                           </div>
-                          <div className="text-lg font-bold tabular-nums text-navy-900">
+                          <div className="text-lg font-bold tabular-nums text-[#0A1F33]">
                             {info.focus_groups}
                           </div>
                         </div>
                       </div>
                       {info.latest_date && (
-                        <div className="mt-2 text-[10px] text-gray-400 font-mono">
+                        <div className="mt-2 text-[10px] text-[#97A0AD] font-mono tabular-nums">
                           Latest: {info.latest_date}
                         </div>
                       )}

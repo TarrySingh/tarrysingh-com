@@ -2,26 +2,41 @@
 
 import { useMemo, useState } from "react"
 import type { WpStats } from "@/lib/panoraima/types"
+import {
+  INK,
+  SLATE,
+  MUTE,
+  FAINT,
+  LINE,
+  LINE_SOFT,
+  SURFACE,
+  COBALT,
+  COBALT_DK,
+  OK,
+  WARN,
+  BAD,
+} from "../consortiumTokens"
 
 interface Props {
   stats: WpStats
   color: string
 }
 
-// Canonical palette for file types (subdued so it never competes with the page chrome)
+// Canonical palette for file types — desaturated to the corporate navy→cobalt→teal family
+// (status hues reused for the few document classes that map cleanly to OK/WARN/BAD).
 const EXT_COLORS: Record<string, string> = {
-  ".pdf":  "#ef4444",
-  ".docx": "#2563eb",
-  ".pptx": "#f59e0b",
-  ".xlsx": "#10b981",
-  ".rtf":  "#6366f1",
-  ".potx": "#f97316",
-  ".docm": "#1d4ed8",
-  ".odt":  "#7c3aed",
-  ".mp4":  "#db2777",
-  ".mp3":  "#a21caf",
-  ".vtt":  "#0ea5e9",
-  ".txt":  "#4b5563",
+  ".pdf":  BAD,        // brick
+  ".docx": COBALT,     // cobalt
+  ".pptx": WARN,       // amber
+  ".xlsx": OK,         // emerald
+  ".rtf":  "#1C5286",  // navy-cobalt mid
+  ".potx": WARN,       // amber
+  ".docm": COBALT_DK,  // pressed cobalt
+  ".odt":  "#143A63",  // deep navy
+  ".mp4":  "#2E7FA6",  // teal-blue
+  ".mp3":  "#36A08C",  // teal
+  ".vtt":  "#2251FF",  // cobalt
+  ".txt":  MUTE,       // muted slate
 }
 
 const TYPE_LABELS: Record<string, string> = {
@@ -53,7 +68,7 @@ function DonutChart({
 
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} role="img" aria-label="File type distribution">
-      <circle cx={center} cy={center} r={radius} fill="none" stroke="#f3f4f6" strokeWidth={thickness} />
+      <circle cx={center} cy={center} r={radius} fill="none" stroke={LINE_SOFT} strokeWidth={thickness} />
       {data.map((d, i) => {
         const frac = d.value / total
         const len = frac * circumference
@@ -83,7 +98,8 @@ function DonutChart({
         x={center}
         y={center - 6}
         textAnchor="middle"
-        className="fill-navy-900"
+        fill={INK}
+        className="tabular-nums"
         style={{ fontSize: 28, fontWeight: 700 }}
       >
         {total}
@@ -92,7 +108,7 @@ function DonutChart({
         x={center}
         y={center + 14}
         textAnchor="middle"
-        className="fill-gray-400"
+        fill={FAINT}
         style={{ fontSize: 10, letterSpacing: 1, textTransform: "uppercase", fontWeight: 700 }}
       >
         files
@@ -109,7 +125,7 @@ export default function FileInventory({ stats, color }: Props) {
       return Object.entries(stats.by_ext || {})
         .filter(([, n]) => n > 0)
         .sort(([, a], [, b]) => b - a)
-        .map(([k, v]) => ({ label: k, value: v, color: EXT_COLORS[k] || "#9ca3af" }))
+        .map(([k, v]) => ({ label: k, value: v, color: EXT_COLORS[k] || FAINT }))
     }
     return Object.entries(stats.by_type || {})
       .filter(([, n]) => n > 0)
@@ -119,13 +135,13 @@ export default function FileInventory({ stats, color }: Props) {
         value: v,
         color: [
           color,
-          "#2563eb",
-          "#10b981",
-          "#f59e0b",
-          "#ef4444",
-          "#7c3aed",
-          "#0ea5e9",
-          "#6b7280",
+          COBALT,
+          OK,
+          WARN,
+          BAD,
+          "#143A63",
+          "#2E7FA6",
+          MUTE,
         ][i % 8],
       }))
   }, [stats, lens, color])
@@ -134,38 +150,50 @@ export default function FileInventory({ stats, color }: Props) {
     <section>
       <div className="flex items-end justify-between mb-5">
         <div>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+          <span
+            className="inline-flex items-center px-2.5 py-0.5 rounded-full font-mono text-[10px] font-semibold uppercase tracking-[0.18em] border"
+            style={{ color: FAINT, borderColor: LINE, background: SURFACE }}
+          >
             File inventory
           </span>
-          <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+          <h2 className="mt-2 text-2xl md:text-3xl font-bold" style={{ color: INK }}>
             What&apos;s in the folder
           </h2>
-          <p className="mt-1 text-sm text-gray-500 max-w-xl">
+          <p className="mt-1 text-sm max-w-xl" style={{ color: SLATE }}>
             {stats.total_files} files across the whole work package. Toggle the lens to see
             format (pdf / docx / …) or purpose (deliverable / meeting / research / …).
           </p>
         </div>
-        <div className="flex rounded-lg border border-gray-200 bg-white p-0.5 text-[11px] font-semibold">
+        <div
+          className="flex rounded-lg border bg-white p-0.5 text-[11px] font-semibold"
+          style={{ borderColor: LINE }}
+        >
           <button
             onClick={() => setLens("ext")}
-            className={`px-3 py-1 rounded transition-colors ${
-              lens === "ext" ? "bg-navy-900 text-white" : "text-navy-700 hover:bg-navy-50"
-            }`}
+            className="px-3 py-1 rounded transition-colors"
+            style={
+              lens === "ext"
+                ? { background: COBALT, color: "#fff" }
+                : { color: SLATE }
+            }
           >
             By format
           </button>
           <button
             onClick={() => setLens("type")}
-            className={`px-3 py-1 rounded transition-colors ${
-              lens === "type" ? "bg-navy-900 text-white" : "text-navy-700 hover:bg-navy-50"
-            }`}
+            className="px-3 py-1 rounded transition-colors"
+            style={
+              lens === "type"
+                ? { background: COBALT, color: "#fff" }
+                : { color: SLATE }
+            }
           >
             By purpose
           </button>
         </div>
       </div>
 
-      <div className="rounded-2xl bg-white border border-gray-100 p-6 md:p-8">
+      <div className="rounded-2xl bg-white border p-6 md:p-8" style={{ borderColor: LINE }}>
         <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-8 md:gap-12 items-center">
           <div className="flex justify-center">
             <DonutChart data={data} size={200} thickness={30} />
@@ -176,22 +204,25 @@ export default function FileInventory({ stats, color }: Props) {
               return (
                 <div
                   key={d.label}
-                  className="flex items-center justify-between gap-3 p-3 rounded-lg border border-gray-100 hover:border-gray-200 transition-colors"
+                  className="flex items-center justify-between gap-3 p-3 rounded-lg border transition-colors hover:border-[#C9D4FF]"
+                  style={{ borderColor: LINE_SOFT }}
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <span
                       className="w-2.5 h-2.5 rounded-sm flex-shrink-0"
                       style={{ background: d.color }}
                     />
-                    <span className="text-sm font-medium text-navy-900 truncate">
+                    <span className="text-sm font-medium truncate" style={{ color: INK }}>
                       {d.label}
                     </span>
                   </div>
                   <div className="flex items-baseline gap-1.5 flex-shrink-0">
-                    <span className="text-sm font-bold tabular-nums text-navy-900">
+                    <span className="text-sm font-bold tabular-nums" style={{ color: INK }}>
                       {d.value}
                     </span>
-                    <span className="text-[10px] font-mono text-gray-400">{pct}%</span>
+                    <span className="text-[10px] font-mono tabular-nums" style={{ color: FAINT }}>
+                      {pct}%
+                    </span>
                   </div>
                 </div>
               )

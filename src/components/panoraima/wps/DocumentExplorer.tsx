@@ -1,8 +1,9 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useMemo, useState, type ReactNode } from "react"
 import { Search, FileText, X, Tag, Clock, MapPin, HardDrive } from "lucide-react"
 import type { WpCatalogueEntry } from "@/lib/panoraima/types"
+import { NAVY, INK, SLATE, MUTE, FAINT, LINE, SURFACE, COBALT, COBALT_SOFT, COBALT_LINE } from "../consortiumTokens"
 
 interface Props {
   catalogue: WpCatalogueEntry[]
@@ -26,7 +27,7 @@ const TYPE_LABEL: Record<string, string> = {
   other: "Other",
 }
 
-export default function DocumentExplorer({ catalogue, color }: Props) {
+export default function DocumentExplorer({ catalogue }: Props) {
   const [q, setQ] = useState("")
   const [typeFilter, setTypeFilter] = useState<string | null>(null)
   const [regionFilter, setRegionFilter] = useState<string | null>(null)
@@ -70,91 +71,84 @@ export default function DocumentExplorer({ catalogue, color }: Props) {
   return (
     <section>
       <div className="mb-5">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+        <span
+          className="inline-flex items-center px-2.5 py-0.5 rounded-full font-mono text-[10px] font-semibold uppercase tracking-[0.18em]"
+          style={{ color: COBALT, borderWidth: 1, borderColor: COBALT_LINE, background: COBALT_SOFT }}
+        >
           Document explorer
         </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        <h2 className="mt-2 text-2xl md:text-3xl font-bold" style={{ color: INK }}>
           Every file in the folder
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-1 text-sm max-w-xl" style={{ color: SLATE }}>
           Search by name or content, filter by type or country, click any card to see the
           extracted excerpt and classification.
         </p>
       </div>
 
       {/* Search + filters */}
-      <div className="rounded-2xl bg-white border border-gray-100 p-4 mb-4 space-y-3">
+      <div className="rounded-2xl bg-white p-4 mb-4 space-y-3" style={{ borderWidth: 1, borderColor: LINE }}>
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: FAINT }} />
           <input
             type="text"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Search file names, excerpts, themes…"
-            className="w-full pl-10 pr-10 py-2.5 text-sm rounded-lg bg-gray-50 border border-gray-200 focus:border-navy-400 focus:bg-white focus:outline-none transition-colors"
+            className="w-full pl-10 pr-10 py-2.5 text-sm rounded-lg focus:outline-none transition-colors focus:ring-2"
+            style={{ background: SURFACE, borderWidth: 1, borderColor: LINE, color: INK, ["--tw-ring-color" as string]: COBALT }}
+            onFocus={(e) => { e.currentTarget.style.borderColor = COBALT; e.currentTarget.style.background = "#FFFFFF" }}
+            onBlur={(e) => { e.currentTarget.style.borderColor = LINE; e.currentTarget.style.background = SURFACE }}
           />
           {q && (
             <button
               onClick={() => setQ("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full flex items-center justify-center transition-colors"
+              style={{ background: LINE }}
               aria-label="Clear"
             >
-              <X className="w-3 h-3 text-gray-600" />
+              <X className="w-3 h-3" style={{ color: MUTE }} />
             </button>
           )}
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-gray-400">Type:</span>
-          <button
-            onClick={() => setTypeFilter(null)}
-            className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-colors ${
-              !typeFilter ? "bg-navy-900 text-white" : "bg-gray-50 text-navy-700 hover:bg-gray-100"
-            }`}
-          >
+          <span className="font-mono text-[10px] uppercase tracking-[0.15em] font-semibold" style={{ color: FAINT }}>Type:</span>
+          <FilterPill active={!typeFilter} onClick={() => setTypeFilter(null)}>
             All
-          </button>
+          </FilterPill>
           {types.map((t) => (
-            <button
+            <FilterPill
               key={t}
+              active={typeFilter === t}
               onClick={() => setTypeFilter(t === typeFilter ? null : t)}
-              className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-colors ${
-                typeFilter === t ? "bg-navy-900 text-white" : "bg-gray-50 text-navy-700 hover:bg-gray-100"
-              }`}
             >
               {TYPE_LABEL[t] || t}
-            </button>
+            </FilterPill>
           ))}
 
           {regions.length > 0 && (
             <>
-              <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-gray-400 ml-3">
+              <span className="font-mono text-[10px] uppercase tracking-[0.15em] font-semibold ml-3" style={{ color: FAINT }}>
                 Country:
               </span>
-              <button
-                onClick={() => setRegionFilter(null)}
-                className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-colors ${
-                  !regionFilter ? "bg-navy-900 text-white" : "bg-gray-50 text-navy-700 hover:bg-gray-100"
-                }`}
-              >
+              <FilterPill active={!regionFilter} onClick={() => setRegionFilter(null)}>
                 All
-              </button>
+              </FilterPill>
               {regions.map((r) => (
-                <button
+                <FilterPill
                   key={r}
+                  active={regionFilter === r}
                   onClick={() => setRegionFilter(r === regionFilter ? null : r)}
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-colors ${
-                    regionFilter === r ? "bg-navy-900 text-white" : "bg-gray-50 text-navy-700 hover:bg-gray-100"
-                  }`}
                 >
                   {r}
-                </button>
+                </FilterPill>
               ))}
             </>
           )}
         </div>
 
-        <div className="text-[11px] text-gray-400 font-mono">
+        <div className="text-[11px] font-mono tabular-nums" style={{ color: FAINT }}>
           {filtered.length} of {catalogue.length} files
         </div>
       </div>
@@ -165,25 +159,31 @@ export default function DocumentExplorer({ catalogue, color }: Props) {
           <button
             key={c.rel_path}
             onClick={() => setSelected(c)}
-            className="text-left rounded-xl border border-gray-100 bg-white p-4 hover:border-navy-200 hover:shadow-sm transition-all group"
+            className="text-left rounded-xl bg-white p-4 transition-colors group"
+            style={{ borderWidth: 1, borderColor: LINE }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = COBALT_LINE }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = LINE }}
           >
             <div className="flex items-start gap-3">
               <span
                 className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-[10px] font-mono font-bold text-white"
-                style={{ background: color }}
+                style={{ background: NAVY }}
               >
                 {(EXT_LABEL[c.ext] || c.ext.slice(1)).toUpperCase().slice(0, 4)}
               </span>
               <div className="min-w-0 flex-1">
-                <div className="text-sm font-semibold text-navy-900 group-hover:text-navy-700 line-clamp-1">
+                <div
+                  className="text-sm font-semibold line-clamp-1 transition-colors"
+                  style={{ color: INK }}
+                >
                   {c.title || c.name}
                 </div>
-                <div className="mt-1 flex items-center gap-2 text-[10px] text-gray-500 flex-wrap">
+                <div className="mt-1 flex items-center gap-2 text-[10px] flex-wrap" style={{ color: MUTE }}>
                   {c.task && (
-                    <span className="font-mono font-bold text-navy-600">{c.task}</span>
+                    <span className="font-mono font-bold" style={{ color: COBALT }}>{c.task}</span>
                   )}
                   {c.type && (
-                    <span className="px-1.5 py-0.5 rounded bg-gray-50 text-navy-700">
+                    <span className="px-1.5 py-0.5 rounded" style={{ background: SURFACE, color: SLATE }}>
                       {TYPE_LABEL[c.type] || c.type}
                     </span>
                   )}
@@ -194,14 +194,14 @@ export default function DocumentExplorer({ catalogue, color }: Props) {
                     </span>
                   )}
                   {c.date && (
-                    <span className="inline-flex items-center gap-1 font-mono">
+                    <span className="inline-flex items-center gap-1 font-mono tabular-nums">
                       <Clock className="w-2.5 h-2.5" />
                       {c.date}
                     </span>
                   )}
                 </div>
                 {c.excerpt && (
-                  <p className="mt-2 text-[11.5px] text-gray-600 line-clamp-2 leading-snug">
+                  <p className="mt-2 text-[11.5px] line-clamp-2 leading-snug" style={{ color: SLATE }}>
                     {c.excerpt}
                   </p>
                 )}
@@ -212,8 +212,8 @@ export default function DocumentExplorer({ catalogue, color }: Props) {
                         key={t}
                         className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-medium"
                         style={{
-                          background: `${color}15`,
-                          color,
+                          background: COBALT_SOFT,
+                          color: COBALT,
                         }}
                       >
                         <Tag className="w-2 h-2" />
@@ -221,7 +221,7 @@ export default function DocumentExplorer({ catalogue, color }: Props) {
                       </span>
                     ))}
                     {c.themes.length > 3 && (
-                      <span className="text-[9px] text-gray-400">+{c.themes.length - 3}</span>
+                      <span className="text-[9px]" style={{ color: FAINT }}>+{c.themes.length - 3}</span>
                     )}
                   </div>
                 )}
@@ -232,23 +232,46 @@ export default function DocumentExplorer({ catalogue, color }: Props) {
       </div>
 
       {filtered.length > 40 && (
-        <div className="mt-4 text-center text-[11px] text-gray-500">
+        <div className="mt-4 text-center text-[11px]" style={{ color: MUTE }}>
           Showing the first 40 — narrow your search to see more.
         </div>
       )}
 
       {/* Detail drawer */}
-      <DocumentSheet entry={selected} onClose={() => setSelected(null)} color={color} />
+      <DocumentSheet entry={selected} onClose={() => setSelected(null)} />
     </section>
   )
 }
 
+function FilterPill({
+  active, onClick, children,
+}: {
+  active: boolean
+  onClick: () => void
+  children: ReactNode
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className="px-2.5 py-1 rounded-md text-[11px] font-semibold transition-colors"
+      style={
+        active
+          ? { background: NAVY, color: "#FFFFFF" }
+          : { background: "#FFFFFF", color: SLATE, borderWidth: 1, borderColor: LINE }
+      }
+      onMouseEnter={(e) => { if (!active) e.currentTarget.style.background = SURFACE }}
+      onMouseLeave={(e) => { if (!active) e.currentTarget.style.background = "#FFFFFF" }}
+    >
+      {children}
+    </button>
+  )
+}
+
 function DocumentSheet({
-  entry, onClose, color,
+  entry, onClose,
 }: {
   entry: WpCatalogueEntry | null
   onClose: () => void
-  color: string
 }) {
   if (!entry) return null
   const open = !!entry
@@ -257,9 +280,10 @@ function DocumentSheet({
     <>
       <div
         onClick={onClose}
-        className={`fixed inset-0 z-40 bg-navy-950/60 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 backdrop-blur-sm transition-opacity duration-300 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
+        style={{ background: "rgba(5,28,44,0.6)" }}
         aria-hidden
       />
       <aside
@@ -270,7 +294,7 @@ function DocumentSheet({
       >
         <div
           className="relative px-6 md:px-8 pt-7 pb-6 text-white overflow-hidden"
-          style={{ background: `linear-gradient(135deg, #0A1628 0%, ${color}dd 180%)` }}
+          style={{ background: NAVY }}
         >
           <button
             onClick={onClose}
@@ -279,7 +303,7 @@ function DocumentSheet({
           >
             <X className="w-4 h-4" />
           </button>
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] font-bold text-gold-300 mb-2">
+          <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] font-semibold mb-2" style={{ color: "#7DA0FF" }}>
             <FileText className="w-3 h-3" />
             {TYPE_LABEL[entry.type] || entry.type}
             {entry.task && (
@@ -317,7 +341,7 @@ function DocumentSheet({
         <div className="flex-1 overflow-y-auto px-6 md:px-8 py-6">
           {entry.themes && entry.themes.length > 0 && (
             <div className="mb-6">
-              <div className="text-[10px] uppercase tracking-[0.18em] text-navy-500 font-bold mb-2">
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] font-semibold mb-2" style={{ color: FAINT }}>
                 Themes
               </div>
               <div className="flex flex-wrap gap-1.5">
@@ -325,7 +349,7 @@ function DocumentSheet({
                   <span
                     key={t}
                     className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium"
-                    style={{ background: `${color}15`, color }}
+                    style={{ background: COBALT_SOFT, color: COBALT }}
                   >
                     <Tag className="w-2.5 h-2.5" />
                     {t}
@@ -337,14 +361,15 @@ function DocumentSheet({
 
           {entry.stakeholders && entry.stakeholders.length > 0 && (
             <div className="mb-6">
-              <div className="text-[10px] uppercase tracking-[0.18em] text-navy-500 font-bold mb-2">
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] font-semibold mb-2" style={{ color: FAINT }}>
                 Stakeholder types mentioned
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {entry.stakeholders.map((s) => (
                   <span
                     key={s}
-                    className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-navy-50 text-navy-700 border border-navy-100"
+                    className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium"
+                    style={{ background: SURFACE, color: SLATE, borderWidth: 1, borderColor: LINE }}
                   >
                     {s.replace("_", " ")}
                   </span>
@@ -355,24 +380,24 @@ function DocumentSheet({
 
           {entry.excerpt ? (
             <div className="mb-6">
-              <div className="text-[10px] uppercase tracking-[0.18em] text-navy-500 font-bold mb-2">
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] font-semibold mb-2" style={{ color: FAINT }}>
                 Extracted excerpt
               </div>
-              <p className="text-[13px] text-navy-800 leading-relaxed italic border-l-2 border-gold-300 pl-4">
+              <p className="text-[13px] leading-relaxed italic pl-4" style={{ color: INK, borderLeftWidth: 2, borderColor: COBALT }}>
                 &ldquo;{entry.excerpt}&rdquo;
               </p>
             </div>
           ) : (
-            <div className="mb-6 text-sm text-gray-500 italic">
+            <div className="mb-6 text-sm italic" style={{ color: MUTE }}>
               No readable excerpt was extracted (scanned PDF or unsupported binary).
             </div>
           )}
 
-          <div className="mt-8 pt-6 border-t border-gray-100">
-            <div className="text-[10px] uppercase tracking-[0.18em] text-navy-500 font-bold mb-2">
+          <div className="mt-8 pt-6" style={{ borderTopWidth: 1, borderColor: LINE }}>
+            <div className="font-mono text-[10px] uppercase tracking-[0.18em] font-semibold mb-2" style={{ color: FAINT }}>
               Source path (SharePoint)
             </div>
-            <code className="block text-[11px] font-mono text-gray-600 break-all bg-gray-50 px-3 py-2 rounded-md">
+            <code className="block text-[11px] font-mono break-all px-3 py-2 rounded-md" style={{ color: INK, background: SURFACE }}>
               PANORAIMA - Documents / WP2 / {entry.rel_path}
             </code>
           </div>

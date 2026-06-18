@@ -2,6 +2,19 @@
 
 import { useState } from "react"
 import type { Task21Detail } from "@/lib/panoraima/types"
+import {
+  INK,
+  SLATE,
+  MUTE,
+  FAINT,
+  LINE,
+  SURFACE,
+  COBALT,
+  OK,
+  WARN,
+  BAD,
+  KICKER,
+} from "../../../consortiumTokens"
 
 interface Props {
   detail: Task21Detail
@@ -60,10 +73,10 @@ const SECTOR_SCORES: Record<string, Record<string, number>> = {
 }
 
 const SECTOR_COLORS: Record<string, string> = {
-  "Healthcare & Life Sciences": "#10b981",
-  "Management & Finance":       "#8b5cf6",
-  "Law & Compliance":           "#ef4444",
-  "Media & Culture":            "#f59e0b",
+  "Healthcare & Life Sciences": OK,
+  "Management & Finance":       COBALT,
+  "Law & Compliance":           BAD,
+  "Media & Culture":            WARN,
 }
 
 export default function T21SectorRadars({ detail }: Props) {
@@ -82,13 +95,16 @@ export default function T21SectorRadars({ detail }: Props) {
   return (
     <section>
       <div className="mb-5">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-navy-400 border border-navy-200 bg-navy-50">
+        <span
+          className={`inline-flex items-center px-2.5 py-0.5 rounded-full border ${KICKER}`}
+          style={{ color: COBALT, borderColor: LINE, background: SURFACE }}
+        >
           Sector skill demands
         </span>
-        <h2 className="mt-2 text-2xl md:text-3xl font-bold text-navy-900">
+        <h2 className="mt-2 text-2xl md:text-3xl font-bold" style={{ color: INK }}>
           Different sectors, different skill demands
         </h2>
-        <p className="mt-1 text-sm text-gray-500 max-w-xl">
+        <p className="mt-1 text-sm max-w-xl" style={{ color: MUTE }}>
           Seven competence axes scored per sector based on D2.1&apos;s emphasis.
           Hover a sector to highlight its vector; click to drill into its notes.
         </p>
@@ -96,7 +112,10 @@ export default function T21SectorRadars({ detail }: Props) {
 
       <div className="grid grid-cols-1 lg:grid-cols-[auto,1fr] gap-6">
         {/* Radar */}
-        <div className="rounded-2xl bg-white border border-gray-100 p-4 flex items-center justify-center">
+        <div
+          className="rounded-2xl bg-white border p-4 flex items-center justify-center"
+          style={{ borderColor: LINE }}
+        >
           <svg viewBox={`0 0 ${size} ${size}`} width={size} height={size}>
             {/* Gridlines */}
             {[0.25, 0.5, 0.75, 1].map((factor, i) => {
@@ -108,8 +127,8 @@ export default function T21SectorRadars({ detail }: Props) {
                 <polygon
                   key={i}
                   points={pts.map(p => `${p.x},${p.y}`).join(" ")}
-                  fill={i === 3 ? "#f9fafb" : "none"}
-                  stroke="#e5e7eb"
+                  fill={i === 3 ? SURFACE : "none"}
+                  stroke={LINE}
                   strokeWidth={0.8}
                 />
               )
@@ -123,7 +142,7 @@ export default function T21SectorRadars({ detail }: Props) {
                   key={j}
                   x1={center} y1={center}
                   x2={end.x} y2={end.y}
-                  stroke="#e5e7eb" strokeWidth={0.8}
+                  stroke={LINE} strokeWidth={0.8}
                 />
               )
             })}
@@ -139,7 +158,7 @@ export default function T21SectorRadars({ detail }: Props) {
                   dominantBaseline="middle"
                   fontSize={9}
                   fontWeight="600"
-                  fill="#64748b"
+                  fill={FAINT}
                 >
                   {axis}
                 </text>
@@ -197,18 +216,18 @@ export default function T21SectorRadars({ detail }: Props) {
                 key={s}
                 onMouseEnter={() => setFocus(s)}
                 onMouseLeave={() => setFocus(null)}
-                className={`w-full text-left rounded-xl border p-4 transition-all ${
-                  isFocused
-                    ? "border-navy-200 bg-navy-50/50 shadow-sm"
-                    : "border-gray-100 bg-white hover:border-gray-200"
-                }`}
+                className="w-full text-left rounded-xl border p-4 transition-all"
+                style={{
+                  borderColor: isFocused ? "#C9D4FF" : LINE,
+                  background: isFocused ? "#EEF2FF" : "#fff",
+                }}
               >
                 <div className="flex items-center gap-3 mb-2">
                   <span
                     className="w-3 h-3 rounded-full flex-shrink-0"
                     style={{ background: SECTOR_COLORS[s] }}
                   />
-                  <span className="font-semibold text-navy-900 text-sm">{s}</span>
+                  <span className="font-semibold text-sm" style={{ color: INK }}>{s}</span>
                 </div>
                 <div className="flex items-center gap-1.5 flex-wrap">
                   {topAxes.map(a => (
@@ -224,7 +243,7 @@ export default function T21SectorRadars({ detail }: Props) {
                     </span>
                   ))}
                 </div>
-                <p className="mt-2 text-[11.5px] text-gray-600 leading-snug line-clamp-2">
+                <p className="mt-2 text-[11.5px] leading-snug line-clamp-2" style={{ color: SLATE }}>
                   Top priorities: {topAxes.join(", ")}. See D2.1 §{sectors.indexOf(s) + 3}
                   &nbsp;for the sector-specific training plan.
                 </p>
@@ -235,7 +254,7 @@ export default function T21SectorRadars({ detail }: Props) {
       </div>
 
       {detail.deliverable.sectors.length > 0 && (
-        <div className="mt-4 text-[11px] text-gray-400 font-mono">
+        <div className="mt-4 text-[11px] font-mono" style={{ color: FAINT }}>
           Source: D2.1 sector sections · competence axes derived heuristically
           from the deliverable&apos;s skill lists.
         </div>

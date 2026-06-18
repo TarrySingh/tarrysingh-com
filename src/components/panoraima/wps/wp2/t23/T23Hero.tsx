@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react"
 import { Building2, BookOpen, HandshakeIcon, CheckCircle2, HelpCircle } from "lucide-react"
 import type { Task23Detail } from "@/lib/panoraima/types"
+import ConsortiumPlate from "../../../ConsortiumPlate"
+import { COBALT, OK, WARN } from "../../../consortiumTokens"
 
 interface Props {
   detail: Task23Detail
@@ -35,9 +37,9 @@ function projectEurope(lat: number, lng: number, w = 520, h = 320) {
 }
 
 const BAND_COLOR: Record<string, string> = {
-  ready:        "#10b981",   // emerald
-  coordinating: "#c9a96e",   // gold
-  waiting:      "#64748b",   // slate
+  ready:        OK,          // submitted / ready (corporate emerald)
+  coordinating: WARN,        // partial / needs coordination (corporate amber)
+  waiting:      "#97A0AD",   // awaiting info (FAINT on navy)
 }
 
 export default function T23Hero({ detail }: Props) {
@@ -48,17 +50,8 @@ export default function T23Hero({ detail }: Props) {
   const W = 520, H = 320
 
   return (
-    <section className="relative overflow-hidden bg-navy-950 pt-24 md:pt-32 pb-20">
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-80"
-        style={{
-          background: `radial-gradient(circle at 15% 25%, rgba(16, 185, 129, 0.35), transparent 45%),
-                       radial-gradient(circle at 82% 65%, rgba(201, 169, 110, 0.32), transparent 45%),
-                       radial-gradient(circle at 50% 100%, rgba(56, 92, 145, 0.25), transparent 45%)`,
-        }}
-      />
-      <div aria-hidden className="absolute inset-0 noise-overlay" />
+    <section className="relative overflow-hidden bg-[#051C2C] pt-24 md:pt-32 pb-20">
+      <ConsortiumPlate variant="hero" network={false} className="absolute inset-0" />
 
       {/* Partner dots colour-coded by band */}
       <svg
@@ -69,15 +62,15 @@ export default function T23Hero({ detail }: Props) {
       >
         <defs>
           <radialGradient id="t23-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#E4CE9D" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#E4CE9D" stopOpacity="0" />
+            <stop offset="0%" stopColor="#7DA0FF" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#7DA0FF" stopOpacity="0" />
           </radialGradient>
         </defs>
 
         {detail.partners.map((p, i) => {
           const [lng, lat] = p.coords
           const { x, y } = projectEurope(lat, lng, W, H)
-          const color = BAND_COLOR[p.band] ?? "#E4CE9D"
+          const color = BAND_COLOR[p.band] ?? "#7DA0FF"
           return (
             <g
               key={p.abbr}
@@ -94,7 +87,7 @@ export default function T23Hero({ detail }: Props) {
                 textAnchor="middle"
                 fontSize="9"
                 fontWeight="700"
-                fill={p.abbr === "HAW" ? "#E4CE9D" : "#cbd5e1"}
+                fill={p.abbr === "HAW" ? "#7DA0FF" : "#A9C0FF"}
                 opacity="0.8"
                 fontFamily="monospace"
               >
@@ -107,10 +100,10 @@ export default function T23Hero({ detail }: Props) {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center gap-3 mb-5">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-gold-400 border border-gold-500/30 bg-gold-500/5">
+          <span className="inline-flex items-center font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7DA0FF]">
             WP2 · T2.3 · Deep dive
           </span>
-          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-300 border border-emerald-400/25 bg-emerald-400/5">
+          <span className="inline-flex items-center px-2.5 py-1 rounded-full font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70 border border-white/15 bg-white/5">
             HAW-led
           </span>
         </div>
@@ -118,11 +111,11 @@ export default function T23Hero({ detail }: Props) {
         <h1 className="animate-fade-up delay-100 text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.05] mb-5 max-w-3xl">
           <Counter target={partners_total} /> partners.
           <br />
-          <span className="gradient-text"><Counter target={existing_programmes} /> existing programmes.</span>
+          <span className="text-[#7DA0FF]"><Counter target={existing_programmes} /> existing programmes.</span>
           <br />
           1 new Masters to accredit.
         </h1>
-        <p className="animate-fade-up delay-200 text-base md:text-lg text-navy-100/80 leading-relaxed max-w-2xl">
+        <p className="animate-fade-up delay-200 text-base md:text-lg text-white/70 leading-relaxed max-w-2xl">
           {detail.tagline}
           {" "}Coordinated by <strong className="text-white">{detail.coordinator_person}</strong> at HAW Hamburg,
           with <strong className="text-white">{detail.ops_contact.name}</strong> at the EQA office
@@ -131,18 +124,18 @@ export default function T23Hero({ detail }: Props) {
 
         <div className="animate-fade-up delay-300 mt-12 grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
           {[
-            { label: "Partners",        value: partners_total,       icon: Building2,    accent: "from-sky-400 to-sky-600" },
-            { label: "Existing progs.", value: existing_programmes,  icon: BookOpen,     accent: "from-violet-400 to-violet-600" },
-            { label: "Need help",       value: partners_need_help,   icon: HandshakeIcon,accent: "from-gold-400 to-gold-600" },
-            { label: "Already set",     value: partners_ready,       icon: CheckCircle2, accent: "from-emerald-400 to-emerald-600" },
-            { label: "Awaiting info",   value: partners_waiting,     icon: HelpCircle,   accent: "from-slate-400 to-slate-600" },
+            { label: "Partners",        value: partners_total,       icon: Building2 },
+            { label: "Existing progs.", value: existing_programmes,  icon: BookOpen },
+            { label: "Need help",       value: partners_need_help,   icon: HandshakeIcon },
+            { label: "Already set",     value: partners_ready,       icon: CheckCircle2 },
+            { label: "Awaiting info",   value: partners_waiting,     icon: HelpCircle },
           ].map((s) => (
             <div
               key={s.label}
               className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm p-4 md:p-5 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300"
             >
-              <div className={`absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r ${s.accent} opacity-80`} />
-              <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-navy-100/60">
+              <div className="absolute top-0 left-0 h-[2px] w-full" style={{ background: COBALT }} />
+              <div className="flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55">
                 <s.icon className="w-3 h-3" />
                 {s.label}
               </div>
@@ -153,7 +146,7 @@ export default function T23Hero({ detail }: Props) {
           ))}
         </div>
 
-        <div className="animate-fade-up delay-500 mt-6 inline-flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-navy-100/70">
+        <div className="animate-fade-up delay-500 mt-6 inline-flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-white/70">
           <span className="inline-flex items-center gap-2">
             <span className="w-2 h-2 rounded-full" style={{ background: BAND_COLOR.ready }} />
             Ready to go
