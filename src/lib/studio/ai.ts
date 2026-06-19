@@ -5,7 +5,7 @@ import Anthropic from "@anthropic-ai/sdk"
  * Continue / Rewrite buttons.
  *
  * Defaults:
- *   - Model:           claude-opus-4-8 (override via STUDIO_AI_MODEL)
+ *   - Model:           claude-sonnet-4-6 (override via STUDIO_AI_MODEL)
  *   - Thinking budget: 4000 tokens (override via STUDIO_AI_THINKING_TOKENS)
  *   - Max output:      2048 tokens (override via STUDIO_AI_MAX_TOKENS)
  *
@@ -24,7 +24,7 @@ import Anthropic from "@anthropic-ai/sdk"
 // why the explicit thinking block is gone. NOTE: runtime is driven by the
 // STUDIO_AI_MODEL env var, which overrides this default — kept in step so an
 // unset env never falls back to a stale model.
-const DEFAULT_MODEL = "claude-opus-4-8"
+const DEFAULT_MODEL = "claude-sonnet-4-6"
 const DEFAULT_THINKING_TOKENS = 4000
 const DEFAULT_MAX_TOKENS = 2048
 

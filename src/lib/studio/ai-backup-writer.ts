@@ -21,7 +21,7 @@ import Anthropic from "@anthropic-ai/sdk"
  * laundering, citation discipline).
  */
 
-const DEFAULT_MODEL = "claude-opus-4-8" // Latest Opus (bumped 2026-05-29; 4-6 retired, 4-7→4-8). Overridden by STUDIO_AI_MODEL env var.
+const DEFAULT_MODEL = "claude-sonnet-4-6" // Sonnet for cost control (was opus-4-8; switched 2026-06-18 to cut the ~$1-2/day API bill). Overridden by STUDIO_AI_MODEL env var.
 const DEFAULT_MAX_TOKENS = 16000 // Article is ~1500 words ≈ 2000 tokens; budget extra for thinking + tool turns
 
 const ROTATION_DOMAINS: readonly string[] = [

@@ -20,7 +20,7 @@
  *
  * Env:
  *   ANTHROPIC_API_KEY                       (required)
- *   STUDIO_AI_MODEL=claude-opus-4-6         (optional)
+ *   STUDIO_AI_MODEL=claude-sonnet-4-6         (optional)
  *   STUDIO_AI_THINKING_TOKENS=4000          (optional; clamped to 1500 here)
  *
  * Cost: ~one AI call per Dispatch, tiny token footprint. <$0.01.
@@ -37,7 +37,7 @@ const REPO_ROOT = join(__dirname, "..", "..")
 const CONTENT_DIR = join(REPO_ROOT, "content", "blog")
 const NUDGES_DIR = join(CONTENT_DIR, "_nudges")
 
-const MODEL = process.env.STUDIO_AI_MODEL || "claude-opus-4-6"
+const MODEL = process.env.STUDIO_AI_MODEL || "claude-sonnet-4-6"
 const THINKING_TOKENS = Math.min(
   Number(process.env.STUDIO_AI_THINKING_TOKENS) || 4000,
   1500,
