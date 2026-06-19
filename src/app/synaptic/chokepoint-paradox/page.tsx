@@ -4,6 +4,7 @@ import { ChokepointParadox } from "@/components/blog/ChokepointParadox"
 import { OvertureDashboard } from "@/components/blog/OvertureDashboard"
 import { FourStrokeEngine } from "@/components/blog/FourStrokeEngine"
 import { WealthTransferMinimap } from "@/components/blog/WealthTransferMinimap"
+import { FromScratchGiants } from "@/components/blog/FromScratchGiants"
 
 /** A wide, breakout-neutralised stage for one instrument. `.cp-gallery`
  *  cancels the PlateFrame blog-column breakout margins. */
@@ -115,6 +116,14 @@ export default function ChokepointParadoxPage() {
         </div>
       </Room>
 
+      {/* V34 — the from-scratch giants, now vs the next wave */}
+      <Room
+        kicker="X · The Quarter-Trillion Tribute"
+        intro="Count the companies built from scratch in the last 50 years that crossed $10bn. America mints them by the hundred; “under 50” quietly disqualifies most of Europe. Now flip to the next wave — the AI and space cohort — and watch the same machine run again."
+      >
+        <FromScratchGiants />
+      </Room>
+
       <p
         className="mx-auto mt-24 max-w-xl text-center text-[12px]"
         style={{
@@ -123,7 +132,7 @@ export default function ChokepointParadoxPage() {
           letterSpacing: "0.08em",
         }}
       >
-        ◷ Flagship in assembly — 4 of 50 instruments, ~45,000 words to come. Built one instrument at a time.
+        ◷ Flagship in assembly — 5 of 50 instruments, ~45,000 words to come. Built one instrument at a time.
       </p>
     </main>
   )
