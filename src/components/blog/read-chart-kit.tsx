@@ -174,6 +174,7 @@ export function PlateFrame({
   controls,
   children,
   breakout = true,
+  palette,
 }: {
   wrapRef: RefObject<HTMLElement | null>
   mode: ReadMode
@@ -182,8 +183,11 @@ export function PlateFrame({
   controls?: ReactNode
   children: ReactNode
   breakout?: boolean
+  /** Optional palette override — lets an instrument theme its own frame
+   *  (e.g. a skinned flagship). Falls back to the mode's default palette. */
+  palette?: ReadPalette
 }) {
-  const p = paletteFor(mode)
+  const p = palette ?? paletteFor(mode)
   return (
     <figure
       ref={wrapRef}
