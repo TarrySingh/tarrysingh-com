@@ -805,6 +805,7 @@ export interface Wp4LE {
   author: string
   coauthor: string
   reviewer: string
+  off_wiki?: boolean     // true = from SharePoint registry, not yet on the wiki master
   materials: {
     count: number
     has: boolean
@@ -887,6 +888,7 @@ export interface Wp4Registry {
       with_sharepoint_material: number
       awaiting_material: number
       off_wiki: number
+      off_wiki_realai?: number
     }
     realai: {
       total: number
@@ -903,4 +905,25 @@ export interface Wp4Registry {
   realai_board: Wp4LE[]
   off_wiki_codes?: string[]
   roster: { name: string; email: string }[]
+}
+
+// Manifest of SharePoint files too large to sync locally (skipped by the size
+// cap — they grow over time). Surfaced on the WP hub so they can be looked up
+// in SharePoint rather than silently omitted.
+export interface LargeFile {
+  name: string
+  rel: string       // path under the WP folder in SharePoint
+  ext: string
+  mb: number
+  modified: string
+  local: boolean     // currently materialised in the local mirror
+}
+
+export interface LargeFilesManifest {
+  generated_at: string
+  threshold_mb: number
+  total: number
+  total_gb: number
+  by_wp: Record<string, LargeFile[]>
+  note: string
 }

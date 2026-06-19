@@ -3,7 +3,7 @@
 import { useMemo } from "react"
 import {
   PenLine, Eye, AlertTriangle, FileCheck2, FileX2,
-  ExternalLink, CalendarClock, CheckCircle2, ListTodo, Hourglass,
+  ExternalLink, CalendarClock, CheckCircle2, ListTodo, Hourglass, FileWarning,
 } from "lucide-react"
 import type { Wp4Registry, Wp4LE, Wp4Completeness } from "@/lib/panoraima/types"
 import {
@@ -166,6 +166,15 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
         <span className="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-gray-600">
           {TRACK_SHORT[le.track] ?? le.track}
         </span>
+        {le.off_wiki && (
+          <span
+            className="inline-flex items-center gap-1 rounded border border-[#E9CFC6] bg-[#FBEAE5] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#A53C22]"
+            title="In the SharePoint LearningEvents registry (marked 'RAI') but not yet on the wiki master — look it up in SharePoint"
+          >
+            <FileWarning className="w-2.5 h-2.5" />
+            SharePoint · not in wiki
+          </span>
+        )}
         {le.due_date && (
           <span className="inline-flex items-center gap-1 font-mono text-[10px] tabular-nums text-[#9CA3AF]">
             <CalendarClock className="w-3 h-3 text-[#9CA3AF]" />
@@ -262,6 +271,7 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
     registry.summary.realai
 
   const board = registry.realai_board
+  const offWikiCount = useMemo(() => board.filter(le => le.off_wiki).length, [board])
 
   const authoring = useMemo(
     () => board.filter(le => hasRole(le, "authoring")),
@@ -300,6 +310,15 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
           <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#9CA3AF] ml-1 tabular-nums">
             · {board.length} LEs on RealAI&apos;s plate
           </span>
+          {!!offWikiCount && (
+            <span
+              className="inline-flex items-center gap-1 rounded border border-[#E9CFC6] bg-[#FBEAE5] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#A53C22] tabular-nums"
+              title="M&F reviews marked 'RAI' in the SharePoint registry but not yet added to the wiki master"
+            >
+              <FileWarning className="w-2.5 h-2.5" />
+              {offWikiCount} from SharePoint · awaiting wiki
+            </span>
+          )}
         </div>
       </div>
 

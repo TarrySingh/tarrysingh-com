@@ -2,16 +2,18 @@
 
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import type { WpHubMeta } from "@/lib/panoraima/types"
+import type { WpHubMeta, LargeFilesManifest } from "@/lib/panoraima/types"
 import WPCard from "./WPCard"
+import LargeFilesNotice from "./LargeFilesNotice"
 import ConsortiumPlate from "../ConsortiumPlate"
 import { NAVY, INK, SLATE, LINE, COBALT } from "../consortiumTokens"
 
 interface Props {
   meta: WpHubMeta
+  largeFiles?: LargeFilesManifest | null
 }
 
-export default function WorkPackagesHub({ meta }: Props) {
+export default function WorkPackagesHub({ meta, largeFiles }: Props) {
   // Hide WP1 from this hub (it has its own consortium dashboard)
   const wps = meta.wps.filter((w) => w.wp !== "WP1")
 
@@ -86,6 +88,9 @@ export default function WorkPackagesHub({ meta }: Props) {
             <WPCard key={w.wp} entry={w} delay={i * 80} />
           ))}
         </div>
+
+        {/* Large files that live in SharePoint only (skipped by syncs) */}
+        {largeFiles && <LargeFilesNotice manifest={largeFiles} />}
 
         {/* Footer note */}
         <div className="mt-16 pt-8 border-t" style={{ borderColor: LINE }}>

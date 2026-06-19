@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-06-19T11:53:48.709469Z",
+  "threshold_mb": 100,
+  "total": 14,
+  "total_gb": 4.95,
+  "by_wp": {
+    "WP1": [
+      {
+        "name": "PANORAIMA - Working Sprint Naples 2025-20251121_111117UTC-Meeting Recording.mp4",
+        "rel": "PMC meetings + Worksprints/2025-11-20 WS Naples 20 and 21 November 2025/PPTs + materials used at the WS/PANORAIMA - Working Sprint Naples 2025-20251121_111117UTC-Meeting Recording.mp4",
+        "ext": "mp4",
+        "mb": 1402.2,
+        "modified": "2025-11-23",
+        "local": true
+      },
+      {
+        "name": "PANORAIMA - Working Sprint Naples 2025-20251120_153928UTC-Meeting Recording.mp4",
+        "rel": "PMC meetings + Worksprints/2025-11-20 WS Naples 20 and 21 November 2025/PPTs + materials used at the WS/PANORAIMA - Working Sprint Naples 2025-20251120_153928UTC-Meeting Recording.mp4",
+        "ext": "mp4",
+        "mb": 1255.7,
+        "modified": "2025-11-24",
+        "local": true
+      },
+      {
+        "name": "PANORAIMA - Working Sprint Naples 2025-20251120_174356UTC-Meeting Recording.mp4",
+        "rel": "PMC meetings + Worksprints/2025-11-20 WS Naples 20 and 21 November 2025/PPTs + materials used at the WS/PANORAIMA - Working Sprint Naples 2025-20251120_174356UTC-Meeting Recording.mp4",
+        "ext": "mp4",
+        "mb": 282.2,
+        "modified": "2025-11-23",
+        "local": true
+      }
+    ],
+    "WP2": [
+      {
+        "name": "WP2 14-2-25 meeting recording.mp4",
+        "rel": "WP2 Meetings/WP2 meeting #1 14-2-25/WP2 14-2-25 meeting recording.mp4",
+        "ext": "mp4",
+        "mb": 301.9,
+        "modified": "2025-02-21",
+        "local": true
+      },
+      {
+        "name": "Panoraima 1_1 Interview-20250513_160638-Meeting Recording.mp4",
+        "rel": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Large Enterprises/Panoraima 1_1 Interview-20250513_160638-Meeting Recording.mp4",
+        "ext": "mp4",
+        "mb": 183.1,
+        "modified": "2025-05-19",
+        "local": true
+      },
+      {
+        "name": "Interview meeting online for Project PANORAIMA - Market analysis-20250513_153446-Meeting Recording.mp4",
+        "rel": "Task 2.1/05_Focus Groups and Relevant Work/NL Working Group/Interviews/AndrewVDHaar-FiberCarrierAssociation/Interview meeting online for Project PANORAIMA - Market analysis-20250513_153446-Meeting Recording.mp4",
+        "ext": "mp4",
+        "mb": 182.0,
+        "modified": "2025-05-13",
+        "local": true
+      },
+      {
+        "name": "PANORAIMA-20250507-Focus Group Session - SMEs - Recording.mp4",
+        "rel": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250507-Focus Group Session - SMEs/PANORAIMA-20250507-Focus Group Session - SMEs - Recording.mp4",
+        "ext": "mp4",
+        "mb": 174.3,
+        "modified": "2025-05-07",
+        "local": true
+      },
+      {
+        "name": "PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Recording.mp4",
+        "rel": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders/PANORAIMA-20250501-Focus 1-1 Session - Ecosystem Stakeholders - Recording.mp4",
+        "ext": "mp4",
+        "mb": 159.9,
+        "modified": "2025-05-01",
+        "local": true
+      },
+      {
+        "name": "[PANORAIMA] Focus Group Session - Large Enterprises - Recording.mp4",
+        "rel": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250506-Focus Group Session - Large Enterprises/[PANORAIMA] Focus Group Session - Large Enterprises - Recording.mp4",
+        "ext": "mp4",
+        "mb": 154.6,
+        "modified": "2025-05-06",
+        "local": true
+      },
+      {
+        "name": "PANORAIMA-20250508-Focus Group Session - Ecosystems - Recording.mp4",
+        "rel": "Task 2.1/05_Focus Groups and Relevant Work/Irish Working Group/PANORAIMA-20250508-Focus Group Session - Ecosystems/PANORAIMA-20250508-Focus Group Session - Ecosystems - Recording.mp4",
+        "ext": "mp4",
+        "mb": 150.9,
+        "modified": "2025-05-09",
+        "local": true
+      }
+    ],
+    "WP3": [
+      {
+        "name": "ttt-Ethics-of-AI-1-12-September-2025.mp4",
+        "rel": "Teach-the-teacher recordings/ttt-Ethics-of-AI-1-12-September-2025.mp4",
+        "ext": "mp4",
+        "mb": 271.0,
+        "modified": "2025-09-18",
+        "local": true
+      },
+      {
+        "name": "LE-reveal.mp4",
+        "rel": "LE reveal January 2026/LE-reveal.mp4",
+        "ext": "mp4",
+        "mb": 268.0,
+        "modified": "2026-01-16",
+        "local": true
+      },
+      {
+        "name": "2025_10_24_Mstyslav_Kazakov.mp4",
+        "rel": "Teach-the-teacher recordings/2025_10_24_Mstyslav_Kazakov.mp4",
+        "ext": "mp4",
+        "mb": 175.5,
+        "modified": "2025-11-02",
+        "local": true
+      },
+      {
+        "name": "2025-12-19-video1904814539.mp4",
+        "rel": "Teach-the-teacher recordings/2025-12-19-video1904814539.mp4",
+        "ext": "mp4",
+        "mb": 105.5,
+        "modified": "2026-05-18",
+        "local": true
+      }
+    ]
+  },
+  "note": "Files larger than 100 MB live in SharePoint and are skipped by default syncs (they grow over time). Open them in the consortium SharePoint."
+}

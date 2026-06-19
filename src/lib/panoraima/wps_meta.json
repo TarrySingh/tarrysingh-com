@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T19:10:59Z",
+  "generated_at": "2026-06-19T09:53:43Z",
   "wps": [
     {
       "wp": "WP2",
@@ -52,19 +52,19 @@
       "description": "Define the learning events and competence profiles that anchor the PANORAIMA curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 46,
-        "size_mb": 266,
+        "total_files": 50,
+        "size_mb": 1086,
         "by_ext": {
           ".xlsx": 28,
           ".docx": 6,
           ".pptx": 3,
           ".ods": 1,
-          ".mp4": 5,
+          ".mp4": 9,
           ".pdf": 2,
           ".potx": 1
         },
         "by_type": {
-          "other": 45,
+          "other": 49,
           "presentation": 1
         },
         "by_region": {}
@@ -81,10 +81,10 @@
       "description": "Design lesson plans and run the cross-university pilots that validate the curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 235,
+        "total_files": 236,
         "size_mb": 258,
         "by_ext": {
-          ".docx": 96,
+          ".docx": 97,
           ".pdf": 30,
           ".xlsx": 6,
           ".pptx": 50,
@@ -100,7 +100,7 @@
           ".csv": 2
         },
         "by_type": {
-          "other": 221,
+          "other": 222,
           "template": 9,
           "presentation": 3,
           "research": 2
