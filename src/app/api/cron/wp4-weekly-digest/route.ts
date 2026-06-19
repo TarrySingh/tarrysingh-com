@@ -95,7 +95,14 @@ function renderEmail(): { subject: string; html: string } {
     ${awaiting.length ? `<p style="margin:18px 0 0;font-size:13px;color:#6B7280">+ <strong>${awaiting.length}</strong> more reviewing assignments still awaiting author content (nothing to do yet).</p>` : ""}
 
     <p style="margin:22px 0 4px"><a href="${DASHBOARD}" style="display:inline-block;background:#16181D;color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600">Open the WP4 tool →</a></p>
-    <p style="color:#6B7280;font-size:12px;line-height:1.55;margin-top:18px">Reviewers: post your review in the Learning Event's <strong>wiki Discussion section</strong> — with a minor or major revision suggestion, signed with your name — never by email. The slides are the primary target; the lesson plan is re-evaluated together with them.</p>
+
+    <div style="margin-top:22px;padding:14px 16px;border:1px solid #E7E7EA;border-radius:8px;background:#FAFAF9">
+      <div style="font-family:ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:${RUST};margin-bottom:8px">How &amp; where to file your review</div>
+      <p style="margin:0 0 8px;font-size:13px;color:#4F535B;line-height:1.55"><strong>What:</strong> review only the RealAI-mandated Learning Events — the ones listed above as <em>your</em> reviewing assignments. Nothing outside that list.</p>
+      <p style="margin:0 0 8px;font-size:13px;color:#4F535B;line-height:1.55"><strong>Where:</strong> on the LE's wiki page, open the <strong>&ldquo;Discussion&rdquo;</strong> tab &rarr; <strong>Edit source</strong> &rarr; paste your review &rarr; <strong>Save page</strong>. Not by email, not in SharePoint comments &mdash; the Discussion tab is the record, and it's what turns the LE green on the dashboard.</p>
+      <p style="margin:0 0 8px;font-size:13px;color:#4F535B;line-height:1.55"><strong>How:</strong> open with an overall <strong>minor / major revision</strong> verdict; then go criterion by criterion (credible practice &middot; current relevance &middot; track &amp; job-roles &middot; professional judgement &middot; when/why/how of the tools &middot; risks &amp; trade-offs); be specific (cite slide numbers); name what works as well as what's missing; sign with your name + email.</p>
+      <p style="margin:0;font-size:13px;color:#4F535B;line-height:1.55"><strong>Two worked examples to copy the format:</strong> <a href="https://hcaim.bme.hu/wiki/Talk:MC-001_Scientific_Landscape:_Bibliometric_Analysis_and_Visualization_in_Media_and_Culture_Research" style="color:${RUST}">MC-001</a> and <a href="https://hcaim.bme.hu/wiki/Talk:MC-003_Social_Network_Analysis:_Theoretical_Foundations" style="color:${RUST}">MC-003</a> Discussion pages.</p>
+    </div>
   </div>`
   return { subject, html }
 }
