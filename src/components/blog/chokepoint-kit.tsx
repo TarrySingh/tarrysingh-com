@@ -33,23 +33,23 @@ export interface CPPalette extends ReadPalette {
 }
 
 const DARK_CP = {
-  leverage: "#38bdf8",
-  leverageHi: "#7dd3fc",
-  squeeze: "#fb5e6b",
-  squeezeHi: "#fb7185",
-  wonder: "#e8a44a",
-  wonderHi: "#f4c482",
-  blueprint: "rgba(125,211,252,0.20)",
+  leverage: "#6cc6e6",
+  leverageHi: "#9ad8ef",
+  squeeze: "#f0708a",
+  squeezeHi: "#f59ab0",
+  wonder: "#e6b45a",
+  wonderHi: "#f4cd86",
+  blueprint: "rgba(120,170,230,0.20)",
 }
 
 const LIGHT_CP = {
-  leverage: "#0369a1",
-  leverageHi: "#0ea5e9",
-  squeeze: "#dc2626",
-  squeezeHi: "#ef4444",
-  wonder: "#b45309",
-  wonderHi: "#d97706",
-  blueprint: "rgba(3,105,161,0.16)",
+  leverage: "#0e7aa5",
+  leverageHi: "#1aa0c9",
+  squeeze: "#c0455a",
+  squeezeHi: "#d75e74",
+  wonder: "#b07a2f",
+  wonderHi: "#caa24e",
+  blueprint: "rgba(14,122,165,0.16)",
 }
 
 /** read-chart-kit palette + the three chokepoint semantic accents. */

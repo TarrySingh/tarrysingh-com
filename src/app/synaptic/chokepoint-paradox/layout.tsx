@@ -10,5 +10,11 @@ export const metadata: Metadata = {
 }
 
 export default function ChokepointParadoxLayout({ children }: { children: ReactNode }) {
-  return <div className="syn-root syn-chokepoint min-h-screen">{children}</div>
+  // data-read-mode="dark" so every instrument renders in its dark palette
+  // (Atlas Luminous is a dark direction); the Read-mode toggle can still flip it.
+  return (
+    <div className="syn-root syn-chokepoint min-h-screen" data-read-mode="dark">
+      {children}
+    </div>
+  )
 }
