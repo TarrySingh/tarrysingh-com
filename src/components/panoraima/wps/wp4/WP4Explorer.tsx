@@ -18,7 +18,13 @@ type MaterialsFilter = "all" | "with" | "pending"
 const RENDER_CAP = 120
 
 export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
-  const les = registry.les
+  // Searchable set = the 455 wiki master + the off-wiki RealAI reviews (M&F
+  // 'RAI' rows surfaced from SharePoint, not yet on the wiki master — they live
+  // only on realai_board, so add them here too).
+  const les = useMemo(() => {
+    const offWiki = (registry.realai_board ?? []).filter((le) => le.off_wiki)
+    return [...registry.les, ...offWiki]
+  }, [registry])
 
   const [query, setQuery] = useState("")
   const [track, setTrack] = useState<string>("All")
@@ -156,6 +162,16 @@ export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
                 </span>
               )}
 
+              {le.off_wiki && (
+                <span
+                  className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded font-mono text-[9px] uppercase tracking-[0.1em] flex-shrink-0 border border-[#E9CFC6] bg-[#FBEAE5]"
+                  style={{ color: "#A53C22" }}
+                  title="From the SharePoint LearningEvents registry — not yet on the wiki master"
+                >
+                  not in wiki
+                </span>
+              )}
+
               <span className="hidden md:inline-flex items-center gap-1 font-mono text-[11px] text-[#9CA3AF] tabular-nums w-14 justify-end flex-shrink-0">
                 <FileText className="w-3 h-3" />
                 {le.materials.count}
@@ -254,6 +270,15 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
               >
                 <Sparkles className="w-2.5 h-2.5" />
                 RealAI
+              </span>
+            )}
+            {le.off_wiki && (
+              <span
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[9px] uppercase tracking-[0.1em] border border-[#E9CFC6] bg-[#FBEAE5]"
+                style={{ color: "#A53C22" }}
+                title="From the SharePoint LearningEvents registry — not yet on the wiki master"
+              >
+                SharePoint · not in wiki
               </span>
             )}
           </div>
