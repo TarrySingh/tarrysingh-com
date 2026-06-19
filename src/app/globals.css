@@ -341,6 +341,81 @@ html {
   }
 }
 
+/* ───────────────────────────────────────────────────────────────────────────
+   THE CHOKEPOINT PARADOX — "The Machine" (Direction C).
+   Exploded-schematic / blueprint aesthetic: a near-black draughtsman's table,
+   blueprint-cyan = LEVERAGE, a single reserved kill-switch RED = the squeeze,
+   copper-gold = crown-jewel WONDER. Plex Mono carries every live readout.
+   ─────────────────────────────────────────────────────────────────────────── */
+.syn-chokepoint {
+  --bg-deep: #05070e;
+  --bg-mid: #0a1020;
+  --project-accent: #38bdf8; /* leverage / blueprint cyan */
+  --project-accent-hi: #7dd3fc;
+  --cp-leverage: #38bdf8;
+  --cp-leverage-hi: #7dd3fc;
+  --cp-squeeze: #f43f5e; /* reserved kill-switch red */
+  --cp-squeeze-hi: #fb7185;
+  --cp-wonder: #e8a44a; /* crown-jewel copper-gold */
+  --cp-wonder-hi: #f4c482;
+  --cp-hair: rgba(56, 189, 248, 0.26);
+  --cp-blueprint: rgba(56, 189, 248, 0.07);
+}
+.syn-chokepoint.syn-root {
+  background-color: #05070e;
+  background-image: radial-gradient(
+    ellipse at center 36%,
+    #0c1a30 0%,
+    #0a1322 30%,
+    #070c18 66%,
+    #05070e 100%
+  );
+}
+
+/* Replace the gold starfield with a faint blueprint grid + a few cyan nodes —
+   the whole page reads like a draughtsman's exploded schematic. */
+.syn-chokepoint.syn-root::before {
+  background-image:
+    linear-gradient(var(--cp-blueprint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cp-blueprint) 1px, transparent 1px),
+    radial-gradient(1.4px 1.4px at 22% 18%, rgba(125, 211, 252, 0.5), transparent 60%),
+    radial-gradient(1.4px 1.4px at 64% 82%, rgba(125, 211, 252, 0.45), transparent 60%),
+    radial-gradient(1.2px 1.2px at 84% 28%, rgba(125, 211, 252, 0.4), transparent 60%),
+    radial-gradient(1.2px 1.2px at 8% 72%, rgba(125, 211, 252, 0.35), transparent 60%);
+  background-size: 46px 46px, 46px 46px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+}
+
+/* Inside a wide gallery wrapper, cancel the blog-column breakout margins
+   PlateFrame carries (same pattern as .sw3-gallery). */
+.syn-chokepoint .cp-gallery > figure[data-read-surface] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Blueprint hero rise + lazy fade-in — compositor-only, reduced-motion safe. */
+@keyframes cp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.cp-hero-rise {
+  animation: cp-rise 820ms var(--ease-paper, cubic-bezier(0.33, 0, 0.2, 1)) both;
+}
+.cp-fade-in {
+  animation: cp-rise 640ms var(--ease-paper, cubic-bezier(0.33, 0, 0.2, 1)) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cp-hero-rise,
+  .cp-fade-in {
+    animation: none;
+  }
+}
+
 /* Fixed starfield layer behind everything inside a syn-root page. */
 .syn-root::before {
   content: "";
