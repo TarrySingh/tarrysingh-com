@@ -1,15 +1,46 @@
 import type { ReactNode } from "react"
 
 import { ChokepointParadox } from "@/components/blog/ChokepointParadox"
+import { OvertureDashboard } from "@/components/blog/OvertureDashboard"
+import { FourStrokeEngine } from "@/components/blog/FourStrokeEngine"
+import { WealthTransferMinimap } from "@/components/blog/WealthTransferMinimap"
 
-/** A wide, breakout-neutralised stage for one instrument (mirrors the
- *  Software-3 gallery's `Stage`). `.cp-gallery` cancels the PlateFrame
- *  blog-column breakout margins. */
+/** A wide, breakout-neutralised stage for one instrument. `.cp-gallery`
+ *  cancels the PlateFrame blog-column breakout margins. */
 function Stage({ children, max = 1160 }: { children: ReactNode; max?: number }) {
   return (
     <div className="cp-gallery mx-auto w-full px-2 sm:px-4" style={{ maxWidth: max }}>
       {children}
     </div>
+  )
+}
+
+/** A gallery room: a centred kicker + short intro, then its instrument(s). */
+function Room({ kicker, intro, children }: { kicker: string; intro: ReactNode; children: ReactNode }) {
+  return (
+    <section className="mt-28 sm:mt-32">
+      <div className="mx-auto max-w-2xl text-center">
+        <p
+          style={{
+            fontFamily: "var(--font-mono), monospace",
+            fontSize: 12,
+            letterSpacing: "0.2em",
+            color: "var(--cp-wonder-hi, #f4cd86)",
+          }}
+        >
+          {kicker}
+        </p>
+        <p
+          className="mt-4 text-lg leading-relaxed"
+          style={{ color: "var(--cp-muted, rgba(238,242,255,0.72))", fontFamily: "var(--font-serif), serif" }}
+        >
+          {intro}
+        </p>
+      </div>
+      <div className="mt-10">
+        <Stage>{children}</Stage>
+      </div>
+    </section>
   )
 }
 
@@ -58,21 +89,41 @@ export default function ChokepointParadoxPage() {
         </p>
       </header>
 
-      <section className="mt-20">
-        <Stage>
-          <ChokepointParadox />
+      {/* V46 — the whole indictment at a glance */}
+      <section className="mt-16">
+        <Stage max={1100}>
+          <OvertureDashboard />
         </Stage>
       </section>
 
+      {/* V1 — the title instrument */}
+      <Room
+        kicker="Prologue · One node"
+        intro="Veldhoven. The most important machine on Earth — and the foreign hands on its triggers. Drag the slider: the strength and the exposure are the same node."
+      >
+        <ChokepointParadox />
+      </Room>
+
+      {/* V9 + V47 — the engine and where you are in it */}
+      <Room
+        kicker="III · The Standing Order"
+        intro="Europe saves more than anyone and funds everyone but itself. Here is the machine that does it, four strokes to a turn, wider every cycle — and the toggle that runs it backwards."
+      >
+        <FourStrokeEngine />
+        <div className="mt-10">
+          <WealthTransferMinimap active={3} />
+        </div>
+      </Room>
+
       <p
-        className="mx-auto mt-16 max-w-xl text-center text-[12px]"
+        className="mx-auto mt-24 max-w-xl text-center text-[12px]"
         style={{
           color: "var(--cp-muted, rgba(238,242,255,0.4))",
           fontFamily: "var(--font-mono), monospace",
           letterSpacing: "0.08em",
         }}
       >
-        ◷ Flagship in assembly — 50 instruments, ~45,000 words. Being built one instrument at a time.
+        ◷ Flagship in assembly — 4 of 50 instruments, ~45,000 words to come. Built one instrument at a time.
       </p>
     </main>
   )
