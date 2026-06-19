@@ -807,6 +807,7 @@ export interface Wp4LE {
   reviewer: string
   off_wiki?: boolean          // true = code itself isn't on the wiki master at all
   realai_wiki_gap?: boolean   // on the wiki, but the wiki doesn't list RealAI's role yet (it's only in SharePoint)
+  review_done?: boolean       // a RealAI review is posted on this LE's wiki Discussion page (or added manually)
   materials: {
     count: number
     has: boolean
@@ -896,6 +897,7 @@ export interface Wp4Registry {
       total: number
       author: number
       reviewer: number
+      reviewed?: number
       by_status: Record<string, number>
       needs_action: number
       author_todo?: number

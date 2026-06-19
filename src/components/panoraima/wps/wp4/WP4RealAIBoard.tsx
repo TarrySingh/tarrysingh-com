@@ -53,12 +53,23 @@ function StatPill({
 // Per-card completeness signal: authors see what's outstanding; reviewers see
 // whether the LE is ready for them to pick up.
 function CompletenessRow({
-  completeness, kind,
+  completeness, kind, reviewDone,
 }: {
   completeness: Wp4Completeness
   kind: "authoring" | "reviewing"
+  reviewDone?: boolean
 }) {
   if (kind === "reviewing") {
+    if (reviewDone) {
+      return (
+        <div className="mt-2.5">
+          <span className="inline-flex items-center gap-1 rounded border border-[#D2E5D9] bg-[#EEF5F0] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#2E6A4B]">
+            <CheckCircle2 className="w-2.5 h-2.5" />
+            Reviewed
+          </span>
+        </div>
+      )
+    }
     return completeness.ready_to_review ? (
       <div className="mt-2.5">
         <span className="inline-flex items-center gap-1 rounded bg-[#16181D] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-white">
@@ -100,7 +111,8 @@ function CompletenessRow({
 }
 
 function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
-  const flagged = needsAction(le)
+  const reviewed = !!le.review_done
+  const flagged = needsAction(le) && !reviewed
   const ss = statusStyle(le.status)
   const trackColor = TRACK_COLOR[le.track] ?? TRACK_COLOR["Unknown"]
   const role = columnRole(le, kind)
@@ -109,10 +121,10 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
 
   return (
     <div className="relative rounded-xl border border-[#E7E7EA] bg-white p-5 transition-colors duration-150 hover:border-[#16181D]/20">
-      {flagged && (
+      {(flagged || reviewed) && (
         <span
           className="absolute left-0 top-4 bottom-4 w-[2px] rounded-full"
-          style={{ background: RUST }}
+          style={{ background: reviewed ? "#2E6A4B" : RUST }}
           aria-hidden
         />
       )}
@@ -187,7 +199,7 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
 
       {/* Completeness — what's outstanding for this LE's role */}
       {le.completeness && (
-        <CompletenessRow completeness={le.completeness} kind={kind} />
+        <CompletenessRow completeness={le.completeness} kind={kind} reviewDone={le.review_done} />
       )}
 
       {/* Footer: materials + needs-action flag */}
@@ -269,7 +281,7 @@ function BoardColumn({
 }
 
 export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) {
-  const { author, reviewer, needs_action, author_todo, ready_to_review } =
+  const { author, reviewer, needs_action, author_todo, ready_to_review, reviewed } =
     registry.summary.realai
 
   const board = registry.realai_board
@@ -309,6 +321,12 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
           )}
           {typeof ready_to_review === "number" && (
             <StatPill label="Ready to review" value={ready_to_review} />
+          )}
+          {typeof reviewed === "number" && reviewed > 0 && (
+            <div className="inline-flex items-baseline gap-1.5 rounded-lg border border-[#D2E5D9] bg-[#EEF5F0] px-3 py-1.5">
+              <span className="text-lg font-bold tabular-nums leading-none tracking-[-0.02em]" style={{ color: "#2E6A4B" }}>{reviewed}</span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#2E6A4B]">Reviewed &#10003;</span>
+            </div>
           )}
           <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#9CA3AF] ml-1 tabular-nums">
             · {board.length} LEs on RealAI&apos;s plate
