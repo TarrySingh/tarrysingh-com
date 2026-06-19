@@ -4,13 +4,13 @@
 // Deliberately NOT the navy/gold multi-colour look of the other WP pages.
 
 // --- the single accent + neutral ladder -----------------------------------
-export const RUST = "#C0492B"          // the one accent (terracotta/brick)
+export const RUST = "#B23E22"          // the one accent (terracotta/brick) — a touch deeper for contrast
 export const RUST_SOFT = "#FBEAE5"     // rust tint for backgrounds
-export const INK = "#16181D"           // near-black headings
-export const INK_SOFT = "#3F434C"
-export const MUTE = "#6B7280"          // body / muted
-export const FAINT = "#9CA3AF"         // faintest labels
-export const LINE = "#E7E7EA"          // hairline borders
+export const INK = "#14161B"           // near-black headings
+export const INK_SOFT = "#363A42"
+export const MUTE = "#444A55"          // body / muted — darkened for readability (was #6B7280)
+export const FAINT = "#646B78"         // secondary labels — darkened so they're actually readable (was #9CA3AF)
+export const LINE = "#DCDDE1"          // hairline borders — a touch stronger
 export const SURFACE = "#FAFAF9"       // off-white section bg
 
 // --- tracks: muted, desaturated stone/slate tones (no rainbow) ------------
@@ -44,16 +44,16 @@ export const TRACK_SHORT: Record<string, string> = {
 export interface StatusStyle { label: string; color: string; bg: string; text: string }
 
 export const STATUS_STYLE: Record<string, StatusStyle> = {
-  "In review":             { label: "In review",        color: RUST,      bg: "bg-[#FBEAE5] border-[#E9CFC6]", text: "text-[#A53C22]" },
-  "In development":        { label: "In development",    color: "#5B6470", bg: "bg-gray-50 border-gray-200",   text: "text-gray-600" },
-  "Materials in progress": { label: "Materials started", color: "#3F7D5E", bg: "bg-[#EEF5F0] border-[#D2E5D9]", text: "text-[#2E6A4B]" },
-  "Lesson plan drafted":   { label: "Plan drafted",      color: "#5B6470", bg: "bg-gray-50 border-gray-200",   text: "text-gray-600" },
-  "Status not set":        { label: "Status not set",    color: "#A6ABB3", bg: "bg-gray-50 border-dashed border-gray-200", text: "text-gray-400" },
-  "Not started":           { label: "Not started",       color: "#C2C5CB", bg: "bg-gray-50 border-gray-200",   text: "text-gray-400" },
+  "In review":             { label: "In review",        color: RUST,      bg: "bg-[#FBEAE5] border-[#E6BFB4]", text: "text-[#9A3318]" },
+  "In development":        { label: "In development",    color: "#3F6FB0", bg: "bg-[#EAF1FA] border-[#C7DAF0]", text: "text-[#2A5594]" },
+  "Materials in progress": { label: "Materials started", color: "#2E7D55", bg: "bg-[#E7F4EC] border-[#BFE2CC]", text: "text-[#1F6B41]" },
+  "Lesson plan drafted":   { label: "Plan drafted",      color: "#5B6470", bg: "bg-[#F1F2F4] border-[#D7D9DE]", text: "text-[#3F434C]" },
+  "Status not set":        { label: "Status not set",    color: "#6B7280", bg: "bg-[#F1F2F4] border-dashed border-[#C9CCD2]", text: "text-[#5B616B]" },
+  "Not started":           { label: "Not started",       color: "#6B7280", bg: "bg-[#F1F2F4] border-[#D7D9DE]", text: "text-[#5B616B]" },
 }
 
 export function statusStyle(status: string): StatusStyle {
-  return STATUS_STYLE[status] || { label: status || "—", color: MUTE, bg: "bg-gray-50 border-gray-200", text: "text-gray-500" }
+  return STATUS_STYLE[status] || { label: status || "—", color: MUTE, bg: "bg-[#F1F2F4] border-[#D7D9DE]", text: "text-[#444A55]" }
 }
 
 export const ROLE_LABEL: Record<string, string> = {

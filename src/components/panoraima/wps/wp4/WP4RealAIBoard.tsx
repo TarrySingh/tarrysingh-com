@@ -38,14 +38,14 @@ function StatPill({
   accent?: boolean
 }) {
   return (
-    <div className="inline-flex items-baseline gap-1.5 rounded-lg border border-[#E7E7EA] bg-white px-3 py-1.5">
+    <div className="inline-flex items-baseline gap-1.5 rounded-lg border border-[#DCDDE1] bg-white px-3 py-1.5 shadow-[0_1px_3px_rgba(20,22,27,0.06)]">
       <span
         className="text-lg font-bold tabular-nums leading-none tracking-[-0.02em]"
         style={accent ? { color: RUST } : { color: "#16181D" }}
       >
         {value}
       </span>
-      <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#9CA3AF]">{label}</span>
+      <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.14em] text-[#444A55]">{label}</span>
     </div>
   )
 }
@@ -63,8 +63,8 @@ function CompletenessRow({
     if (reviewDone) {
       return (
         <div className="mt-2.5">
-          <span className="inline-flex items-center gap-1 rounded border border-[#D2E5D9] bg-[#EEF5F0] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#2E6A4B]">
-            <CheckCircle2 className="w-2.5 h-2.5" />
+          <span className="inline-flex items-center gap-1 rounded border border-[#BFE2CC] bg-[#E7F4EC] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#1F6B41]">
+            <CheckCircle2 className="w-3 h-3" />
             Reviewed
           </span>
         </div>
@@ -72,15 +72,15 @@ function CompletenessRow({
     }
     return completeness.ready_to_review ? (
       <div className="mt-2.5">
-        <span className="inline-flex items-center gap-1 rounded bg-[#16181D] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-white">
-          <CheckCircle2 className="w-2.5 h-2.5" />
+        <span className="inline-flex items-center gap-1 rounded bg-[#16181D] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-white">
+          <CheckCircle2 className="w-3 h-3" />
           Ready to review
         </span>
       </div>
     ) : (
       <div className="mt-2.5">
-        <span className="inline-flex items-center gap-1 rounded bg-gray-100 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-gray-500">
-          <Hourglass className="w-2.5 h-2.5" />
+        <span className="inline-flex items-center gap-1 rounded border border-[#D7D9DE] bg-[#F1F2F4] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#444A55]">
+          <Hourglass className="w-3 h-3" />
           Awaiting author content
         </span>
       </div>
@@ -90,7 +90,7 @@ function CompletenessRow({
   // Authoring column
   if (completeness.author_needs.length === 0) {
     return (
-      <div className="mt-2.5 flex items-center gap-1.5 text-[11px] font-semibold text-[#2E6A4B]">
+      <div className="mt-2.5 flex items-center gap-1.5 text-[13px] font-bold text-[#1F6B41]">
         <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" />
         Complete
       </div>
@@ -98,12 +98,12 @@ function CompletenessRow({
   }
 
   return (
-    <div className="mt-2.5 border-t border-[#E7E7EA] pt-2.5">
-      <div className="flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em]" style={{ color: RUST }}>
+    <div className="mt-2.5 border-t border-[#DCDDE1] pt-2.5">
+      <div className="flex items-center gap-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.14em]" style={{ color: RUST }}>
         <ListTodo className="w-3 h-3 flex-shrink-0" />
         Needs
       </div>
-      <div className="mt-1 text-[11px] font-medium leading-snug text-[#4F535B]">
+      <div className="mt-1 text-[13px] font-medium leading-snug text-[#3A3E46]">
         {completeness.author_needs.join(" · ")}
       </div>
     </div>
@@ -120,7 +120,7 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
   const title = le.title?.trim() || le.code
 
   return (
-    <div className="relative rounded-xl border border-[#E7E7EA] bg-white p-5 transition-colors duration-150 hover:border-[#16181D]/20">
+    <div className="relative rounded-xl border border-[#DCDDE1] bg-white p-5 md:p-6 shadow-[0_1px_3px_rgba(20,22,27,0.06)] transition-all duration-150 hover:shadow-[0_4px_14px_rgba(20,22,27,0.08)] hover:border-[#16181D]/25">
       {(flagged || reviewed) && (
         <span
           className="absolute left-0 top-4 bottom-4 w-[2px] rounded-full"
@@ -137,13 +137,13 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
             style={{ background: trackColor }}
             title={le.track}
           />
-          <span className="font-mono text-[12px] font-bold tracking-[0.02em] text-[#16181D] truncate">
+          <span className="font-mono text-[13.5px] font-bold tracking-[0.02em] text-[#16181D] truncate">
             {le.code}
           </span>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
           <span
-            className="font-mono text-[9px] font-semibold uppercase tracking-[0.1em]"
+            className="font-mono text-[11px] font-bold uppercase tracking-[0.1em]"
             style={{ color: roleColor }}
           >
             {ROLE_LABEL[role] ?? role}
@@ -154,7 +154,7 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={e => e.stopPropagation()}
-              className="text-[#9CA3AF] hover:text-[#16181D] transition-colors"
+              className="text-[#646B78] hover:text-[#16181D] transition-colors"
               aria-label="Open wiki page"
               title="Open wiki page"
             >
@@ -165,33 +165,33 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
       </div>
 
       {/* Title */}
-      <h4 className="mt-2 text-[13px] font-semibold leading-snug text-[#16181D] line-clamp-2">
+      <h4 className="mt-2 text-[15px] md:text-[16px] font-bold leading-snug text-[#16181D] line-clamp-2">
         {title}
       </h4>
 
       {/* Status + track + due */}
       <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
-        <span className={`inline-flex items-center gap-1 rounded border px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] ${ss.bg} ${ss.text}`}>
+        <span className={`inline-flex items-center gap-1 rounded border px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] ${ss.bg} ${ss.text}`}>
           <span className="w-1.5 h-1.5 rounded-[2px]" style={{ background: ss.color }} />
           {ss.label}
         </span>
-        <span className="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-gray-600">
+        <span className="inline-flex items-center rounded border border-[#D7D9DE] bg-[#F1F2F4] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#3A3E46]">
           {TRACK_SHORT[le.track] ?? le.track}
         </span>
         {(le.realai_wiki_gap || le.off_wiki) && (
           <span
-            className="inline-flex items-center gap-1 rounded border border-[#E9CFC6] bg-[#FBEAE5] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#A53C22]"
+            className="inline-flex items-center gap-1 rounded border border-[#E6BFB4] bg-[#FBEAE5] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#9A3318]"
             title={le.off_wiki
               ? "This code isn't on the wiki master yet — it exists only in the SharePoint registry."
               : "This LE is on the wiki, but the wiki doesn't list RealAI as reviewer yet — the assignment is only in the SharePoint M&F registry (marked 'RAI')."}
           >
-            <FileWarning className="w-2.5 h-2.5" />
+            <FileWarning className="w-3 h-3" />
             {le.off_wiki ? "not on wiki" : "RealAI not on wiki yet"}
           </span>
         )}
         {le.due_date && (
-          <span className="inline-flex items-center gap-1 font-mono text-[10px] tabular-nums text-[#9CA3AF]">
-            <CalendarClock className="w-3 h-3 text-[#9CA3AF]" />
+          <span className="inline-flex items-center gap-1 font-mono text-[12px] font-semibold tabular-nums text-[#5B616B]">
+            <CalendarClock className="w-3 h-3 text-[#646B78]" />
             {le.due_date}
           </span>
         )}
@@ -203,24 +203,24 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
       )}
 
       {/* Footer: materials + needs-action flag */}
-      <div className="mt-3 pt-2.5 border-t border-[#E7E7EA] flex items-center justify-between gap-2">
+      <div className="mt-3 pt-2.5 border-t border-[#DCDDE1] flex items-center justify-between gap-2">
         {le.materials.has ? (
-          <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#2E6A4B] tabular-nums">
+          <span className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#1F6B41] tabular-nums">
             <FileCheck2 className="w-3.5 h-3.5" />
             {le.materials.count} {le.materials.count === 1 ? "file" : "files"}
           </span>
         ) : (
-          <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-[#9CA3AF]">
+          <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#5B616B]">
             <FileX2 className="w-3.5 h-3.5" />
             no materials yet
           </span>
         )}
         {flagged && (
           <span
-            className="inline-flex items-center gap-1 rounded px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-white"
+            className="inline-flex items-center gap-1 rounded px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-white"
             style={{ background: RUST }}
           >
-            <AlertTriangle className="w-2.5 h-2.5" />
+            <AlertTriangle className="w-3 h-3" />
             needs action
           </span>
         )}
@@ -240,33 +240,33 @@ function BoardColumn({
 }) {
   const actionCount = items.filter(needsAction).length
   return (
-    <div className="rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6">
-      <div className="flex items-start justify-between gap-2 pb-4 mb-4 border-b border-[#E7E7EA]">
+    <div className="rounded-xl border border-[#DCDDE1] bg-white p-5 md:p-6 shadow-[0_1px_3px_rgba(20,22,27,0.06)]">
+      <div className="flex items-start justify-between gap-2 pb-4 mb-4 border-b border-[#DCDDE1]">
         <div className="flex items-center gap-2.5 min-w-0">
-          <Icon className="w-4 h-4 text-[#6B7280] flex-shrink-0" />
+          <Icon className="w-4 h-4 text-[#444A55] flex-shrink-0" />
           <div className="min-w-0">
             <h3 className="flex items-baseline gap-1.5 text-base font-bold tracking-[-0.01em] text-[#16181D] leading-none">
               {title}
-              <span className="font-mono text-[12px] font-bold tabular-nums text-[#9CA3AF]">
+              <span className="font-mono text-[13.5px] font-bold tabular-nums text-[#5B616B]">
                 {items.length}
               </span>
             </h3>
-            <p className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-[#9CA3AF]">{hint}</p>
+            <p className="mt-1.5 font-mono text-[12px] font-semibold uppercase tracking-[0.12em] text-[#5B616B]">{hint}</p>
           </div>
         </div>
         {actionCount > 0 && (
           <span
-            className="inline-flex items-center gap-1 rounded px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] tabular-nums text-white flex-shrink-0"
+            className="inline-flex items-center gap-1 rounded px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] tabular-nums text-white flex-shrink-0"
             style={{ background: RUST }}
           >
-            <AlertTriangle className="w-2.5 h-2.5" />
+            <AlertTriangle className="w-3 h-3" />
             {actionCount}
           </span>
         )}
       </div>
 
       {items.length === 0 ? (
-        <div className="rounded-lg border border-dashed border-[#E7E7EA] bg-white p-6 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-[#9CA3AF]">
+        <div className="rounded-lg border border-dashed border-[#DCDDE1] bg-white p-6 text-center font-mono text-[13px] font-semibold uppercase tracking-[0.12em] text-[#5B616B]">
           Nothing assigned here
         </div>
       ) : (
@@ -300,13 +300,13 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
   return (
     <section>
       <div className="mb-8">
-        <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] mb-2" style={{ color: RUST }}>
+        <div className="font-mono text-[13px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: RUST }}>
           RealAI commitments
         </div>
         <h2 className="text-2xl md:text-[2rem] font-bold tracking-[-0.02em] text-[#16181D]">
           What&apos;s ours
         </h2>
-        <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280] max-w-2xl">
+        <p className="mt-2 text-[15px] leading-relaxed text-[#444A55] max-w-2xl">
           The Learning Events RealAI authors or reviews, with status and what needs
           action next. Routing: Authoring &rarr; Tarry; Reviewing &rarr; Tannistha &amp; Monira.
         </p>
@@ -323,20 +323,20 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
             <StatPill label="Ready to review" value={ready_to_review} />
           )}
           {typeof reviewed === "number" && reviewed > 0 && (
-            <div className="inline-flex items-baseline gap-1.5 rounded-lg border border-[#D2E5D9] bg-[#EEF5F0] px-3 py-1.5">
-              <span className="text-lg font-bold tabular-nums leading-none tracking-[-0.02em]" style={{ color: "#2E6A4B" }}>{reviewed}</span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#2E6A4B]">Reviewed &#10003;</span>
+            <div className="inline-flex items-baseline gap-1.5 rounded-lg border border-[#BFE2CC] bg-[#E7F4EC] px-3 py-1.5 shadow-[0_1px_3px_rgba(20,22,27,0.06)]">
+              <span className="text-lg font-bold tabular-nums leading-none tracking-[-0.02em]" style={{ color: "#1F6B41" }}>{reviewed}</span>
+              <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.14em] text-[#1F6B41]">Reviewed &#10003;</span>
             </div>
           )}
-          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#9CA3AF] ml-1 tabular-nums">
+          <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.12em] text-[#5B616B] ml-1 tabular-nums">
             · {board.length} LEs on RealAI&apos;s plate
           </span>
           {!!wikiGapCount && (
             <span
-              className="inline-flex items-center gap-1 rounded border border-[#E9CFC6] bg-[#FBEAE5] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#A53C22] tabular-nums"
+              className="inline-flex items-center gap-1 rounded border border-[#E6BFB4] bg-[#FBEAE5] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#9A3318] tabular-nums"
               title="LEs where RealAI is assigned in the SharePoint M&F registry (marked 'RAI') but the wiki doesn't list us as reviewer yet"
             >
-              <FileWarning className="w-2.5 h-2.5" />
+              <FileWarning className="w-3 h-3" />
               {wikiGapCount} where wiki omits RealAI
             </span>
           )}

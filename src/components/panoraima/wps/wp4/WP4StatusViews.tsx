@@ -85,7 +85,7 @@ export default function WP4StatusViews({ registry }: { registry: Wp4Registry }) 
         <h2 className="text-2xl md:text-[2rem] font-bold tracking-[-0.02em] text-[#16181D]">
           Progress across the tracks
         </h2>
-        <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280] max-w-2xl">
+        <p className="mt-2 text-[15px] leading-relaxed text-[#444A55] max-w-2xl">
           How far each track has come, and where lesson materials are still
           pending.
         </p>
@@ -93,12 +93,12 @@ export default function WP4StatusViews({ registry }: { registry: Wp4Registry }) 
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* ---- Per-track stacked bars ---- */}
-        <div className="lg:col-span-2 rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 transition-colors hover:border-[#16181D]/20">
+        <div className="lg:col-span-2 rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 shadow-[0_1px_3px_rgba(20,22,27,0.06)] transition-all hover:shadow-[0_4px_14px_rgba(20,22,27,0.08)] hover:border-[#16181D]/25">
           <div className="flex items-baseline justify-between mb-6">
-            <h3 className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9CA3AF]">
+            <h3 className="font-mono text-[12px] font-semibold uppercase tracking-[0.14em] text-[#444A55]">
               Lesson events by track &amp; status
             </h3>
-            <span className="font-mono text-[10px] uppercase tracking-[0.14em] tabular-nums text-[#9CA3AF]">
+            <span className="font-mono text-[12px] uppercase tracking-[0.14em] tabular-nums text-[#5B616B]">
               {les.length} LEs total
             </span>
           </div>
@@ -109,18 +109,18 @@ export default function WP4StatusViews({ registry }: { registry: Wp4Registry }) 
               return (
                 <li key={row.track}>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#16181D]">
+                    <span className="flex items-center gap-2 font-mono text-[12px] font-semibold uppercase tracking-[0.14em] text-[#16181D]">
                       <span
-                        className="w-2 h-2 rounded-[2px] flex-shrink-0"
+                        className="w-2.5 h-2.5 rounded-[2px] flex-shrink-0"
                         style={{ background: TRACK_COLOR[row.track] ?? "#9CA3AF" }}
                       />
                       {TRACK_SHORT[row.track] ?? row.track}
                     </span>
-                    <span className="font-mono text-[11px] font-bold tabular-nums text-[#16181D]">
+                    <span className="font-mono text-[13px] font-bold tabular-nums text-[#16181D]">
                       {row.total}
                     </span>
                   </div>
-                  <div className="h-3 rounded-[3px] bg-[#F4F4F2] overflow-hidden">
+                  <div className="h-4 rounded-[3px] bg-[#ECECEA] overflow-hidden">
                     <div
                       className="flex h-full overflow-hidden transition-all duration-700 ease-out"
                       style={{ width: `${laneWidth}%` }}
@@ -147,14 +147,14 @@ export default function WP4StatusViews({ registry }: { registry: Wp4Registry }) 
           </ol>
 
           {/* Legend */}
-          <div className="mt-7 pt-5 border-t border-[#E7E7EA] flex flex-wrap items-center gap-x-5 gap-y-2">
+          <div className="mt-7 pt-5 border-t border-[#E7E7EA] flex flex-wrap items-center gap-x-5 gap-y-2.5">
             {presentStatuses.map((status) => (
               <span
                 key={status}
-                className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-[#6B7280]"
+                className="inline-flex items-center gap-1.5 font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-[#444A55]"
               >
                 <span
-                  className="w-2 h-2 rounded-[2px]"
+                  className="w-2.5 h-2.5 rounded-[2px]"
                   style={{ background: statusStyle(status).color }}
                 />
                 {statusStyle(status).label}
@@ -166,8 +166,8 @@ export default function WP4StatusViews({ registry }: { registry: Wp4Registry }) 
         {/* ---- Right rail: materials coverage + missing status ---- */}
         <div className="flex flex-col gap-4">
           {/* Materials coverage */}
-          <div className="rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 transition-colors hover:border-[#16181D]/20">
-            <h3 className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9CA3AF] mb-5">
+          <div className="rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 shadow-[0_1px_3px_rgba(20,22,27,0.06)] transition-all hover:shadow-[0_4px_14px_rgba(20,22,27,0.08)] hover:border-[#16181D]/25">
+            <h3 className="font-mono text-[12px] font-semibold uppercase tracking-[0.14em] text-[#444A55] mb-5">
               Materials coverage
             </h3>
 
@@ -184,12 +184,12 @@ export default function WP4StatusViews({ registry }: { registry: Wp4Registry }) 
                   icon={<FolderClock className="w-3.5 h-3.5" />}
                   label="Pending"
                   value={pending}
-                  color="#9CA3AF"
+                  color="#444A55"
                 />
               </div>
             </div>
 
-            <p className="mt-5 text-[12px] text-[#6B7280] leading-relaxed">
+            <p className="mt-5 text-[13.5px] text-[#444A55] leading-relaxed">
               <span
                 className="font-mono font-bold tabular-nums"
                 style={{ color: RUST }}
@@ -202,14 +202,14 @@ export default function WP4StatusViews({ registry }: { registry: Wp4Registry }) 
           </div>
 
           {/* Missing-status callout */}
-          <div className="rounded-xl border border-[#E7E7EA] bg-[#FAFAF9] p-5 md:p-6">
+          <div className="rounded-xl border border-[#E7E7EA] bg-[#FAFAF9] p-5 md:p-6 shadow-[0_1px_3px_rgba(20,22,27,0.06)]">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-lg bg-white border border-[#E7E7EA] flex items-center justify-center text-[#6B7280] flex-shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-white border border-[#E7E7EA] flex items-center justify-center text-[#444A55] flex-shrink-0">
                 <AlertCircle className="w-4 h-4" />
               </div>
               <div className="min-w-0">
                 <div
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em]"
+                  className="font-mono text-[12px] font-semibold uppercase tracking-[0.14em]"
                   style={{ color: RUST }}
                 >
                   Data quality nudge
@@ -221,11 +221,11 @@ export default function WP4StatusViews({ registry }: { registry: Wp4Registry }) 
                   >
                     {missingStatus}
                   </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#9CA3AF] tabular-nums">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-[#5B616B] tabular-nums">
                     of {registry.summary.total_les} · {missingPct}%
                   </span>
                 </div>
-                <p className="mt-2 text-[12px] text-[#6B7280] leading-relaxed">
+                <p className="mt-2 text-[13.5px] text-[#444A55] leading-relaxed">
                   {missingStatus === 0
                     ? "Every lesson event has a status set — the register is clean."
                     : "lesson events have no status set. Setting these unlocks accurate progress tracking across the tracks."}
@@ -271,7 +271,7 @@ function CoverageRow({
         <div className="text-lg font-bold tabular-nums text-[#16181D] leading-none">
           {value}
         </div>
-        <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#9CA3AF] mt-1">
+        <div className="font-mono text-[12px] uppercase tracking-[0.14em] text-[#444A55] mt-1">
           {label}
         </div>
       </div>
@@ -321,7 +321,7 @@ function Ring({ pct }: { pct: number }) {
         dominantBaseline="central"
         textAnchor="middle"
         className="fill-[#16181D] font-bold tabular-nums"
-        style={{ fontSize: "20px", fontFamily: "var(--font-mono, monospace)" }}
+        style={{ fontSize: "22px", fontFamily: "var(--font-mono, monospace)" }}
       >
         {pct}%
       </text>
