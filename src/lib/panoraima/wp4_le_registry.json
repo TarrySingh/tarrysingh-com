@@ -2,7 +2,7 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-06-19T11:50:19.703840Z",
+  "generated_at": "2026-06-19T12:21:31.054391Z",
   "data_sources": {
     "wiki": {
       "status": "live",
@@ -10,7 +10,7 @@
       "master_total": 455
     },
     "sharepoint": {
-      "generated_at": "2026-06-19T11:50:19.497775Z",
+      "generated_at": "2026-06-19T12:21:30.874918Z",
       "counts": {
         "codes_total": 497,
         "with_materials": 51,
@@ -34,24 +34,25 @@
       "Status not set": 270,
       "In review": 58
     },
-    "with_materials": 49,
-    "materials_pending": 406,
+    "with_materials": 51,
+    "materials_pending": 404,
     "coverage": {
       "wiki_total": 455,
-      "with_sharepoint_material": 49,
-      "awaiting_material": 406,
-      "off_wiki": 122,
-      "off_wiki_realai": 25
+      "with_sharepoint_material": 51,
+      "awaiting_material": 404,
+      "off_wiki": 68,
+      "off_wiki_realai": 1,
+      "realai_wiki_gap": 30
     },
     "realai": {
       "total": 53,
       "author": 11,
       "reviewer": 42,
       "by_status": {
-        "In development": 6,
-        "Status not set": 20,
+        "In development": 10,
+        "Status not set": 40,
         "In review": 2,
-        "Not started": 25
+        "Not started": 1
       },
       "needs_action": 17,
       "author_todo": 11,
@@ -178,17 +179,27 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "KPI · Olena Butnyk",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": ""
+        "count": 1,
+        "has": true,
+        "newest": "2026-06-18",
+        "files": [
+          {
+            "name": "BSAIC 01 AI stratgey for competitive advantage v1.pptx",
+            "ext": "pptx",
+            "kb": 3275,
+            "date": "2026-06-18",
+            "sha": "4a616d89dab513b1",
+            "rel": "4.5 Management & Finance/BSAIC-01/BSAIC 01 AI stratgey for competitive advantage v1.pptx"
+          }
+        ],
+        "folder": "BSAIC-01"
       },
       "lesson_plan": {
         "doc": "",
@@ -204,7 +215,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -216,17 +229,18 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "CNR · Luigi Barbato",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-02"
       },
       "lesson_plan": {
         "doc": "",
@@ -242,7 +256,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -259,12 +275,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-03"
       },
       "lesson_plan": {
         "doc": "",
@@ -280,7 +297,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -297,12 +316,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-04"
       },
       "lesson_plan": {
         "doc": "",
@@ -318,7 +338,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -335,12 +357,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-05"
       },
       "lesson_plan": {
         "doc": "",
@@ -356,7 +379,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -373,12 +398,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-06"
       },
       "lesson_plan": {
         "doc": "",
@@ -394,7 +420,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -411,12 +439,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-07"
       },
       "lesson_plan": {
         "doc": "",
@@ -432,7 +461,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -449,12 +480,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-08"
       },
       "lesson_plan": {
         "doc": "",
@@ -470,7 +502,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -485,14 +519,15 @@
       "due_date": "",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-09"
       },
       "lesson_plan": {
         "doc": "",
@@ -503,12 +538,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/BSAIC-09_Operating_Model_Alignment",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -523,14 +576,15 @@
       "due_date": "",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-10"
       },
       "lesson_plan": {
         "doc": "",
@@ -541,12 +595,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/BSAIC-10_AI_Portfolio_Roadmapping",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -561,14 +633,15 @@
       "due_date": "",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-11"
       },
       "lesson_plan": {
         "doc": "",
@@ -579,12 +652,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/BSAIC-11_Designing_Human/Machine_Collaboration",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -601,12 +692,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-12"
       },
       "lesson_plan": {
         "doc": "",
@@ -622,7 +714,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -639,12 +733,22 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": ""
+        "count": 1,
+        "has": true,
+        "newest": "2026-05-16",
+        "files": [
+          {
+            "name": "lessonplan_BSAIC-13-TUD.docx",
+            "ext": "docx",
+            "kb": 32,
+            "date": "2026-05-16",
+            "sha": "ab579579365d48eb",
+            "rel": "4.5 Management & Finance/BSAIC-13/lessonplan_BSAIC-13-TUD.docx"
+          }
+        ],
+        "folder": "BSAIC-13"
       },
       "lesson_plan": {
         "doc": "",
@@ -660,7 +764,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -677,12 +783,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-14"
       },
       "lesson_plan": {
         "doc": "",
@@ -698,7 +805,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -715,12 +824,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-15"
       },
       "lesson_plan": {
         "doc": "",
@@ -736,7 +846,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -753,12 +865,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-16"
       },
       "lesson_plan": {
         "doc": "",
@@ -774,7 +887,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -791,12 +906,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-17"
       },
       "lesson_plan": {
         "doc": "",
@@ -812,7 +928,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -829,12 +947,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-18"
       },
       "lesson_plan": {
         "doc": "",
@@ -850,7 +969,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -867,12 +988,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-19"
       },
       "lesson_plan": {
         "doc": "",
@@ -888,7 +1010,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -905,12 +1029,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-20"
       },
       "lesson_plan": {
         "doc": "",
@@ -926,7 +1051,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -943,12 +1070,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-21"
       },
       "lesson_plan": {
         "doc": "",
@@ -964,7 +1092,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -981,12 +1111,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-22"
       },
       "lesson_plan": {
         "doc": "",
@@ -1002,7 +1133,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1019,12 +1152,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-24"
       },
       "lesson_plan": {
         "doc": "",
@@ -1040,7 +1174,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1057,12 +1193,13 @@
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-25"
       },
       "lesson_plan": {
         "doc": "",
@@ -1078,7 +1215,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1092,15 +1231,16 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "TUD · Maurice Martin",
-      "coauthor": "",
+      "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-26"
       },
       "lesson_plan": {
         "doc": "",
@@ -1116,7 +1256,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1130,15 +1272,16 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "TUD · Maurice Martin",
-      "coauthor": "",
+      "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-27"
       },
       "lesson_plan": {
         "doc": "",
@@ -1154,7 +1297,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1168,15 +1313,16 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "TUD · Maurice Martin",
-      "coauthor": "",
+      "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-28"
       },
       "lesson_plan": {
         "doc": "",
@@ -1192,7 +1338,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1209,12 +1357,13 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-29"
       },
       "lesson_plan": {
         "doc": "",
@@ -1230,7 +1379,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1244,9 +1395,10 @@
       "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "TUD · Maurice Martin",
-      "coauthor": "",
+      "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1268,7 +1420,8 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry"
       ]
     },
     {
@@ -1282,15 +1435,16 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "TUD · Maurice Martin",
-      "coauthor": "",
+      "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-31"
       },
       "lesson_plan": {
         "doc": "",
@@ -1306,7 +1460,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1320,15 +1476,16 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "TUD · Maurice Martin",
-      "coauthor": "",
+      "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-32"
       },
       "lesson_plan": {
         "doc": "",
@@ -1344,7 +1501,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1358,15 +1517,16 @@
       "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "TUD · Mary Hendrick",
-      "coauthor": "",
+      "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-33"
       },
       "lesson_plan": {
         "doc": "",
@@ -1382,7 +1542,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1396,15 +1558,16 @@
       "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "TUD · Mary Hendrick",
-      "coauthor": "",
+      "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "BSAIC-34"
       },
       "lesson_plan": {
         "doc": "",
@@ -1420,7 +1583,9 @@
       },
       "completeness": null,
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -1437,6 +1602,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1475,6 +1641,7 @@
       "coauthor": "BME",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1513,6 +1680,7 @@
       "coauthor": "",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1551,6 +1719,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1589,6 +1758,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1627,6 +1797,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1665,6 +1836,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1703,6 +1875,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1741,6 +1914,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1779,6 +1953,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1817,6 +1992,7 @@
       "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1855,6 +2031,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1893,6 +2070,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1931,6 +2109,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -1969,6 +2148,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2007,6 +2187,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2045,6 +2226,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2083,6 +2265,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2121,6 +2304,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2159,6 +2343,7 @@
       "coauthor": "",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2197,6 +2382,7 @@
       "coauthor": "",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2235,6 +2421,7 @@
       "coauthor": "",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2273,6 +2460,7 @@
       "coauthor": "",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2311,6 +2499,7 @@
       "coauthor": "",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2349,6 +2538,7 @@
       "coauthor": "",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -2385,14 +2575,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-01"
       },
       "lesson_plan": {
         "doc": "",
@@ -2403,12 +2594,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-01_Base_problem_-_Accounting_-_From_transaction_to_trusted_numbers:_R2R,_master_data_and_reconciliation",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2423,14 +2632,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-02"
       },
       "lesson_plan": {
         "doc": "",
@@ -2441,12 +2651,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-02_AI-enhanced_-_Accounting_-_AI_invoice_capture,_matching_and_confidence_thresholds",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2461,14 +2689,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-03"
       },
       "lesson_plan": {
         "doc": "",
@@ -2479,12 +2708,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-03_AI-enhanced_-_Accounting_-_AI_reconciliation_and_cash_application_with_exception_review",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2499,14 +2746,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-04"
       },
       "lesson_plan": {
         "doc": "",
@@ -2517,12 +2765,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-04_AI-enhanced_-_Accounting_-_Data-linked_disclosures_and_controllable_note_generation",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2537,14 +2803,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-05"
       },
       "lesson_plan": {
         "doc": "",
@@ -2555,12 +2822,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-05_Failure_modes_-_Accounting_-_When_accounting_AI_looks_confident_but_stops_being_trustworthy",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2575,14 +2860,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "HAW",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-06"
       },
       "lesson_plan": {
         "doc": "",
@@ -2593,12 +2879,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-06_Regulatory_-_Accounting_-_Standards,_controls_and_audit_evidence_for_AI-supported_close",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2613,14 +2917,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-07"
       },
       "lesson_plan": {
         "doc": "",
@@ -2631,12 +2936,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-07_Base_problem_-_Finance_%26_Control_-_From_actuals_to_steering:_budgeting,_forecasting_and_management_reporting",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2651,14 +2974,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-08"
       },
       "lesson_plan": {
         "doc": "",
@@ -2669,12 +2993,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-08_Base_problem_-_Finance_%26_Control_-_The_abstraction_gap_between_actuals_and_forecasts",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2689,14 +3031,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-09"
       },
       "lesson_plan": {
         "doc": "",
@@ -2707,12 +3050,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-09_AI-enhanced_-_Finance_%26_Control_-_ML_forecasting_and_discovered_drivers_versus_expert_models",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2727,14 +3088,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-10"
       },
       "lesson_plan": {
         "doc": "",
@@ -2745,12 +3107,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-10_AI-enhanced_-_Finance_%26_Control_-_AI_variance_analysis,_commentary_and_anomaly_triage",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2765,14 +3145,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-11"
       },
       "lesson_plan": {
         "doc": "",
@@ -2783,12 +3164,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-11_Failure_modes_-_Finance_%26_Control_-_Regime_change,_false_precision_and_overwhelmed_reviewers",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2803,14 +3202,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-12"
       },
       "lesson_plan": {
         "doc": "",
@@ -2821,12 +3221,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-12_Regulatory_-_Finance_%26_Control_-_Forecast_governance_with_COSO,_SR_11-7_and_model_documentation",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2841,14 +3259,15 @@
       "due_date": "",
       "author": "HU · Hubert Fonteijn",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-13"
       },
       "lesson_plan": {
         "doc": "",
@@ -2859,12 +3278,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-13_Base_problem_-_Financial_Instruments_%26_Markets_-_Mortgage_as_contract,_priced_risk_and_portfolio_logic",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2879,14 +3316,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-14"
       },
       "lesson_plan": {
         "doc": "",
@@ -2897,12 +3335,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-14_AI-enhanced_-_Financial_Instruments_%26_Markets_-_Credit_modelling_from_interpretable_to_opaque_models",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2917,14 +3373,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-15"
       },
       "lesson_plan": {
         "doc": "",
@@ -2935,12 +3392,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-15_AI-enhanced_-_Financial_Instruments_%26_Markets_-_Explaining_credit_models_for_borrowers,_regulators_and_risk_teams",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2955,14 +3430,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-16"
       },
       "lesson_plan": {
         "doc": "",
@@ -2973,12 +3449,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-16_AI-enhanced_-_Financial_Instruments_%26_Markets_-_From_portfolio_risk_to_treasury_risk:_concentration,_liquidity_and_early_warning",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -2993,14 +3487,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-17"
       },
       "lesson_plan": {
         "doc": "",
@@ -3011,12 +3506,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-17_Failure_modes_-_Financial_Instruments_%26_Markets_-_Non-stationarity,_crisis_breakdown_and_unexplainable_denials",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -3031,14 +3544,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-18"
       },
       "lesson_plan": {
         "doc": "",
@@ -3049,12 +3563,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-18_Regulatory_-_Financial_Instruments_%26_Markets_-_From_SR_11-7_and_Basel_model_governance_to_broader_AI_governance",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -3069,14 +3601,15 @@
       "due_date": "",
       "author": "HU",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-19"
       },
       "lesson_plan": {
         "doc": "",
@@ -3087,12 +3620,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-19_Integration_-_Finance_-_Data_lineage_and_evidence_architecture_across_accounting,_control_and_risk",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -3106,15 +3657,16 @@
       "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
-      "coauthor": "",
-      "reviewer": "",
+      "coauthor": "KPI",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-20"
       },
       "lesson_plan": {
         "doc": "",
@@ -3125,12 +3677,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-20_Integration_-_Finance_-_Human_decision_rights,_review_capacity_and_competence_retention",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -3144,15 +3714,16 @@
       "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
-      "coauthor": "",
-      "reviewer": "",
+      "coauthor": "KPI",
+      "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
         "newest": "",
         "files": [],
-        "folder": ""
+        "folder": "FIN-21"
       },
       "lesson_plan": {
         "doc": "",
@@ -3163,12 +3734,30 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/FIN-21_Capstone_-_Finance_-_Responsible_financial_AI_operating_model_with_controls,_validation_and_escalation",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
-        "wiki"
+        "wiki",
+        "registry",
+        "materials"
       ]
     },
     {
@@ -3185,6 +3774,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3224,6 +3814,7 @@
       "coauthor": "HAW (if merged with H 223-H 224)",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3263,6 +3854,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3302,6 +3894,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3341,6 +3934,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3380,6 +3974,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3419,6 +4014,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3458,6 +4054,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3497,6 +4094,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3536,6 +4134,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3575,6 +4174,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3614,6 +4214,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3653,6 +4254,7 @@
       "coauthor": "HAW",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3692,6 +4294,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3731,6 +4334,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3770,6 +4374,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3809,6 +4414,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3848,6 +4454,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3887,6 +4494,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3926,6 +4534,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -3965,6 +4574,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4004,6 +4614,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4043,6 +4654,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4082,6 +4694,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4121,6 +4734,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4160,6 +4774,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4199,6 +4814,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4238,6 +4854,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4277,6 +4894,7 @@
       "coauthor": "BME · Béla Pataki",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4316,6 +4934,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4355,6 +4974,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4394,6 +5014,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4433,6 +5054,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4472,6 +5094,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4511,6 +5134,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4550,6 +5174,7 @@
       "coauthor": "BME · Béla Pataki",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4589,6 +5214,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4628,6 +5254,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4667,6 +5294,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4706,6 +5334,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4745,6 +5374,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4784,6 +5414,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4823,6 +5454,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4862,6 +5494,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -4918,6 +5551,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4957,6 +5591,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -4996,6 +5631,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5035,6 +5671,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5074,6 +5711,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5114,6 +5752,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5153,6 +5792,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5192,6 +5832,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5231,6 +5872,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5270,6 +5912,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5309,6 +5952,7 @@
       "coauthor": "HU",
       "reviewer": "CNR · Luigi Barbato",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5348,6 +5992,7 @@
       "coauthor": "HU · Sieuwert van Otterloo",
       "reviewer": "CNR · Luigi Barbato",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5387,6 +6032,7 @@
       "coauthor": "HU · Tina van der Linden",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5426,6 +6072,7 @@
       "coauthor": "HU · Tina van der Linden",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5465,6 +6112,7 @@
       "coauthor": "HAW",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5504,6 +6152,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5543,6 +6192,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5582,6 +6232,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5621,6 +6272,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5660,6 +6312,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5699,6 +6352,7 @@
       "coauthor": "L&C?",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5738,6 +6392,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5777,6 +6432,7 @@
       "coauthor": "West Attica",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5816,6 +6472,7 @@
       "coauthor": "HAW",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5855,6 +6512,7 @@
       "coauthor": "QTICS",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -5894,6 +6552,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -5942,6 +6601,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -5990,6 +6650,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -6038,6 +6699,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -6094,6 +6756,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6133,6 +6796,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6172,6 +6836,7 @@
       "coauthor": "TU Dublin (Salam)",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6211,6 +6876,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6250,6 +6916,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6289,6 +6956,7 @@
       "coauthor": "",
       "reviewer": "BME",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6328,6 +6996,7 @@
       "coauthor": "",
       "reviewer": "BME",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6367,6 +7036,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -6424,6 +7094,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6464,6 +7135,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6504,6 +7176,7 @@
       "coauthor": "BME · Béla Pataki",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6543,6 +7216,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6582,6 +7256,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6621,6 +7296,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -6677,6 +7353,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6716,6 +7393,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6755,6 +7433,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6794,6 +7473,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6833,6 +7513,7 @@
       "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6872,6 +7553,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6911,6 +7593,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6950,6 +7633,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -6989,6 +7673,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7028,6 +7713,7 @@
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7067,6 +7753,7 @@
       "coauthor": "UNINA",
       "reviewer": "CNR · Lidia Marassi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -7116,6 +7803,7 @@
       "coauthor": "UNIWA",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7155,6 +7843,7 @@
       "coauthor": "KPI · Myroslava Kukhta",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -7204,6 +7893,7 @@
       "coauthor": "HU · Sieuwert van Otterloo",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7243,6 +7933,7 @@
       "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7282,6 +7973,7 @@
       "coauthor": "UNINA",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7321,6 +8013,7 @@
       "coauthor": "UNINA",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7360,6 +8053,7 @@
       "coauthor": "TUD · Keith Quille",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7399,6 +8093,7 @@
       "coauthor": "KPI · Myroslava Kukhta",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -7455,6 +8150,7 @@
       "coauthor": "KPI · Myrsolava Kukhta",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -7503,6 +8199,7 @@
       "coauthor": "KPI · Myroslava Kukhta",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -7559,6 +8256,7 @@
       "coauthor": "KPI · Myroslava Kukhta",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -7615,6 +8313,7 @@
       "coauthor": "UNIWA",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7654,6 +8353,7 @@
       "coauthor": "UNIWA",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7693,6 +8393,7 @@
       "coauthor": "TUD",
       "reviewer": "KPI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -7741,6 +8442,7 @@
       "coauthor": "TUD",
       "reviewer": "KPI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -7789,6 +8491,7 @@
       "coauthor": "BME · Dorottya Egres",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7828,6 +8531,7 @@
       "coauthor": "BME · Dorottya Egres",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -7867,6 +8571,7 @@
       "coauthor": "BME · Béla Pataki",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -7916,6 +8621,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -7965,6 +8671,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8005,6 +8712,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8045,6 +8753,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8085,6 +8794,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8125,6 +8835,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8165,6 +8876,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "CNR · Luigi Barbato",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8205,6 +8917,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "CNR · Luigi Barbato",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8245,6 +8958,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "CNR · Luigi Barbato",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8285,6 +8999,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "CNR · Luigi Barbato",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8325,6 +9040,7 @@
       "coauthor": "BME · Béla Pataki",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8365,6 +9081,7 @@
       "coauthor": "BME · Béla Pataki",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8405,6 +9122,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -8454,6 +9172,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8494,6 +9213,7 @@
       "coauthor": "UNIWA",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8534,6 +9254,7 @@
       "coauthor": "UNIWA",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8574,6 +9295,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8614,6 +9336,7 @@
       "coauthor": "UNINA",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8653,6 +9376,7 @@
       "coauthor": "HU · Marieke Peeters",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8692,6 +9416,7 @@
       "coauthor": "HU · Marieke Peeters",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8731,6 +9456,7 @@
       "coauthor": "TUD · Keith Quille",
       "reviewer": "Keith Quille",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -8780,6 +9506,7 @@
       "coauthor": "UNINA? (tbc)",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -8828,6 +9555,7 @@
       "coauthor": "HU · Sieuwert van Otterloo",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8867,6 +9595,7 @@
       "coauthor": "HAW",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8906,6 +9635,7 @@
       "coauthor": "HAW",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8945,6 +9675,7 @@
       "coauthor": "HAW",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -8984,6 +9715,7 @@
       "coauthor": "HU · Tina van der Linden",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9023,6 +9755,7 @@
       "coauthor": "HU · Tina van der Linden",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9062,6 +9795,7 @@
       "coauthor": "HU · Tina van der Linden",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9101,6 +9835,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9140,6 +9875,7 @@
       "coauthor": "UNINA · (UNINA contact)",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9232,6 +9968,7 @@
       "coauthor": "Sofia University",
       "reviewer": "ENEA",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9271,6 +10008,7 @@
       "coauthor": "BME",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9363,6 +10101,7 @@
       "coauthor": "UNINA",
       "reviewer": "ENEA",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9402,6 +10141,7 @@
       "coauthor": "BME",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9441,6 +10181,7 @@
       "coauthor": "Sofia University",
       "reviewer": "Nathean · TBC",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 43,
         "has": true,
@@ -9801,6 +10542,7 @@
       "coauthor": "TUD",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9840,6 +10582,7 @@
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9879,6 +10622,7 @@
       "coauthor": "UNINA",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -9973,6 +10717,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "CeADAR · Aditya Grover",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10012,6 +10757,7 @@
       "coauthor": "BME",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10106,6 +10852,7 @@
       "coauthor": "Sofia University · Ioannis Patias",
       "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10145,6 +10892,7 @@
       "coauthor": "West Attica",
       "reviewer": "QTICS",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10184,6 +10932,7 @@
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10223,6 +10972,7 @@
       "coauthor": "UNINA",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10262,6 +11012,7 @@
       "coauthor": "UNINA",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10301,6 +11052,7 @@
       "coauthor": "",
       "reviewer": "CeADAR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10340,6 +11092,7 @@
       "coauthor": "",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10379,6 +11132,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "CNR · Luigi Barbato",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10418,6 +11172,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "CeADAR · Aditya Grover",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10457,6 +11212,7 @@
       "coauthor": "TUD",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10496,6 +11252,7 @@
       "coauthor": "TUD",
       "reviewer": "CeADAR · Aditya Grover",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10535,6 +11292,7 @@
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "CeADAR · Aditya Grover",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10574,6 +11332,7 @@
       "coauthor": "UNINA",
       "reviewer": "CeADAR · Aditya Grover",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10613,6 +11372,7 @@
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10652,6 +11412,7 @@
       "coauthor": "BME",
       "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10691,6 +11452,7 @@
       "coauthor": "UNINA",
       "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10730,6 +11492,7 @@
       "coauthor": "HAW",
       "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10769,6 +11532,7 @@
       "coauthor": "TUD",
       "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10808,6 +11572,7 @@
       "coauthor": "West Attica",
       "reviewer": "QTICS",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10847,6 +11612,7 @@
       "coauthor": "HAW",
       "reviewer": "QTICS",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10886,6 +11652,7 @@
       "coauthor": "HU · Tina van der Linden",
       "reviewer": "Nathean",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10925,6 +11692,7 @@
       "coauthor": "HU · Tina van der Linden",
       "reviewer": "Nathean · John.pugh@nathean.com",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -10964,6 +11732,7 @@
       "coauthor": "UNINA",
       "reviewer": "QTICS (proposed)",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11003,6 +11772,7 @@
       "coauthor": "TUD",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11042,6 +11812,7 @@
       "coauthor": "All Partners",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11081,6 +11852,7 @@
       "coauthor": "UNINA",
       "reviewer": "QTICS",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11120,6 +11892,7 @@
       "coauthor": "Sofia University",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11159,6 +11932,7 @@
       "coauthor": "TUD · Aditya.grover@ucd.ie (CeADAR)",
       "reviewer": "CeADAR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -11215,6 +11989,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11254,6 +12029,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "CeADAR · Aditya.grover@ucd.ie",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11293,6 +12069,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11332,6 +12109,7 @@
       "coauthor": "HU · Bas.vangestel@hu.nl / rene.vanderploeg@hu.nl",
       "reviewer": "CeADAR · Aditya.grover@ucd.ie",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11371,6 +12149,7 @@
       "coauthor": "BME · András Gézsi",
       "reviewer": "CeADAR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11411,6 +12190,7 @@
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -11522,6 +12302,7 @@
       "coauthor": "BME · Ahmad Khalidi",
       "reviewer": "QTICS · Musfira Jilani",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11561,6 +12342,7 @@
       "coauthor": "West Attica",
       "reviewer": "CeADAR · Musfira Jilani",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11600,6 +12382,7 @@
       "coauthor": "UNIWA · Ahmad Khalidi",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11694,6 +12477,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11733,6 +12517,7 @@
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11772,6 +12557,7 @@
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11811,6 +12597,7 @@
       "coauthor": "West Attica",
       "reviewer": "QTICS · Katalin Jakab Tauberne",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11850,6 +12637,7 @@
       "coauthor": "UNINA",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11889,6 +12677,7 @@
       "coauthor": "BME",
       "reviewer": "QTICS · Katalin Jakab Tauberne",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11928,6 +12717,7 @@
       "coauthor": "BME",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -11967,6 +12757,7 @@
       "coauthor": "TUD",
       "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12006,6 +12797,7 @@
       "coauthor": "Sofia University",
       "reviewer": "QTICS · Katalin Jakab Tauberne",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12045,6 +12837,7 @@
       "coauthor": "HAW",
       "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12084,6 +12877,7 @@
       "coauthor": "UNIWA",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12123,6 +12917,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12162,6 +12957,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12201,6 +12997,7 @@
       "coauthor": "West Attica",
       "reviewer": "Real AI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12293,6 +13090,7 @@
       "coauthor": "TUD",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12387,6 +13185,7 @@
       "coauthor": "Sofia University",
       "reviewer": "CNR",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12427,6 +13226,7 @@
       "coauthor": "UNINA",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12519,6 +13319,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12558,6 +13359,7 @@
       "coauthor": "T.B.D",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12654,6 +13456,7 @@
       "coauthor": "T.B.D",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12693,6 +13496,7 @@
       "coauthor": "HAW · Michael Gille",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12732,6 +13536,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12771,6 +13576,7 @@
       "coauthor": "HAW",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12810,6 +13616,7 @@
       "coauthor": "TU Dublin",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12906,6 +13713,7 @@
       "coauthor": "T.B.D",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12945,6 +13753,7 @@
       "coauthor": "QTICS",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -12984,6 +13793,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13080,6 +13890,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13176,6 +13987,7 @@
       "coauthor": "Sieuwert",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13215,6 +14027,7 @@
       "coauthor": "T.B.D",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13254,6 +14067,7 @@
       "coauthor": "T.B.D",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13350,6 +14164,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13389,6 +14204,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13428,6 +14244,7 @@
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13467,6 +14284,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13506,6 +14324,7 @@
       "coauthor": "TU Dublin",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13602,6 +14421,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13641,6 +14461,7 @@
       "coauthor": "T.B.D",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13680,6 +14501,7 @@
       "coauthor": "UNIWA",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13719,6 +14541,7 @@
       "coauthor": "HAW · Michael Gille",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13812,6 +14635,7 @@
       "coauthor": "TU Dublin (Salam)",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13908,6 +14732,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13947,6 +14772,7 @@
       "coauthor": "QTICS",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -13986,6 +14812,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14025,6 +14852,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14064,6 +14892,7 @@
       "coauthor": "QTICS",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14103,6 +14932,7 @@
       "coauthor": "QTICS",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14142,6 +14972,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14181,6 +15012,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14220,6 +15052,7 @@
       "coauthor": "HAW",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14259,6 +15092,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14298,6 +15132,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14337,6 +15172,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14376,6 +15212,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14415,6 +15252,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14453,6 +15291,7 @@
       "coauthor": "",
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -14554,6 +15393,7 @@
       "coauthor": "",
       "reviewer": "UNINA · Egidia Cirillo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -14602,6 +15442,7 @@
       "coauthor": "",
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -14703,6 +15544,7 @@
       "coauthor": "",
       "reviewer": "UNINA · Egidia",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -14751,6 +15593,7 @@
       "coauthor": "",
       "reviewer": "UNINA · Egidia",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -14799,6 +15642,7 @@
       "coauthor": "",
       "reviewer": "TUD · Na Li",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -14847,6 +15691,7 @@
       "coauthor": "",
       "reviewer": "UNINA · Egidia Cirillo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -14895,6 +15740,7 @@
       "coauthor": "",
       "reviewer": "TUD · Na Li",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -14943,6 +15789,7 @@
       "coauthor": "",
       "reviewer": "TUD · Na Li",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -14982,6 +15829,7 @@
       "coauthor": "",
       "reviewer": "TUD · Na Li",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15021,6 +15869,7 @@
       "coauthor": "",
       "reviewer": "TUD · Na Li",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15060,6 +15909,7 @@
       "coauthor": "",
       "reviewer": "TUD · Na Li",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15099,6 +15949,7 @@
       "coauthor": "",
       "reviewer": "TUD · Na Li",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15138,6 +15989,7 @@
       "coauthor": "",
       "reviewer": "TUD · Na Li",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -15186,6 +16038,7 @@
       "coauthor": "",
       "reviewer": "BME · Hédi Csordás",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -15234,6 +16087,7 @@
       "coauthor": "",
       "reviewer": "BME · Hédi Csordás",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -15282,6 +16136,7 @@
       "coauthor": "",
       "reviewer": "BME · Hédi Csordás",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -15330,6 +16185,7 @@
       "coauthor": "",
       "reviewer": "BME · Hédi Csordás",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -15378,6 +16234,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15417,6 +16274,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15456,6 +16314,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15495,6 +16354,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15534,6 +16394,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15573,6 +16434,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -15612,6 +16474,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -15660,6 +16523,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -15716,6 +16580,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -15764,6 +16629,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -15820,6 +16686,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -15868,6 +16735,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 3,
         "has": true,
@@ -15932,6 +16800,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -15980,6 +16849,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -16036,6 +16906,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16075,6 +16946,7 @@
       "coauthor": "",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16114,6 +16986,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16153,6 +17026,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16192,6 +17066,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16231,6 +17106,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16270,6 +17146,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16309,6 +17186,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16348,6 +17226,7 @@
       "coauthor": "BME",
       "reviewer": "KPI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -16396,6 +17275,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16435,6 +17315,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16474,6 +17355,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16513,6 +17395,7 @@
       "coauthor": "BME",
       "reviewer": "HAW · Frauke Schade",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -16561,6 +17444,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16600,6 +17484,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16639,6 +17524,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16678,6 +17564,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16717,6 +17604,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16756,6 +17644,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16795,6 +17684,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16834,6 +17724,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16873,6 +17764,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16912,6 +17804,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16951,6 +17844,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -16990,6 +17884,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17029,6 +17924,7 @@
       "coauthor": "",
       "reviewer": "HAW",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17069,6 +17965,7 @@
       "coauthor": "",
       "reviewer": "REAL AI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -17125,6 +18022,7 @@
       "coauthor": "",
       "reviewer": "REAL AI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -17181,6 +18079,7 @@
       "coauthor": "",
       "reviewer": "REAL AI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -17237,6 +18136,7 @@
       "coauthor": "",
       "reviewer": "REAL AI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -17293,6 +18193,7 @@
       "coauthor": "",
       "reviewer": "BME",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17332,6 +18233,7 @@
       "coauthor": "",
       "reviewer": "BME",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17371,6 +18273,7 @@
       "coauthor": "",
       "reviewer": "TUD",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17410,6 +18313,7 @@
       "coauthor": "",
       "reviewer": "TUD",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17449,6 +18353,7 @@
       "coauthor": "",
       "reviewer": "TUD",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17488,6 +18393,7 @@
       "coauthor": "",
       "reviewer": "TUD",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17527,6 +18433,7 @@
       "coauthor": "",
       "reviewer": "BME",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17566,6 +18473,7 @@
       "coauthor": "",
       "reviewer": "BME",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17605,6 +18513,7 @@
       "coauthor": "",
       "reviewer": "BME",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17644,6 +18553,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17683,6 +18593,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17722,6 +18633,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17761,6 +18673,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17800,6 +18713,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17839,6 +18753,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17878,6 +18793,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17917,6 +18833,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17956,6 +18873,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -17995,6 +18913,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18034,6 +18953,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18073,6 +18993,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18112,6 +19033,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18151,6 +19073,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18190,6 +19113,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18229,6 +19153,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18268,6 +19193,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18307,6 +19233,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18346,6 +19273,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18385,6 +19313,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18481,6 +19410,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18577,6 +19507,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18673,6 +19604,7 @@
       "coauthor": "TUD",
       "reviewer": "ESI: done",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -18722,6 +19654,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18762,6 +19695,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18802,6 +19736,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18842,6 +19777,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18882,6 +19818,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18922,6 +19859,7 @@
       "coauthor": "",
       "reviewer": "NAT",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -18962,6 +19900,7 @@
       "coauthor": "",
       "reviewer": "NAT",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19002,6 +19941,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19042,6 +19982,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19082,6 +20023,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19122,6 +20064,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19162,6 +20105,7 @@
       "coauthor": "TUD",
       "reviewer": "ESI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -19211,6 +20155,7 @@
       "coauthor": "TUD",
       "reviewer": "TUD · Dariusz Terefenko",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19251,6 +20196,7 @@
       "coauthor": "",
       "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -19307,6 +20253,7 @@
       "coauthor": "",
       "reviewer": "NAT",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19347,6 +20294,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19387,6 +20335,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19427,6 +20376,7 @@
       "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19467,6 +20417,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19507,6 +20458,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19547,6 +20499,7 @@
       "coauthor": "",
       "reviewer": "NAT",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19587,6 +20540,7 @@
       "coauthor": "",
       "reviewer": "NAT",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19627,6 +20581,7 @@
       "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -19676,6 +20631,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19716,6 +20672,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19756,6 +20713,7 @@
       "coauthor": "",
       "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -19812,6 +20770,7 @@
       "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19852,6 +20811,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19892,6 +20852,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19932,6 +20893,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -19972,6 +20934,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20012,6 +20975,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20052,6 +21016,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20094,6 +21059,7 @@
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 2,
         "has": true,
@@ -20205,6 +21171,7 @@
       "coauthor": "HAW · Michael Gille",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20298,6 +21265,7 @@
       "coauthor": "UNINA · (UNINA contact)",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20390,6 +21358,7 @@
       "coauthor": "BME",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20482,6 +21451,7 @@
       "coauthor": "UNINA",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20576,6 +21546,7 @@
       "coauthor": "UNIWA · Ahmad Khalidi",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20657,6 +21628,234 @@
       ]
     },
     {
+      "code": "BSAIC-09",
+      "track": "Management & Finance",
+      "title": "BSAIC-09 Operating Model Alignment",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "BSAIC",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "TUD · Maurice Martin",
+      "coauthor": "SU · Ioannis Patias",
+      "reviewer": "RAI",
+      "off_wiki": false,
+      "realai_wiki_gap": true,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "BSAIC-09"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/BSAIC-09_Operating_Model_Alignment",
+      "wiki_sections": null,
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "registry",
+        "materials"
+      ]
+    },
+    {
+      "code": "BSAIC-10",
+      "track": "Management & Finance",
+      "title": "BSAIC-10 AI Portfolio Roadmapping",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "BSAIC",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "TUD · Maurice Martin",
+      "coauthor": "SU · Ioannis Patias",
+      "reviewer": "RAI",
+      "off_wiki": false,
+      "realai_wiki_gap": true,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "BSAIC-10"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/BSAIC-10_AI_Portfolio_Roadmapping",
+      "wiki_sections": null,
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "registry",
+        "materials"
+      ]
+    },
+    {
+      "code": "BSAIC-11",
+      "track": "Management & Finance",
+      "title": "BSAIC-11 Designing Human/Machine Collaboration",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "BSAIC",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "TUD · Maurice Martin",
+      "coauthor": "SU · Ioannis Patias",
+      "reviewer": "RAI",
+      "off_wiki": false,
+      "realai_wiki_gap": true,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "BSAIC-11"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/BSAIC-11_Designing_Human/Machine_Collaboration",
+      "wiki_sections": null,
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "registry",
+        "materials"
+      ]
+    },
+    {
+      "code": "FIN-13",
+      "track": "Management & Finance",
+      "title": "FIN-13 Base problem - Financial Instruments & Markets - Mortgage as contract, priced risk and portfolio logic",
+      "lesson_type": "Lecture + case study + practical",
+      "duration": "120",
+      "job_role": "Analyst in Finance",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "HU · Hubert Fonteijn",
+      "coauthor": "",
+      "reviewer": "RAI",
+      "off_wiki": false,
+      "realai_wiki_gap": true,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "FIN-13"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-13_Base_problem_-_Financial_Instruments_%26_Markets_-_Mortgage_as_contract,_priced_risk_and_portfolio_logic",
+      "wiki_sections": null,
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "registry",
+        "materials"
+      ]
+    },
+    {
       "code": "MF.15",
       "track": "Management & Finance",
       "title": "MF-15 Process and Value-Stream Mapping for Digital Transformation",
@@ -20670,6 +21869,7 @@
       "coauthor": "",
       "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -20726,6 +21926,7 @@
       "coauthor": "",
       "reviewer": "RAI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -20782,6 +21983,7 @@
       "coauthor": "BME",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20876,6 +22078,7 @@
       "coauthor": "West Attica",
       "reviewer": "Real AI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -20968,6 +22171,7 @@
       "coauthor": "TUD",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -21062,6 +22266,7 @@
       "coauthor": "UNINA",
       "reviewer": "RealAI",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -21154,6 +22359,7 @@
       "coauthor": "",
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -21255,6 +22461,7 @@
       "coauthor": "",
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 1,
         "has": true,
@@ -21356,6 +22563,7 @@
       "coauthor": "",
       "reviewer": "REAL AI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -21412,6 +22620,7 @@
       "coauthor": "",
       "reviewer": "REAL AI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -21468,6 +22677,7 @@
       "coauthor": "",
       "reviewer": "REAL AI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -21524,6 +22734,7 @@
       "coauthor": "",
       "reviewer": "REAL AI",
       "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -21580,6 +22791,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -21676,6 +22888,7 @@
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -21772,6 +22985,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -21868,6 +23082,7 @@
       "coauthor": "T.B.D",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -21964,6 +23179,7 @@
       "coauthor": "TU Dublin",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -22060,6 +23276,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -22156,6 +23373,7 @@
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -22252,6 +23470,7 @@
       "coauthor": "T.B.D",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -22348,6 +23567,7 @@
       "coauthor": "TU Dublin",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -22444,6 +23664,7 @@
       "coauthor": "TU Dublin (Salam)",
       "reviewer": "",
       "off_wiki": false,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -22527,184 +23748,20 @@
       ]
     },
     {
-      "code": "BSAIC.09",
+      "code": "FIN-01",
       "track": "Management & Finance",
-      "title": "Operating Model Alignment",
-      "lesson_type": "",
+      "title": "FIN-01 Base problem - Accounting - From transaction to trusted numbers: R2R, master data and reconciliation",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
-      "due_date": "",
-      "author": "TUD",
-      "coauthor": "",
-      "reviewer": "RAI",
-      "off_wiki": true,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "BSAIC-09"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": null,
-      "wiki_sections": null,
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": false,
-        "outcomes_present": false,
-        "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "registry",
-        "materials"
-      ]
-    },
-    {
-      "code": "BSAIC.10",
-      "track": "Management & Finance",
-      "title": "AI Portfolio Roadmapping",
-      "lesson_type": "",
-      "duration": "",
-      "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
-      "due_date": "",
-      "author": "TUD",
-      "coauthor": "",
-      "reviewer": "RAI",
-      "off_wiki": true,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "BSAIC-10"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": null,
-      "wiki_sections": null,
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": false,
-        "outcomes_present": false,
-        "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "registry",
-        "materials"
-      ]
-    },
-    {
-      "code": "BSAIC.11",
-      "track": "Management & Finance",
-      "title": "Designing Human/Machine Collaboration",
-      "lesson_type": "",
-      "duration": "",
-      "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
-      "due_date": "",
-      "author": "TUD",
-      "coauthor": "",
-      "reviewer": "RAI",
-      "off_wiki": true,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "BSAIC-11"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": null,
-      "wiki_sections": null,
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": false,
-        "outcomes_present": false,
-        "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "registry",
-        "materials"
-      ]
-    },
-    {
-      "code": "FIN.01",
-      "track": "Management & Finance",
-      "title": "Base problem - Accounting - From transaction to trusted numbers: R2R, master data and reconciliation",
-      "lesson_type": "",
-      "duration": "",
-      "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22718,7 +23775,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-01_Base_problem_-_Accounting_-_From_transaction_to_trusted_numbers:_R2R,_master_data_and_reconciliation",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -22742,24 +23799,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.02",
+      "code": "FIN-02",
       "track": "Management & Finance",
-      "title": "AI-enhanced - Accounting - AI invoice capture, matching and confidence thresholds",
-      "lesson_type": "",
+      "title": "FIN-02 AI-enhanced - Accounting - AI invoice capture, matching and confidence thresholds",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22773,7 +23832,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-02_AI-enhanced_-_Accounting_-_AI_invoice_capture,_matching_and_confidence_thresholds",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -22797,24 +23856,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.03",
+      "code": "FIN-03",
       "track": "Management & Finance",
-      "title": "AI-enhanced - Accounting - AI reconciliation and cash application with exception review",
-      "lesson_type": "",
+      "title": "FIN-03 AI-enhanced - Accounting - AI reconciliation and cash application with exception review",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22828,7 +23889,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-03_AI-enhanced_-_Accounting_-_AI_reconciliation_and_cash_application_with_exception_review",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -22852,24 +23913,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.04",
+      "code": "FIN-04",
       "track": "Management & Finance",
-      "title": "AI-enhanced - Accounting - Data-linked disclosures and controllable note generation",
-      "lesson_type": "",
+      "title": "FIN-04 AI-enhanced - Accounting - Data-linked disclosures and controllable note generation",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22883,7 +23946,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-04_AI-enhanced_-_Accounting_-_Data-linked_disclosures_and_controllable_note_generation",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -22907,24 +23970,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.05",
+      "code": "FIN-05",
       "track": "Management & Finance",
-      "title": "Failure modes - Accounting - When accounting AI looks confident but stops being trustworthy",
-      "lesson_type": "",
+      "title": "FIN-05 Failure modes - Accounting - When accounting AI looks confident but stops being trustworthy",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22938,7 +24003,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-05_Failure_modes_-_Accounting_-_When_accounting_AI_looks_confident_but_stops_being_trustworthy",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -22962,24 +24027,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.06",
+      "code": "FIN-06",
       "track": "Management & Finance",
-      "title": "Regulatory - Accounting - Standards, controls and audit evidence for AI-supported close",
-      "lesson_type": "",
+      "title": "FIN-06 Regulatory - Accounting - Standards, controls and audit evidence for AI-supported close",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "HAW",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22993,7 +24060,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-06_Regulatory_-_Accounting_-_Standards,_controls_and_audit_evidence_for_AI-supported_close",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23017,24 +24084,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.07",
+      "code": "FIN-07",
       "track": "Management & Finance",
-      "title": "Base problem - Finance & Control - From actuals to steering: budgeting, forecasting and management reporting",
-      "lesson_type": "",
+      "title": "FIN-07 Base problem - Finance & Control - From actuals to steering: budgeting, forecasting and management reporting",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23048,7 +24117,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-07_Base_problem_-_Finance_%26_Control_-_From_actuals_to_steering:_budgeting,_forecasting_and_management_reporting",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23072,24 +24141,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.08",
+      "code": "FIN-08",
       "track": "Management & Finance",
-      "title": "Base problem - Finance & Control - The abstraction gap between actuals and forecasts",
-      "lesson_type": "",
+      "title": "FIN-08 Base problem - Finance & Control - The abstraction gap between actuals and forecasts",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23103,7 +24174,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-08_Base_problem_-_Finance_%26_Control_-_The_abstraction_gap_between_actuals_and_forecasts",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23127,24 +24198,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.09",
+      "code": "FIN-09",
       "track": "Management & Finance",
-      "title": "AI-enhanced - Finance & Control - ML forecasting and discovered drivers versus expert models",
-      "lesson_type": "",
+      "title": "FIN-09 AI-enhanced - Finance & Control - ML forecasting and discovered drivers versus expert models",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23158,7 +24231,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-09_AI-enhanced_-_Finance_%26_Control_-_ML_forecasting_and_discovered_drivers_versus_expert_models",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23182,24 +24255,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.10",
+      "code": "FIN-10",
       "track": "Management & Finance",
-      "title": "AI-enhanced - Finance & Control - AI variance analysis, commentary and anomaly triage",
-      "lesson_type": "",
+      "title": "FIN-10 AI-enhanced - Finance & Control - AI variance analysis, commentary and anomaly triage",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23213,7 +24288,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-10_AI-enhanced_-_Finance_%26_Control_-_AI_variance_analysis,_commentary_and_anomaly_triage",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23237,24 +24312,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.11",
+      "code": "FIN-11",
       "track": "Management & Finance",
-      "title": "Failure modes - Finance & Control - Regime change, false precision and overwhelmed reviewers",
-      "lesson_type": "",
+      "title": "FIN-11 Failure modes - Finance & Control - Regime change, false precision and overwhelmed reviewers",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23268,7 +24345,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-11_Failure_modes_-_Finance_%26_Control_-_Regime_change,_false_precision_and_overwhelmed_reviewers",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23292,24 +24369,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.12",
+      "code": "FIN-12",
       "track": "Management & Finance",
-      "title": "Regulatory - Finance & Control - Forecast governance with COSO, SR 11-7 and model documentation",
-      "lesson_type": "",
+      "title": "FIN-12 Regulatory - Finance & Control - Forecast governance with COSO, SR 11-7 and model documentation",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23323,7 +24402,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-12_Regulatory_-_Finance_%26_Control_-_Forecast_governance_with_COSO,_SR_11-7_and_model_documentation",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23347,79 +24426,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.13",
+      "code": "FIN-14",
       "track": "Management & Finance",
-      "title": "Base problem - Financial Instruments & Markets - Mortgage as contract, priced risk and portfolio logic",
-      "lesson_type": "",
+      "title": "FIN-14 AI-enhanced - Financial Instruments & Markets - Credit modelling from interpretable to opaque models",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "FIN-13"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": null,
-      "wiki_sections": null,
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": false,
-        "outcomes_present": false,
-        "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "registry",
-        "materials"
-      ]
-    },
-    {
-      "code": "FIN.14",
-      "track": "Management & Finance",
-      "title": "AI-enhanced - Financial Instruments & Markets - Credit modelling from interpretable to opaque models",
-      "lesson_type": "",
-      "duration": "",
-      "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
-      "due_date": "",
-      "author": "HU",
-      "coauthor": "",
-      "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23433,7 +24459,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-14_AI-enhanced_-_Financial_Instruments_%26_Markets_-_Credit_modelling_from_interpretable_to_opaque_models",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23457,24 +24483,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.15",
+      "code": "FIN-15",
       "track": "Management & Finance",
-      "title": "AI-enhanced - Financial Instruments & Markets - Explaining credit models for borrowers, regulators and risk teams",
-      "lesson_type": "",
+      "title": "FIN-15 AI-enhanced - Financial Instruments & Markets - Explaining credit models for borrowers, regulators and risk teams",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23488,7 +24516,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-15_AI-enhanced_-_Financial_Instruments_%26_Markets_-_Explaining_credit_models_for_borrowers,_regulators_and_risk_teams",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23512,24 +24540,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.16",
+      "code": "FIN-16",
       "track": "Management & Finance",
-      "title": "AI-enhanced - Financial Instruments & Markets - From portfolio risk to treasury risk: concentration, liquidity and early warning",
-      "lesson_type": "",
+      "title": "FIN-16 AI-enhanced - Financial Instruments & Markets - From portfolio risk to treasury risk: concentration, liquidity and early warning",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23543,7 +24573,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-16_AI-enhanced_-_Financial_Instruments_%26_Markets_-_From_portfolio_risk_to_treasury_risk:_concentration,_liquidity_and_early_warning",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23567,24 +24597,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.17",
+      "code": "FIN-17",
       "track": "Management & Finance",
-      "title": "Failure modes - Financial Instruments & Markets - Non-stationarity, crisis breakdown and unexplainable denials",
-      "lesson_type": "",
+      "title": "FIN-17 Failure modes - Financial Instruments & Markets - Non-stationarity, crisis breakdown and unexplainable denials",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23598,7 +24630,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-17_Failure_modes_-_Financial_Instruments_%26_Markets_-_Non-stationarity,_crisis_breakdown_and_unexplainable_denials",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23622,24 +24654,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.18",
+      "code": "FIN-18",
       "track": "Management & Finance",
-      "title": "Regulatory - Financial Instruments & Markets - From SR 11-7 and Basel model governance to broader AI governance",
-      "lesson_type": "",
+      "title": "FIN-18 Regulatory - Financial Instruments & Markets - From SR 11-7 and Basel model governance to broader AI governance",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23653,7 +24687,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-18_Regulatory_-_Financial_Instruments_%26_Markets_-_From_SR_11-7_and_Basel_model_governance_to_broader_AI_governance",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23677,24 +24711,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.19",
+      "code": "FIN-19",
       "track": "Management & Finance",
-      "title": "Integration - Finance - Data lineage and evidence architecture across accounting, control and risk",
-      "lesson_type": "",
+      "title": "FIN-19 Integration - Finance - Data lineage and evidence architecture across accounting, control and risk",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23708,7 +24744,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-19_Integration_-_Finance_-_Data_lineage_and_evidence_architecture_across_accounting,_control_and_risk",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23732,24 +24768,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.20",
+      "code": "FIN-20",
       "track": "Management & Finance",
-      "title": "Integration - Finance - Human decision rights, review capacity and competence retention",
-      "lesson_type": "",
+      "title": "FIN-20 Integration - Finance - Human decision rights, review capacity and competence retention",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "KPI",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23763,7 +24801,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-20_Integration_-_Finance_-_Human_decision_rights,_review_capacity_and_competence_retention",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23787,24 +24825,26 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
     },
     {
-      "code": "FIN.21",
+      "code": "FIN-21",
       "track": "Management & Finance",
-      "title": "Capstone - Finance - Responsible financial AI operating model with controls, validation and escalation",
-      "lesson_type": "",
+      "title": "FIN-21 Capstone - Finance - Responsible financial AI operating model with controls, validation and escalation",
+      "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Not started",
-      "wiki_status": "",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU",
       "coauthor": "KPI",
       "reviewer": "RAI",
-      "off_wiki": true,
+      "off_wiki": false,
+      "realai_wiki_gap": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -23818,7 +24858,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": null,
+      "wiki_page": "https://hcaim.bme.hu/wiki/FIN-21_Capstone_-_Finance_-_Responsible_financial_AI_operating_model_with_controls,_validation_and_escalation",
       "wiki_sections": null,
       "realai": {
         "involved": true,
@@ -23842,6 +24882,7 @@
         "ready_to_review": false
       },
       "sources": [
+        "wiki",
         "registry",
         "materials"
       ]
@@ -23860,6 +24901,7 @@
       "coauthor": "",
       "reviewer": "RAI",
       "off_wiki": true,
+      "realai_wiki_gap": false,
       "materials": {
         "count": 0,
         "has": false,
@@ -23902,61 +24944,7 @@
     }
   ],
   "off_wiki_codes": [
-    "BSAIC.01",
-    "BSAIC.02",
-    "BSAIC.03",
-    "BSAIC.04",
-    "BSAIC.05",
-    "BSAIC.06",
-    "BSAIC.07",
-    "BSAIC.08",
-    "BSAIC.09",
-    "BSAIC.10",
-    "BSAIC.11",
-    "BSAIC.12",
-    "BSAIC.13",
-    "BSAIC.14",
-    "BSAIC.15",
-    "BSAIC.16",
-    "BSAIC.17",
-    "BSAIC.18",
-    "BSAIC.19",
-    "BSAIC.20",
-    "BSAIC.21",
-    "BSAIC.22",
-    "BSAIC.23",
-    "BSAIC.24",
-    "BSAIC.25",
-    "BSAIC.26",
-    "BSAIC.27",
-    "BSAIC.28",
-    "BSAIC.29",
-    "BSAIC.30",
-    "BSAIC.31",
-    "BSAIC.32",
-    "BSAIC.33",
-    "BSAIC.34",
-    "FIN.01",
-    "FIN.02",
-    "FIN.03",
-    "FIN.04",
-    "FIN.05",
-    "FIN.06",
-    "FIN.07",
-    "FIN.08",
-    "FIN.09",
-    "FIN.10",
-    "FIN.11",
-    "FIN.12",
-    "FIN.13",
-    "FIN.14",
-    "FIN.15",
-    "FIN.16",
-    "FIN.17",
-    "FIN.18",
-    "FIN.19",
-    "FIN.20",
-    "FIN.21",
+    "BSAIC-23",
     "H-193",
     "HL-027",
     "HL-037",

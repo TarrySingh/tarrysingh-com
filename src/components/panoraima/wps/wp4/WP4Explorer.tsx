@@ -162,13 +162,15 @@ export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
                 </span>
               )}
 
-              {le.off_wiki && (
+              {(le.realai_wiki_gap || le.off_wiki) && (
                 <span
                   className="hidden md:inline-flex items-center px-1.5 py-0.5 rounded font-mono text-[9px] uppercase tracking-[0.1em] flex-shrink-0 border border-[#E9CFC6] bg-[#FBEAE5]"
                   style={{ color: "#A53C22" }}
-                  title="From the SharePoint LearningEvents registry — not yet on the wiki master"
+                  title={le.off_wiki
+                    ? "This code isn't on the wiki master yet — SharePoint registry only."
+                    : "On the wiki, but the wiki doesn't list RealAI as reviewer yet — assignment is in the SharePoint M&F registry."}
                 >
-                  not in wiki
+                  {le.off_wiki ? "not on wiki" : "wiki omits RealAI"}
                 </span>
               )}
 
@@ -272,13 +274,15 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
                 RealAI
               </span>
             )}
-            {le.off_wiki && (
+            {(le.realai_wiki_gap || le.off_wiki) && (
               <span
                 className="inline-flex items-center gap-1 px-2 py-0.5 rounded font-mono text-[9px] uppercase tracking-[0.1em] border border-[#E9CFC6] bg-[#FBEAE5]"
                 style={{ color: "#A53C22" }}
-                title="From the SharePoint LearningEvents registry — not yet on the wiki master"
+                title={le.off_wiki
+                  ? "This code isn't on the wiki master yet — SharePoint registry only."
+                  : "On the wiki, but the wiki doesn't list RealAI as reviewer yet."}
               >
-                SharePoint · not in wiki
+                {le.off_wiki ? "SharePoint · not on wiki" : "wiki omits RealAI as reviewer"}
               </span>
             )}
           </div>

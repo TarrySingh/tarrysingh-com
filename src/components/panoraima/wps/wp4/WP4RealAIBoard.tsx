@@ -166,13 +166,15 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
         <span className="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-gray-600">
           {TRACK_SHORT[le.track] ?? le.track}
         </span>
-        {le.off_wiki && (
+        {(le.realai_wiki_gap || le.off_wiki) && (
           <span
             className="inline-flex items-center gap-1 rounded border border-[#E9CFC6] bg-[#FBEAE5] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#A53C22]"
-            title="In the SharePoint LearningEvents registry (marked 'RAI') but not yet on the wiki master — look it up in SharePoint"
+            title={le.off_wiki
+              ? "This code isn't on the wiki master yet — it exists only in the SharePoint registry."
+              : "This LE is on the wiki, but the wiki doesn't list RealAI as reviewer yet — the assignment is only in the SharePoint M&F registry (marked 'RAI')."}
           >
             <FileWarning className="w-2.5 h-2.5" />
-            SharePoint · not in wiki
+            {le.off_wiki ? "not on wiki" : "RealAI not on wiki yet"}
           </span>
         )}
         {le.due_date && (
@@ -271,7 +273,8 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
     registry.summary.realai
 
   const board = registry.realai_board
-  const offWikiCount = useMemo(() => board.filter(le => le.off_wiki).length, [board])
+  const wikiGapCount = useMemo(
+    () => board.filter(le => le.realai_wiki_gap || le.off_wiki).length, [board])
 
   const authoring = useMemo(
     () => board.filter(le => hasRole(le, "authoring")),
@@ -310,13 +313,13 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
           <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#9CA3AF] ml-1 tabular-nums">
             · {board.length} LEs on RealAI&apos;s plate
           </span>
-          {!!offWikiCount && (
+          {!!wikiGapCount && (
             <span
               className="inline-flex items-center gap-1 rounded border border-[#E9CFC6] bg-[#FBEAE5] px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#A53C22] tabular-nums"
-              title="M&F reviews marked 'RAI' in the SharePoint registry but not yet added to the wiki master"
+              title="LEs where RealAI is assigned in the SharePoint M&F registry (marked 'RAI') but the wiki doesn't list us as reviewer yet"
             >
               <FileWarning className="w-2.5 h-2.5" />
-              {offWikiCount} from SharePoint · awaiting wiki
+              {wikiGapCount} where wiki omits RealAI
             </span>
           )}
         </div>

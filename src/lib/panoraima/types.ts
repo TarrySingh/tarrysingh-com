@@ -805,7 +805,8 @@ export interface Wp4LE {
   author: string
   coauthor: string
   reviewer: string
-  off_wiki?: boolean     // true = from SharePoint registry, not yet on the wiki master
+  off_wiki?: boolean          // true = code itself isn't on the wiki master at all
+  realai_wiki_gap?: boolean   // on the wiki, but the wiki doesn't list RealAI's role yet (it's only in SharePoint)
   materials: {
     count: number
     has: boolean
@@ -889,6 +890,7 @@ export interface Wp4Registry {
       awaiting_material: number
       off_wiki: number
       off_wiki_realai?: number
+      realai_wiki_gap?: number
     }
     realai: {
       total: number
