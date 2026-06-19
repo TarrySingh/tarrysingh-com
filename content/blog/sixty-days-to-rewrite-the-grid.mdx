@@ -13,31 +13,31 @@ That [order](https://www.ferc.gov/news-events/news/ferc-act-large-load-interconn
 
 Here is the strangest part of the current moment: the grid is now both the customer and the model.
 
-a customer that doesn't wait
+## a customer that doesn't wait
 
 According to the latest [IEA Energy and AI special report](https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai), global data center electricity consumption was around 415 TWh in 2024 and is projected to reach roughly 945 TWh by 2030. AI-focused data centers — the satellite-trackable "AI factories" the IEA started monitoring — grew capacity threefold in 18 months. Hyperscaler capex topped $400 billion in 2025 and is on pace to grow another 75% this year. None of those numbers come from vendors. They come from the agency whose job it is to count electricity, and even there I would treat the 2030 estimate as a corridor, not a point — the range across IEA scenarios is wide enough to fly a wind turbine through.
 
 Data centers can move from groundbreaking to commissioning in 12-18 months. Transmission lines, when they get built at all, take five. The [most recent reporting](https://www.utilitydive.com/news/pjm-google-tapestry-grid-interconnection-ai/744982/) using Lawrence Berkeley National Lab figures puts the median interconnection wait at five years for projects energized in 2023, up from under two for projects built around the turn of the century. That gap — months on one side, years on the other — is the central planning problem of 2026. FERC's order is an attempt to compress one side of it.
 
-a model that wasn't asked
+## a model that wasn't asked
 
 The model is the other half of the story. Google's grid moonshot, [Tapestry](https://www.tapestryenergy.com/en), has deployed its HyperQ system inside PJM's reformed interconnection queue and reportedly processed 811 generation applications representing 220 GW of potential capacity in under an hour during the initial site control review ([Data Center Dynamics](https://www.datacenterdynamics.com/en/news/google-backed-tapestry-completes-first-deployment-of-ai-platform-for-pjm-interconnection-application-process/), [PJM Inside Lines](https://insidelines.pjm.com/pjm-google-tapestry-join-forces-to-apply-ai-to-enhance-regional-planning-generation-interconnection/)). Vector, the largest distribution utility in New Zealand, is now using Tapestry's tooling for day-to-day operations — the first scaled deployment on a distribution network ([Latitude Media](https://www.latitudemedia.com/news/exclusive-googles-grid-moonshot-is-now-tackling-distribution/)). And AES has published a 20-year roadmap with Tapestry describing what they call a "semi-autonomous" grid: agentic systems planning generation, brokering capacity, dispatching storage, with humans in supervisory loops rather than control loops ([Latitude Media](https://www.latitudemedia.com/news/google-and-aes-map-how-autonomous-ai-agents-will-shape-a-digital-grid/)).
 
 I want to be careful here. "Agentic grid" is not a thing yet. It is a roadmap, not an installed system. What is installed is a queue-screening tool that does what twelve engineers in a fluorescent room used to do over six months. That is genuinely useful. It is also the easy part. The hard part is not screening applications — it is allocating scarce transmission capacity across competing requests with political, economic, and reliability weights that nobody has agreed on. An agent cannot decide on its own that a Pennsylvania steel town gets the kilowatt before a Northern Virginia data hall. That sits with regulators, attorneys general, and ratepayers. The model recommends; the political system disposes. Anyone selling you autonomous grid orchestration in 2026 is selling you a thesis, not a product.
 
-a different kind of deal
+## a different kind of deal
 
 The other thing happening in the seam between AI and electricity is that hyperscalers have stopped waiting for utility expansion plans and started writing power deals that look more like the upstream oil and gas contracts of the 1970s — twenty-year tenors, structured around bespoke technologies, tied to specific load points. Ormat agreed to build new geothermal plants for Google's Nevada operations under NV Energy's "clean transition tariff," with Nevada PUC approval expected in the second half of this year ([Latitude Media](https://www.latitudemedia.com/news/ormat-deepens-its-data-center-power-play-with-google-deal/)). Meta announced a two-decade arrangement combining existing nuclear capacity and SMR investment that could deliver up to 6.6 GW for its AI superclusters by 2035 ([Latitude Media](https://www.latitudemedia.com/news/meta-strikes-6-6-gw-nuclear-deal-to-fuel-its-ai-supercluster/)). PPAs for nuclear in the US passed 16 GW of contracted capacity, the majority tied to data center demand.
 
 This is not the renewables story of 2018 with new logos. It is a sovereign-style energy contract written by a private firm whose model weights are the asset securing the deal. When Mark Zuckerberg signs a 6.6 GW nuclear arrangement, he is doing what national oil companies used to do. That should make somebody uncomfortable.
 
-what the satellites already know
+## what the satellites already know
 
 There is a quieter thread worth pulling. While the headlines focus on data centers and nuclear PPAs, the AI work changing the energy system most cleanly right now is upstream and overhead. The Methane Alert and Response System has expanded into coal and waste tracking this year, running AI analysis over global satellite feeds ([UNEP](https://www.unep.org/topics/energy/methane/methane-alert-and-response-system-mars)). The California Air Resources Board credited [Tanager-1's super-emitter detection](https://ww2.arb.ca.gov/news/californias-methane-satellite-helps-stop-10-large-leaks) with resolving ten large methane leaks at oil and gas facilities across the state since May. Three more satellites are due to launch in 2026 and 2027.
 
 At Earthscan we spend most of our time inside this layer — earth observation feeds, AI classifiers, operator response loops — and the unglamorous truth is that this is where AI is currently doing more measurable good for the energy sector than anywhere else. Closed methane leaks have a numerator and a denominator. Self-reported productivity uplift in a software shop does not.
 
-an opinion, then a stake
+## an opinion, then a stake
 
 If I were on the board of a US utility today I would not be funding another internal AI lab. I would be using the FERC sixty-day window to write a clean co-located large-load tariff that prices firm capacity correctly, embeds curtailment terms enforceable in software, and treats the hyperscaler as the sophisticated counterparty it is. The Tapestry-and-AES "semi-autonomous grid" pitch is interesting but downstream of that policy decision. The contract is the model. The software is the implementation.
 
@@ -47,6 +47,6 @@ The two clocks — facility build and transmission build — are not going to co
 
 Sixty days is a tight clock. The grid has been on it since long before AI noticed.
 
----
+* * *
 
 Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io), an Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).
