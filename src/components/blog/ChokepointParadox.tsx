@@ -23,7 +23,6 @@ import { useRef, useState } from "react"
 
 import { PlateFrame, useReadMode, clamp01, lerp } from "./read-chart-kit"
 import { cpPalette, mixHex } from "./chokepoint-kit"
-import { SKINS, getSkinPalette, type SkinKey } from "./chokepoint-skins"
 
 const CX = 460
 const CY = 282
@@ -53,13 +52,10 @@ function towardCenter(x: number, y: number, dist: number): [number, number] {
   return [CX + (dx / len) * dist, CY + (dy / len) * dist]
 }
 
-export function ChokepointParadox({ skinKey }: { skinKey?: SkinKey } = {}) {
+export function ChokepointParadox() {
   const wrapRef = useRef<HTMLElement | null>(null)
-  const liveMode = useReadMode(wrapRef)
-  // During the audition a skin fixes the palette + mode; in production the
-  // instrument follows the live Read-mode toggle.
-  const mode = skinKey ? SKINS[skinKey].mode : liveMode
-  const p = skinKey ? getSkinPalette(skinKey) : cpPalette(liveMode)
+  const mode = useReadMode(wrapRef)
+  const p = cpPalette(mode)
   const [s, setS] = useState(0.5) // 0 = pure leverage, 1 = pure squeeze
 
   const lvOpacity = lerp(1, 0.16, s)
