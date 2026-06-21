@@ -21,7 +21,7 @@ import Anthropic from "@anthropic-ai/sdk"
  * laundering, citation discipline).
  */
 
-const DEFAULT_MODEL = "claude-sonnet-4-6" // Sonnet for cost control (was opus-4-8; switched 2026-06-18 to cut the ~$1-2/day API bill). Overridden by STUDIO_AI_MODEL env var.
+const DEFAULT_MODEL = "claude-sonnet-4-5" // Sonnet for cost control. NB: claude-sonnet-4-6 broke the Dispatch 2026-06-20/21 (this studio key has no 4-6 access → ai_call_failed); 4-5 is confirmed working (earthscan) and still cheap. opus-4-8 is the known-good fallback. Overridden by STUDIO_AI_MODEL env var.
 const DEFAULT_MAX_TOKENS = 16000 // Article is ~1500 words ≈ 2000 tokens; budget extra for thinking + tool turns
 
 const ROTATION_DOMAINS: readonly string[] = [

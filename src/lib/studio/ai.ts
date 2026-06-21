@@ -24,7 +24,11 @@ import Anthropic from "@anthropic-ai/sdk"
 // why the explicit thinking block is gone. NOTE: runtime is driven by the
 // STUDIO_AI_MODEL env var, which overrides this default — kept in step so an
 // unset env never falls back to a stale model.
-const DEFAULT_MODEL = "claude-sonnet-4-6"
+// NB: claude-sonnet-4-6 broke the daily Dispatch on 2026-06-20/21 — this studio
+// key has no access to that id (every call → ai_call_failed). claude-sonnet-4-5
+// is confirmed working on this account (earthscan) and still cheap; opus-4-8 is
+// the known-good fallback. Overridden by the STUDIO_AI_MODEL env var.
+const DEFAULT_MODEL = "claude-sonnet-4-5"
 const DEFAULT_THINKING_TOKENS = 4000
 const DEFAULT_MAX_TOKENS = 2048
 
