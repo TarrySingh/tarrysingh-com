@@ -48,16 +48,16 @@
       "total": 53,
       "author": 11,
       "reviewer": 42,
-      "reviewed": 2,
+      "reviewed": 7,
       "by_status": {
-        "In development": 10,
-        "Status not set": 40,
-        "In review": 2,
+        "In review": 23,
+        "In development": 9,
+        "Status not set": 20,
         "Not started": 1
       },
-      "needs_action": 17,
+      "needs_action": 27,
       "author_todo": 11,
-      "ready_to_review": 6
+      "ready_to_review": 25
     }
   },
   "guides": {
@@ -531,7 +531,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -566,7 +566,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -589,7 +589,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -624,7 +624,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -647,7 +647,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -682,7 +682,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -2629,8 +2629,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -2672,7 +2672,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -2687,8 +2687,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -2730,7 +2730,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -2745,8 +2745,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -2788,7 +2788,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -2803,8 +2803,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -2846,7 +2846,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -2861,8 +2861,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -2904,7 +2904,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -2919,8 +2919,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "HAW",
@@ -2962,7 +2962,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -2977,8 +2977,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3020,7 +3020,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3035,8 +3035,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3078,7 +3078,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3093,8 +3093,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3136,7 +3136,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3151,8 +3151,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3194,7 +3194,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3209,8 +3209,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3252,7 +3252,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3267,8 +3267,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3310,7 +3310,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3325,8 +3325,8 @@
       "lesson_type": "Lecture + case study + practical",
       "duration": "120",
       "job_role": "Analyst in Finance",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU · Hubert Fonteijn",
       "coauthor": "",
@@ -3368,7 +3368,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3383,8 +3383,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3426,7 +3426,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3441,8 +3441,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3484,7 +3484,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3499,8 +3499,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3542,7 +3542,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3557,8 +3557,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3600,7 +3600,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3615,8 +3615,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3658,7 +3658,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3673,8 +3673,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -3716,7 +3716,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3731,8 +3731,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "KPI",
@@ -3774,7 +3774,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -3789,8 +3789,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "KPI",
@@ -3832,7 +3832,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -20633,7 +20633,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -20668,7 +20668,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -21162,7 +21162,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -21197,7 +21197,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -22104,7 +22104,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22139,7 +22139,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -22162,7 +22162,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22197,7 +22197,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -22220,7 +22220,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22255,7 +22255,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -22270,8 +22270,8 @@
       "lesson_type": "Lecture + case study + practical",
       "duration": "120",
       "job_role": "Analyst in Finance",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU · Hubert Fonteijn",
       "coauthor": "",
@@ -22313,7 +22313,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -22336,7 +22336,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22371,7 +22371,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -22394,7 +22394,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -22429,7 +22429,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24242,8 +24242,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24285,7 +24285,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24300,8 +24300,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24343,7 +24343,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24358,8 +24358,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24401,7 +24401,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24416,8 +24416,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24459,7 +24459,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24474,8 +24474,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24517,7 +24517,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24532,8 +24532,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "HAW",
@@ -24575,7 +24575,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24590,8 +24590,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24633,7 +24633,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24648,8 +24648,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24691,7 +24691,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24706,8 +24706,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24749,7 +24749,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24764,8 +24764,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24807,7 +24807,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24822,8 +24822,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24865,7 +24865,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24880,8 +24880,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24923,7 +24923,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24938,8 +24938,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -24981,7 +24981,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -24996,8 +24996,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -25039,7 +25039,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -25054,8 +25054,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -25097,7 +25097,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -25112,8 +25112,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -25155,7 +25155,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -25170,8 +25170,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -25213,7 +25213,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -25228,8 +25228,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -25271,7 +25271,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -25286,8 +25286,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "KPI",
@@ -25329,7 +25329,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -25344,8 +25344,8 @@
       "lesson_type": "MISSING",
       "duration": "",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "review",
       "due_date": "",
       "author": "HU",
       "coauthor": "KPI",
@@ -25387,7 +25387,7 @@
         "materials_uploaded": false,
         "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
