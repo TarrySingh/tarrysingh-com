@@ -354,9 +354,12 @@ Return JSON only. No code fences. No preamble.`
     const message = err instanceof Error ? err.message : String(err)
     console.error(JSON.stringify({ tag: "studio.ai.frontmatter_error", model, error: message }))
     const debug = process.env.STUDIO_AI_DEBUG === "1"
+    // Surface the real Anthropic error into the failure_reason (keeps the
+    // `ai_call_failed` prefix so it stays retryable) — temporary, to diagnose
+    // the Sonnet 400 from the DB without pulling secrets. Revert after.
     return {
       ok: false,
-      error: "ai_call_failed",
+      error: `ai_call_failed:${model}:${message.replace(/\s+/g, " ").slice(0, 320)}`,
       ...(debug ? { debug: message, modelUsed: model } : {}),
     } as AIError
   }
