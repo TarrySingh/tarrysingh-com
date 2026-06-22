@@ -81,6 +81,7 @@ function isRetryableFailureReason(reason: string | null): boolean {
   if (!reason) return false
   return (
     reason.startsWith("ai_frontmatter:ai_call_failed") ||
+    reason.startsWith("awaiting_frontmatter:") ||
     reason.startsWith("drive_download:") ||
     /\b(?:overloaded|timeout|429|500|502|503|529|econn|network|fetch failed)\b/i.test(reason)
   )
