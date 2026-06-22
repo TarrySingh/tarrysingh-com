@@ -48,16 +48,16 @@
       "total": 53,
       "author": 11,
       "reviewer": 42,
-      "reviewed": 13,
+      "reviewed": 19,
       "by_status": {
         "In review": 23,
         "In development": 9,
         "Status not set": 20,
         "Not started": 1
       },
-      "needs_action": 21,
+      "needs_action": 15,
       "author_todo": 11,
-      "ready_to_review": 19
+      "ready_to_review": 13
     }
   },
   "guides": {
@@ -2985,7 +2985,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -3043,7 +3043,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -3101,7 +3101,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -3159,7 +3159,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -3217,7 +3217,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -3275,7 +3275,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -24598,7 +24598,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -24656,7 +24656,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -24714,7 +24714,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -24772,7 +24772,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -24830,7 +24830,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
@@ -24888,7 +24888,7 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
+      "review_done": true,
       "materials": {
         "count": 0,
         "has": false,
