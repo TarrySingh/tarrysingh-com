@@ -2,7 +2,7 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-06-19T13:27:36.329518Z",
+  "generated_at": "2026-06-22T20:43:01.375893Z",
   "data_sources": {
     "wiki": {
       "status": "live",
@@ -10,7 +10,7 @@
       "master_total": 455
     },
     "sharepoint": {
-      "generated_at": "2026-06-19T12:21:30.874918Z",
+      "generated_at": "2026-06-22T20:43:01.210184Z",
       "counts": {
         "codes_total": 497,
         "with_materials": 51,
@@ -10415,95 +10415,15 @@
       "realai_wiki_gap": false,
       "review_done": false,
       "materials": {
-        "count": 43,
+        "count": 46,
         "has": true,
-        "newest": "2026-06-08",
+        "newest": "2026-06-19",
         "files": [
-          {
-            "name": "3_resources.html",
-            "ext": "html",
-            "kb": 17,
-            "date": "2026-06-08",
-            "sha": "b31174bd5a170e4c",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources.html"
-          },
-          {
-            "name": "2_Exercises_TeacherInstructions.html",
-            "ext": "html",
-            "kb": 24,
-            "date": "2026-06-08",
-            "sha": "6ce43e1124b415b4",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions.html"
-          },
-          {
-            "name": "2_Exercises.html",
-            "ext": "html",
-            "kb": 20,
-            "date": "2026-06-08",
-            "sha": "ce6f0a56d9a103bc",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises.html"
-          },
-          {
-            "name": "bootstrap-138a6193a3bd40baf1e627da441a4734.min.css",
-            "ext": "css",
-            "kb": 420,
-            "date": "2026-06-08",
-            "sha": "a20d3d44875fd0fb",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
-          },
-          {
-            "name": "tippy.umd.min.js",
-            "ext": "js",
-            "kb": 23,
-            "date": "2026-06-08",
-            "sha": "41181eeec6d7ba64",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tippy.umd.min.js"
-          },
-          {
-            "name": "anchor.min.js",
-            "ext": "js",
-            "kb": 5,
-            "date": "2026-06-08",
-            "sha": "69098e105d990f83",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/anchor.min.js"
-          },
-          {
-            "name": "quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css",
-            "ext": "css",
-            "kb": 3,
-            "date": "2026-06-08",
-            "sha": "96d688dbd4c2de66",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css"
-          },
-          {
-            "name": "popper.min.js",
-            "ext": "js",
-            "kb": 19,
-            "date": "2026-06-08",
-            "sha": "4d50586b184724d3",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/popper.min.js"
-          },
-          {
-            "name": "clipboard.min.js",
-            "ext": "js",
-            "kb": 8,
-            "date": "2026-06-08",
-            "sha": "e17a1d816e13c082",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/clipboard/clipboard.min.js"
-          },
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-06-08",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tabsets/tabsets.js"
-          },
           {
             "name": "bootstrap-icons.css",
             "ext": "css",
             "kb": 97,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "01253947f506e030",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/bootstrap/bootstrap-icons.css"
           },
@@ -10511,23 +10431,55 @@
             "name": "bootstrap.min.js",
             "ext": "js",
             "kb": 78,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "d2ea6c1e0cabca20",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/bootstrap/bootstrap.min.js"
+          },
+          {
+            "name": "bootstrap-138a6193a3bd40baf1e627da441a4734.min.css",
+            "ext": "css",
+            "kb": 420,
+            "date": "2026-06-19",
+            "sha": "a20d3d44875fd0fb",
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
           },
           {
             "name": "bootstrap-icons.woff",
             "ext": "woff",
             "kb": 176,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "f55513b7b591cb84",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-06-19",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-06-19",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-06-19",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tabsets/tabsets.js"
           },
           {
             "name": "quarto.js",
             "ext": "js",
             "kb": 26,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "4ecb60f215d96b2a",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/quarto.js"
           },
@@ -10535,39 +10487,55 @@
             "name": "tippy.css",
             "ext": "css",
             "kb": 1,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "5969f497d9158d76",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tippy.css"
-          },
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-06-08",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
-            "name": "tippy.css",
-            "ext": "css",
-            "kb": 1,
-            "date": "2026-06-08",
-            "sha": "5969f497d9158d76",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/tippy.css"
           },
           {
             "name": "tippy.umd.min.js",
             "ext": "js",
             "kb": 23,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "41181eeec6d7ba64",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/tippy.umd.min.js"
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tippy.umd.min.js"
           },
           {
             "name": "anchor.min.js",
             "ext": "js",
             "kb": 5,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-06-19",
+            "sha": "96d688dbd4c2de66",
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-06-19",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-06-19",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-06-19",
             "sha": "69098e105d990f83",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/anchor.min.js"
           },
@@ -10575,7 +10543,7 @@
             "name": "quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css",
             "ext": "css",
             "kb": 3,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "96d688dbd4c2de66",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css"
           },
@@ -10583,23 +10551,23 @@
             "name": "popper.min.js",
             "ext": "js",
             "kb": 19,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "4d50586b184724d3",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/popper.min.js"
           },
           {
-            "name": "bootstrap-icons.css",
-            "ext": "css",
-            "kb": 97,
-            "date": "2026-06-08",
-            "sha": "01253947f506e030",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/bootstrap/bootstrap-icons.css"
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-06-19",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/tabsets/tabsets.js"
           },
           {
             "name": "bootstrap.min.js",
             "ext": "js",
             "kb": 78,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "d2ea6c1e0cabca20",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/bootstrap/bootstrap.min.js"
           },
@@ -10607,7 +10575,7 @@
             "name": "bootstrap-138a6193a3bd40baf1e627da441a4734.min.css",
             "ext": "css",
             "kb": 420,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "a20d3d44875fd0fb",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
           },
@@ -10615,7 +10583,7 @@
             "name": "bootstrap-icons.woff",
             "ext": "woff",
             "kb": 176,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "f55513b7b591cb84",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/bootstrap/bootstrap-icons.woff"
           },
@@ -10623,103 +10591,39 @@
             "name": "quarto.js",
             "ext": "js",
             "kb": 26,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "4ecb60f215d96b2a",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/quarto.js"
-          },
-          {
-            "name": "clipboard.min.js",
-            "ext": "js",
-            "kb": 8,
-            "date": "2026-06-08",
-            "sha": "e17a1d816e13c082",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/clipboard/clipboard.min.js"
-          },
-          {
-            "name": "popper.min.js",
-            "ext": "js",
-            "kb": 19,
-            "date": "2026-06-08",
-            "sha": "4d50586b184724d3",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/popper.min.js"
-          },
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-06-08",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
-            "name": "bootstrap-icons.woff",
-            "ext": "woff",
-            "kb": 176,
-            "date": "2026-06-08",
-            "sha": "f55513b7b591cb84",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap-icons.woff"
-          },
-          {
-            "name": "quarto.js",
-            "ext": "js",
-            "kb": 26,
-            "date": "2026-06-08",
-            "sha": "4ecb60f215d96b2a",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/quarto.js"
           },
           {
             "name": "tippy.css",
             "ext": "css",
             "kb": 1,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "5969f497d9158d76",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/tippy.css"
-          },
-          {
-            "name": "tippy.umd.min.js",
-            "ext": "js",
-            "kb": 23,
-            "date": "2026-06-08",
-            "sha": "41181eeec6d7ba64",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/tippy.umd.min.js"
-          },
-          {
-            "name": "anchor.min.js",
-            "ext": "js",
-            "kb": 5,
-            "date": "2026-06-08",
-            "sha": "69098e105d990f83",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/anchor.min.js"
-          },
-          {
-            "name": "quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css",
-            "ext": "css",
-            "kb": 3,
-            "date": "2026-06-08",
-            "sha": "96d688dbd4c2de66",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css"
-          },
-          {
-            "name": "clipboard.min.js",
-            "ext": "js",
-            "kb": 8,
-            "date": "2026-06-08",
-            "sha": "e17a1d816e13c082",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/clipboard/clipboard.min.js"
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/quarto-html/tippy.css"
           },
           {
             "name": "bootstrap-icons.css",
             "ext": "css",
             "kb": 97,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "01253947f506e030",
-            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap-icons.css"
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/bootstrap/bootstrap-icons.css"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-06-19",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions_files/libs/clipboard/clipboard.min.js"
           },
           {
             "name": "bootstrap.min.js",
             "ext": "js",
             "kb": 78,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "d2ea6c1e0cabca20",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap.min.js"
           },
@@ -10727,17 +10631,113 @@
             "name": "bootstrap-138a6193a3bd40baf1e627da441a4734.min.css",
             "ext": "css",
             "kb": 420,
-            "date": "2026-06-08",
+            "date": "2026-06-19",
             "sha": "a20d3d44875fd0fb",
             "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
           },
           {
-            "name": "1_tutorial_fair_intro.pptx",
-            "ext": "pptx",
-            "kb": 6534,
-            "date": "2026-06-08",
-            "sha": "d03130f530711aa8",
-            "rel": "4.2 Health & Lifescience/HL-006/1_tutorial_fair_intro.pptx"
+            "name": "bootstrap-icons.woff",
+            "ext": "woff",
+            "kb": 176,
+            "date": "2026-06-19",
+            "sha": "f55513b7b591cb84",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-06-19",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "bootstrap-icons.css",
+            "ext": "css",
+            "kb": 97,
+            "date": "2026-06-19",
+            "sha": "01253947f506e030",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/bootstrap/bootstrap-icons.css"
+          },
+          {
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-06-19",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-06-19",
+            "sha": "96d688dbd4c2de66",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-06-19",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-06-19",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-06-19",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-06-19",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-06-19",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-06-19",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_files/libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "2_Exercises_TeacherInstructions.md",
+            "ext": "md",
+            "kb": 6,
+            "date": "2026-06-19",
+            "sha": "5378b138d7c5a2d9",
+            "rel": "4.2 Health & Lifescience/HL-006/2_Exercises_TeacherInstructions.md"
+          },
+          {
+            "name": "3_resources.md",
+            "ext": "md",
+            "kb": 0,
+            "date": "2026-06-19",
+            "sha": "f3260a443834d023",
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources.md"
           }
         ],
         "folder": "HL-006"
@@ -16832,14 +16832,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-06-19",
         "files": [
           {
             "name": "MC-025.pptx",
             "ext": "pptx",
-            "kb": 2106,
-            "date": "2026-06-10",
-            "sha": "431e70912719123c",
+            "kb": 2105,
+            "date": "2026-06-19",
+            "sha": "240c9673c5be805d",
             "rel": "4.3 Media & Culture/MC-025/MC-025.pptx"
           }
         ],
