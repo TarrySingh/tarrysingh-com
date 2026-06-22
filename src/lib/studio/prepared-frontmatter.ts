@@ -38,6 +38,7 @@ export async function getPreparedFrontmatter(
     .from(TABLE)
     .select("category, excerpt, tags")
     .eq("slug", slug)
+    .eq("status", "ready")
     .maybeSingle()
   if (error) {
     console.error(
@@ -81,5 +82,48 @@ export async function upsertPreparedFrontmatter(input: {
       }),
     )
     throw new Error("prepared_frontmatter_upsert_failed")
+  }
+}
+
+/**
+ * Stash an article that the cron ingested but has no prepared frontmatter yet,
+ * so the scheduled cloud routine can pick it up (query status='awaiting'),
+ * generate {category, excerpt, tags}, and flip it to status='ready'. The body
+ * is stashed alongside so the routine needs only Supabase — no Drive access —
+ * which makes it robust in a headless cloud run. insert-or-ignore so it never
+ * clobbers a row that's already ready.
+ */
+export async function stashAwaitingArticle(input: {
+  slug: string
+  title: string
+  body: string
+  wordCount: number
+  articleDate: string
+}): Promise<void> {
+  const sb = createServiceClient()
+  const { error } = await sb.from(TABLE).upsert(
+    {
+      slug: input.slug,
+      status: "awaiting",
+      title: input.title,
+      body: input.body,
+      word_count: input.wordCount,
+      article_date: input.articleDate,
+      category: "",
+      excerpt: "",
+      tags: [],
+      source: "awaiting-ingest",
+    },
+    { onConflict: "slug", ignoreDuplicates: true },
+  )
+  if (error) {
+    console.error(
+      JSON.stringify({
+        tag: "studio.prepared_fm.stash_error",
+        slug: input.slug,
+        error,
+      }),
+    )
+    // Non-fatal — the file stays retryable; a later tick re-stashes.
   }
 }

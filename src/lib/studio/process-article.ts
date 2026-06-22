@@ -1,5 +1,8 @@
 import { parseDailyArticle } from "./ingest"
-import { getPreparedFrontmatter } from "./prepared-frontmatter"
+import {
+  getPreparedFrontmatter,
+  stashAwaitingArticle,
+} from "./prepared-frontmatter"
 import { upsertDraft } from "./drafts-store"
 import { sendApprovalEmail } from "./email"
 import { makeApprovalToken } from "./approval-token"
@@ -153,6 +156,9 @@ export async function processArticle(
   // aiFrontmatter API call that coupled the Dispatch to the Anthropic budget.
   const prepared = await getPreparedFrontmatter(slug)
   if (!prepared) {
+    // Stash the body so the scheduled cloud routine can generate the
+    // frontmatter (Supabase-only on its side, no Drive dependency).
+    await stashAwaitingArticle({ slug, title, body, wordCount, articleDate })
     return {
       ok: false,
       stage: "awaiting_frontmatter",
