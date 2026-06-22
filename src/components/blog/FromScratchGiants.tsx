@@ -114,12 +114,26 @@ const EU_NEXT: Co[] = [
   { name: "Wayve", v: 10, priv: true, sector: "Autonomous driving", note: "" },
   { name: "Aleph α", v: 5, priv: true, sector: "Frontier AI", note: "" },
 ]
+// India — the fourth pole: a from-scratch new-economy + IT cohort that now
+// rivals Europe's. Jio's IPO was filed Jun 2026; several listed in 2024-26.
+const IN_NEXT: Co[] = [
+  { name: "Jio Platforms", v: 157, priv: true, sector: "Telecom & digital", note: "Reliance's digital arm — IPO filed Jun 2026, expected ~$133–180bn.", src: "https://www.businesstoday.in/markets/ipo-corner/story/jio-platforms-ipo-all-eyes-on-reliance-agm-2026-on-19-june-issue-valuation-expectations-537207-2026-06-16" },
+  { name: "HDFC Bank", v: 127, sector: "Banking", note: "India's largest private bank (founded 1994).", src: "https://companiesmarketcap.com/hdfc-bank/marketcap/" },
+  { name: "Bharti Airtel", v: 122, sector: "Telecom", note: "The South-Asian + African carrier (founded 1995).", src: "https://companiesmarketcap.com/inr/bharti-airtel/marketcap/" },
+  { name: "Infosys", v: 51, sector: "IT services", note: "The original Indian software champion.", src: "https://companiesmarketcap.com/infosys/marketcap/" },
+  { name: "Flipkart", v: 36, priv: true, sector: "E-commerce", note: "Walmart-owned; the home-grown Amazon rival.", src: "https://tracxn.com/d/companies/flipkart" },
+  { name: "Eternal", v: 29, sector: "Delivery & commerce", note: "Zomato's parent — food + quick-commerce (Blinkit).", src: "https://companiesmarketcap.com/inr/eternal-zomato/marketcap/" },
+  { name: "Groww", v: 15, sector: "Fintech", note: "The retail-investing platform that IPO'd in 2026.", src: "https://finance.yahoo.com/quote/GROWW.NS/" },
+  { name: "PhonePe", v: 12, priv: true, sector: "Fintech", note: "India's dominant UPI payments app.", src: "https://tracxn.com/d/companies/phonepe" },
+  { name: "Nykaa", v: 10, sector: "E-commerce", note: "Beauty + fashion commerce.", src: "https://companiesmarketcap.com/inr/nykaa/marketcap/" },
+  { name: "Meesho", v: 9, sector: "E-commerce", note: "Social commerce for the next 500M users (IPO 2026).", src: "https://finance.yahoo.com/quote/MEESHO.NS/" },
+]
 
-const K = 1.55 // radius = sqrt(value) * K
+const K = 1.15 // radius = sqrt(value) * K
 
-type Placed = Co & { x: number; y: number; r: number; region: "us" | "eu" | "cn" }
+type Placed = Co & { x: number; y: number; r: number; region: "us" | "eu" | "cn" | "in" }
 
-function packCluster(cos: Co[], cx: number, cy: number, region: "us" | "eu" | "cn"): Placed[] {
+function packCluster(cos: Co[], cx: number, cy: number, region: "us" | "eu" | "cn" | "in"): Placed[] {
   const items = cos
     .map((c) => ({ ...c, r: Math.sqrt(c.v) * K, x: cx, y: cy, region }))
     .sort((a, b) => b.r - a.r)
@@ -173,19 +187,22 @@ export function FromScratchGiants() {
   const usData = useMemo(() => (next ? [...US_2024, ...US_NEXT] : US_2024), [next])
   const euData = useMemo(() => (next ? [...EU_2024, ...EU_NEXT] : EU_2024), [next])
 
-  const us = useMemo(() => packCluster(usData, 340, 330, "us"), [usData])
-  const eu = useMemo(() => packCluster(euData, next ? 885 : 870, next ? 150 : 300, "eu"), [euData, next])
-  const cn = useMemo(() => (next ? packCluster(CN_NEXT, 845, 460, "cn") : []), [next])
+  const us = useMemo(() => packCluster(usData, next ? 320 : 350, next ? 410 : 350, "us"), [usData, next])
+  const eu = useMemo(() => packCluster(euData, next ? 905 : 880, next ? 130 : 310, "eu"), [euData, next])
+  const cn = useMemo(() => (next ? packCluster(CN_NEXT, 900, 365, "cn") : []), [next])
+  const india = useMemo(() => (next ? packCluster(IN_NEXT, 905, 585, "in") : []), [next])
 
   const usTot = usData.reduce((s, c) => s + c.v, 0)
   const euTot = euData.reduce((s, c) => s + c.v, 0)
   const cnTot = CN_NEXT.reduce((s, c) => s + c.v, 0)
+  const inTot = IN_NEXT.reduce((s, c) => s + c.v, 0)
   const ratio = Math.round(usTot / euTot)
 
   const region = {
     us: { fill: p.leverage, hi: p.leverageHi },
     eu: { fill: p.wonder, hi: p.wonderHi },
     cn: { fill: p.squeeze, hi: p.squeezeHi },
+    in: mode === "dark" ? { fill: "#a98fe0", hi: "#c7b4f0" } : { fill: "#6d4ca8", hi: "#8a68c4" },
   }
 
   // reset selection when toggling view (positions change)
@@ -283,6 +300,8 @@ export function FromScratchGiants() {
             <>
               {" "}·{" "}
               <span style={{ color: region.cn.hi }}>China</span>
+              {" "}·{" "}
+              <span style={{ color: region.in.hi }}>India</span>
             </>
           )}
           . Solid = public market cap; ringed = private last-round (approximate). SpaceX public since its
@@ -291,26 +310,32 @@ export function FromScratchGiants() {
       }
     >
       <svg
-        viewBox="0 0 1000 640"
+        viewBox={next ? "0 0 1000 730" : "0 0 1000 640"}
         role="img"
-        aria-label="Bubble map of from-scratch US, European and (in the next-wave view) Chinese companies, area proportional to value; tap a bubble for detail"
+        aria-label="Bubble map of from-scratch US, European and (in the next-wave view) Chinese and Indian companies, area proportional to value; tap a bubble for detail"
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
-        <text x={340} y={62} textAnchor="middle" fill={region.us.hi} style={{ fontSize: 34, fontWeight: 800, letterSpacing: "0.08em" }}>
+        <text x={next ? 300 : 350} y={next ? 56 : 60} textAnchor="middle" fill={region.us.hi} style={{ fontSize: 34, fontWeight: 800, letterSpacing: "0.08em" }}>
           US
         </text>
-        <text x={next ? 885 : 870} y={next ? 70 : 196} textAnchor="middle" fill={region.eu.hi} style={{ fontSize: 26, fontWeight: 800, letterSpacing: "0.08em" }}>
+        <text x={next ? 905 : 880} y={next ? 66 : 200} textAnchor="middle" fill={region.eu.hi} style={{ fontSize: 26, fontWeight: 800, letterSpacing: "0.08em" }}>
           EU
         </text>
         {next && (
-          <text x={845} y={330} textAnchor="middle" fill={region.cn.hi} style={{ fontSize: 24, fontWeight: 800, letterSpacing: "0.08em" }}>
-            CHINA
-          </text>
+          <>
+            <text x={900} y={296} textAnchor="middle" fill={region.cn.hi} style={{ fontSize: 22, fontWeight: 800, letterSpacing: "0.08em" }}>
+              CHINA
+            </text>
+            <text x={905} y={524} textAnchor="middle" fill={region.in.hi} style={{ fontSize: 22, fontWeight: 800, letterSpacing: "0.08em" }}>
+              INDIA
+            </text>
+          </>
         )}
 
         <Bubbles data={us} tone={region.us} />
         <Bubbles data={eu} tone={region.eu} />
         {next && <Bubbles data={cn} tone={region.cn} />}
+        {next && <Bubbles data={india} tone={region.in} />}
       </svg>
 
       {/* Detail card — appears on selection */}
@@ -376,8 +401,9 @@ export function FromScratchGiants() {
         <span style={{ color: region.us.hi, fontSize: 15, fontWeight: 700 }}>US {fmtT(usTot)}</span>
         <span style={{ color: region.eu.hi, fontSize: 15, fontWeight: 700 }}>EU {fmtT(euTot)}</span>
         {next && <span style={{ color: region.cn.hi, fontSize: 15, fontWeight: 700 }}>China {fmtT(cnTot)}</span>}
+        {next && <span style={{ color: region.in.hi, fontSize: 15, fontWeight: 700 }}>India {fmtT(inTot)}</span>}
         <span style={{ color: p.muted, fontSize: 13 }}>
-          {ratio}× the gap{next ? " — and widening with the next cohort" : ""}
+          {ratio}× the gap{next ? " — and widening" : ""}
         </span>
       </div>
     </PlateFrame>
