@@ -6,6 +6,7 @@ import { FourStrokeEngine } from "@/components/blog/FourStrokeEngine"
 import { WealthTransferMinimap } from "@/components/blog/WealthTransferMinimap"
 import { FromScratchGiants } from "@/components/blog/FromScratchGiants"
 import { ChokepointChapterOne } from "@/components/blog/ChokepointChapterOne"
+import { ChokepointChapterTwo } from "@/components/blog/ChokepointChapterTwo"
 
 /** A wide, breakout-neutralised stage for one instrument. `.cp-gallery`
  *  cancels the PlateFrame blog-column breakout margins. */
@@ -103,6 +104,9 @@ export default function ChokepointParadoxPage() {
 
       {/* CHAPTER 1 — prose + V3/V4/V5, in essay flow */}
       <ChokepointChapterOne />
+
+      {/* CHAPTER 2 — prose + V6/V7/V8, in essay flow */}
+      <ChokepointChapterTwo />
 
       {/* V9 + V47 — the engine and where you are in it */}
       <Room
