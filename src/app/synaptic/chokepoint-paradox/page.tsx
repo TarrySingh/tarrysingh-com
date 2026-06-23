@@ -5,9 +5,7 @@ import { OvertureDashboard } from "@/components/blog/OvertureDashboard"
 import { FourStrokeEngine } from "@/components/blog/FourStrokeEngine"
 import { WealthTransferMinimap } from "@/components/blog/WealthTransferMinimap"
 import { FromScratchGiants } from "@/components/blog/FromScratchGiants"
-import { SeventeenHundredMeter } from "@/components/blog/SeventeenHundredMeter"
-import { ValleyOfDeath } from "@/components/blog/ValleyOfDeath"
-import { TwoClocks } from "@/components/blog/TwoClocks"
+import { ChokepointChapterOne } from "@/components/blog/ChokepointChapterOne"
 
 /** A wide, breakout-neutralised stage for one instrument. `.cp-gallery`
  *  cancels the PlateFrame blog-column breakout margins. */
@@ -103,19 +101,8 @@ export default function ChokepointParadoxPage() {
       {/* PROLOGUE — prose + V1 + V2, in essay flow */}
       <ChokepointPrologue />
 
-      {/* V3 + V4 + V5 — Chapter 1, the Netherlands canary (PREVIEW — prose to follow) */}
-      <Room
-        kicker="I · The Canary — the Netherlands in high resolution"
-        intro="The country that builds the machine is Europe in miniature: the richest of savings, the best of science, and a polite, structural refusal to back itself. Three instruments — what the gap costs each citizen, where the research bleeds out, and why a 40-year strategy keeps resetting every four."
-      >
-        <SeventeenHundredMeter />
-        <div className="mt-10">
-          <ValleyOfDeath />
-        </div>
-        <div className="mt-10">
-          <TwoClocks />
-        </div>
-      </Room>
+      {/* CHAPTER 1 — prose + V3/V4/V5, in essay flow */}
+      <ChokepointChapterOne />
 
       {/* V9 + V47 — the engine and where you are in it */}
       <Room
