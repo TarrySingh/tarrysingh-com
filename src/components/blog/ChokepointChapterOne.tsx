@@ -136,6 +136,18 @@ export function ChokepointChapterOne() {
         </P>
 
         <P>
+          And the most telling fact in the whole deck is the one place none of this happens. Dutch
+          agritech is not a research colony &mdash; it is an empire. The Netherlands is the world&rsquo;s{" "}
+          <Lev>second-largest agri-food exporter</Lev>, achieved on roughly <Lev>0.4% of global
+          production volume</Lev>: a small, water-logged country that out-exports whole continents by
+          turning Wageningen&rsquo;s science into greenhouses, seeds and systems it actually owns and
+          scales at home. It is proof, in the country&rsquo;s own figures, that the Dutch <em>can</em>
+          convert world-class research into a durable, home-grown, globe-leading industry &mdash; when
+          they decide to. Which makes the failure to do the same in AI, biotech and deep tech not a
+          ceiling but a choice, and the choice is most visible in where the money goes.
+        </P>
+
+        <P>
           Which brings us to the part that should be impossible to write with a straight face. The
           Netherlands has <Won>&euro;1.6 trillion</Won> in pension assets &mdash; one of the deepest pools
           of patient, long-horizon capital on the planet, money explicitly saved for the forty-year
@@ -267,7 +279,7 @@ export function ChokepointChapterOne() {
 
       <Sources
         items={[
-          "Dutch Competitiveness Strategy, Part A (2026) — Executive summary & crisis dashboard: €1,700/citizen/yr stagnation cost; labour-productivity growth ~0.4% (2014–24) vs ~1.8% historic; R&D intensity 2.23% (target 3% GDP) = ~€6.7bn/yr shortfall, ~€86–107bn 10-yr innovation need; robot density 209 vs Korea 1,012; PISA −20pts (maths/reading/science).",
+          "Dutch Competitiveness Strategy, Part A (2026) — Executive summary & crisis dashboard: €1,700/citizen/yr stagnation cost; labour-productivity growth ~0.4% (2014–24) vs ~1.8% historic; R&D intensity 2.23% (target 3% GDP) = ~€6.7bn/yr shortfall, ~€86–107bn 10-yr innovation need; robot density 209 vs Korea 1,012; PISA −20pts (maths/reading/science); agritech the lone scaled success — world #2 agri-food exporter on ~0.4% of global production volume.",
           "Same — Transformation 1 (“the missing middle”): 0 AI unicorns; new biotech firm formation 48 (2018) → 12 (2024); domestic VC share 15% (was 61%) in €50M+ rounds; ~90% of AI PhDs leave academia; Adyen/Mollie “succeeded despite the ecosystem.” Root causes: corporatist incumbent bias (Shell/Unilever/Philips), banking dominance over VC, subsidy-dependent start-ups, restrictive TTO/spin-out rules, siloed research. Cited therein: Dealroom.co; TechLeap.nl, State of Dutch Tech 2024.",
           "Same — Benchmark matrix (sources: Draghi Report 2024; Dealroom.co; OECD): Israel — Innovation Authority, repay-on-success conditional grants, SpaceIL-as-national-pride, 6.3% R&D intensity; Sweden — 41 unicorns / ~4× Dutch per-capita, 74% of VC to impact, Spotify/Klarna alumni networks; Switzerland — Roche/Novartis corporate R&D, #1 innovation index; Denmark — 30-year sectoral agreements (Vestas/Ørsted); Netherlands = fragmented grants / ivory tower / NGF cancellation.",
           "Same — Transformation 2 (energy): grid congestion “code red” across nearly all provinces; industrial electricity prices ~65% above 2021 levels — a constraint on reindustrialisation (treated fully in a later chapter).",
