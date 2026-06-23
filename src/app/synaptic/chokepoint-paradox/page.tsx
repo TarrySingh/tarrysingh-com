@@ -1,11 +1,10 @@
 import type { ReactNode } from "react"
 
-import { ChokepointParadox } from "@/components/blog/ChokepointParadox"
+import { ChokepointPrologue } from "@/components/blog/ChokepointPrologue"
 import { OvertureDashboard } from "@/components/blog/OvertureDashboard"
 import { FourStrokeEngine } from "@/components/blog/FourStrokeEngine"
 import { WealthTransferMinimap } from "@/components/blog/WealthTransferMinimap"
 import { FromScratchGiants } from "@/components/blog/FromScratchGiants"
-import { AmericanLeash } from "@/components/blog/AmericanLeash"
 import { SeventeenHundredMeter } from "@/components/blog/SeventeenHundredMeter"
 import { ValleyOfDeath } from "@/components/blog/ValleyOfDeath"
 import { TwoClocks } from "@/components/blog/TwoClocks"
@@ -101,16 +100,8 @@ export default function ChokepointParadoxPage() {
         </Stage>
       </section>
 
-      {/* V1 — the title instrument */}
-      <Room
-        kicker="Prologue · One node"
-        intro="Veldhoven. The most important machine on Earth — and the foreign hands on its triggers. Drag the slider: the strength and the exposure are the same node."
-      >
-        <ChokepointParadox />
-        <div className="mt-10">
-          <AmericanLeash />
-        </div>
-      </Room>
+      {/* PROLOGUE — prose + V1 + V2, in essay flow */}
+      <ChokepointPrologue />
 
       {/* V3 + V4 + V5 — Chapter 1, the Netherlands canary (PREVIEW — prose to follow) */}
       <Room
