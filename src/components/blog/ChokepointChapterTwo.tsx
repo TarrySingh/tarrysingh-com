@@ -1,0 +1,189 @@
+import type { ReactNode } from "react"
+
+import { DraghiTracker } from "./DraghiTracker"
+import { WideningGap } from "./WideningGap"
+import { CompassThatSpins } from "./CompassThatSpins"
+import { Prose, P, Lead, ChapterMark, PullQuote, Lev, Won, Sq, Sources } from "./chokepoint-prose"
+
+function Figure({ children, max = 1100 }: { children: ReactNode; max?: number }) {
+  return (
+    <div className="cp-gallery mx-auto my-14 w-full px-2 sm:px-4" style={{ maxWidth: max }}>
+      {children}
+    </div>
+  )
+}
+
+/**
+ * CHAPTER 2 — The Map Out, Filed Under Noted.
+ * The Draghi report as the most lucid diagnosis Europe ever commissioned of its
+ * own decline — and the 18-month autopsy of the inaction that followed. Figures
+ * verified to July 2026 (Draghi 2024; Letta 2024; CER/Commission tracking;
+ * ITIF; Atomico; ECB; Synergy). V6/V7/V8 embedded; Source Ledger at the foot.
+ */
+export function ChokepointChapterTwo() {
+  return (
+    <section>
+      <ChapterMark kicker="Chapter Two · The Map Out" title="Filed Under Noted" />
+
+      <Prose>
+        <Lead>
+          In September 2024, Europe was handed the most lucid diagnosis of its own decline it has ever
+          commissioned, and it has spent the eighteen months since proving the diagnosis right by
+          ignoring it. The document was Mario Draghi&rsquo;s report on European competitiveness &mdash;
+          four hundred pages, written by a former central banker with no election to win and no incentive
+          to flatter, at the request of the European Commission itself. It is not a pamphlet. It is the
+          establishment&rsquo;s own verdict on the establishment, and its central finding is the one this
+          essay keeps arriving at from every direction: Europe is falling behind, the gap is widening, and
+          the cause is not bad luck but a failure to act.
+        </Lead>
+
+        <P>
+          The prescription was specific and enormous. To stop the slide, Draghi argued, Europe needs an
+          additional <Sq>&euro;750&ndash;800 billion of investment every year</Sq> &mdash; on the order of{" "}
+          <Sq>4.4 to 4.7% of EU GDP</Sq>, the largest sustained investment surge since the post-war
+          reconstruction, roughly twice the scale of the Marshall Plan relative to the economy. He broke it
+          down to the euro: about &euro;450 billion a year for decarbonisation, &euro;150 billion for
+          digitalisation, &euro;100&ndash;150 billion for breakthrough innovation, &euro;50 billion for
+          defence. And he was explicit that perhaps <Lev>80% of it must come from private capital</Lev>
+          &mdash; which, given that Europe is the richest savings bloc on the planet, ought to have been
+          the easy part. The map out was not vague. It came with a budget, a timeline, and a list of 383
+          specific recommendations.
+        </P>
+
+        <P>
+          Before the autopsy of what was done with it, look at the diagnosis itself, because the gap
+          Draghi measured is not closing while you read about it &mdash; it is opening, on every axis that
+          compounds. Click through them below.
+        </P>
+      </Prose>
+
+      <Figure max={1160}>
+        <WideningGap />
+      </Figure>
+
+      <Prose>
+        <P>
+          Each of those is a different instrument reading the same disease. Europe deploys a fraction of
+          the venture capital the United States does &mdash; the American market runs <Lev>four to five
+          times larger</Lev>, and in the late-stage rounds that build giants the asymmetry is starker
+          still: Europe accounts for around <Sq>9% of global late-stage funding against America&rsquo;s
+          68%</Sq>. On the capital expenditure that is currently deciding the AI era, the gap is not a
+          multiple but a chasm: America&rsquo;s big platforms are spending something like{" "}
+          <Sq>$700 billion in 2026</Sq> on data centres and AI, against a sovereign European figure nearer{" "}
+          <Sq>&euro;10.6 billion</Sq> &mdash; a ratio in the region of <Won>fifty-five to sixty to
+          one</Won>. The continent that invented the technologies is now a rounding error in the build-out
+          that will monetise them. Draghi&rsquo;s report did not predict this so much as see it arriving
+          and name the cause.
+        </P>
+
+        <P>
+          So what did Europe do with four hundred pages of correct, expensive, establishment-sanctioned
+          advice? It noted them. Eighteen months on, the most generous accounting of the 383
+          recommendations finds that only about <Sq>15% are fully binding law</Sq> &mdash; and that figure
+          is the <em>improvement</em>, up from roughly <Sq>11% the previous autumn</Sq>. The crawl is the
+          story: four points of progress across a year on a plan whose own logic was that the window was
+          already closing. Whole domains &mdash; energy, defence, pharmaceuticals, the automotive sector
+          &mdash; register essentially <Sq>zero</Sq> structural progress. Scrub the timeline below and
+          watch the map sit on the table, drawn in full, almost entirely unwalked.
+        </P>
+      </Prose>
+
+      <Figure>
+        <DraghiTracker />
+      </Figure>
+
+      <Prose>
+        <P>
+          It would be easier to forgive if the problem were disagreement. It is not. Almost nobody of
+          consequence in Brussels disputes the Draghi diagnosis; ministers cite it approvingly in the
+          speeches where they announce that it will be considered. The blockage is not intellectual. It
+          is the thing the report itself named, in a phrase that should be carved over the door of the
+          Berlaymont: <Sq>inertia as a rule of law</Sq>. Europe has built a governance machine whose
+          steady state is deliberation, in which the production of a strategy is treated as
+          interchangeable with the execution of one, and in which any individual government can slow the
+          whole convoy to the speed of its most reluctant member.
+        </P>
+
+        <P>
+          The clearest case is the one most central to Draghi&rsquo;s fix: the single market for capital
+          that would let Europe&rsquo;s &euro;33 trillion of private savings fund Europe&rsquo;s own
+          future. A Capital Markets Union has been official EU policy since <Sq>2015</Sq>. It has been
+          relaunched, rebranded, and re-committed to roughly once per Commission ever since &mdash; most
+          recently as a &ldquo;Savings and Investments Union,&rdquo; with the bloc&rsquo;s six largest
+          economies issuing a fresh call to accelerate in May 2026 and a legislative package now aimed,
+          with a straight face, at <Sq>&ldquo;summer 2026&rdquo;</Sq>. Eleven years of summers. The compass
+          below is the most honest possible diagram of European industrial strategy: a needle that spins
+          with great energy, points authoritatively at each new deadline, and never once settles on a
+          bearing.
+        </P>
+      </Prose>
+
+      <Figure>
+        <CompassThatSpins />
+      </Figure>
+
+      <Prose>
+        <P>
+          And here is the part that turns farce into something colder. As the action has deflated, the{" "}
+          <em>rhetoric</em> has inflated to fill the vacuum. The word that now saturates every European
+          tech communiqué is <Won>&ldquo;sovereignty&rdquo;</Won> &mdash; digital sovereignty,
+          technological sovereignty, strategic autonomy. It is a fine word, and Europe has discovered it
+          at precisely the moment it has the least of the thing. The continent talks sovereignty while
+          running <Sq>70 to 85% of its cloud</Sq> on American hyperscalers, while its savers keep{" "}
+          <Sq>34% of their wealth in bank deposits</Sq> earning nothing rather than funding European
+          firms, while &euro;300 billion a year of that wealth flows out to capitalise the rivals. The
+          vocabulary of independence is doing the work that independence will not.
+        </P>
+
+        <P>
+          Letta&rsquo;s parallel report on the single market, published five months before Draghi&rsquo;s,
+          had already supplied the most damning number of all: of Europe&rsquo;s vast savings, some{" "}
+          <Sq>&euro;300 billion leaves the continent every year</Sq>, much of it to be intermediated by
+          Wall Street and lent back to Europe at a markup, or invested in the American companies that will
+          buy Europe&rsquo;s best startups. A continent that cannot fund itself is not sovereign in any
+          sense the word has ever carried, however many times a press release uses it. Sovereignty is not
+          a slogan you adopt. It is a set of cheques you are willing to write.
+        </P>
+
+        <PullQuote>
+          A diagnosis filed under &ldquo;noted&rdquo; is not neutrality. It is a more articulate way of
+          losing &mdash; the difference between a patient who never saw the doctor and one who read the
+          chart, agreed with it, and changed nothing.
+        </PullQuote>
+
+        <P>
+          None of this means the door is shut. Draghi&rsquo;s map is still on the table, and the striking
+          thing about it is how much of the required capital already exists inside Europe &mdash; it is a
+          problem of plumbing and nerve, not of poverty. The Savings and Investments Union, if it were
+          ever actually built, would route the &euro;300 billion home. The 15% implemented could become
+          50%. The summer that never comes could, in principle, arrive. But hope is not a plan, and the
+          first eighteen months are not encouraging, because they revealed the true obstacle: not that
+          Europe does not know what to do, but that knowing has become, for an entire governing class, a
+          comfortable substitute for doing.
+        </P>
+
+        <P>
+          Which forces the question the rest of this essay exists to answer. If the savings are here, and
+          the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
+          costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
+          the money go instead? Not metaphorically. Mechanically. The next chapter opens the engine that
+          carries Europe&rsquo;s wealth out of Europe, four strokes to a turn, and shows you the part no
+          report quite says out loud: that the outflow is not a leak the continent is failing to plug. It
+          is a standing order it has chosen, for ten years running, not to cancel.
+        </P>
+      </Prose>
+
+      <Sources
+        items={[
+          "Mario Draghi, “The future of European competitiveness” (European Commission, Sept 2024): additional investment need ~€750–800bn/yr (4.4–4.7% of EU GDP), of which ~80% private; ~€450bn decarbonisation + €150bn digital + €100–150bn innovation + €50bn defence; 383 recommendations.",
+          "Draghi implementation tracking (Centre for European Reform / Commission, to Jan 2026): ~15.1% of recommendations fully binding (up from 11.2%, Sept 2025); energy, defence, pharma, auto at ~zero structural progress.",
+          "Enrico Letta, “Much more than a market” (EU Council, Apr 2024): €33tn EU private savings; ~€300bn/yr leaves the EU (largely to the US); 34.1% of EU household savings held in bank deposits (vs ~12% US).",
+          "EU venture-capital gap (ITIF 2025; Atomico, State of European Tech 2025; Crunchbase): US VC ~4–5× the EU; EU ~9% of global late-stage funding vs US ~68%; EU 48 unicorns vs US 206.",
+          "AI / data-centre capex (Euronews, Feb 2026; ECB, Mar 2026): US big-tech ~$700bn in 2026 vs EU sovereign cloud/AI ~€10.6bn — a ~55–60× gap.",
+          "Capital Markets Union / Savings & Investments Union: EU policy since 2015; relaunched as the SIU; E6 acceleration call (May 2026) + Market Integration & Supervision Package targeting summer 2026 (Euronews, May 2026).",
+          "European cloud market: US hyperscalers ~70–85% share; European providers ~15%, stable since 2022 (Synergy Research, 2025–26).",
+        ]}
+      />
+    </section>
+  )
+}
