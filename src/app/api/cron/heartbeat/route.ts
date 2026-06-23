@@ -257,6 +257,90 @@ ${args.commitError ? `<p><strong>GitHub note:</strong> <code>${esc(args.commitEr
   }
 }
 
+// Deterministic frontmatter — NO LLM. Used only as the heartbeat's last-resort
+// self-heal when both cloud-prep runs missed an article: the excerpt is the
+// piece's own opening, verbatim, so a Dispatch can never silently stall.
+function deterministicFallbackFrontmatter(
+  slug: string,
+  title: string,
+  body: string,
+): { category: string; excerpt: string; tags: string[] } {
+  const paras: string[] = []
+  let buf: string[] = []
+  for (const raw of (body || "").split("\n")) {
+    const line = raw.trim()
+    if (!line) {
+      if (buf.length) {
+        paras.push(buf.join(" "))
+        buf = []
+      }
+      continue
+    }
+    if (line.startsWith("#")) continue
+    if (/^(by |—|\*|>|!\[|\[)/i.test(line)) continue
+    buf.push(line)
+    if (buf.join(" ").length > 400) break
+  }
+  if (buf.length) paras.push(buf.join(" "))
+  let text = paras.find((p) => p.length > 60) ?? paras[0] ?? title ?? slug
+  text = text
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/[*_`#>]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+  const words = text.split(" ")
+  let excerpt = words.slice(0, 55).join(" ")
+  if (words.length > 55) excerpt = excerpt.replace(/[,;:]?\s*\S*$/, "") + " …"
+  if (excerpt.length < 20) excerpt = `A new Dispatch — ${title || slug}.`
+  const stop = new Set([
+    "the", "a", "an", "and", "or", "of", "to", "in", "on", "for", "with",
+    "is", "are", "be", "by", "at", "from", "as", "that", "this", "it", "its",
+  ])
+  const tags = Array.from(
+    new Set(slug.split("-").filter((w) => w.length > 2 && !stop.has(w))),
+  ).slice(0, 5)
+  return { category: "Essays", excerpt, tags: tags.length ? tags : ["dispatch"] }
+}
+
+// Promote any article stuck `awaiting` frontmatter (both cloud-prep runs missed
+// it) with deterministic frontmatter, so the Drive-ingest retry pass ships it.
+// Only writes to studio_prepared_frontmatter — never the critical ingest path.
+async function deterministicallyHealAwaiting(): Promise<{
+  healed: number
+  slugs: string[]
+  error?: string
+}> {
+  try {
+    const sb = createServiceClient()
+    const { data, error } = await sb
+      .from("studio_prepared_frontmatter")
+      .select("slug, title, body")
+      .eq("status", "awaiting")
+    if (error) return { healed: 0, slugs: [], error: error.message }
+    const rows =
+      (data as { slug: string; title: string | null; body: string | null }[] | null) ?? []
+    const slugs: string[] = []
+    for (const r of rows) {
+      const fm = deterministicFallbackFrontmatter(r.slug, r.title ?? "", r.body ?? "")
+      const { error: upErr } = await sb
+        .from("studio_prepared_frontmatter")
+        .update({
+          category: fm.category,
+          excerpt: fm.excerpt,
+          tags: fm.tags,
+          status: "ready",
+          source: "heartbeat-fallback",
+        })
+        .eq("slug", r.slug)
+        .eq("status", "awaiting")
+      if (!upErr) slugs.push(r.slug)
+    }
+    return { healed: slugs.length, slugs }
+  } catch (err) {
+    return { healed: 0, slugs: [], error: err instanceof Error ? err.message : String(err) }
+  }
+}
+
 async function handleTick(req: NextRequest) {
   const drafts = await todaysDraftCount()
   const commits = await todaysBlogCommits()
@@ -302,6 +386,25 @@ async function handleTick(req: NextRequest) {
       reason: "no_draft_no_commit_today",
       drafts,
       commits,
+    })
+  }
+
+  // Self-heal before alarming. If an article is stuck `awaiting` frontmatter
+  // (both cloud-prep runs missed it), promote it here with deterministic
+  // frontmatter — the piece's own opening as the excerpt, no LLM — so the
+  // Dispatch ships anyway. `awaiting_frontmatter` is retryable, so the next
+  // Drive-ingest tick turns the now-`ready` row into a draft + approval email
+  // within ~15 min. A silent stall is therefore impossible: worst case is a
+  // plain excerpt Tarry can polish in the editor before publishing.
+  const healed = await deterministicallyHealAwaiting()
+  if (healed.healed > 0) {
+    console.log(JSON.stringify({ tag: "studio.heartbeat.self_healed", ...healed }))
+    await pingWatchdog("ok")
+    return NextResponse.json({
+      ok: true,
+      green: false,
+      selfHealed: healed,
+      note: "promoted awaiting article(s) with deterministic frontmatter; ingest retry ships within ~15 min",
     })
   }
 
