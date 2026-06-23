@@ -2,11 +2,10 @@ import type { ReactNode } from "react"
 
 import { ChokepointPrologue } from "@/components/blog/ChokepointPrologue"
 import { OvertureDashboard } from "@/components/blog/OvertureDashboard"
-import { FourStrokeEngine } from "@/components/blog/FourStrokeEngine"
-import { WealthTransferMinimap } from "@/components/blog/WealthTransferMinimap"
 import { FromScratchGiants } from "@/components/blog/FromScratchGiants"
 import { ChokepointChapterOne } from "@/components/blog/ChokepointChapterOne"
 import { ChokepointChapterTwo } from "@/components/blog/ChokepointChapterTwo"
+import { ChokepointChapterThree } from "@/components/blog/ChokepointChapterThree"
 
 /** A wide, breakout-neutralised stage for one instrument. `.cp-gallery`
  *  cancels the PlateFrame blog-column breakout margins. */
@@ -108,16 +107,8 @@ export default function ChokepointParadoxPage() {
       {/* CHAPTER 2 — prose + V6/V7/V8, in essay flow */}
       <ChokepointChapterTwo />
 
-      {/* V9 + V47 — the engine and where you are in it */}
-      <Room
-        kicker="III · The Standing Order"
-        intro="Europe saves more than anyone and funds everyone but itself. Here is the machine that does it, four strokes to a turn, wider every cycle — and the toggle that runs it backwards."
-      >
-        <FourStrokeEngine />
-        <div className="mt-10">
-          <WealthTransferMinimap active={3} />
-        </div>
-      </Room>
+      {/* CHAPTER 3 — prose + V9/V10/V11/V12, in essay flow */}
+      <ChokepointChapterThree />
 
       {/* V34 — the from-scratch giants, now vs the next wave */}
       <Room
