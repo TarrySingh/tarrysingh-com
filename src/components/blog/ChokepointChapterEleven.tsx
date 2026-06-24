@@ -157,6 +157,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          There is one more turn of the screw, and it is the lane Europe most conspicuously left empty. As
+          frontier models grew ruinously expensive, a parallel world of <Sq>open-weight</Sq> models &mdash;
+          freely downloadable, cheap to run, good enough for most tasks &mdash; exploded to capture roughly{" "}
+          <Sq>half of enterprise inference</Sq>. This was, in principle, Europe&rsquo;s natural territory:
+          open, sovereign, deployable on your own hardware, the very antidote to renting intelligence from a
+          foreign hyperscaler. Instead the open-weight flood was led from China, by DeepSeek and
+          Alibaba&rsquo;s Qwen, and from American challengers like Meta&rsquo;s Llama &mdash; and even the
+          open models run overwhelmingly on American and Chinese cloud infrastructure. Europe had the
+          strongest possible case for an open, sovereign-inference strategy, and the talent to execute it,
+          and watched two other powers fill the lane while it debated the rules of the road.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
