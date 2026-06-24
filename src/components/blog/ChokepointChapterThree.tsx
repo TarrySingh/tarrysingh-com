@@ -140,9 +140,9 @@ export function ChokepointChapterThree() {
         <P>
           Which is the purest expression of the whole machine: the European pension system, sitting on the
           deepest retirement savings in the world, allocates a vanishing fraction of it to the venture
-          capital that builds the future. The European figure is around <Sq>0.01% of assets</Sq>; the
-          American figure is roughly <Lev>0.03%</Lev> &mdash; three times as much from a system that is
-          itself far from generous. A hundredth of a percent. The savers&rsquo; own money, managed in the
+          capital that builds the future. The European figure is on the order of a <Sq>hundredth of a per
+          cent</Sq> of assets, against an American system that commits roughly <Lev>a hundred times</Lev>
+          more. The savers&rsquo; own money, managed in the
           savers&rsquo; own name, declines to back the economy the savers will retire into &mdash; and
           flows instead to the firms that will sell that economy its software at a markup. The standing
           order does not need a villain. It needs only a thousand prudent people each doing the normal,
@@ -179,8 +179,8 @@ export function ChokepointChapterThree() {
 
         <P>
           The deepest irony sits in the pension statements. European pension funds allocate a vanishingly
-          small slice &mdash; on the order of <Sq>0.01% of their assets</Sq> &mdash; to domestic venture
-          capital, roughly a third of the already-modest American rate, leaving a quarter-trillion euros a
+          small slice &mdash; barely a <Sq>hundredth of a per cent</Sq> of their assets &mdash; to domestic
+          venture capital, a fraction of even the modest American rate, leaving a quarter-trillion euros a
           year of European retirement savings <em>not</em> backing European companies. Where does it go?
           Norway&rsquo;s sovereign wealth fund, the largest single pool of European capital on Earth, holds
           its biggest single positions in <Sq>Apple and Microsoft</Sq> &mdash; on the order of forty to
@@ -244,8 +244,8 @@ export function ChokepointChapterThree() {
         <P>
           Klarna is worth one last look, because its arc rehearses the whole machine in a single company. A
           Swedish founder built it on European soil; it scaled on American venture capital; in 2024 its
-          chief executive boasted that AI had let it do the work of some <Sq>seven hundred</Sq> customer-
-          service staff, a story that helped power the narrative toward a New York listing; and by 2026, with
+          chief executive boasted that AI had let it do the work of some <Sq>seven hundred</Sq>
+          customer-service staff, a story that helped power the narrative toward a New York listing; and by 2026, with
           service quality slipping, it had quietly begun <Sq>rehiring humans</Sq> into a hybrid model. Read
           it slowly and every stroke is there: build in Europe, fund from America, optimise for the exit
           narrative rather than the durable business, and list in New York so the compounding accrues to US
@@ -348,7 +348,7 @@ export function ChokepointChapterThree() {
           "European scale-up funding cliff (Invest Europe / Dealroom 2025; Letta report): European capital leads ~78% of early-stage but ~18% of late-stage rounds; ~82% of scale-up rounds foreign-led. Scaleup Europe Fund (~€5bn, EQT-managed, first close autumn 2026).",
           "Champion captures (company filings/announcements): Klarna NYSE listing, Sept 2025; Wise primary listing moved to Nasdaq, May 2026 (LSE secondary retained); Arm — SoftBank-owned, Nasdaq-listed; DeepMind — a Google division.",
           "Norway Government Pension Fund Global (NBIM, 2026): ~€1.7tn fund; ~$49bn in Apple, ~$42bn in Microsoft (~1.3% each) — a major but not top-5 holder.",
-          "Pension-fund venture allocation (ECB, May 2026): EU pension funds ~0.01% of assets to venture capital vs US ~0.03% — a ~3× gap.",
+          "Pension-fund venture allocation (two metrics): on TOTAL venture capital, EU pension funds ~0.018% of assets vs US ~1.9% (~100×; rooted in the 1979 US ERISA “prudent-man” rule change Europe never matched); on the DOMESTIC-VC subset, EU ~0.01% vs US ~0.03% (~3×). ECB (May 2026); Lazard/Draghi.",
         ]}
       />
     </section>
