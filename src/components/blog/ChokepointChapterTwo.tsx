@@ -188,6 +188,18 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          And the dependence deepens precisely as it appears to localise. The American hyperscalers have
+          learned to answer Europe&rsquo;s sovereignty worries by building on European soil &mdash; AWS,
+          Microsoft and Google have committed tens of billions of euros to data centres and &ldquo;EU
+          sovereign cloud&rdquo; regions across Germany, France and beyond. It sounds like reshoring. It is
+          closer to the opposite: a European building, full of American servers, running American software,
+          billed on a subscription that can be re-priced or, in the limit, switched off from abroad. The
+          concrete is European; the control is not. And the gap in who actually <em>spends</em> tells the
+          real story &mdash; American AI and data-centre capital expenditure runs into the hundreds of
+          billions a year against a European sovereign-cloud figure still measured in low tens.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
