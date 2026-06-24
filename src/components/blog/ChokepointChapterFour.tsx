@@ -176,6 +176,17 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          Step back and the strategic picture is starker still: for all the Chips Act money and ambition,
+          there is, as of 2026, <Sq>no leading-edge logic fab in Europe at all</Sq> &mdash; nothing making
+          chips at the three-nanometre class that ASML&rsquo;s own machines enable in Taiwan, Korea and
+          Arizona. Europe builds the irreplaceable tool and then buys back the finished chips it cannot make
+          at home, at prices set by the firms that bought the tool. It is the four-stroke engine in silicon:
+          invent the critical capability, sell it wholesale, and re-import the value-added at retail. The
+          most advanced manufacturing <em>technology</em> on Earth is European; the most advanced
+          manufacturing is somewhere else.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
