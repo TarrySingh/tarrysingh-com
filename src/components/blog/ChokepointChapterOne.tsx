@@ -302,6 +302,26 @@ export function ChokepointChapterOne() {
         </P>
 
         <P>
+          When a Dutch champion does try to conquer America head-on, the result is often a cautionary tale.{" "}
+          <Sq>Just Eat Takeaway</Sq>, born of the Dutch food-delivery pioneer Takeaway.com, bought the
+          American firm <Sq>Grubhub</Sq> in 2021 for around seven billion dollars at the pandemic peak
+          &mdash; and offloaded it a few years later for a fraction of that, a multi-billion-dollar
+          write-down that stands among the costliest European attempts to scale into the US market on
+          American terms. The lesson Dutch boardrooms drew was not &ldquo;try harder&rdquo; but
+          &ldquo;don&rsquo;t try&rdquo; &mdash; which is its own kind of defeat.
+        </P>
+
+        <P>
+          Even the Dutch crown jewels are, on inspection, the children of a retreat. ASML, NXP and BE
+          Semiconductor are all <Sq>spin-offs of Philips</Sq>, once the towering electronics giant of
+          Europe &mdash; brilliant companies set free as their parent shrank from a global champion into a
+          health-tech mid-cap. The cluster is real and world-beating. But it is a constellation thrown off
+          by a contracting star, and nothing in the Dutch system has since assembled a new giant to replace
+          the one that broke apart. Europe is unusually good at producing excellent fragments and unusually
+          bad at keeping, or rebuilding, the whole.
+        </P>
+
+        <P>
           Hold the Netherlands in your mind now as a high-resolution scan of the patient, because every
           symptom you have just seen &mdash; the savings that flee, the scale-ups that emigrate, the
           talent priced to leave, the strategy that resets every four years, the grid that cannot carry
