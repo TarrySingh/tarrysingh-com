@@ -162,10 +162,9 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
-          Density is its own kind of destiny, and the gap there is starker than any salary line. The San
-          Francisco Bay Area packs something like <Sq>twenty-four AI specialists per thousand workers</Sq>;
-          Europe&rsquo;s strongest hub, Dublin, manages around four &mdash; the top American clusters run
-          five to ten times denser than the best European ones. Density is not vanity; it is the mechanism.
+          Density is its own kind of destiny, and it is worth dwelling on why the concentration gap measured
+          earlier &mdash; the top American hubs running five to ten times denser than the best European ones
+          &mdash; matters so much more than the bare ratio suggests. Density is not vanity; it is the mechanism.
           It is how a researcher hears the unpublished result, how the second start-up gets founded by the
           first one&rsquo;s alumni, how capital and talent and ambition collide often enough to ignite.
           Europe&rsquo;s talent is real but diffuse, spread thin across twenty-seven national systems and as
