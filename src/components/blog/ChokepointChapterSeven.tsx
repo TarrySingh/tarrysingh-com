@@ -250,6 +250,18 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          And the men who run German industry have stopped using diplomatic language. Peter Leibinger, head
+          of the powerful federation of German industries, called the moment Germany&rsquo;s <Sq>&ldquo;deepest
+          crisis since the founding of the Federal Republic&rdquo;</Sq>; the billionaire industrialist
+          Reinhold W&uuml;rth warned that the country was caught in a <Sq>&ldquo;downward spiral of
+          deindustrialisation.&rdquo;</Sq> These are not activists or professional declinists; they are the
+          owners and chiefs of the very firms the energy crisis is hollowing out, and they are saying, in
+          public, that the post-war German economic model is breaking. When the people with the most to lose
+          and the most reason for optimism begin talking like this, the polite official insistence that the
+          slump is merely cyclical becomes very hard to credit.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
