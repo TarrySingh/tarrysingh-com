@@ -212,6 +212,18 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          The demand for the Dutch machines, meanwhile, has never been more naked. In 2026 the Korean
+          memory-maker <Sq>SK hynix</Sq> placed what was reported as the largest EUV order in history
+          &mdash; on the order of <Sq>eight billion dollars</Sq> for some thirty machines &mdash; a single
+          foreign customer committing more to ASML&rsquo;s tools than the European Commission directly
+          controls in its entire chip strategy. Brussels, for its part, answered the Chips Act&rsquo;s
+          shortfall by drafting a <Sq>&ldquo;Chips Act 2.0&rdquo;</Sq> with another twenty-billion-euro
+          ambition. The contrast is the chapter in miniature: the world bids billions for the European tool,
+          and Europe answers its own strategic shortfall with another plan, another target, another round
+          number, run through the same fragmented machinery that produced the shortfall in the first place.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
