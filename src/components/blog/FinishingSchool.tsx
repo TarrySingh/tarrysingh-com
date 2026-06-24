@@ -276,8 +276,8 @@ export function FinishingSchool() {
           <text x={18} y={mid - 6} textAnchor="start" fill={p.leverageHi} style={{ fontSize: 30, fontWeight: 800 }}>
             {Math.round(retained * COHORT)}
           </text>
-          <text x={18} y={mid + 12} textAnchor="start" fill={p.leverage} style={{ fontSize: 12, letterSpacing: "0.12em" }}>
-            REALISED AT HOME
+          <text x={18} y={mid + 12} textAnchor="start" fill={p.leverage} style={{ fontSize: 12, letterSpacing: "0.1em" }}>
+            KEPT AT HOME
           </text>
         </g>
 

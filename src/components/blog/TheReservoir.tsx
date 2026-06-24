@@ -74,7 +74,7 @@ export function TheReservoir() {
   const leakBn = OUTFLOW * (1 - t) // what still spills to the US basin
 
   // Over-the-dam spill narrows as the valve turns home.
-  const spillW = lerp(46, 5, eased)
+  const spillW = lerp(20, 4, eased)
   const spillOpacity = lerp(0.95, 0.12, eased)
   // Home-bound channel opens as the valve turns home.
   const homeW = lerp(2, 46, eased)
@@ -141,11 +141,11 @@ export function TheReservoir() {
             <stop offset="0%" stopColor={p.squeezeHi} stopOpacity={0.45} />
             <stop offset="100%" stopColor={p.squeeze} stopOpacity={0.9} />
           </linearGradient>
-          <marker id="rv-spill-head" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill={p.squeeze} />
+          <marker id="rv-spill-head" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="13" refY="9" orient="auto">
+            <path d="M0,0 L16,9 L0,18 Z" fill={p.squeeze} />
           </marker>
-          <marker id="rv-home-head" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill={p.leverage} />
+          <marker id="rv-home-head" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="13" refY="9" orient="auto">
+            <path d="M0,0 L16,9 L0,18 Z" fill={p.leverage} />
           </marker>
         </defs>
 
@@ -249,10 +249,10 @@ export function TheReservoir() {
         </text>
 
         {/* spill readout — what still leaks, in mono at the crest */}
-        <text x={(DAM_X + US_X) / 2 + 30} y={US_TOP - 78} textAnchor="middle" fill={p.squeezeHi} style={{ fontSize: 30, fontWeight: 800, opacity: spillOpacity < 0.2 ? 0.4 : 1 }}>
+        <text x={(DAM_X + US_X) / 2 + 30} y={US_TOP - 100} textAnchor="middle" fill={p.squeezeHi} style={{ fontSize: 28, fontWeight: 800, opacity: spillOpacity < 0.2 ? 0.4 : 1 }}>
           {fmtBn(leakBn)}/yr
         </text>
-        <text x={(DAM_X + US_X) / 2 + 30} y={US_TOP - 60} textAnchor="middle" fill={p.soft} style={{ fontSize: 12, letterSpacing: "0.16em" }}>
+        <text x={(DAM_X + US_X) / 2 + 30} y={US_TOP - 80} textAnchor="middle" fill={p.soft} style={{ fontSize: 12, letterSpacing: "0.16em" }}>
           STILL SPILLING OUT
         </text>
       </svg>

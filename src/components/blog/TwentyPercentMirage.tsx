@@ -118,7 +118,7 @@ export function TwentyPercentMirage() {
       }
     >
       <svg
-        viewBox="0 0 860 470"
+        viewBox="0 0 1000 470"
         role="img"
         aria-label={
           field
@@ -168,15 +168,12 @@ export function TwentyPercentMirage() {
           return (
             <g key={`tk-${v}`}>
               <line x1={ix} y1={iy} x2={ox} y2={oy} stroke={isTarget ? p.wonder : p.soft} strokeWidth={isTarget ? 2.4 : 1.4} />
-              <text
-                x={lx}
-                y={ly + 4}
-                textAnchor="middle"
-                fill={isTarget ? p.wonderHi : p.soft}
-                style={{ fontSize: isTarget ? 13 : 11, fontWeight: isTarget ? 700 : 400 }}
-              >
-                {v}%
-              </text>
+              {/* the 20% target's numeric label is carried by the gold TARGET marker — skip it here to avoid a double-label */}
+              {!isTarget && (
+                <text x={lx} y={ly + 4} textAnchor="middle" fill={p.soft} style={{ fontSize: 11 }}>
+                  {v}%
+                </text>
+              )}
             </g>
           )
         })}
@@ -254,7 +251,7 @@ export function TwentyPercentMirage() {
         {/* ── THE FIELD: Intel Magdeburg tombstone, fades in on the reality face ── */}
         <g style={{ opacity: t, transition: trans }} aria-hidden={!field}>
           {/* tombstone slab, lower-right */}
-          <g transform="translate(700, 300)">
+          <g transform="translate(840, 300)">
             <path
               d="M -64 96 L -64 -40 A 64 64 0 0 1 64 -40 L 64 96 Z"
               fill={rgba(p.glowRGB, 0.1)}

@@ -161,10 +161,10 @@ const CASES: Case[] = [
 
 // ---- plot frame (viewBox units) -------------------------------------------
 const W = 920
-const H = 420
+const H = 452
 const PIVOT_X = W / 2
 const PIVOT_Y = 300 // the scissors hinge sits low; blades open upward
-const BLADE_LEN = 300
+const BLADE_LEN = 260 // shorter blades leave headroom for the tip labels at the top
 const HANDLE_LEN = 70
 
 // blade half-angles (radians) at fully-closed vs fully-open
@@ -434,7 +434,7 @@ export function ExitValueScissors() {
         <circle cx={PIVOT_X} cy={PIVOT_Y} r={9} fill={p.wonder} stroke={p.bg} strokeWidth={2} />
         <text
           x={PIVOT_X}
-          y={PIVOT_Y + 40}
+          y={PIVOT_Y + 98}
           textAnchor="middle"
           fill={p.ink}
           style={{ fontSize: 19, fontWeight: 800 }}
@@ -443,23 +443,12 @@ export function ExitValueScissors() {
         </text>
         <text
           x={PIVOT_X}
-          y={PIVOT_Y + 60}
+          y={PIVOT_Y + 116}
           textAnchor="middle"
           fill={p.soft}
           style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}
         >
           {c.capturedVenue} · {c.date}
-        </text>
-
-        {/* the spread, named in mono above the open blades */}
-        <text
-          x={PIVOT_X}
-          y={20}
-          textAnchor="middle"
-          fill={p.squeeze}
-          style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.06em" }}
-        >
-          THE EXIT-VALUE SPREAD — CREATED ◂ EUROPE · US ▸ CAPTURED
         </text>
       </svg>
 
