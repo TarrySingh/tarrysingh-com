@@ -149,6 +149,20 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          And it is no longer only the energy-hungry chemicals and metals; the malaise has reached the
+          machine-makers at the very core of the European model. In Germany &mdash; the continent&rsquo;s
+          industrial heart &mdash; <Sq>Volkswagen</Sq> is cutting on the order of <Sq>35,000 jobs</Sq> by
+          2030 and has begun shifting Golf production to Mexico; <Sq>Bosch</Sq>, the world&rsquo;s largest
+          car-parts maker, has announced around <Sq>22,000</Sq>; ZF and Continental tens of thousands more
+          between them. The chemical sector is in its <Sq>fourth consecutive year of crisis</Sq>, and the
+          single most alarming data point is a survey finding: more than <Sq>half</Sq> of German industrial
+          firms with over five hundred employees now say they are weighing moving production out of the
+          country. This is not a downturn that ends with the cycle. It is the slow relocation of the
+          continent&rsquo;s manufacturing base toward places where the power &mdash; and increasingly the
+          future &mdash; is cheaper, happening to the one country that was supposed to be immune to it.
+        </P>
+
+        <P>
           The new economy tells the same story from the opposite direction. The AI build-out is, at bottom,
           a bet on cheap power, and the numbers have become almost comically lopsided: American hyperscalers
           have announced something on the order of <Sq>four hundred gigawatts</Sq> of new AI-compute
