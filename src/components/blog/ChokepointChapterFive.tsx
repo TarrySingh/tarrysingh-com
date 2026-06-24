@@ -161,6 +161,27 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          The most expensive lesson of all is being taught right now in pharmaceuticals, and it is worth
+          watching because it is the thesis at full speed. <Sq>Novo Nordisk</Sq>, the Danish maker of
+          Ozempic and Wegovy, more or less invented the modern obesity-drug category &mdash; a genuine
+          scientific triumph that briefly made it Europe&rsquo;s most valuable company. Then the American
+          challenger, <Sq>Eli Lilly</Sq>, arrived with deeper pockets, a louder marketing machine and the
+          full weight of the US health system behind it, and out-scaled Novo in its own invention. Through
+          2025 Novo&rsquo;s market value roughly <Sq>halved</Sq>; in 2026 Lilly&rsquo;s pushed toward a
+          trillion dollars. Europe discovered the molecule. America is keeping the market.
+        </P>
+
+        <P>
+          And the pattern is already pre-installed in the next generation. <Sq>Wayve</Sq>, the British
+          self-driving-AI company widely held to be Europe&rsquo;s best, raised its mega-round not from
+          European funds but from <Sq>SoftBank, Microsoft and Nvidia</Sq> &mdash; which means that if it
+          succeeds, the upside compounds to Tokyo and Redmond and Santa Clara, and if it ever needs an
+          exit, there is no European acquirer remotely large enough to be the buyer. The bright spots are
+          not counter-evidence to the argument. Examined honestly, one after another, they <em>are</em> the
+          argument: world-class invention, foreign capture, on repeat, and faster each cycle.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
