@@ -314,9 +314,11 @@ export function ChokepointChapterTen() {
           Tally the everyday digital life of a European and the absence is total. The streaming they watch is
           American &mdash; Netflix, Disney, YouTube and the rest take some <Sq>80% of online video
           minutes</Sq> across the major European markets; the online shopping runs largely through Amazon,
-          which leads all five of the continent&rsquo;s biggest e-commerce markets; the search is Google, the
-          phones run iOS or Android, the social feeds are American or Chinese, the cloud behind all of it is
-          one of three US firms. There is no European Google, no European Amazon, no European Netflix, no
+          which leads all five of the continent&rsquo;s biggest e-commerce markets; the search is Google,
+          which holds around <Sq>95% of the European market</Sq> against low-single-digit shares for
+          home-grown alternatives like Qwant and Ecosia; the browsers are overwhelmingly Chrome; the phones
+          run iOS or Android; the social feeds are American or Chinese; the cloud behind all of it is one of
+          three US firms. There is no European Google, no European Amazon, no European Netflix, no
           European iPhone &mdash; not because Europeans would refuse to use them, but because Europe never
           built them, and, having not built them, now lives its entire digital existence as a paying guest in
           structures it does not own. A continent can be wealthy and cultured and free and still, in the
