@@ -119,6 +119,18 @@ export function ChokepointChapterNine() {
           serious customer for the future.
         </P>
 
+        <P>
+          The machinery behind all this is genuinely vast. Under the Digital Markets Act the Commission
+          formally designated <Sq>six gatekeepers</Sq> &mdash; Apple, Alphabet, Amazon, Meta, Microsoft and
+          ByteDance &mdash; controlling some <Sq>two dozen &ldquo;core platform services&rdquo;</Sq>, each
+          triggering its own compliance regime, audits and interoperability duties. It is, in the abstract,
+          a serious and in places admirable attempt to discipline genuine market power. But step back and
+          the shape is unmistakable: five of the six firms being regulated are American, one is Chinese,
+          and <em>none</em> is European &mdash; because Europe has no platform large enough to need
+          disciplining. The continent has built the world&rsquo;s most sophisticated apparatus for
+          governing digital giants and has not produced a single one of its own to govern.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
