@@ -324,6 +324,20 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          Scholars have started reaching for older words to describe all this, and the words are
+          uncomfortable. The economist Yanis Varoufakis calls it &ldquo;technofeudalism&rdquo; and Europe a
+          &ldquo;vassal&rdquo;; C&eacute;dric Durand sees capital shifting from making things to extracting
+          rent from platforms; Couldry and Mejias describe the harvesting of human behaviour as a new{" "}
+          <Sq>&ldquo;data colonialism&rdquo;</Sq>; Farrell and Newman map how control of the world&rsquo;s
+          digital chokepoints became, in their phrase, <Sq>&ldquo;weaponised interdependence.&rdquo;</Sq> Even
+          Anu Bradford, who literally wrote the book on the &ldquo;Brussels Effect,&rdquo; now says its
+          &ldquo;high-water mark&rdquo; has passed. You do not have to accept every flourish of the framing to
+          feel its weight: a relationship in which one party supplies the platforms, the capital, the chips
+          and the rules, and the other supplies the data, the customers and the rent, is not a partnership of
+          equals. It is one of the oldest arrangements in economic history, wearing a touchscreen.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
