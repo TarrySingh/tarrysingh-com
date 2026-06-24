@@ -206,6 +206,20 @@ export function ChokepointChapterNine() {
           power they were meant to check sits, untouched, in California.
         </P>
 
+        <P>
+          It would be unfair to end the chapter without conceding what the rulebook gets right, because the
+          honest case is more damning than a one-sided one. When the EU mandated a single <Sq>USB-C
+          charger</Sq> for all phones and laptops, it cut waste and saved consumers real money, and the rest
+          of the world quietly followed; its <Sq>right-to-repair</Sq> rules and repairability labels are
+          nudging an entire industry toward durability; the GDPR, for all its costs, genuinely raised the
+          global floor on privacy. This is the Brussels Effect working as advertised &mdash; Europe setting
+          standards the world adopts. The trouble is the asymmetry of what it has chosen to be good at.
+          Europe has become the world&rsquo;s indispensable regulator of products and a negligible producer
+          of them; it writes the rules of the digital economy with one hand and rents the digital economy
+          with the other. Being the referee is an honourable job. It is simply not the same as being a
+          player &mdash; and a continent cannot regulate its way back onto the field.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
