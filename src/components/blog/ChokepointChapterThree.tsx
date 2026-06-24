@@ -216,6 +216,18 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          Klarna is worth one last look, because its arc rehearses the whole machine in a single company. A
+          Swedish founder built it on European soil; it scaled on American venture capital; in 2024 its
+          chief executive boasted that AI had let it do the work of some <Sq>seven hundred</Sq> customer-
+          service staff, a story that helped power the narrative toward a New York listing; and by 2026, with
+          service quality slipping, it had quietly begun <Sq>rehiring humans</Sq> into a hybrid model. Read
+          it slowly and every stroke is there: build in Europe, fund from America, optimise for the exit
+          narrative rather than the durable business, and list in New York so the compounding accrues to US
+          public markets. The founders bank the wealth; the value-creation machine itself ends up on the
+          American side of the ledger.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
