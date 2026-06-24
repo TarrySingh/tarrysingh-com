@@ -375,6 +375,20 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          The scale of ambition is, at least, finally being named at the top. In early 2026 President Macron
+          called for Europe to invest <Sq>&euro;1.2 trillion a year</Sq> across the green, digital and defence
+          transitions &mdash; a figure that would once have been unthinkable and is now merely daunting. It
+          needs to be, because the trend it must bend is stark: Europe&rsquo;s share of world output has
+          fallen from around <Sq>28% in 2010 toward a projected 17% by 2050</Sq>, a trajectory on which, by
+          mid-century, no European state would sit among the world&rsquo;s largest economies at all. Numbers
+          that large can read as rhetoric. But they are the honest measure of the gap between managing a
+          decline and reversing it &mdash; and the whole argument of this essay is that the second course is
+          still, expensively and narrowly, available.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
