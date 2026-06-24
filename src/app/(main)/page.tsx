@@ -6,6 +6,7 @@ import { ArrowRight, TrendingUp, Globe, Cpu, BarChart3, Bot, Home, Network, Gaug
 import coverPlanisphere from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
 import chipPlate from "@proposals/MEMPHIS/plates/plate-I-chip.png"
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
+import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
 
 const stats = [
   { value: "30+", label: "Years of Experience" },
@@ -329,14 +330,103 @@ const Landing = () => {
                 lineHeight: 1.5,
               }}
             >
-              Two interactive plates from a studio that takes its time —
-              museum-grade scientific illustration applied to the technical
-              content of frontier deep-tech proposals.
+              A ~45,000-word field guide and two frontier deep-tech
+              proposals — rendered as museum-grade interactive illustration
+              from a studio that takes its time.
             </p>
           </div>
 
-          {/* paired feature cards */}
-          <div className="mt-14 grid gap-8 lg:grid-cols-2">
+          {/* feature cards */}
+          <div className="mt-14 grid gap-8 lg:grid-cols-3">
+            {/* flagship: the field guide */}
+            <Link
+              href="/synaptic/chokepoint-paradox"
+              className="group block rounded-2xl border p-6 transition-opacity hover:opacity-95"
+              style={{
+                borderColor: "rgba(70,199,214,0.30)",
+                background:
+                  "linear-gradient(180deg, rgba(12,32,46,0.88), rgba(7,17,28,0.94))",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+              }}
+            >
+              <div
+                className="relative aspect-[4/5] w-full overflow-hidden rounded-xl"
+                style={{ background: "#07111c" }}
+              >
+                <ChokepointPlate className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.02]" />
+                <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+                  <span
+                    className="font-mono uppercase transition-all duration-300 group-hover:tracking-[0.32em]"
+                    style={{
+                      color: "rgba(245,232,204,0.6)",
+                      fontSize: "10px",
+                      letterSpacing: "0.28em",
+                      textShadow: "0 1px 6px rgba(0,0,0,0.55)",
+                    }}
+                  >
+                    Interactive field guide
+                  </span>
+                  <span
+                    className="font-mono uppercase transition-opacity duration-300"
+                    style={{
+                      color: "#7fd4e0",
+                      fontSize: "12px",
+                      letterSpacing: "0.32em",
+                      textShadow: "0 1px 6px rgba(0,0,0,0.6)",
+                    }}
+                  >
+                    Enter →
+                  </span>
+                </div>
+              </div>
+              <div className="mt-6">
+                <span
+                  className="text-[11px] font-mono uppercase"
+                  style={{ color: "rgba(70,199,214,0.78)", letterSpacing: "0.3em" }}
+                >
+                  The field guide · July 2026
+                </span>
+                <h3
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'Gloock', serif",
+                    fontSize: "1.7rem",
+                    letterSpacing: "0.04em",
+                    color: "#f6ead0",
+                    lineHeight: 1.05,
+                  }}
+                >
+                  THE CHOKEPOINT PARADOX{" "}
+                  <span style={{ color: "#46c7d6" }}>→</span>
+                </h3>
+                <p
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'IBM Plex Serif', Georgia, serif",
+                    fontStyle: "italic",
+                    fontSize: "0.95rem",
+                    color: "#7fd4e0",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Europe holds the key; Washington owns the lock
+                </p>
+                <p
+                  className="mt-3"
+                  style={{
+                    color: "rgba(196,210,225,0.85)",
+                    fontSize: "0.92rem",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  ~45,000 words · ~40 interactive instruments · the machine
+                  that ships a continent&rsquo;s wealth, talent and IP west —
+                  and the narrow door still open.
+                </p>
+              </div>
+            </Link>
+
             <Link
               href="/synaptic"
               className="group block rounded-2xl border p-6 transition-opacity hover:opacity-95"
