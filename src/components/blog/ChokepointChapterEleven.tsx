@@ -182,6 +182,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          Europe is not doing nothing. The <Sq>EuroHPC</Sq> programme has stood up some of the world&rsquo;s
+          fastest public supercomputers &mdash; Germany&rsquo;s exascale <Sq>Jupiter</Sq> among them &mdash;
+          and the gigafactory plan would add five more. It is real, sovereign, publicly-owned compute, and it
+          deserves credit. But weigh it honestly against the private American build-out and the scale problem
+          reappears: a single US hyperscaler brings more accelerated compute online in a quarter than
+          Europe&rsquo;s flagship public machines hold in total, and it does so every quarter, funded by cash
+          flows no public budget can match. Public supercomputers are necessary and they are not sufficient.
+          The question is never whether Europe can build <em>some</em> sovereign compute. It is whether it
+          can build enough, fast enough, to matter &mdash; and on current trajectories the honest answer is
+          not yet.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
