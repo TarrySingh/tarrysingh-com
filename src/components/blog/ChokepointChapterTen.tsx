@@ -392,6 +392,7 @@ export function ChokepointChapterTen() {
           "Concrete shares: Google ~90% of EU search (Ecosia ~0.5%, Qwant negligible); Chrome ~65% desktop; the late European Search Perspective JV remains sub-1%. StatCounter; country search data, 2026.",
           "Conceptual frame: Varoufakis (“technofeudalism”/“vassal”); Durand (rentier platform capital); Couldry & Mejias (“data colonialism”); Farrell & Newman (“weaponised interdependence”); Anu Bradford (“Brussels Effect” high-water mark passed).",
           "Two-empires squeeze: the US owns the top of the stack; China refines ~92% of rare earths and ~98% of gallium/germanium and has used export controls as leverage. USGS; IEA critical minerals.",
+          "The China squeeze, 2026: BYD EV registrations ~+180% YoY in Europe (top-3, ~45% combined duty); CATL ~40% global battery share & >50% of EU batteries; ~95% of EU solar from China; China retaliated with up to 42.7% tariffs on EU dairy + pork/brandy probes and is being pushed out of EU 5G; EU–China goods deficit ~€360bn (2025); DeepSeek-class open models at a fraction of US cost. EPRS; IEA; CNBC; EUISS.",
         ]}
       />
     </section>
