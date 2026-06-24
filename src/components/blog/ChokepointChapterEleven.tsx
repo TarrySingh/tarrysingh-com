@@ -170,6 +170,18 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          The window in which this could be reversed cheaply is also closing, which is the part that should
+          frighten European policymakers most. Each generation of frontier model costs more to train than
+          the last &mdash; tens, then hundreds of millions of dollars, soon billions &mdash; and the set of
+          organisations that can afford to sit at the very edge is narrowing toward a handful, all of them
+          American or Chinese. A challenger two years behind today may be structurally unable to catch up
+          tomorrow, not because its researchers are worse but because the price of a ticket to the frontier
+          has risen past what any European entity will fund. The deflation makes intelligence cheap to{" "}
+          <em>use</em> and ruinously expensive to <em>make</em> &mdash; and Europe, with all its savings,
+          has so far chosen to be a buyer.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
