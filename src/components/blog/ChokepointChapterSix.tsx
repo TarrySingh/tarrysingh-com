@@ -185,6 +185,20 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          The machinery of retention is broken at both ends. Europe trains an enormous share of the
+          world&rsquo;s science and engineering talent in superb public universities &mdash; and then makes
+          it administratively harder to keep a brilliant non-European graduate than the United States makes
+          it to recruit one, while offering a fraction of the pay and almost none of the equity upside. A
+          doctorate earned in Delft or Z&uuml;rich or Munich is a globally portable asset, and its holder
+          faces a calculation Europe loses at every term: more money, more compute, more ambitious
+          colleagues, a faster path to a green card, all on the far side of the Atlantic. The continent
+          subsidises the most expensive part of the pipeline &mdash; the education &mdash; and then declines
+          to compete for the cheap part, the keeping. It is the most expensive imaginable way to run a
+          talent policy: pay to grow it, pay nothing to hold it, and then call the loss a brain drain as
+          though it were the weather.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
