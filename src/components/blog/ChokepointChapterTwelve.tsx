@@ -276,6 +276,22 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          And before despairing that Europe simply cannot build champions, recall that it has done exactly
+          that, spectacularly, when it chose to. <Sq>Airbus</Sq> began in 1970 as an improbable cross-border
+          consortium &mdash; French, German, Spanish and British &mdash; backed by patient state money against
+          a near-total American monopoly in large passenger jets. For years it was mocked as a subsidised
+          vanity project. Today it is one of only two companies on Earth that can build a wide-body airliner,
+          routinely out-selling Boeing, employing tens of thousands across the continent and exporting to the
+          world. Airbus is the existence proof the whole prescription rests on: when Europe pools its
+          resources across borders, backs an industry with public capital for the decades it takes to mature,
+          and refuses to be scared off by the early losses, it can build a world-beater from nothing and hold
+          it. The continent plainly does not lack the <em>ability</em> to do for AI, chips and energy what it
+          once did for aerospace. It lacks, so far, the will to try at that scale more than once a generation.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
