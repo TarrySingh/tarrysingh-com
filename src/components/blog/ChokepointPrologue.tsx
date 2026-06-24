@@ -141,6 +141,18 @@ export function ChokepointPrologue() {
         </P>
 
         <P>
+          The pattern is not abstract, and the proof is a roll-call of things you use every day. The
+          World Wide Web was written at <Sq>CERN</Sq>, in Geneva, and given to the world for nothing; the
+          MP3 was compressed into being at Germany&rsquo;s <Sq>Fraunhofer</Sq> institute; Skype was built
+          by Estonian engineers for Scandinavian founders; the most important AI laboratory of the 2010s,{" "}
+          <Sq>DeepMind</Sq>, was founded in London. Every one of them became someone else&rsquo;s franchise
+          &mdash; an American platform, an American acquisition, an American market capitalisation. Europe
+          has invented an astonishing share of the modern world and captured the returns on almost none of
+          it, and the <em>regularity</em> with which this happens is the tell. Once is misfortune. A
+          century of it is a machine.
+        </P>
+
+        <P>
           Those choices form a machine of their own, and this essay takes it apart stroke by stroke. It
           runs in four. Europe <strong>saves</strong> more than anyone &mdash; and routes the savings
           abroad. It <strong>funds</strong> the companies that will compete with it &mdash; through other
