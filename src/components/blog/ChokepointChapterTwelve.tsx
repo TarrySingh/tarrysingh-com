@@ -359,6 +359,22 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          History offers Europe a precise and unflattering mirror. Leadership in trade and technology has
+          changed hands before &mdash; from Venice to the Dutch Republic to imperial Britain &mdash; and the
+          shape of each handover is the same: the incumbent, grown rich, loses its nerve for the new thing,
+          drifts from making into rentier finance and the curation of past glories, and is overtaken by a
+          hungrier rival still willing to build. It is not a comforting precedent, because in every case the
+          decline felt, from the inside, like stability. But the mirror cuts both ways: each of those powers
+          was eventually <em>succeeded</em> by another that chose to build, which means the role is never
+          retired, only reassigned. Chancellor Merz put the stakes in a single line at a 2025 sovereignty
+          summit: &ldquo;<Sq>If Europe does not want to become a museum of technology, we must ramp up
+          investment significantly.</Sq>&rdquo; The museum is one available future. It is not, yet, the only
+          one &mdash; and which it becomes is still, narrowly, a matter of choice rather than fate.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
