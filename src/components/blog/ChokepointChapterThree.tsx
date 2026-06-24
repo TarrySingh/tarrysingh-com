@@ -191,6 +191,16 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          The cap-table capture has a flagship case, and it is the most valuable chip-design company
+          outside the foundries. <Sq>ARM</Sq>, founded in Cambridge and the brains inside nearly every
+          smartphone on Earth, was bought by Japan&rsquo;s SoftBank in 2016 and re-listed not in London but
+          on Nasdaq in 2023 &mdash; every euro of value it has compounded since accruing on an American
+          exchange under a Japanese owner. It is not the exception but the median: of European late-stage
+          rounds large enough to build a global company, the clear majority are led or co-led by American
+          investors, who set the terms, the domicile, and ultimately the destination of the exit.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
