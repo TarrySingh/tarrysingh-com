@@ -41,7 +41,7 @@ interface Gauge {
 
 const GAUGES: Gauge[] = [
   {
-    anchor: "#ch1-the-gap",
+    anchor: "#chapter-1",
     chapter: "Ch.1 · Productivity",
     value: "~50%",
     fill: 0.5,
@@ -49,7 +49,7 @@ const GAUGES: Gauge[] = [
     accent: "wonder",
   },
   {
-    anchor: "#ch3-standing-order",
+    anchor: "#chapter-3",
     chapter: "Ch.3 · The standing order",
     value: "€300bn",
     fill: 0.78,
@@ -57,7 +57,7 @@ const GAUGES: Gauge[] = [
     accent: "squeeze",
   },
   {
-    anchor: "#ch10-tribute",
+    anchor: "#chapter-10",
     chapter: "Ch.10 · The tribute",
     value: "€264bn",
     fill: 0.7,
@@ -65,7 +65,7 @@ const GAUGES: Gauge[] = [
     accent: "squeeze",
   },
   {
-    anchor: "#ch6-dry-powder",
+    anchor: "#chapter-6",
     chapter: "Ch.6 · Dry powder",
     value: "0.009%",
     fill: 0.32,
@@ -73,7 +73,7 @@ const GAUGES: Gauge[] = [
     accent: "leverage",
   },
   {
-    anchor: "#ch12-the-drawer",
+    anchor: "#chapter-12",
     chapter: "Ch.12 · The drawer",
     value: "11%",
     fill: 0.11,
@@ -81,13 +81,31 @@ const GAUGES: Gauge[] = [
     accent: "leverage",
   },
   {
-    anchor: "#ch9-forty-times",
+    anchor: "#chapter-9",
     chapter: "Ch.9 · The gulf",
     value: "40×",
     fill: 0.9,
     caption: "Anthropic (~$965bn) against Europe's flagship Mistral (~€20bn).",
     accent: "wonder",
   },
+]
+
+// Every section in reading order — the full index strip beneath the six hero
+// dials. IDs match the <section> anchors on each chapter (and the JumpNav rail).
+const SECTIONS: { id: string; roman: string; title: string }[] = [
+  { id: "prologue", roman: "·", title: "Prologue" },
+  { id: "chapter-1", roman: "I", title: "The Canary" },
+  { id: "chapter-2", roman: "II", title: "The Map Out" },
+  { id: "chapter-3", roman: "III", title: "The Standing Order" },
+  { id: "chapter-4", roman: "IV", title: "The Crown Jewel" },
+  { id: "chapter-5", roman: "V", title: "Tenant Farms" },
+  { id: "chapter-6", roman: "VI", title: "The Finishing School" },
+  { id: "chapter-7", roman: "VII", title: "The Electrons" },
+  { id: "chapter-8", roman: "VIII", title: "The Re-Armament" },
+  { id: "chapter-9", roman: "IX", title: "The Moat" },
+  { id: "chapter-10", roman: "X", title: "The Ledger" },
+  { id: "chapter-11", roman: "XI", title: "The Accelerant" },
+  { id: "chapter-12", roman: "XII", title: "The Turn & Coda" },
 ]
 
 function accentOf(p: CPPalette, a: Accent): { base: string; hi: string } {
@@ -148,6 +166,15 @@ export function OvertureDashboard({ onJump }: { onJump?: (anchor: string) => voi
     if (onJump) {
       e.preventDefault()
       onJump(anchor)
+      return
+    }
+    // No external handler: smooth-scroll to the section ourselves so every dial
+    // and index pill actually navigates (a bare href would otherwise hard-jump).
+    const el = typeof document !== "undefined" ? document.getElementById(anchor.replace("#", "")) : null
+    if (el) {
+      e.preventDefault()
+      el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" })
+      if (typeof history !== "undefined") history.replaceState(null, "", anchor)
     }
   }
 
@@ -259,7 +286,7 @@ export function OvertureDashboard({ onJump }: { onJump?: (anchor: string) => voi
                   {g.caption}
                 </span>
                 <span
-                  className="mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.12em] opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"
+                  className="mt-1.5 inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.12em] opacity-60 transition-opacity group-hover:opacity-100 group-focus:opacity-100"
                   style={{ fontFamily: "var(--font-mono), monospace", color: hi }}
                 >
                   Read the chapter →
@@ -288,6 +315,35 @@ export function OvertureDashboard({ onJump }: { onJump?: (anchor: string) => voi
           Structure
         </span>
       </div>
+
+      {/* the full index — every section, one tap away (the six dials above are the highlights) */}
+      <nav className="mt-4 border-t pt-3" style={{ borderColor: p.hair }} aria-label="All chapters">
+        <span
+          className="mb-2 block text-[10px] uppercase tracking-[0.18em]"
+          style={{ fontFamily: "var(--font-mono), monospace", color: p.soft }}
+        >
+          The full index · jump to any section
+        </span>
+        <div className="flex flex-wrap gap-1.5">
+          {SECTIONS.map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              onClick={(e) => handleJump(e, `#${s.id}`)}
+              className="rounded-md border px-2 py-1 text-[11px] no-underline transition-opacity hover:opacity-100"
+              style={{
+                borderColor: p.border,
+                color: p.muted,
+                fontFamily: "var(--font-mono), monospace",
+                background: rgba(p.inkRGB, mode === "dark" ? 0.04 : 0.02),
+                opacity: 0.82,
+              }}
+            >
+              <span style={{ color: p.soft }}>{s.roman}</span>&nbsp;{s.title}
+            </a>
+          ))}
+        </div>
+      </nav>
     </PlateFrame>
   )
 }
