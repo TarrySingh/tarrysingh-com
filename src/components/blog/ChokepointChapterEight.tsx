@@ -291,8 +291,8 @@ export function ChokepointChapterEight() {
           first <Sq>&euro;38 billion</Sq> in disbursements to eight member states, and a new five-nation
           consortium, <Sq>LEAP</Sq>, formed to mass-produce the cheap drones the Ukraine war has shown to be
           decisive. But the gap between spending and capability is still wide and slow to close: the flagship{" "}
-          <Sq>European Sky Shield</Sq> air-defence initiative now counts thirty nations and, years in, still
-          has no integrated system actually deployed. This is the recurring shape of European ambition &mdash;
+          <Sq>European Sky Shield</Sq> air-defence initiative now counts some two dozen nations and, years in,
+          still has no integrated system actually deployed. This is the recurring shape of European ambition &mdash;
           the announcement arrives long before the capability, the cheque clears years before the shield is
           built &mdash; and in defence, more than anywhere, the lag between deciding and fielding is measured
           in the one currency that ultimately matters: time the continent may not have.
@@ -321,7 +321,7 @@ export function ChokepointChapterEight() {
           "The soft kill-switch made literal: the US paused intelligence-sharing with Ukraine for ~6 days (Mar 2025); ITAR gives Washington a re-export/use veto over US components in EU weapons. Reporting; US ITAR.",
           "Capability gaps: Europe leans on ~3 shared C-17 airlifters; Copernicus imagery too coarse for military vehicles; no credible European SEAD; no European SpaceX; IRIS² satcom not due until 2029. SAC; Copernicus; ESA.",
           "The European defence-tech boom: Helsing (~$18bn), Rheinmetall (toward ~€50bn by 2030), Quantum Systems, Stark, ARX — many engineered ITAR-free for the SAFE 65%-EU-content rule. TechCrunch; CNBC.",
-          "Spending vs capability: NATO Europe ~€130bn (2025 record); SAFE's first ~€38bn disbursed (Jan 2026); but European Sky Shield (30 nations) has no system deployed, and the Franco-German FCAS fighter stalled (2026). NATO; EU; Asia Times.",
+          "Spending vs capability: NATO Europe ~€130bn (2025 record); SAFE's first ~€38bn disbursed (Jan 2026); but European Sky Shield (~two dozen nations) has no system deployed, and the Franco-German FCAS fighter stalled (2026). NATO; EU; Asia Times.",
           "The warfare shift: at NATO's Hedgehog exercise (Estonia, 2025), ~10 Ukrainian drone operators reportedly defeated two NATO battalions — a contest of cheap iteration where Europe could excel. Reporting.",
         ]}
       />
