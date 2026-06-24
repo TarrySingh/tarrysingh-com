@@ -319,6 +319,12 @@ export function ChokepointChapterFour() {
           "ESMC (TSMC + Bosch/Infineon/NXP), Dresden: topping-out Jan 2026; 28/22nm + 16/12nm; ~40k wafers/month; production target late 2027; ~€10bn+ (€5bn state aid). TrendForce, Nov 2025.",
           "Chips Act fragmentation: ~€86bn mostly national subsidies; ~5% centrally EU-managed (ECA SR 12/2025). Rival semiconductor capex ~$580bn (2020–23); US CHIPS Act $52.7bn federal; China $40bn+ state funds (SEMI 2025).",
           "Design IP: Arm — SoftBank-owned, Nasdaq-listed; Graphcore — acquired by SoftBank, 2024.",
+          "Chips Act: ~€86bn headline but the Commission directly controls only ~€4.5bn (~5%); on track to ~11.7% of the 20%-by-2030 target. Ex-ASML CEO Wennink called the 20% goal “totally unrealistic.” The Register; Bruegel; Wennink interview.",
+          "The single points: Cymer (San Diego, US) sole EUV light source; Zeiss (Germany) sole optics; ASML remotely monitors all ~314 EUV systems and licenses spares/servicing — leverage that became liability as China fell 49%→19% of sales. ASML; technode.",
+          "Demand & policy: SK hynix placed the largest-ever EUV order (~$8bn / ~30 machines); Chips Act 2.0 (Jun 2026) targets ~€120bn by 2035; High-NA EXE:5200 (~$350–400m) shipped to imec (2026). SK hynix; EC; imec.",
+          "The pain & the bright spot: STMicro ~5,000 job cuts; Intel's Magdeburg cancellation took ~18,000 supplier jobs; but Infineon opened a €5bn Dresden power-chip fab (Jul 2026) and GlobalFoundries ran Europe's first end-to-end sovereign flow (Jun 2026). STMicro; Infineon; GlobalFoundries.",
+          "Nexperia & materials: the Dutch government seized governance of Chinese-owned Nexperia (Oct 2025), idling EU car plants; China controls ~98% of refined gallium/germanium and uses export licensing as leverage. Reporting; USGS.",
+          "No leading-edge logic fab exists in Europe; the one new fab (ESMC Dresden, ~2027) makes 28/22nm — a decade behind. Contrast: Taiwan built TSMC in 14 years, Korea over 50, with sustained state backing. ESMC; ITRI.",
         ]}
       />
     </section>
