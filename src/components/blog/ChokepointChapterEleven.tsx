@@ -272,6 +272,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          And the frontier is already moving past the screen into the physical world, where Europe is, if
+          anything, further behind. The race to build <Sq>humanoid robots</Sq> &mdash; general-purpose
+          machines that could transform manufacturing and logistics &mdash; is being run by America&rsquo;s
+          Figure and Tesla and a phalanx of Chinese firms; Figure&rsquo;s robots have already logged months
+          on a <Sq>BMW</Sq> production line, which is to say that the German carmaker&rsquo;s glimpse of the
+          robotic future runs on American hardware and American AI. There is no European entrant of
+          comparable scale. The same holds in AI-for-science: the protein-folding breakthroughs that will
+          reshape medicine came out of a London lab &mdash; owned, as ever, by Google. Whichever way the
+          technology turns next, from chatbots to robots to drug discovery, Europe keeps arriving as the
+          customer, the test site, or the acquired &mdash; almost never the owner.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
