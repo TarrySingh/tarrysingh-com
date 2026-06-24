@@ -146,6 +146,18 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          And the spending is real and historic: NATO&rsquo;s European members pushed collective defence
+          investment past <Sq>a hundred and thirty billion euros</Sq> in 2025, a record, with the pledge to
+          reach 5% of GDP by 2035 still ahead of them. The question the chapter keeps pressing is simply
+          <em>where it lands</em>. Some, encouragingly, lands at home &mdash; Rheinmetall&rsquo;s order
+          book, Helsing&rsquo;s valuation, the SAFE content rules. But the marquee capabilities &mdash; the
+          fifth-generation jet, the battle-management software, the precision munitions in the quantities a
+          real war consumes &mdash; still run substantially through American suppliers, which means the
+          largest European rearmament since the Cold War is also, in its opening years, one of the largest
+          single transfers of European money into American defence revenue on record.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
