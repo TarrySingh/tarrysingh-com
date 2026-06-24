@@ -206,16 +206,16 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
-          And the bind has begun to produce a strange new strategy: stay private, stay European on purpose.
-          The Italian software consolidator <Sq>Bending Spoons</Sq> &mdash; which has quietly bought up
-          consumer apps from Evernote to Brightcove &mdash; has refused to go public, its founder reasoning
-          openly that European companies cannot command American valuations on public markets, so a listing
-          would only invite American investors to demand American growth at American speed. It is a rational
-          defence, and a quietly damning one: the smart move for a European champion is now to keep its head
-          down and avoid the public markets altogether, because those markets price it at a discount
-          precisely <em>for</em> being European. When the rational strategy for your best companies is to
-          stay deliberately obscure, the capital market has stopped being a ladder and become a trap to be
-          evaded.
+          Consider the Italian software consolidator <Sq>Bending Spoons</Sq>, which built itself from a
+          forty-thousand-dollar seed into the owner of Evernote, Vimeo, AOL and Eventbrite, partly by
+          rewriting its products with AI &mdash; by early 2026 more than ninety per cent of its code was
+          machine-authored. For years it stayed defiantly private, its founder arguing that European firms
+          could not command American valuations on public markets. Then, in June 2026, it filed to go public
+          anyway &mdash; on <Sq>Nasdaq</Sq>, at some nineteen billion dollars, not in Milan or on any
+          European exchange. Even the rare Italian champion that built something genuinely large concluded,
+          when the moment came to cash the achievement in, that the only serious place to do it was New
+          York. The gravity is not subtle, and it does not spare even the ones who tried hardest to resist
+          it.
         </P>
 
         <P>
