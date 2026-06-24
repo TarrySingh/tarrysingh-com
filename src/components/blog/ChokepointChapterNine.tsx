@@ -156,6 +156,18 @@ export function ChokepointChapterNine() {
           the posture of one that keeps revising them under pressure from somebody else.
         </P>
 
+        <P>
+          The enforcement, when it comes, lands on American and Chinese platforms because those are the only
+          ones big enough to enforce against. In late 2025 the Commission fined <Sq>X</Sq> some
+          &euro;120 million under the Digital Services Act over its &ldquo;blue check&rdquo; design and
+          ad-transparency failures; in early 2026 it moved against <Sq>TikTok</Sq> for addictive design, the
+          first action of its kind. These are, once more, real attempts to govern genuine harms. But notice
+          the shape one final time: the regulator is European, the regulated are not, and the very existence
+          of a sophisticated enforcement apparatus with no domestic platforms to enforce against is the
+          cleanest possible statement of the chokepoint paradox. Europe has made itself the world&rsquo;s
+          referee in a game it no longer fields a team in.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
