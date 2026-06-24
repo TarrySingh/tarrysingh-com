@@ -196,6 +196,21 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          And the roster of fundable European deep tech is longer and stranger than the gloom suggests.{" "}
+          <Sq>Isar Aerospace</Sq> is building rockets in Germany; <Sq>The Exploration Company</Sq>, split
+          between Munich and Bordeaux, is building reusable space capsules; <Sq>Proxima Fusion</Sq> is
+          chasing a working fusion stellarator with German state money behind it; <Sq>IQM</Sq> and{" "}
+          <Sq>Pasqal</Sq> are selling real quantum computers to real customers. None is a sure thing;
+          several will fail. But the seedbed is not empty &mdash; it is, if anything, unusually rich &mdash;
+          and what these companies share is not a shortage of ambition or engineering but the same missing
+          input as everyone else in this essay: the patient, scaled, late-stage European capital that would
+          let them grow up at home instead of being bought, or starved, before they can. The way out is
+          standing right there, incorporated and pitching. It is waiting to be funded.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
