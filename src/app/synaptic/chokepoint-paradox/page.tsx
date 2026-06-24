@@ -9,6 +9,7 @@ import { ChokepointChapterThree } from "@/components/blog/ChokepointChapterThree
 import { ChokepointChapterFour } from "@/components/blog/ChokepointChapterFour"
 import { ChokepointChapterFive } from "@/components/blog/ChokepointChapterFive"
 import { ChokepointChapterSix } from "@/components/blog/ChokepointChapterSix"
+import { ChokepointChapterSeven } from "@/components/blog/ChokepointChapterSeven"
 
 /** A wide, breakout-neutralised stage for one instrument. `.cp-gallery`
  *  cancels the PlateFrame blog-column breakout margins. */
@@ -121,6 +122,9 @@ export default function ChokepointParadoxPage() {
 
       {/* CHAPTER 6 — prose + V21/V22/V23, in essay flow */}
       <ChokepointChapterSix />
+
+      {/* CHAPTER 7 — prose + V24/V25/V26, in essay flow */}
+      <ChokepointChapterSeven />
 
       {/* V34 — the from-scratch giants, now vs the next wave */}
       <Room
