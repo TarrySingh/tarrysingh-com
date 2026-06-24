@@ -265,8 +265,7 @@ export function ChokepointChapterTwelve() {
           The most encouraging sign is also the most recent. In June 2026 the European Commission unveiled a
           sweeping <Sq>tech-sovereignty package</Sq> &mdash; on the order of a hundred and twenty billion
           euros for semiconductors, two hundred billion for data centres, a hundred billion for cloud and AI,
-          and a smaller but pointed <Sq>two-billion-euro open-source push</Sq> carrying a &ldquo;Free Software
-          first&rdquo; procurement rule, a quiet admission that owning the <em>code</em> may matter as much as
+          and a smaller but pointed open-source pillar &mdash; a tacit admission that owning the <em>code</em> may matter as much as
           owning the metal &mdash; alongside a &ldquo;Scale-Up Europe&rdquo; fund aimed squarely at stopping
           high-potential startups from leaving. The figures, for once, are within sight of the scale of the problem rather
           than an order of magnitude below it; the diagnosis has plainly landed. Whether this proves the
@@ -370,8 +369,10 @@ export function ChokepointChapterTwelve() {
           hungrier rival still willing to build. It is not a comforting precedent, because in every case the
           decline felt, from the inside, like stability. But the mirror cuts both ways: each of those powers
           was eventually <em>succeeded</em> by another that chose to build, which means the role is never
-          retired, only reassigned. Chancellor Merz put the stakes in a single line at a 2025 sovereignty
-          summit: &ldquo;<Sq>If Europe does not want to become a museum of technology, we must ramp up
+          retired, only reassigned. The stakes were put most memorably at the November 2025 Berlin
+          digital-sovereignty summit co-hosted by Chancellor Merz and President Macron, in a single line from
+          Ralf Wintergerst, head of Germany&rsquo;s digital-industry association: &ldquo;<Sq>If Europe does
+          not want to become a museum of technology, we must ramp up
           investment significantly.</Sq>&rdquo; The museum is one available future. It is not, yet, the only
           one &mdash; and which it becomes is still, narrowly, a matter of choice rather than fate.
         </P>
@@ -475,9 +476,9 @@ export function ChokepointChapterTwelve() {
           "Savings & Investments Union: ~€10–11tn in idle deposits; ~€300bn/yr capital outflow; measures (Savings & Investment Accounts, securitisation) largely non-binding/in trilogue (2025–26). European Commission.",
           "Single market: internal barriers ≈ 54% (goods) / 95% (services) tariff-equivalents (ECB, Jan 2026); ~€2.8tn potential GDP gain (2022–32); Letta “One Europe, One Market” roadmap, deadline Dec 2027. ECB; Letta report; European Parliament.",
           "Frontier build & implementation: InvestAI ~€200bn mobilisation / €20bn facility → 5 AI gigafactories; Mistral ~€3bn raise at ~€20bn, ARR past $400m (Jun 2026). Only ~11–15% of Draghi recommendations fully implemented (early 2026). European Commission; TechCrunch; Draghi implementation audits.",
-          "Tech Sovereignty Package (3 Jun 2026): ~€420bn four-pillar envelope — ~€120bn semiconductors (Chips Act 2.0), ~€200bn data centres (to 2036), ~€100bn cloud/AI (CADA, four-tier sovereignty framework), ~€2bn open-source (“Free Software first” procurement) — plus the “Scale-Up Europe” fund. European Commission.",
+          "EU tech-sovereignty push (2026; figures reported across sources, not a single official line): on the order of ~€120bn semiconductors (Chips Act 2.0), ~€200bn data centres, ~€100bn cloud/AI (CADA), an open-source pillar, plus InvestAI ~€200bn and a Scale-Up Europe fund; a ~€420bn aggregate is reported. European Commission.",
           "Green shoots (2026): Germany rejected Palantir (Apr); Euro-Office launched (Jun); Denmark/Austria/France migrating off Microsoft; ~€800bn ReArm Europe; Letta roadmap signed (Apr). German MoD; European Commission.",
-          "The historical mirror: leadership in trade and technology changed hands before — Venice → the Dutch Republic → imperial Britain — each incumbent drifting from making into rentier finance; Chancellor Merz (2025 summit): “If Europe does not want to become a museum of technology, we must ramp up investment significantly.” Merz; economic history.",
+          "The historical mirror: leadership in trade and technology changed hands before — Venice → the Dutch Republic → imperial Britain — each incumbent drifting from making into rentier finance; Ralf Wintergerst (Bitkom president), Berlin Digital Sovereignty Summit co-hosted by Merz & Macron (Nov 2025): “If Europe does not want to become a museum of technology, we must ramp up investment significantly.” Bitkom; summit reporting; economic history.",
           "The scale being named: Macron (early 2026) called for ~€1.2tn/yr of combined green, digital and defence investment; the EU’s share of world output is projected to slide from ~28% (2010) toward ~17% (2050). Macron; IMF/EC projections.",
         ]}
       />
