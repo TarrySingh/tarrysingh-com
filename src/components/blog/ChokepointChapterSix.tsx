@@ -174,6 +174,17 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          It would be too easy to make this only about money, and the deeper truth is worse for Europe. Ask
+          the researchers who leave why they went, and the pay gap is rarely the first answer. They went
+          because that is where the <em>work</em> is &mdash; the frontier models, the near-unlimited compute,
+          the colleagues operating at the absolute edge, the sense that the most important problems in the
+          field are being solved in that building and not this one. A continent can sometimes close a salary
+          gap with a grant. It cannot close an <em>ambition</em> gap with one, because ambition follows the
+          frontier, and the frontier followed the capital and the compute across the Atlantic years ago.
+          Europe is not only out-paying its talent; it is, more damagingly, out-<em>inspiring</em> it.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
