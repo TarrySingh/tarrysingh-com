@@ -261,6 +261,18 @@ export function ChokepointChapterNine() {
           refereeing.
         </P>
 
+        <P>
+          And the deprivation runs the newest way too. <Sq>Meta</Sq> has withheld its most capable
+          multimodal <Sq>Llama</Sq> models from the European Union, citing regulatory unpredictability; Apple
+          has kept its upgraded Siri off European iPhones; the Commission has opened formal proceedings
+          against <Sq>X</Sq> over the risks of its Grok chatbot. The cumulative effect is a continent that
+          increasingly receives the frontier of AI late, in cut-down form, or not at all &mdash; not because
+          its engineers cannot handle it, but because its rules make it the most legally fraught market in
+          the rich world to ship into. Europe set out to govern the technology and has ended up, in a growing
+          number of cases, simply not being offered it. That is the chokepoint paradox in its newest and most
+          literal form: a market so busy regulating the future that the future has begun to route around it.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
