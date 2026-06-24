@@ -170,6 +170,20 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          The single most painful loss is the one that was supposed to be the answer. <Sq>Northvolt</Sq>,
+          the Swedish battery-maker, was Europe&rsquo;s great hope to build a homegrown champion in the one
+          industry on which the entire electric transition depends &mdash; and in March 2025 it filed for
+          bankruptcy under roughly <Sq>&euro;5.8 billion</Sq> of debt, the largest industrial collapse in
+          modern Swedish history, its half-built gigafactory in the Arctic north left for others to pick
+          over. Around it the older economy keeps closing: <Sq>Speira</Sq> shuttered primary aluminium
+          smelting at Neuss; <Sq>Tata Steel</Sq> moved to close coke and blast-furnace lines at IJmuiden;{" "}
+          <Sq>Yara</Sq> earmarked an ammonia plant in Belgium for closure. And the new economy cannot move
+          in to replace them, because <Sq>AWS</Sq> and its peers now face grid-connection waits of up to
+          seven years for new European data centres. The factories that leave do not come back, and the
+          ones that might replace them cannot get plugged in.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
