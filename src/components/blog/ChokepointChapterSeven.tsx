@@ -122,6 +122,19 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          BASF is the loudest case, not the only one. <Sq>ArcelorMittal</Sq> moved to idle blast furnaces
+          at Florange in France and Li&egrave;ge in Belgium, putting thousands of steel jobs at risk and
+          citing power costs running past twenty euro-cents a kilowatt-hour. <Sq>Yara</Sq>, the Norwegian
+          fertiliser giant, mothballed around two million tonnes of nitrogen capacity at Her&oslash;ya and
+          K&aring;rst&oslash; after a four-fold electricity-cost spike and shifted production to the US Gulf
+          and Trinidad, where power runs nearer six cents. The pattern is not weakness; it is arithmetic
+          &mdash; and Europe stacks on top of it one cost its rivals do not pay at all: the{" "}
+          <Sq>Emissions Trading System</Sq> carbon price, around ninety to a hundred euros a tonne, which
+          adds a further eighteen to twenty-five euros per megawatt-hour to a European smelter&rsquo;s
+          power bill that a Texan or Chinese competitor simply keeps as margin.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
