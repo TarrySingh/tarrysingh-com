@@ -168,6 +168,18 @@ export function ChokepointPrologue() {
         </P>
 
         <P>
+          And the drift is not only of listings but of companies bodily. A steady trickle of European
+          champions simply <em>moves</em>: the French data-science firm <Sq>Dataiku</Sq>, the search company{" "}
+          <Sq>Algolia</Sq>, the treasury-software maker <Sq>Kyriba</Sq>, the telephony startup{" "}
+          <Sq>Aircall</Sq> &mdash; all founded in France, all relocating their centre of gravity to the
+          United States, most citing the same plain reason: it is simply easier to be an ambitious company
+          there. The founders stay European, the first risk was European, and the headquarters, the cap
+          table and the eventual windfall end up American. When the most ambitious version of a European
+          company turns out to be an American one, the continent is not failing to <em>start</em> companies.
+          It is failing to keep the ones it starts.
+        </P>
+
+        <P>
           The drift shows up most starkly where the money is finally counted: the stock exchange. Across
           the fifteen years to 2025, London hemorrhaged hundreds of listings toward New York and Nasdaq;
           when Sweden&rsquo;s <Sq>Klarna</Sq> finally went public in 2025 it chose the New York Stock
