@@ -234,6 +234,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          The scale of the appetite is hard to hold in the mind. Global data centres are on course to
+          consume more than <Sq>a thousand terawatt-hours</Sq> of electricity in 2026 &mdash; about as much
+          as the whole of Japan &mdash; and the curve bends sharply upward from there. Satya Nadella,
+          Microsoft&rsquo;s chief executive, drew the conclusion bluntly: economic growth, he said, will be
+          &ldquo;directly correlated&rdquo; to the cost of the energy that powers AI. Read that sentence from
+          a European chair and it is a verdict. The continent has chosen, through Chapter Seven&rsquo;s long
+          list of decisions, to make its energy among the dearest in the developed world &mdash; which means
+          it has chosen, without ever quite saying so, to make itself one of the most expensive places on
+          Earth to build the defining industry of the century. The accelerant runs on watts, and Europe
+          rationed its own.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
