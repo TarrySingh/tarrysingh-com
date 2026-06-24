@@ -122,6 +122,19 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          And the Dutch queue is only the sharpest edge of a continental problem. Across the EU something on
+          the order of <Sq>1.7 terawatts</Sq> of would-be generation &mdash; most of it wind and solar, more
+          than the entire capacity installed on the system today &mdash; sits in connection queues waiting
+          for wires that do not yet exist. In 2025, for the first time, renewables supplied more than{" "}
+          <Sq>half</Sq> of the EU&rsquo;s electricity. And yet the cruelty of the bottleneck is exactly that:
+          the clean, cheap power Europe has actually managed to build increasingly cannot reach the factories
+          and data centres that need it, because the grid to carry it was never built alongside. It is the
+          capital paradox again, written in copper &mdash; a continent rich enough to fund anything that has
+          somehow under-invested in the one piece of infrastructure, the wires, on which every other ambition
+          (electrification, reindustrialisation, AI) now physically depends.
+        </P>
+
+        <P>
           BASF is the loudest case, not the only one. <Sq>ArcelorMittal</Sq> moved to idle blast furnaces
           at Florange in France and Li&egrave;ge in Belgium, putting thousands of steel jobs at risk and
           citing power costs running past twenty euro-cents a kilowatt-hour. <Sq>Yara</Sq>, the Norwegian
