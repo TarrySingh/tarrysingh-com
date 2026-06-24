@@ -350,6 +350,22 @@ export function ChokepointChapterTwelve() {
           <em>default</em> &mdash; the thing that happens if nothing is decided.
         </P>
 
+        <P>
+          And yet the most important thing that happened in the writing of this essay is that the question
+          stopped being academic. In 2025 the United States, under a new administration, reminded Europe in a
+          sequence of shocks &mdash; tariffs aimed explicitly at its tech rules, a pause in intelligence to
+          Ukraine, sanctions that knocked a war-crimes prosecutor off his email, open talk of taking
+          Greenland by force &mdash; that the dependence catalogued in these pages was not a comfortable
+          economic arrangement but a <em>lever</em>, and that the hand on it could no longer be assumed to be
+          friendly. By the spring of 2026, polls found that barely <Sq>one in ten Europeans</Sq> still
+          regarded the United States as an ally. The fright did what fifteen years of competitiveness reports
+          could not: in November 2025, twenty-three governments and a roomful of companies met in Berlin and
+          pledged the first real money toward digital sovereignty. Whether that proves the turning point or
+          just the loudest meeting yet, no one yet knows. But the paradox has, at last, been felt as well as
+          measured &mdash; and the things that are finally <em>felt</em> are sometimes, at last, the things
+          that get done.
+        </P>
+
         <PullQuote>
           A key in the pocket opens nothing. The whole of Europe&rsquo;s tragedy, and the whole of its
           hope, is that the lock was never the problem. The hand was.
