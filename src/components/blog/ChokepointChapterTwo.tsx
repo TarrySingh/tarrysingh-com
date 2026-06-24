@@ -287,6 +287,19 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          And the diagnosis sharpens to a single startling point. When economists decompose the widening gap
+          in returns between European and American business, almost the entire difference &mdash; by one
+          analysis <Sq>around 90%</Sq> &mdash; turns out to come from one place: the technology sector. Europe
+          is not broadly less productive than America across the board; in many traditional industries it
+          holds its own. It is being out-run almost entirely in the digital, software and AI economy that now
+          drives growth everywhere &mdash; the gap showing up as labour-productivity growth of well under one
+          per cent a year in the euro area against several times that in the United States over the same span.
+          The continent did not fall behind at <em>everything</em>. It fell behind at the <em>one thing</em>
+          that compounds into everything else, and then mistook a tech problem for a general malaise it could
+          manage rather than a specific failure it had to fix.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
