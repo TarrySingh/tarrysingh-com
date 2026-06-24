@@ -159,6 +159,17 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          The bitterest detail is where the crunch bites hardest. Brainport, the Eindhoven region that hosts
+          ASML and the densest concentration of high-tech industry on the continent, is itself running up
+          against the limits of the local network &mdash; the single most strategically important industrial
+          cluster in Europe, the one that builds the machine the whole digital world depends on, rationing
+          its own ability to expand because the wires are full. More than ten thousand businesses sit in the
+          Dutch connection queue behind it. When the country that makes the world&rsquo;s most advanced
+          technology cannot reliably plug in its own most advanced factories, the problem has stopped being
+          an energy-market quirk and become a sovereignty question in its own right.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
