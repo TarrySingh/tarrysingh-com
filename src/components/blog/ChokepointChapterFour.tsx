@@ -249,6 +249,18 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          And in 2025 the chip dependence cut from the other direction, on European soil. <Sq>Nexperia</Sq>,
+          a Dutch chipmaker spun out of Philips and now <em>Chinese-owned</em>, became the centre of a control
+          fight: when export restrictions tangled its operations, the disruption rippled straight into
+          European car factories that rely on its humble but essential components, briefly threatening to halt
+          production lines across the continent. It was a small, sharp lesson in how many directions the
+          vulnerability runs &mdash; a Dutch-made, Chinese-owned, export-controlled chip with the power to idle
+          German assembly plants &mdash; and a reminder that Europe&rsquo;s semiconductor exposure is not only
+          the glamorous matter of the leading edge but the unglamorous one of the ten-cent parts no car can be
+          built without, and which it long ago stopped reliably making for itself.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
