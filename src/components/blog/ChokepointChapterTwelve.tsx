@@ -292,6 +292,22 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          And Airbus is not a lonely exception; it is the headline of a longer list Europe rarely reads back
+          to itself. <Sq>Galileo</Sq>, the EU&rsquo;s satellite-navigation system, now delivers civilian
+          positioning accurate to twenty centimetres &mdash; <em>better</em> than the American GPS it was
+          told it would never need to build. <Sq>CERN</Sq> gave the world the Web. <Sq>Erasmus</Sq> has put
+          eighteen million young Europeans across one another&rsquo;s borders since 1987, knitting a continent
+          together one student at a time. The euro is the world&rsquo;s second reserve currency; the single
+          market is the largest trading bloc on Earth. Every one of these is a thing Europe was told it could
+          not, or need not, do &mdash; and did, by pooling sovereignty and spending public money with patience
+          across borders. The lesson could not be plainer, or more encouraging: the machine that produces
+          European failure and the machine that produces European triumph are the same machine. It depends
+          entirely on which way Europe decides to point it.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
