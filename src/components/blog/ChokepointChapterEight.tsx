@@ -287,6 +287,18 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          The money has at last begun to move: in January 2026 the EU&rsquo;s SAFE instrument approved its
+          first <Sq>&euro;38 billion</Sq> in disbursements to eight member states, and a new five-nation
+          consortium, <Sq>LEAP</Sq>, formed to mass-produce the cheap drones the Ukraine war has shown to be
+          decisive. But the gap between spending and capability is still wide and slow to close: the flagship{" "}
+          <Sq>European Sky Shield</Sq> air-defence initiative now counts thirty nations and, years in, still
+          has no integrated system actually deployed. This is the recurring shape of European ambition &mdash;
+          the announcement arrives long before the capability, the cheque clears years before the shield is
+          built &mdash; and in defence, more than anywhere, the lag between deciding and fielding is measured
+          in the one currency that ultimately matters: time the continent may not have.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
