@@ -232,6 +232,21 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          There is one category where Europe genuinely held a giant, and its predicament is its own kind of
+          warning. <Sq>SAP</Sq>, the German business-software titan, is the most valuable technology company
+          in Europe, and <Sq>Dassault Syst&egrave;mes</Sq>, Schneider&rsquo;s software arm and Sweden&rsquo;s
+          Hexagon are real, durable, world-class firms in industrial and design software. But watch what is
+          happening to them now: as the business shifts to AI-driven, cloud, subscription and
+          &ldquo;token-based&rdquo; pricing, their comfortable legacy margins are compressing, and the
+          frontier of that shift &mdash; the models, the clouds, the chips it all runs on &mdash; is owned by
+          the Americans. Even Europe&rsquo;s software champions are being pushed from owning the product
+          toward renting the platform it must now live on. SAP&rsquo;s own answer, a twenty-billion-euro
+          sovereign cloud built to stay interoperable with the US hyperscalers, captures the bind exactly:
+          the best European software company can build a sovereign alternative, but it must keep it plugged
+          in to the very giants it is meant to provide an alternative to.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
