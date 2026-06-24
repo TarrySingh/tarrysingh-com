@@ -236,6 +236,19 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          And the pain is not confined to the cancelled mega-fabs; it is hitting the firms that stayed.{" "}
+          <Sq>STMicroelectronics</Sq>, the Franco-Italian chipmaker, announced some five thousand job cuts
+          over three years as it restructured against Asian competition; when Intel walked away from
+          Magdeburg, it took with it not just three thousand promised jobs but an estimated{" "}
+          <Sq>eighteen thousand</Sq> more in the supplier base that had begun to assemble around it. A
+          semiconductor ecosystem is a delicate, decades-long thing to grow and a quick thing to lose, and
+          Europe keeps discovering that announcing one is far easier than sustaining it. The strategy keeps
+          mistaking the press release for the factory &mdash; and the factory, unlike the press release,
+          demands patient capital, cheap power and political constancy that the continent has struggled to
+          supply all at once.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
