@@ -192,6 +192,18 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          If you want the dependence stated in a single sentence, a Microsoft executive supplied it under
+          oath. In June 2025 the company&rsquo;s French legal director, questioned by the French Senate,{" "}
+          <Sq>conceded that Microsoft could not guarantee</Sq> that European customers&rsquo; data would be
+          shielded from American authorities under the CLOUD Act &mdash; could not, in other words, promise
+          the one thing &ldquo;sovereign cloud&rdquo; is sold to deliver. It was an honest answer, and a
+          damning one. Around it the extraction continues in quieter forms: when European governments levied
+          digital-services taxes on the platforms, the platforms simply passed the cost back to European
+          advertisers as a surcharge. The tribute is not only large; it is structured so that the attempts
+          to claw it back are themselves billed to Europe.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
