@@ -182,6 +182,18 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          Take the single most celebrated case and look at it without flinching. <Sq>DeepMind</Sq> was
+          founded in London in 2010, the most important artificial-intelligence laboratory Europe has ever
+          produced; in 2014 it was sold to Google for a few hundred million dollars and has been a division
+          of an American hyperscaler ever since. Its crowning achievement, <Sq>AlphaFold</Sq> &mdash; which
+          cracked the fifty-year problem of predicting protein structures and won its leaders a share of the
+          2024 Nobel Prize in Chemistry &mdash; is, as intellectual property, Alphabet&rsquo;s. A British lab
+          made a discovery that will reshape biology for a century, and the value of it compounds in Mountain
+          View. There is no prouder European achievement in modern AI, and no cleaner illustration of the
+          thesis: the genius is European, the ownership is not.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
