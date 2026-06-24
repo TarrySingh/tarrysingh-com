@@ -206,6 +206,19 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          The procurement map is starting, in places, to redraw itself. The Franco-German land-systems
+          champion <Sq>KNDS</Sq> &mdash; maker of the Leopard tank and the Caesar howitzer &mdash; lined up a
+          listing reportedly valuing it around twenty billion euros, and Germany ordered its first
+          domestically-built tanks and artillery in a generation. France&rsquo;s <Sq>Rafale</Sq> fighter
+          carries an order backlog of more than two hundred aircraft, much of it export, as buyers seek an
+          alternative to the American jet and its strings; and even American primes are adapting, building{" "}
+          <Sq>ITAR-free</Sq> European production bases specifically so their kit can qualify for &ldquo;buy
+          European&rdquo; contracts. The continent is discovering, under the pressure of a real war on its
+          border, that an industrial base is not a thing you can summon in a crisis. It is a thing you
+          either kept, or did not.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
