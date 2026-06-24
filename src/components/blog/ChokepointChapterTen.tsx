@@ -143,6 +143,19 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          The counter-melody, faint but real, is that some governments have finally started to walk out.
+          After the Khan affair, <Sq>Denmark</Sq> began moving its public administration off Microsoft
+          email and productivity software; <Sq>Austria</Sq>&rsquo;s federal computing centre started
+          shifting departments to open-source <Sq>LibreOffice</Sq> and <Sq>Nextcloud</Sq>; France pressed
+          ahead with its sovereign-suite plans. These are early, partial and technically painful &mdash; a
+          ministry does not leave Outlook in an afternoon &mdash; and they will not, by themselves, move the
+          &euro;264-billion figure much. But they matter as proof of concept: the tribute is not a law of
+          physics. It is a contract, and contracts can be cancelled by a customer with the will to absorb
+          the switching cost. The whole essay keeps asking whether Europe has that will at scale, or only in
+          a brave few capitals.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
