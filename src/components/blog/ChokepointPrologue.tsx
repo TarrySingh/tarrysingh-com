@@ -208,6 +208,18 @@ export function ChokepointPrologue() {
         </P>
 
         <P>
+          The people running Europe&rsquo;s biggest companies see it clearly, and say so. Pascal Soriot,
+          who runs AstraZeneca, one of the few European firms that can stand unembarrassed on a global
+          stage, described the continent bluntly as <Sq>&ldquo;losing ground&rdquo;</Sq> &mdash; too focused,
+          he said, on managing costs and distributing benefits, behaving &ldquo;like one company in
+          decline.&rdquo; It is a striking thing for a European chief executive to say out loud, and a
+          useful corrective to any suspicion that this essay is an outsider&rsquo;s sneer. The diagnosis
+          here is not foreign and it is not new; it is the quiet consensus of the people closest to the
+          machine, who have mostly concluded that saying it changes nothing, and gone back to managing the
+          decline with the competence for which Europe remains, genuinely, world-class.
+        </P>
+
+        <P>
           The drift shows up most starkly where the money is finally counted: the stock exchange. Across
           the fifteen years to 2025, London hemorrhaged hundreds of listings toward New York and Nasdaq;
           when Sweden&rsquo;s <Sq>Klarna</Sq> finally went public in 2025 it chose the New York Stock
