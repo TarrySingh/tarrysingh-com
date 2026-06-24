@@ -137,6 +137,18 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          And ownership aside, even the champions Europe still nominally holds are tethered.{" "}
+          <Sq>ARM</Sq>, the Cambridge chip-design house inside nearly every phone, is SoftBank-owned and
+          Nasdaq-listed; <Sq>Wise</Sq> and <Sq>Revolut</Sq>, Britain&rsquo;s fintech stars, run on American
+          venture capital and answer increasingly to American exchanges and IPO timetables; and{" "}
+          <Sq>Mistral</Sq>, the great hope of European AI, is valued at roughly a fortieth of its American
+          rival Anthropic, rents all its compute from Nvidia, and was rescued into relevance by a stake
+          from ASML &mdash; one European chokepoint propping up another. The bright spots are real. They
+          are also, almost without exception, working someone else&rsquo;s land on a lease they did not
+          write.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
