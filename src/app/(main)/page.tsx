@@ -353,31 +353,7 @@ const Landing = () => {
                 className="relative aspect-[4/5] w-full overflow-hidden rounded-xl"
                 style={{ background: "#07111c" }}
               >
-                <ChokepointPlate className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.02]" />
-                <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
-                  <span
-                    className="font-mono uppercase transition-all duration-300 group-hover:tracking-[0.32em]"
-                    style={{
-                      color: "rgba(245,232,204,0.6)",
-                      fontSize: "10px",
-                      letterSpacing: "0.28em",
-                      textShadow: "0 1px 6px rgba(0,0,0,0.55)",
-                    }}
-                  >
-                    Interactive field guide
-                  </span>
-                  <span
-                    className="font-mono uppercase transition-opacity duration-300"
-                    style={{
-                      color: "#7fd4e0",
-                      fontSize: "12px",
-                      letterSpacing: "0.32em",
-                      textShadow: "0 1px 6px rgba(0,0,0,0.6)",
-                    }}
-                  >
-                    Enter →
-                  </span>
-                </div>
+                <ChokepointPlate className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.01]" />
               </div>
               <div className="mt-6">
                 <span
