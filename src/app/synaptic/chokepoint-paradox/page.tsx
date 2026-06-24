@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 
+import { ChokepointJumpNav } from "@/components/blog/ChokepointJumpNav"
 import { ChokepointPrologue } from "@/components/blog/ChokepointPrologue"
 import { OvertureDashboard } from "@/components/blog/OvertureDashboard"
 import { ChokepointChapterOne } from "@/components/blog/ChokepointChapterOne"
@@ -28,6 +29,8 @@ function Stage({ children, max = 1160 }: { children: ReactNode; max?: number }) 
 export default function ChokepointParadoxPage() {
   return (
     <main className="mx-auto w-full px-5 pb-32 pt-24 sm:pt-32">
+      <ChokepointJumpNav />
+
       <header className="cp-hero-rise mx-auto max-w-3xl text-center">
         <p
           style={{
