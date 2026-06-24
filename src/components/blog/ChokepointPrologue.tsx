@@ -193,6 +193,21 @@ export function ChokepointPrologue() {
         </P>
 
         <P>
+          And lest this seem like a story only about the AI age, recall that Europe has run this exact play
+          before, at the top of the last technology wave, and lost. In May 2000 <Sq>Nokia</Sq> was worth
+          some three hundred billion euros and Europe owned the mobile phone; Sweden&rsquo;s{" "}
+          <Sq>Ericsson</Sq> held perhaps forty per cent of the world&rsquo;s handset market; the continent
+          had written the global GSM standard. Within a decade it was gone. Nokia lost <Sq>98% of its
+          value</Sq> and was sold for parts to Microsoft; Ericsson retreated to network gear; Siemens dumped
+          its phone division on a Taiwanese firm that promptly went bankrupt. Europe did not lose mobile
+          because its engineers were beaten on the hardware. It lost because, when the value migrated from
+          the device to the software platform &mdash; the app store, the operating system, the ecosystem
+          &mdash; the Americans built the platform and the Europeans kept polishing the handset. The
+          chokepoint paradox is not a new affliction. It is a recurrence, and the AI age is merely its
+          largest instance yet.
+        </P>
+
+        <P>
           The drift shows up most starkly where the money is finally counted: the stock exchange. Across
           the fifteen years to 2025, London hemorrhaged hundreds of listings toward New York and Nasdaq;
           when Sweden&rsquo;s <Sq>Klarna</Sq> finally went public in 2025 it chose the New York Stock
