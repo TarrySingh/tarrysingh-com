@@ -180,6 +180,19 @@ export function ChokepointPrologue() {
         </P>
 
         <P>
+          Zoom all the way out and the scoreboard is stark. Of the fifty most valuable companies on Earth,
+          something like <Sq>forty are American and fewer than ten European</Sq>; there is no European
+          Google, no European Amazon, no European Apple, and the continent&rsquo;s most valuable company is a
+          maker of the machines that <em>other people</em> use to build the future. Europe spends about{" "}
+          <Sq>2.2% of its output on research and development</Sq> against America&rsquo;s 3.45%, and has for
+          years &mdash; a gap that looks small in any single year and compounds into a chasm over a
+          generation. None of this is destiny. It is the cumulative read-out of a thousand smaller choices,
+          each individually defensible, which is exactly why the pattern is so hard to see and so hard to
+          break: there is no single villain to point at, only a machine, running smoothly, in the wrong
+          direction.
+        </P>
+
+        <P>
           The drift shows up most starkly where the money is finally counted: the stock exchange. Across
           the fifteen years to 2025, London hemorrhaged hundreds of listings toward New York and Nasdaq;
           when Sweden&rsquo;s <Sq>Klarna</Sq> finally went public in 2025 it chose the New York Stock
