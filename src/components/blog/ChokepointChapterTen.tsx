@@ -1,0 +1,154 @@
+import type { ReactNode } from "react"
+
+import { ValueCaptureWaterfall } from "./ValueCaptureWaterfall"
+import { FromScratchGiants } from "./FromScratchGiants"
+import { IrishMirage } from "./IrishMirage"
+import { CloudActSwitch } from "./CloudActSwitch"
+import { Prose, P, Lead, ChapterMark, PullQuote, Lev, Won, Sq, Sources } from "./chokepoint-prose"
+
+function Figure({ children, max = 1100 }: { children: ReactNode; max?: number }) {
+  return (
+    <div className="cp-gallery mx-auto my-14 w-full px-2 sm:px-4" style={{ maxWidth: max }}>
+      {children}
+    </div>
+  )
+}
+
+/**
+ * CHAPTER 10 — The Quarter-Trillion Tribute: The Wealth-Transfer Ledger.
+ * The spine payoff: the whole machine totalled in euros. Figures verified to
+ * July 2026 (Asterès/Cigref; companiesmarketcap; Ireland CSO; CASSIS;
+ * Compass Lexecon). V33 + V34 (treemap) + V35 + V36.
+ */
+export function ChokepointChapterTen() {
+  return (
+    <section>
+      <ChapterMark kicker="Chapter Ten · The Ledger" title="The Quarter-Trillion Tribute" />
+
+      <Prose>
+        <Lead>
+          Now the bill. Every chapter so far has traced one stream of the outflow &mdash; the savings, the
+          companies, the talent, the electrons, the defence euros, the value the rulebook fails to keep.
+          This chapter totals them, in the one currency that ends arguments: euros, on a ledger, paid
+          annually. The headline number is the cloud, and it is the cleanest single measure of the whole
+          machine. Europe pays the United States something like <Won>&euro;264 billion a year</Won> for
+          digital infrastructure and software &mdash; a quarter of a trillion euros, every year, for the
+          right to run its economy on someone else&rsquo;s computers. It is not a debt, which would at
+          least end. It is a tribute, which renews by default.
+        </Lead>
+
+        <P>
+          Watch where the money actually goes, because the shape of it is the whole argument. Of
+          Europe&rsquo;s professional cloud spending, roughly <Sq>80 to 83% flows to US providers</Sq>,
+          with about <Sq>70% captured by the three American hyperscalers</Sq> &mdash; Amazon, Microsoft,
+          Google. What Europe keeps is the thin end: the reseller margins, the wages of the local sales
+          teams, the concrete and steel of the data centres it builds on its own soil to host American
+          software. The value that compounds &mdash; the equity, the intellectual property, the
+          platform &mdash; books elsewhere. Europe is, quite literally, paying to construct the buildings
+          in which its digital dependence is housed. Step down the waterfall below and watch the basis
+          points leave.
+        </P>
+      </Prose>
+
+      <Figure>
+        <ValueCaptureWaterfall />
+      </Figure>
+
+      <Prose>
+        <P>
+          The accumulated result of paying that tribute for a decade is a gap in raw corporate scale that
+          has stopped being a gap and become a different order of being. The seven largest American
+          technology companies are now worth, together, around <Lev>$23 trillion</Lev> &mdash; roughly{" "}
+          <Won>the entire GDP of the European Union</Won>, and close to one and a half times the value of
+          every company listed on every European exchange combined. Drill into a single one and the point
+          turns surreal: <Sq>Nvidia alone, at about $4.8 trillion, is now worth more than the whole German
+          economy</Sq> &mdash; one American chip company, more valuable than Europe&rsquo;s industrial
+          heartland. Pan across the landscape below; the American mass on one side and the European on the
+          other are not two teams in the same league. They are two different sports.
+        </P>
+      </Prose>
+
+      <Figure max={1180}>
+        <FromScratchGiants />
+      </Figure>
+
+      <Prose>
+        <P>
+          A defender of Europe has, at this point, one number left to reach for &mdash; the trade
+          statistics, which appear to show Europe running a healthy surplus with the world in services,
+          anchored by Ireland&rsquo;s spectacular export figures. It is the last bright number on the
+          board, and it is a mirage. Ireland&rsquo;s headline GDP, around <Sq>&euro;563 billion</Sq>, sits
+          about <Sq>75% above its real national income</Sq> (GNI*, near &euro;321 billion) &mdash; the gap
+          is almost entirely the accounting shadow of US multinationals booking global profits through
+          Dublin for tax reasons. Strip that distortion out, and the genuine transatlantic digital balance
+          is not a surplus at all but a deficit on the order of <Sq>&minus;$350 billion</Sq>. The number
+          that looked like Europe winning was American profit, parked in a European postbox. Flip the
+          toggle below from the mirage to the real ledger.
+        </P>
+      </Prose>
+
+      <Figure max={1160}>
+        <IrishMirage />
+      </Figure>
+
+      <Prose>
+        <P>
+          And the tribute buys more than dependence; it buys exposure, because the platform Europe rents
+          comes with a foreign government attached. Around <Sq>80% of the EU public sector&rsquo;s
+          productivity software is Microsoft&rsquo;s</Sq>, and data held by American companies falls, under
+          the US CLOUD Act, within reach of American law wherever in the world it physically sits. For
+          years this was an abstraction lawyers worried about. In 2025 it stopped being abstract: after the
+          US administration sanctioned the International Criminal Court&rsquo;s chief prosecutor,{" "}
+          <Sq>Karim Khan</Sq>, his Microsoft email went dark, and he decamped to a Swiss provider. Microsoft
+          insists the Court chose to disconnect him rather than the company cutting him off &mdash; the
+          attribution is genuinely disputed &mdash; but the lesson landed regardless: the email of the
+          world&rsquo;s leading war-crimes prosecutor became inaccessible the moment Washington was
+          displeased, on a platform that runs Europe&rsquo;s ministries too. Throw the switch below.
+        </P>
+      </Prose>
+
+      <Figure>
+        <CloudActSwitch />
+      </Figure>
+
+      <Prose>
+        <PullQuote>
+          A quarter of a trillion euros a year, a market worth a continent, a surplus that is a mirage,
+          and an off-switch in a foreign capital. This is the ledger, and it has been open, and unbalanced,
+          and unremarked, for a decade.
+        </PullQuote>
+
+        <P>
+          It would be easy to read this chapter as the bleakest of the lot, and in euros it is. But notice
+          the faint, repeated counter-melody, because the essay turns on it: Euro-Office, a sovereign
+          European software suite, launched in June 2026; Denmark, Austria and France have begun migrating
+          their public sectors off Microsoft; the Karim Khan affair did more to concentrate European minds
+          on data sovereignty than a decade of position papers. The tribute is enormous and it is real.
+          It is also, like every other line on this ledger, a standing order &mdash; and the one thing we
+          know about standing orders, from the first chapter to this one, is that they can be cancelled by
+          anyone with the nerve to sign the form.
+        </P>
+
+        <P>
+          There is one accelerant left to account for, and it is the reason the whole ledger is about to
+          get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
+          multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
+          unprecedented speed. The final chapter of the diagnosis is about that accelerant: software that
+          now costs almost nothing to make, deflates by an order of magnitude a year, and pours its
+          returns into exactly the concentrated, well-capitalised, energy-rich hands Europe does not have.
+          If the machine has run quietly for a decade, Software 3.0 is the foot going down on the pedal.
+        </P>
+      </Prose>
+
+      <Sources
+        items={[
+          "Cloud tribute: Europe spends ~€264bn/yr on US software/cloud (~80–83% of professional cloud spend; ~70% to the three US hyperscalers; ~1.5% of EU GDP). Asterès for Cigref/Numeum (2025); Synergy Research.",
+          "Scale: US “Magnificent Seven” combined ~$23tn (mid-2026) ≈ EU GDP, ~1.46× all EU listed companies (~$15.7tn); Nvidia ~$4.85tn > Germany's GDP ~$4.69tn. companiesmarketcap.com (Jun 2026).",
+          "Irish mirage: Ireland GDP ~€563bn vs GNI* ~€321bn (GDP ~75% above real income); top 3 firms ~46% of Irish corporation tax; real EU–US digital trade deficit ~−$350bn (2022–24). Ireland CSO (2024); CASSIS / University of Bonn; Irish Fiscal Council.",
+          "Public-sector lock-in: Microsoft ~77–92% (≈80%) of EU public-sector productivity software; Euro-Office sovereign suite launched Jun 2026; Denmark/Austria/France migrating. Open Cloud Coalition / Compass Lexecon (Jul 2025).",
+          "CLOUD Act demonstration: ICC prosecutor Karim Khan's Microsoft email became inaccessible after a US executive-order sanction (Feb 2025); he moved to Proton (Switzerland). Attribution disputed (Microsoft says the ICC disconnected him). The Register; AP; Computer Weekly (2025–26).",
+        ]}
+      />
+    </section>
+  )
+}
