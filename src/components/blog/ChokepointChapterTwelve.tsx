@@ -121,6 +121,21 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          Return, finally, to the savings, because they are the whole argument in microcosm. Of
+          Europe&rsquo;s household wealth, something like <Sq>&euro;10 to 11 trillion</Sq> sits in bank
+          deposits earning next to nothing &mdash; not invested, not at risk, not building anything, simply
+          parked. In the same years, the continent&rsquo;s own competitiveness reports put the annual
+          investment shortfall at <Sq>&euro;800 billion and climbing toward &euro;1.4 trillion</Sq>. The
+          money to close the gap is not missing; it is sitting in current accounts, and a third of a
+          trillion euros of it leaks abroad every year to be invested by someone else, in someone
+          else&rsquo;s companies, for someone else&rsquo;s returns. A continent does not get more
+          self-evidently rich, or more self-evidently timid, than that: the deepest savings pool on Earth,
+          declining to fund its own future, then wondering why the future is owned elsewhere.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
