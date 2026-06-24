@@ -165,6 +165,32 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          Follow the cheques and the pattern is unmistakable. <Sq>Klarna</Sq> raised round after round from
+          Sequoia and other American funds before listing in New York in 2025; <Sq>Revolut</Sq>, valued
+          around thirty-three billion dollars, leaned on SoftBank&rsquo;s Vision Fund and General Catalyst
+          and stayed private into 2026 on American late-stage money; <Sq>Graphcore</Sq>, once Britain&rsquo;s
+          great hope to build an alternative to Nvidia&rsquo;s AI chips, ran short of European growth
+          capital and was sold to Japan&rsquo;s SoftBank in 2024. The shortfall is structural, not
+          anecdotal: the median European growth-stage round runs roughly{" "}
+          <Sq>&euro;18&ndash;24 million</Sq> against <Sq>&euro;45&ndash;65 million</Sq> in the United
+          States, and the missing middle &mdash; the Series B-to-C cheque that turns a promising company
+          into a global one &mdash; is exactly where American capital steps in and takes the cap table.
+        </P>
+
+        <P>
+          The deepest irony sits in the pension statements. European pension funds allocate a vanishingly
+          small slice &mdash; on the order of <Sq>0.01% of their assets</Sq> &mdash; to domestic venture
+          capital, roughly a third of the already-modest American rate, leaving a quarter-trillion euros a
+          year of European retirement savings <em>not</em> backing European companies. Where does it go?
+          Norway&rsquo;s sovereign wealth fund, the largest single pool of European capital on Earth, now
+          counts <Sq>Nvidia</Sq> among its very largest holdings &mdash; which means a Dutch
+          machine&rsquo;s biggest customer is funded, in part, by the pensions of Norwegian oil workers,
+          whose returns then ride on an American chip company that depends on a Dutch monopoly the fund
+          holds no special stake in. The savings are European. The equity is American. The circle closes on
+          everyone except Europe.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
