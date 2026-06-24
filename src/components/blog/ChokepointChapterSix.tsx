@@ -152,11 +152,10 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
-          The trend line is the alarming part. Europe&rsquo;s net inflow of tech talent &mdash; skilled
-          people arriving minus those leaving &mdash; roughly <Sq>halved in two years</Sq>, from around
-          fifty-two thousand in 2022 to twenty-six thousand in 2024, as the United States, Canada and
-          Australia pulled harder while Europe&rsquo;s own friction (visa drag, equity gaps, regulatory
-          uncertainty) pushed. A continent that educates its workforce at public expense and then watches
+          The trend line is the alarming part, and it has already been measured: that net inflow, as we saw,
+          has roughly <Sq>halved in just two years</Sq>, as the United States, Canada and Australia pulled
+          harder while Europe&rsquo;s own friction &mdash; visa drag, equity gaps, regulatory uncertainty
+          &mdash; pushed. A continent that educates its workforce at public expense and then watches
           the net flow run the wrong way is not suffering a talent shortage. It is quietly running a talent
           <em>export</em> business, and booking the loss as someone else&rsquo;s gain.
         </P>
