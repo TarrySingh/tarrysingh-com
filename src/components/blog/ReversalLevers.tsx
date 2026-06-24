@@ -113,7 +113,7 @@ const DRAGHI_IMPL = 0.13
 
 // Plot frame (viewBox units).
 const W = 920
-const H = 612
+const H = 680
 
 // Lever-bank geometry — five console rows down the left two-thirds.
 const ROW_TOP = 150
@@ -263,7 +263,7 @@ export function ReversalLevers() {
         <text x={SLOT_X} y={62} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.2em" }}>
           THE PLANS ARE WRITTEN · THE LEVERS ARE BUILT
         </text>
-        <text x={SLOT_X} y={94} fill={p.leverage} style={{ fontSize: 26, fontWeight: 800, letterSpacing: "0.01em" }}>
+        <text x={SLOT_X} y={94} fill={p.leverage} style={{ fontSize: 21, fontWeight: 800, letterSpacing: "0.01em" }}>
           THE KEY EUROPE HOLDS
         </text>
         <text x={SLOT_X} y={118} fill={p.muted} style={{ fontSize: 12.5, fontFamily: "var(--font-serif), serif", fontStyle: "italic" }}>
@@ -333,10 +333,10 @@ export function ReversalLevers() {
               {/* filled travel */}
               <rect x={SLOT_X} y={slotY} width={lerp(0, SLOT_W, t)} height={12} rx={6} fill={armColor} opacity={0.55} />
               {/* slot end caps: armed (cyan, left) / pulled (gold, right) */}
-              <text x={SLOT_X} y={slotY + 30} fill={p.leverage} style={{ fontSize: 8, letterSpacing: "0.08em" }}>
+              <text x={SLOT_X} y={slotY + 30} fill={p.leverage} style={{ fontSize: 11, letterSpacing: "0.08em" }}>
                 ARMED
               </text>
-              <text x={SLOT_X + SLOT_W} y={slotY + 30} textAnchor="end" fill={on ? p.wonderHi : p.soft} style={{ fontSize: 8, letterSpacing: "0.08em" }}>
+              <text x={SLOT_X + SLOT_W} y={slotY + 30} textAnchor="end" fill={on ? p.wonderHi : p.soft} style={{ fontSize: 11, letterSpacing: "0.08em" }}>
                 PULLED
               </text>
               {/* the lever handle */}
@@ -395,10 +395,10 @@ export function ReversalLevers() {
             of the plan, executed
           </text>
           {/* the floor label */}
-          <text x={gx} y={gy + gr + 4} textAnchor="middle" fill={p.squeeze} style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.04em" }}>
+          <text x={gx} y={gy + gr + 4} textAnchor="middle" fill={p.squeeze} style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.04em" }}>
             real 2026 floor · ~13%
           </text>
-          <text x={gx} y={gy + gr + 20} textAnchor="middle" fill={p.soft} style={{ fontSize: 9.5, fontFamily: "var(--font-serif), serif", fontStyle: "italic" }}>
+          <text x={gx} y={gy + gr + 20} textAnchor="middle" fill={p.soft} style={{ fontSize: 12, fontFamily: "var(--font-serif), serif", fontStyle: "italic" }}>
             Draghi: ~11–15% fully implemented
           </text>
         </g>
@@ -412,7 +412,7 @@ export function ReversalLevers() {
               <line x1={SLOT_X} y1={dy} x2={W - 60} y2={dy} stroke={p.blueprint} strokeWidth={1} />
               <text x={SLOT_X} y={dy + 24} fill={headColor} style={{ fontSize: 13, fontWeight: 800, letterSpacing: "0.04em" }}>
                 {cur.label}
-                <tspan fill={p.soft} style={{ fontSize: 10.5, fontWeight: 600 }}>
+                <tspan fill={p.soft} style={{ fontSize: 12, fontWeight: 600 }}>
                   {"   "}· real impl {pct(cur.impl)}
                 </tspan>
               </text>

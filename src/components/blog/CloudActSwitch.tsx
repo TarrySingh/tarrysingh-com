@@ -80,7 +80,7 @@ const RESIST = CELLS.filter((c) => c.resist).length // 3 — the sovereign break
 
 // Grid geometry (viewBox units).
 const W = 920
-const H = 600
+const H = 632
 const COLS = 5
 const ROWS = 5
 const GRID_X = 70

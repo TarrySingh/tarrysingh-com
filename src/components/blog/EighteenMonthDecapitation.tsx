@@ -257,19 +257,19 @@ export function EighteenMonthDecapitation() {
         {/* line end-labels (always visible, the static reveal) */}
         <g>
           <circle cx={x(LAST)} cy={y(SERIES[LAST].lilly)} r={4.5} fill={p.squeezeHi} stroke={p.bg} strokeWidth={1.5} />
-          <text x={x(LAST) + 12} y={y(SERIES[LAST].lilly) - 8} fill={p.squeeze} style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em" }}>
+          <text x={W - 8} y={y(SERIES[LAST].lilly) - 8} textAnchor="end" fill={p.squeeze} style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em" }}>
             ELI LILLY
           </text>
-          <text x={x(LAST) + 12} y={y(SERIES[LAST].lilly) + 10} fill={p.squeezeHi} style={{ fontSize: 18, fontWeight: 800 }}>
+          <text x={W - 8} y={y(SERIES[LAST].lilly) + 10} textAnchor="end" fill={p.squeezeHi} style={{ fontSize: 18, fontWeight: 800 }}>
             ~$1.01tn
           </text>
         </g>
         <g>
           <circle cx={x(LAST)} cy={y(SERIES[LAST].novo)} r={4.5} fill={p.leverageHi} stroke={p.bg} strokeWidth={1.5} />
-          <text x={x(LAST) + 12} y={y(SERIES[LAST].novo) - 6} fill={p.leverage} style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em" }}>
+          <text x={W - 8} y={y(SERIES[LAST].novo) - 6} textAnchor="end" fill={p.leverage} style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em" }}>
             NOVO NORDISK
           </text>
-          <text x={x(LAST) + 12} y={y(SERIES[LAST].novo) + 12} fill={p.leverageHi} style={{ fontSize: 18, fontWeight: 800 }}>
+          <text x={W - 8} y={y(SERIES[LAST].novo) + 12} textAnchor="end" fill={p.leverageHi} style={{ fontSize: 18, fontWeight: 800 }}>
             ~$197bn
           </text>
         </g>

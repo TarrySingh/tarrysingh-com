@@ -240,7 +240,7 @@ export function BrainDrainTide() {
         <text x={EU_X + 16} y={BASIN_TOP + 46} fill={p.leverageHi} style={{ fontSize: 40, fontWeight: 800 }}>
           {fmtK(net)}
         </text>
-        <text x={EU_X + 18} y={BASIN_TOP + 66} fill={p.muted} style={{ fontSize: 11.5 }}>
+        <text x={EU_X + 18} y={BASIN_TOP + 66} fill={p.muted} style={{ fontSize: 12 }}>
           net AI-talent inflow / year
         </text>
         <text x={EU_X + 18} y={BASIN_BOT - 16} fill={p.soft} style={{ fontSize: 10.5, letterSpacing: "0.1em" }}>
@@ -264,7 +264,7 @@ export function BrainDrainTide() {
         <text x={US_X + US_W - 16} y={BASIN_TOP + 46} textAnchor="end" fill={p.squeezeHi} style={{ fontSize: 19, fontWeight: 800, letterSpacing: "0.02em" }}>
           long-run net importer
         </text>
-        <text x={US_X + US_W - 18} y={BASIN_TOP + 68} textAnchor="end" fill={p.muted} style={{ fontSize: 11.5 }}>
+        <text x={US_X + US_W - 18} y={BASIN_TOP + 68} textAnchor="end" fill={p.muted} style={{ fontSize: 12 }}>
           US-bound migration has dominated since ~2017
         </text>
 

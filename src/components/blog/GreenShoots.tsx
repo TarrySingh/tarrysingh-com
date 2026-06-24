@@ -289,7 +289,7 @@ export function GreenShoots() {
         {/* THE SOIL-LINE — the dark earth the shoots must break through */}
         <rect x={FIELD_X0 - 8} y={SOIL_Y} width={FIELD_X1 - FIELD_X0 + 16} height={48} rx={6} fill={soil} />
         <line x1={FIELD_X0 - 8} y1={SOIL_Y} x2={FIELD_X1 + 8} y2={SOIL_Y} stroke={p.wonder} strokeWidth={1.4} strokeOpacity={0.5} />
-        <text x={FIELD_X0} y={SOIL_Y + 30} fill={rgba(p.glowRGB, 0.7)} style={{ fontSize: 10, letterSpacing: "0.22em" }}>
+        <text x={FIELD_X0} y={SOIL_Y + 30} fill={rgba(p.glowRGB, 0.7)} style={{ fontSize: 11.5, letterSpacing: "0.22em" }}>
           {sprouting ? "2025–2026 · THE GROUND BREAKS" : "2015–2024 · BARREN — REPORTS FILED, SHELVED"}
         </text>
 
@@ -319,7 +319,7 @@ export function GreenShoots() {
                 {/* a buried seed below the soil — fear, not yet acted on */}
                 <line x1={x} y1={SOIL_Y} x2={x} y2={SOIL_Y - (isActive ? 16 : 9)} stroke={p.squeeze} strokeWidth={isActive ? 2.4 : 1.6} strokeLinecap="round" strokeOpacity={isActive ? 0.95 : 0.6} />
                 <circle cx={x} cy={SOIL_Y + 24} r={isActive ? 4 : 3} fill={p.squeeze} fillOpacity={isActive ? 0.9 : 0.5} />
-                <text x={x} y={SOIL_Y - (isActive ? 24 : 17)} textAnchor="middle" fill={isActive ? p.squeezeHi : p.soft} style={{ fontSize: 8.5, letterSpacing: "0.06em" }}>
+                <text x={x} y={SOIL_Y - (isActive ? 24 : 17)} textAnchor="middle" fill={isActive ? p.squeezeHi : p.soft} style={{ fontSize: 9.5, letterSpacing: "0.06em" }}>
                   {s.date}
                 </text>
               </g>
@@ -374,11 +374,11 @@ export function GreenShoots() {
                     y={tipY - 16}
                     textAnchor="middle"
                     fill={isActive ? p.wonderHi : p.muted}
-                    style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.05em" }}
+                    style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: "0.05em" }}
                   >
                     {s.label}
                   </text>
-                  <text x={x} y={tipY - 28} textAnchor="middle" fill={p.soft} style={{ fontSize: 8, letterSpacing: "0.08em" }}>
+                  <text x={x} y={tipY - 28} textAnchor="middle" fill={p.soft} style={{ fontSize: 9.5, letterSpacing: "0.08em" }}>
                     {s.date}
                   </text>
                 </>
@@ -392,7 +392,7 @@ export function GreenShoots() {
           const px = FIELD_X1 - 330
           const pw = 330
           const py = 24
-          const ph = 168
+          const ph = 188
           const live2 = sprouting
           return (
             <g>
@@ -406,7 +406,7 @@ export function GreenShoots() {
                 stroke={live2 ? p.wonder : p.squeeze}
                 strokeWidth={1.3}
               />
-              <text x={px + 18} y={py + 26} fill={p.soft} style={{ fontSize: 9.5, letterSpacing: "0.2em" }}>
+              <text x={px + 18} y={py + 26} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.2em" }}>
                 {live2 ? (cur.strong ? "LOAD-BEARING SHOOT" : "EARLY SHOOT") : "DORMANT · NOT YET BROKEN GROUND"}
               </text>
               <text x={px + 18} y={py + 50} fill={live2 ? (cur.strong ? p.wonderHi : p.wonder) : p.squeeze} style={{ fontSize: 14, fontWeight: 800, letterSpacing: "0.02em" }}>
@@ -433,7 +433,7 @@ export function GreenShoots() {
         <text x={FIELD_X0} y={H - 14} fill={sprouting ? p.squeezeHi : p.soft} style={{ fontSize: 11, fontFamily: "var(--font-serif), serif", fontStyle: "italic" }}>
           {sprouting ? cur.fear : "A decade of foresight on paper. Not one shoot broke the soil."}
         </text>
-        <text x={FIELD_X1} y={H - 14} textAnchor="end" fill={p.soft} style={{ fontSize: 9.5, letterSpacing: "0.06em" }}>
+        <text x={FIELD_X1} y={H - 14} textAnchor="end" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.06em" }}>
           {cur.source}
         </text>
       </svg>

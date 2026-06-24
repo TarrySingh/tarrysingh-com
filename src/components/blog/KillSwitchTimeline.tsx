@@ -194,7 +194,7 @@ export function KillSwitchTimeline() {
         <text x={60} y={150} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           ASML China revenue · {cur.date}
         </text>
-        <text x={57} y={206} fill={ringColor} style={{ fontSize: 60, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={57} y={206} fill={ringColor} style={{ fontSize: 44, fontWeight: 800, letterSpacing: "-0.01em" }}>
           {pctFmt(cur.china)}
         </text>
         <text x={60} y={232} fill={p.muted} style={{ fontSize: 13 }}>
@@ -215,7 +215,7 @@ export function KillSwitchTimeline() {
           y={206}
           textAnchor="end"
           fill={p.squeeze}
-          style={{ fontSize: 52, fontWeight: 800, letterSpacing: "-0.01em" }}
+          style={{ fontSize: 44, fontWeight: 800, letterSpacing: "-0.01em" }}
         >
           −{Math.round(cut)} pts
         </text>
@@ -367,7 +367,7 @@ export function KillSwitchTimeline() {
                 y={trackY - 14}
                 textAnchor="middle"
                 fill={here ? p.squeezeHi : on ? p.muted : p.soft}
-                style={{ fontSize: 10.5, fontWeight: here ? 700 : 400 }}
+                style={{ fontSize: 12, fontWeight: here ? 700 : 400 }}
               >
                 {s.date}
               </text>
@@ -377,7 +377,7 @@ export function KillSwitchTimeline() {
                   y={trackY + 22}
                   textAnchor={i === 0 ? "start" : i === N ? "end" : "middle"}
                   fill={p.squeezeHi}
-                  style={{ fontSize: 10.5, fontWeight: 600 }}
+                  style={{ fontSize: 12, fontWeight: 600 }}
                 >
                   {s.detail}
                 </text>

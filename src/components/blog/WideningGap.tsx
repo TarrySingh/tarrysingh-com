@@ -106,7 +106,7 @@ const DIMS: Dim[] = [
 
 // Plot frame (viewBox units). A pair of horizontal bars meeting at a centre gutter.
 const W = 920
-const H = 360
+const H = 410
 const PADL = 40
 const PADR = 40
 const PADT = 86
@@ -264,7 +264,7 @@ export function WideningGap() {
           <text x={CX - 14} y={euY - 10} textAnchor="end" fill={p.leverage} style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.14em" }}>
             EUROPE
           </text>
-          <text x={CX - euLen - 12} y={euY + BAR_H / 2 + 9} textAnchor="end" fill={p.leverageHi} style={{ fontSize: 26, fontWeight: 800 }}>
+          <text x={CX - euLen - 12} y={euY + BAR_H / 2 + 9} textAnchor="end" fill={p.leverageHi} style={{ fontSize: 24, fontWeight: 800 }}>
             {d.euLabel}
           </text>
         </g>
@@ -284,7 +284,7 @@ export function WideningGap() {
           <text x={CX + 14} y={usY - 10} textAnchor="start" fill={p.squeeze} style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.14em" }}>
             UNITED STATES
           </text>
-          <text x={CX + usLen + 12} y={usY + BAR_H / 2 + 9} textAnchor="start" fill={p.squeezeHi} style={{ fontSize: 26, fontWeight: 800 }}>
+          <text x={CX + usLen + 12} y={usY + BAR_H / 2 + 9} textAnchor="start" fill={p.squeezeHi} style={{ fontSize: 24, fontWeight: 800 }}>
             {d.usLabel}
           </text>
         </g>

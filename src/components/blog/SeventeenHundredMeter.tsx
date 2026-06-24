@@ -220,9 +220,10 @@ export function SeventeenHundredMeter() {
           strokeDasharray="2 3"
         />
 
-        {/* path labels — anchored at the live frontier of each line */}
+        {/* path labels — anchored at the live frontier, clamped so the end-anchored
+            text never runs off the left edge at early scrub years */}
         <text
-          x={x(cur.year) - 8}
+          x={Math.max(x(cur.year) - 8, PADL + 168)}
           y={y(cur.ghost) - 8}
           textAnchor="end"
           fill={p.wonderHi}
@@ -231,7 +232,7 @@ export function SeventeenHundredMeter() {
           path not taken · 1.6%/yr
         </text>
         <text
-          x={x(cur.year) - 8}
+          x={Math.max(x(cur.year) - 8, PADL + 110)}
           y={y(cur.actual) + 18}
           textAnchor="end"
           fill={p.muted}

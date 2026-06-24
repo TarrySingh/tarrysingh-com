@@ -270,7 +270,7 @@ export function CompassThatSpins() {
         </text>
         <text
           x={CX}
-          y={CY - R + 30}
+          y={CY - R + 38}
           textAnchor="middle"
           fill={p.muted}
           style={{ fontSize: 11.5 }}
@@ -282,7 +282,7 @@ export function CompassThatSpins() {
         <text x={56} y={H - 96} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           delivered
         </text>
-        <text x={52} y={H - 50} fill={rgba(mode === "dark" ? "120,170,230" : "14,122,165", 0.5)} style={{ fontSize: 56, fontWeight: 800 }}>
+        <text x={56} y={H - 50} fill={rgba(mode === "dark" ? "120,170,230" : "14,122,165", 0.5)} style={{ fontSize: 46, fontWeight: 800 }}>
           {delivered}
         </text>
 
@@ -290,7 +290,7 @@ export function CompassThatSpins() {
         <text x={W - 56} y={H - 96} textAnchor="end" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           years slipped
         </text>
-        <text x={W - 52} y={H - 50} textAnchor="end" fill={p.squeeze} style={{ fontSize: 56, fontWeight: 800 }}>
+        <text x={W - 56} y={H - 50} textAnchor="end" fill={p.squeeze} style={{ fontSize: 46, fontWeight: 800 }}>
           {Math.round(yearsSlipped)}
         </text>
         <text x={W - 54} y={H - 30} textAnchor="end" fill={p.soft} style={{ fontSize: 11 }}>

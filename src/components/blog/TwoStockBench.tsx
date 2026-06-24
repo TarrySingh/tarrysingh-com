@@ -75,7 +75,7 @@ const fmtBn = (bn: number) => `$${Math.round(bn)}bn`
 
 // Plot frame (viewBox units). Two rows of player-cards, EU on top, US below.
 const W = 940
-const H = 470
+const H = 890
 const PADL = 24
 const PADR = 24
 const ROW_GAP = 14
@@ -275,7 +275,7 @@ export function TwoStockBench() {
         <text x={bandL - 14} y={euTop - 22} textAnchor="end" fill={p.leverage} style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.16em" }}>
           EUROPE&rsquo;S TOP TIER
         </text>
-        <text x={bandL + 4} y={euTop - 22} textAnchor="start" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase" }}>
+        <text x={bandL + 4} y={euTop - 22} textAnchor="start" fill={p.soft} style={{ fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase" }}>
           a four-name bench
         </text>
         {EUROPE.map((pl, i) =>
@@ -289,7 +289,7 @@ export function TwoStockBench() {
           ),
         )}
         {/* EU live total */}
-        <text x={bandL - 14} y={euTop + EUROPE.length * (CARD_H + ROW_GAP) + 8} textAnchor="end" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase" }}>
+        <text x={bandL - 14} y={euTop + EUROPE.length * (CARD_H + ROW_GAP) + 8} textAnchor="end" fill={p.soft} style={{ fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase" }}>
           top-tier total
         </text>
         <text x={bandL + 4} y={euTop + EUROPE.length * (CARD_H + ROW_GAP) + 10} textAnchor="start" fill={hurt > 0.02 ? p.squeezeHi : p.leverageHi} style={{ fontSize: 22, fontWeight: 800 }}>

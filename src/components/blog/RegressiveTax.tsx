@@ -281,7 +281,7 @@ export function RegressiveTax() {
         <text x={W - PADR} y={34} textAnchor="end" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           What the regime already cost
         </text>
-        <text x={W - PADR + 1} y={70} textAnchor="end" fill={p.squeeze} style={{ fontSize: 28, fontWeight: 800 }}>
+        <text x={W - PADR + 1} y={70} textAnchor="end" fill={p.squeeze} style={{ fontSize: 19, fontWeight: 800 }}>
           −{GDPR_DEAL_CUT}%
         </text>
         <text x={W - PADR} y={88} textAnchor="end" fill={p.muted} style={{ fontSize: 11.5 }}>

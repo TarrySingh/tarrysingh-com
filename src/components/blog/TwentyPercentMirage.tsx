@@ -223,7 +223,7 @@ export function TwentyPercentMirage() {
         <text x={CX} y={CY - 96} textAnchor="middle" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em" }}>
           PROJECTED · 2030
         </text>
-        <text x={CX} y={CY - 40} textAnchor="middle" fill={p.leverage} style={{ fontSize: 64, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={CX} y={CY - 40} textAnchor="middle" fill={p.leverage} style={{ fontSize: 42, fontWeight: 800, letterSpacing: "-0.01em" }}>
           {PROJ_2030.toFixed(1)}%
         </text>
         <text x={CX} y={CY - 14} textAnchor="middle" fill={p.muted} style={{ fontSize: 12 }}>
@@ -246,7 +246,7 @@ export function TwentyPercentMirage() {
           <text x={0} y={-2} textAnchor="middle" fill={p.squeezeHi} style={{ fontSize: 19, fontWeight: 800, letterSpacing: "0.06em" }}>
             VERY UNLIKELY
           </text>
-          <text x={0} y={14} textAnchor="middle" fill={p.squeeze} style={{ fontSize: 9, letterSpacing: "0.12em" }}>
+          <text x={0} y={14} textAnchor="middle" fill={p.squeeze} style={{ fontSize: 10.5, letterSpacing: "0.12em" }}>
             EUROPEAN COURT OF AUDITORS · SR 12/2025
           </text>
         </g>

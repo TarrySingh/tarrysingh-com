@@ -454,7 +454,7 @@ export function ExitValueScissors() {
         {/* the spread, named in mono above the open blades */}
         <text
           x={PIVOT_X}
-          y={PIVOT_Y - BLADE_LEN - 18}
+          y={20}
           textAnchor="middle"
           fill={p.squeeze}
           style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.06em" }}

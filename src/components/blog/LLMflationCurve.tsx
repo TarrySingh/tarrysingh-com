@@ -253,7 +253,7 @@ export function LLMflationCurve() {
         <text x={PADL} y={48} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           Good-enough intelligence · {d.label}
         </text>
-        <text x={PADL - 3} y={108} fill={p.wonderHi} style={{ fontSize: 58, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={PADL - 3} y={108} fill={p.wonderHi} style={{ fontSize: 46, fontWeight: 800, letterSpacing: "-0.01em" }}>
           {fmtUSD(d.budget)}
         </text>
         <text x={PADL} y={132} fill={p.muted} style={{ fontSize: 12.5 }}>
@@ -263,7 +263,7 @@ export function LLMflationCurve() {
         <text x={W - PADR} y={48} textAnchor="end" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           Token demand · index
         </text>
-        <text x={W - PADR + 3} y={108} textAnchor="end" fill={p.squeeze} style={{ fontSize: 58, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={W - PADR + 3} y={108} textAnchor="end" fill={p.squeeze} style={{ fontSize: 46, fontWeight: 800, letterSpacing: "-0.01em" }}>
           {d.demand.toFixed(1)}×
         </text>
         <text x={W - PADR} y={132} textAnchor="end" fill={p.muted} style={{ fontSize: 12.5 }}>

@@ -351,7 +351,7 @@ export function TwentySevenMaze() {
           />
 
           {/* gate label */}
-          <text x={EU_X} y={EU_Y - 16} fill={p.squeezeHi} style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.1em" }}>
+          <text x={EU_X} y={EU_Y - 4} fill={p.squeezeHi} style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.1em" }}>
             27 MAZES · ONE PER MEMBER STATE
           </text>
 
@@ -386,7 +386,7 @@ export function TwentySevenMaze() {
             strokeLinecap="round"
             markerEnd="url(#tm-arrow)"
           />
-          <text x={US_X + US_W / 2} y={US_Y - 16} textAnchor="middle" fill={p.leverage} style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.1em" }}>
+          <text x={US_X + US_W / 2} y={US_Y - 4} textAnchor="middle" fill={p.leverage} style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.1em" }}>
             ONE MARKET · CLEAN LANE
           </text>
           {/* US founder, already at scale */}

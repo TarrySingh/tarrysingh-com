@@ -236,7 +236,7 @@ export function OvertureDashboard({ onJump }: { onJump?: (anchor: string) => voi
                   fill={p.soft}
                   style={{
                     fontFamily: "var(--font-mono), monospace",
-                    fontSize: 8.5,
+                    fontSize: 11,
                     letterSpacing: "0.18em",
                   }}
                 >

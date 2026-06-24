@@ -238,7 +238,7 @@ export function FinishingSchool() {
               <text x={d.x} y={BAND_BOT + 92} textAnchor="middle" fill={p.squeezeHi} style={{ fontSize: 17, fontWeight: 800 }}>
                 {pct(losses[i])}
               </text>
-              <text x={d.x} y={BAND_BOT + 110} textAnchor="middle" fill={p.soft} style={{ fontSize: 10 }}>
+              <text x={d.x} y={BAND_BOT + 110} textAnchor="middle" fill={p.soft} style={{ fontSize: 12 }}>
                 {d.sub}
               </text>
               {/* loss-height visual nub (keeps lossH referenced + reads the slice) */}
@@ -276,13 +276,13 @@ export function FinishingSchool() {
           <text x={18} y={mid - 6} textAnchor="start" fill={p.leverageHi} style={{ fontSize: 30, fontWeight: 800 }}>
             {Math.round(retained * COHORT)}
           </text>
-          <text x={18} y={mid + 12} textAnchor="start" fill={p.leverage} style={{ fontSize: 10.5, letterSpacing: "0.12em" }}>
+          <text x={18} y={mid + 12} textAnchor="start" fill={p.leverage} style={{ fontSize: 12, letterSpacing: "0.12em" }}>
             REALISED AT HOME
           </text>
         </g>
 
         {/* leaving counter — the red total, top-right in mono */}
-        <text x={BAND_X1} y={BAND_TOP - 88} textAnchor="end" fill={p.squeeze} style={{ fontSize: 10.5, letterSpacing: "0.16em" }}>
+        <text x={BAND_X1} y={BAND_TOP - 88} textAnchor="end" fill={p.squeeze} style={{ fontSize: 12, letterSpacing: "0.16em" }}>
           REALISED ABROAD
         </text>
         <text x={BAND_X1} y={BAND_TOP - 56} textAnchor="end" fill={p.squeezeHi} style={{ fontSize: 34, fontWeight: 800 }}>

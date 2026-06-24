@@ -223,7 +223,7 @@ export function TwoClocks() {
           {Math.min(year, ASSET_HORIZON).toFixed(0)}
           <tspan fill={p.soft} style={{ fontSize: 14, fontWeight: 700 }}> / {ASSET_HORIZON}y</tspan>
         </text>
-        <text x={ASSET.cx} y={ASSET.cy + 28} textAnchor="middle" fill={p.soft} style={{ fontSize: 10.5, letterSpacing: "0.16em" }}>
+        <text x={ASSET.cx} y={ASSET.cy + 28} textAnchor="middle" fill={p.soft} style={{ fontSize: 12, letterSpacing: "0.16em" }}>
           STRATEGIC HORIZON
         </text>
         <text x={ASSET.cx} y={ASSET.cy + ASSET.r + 30} textAnchor="middle" fill={p.muted} style={{ fontSize: 12 }}>
@@ -263,7 +263,7 @@ export function TwoClocks() {
         <text x={POL.cx} y={POL.cy + 10} textAnchor="middle" fill={p.ink} style={{ fontSize: 26, fontWeight: 800 }}>
           {cyclesDone}
         </text>
-        <text x={POL.cx} y={POL.cy + 28} textAnchor="middle" fill={p.soft} style={{ fontSize: 9.5, letterSpacing: "0.12em" }}>
+        <text x={POL.cx} y={POL.cy + 28} textAnchor="middle" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.12em" }}>
           {cyclesDone === 1 ? "RESET" : "RESETS"} · 4y
         </text>
 

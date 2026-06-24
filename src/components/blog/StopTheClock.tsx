@@ -387,7 +387,7 @@ export function StopTheClock() {
             y={dlY + (dlY > CY ? 18 : -10)}
             textAnchor={dlX > CX ? "start" : "end"}
             fill={dlColor}
-            style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.03em" }}
+            style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: "0.03em" }}
           >
             HIGH-RISK · {cur.deadlineLabel}
           </text>

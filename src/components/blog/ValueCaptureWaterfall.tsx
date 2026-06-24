@@ -224,7 +224,7 @@ export function ValueCaptureWaterfall() {
         <text x={PADL} y={52} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           Shipped to US providers · per year
         </text>
-        <text x={PADL - 3} y={108} fill={p.squeeze} style={{ fontSize: 60, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={PADL - 3} y={108} fill={p.squeeze} style={{ fontSize: 46, fontWeight: 800, letterSpacing: "-0.01em" }}>
           €{eurOut}bn
         </text>
         <text x={PADL} y={132} fill={p.muted} style={{ fontSize: 12.5 }}>
@@ -234,7 +234,7 @@ export function ValueCaptureWaterfall() {
         <text x={W - PADR} y={52} textAnchor="end" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           Retained in Europe · per 100
         </text>
-        <text x={W - PADR + 3} y={108} textAnchor="end" fill={p.leverageHi} style={{ fontSize: 60, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={W - PADR + 3} y={108} textAnchor="end" fill={p.leverageHi} style={{ fontSize: 46, fontWeight: 800, letterSpacing: "-0.01em" }}>
           {fmtUnit(retained)}
         </text>
         <text x={W - PADR} y={132} textAnchor="end" fill={p.muted} style={{ fontSize: 12.5 }}>

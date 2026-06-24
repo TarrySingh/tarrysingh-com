@@ -234,7 +234,7 @@ export function AccelerantEngine() {
         <text x={PADL} y={48} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           The accelerant · every gap, multiplied
         </text>
-        <text x={PADL - 3} y={112} fill={engaged ? p.squeeze : p.leverage} style={{ fontSize: 64, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={PADL - 3} y={112} fill={engaged ? p.squeeze : p.leverage} style={{ fontSize: 46, fontWeight: 800, letterSpacing: "-0.01em" }}>
           ×{liveAgg.toFixed(1)}
         </text>
         <text x={PADL} y={136} fill={p.muted} style={{ fontSize: 12.5 }}>
@@ -244,7 +244,7 @@ export function AccelerantEngine() {
         <text x={W - PADR} y={48} textAnchor="end" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           Frontier compute · the sharpest
         </text>
-        <text x={W - PADR + 3} y={112} textAnchor="end" fill={engaged ? p.squeezeHi : p.leverage} style={{ fontSize: 64, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={W - PADR + 3} y={112} textAnchor="end" fill={engaged ? p.squeezeHi : p.leverage} style={{ fontSize: 46, fontWeight: 800, letterSpacing: "-0.01em" }}>
           ×{lerp(1, GAPS[N - 1].mult, throttle).toFixed(0)}
         </text>
         <text x={W - PADR} y={136} textAnchor="end" fill={p.muted} style={{ fontSize: 12.5 }}>
@@ -253,7 +253,7 @@ export function AccelerantEngine() {
 
         {/* the "before" baseline reference — where every cyan bar starts */}
         <line x1={TRACK_X0} y1={PLOT_TOP - 8} x2={TRACK_X0} y2={PLOT_BOT + 8} stroke={p.blueprint} strokeWidth={1} />
-        <text x={TRACK_X0} y={PLOT_TOP - 16} textAnchor="middle" fill={p.soft} style={{ fontSize: 10, letterSpacing: "0.12em" }}>
+        <text x={TRACK_X0} y={PLOT_TOP - 16} textAnchor="middle" fill={p.soft} style={{ fontSize: 12, letterSpacing: "0.12em" }}>
           BEFORE
         </text>
 
@@ -267,11 +267,12 @@ export function AccelerantEngine() {
           const active = throttle > 0.02
           return (
             <g key={g.key}>
-              {/* row label + the gap as the essay framed it */}
-              <text x={PADL - 16} y={y - 3} textAnchor="end" fill={p.ink} style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.08em" }}>
+              {/* row label */}
+              <text x={PADL - 16} y={y + 5} textAnchor="end" fill={p.ink} style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.08em" }}>
                 {g.label}
               </text>
-              <text x={PADL - 16} y={y + 13} textAnchor="end" fill={p.soft} style={{ fontSize: 9.5 }}>
+              {/* the gap as the essay framed it — full-width line beneath the bar */}
+              <text x={TRACK_X0} y={y + BAR_H / 2 + 15} fill={p.soft} style={{ fontSize: 12 }}>
                 {g.detail}
               </text>
 

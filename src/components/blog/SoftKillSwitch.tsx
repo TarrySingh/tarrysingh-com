@@ -250,7 +250,7 @@ export function SoftKillSwitch() {
         <text x={60} y={56} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           F-35s inoperable · of ~{DELIVERED} delivered
         </text>
-        <text x={57} y={118} fill={needleColor} style={{ fontSize: 62, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={57} y={118} fill={needleColor} style={{ fontSize: 48, fontWeight: 800, letterSpacing: "-0.01em" }}>
           {intFmt(jetsAffected)}
         </text>
         <text x={60} y={146} fill={p.muted} style={{ fontSize: 13 }}>
@@ -318,10 +318,10 @@ export function SoftKillSwitch() {
           />
           <circle cx={dialCx} cy={dialCy} r={4} fill={needleColor} />
           {/* "support withdrawn" label under the dial */}
-          <text x={dialCx - dialR} y={dialCy + 26} textAnchor="start" fill={p.leverage} style={{ fontSize: 9, letterSpacing: "0.06em" }}>
+          <text x={dialCx - dialR} y={dialCy + 26} textAnchor="start" fill={p.leverage} style={{ fontSize: 11, letterSpacing: "0.06em" }}>
             flowing
           </text>
-          <text x={dialCx + dialR} y={dialCy + 26} textAnchor="end" fill={p.squeeze} style={{ fontSize: 9, letterSpacing: "0.06em" }}>
+          <text x={dialCx + dialR} y={dialCy + 26} textAnchor="end" fill={p.squeeze} style={{ fontSize: 11, letterSpacing: "0.06em" }}>
             withdrawn
           </text>
           <text
@@ -329,7 +329,7 @@ export function SoftKillSwitch() {
             y={dialCy + 8}
             textAnchor="middle"
             fill={needleColor}
-            style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: "0.08em" }}
+            style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.08em" }}
           >
             {cur.label}
           </text>

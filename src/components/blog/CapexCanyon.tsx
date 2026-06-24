@@ -201,7 +201,7 @@ export function CapexCanyon() {
         <text x={PADL} y={44} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           US hyperscaler AI capex · 2026
         </text>
-        <text x={PADL - 3} y={100} fill={p.squeeze} style={{ fontSize: 58, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={PADL - 3} y={100} fill={p.squeeze} style={{ fontSize: 50, fontWeight: 800, letterSpacing: "-0.01em" }}>
           ${US_CAPEX}bn
         </text>
         <text x={PADL} y={122} fill={p.muted} style={{ fontSize: 12 }}>
@@ -211,7 +211,7 @@ export function CapexCanyon() {
         <text x={W - PADR} y={44} textAnchor="end" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}>
           Europe, combined · 2026
         </text>
-        <text x={W - PADR + 3} y={100} textAnchor="end" fill={p.leverageHi} style={{ fontSize: 58, fontWeight: 800, letterSpacing: "-0.01em" }}>
+        <text x={W - PADR + 3} y={100} textAnchor="end" fill={p.leverageHi} style={{ fontSize: 50, fontWeight: 800, letterSpacing: "-0.01em" }}>
           ${EU_CAPEX}bn
         </text>
         <text x={W - PADR} y={122} textAnchor="end" fill={p.muted} style={{ fontSize: 12 }}>
@@ -264,7 +264,7 @@ export function CapexCanyon() {
           <text x={US_X} y={PLOT_BOT + 24} textAnchor="middle" fill={p.muted} style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em" }}>
             US HYPERSCALERS
           </text>
-          <text x={US_X} y={PLOT_BOT + 40} textAnchor="middle" fill={p.soft} style={{ fontSize: 10 }}>
+          <text x={US_X} y={PLOT_BOT + 40} textAnchor="middle" fill={p.soft} style={{ fontSize: 11 }}>
             4 firms · the near rim
           </text>
         </g>
@@ -333,7 +333,7 @@ export function CapexCanyon() {
           <text x={EU_X} y={PLOT_BOT + 24} textAnchor="middle" fill={p.muted} style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em" }}>
             EUROPE, COMBINED
           </text>
-          <text x={EU_X} y={PLOT_BOT + 40} textAnchor="middle" fill={p.soft} style={{ fontSize: 10 }}>
+          <text x={EU_X} y={PLOT_BOT + 40} textAnchor="middle" fill={p.soft} style={{ fontSize: 11 }}>
             Gigafactories + Mistral · the far rim
           </text>
         </g>

@@ -252,7 +252,7 @@ export function TheReservoir() {
         <text x={(DAM_X + US_X) / 2 + 30} y={US_TOP - 78} textAnchor="middle" fill={p.squeezeHi} style={{ fontSize: 30, fontWeight: 800, opacity: spillOpacity < 0.2 ? 0.4 : 1 }}>
           {fmtBn(leakBn)}/yr
         </text>
-        <text x={(DAM_X + US_X) / 2 + 30} y={US_TOP - 60} textAnchor="middle" fill={p.soft} style={{ fontSize: 10.5, letterSpacing: "0.16em" }}>
+        <text x={(DAM_X + US_X) / 2 + 30} y={US_TOP - 60} textAnchor="middle" fill={p.soft} style={{ fontSize: 12, letterSpacing: "0.16em" }}>
           STILL SPILLING OUT
         </text>
       </svg>

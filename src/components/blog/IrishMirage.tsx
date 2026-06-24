@@ -63,7 +63,7 @@ const MNC_SWING = 27 // % collapse in multinational-dominated output, Q1 2026
 
 // Plot frame (viewBox units).
 const W = 920
-const H = 560
+const H = 588
 const BASE_Y = 430 // the ledger baseline (zero)
 const TOP_Y = 96 // top of the plot
 const TOWER_X = 196 // centre of the GDP/GNI* tower

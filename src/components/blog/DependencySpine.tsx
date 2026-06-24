@@ -209,10 +209,10 @@ export function DependencySpine() {
         </text>
 
         {/* scale legend over the column: 0% ← sovereign | dependent → 100% */}
-        <text x={SPINE_X - SEG_W / 2 + 6} y={BOT + 30} textAnchor="start" fill={p.leverage} style={{ fontSize: 9.5, letterSpacing: "0.1em" }}>
+        <text x={SPINE_X - SEG_W / 2 + 6} y={BOT + 30} textAnchor="start" fill={p.leverage} style={{ fontSize: 11, letterSpacing: "0.1em" }}>
           ◂ EUROPEAN-SOVEREIGN
         </text>
-        <text x={SPINE_X + SEG_W / 2 - 6} y={BOT + 30} textAnchor="end" fill={p.squeeze} style={{ fontSize: 9.5, letterSpacing: "0.1em" }}>
+        <text x={SPINE_X + SEG_W / 2 - 6} y={BOT + 30} textAnchor="end" fill={p.squeeze} style={{ fontSize: 11, letterSpacing: "0.1em" }}>
           US-DEPENDENT ▸
         </text>
 
@@ -355,7 +355,7 @@ export function DependencySpine() {
               </text>
 
               {/* the headline figure */}
-              <text x={px + 22} y={py + 138} fill={headColor} style={{ fontSize: 58, fontWeight: 800, letterSpacing: "-0.02em" }}>
+              <text x={px + 22} y={py + 138} fill={headColor} style={{ fontSize: 46, fontWeight: 800, letterSpacing: "-0.02em" }}>
                 {cur.metric}
               </text>
               <text x={px + 22} y={py + 162} fill={p.muted} style={{ fontSize: 12 }}>
@@ -363,27 +363,27 @@ export function DependencySpine() {
               </text>
 
               {/* dependence detail */}
-              {wrapText(cur.detail, 46).map((line, k) => (
+              {wrapText(cur.detail, 38).map((line, k) => (
                 <text key={`det-${k}`} x={px + 22} y={py + 206 + k * 19} fill={p.muted} style={{ fontSize: 12.5, fontFamily: "var(--font-serif), serif" }}>
                   {line}
                 </text>
               ))}
 
               {/* the alternative — gold if resistance, else faint */}
-              <line x1={px + 22} y1={py + 206 + wrapText(cur.detail, 46).length * 19 + 14} x2={px + pw - 22} y2={py + 206 + wrapText(cur.detail, 46).length * 19 + 14} stroke={p.blueprint} strokeWidth={1} />
+              <line x1={px + 22} y1={py + 206 + wrapText(cur.detail, 38).length * 19 + 14} x2={px + pw - 22} y2={py + 206 + wrapText(cur.detail, 38).length * 19 + 14} stroke={p.blueprint} strokeWidth={1} />
               <text
                 x={px + 22}
-                y={py + 206 + wrapText(cur.detail, 46).length * 19 + 38}
+                y={py + 206 + wrapText(cur.detail, 38).length * 19 + 38}
                 fill={gold ? p.wonderHi : p.soft}
                 style={{ fontSize: 10, letterSpacing: "0.18em" }}
               >
                 {gold ? "▸ ALTERNATIVE FORMING" : "ALTERNATIVE"}
               </text>
-              {wrapText(cur.alt, 46).map((line, k) => (
+              {wrapText(cur.alt, 38).map((line, k) => (
                 <text
                   key={`alt-${k}`}
                   x={px + 22}
-                  y={py + 206 + wrapText(cur.detail, 46).length * 19 + 58 + k * 19}
+                  y={py + 206 + wrapText(cur.detail, 38).length * 19 + 58 + k * 19}
                   fill={gold ? mixHex(p.wonderHi, p.muted, 0.25) : p.soft}
                   style={{ fontSize: 12.5, fontFamily: "var(--font-serif), serif" }}
                 >
