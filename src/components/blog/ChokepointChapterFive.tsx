@@ -174,6 +174,19 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          The same drama plays out one tier down, in the biotech that ought to be Europe&rsquo;s natural
+          stronghold. There is real consolidation &mdash; Denmark&rsquo;s <Sq>Genmab</Sq> agreed an
+          eight-billion-euro purchase of the Dutch antibody firm <Sq>Merus</Sq> in 2026, and Germany&rsquo;s{" "}
+          <Sq>BioNTech</Sq> absorbed its compatriot <Sq>CureVac</Sq> &mdash; proof that Europe can, when it
+          chooses, build scale inside its own borders. But the capital market underneath still drains the
+          other way: of the European-domiciled biotechs that went public over the past six years, all but one
+          listed <em>outside</em> Europe, and when Belgium&rsquo;s <Sq>Agomab</Sq> reached the public markets
+          in 2026 it did so on Nasdaq, in dollars, like nearly everyone before it. Europe can invent the
+          science and even, increasingly, own the mergers &mdash; and still watch the moment of
+          capitalisation, the part where the wealth is actually minted, happen on an American exchange.
+        </P>
+
+        <P>
           And the pattern is already pre-installed in the next generation. <Sq>Wayve</Sq>, the British
           self-driving-AI company widely held to be Europe&rsquo;s best, raised its mega-round not from
           European funds but from <Sq>SoftBank, Microsoft and Nvidia</Sq> &mdash; which means that if it
