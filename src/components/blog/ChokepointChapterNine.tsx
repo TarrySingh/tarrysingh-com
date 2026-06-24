@@ -192,6 +192,20 @@ export function ChokepointChapterNine() {
           so far, mostly been filed under noted.
         </P>
 
+        <P>
+          By 2026 the friction had hardened into open refusal and visible deprivation. <Sq>Meta</Sq> simply
+          <em>declined to sign</em> the AI Act&rsquo;s code of practice, betting that the cost of fighting
+          the rules was lower than the cost of following them; <Sq>Apple</Sq> blocked its flagship AI
+          assistant, the upgraded Siri, from the European Union indefinitely rather than reshape it to the
+          Digital Markets Act, so that European iPhone owners simply <em>do not get</em> features their
+          American counterparts take for granted. Set against that, the cookie banner that greets every
+          European on every website &mdash; some two-thirds of major sites show one, and by one study only a
+          sixth are actually compliant &mdash; is almost a comic emblem: a continent that experiences the
+          internet as a daily obstacle course of consent pop-ups, having successfully regulated the user
+          experience while regulating none of the platforms beneath it. The rules are felt everywhere. The
+          power they were meant to check sits, untouched, in California.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
