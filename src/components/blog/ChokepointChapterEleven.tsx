@@ -316,6 +316,7 @@ export function ChokepointChapterEleven() {
           "AI capex canyon: four US hyperscalers ~$725bn AI/data-centre capex in 2026 (+~77% YoY; ~$755bn incl. xAI/Stargate) vs ~$60bn for Europe (~12–13×). EU “AI Gigafactories” ~€20bn. CNBC / company filings (2026).",
           "Lab scale: Mistral (France) ~€11.7bn (Sep 2025) → ~€20bn/$23bn (2026 talks), ~$0.4bn ARR; vs OpenAI ~$852bn and Anthropic ~$965bn (2026; ~$47bn ARR) — Europe's best lab ~40× smaller. TechCrunch; company announcements.",
           "Frontier concentration: US ~50 notable AI models (2025) vs Europe ~3 and China ~30; US ~74% of high-end AI compute vs Europe ~5–6% (falling); every frontier-leading model since 2023 from a US lab. Stanford AI Index 2026; Epoch AI.",
+          "The funding gap, correctly framed: European VC deploys roughly $50bn/yr (annual flow, not the ~$430bn AUM); the US invests more in AI alone in a single year than Europe’s venture industry deploys across every sector. Atomico State of European Tech; Dealroom; Invest Europe.",
         ]}
       />
     </section>
