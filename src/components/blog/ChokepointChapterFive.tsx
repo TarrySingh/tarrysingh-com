@@ -261,6 +261,19 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          Even the consolidation plays tell the story. <Sq>Zalando</Sq>, Europe&rsquo;s biggest
+          fashion-e-commerce company, spent over a billion euros buying its rival About You in 2025 to build
+          the scale to resist Amazon &mdash; and still leads only the narrow niche of cross-border fashion
+          while Amazon leads the broad market in all five of Europe&rsquo;s largest economies.{" "}
+          <Sq>Prosus</Sq>, the Dutch giant that owns much of the European delivery and classifieds landscape,
+          is in truth a holding company whose worth rides on a quarter-stake in China&rsquo;s Tencent. The
+          pattern even at the top of the European table is consolidation <em>around</em> the American and
+          Chinese platforms rather than displacement of them &mdash; European champions merging with one
+          another to hold a defensible corner of a market whose centre belongs to someone else. It is a
+          rational survival strategy. It is not the behaviour of an industry that expects to lead.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
