@@ -162,6 +162,18 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          The pipeline has a postcode. For two decades the route ran from Europe&rsquo;s great university
+          towns &mdash; Cambridge, Oxford, Z&uuml;rich, Paris, Amsterdam &mdash; to a handful of square
+          miles around San Francisco Bay, and the AI era has only widened it. The pattern is so consistent
+          that scholars have a name for the arrangement: the <Sq>research colony</Sq>, a territory that
+          supplies the raw intellectual material &mdash; the doctorates, the papers, the foundational ideas
+          &mdash; to an imperial core that turns them into products, profits and equity. Europe educates the
+          mind at public expense; America rents it, captures its output, and books the returns. It is a
+          colonial relationship inverted into the knowledge economy, and the most uncomfortable part is how
+          willingly, and how cheaply, the colony exports its most valuable crop.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
