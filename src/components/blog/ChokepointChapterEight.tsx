@@ -246,6 +246,19 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          Space is the starkest gap of all, because it is where the next war will be won or lost. Europe has
+          no equivalent of SpaceX &mdash; no cheap, reusable, high-cadence launcher of its own &mdash; and so
+          depends on American rockets even to put its own satellites up; its sovereign
+          satellite-communications network, <Sq>IRIS&sup2;</Sq>, is not due in service until 2029, years
+          behind the constellations already overhead. When Ukraine&rsquo;s battlefield connectivity hung, at
+          moments, on the goodwill of a single American billionaire&rsquo;s satellite network, every European
+          capital saw the future with terrible clarity: that the most decisive military infrastructure of the
+          age is privately owned, American, and switchable &mdash; and that Europe, for all its engineers and
+          its money, had not built itself an alternative. The continent that launched the European space age
+          from Kourou is now, overhead, a tenant like everywhere else.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
