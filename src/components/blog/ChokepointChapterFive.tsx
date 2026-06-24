@@ -194,6 +194,18 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          Two more cases sharpen the point from opposite ends. <Sq>Elastic</Sq>, the Dutch-founded search
+          company, listed on the New York Stock Exchange in 2018 partly to escape the gravity of the
+          American cloud giants &mdash; whereupon Amazon simply <Sq>forked its open-source code</Sq> into a
+          rival product, &ldquo;OpenSearch,&rdquo; and captured much of the market the Dutch company had
+          created. And <Sq>Adyen</Sq>, the rare European champion that stayed home &mdash; Euronext-listed,
+          Amsterdam-headquartered, with the fattest margins in global payments &mdash; still processes only
+          around <Sq>three per cent of global payment volume</Sq>, hemmed permanently beneath Visa and
+          Mastercard. List in New York and the platforms eat you; stay in Amsterdam and you hit a structural
+          ceiling. The genius is real on both paths. The ownership of the future is on neither.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
