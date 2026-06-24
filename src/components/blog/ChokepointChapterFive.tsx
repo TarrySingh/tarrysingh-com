@@ -219,6 +219,19 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          And the tether does not always run west. Some of Europe&rsquo;s most prominent media and tech
+          assets are bound, increasingly, to <em>Chinese</em> capital. <Sq>Tencent</Sq> holds around a fifth
+          of <Sq>Universal Music Group</Sq>, the Amsterdam-listed company that is the largest record label
+          on Earth; Spotify and Tencent swapped minority stakes years ago, lacing Europe&rsquo;s streaming
+          champion into a dependence on Beijing-aligned capital and on Chinese goodwill for its largest
+          Asian market; <Sq>Prosus</Sq>, the Dutch investment giant that aspires to be Europe&rsquo;s most
+          valuable tech company, draws much of its worth from a roughly quarter-stake in Tencent. So even
+          the European champions that escaped American gravity often did so by drifting into a different
+          orbit. The point is not that China is the villain in America&rsquo;s place. It is that a continent
+          which does not own its own platforms ends up owned, in pieces, by whoever does.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
