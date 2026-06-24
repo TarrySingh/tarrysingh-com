@@ -164,6 +164,18 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          The cruelest irony of the crown jewel is that its very importance is what made it a hostage.
+          Because ASML&rsquo;s machines are indispensable, controlling who may buy them became the single
+          most powerful lever in the technology cold war &mdash; and that lever is pulled in Washington, not
+          The Hague. The proof is written on ASML&rsquo;s own income statement: China, for years its largest
+          market at close to <Sq>half of all sales</Sq>, was throttled by export controls to around{" "}
+          <Sq>a fifth</Sq> in barely two years &mdash; an entire market amputated, not by competition or a
+          better product, but by a foreign-policy decision the company could neither shape nor veto. Europe
+          owns the most valuable chokepoint in the world economy and discovered, the moment it mattered,
+          that owning the chokepoint and controlling it are two different things.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
