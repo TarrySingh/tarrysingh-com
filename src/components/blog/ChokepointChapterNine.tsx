@@ -131,6 +131,18 @@ export function ChokepointChapterNine() {
           governing digital giants and has not produced a single one of its own to govern.
         </P>
 
+        <P>
+          The privacy regime has its own landmark, and it cuts the same way. In 2023 the Irish regulator
+          fined <Sq>Meta &euro;1.2 billion</Sq> &mdash; the largest GDPR penalty ever &mdash; for shipping
+          European users&rsquo; data to American servers, the climax of a decade-long saga driven by a
+          single Austrian activist, Max Schrems, who twice toppled the legal frameworks governing
+          EU&ndash;US data flows. It was, again, real enforcement of a real principle. And again the deeper
+          picture is the trap: the data was crossing to American servers in the first place because the
+          services Europeans use are American, hosted on American clouds &mdash; and the most a European
+          regulator can ultimately do is fine the foreign company for the terms of a dependence it has no
+          power to end. You cannot regulate your way out of not owning the infrastructure.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
