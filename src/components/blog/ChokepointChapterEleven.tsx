@@ -195,6 +195,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          And the binding constraint, underneath the capital and the chips, turns out to be the most
+          physical thing of all: <em>power</em>. Training a frontier model is, in the end, a question of how
+          many megawatts you can point at a data centre for months on end &mdash; and on that axis
+          Europe&rsquo;s two-to-threefold electricity-cost disadvantage from Chapter Seven becomes an AI
+          disadvantage directly. The Chinese lab <Sq>DeepSeek</Sq> stunned the field in late 2025 by
+          training a competitive model for a reported few million dollars and releasing it open-weight,
+          proof that the frontier is not <em>only</em> about brute spend. But the broader trend runs the
+          other way: training compute is scaling more than fivefold a year, and the three leading American
+          labs alone command something like <Sq>sixty per cent of the world&rsquo;s frontier compute</Sq>.
+          The accelerant&rsquo;s fuel is electricity and silicon, and Europe rationed its access to both.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
