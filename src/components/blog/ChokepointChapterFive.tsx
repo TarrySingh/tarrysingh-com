@@ -206,6 +206,19 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          And the bind has begun to produce a strange new strategy: stay private, stay European on purpose.
+          The Italian software consolidator <Sq>Bending Spoons</Sq> &mdash; which has quietly bought up
+          consumer apps from Evernote to Brightcove &mdash; has refused to go public, its founder reasoning
+          openly that European companies cannot command American valuations on public markets, so a listing
+          would only invite American investors to demand American growth at American speed. It is a rational
+          defence, and a quietly damning one: the smart move for a European champion is now to keep its head
+          down and avoid the public markets altogether, because those markets price it at a discount
+          precisely <em>for</em> being European. When the rational strategy for your best companies is to
+          stay deliberately obscure, the capital market has stopped being a ladder and become a trap to be
+          evaded.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
