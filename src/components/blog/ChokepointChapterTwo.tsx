@@ -177,8 +177,10 @@ export function ChokepointChapterTwo() {
 
         <P>
           The newest attempts are more serious and worth crediting. Deutsche Telekom&rsquo;s{" "}
-          <Sq>T Cloud</Sq> went live in 2025 and is building a sovereign industrial-AI cloud on Nvidia
-          silicon in Germany; <Sq>SAP</Sq> launched a sovereign cloud in France in 2026 through the
+          <Sq>T Cloud</Sq> went live in 2025, and with Nvidia it stood up an industrial-AI cloud in Munich on
+          more than <Sq>ten thousand Blackwell GPUs</Sq> &mdash; a billion-euro build that lifted German AI
+          compute by about half, and runs, of course, on American chips; <Sq>SAP</Sq> launched a sovereign
+          cloud in France in 2026 through the
           Orange-and-Capgemini venture &ldquo;Bleu,&rdquo; chasing the French state&rsquo;s SecNumCloud
           qualification. These are real and they matter. But read the architecture closely and the
           dependency keeps reappearing one layer down &mdash; the chips are Nvidia&rsquo;s, the reference
@@ -214,7 +216,10 @@ export function ChokepointChapterTwo() {
         <P>
           There are, to be fair, signs of a European cloud worth rooting for. <Sq>OVHcloud</Sq> has begun
           winning real public-sector and regulated-industry business on the explicit promise of immunity
-          from foreign law; a coalition of European providers calling itself <Sq>Euclidia</Sq> emerged to
+          from foreign law &mdash; and in April 2026 the European Commission itself awarded a roughly{" "}
+          <Sq>&euro;180 million</Sq> sovereign-cloud contract to a slate of European providers (OVHcloud,
+          STACKIT, Scaleway, Proximus), with <em>no American hyperscaler eligible to bid</em>; a coalition of
+          European providers calling itself <Sq>Euclidia</Sq> emerged to
           argue, pointedly, that &ldquo;sovereign&rdquo; should mean European-owned and European-controlled,
           not merely American technology in a local building. These are the right arguments, made by the
           right people. But they are made from a market position of around fifteen per cent and slipping,
