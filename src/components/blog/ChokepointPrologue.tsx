@@ -153,6 +153,17 @@ export function ChokepointPrologue() {
         </P>
 
         <P>
+          The drift shows up most starkly where the money is finally counted: the stock exchange. Across
+          the fifteen years to 2025, London hemorrhaged hundreds of listings toward New York and Nasdaq;
+          when Sweden&rsquo;s <Sq>Klarna</Sq> finally went public in 2025 it chose the New York Stock
+          Exchange, not Stockholm, and <Sq>Wise</Sq>, the British payments champion, began shifting its own
+          primary listing across the Atlantic. The founders are European, the engineering is European, the
+          first risk was European &mdash; and the equity, the liquidity and the compounding all come to
+          rest on an American exchange. Europe builds the company; America banks it. That is the whole
+          essay compressed into a single transaction, repeated until it is a structure.
+        </P>
+
+        <P>
           Those choices form a machine of their own, and this essay takes it apart stroke by stroke. It
           runs in four. Europe <strong>saves</strong> more than anyone &mdash; and routes the savings
           abroad. It <strong>funds</strong> the companies that will compete with it &mdash; through other
