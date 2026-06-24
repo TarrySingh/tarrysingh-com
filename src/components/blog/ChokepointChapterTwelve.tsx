@@ -264,9 +264,11 @@ export function ChokepointChapterTwelve() {
         <P>
           The most encouraging sign is also the most recent. In June 2026 the European Commission unveiled a
           sweeping <Sq>tech-sovereignty package</Sq> &mdash; on the order of a hundred and twenty billion
-          euros for semiconductors, two hundred billion for data centres, a hundred billion for cloud and AI
-          &mdash; alongside a &ldquo;Scale-Up Europe&rdquo; fund aimed squarely at stopping high-potential
-          startups from leaving. The figures, for once, are within sight of the scale of the problem rather
+          euros for semiconductors, two hundred billion for data centres, a hundred billion for cloud and AI,
+          and a smaller but pointed <Sq>two-billion-euro open-source push</Sq> carrying a &ldquo;Free Software
+          first&rdquo; procurement rule, a quiet admission that owning the <em>code</em> may matter as much as
+          owning the metal &mdash; alongside a &ldquo;Scale-Up Europe&rdquo; fund aimed squarely at stopping
+          high-potential startups from leaving. The figures, for once, are within sight of the scale of the problem rather
           than an order of magnitude below it; the diagnosis has plainly landed. Whether this proves the
           turning point or merely the latest, largest plan to be &ldquo;filed under noted&rdquo; depends
           entirely on execution &mdash; on whether twenty-seven governments fund it, sustain it across
