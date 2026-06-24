@@ -149,6 +149,19 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          Density is its own kind of destiny, and the gap there is starker than any salary line. The San
+          Francisco Bay Area packs something like <Sq>twenty-four AI specialists per thousand workers</Sq>;
+          Europe&rsquo;s strongest hub, Dublin, manages around four &mdash; the top American clusters run
+          five to ten times denser than the best European ones. Density is not vanity; it is the mechanism.
+          It is how a researcher hears the unpublished result, how the second start-up gets founded by the
+          first one&rsquo;s alumni, how capital and talent and ambition collide often enough to ignite.
+          Europe&rsquo;s talent is real but diffuse, spread thin across twenty-seven national systems and as
+          many languages; America&rsquo;s is concentrated to the point of criticality. You can hold the same
+          number of brilliant people and get a fraction of the output, simply because they are too far apart
+          to catch fire.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
