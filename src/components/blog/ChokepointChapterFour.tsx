@@ -294,11 +294,11 @@ export function ChokepointChapterFour() {
 
         <P>
           There are, to be fair, the beginnings of something. In June 2026 <Sq>GlobalFoundries</Sq> in
-          Dresden demonstrated the first fully European, end-to-end &ldquo;sovereign&rdquo; chip flow &mdash;
+          Dresden reported the first fully European, end-to-end &ldquo;sovereign&rdquo; chip flow &mdash;
           designed, manufactured and delivered without leaving the continent &mdash; for a security-critical
           navigation chip. It is a real and meaningful milestone, and it is also, tellingly, at a mature node,
           for a niche application. Meanwhile the leash on the leading edge tightens: ASML now remotely
-          monitors all <Sq>314 EUV systems</Sq> on Earth, a customer cannot so much as relocate one without
+          monitors every EUV system it has ever shipped, a customer cannot so much as relocate one without
           the company&rsquo;s involvement, and the Dutch export rules now require a licence even for the spare
           parts and software updates that keep an installed machine alive. The most European thing in the
           entire industry &mdash; the irreplaceable machine &mdash; is also the most tightly leashed, and the
@@ -325,7 +325,7 @@ export function ChokepointChapterFour() {
           "Chips Act fragmentation: ~€86bn mostly national subsidies; ~5% centrally EU-managed (ECA SR 12/2025). Rival semiconductor capex ~$580bn (2020–23); US CHIPS Act $52.7bn federal; China $40bn+ state funds (SEMI 2025).",
           "Design IP: Arm — SoftBank-owned, Nasdaq-listed; Graphcore — acquired by SoftBank, 2024.",
           "Chips Act: ~€86bn headline but the Commission directly controls only ~€4.5bn (~5%); on track to ~11.7% of the 20%-by-2030 target. Ex-ASML CEO Wennink called the 20% goal “totally unrealistic.” The Register; Bruegel; Wennink interview.",
-          "The single points: Cymer (San Diego, US) sole EUV light source; Zeiss (Germany) sole optics; ASML remotely monitors all ~314 EUV systems and licenses spares/servicing — leverage that became liability as China fell 49%→19% of sales. ASML; technode.",
+          "The single points: Cymer (San Diego, US) sole EUV light source; Zeiss (Germany) sole optics; ASML remotely monitors every EUV system it has shipped and licenses spares/servicing — leverage that became liability as China fell 49%→19% of sales. ASML; technode.",
           "The smarter bet: Europe leads power semis (Infineon/STMicro SiC & GaN); STMicro began high-volume silicon-photonics production at Crolles (2026); Silicon Box (Novara, Italy) won EU “Open EU Foundry” status for advanced chiplet packaging. STMicro; EC.",
           "Demand & policy: SK hynix placed the largest-ever EUV order (~$8bn / ~30 machines); Chips Act 2.0 (Jun 2026) targets ~€120bn by 2035; High-NA EXE:5200 (~$350–400m) shipped to imec (2026). SK hynix; EC; imec.",
           "The pain & the bright spot: STMicro ~5,000 job cuts; Intel's Magdeburg cancellation took ~18,000 supplier jobs; but Infineon opened a €5bn Dresden power-chip fab (Jul 2026) and GlobalFoundries ran Europe's first end-to-end sovereign flow (Jun 2026). STMicro; Infineon; GlobalFoundries.",
