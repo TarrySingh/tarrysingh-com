@@ -285,6 +285,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          One pair of numbers captures the whole asymmetry. In 2025 American private investment in AI reached
+          some <Sq>$286 billion</Sq>; the entire European venture-capital industry &mdash; not its AI
+          spending, its <em>whole</em> venture pool, across every sector &mdash; manages around{" "}
+          <Sq>$44 billion</Sq>. America invests more in artificial intelligence in a single year than Europe
+          has available to back new companies of any kind, anywhere, full stop. You cannot compete for the
+          defining technology of the century out of a venture industry a fraction the size of your
+          rival&rsquo;s spending on that one technology alone. It is not that European investors are timid,
+          though some are; it is that the pool they draw from is structurally too shallow, because the savings
+          that should fill it are, as the capital chapter showed, parked in deposits and bonds and American
+          markets instead. The accelerant runs on capital, and Europe brought a teaspoon to a flood.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
