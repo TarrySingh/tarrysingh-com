@@ -273,6 +273,20 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          And the nature of war itself is changing under Europe&rsquo;s feet in a way that should terrify and
+          encourage it in equal measure. At a NATO exercise in Estonia in 2025, a handful of Ukrainian drone
+          operators &mdash; ten of them &mdash; reportedly defeated <Sq>two NATO battalions</Sq> in half a
+          day using cheap first-person-view drones: a vivid demonstration that the expensive, exquisite
+          platforms Europe buys from America can be checkmated by hardware costing a few hundred euros. This
+          is, for once, a contest where incumbency counts for little and Europe&rsquo;s engineering culture
+          could genuinely excel &mdash; the drone war rewards iteration, software and cheap manufacturing, not
+          forty-year procurement cycles. Ukraine has become both the proof and the school. The question is
+          whether Europe learns the lesson in time to build the new kind of arsenal itself &mdash; or whether
+          it spends its historic defence budget re-buying, at vast expense, the <em>last</em> war&rsquo;s
+          weapons from the last war&rsquo;s supplier.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
