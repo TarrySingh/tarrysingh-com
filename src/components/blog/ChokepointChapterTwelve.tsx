@@ -151,6 +151,21 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          It would be dishonest to end on easy optimism, because the obstacle is real and it is structural.
+          The reason the savings stay parked and the single market stays fragmented is not that no one has
+          noticed; it is that every fix requires <Sq>twenty-seven governments</Sq> &mdash; each with its own
+          banks to protect, its own champions to favour, its own electorate to answer to &mdash; to
+          surrender a piece of control at the same moment. A genuine capital-markets union threatens national
+          financial centres; a real single market threatens protected national firms; a serious industrial
+          policy means picking winners across borders. Each is individually rational to block, and
+          collectively catastrophic to keep blocking. That is the true lock on the door &mdash; not American
+          power but European collective inaction &mdash; and it is the one no foreign capital can pick for
+          Europe, and none can keep shut either.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
