@@ -211,7 +211,7 @@ export function ChokepointParadox() {
           y={CY + 16}
           textAnchor="middle"
           fill={mode === "dark" ? "rgba(10,15,28,0.7)" : "rgba(253,250,242,0.8)"}
-          style={{ fontSize: 10.5, letterSpacing: "0.18em" }}
+          style={{ fontSize: 11.5, letterSpacing: "0.16em" }}
         >
           VELDHOVEN
         </text>
