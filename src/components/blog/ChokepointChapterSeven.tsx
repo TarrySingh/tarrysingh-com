@@ -135,6 +135,18 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          The new economy tells the same story from the opposite direction. The AI build-out is, at bottom,
+          a bet on cheap power, and the numbers have become almost comically lopsided: American hyperscalers
+          have announced something on the order of <Sq>four hundred gigawatts</Sq> of new AI-compute
+          capacity by 2030, against a European total well under <Sq>forty</Sq>. The reason is the meter. A
+          data centre paying European industrial power prices &mdash; two to three times American ones
+          &mdash; is uneconomic before the first server is racked, which is why no European hyperscaler has
+          announced a major campus outside North America or the handful of cold, cheap-power corners like
+          Iceland and Norway. Europe priced itself out of the old economy&rsquo;s furnaces and the new
+          economy&rsquo;s data centres with one and the same tariff.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
