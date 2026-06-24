@@ -326,6 +326,23 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          The hardest obstacle is structural, and it has a name: <Sq>unanimity</Sq>. On the decisions that
+          matter most &mdash; tax, foreign policy, the deepest fiscal integration &mdash; a single member
+          state can veto the other twenty-six, and they do: there have been dozens of national vetoes in the
+          past decade and a half, <Sq>Hungary alone casting some twenty-one</Sq>, often to extract unrelated
+          concessions. The treaties even contain a mechanism to escape this trap &mdash; the
+          &ldquo;passerelle&rdquo; clause &mdash; but invoking it <em>itself requires unanimity</em>, and it
+          has been used essentially once since 1992. So Europe is a great power in a straitjacket of its own
+          stitching: it has the population, the wealth and the science of a superpower and the
+          decision-making speed of a condominium association where any one resident can halt the roof repair.
+          When people ask why Europe cannot simply <em>do</em> the things this essay prescribes, this is the
+          honest answer. The will is not the only thing missing. So, by design, is the ability to act on it
+          without everyone agreeing at once.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
