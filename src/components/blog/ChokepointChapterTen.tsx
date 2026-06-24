@@ -230,6 +230,31 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          And in 2026 the bottom of that squeeze stopped being abstract. <Sq>BYD</Sq>&rsquo;s electric-car
+          registrations in Europe rose around <Sq>180% year on year</Sq> in early 2026, vaulting it into the
+          continent&rsquo;s top three despite a combined EU duty above forty per cent; <Sq>CATL</Sq>, already
+          the supplier of more than half of Europe&rsquo;s batteries, is building gigafactories on European
+          soil while holding a global battery share north of forty per cent. Roughly <Sq>95% of Europe&rsquo;s
+          solar panels</Sq> come from China, and when Beijing trimmed an export rebate in 2026 the price of
+          European solar simply rose. Where Washington reaches for export controls, Beijing reaches for the
+          mirror image: when the EU put tariffs on Chinese electric cars, China answered with duties of up to{" "}
+          <Sq>42.7%</Sq> on European dairy, plus probes into its pork and brandy &mdash; aimed, with
+          precision, at the farm vote &mdash; even as it began forcing Huawei out of European 5G cores. The
+          continent&rsquo;s 2025 goods deficit with China widened to some <Sq>&euro;360 billion</Sq>.
+        </P>
+
+        <P>
+          The same two-front logic now reaches the frontier itself. China&rsquo;s open-weight models &mdash;{" "}
+          <Sq>DeepSeek</Sq> and its successors &mdash; deliver capability close to the American frontier at a
+          fraction of the cost, and they slip past US export controls entirely, because anyone can simply
+          download them. For a continent that cannot match American capital intensity, the cheaper Chinese
+          tier is genuinely tempting &mdash; and reaching for it would only swap one dependence for another.
+          That is the trap in its final form: Europe can rent the top of the stack from America or the bottom
+          of it from China, but the one option fifteen years of strategy has not produced is the third &mdash;
+          owning enough of either to set its own terms.
+        </P>
+
+        <P>
           Widen the lens beyond cloud and the tribute only grows. Europe runs a services trade deficit with
           the United States of around <Sq>&euro;178 billion a year</Sq>, much of it digital; global
           cross-border payments for the use of intellectual property &mdash; the licensing of patents,
