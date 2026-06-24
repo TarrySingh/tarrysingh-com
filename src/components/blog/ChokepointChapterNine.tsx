@@ -41,7 +41,7 @@ export function ChokepointChapterNine() {
           The clearest evidence is the one regulation Europe is proudest of. The GDPR was a genuine moral
           achievement and a measurable economic own-goal: a 2025 study from the National Bureau of
           Economic Research found that, after it took effect, the number of EU venture deals led by US
-          investors fell by about <Sq>20.6%</Sq>, and EU technology venture investment dropped roughly{" "}
+          investors fell by about <Sq>21%</Sq>, and EU technology venture investment dropped roughly{" "}
           <Sq>26% relative to the United States</Sq>. The rule meant to protect Europeans from Big Tech
           also, quietly, made it harder for the next European challenger to Big Tech to get funded. And the
           pattern generalises through the compliance cost itself, because compliance is a <em>regressive
@@ -281,7 +281,7 @@ export function ChokepointChapterNine() {
 
       <Sources
         items={[
-          "GDPR effect on venture: ~20.6% fall in EU deals led by US investors; ~13% fall in deal amounts (~$1.6bn/yr); ~26% drop in EU tech VC relative to the US. NBER Working Paper 33909 (Jia et al., 2025).",
+          "GDPR effect on venture: ~21% fall in EU deals led by US investors; ~13% fall in deal amounts (~$1.6bn/yr). NBER Working Paper 33909 (Jia et al., 2025).",
           "Regulatory volume: >13,000 EU legal acts (2019–24) vs ~5,500 US; ~100 tech-focused laws + 270+ digital regulators (Draghi report, Sept 2024) — likely a lower bound (implementing-act undercount).",
           "AI Act compliance: high-risk providers ~€200k–600k+ initial (QMS ~€193k–330k; ~€29k/yr per model); ~€3.3bn/yr EU-wide; ~78% of organisations had taken no compliance steps by Apr 2026; penalties up to €35m or 7% of global turnover. DIGITALEUROPE; CEPS.",
           "“Stop-the-Clock” / Digital Omnibus (provisional agreement 7 May 2026): AI Act high-risk (Annex III) obligations delayed from 2 Aug 2026 to 2 Dec 2027 (Annex I to 2 Aug 2028). Gibson Dunn / European Commission.",

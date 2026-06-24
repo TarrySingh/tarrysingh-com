@@ -58,11 +58,11 @@ export function ChokepointChapterTen() {
         <P>
           The accumulated result of paying that tribute for a decade is a gap in raw corporate scale that
           has stopped being a gap and become a different order of being. The seven largest American
-          technology companies are now worth, together, around <Lev>$23 trillion</Lev> &mdash; roughly{" "}
-          <Won>the entire GDP of the European Union</Won>, and close to one and a half times the value of
-          every company listed on every European exchange combined. Drill into a single one and the point
-          turns surreal: <Sq>Nvidia alone, at about $4.8 trillion, is now worth more than the whole German
-          economy</Sq> &mdash; one American chip company, more valuable than Europe&rsquo;s industrial
+          technology companies are now worth, together, more than <Lev>$20 trillion</Lev> &mdash; on the
+          order of <Won>the entire GDP of the European Union</Won>, and well over the combined value of every
+          company listed on every European exchange. Drill into a single one and the point turns surreal:{" "}
+          <Sq>Nvidia alone, at about $4.8 trillion, is worth roughly as much as the entire German
+          economy</Sq> &mdash; one American chip company, on the scale of Europe&rsquo;s industrial
           heartland. Pan across the landscape below; the American mass on one side and the European on the
           other are not two teams in the same league. They are two different sports.
         </P>
@@ -170,9 +170,9 @@ export function ChokepointChapterTen() {
         <P>
           To feel the asymmetry, set the scoreboards side by side. The seven largest American technology
           companies are together worth more than every listed company in Europe combined, by something like
-          half again. A single one of them, <Sq>Nvidia</Sq>, is worth more than the entire German economy
-          &mdash; one firm, founded in 1993, selling chips designed in California and made in Taiwan on
-          machines built in the Netherlands, now outweighing the industrial heartland of the continent that
+          half again. A single one of them, <Sq>Nvidia</Sq>, is worth roughly as much as the entire German
+          economy &mdash; one firm, founded in 1993, selling chips designed in California and made in Taiwan
+          on machines built in the Netherlands, now rivalling the industrial heartland of the continent that
           builds those machines. There is no European company within an order of magnitude. This is not a
           gap that closes with a good quarter or a clever policy; it is the accumulated interest on twenty
           years of the standing order, compounded &mdash; and still compounding.
@@ -351,7 +351,7 @@ export function ChokepointChapterTen() {
       <Sources
         items={[
           "Cloud tribute: Europe spends ~€264bn/yr on US software/cloud (~80–83% of professional cloud spend; ~70% to the three US hyperscalers; ~1.5% of EU GDP). Asterès for Cigref/Numeum (2025); Synergy Research.",
-          "Scale: US “Magnificent Seven” combined ~$23tn (mid-2026) ≈ EU GDP, ~1.46× all EU listed companies (~$15.7tn); Nvidia ~$4.85tn > Germany's GDP ~$4.69tn. companiesmarketcap.com (Jun 2026).",
+          "Scale: US “Magnificent Seven” combined >$20tn (mid-2026), on the order of EU GDP (~$18–19tn) and ~1.4–1.7× all EU listed companies; Nvidia ~$4.8tn, roughly on the scale of Germany's GDP (~$4.7–5.4tn). companiesmarketcap.com (Jun 2026).",
           "Irish mirage: Ireland GDP ~€563bn vs GNI* ~€321bn (GDP ~75% above real income); top 3 firms ~46% of Irish corporation tax; real EU–US digital trade deficit ~−$350bn (2022–24). Ireland CSO (2024); CASSIS / University of Bonn; Irish Fiscal Council.",
           "Public-sector lock-in: Microsoft ~77–92% (≈80%) of EU public-sector productivity software; Euro-Office sovereign suite launched Jun 2026; Denmark/Austria/France migrating. Open Cloud Coalition / Compass Lexecon (Jul 2025).",
           "CLOUD Act demonstration: ICC prosecutor Karim Khan's Microsoft email became inaccessible after a US executive-order sanction (Feb 2025); he moved to Proton (Switzerland). Attribution disputed (Microsoft says the ICC disconnected him). The Register; AP; Computer Weekly (2025–26).",

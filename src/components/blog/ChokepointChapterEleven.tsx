@@ -287,9 +287,9 @@ export function ChokepointChapterEleven() {
         <P>
           One pair of numbers captures the whole asymmetry. In 2025 American private investment in AI reached
           some <Sq>$286 billion</Sq>; the entire European venture-capital industry &mdash; not its AI
-          spending, its <em>whole</em> venture pool, across every sector &mdash; manages around{" "}
-          <Sq>$44 billion</Sq>. America invests more in artificial intelligence in a single year than Europe
-          has available to back new companies of any kind, anywhere, full stop. You cannot compete for the
+          spending, its <em>whole</em> annual venture pool, across every sector &mdash; deploys roughly{" "}
+          <Sq>fifty billion dollars a year</Sq>. America invests more in artificial intelligence in a single
+          year than Europe&rsquo;s venture industry deploys, across every sector, anywhere, full stop. You cannot compete for the
           defining technology of the century out of a venture industry a fraction the size of your
           rival&rsquo;s spending on that one technology alone. It is not that European investors are timid,
           though some are; it is that the pool they draw from is structurally too shallow, because the savings

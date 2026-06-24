@@ -39,7 +39,7 @@ export function ChokepointChapterTwelve() {
 
         <P>
           Begin with the card itself, because it is almost absurdly good. In the small Dutch town of
-          Veldhoven sits <Won>ASML</Won>, a company worth around <Sq>&euro;677 billion</Sq> that holds a{" "}
+          Veldhoven sits <Won>ASML</Won>, a company worth around <Sq>&euro;650 billion</Sq> that holds a{" "}
           <Sq>100% monopoly</Sq> on extreme-ultraviolet lithography &mdash; the machines without which no
           advanced chip on Earth can be made. Not most chips: <em>none</em> of the leading-edge ones. TSMC
           cannot print a 3-nanometre processor without ASML; neither can Samsung, nor Intel, nor anyone in
@@ -438,7 +438,7 @@ export function ChokepointChapterTwelve() {
 
       <Sources
         items={[
-          "ASML: ~€677bn market cap; ~100% monopoly on EUV lithography (no substitute — no leading-edge chip is made without it); IMEC/Zeiss High-NA EUV (2026). ASML; IMEC. NB: ARM is not European (SoftBank-owned, run from Tokyo).",
+          "ASML: ~€600–650bn market cap (volatile, mid-2026); ~100% monopoly on EUV lithography (no substitute — no leading-edge chip is made without it); IMEC/Zeiss High-NA EUV (2026). ASML; IMEC. NB: ARM is not European (SoftBank-owned, run from Tokyo).",
           "Structural strengths: ~€33.5tn EU household savings (~€61tn net wealth, euro area); single market of ~450m; ~22% of global scientific publications (Elsevier, 2025); ~€2.5tn manufacturing value-added. ECB/BCG; Eurostat; Elsevier.",
           "Savings & Investments Union: ~€10–11tn in idle deposits; ~€300bn/yr capital outflow; measures (Savings & Investment Accounts, securitisation) largely non-binding/in trilogue (2025–26). European Commission.",
           "Single market: internal barriers ≈ 54% (goods) / 95% (services) tariff-equivalents (ECB, Jan 2026); ~€2.8tn potential GDP gain (2022–32); Letta “One Europe, One Market” roadmap, deadline Dec 2027. ECB; Letta report; European Parliament.",
