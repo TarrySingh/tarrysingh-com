@@ -239,6 +239,19 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          The composition of the workforce tells its own story. Europe&rsquo;s tech hubs increasingly run on
+          imported talent &mdash; by one measure roughly <Sq>a quarter of Ireland&rsquo;s AI workforce</Sq>
+          did its undergraduate degree in India &mdash; even as the continent&rsquo;s own graduates leave for
+          America; Europe is, in effect, a transit lounge, drawing skilled people in from the developing
+          world and losing them onward to the United States. And the pipeline is narrow where it should be
+          widest: women hold only about <Sq>a quarter of AI roles worldwide</Sq>, and Europe does no better,
+          leaving half its potential talent under-tapped at the exact moment it can least afford to. A
+          continent serious about a talent shortage would be widening every intake it has. Europe treats its
+          human capital the way it treats its financial capital: abundant, world-class, and quietly allowed
+          to flow out faster than it is built up.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
