@@ -259,6 +259,19 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          The extraction runs through the screen as well as the wallet. <Sq>Meta</Sq> alone pulls something
+          like <Sq>forty to forty-four billion euros</Sq> a year in advertising revenue out of Europe; Google
+          takes more; the app stores levy their tithe on every download and subscription. And one layer
+          deeper, the financial system itself is denominated in someone else&rsquo;s currency: the US dollar
+          appears in roughly <Sq>half of all international payment messages</Sq> and the overwhelming majority
+          of foreign-exchange trades, which lets Washington turn the plumbing of global finance into an
+          instrument of foreign policy at will. Europe has its own currency and one of the world&rsquo;s
+          great trading blocs, and still its companies advertise, transact and settle on rails it does not
+          own. The tribute, fully tallied, is not one bill but a stack of them &mdash; and almost every one
+          is addressed across the Atlantic.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
