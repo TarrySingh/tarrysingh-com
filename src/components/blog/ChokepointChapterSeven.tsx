@@ -125,8 +125,9 @@ export function ChokepointChapterSeven() {
           And the Dutch queue is only the sharpest edge of a continental problem. Across the EU something on
           the order of <Sq>1.7 terawatts</Sq> of would-be generation &mdash; most of it wind and solar, more
           than the entire capacity installed on the system today &mdash; sits in connection queues waiting
-          for wires that do not yet exist. In 2025, for the first time, renewables supplied more than{" "}
-          <Sq>half</Sq> of the EU&rsquo;s electricity. And yet the cruelty of the bottleneck is exactly that:
+          for wires that do not yet exist. In 2025, for the first time, wind and solar together out-generated{" "}
+          <Sq>fossil fuels</Sq> across the EU&rsquo;s grid &mdash; a genuine milestone. And yet the cruelty of
+          the bottleneck is exactly that:
           the clean, cheap power Europe has actually managed to build increasingly cannot reach the factories
           and data centres that need it, because the grid to carry it was never built alongside. It is the
           capital paradox again, written in copper &mdash; a continent rich enough to fund anything that has
@@ -314,7 +315,7 @@ export function ChokepointChapterSeven() {
           "European chemical industry: ~37 Mt capacity lost 2022–2025 (~9% of EU total); ~109,000 jobs lost or at risk (≈20k direct + 89k indirect); output ~11–15% below pre-crisis; ~49% of closures cite energy. Cefic Chemical Trends Q2 2025; ICIS Feb 2026.",
           "BASF: €8.7bn Zhanjiang (China) Verbund site inaugurated 26 Mar 2026; Ludwigshafen plant closures amid €1bn+ operating losses. BASF press release (Mar 2026).",
           "Dutch grid: ~47 GW of connection requests (≈14,044 regional + 212 national) waitlisted with ~10-year waits; TenneT warns the grid will fail to meet 2030 demand; Randstad/Schiphol frozen to ~2035. TenneT / NL Times, Jun 2026.",
-          "EU-wide grid: ~1.7 TW of would-be generation sits in EU connection queues (more than today’s installed capacity); renewables supplied >50% of EU electricity for the first time in 2025; data-center grid-connection waits ~7–10 years (to ~13). ENTSO-E; Ember; sector reports.",
+          "EU-wide grid: ~1.7 TW of would-be generation sits in EU connection queues (more than today’s installed capacity); wind & solar out-generated fossil fuels for the first time in 2025 (~30% vs 29%; renewables ~47%); data-center grid-connection waits ~7–10 years (to ~13). ENTSO-E; Ember; sector reports.",
         ]}
       />
     </section>
