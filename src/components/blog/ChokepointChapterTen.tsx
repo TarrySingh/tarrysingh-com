@@ -364,6 +364,7 @@ export function ChokepointChapterTen() {
           "Ad-tech & financial rails: Meta ~€40–44bn/yr EU ad revenue; the EU runs a ~€178bn services trade deficit with the US; USD in ~half of international payment messages; Google fined €3bn (2025, ad-tech). Eurostat; EC; SWIFT.",
           "Data as resource: the EU Data Act (in force Sep 2025) frames data as shared infrastructure but excludes the largest “gatekeepers” from core data-sharing duties. EU Data Act.",
           "The everyday absence: no European search engine, social network, app store, streaming or e-commerce platform at scale; US services ~80% of EU online-video minutes; Amazon leads all five largest EU e-commerce markets. DPP; e-commerce market reports.",
+          "Concrete shares: Google ~95% of EU search (Qwant ~0.15%, Ecosia ~0.6%); Chrome ~69% desktop (Opera ~3%); the late European Search Perspective JV remains sub-1%. StatCounter; country search data, 2026.",
           "Conceptual frame: Varoufakis (“technofeudalism”/“vassal”); Durand (rentier platform capital); Couldry & Mejias (“data colonialism”); Farrell & Newman (“weaponised interdependence”); Anu Bradford (“Brussels Effect” high-water mark passed).",
           "Two-empires squeeze: the US owns the top of the stack; China refines ~92% of rare earths and ~98% of gallium/germanium and has used export controls as leverage. USGS; IEA critical minerals.",
         ]}
