@@ -204,6 +204,19 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          The money does flow back in trickles, where governments fight for it. France collects several
+          hundred million euros a year from its <Sq>digital-services tax</Sq>; Italy widened its own by
+          scrapping the revenue threshold so that any sales into the country are caught. But these are
+          rear-guard skirmishes over a sliver of the outflow, and they invite retaliation &mdash; Washington
+          has repeatedly threatened tariffs against countries that tax its champions. The more telling
+          movement is on the procurement side, where the <Sq>German military</Sq> joined the civilian
+          agencies in refusing Palantir over sovereignty concerns. It is the same lesson arriving from every
+          direction at once: you cannot tax your way back to sovereignty, and you cannot litigate your way
+          there either. You can only build or buy your way there &mdash; and Europe has spent two decades
+          doing neither.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
