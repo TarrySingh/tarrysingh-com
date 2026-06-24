@@ -272,6 +272,19 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          And the rawest resource of all, Europe gives away for free. Every search, post, purchase and
+          location ping a European generates is data, and data is the feedstock of the AI economy &mdash; and
+          the overwhelming majority of it is harvested, refined and monetised by American platforms, then
+          sold back to Europe in the form of the very services that collected it. Europe&rsquo;s answer, a{" "}
+          <Sq>Data Act</Sq> meant to treat data as shared European infrastructure, took effect in 2025
+          &mdash; and pointedly <em>excluded</em> the largest gatekeepers from its core data-sharing duties,
+          the loophole quietly swallowing the rule. A continent that frets about importing oil has spent two
+          decades exporting something more valuable, in unlimited quantity, for nothing: the recorded
+          behaviour of four hundred and fifty million people, the single richest training set on Earth,
+          shipped abroad as fast as it is generated and bought back as a finished product.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
