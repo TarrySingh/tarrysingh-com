@@ -303,6 +303,7 @@ export function ChokepointChapterSix() {
           "Talent density: top US hubs ~5–10× the AI-talent density of top European ones (San Francisco ~23.9 vs Ireland ~4.2 per 1,000). Interface EU / Revelio Labs, Sept 2025.",
           "Create vs capture: Europe ~17–20% of the world's highly-cited research but ~5% of global AI patents; ~57% of relocating European founders moved to the US. WIPO / EPO / Clarivate; Atomico 2025.",
           "EU “Choose Europe for Science”: ~€500m (May 2025) → ~€900m across ~101 national/regional schemes (Jan 2026); surge in senior-researcher applications (e.g. +130% ERC Advanced from non-EU). European Commission, Jan 2026.",
+          "Counter-programs: Inria offers ~€1M four-year early-career AI chairs; the Max Planck AI network (MP-AIX) added guaranteed compute + tenure-track posts (2026); the EIC 2026 programme is ~€1.4bn with a new talent scheme — even as Anthropic opened six European offices (incl. its first London) in 2026. Inria; Max Planck; EIC; Anthropic.",
         ]}
       />
     </section>
