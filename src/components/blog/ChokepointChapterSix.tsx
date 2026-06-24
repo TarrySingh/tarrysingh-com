@@ -264,6 +264,19 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          And the loss is not evenly spread; it hollows out whole regions. Dozens of European areas &mdash;
+          much of Bulgaria and Romania, swathes of southern Italy and Portugal &mdash; are now caught in what
+          demographers call a <Sq>&ldquo;talent development trap&rdquo;</Sq>: their young and educated leave for
+          the richer cities or for America, the population ages and shrinks, and the conditions that might have
+          kept the next cohort decay further with each departure. Across the EU, youth unemployment sits around{" "}
+          <Sq>15%</Sq>, more than double the adult rate, even as firms complain they cannot find skilled
+          workers &mdash; the paradox of a continent that cannot match its people to its opportunities because
+          too few of the opportunities are being created at home. A brain drain, seen up close, is not an
+          abstraction in a productivity table. It is a clever young person in Cluj or Catania doing the
+          arithmetic of their own life and concluding, reasonably, that their future is somewhere else.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
