@@ -130,6 +130,19 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          The exposure is not a worst-case hypothetical; it is the default legal architecture. The US{" "}
+          <Sq>CLOUD Act</Sq> of 2018 lets American authorities compel data held by American companies
+          anywhere on Earth, with no requirement for the host country&rsquo;s consent &mdash; and since
+          something like <Sq>80% of EU public-sector data</Sq> sits on American platforms, the Karim Khan
+          episode was less an aberration than a live demonstration of a standing reality. The same
+          concentration shows up on the tax ledger: Ireland now draws roughly <Sq>46% of its corporation
+          tax</Sq> from just three US firms &mdash; splendid until the day Washington changes its own rules
+          and a third of a small country&rsquo;s revenue turns out to hinge on decisions made in a foreign
+          capital. Dependence, it turns out, is not only something you pay for in cloud invoices. It is
+          something you quietly bank your public finances on.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
