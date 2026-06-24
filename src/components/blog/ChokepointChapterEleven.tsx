@@ -221,6 +221,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          Reduce the whole contest to one ratio and it is brutal. The United States commands roughly{" "}
+          <Sq>74% of the world&rsquo;s high-end AI compute</Sq>; Europe holds about <Sq>4.8%</Sq> &mdash;
+          some seventeen times less &mdash; and even the optimistic projections have that share peaking near
+          eight per cent later this decade before sliding back. Europe is responding at the only scale it can
+          muster collectively: EuroHPC has announced something like <Sq>thirty-five new AI
+          supercomputers</Sq> across twenty-three nations. It is a real and serious effort, and it is still
+          being lapped, because the American build-out is private, profit-funded and relentless while the
+          European one is public, budgeted and negotiated. Compute has become the new oil, and Europe is
+          bringing a carefully-costed national programme to a market the hyperscalers are flooding with
+          their own cash.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
