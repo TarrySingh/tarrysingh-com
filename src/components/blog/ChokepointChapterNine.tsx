@@ -180,6 +180,18 @@ export function ChokepointChapterNine() {
           anyway. The rulebook is, with grim consistency, regressive at every level.
         </P>
 
+        <P>
+          Enrico Letta, asked to diagnose the same disease, put his finger on the deeper cost:{" "}
+          <Sq>&ldquo;Fragmentation directly weakens Europe&rsquo;s innovative capacity and strategic
+          autonomy.&rdquo;</Sq> The regulatory machine and the fragmented market are the same problem seen
+          twice &mdash; a continent that produces rules faster than it produces companies, then wonders why
+          the rules have no domestic champions to protect. The cure Letta and Draghi both prescribe is not
+          less ambition but more <em>coordination</em>: one market, one rulebook, one set of forms. It is
+          telling that the two most senior establishment figures Europe could commission to study itself
+          both came back with the same answer &mdash; integrate or decline &mdash; and that the answer has,
+          so far, mostly been filed under noted.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
