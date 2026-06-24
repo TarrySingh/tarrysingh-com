@@ -345,6 +345,11 @@ export function ChokepointChapterTwo() {
           "AI / data-centre capex (Euronews, Feb 2026; ECB, Mar 2026): US big-tech ~$700bn in 2026 vs EU sovereign cloud/AI ~€10.6bn — a ~55–60× gap.",
           "Capital Markets Union / Savings & Investments Union: EU policy since 2015; relaunched as the SIU; E6 acceleration call (May 2026) + Market Integration & Supervision Package targeting summer 2026 (Euronews, May 2026).",
           "European cloud market: US hyperscalers ~70–85% share; European providers ~15%, stable since 2022 (Synergy Research, 2025–26).",
+          "Gaia-X stalled into a “paper monster”; OVHcloud only crossed ~€1bn revenue in 2025; newer sovereign bets (Deutsche Telekom T Cloud, SAP/Bleu) still run on Nvidia silicon. DCD; SAP; DT.",
+          "The legal floor: Schrems II left EU-data-on-US-clouds permanently provisional; CrowdStrike's Jul 2024 update crashed ~8.5m machines (~$10bn losses), felling EU hospitals/airports/banks. CJEU; CISA.",
+          "“Sovereign cloud” proliferation: DT/Oracle/IBM EU offerings + AWS/Microsoft European regions, even as AWS & Azure face DMA gatekeeper findings (2026). EC DMA.",
+          "Sovereignty contested: the EUCS scheme's hard sovereignty requirements were stripped after lobbying; the US State Dept reportedly pressed EU governments to drop data-sovereignty demands (2026). EUCS drafts; reporting.",
+          "Build race: Schwarz ~€11bn into STACKIT; AWS ~€9.4bn Frankfurt; France moved its Health Data Hub off Azure to Scaleway; Broadcom raised VMware prices ~800–1000% on EU providers. CISPE; reporting.",
         ]}
       />
     </section>
