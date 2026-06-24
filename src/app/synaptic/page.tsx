@@ -8,12 +8,13 @@ import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { VisionHorizon } from "@/components/synaptic/VisionHorizon"
+import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
 
 export const metadata = {
   title:
-    "Synaptic Cartography — SYMPHONY · MEMPHIS · tarrysingh.com",
+    "Synaptic Cartography — The Chokepoint Paradox · SYMPHONY · MEMPHIS · tarrysingh.com",
   description:
-    "A studio of deep-tech proposals presented as museum-grade interactive plates: SYMPHONY — a neuromimetic knowledge substrate for software — and MEMPHIS — a hippocampal-memristive neuromorphic architecture. Both EIC Pathfinder 2026 submissions.",
+    "A studio of deep-tech proposals and long-form field guides presented as museum-grade interactive plates: THE CHOKEPOINT PARADOX — a ~45,000-word field guide to Europe's tech-sovereignty failure with ~40 instruments — alongside SYMPHONY and MEMPHIS, two EIC Pathfinder 2026 submissions, and the SOFTWARE 3.0 gallery.",
 }
 
 const proseStyle = {
@@ -83,7 +84,7 @@ export default function SynapticPage() {
             className="syn-small-caps mt-3"
             style={{ color: "var(--ink-dim)", letterSpacing: "0.3em" }}
           >
-            · two finished plates · more on the way ·
+            · four cartographies · the studio grows ·
           </p>
         </div>
       </header>
@@ -143,11 +144,73 @@ export default function SynapticPage() {
       {/* featured project cards */}
       <section className="syn-column pt-20">
         <div className="space-y-3 pb-12 text-center">
-          <SmallCaps>Three cartographies</SmallCaps>
+          <SmallCaps>Four cartographies</SmallCaps>
           <h2 className="syn-display mx-auto" style={sectionHeading}>
             Pick a thread
           </h2>
         </div>
+
+        {/* ── featured: the flagship field guide ── */}
+        <Link
+          href="/synaptic/chokepoint-paradox"
+          className="syn-chokepoint group mb-14 block focus-visible:outline-none"
+        >
+          <figure>
+            <div
+              className="relative overflow-hidden rounded-[var(--radius-card)]"
+              style={{
+                aspectRatio: "16 / 9",
+                boxShadow:
+                  "0 0 0 1px rgba(70,199,214,0.18), 0 22px 70px rgba(0,0,0,0.5)",
+              }}
+            >
+              <ChokepointPlate className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-[1.02]" />
+              <div className="pointer-events-none absolute bottom-5 left-6 right-6 flex items-end justify-between gap-3">
+                <span
+                  className="syn-mono uppercase transition-all duration-300 group-hover:tracking-[0.34em]"
+                  style={{ color: "rgba(245,232,204,0.62)", fontSize: "10px", letterSpacing: "0.28em" }}
+                >
+                  ~45,000 words · ~40 interactive instruments
+                </span>
+                <span
+                  className="syn-mono uppercase"
+                  style={{ color: "#e8b54a", fontSize: "12px", letterSpacing: "0.32em" }}
+                >
+                  Enter →
+                </span>
+              </div>
+            </div>
+            <figcaption className="grid gap-6 pt-7 lg:grid-cols-[1.5fr_1fr] lg:items-start">
+              <div>
+                <SmallCaps>Plate IV · the field guide</SmallCaps>
+                <h3
+                  className="syn-display mt-3"
+                  style={{
+                    fontSize: "3.1rem",
+                    color: "var(--ink)",
+                    lineHeight: 1,
+                    letterSpacing: "var(--track-display)",
+                    margin: 0,
+                  }}
+                >
+                  THE CHOKEPOINT PARADOX{" "}
+                  <span style={{ color: "#46c7d6" }}>→</span>
+                </h3>
+                <p className="syn-italic-caption mt-3" style={{ color: "#7fd4e0" }}>
+                  Europe holds the key; Washington owns the lock
+                </p>
+              </div>
+              <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+                The flagship field guide to Europe&rsquo;s tech-sovereignty
+                failure &mdash; the machine that ships a continent&rsquo;s
+                wealth, talent and IP west, and the narrow door still open.
+                Twelve chapters, a coda, and roughly forty bespoke instruments,
+                each a citable argument. Current to July 2026.
+              </p>
+            </figcaption>
+          </figure>
+        </Link>
+
         <div className="grid gap-10 lg:grid-cols-3">
           <Link
             href="/synaptic/symphony"
