@@ -298,6 +298,10 @@ export function ChokepointChapterNine() {
           "AI Act compliance: high-risk providers ~€200k–600k+ initial (QMS ~€193k–330k; ~€29k/yr per model); ~€3.3bn/yr EU-wide; ~78% of organisations had taken no compliance steps by Apr 2026; penalties up to €35m or 7% of global turnover. DIGITALEUROPE; CEPS.",
           "“Stop-the-Clock” / Digital Omnibus (provisional agreement 7 May 2026): AI Act high-risk (Annex III) obligations delayed from 2 Aug 2026 to 2 Dec 2027 (Annex I to 2 Aug 2028). Gibson Dunn / European Commission.",
           "Apple DMA fine: €500m (Apr 2025) for App-Store anti-steering, under appeal; EU commissions reduced from 15–30% toward ~7–10%; Apple's Services revenue continued to grow. European Commission.",
+          "The fine roster (DMA/DSA/GDPR/privacy): Apple €500m + Meta €200m (DMA, Apr 2025); Google €2.95bn (ad-tech, Sep 2025); Temu €200m (DSA — largest to date); TikTok €530m (data transfers); X under DSA proceedings (Grok); Clearview AI fines across multiple DPAs. European Commission; national DPAs.",
+          "Products withheld from the EU: Meta held back its most capable multimodal Llama models (citing regulatory unpredictability); Apple delayed Apple Intelligence/Siri upgrades; AI-feature launches staggered — the EU increasingly receives the AI frontier late, cut-down, or not at all. Company statements; reporting.",
+          "GDPR’s measured cost: deal volume for EU tech ventures fell ~21% and deal size ~33% after enforcement; high-risk AI-Act compliance estimated at ~€200k–€600k initial + ~€80k–€150k/yr for SMEs. NBER WP 33909; EC impact studies.",
+          "Simplification, late: the Digital Omnibus / AI-Act provisional agreement (May 2026) eased parts of the high-risk regime; ePrivacy Regulation withdrawn (Feb 2026), cookie rules folded into GDPR — a partial walk-back after the burden was already booked. EC; Council.",
         ]}
       />
     </section>
