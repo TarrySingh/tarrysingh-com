@@ -147,6 +147,18 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          Behind the frozen connection queues sits a number that explains why they will not thaw soon.
+          Europe&rsquo;s own estimates put the grid investment it needs this decade at something like{" "}
+          <Sq>&euro;584 billion</Sq>, with some analyses pushing past a trillion once the full
+          electrification of heat, transport and industry is counted &mdash; and the actual build-out is
+          running far behind. Germany has completed only a fraction of its planned high-voltage transmission
+          lines; the Netherlands is rationing connections in its richest region. This is the capital chapter
+          again, in a hard hat: the money to build the grid is the same idle savings from Chapter Three, and
+          the decision not to mobilise it at speed is the same failure of nerve &mdash; only now it shows up
+          as a substation that does not exist and a factory that therefore cannot.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
