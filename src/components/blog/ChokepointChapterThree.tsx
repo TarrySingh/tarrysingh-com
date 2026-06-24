@@ -241,6 +241,19 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          The single starkest number in the whole capital story is the pension allocation, and it deserves
+          to be stated baldly. European pension funds put on the order of <Sq>0.018% of their assets</Sq>
+          into venture capital; American ones put closer to <Sq>1.9%</Sq> &mdash; a hundredfold difference,
+          rooted in a 1979 American rule change that freed pensions to take the risk, which Europe never
+          matched. The Netherlands&rsquo; ABP and APG between them steward over a trillion euros, much of it
+          working in American markets. The good news is that the diagnosis has finally started producing
+          instruments: France&rsquo;s <Sq>Tibi</Sq> programme has corralled tens of billions toward deep
+          tech, and a European <Sq>Tech Champions Initiative</Sq> is assembling a fund-of-funds to write the
+          big late-stage cheques Europe has always lacked. Whether these stay pilot-scale or become the new
+          default is the hundred-billion-euro question on which the next decade turns.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
