@@ -243,6 +243,23 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          France is the test case for whether ambition is enough, and the early returns are sobering. No
+          government has tried harder: the <Sq>Tibi</Sq> programme has corralled some thirteen billion euros
+          of institutional money toward European tech; <Sq>Mistral</Sq> is building a sovereign AI cloud
+          outside Paris; <Sq>Hugging Face</Sq>, the Paris-founded &ldquo;GitHub of machine learning,&rdquo;
+          hosts millions of open models as a genuine counterweight to the American labs; the country runs on
+          cheap, clean nuclear power that ought to be a decisive AI advantage. And yet French startup
+          funding still <Sq>roughly halved</Sq> in the first half of 2025 after a snap election spooked
+          investors, and the flagship champions remain a fraction of their American rivals. If the European
+          country doing the most can be knocked off course by a single election, the lesson is not that the
+          strategy is wrong. It is that the strategy needs to be bigger, steadier, and shared across the
+          whole continent &mdash; immune to any one nation&rsquo;s politics &mdash; or it will keep being
+          undone faster than it can compound.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
