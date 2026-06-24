@@ -196,6 +196,18 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          Two 2025 decisions capture the bind from both directions. <Sq>ArcelorMittal</Sq> cancelled some
+          two-and-a-half billion euros of green-hydrogen steel projects in Germany and walked away from more
+          than a billion in German subsidies, judging that clean steel simply could not pay at European
+          power prices &mdash; the green transition foreclosed by the very energy bill it was meant to drive.
+          And the AI build, when it does reach Europe, goes where the power is cheap: OpenAI&rsquo;s{" "}
+          <Sq>Stargate</Sq> programme is siting a hundred-thousand-GPU data centre not in the industrial
+          heartland but in the far north of <Sq>Norway</Sq>, drawn to its abundant, cheap hydropower.
+          Europe&rsquo;s electrons have become a sorting mechanism: heavy industry priced out, AI compute
+          pushed to the cold edges, and the populous, productive core left paying the most for the least.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
