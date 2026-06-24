@@ -275,6 +275,18 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          The one country making a serious, sustained bet is, again, France, which committed some{" "}
+          <Sq>&euro;73 billion</Sq> to build six new EPR2 reactors &mdash; a multi-decade wager on cheap
+          sovereign power that is exactly the kind of patient constancy the rest of the continent struggles to
+          muster. Set against it is the counter-signal: <Sq>Fluidstack</Sq>, an AI-cloud company, decamped
+          from Europe to list in the United States at an eighteen-billion-dollar valuation, taking its compute
+          build with it. The two facts frame the whole chapter. Cheap, firm, sovereign power is buildable, and
+          France is building it; but absent that power, and the speed to connect it, the AI economy that runs
+          on electrons simply forms up somewhere else. Europe&rsquo;s energy choices are not only about
+          industry&rsquo;s past. They are about whether the future plugs in at home or abroad.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
