@@ -322,6 +322,21 @@ export function ChokepointChapterOne() {
         </P>
 
         <P>
+          The exception that proves the rule is made of glass. In the <Sq>Westland</Sq>, a strip of South
+          Holland carpeted with greenhouses, Dutch growers achieve tomato yields of around{" "}
+          <Sq>ninety-five tonnes a hectare</Sq> against a world average near eighteen, and the country
+          exports more food by value than almost anyone on Earth from a territory the size of a large city.
+          It is one of the genuine wonders of applied science. And notice how it is organised: around{" "}
+          <Sq>Wageningen</Sq>, the world&rsquo;s leading agricultural university, knowledge moves by
+          licensing and operating expertise, by family firms and cooperatives refined over generations
+          &mdash; not by venture capital and equity scaling. The Dutch are world-beaters precisely where the
+          model is patient, rooted and incremental, and stranded precisely where it demands a founder, a fast
+          cheque and a willingness to bet the company. The competence is total. It is simply sector-locked
+          into the shape the chokepoint machine cannot capture &mdash; which is also, unfortunately, the
+          shape that does not build the next trillion-dollar platform.
+        </P>
+
+        <P>
           Hold the Netherlands in your mind now as a high-resolution scan of the patient, because every
           symptom you have just seen &mdash; the savings that flee, the scale-ups that emigrate, the
           talent priced to leave, the strategy that resets every four years, the grid that cannot carry
