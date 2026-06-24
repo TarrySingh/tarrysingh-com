@@ -349,6 +349,18 @@ export function ChokepointChapterOne() {
         </P>
 
         <P>
+          The Dutch state knows exactly how exposed it is, because in 2024 it had to pay to keep its crown
+          jewel from leaving. When ASML signalled it might expand abroad rather than at home, the government
+          scrambled together a <Sq>two-and-a-half-billion-euro</Sq> package &mdash; nicknamed
+          &ldquo;Operation Beethoven&rdquo; &mdash; to unblock the housing, grid and talent bottlenecks
+          around Eindhoven and persuade the company to stay. A country does not improvise billions to retain
+          a single firm unless it understands that the firm <em>is</em> the economy. And the pull the other
+          way is relentless: foreign acquisitions of Dutch scale-ups roughly <Sq>doubled</Sq> between 2020
+          and 2025, from sixty-six a year to a hundred and twenty-nine. The canary is not only singing. It
+          is being carried, cage and all, out of the mine.
+        </P>
+
+        <P>
           Hold the Netherlands in your mind now as a high-resolution scan of the patient, because every
           symptom you have just seen &mdash; the savings that flee, the scale-ups that emigrate, the
           talent priced to leave, the strategy that resets every four years, the grid that cannot carry
