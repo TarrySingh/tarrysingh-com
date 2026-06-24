@@ -224,6 +224,17 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          The most decisive counter-move so far came from Paris. In 2026 France&rsquo;s interministerial
+          digital directorate, <Sq>DINUM</Sq>, issued a directive pushing every ministry and affiliated
+          public body toward sovereign and open-source tools rather than the American defaults &mdash; an
+          order touching the software of roughly two and a half million civil servants, and a direct
+          challenge to the assumption that the dependence is permanent. It is the most concrete state-level
+          attempt yet to cancel the standing order. Whether it survives the friction of actually migrating
+          &mdash; the retraining, the integration, the thousand small reasons it is always easier not to
+          &mdash; is the test that matters, and the one the rest of Europe will be watching.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
