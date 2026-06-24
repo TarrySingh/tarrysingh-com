@@ -158,6 +158,27 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          And the soft kill-switch stopped being hypothetical in March 2025, in the most literal way
+          imaginable. For a few days, amid a diplomatic rupture, the United States <Sq>suspended
+          intelligence-sharing with Ukraine</Sq> &mdash; degrading, at a stroke, the targeting and
+          early-warning picture Ukrainian forces depended on. The feed was restored within about a week,
+          but the demonstration was total: the most important input to a modern military can be switched
+          off from Washington, on a political whim, with no notice. Every European capital watching
+          understood that the same hand rests on the same kind of switch over its own American-supplied
+          systems.
+        </P>
+
+        <P>
+          The legal architecture makes it concrete. American components inside European weapons fall under{" "}
+          <Sq>ITAR</Sq>, the US arms-export regime, which hands Washington a veto over the re-export &mdash;
+          and sometimes the very use &mdash; of any system containing US-origin technology, a constraint
+          that has repeatedly complicated European deliveries of missiles and aircraft to third countries.
+          So even the weapons Europe builds for itself often carry an American licence buried in the bill of
+          materials. The continent is spending its historic defence surge to acquire capability and, baked
+          invisibly into much of it, a foreign permission slip it cannot revoke.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
