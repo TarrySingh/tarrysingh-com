@@ -143,6 +143,19 @@ export function ChokepointChapterNine() {
           power to end. You cannot regulate your way out of not owning the infrastructure.
         </P>
 
+        <P>
+          And there is a final twist that complicates the whole picture, because the retreat from the
+          rulebook is being authored partly by the very giants it was meant to constrain. The{" "}
+          <Sq>Digital Omnibus</Sq> simplification of 2026 &mdash; the package that stopped the AI
+          Act&rsquo;s clock and trimmed reporting duties &mdash; arrived after sustained lobbying from
+          American big tech and its allies, who found Brussels suddenly receptive to the argument that its
+          own rules were throttling competitiveness. So Europe spent a decade building the most ambitious
+          digital rulebook in the world, then began dismantling parts of it under pressure from the firms it
+          was written to discipline. Whether that is wise course-correction or regulatory capture depends on
+          where you stand &mdash; but either way it is not the posture of a power that sets the terms. It is
+          the posture of one that keeps revising them under pressure from somebody else.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
