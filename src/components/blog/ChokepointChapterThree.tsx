@@ -202,6 +202,20 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          The failure has a precise location on the funding ladder, and European founders have a name for
+          it: the <Sq>Series B cliff</Sq>. A European startup can raise a seed round and an A round at home
+          well enough; the angels and early funds exist. It is the next cheque &mdash; the{" "}
+          <Sq>twenty-five to a hundred million euros</Sq> that turns a promising company into a category
+          leader &mdash; that goes missing, because Europe has too few funds large enough to write it. So at
+          exactly the moment a company is proving it can scale, the only investors in the room with the
+          chequebook to fund that scaling are American. They invest, and reasonably ask for what capital
+          asks for: a board seat, a US holding company, a path toward a New York listing. The founder says
+          yes, because the alternative is to stall &mdash; and another European company quietly becomes, in
+          all the ways that matter, an American one. Not through failure. Through the precise absence of a
+          single missing tier of domestic capital.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
