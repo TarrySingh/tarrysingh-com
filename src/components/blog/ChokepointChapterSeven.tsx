@@ -262,6 +262,19 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          The closures have not slowed; if anything they have become routine enough to stop making headlines.{" "}
+          <Sq>BASF</Sq> is shutting eleven plants at Ludwigshafen alone, including ammonia and TDI lines, as
+          part of more than a billion euros of annual cost cuts; <Sq>INEOS</Sq> is closing chemical units in
+          Germany; the cumulative European chemical capacity lost since 2022 has passed <Sq>37 million
+          tonnes</Sq>, nearly a tenth of the total. And the energy dependence that drove it has, if anything,
+          deepened: having replaced Russian pipeline gas, Europe now imports the majority of its liquefied
+          natural gas from the United States &mdash; some <Sq>63%</Sq> of it, heading toward eighty &mdash;
+          trading one external dependence for another, at a price that keeps its industry uncompetitive
+          either way. The continent swapped a hostile supplier for a friendly one and called it security;
+          what it actually bought was the same vulnerability with a better-tempered landlord.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
