@@ -106,6 +106,19 @@ export function ChokepointChapterNine() {
           rules were nominally meant to make room for, who finds the drawbridge in its face.
         </P>
 
+        <P>
+          The cost of the rulebook is most visible in the products Europeans simply do not get, or get
+          late. <Sq>Apple Intelligence</Sq> was withheld from the EU at its 2024 launch over Digital
+          Markets Act uncertainty; <Sq>Meta</Sq> delayed its AI assistant in the bloc for the same reason;{" "}
+          <Sq>Google</Sq> geofenced its Gemini model out of several EU countries after a French-regulator
+          challenge; and when the Chinese lab <Sq>DeepSeek</Sq> arrived, European data authorities moved to
+          block it from training on EU data. Set aside whether each call was right &mdash; the cumulative
+          signal to any company deciding where to launch is unmistakable: Europe is the market where the
+          newest things show up last, wrapped in the most legal doubt. A continent that cannot reliably
+          even <em>receive</em> the frontier, let alone build it, has quietly priced itself out of being a
+          serious customer for the future.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
