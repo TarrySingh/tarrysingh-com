@@ -237,6 +237,19 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          Watch how the Americans solved the same power problem, because the contrast is total. Unable to
+          wait for the grid, the US hyperscalers simply <em>bought their own nuclear plants</em>: Microsoft
+          signed a deal to restart a reactor at <Sq>Three Mile Island</Sq> to feed its data centres; Amazon
+          struck a multi-billion-dollar agreement for the output of the <Sq>Susquehanna</Sq> nuclear
+          station. When a company that size needs a gigawatt of firm power, it writes a cheque and gets one.
+          A European firm in the same position joins a connection queue that now runs <Sq>seven to thirteen
+          years</Sq> in Dublin, Frankfurt, London, Amsterdam and Paris alike. The difference is not
+          technology or even, ultimately, money &mdash; Europe has both. It is the capacity to <em>act</em>:
+          to build, to buy, to clear the path, at the speed the moment demands. The Americans are powering
+          the AI age off the grid by sheer force of will. Europe is waiting in line for permission.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
