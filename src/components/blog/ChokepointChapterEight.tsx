@@ -135,6 +135,17 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          The scale of the aircraft dependence alone is worth spelling out, because it is a continent-wide
+          commitment, not a one-off. The United Kingdom plans some <Sq>138 F-35s</Sq>; Finland{" "}
+          <Sq>64</Sq>; Italy ninety-odd; the Netherlands, Norway, Belgium, Denmark, Poland and the Czech
+          Republic filling in behind &mdash; on the order of <Sq>six hundred</Sq> of the jets across
+          European NATO, each one flying on American spare parts, American software updates and American
+          mission data. Poland took its first airframes in 2026; deliveries run well into the 2030s. This
+          is not a procurement a country unwinds in a budget cycle. It is a thirty-year structural
+          dependence, signed willingly, by almost every air force on the continent at once.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
