@@ -300,6 +300,19 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          And the fragility of the arrangement was demonstrated, accidentally and globally, on a single
+          morning in July 2024, when a faulty update from the American security firm <Sq>CrowdStrike</Sq>
+          crashed some <Sq>eight and a half million Windows computers</Sq> at once. Across Europe, hospitals
+          turned away non-emergency patients, airports ground to a halt, banks and broadcasters went dark
+          &mdash; not because of an attack, but because of a botched software patch pushed from abroad to
+          machines the continent does not control. The episode put a number on the dependence: something on
+          the order of <Sq>ten billion dollars</Sq> in global losses from one bad file. A continent whose
+          hospitals, airports and banks can be felled by an American vendor&rsquo;s routine Tuesday update
+          has outsourced not just its convenience but its resilience &mdash; and resilience, unlike
+          convenience, is the thing you only discover you have surrendered on the morning it fails.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
