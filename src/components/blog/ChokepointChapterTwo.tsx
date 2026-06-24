@@ -259,6 +259,20 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          And when Europe did try to write real sovereignty into its rules, it discovered who objects. The
+          EU&rsquo;s cloud-security certification scheme, <Sq>EUCS</Sq>, originally proposed to require that
+          the most sensitive European data sit only with providers immune from foreign law &mdash; which is
+          to say, not the American hyperscalers. After sustained lobbying, those sovereignty requirements
+          were quietly <Sq>stripped out</Sq>; and in early 2026 the US Secretary of State reportedly
+          instructed American diplomats to press European governments to drop &ldquo;data sovereignty&rdquo;
+          and data-localisation demands altogether. The dependence, in other words, is not passively accepted
+          by Washington as a happy accident of market share. It is actively defended &mdash; because the
+          tribute documented in this essay is, from the other side of the Atlantic, simply revenue worth
+          protecting. Europe is not only failing to build the alternative. It is being lobbied, firmly, out
+          of even requiring one.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
