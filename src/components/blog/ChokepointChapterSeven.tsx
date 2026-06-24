@@ -220,6 +220,23 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          Nowhere is the industrial squeeze more visible than in the country that was supposed to be immune
+          to it. Germany, the manufacturing heart of Europe, ground through a third straight year of
+          stagnation in 2026 with the grim furniture of decline piling up: <Sq>Volkswagen</Sq> shut a German
+          factory for the first time in eighty-eight years; <Sq>Bosch</Sq> announced twenty-two thousand job
+          cuts; <Sq>Thyssenkrupp</Sq>, the storied steelmaker, agreed to shed some eleven thousand jobs
+          &mdash; forty per cent of its steel workforce &mdash; and lined up a sale to an Indian group.
+          German unemployment crossed <Sq>three million</Sq> for the first time in over a decade, and
+          corporate insolvencies hit their highest level in years. The proximate causes are the ones this
+          chapter has catalogued &mdash; energy at well over twice American prices &mdash; compounded by a
+          second shock from the opposite direction: Chinese electric cars, led by <Sq>BYD</Sq>, eating the
+          home market of the very industry that defined modern Germany. The country that was the rebuttal to
+          every declinist argument about Europe is now the argument&rsquo;s leading exhibit, and it got
+          there by the same machine: priced out of energy, out-built on capital, out-scaled on the
+          technologies that will define the next economy.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
