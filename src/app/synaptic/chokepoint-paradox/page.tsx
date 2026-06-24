@@ -127,7 +127,7 @@ export default function ChokepointParadoxPage() {
           letterSpacing: "0.08em",
         }}
       >
-        ◷ Spine complete — Prologue, 12 chapters &amp; Coda, ~40 instruments live; now deepening every chapter toward the ~45,000-word floor. Built one instrument at a time.
+        © 2026 tarrysingh.com
       </p>
     </main>
   )

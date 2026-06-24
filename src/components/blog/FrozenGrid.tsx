@@ -88,10 +88,10 @@ const QUEUE = buildQueue()
 
 // Grid geometry (viewBox units).
 const W = 920
-const H = 540
+const H = 452
 const PADL = 56
 const PADR = 56
-const PADT = 92
+const PADT = 132 // grid top — clears the big readouts + the FRONT/BACK axis labels above it
 const PLOT_W = W - PADL - PADR
 const COLS = 13
 const ROWS = 2
