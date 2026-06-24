@@ -254,6 +254,18 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          The founders themselves say it without euphemism. Pascal Gauthier, who runs the French
+          crypto-security firm Ledger, put the capital problem in a single sentence: <Sq>&ldquo;Money is in
+          New York today &mdash; it&rsquo;s nowhere else in the world, certainly not in Europe.&rdquo;</Sq>
+          He was talking about his own sector, but the diagnosis generalises across the whole essay. The
+          people who run European companies are not confused about where the capital is; they live the
+          shortage daily, and a striking number quietly conclude that the rational response is not to fix
+          Europe but to go where the money already sits. The capital drain is not, at bottom, an accident of
+          policy. It is the aggregate of thousands of founders making the same clear-eyed, individually
+          correct decision to follow the money west.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
