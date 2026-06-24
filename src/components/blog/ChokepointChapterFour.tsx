@@ -279,8 +279,13 @@ export function ChokepointChapterFour() {
           July 2026 <Sq>Infineon</Sq> opened a five-billion-euro fab in Dresden &mdash; on time, even early
           &mdash; making the power-management chips Europe actually leads in; the silicon-carbide market it
           serves is forecast to grow nearly tenfold this decade, and European firms hold a real share of it.
-          This is the strategy that can work: build in the segments where Europe is strong, in its own
-          industrial heartland, with patient capital. But hold it against the scoreboard. A five-billion-euro
+          The same smarter bet shows up in the segments alongside the logic die: STMicro began high-volume
+          production of a silicon-photonics interconnect platform at Crolles in 2026, aimed squarely at the AI
+          data centre, and Italy&rsquo;s <Sq>Silicon Box</Sq> won &ldquo;Open EU Foundry&rdquo; status for the
+          advanced chiplet-packaging that stitches finished dies together. This is the strategy that can work:
+          build in the segments where Europe is strong &mdash; power, photonics, packaging, the profitable rim
+          around the leading-edge die &mdash; in its own industrial heartland, with patient capital. But hold
+          it against the scoreboard. A five-billion-euro
           fab for mature power chips is a fine and sensible thing; it is also roughly what a single American
           hyperscaler spends on AI infrastructure in a week. Europe can win the races it enters seriously. The
           trouble is that the race which will decide the next economy &mdash; leading-edge logic for AI
