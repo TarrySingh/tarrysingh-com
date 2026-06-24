@@ -211,6 +211,23 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          It helps to be honest about the size of what would be required, because it is the part the
+          green-shoot stories tend to skate over. Draghi&rsquo;s own figure for the investment Europe needs
+          is around <Sq>&euro;800 billion a year</Sq> &mdash; close to <Sq>5% of the continent&rsquo;s
+          GDP</Sq>, sustained for years. To feel the scale: the Marshall Plan ran at roughly one per cent of
+          American output; the Apollo programme peaked near half a per cent; what Draghi asks for is several
+          times the intensity of either, not for a few years but indefinitely. That sounds impossible until
+          you remember that Europe has already done the once-unthinkable thing the plan requires: in 2020 it
+          agreed to <Sq>borrow jointly</Sq>, some &euro;750 billion through NextGenerationEU, breaking a
+          taboo that had stood for the union&rsquo;s entire history. The machinery for collective ambition
+          exists. It has been switched on exactly once, in a pandemic, and switched off again. The question
+          the next decade answers is whether it takes a catastrophe to turn it on &mdash; or whether, just
+          this once, foresight might be enough.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
