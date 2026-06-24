@@ -136,6 +136,21 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          None of which means the only move is to out-spend the un-out-spendable. The smarter prescriptions
+          aim not at matching America gigafactory for gigafactory but at the lanes where Europe could
+          actually win. <Sq>Edge inference</Sq> &mdash; running AI cheaply on local, low-power chips rather
+          than in vast foreign data centres &mdash; plays to European strengths in semiconductors and
+          embedded systems; companies like the Dutch-founded <Sq>Axelera</Sq> are already chasing it.
+          Open-weight, sovereign models hosted on European soil answer the dependence head-on. And the
+          single most powerful lever requires no new technology at all: redirect even a fraction of the{" "}
+          <Sq>&euro;33 trillion</Sq> in European savings &mdash; through a pension-allocation rule, a public
+          guarantee, a Savings and Investments Union with actual teeth &mdash; and the missing growth
+          capital appears, because it was never truly missing. It was parked.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
