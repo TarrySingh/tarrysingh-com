@@ -200,6 +200,18 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          And the legal foundation under all of it has never actually been made sound. Ever since the{" "}
+          <Sq>Schrems II</Sq> ruling struck down the previous EU&ndash;US data deal, European data sitting
+          on American clouds has lived in a state of permanent legal provisionality &mdash; patched by
+          successive frameworks that the same Austrian litigant who toppled the last two is already
+          challenging. The result is a quiet institutional doublethink: European bodies know the platforms
+          they run on are governed, in the last instance, by American law, and use them anyway, because
+          there is no European substitute at the scale they need. Industry analysts now write about
+          hyperscaler &ldquo;permanence&rdquo; in Europe as a settled fact rather than an open question
+          &mdash; the dependence hardened from a procurement choice into the assumed shape of the world.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
