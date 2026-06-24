@@ -292,6 +292,18 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          Some of the drain is written directly into Europe&rsquo;s own rulebook. Under <Sq>Solvency II</Sq>,
+          the regime governing the continent&rsquo;s vast insurance industry, holding equity &mdash; the
+          patient, risk-bearing capital that builds companies &mdash; carries a punitive capital charge,
+          while government bonds are treated as nearly free. So the very institutions that in America are
+          among the largest backers of long-term innovation are, in Europe, regulated into parking their
+          trillions in safe debt instead. It is the chokepoint paradox turning on itself: a continent that
+          complains it lacks risk capital has built a prudential system that taxes risk and rewards the safe
+          option, then acts surprised when its insurers and pension funds behave exactly as the rules
+          instruct. The savings are not missing. They are being regulated into timidity.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
