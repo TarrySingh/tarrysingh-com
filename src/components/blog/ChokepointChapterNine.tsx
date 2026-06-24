@@ -233,6 +233,20 @@ export function ChokepointChapterNine() {
           elsewhere.
         </P>
 
+        <P>
+          And the burden falls most heavily where it is least affordable. The headline GDPR fines land on
+          Google and Meta, but the quieter enforcement increasingly targets ordinary small and mid-sized
+          firms &mdash; a German property company, <Sq>Deutsche Wohnen</Sq>, was fined some fourteen million
+          euros over data-retention practices, the kind of penalty that is survivable for a hyperscaler and
+          lethal for a mid-cap. For a small European company the compliance arithmetic is brutal:
+          cookie-consent tooling, a data-protection officer, breach-notification processes and the standing
+          risk of a fine measured as a percentage of <em>global</em> turnover can run to tens of thousands of
+          euros a year before a single product ships. The giant treats all of it as a line item; the startup
+          treats it as one more reason to incorporate in Delaware. Regulation meant to constrain the powerful
+          keeps, with grim reliability, landing hardest on the small &mdash; which is to say, on precisely the
+          firms Europe needs most.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
