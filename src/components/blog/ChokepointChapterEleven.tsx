@@ -144,6 +144,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          Put the capital gap in named-company terms and it stops being an abstraction. In a single year{" "}
+          <Sq>Microsoft</Sq> alone is spending something like eighty to a hundred-and-twenty billion dollars
+          on AI and cloud infrastructure; <Sq>Amazon</Sq> on the order of two hundred; <Sq>Google</Sq> and{" "}
+          <Sq>Meta</Sq> tens of billions each; and the <Sq>Stargate</Sq> venture alone proposes to spend up
+          to half a trillion dollars on data centres over a few years. Any one of those line items dwarfs
+          the whole of Europe&rsquo;s coordinated AI-infrastructure ambition. This is what it means to say
+          the contest is decided by capital intensity: the unit of American investment is one
+          company&rsquo;s quarterly capex, and the unit of European investment is the multi-year,
+          twenty-seven-country, much-debated programme. They are not the same kind of number &mdash; and
+          pretending they are is how a decade goes missing.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
