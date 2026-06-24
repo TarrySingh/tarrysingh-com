@@ -355,6 +355,15 @@ export function ChokepointChapterTen() {
           "Irish mirage: Ireland GDP ~€563bn vs GNI* ~€321bn (GDP ~75% above real income); top 3 firms ~46% of Irish corporation tax; real EU–US digital trade deficit ~−$350bn (2022–24). Ireland CSO (2024); CASSIS / University of Bonn; Irish Fiscal Council.",
           "Public-sector lock-in: Microsoft ~77–92% (≈80%) of EU public-sector productivity software; Euro-Office sovereign suite launched Jun 2026; Denmark/Austria/France migrating. Open Cloud Coalition / Compass Lexecon (Jul 2025).",
           "CLOUD Act demonstration: ICC prosecutor Karim Khan's Microsoft email became inaccessible after a US executive-order sanction (Feb 2025); he moved to Proton (Switzerland). Attribution disputed (Microsoft says the ICC disconnected him). The Register; AP; Computer Weekly (2025–26).",
+          "ICC sequel: the Court migrated off Microsoft to openDesk (open-source, Germany's Centre for Digital Sovereignty / ZenDiS), Oct 2025. The Register.",
+          "Microsoft under oath: its French legal director told the French Senate (Jun 2025) it could not guarantee EU data is shielded from the US CLOUD Act. French Senate testimony; reporting.",
+          "Sovereignty theatre: Germany's Delos Cloud runs on Microsoft Azure; the Microsoft EU Data Boundary carries documented non-EU engineer-access carve-outs; CISPE filed an antitrust complaint over Broadcom/VMware pricing. Delos; Microsoft; CISPE.",
+          "Payments rails: Visa & Mastercard clear ~€24tn/yr and well over half of EU cashless payments; the Monnet Project failed; Wero (EPI) + the EuroPA Alliance (Feb 2026) are the late European answer. ECB; EPI/Wero.",
+          "Ad-tech & financial rails: Meta ~€40–44bn/yr EU ad revenue; the EU runs a ~€178bn services trade deficit with the US; USD in ~half of international payment messages; Google fined €3bn (2025, ad-tech). Eurostat; EC; SWIFT.",
+          "Data as resource: the EU Data Act (in force Sep 2025) frames data as shared infrastructure but excludes the largest “gatekeepers” from core data-sharing duties. EU Data Act.",
+          "The everyday absence: no European search engine, social network, app store, streaming or e-commerce platform at scale; US services ~80% of EU online-video minutes; Amazon leads all five largest EU e-commerce markets. DPP; e-commerce market reports.",
+          "Conceptual frame: Varoufakis (“technofeudalism”/“vassal”); Durand (rentier platform capital); Couldry & Mejias (“data colonialism”); Farrell & Newman (“weaponised interdependence”); Anu Bradford (“Brussels Effect” high-water mark passed).",
+          "Two-empires squeeze: the US owns the top of the stack; China refines ~92% of rare earths and ~98% of gallium/germanium and has used export controls as leverage. USGS; IEA critical minerals.",
         ]}
       />
     </section>
