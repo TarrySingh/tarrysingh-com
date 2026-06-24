@@ -247,6 +247,18 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          The race is now being run in concrete, and the scoreboard is instructive. On the European side,
+          Deutsche Telekom is standing up an industrial-AI cloud in Munich, and the retail group Schwarz is
+          pouring some eleven billion euros into <Sq>STACKIT</Sq>, complete with a planned cluster of a
+          hundred thousand AI chips &mdash; serious, sovereign, German-owned bets. On the other side, Amazon
+          alone committed nearly ten billion euros to a single expanded region around Frankfurt and launched
+          a separate &ldquo;<Sq>European Sovereign Cloud</Sq>&rdquo; staffed by Europeans &mdash; a clever
+          move that answers the sovereignty objection in marketing while keeping the technology, and the
+          ultimate legal control, American. Both sides are building furiously. Only one of them can also,
+          when it chooses, set the prices and write the terms for the other.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
