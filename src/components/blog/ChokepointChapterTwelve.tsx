@@ -260,6 +260,22 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          The most encouraging sign is also the most recent. In June 2026 the European Commission unveiled a
+          sweeping <Sq>tech-sovereignty package</Sq> &mdash; on the order of a hundred and twenty billion
+          euros for semiconductors, two hundred billion for data centres, a hundred billion for cloud and AI
+          &mdash; alongside a &ldquo;Scale-Up Europe&rdquo; fund aimed squarely at stopping high-potential
+          startups from leaving. The figures, for once, are within sight of the scale of the problem rather
+          than an order of magnitude below it; the diagnosis has plainly landed. Whether this proves the
+          turning point or merely the latest, largest plan to be &ldquo;filed under noted&rdquo; depends
+          entirely on execution &mdash; on whether twenty-seven governments fund it, sustain it across
+          elections, and resist the thousand temptations to water it down. The plan is finally the right
+          size. The only remaining question is the one this essay has asked from its first page: whether
+          Europe will <em>do</em> it, or merely resolve to.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
@@ -287,6 +303,19 @@ export function ChokepointChapterTwelve() {
           differently now: there is, he wrote, &ldquo;no future for the people of Europe other than in
           union.&rdquo; He meant it as the path out of war. It is turning out to be the path out of decline
           as well &mdash; and Europe keeps, politely, declining to take it.
+        </P>
+
+        <P>
+          And the clock is not neutral. Europe is ageing fast: on current trends the working-age population
+          falls in <Sq>twenty-two of the twenty-seven member states</Sq> by 2050, with a projected shortfall
+          of tens of millions of workers, even as the bloc&rsquo;s share of world output slides toward a
+          tenth. A continent that is shrinking, ageing and ceding the technologies of the future all at once
+          does not have the luxury of a slow, dignified adjustment; the demographic arithmetic turns every
+          decade of delay into a steeper climb. The phrase that haunts Europe&rsquo;s own strategists is
+          that the continent risks becoming an <Sq>open-air museum</Sq> &mdash; a beautiful, beloved place to
+          visit, exhibiting the achievements of a civilisation that has lost the will to add to them. The
+          whole of this essay is an argument that this outcome is not fated. But it is, now, the
+          <em>default</em> &mdash; the thing that happens if nothing is decided.
         </P>
 
         <PullQuote>
