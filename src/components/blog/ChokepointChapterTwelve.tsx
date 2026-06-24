@@ -181,6 +181,21 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          One reform in particular has gathered momentum because it attacks the fragmentation head-on:{" "}
+          <Sq>&ldquo;EU Inc&rdquo;</Sq>, a proposed pan-European legal entity &mdash; a single, optional
+          &ldquo;28th regime&rdquo; company form a founder could incorporate under once and operate across
+          all twenty-seven member states, instead of refounding in each. Thousands of European founders and
+          investors have signed on, because it targets the precise friction that sends them to Delaware: not
+          a lack of talent or ideas, but the absurdity of a &ldquo;single market&rdquo; in which building a
+          company that works everywhere means complying everywhere. It is small, technical and unglamorous,
+          and it is exactly the kind of fix that matters &mdash; because the chokepoint was never built by
+          one grand decision, and it will not be dismantled by one either. It will be dismantled, if at all,
+          by a hundred boring reforms enacted with unfamiliar urgency.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
