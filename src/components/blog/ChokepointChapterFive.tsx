@@ -247,6 +247,20 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          Pharmaceuticals deserve a closer look, because they are the field where Europe&rsquo;s scientific
+          pedigree runs deepest and the erosion is therefore most telling. Europe&rsquo;s share of the
+          world&rsquo;s manufacturing of <Sq>active pharmaceutical ingredients</Sq> &mdash; the molecules that
+          make a drug a drug &mdash; collapsed from around <Sq>63% in 1981 to about 6% today</Sq>, almost all
+          of it ceded to China and India, so that the continent that invented modern medicine now imports the
+          substance of it. And the capital pattern is the familiar one: European biotech raised perhaps{" "}
+          <Sq>&euro;25 billion</Sq> in venture funding over a decade against more than <Sq>&euro;200
+          billion</Sq> in the United States, and of sixty-seven European biotechs that went public over six
+          years, <Sq>sixty-six listed abroad</Sq>. Europe still does world-class biology. It simply
+          manufactures it elsewhere, funds it elsewhere and lists it elsewhere &mdash; keeping, as ever, the
+          discovery and exporting the value.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
