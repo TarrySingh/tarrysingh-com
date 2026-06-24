@@ -259,6 +259,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          The cruelest statistic in the whole essay may be this one. Europe has more monthly users of
+          large-language-model chatbots than the United States does &mdash; some <Sq>133 million</Sq>,
+          roughly twice the American base &mdash; and almost every model they use was built in America.
+          Europeans are, per head, among the most enthusiastic <em>consumers</em> of AI on Earth and among
+          the most negligible <em>producers</em> of it: the continent files perhaps <Sq>3% of the
+          world&rsquo;s new AI patents</Sq> against America&rsquo;s seventy. This is the chokepoint paradox
+          rendered in a single behaviour &mdash; a market that adopts the technology avidly, pays for it
+          eagerly, generates the data that improves it freely, and owns none of it. To be the best customer
+          of an industry you hold no stake in is not a position of strength. It is the very definition of a
+          market, as opposed to a competitor.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
