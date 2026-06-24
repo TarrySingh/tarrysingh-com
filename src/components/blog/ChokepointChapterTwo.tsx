@@ -273,6 +273,20 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          The market&rsquo;s response to all this has been a sudden proliferation of clouds wearing the word
+          &ldquo;sovereign&rdquo; like a label of origin. Deutsche Telekom is building an industrial-AI cloud
+          in Munich packed with Nvidia chips; Oracle and IBM have rushed out their own EU
+          &ldquo;sovereign&rdquo; offerings; even AWS and Microsoft now sell European-staffed sovereign
+          regions &mdash; the same firms that, in mid-2026, faced preliminary findings that their cloud
+          businesses should be designated gatekeepers under the Digital Markets Act. The word has become a
+          marketing category precisely because the underlying anxiety is real and unmet. But a label is not
+          a guarantee, and most of these &ldquo;sovereign&rdquo; clouds still run on American silicon,
+          American reference designs, or American corporate parents. Europe has discovered that it can buy
+          the adjective off the shelf. The noun &mdash; actual, unconditional control &mdash; is the one
+          thing that is not for sale.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
