@@ -261,7 +261,7 @@ export function ChokepointChapterEleven() {
         <P>
           And even Europe&rsquo;s answer is built on borrowed silicon. Mistral&rsquo;s own buildout &mdash; a{" "}
           <Sq>&euro;1.2 billion</Sq> data-centre programme spanning a live Paris site and a Swedish facility
-          for 2027, on the order of <Sq>13,800 Nvidia GPUs</Sq> &mdash; runs, like roughly <Sq>85%</Sq> of all
+          for 2027, on the order of <Sq>13,800 Nvidia GPUs</Sq> &mdash; runs, like roughly <Sq>four-fifths</Sq> of all
           the AI accelerators in Europe, on chips designed in California and fabricated in Taiwan. Members of
           the European Parliament have named the obvious bind: the very &ldquo;AI gigafactories&rdquo; meant
           to buy sovereignty deepen the continent&rsquo;s dependence on a single American supplier, because
@@ -300,7 +300,7 @@ export function ChokepointChapterEleven() {
           One pair of numbers captures the whole asymmetry. In 2025 American private investment in AI reached
           some <Sq>$286 billion</Sq>; the entire European venture-capital industry &mdash; not its AI
           spending, its <em>whole</em> annual venture pool, across every sector &mdash; deploys roughly{" "}
-          <Sq>fifty billion dollars a year</Sq>. America invests more in artificial intelligence in a single
+          <Sq>sixty to eighty billion dollars a year</Sq>. America invests more in artificial intelligence in a single
           year than Europe&rsquo;s venture industry deploys, across every sector, anywhere, full stop. You cannot compete for the
           defining technology of the century out of a venture industry a fraction the size of your
           rival&rsquo;s spending on that one technology alone. It is not that European investors are timid,
@@ -326,10 +326,10 @@ export function ChokepointChapterEleven() {
           "LLMflation: cost of a unit of LLM capability falling ~10×/yr (~1,000× over 3 years at the budget tier; ~60× at the frontier; GPT-4-class $30/Mtok → cents). a16z (“LLMflation”); Epoch AI (inference price trends).",
           "Jevons / token demand: ~24× token-demand growth by 2030; enterprise AI budgets ~5.8× even as per-token prices fell ~65%; agentic tasks 50k–500k+ tokens (1–3.5M for full coding workflows). Goldman Sachs; Stanford Digital Economy Lab.",
           "AI capex canyon: four US hyperscalers ~$725bn AI/data-centre capex in 2026 (+~77% YoY; ~$755bn incl. xAI/Stargate) vs ~$60bn for Europe (~12–13×). EU “AI Gigafactories” ~€20bn. CNBC / company filings (2026).",
-          "The remedy’s own dependence: Mistral committed ~€1.2bn to data centres (live Paris 2026 + Sweden 2027) with ~13,800 Nvidia GPUs; ~85% of AI accelerators in Europe are Nvidia, and MEPs warned the EU “AI gigafactories” deepen single-supplier reliance. Mistral; European Parliament.",
+          "The remedy’s own dependence: Mistral committed ~€1.2bn to data centres (live Paris 2026 + Sweden 2027) with ~13,800 Nvidia GPUs; ~80% of AI accelerators in Europe are Nvidia, and MEPs warned the EU “AI gigafactories” deepen single-supplier reliance. Mistral; European Parliament.",
           "Lab scale: Mistral (France) ~€11.7bn (Sep 2025) → ~€20bn/$23bn (2026 talks), ~$0.4bn ARR; vs OpenAI ~$852bn and Anthropic ~$965bn (2026; ~$47bn ARR) — Europe's best lab ~40× smaller. TechCrunch; company announcements.",
           "Frontier concentration: US ~50 notable AI models (2025) vs Europe ~3 and China ~30; US ~74% of high-end AI compute vs Europe ~5–6% (falling); every frontier-leading model since 2023 from a US lab. Stanford AI Index 2026; Epoch AI.",
-          "The funding gap, correctly framed: European VC deploys roughly $50bn/yr (annual flow, not the ~$430bn AUM); the US invests more in AI alone in a single year than Europe’s venture industry deploys across every sector. Atomico State of European Tech; Dealroom; Invest Europe.",
+          "The funding gap, correctly framed: European VC deploys ~$60-80bn/yr (annual flow, distinct from ~$430bn AUM); the US invests more in AI alone in a single year than Europe’s venture industry deploys across every sector. Atomico State of European Tech; Dealroom; Invest Europe.",
         ]}
       />
     </section>
