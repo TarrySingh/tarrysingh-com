@@ -187,6 +187,18 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          The leverage runs in more than one direction, and 2026 made that vivid. ASML began shipping its
+          next-generation <Sq>High-NA EUV</Sq> machines &mdash; at around <Sq>$350 million each</Sq>, the
+          most expensive commercial tools ever built &mdash; deepening the dependence of every advanced
+          chipmaker on one Dutch firm. But China answered the export controls with leverage of its own,
+          throttling exports of <Sq>gallium and germanium</Sq>, raw materials the chip and defence
+          industries cannot do without, until European prices spiked several-fold. The semiconductor war is
+          a war of chokepoints, and Europe sits astride the single most important one &mdash; which is
+          precisely why it has so little freedom to act. To hold the decisive node is also to become the
+          decisive target.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
