@@ -130,6 +130,20 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          There is a particularly cruel edge to this for Europe, because the one corner of software the
+          continent genuinely leads is exactly the corner the accelerant threatens first.
+          Europe&rsquo;s enterprise-software champions &mdash; <Sq>SAP</Sq>, the German giant, and the
+          per-seat business model it exemplifies &mdash; sell software by the user, by the month. But when a
+          frontier model can do the data extraction, the support reply or the junior-developer task for a
+          few cents of tokens, the per-seat fee starts to look like a toll the customer can route around,
+          and the defensible ground migrates up to the things Europe does <em>not</em> own: the frontier
+          model, the chips, the distribution. To feel the asymmetry that enforces it, hold one number in
+          mind &mdash; a single US hyperscaler&rsquo;s annual capital budget now exceeds the entire yearly
+          wage bill of a mid-sized European country&rsquo;s AI workforce. You cannot out-hire, out-build or
+          out-spend that from a standing start, not without first deciding to try.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
