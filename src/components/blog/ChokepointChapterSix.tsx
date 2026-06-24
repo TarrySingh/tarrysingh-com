@@ -225,6 +225,20 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          And then, in 2025, something genuinely new happened: for the first time in a generation the tide
+          briefly slackened &mdash; not because Europe grew more attractive, but because America grew less
+          so. As the new US administration cut research budgets and leaned on universities, applications
+          from US-based scientists to European programmes surged: France&rsquo;s hastily-launched <Sq>&ldquo;Safe
+          Place for Science&rdquo;</Sq> drew hundreds of American applicants in its first round, the European
+          Research Council reported a sharp jump in interest from across the Atlantic, and Europe found
+          itself, improbably, a refuge. It is the essay&rsquo;s most hopeful accident: proof that talent
+          flows toward stability and freedom and funding, and that these are things Europe, when it chooses,
+          can still offer better than almost anyone. The window is real. Whether Europe funds it at the scale
+          required, or lets it close again as the American panic subsides, is exactly the test of nerve this
+          essay keeps returning to.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
