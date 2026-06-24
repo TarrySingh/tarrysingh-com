@@ -311,6 +311,20 @@ export function ChokepointChapterTwelve() {
 
       <Prose>
         <P>
+          And the proof is not only in the grand pan-European projects; it is in the pockets where the
+          continent already behaves the way the whole of it could. <Sq>Sweden</Sq>, a country of ten million
+          people, has produced some <Sq>forty unicorns</Sq> &mdash; the highest count per head in Europe, with
+          the alumni networks behind Spotify and Klarna still minting more. <Sq>Estonia</Sq>, smaller still,
+          has the densest startup ecosystem in Europe per capita and the second-highest unicorn rate per head
+          in the world after Israel, built on a state that digitised itself completely. These are not resource
+          miracles; they are the ordinary output of good education, early capital, light rules and a decision
+          to treat technology as a national project. Where a European place has chosen to compete, a European
+          place has competed. The deficit was never in the genes. It is in the choice.
+        </P>
+      </Prose>
+
+      <Prose>
+        <P>
           And Europe need not even invent the playbook, because three other latecomers wrote it in living
           memory. <Sq>Taiwan</Sq> went from licensing an obsolete American chip process in 1973 to spinning
           out <Sq>TSMC</Sq> &mdash; today the maker of ninety per cent of the world&rsquo;s most advanced
