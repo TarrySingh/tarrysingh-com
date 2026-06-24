@@ -220,6 +220,19 @@ export function ChokepointPrologue() {
         </P>
 
         <P>
+          And the abstraction has a price that lands in ordinary lives. The average American household now
+          has a real income something like <Sq>a third higher</Sq> than the average European one, a gap that
+          has widened steadily as the productivity lines diverged &mdash; which is to say that the chokepoint
+          paradox is not only a story about companies and cap tables but about the slow erosion of what a
+          European salary can buy relative to an American one. For now it is masked by Europe&rsquo;s genuine
+          advantages: the healthcare, the cities, the security, the holidays, the sense that life is for more
+          than work. Those are real, and worth defending. But a continent cannot indefinitely fund a superior
+          quality of life on the proceeds of an economy it is steadily ceding, and the bill for choosing
+          comfort over dynamism, decade after decade, does not disappear. It is merely deferred &mdash; and
+          handed, with the rest of the ledger, to the next generation.
+        </P>
+
+        <P>
           The drift shows up most starkly where the money is finally counted: the stock exchange. Across
           the fifteen years to 2025, London hemorrhaged hundreds of listings toward New York and Nasdaq;
           when Sweden&rsquo;s <Sq>Klarna</Sq> finally went public in 2025 it chose the New York Stock
