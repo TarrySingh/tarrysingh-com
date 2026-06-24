@@ -4,7 +4,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, TrendingUp, Globe, Cpu, BarChart3, Bot, Home, Network, Gauge } from "lucide-react"
 import coverPlanisphere from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
-import chipPlate from "@proposals/MEMPHIS/plates/plate-I-chip.png"
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
 import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
 
@@ -330,14 +329,14 @@ const Landing = () => {
                 lineHeight: 1.5,
               }}
             >
-              A ~45,000-word field guide and two frontier deep-tech
-              proposals — rendered as museum-grade interactive illustration
-              from a studio that takes its time.
+              A ~45,000-word field guide and a frontier deep-tech proposal —
+              two plates from a studio that takes its time, with more
+              inside.
             </p>
           </div>
 
           {/* feature cards */}
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
+          <div className="mt-14 grid gap-8 lg:grid-cols-2">
             {/* flagship: the field guide */}
             <Link
               href="/synaptic/chokepoint-paradox"
@@ -524,107 +523,6 @@ const Landing = () => {
                   Twelve interactive plates · the full proposal · four
                   partner pages · multi-scale neuromodulation transposed
                   from cortex to code.
-                </p>
-              </div>
-            </Link>
-
-            <Link
-              href="/synaptic"
-              className="group block rounded-2xl border p-6 transition-opacity hover:opacity-95"
-              style={{
-                borderColor: "rgba(232,184,122,0.32)",
-                background:
-                  "linear-gradient(180deg, rgba(20,34,59,0.85), rgba(12,24,40,0.92))",
-                backdropFilter: "blur(8px)",
-                WebkitBackdropFilter: "blur(8px)",
-              }}
-            >
-              <div
-                className="relative aspect-[4/5] w-full overflow-hidden rounded-xl"
-                style={{ background: "#0c1828" }}
-              >
-                <Image
-                  src={chipPlate}
-                  alt="MEMPHIS · the chip — hippocampal-memristive plate of the Synaptic Cartography series."
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  placeholder="blur"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  fill
-                />
-                {/* interactive plate hover affordance */}
-                <div
-                  className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3"
-                >
-                  <span
-                    className="font-mono uppercase transition-all duration-300 group-hover:tracking-[0.32em]"
-                    style={{
-                      color: "rgba(245,232,204,0.6)",
-                      fontSize: "10px",
-                      letterSpacing: "0.28em",
-                      textShadow: "0 1px 6px rgba(0,0,0,0.55)",
-                    }}
-                  >
-                    Interactive plate
-                  </span>
-                  <span
-                    className="font-mono uppercase transition-opacity duration-300"
-                    style={{
-                      color: "#ffd296",
-                      fontSize: "12px",
-                      letterSpacing: "0.32em",
-                      textShadow: "0 1px 6px rgba(0,0,0,0.6)",
-                    }}
-                  >
-                    Enter →
-                  </span>
-                </div>
-              </div>
-              <div className="mt-6">
-                <span
-                  className="text-[11px] font-mono uppercase"
-                  style={{
-                    color: "rgba(232,184,122,0.75)",
-                    letterSpacing: "0.3em",
-                  }}
-                >
-                  Plate I · the chip · May 2026
-                </span>
-                <h3
-                  className="mt-3"
-                  style={{
-                    fontFamily: "'Gloock', serif",
-                    fontSize: "2rem",
-                    letterSpacing: "0.06em",
-                    color: "#f6ead0",
-                    lineHeight: 1,
-                  }}
-                >
-                  MEMPHIS{" "}
-                  <span style={{ color: "#e8b87a" }}>→</span>
-                </h3>
-                <p
-                  className="mt-3"
-                  style={{
-                    fontFamily: "'IBM Plex Serif', Georgia, serif",
-                    fontStyle: "italic",
-                    fontSize: "0.95rem",
-                    color: "#ffd296",
-                    lineHeight: 1.5,
-                  }}
-                >
-                  A hippocampal · memristive · neuromorphic architecture
-                </p>
-                <p
-                  className="mt-3"
-                  style={{
-                    color: "rgba(196,210,225,0.85)",
-                    fontSize: "0.92rem",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  Five interactive plates · STDP window · CA3 ↔ CA1
-                  circuit · memory and computation co-localised at
-                  &lt; 10 fJ per synaptic event.
                 </p>
               </div>
             </Link>
