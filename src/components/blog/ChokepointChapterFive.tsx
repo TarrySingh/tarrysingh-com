@@ -97,9 +97,11 @@ export function ChokepointChapterFive() {
       <Prose>
         <P>
           Then there is the frontier that matters most for the next decade, where Europe&rsquo;s flag is
-          carried by a single company: <Sq>Mistral</Sq>, valued around <Sq>&euro;14 billion</Sq>. It is a
-          genuinely good lab. It is also a fraction &mdash; a small fraction &mdash; of the American
-          frontier labs it is meant to rival, which raise at valuations well into the hundreds of billions.
+          carried by a single company: <Sq>Mistral</Sq>, valued around <Sq>&euro;20 billion</Sq> after its
+          2026 round. It is a genuinely good lab. It is also a fraction &mdash; a small fraction &mdash; of the
+          American frontier labs it is meant to rival, which are valued well into the hundreds of billions of
+          dollars; Anthropic alone is on the order of <Sq>forty times</Sq> its size, and Mistral trains on
+          rented Nvidia silicon, part-owned by ASML.
           Europe&rsquo;s entire answer to OpenAI, Anthropic and Google DeepMind is one company worth less
           than those labs raise in a single round. You can admire Mistral enormously and still see that one
           plucky challenger against a phalanx of giants is not a sovereign AI capability; it is a brave
