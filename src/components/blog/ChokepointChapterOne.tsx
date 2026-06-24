@@ -292,6 +292,16 @@ export function ChokepointChapterOne() {
         </P>
 
         <P>
+          One number captures the whole Dutch paradox. The Netherlands has the{" "}
+          <Sq>highest density of AI professionals in Europe</Sq> &mdash; nearly eleven for every ten
+          thousand people &mdash; and almost no AI champions to show for it. A country that ranks sixth in
+          the world for overall competitiveness and third for infrastructure also sits far down the table
+          for the digital-skills depth and scale-up capital that turn dense talent into companies. The
+          brilliance is present and measurable; the machine to compound it into ownership is the thing that
+          is missing &mdash; and its absence is a choice, not a shortage of clever people.
+        </P>
+
+        <P>
           Hold the Netherlands in your mind now as a high-resolution scan of the patient, because every
           symptom you have just seen &mdash; the savings that flee, the scale-ups that emigrate, the
           talent priced to leave, the strategy that resets every four years, the grid that cannot carry
