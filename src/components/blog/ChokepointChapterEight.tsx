@@ -259,6 +259,20 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          The most basic test of a war economy is whether it can make enough shells, and Europe has spent
+          three years discovering, humiliatingly, that it could not. At the start of the Ukraine war the
+          entire European Union struggled to produce in a year what Russia turned out in months; only now,
+          after a frantic build-out, is NATO&rsquo;s monthly artillery-ammunition target &mdash; around{" "}
+          <Sq>267,000 shells</Sq> &mdash; drawing level with Russia&rsquo;s output, and only because firms
+          like Germany&rsquo;s <Sq>Diehl</Sq> are doubling missile lines and Rheinmetall is building new
+          plants. Meanwhile France, the EU&rsquo;s only nuclear power, moved in 2026 to harden its own
+          deterrent and stopped disclosing the size of its arsenal &mdash; a quiet acknowledgement that the
+          American nuclear umbrella over Europe could no longer simply be assumed. A continent that has to
+          re-learn how to make ammunition and re-examine who guarantees its ultimate security is a continent
+          discovering, late and at speed, just how much of its own defence it had quietly outsourced.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
