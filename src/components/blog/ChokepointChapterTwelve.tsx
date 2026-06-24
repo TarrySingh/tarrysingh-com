@@ -343,6 +343,22 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          One of the more elegant ideas to come out of the soul-searching is Enrico Letta&rsquo;s, who
+          proposed that Europe needs a <Sq>&ldquo;fifth freedom&rdquo;</Sq> to sit beside the famous four of
+          goods, services, capital and people: the free movement of <em>research, knowledge, innovation and
+          education</em> across the continent&rsquo;s borders. It sounds abstract until you notice how
+          un-free those things currently are &mdash; a discovery made in one member state, a researcher
+          trained in another, a spin-out incorporated in a third, each crossing borders a single market was
+          supposed to have erased decades ago. The fifth freedom is really just the recognition that
+          Europe&rsquo;s greatest untapped asset is not a pot of money but the ability to let its own
+          brilliance circulate and combine without friction. It is, like almost everything in the
+          prescription, less a matter of building something new than of finally removing the obstacles Europe
+          long ago, and quite deliberately, built around itself.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
