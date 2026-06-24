@@ -247,6 +247,18 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          To feel how far the frontier has run, look at a single American cluster. Elon Musk&rsquo;s xAI
+          built a data centre in Memphis it calls <Sq>Colossus</Sq>, scaled toward two gigawatts of power
+          and on the order of <Sq>half a million Nvidia GPUs</Sq> &mdash; one company, one site, commanding
+          more concentrated AI compute than entire European nations, stood up in months. There is nothing in
+          Europe remotely like it, and on current trajectories there will not be: the continent&rsquo;s
+          flagship answer, Mistral&rsquo;s sovereign cloud outside Paris, is measured in tens of megawatts
+          and thousands of chips &mdash; a creditable startup against an industrial juggernaut. The gap is
+          not that Europe lacks AI ambition. It is that its largest ambition is roughly the size of an
+          American afterthought.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
