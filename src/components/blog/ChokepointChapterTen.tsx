@@ -298,6 +298,19 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          The dependence reaches even the information Europeans use to govern themselves. The continent has
+          no search engine, no social network, no app store of any scale &mdash; so the news its citizens
+          read, the debates they have and increasingly the facts they believe are mediated by American
+          platforms whose incentives are not European. When Google&rsquo;s AI-generated answers began keeping
+          users from clicking through, European publishers watched their traffic fall by roughly a third and
+          their viability, in the Commission&rsquo;s own words, come &ldquo;at risk in nearly all member
+          states.&rdquo; When the owner of <Sq>X</Sq> chose to throw his platform&rsquo;s weight behind a
+          far-right party before a German election, there was no European venue of comparable reach to
+          counterbalance it. A continent can write all the content rules it likes; if it does not own the
+          pipes the information flows through, it does not, in the end, control its own public square.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
