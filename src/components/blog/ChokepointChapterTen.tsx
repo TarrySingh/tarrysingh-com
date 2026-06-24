@@ -217,6 +217,19 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          And the squeeze comes from two directions at once, which is the part that makes it feel
+          inescapable. If the United States owns the top of the technology stack &mdash; the platforms, the
+          frontier models, the cloud &mdash; China increasingly owns the bottom: it refines something like{" "}
+          <Sq>92% of the world&rsquo;s rare earths</Sq> and produces the overwhelming majority of the
+          gallium and germanium that chips, sensors and weapons require, and it has already shown it will
+          throttle those exports as leverage. Europe sits in the middle, dependent on America for the
+          software that runs its economy and on China for the materials &mdash; and increasingly the
+          manufactured goods, the electric cars, the solar panels, the batteries &mdash; that fill it. To be
+          a chokepoint empire is to be feared. To be caught between two of them, holding decisive leverage
+          over neither, is to be the place where the squeeze is felt.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
