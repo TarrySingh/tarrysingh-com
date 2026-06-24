@@ -252,6 +252,18 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          The gap shows up before the first job, in what graduates even imagine doing. Only about <Sq>15% of
+          European PhDs</Sq> go on to found or join a startup, against something like <Sq>45% in the United
+          States</Sq>; the European doctorate still points, by default, toward the university, the public lab
+          or the large incumbent, not the risky new company. And when Europeans do try to build, roughly{" "}
+          <Sq>seven in ten founders</Sq> name the regulatory environment as a brake on expansion. So the loss
+          compounds at every stage: a system that trains brilliantly, channels its brilliance away from
+          enterprise, taxes the equity that would reward it, and regulates the scaling that would retain it
+          &mdash; and then wonders where its founders went. They went to the place that does the opposite of
+          all four things, and felt, on arrival, as though they had been let out of a smaller room.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
