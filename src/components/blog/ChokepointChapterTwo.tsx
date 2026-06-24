@@ -235,6 +235,18 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          The price of lock-in became impossible to ignore the moment a vendor decided to test it. When
+          Broadcom acquired VMware, the virtualisation software a great share of European data centres run
+          on, it raised prices on some European cloud providers by figures variously reported between{" "}
+          <Sq>eight hundred and a thousand per cent</Sq> &mdash; an increase you can only impose on
+          customers who have nowhere else to go. The shock did, at least, concentrate minds: France moved its
+          national <Sq>Health Data Hub</Sq> off Microsoft Azure to the homegrown provider Scaleway, and the
+          German retail group Schwarz poured billions into its own sovereign cloud. The lesson European
+          institutions are learning, expensively, is the oldest one in commerce: a supplier you cannot leave
+          is not a supplier. It is a landlord.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
