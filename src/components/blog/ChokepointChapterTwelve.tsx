@@ -259,6 +259,19 @@ export function ChokepointChapterTwelve() {
           choice, which means every one of them reversible.
         </P>
 
+        <P>
+          The cost of continuing as we are is not abstract, and Draghi named it plainly: without radical
+          change, he warned, Europe faces a <Sq>&ldquo;slow agony&rdquo;</Sq> of decline, an
+          &ldquo;existential challenge&rdquo; to the European model itself. The arithmetic agrees. On current
+          trajectories Europe&rsquo;s share of world output, already down to around a seventh, slides{" "}
+          <Sq>below a tenth by 2050</Sq> &mdash; a continent shrinking from a pole of the world economy into
+          a museum of it, prosperous and admired and increasingly beside the point. Jean Monnet, who built
+          the union out of the rubble of the last time Europe destroyed itself, left a line that reads
+          differently now: there is, he wrote, &ldquo;no future for the people of Europe other than in
+          union.&rdquo; He meant it as the path out of war. It is turning out to be the path out of decline
+          as well &mdash; and Europe keeps, politely, declining to take it.
+        </P>
+
         <PullQuote>
           A key in the pocket opens nothing. The whole of Europe&rsquo;s tragedy, and the whole of its
           hope, is that the lock was never the problem. The hand was.
