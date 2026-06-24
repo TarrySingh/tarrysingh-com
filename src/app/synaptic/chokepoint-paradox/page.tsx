@@ -2,7 +2,6 @@ import type { ReactNode } from "react"
 
 import { ChokepointPrologue } from "@/components/blog/ChokepointPrologue"
 import { OvertureDashboard } from "@/components/blog/OvertureDashboard"
-import { FromScratchGiants } from "@/components/blog/FromScratchGiants"
 import { ChokepointChapterOne } from "@/components/blog/ChokepointChapterOne"
 import { ChokepointChapterTwo } from "@/components/blog/ChokepointChapterTwo"
 import { ChokepointChapterThree } from "@/components/blog/ChokepointChapterThree"
@@ -12,6 +11,7 @@ import { ChokepointChapterSix } from "@/components/blog/ChokepointChapterSix"
 import { ChokepointChapterSeven } from "@/components/blog/ChokepointChapterSeven"
 import { ChokepointChapterEight } from "@/components/blog/ChokepointChapterEight"
 import { ChokepointChapterNine } from "@/components/blog/ChokepointChapterNine"
+import { ChokepointChapterTen } from "@/components/blog/ChokepointChapterTen"
 
 /** A wide, breakout-neutralised stage for one instrument. `.cp-gallery`
  *  cancels the PlateFrame blog-column breakout margins. */
@@ -20,35 +20,6 @@ function Stage({ children, max = 1160 }: { children: ReactNode; max?: number }) 
     <div className="cp-gallery mx-auto w-full px-2 sm:px-4" style={{ maxWidth: max }}>
       {children}
     </div>
-  )
-}
-
-/** A gallery room: a centred kicker + short intro, then its instrument(s). */
-function Room({ kicker, intro, children }: { kicker: string; intro: ReactNode; children: ReactNode }) {
-  return (
-    <section className="mt-28 sm:mt-32">
-      <div className="mx-auto max-w-2xl text-center">
-        <p
-          style={{
-            fontFamily: "var(--font-mono), monospace",
-            fontSize: 12,
-            letterSpacing: "0.2em",
-            color: "var(--cp-wonder-hi, #f4cd86)",
-          }}
-        >
-          {kicker}
-        </p>
-        <p
-          className="mt-4 text-lg leading-relaxed"
-          style={{ color: "var(--cp-muted, rgba(238,242,255,0.72))", fontFamily: "var(--font-serif), serif" }}
-        >
-          {intro}
-        </p>
-      </div>
-      <div className="mt-10">
-        <Stage>{children}</Stage>
-      </div>
-    </section>
   )
 }
 
@@ -134,13 +105,8 @@ export default function ChokepointParadoxPage() {
       {/* CHAPTER 9 — prose + V30/V31/V32, in essay flow */}
       <ChokepointChapterNine />
 
-      {/* V34 — the from-scratch giants, now vs the next wave */}
-      <Room
-        kicker="X · The Quarter-Trillion Tribute"
-        intro="Count the companies built from scratch in the last 50 years that crossed $10bn. America mints them by the hundred; “under 50” quietly disqualifies most of Europe. Now flip to the next wave — the AI and space cohort — and watch the same machine run again."
-      >
-        <FromScratchGiants />
-      </Room>
+      {/* CHAPTER 10 — prose + V33 / V34 treemap / V35 / V36, in essay flow */}
+      <ChokepointChapterTen />
 
       <p
         className="mx-auto mt-24 max-w-xl text-center text-[12px]"
@@ -150,7 +116,7 @@ export default function ChokepointParadoxPage() {
           letterSpacing: "0.08em",
         }}
       >
-        ◷ Flagship in assembly — 5 of 50 instruments, ~45,000 words to come. Built one instrument at a time.
+        ◷ Flagship in assembly — 10 of 12 chapters, ~37 instruments live; deepening to ~45,000 words. Built one instrument at a time.
       </p>
     </main>
   )
