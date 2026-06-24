@@ -191,6 +191,21 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          And here, more than anywhere in the essay, a genuine European industry is being born in real time.
+          A wave of defence-technology start-ups has erupted out of Germany in particular: <Sq>Helsing</Sq>
+          raising at around eighteen billion dollars, <Sq>Quantum Systems</Sq> and the drone-maker{" "}
+          <Sq>Stark</Sq> and the autonomous-vehicle firm <Sq>ARX</Sq> all scaling fast, many of them
+          explicitly engineering their supply chains to be free of American components so they qualify under
+          the &ldquo;buy European&rdquo; rules. The procurement decisions are starting to follow: Denmark
+          chose the Franco-Italian <Sq>SAMP/T</Sq> air-defence system over the American Patriot in 2025, and
+          the Franco-German land-systems giant <Sq>KNDS</Sq> lined up a twenty-billion-euro listing. None of
+          this undoes the F-35 dependence or the software question. But it is the most convincing evidence in
+          the whole essay that, when the fear is sharp enough and the money real enough, Europe can still
+          grow champions of its own &mdash; which only sharpens the question of why it does so almost nowhere
+          else.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
