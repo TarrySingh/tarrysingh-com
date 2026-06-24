@@ -155,32 +155,17 @@ export default function SynapticPage() {
           href="/synaptic/chokepoint-paradox"
           className="syn-chokepoint group mb-14 block focus-visible:outline-none"
         >
-          <figure>
+          <figure className="grid items-center gap-10 lg:grid-cols-[minmax(0,460px)_1fr]">
             <div
-              className="relative overflow-hidden rounded-[var(--radius-card)]"
+              className="overflow-hidden rounded-[var(--radius-card)]"
               style={{
-                aspectRatio: "16 / 9",
                 boxShadow:
                   "0 0 0 1px rgba(70,199,214,0.18), 0 22px 70px rgba(0,0,0,0.5)",
               }}
             >
-              <ChokepointPlate className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-[1.02]" />
-              <div className="pointer-events-none absolute bottom-5 left-6 right-6 flex items-end justify-between gap-3">
-                <span
-                  className="syn-mono uppercase transition-all duration-300 group-hover:tracking-[0.34em]"
-                  style={{ color: "rgba(245,232,204,0.62)", fontSize: "10px", letterSpacing: "0.28em" }}
-                >
-                  ~45,000 words · ~40 interactive instruments
-                </span>
-                <span
-                  className="syn-mono uppercase"
-                  style={{ color: "#e8b54a", fontSize: "12px", letterSpacing: "0.32em" }}
-                >
-                  Enter →
-                </span>
-              </div>
+              <ChokepointPlate className="block h-auto w-full transition-transform duration-700 group-hover:scale-[1.01]" />
             </div>
-            <figcaption className="grid gap-6 pt-7 lg:grid-cols-[1.5fr_1fr] lg:items-start">
+            <figcaption>
               <div>
                 <SmallCaps>Plate IV · the field guide</SmallCaps>
                 <h3
