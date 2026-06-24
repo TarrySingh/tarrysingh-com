@@ -168,6 +168,18 @@ export function ChokepointChapterNine() {
           referee in a game it no longer fields a team in.
         </P>
 
+        <P>
+          The newest rules sharpen the irony to a point. The AI Act&rsquo;s toughest tier, its obligations
+          for &ldquo;systemic-risk&rdquo; models, is triggered by a training-compute threshold so high that
+          essentially <Sq>only American models</Sq> &mdash; GPT-class, Gemini, Claude &mdash; cross it;
+          Europe is, in effect, writing the operating manual for machines it does not build. Meanwhile the
+          compliance bill lands hardest on the small: cookie-consent and data rules can cost a European
+          SME tens of thousands of euros a year, and enforcement keeps escalating &mdash; Google alone was
+          fined another <Sq>&euro;325 million</Sq> in 2025 over its ad and cookie practices. The giants pay
+          it as a toll and continue; the startup pays it as a tax it can barely afford, on its way to losing
+          anyway. The rulebook is, with grim consistency, regressive at every level.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
