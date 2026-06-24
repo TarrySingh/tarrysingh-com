@@ -23,7 +23,7 @@ function Figure({ children, max = 1100 }: { children: ReactNode; max?: number })
  */
 export function ChokepointChapterThree() {
   return (
-    <section>
+    <section id="chapter-3">
       <ChapterMark kicker="Chapter Three · The Standing Order" title="How Europe Funds Its Own Defeat" />
 
       <Prose>
