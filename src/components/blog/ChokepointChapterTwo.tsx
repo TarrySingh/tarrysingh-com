@@ -212,6 +212,18 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          There are, to be fair, signs of a European cloud worth rooting for. <Sq>OVHcloud</Sq> has begun
+          winning real public-sector and regulated-industry business on the explicit promise of immunity
+          from foreign law; a coalition of European providers calling itself <Sq>Euclidia</Sq> emerged to
+          argue, pointedly, that &ldquo;sovereign&rdquo; should mean European-owned and European-controlled,
+          not merely American technology in a local building. These are the right arguments, made by the
+          right people. But they are made from a market position of around fifteen per cent and slipping,
+          against rivals who spend more on data centres in a quarter than the European challengers are worth.
+          The will is finally there in places. The scale is not &mdash; and in cloud, as in chips, scale is
+          the whole game.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
