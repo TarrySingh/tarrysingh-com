@@ -166,6 +166,21 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          And there are real things to back, named and fundable today, if the capital would only turn up.
+          Draghi&rsquo;s own report called for a <Sq>&euro;50-billion European Deep Tech Fund</Sq>; the seeds
+          it would water already exist. <Sq>Axelera</Sq> and Germany&rsquo;s <Sq>Black Semiconductor</Sq> are
+          building European AI silicon; <Sq>IQM</Sq> in Finland and <Sq>Pasqal</Sq> in France are among the
+          world&rsquo;s leading quantum-computing firms; a <Sq>EuroStack</Sq> movement has published a
+          manifesto for a modular, Europe-owned computing stack from chips to cloud to applications. None of
+          these is a fantasy; each is a company or a coalition with customers and a roadmap, starved only of
+          the patient, late-stage capital Europe exports by the hundreds of billions every year. The way out
+          is not a mystery waiting to be discovered. It is a decision, already drafted and costed, waiting to
+          be funded from savings that already exist.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
