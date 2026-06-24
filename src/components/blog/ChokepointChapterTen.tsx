@@ -285,6 +285,19 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          The Karim Khan affair had a sequel that is the most hopeful thing in the chapter. In October 2025
+          the International Criminal Court &mdash; having watched its prosecutor&rsquo;s Microsoft account go
+          dark under US sanctions &mdash; formally <Sq>migrated off Microsoft entirely</Sq>, moving to{" "}
+          <Sq>openDesk</Sq>, an open-source suite built by Germany&rsquo;s public Centre for Digital
+          Sovereignty. It is a small institution and a small migration, technically painful and far from
+          complete. But it is the proof of concept the whole essay has been circling: that when the threat
+          becomes concrete enough, the supposedly immovable dependence <em>can</em> be moved &mdash; that
+          &ldquo;sovereign,&rdquo; open, European infrastructure is not a fantasy but a working alternative,
+          waiting only for the will, and the fright, to adopt it. The tribute is enormous. It is also, as the
+          ICC has just demonstrated, cancellable.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
