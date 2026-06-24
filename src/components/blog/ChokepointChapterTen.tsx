@@ -179,6 +179,19 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          Even the &ldquo;sovereign&rdquo; answers keep routing back to the same firms. Germany&rsquo;s
+          flagship sovereign-cloud project, <Sq>Delos Cloud</Sq>, is built on Microsoft Azure; the
+          much-trumpeted <Sq>Microsoft EU Data Boundary</Sq>, which promised European data would stay in
+          Europe, turned out on inspection to carry documented carve-outs letting engineers outside the EU
+          reach support data. And the dependence has a price as well as a politics: when Broadcom bought
+          VMware, the virtualisation software a great deal of European enterprise runs on, and sharply raised
+          its prices, a coalition of European cloud firms filed a formal antitrust complaint &mdash; because
+          they had nothing else to switch to. &ldquo;Sovereign,&rdquo; in practice, keeps collapsing back
+          into &ldquo;American, with a European label and a reassuring clause&rdquo; &mdash; and the clause
+          is only as good as the day Washington decides otherwise.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
