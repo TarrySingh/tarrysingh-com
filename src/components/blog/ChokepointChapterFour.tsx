@@ -145,6 +145,25 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          Look closely at what Europe is actually building with its chip money and the ambition shrinks
+          further. The one major new fab to break ground is <Sq>ESMC in Dresden</Sq> &mdash; a
+          ten-billion-euro joint venture led by Taiwan&rsquo;s TSMC with Bosch, Infineon and NXP &mdash;
+          and it is slated to produce <Sq>28- and 22-nanometre</Sq> chips when it opens around 2027:
+          competent, useful, and roughly a decade behind the leading edge ASML&rsquo;s own machines make
+          possible elsewhere. Europe builds the tool that prints the most advanced chips on Earth, then
+          builds itself a factory for the chips of 2015.
+        </P>
+
+        <P>
+          And the money behind the ambition is a study in fragmentation. The Chips Act&rsquo;s headline is{" "}
+          <Sq>&euro;86 billion</Sq>, but the European Commission directly controls only about{" "}
+          <Sq>&euro;4.5 billion of it</Sq> &mdash; barely five per cent &mdash; with the rest scattered
+          across member states under no obligation even to report progress on what they fund. A continental
+          strategy run as twenty-seven national cheque-books is how you arrive at a 20%-of-the-world target
+          that the Commission&rsquo;s own forecasts now expect to reach about <Sq>11.7%</Sq> by 2030.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
