@@ -206,13 +206,15 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
-          The most candid admission of the whole dynamic came from the very top. In 2025 the President of the
-          European Commission publicly committed Europe to invest some <Sq>$600 billion</Sq> in the United
-          States over the following years, as part of a trade understanding struck under tariff pressure. Set
-          against an essay&rsquo;s worth of complaint about capital draining west, it is a remarkable thing
-          for Europe&rsquo;s chief executive to promise &mdash; the wealth transfer reframed not as an
-          accident of markets but as an explicit, negotiated, headline commitment. When the pump is written
-          into the deal, it has stopped being a leak. It has become the policy.
+          The most candid admission of the whole dynamic was written into a trade deal. As part of the 2025
+          EU&ndash;US understanding struck under tariff pressure, the European side put a figure of some{" "}
+          <Sq>$600 billion</Sq> of European investment <em>into</em> the United States by 2029 on the table
+          &mdash; framed, precisely, as the &ldquo;interest&rdquo; of European companies rather than a binding
+          pledge the Commission could compel. The hedge matters and cuts both ways: Brussels can no more order
+          private capital across the Atlantic than order it to stay home. But that a transatlantic deal could
+          even be <em>framed</em> around hundreds of billions of European money flowing west &mdash; offered
+          as a concession rather than resisted as a loss &mdash; tells you how completely the direction of the
+          current is now simply assumed. The leak is no longer hidden. It has become a bargaining chip.
         </P>
 
         <P>
@@ -341,7 +343,7 @@ export function ChokepointChapterThree() {
           "Enrico Letta, “Much more than a market” (EU Council, Apr 2024): €33tn EU private financial wealth; ~€300bn/yr leaves the EU (largely to the US).",
           "EU Savings & Investments Union (European Commission, Mar 2025): ~€10tn of household savings in bank deposits; ~70% of EU household savings in cash/deposits (vs ~30% US).",
           "Household participation gap: ~17% of EU household financial assets in securities vs ~43% in the US (~9% Germany, ~5% France); the most popular EU retail ETF tracks an all-world index ~two-thirds US-weighted and tech-tilted. Brussels Morning; provider data, 2026.",
-          "The transfer made explicit: under the 2025 EU–US trade understanding, the Commission committed Europe to ~$600bn of investment in the US over the following years; equity-fund flows diverged ~€540bn toward US funds (2009–2026). Intereconomics; Morningstar.",
+          "The transfer made explicit: under the 2025 EU–US trade understanding, EU companies expressed interest in ~$600bn of investment in the US by 2029 (non-binding interest, not a Commission pledge); equity-fund flows diverged ~€540bn toward US funds (2009–2026). Intereconomics; Morningstar.",
           "Norges Bank IM (~$2.2tn, Europe’s largest capital pool): CEO Tangen warned of “unprecedented” big-tech concentration; biggest positions in Apple & Microsoft; the fund fell 1.9% in Q1 2026 as US tech slid. NBIM; AMWatch.",
           "European scale-up funding cliff (Invest Europe / Dealroom 2025; Letta report): European capital leads ~78% of early-stage but ~18% of late-stage rounds; ~82% of scale-up rounds foreign-led. Scaleup Europe Fund (~€5bn, EQT-managed, first close autumn 2026).",
           "Champion captures (company filings/announcements): Klarna NYSE listing, Sept 2025; Wise primary listing moved to Nasdaq, May 2026 (LSE secondary retained); Arm — SoftBank-owned, Nasdaq-listed; DeepMind — a Google division.",
