@@ -255,9 +255,9 @@ export function ChokepointChapterTwo() {
 
         <P>
           The race is now being run in concrete, and the scoreboard is instructive. On the European side,
-          Deutsche Telekom is standing up an industrial-AI cloud in Munich, and the retail group Schwarz is
-          pouring some eleven billion euros into <Sq>STACKIT</Sq>, complete with a planned cluster of a
-          hundred thousand AI chips &mdash; serious, sovereign, German-owned bets. On the other side, Amazon
+          beyond Deutsche Telekom&rsquo;s Munich build the retail group Schwarz is pouring some eleven billion
+          euros into <Sq>STACKIT</Sq>, complete with a planned cluster of a hundred thousand AI chips
+          &mdash; serious, sovereign, German-owned bets. On the other side, Amazon
           alone committed nearly ten billion euros to a single expanded region around Frankfurt and launched
           a separate &ldquo;<Sq>European Sovereign Cloud</Sq>&rdquo; staffed by Europeans &mdash; a clever
           move that answers the sovereignty objection in marketing while keeping the technology, and the
