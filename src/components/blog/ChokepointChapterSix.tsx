@@ -213,6 +213,18 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          The pattern even shapes Europe&rsquo;s rare successes. <Sq>Arthur Mensch</Sq>, the founder of
+          Mistral &mdash; the closest thing the continent has to a frontier AI champion &mdash; did not
+          build it straight out of a European lab. He spent years at <Sq>Google DeepMind</Sq> in Paris
+          first, learning the craft inside an American hyperscaler, before leaving in 2023 to start
+          something French. So even the bright spot runs on talent Europe first had to lose to the Americans
+          and then win back; the training that mattered most happened on a US payroll, on European soil, in
+          a lab Europe does not own. The continent can, occasionally, reclaim its people &mdash; but it does
+          so one founder at a time, against a tide running the other way by the tens of thousands, and then
+          calls the rare reversal a triumph rather than the exception that measures the scale of the loss.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
