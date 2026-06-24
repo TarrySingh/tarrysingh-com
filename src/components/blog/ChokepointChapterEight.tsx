@@ -179,6 +179,18 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          And there is one corner of the defence build-out where the gap is not large but near-total. Modern
+          war is becoming software &mdash; drones that target autonomously, battle-management systems that
+          fuse a thousand feeds, the AI layer that increasingly decides faster than any human staff can.
+          American firms are pouring hundreds of billions into the underlying AI; Europe&rsquo;s defence-AI
+          spending, the figure that may matter most by 2035, rounds to a small fraction of that. The
+          continent that worried about depending on American chips and clouds is now, by inattention, on
+          track to depend on American military <em>intelligence</em> software too &mdash; which is exactly
+          why Germany&rsquo;s rejection of Palantir and the rise of Helsing matter far more than their euro
+          values suggest. They are the first refusal to outsource the brain of European defence.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
