@@ -153,6 +153,21 @@ export function ChokepointPrologue() {
         </P>
 
         <P>
+          The roll-call is longer than the famous cases, and quieter. <Sq>Python</Sq>, the programming
+          language that now runs a vast share of the world&rsquo;s data science and AI, was created by a
+          Dutchman, Guido van Rossum, at a research institute in Amsterdam; <Sq>Linux</Sq>, the operating
+          system underneath almost every server and cloud on Earth, was begun by a Finn, Linus Torvalds. The
+          capacitive touchscreen that makes the smartphone possible was prototyped by a Danish engineer at
+          CERN in the early 1970s, decades before Apple scaled it into the iPhone. Europe did not merely
+          invent a few products it failed to keep; it invented several of the <em>foundations</em> the
+          American technology economy is built on, let them go, and now rents the industry they made
+          possible. The divergence that followed is brutal in the aggregate: European output per person has
+          slipped from roughly three-quarters of the American level around 2008 toward something nearer half
+          today &mdash; the compounding result of one economy that scaled its inventions and one that
+          exported them.
+        </P>
+
+        <P>
           The drift shows up most starkly where the money is finally counted: the stock exchange. Across
           the fifteen years to 2025, London hemorrhaged hundreds of listings toward New York and Nasdaq;
           when Sweden&rsquo;s <Sq>Klarna</Sq> finally went public in 2025 it chose the New York Stock
