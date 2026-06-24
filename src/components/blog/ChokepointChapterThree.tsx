@@ -228,6 +228,19 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          The aggregate scale of the shortfall is its own kind of indictment. Atomico&rsquo;s annual survey
+          of European technology reckons the continent <Sq>underfunded its tech sector by some
+          $375 billion</Sq> over the past decade relative to the United States, and would need a trillion
+          dollars more in the next one merely to stop the gap widening. And the exits keep voting with their
+          feet: <Sq>Klarna</Sq> finally went public on the New York Stock Exchange in September 2025 at about
+          fifteen billion dollars &mdash; <em>down two-thirds</em> from its 2021 private peak, yet still
+          chosen over any European venue &mdash; while <Sq>Wise</Sq> moved its primary listing to Nasdaq in
+          2026, keeping London only as a secondary afterthought. Each is a small, rational decision by a
+          single company; together they are a continent quietly conceding that the place where ambition gets
+          financed and rewarded is somewhere else.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
