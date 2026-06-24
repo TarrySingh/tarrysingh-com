@@ -156,6 +156,29 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          And the dependence is deepest exactly where it matters most. European firms run a meaningful slice
+          of ordinary computing on local providers &mdash; but for the <em>strategic</em> workloads, the AI
+          training and inference that will define the next decade, the hyperscalers&rsquo; share runs toward{" "}
+          <Sq>nearly 100%</Sq>, because only they have the scale of accelerated compute to do it. So the
+          tribute is not a flat tax across the whole economy; it is concentrated, and rising, precisely on
+          the frontier. Europe can keep renting yesterday&rsquo;s computing from itself. Tomorrow&rsquo;s it
+          rents, almost entirely, from three American firms &mdash; which makes the quarter-trillion figure
+          not a ceiling but a floor, set to climb as the workloads it cannot yet host at home become the
+          whole game.
+        </P>
+
+        <P>
+          To feel the asymmetry, set the scoreboards side by side. The seven largest American technology
+          companies are together worth more than every listed company in Europe combined, by something like
+          half again. A single one of them, <Sq>Nvidia</Sq>, is worth more than the entire German economy
+          &mdash; one firm, founded in 1993, selling chips designed in California and made in Taiwan on
+          machines built in the Netherlands, now outweighing the industrial heartland of the continent that
+          builds those machines. There is no European company within an order of magnitude. This is not a
+          gap that closes with a good quarter or a clever policy; it is the accumulated interest on twenty
+          years of the standing order, compounded &mdash; and still compounding.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
