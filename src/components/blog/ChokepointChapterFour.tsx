@@ -275,6 +275,19 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          It is worth crediting the genuine progress, because it shows what realistic ambition looks like. In
+          July 2026 <Sq>Infineon</Sq> opened a five-billion-euro fab in Dresden &mdash; on time, even early
+          &mdash; making the power-management chips Europe actually leads in; the silicon-carbide market it
+          serves is forecast to grow nearly tenfold this decade, and European firms hold a real share of it.
+          This is the strategy that can work: build in the segments where Europe is strong, in its own
+          industrial heartland, with patient capital. But hold it against the scoreboard. A five-billion-euro
+          fab for mature power chips is a fine and sensible thing; it is also roughly what a single American
+          hyperscaler spends on AI infrastructure in a week. Europe can win the races it enters seriously. The
+          trouble is that the race which will decide the next economy &mdash; leading-edge logic for AI
+          &mdash; is the one it has, so far, declined to seriously enter.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
