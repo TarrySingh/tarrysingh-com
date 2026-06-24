@@ -1,0 +1,171 @@
+import type { ReactNode } from "react"
+
+import { LockAndKey } from "./LockAndKey"
+import { ReversalLevers } from "./ReversalLevers"
+import { GreenShoots } from "./GreenShoots"
+import { Prose, P, Lead, ChapterMark, PullQuote, Lev, Won, Sq, Sources } from "./chokepoint-prose"
+
+function Figure({ children, max = 1100 }: { children: ReactNode; max?: number }) {
+  return (
+    <div className="cp-gallery mx-auto my-14 w-full px-2 sm:px-4" style={{ maxWidth: max }}>
+      {children}
+    </div>
+  )
+}
+
+/**
+ * CHAPTER 12 — The Key Europe Holds (the constructive turn) + the Coda.
+ * Europe is not poor or weak; it holds the most irreplaceable chokepoint asset
+ * on Earth and a written, costed plan — and has never turned the key. Figures
+ * verified to July 2026 (ASML/IMEC; ECB/BCG; Letta; Draghi audits; Mistral).
+ * V40/V41/V42, then the Coda.
+ */
+export function ChokepointChapterTwelve() {
+  return (
+    <section>
+      <ChapterMark kicker="Chapter Twelve · The Turn" title="The Key Europe Holds" />
+
+      <Prose>
+        <Lead>
+          After eleven chapters of loss it would be reasonable to expect this one to be a eulogy. It is
+          not, and the reason is the single most important fact in the entire essay: Europe is not poor,
+          and it is not weak, and it is not, whatever the figures suggest, out of the game. It is a
+          continent that holds a genuinely extraordinary hand and has spent fifteen years declining to
+          play it. The tragedy of the chokepoint paradox was never that Europe lacks the cards. It is that
+          it holds the one card no one else can replace &mdash; and keeps it in its pocket. This chapter is
+          about the card, the moves, and the first real signs that the continent has finally started to
+          reach for the table.
+        </Lead>
+
+        <P>
+          Begin with the card itself, because it is almost absurdly good. In the small Dutch town of
+          Veldhoven sits <Won>ASML</Won>, a company worth around <Sq>&euro;677 billion</Sq> that holds a{" "}
+          <Sq>100% monopoly</Sq> on extreme-ultraviolet lithography &mdash; the machines without which no
+          advanced chip on Earth can be made. Not most chips: <em>none</em> of the leading-edge ones. TSMC
+          cannot print a 3-nanometre processor without ASML; neither can Samsung, nor Intel, nor anyone in
+          China, at any price, because there is no substitute and no second source. This is not a
+          vulnerability. It is the most concentrated point of leverage in the entire global technology
+          supply chain, and it is European. Around it Europe holds the rest of a formidable hand:{" "}
+          <Sq>&euro;33.5 trillion</Sq> in household savings, a single market of <Sq>450 million</Sq>
+          people, <Sq>22% of the world&rsquo;s scientific papers</Sq>, and &euro;2.5 trillion of
+          manufacturing. The title of this essay is not a metaphor. Europe holds the key. Turn it below.
+        </P>
+      </Prose>
+
+      <Figure max={1160}>
+        <LockAndKey />
+      </Figure>
+
+      <Prose>
+        <P>
+          So if the assets are real, the obvious question is what to <em>do</em> with them &mdash; and
+          here is the part that should be either infuriating or liberating, depending on the hour: there is
+          no mystery. The plans are written, costed, and in several cases already signed. Mobilise the
+          savings through a real Savings and Investments Union, and the <Sq>&euro;10-11 trillion</Sq>
+          sitting in low-yield deposits &mdash; and the roughly <Sq>&euro;300 billion a year</Sq> that
+          currently leaks abroad &mdash; could fund European companies instead of American ones. Complete
+          the single market, whose internal barriers still amount to tariff-equivalents of around{" "}
+          <Sq>54% on goods and 95% on services</Sq>, and the prize is on the order of{" "}
+          <Won>&euro;2.8 trillion</Won> of GDP; Enrico Letta&rsquo;s &ldquo;One Europe, One Market&rdquo;
+          roadmap has even put a deadline on it &mdash; December 2027. Back the frontier through InvestAI&rsquo;s{" "}
+          <Sq>&euro;200 billion</Sq> mobilisation and its five planned AI gigafactories. Fix the grid and
+          the power price. Buy and build European. Pull the levers below &mdash; and then look at the gauge
+          that matters.
+        </P>
+      </Prose>
+
+      <Figure max={1160}>
+        <ReversalLevers />
+      </Figure>
+
+      <Prose>
+        <P>
+          That gauge is the whole problem in one number. As of early 2026, barely <Sq>11 to 15%</Sq> of
+          the Draghi report&rsquo;s recommendations had been fully implemented. The savings-union measures
+          are mostly non-binding suggestions to member states; the single-market roadmap is a list of
+          intentions with a deadline it is already behind. This is the chokepoint paradox in its purest
+          form: the diagnosis is correct, the prescription is written, the patient has the money for the
+          medicine &mdash; and the prescription sits un-filled on the counter, because filling it requires
+          twenty-seven governments to act together against their own short-term incentives, and that is the
+          one thing the machine is built to prevent. The levers are not missing. The hand on the levers is.
+        </P>
+
+        <P>
+          And yet &mdash; and this is why the chapter is not a eulogy &mdash; something has changed in the
+          last eighteen months that fifteen years of competitiveness reports never managed. The continent
+          has started, haltingly and unevenly, to move. Germany <Won>rejected Palantir</Won> over
+          sovereignty. A sovereign software suite, Euro-Office, launched; Denmark, Austria and France began
+          migrating their public sectors off Microsoft. Mistral raised three billion euros at a twenty-
+          billion valuation and crossed four hundred million in revenue. Europe pledged to spend like it
+          means it on defence. Letta&rsquo;s roadmap got signed. None of these is sufficient. All of them
+          are real. Walk the field below and watch when it came alive.
+        </P>
+      </Prose>
+
+      <Figure max={1160}>
+        <GreenShoots />
+      </Figure>
+
+      <Prose>
+        <P>
+          Read those green shoots carefully, though, because they share a single, sobering root: almost
+          every one was watered by <em>fear</em>, not foresight. Germany did not reject Palantir because of
+          an economic argument; it did so because an American administration had made the cost of
+          dependence suddenly, viscerally real. Europe is re-arming because Russia is on its border and the
+          American guarantee feels conditional. The data-sovereignty awakening followed a war-crimes
+          prosecutor&rsquo;s email going dark. The recurring, uncomfortable finding of this entire essay is
+          that the slow economic version of the threat &mdash; the bloodless capture documented in every
+          chapter &mdash; never moved Europe at all; only the sharp, frightening version did. The open
+          question, the one the next five years will answer, is whether a continent can learn to act on the
+          quiet emergency before it becomes a loud one.
+        </P>
+      </Prose>
+
+      {/* ───────────────────────── CODA ───────────────────────── */}
+      <ChapterMark kicker="Coda" title="Europe Holds the Key" />
+
+      <Prose>
+        <P>
+          We opened with a paradox and we can now close it. Europe is the richest savings bloc on the
+          planet and Wall Street&rsquo;s most reliable source of capital. It trains the engineers, writes
+          a fifth of the science, and owns the one machine in the entire chip supply chain that cannot be
+          replaced. By every measure of raw capacity it should be a peer of the United States and a rival
+          to China. And instead it ships its savings, its founders, its companies and a quarter-trillion
+          euros a year to the firms that out-compete it, and calls the arrangement stability. This was
+          never a failure of genius. Europe has the genius. It is a failure of nerve, and across twelve
+          chapters the failure turned out to have names, dates, and line items &mdash; every one of them a
+          choice, which means every one of them reversible.
+        </P>
+
+        <PullQuote>
+          A key in the pocket opens nothing. The whole of Europe&rsquo;s tragedy, and the whole of its
+          hope, is that the lock was never the problem. The hand was.
+        </PullQuote>
+
+        <P>
+          That is, in the end, the strange consolation of the chokepoint. A continent that had simply been
+          out-built could do nothing but try to build faster and lose. But Europe has not been out-built;
+          it has been out-<em>nerved</em>. It holds ASML, the savings, the market, the science &mdash; the
+          key is real and it is in European hands. Turning it does not require a miracle, a new technology,
+          or American permission. It requires twenty-seven governments and a few hundred million people to
+          decide, just once, that managing a dignified decline is the more frightening option. Washington
+          owns the lock. But the lock is useless to everyone, including Washington, if the key is never
+          turned &mdash; and the key, the one no one else on Earth can cut, has been European all along. The
+          only question left in the whole affair is the one this essay cannot answer, because it is not a
+          question of data: will Europe turn it?
+        </P>
+      </Prose>
+
+      <Sources
+        items={[
+          "ASML: ~€677bn market cap; ~100% monopoly on EUV lithography (no substitute — no leading-edge chip is made without it); IMEC/Zeiss High-NA EUV (2026). ASML; IMEC. NB: ARM is not European (SoftBank-owned, run from Tokyo).",
+          "Structural strengths: ~€33.5tn EU household savings (~€61tn net wealth, euro area); single market of ~450m; ~22% of global scientific publications (Elsevier, 2025); ~€2.5tn manufacturing value-added. ECB/BCG; Eurostat; Elsevier.",
+          "Savings & Investments Union: ~€10–11tn in idle deposits; ~€300bn/yr capital outflow; measures (Savings & Investment Accounts, securitisation) largely non-binding/in trilogue (2025–26). European Commission.",
+          "Single market: internal barriers ≈ 54% (goods) / 95% (services) tariff-equivalents (ECB, Jan 2026); ~€2.8tn potential GDP gain (2022–32); Letta “One Europe, One Market” roadmap, deadline Dec 2027. ECB; Letta report; European Parliament.",
+          "Frontier build & implementation: InvestAI ~€200bn mobilisation / €20bn facility → 5 AI gigafactories; Mistral ~€3bn raise at ~€20bn, ARR past $400m (Jun 2026). Only ~11–15% of Draghi recommendations fully implemented (early 2026). European Commission; TechCrunch; Draghi implementation audits.",
+          "Green shoots (2026): Germany rejected Palantir (Apr); Euro-Office launched (Jun); Denmark/Austria/France migrating off Microsoft; ~€800bn ReArm Europe; Letta roadmap signed (Apr). German MoD; European Commission.",
+        ]}
+      />
+    </section>
+  )
+}
