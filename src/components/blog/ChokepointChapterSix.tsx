@@ -115,6 +115,30 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          Put names to it and the abstraction turns concrete. <Sq>Jan Leike</Sq>, who had led
+          OpenAI&rsquo;s superalignment work, moved to Anthropic in 2024; <Sq>Yann LeCun</Sq>, the French
+          Turing laureate who built Meta&rsquo;s AI research lab and personally anchored its Paris outpost,
+          left in late 2025 to start his own world-model company. The pay gap underneath these moves is not
+          subtle: a senior AI engineer who commands <Sq>&euro;120,000&ndash;180,000</Sq> in Western Europe
+          can earn two to four times that, often far more once equity is counted, at a US lab. And the
+          equity is the point &mdash; the European salary is a wage, the American package is a claim on the
+          upside, and a decade of upside is what compounds into a house, a fortune, or the seed of the next
+          company.
+        </P>
+
+        <P>
+          The cruelest detail is geographic. The American labs no longer need Europeans to emigrate; they
+          simply open an office down the road. <Sq>Anthropic</Sq> hired scores of staff in Ireland inside
+          a single year and now runs research and operations out of London, Dublin, Zurich, Paris and
+          Munich &mdash; European talent, European cities, American payroll and American equity, the
+          continent reduced to a staging ground for someone else&rsquo;s firm. Europe&rsquo;s answer, the{" "}
+          <Sq>&ldquo;Choose Europe for Science&rdquo;</Sq> programme launched in 2025, put about five
+          hundred million euros on the table to lure researchers home &mdash; a real gesture, and roughly
+          a fortieth of what the bloc proposes to spend on the AI gigafactories those researchers would
+          work in. We will fund the machines. We are still pricing the people as an afterthought.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
