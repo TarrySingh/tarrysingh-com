@@ -184,6 +184,18 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          And a hard truth sits underneath the prices: much of the gap is self-inflicted policy, not fate.
+          France, which kept and kept building nuclear power, enjoys some of the cheapest, cleanest
+          electricity in Europe; Germany, which <Sq>shut its last reactors in 2023</Sq> in the middle of an
+          energy crisis, locked in a deeper dependence on gas and a higher price for a generation. The
+          continent that frets about strategic autonomy switched off its most strategically autonomous
+          source of power on principle, then watched its chemical industry decamp over the resulting bills.
+          Energy is the chapter where the verdict is least about American strength and most about European
+          choice &mdash; which is also what makes it, in theory, the most fixable, if the nerve to reverse
+          the choices could be found.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
