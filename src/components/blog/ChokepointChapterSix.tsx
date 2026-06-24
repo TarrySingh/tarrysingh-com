@@ -199,6 +199,20 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          The poaching is not abstract; it has names and dates. In June 2025 Meta hired away three of the
+          researchers who had built <Sq>OpenAI&rsquo;s Z&uuml;rich office</Sq> &mdash; Lucas Beyer, Alexander
+          Kolesnikov and Xiaohua Zhai, themselves recruited out of Google DeepMind&rsquo;s Zurich lab months
+          earlier. Anthropic, opening its own Zurich hub, hired the DeepMind veteran <Sq>Neil Houlsby</Sq> to
+          run it. The American labs now wage their talent wars <em>inside</em> Europe, trading European
+          researchers among themselves on European soil, with European institutions merely the venue. And
+          the tax code holds the door open: a stock-option grant that a US engineer eventually pays
+          capital-gains rates on, around fifteen to twenty per cent, a German engineer pays ordinary income
+          tax on at exercise, north of forty &mdash; so even the equity meant to bind talent to a European
+          startup is taxed as though it were a salary. Europe penalises the one instrument that might let it
+          compete.
+        </P>
+
+        <P>
           The next chapter is about the most physical hole of all &mdash; the one you can measure at the
           electricity meter. Because a continent can train the engineers and bank the savings and still
           fail to build anything, if it has priced the electrons that everything runs on out of reach.
