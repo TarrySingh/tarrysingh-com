@@ -259,6 +259,18 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          And even Europe&rsquo;s answer is built on borrowed silicon. Mistral&rsquo;s own buildout &mdash; a{" "}
+          <Sq>&euro;1.2 billion</Sq> data-centre programme spanning a live Paris site and a Swedish facility
+          for 2027, on the order of <Sq>13,800 Nvidia GPUs</Sq> &mdash; runs, like roughly <Sq>85%</Sq> of all
+          the AI accelerators in Europe, on chips designed in California and fabricated in Taiwan. Members of
+          the European Parliament have named the obvious bind: the very &ldquo;AI gigafactories&rdquo; meant
+          to buy sovereignty deepen the continent&rsquo;s dependence on a single American supplier, because
+          there is no European alternative to Nvidia to buy instead. It is the chokepoint paradox nested
+          inside its own remedy &mdash; a sovereign cloud sovereign in everything except the one component
+          that matters most.
+        </P>
+
+        <P>
           The cruelest statistic in the whole essay may be this one. Europe has more monthly users of
           large-language-model chatbots than the United States does &mdash; some <Sq>133 million</Sq>,
           roughly twice the American base &mdash; and almost every model they use was built in America.
