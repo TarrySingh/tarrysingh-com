@@ -267,6 +267,31 @@ export function ChokepointChapterOne() {
         </P>
 
         <P>
+          It would be dishonest to pretend the Netherlands never holds on to a winner, and the honest
+          exceptions sharpen the rule rather than soften it. <Sq>Adyen</Sq>, the Amsterdam payments
+          processor, listed on Euronext in 2018, kept its headquarters at home, and now moves more than a
+          trillion euros a year &mdash; Europe&rsquo;s most valuable fintech, still European.{" "}
+          <Sq>Booking.com</Sq>, Amsterdam-built, has kept its head office on the canal-ring for two decades
+          even while listing in New York. These prove the outcome is not fated. But notice how the
+          exceptions cluster in payments and travel &mdash; not in the frontier industries, AI and chips
+          and foundational software, where the next two decades of value will be decided. Europe can keep
+          the champions of the last era. It keeps losing the ones that will own the next.
+        </P>
+
+        <P>
+          And the deeper trap is measurable, not anecdotal. The Netherlands ranks among the world&rsquo;s
+          top ten for innovation <em>inputs</em> &mdash; R&amp;D spending reached <Sq>2.44% of GDP</Sq>,
+          some &euro;12.5 billion, in 2023 &mdash; yet slips toward the high teens on innovation
+          <em>outputs</em>: the patents, the scale-ups, the commercial franchises that turn research into
+          rent. The Brainport cluster around Eindhoven is a genuine marvel of roughly eleven hundred
+          companies and a hundred thousand jobs &mdash; but some seventy per cent of them sit in
+          manufacturing and hardware and barely <Sq>8% in software</Sq>, against a third or more in
+          Silicon Valley. It is a hardware powerhouse in a software century: world-class at building the
+          tools, strangely unable to own the platforms those tools enable. The inputs are Dutch. The
+          compounding is somewhere else.
+        </P>
+
+        <P>
           Hold the Netherlands in your mind now as a high-resolution scan of the patient, because every
           symptom you have just seen &mdash; the savings that flee, the scale-ups that emigrate, the
           talent priced to leave, the strategy that resets every four years, the grid that cannot carry
