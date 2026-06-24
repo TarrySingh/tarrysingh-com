@@ -103,7 +103,7 @@ export function ChokepointPrologue() {
         <P>
           You can watch the cost in a single line on ASML&rsquo;s own income statement. For most of the
           decade China was its largest market &mdash; about <Sq>49% of sales</Sq> at the 2024 peak. Then
-          the controls tightened, and the number fell off a cliff: 49%, then 36%, then{" "}
+          the controls tightened, and the number fell off a cliff: 49% in 2024, about 36% by late 2025, then{" "}
           <Sq>19% by the first quarter of 2026</Sq> &mdash; an entire market not lost to a competitor or
           a better product, but deleted by a foreign-policy decision Europe did not make and could not
           veto. The record-revenue year and the structural amputation are the same year. They are the
