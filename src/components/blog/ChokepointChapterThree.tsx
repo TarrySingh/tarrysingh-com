@@ -192,6 +192,30 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          The household end of the same pipe is just as telling. Only about <Sq>17%</Sq> of European
+          household financial assets sit in securities, against roughly <Sq>43%</Sq> in the United States
+          &mdash; nearer nine per cent in Germany, five in France &mdash; so the European who does invest
+          typically reaches for a global index fund, and the global index is itself a wealth-transfer
+          machine. The most popular such product on European retail platforms tracks an all-world benchmark
+          that is around two-thirds American and tilted hardest toward US technology, which means a German
+          saver buying &ldquo;the whole world&rdquo; through a Frankfurt app is, in practice, wiring most of
+          the money to Cupertino and Redmond. The Commission has diagnosed the disease &mdash; its Savings
+          and Investments Union, launched in 2025, names an investment gap of <Won>&euro;750&ndash;800
+          billion a year</Won> and aims to keep European savings at home &mdash; but the prescription is
+          years away from changing the plumbing.
+        </P>
+
+        <P>
+          The most candid admission of the whole dynamic came from the very top. In 2025 the President of the
+          European Commission publicly committed Europe to invest some <Sq>$600 billion</Sq> in the United
+          States over the following years, as part of a trade understanding struck under tariff pressure. Set
+          against an essay&rsquo;s worth of complaint about capital draining west, it is a remarkable thing
+          for Europe&rsquo;s chief executive to promise &mdash; the wealth transfer reframed not as an
+          accident of markets but as an explicit, negotiated, headline commitment. When the pump is written
+          into the deal, it has stopped being a leak. It has become the policy.
+        </P>
+
+        <P>
           The cap-table capture has a flagship case, and it is the most valuable chip-design company
           outside the foundries. <Sq>ARM</Sq>, founded in Cambridge and the brains inside nearly every
           smartphone on Earth, was bought by Japan&rsquo;s SoftBank in 2016 and re-listed not in London but
