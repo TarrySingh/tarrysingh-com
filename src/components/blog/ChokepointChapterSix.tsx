@@ -106,6 +106,19 @@ export function ChokepointChapterSix() {
         </P>
 
         <P>
+          The fight is real at the institutional level too, and worth naming. France&rsquo;s <Sq>Inria</Sq>
+          has begun offering early-career AI chairs worth around <Won>&euro;1 million</Won> over four years;
+          the <Sq>Max Planck</Sq> Society stood up a dedicated AI network with guaranteed compute and
+          tenure-track posts; the European Innovation Council put some <Won>&euro;1.4 billion</Won> into its
+          2026 programme with a new talent scheme attached. These are serious, well-designed instruments. But
+          they compete on the same soil as the poachers: in 2026 <Sq>Anthropic</Sq> alone opened six European
+          offices, including its first in London, and the American labs no longer need to lure Europe&rsquo;s
+          researchers across an ocean &mdash; they can hire them down the street, on a European address, at an
+          American package. The counter-offensive is genuine; it is also outspent and out-equitied by rivals
+          who have simply moved into the building.
+        </P>
+
+        <P>
           But a retention scheme, however welcome, treats a symptom. The disease is that Europe has built
           an economy where the rational move for its most talented person is to leave &mdash; where the
           pay is abroad, the capital is abroad, the scale is abroad, and the only thing reliably at home is
