@@ -314,6 +314,7 @@ export function ChokepointChapterSeven() {
           "European chemical industry: ~37 Mt capacity lost 2022–2025 (~9% of EU total); ~109,000 jobs lost or at risk (≈20k direct + 89k indirect); output ~11–15% below pre-crisis; ~49% of closures cite energy. Cefic Chemical Trends Q2 2025; ICIS Feb 2026.",
           "BASF: €8.7bn Zhanjiang (China) Verbund site inaugurated 26 Mar 2026; Ludwigshafen plant closures amid €1bn+ operating losses. BASF press release (Mar 2026).",
           "Dutch grid: ~47 GW of connection requests (≈14,044 regional + 212 national) waitlisted with ~10-year waits; TenneT warns the grid will fail to meet 2030 demand; Randstad/Schiphol frozen to ~2035. TenneT / NL Times, Jun 2026.",
+          "EU-wide grid: ~1.7 TW of would-be generation sits in EU connection queues (more than today’s installed capacity); renewables supplied >50% of EU electricity for the first time in 2025; data-center grid-connection waits ~7–10 years (to ~13). ENTSO-E; Ember; sector reports.",
         ]}
       />
     </section>
