@@ -221,9 +221,10 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
-          Reduce the whole contest to one ratio and it is brutal. The United States commands roughly{" "}
-          <Sq>74% of the world&rsquo;s high-end AI compute</Sq>; Europe holds about <Sq>4.8%</Sq> &mdash;
-          some seventeen times less &mdash; and even the optimistic projections have that share peaking near
+          Reduce the whole contest to one ratio and it is brutal. On the most consequential input of all
+          &mdash; high-end AI compute &mdash; Europe holds <Sq>under five per cent</Sq> of the world&rsquo;s,
+          some seventeen times less than the United States, and even the optimistic projections have that
+          share peaking near
           eight per cent later this decade before sliding back. Europe is responding at the only scale it can
           muster collectively: EuroHPC has announced something like <Sq>thirty-five new AI
           supercomputers</Sq> across twenty-three nations. It is a real and serious effort, and it is still
