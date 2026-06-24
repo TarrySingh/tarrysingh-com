@@ -149,6 +149,18 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          The newest tenant farm is the most telling, because Europe built it on purpose as a champion.{" "}
+          <Sq>Mistral</Sq> is a genuinely excellent French AI lab, the continent&rsquo;s best answer to
+          OpenAI and Anthropic &mdash; and it runs entirely on rented Nvidia silicon, took on hundreds of
+          millions of dollars of GPU debt to do it, and was kept aloft by a strategic stake from ASML. So
+          even the flagship is a chain of dependence: a European model trained on American chips bought with
+          debt, part-owned by a European monopoly that itself operates under American export law. There is
+          no disgrace in any single link &mdash; each is the rational move on the board as it stands. But
+          see the whole clearly: Europe&rsquo;s sovereign-AI champion is sovereign in branding and tributary
+          in fact.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
