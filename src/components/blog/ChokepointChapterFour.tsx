@@ -224,6 +224,18 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          You do not have to take a critic&rsquo;s word for any of this; take ASML&rsquo;s. Peter Wennink,
+          who ran the company until 2024, called the EU&rsquo;s flagship goal of <Sq>20% of global chip
+          production by 2030</Sq> &ldquo;<Sq>totally unrealistic</Sq>,&rdquo; noting that Europe holds maybe
+          eight per cent at best and that hitting the target would mean roughly quadrupling output while
+          everyone else expanded too. When the chief executive of the single most important company in the
+          entire supply chain publicly calls his own continent&rsquo;s strategy unattainable, the polite
+          fiction that the plans merely need a little more time collapses. The people closest to the machine
+          know exactly how far behind Europe is. It is the political class, drafting its targets in round
+          numbers, that keeps insisting otherwise.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
