@@ -220,6 +220,19 @@ export function ChokepointChapterNine() {
           player &mdash; and a continent cannot regulate its way back onto the field.
         </P>
 
+        <P>
+          For a single human-scale illustration, take <Sq>Bird</Sq> (formerly MessageBird), one of the
+          Netherlands&rsquo; few homegrown tech unicorns. When it cut a fifth of its workforce, its chief
+          executive did not blame the market or his own strategy first; he pointed at the compliance burden
+          of operating across Europe&rsquo;s thicket of rules, and made plain that the next jobs would be
+          created somewhere friendlier. Multiply that one founder&rsquo;s calculation across every scaling
+          European company weighing where to put its next hundred engineers, and the regulatory reflex stops
+          being an abstraction about sovereignty and becomes a steady, quiet export of exactly the
+          high-growth employment Europe says it most wants to keep. The rulebook does not only fail to
+          produce champions; it actively encourages the ones Europe already has to do their growing
+          elsewhere.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
