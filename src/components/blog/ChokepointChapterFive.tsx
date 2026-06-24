@@ -123,6 +123,20 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          Run the roll-call and the pattern is total. <Sq>Spotify</Sq>, Sweden&rsquo;s streaming champion,
+          is incorporated in Luxembourg, listed in New York, and counts China&rsquo;s Tencent among its
+          shareholders. <Sq>Supercell</Sq>, the Finnish studio behind Clash of Clans, was bought by Tencent
+          for some ten billion dollars. <Sq>Mojang</Sq>, the Swedish maker of Minecraft, went to Microsoft
+          for $2.5 billion; <Sq>Skype</Sq>, the Estonian miracle that taught the world to make free calls,
+          was bought by Microsoft for $8.5 billion and then, in December 2025, simply switched off and
+          folded into Teams &mdash; a European household name discontinued by an American product manager,
+          with no European in a position to object. And <Sq>DeepMind</Sq>, London&rsquo;s crown jewel of
+          artificial intelligence, has been a division of Google for over a decade; its Nobel-winning
+          breakthroughs are Alphabet&rsquo;s property. Every one of these is a genuine European triumph.
+          Not one of them is European-owned.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
