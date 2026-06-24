@@ -313,6 +313,19 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          Draghi himself put the indictment in a single devastating sentence to the European Parliament:
+          there is, he noted, <Sq>no EU company with a market value above &euro;100 billion that has been
+          founded from scratch in the last fifty years</Sq> &mdash; while the United States has minted six of
+          them past a <em>trillion</em>. He has a phrase for the predicament, too: the <Sq>&ldquo;middle-technology
+          trap,&rdquo;</Sq> a Europe stuck specialising in the mature industries of the last century while the
+          high-growth sectors of this one are colonised by others. And a year on from his report, his verdict
+          on Europe&rsquo;s response was four words long: <Sq>&ldquo;every challenge has worsened.&rdquo;</Sq>
+          When the most respected economist the European establishment could find to diagnose itself returns,
+          twelve months later, to report that the patient has declined further while the prescription went
+          unfilled, the polite fiction that reform is quietly under way becomes impossible to sustain.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
