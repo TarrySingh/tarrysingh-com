@@ -182,12 +182,13 @@ export function ChokepointChapterThree() {
           small slice &mdash; on the order of <Sq>0.01% of their assets</Sq> &mdash; to domestic venture
           capital, roughly a third of the already-modest American rate, leaving a quarter-trillion euros a
           year of European retirement savings <em>not</em> backing European companies. Where does it go?
-          Norway&rsquo;s sovereign wealth fund, the largest single pool of European capital on Earth, now
-          counts <Sq>Nvidia</Sq> among its very largest holdings &mdash; which means a Dutch
-          machine&rsquo;s biggest customer is funded, in part, by the pensions of Norwegian oil workers,
-          whose returns then ride on an American chip company that depends on a Dutch monopoly the fund
-          holds no special stake in. The savings are European. The equity is American. The circle closes on
-          everyone except Europe.
+          Norway&rsquo;s sovereign wealth fund, the largest single pool of European capital on Earth, holds
+          its biggest single positions in <Sq>Apple and Microsoft</Sq> &mdash; on the order of forty to
+          fifty billion dollars each &mdash; and ranks among the larger holders of Nvidia besides. Which
+          means a Dutch machine&rsquo;s biggest customers are funded, in part, by the pensions of Norwegian
+          oil workers, whose returns then ride on American technology giants that depend on a Dutch
+          monopoly the fund holds no special stake in. The savings are European. The equity is American.
+          The circle closes on everyone except Europe.
         </P>
 
         <P>
