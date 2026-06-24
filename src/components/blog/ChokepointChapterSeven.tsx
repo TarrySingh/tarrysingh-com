@@ -21,7 +21,7 @@ function Figure({ children, max = 1100 }: { children: ReactNode; max?: number })
  */
 export function ChokepointChapterSeven() {
   return (
-    <section>
+    <section id="chapter-7">
       <ChapterMark kicker="Chapter Seven · The Electrons" title="The Electrons We Priced Out" />
 
       <Prose>
