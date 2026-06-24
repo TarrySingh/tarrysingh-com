@@ -321,6 +321,7 @@ export function ChokepointChapterFive() {
           "Novo Nordisk invented the GLP-1 category, then ~halved in value through 2025 as Eli Lilly out-scaled it (Lilly toward ~$1tn); Wayve (UK AV) backed by SoftBank/Microsoft/Nvidia. Reuters; company filings.",
           "Public-market ceilings: Spotify hands ~70% of revenue to US labels; Klarna trades ~56% below its 2025 IPO price; Zalando ~75% below its 2021 peak. Company filings.",
           "Pharma erosion: EU active-pharmaceutical-ingredient manufacturing fell from ~63% (1981) to ~6% (2024); EU biotech VC ~€25bn vs US ~€200bn over a decade; 66 of 67 European biotech IPOs listed abroad. ICIS; Atomico.",
+          "Biotech consolidation vs flight (2026): Genmab–Merus ~€8bn; BioNTech–CureVac all-stock; yet of EU-domiciled biotechs public in six years, all but one listed abroad — Belgium’s Agomab IPO’d on Nasdaq (Feb 2026). Company filings.",
           "Software giants squeezed: SAP (~$180–200bn, P/E below US peers), Dassault Systèmes, Schneider/Hexagon — margins compressing in the AI/cloud shift; even Bending Spoons (Italy) filed a ~$19bn Nasdaq IPO (Jun 2026). Company filings.",
           "The eastern tether: Tencent holds ~20% of Universal Music Group and ~swapped stakes with Spotify; Prosus's value rides on a ~quarter-stake in Tencent. Billboard; company filings.",
         ]}
