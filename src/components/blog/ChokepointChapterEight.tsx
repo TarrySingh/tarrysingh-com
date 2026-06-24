@@ -232,6 +232,20 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          And beneath the spending lies a set of capability gaps so specific they are almost embarrassing.
+          For all its wealth, Europe can deploy only a handful of its own heavy strategic-airlift aircraft
+          and air-to-air tankers, leaning on a literal <Sq>three shared C-17s</Sq> and a small pooled fleet
+          for the basic job of moving an army; its civilian <Sq>Copernicus</Sq> satellites see the ground at
+          a resolution too coarse to identify a military vehicle, leaving it dependent on American imagery to
+          know what is happening on its own frontier; and no European air force maintains a credible capacity
+          to suppress enemy air defences &mdash; the dangerous first task of any modern air campaign &mdash;
+          without the United States. These are not luxuries. They are the load-bearing capabilities of an
+          autonomous military, and a continent of four hundred and fifty million people, spending hundreds of
+          billions, still cannot field them alone. That dependence is not a line in a budget. It is the
+          difference between an alliance and a protectorate.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
