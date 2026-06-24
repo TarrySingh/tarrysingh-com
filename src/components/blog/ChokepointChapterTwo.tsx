@@ -355,6 +355,7 @@ export function ChokepointChapterTwo() {
           "“Sovereign cloud” proliferation: DT/Oracle/IBM EU offerings + AWS/Microsoft European regions, even as AWS & Azure face DMA gatekeeper findings (2026). EC DMA.",
           "Sovereignty contested: the EUCS scheme's hard sovereignty requirements were stripped after lobbying; the US State Dept reportedly pressed EU governments to drop data-sovereignty demands (2026). EUCS drafts; reporting.",
           "Build race: Schwarz ~€11bn into STACKIT; AWS ~€9.4bn Frankfurt; France moved its Health Data Hub off Azure to Scaleway; Broadcom raised VMware prices ~800–1000% on EU providers. CISPE; reporting.",
+          "Sovereignty money moving (2026): DT+Nvidia Munich industrial-AI cloud >10,000 Blackwell GPUs (~€1bn, ~+50% German AI compute); AWS European Sovereign Cloud (Brandenburg, ~€7.8bn through 2040, EU-staffed, isolated partition); EC awarded ~€180m to European-only providers (OVHcloud/STACKIT/Scaleway/Proximus, SEAL-2/3 — no US hyperscaler eligible); Gartner: EU sovereign-cloud IaaS +83% to ~$12.6bn (2026), only ~20% of workloads local. NVIDIA; AWS; EC; Gartner.",
         ]}
       />
     </section>
