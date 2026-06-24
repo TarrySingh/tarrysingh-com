@@ -288,6 +288,19 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          There are, to be fair, the beginnings of something. In June 2026 <Sq>GlobalFoundries</Sq> in
+          Dresden demonstrated the first fully European, end-to-end &ldquo;sovereign&rdquo; chip flow &mdash;
+          designed, manufactured and delivered without leaving the continent &mdash; for a security-critical
+          navigation chip. It is a real and meaningful milestone, and it is also, tellingly, at a mature node,
+          for a niche application. Meanwhile the leash on the leading edge tightens: ASML now remotely
+          monitors all <Sq>314 EUV systems</Sq> on Earth, a customer cannot so much as relocate one without
+          the company&rsquo;s involvement, and the Dutch export rules now require a licence even for the spare
+          parts and software updates that keep an installed machine alive. The most European thing in the
+          entire industry &mdash; the irreplaceable machine &mdash; is also the most tightly leashed, and the
+          hand on the leash, as the prologue warned, is not entirely Europe&rsquo;s own.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
