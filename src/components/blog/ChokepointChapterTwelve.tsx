@@ -228,6 +228,21 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          And the templates for what such a mobilisation looks like are not exotic; America itself built
+          them. The <Sq>Interstate Highway System</Sq> wired a continent together with public money over a
+          decade; <Sq>DARPA</Sq> seeded the internet, GPS and a dozen foundational technologies by funding
+          the research private capital would not touch; the whole American semiconductor and internet edge
+          was, at root, a story of patient public investment that private dynamism then compounded. Europe
+          keeps imagining that sovereignty is something you legislate. The American example says it is
+          something you <em>build</em> &mdash; with state money, at national scale, over decades, accepting
+          the failures along the way &mdash; and then let the market run with. Europe has the savings to fund
+          a dozen DARPAs. What it has lacked is the conviction that the future is worth buying outright
+          rather than renting by the year.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
