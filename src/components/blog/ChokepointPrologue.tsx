@@ -22,7 +22,7 @@ function Figure({ children, max = 1100 }: { children: ReactNode; max?: number })
  */
 export function ChokepointPrologue() {
   return (
-    <section>
+    <section id="prologue">
       <ChapterMark kicker="Prologue · One Node" title="The Machine in Veldhoven" />
 
       <Prose>
