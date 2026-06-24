@@ -208,6 +208,19 @@ export function ChokepointChapterEleven() {
         </P>
 
         <P>
+          Europe is, to its credit, finally trying to build models of its own. <Sq>EuroLLM</Sq>, trained on
+          Barcelona&rsquo;s MareNostrum supercomputer to speak all the EU&rsquo;s languages, and the{" "}
+          <Sq>OpenEuroLLM</Sq> consortium spanning nine countries, are genuine attempts at a sovereign,
+          open, multilingual alternative to the American and Chinese frontier. They are also, by the
+          standards of the firms they mean to answer, tiny &mdash; tens of millions of euros against
+          training runs that cost hundreds. And the constraint bites deeper down the chain than money: the
+          advanced <Sq>packaging</Sq> that stitches AI chips together, TSMC&rsquo;s so-called CoWoS capacity,
+          is sold out into 2027, the overwhelming majority pre-bought by American firms. You cannot rent your
+          way to the frontier when the queue for the only factory that can build it is already full, and you
+          are nowhere near the front.
+        </P>
+
+        <P>
           That is the knife-edge on which this essay now balances, and it is the right place to turn from
           diagnosis to prescription. The machine is real, the tribute is real, the accelerant is real. But
           nothing in any of these eleven chapters was an act of God. It was capital that chose safety,
