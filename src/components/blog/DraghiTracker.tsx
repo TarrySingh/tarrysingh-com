@@ -66,11 +66,15 @@ const GAPPX = 5
 const GRID_W = COLS * CELL + (COLS - 1) * GAPPX
 const GRID_H = ROWS * CELL + (ROWS - 1) * GAPPX
 
-// Plot frame (viewBox units).
+// Plot frame (viewBox units). The header zone (label · big readout · sub ·
+// timeline) is laid out in ABSOLUTE y so it can never collide with the grid top.
 const PADL = 40
-const PADT = 132
+const PADT = 176 // grid top — clear below the timeline
 const W = PADL * 2 + GRID_W
 const H = PADT + GRID_H + 48
+const Y_LABEL = 30
+const Y_BIG = 78
+const Y_SUB = 100
 
 const pctFmt = (v: number) => v.toFixed(1)
 const lit = (pct: number) => Math.round((pct / 100) * TOTAL)
@@ -112,7 +116,7 @@ export function DraghiTracker() {
   // Timeline track geometry (for the scrubber ticks drawn in-SVG).
   const trackX0 = PADL + 4
   const trackX1 = W - PADL - 4
-  const trackY = 108
+  const trackY = 134
   const tx = linScale(0, N, trackX0, trackX1)
 
   return (
@@ -159,49 +163,49 @@ export function DraghiTracker() {
         {/* THE BIG READOUT — % implemented + the count */}
         <text
           x={PADL}
-          y={PADT - 96}
+          y={Y_LABEL}
           fill={p.soft}
-          style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}
+          style={{ fontSize: 9.5, letterSpacing: "0.14em", textTransform: "uppercase" }}
         >
-          fully binding · {cur.label}
+          fully binding
         </text>
         <text
-          x={PADL - 3}
-          y={PADT - 50}
+          x={PADL - 2}
+          y={Y_BIG}
           fill={p.leverage}
-          style={{ fontSize: 56, fontWeight: 800, letterSpacing: "-0.01em" }}
+          style={{ fontSize: 30, fontWeight: 800, letterSpacing: "-0.01em" }}
         >
           {pctFmt(cur.pct)}%
         </text>
-        <text x={PADL} y={PADT - 28} fill={p.muted} style={{ fontSize: 13 }}>
+        <text x={PADL} y={Y_SUB} fill={p.muted} style={{ fontSize: 12 }}>
           {litCount} of {TOTAL} recommendations walked
         </text>
 
         {/* THE GAP — the surge the map asked for, still unaddressed (red) */}
         <text
           x={W - PADL}
-          y={PADT - 96}
+          y={Y_LABEL}
           textAnchor="end"
           fill={p.soft}
-          style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase" }}
+          style={{ fontSize: 9.5, letterSpacing: "0.14em", textTransform: "uppercase" }}
         >
-          investment gap · unaddressed
+          annual investment gap
         </text>
         <text
-          x={W - PADL + 3}
-          y={PADT - 50}
+          x={W - PADL + 2}
+          y={Y_BIG}
           textAnchor="end"
           fill={p.squeeze}
-          style={{ fontSize: 40, fontWeight: 800, letterSpacing: "-0.01em" }}
+          style={{ fontSize: 28, fontWeight: 800, letterSpacing: "-0.01em" }}
         >
           €{GAP_LO}–{GAP_HI}bn
         </text>
         <text
           x={W - PADL}
-          y={PADT - 28}
+          y={Y_SUB}
           textAnchor="end"
           fill={p.muted}
-          style={{ fontSize: 13 }}
+          style={{ fontSize: 12 }}
         >
           /yr · {GDP_LO}–{GDP_HI}% of EU GDP
         </text>
