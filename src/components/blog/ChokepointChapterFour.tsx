@@ -261,6 +261,20 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          The contrast with Asia is the most instructive part of the whole chapter. Taiwan built TSMC out of
+          a government research institute in fourteen patient years; South Korea has sustained a
+          state-and-conglomerate semiconductor partnership for half a century; both treated chips as a
+          multi-decade national project and never wavered. Europe passed a Chips Act in 2023 and watched its
+          flagship, the Intel fab in Magdeburg, be <Sq>abandoned within two years</Sq> &mdash; the German and
+          Polish subsidies, some twelve billion euros, left undrawn. The difference is not money or talent; it
+          is time-horizon and constancy. Asia&rsquo;s chip champions were built by states that decided what
+          they wanted and held the course across electoral cycles and downturns alike. Europe keeps deciding,
+          then re-deciding, then quietly letting the decision lapse &mdash; which is precisely how a continent
+          ends up owning the world&rsquo;s most important machine and almost none of the industry it makes
+          possible.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
