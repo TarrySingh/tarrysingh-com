@@ -13,6 +13,7 @@ import { ChokepointChapterEight } from "@/components/blog/ChokepointChapterEight
 import { ChokepointChapterNine } from "@/components/blog/ChokepointChapterNine"
 import { ChokepointChapterTen } from "@/components/blog/ChokepointChapterTen"
 import { ChokepointChapterEleven } from "@/components/blog/ChokepointChapterEleven"
+import { ChokepointChapterTwelve } from "@/components/blog/ChokepointChapterTwelve"
 
 /** A wide, breakout-neutralised stage for one instrument. `.cp-gallery`
  *  cancels the PlateFrame blog-column breakout margins. */
@@ -112,6 +113,9 @@ export default function ChokepointParadoxPage() {
       {/* CHAPTER 11 — prose + V37/V38/V39, in essay flow */}
       <ChokepointChapterEleven />
 
+      {/* CHAPTER 12 + CODA — prose + V40/V41/V42, the constructive turn */}
+      <ChokepointChapterTwelve />
+
       <p
         className="mx-auto mt-24 max-w-xl text-center text-[12px]"
         style={{
@@ -120,7 +124,7 @@ export default function ChokepointParadoxPage() {
           letterSpacing: "0.08em",
         }}
       >
-        ◷ Flagship in assembly — 10 of 12 chapters, ~37 instruments live; deepening to ~45,000 words. Built one instrument at a time.
+        ◷ Spine complete — Prologue, 12 chapters &amp; Coda, ~40 instruments live; now deepening every chapter toward the ~45,000-word floor. Built one instrument at a time.
       </p>
     </main>
   )
