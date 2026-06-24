@@ -343,6 +343,23 @@ export function ChokepointChapterTwelve() {
 
       <Prose>
         <P>
+          And the next races have not yet been lost &mdash; they are being run right now, and Europe is
+          actually on the track. In <Sq>quantum computing</Sq>, Finland&rsquo;s IQM and France&rsquo;s Pasqal
+          are among the genuine global leaders, installing real machines into European supercomputing centres.
+          In <Sq>fusion</Sq>, Munich&rsquo;s Proxima Fusion is building a two-billion-euro stellarator
+          demonstrator with Bavarian and Max Planck backing, alongside the giant ITER reactor rising in the
+          south of France. In <Sq>space</Sq>, Ariane 6 is finally flying a steady cadence and a clutch of new
+          launch startups &mdash; Isar Aerospace, Rocket Factory Augsburg &mdash; are reaching for orbit. The
+          science is there; the nerve is flickering to life. But watch the early-warning lights, because they
+          are the same ones as ever: IQM and Pasqal are both eyeing <em>Nasdaq</em> listings, and in 2025
+          Europe managed around <Sq>nine orbital launches to America&rsquo;s hundred and ninety-plus</Sq>.
+          Europe is in the next races. Whether it stays in them, and on its own terms, is the question this
+          whole essay has been about.
+        </P>
+      </Prose>
+
+      <Prose>
+        <P>
           The hardest obstacle is structural, and it has a name: <Sq>unanimity</Sq>. On the decisions that
           matter most &mdash; tax, foreign policy, the deepest fiscal integration &mdash; a single member
           state can veto the other twenty-six, and they do: there have been dozens of national vetoes in the
