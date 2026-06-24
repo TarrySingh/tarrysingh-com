@@ -120,6 +120,21 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          The defence surge is, at least, beginning to grow a European industry to spend into. The
+          EU&rsquo;s <Sq>SAFE</Sq> instrument &mdash; a hundred-and-fifty-billion-euro loan pot agreed in
+          2025 &mdash; carries a rule with real teeth: at least <Sq>65% of a funded weapon&rsquo;s
+          value</Sq> must come from European or allied suppliers, an explicit attempt to keep the
+          re-armament money on the continent. <Sq>Rheinmetall</Sq>, the German munitions maker, expects to
+          roughly quintuple sales toward fifty billion euros by 2030; <Sq>Helsing</Sq>, a Munich
+          defence-AI company backed by Spotify&rsquo;s Daniel Ek, is raising at around eighteen billion.
+          These are real green shoots in the one field where fear has concentrated minds. But the
+          counter-example is just as instructive: the Franco-German <Sq>FCAS</Sq> next-generation fighter,
+          nine years and billions of euros in, produced no flying prototype and effectively stalled in
+          2026 &mdash; the old European disease of a flagship programme dissolving into national
+          in-fighting, even as the urgency screams.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
