@@ -208,6 +208,18 @@ export function ChokepointChapterSeven() {
         </P>
 
         <P>
+          The cruel twist is that the answer is proven and Europe has simply forgotten how to deploy it at
+          speed. Finland&rsquo;s <Sq>Olkiluoto 3</Sq> and France&rsquo;s long-delayed <Sq>Flamanville</Sq>
+          reactor both finally came online this decade and now pour cheap, clean, firm power into their grids
+          &mdash; proof that the technology works. But Britain&rsquo;s <Sq>Hinkley Point C</Sq> has slipped
+          toward 2030 at a cost ballooning past <Sq>forty-five billion pounds</Sq>, a monument to how
+          thoroughly the West has lost the muscle memory of building big things on time. Europe&rsquo;s
+          energy problem, in the end, is its capital and talent problems wearing a third costume: not an
+          absence of the answer, but an inability to commit to it at scale, on schedule, against the
+          short-term objections &mdash; the failure of nerve, rendered in concrete and cooling towers.
+        </P>
+
+        <P>
           The energy chapter, then, is the capital chapter and the talent chapter in physical form: a
           continent that has the resources to solve a solvable problem and keeps declining to spend the
           nerve. The next chapter turns to the place where Europe is now spending money fastest of all
