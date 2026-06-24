@@ -247,6 +247,20 @@ export function ChokepointChapterNine() {
           firms Europe needs most.
         </P>
 
+        <P>
+          Lay out the marquee enforcement of the last two years as a single list and the asymmetry becomes
+          almost comic. <Sq>Apple</Sq>, fined &euro;500 million; <Sq>Meta</Sq>, &euro;200 million under the
+          DMA and &euro;390 million before that; <Sq>TikTok</Sq>, &euro;530 million for shipping European
+          data to China; <Sq>X</Sq>, &euro;120 million; <Sq>Temu</Sq>, &euro;200 million for unsafe goods;{" "}
+          <Sq>Clearview AI</Sq>, &euro;30 million for scraping faces &mdash; a roll-call of billions in
+          penalties, and not one of the firms on it European. The point is not that the fines are wrong; most
+          punish genuine abuses. The point is what the list <em>is</em>: an inventory of the digital
+          economy&rsquo;s most powerful companies, compiled by the one body on the continent still able to
+          make them flinch, on which Europe appears nowhere as a defendant because it appears nowhere as a
+          builder. The fines are the consolation prize of a power that gave up competing and settled for
+          refereeing.
+        </P>
+
         <PullQuote>
           A moat only protects you if the drawbridge goes up for your enemies and down for your friends.
           Europe built the deepest moat in the world and then lowered the bridge for the giants and raised
