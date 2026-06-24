@@ -337,6 +337,18 @@ export function ChokepointChapterOne() {
         </P>
 
         <P>
+          Two final Dutch details complete the portrait. When a genuine Dutch deep-tech winner does emerge
+          &mdash; <Sq>DataSnipper</Sq>, an Amsterdam document-automation company that found real
+          product-market fit &mdash; its path to scale ran through acquisition by the American automation
+          giant UiPath, its intellectual property consolidated into a New-York-listed group. And when the
+          government finally answered the competitiveness alarm with a headline{" "}
+          <Sq>&euro;2.8-billion</Sq> technology-and-talent fund, the first-year allocation arrived at around{" "}
+          <Sq>&euro;340 million</Sq> &mdash; an eighty-eight per cent gap between the announcement and the
+          cheque, the four-year political clock starving a forty-year bet before it began. The ambition is
+          real and recurring. So is the under-execution. That, in one country, is the whole machine.
+        </P>
+
+        <P>
           Hold the Netherlands in your mind now as a high-resolution scan of the patient, because every
           symptom you have just seen &mdash; the savings that flee, the scale-ups that emigrate, the
           talent priced to leave, the strategy that resets every four years, the grid that cannot carry
