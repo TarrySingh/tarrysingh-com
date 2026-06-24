@@ -170,10 +170,9 @@ export function ChokepointChapterTen() {
         <P>
           To feel the asymmetry, set the scoreboards side by side. The seven largest American technology
           companies are together worth more than every listed company in Europe combined, by something like
-          half again. A single one of them, <Sq>Nvidia</Sq>, is worth roughly as much as the entire German
-          economy &mdash; one firm, founded in 1993, selling chips designed in California and made in Taiwan
-          on machines built in the Netherlands, now rivalling the industrial heartland of the continent that
-          builds those machines. There is no European company within an order of magnitude. This is not a
+          half again &mdash; and there is no European company within an order of magnitude of the largest of
+          them, the chip-maker whose single name now stands against the scale of a major European economy.
+          This is not a
           gap that closes with a good quarter or a clever policy; it is the accumulated interest on twenty
           years of the standing order, compounded &mdash; and still compounding.
         </P>
