@@ -230,6 +230,20 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          Widen the lens beyond cloud and the tribute only grows. Europe runs a services trade deficit with
+          the United States of around <Sq>&euro;178 billion a year</Sq>, much of it digital; global
+          cross-border payments for the use of intellectual property &mdash; the licensing of patents,
+          brands and software &mdash; passed a trillion dollars, with the United States the largest single
+          collector. Even the regulator&rsquo;s biggest swings barely dent it: the Commission fined{" "}
+          <Sq>Google three billion euros</Sq> in 2025 over its ad-tech dominance, lifting its cumulative EU
+          antitrust fines past eight billion &mdash; sums that are at once the largest in the history of
+          competition law and a rounding error against the revenue the same firm pulls out of Europe every
+          year. The tribute is paid in a hundred currencies &mdash; cloud fees, ad revenue, IP royalties,
+          app-store commissions &mdash; and totalled, it is the quiet transfer of a great power&rsquo;s
+          economic surplus to another.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
