@@ -279,6 +279,19 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          Underneath the venture shortfall is a deeper, more cultural gap: Europeans simply do not own equity
+          the way Americans do. Around <Sq>62% of American adults</Sq> hold stocks; in Germany the figure is
+          closer to <Sq>15%</Sq>, in Britain a third. European companies raise some 85% of their financing
+          from banks, against barely half in the United States &mdash; which means European capital is
+          structurally biased toward the safe, collateralised loan and away from the risky equity stake that
+          funds a frontier company. And where Europeans do invest in markets, they increasingly do it through
+          American hands: US asset managers &mdash; BlackRock, Vanguard, State Street &mdash; now run close to{" "}
+          <Sq>half of all European assets under management</Sq>. So the continent not only sends its savings
+          to American markets; it increasingly pays American firms to manage the journey. The drain is not a
+          single leak. It is the plumbing.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
