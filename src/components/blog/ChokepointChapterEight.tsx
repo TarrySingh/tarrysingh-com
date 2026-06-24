@@ -219,6 +219,19 @@ export function ChokepointChapterEight() {
         </P>
 
         <P>
+          The most encouraging movement is in the unglamorous business of actually making things. Stung by
+          the discovery that it could not produce artillery shells fast enough to sustain Ukraine,{" "}
+          <Sq>Rheinmetall</Sq> is racing toward <Sq>1.5 million 155-millimetre shells a year</Sq> by 2027;
+          Norway&rsquo;s Nammo is restarting mothballed lines; two dozen nations have signed up to a European
+          air-defence initiative. And Ukraine has become, grimly, Europe&rsquo;s defence-tech proving ground:
+          a swarm of new drone makers &mdash; Germany&rsquo;s Quantum Systems and Stark, Croatia&rsquo;s
+          Orqa, a dozen others &mdash; are iterating weapons in a live war at a speed no peacetime
+          procurement system could match, and scaling toward millions of units a year. This is what an
+          industrial base looks like when it is finally allowed, or forced, to grow. The tragedy threaded
+          through the whole essay is that it took a war on the continent&rsquo;s edge to permit it.
+        </P>
+
+        <P>
           Which raises the question the back half of this essay keeps circling: if existential fear is what
           it takes to make Europe act, does the economic version of the same threat &mdash; the slow,
           bloodless capture documented in every other chapter &mdash; register as fear at all? Or does it
