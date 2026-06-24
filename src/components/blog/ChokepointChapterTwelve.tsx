@@ -308,6 +308,24 @@ export function ChokepointChapterTwelve() {
         </P>
       </Prose>
 
+      <Prose>
+        <P>
+          And Europe need not even invent the playbook, because three other latecomers wrote it in living
+          memory. <Sq>Taiwan</Sq> went from licensing an obsolete American chip process in 1973 to spinning
+          out <Sq>TSMC</Sq> &mdash; today the maker of ninety per cent of the world&rsquo;s most advanced
+          chips &mdash; in fourteen years, by way of a single determined state research institute.{" "}
+          <Sq>South Korea</Sq> spends over five per cent of its GDP on research and pairs its industrial
+          giants with decades of patient state financing to hold a fifth of global chip production.{" "}
+          <Sq>Israel</Sq>, a country of nine million, turned a military signals-intelligence unit into a
+          startup conveyor belt that has produced more than ninety unicorns and the highest venture
+          investment per head on Earth &mdash; one of them, Wiz, sold to Google in 2026 for thirty-two
+          billion dollars. None of these is bigger, richer or better-educated than Europe; every one simply{" "}
+          <em>decided</em>, and then sustained the decision across governments and decades. The difference
+          between them and Europe is not capacity. It is the willingness to choose a hard thing and refuse
+          to let go of it.
+        </P>
+      </Prose>
+
       {/* ───────────────────────── CODA ───────────────────────── */}
       <ChapterMark kicker="Coda" title="Europe Holds the Key" />
 
