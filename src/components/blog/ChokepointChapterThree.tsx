@@ -266,6 +266,19 @@ export function ChokepointChapterThree() {
         </P>
 
         <P>
+          London tells the same story in miniature, and faster. In the first half of 2025, companies raised
+          a mere <Sq>&pound;160 million</Sq> in initial public offerings on the London market &mdash; the
+          weakest in more than three decades &mdash; while a parade of its biggest names voted with their
+          feet: Wise shifted its primary listing to Nasdaq, the gambling group Flutter moved to New York,
+          and Arm, the Cambridge chip-design jewel, had already chosen New York over its home exchange. A
+          half-per-cent stamp duty on UK share trades that New York does not levy, and fintech valuations
+          that run a third to two-thirds higher on Nasdaq, make the arithmetic brutally simple: for a growth
+          company, listing in London is, in the cold words of more than one adviser, &ldquo;not
+          rational.&rdquo; The City that once financed the world now watches the world&rsquo;s ambition list
+          somewhere else.
+        </P>
+
+        <P>
           The next chapter is where the cost of <em>not</em> doing so stops being a financial abstraction
           and becomes a physical one. Because the same continent that exports its capital also owns the
           single most strategic asset in the modern economy &mdash; the machine in Veldhoven &mdash; and
