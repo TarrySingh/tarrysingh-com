@@ -244,6 +244,21 @@ export function ChokepointChapterTen() {
         </P>
 
         <P>
+          Even the most basic plumbing of the economy runs on foreign rails. Every time a European taps a
+          card, the transaction almost certainly flows through <Sq>Visa or Mastercard</Sq> &mdash; two
+          American networks that together handle well over half of the continent&rsquo;s cashless payments
+          and clear some twenty-odd trillion euros a year, taking a sliver of each and seeing the data trail
+          of a continent&rsquo;s spending. Europe has tried for two decades to build its own: the
+          &ldquo;Monnet Project&rdquo; collapsed when national banks would not cooperate, and only now, with{" "}
+          <Sq>Wero</Sq> &mdash; a pan-European wallet that moved billions in its first year and, in 2026,
+          linked arms with Italy&rsquo;s, Spain&rsquo;s, Portugal&rsquo;s and the Nordics&rsquo; national
+          systems &mdash; is a genuine alternative finally taking shape. It is the whole essay in miniature:
+          a sovereignty so basic most Europeans never think about it, surrendered for decades to American
+          firms, and reclaimable only once the continent finally decides to stop competing as twenty-seven
+          and start acting as one.
+        </P>
+
+        <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
           get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
