@@ -163,6 +163,31 @@ export function ChokepointChapterTwo() {
         </P>
 
         <P>
+          The continent has not failed to notice, and the record of its attempts to answer is its own kind
+          of evidence. <Sq>Gaia-X</Sq>, launched in 2019 as Europe&rsquo;s grand sovereign-cloud project,
+          curdled into what one analysis called a &ldquo;paper monster&rdquo; &mdash; years of working
+          groups and standards documents, little running infrastructure, and a fatal decision to welcome
+          the very American hyperscalers it was meant to counter into the consortium. Meanwhile the
+          European providers&rsquo; combined share of their own cloud market has slid from about{" "}
+          <Sq>29% in 2017 to roughly 15%</Sq>, and stuck there &mdash; treading water in a market growing
+          some 24% a year, which means losing ground in everything but the press release.{" "}
+          <Sq>OVHcloud</Sq>, the French flag-carrier, only crossed a billion euros of revenue in 2025; the
+          three American hyperscalers spend more than that on data centres in a good fortnight.
+        </P>
+
+        <P>
+          The newest attempts are more serious and worth crediting. Deutsche Telekom&rsquo;s{" "}
+          <Sq>T Cloud</Sq> went live in 2025 and is building a sovereign industrial-AI cloud on Nvidia
+          silicon in Germany; <Sq>SAP</Sq> launched a sovereign cloud in France in 2026 through the
+          Orange-and-Capgemini venture &ldquo;Bleu,&rdquo; chasing the French state&rsquo;s SecNumCloud
+          qualification. These are real and they matter. But read the architecture closely and the
+          dependency keeps reappearing one layer down &mdash; the chips are Nvidia&rsquo;s, the reference
+          designs American &mdash; and &ldquo;sovereign&rdquo; increasingly means a European-run building
+          full of someone else&rsquo;s technology, governed by a contract that <em>promises</em> Washington
+          cannot reach inside. It is better than nothing. It is not yet ownership.
+        </P>
+
+        <P>
           Which forces the question the rest of this essay exists to answer. If the savings are here, and
           the science is here, and the machine is here, and even the <em>plan</em> is here, correct and
           costed and signed by the establishment&rsquo;s own oracle &mdash; then where, precisely, does
