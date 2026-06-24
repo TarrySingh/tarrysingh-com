@@ -199,6 +199,19 @@ export function ChokepointChapterFour() {
         </P>
 
         <P>
+          There is, in fairness, one corner of semiconductors where Europe is genuinely strong, and it is
+          worth naming because it shows what holding on actually looks like. In <Sq>power electronics</Sq>
+          &mdash; the unglamorous chips that manage electricity in cars, trains, motors and grids &mdash;
+          Germany&rsquo;s <Sq>Infineon</Sq> and the Franco-Italian <Sq>STMicroelectronics</Sq> are world
+          leaders, and Infineon is building a five-billion-euro fab in Dresden to press the advantage. This
+          is the model that works: a real product, real customers, patient capital, kept at home. But notice
+          where it sits &mdash; in the mature, industrial, slower-moving end of the business, not the
+          bleeding-edge logic that runs AI &mdash; and notice that even here the share is slipping as Chinese
+          rivals scale. Europe can hold a chokepoint when it builds in its own industrial heartland. The
+          puzzle of the whole essay is how rarely it tries.
+        </P>
+
+        <P>
           Which is the right moment to be fair to the other side of the ledger. Critics of an argument like
           this one always have a ready reply: but look at the bright spots &mdash; ASML, Arm, Mistral, Novo
           Nordisk, the defence-tech upstarts. Europe is not a museum; it makes world-beaters. That is true,
