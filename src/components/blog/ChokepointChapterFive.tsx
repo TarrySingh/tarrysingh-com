@@ -274,6 +274,20 @@ export function ChokepointChapterFive() {
         </P>
 
         <P>
+          And when these champions do reach the public markets, their own financial statements quietly
+          confess the ceiling. <Sq>Spotify</Sq>, for all its seven hundred million users, hands roughly{" "}
+          <Sq>70% of its revenue</Sq> to the American music labels that own the rights, capping its margins
+          permanently beneath them. <Sq>Klarna</Sq>, having listed in New York, trades down more than half
+          from its offer price, valued by the market not as a rocket but as a mature payments processor.{" "}
+          <Sq>Zalando</Sq> is worth three-quarters less than at its 2021 peak. The market is not being
+          irrational; it is pricing a structural truth these companies live daily &mdash; that a European
+          champion sitting beneath an American platform, an American rights-holder or an American exchange
+          captures only the slice of value the layer above it chooses to leave. They are real, profitable,
+          admirable businesses. They are also, every one of them, tenants reading the terms of a lease they
+          did not write.
+        </P>
+
+        <P>
           Which points at the input underneath all the others, the one Europe is most lavishly endowed
           with and most carelessly exports: not capital, not companies, but people. The next chapter is
           about the talent &mdash; the brains Europe trains at its own expense and then rents out to the
