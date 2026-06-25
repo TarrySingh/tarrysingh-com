@@ -22,6 +22,7 @@ import { RamaswamyPedigree } from "@/components/synaptic/RamaswamyPedigree"
 import { SicilianoRose } from "@/components/synaptic/SicilianoRose"
 import { StatisticalCeiling } from "@/components/synaptic/StatisticalCeiling"
 import { SynapticSubscribe } from "@/components/synaptic/SynapticSubscribe"
+import { SynapticSubscribeInline } from "@/components/synaptic/SynapticSubscribeInline"
 import { SubstrateScales } from "@/components/synaptic/SubstrateScales"
 import { SymphonyStudio } from "@/components/synaptic/SymphonyStudio"
 import { VisionHorizon } from "@/components/synaptic/VisionHorizon"
@@ -318,6 +319,10 @@ export default function SymphonyPage() {
             </p>
           </Cartouche>
         </div>
+      </section>
+
+      <section className="syn-column pt-32">
+        <SynapticSubscribeInline accent="--symphony-violet-hi" />
       </section>
 
       <section id="objectives" className="syn-column space-y-8 pt-32">
@@ -639,6 +644,10 @@ export default function SymphonyPage() {
           </Link>
           <Hairline />
         </div>
+      </section>
+
+      <section className="syn-column pt-32">
+        <SynapticSubscribeInline accent="--symphony-violet-hi" />
       </section>
 
       <section className="syn-column pt-32">
