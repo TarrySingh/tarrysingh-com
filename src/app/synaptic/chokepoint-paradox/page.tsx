@@ -2,6 +2,7 @@ import type { ReactNode } from "react"
 
 import { ChokepointJumpNav } from "@/components/blog/ChokepointJumpNav"
 import { SynapticSubscribe } from "@/components/synaptic/SynapticSubscribe"
+import { SynapticSubscribeInline } from "@/components/synaptic/SynapticSubscribeInline"
 import { ChokepointPrologue } from "@/components/blog/ChokepointPrologue"
 import { OvertureDashboard } from "@/components/blog/OvertureDashboard"
 import { ChokepointChapterOne } from "@/components/blog/ChokepointChapterOne"
@@ -90,6 +91,12 @@ export default function ChokepointParadoxPage() {
       {/* CHAPTER 2 — prose + V6/V7/V8, in essay flow */}
       <ChokepointChapterTwo />
 
+      <section className="mt-16">
+        <Stage max={760}>
+          <SynapticSubscribeInline accent="var(--cp-wonder-hi, #f4cd86)" />
+        </Stage>
+      </section>
+
       {/* CHAPTER 3 — prose + V9/V10/V11/V12, in essay flow */}
       <ChokepointChapterThree />
 
@@ -98,6 +105,12 @@ export default function ChokepointParadoxPage() {
 
       {/* CHAPTER 5 — prose + V18/V19/V20, in essay flow */}
       <ChokepointChapterFive />
+
+      <section className="mt-16">
+        <Stage max={760}>
+          <SynapticSubscribeInline accent="var(--cp-wonder-hi, #f4cd86)" />
+        </Stage>
+      </section>
 
       {/* CHAPTER 6 — prose + V21/V22/V23, in essay flow */}
       <ChokepointChapterSix />
@@ -108,6 +121,12 @@ export default function ChokepointParadoxPage() {
       {/* CHAPTER 8 — prose + V27/V28/V29, in essay flow */}
       <ChokepointChapterEight />
 
+      <section className="mt-16">
+        <Stage max={760}>
+          <SynapticSubscribeInline accent="var(--cp-wonder-hi, #f4cd86)" />
+        </Stage>
+      </section>
+
       {/* CHAPTER 9 — prose + V30/V31/V32, in essay flow */}
       <ChokepointChapterNine />
 
@@ -116,6 +135,12 @@ export default function ChokepointParadoxPage() {
 
       {/* CHAPTER 11 — prose + V37/V38/V39, in essay flow */}
       <ChokepointChapterEleven />
+
+      <section className="mt-16">
+        <Stage max={760}>
+          <SynapticSubscribeInline accent="var(--cp-wonder-hi, #f4cd86)" />
+        </Stage>
+      </section>
 
       {/* CHAPTER 12 + CODA — prose + V40/V41/V42, the constructive turn */}
       <ChokepointChapterTwelve />
