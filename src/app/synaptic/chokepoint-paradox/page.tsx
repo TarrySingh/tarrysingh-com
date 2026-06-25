@@ -1,6 +1,7 @@
 import type { ReactNode } from "react"
 
 import { ChokepointJumpNav } from "@/components/blog/ChokepointJumpNav"
+import { SynapticSubscribe } from "@/components/synaptic/SynapticSubscribe"
 import { ChokepointPrologue } from "@/components/blog/ChokepointPrologue"
 import { OvertureDashboard } from "@/components/blog/OvertureDashboard"
 import { ChokepointChapterOne } from "@/components/blog/ChokepointChapterOne"
@@ -118,6 +119,9 @@ export default function ChokepointParadoxPage() {
 
       {/* CHAPTER 12 + CODA — prose + V40/V41/V42, the constructive turn */}
       <ChokepointChapterTwelve />
+
+      {/* Subscribe — the studio's folio dispatch card, foot of the plate */}
+      <SynapticSubscribe />
 
       <p
         className="mx-auto mt-24 max-w-xl text-center text-[12px]"
