@@ -5,6 +5,7 @@ import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { JumpNav } from "@/components/synaptic/JumpNav"
+import { SynapticSubscribeInline } from "@/components/synaptic/SynapticSubscribeInline"
 
 const SECTIONS = [
   { id: "abstract", label: "0 · Abstract" },
@@ -337,6 +338,10 @@ export default function SymphonyProposalPage() {
         </div>
       </section>
 
+      <section className="syn-column pt-32">
+        <SynapticSubscribeInline accent="--symphony-violet-hi" />
+      </section>
+
       {/* Section 4 — Evidence */}
       <section id="evidence" className="syn-column space-y-8 pt-32">
         <div className="space-y-3">
@@ -523,6 +528,10 @@ export default function SymphonyProposalPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="syn-column pt-32">
+        <SynapticSubscribeInline accent="--symphony-violet-hi" />
       </section>
 
       {/* Section 8 — Go-to-market */}
