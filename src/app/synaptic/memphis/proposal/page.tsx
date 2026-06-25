@@ -5,6 +5,7 @@ import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { NumberedDisk } from "@/components/editorial/NumberedDisk"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { JumpNav } from "@/components/synaptic/JumpNav"
+import { SynapticSubscribeInline } from "@/components/synaptic/SynapticSubscribeInline"
 
 const SECTIONS = [
   { id: "abstract", label: "0 · Abstract" },
@@ -282,6 +283,10 @@ export default function MemphisProposalPage() {
         </div>
       </section>
 
+      <section className="syn-column pt-32">
+        <SynapticSubscribeInline accent="--memphis-amber-hi" />
+      </section>
+
       {/* 4 Objectives */}
       <section id="objectives" className="syn-column space-y-8 pt-32">
         <div className="space-y-3">
@@ -451,6 +456,10 @@ export default function MemphisProposalPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="syn-column pt-32">
+        <SynapticSubscribeInline accent="--memphis-amber-hi" />
       </section>
 
       {/* 7 Uncertainty */}
