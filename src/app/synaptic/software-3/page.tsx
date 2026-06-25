@@ -5,6 +5,7 @@ import { Hairline } from "@/components/editorial/Hairline"
 import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { JumpNav } from "@/components/synaptic/JumpNav"
+import { SynapticSubscribe } from "@/components/synaptic/SynapticSubscribe"
 import { FullDeck } from "@/components/synaptic/FullDeck"
 
 import { TwentyFortyPlanisphere } from "@/components/blog/TwentyFortyPlanisphere"
@@ -404,6 +405,13 @@ export default function Software3Page() {
           </Link>
         </div>
       </section>
+
+      <div className="syn-column">
+        <SynapticSubscribe
+          accent="var(--sw3-accent, #e8a44a)"
+          accentHi="var(--sw3-accent-hi, #f4c482)"
+        />
+      </div>
 
       <footer className="syn-column pb-24 pt-20 text-center">
         <ItalicCaption className="mx-auto max-w-xl">

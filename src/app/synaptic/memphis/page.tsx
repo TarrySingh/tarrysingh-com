@@ -11,6 +11,7 @@ import { ChipPlate } from "@/components/synaptic/ChipPlate"
 import { EnergyGradient } from "@/components/synaptic/EnergyGradient"
 import { JumpNav } from "@/components/synaptic/JumpNav"
 import { StdpWindow } from "@/components/synaptic/StdpWindow"
+import { SynapticSubscribe } from "@/components/synaptic/SynapticSubscribe"
 import { TwoPhaseDynamics } from "@/components/synaptic/TwoPhaseDynamics"
 
 const SECTIONS = [
@@ -334,6 +335,10 @@ export default function MemphisPage() {
           </Link>
         </div>
       </section>
+
+      <div className="syn-column">
+        <SynapticSubscribe />
+      </div>
 
       <footer className="syn-column pb-24 pt-32 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">

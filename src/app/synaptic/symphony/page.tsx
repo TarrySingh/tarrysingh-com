@@ -21,6 +21,7 @@ import { JumpNav } from "@/components/synaptic/JumpNav"
 import { RamaswamyPedigree } from "@/components/synaptic/RamaswamyPedigree"
 import { SicilianoRose } from "@/components/synaptic/SicilianoRose"
 import { StatisticalCeiling } from "@/components/synaptic/StatisticalCeiling"
+import { SynapticSubscribe } from "@/components/synaptic/SynapticSubscribe"
 import { SubstrateScales } from "@/components/synaptic/SubstrateScales"
 import { SymphonyStudio } from "@/components/synaptic/SymphonyStudio"
 import { VisionHorizon } from "@/components/synaptic/VisionHorizon"
@@ -776,6 +777,10 @@ export default function SymphonyPage() {
           </Link>
         </div>
       </section>
+
+      <div className="syn-column">
+        <SynapticSubscribe />
+      </div>
 
       <footer className="syn-column pb-24 pt-32 text-center">
         <ItalicCaption className="mx-auto max-w-2xl">
