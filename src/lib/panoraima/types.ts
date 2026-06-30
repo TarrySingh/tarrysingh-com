@@ -870,11 +870,21 @@ export interface Wp4Guides {
   claude_howto: Wp4ClaudeHowto[]
 }
 
+export interface Wp4RefreshEvent {
+  at: string
+  wiki_captured?: string | null
+  sharepoint_generated?: string | null
+  realai_total?: number
+  reviewed?: number
+}
+
 export interface Wp4Registry {
   wp: string
   title: string
   tagline: string
   generated_at: string
+  refreshed_at?: string
+  refresh_history?: Wp4RefreshEvent[]
   data_sources: {
     wiki: { status: string; captured_at?: string; scope?: string; master_total?: number; master_list_total?: number }
     sharepoint: { generated_at?: string; counts?: Record<string, number> }
