@@ -1,13 +1,13 @@
 "use client"
 
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import {
   PenLine, Eye, AlertTriangle, FileCheck2, FileX2,
   ExternalLink, CalendarClock, CheckCircle2, ListTodo, Hourglass, FileWarning,
 } from "lucide-react"
 import type { Wp4Registry, Wp4LE, Wp4Completeness } from "@/lib/panoraima/types"
 import {
-  RUST, TRACK_COLOR, TRACK_SHORT, statusStyle, ROLE_LABEL, ROLE_COLOR,
+  RUST, TRACK_ORDER, TRACK_COLOR, TRACK_SHORT, statusStyle, ROLE_LABEL, ROLE_COLOR,
 } from "./wp4constants"
 
 // An LE "needs action" from RealAI's side when its wiki page is mid-flight.
@@ -280,22 +280,74 @@ function BoardColumn({
   )
 }
 
+// Pill counts recomputed over an arbitrary slice of the board so they respond to
+// the track filter. Definitions mirror build_wp4_registry's summary.realai.
+function pillCounts(les: Wp4LE[]) {
+  let author = 0, reviewer = 0, needs = 0, authorTodo = 0, ready = 0, reviewed = 0
+  for (const le of les) {
+    const c = le.completeness
+    if (le.realai.roles.some(r => r.role === "reviewer")) reviewer++
+    if (c?.is_author) author++
+    if (le.review_done) reviewed++
+    if (c && (c.author_needs.length > 0 || c.ready_to_review)) needs++
+    if (c && c.author_needs.length > 0) authorTodo++
+    if (c && !c.is_author && c.ready_to_review) ready++
+  }
+  return { author, reviewer, needs, authorTodo, ready, reviewed }
+}
+
+function FilterChip({
+  label, count, color, active, onClick,
+}: {
+  label: string
+  count: number
+  color?: string
+  active: boolean
+  onClick: () => void
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.1em] transition-all ${
+        active
+          ? "border-[#16181D] bg-[#16181D] text-white shadow-[0_2px_8px_rgba(20,22,27,0.18)]"
+          : "border-[#DCDDE1] bg-white text-[#444A55] hover:border-[#16181D]/40 hover:text-[#16181D]"
+      }`}
+    >
+      {color && (
+        <span className="w-2 h-2 rounded-[2px]" style={{ background: color }} aria-hidden />
+      )}
+      {label}
+      <span className={`tabular-nums ${active ? "text-white/70" : "text-[#9CA3AF]"}`}>{count}</span>
+    </button>
+  )
+}
+
 export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) {
-  const { author, reviewer, needs_action, author_todo, ready_to_review, reviewed } =
-    registry.summary.realai
-
   const board = registry.realai_board
-  const wikiGapCount = useMemo(
-    () => board.filter(le => le.realai_wiki_gap || le.off_wiki).length, [board])
+  const [track, setTrack] = useState<string | null>(null)   // null = all tracks
 
+  // RealAI LE count per track — drives the filter-chip badges
+  const trackCounts = useMemo(() => {
+    const m: Record<string, number> = {}
+    for (const le of board) m[le.track] = (m[le.track] ?? 0) + 1
+    return m
+  }, [board])
+
+  // the board narrowed to the active track filter; everything below reflects it
+  const filtered = useMemo(
+    () => (track ? board.filter(le => le.track === track) : board),
+    [board, track],
+  )
+  const counts = useMemo(() => pillCounts(filtered), [filtered])
+  const wikiGapCount = useMemo(
+    () => filtered.filter(le => le.realai_wiki_gap || le.off_wiki).length, [filtered])
   const authoring = useMemo(
-    () => board.filter(le => hasRole(le, "authoring")),
-    [board],
-  )
+    () => filtered.filter(le => hasRole(le, "authoring")), [filtered])
   const reviewing = useMemo(
-    () => board.filter(le => hasRole(le, "reviewing")),
-    [board],
-  )
+    () => filtered.filter(le => hasRole(le, "reviewing")), [filtered])
 
   return (
     <section>
@@ -311,25 +363,44 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
           action next. Routing: Authoring &rarr; Tarry; Reviewing &rarr; Tannistha &amp; Monira.
         </p>
 
-        {/* Summary strip */}
-        <div className="mt-6 flex flex-wrap items-center gap-2">
-          <StatPill label="Authoring" value={author} accent />
-          <StatPill label="Reviewing" value={reviewer} />
-          <StatPill label="Needs action" value={needs_action} accent />
-          {typeof author_todo === "number" && (
-            <StatPill label="LEs needing content" value={author_todo} />
-          )}
-          {typeof ready_to_review === "number" && (
-            <StatPill label="Ready to review" value={ready_to_review} />
-          )}
-          {typeof reviewed === "number" && reviewed > 0 && (
+        {/* Track filter — All + the five wiki tracks (counts are RealAI's LEs) */}
+        <div className="mt-6 flex flex-wrap items-center gap-1.5">
+          <span className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#5B616B] mr-1.5">
+            Filter by track
+          </span>
+          <FilterChip
+            label="All tracks"
+            count={board.length}
+            active={track === null}
+            onClick={() => setTrack(null)}
+          />
+          {TRACK_ORDER.map(t => (
+            <FilterChip
+              key={t}
+              label={TRACK_SHORT[t] ?? t}
+              color={TRACK_COLOR[t]}
+              count={trackCounts[t] ?? 0}
+              active={track === t}
+              onClick={() => setTrack(track === t ? null : t)}
+            />
+          ))}
+        </div>
+
+        {/* Summary strip — reflects the active track filter */}
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <StatPill label="Authoring" value={counts.author} accent />
+          <StatPill label="Reviewing" value={counts.reviewer} />
+          <StatPill label="Needs action" value={counts.needs} accent />
+          <StatPill label="LEs needing content" value={counts.authorTodo} />
+          <StatPill label="Ready to review" value={counts.ready} />
+          {counts.reviewed > 0 && (
             <div className="inline-flex items-baseline gap-1.5 rounded-lg border border-[#BFE2CC] bg-[#E7F4EC] px-3 py-1.5 shadow-[0_1px_3px_rgba(20,22,27,0.06)]">
-              <span className="text-lg font-bold tabular-nums leading-none tracking-[-0.02em]" style={{ color: "#1F6B41" }}>{reviewed}</span>
+              <span className="text-lg font-bold tabular-nums leading-none tracking-[-0.02em]" style={{ color: "#1F6B41" }}>{counts.reviewed}</span>
               <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.14em] text-[#1F6B41]">Reviewed &#10003;</span>
             </div>
           )}
           <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.12em] text-[#5B616B] ml-1 tabular-nums">
-            · {board.length} LEs on RealAI&apos;s plate
+            · {track ? `${filtered.length} of ${board.length}` : board.length} LEs on RealAI&apos;s plate
           </span>
           {!!wikiGapCount && (
             <span
