@@ -2,15 +2,15 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-06-30T15:56:13.519940Z",
-  "refreshed_at": "2026-06-30T15:56:13.519940Z",
+  "generated_at": "2026-06-30T16:03:15.505063Z",
+  "refreshed_at": "2026-06-30T16:03:15.505063Z",
   "refresh_history": [
     {
       "at": "2026-06-30T14:07:00.511354Z",
       "wiki_captured": "2026-06-30T11:44:26.449Z",
       "sharepoint_generated": "2026-06-30T14:07:00.320241Z",
       "realai_total": 55,
-      "reviewed": 11
+      "reviewed": 12
     }
   ],
   "data_sources": {
@@ -59,7 +59,7 @@
       "total": 55,
       "author": 11,
       "reviewer": 44,
-      "reviewed": 11,
+      "reviewed": 12,
       "by_status": {
         "In development": 9,
         "In review": 30,
@@ -14080,8 +14080,8 @@
       "reviewer": "Real AI",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Minor revision. Right topic (adoption, not validation, is where healthcare AI stalls) but reads as generic change management; make it AI-specific by swapping in trust, explainability, accountability, workflow fit, the validation-to-adoption gap, and model drift/monitoring + equity-as-resistance (120 min is already full, so trade out generic depth); fix the three weak outcomes (LO3/LO6 'explore', LO5 run-on); give the 'apply' outcome a real exercise; add a formative check; reconsider 'all three roles'.",
       "materials": {
         "count": 0,
         "has": false,
@@ -22815,8 +22815,8 @@
       "reviewer": "Real AI",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Minor revision. Right topic (adoption, not validation, is where healthcare AI stalls) but reads as generic change management; make it AI-specific by swapping in trust, explainability, accountability, workflow fit, the validation-to-adoption gap, and model drift/monitoring + equity-as-resistance (120 min is already full, so trade out generic depth); fix the three weak outcomes (LO3/LO6 'explore', LO5 run-on); give the 'apply' outcome a real exercise; add a formative check; reconsider 'all three roles'.",
       "materials": {
         "count": 0,
         "has": false,
