@@ -79,6 +79,12 @@ export async function getHighWaterModifiedTime(): Promise<string | null> {
  */
 function isRetryableFailureReason(reason: string | null): boolean {
   if (!reason) return false
+  // Permanent Drive failures never recover on retry — a 403/404/410 means
+  // the file was deleted or the service account lost access (e.g. the file
+  // was removed from the polled folder after publish). Drop them so they
+  // don't churn a Drive call every tick. (The ingest route now appends the
+  // HTTP status to `drive_download:` reasons so this can fire.)
+  if (/:(?:401|403|404|410)\b/.test(reason)) return false
   return (
     reason.startsWith("ai_frontmatter:ai_call_failed") ||
     reason.startsWith("awaiting_frontmatter:") ||
@@ -89,8 +95,16 @@ function isRetryableFailureReason(reason: string | null): boolean {
 
 /**
  * Rows that failed on a transient error recently enough to be worth a
- * retry. Bounded to the last 48h (the cron's hard age floor) so a
- * permanently-stuck file isn't retried forever. Capped per tick.
+ * retry. Bounded to the last 48h since the file was FIRST seen so a
+ * permanently-stuck file isn't retried forever.
+ *
+ * Bug fixed 2026-06-30: this previously bounded on `last_seen_at`, but
+ * every failed retry calls `recordDriveIngest(status:"failed")` which
+ * bumps `last_seen_at` to now — so the 48h window never expired and a
+ * dead file (e.g. one published-then-removed-from-folder, whose Drive
+ * download now 403/404s) was retried every 15 min forever. Keying the
+ * cap off the immutable `first_seen_at` makes "give up after 48h" real.
+ * (That stuck retry was the symptom behind the frozen ingest cursor.)
  */
 export async function getRetryableFailures(limit = 5): Promise<DriveIngestRow[]> {
   const sb = createServiceClient()
@@ -101,8 +115,8 @@ export async function getRetryableFailures(limit = 5): Promise<DriveIngestRow[]>
       "file_id,filename,slug,modified_time_iso,status,email_id,failure_reason,first_seen_at,last_seen_at",
     )
     .eq("status", "failed")
-    .gte("last_seen_at", cutoffIso)
-    .order("last_seen_at", { ascending: true })
+    .gte("first_seen_at", cutoffIso)
+    .order("first_seen_at", { ascending: true })
     .limit(50)
   if (error) {
     console.error(JSON.stringify({ tag: "studio.drive_log.retryables_error", error }))

@@ -227,19 +227,22 @@ async function ingestFile(
   // Download + process.
   const dl = await downloadFileContent(file.id)
   if (!dl.ok) {
+    // Append the HTTP status (when present) so the retry classifier can
+    // treat permanent 403/404/410s as terminal instead of retrying forever.
+    const dlReason = `drive_download:${dl.error}${"status" in dl ? `:${dl.status}` : ""}`
     await recordDriveIngest({
       fileId: file.id,
       filename: file.name,
       modifiedTimeIso: file.modifiedTime,
       status: "failed",
-      failureReason: `drive_download:${dl.error}`,
+      failureReason: dlReason,
     }).catch(() => {})
     return {
       file_id: file.id,
       filename: file.name,
       modifiedTime: file.modifiedTime,
       action: "failed",
-      reason: `drive_download:${dl.error}`,
+      reason: dlReason,
     }
   }
 
