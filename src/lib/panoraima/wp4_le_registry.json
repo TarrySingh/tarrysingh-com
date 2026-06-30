@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-06-30T15:47:47.398425Z",
-  "refreshed_at": "2026-06-30T15:47:47.398425Z",
+  "generated_at": "2026-06-30T15:56:13.519940Z",
+  "refreshed_at": "2026-06-30T15:56:13.519940Z",
   "refresh_history": [
     {
       "at": "2026-06-30T14:07:00.511354Z",
@@ -199,6 +199,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -250,6 +251,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -292,6 +294,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -334,6 +337,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -376,6 +380,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -418,6 +423,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -460,6 +466,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -502,6 +509,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -544,6 +552,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -639,6 +648,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -734,6 +744,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -829,6 +840,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -871,6 +883,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -922,6 +935,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -964,6 +978,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1006,6 +1021,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1048,6 +1064,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1090,6 +1107,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1132,6 +1150,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1174,6 +1193,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1216,6 +1236,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1258,6 +1279,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1300,6 +1322,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1342,6 +1365,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1384,6 +1408,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1426,6 +1451,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1468,6 +1494,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1510,6 +1537,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1552,6 +1580,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1593,6 +1622,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1635,6 +1665,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1677,6 +1708,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1719,6 +1751,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1761,6 +1794,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1801,6 +1835,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1841,6 +1876,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1881,6 +1917,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1921,6 +1958,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1961,6 +1999,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2001,6 +2040,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2041,6 +2081,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2081,6 +2122,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2121,6 +2163,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2161,6 +2204,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2201,6 +2245,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2241,6 +2286,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2281,6 +2327,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2321,6 +2368,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2361,6 +2409,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2401,6 +2450,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2441,6 +2491,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2481,6 +2532,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2521,6 +2573,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2561,6 +2614,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2601,6 +2655,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2641,6 +2696,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2681,6 +2737,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2721,6 +2778,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2779,6 +2837,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2837,6 +2896,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2895,6 +2955,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2953,6 +3014,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3011,6 +3073,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3069,6 +3132,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3127,6 +3191,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3185,6 +3250,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3243,6 +3309,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3301,6 +3368,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3359,6 +3427,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3417,6 +3486,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3475,6 +3545,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3533,6 +3604,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3591,6 +3663,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3649,6 +3722,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3707,6 +3781,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3765,6 +3840,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3823,6 +3899,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3881,6 +3958,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3939,6 +4017,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3980,6 +4059,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4021,6 +4101,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4062,6 +4143,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4103,6 +4185,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4144,6 +4227,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4185,6 +4269,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4226,6 +4311,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4267,6 +4353,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4308,6 +4395,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4349,6 +4437,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4390,6 +4479,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4431,6 +4521,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4472,6 +4563,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4513,6 +4605,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4554,6 +4647,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4595,6 +4689,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4636,6 +4731,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4677,6 +4773,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4718,6 +4815,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4759,6 +4857,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4800,6 +4899,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4841,6 +4941,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4882,6 +4983,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4923,6 +5025,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4964,6 +5067,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5005,6 +5109,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5046,6 +5151,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5087,6 +5193,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5128,6 +5235,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5169,6 +5277,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5210,6 +5319,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5251,6 +5361,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5292,6 +5403,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5333,6 +5445,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5374,6 +5487,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5415,6 +5529,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5456,6 +5571,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5497,6 +5613,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5538,6 +5655,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5579,6 +5697,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5620,6 +5739,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5661,6 +5781,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5702,6 +5823,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -5760,6 +5882,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5801,6 +5924,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5842,6 +5966,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5883,6 +6008,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5924,6 +6050,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5966,6 +6093,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6007,6 +6135,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6048,6 +6177,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6089,6 +6219,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6130,6 +6261,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6171,6 +6303,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6212,6 +6345,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6253,6 +6387,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6294,6 +6429,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6335,6 +6471,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6376,6 +6513,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6417,6 +6555,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6458,6 +6597,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6508,6 +6648,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6549,6 +6690,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6590,6 +6732,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6631,6 +6774,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6672,6 +6816,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6713,6 +6858,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6763,6 +6909,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6813,6 +6960,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6863,6 +7011,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -6921,6 +7070,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6962,6 +7112,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7003,6 +7154,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7044,6 +7196,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7085,6 +7238,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7126,6 +7280,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7167,6 +7322,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7208,6 +7364,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -7267,6 +7424,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7309,6 +7467,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7351,6 +7510,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7392,6 +7552,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7433,6 +7594,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7474,6 +7636,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -7532,6 +7695,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7573,6 +7737,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7614,6 +7779,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7655,6 +7821,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7696,6 +7863,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7737,6 +7905,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7778,6 +7947,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7819,6 +7989,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7860,6 +8031,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7901,6 +8073,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7942,6 +8115,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -7993,6 +8167,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8034,6 +8209,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8085,6 +8261,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8126,6 +8303,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8167,6 +8345,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8208,6 +8387,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8249,6 +8429,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8290,6 +8471,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -8348,6 +8530,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8398,6 +8581,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -8456,6 +8640,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -8514,6 +8699,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8564,6 +8750,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8614,6 +8801,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8664,6 +8852,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8714,6 +8903,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8764,6 +8954,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8805,6 +8996,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8856,6 +9048,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8907,6 +9100,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8949,6 +9143,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8991,6 +9186,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9033,6 +9229,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9075,6 +9272,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9117,6 +9315,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9159,6 +9358,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9201,6 +9401,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9243,6 +9444,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9285,6 +9487,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9327,6 +9530,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9369,6 +9573,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -9420,6 +9625,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9462,6 +9668,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9504,6 +9711,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9546,6 +9754,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9588,6 +9797,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9629,6 +9839,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9670,6 +9881,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9711,6 +9923,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -9762,6 +9975,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -9812,6 +10026,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9853,6 +10068,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9911,6 +10127,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9952,6 +10169,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -9993,6 +10211,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10034,6 +10253,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10075,6 +10295,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10116,6 +10337,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10157,6 +10379,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": "Strong foundations plan, minor revision. Add the healthcare-critical evaluation pieces (calibration and AUPRC, external/temporal validation, data leakage), name a concrete flawed example, and add one worked mini-case so the 'evaluate' outcome has a student activity; line up the outcome tags.",
       "materials": {
         "count": 0,
         "has": false,
@@ -10251,6 +10474,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10292,6 +10516,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": "Minor revision. The teaching is good, but the six learning outcomes are written so they cannot be assessed and need a real rewrite (to about four); the data-analysis and fairness outcomes are not actually taught; right-size the 65-minute block with one worksheet (question scaffold, protocol checklist, short rubric, role briefs).",
       "materials": {
         "count": 0,
         "has": false,
@@ -10386,6 +10611,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10427,6 +10653,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10468,6 +10695,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 47,
         "has": true,
@@ -10830,6 +11058,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10871,6 +11100,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10912,6 +11142,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": "Major revision. Part 2 is built on library-size confounding but never teaches the fix (CPM or size-factor normalisation), and Part 1's text mislabels log2(count+1) as 'normalization'; the definitions slide is in Dutch; the lesson plan is not on the wiki yet.",
       "materials": {
         "count": 73,
         "has": true,
@@ -11329,6 +11560,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11370,6 +11602,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11466,6 +11699,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11507,6 +11741,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11548,6 +11783,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11589,6 +11825,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11630,6 +11867,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11671,6 +11909,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11712,6 +11951,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11753,6 +11993,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11794,6 +12035,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11835,6 +12077,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11876,6 +12119,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11917,6 +12161,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11958,6 +12203,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -11999,6 +12245,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12040,6 +12287,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12081,6 +12329,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -12131,6 +12380,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12172,6 +12422,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12213,6 +12464,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12254,6 +12506,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12295,6 +12548,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12336,6 +12590,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12377,6 +12632,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12418,6 +12674,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12459,6 +12716,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12500,6 +12758,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12541,6 +12800,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -12591,6 +12851,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -12649,6 +12910,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12690,6 +12952,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12731,6 +12994,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12772,6 +13036,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12813,6 +13078,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -12864,6 +13130,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -12977,6 +13244,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13018,6 +13286,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13059,6 +13328,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13155,6 +13425,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13196,6 +13467,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13237,6 +13509,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13278,6 +13551,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13319,6 +13593,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13360,6 +13635,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13401,6 +13677,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13442,6 +13719,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13483,6 +13761,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13524,6 +13803,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13565,6 +13845,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13606,6 +13887,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13702,6 +13984,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13798,6 +14081,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13892,6 +14176,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13988,6 +14273,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14030,6 +14316,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14124,6 +14411,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14165,6 +14453,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14263,6 +14552,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14304,6 +14594,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14345,6 +14636,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14386,6 +14678,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14427,6 +14720,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14525,6 +14819,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14566,6 +14861,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14607,6 +14903,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14705,6 +15002,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14800,6 +15098,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14841,6 +15140,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14882,6 +15182,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -14980,6 +15281,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15021,6 +15323,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15062,6 +15365,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15103,6 +15407,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15144,6 +15449,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15242,6 +15548,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15283,6 +15590,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15324,6 +15632,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15365,6 +15674,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15460,6 +15770,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15558,6 +15869,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15599,6 +15911,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15640,6 +15953,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15681,6 +15995,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15722,6 +16037,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15763,6 +16079,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15804,6 +16121,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15845,6 +16163,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15886,6 +16205,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15926,6 +16246,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16029,6 +16350,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16079,6 +16401,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16182,6 +16505,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16232,6 +16556,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16282,6 +16607,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16332,6 +16658,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16382,6 +16709,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16432,6 +16760,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16473,6 +16802,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16514,6 +16844,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16555,6 +16886,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16596,6 +16928,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16637,6 +16970,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16687,6 +17021,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16737,6 +17072,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16787,6 +17123,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16837,6 +17174,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -16887,6 +17225,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16928,6 +17267,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16969,6 +17309,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17010,6 +17351,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17051,6 +17393,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17092,6 +17435,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17133,6 +17477,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -17183,6 +17528,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -17241,6 +17587,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -17291,6 +17638,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -17349,6 +17697,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -17399,6 +17748,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -17465,6 +17815,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -17515,6 +17866,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -17573,6 +17925,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17614,6 +17967,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17655,6 +18009,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17696,6 +18051,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17737,6 +18093,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17778,6 +18135,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17819,6 +18177,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17860,6 +18219,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17901,6 +18261,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -17951,6 +18312,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -18001,6 +18363,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -18051,6 +18414,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -18101,6 +18465,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -18151,6 +18516,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18192,6 +18558,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18233,6 +18600,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18274,6 +18642,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18315,6 +18684,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18356,6 +18726,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18397,6 +18768,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18438,6 +18810,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18479,6 +18852,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18521,6 +18895,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18579,6 +18954,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18637,6 +19013,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18695,6 +19072,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18753,6 +19131,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18794,6 +19173,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18835,6 +19215,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18876,6 +19257,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18917,6 +19299,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18958,6 +19341,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18999,6 +19383,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19040,6 +19425,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19081,6 +19467,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19122,6 +19509,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19163,6 +19551,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19204,6 +19593,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19245,6 +19635,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19286,6 +19677,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19327,6 +19719,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19368,6 +19761,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19409,6 +19803,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19450,6 +19845,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19491,6 +19887,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19532,6 +19929,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19573,6 +19971,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19614,6 +20013,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19655,6 +20055,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19696,6 +20097,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19737,6 +20139,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19778,6 +20181,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19819,6 +20223,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19860,6 +20265,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19901,6 +20307,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19999,6 +20406,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20097,6 +20505,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20195,6 +20604,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -20246,6 +20656,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20288,6 +20699,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20330,6 +20742,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20372,6 +20785,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20414,6 +20828,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20456,6 +20871,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20498,6 +20914,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20540,6 +20957,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20582,6 +21000,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20624,6 +21043,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20666,6 +21086,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20708,6 +21129,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -20759,6 +21181,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20801,6 +21224,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20896,6 +21320,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20938,6 +21363,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20980,6 +21406,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21022,6 +21449,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21064,6 +21492,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21106,6 +21535,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21148,6 +21578,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -21199,6 +21630,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21241,6 +21673,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21336,6 +21769,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21378,6 +21812,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21420,6 +21855,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21464,6 +21900,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": "Strong foundations plan, minor revision. Add the healthcare-critical evaluation pieces (calibration and AUPRC, external/temporal validation, data leakage), name a concrete flawed example, and add one worked mini-case so the 'evaluate' outcome has a student activity; line up the outcome tags.",
       "materials": {
         "count": 0,
         "has": false,
@@ -21558,6 +21995,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": "Minor revision. The teaching is good, but the six learning outcomes are written so they cannot be assessed and need a real rewrite (to about four); the data-analysis and fairness outcomes are not actually taught; right-size the 65-minute block with one worksheet (question scaffold, protocol checklist, short rubric, role briefs).",
       "materials": {
         "count": 0,
         "has": false,
@@ -21652,6 +22090,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": "Major revision. Part 2 is built on library-size confounding but never teaches the fix (CPM or size-factor normalisation), and Part 1's text mislabels log2(count+1) as 'normalization'; the definitions slide is in Dutch; the lesson plan is not on the wiki yet.",
       "materials": {
         "count": 73,
         "has": true,
@@ -22069,6 +22508,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -22182,6 +22622,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22278,6 +22719,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22374,6 +22816,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22468,6 +22911,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22564,6 +23008,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22658,6 +23103,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22753,6 +23199,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22811,6 +23258,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22869,6 +23317,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22927,6 +23376,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22985,6 +23435,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23043,6 +23494,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23101,6 +23553,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23159,6 +23612,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23217,6 +23671,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23275,6 +23730,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23333,6 +23789,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23391,6 +23848,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23449,6 +23907,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23507,6 +23966,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23565,6 +24025,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23623,6 +24084,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23681,6 +24143,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23739,6 +24202,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23797,6 +24261,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23855,6 +24320,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23913,6 +24379,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24009,6 +24476,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24107,6 +24575,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24202,6 +24671,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24297,6 +24767,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24392,6 +24863,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24487,6 +24959,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24545,6 +25018,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24640,6 +25114,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24735,6 +25210,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24831,6 +25307,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -24934,6 +25411,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
+      "review_note": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -25037,6 +25515,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25095,6 +25574,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25153,6 +25633,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25211,6 +25692,7 @@
       "off_wiki": false,
       "realai_wiki_gap": true,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25269,6 +25751,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25367,6 +25850,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25465,6 +25949,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25563,6 +26048,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25661,6 +26147,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25759,6 +26246,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25857,6 +26345,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25955,6 +26444,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -26053,6 +26543,7 @@
       "off_wiki": true,
       "realai_wiki_gap": false,
       "review_done": false,
+      "review_note": null,
       "materials": {
         "count": 0,
         "has": false,

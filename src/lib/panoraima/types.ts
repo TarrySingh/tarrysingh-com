@@ -808,6 +808,7 @@ export interface Wp4LE {
   off_wiki?: boolean          // true = code itself isn't on the wiki master at all
   realai_wiki_gap?: boolean   // on the wiki, but the wiki doesn't list RealAI's role yet (it's only in SharePoint)
   review_done?: boolean       // a RealAI review is posted on this LE's wiki Discussion page (or added manually)
+  review_note?: string        // short headline of what RealAI found (drives the track update report)
   materials: {
     count: number
     has: boolean

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react"
 import {
   PenLine, Eye, AlertTriangle, FileCheck2, FileX2,
   ExternalLink, CalendarClock, CheckCircle2, ListTodo, Hourglass, FileWarning,
+  FileText, Copy, Download, X,
 } from "lucide-react"
 import type { Wp4Registry, Wp4LE, Wp4Completeness } from "@/lib/panoraima/types"
 import {
@@ -296,6 +297,58 @@ function pillCounts(les: Wp4LE[]) {
   return { author, reviewer, needs, authorTodo, ready, reviewed }
 }
 
+// One-line state for an LE in the update report.
+function reportState(le: Wp4LE): string {
+  if (le.review_done) return "Reviewed (posted to wiki)"
+  const c = le.completeness
+  if (c?.ready_to_review) return "Ready to review"
+  if (c && c.author_needs.length > 0) return "Author content outstanding"
+  if (le.realai_wiki_gap || le.off_wiki) return "Pending wiki listing"
+  return "In progress"
+}
+
+// Build a plain-text status report for a track lead — copy into an email or send as-is.
+function buildReport(
+  track: string | null,
+  les: Wp4LE[],
+  counts: ReturnType<typeof pillCounts>,
+  registry: Wp4Registry,
+): string {
+  const trackName = track ?? "all tracks"
+  const date = new Date(registry.refreshed_at || registry.generated_at)
+    .toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+  const gap = les.filter(le => le.realai_wiki_gap || le.off_wiki).length
+  const L: string[] = []
+  L.push("RealAI — WP4 review status update")
+  L.push(`Track: ${trackName}`)
+  L.push(`Date: ${date}`)
+  L.push("Prepared by: RealAI (reviewing: Tannistha & Monira; authoring: Tarry Singh)")
+  L.push("")
+  L.push("SUMMARY")
+  L.push(`RealAI is on ${les.length} Learning Event${les.length === 1 ? "" : "s"} in ${trackName}: ${counts.author} as author, ${counts.reviewer} as reviewer.`)
+  L.push(`Reviewed and posted: ${counts.reviewed}.  Ready to review: ${counts.ready}.  Author content outstanding: ${counts.authorTodo}.`)
+  if (gap) L.push(`${gap} not yet listed with RealAI as reviewer on the wiki master (the assignment is in the SharePoint M&F registry).`)
+  L.push("")
+  L.push("LEARNING EVENTS")
+  const ordered = [...les].sort((a, b) => {
+    const rank = (le: Wp4LE) => le.review_done ? 0 : le.completeness?.ready_to_review ? 1 : 2
+    return rank(a) - rank(b) || a.code.localeCompare(b.code)
+  })
+  for (const le of ordered) {
+    const roles = le.realai.roles.map(r => ROLE_LABEL[r.role] ?? r.role).join(", ") || "—"
+    let title = le.title?.trim() || ""
+    if (title.startsWith(le.code)) title = title.slice(le.code.length).replace(/^[\s—:-]+/, "").trim()
+    L.push("")
+    L.push(`${le.code} — ${title}`)
+    L.push(`    Status: ${le.status || "—"}  |  RealAI: ${roles}  |  ${reportState(le)}`)
+    if (le.review_note) L.push(`    What we found: ${le.review_note}`)
+    if (le.review_done && le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
+  }
+  L.push("")
+  L.push("Each reviewed LE has the full RealAI review on its wiki Discussion tab. Happy to walk through any of these.")
+  return L.join("\n")
+}
+
 function FilterChip({
   label, count, color, active, onClick,
 }: {
@@ -349,6 +402,30 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
   const reviewing = useMemo(
     () => filtered.filter(le => hasRole(le, "reviewing")), [filtered])
 
+  // Update report — a plain-text status the user can mail to the track lead.
+  const [showReport, setShowReport] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const reportText = useMemo(
+    () => buildReport(track, filtered, counts, registry), [track, filtered, counts, registry])
+  const trackLabel = track ?? "all tracks"
+  const copyReport = () => {
+    navigator.clipboard?.writeText(reportText).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1600)
+    }).catch(() => {})
+  }
+  const downloadReport = () => {
+    const blob = new Blob([reportText], { type: "text/plain;charset=utf-8" })
+    const a = document.createElement("a")
+    a.href = URL.createObjectURL(blob)
+    a.download = `RealAI-WP4-update-${(track ?? "all-tracks").replace(/\W+/g, "-")}.txt`
+    document.body.appendChild(a); a.click()
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove() }, 200)
+  }
+  const mailtoHref =
+    `mailto:?subject=${encodeURIComponent(`RealAI — WP4 review status update: ${trackLabel}`)}` +
+    `&body=${encodeURIComponent(reportText)}`
+
   return (
     <section>
       <div className="mb-8">
@@ -384,6 +461,15 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
               onClick={() => setTrack(track === t ? null : t)}
             />
           ))}
+          <button
+            type="button"
+            onClick={() => setShowReport(true)}
+            className="sm:ml-auto inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-white px-3 py-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-[#16181D] hover:border-[#16181D]/50 hover:bg-[#FAFAF9] transition-all"
+            title={`Generate an emailable status report for ${trackLabel}`}
+          >
+            <FileText className="w-3.5 h-3.5" style={{ color: RUST }} />
+            Create update report
+          </button>
         </div>
 
         {/* Summary strip — reflects the active track filter */}
@@ -431,6 +517,70 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
           hint="LEs RealAI reviews — quality gate"
         />
       </div>
+
+      {/* Update report modal — emailable status for the track lead */}
+      {showReport && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+          onClick={() => setShowReport(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="w-full max-w-2xl rounded-xl border border-[#DCDDE1] bg-white shadow-[0_24px_70px_rgba(20,22,27,0.35)]"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between gap-3 border-b border-[#E7E7EA] px-5 py-3.5">
+              <div className="flex items-center gap-2 min-w-0">
+                <FileText className="w-4 h-4 flex-shrink-0" style={{ color: RUST }} />
+                <span className="font-bold text-[15px] text-[#16181D] truncate">
+                  Update report &middot; <span className="capitalize">{trackLabel}</span>
+                </span>
+              </div>
+              <button
+                onClick={() => setShowReport(false)}
+                className="text-[#646B78] hover:text-[#16181D] transition-colors flex-shrink-0"
+                aria-label="Close"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="p-5">
+              <p className="text-[13px] text-[#444A55] mb-3">
+                A plain-text status for the {track ? trackLabel : "relevant"} track lead &mdash; copy it into an email, download it, or open it in your mail client.
+              </p>
+              <textarea
+                readOnly
+                value={reportText}
+                onFocus={e => e.currentTarget.select()}
+                className="w-full h-72 rounded-lg border border-[#DCDDE1] bg-[#FAFAF9] p-3 font-mono text-[12px] leading-relaxed text-[#16181D] resize-none focus:outline-none focus:border-[#16181D]/40"
+              />
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <button
+                  onClick={copyReport}
+                  className="inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-[13px] font-bold text-white transition-all"
+                  style={{ background: copied ? "#1F6B41" : RUST }}
+                >
+                  {copied ? <CheckCircle2 className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copied ? "Copied" : "Copy to clipboard"}
+                </button>
+                <button
+                  onClick={downloadReport}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-white px-3.5 py-2 text-[13px] font-bold text-[#16181D] hover:border-[#16181D]/40 transition-all"
+                >
+                  <Download className="w-3.5 h-3.5" /> Download .txt
+                </button>
+                <a
+                  href={mailtoHref}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-white px-3.5 py-2 text-[13px] font-bold text-[#16181D] hover:border-[#16181D]/40 transition-all"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" /> Open in email
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
