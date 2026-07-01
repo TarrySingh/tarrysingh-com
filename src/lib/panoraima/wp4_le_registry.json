@@ -2,9 +2,16 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-06-30T16:03:15.505063Z",
-  "refreshed_at": "2026-06-30T16:03:15.505063Z",
+  "generated_at": "2026-07-01T22:08:40.190913Z",
+  "refreshed_at": "2026-07-01T22:08:40.190913Z",
   "refresh_history": [
+    {
+      "at": "2026-07-01T22:08:06.851274Z",
+      "wiki_captured": "2026-07-01T19:30:00.287Z",
+      "sharepoint_generated": "2026-06-30T14:07:00.320241Z",
+      "realai_total": 55,
+      "reviewed": 12
+    },
     {
       "at": "2026-06-30T14:07:00.511354Z",
       "wiki_captured": "2026-06-30T11:44:26.449Z",
@@ -16,7 +23,7 @@
   "data_sources": {
     "wiki": {
       "status": "live",
-      "captured_at": "2026-06-30T11:44:26.449Z",
+      "captured_at": "2026-07-01T19:30:00.287Z",
       "master_total": 436
     },
     "sharepoint": {
@@ -40,10 +47,10 @@
       "Media": 89
     },
     "by_status": {
-      "In development": 152,
-      "Status not set": 192,
-      "In review": 86,
-      "Materials in progress": 6
+      "In development": 182,
+      "Status not set": 116,
+      "In review": 124,
+      "Materials in progress": 14
     },
     "with_materials": 63,
     "materials_pending": 373,
@@ -61,10 +68,9 @@
       "reviewer": 44,
       "reviewed": 12,
       "by_status": {
-        "In development": 9,
-        "In review": 30,
-        "Status not set": 13,
-        "Materials in progress": 2,
+        "In development": 15,
+        "In review": 32,
+        "Status not set": 7,
         "Not started": 1
       },
       "needs_action": 22,
@@ -4008,8 +4014,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "TUD",
@@ -4344,10 +4350,10 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "BME",
+      "author": "BME · András Gézsi",
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
@@ -5604,8 +5610,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "",
@@ -5646,8 +5652,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "",
@@ -5688,8 +5694,8 @@
       "lesson_type": "Practical",
       "duration": "120",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "TUD",
@@ -5730,8 +5736,8 @@
       "lesson_type": "Interactive",
       "duration": "120",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "TUD",
@@ -5999,8 +6005,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "",
@@ -6849,8 +6855,8 @@
       "lesson_type": "Interactive",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Krisztina Ecsediné Dr. Szabó",
       "coauthor": "Hédi Virág Csordás · Mary Hendrick",
@@ -6900,8 +6906,8 @@
       "lesson_type": "Practice",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME",
       "coauthor": "Hédi Virág Csordás",
@@ -6951,10 +6957,10 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "BME",
+      "author": "BME · Hédi Virág Csordás, Krisztina Ecsediné Dr. Szabó",
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
@@ -7002,10 +7008,10 @@
       "lesson_type": "Interactive",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "BME",
+      "author": "BME · Hédi Virág Csordás",
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
@@ -7061,11 +7067,11 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
-      "author": "BME",
-      "coauthor": "",
+      "author": "BME · Hédi Virág Csordás",
+      "coauthor": "TUD · Mary Hendrick",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -7103,8 +7109,8 @@
       "lesson_type": "Interactive",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "BME · Hédi Virág Csordás, Krisztina Ecsediné Dr. Szabó",
       "coauthor": "TUD · Mary Hendrick",
@@ -7543,8 +7549,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "HAW · Ahmad Khalidi",
@@ -7585,10 +7591,10 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "BME · András Gézsi",
+      "author": "BME · Béla Pataki",
       "coauthor": "UNINA · Stefano Marrone",
       "reviewer": "",
       "off_wiki": false,
@@ -7686,8 +7692,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "HAW · Ahmad Khalidi",
@@ -8200,8 +8206,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "HAW · Alena Störmer",
       "coauthor": "KPI · Myroslava Kukhta",
@@ -8252,8 +8258,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "HU · Sieuwert van Otterloo",
@@ -8420,8 +8426,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "TUD · Keith Quille",
@@ -8792,8 +8798,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Hédi Csordás",
       "coauthor": "TUD",
@@ -8843,8 +8849,8 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Hédi Csordás",
       "coauthor": "TUD",
@@ -10375,7 +10381,7 @@
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "UNINA · Stefano Marrone",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -10403,9 +10409,9 @@
         },
         {
           "name": "Management information",
-          "len": 1265,
+          "len": 1281,
           "empty": false,
-          "text": "Author Organisation 1\n\nBME\n\n\nAuthor Person 1\n\nAndrás Gézsi\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\nStefano Marrone\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nExplain the main paradigms of artificial intelligence and machine learning in the context of healthcare data and clinical decision-making tasks. (knowledge, intermediate level)Differentiate between common machine learning problem formulations (classification, regression, clustering) and map them to typical healthcare applications. (cognitive skill, intermediate level)Interpret the relationship between data characteristics (e.g., noise, missingness, bias) and model performance in real-world healthcare settings. (cognitive skill, intermediate level)Evaluate the suitability of different AI approaches for specific biomedical problems using simple performance metrics and domain constraints. (cognitive skill, basic level)Recognize key limitations and risks of AI systems in healthcare, including generalization issues and potential biases. (competence, basic level)\nLearning Events to be completed before:\nNone.\nKeywords:\nAI in the context of healthcare, overview of data types, predictive models and performance metrics in healthcare,"
+          "text": "Author Organisation 1\n\nBME\n\n\nAuthor Person 1\n\nAndrás Gézsi\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\nStefano Marrone\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nExplain the main paradigms of artificial intelligence and machine learning in the context of healthcare data and clinical decision-making tasks. (knowledge, intermediate level)Differentiate between common machine learning problem formulations (classification, regression, clustering) and map them to typical healthcare applications. (cognitive skill, intermediate level)Interpret the relationship between data characteristics (e.g., noise, missingness, bias) and model performance in real-world healthcare settings. (cognitive skill, intermediate level)Evaluate the suitability of different AI approaches for specific biomedical problems using simple performance metrics and domain constraints. (cognitive skill, basic level)Recognize key limitations and risks of AI systems in healthcare, including generalization issues and potential biases. (competence, basic level)\nLearning Events to be completed before:\nNone.\nKeywords:\nAI in the context of healthcare, overview of data types, predictive models and performance metrics in healthcare,"
         },
         {
           "name": "Expected preparation",
@@ -10512,7 +10518,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "BME",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -10540,9 +10546,9 @@
         },
         {
           "name": "Management information",
-          "len": 1997,
+          "len": 2043,
           "empty": false,
-          "text": "Author Organisation 1\n\nUNINA\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n\"1.Identify and formulate knowledge on healthcare problems as research questions in artificial intelligence in healthcare at an intermediate level within clinical and biomedical research contexts.\n2.Analyze and interpret skills related to different healthcare data types used in AI applications at an intermediate level in medical data analysis and clinical decision support contexts.\n3.Design and develop competence in AI-based research protocols in healthcare at an intermediate level within clinical research and innovation project contexts.\n4.Evaluate and apply knowledge on bias, fairness, and ethical principles in artificial intelligence in healthcare at an intermediate level in responsible AI and clinical application contexts.\n5.Develop and implement skills for proposing AI-based solutions to clinical problems at an intermediate level within healthcare innovation and data-driven clinical research contexts.\n6.Integrate and demonstrate competence in translating clinical needs into AI research questions and experimental protocols at an intermediate level in multidisciplinary healthcare and AI research environments\"\nLearning Events to be completed before:\nNone.\nKeywords:\nUnderstand how healthcare problems are translated into research questions and AI models: Healthcare problems as research questions, Basics of AI innovation in healthcare, Data types in healthcare, Research and protocol design in AI in healthcare, Bias, fairness, ethics in AI in healthcare; Present clinical case stories, identify a clinical problem, Explore a dataset and create an AI-based solution for the clinical problem, Design a research protocol for exploring this AI-based research question; Ability to identify a clinical problem and provide a research protocol for testing an AI-based solution for it,"
+          "text": "Author Organisation 1\n\nUNINA\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n\"1.Identify and formulate knowledge on healthcare problems as research questions in artificial intelligence in healthcare at an intermediate level within clinical and biomedical research contexts.\n2.Analyze and interpret skills related to different healthcare data types used in AI applications at an intermediate level in medical data analysis and clinical decision support contexts.\n3.Design and develop competence in AI-based research protocols in healthcare at an intermediate level within clinical research and innovation project contexts.\n4.Evaluate and apply knowledge on bias, fairness, and ethical principles in artificial intelligence in healthcare at an intermediate level in responsible AI and clinical application contexts.\n5.Develop and implement skills for proposing AI-based solutions to clinical problems at an intermediate level within healthcare innovation and data-driven clinical research contexts.\n6.Integrate and demonstrate competence in translating clinical needs into AI research questions and experimental protocols at an intermediate level in multidisciplinary healthcare and AI research environments\"\nLearning Events to be completed before:\nNone.\nKeywords:\nUnderstand how healthcare problems are translated into research questions and AI models: Healthcare problems as research questions, Basics of AI innovation in healthcare, Data types in healthcare, Research and protocol design in AI in healthcare, Bias, fairness, ethics in AI in healthcare; Present clinical case stories, identify a clinical problem, Explore a dataset and create an AI-based solution for the clinical problem, Design a research protocol for exploring this AI-based research question; Ability to identify a clinical problem and provide a research protocol for testing an AI-based solution for it,"
         },
         {
           "name": "Expected preparation",
@@ -11487,9 +11493,9 @@
         },
         {
           "name": "Management information",
-          "len": 300,
+          "len": 346,
           "empty": false,
-          "text": "Author Organisation 1\n\nHU\n\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nHU\n\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
         },
         {
           "name": "Expected preparation",
@@ -11690,8 +11696,8 @@
       "lesson_type": "Interactive (case study)",
       "duration": "120",
       "job_role": "All three roles",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "Sofia University · Ioannis Patias",
@@ -11858,8 +11864,8 @@
       "lesson_type": "Interactive (case study)",
       "duration": "120",
       "job_role": "Researcher",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "UNINA · Stefano Marrone",
@@ -12152,8 +12158,8 @@
       "lesson_type": "Lecture / Interactive",
       "duration": "120",
       "job_role": "Researcher",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
@@ -12623,8 +12629,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "All three roles",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "UNINA · Stefano Marrone",
@@ -12665,8 +12671,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "All three roles",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "TUD",
@@ -13126,7 +13132,7 @@
       "due_date": "",
       "author": "TUD · Ahmad",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -13171,9 +13177,9 @@
         },
         {
           "name": "Management information",
-          "len": 716,
+          "len": 749,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nAhmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nAhmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
         },
         {
           "name": "Expected preparation",
@@ -13324,7 +13330,7 @@
       "due_date": "",
       "author": "HAW",
       "coauthor": "West Attica · Ahmad Khalidi",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -13352,9 +13358,9 @@
         },
         {
           "name": "Management information",
-          "len": 560,
+          "len": 571,
           "empty": false,
-          "text": "Author Organisation 1\n\nHAW\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\nAhmad Khalidi\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nNavigating predictive dashboards for clinical workflows, reviewing patient pathways and outcome predictions (multidisciplinary), integrating model outputs into daily decision-making, role-specific focus: diagnostic workflows (clinicians) vs. research tooling (AI specialists)\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nHAW\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\nAhmad Khalidi\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nNavigating predictive dashboards for clinical workflows, reviewing patient pathways and outcome predictions (multidisciplinary), integrating model outputs into daily decision-making, role-specific focus: diagnostic workflows (clinicians) vs. research tooling (AI specialists)\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
         },
         {
           "name": "Expected preparation",
@@ -13883,7 +13889,7 @@
       "due_date": "",
       "author": "HU · Bas van Gestel / René van der Ploeg",
       "coauthor": "TUD",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Monira Majhabeen, Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -13911,9 +13917,9 @@
         },
         {
           "name": "Management information",
-          "len": 298,
+          "len": 327,
           "empty": false,
-          "text": "Author Organisation 1\n\nHU\n\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nHU\n\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tarry Singh\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
         },
         {
           "name": "Expected preparation",
@@ -13980,7 +13986,7 @@
       "due_date": "",
       "author": "West Attica",
       "coauthor": "TUD",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -14008,9 +14014,9 @@
         },
         {
           "name": "Management information",
-          "len": 272,
+          "len": 301,
           "empty": false,
-          "text": "Author Organisation 1\n\nWest Attica\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nWest Attica\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
         },
         {
           "name": "Expected preparation",
@@ -14077,7 +14083,7 @@
       "due_date": "",
       "author": "TUD · Mary Hendrick",
       "coauthor": "West Attica",
-      "reviewer": "Real AI",
+      "reviewer": "Real AI · Tarry Singh, Tannistha Maiti, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -14105,9 +14111,9 @@
         },
         {
           "name": "Management information",
-          "len": 1035,
+          "len": 1081,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\tThe students can describe the multi-dimensional functional domains of Healthcare change leadership\n-\tThe students can assess change leadership frameworks to anchor health organisational change culture. \n-\tThe students explore psychological safety and its impact on stakeholder AI Adoption.\n-\tThe students can apply methods to reduce stakeholder resistance to change e.g. Forcefield Analysis.\n-\tThe students can evaluate AI application used to gather results and assess performance management improvements with a focus on patient outcomes etc.,\n-\tThe students explore examples of ethical, human-centric integration of technology into daily clinical workflows.\nLearning Events to be completed before:\nNone.\nKeywords:\nhow to drive adoption, handle resistance, gather feedback, and iterate workflows with stakeholders,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh, Tannistha Maiti, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\tThe students can describe the multi-dimensional functional domains of Healthcare change leadership\n-\tThe students can assess change leadership frameworks to anchor health organisational change culture. \n-\tThe students explore psychological safety and its impact on stakeholder AI Adoption.\n-\tThe students can apply methods to reduce stakeholder resistance to change e.g. Forcefield Analysis.\n-\tThe students can evaluate AI application used to gather results and assess performance management improvements with a focus on patient outcomes etc.,\n-\tThe students explore examples of ethical, human-centric integration of technology into daily clinical workflows.\nLearning Events to be completed before:\nNone.\nKeywords:\nhow to drive adoption, handle resistance, gather feedback, and iterate workflows with stakeholders,"
         },
         {
           "name": "Expected preparation",
@@ -16237,8 +16243,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Liubov Panchenko",
       "coauthor": "BME · Dorottya Egres",
@@ -16279,9 +16285,9 @@
         },
         {
           "name": "Management information",
-          "len": 772,
+          "len": 764,
           "empty": false,
-          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: under revision\nLearning Outcomes:\nStudents will be able to construct advanced search queries in Scopus or Web of Science for their specific research topics and accurately export bibliographic metadata for further analysis. By utilizing scientific visualization tools, students will learn to generate co-authorship and keyword maps to visually identify key research clusters and structural relationships within their chosen field.\nLearning Events to be completed before:\nNone.\nKeywords:\nBibliometric analysis, visualization, clusters, Scopus, VOSviewer,"
+          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nStudents will be able to construct advanced search queries in Scopus or Web of Science for their specific research topics and accurately export bibliographic metadata for further analysis. By utilizing scientific visualization tools, students will learn to generate co-authorship and keyword maps to visually identify key research clusters and structural relationships within their chosen field.\nLearning Events to be completed before:\nNone.\nKeywords:\nBibliometric analysis, visualization, clusters, Scopus, VOSviewer,"
         },
         {
           "name": "Expected preparation",
@@ -16341,8 +16347,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Liubov Panchenko",
       "coauthor": "",
@@ -16392,8 +16398,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Liubov Panchenko",
       "coauthor": "BME · Dorottya Egres",
@@ -16434,9 +16440,9 @@
         },
         {
           "name": "Management information",
-          "len": 826,
+          "len": 818,
           "empty": false,
-          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: under revision\nLearning Outcomes:\nStudents will master the relational paradigm, understanding how the configuration of ties between actors defines the structure of the media space. Students will learn to differentiate between centrality metrics (degree, betweenness, closeness) and general network properties to assess the influence of individual nodes. Students will be able to theoretically interpret network topologies, identifying clusters, structural holes, and opinion leaders.\nLearning Events to be completed before:\nNone.\nKeywords:\nnetworks, nodes, actors, edges, centrality metrics, visualization,"
+          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nStudents will master the relational paradigm, understanding how the configuration of ties between actors defines the structure of the media space. Students will learn to differentiate between centrality metrics (degree, betweenness, closeness) and general network properties to assess the influence of individual nodes. Students will be able to theoretically interpret network topologies, identifying clusters, structural holes, and opinion leaders.\nLearning Events to be completed before:\nNone.\nKeywords:\nnetworks, nodes, actors, edges, centrality metrics, visualization,"
         },
         {
           "name": "Expected preparation",
@@ -16496,8 +16502,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -16547,8 +16553,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -16598,8 +16604,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -16649,8 +16655,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI",
       "coauthor": "",
@@ -16700,8 +16706,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Liubov Panchenko",
       "coauthor": "",
@@ -16961,8 +16967,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -17012,8 +17018,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Maksym Yenin",
       "coauthor": "",
@@ -17063,8 +17069,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Maksym Yenin",
       "coauthor": "",
@@ -17114,8 +17120,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Maksym Yenin",
       "coauthor": "",
@@ -17165,8 +17171,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -17216,8 +17222,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -17258,8 +17264,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -17300,8 +17306,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -17342,8 +17348,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -17384,11 +17390,11 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
-      "coauthor": "",
+      "coauthor": "HAW · Alena Störmer",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -17426,11 +17432,11 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
-      "coauthor": "",
+      "coauthor": "HAW · Alena Störmer",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -17468,11 +17474,11 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "UNINA",
-      "coauthor": "",
+      "coauthor": "HAW · Alena Störmer",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -17519,11 +17525,11 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "UNINA",
-      "coauthor": "",
+      "coauthor": "HAW · Alena Störmer",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -17578,11 +17584,11 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "UNINA",
-      "coauthor": "",
+      "coauthor": "HAW · Alena Störmer",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -17629,11 +17635,11 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "UNINA",
-      "coauthor": "",
+      "coauthor": "HAW · Alena Störmer",
       "reviewer": "CNR · Francesco Gargiulo",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -17688,8 +17694,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -17739,8 +17745,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -17806,8 +17812,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -17857,8 +17863,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -17916,8 +17922,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -17958,8 +17964,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -18000,8 +18006,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -18042,8 +18048,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -18084,8 +18090,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -18126,8 +18132,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
@@ -18505,14 +18511,14 @@
       "track": "Media",
       "title": "MC-056 European Regulatory Solution For Reducing Disinformation In Platform Communication Based On Artificial Intelligence",
       "lesson_type": "Interactive",
-      "duration": "60",
+      "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "BME",
+      "author": "BME · Krisztina Nagy",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "HU · Sieuwert van Otterloo",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -18547,14 +18553,14 @@
       "track": "Media",
       "title": "MC-057 Transparency Obligations For Very Large Online Platforms: AI-Driven Operations And Reporting Under The Digital Services Act",
       "lesson_type": "Interactive",
-      "duration": "60",
+      "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "BME",
+      "author": "BME · Krisztina Nagy",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "HU · Sieuwert van Otterloo",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -18591,12 +18597,12 @@
       "lesson_type": "Interactive",
       "duration": "60",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "BME",
+      "author": "BME · Krisztina Nagy",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "HU · Tina van der Linden",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -18633,12 +18639,12 @@
       "lesson_type": "Interactive",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "BME",
+      "author": "BME · Krisztina Nagy",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "HU · Tina van der Linden",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -18843,8 +18849,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -18886,8 +18892,8 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -18945,8 +18951,8 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -19004,8 +19010,8 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -19063,8 +19069,8 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "HU",
       "coauthor": "",
@@ -19500,8 +19506,8 @@
       "lesson_type": "Lecture",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Hédi Virág Csordás",
       "coauthor": "BME · Adrienn Szirmai",
@@ -19542,8 +19548,8 @@
       "lesson_type": "Interactive",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -19584,8 +19590,8 @@
       "lesson_type": "Lecture",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Arienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -19626,8 +19632,8 @@
       "lesson_type": "Practice",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -19668,11 +19674,11 @@
       "lesson_type": "Lecture",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "QTICS",
-      "coauthor": "BME",
+      "author": "QTICS · Adrienn Szirmai",
+      "coauthor": "BME · Hédi Virág Csordás",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -19710,8 +19716,8 @@
       "lesson_type": "Interactive",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -19752,8 +19758,8 @@
       "lesson_type": "Lecture",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -19794,8 +19800,8 @@
       "lesson_type": "Interactive",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -19836,8 +19842,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -19878,8 +19884,8 @@
       "lesson_type": "Interactive",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -19920,8 +19926,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -19962,8 +19968,8 @@
       "lesson_type": "Lecture",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -20004,8 +20010,8 @@
       "lesson_type": "Interactive",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -20046,8 +20052,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -20088,8 +20094,8 @@
       "lesson_type": "Lecture",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -20130,8 +20136,8 @@
       "lesson_type": "Lecture",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -20172,8 +20178,8 @@
       "lesson_type": "Practice",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -20214,8 +20220,8 @@
       "lesson_type": "Lecture",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -20256,8 +20262,8 @@
       "lesson_type": "Practice",
       "duration": "30",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
@@ -20298,10 +20304,10 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "Real AI",
+      "author": "Real AI · Tarry Singh , Tannistha Maiti",
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
@@ -20325,21 +20331,21 @@
       "wiki_sections": [
         {
           "name": "Administrative information",
-          "len": 164,
+          "len": 167,
           "empty": false,
-          "text": "Title\n\nThe Economics Of Disinformation: Clickbait And Ad-Tech\n\n\nCODE\n\nMC-100\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm"
+          "text": "Title\n\nThe Economics Of Disinformation: Clickbait And Ad-Tech\n\n\nCODE\n\nMC-100\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nComm"
         },
         {
           "name": "Management information",
-          "len": 256,
+          "len": 2977,
           "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\n\n\n\nReviewer Person\n\n\n\n\nStatus\n\n!Missing status!\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\n\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nExplain the attention economy and why engagement diverges from accuracy: students can explain, from Simon's account of attention as the scarce resource, why platforms and publishers optimise for engagement, and can summarise the evidence that false news spread faster and wider than true news on Twitter (Vosoughi, Roy and Aral, 2018) together with the limits of that generalisation (Juul and Ugander, 2021).Describe how programmatic advertising works and how it funds disinformation: students can explain real-time bidding and the roles of ad exchanges and demand-side and supply-side platforms, and explain why automated, quality-blind placement sends advertiser money to low-quality made-for-advertising and disinformation sites.Describe the scale and follow the money: students can use current figures to state the size of the problem, including the wasted programmatic spend measured by the Association of National Advertisers (about 26.8 billion dollars, Q2 2025), and can follow one brand's advertising budget through to a disinformation publisher, identifying Google and the major exchanges as the largest single sources (Global Disinformation Index; NewsGuard).Analyse how generative AI has changed the economics: students can explain how generative AI lowers the cost of clickbait and enables AI content farms built to harvest programmatic revenue (NewsGuard has tracked these into the thousands since 2023), and can describe the brand-safety failure in which reputable brands' ads appear on such sites without the advertiser's knowledge.Evaluate the follow-the-money countermeasures and their limits: students can explain demonetisation as the leading response, defunding content rather than removing it, name the main actors (the Global Disinformation Index, Check My Ads, brand-safety initiatives), and assess why the approach is disputed and, since 2024, in retreat, with GARM closed and the Global Disinformation Index no longer rating individual sites, and why the opacity of the marketplace limits enforcement.Apply the EU regulatory frame to a communication decision: students can explain the relevant duties under the Digital Services Act and the Code of Practice on Disinformation, now a Code of Conduct under Article 45 and in effect since 1 July 2025, covering advertising transparency, recommender-system rules, and demonetisation commitments, and can use them to justify an ad-placement or brand-safety decision.\nLearning Events to be completed before:\nNone.\nKeywords:\nAttention economy,Engagement optimisation,Programmatic advertising,Real-time bidding,Made-for-advertising sites,Ad-tech,Clickbait,AI content farms,Brand safety,Demonetisation,Global Disinformation Index,Digital Services Act,Code of Practice on Disinformation,"
         },
         {
           "name": "Expected preparation",
-          "len": 137,
+          "len": 2116,
           "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+          "text": "Obligatory for students:\nHarvard Business Review (2023). Are Your Ads Funding Disinformation?MIT News (2018). Study: On Twitter, false news travels faster than true stories. (Plain-language summary of Vosoughi, Roy and Aral, 2018.)\nOptional for students:\nHwang, T. (2020). Subprime Attention Crisis: Advertising and the Time Bomb at the Heart of the Internet. FSG Originals.\nReferences and background for students:\nSimon, H. A. (1971). Designing Organizations for an Information-Rich World. (Origin of the attention economy: a wealth of information creates a poverty of attention.)Vosoughi, S., Roy, D. and Aral, S. (2018). The spread of true and false news online. Science, 359(6380). (False news was about 70 per cent more likely to be retweeted than the truth.)Juul, J. L. and Ugander, J. (2021). Proceedings of the National Academy of Sciences. (The true-versus-false diffusion gap narrows once cascades are matched on size; a needed check on the previous finding.)Association of National Advertisers (2025). Programmatic Media Supply Chain Transparency Benchmark, Q2 2025. (About 26.8 billion dollars of wasted or inefficient programmatic spend.)NewsGuard. AI Tracking Center. (Running count of AI-generated content-farm sites; self-reported, cite with its date.)Global Disinformation Index. Reports on the ad revenue flowing to disinformation sites (estimates produced by the Index).Carter Center (2024). The Disinformation Economy.European Commission (2025). The Code of Practice on Disinformation, integrated into the Digital Services Act as a Code of Conduct under Article 45 (in effect 1 July 2025).\nRecommended for teachers:\nDSA Observatory (2025). What does the DSA mean for online advertising and ad-tech?Tech Policy Press (2025). The EU's Code of Practice on Disinformation is now part of the Digital Services Act.Fortune (2024). Coverage of the closure of GARM (the Global Alliance for Responsible Media) after litigation, useful context on why brand-safety coalitions have retreated.MIT Technology Review (2023). Reporting on AI content farms that churn out low-quality content to harvest ad revenue."
         },
         {
           "name": "Acknowledgements, thanks",
@@ -20355,9 +20361,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 0,
-          "empty": true,
-          "text": ""
+          "len": 6079,
+          "empty": false,
+          "text": "This 90-minute lecture examines disinformation as an economic system: the financial incentives of the attention economy, the ad-tech machinery that pays for engagement, and the way AI has lowered the cost of producing content optimised for clicks rather than accuracy. It is written for a Master's student training as an AI-driven communication and media specialist, so it treats disinformation not only as a content problem but as a supply chain with money at every step. The guiding question is who pays for this, and how.\nSummary statement:\nThe lecture moves from the logic of the attention economy to the plumbing of programmatic advertising to the effect of generative AI, and then to the responses. It starts with Simon's account of attention as the scarce resource and the evidence that engagement and accuracy pull apart, using the Vosoughi, Roy and Aral (2018) study of false-news spread and its documented limits. It then explains how programmatic advertising works, through real-time bidding across exchanges and demand-side and supply-side platforms, and why automated placement, indifferent to site quality, routes advertiser money to made-for-advertising and disinformation sites, at a scale the Association of National Advertisers measures in the tens of billions of dollars. It shows how generative AI has turned this into an industrial process, with thousands of AI content farms built to harvest ad revenue, and how reputable brands end up funding them without knowing. It closes on the countermeasures and their limits.\nMission:\nThe module prepares communication professionals to reason about the money behind information. Students learn to follow the flow of advertising revenue from a brand's media budget to a disinformation publisher, to name the actors and mechanisms at each step, and to judge the countermeasures honestly, including why demonetisation is politically fraught and why several of its main implementers have pulled back under legal and political pressure. They then apply the EU frame: the Digital Services Act and the Code of Practice on Disinformation, now a Code of Conduct under Article 45, which carries advertising-transparency, recommender-system and demonetisation commitments. The applied work mirrors the day-to-day task of an AI-driven communication and media specialist: deciding where a brand's or an institution's advertising may run, how to set brand-safety and inclusion rules, and how to defend those decisions when the marketplace is opaque. The teaching aim is judgement about incentives: content moderation alone does not touch the business model, and changing what gets funded is a different and harder lever.\nSession flow (90 minutes):\n0 to 15, the attention economy: attention as the scarce resource (Simon), engagement as the currency, and why optimising for engagement diverges from accuracy; the Vosoughi et al. (2018) evidence and its limits.\n15 to 40, the ad-tech machine: real-time bidding, exchanges, demand-side and supply-side platforms; made-for-advertising sites; why automated placement ignores site quality; the scale of wasted spend (ANA).\n40 to 60, generative AI as an accelerant: AI content farms built for ad revenue (NewsGuard tracking since 2023); how ad money reaches disinformation publishers, and how a brand's ads end up on those sites through opaque programmatic buying rather than by choice; Google and the major exchanges are the largest single sources.\n60 to 75, responses and their limits: demonetisation and follow-the-money (the Global Disinformation Index, Check My Ads, brand-safety), why it is contested, and its retreat under pressure; the EU frame (the Digital Services Act and the Code of Conduct on Disinformation).\n75 to 90, applied exercise: in small groups, students trace the ad-revenue path for a given disinformation or AI-content-farm site, then draft a brand-safety and ad-placement policy for a named advertiser or public institution, and defend it against the transparency limits of the mark"
         }
       ],
       "realai": {
@@ -20373,17 +20379,14 @@
       },
       "completeness": {
         "is_author": true,
-        "instructions_written": false,
+        "instructions_written": true,
         "outcomes_present": true,
         "materials_uploaded": false,
-        "wiki_missing": [
-          "Instructions for teachers (detailed)"
-        ],
+        "wiki_missing": [],
         "author_needs": [
-          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -20397,10 +20400,10 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "Real AI",
+      "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
@@ -20424,21 +20427,21 @@
       "wiki_sections": [
         {
           "name": "Administrative information",
-          "len": 143,
+          "len": 146,
           "empty": false,
-          "text": "Title\n\nThe Psychology Of Synthetic Media\n\n\nCODE\n\nMC-101\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm"
+          "text": "Title\n\nThe Psychology Of Synthetic Media\n\n\nCODE\n\nMC-101\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nComm"
         },
         {
           "name": "Management information",
-          "len": 256,
+          "len": 2665,
           "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\n\n\n\nReviewer Person\n\n\n\n\nStatus\n\n!Missing status!\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\n\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nDefine and classify synthetic media: students can distinguish deepfakes from cheapfakes and from other manipulations (generated video, cloned audio, synthetic images, synthetic text), and explain why, for an audience, the claim attached to a piece of content usually matters more than how it was produced.Explain the cognitive mechanisms behind belief in synthetic media: students can account for the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning, and explain why higher cognitive ability and heavy social-media use change a person's exposure to these effects rather than removing them.Analyse the effects on trust and reality perception that go beyond a single act of deception: students can explain epistemic destabilisation, the erosion of trust in news, in institutions, and in the depicted person, and show with evidence that a synthetic clip can lower trust and damage a reputation even when viewers rate it as not credible.Explain and evaluate the liar's dividend: students can define the liar's dividend (Chesney and Citron, 2019), summarise the experimental evidence that public figures gain support by dismissing authentic evidence as fabricated (Schiff, Schiff and Bueno, 2024), and explain how the effect reaches authentic video, which can be discredited by labelling it a deepfake (Hameleers and Marquart, 2023; Grohmann, Halle and Appel, 2026).Assess the limits of detection and warnings: students can explain why detection tools, deepfake warnings, and media-literacy messaging are necessary but not sufficient, including the continued-influence effect on synthetic video and the risk that broad warnings produce generalised distrust, or reality apathy, rather than calibrated skepticism.Design a provenance-first response for communication practice: students can build a verification and disclosure workflow for a newsroom or communications team that combines content provenance (C2PA content credentials), plausibility-aware checking, and the labelling duties of Article 50 of the EU AI Act, and can justify framing choices that build warranted trust in verified content.\nLearning Events to be completed before:\nNone.\nKeywords:\nSynthetic media,Deepfakes,Cheapfakes,Liar's dividend,Epistemic destabilisation,Illusory truth effect,Motivated reasoning,Continued-influence effect,Reality apathy,Content provenance (C2PA),Media trust,Verification,EU AI Act Article 50,"
         },
         {
           "name": "Expected preparation",
-          "len": 137,
+          "len": 2820,
           "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+          "text": "Obligatory for students:\nParis, B. and Donovan, J. (2019). Deepfakes and Cheap Fakes: The Manipulation of Audio and Visual Evidence. Data and Society Research Institute.Vaccari, C. and Chadwick, A. (2020). Deepfakes and Disinformation: Exploring the Impact of Synthetic Political Video on Deception, Uncertainty, and Trust in News. Social Media + Society, 6(1).\nOptional for students:\nSchiff, K. J., Schiff, D. S. and Bueno, N. S. (2024). The Liar's Dividend: Can Politicians Claim Misinformation to Evade Accountability? American Political Science Review.\nReferences and background for students:\nChesney, R. and Citron, D. K. (2019). Deep Fakes: A Looming Challenge for Privacy, Democracy, and National Security. California Law Review, 107. (Origin of the term liar's dividend.)Hameleers, M., van der Meer, T. G. L. A. and Dobber, T. (2023). Computers in Human Behavior. (Political deepfakes delegitimise the depicted figure regardless of whether audiences believe the clip is real.)Hameleers, M. and Marquart, F. (2023). International Journal of Communication, 17. (Calling an authentic video a deepfake reduced its credibility, and the effect persisted for three days.)Grohmann, J., Halle, S. and Appel, M. (2026). Psychology of Popular Media. (Denying a genuine scandal video as a deepfake raised the leader's perceived standing, an effect carried by audiences misidentifying the authentic video as fake.)Weikmann, T., Egelhofer, J. L. and Lecheler, S. (2025). Journalism and Mass Communication Quarterly. (Deepfakes and cheapfakes both cause misperceptions even when audiences rate them low in credibility.)European Union (2024). Regulation (EU) 2024/1689 (the AI Act), Article 50: transparency and labelling obligations for AI-generated and manipulated content.Coalition for Content Provenance and Authenticity (C2PA). Content Credentials: the technical standard for recording how a piece of media was created and edited.\nRecommended for teachers:\nAhmed, S. and colleagues (2024). Journal of Broadcasting and Electronic Media. (Eight-country evidence that repeated exposure raises belief in a deepfake, and that reliance on social media for news amplifies this regardless of cognitive ability.)Clark, T. and Lewandowsky, S. (2024). Communications Psychology (Nature Portfolio). (A pre-exposure warning that a video is fake does not remove its continued influence on judgement.)Ecker, U. K. H. (2025). Journal of Applied Research in Memory and Cognition. (Editorial synthesis of illusory-truth and continued-influence findings for synthetic media.)Farid, H. (University of California, Berkeley). Media forensics research on the limits and reliability of automated deepfake detection.Ovadya, A. On reality apathy and the infocalypse: the risk of an information environment in which audiences stop believing anything."
         },
         {
           "name": "Acknowledgements, thanks",
@@ -20454,9 +20457,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 0,
-          "empty": true,
-          "text": ""
+          "len": 5500,
+          "empty": false,
+          "text": "This 90-minute lecture examines the psychology of synthetic media: how AI-generated video, audio, images, and text change what audiences trust, how they judge what is real, and how public communication works when any recording can be challenged as fake. It is written for a Master's student training as an AI-driven communication and media specialist, so it treats synthetic media as a shift in the conditions of belief, not as a detection problem to be solved with a better tool. The lecture is built around the liar's dividend: once convincing fakes are common, the mere possibility of a fake lets a speaker dismiss authentic evidence as fabricated.\nSummary statement:\nThe lecture moves from definitions to cognition to consequences to practice. It first separates deepfakes from cheapfakes and other manipulations and establishes that audiences react to the claim made about a piece of content more than to the technique behind it. It then explains the cognitive mechanisms that make synthetic content believable or persistent: the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning. It then turns to the effects that matter most for a communicator. Current evidence indicates that political deepfakes are not, on average, more persuasive than other forms of misinformation, but that they destabilise trust in news and institutions and can damage the reputation of the person shown even when audiences rate the clip as not credible. The liar's dividend is presented as the sharpest form of this problem, with the experimental evidence for it and the current debate about how far it reaches video.\nMission:\nThe module prepares communication professionals to work in an environment where authenticity can no longer be inferred from the medium. Students examine how repetition, reliance on social media, and motivated reasoning shape belief, why credibility ratings understate the real harm of synthetic content, and how the liar's dividend is used to avoid accountability. They then build a practical response: a verification and disclosure workflow that relies on content provenance (C2PA content credentials) and plausibility-aware checking rather than on detection alone, that meets the transparency and labelling duties of Article 50 of the EU AI Act, and that communicates uncertainty without pushing audiences into indiscriminate distrust. The applied work mirrors the day-to-day task of an AI-driven communication and media specialist: deciding under time pressure whether to publish, label, or challenge a piece of media, and explaining that decision to an audience. The teaching aim is judgement: understanding what synthetic media does to an audience, and choosing communication practices that hold up when any single piece of evidence can be called fake.\nSession flow (90 minutes):\n0 to 15, definitions and taxonomy: deepfakes, cheapfakes, generated audio, image and text; why the claim attached to content matters more to audiences than the production method.\n15 to 35, cognition: the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning; the finding that higher cognitive ability and heavy social-media use change exposure, not immunity.\n35 to 55, consequences: epistemic destabilisation, trust erosion, and reputational damage below the threshold of belief; the liar's dividend, the evidence for it, and the open question of how far it reaches video.\n55 to 70, practice foundations: the limits of detection and warnings (the continued-influence effect and reality apathy); the elements of a provenance-first response using C2PA content credentials, plausibility-aware verification, and Article 50 labelling.\n70 to 90, applied exercise: in small groups, students draft a verification-and-disclosure workflow for a newsroom or communications team facing a suspected deepfake, or a genuine recording that a public figure has dismissed as fake, and name the liar's-dividend risk an"
         }
       ],
       "realai": {
@@ -20472,17 +20475,14 @@
       },
       "completeness": {
         "is_author": true,
-        "instructions_written": false,
+        "instructions_written": true,
         "outcomes_present": true,
         "materials_uploaded": false,
-        "wiki_missing": [
-          "Instructions for teachers (detailed)"
-        ],
+        "wiki_missing": [],
         "author_needs": [
-          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -21354,11 +21354,11 @@
       "lesson_type": "Practical",
       "duration": "60 Minutes",
       "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "TUD · Mary Hendrick",
-      "coauthor": "KPI",
+      "coauthor": "KPI · Olena Butnyk",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -21569,11 +21569,11 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "TUD",
-      "coauthor": "KPI",
+      "coauthor": "KPI · Olena Butnyk",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -21896,7 +21896,7 @@
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "UNINA · Stefano Marrone",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -21924,9 +21924,9 @@
         },
         {
           "name": "Management information",
-          "len": 1265,
+          "len": 1281,
           "empty": false,
-          "text": "Author Organisation 1\n\nBME\n\n\nAuthor Person 1\n\nAndrás Gézsi\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\nStefano Marrone\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nExplain the main paradigms of artificial intelligence and machine learning in the context of healthcare data and clinical decision-making tasks. (knowledge, intermediate level)Differentiate between common machine learning problem formulations (classification, regression, clustering) and map them to typical healthcare applications. (cognitive skill, intermediate level)Interpret the relationship between data characteristics (e.g., noise, missingness, bias) and model performance in real-world healthcare settings. (cognitive skill, intermediate level)Evaluate the suitability of different AI approaches for specific biomedical problems using simple performance metrics and domain constraints. (cognitive skill, basic level)Recognize key limitations and risks of AI systems in healthcare, including generalization issues and potential biases. (competence, basic level)\nLearning Events to be completed before:\nNone.\nKeywords:\nAI in the context of healthcare, overview of data types, predictive models and performance metrics in healthcare,"
+          "text": "Author Organisation 1\n\nBME\n\n\nAuthor Person 1\n\nAndrás Gézsi\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\nStefano Marrone\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nExplain the main paradigms of artificial intelligence and machine learning in the context of healthcare data and clinical decision-making tasks. (knowledge, intermediate level)Differentiate between common machine learning problem formulations (classification, regression, clustering) and map them to typical healthcare applications. (cognitive skill, intermediate level)Interpret the relationship between data characteristics (e.g., noise, missingness, bias) and model performance in real-world healthcare settings. (cognitive skill, intermediate level)Evaluate the suitability of different AI approaches for specific biomedical problems using simple performance metrics and domain constraints. (cognitive skill, basic level)Recognize key limitations and risks of AI systems in healthcare, including generalization issues and potential biases. (competence, basic level)\nLearning Events to be completed before:\nNone.\nKeywords:\nAI in the context of healthcare, overview of data types, predictive models and performance metrics in healthcare,"
         },
         {
           "name": "Expected preparation",
@@ -21991,7 +21991,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "BME",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -22019,9 +22019,9 @@
         },
         {
           "name": "Management information",
-          "len": 1997,
+          "len": 2043,
           "empty": false,
-          "text": "Author Organisation 1\n\nUNINA\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n\"1.Identify and formulate knowledge on healthcare problems as research questions in artificial intelligence in healthcare at an intermediate level within clinical and biomedical research contexts.\n2.Analyze and interpret skills related to different healthcare data types used in AI applications at an intermediate level in medical data analysis and clinical decision support contexts.\n3.Design and develop competence in AI-based research protocols in healthcare at an intermediate level within clinical research and innovation project contexts.\n4.Evaluate and apply knowledge on bias, fairness, and ethical principles in artificial intelligence in healthcare at an intermediate level in responsible AI and clinical application contexts.\n5.Develop and implement skills for proposing AI-based solutions to clinical problems at an intermediate level within healthcare innovation and data-driven clinical research contexts.\n6.Integrate and demonstrate competence in translating clinical needs into AI research questions and experimental protocols at an intermediate level in multidisciplinary healthcare and AI research environments\"\nLearning Events to be completed before:\nNone.\nKeywords:\nUnderstand how healthcare problems are translated into research questions and AI models: Healthcare problems as research questions, Basics of AI innovation in healthcare, Data types in healthcare, Research and protocol design in AI in healthcare, Bias, fairness, ethics in AI in healthcare; Present clinical case stories, identify a clinical problem, Explore a dataset and create an AI-based solution for the clinical problem, Design a research protocol for exploring this AI-based research question; Ability to identify a clinical problem and provide a research protocol for testing an AI-based solution for it,"
+          "text": "Author Organisation 1\n\nUNINA\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n\"1.Identify and formulate knowledge on healthcare problems as research questions in artificial intelligence in healthcare at an intermediate level within clinical and biomedical research contexts.\n2.Analyze and interpret skills related to different healthcare data types used in AI applications at an intermediate level in medical data analysis and clinical decision support contexts.\n3.Design and develop competence in AI-based research protocols in healthcare at an intermediate level within clinical research and innovation project contexts.\n4.Evaluate and apply knowledge on bias, fairness, and ethical principles in artificial intelligence in healthcare at an intermediate level in responsible AI and clinical application contexts.\n5.Develop and implement skills for proposing AI-based solutions to clinical problems at an intermediate level within healthcare innovation and data-driven clinical research contexts.\n6.Integrate and demonstrate competence in translating clinical needs into AI research questions and experimental protocols at an intermediate level in multidisciplinary healthcare and AI research environments\"\nLearning Events to be completed before:\nNone.\nKeywords:\nUnderstand how healthcare problems are translated into research questions and AI models: Healthcare problems as research questions, Basics of AI innovation in healthcare, Data types in healthcare, Research and protocol design in AI in healthcare, Bias, fairness, ethics in AI in healthcare; Present clinical case stories, identify a clinical problem, Explore a dataset and create an AI-based solution for the clinical problem, Design a research protocol for exploring this AI-based research question; Ability to identify a clinical problem and provide a research protocol for testing an AI-based solution for it,"
         },
         {
           "name": "Expected preparation",
@@ -22435,9 +22435,9 @@
         },
         {
           "name": "Management information",
-          "len": 300,
+          "len": 346,
           "empty": false,
-          "text": "Author Organisation 1\n\nHU\n\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nHU\n\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
         },
         {
           "name": "Expected preparation",
@@ -22504,7 +22504,7 @@
       "due_date": "",
       "author": "TUD · Ahmad",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -22549,9 +22549,9 @@
         },
         {
           "name": "Management information",
-          "len": 716,
+          "len": 749,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nAhmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nAhmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
         },
         {
           "name": "Expected preparation",
@@ -22618,7 +22618,7 @@
       "due_date": "",
       "author": "HU · Bas van Gestel / René van der Ploeg",
       "coauthor": "TUD",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Monira Majhabeen, Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -22646,9 +22646,9 @@
         },
         {
           "name": "Management information",
-          "len": 298,
+          "len": 327,
           "empty": false,
-          "text": "Author Organisation 1\n\nHU\n\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nHU\n\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tarry Singh\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
         },
         {
           "name": "Expected preparation",
@@ -22715,7 +22715,7 @@
       "due_date": "",
       "author": "West Attica",
       "coauthor": "TUD",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -22743,9 +22743,9 @@
         },
         {
           "name": "Management information",
-          "len": 272,
+          "len": 301,
           "empty": false,
-          "text": "Author Organisation 1\n\nWest Attica\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nWest Attica\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
         },
         {
           "name": "Expected preparation",
@@ -22812,7 +22812,7 @@
       "due_date": "",
       "author": "TUD · Mary Hendrick",
       "coauthor": "West Attica",
-      "reviewer": "Real AI",
+      "reviewer": "Real AI · Tarry Singh, Tannistha Maiti, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -22840,9 +22840,9 @@
         },
         {
           "name": "Management information",
-          "len": 1035,
+          "len": 1081,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\tThe students can describe the multi-dimensional functional domains of Healthcare change leadership\n-\tThe students can assess change leadership frameworks to anchor health organisational change culture. \n-\tThe students explore psychological safety and its impact on stakeholder AI Adoption.\n-\tThe students can apply methods to reduce stakeholder resistance to change e.g. Forcefield Analysis.\n-\tThe students can evaluate AI application used to gather results and assess performance management improvements with a focus on patient outcomes etc.,\n-\tThe students explore examples of ethical, human-centric integration of technology into daily clinical workflows.\nLearning Events to be completed before:\nNone.\nKeywords:\nhow to drive adoption, handle resistance, gather feedback, and iterate workflows with stakeholders,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh, Tannistha Maiti, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\tThe students can describe the multi-dimensional functional domains of Healthcare change leadership\n-\tThe students can assess change leadership frameworks to anchor health organisational change culture. \n-\tThe students explore psychological safety and its impact on stakeholder AI Adoption.\n-\tThe students can apply methods to reduce stakeholder resistance to change e.g. Forcefield Analysis.\n-\tThe students can evaluate AI application used to gather results and assess performance management improvements with a focus on patient outcomes etc.,\n-\tThe students explore examples of ethical, human-centric integration of technology into daily clinical workflows.\nLearning Events to be completed before:\nNone.\nKeywords:\nhow to drive adoption, handle resistance, gather feedback, and iterate workflows with stakeholders,"
         },
         {
           "name": "Expected preparation",
@@ -23078,6 +23078,214 @@
         "instructions_written": true,
         "outcomes_present": true,
         "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": true
+      },
+      "sources": [
+        "wiki",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-001",
+      "track": "Media",
+      "title": "MC-001 Scientific Landscape: Bibliometric Analysis and Visualization in Media and Culture Research",
+      "lesson_type": "Practice",
+      "duration": "90",
+      "job_role": "Comm",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
+      "due_date": "",
+      "author": "KPI · Liubov Panchenko",
+      "coauthor": "BME · Dorottya Egres",
+      "reviewer": "Real AI · Tarry Singh",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": true,
+      "review_note": null,
+      "materials": {
+        "count": 1,
+        "has": true,
+        "newest": "2026-06-10",
+        "files": [
+          {
+            "name": "MC_001_Scientific_Landscape_Practice.pptx",
+            "ext": "pptx",
+            "kb": 6069,
+            "date": "2026-06-10",
+            "sha": "c1f609b75b290592",
+            "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Practice.pptx"
+          }
+        ],
+        "folder": "MC-001"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-001_Scientific_Landscape:_Bibliometric_Analysis_and_Visualization_in_Media_and_Culture_Research",
+      "wiki_sections": [
+        {
+          "name": "Administrative information",
+          "len": 202,
+          "empty": false,
+          "text": "Title\n\nScientific Landscape: Bibliometric Analysis and Visualization in Media and Culture Research\n\n\nCODE\n\nMC-001\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nPractice\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm"
+        },
+        {
+          "name": "Management information",
+          "len": 764,
+          "empty": false,
+          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nStudents will be able to construct advanced search queries in Scopus or Web of Science for their specific research topics and accurately export bibliographic metadata for further analysis. By utilizing scientific visualization tools, students will learn to generate co-authorship and keyword maps to visually identify key research clusters and structural relationships within their chosen field.\nLearning Events to be completed before:\nNone.\nKeywords:\nBibliometric analysis, visualization, clusters, Scopus, VOSviewer,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 201,
+          "empty": false,
+          "text": "Obligatory for students:\nText Analytics and NLP for Discourse, Topic, and Positioning Analysis\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 80,
+          "empty": false,
+          "text": "MC-001\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 2550,
+          "empty": false,
+          "text": "Tool: Scopus/Web of Science database, VOSviewer (latest version). \nNote: This is a computer practice session. Students must have active Scopus/WoS institutional access and have VOSviewer pre-installed on their workstations.\nInstructions for teachers:\n1.\tIntroduction (5 min): The instructor displays a high-resolution VOSviewer map from a recent study in sociology or media. Prompt for students: What patterns do you observe? Discuss the semantics of the visualization: node size (frequency/impact), edge thickness (link strength), and color-coded clusters (thematic or social proximity). \n2.\tConceptual Briefing (10 min): Define bibliometrics and its role in systematic literature reviews and state-of-the-art mapping. Distinguish between descriptive bibliometrics (productivity metrics, citation counts) and science mapping (structural relationships and intellectual evolution). Introduce the specific networks to be built: Co-authorship (social structure) and Keyword Co-occurrence (intellectual structure). Define VOSviewer parameters: nodes, edges, total link strength, clusters, and the minimum occurrence threshold. \n3.\tTechnical Demo (5 min): Demonstrate advanced data harvesting: building a query using Boolean operators (AND, OR, LIMIT-TO) and exporting metadata in CSV or RIS formats with full bibliographical information. \n4.\tData Collection (15 min): Students work individually or in pairs to define a research niche. They select a topic within media/culture (e.g., algorithmic bias, digital disinformation, platform labor, or AI in journalism). Students refine their queries to achieve a manageable corpus (300–800 records) to ensure visual clarity. \n5.\tDescriptive Analysis (10 min): Using the database’s built-in \"Analyze Results\" tool, students report on the distribution of publications by year, top journals, and leading geographic regions.\n6.\tScience Mapping Practice (25 min): Students import their data into VOSviewer. They must generate two distinct maps: a co-authorship network and a keyword co-occurrence map. \n7.\tInterpretation & Reporting (15 min): Students draft a brief report summarizing the primary research clusters and identifying the most influential nodes (authors or concepts) based on link strength. \n8.\tReflection and Sharing (15 min): Selected pairs present their maps.\n9.\t Wrap-up (5 min): Summarize the key concepts and allow time for final questions. Homework: run the same query in both Scopus and Web of Science. Compare the resulting VOSviewer maps: are the thematic clusters consistent across databases?"
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": true,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": true
+      },
+      "sources": [
+        "wiki",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-003",
+      "track": "Media",
+      "title": "MC-003 Social Network Analysis: Theoretical Foundations",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "Comm$Conflict",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
+      "due_date": "",
+      "author": "KPI · Liubov Panchenko",
+      "coauthor": "BME · Dorottya Egres",
+      "reviewer": "Real AI · Tarry Singh",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": true,
+      "review_note": null,
+      "materials": {
+        "count": 1,
+        "has": true,
+        "newest": "2026-06-10",
+        "files": [
+          {
+            "name": "MC_003_Toxicity_Polarization_Monitoring_Practice.pptx",
+            "ext": "pptx",
+            "kb": 5818,
+            "date": "2026-06-10",
+            "sha": "92666968352c34b9",
+            "rel": "4.3 Media & Culture/MC-003/MC_003_Toxicity_Polarization_Monitoring_Practice.pptx"
+          }
+        ],
+        "folder": "MC-003"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-003_Social_Network_Analysis:_Theoretical_Foundations",
+      "wiki_sections": [
+        {
+          "name": "Administrative information",
+          "len": 167,
+          "empty": false,
+          "text": "Title\n\nSocial Network Analysis: Theoretical Foundations\n\n\nCODE\n\nMC-003\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm$Conflict"
+        },
+        {
+          "name": "Management information",
+          "len": 818,
+          "empty": false,
+          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nStudents will master the relational paradigm, understanding how the configuration of ties between actors defines the structure of the media space. Students will learn to differentiate between centrality metrics (degree, betweenness, closeness) and general network properties to assess the influence of individual nodes. Students will be able to theoretically interpret network topologies, identifying clusters, structural holes, and opinion leaders.\nLearning Events to be completed before:\nNone.\nKeywords:\nnetworks, nodes, actors, edges, centrality metrics, visualization,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 137,
+          "empty": false,
+          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 80,
+          "empty": false,
+          "text": "MC-003\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 2710,
+          "empty": false,
+          "text": "Tools: NodeXL. Gephi\nNote: Students can have Gephi/NodeXL pre-installed on their notebooks.\nInstructions for teachers:\n1.\tIntroduction (5 min): The \"Network Turn\" in Social Sciences. Why connectivity often matters more than individual content in the digital age\n2.\tConceptualizing the network (15 min): actors (nodes), relations (edges/ties), and attributes. Taxonomies of ties: directed vs. undirected, binary vs. weighted.\n3.\tFoundational Concepts (15 min): Introduce basic graph terminology. Discuss seminal studies: Jacob Moreno’s Sociometry, Mark Granovetter’s \"Strength of Weak Ties\" (information diffusion), and Manuel Castells’ \"Network Society\" as it pertains to contemporary media structures.\n4.\tMicro-discussion (10 min): Collaborative Mapping. In pairs, students select a specific media ecosystem (e.g., a newsroom hierarchy, a Twitter/X discourse community, or a podcast network) and sketch a graph with 5–7 nodes. Presentation of maps: Address the ontological question - what constitutes an \"actor\" in a media network? (Users, hashtags, bots, or media outlets).\n5.\tCore Metrics (15 min): Quantitative Interpretation of nodes. Degree centrality: popularity and immediate reach. Betweenness centrality: control over information flow and brokerage. Closeness centrality: efficiency and speed of access to the whole network.\n6.\tNetwork-Level Properties: Explain density, diameter, average path length (small world phenomenon), and clustering coefficient as the macro-context for interpretation.\n7.\tApplied Exercise (15 min): Manual calculation. Students compute degree and betweenness for a provided 7-node graph (on whiteboard or handout). Compare manual results with software output (Gephi/NodeXL) to demystify algorithmic calculations.\n8.\tAdvanced Topology (10 min): Social Structures in Media. Clusters & Modularity: Identifying echo chambers, filter bubbles, and polarized discourse. Structural Holes (Ronald Burt): The role of the \"broker\" as a bridge between disconnected audiences. Opinion leaders vs. Bridge-builders in the digital landscape.\n9.\tCase-Study Analysis (15 min): Analyzing a real-world media campaign graph (pre-processed in Gephi, based on a familiar socio-political context). Task: Identify at least two distinct clusters; locate a node occupying a structural hole (broker); identify the top two opinion leaders. Justify each finding with the appropriate metric. Small group work followed by a brief plenary session.\n10.\tConclusion & Reflection (5 min): One-sentence synthesis: \"The most significant insight I gained today regarding media space through the lens of SNA is...\"Synthesize student responses into the three core learning outcomes to reinforce the day's curriculum."
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -24375,7 +24583,7 @@
       "due_date": "",
       "author": "HAW",
       "coauthor": "West Attica · Ahmad Khalidi",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -24403,9 +24611,9 @@
         },
         {
           "name": "Management information",
-          "len": 560,
+          "len": 571,
           "empty": false,
-          "text": "Author Organisation 1\n\nHAW\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\nAhmad Khalidi\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nNavigating predictive dashboards for clinical workflows, reviewing patient pathways and outcome predictions (multidisciplinary), integrating model outputs into daily decision-making, role-specific focus: diagnostic workflows (clinicians) vs. research tooling (AI specialists)\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nHAW\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\nAhmad Khalidi\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nNavigating predictive dashboards for clinical workflows, reviewing patient pathways and outcome predictions (multidisciplinary), integrating model outputs into daily decision-making, role-specific focus: diagnostic workflows (clinicians) vs. research tooling (AI specialists)\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
         },
         {
           "name": "Expected preparation",
@@ -24454,6 +24662,434 @@
         ],
         "author_needs": [],
         "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-066",
+      "track": "Media",
+      "title": "MC-066 Monitoring, Evaluation, And Reporting On The Responsible Use Of AI In Media",
+      "lesson_type": "Interactive",
+      "duration": "90",
+      "job_role": "Comm$Conflict",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "HU",
+      "coauthor": "",
+      "reviewer": "REAL AI",
+      "off_wiki": false,
+      "realai_wiki_gap": true,
+      "review_done": false,
+      "review_note": null,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "MC-066"
+      },
+      "lesson_plan": {
+        "doc": "MC-066_Monitoring_Evaluation_Reporting_Media.docx",
+        "rel": "WP4.3 Media lesson plans/MC-066_Monitoring_Evaluation_Reporting_Media.docx",
+        "has_meta_block": true,
+        "date": "2026-05-27"
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-066_Monitoring,_Evaluation,_And_Reporting_On_The_Responsible_Use_Of_AI_In_Media",
+      "wiki_sections": null,
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "lesson_plan",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-067",
+      "track": "Media",
+      "title": "MC-067 AI in Media That Fits: Participatory Design and Evaluation",
+      "lesson_type": "Interactive",
+      "duration": "90",
+      "job_role": "Comm$Conflict",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "HU",
+      "coauthor": "",
+      "reviewer": "REAL AI",
+      "off_wiki": false,
+      "realai_wiki_gap": true,
+      "review_done": false,
+      "review_note": null,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "MC-067"
+      },
+      "lesson_plan": {
+        "doc": "MC-067_Participatory_Design_Media.docx",
+        "rel": "WP4.3 Media lesson plans/MC-067_Participatory_Design_Media.docx",
+        "has_meta_block": true,
+        "date": "2026-05-27"
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-067_AI_in_Media_That_Fits:_Participatory_Design_and_Evaluation",
+      "wiki_sections": null,
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "lesson_plan",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-068",
+      "track": "Media",
+      "title": "MC-068 Decision-Support Systems For Conflict Resolution - Human-Interaction Design Principles",
+      "lesson_type": "Interactive",
+      "duration": "90",
+      "job_role": "Conflict",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "HU",
+      "coauthor": "",
+      "reviewer": "REAL AI",
+      "off_wiki": false,
+      "realai_wiki_gap": true,
+      "review_done": false,
+      "review_note": null,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "MC-068"
+      },
+      "lesson_plan": {
+        "doc": "MC-068_Decision_Support_Conflict_Media.docx",
+        "rel": "WP4.3 Media lesson plans/MC-068_Decision_Support_Conflict_Media.docx",
+        "has_meta_block": true,
+        "date": "2026-05-27"
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-068_Decision-Support_Systems_For_Conflict_Resolution_-_Human-Interaction_Design_Principles",
+      "wiki_sections": null,
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "lesson_plan",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-069",
+      "track": "Media",
+      "title": "MC-069 Data Problem-Solving Cycle: A Human-Centered AI Approach For Media",
+      "lesson_type": "Interactive",
+      "duration": "90",
+      "job_role": "Comm$Conflict",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "HU",
+      "coauthor": "",
+      "reviewer": "REAL AI",
+      "off_wiki": false,
+      "realai_wiki_gap": true,
+      "review_done": false,
+      "review_note": null,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "MC-069"
+      },
+      "lesson_plan": {
+        "doc": "MC-069_Data_Problem_Solving_Media.docx",
+        "rel": "WP4.3 Media lesson plans/MC-069_Data_Problem_Solving_Media.docx",
+        "has_meta_block": true,
+        "date": "2026-05-11"
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-069_Data_Problem-Solving_Cycle:_A_Human-Centered_AI_Approach_For_Media",
+      "wiki_sections": null,
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "lesson_plan",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-100",
+      "track": "Media",
+      "title": "MC-100 The Economics Of Disinformation: Clickbait And Ad-Tech",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "Comm",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "Real AI · Tarry Singh , Tannistha Maiti",
+      "coauthor": "",
+      "reviewer": "",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": false,
+      "review_note": null,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "MC-100"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-100_The_Economics_Of_Disinformation:_Clickbait_And_Ad-Tech",
+      "wiki_sections": [
+        {
+          "name": "Administrative information",
+          "len": 167,
+          "empty": false,
+          "text": "Title\n\nThe Economics Of Disinformation: Clickbait And Ad-Tech\n\n\nCODE\n\nMC-100\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nComm"
+        },
+        {
+          "name": "Management information",
+          "len": 2977,
+          "empty": false,
+          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\n\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nExplain the attention economy and why engagement diverges from accuracy: students can explain, from Simon's account of attention as the scarce resource, why platforms and publishers optimise for engagement, and can summarise the evidence that false news spread faster and wider than true news on Twitter (Vosoughi, Roy and Aral, 2018) together with the limits of that generalisation (Juul and Ugander, 2021).Describe how programmatic advertising works and how it funds disinformation: students can explain real-time bidding and the roles of ad exchanges and demand-side and supply-side platforms, and explain why automated, quality-blind placement sends advertiser money to low-quality made-for-advertising and disinformation sites.Describe the scale and follow the money: students can use current figures to state the size of the problem, including the wasted programmatic spend measured by the Association of National Advertisers (about 26.8 billion dollars, Q2 2025), and can follow one brand's advertising budget through to a disinformation publisher, identifying Google and the major exchanges as the largest single sources (Global Disinformation Index; NewsGuard).Analyse how generative AI has changed the economics: students can explain how generative AI lowers the cost of clickbait and enables AI content farms built to harvest programmatic revenue (NewsGuard has tracked these into the thousands since 2023), and can describe the brand-safety failure in which reputable brands' ads appear on such sites without the advertiser's knowledge.Evaluate the follow-the-money countermeasures and their limits: students can explain demonetisation as the leading response, defunding content rather than removing it, name the main actors (the Global Disinformation Index, Check My Ads, brand-safety initiatives), and assess why the approach is disputed and, since 2024, in retreat, with GARM closed and the Global Disinformation Index no longer rating individual sites, and why the opacity of the marketplace limits enforcement.Apply the EU regulatory frame to a communication decision: students can explain the relevant duties under the Digital Services Act and the Code of Practice on Disinformation, now a Code of Conduct under Article 45 and in effect since 1 July 2025, covering advertising transparency, recommender-system rules, and demonetisation commitments, and can use them to justify an ad-placement or brand-safety decision.\nLearning Events to be completed before:\nNone.\nKeywords:\nAttention economy,Engagement optimisation,Programmatic advertising,Real-time bidding,Made-for-advertising sites,Ad-tech,Clickbait,AI content farms,Brand safety,Demonetisation,Global Disinformation Index,Digital Services Act,Code of Practice on Disinformation,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 2116,
+          "empty": false,
+          "text": "Obligatory for students:\nHarvard Business Review (2023). Are Your Ads Funding Disinformation?MIT News (2018). Study: On Twitter, false news travels faster than true stories. (Plain-language summary of Vosoughi, Roy and Aral, 2018.)\nOptional for students:\nHwang, T. (2020). Subprime Attention Crisis: Advertising and the Time Bomb at the Heart of the Internet. FSG Originals.\nReferences and background for students:\nSimon, H. A. (1971). Designing Organizations for an Information-Rich World. (Origin of the attention economy: a wealth of information creates a poverty of attention.)Vosoughi, S., Roy, D. and Aral, S. (2018). The spread of true and false news online. Science, 359(6380). (False news was about 70 per cent more likely to be retweeted than the truth.)Juul, J. L. and Ugander, J. (2021). Proceedings of the National Academy of Sciences. (The true-versus-false diffusion gap narrows once cascades are matched on size; a needed check on the previous finding.)Association of National Advertisers (2025). Programmatic Media Supply Chain Transparency Benchmark, Q2 2025. (About 26.8 billion dollars of wasted or inefficient programmatic spend.)NewsGuard. AI Tracking Center. (Running count of AI-generated content-farm sites; self-reported, cite with its date.)Global Disinformation Index. Reports on the ad revenue flowing to disinformation sites (estimates produced by the Index).Carter Center (2024). The Disinformation Economy.European Commission (2025). The Code of Practice on Disinformation, integrated into the Digital Services Act as a Code of Conduct under Article 45 (in effect 1 July 2025).\nRecommended for teachers:\nDSA Observatory (2025). What does the DSA mean for online advertising and ad-tech?Tech Policy Press (2025). The EU's Code of Practice on Disinformation is now part of the Digital Services Act.Fortune (2024). Coverage of the closure of GARM (the Global Alliance for Responsible Media) after litigation, useful context on why brand-safety coalitions have retreated.MIT Technology Review (2023). Reporting on AI content farms that churn out low-quality content to harvest ad revenue."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 80,
+          "empty": false,
+          "text": "MC-100\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 6079,
+          "empty": false,
+          "text": "This 90-minute lecture examines disinformation as an economic system: the financial incentives of the attention economy, the ad-tech machinery that pays for engagement, and the way AI has lowered the cost of producing content optimised for clicks rather than accuracy. It is written for a Master's student training as an AI-driven communication and media specialist, so it treats disinformation not only as a content problem but as a supply chain with money at every step. The guiding question is who pays for this, and how.\nSummary statement:\nThe lecture moves from the logic of the attention economy to the plumbing of programmatic advertising to the effect of generative AI, and then to the responses. It starts with Simon's account of attention as the scarce resource and the evidence that engagement and accuracy pull apart, using the Vosoughi, Roy and Aral (2018) study of false-news spread and its documented limits. It then explains how programmatic advertising works, through real-time bidding across exchanges and demand-side and supply-side platforms, and why automated placement, indifferent to site quality, routes advertiser money to made-for-advertising and disinformation sites, at a scale the Association of National Advertisers measures in the tens of billions of dollars. It shows how generative AI has turned this into an industrial process, with thousands of AI content farms built to harvest ad revenue, and how reputable brands end up funding them without knowing. It closes on the countermeasures and their limits.\nMission:\nThe module prepares communication professionals to reason about the money behind information. Students learn to follow the flow of advertising revenue from a brand's media budget to a disinformation publisher, to name the actors and mechanisms at each step, and to judge the countermeasures honestly, including why demonetisation is politically fraught and why several of its main implementers have pulled back under legal and political pressure. They then apply the EU frame: the Digital Services Act and the Code of Practice on Disinformation, now a Code of Conduct under Article 45, which carries advertising-transparency, recommender-system and demonetisation commitments. The applied work mirrors the day-to-day task of an AI-driven communication and media specialist: deciding where a brand's or an institution's advertising may run, how to set brand-safety and inclusion rules, and how to defend those decisions when the marketplace is opaque. The teaching aim is judgement about incentives: content moderation alone does not touch the business model, and changing what gets funded is a different and harder lever.\nSession flow (90 minutes):\n0 to 15, the attention economy: attention as the scarce resource (Simon), engagement as the currency, and why optimising for engagement diverges from accuracy; the Vosoughi et al. (2018) evidence and its limits.\n15 to 40, the ad-tech machine: real-time bidding, exchanges, demand-side and supply-side platforms; made-for-advertising sites; why automated placement ignores site quality; the scale of wasted spend (ANA).\n40 to 60, generative AI as an accelerant: AI content farms built for ad revenue (NewsGuard tracking since 2023); how ad money reaches disinformation publishers, and how a brand's ads end up on those sites through opaque programmatic buying rather than by choice; Google and the major exchanges are the largest single sources.\n60 to 75, responses and their limits: demonetisation and follow-the-money (the Global Disinformation Index, Check My Ads, brand-safety), why it is contested, and its retreat under pressure; the EU frame (the Digital Services Act and the Code of Conduct on Disinformation).\n75 to 90, applied exercise: in small groups, students trace the ad-revenue path for a given disinformation or AI-content-farm site, then draft a brand-safety and ad-placement policy for a named advertiser or public institution, and defend it against the transparency limits of the mark"
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "author",
+            "recipients": [
+              "tarry.singh@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": true,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [
+          "Upload materials (SharePoint)"
+        ],
+        "ready_to_review": true
+      },
+      "sources": [
+        "wiki",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-101",
+      "track": "Media",
+      "title": "MC-101 The Psychology Of Synthetic Media",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "Comm",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "Real AI · Tarry Singh, Tannistha Maiti",
+      "coauthor": "",
+      "reviewer": "",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": false,
+      "review_note": null,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "MC-101"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-101_The_Psychology_Of_Synthetic_Media",
+      "wiki_sections": [
+        {
+          "name": "Administrative information",
+          "len": 146,
+          "empty": false,
+          "text": "Title\n\nThe Psychology Of Synthetic Media\n\n\nCODE\n\nMC-101\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nComm"
+        },
+        {
+          "name": "Management information",
+          "len": 2665,
+          "empty": false,
+          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\n\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nDefine and classify synthetic media: students can distinguish deepfakes from cheapfakes and from other manipulations (generated video, cloned audio, synthetic images, synthetic text), and explain why, for an audience, the claim attached to a piece of content usually matters more than how it was produced.Explain the cognitive mechanisms behind belief in synthetic media: students can account for the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning, and explain why higher cognitive ability and heavy social-media use change a person's exposure to these effects rather than removing them.Analyse the effects on trust and reality perception that go beyond a single act of deception: students can explain epistemic destabilisation, the erosion of trust in news, in institutions, and in the depicted person, and show with evidence that a synthetic clip can lower trust and damage a reputation even when viewers rate it as not credible.Explain and evaluate the liar's dividend: students can define the liar's dividend (Chesney and Citron, 2019), summarise the experimental evidence that public figures gain support by dismissing authentic evidence as fabricated (Schiff, Schiff and Bueno, 2024), and explain how the effect reaches authentic video, which can be discredited by labelling it a deepfake (Hameleers and Marquart, 2023; Grohmann, Halle and Appel, 2026).Assess the limits of detection and warnings: students can explain why detection tools, deepfake warnings, and media-literacy messaging are necessary but not sufficient, including the continued-influence effect on synthetic video and the risk that broad warnings produce generalised distrust, or reality apathy, rather than calibrated skepticism.Design a provenance-first response for communication practice: students can build a verification and disclosure workflow for a newsroom or communications team that combines content provenance (C2PA content credentials), plausibility-aware checking, and the labelling duties of Article 50 of the EU AI Act, and can justify framing choices that build warranted trust in verified content.\nLearning Events to be completed before:\nNone.\nKeywords:\nSynthetic media,Deepfakes,Cheapfakes,Liar's dividend,Epistemic destabilisation,Illusory truth effect,Motivated reasoning,Continued-influence effect,Reality apathy,Content provenance (C2PA),Media trust,Verification,EU AI Act Article 50,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 2820,
+          "empty": false,
+          "text": "Obligatory for students:\nParis, B. and Donovan, J. (2019). Deepfakes and Cheap Fakes: The Manipulation of Audio and Visual Evidence. Data and Society Research Institute.Vaccari, C. and Chadwick, A. (2020). Deepfakes and Disinformation: Exploring the Impact of Synthetic Political Video on Deception, Uncertainty, and Trust in News. Social Media + Society, 6(1).\nOptional for students:\nSchiff, K. J., Schiff, D. S. and Bueno, N. S. (2024). The Liar's Dividend: Can Politicians Claim Misinformation to Evade Accountability? American Political Science Review.\nReferences and background for students:\nChesney, R. and Citron, D. K. (2019). Deep Fakes: A Looming Challenge for Privacy, Democracy, and National Security. California Law Review, 107. (Origin of the term liar's dividend.)Hameleers, M., van der Meer, T. G. L. A. and Dobber, T. (2023). Computers in Human Behavior. (Political deepfakes delegitimise the depicted figure regardless of whether audiences believe the clip is real.)Hameleers, M. and Marquart, F. (2023). International Journal of Communication, 17. (Calling an authentic video a deepfake reduced its credibility, and the effect persisted for three days.)Grohmann, J., Halle, S. and Appel, M. (2026). Psychology of Popular Media. (Denying a genuine scandal video as a deepfake raised the leader's perceived standing, an effect carried by audiences misidentifying the authentic video as fake.)Weikmann, T., Egelhofer, J. L. and Lecheler, S. (2025). Journalism and Mass Communication Quarterly. (Deepfakes and cheapfakes both cause misperceptions even when audiences rate them low in credibility.)European Union (2024). Regulation (EU) 2024/1689 (the AI Act), Article 50: transparency and labelling obligations for AI-generated and manipulated content.Coalition for Content Provenance and Authenticity (C2PA). Content Credentials: the technical standard for recording how a piece of media was created and edited.\nRecommended for teachers:\nAhmed, S. and colleagues (2024). Journal of Broadcasting and Electronic Media. (Eight-country evidence that repeated exposure raises belief in a deepfake, and that reliance on social media for news amplifies this regardless of cognitive ability.)Clark, T. and Lewandowsky, S. (2024). Communications Psychology (Nature Portfolio). (A pre-exposure warning that a video is fake does not remove its continued influence on judgement.)Ecker, U. K. H. (2025). Journal of Applied Research in Memory and Cognition. (Editorial synthesis of illusory-truth and continued-influence findings for synthetic media.)Farid, H. (University of California, Berkeley). Media forensics research on the limits and reliability of automated deepfake detection.Ovadya, A. On reality apathy and the infocalypse: the risk of an information environment in which audiences stop believing anything."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 80,
+          "empty": false,
+          "text": "MC-101\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 5500,
+          "empty": false,
+          "text": "This 90-minute lecture examines the psychology of synthetic media: how AI-generated video, audio, images, and text change what audiences trust, how they judge what is real, and how public communication works when any recording can be challenged as fake. It is written for a Master's student training as an AI-driven communication and media specialist, so it treats synthetic media as a shift in the conditions of belief, not as a detection problem to be solved with a better tool. The lecture is built around the liar's dividend: once convincing fakes are common, the mere possibility of a fake lets a speaker dismiss authentic evidence as fabricated.\nSummary statement:\nThe lecture moves from definitions to cognition to consequences to practice. It first separates deepfakes from cheapfakes and other manipulations and establishes that audiences react to the claim made about a piece of content more than to the technique behind it. It then explains the cognitive mechanisms that make synthetic content believable or persistent: the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning. It then turns to the effects that matter most for a communicator. Current evidence indicates that political deepfakes are not, on average, more persuasive than other forms of misinformation, but that they destabilise trust in news and institutions and can damage the reputation of the person shown even when audiences rate the clip as not credible. The liar's dividend is presented as the sharpest form of this problem, with the experimental evidence for it and the current debate about how far it reaches video.\nMission:\nThe module prepares communication professionals to work in an environment where authenticity can no longer be inferred from the medium. Students examine how repetition, reliance on social media, and motivated reasoning shape belief, why credibility ratings understate the real harm of synthetic content, and how the liar's dividend is used to avoid accountability. They then build a practical response: a verification and disclosure workflow that relies on content provenance (C2PA content credentials) and plausibility-aware checking rather than on detection alone, that meets the transparency and labelling duties of Article 50 of the EU AI Act, and that communicates uncertainty without pushing audiences into indiscriminate distrust. The applied work mirrors the day-to-day task of an AI-driven communication and media specialist: deciding under time pressure whether to publish, label, or challenge a piece of media, and explaining that decision to an audience. The teaching aim is judgement: understanding what synthetic media does to an audience, and choosing communication practices that hold up when any single piece of evidence can be called fake.\nSession flow (90 minutes):\n0 to 15, definitions and taxonomy: deepfakes, cheapfakes, generated audio, image and text; why the claim attached to content matters more to audiences than the production method.\n15 to 35, cognition: the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning; the finding that higher cognitive ability and heavy social-media use change exposure, not immunity.\n35 to 55, consequences: epistemic destabilisation, trust erosion, and reputational damage below the threshold of belief; the liar's dividend, the evidence for it, and the open question of how far it reaches video.\n55 to 70, practice foundations: the limits of detection and warnings (the continued-influence effect and reality apathy); the elements of a provenance-first response using C2PA content credentials, plausibility-aware verification, and Article 50 labelling.\n70 to 90, applied exercise: in small groups, students draft a verification-and-disclosure workflow for a newsroom or communications team facing a suspected deepfake, or a genuine recording that a public figure has dismissed as fake, and name the liar's-dividend risk an"
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "author",
+            "recipients": [
+              "tarry.singh@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": true,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [
+          "Upload materials (SharePoint)"
+        ],
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -25284,648 +25920,6 @@
           "Instructions for teachers (detailed)"
         ],
         "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "wiki",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-001",
-      "track": "Media",
-      "title": "MC-001 Scientific Landscape: Bibliometric Analysis and Visualization in Media and Culture Research",
-      "lesson_type": "Practice",
-      "duration": "90",
-      "job_role": "Comm",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
-      "due_date": "",
-      "author": "KPI · Liubov Panchenko",
-      "coauthor": "BME · Dorottya Egres",
-      "reviewer": "Real AI · Tarry Singh",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": true,
-      "review_note": null,
-      "materials": {
-        "count": 1,
-        "has": true,
-        "newest": "2026-06-10",
-        "files": [
-          {
-            "name": "MC_001_Scientific_Landscape_Practice.pptx",
-            "ext": "pptx",
-            "kb": 6069,
-            "date": "2026-06-10",
-            "sha": "c1f609b75b290592",
-            "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Practice.pptx"
-          }
-        ],
-        "folder": "MC-001"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-001_Scientific_Landscape:_Bibliometric_Analysis_and_Visualization_in_Media_and_Culture_Research",
-      "wiki_sections": [
-        {
-          "name": "Administrative information",
-          "len": 202,
-          "empty": false,
-          "text": "Title\n\nScientific Landscape: Bibliometric Analysis and Visualization in Media and Culture Research\n\n\nCODE\n\nMC-001\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nPractice\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm"
-        },
-        {
-          "name": "Management information",
-          "len": 772,
-          "empty": false,
-          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: under revision\nLearning Outcomes:\nStudents will be able to construct advanced search queries in Scopus or Web of Science for their specific research topics and accurately export bibliographic metadata for further analysis. By utilizing scientific visualization tools, students will learn to generate co-authorship and keyword maps to visually identify key research clusters and structural relationships within their chosen field.\nLearning Events to be completed before:\nNone.\nKeywords:\nBibliometric analysis, visualization, clusters, Scopus, VOSviewer,"
-        },
-        {
-          "name": "Expected preparation",
-          "len": 201,
-          "empty": false,
-          "text": "Obligatory for students:\nText Analytics and NLP for Discourse, Topic, and Positioning Analysis\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "MC-001\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 2550,
-          "empty": false,
-          "text": "Tool: Scopus/Web of Science database, VOSviewer (latest version). \nNote: This is a computer practice session. Students must have active Scopus/WoS institutional access and have VOSviewer pre-installed on their workstations.\nInstructions for teachers:\n1.\tIntroduction (5 min): The instructor displays a high-resolution VOSviewer map from a recent study in sociology or media. Prompt for students: What patterns do you observe? Discuss the semantics of the visualization: node size (frequency/impact), edge thickness (link strength), and color-coded clusters (thematic or social proximity). \n2.\tConceptual Briefing (10 min): Define bibliometrics and its role in systematic literature reviews and state-of-the-art mapping. Distinguish between descriptive bibliometrics (productivity metrics, citation counts) and science mapping (structural relationships and intellectual evolution). Introduce the specific networks to be built: Co-authorship (social structure) and Keyword Co-occurrence (intellectual structure). Define VOSviewer parameters: nodes, edges, total link strength, clusters, and the minimum occurrence threshold. \n3.\tTechnical Demo (5 min): Demonstrate advanced data harvesting: building a query using Boolean operators (AND, OR, LIMIT-TO) and exporting metadata in CSV or RIS formats with full bibliographical information. \n4.\tData Collection (15 min): Students work individually or in pairs to define a research niche. They select a topic within media/culture (e.g., algorithmic bias, digital disinformation, platform labor, or AI in journalism). Students refine their queries to achieve a manageable corpus (300–800 records) to ensure visual clarity. \n5.\tDescriptive Analysis (10 min): Using the database’s built-in \"Analyze Results\" tool, students report on the distribution of publications by year, top journals, and leading geographic regions.\n6.\tScience Mapping Practice (25 min): Students import their data into VOSviewer. They must generate two distinct maps: a co-authorship network and a keyword co-occurrence map. \n7.\tInterpretation & Reporting (15 min): Students draft a brief report summarizing the primary research clusters and identifying the most influential nodes (authors or concepts) based on link strength. \n8.\tReflection and Sharing (15 min): Selected pairs present their maps.\n9.\t Wrap-up (5 min): Summarize the key concepts and allow time for final questions. Homework: run the same query in both Scopus and Web of Science. Compare the resulting VOSviewer maps: are the thematic clusters consistent across databases?"
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": true,
-        "outcomes_present": true,
-        "materials_uploaded": true,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": true
-      },
-      "sources": [
-        "wiki",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-003",
-      "track": "Media",
-      "title": "MC-003 Social Network Analysis: Theoretical Foundations",
-      "lesson_type": "Lecture",
-      "duration": "90",
-      "job_role": "Comm$Conflict",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
-      "due_date": "",
-      "author": "KPI · Liubov Panchenko",
-      "coauthor": "BME · Dorottya Egres",
-      "reviewer": "Real AI · Tarry Singh",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": true,
-      "review_note": null,
-      "materials": {
-        "count": 1,
-        "has": true,
-        "newest": "2026-06-10",
-        "files": [
-          {
-            "name": "MC_003_Toxicity_Polarization_Monitoring_Practice.pptx",
-            "ext": "pptx",
-            "kb": 5818,
-            "date": "2026-06-10",
-            "sha": "92666968352c34b9",
-            "rel": "4.3 Media & Culture/MC-003/MC_003_Toxicity_Polarization_Monitoring_Practice.pptx"
-          }
-        ],
-        "folder": "MC-003"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-003_Social_Network_Analysis:_Theoretical_Foundations",
-      "wiki_sections": [
-        {
-          "name": "Administrative information",
-          "len": 167,
-          "empty": false,
-          "text": "Title\n\nSocial Network Analysis: Theoretical Foundations\n\n\nCODE\n\nMC-003\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm$Conflict"
-        },
-        {
-          "name": "Management information",
-          "len": 826,
-          "empty": false,
-          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: under revision\nLearning Outcomes:\nStudents will master the relational paradigm, understanding how the configuration of ties between actors defines the structure of the media space. Students will learn to differentiate between centrality metrics (degree, betweenness, closeness) and general network properties to assess the influence of individual nodes. Students will be able to theoretically interpret network topologies, identifying clusters, structural holes, and opinion leaders.\nLearning Events to be completed before:\nNone.\nKeywords:\nnetworks, nodes, actors, edges, centrality metrics, visualization,"
-        },
-        {
-          "name": "Expected preparation",
-          "len": 137,
-          "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "MC-003\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 2710,
-          "empty": false,
-          "text": "Tools: NodeXL. Gephi\nNote: Students can have Gephi/NodeXL pre-installed on their notebooks.\nInstructions for teachers:\n1.\tIntroduction (5 min): The \"Network Turn\" in Social Sciences. Why connectivity often matters more than individual content in the digital age\n2.\tConceptualizing the network (15 min): actors (nodes), relations (edges/ties), and attributes. Taxonomies of ties: directed vs. undirected, binary vs. weighted.\n3.\tFoundational Concepts (15 min): Introduce basic graph terminology. Discuss seminal studies: Jacob Moreno’s Sociometry, Mark Granovetter’s \"Strength of Weak Ties\" (information diffusion), and Manuel Castells’ \"Network Society\" as it pertains to contemporary media structures.\n4.\tMicro-discussion (10 min): Collaborative Mapping. In pairs, students select a specific media ecosystem (e.g., a newsroom hierarchy, a Twitter/X discourse community, or a podcast network) and sketch a graph with 5–7 nodes. Presentation of maps: Address the ontological question - what constitutes an \"actor\" in a media network? (Users, hashtags, bots, or media outlets).\n5.\tCore Metrics (15 min): Quantitative Interpretation of nodes. Degree centrality: popularity and immediate reach. Betweenness centrality: control over information flow and brokerage. Closeness centrality: efficiency and speed of access to the whole network.\n6.\tNetwork-Level Properties: Explain density, diameter, average path length (small world phenomenon), and clustering coefficient as the macro-context for interpretation.\n7.\tApplied Exercise (15 min): Manual calculation. Students compute degree and betweenness for a provided 7-node graph (on whiteboard or handout). Compare manual results with software output (Gephi/NodeXL) to demystify algorithmic calculations.\n8.\tAdvanced Topology (10 min): Social Structures in Media. Clusters & Modularity: Identifying echo chambers, filter bubbles, and polarized discourse. Structural Holes (Ronald Burt): The role of the \"broker\" as a bridge between disconnected audiences. Opinion leaders vs. Bridge-builders in the digital landscape.\n9.\tCase-Study Analysis (15 min): Analyzing a real-world media campaign graph (pre-processed in Gephi, based on a familiar socio-political context). Task: Identify at least two distinct clusters; locate a node occupying a structural hole (broker); identify the top two opinion leaders. Justify each finding with the appropriate metric. Small group work followed by a brief plenary session.\n10.\tConclusion & Reflection (5 min): One-sentence synthesis: \"The most significant insight I gained today regarding media space through the lens of SNA is...\"Synthesize student responses into the three core learning outcomes to reinforce the day's curriculum."
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": true,
-        "outcomes_present": true,
-        "materials_uploaded": true,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": true
-      },
-      "sources": [
-        "wiki",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-066",
-      "track": "Media",
-      "title": "MC-066 Monitoring, Evaluation, And Reporting On The Responsible Use Of AI In Media",
-      "lesson_type": "Interactive",
-      "duration": "90",
-      "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
-      "due_date": "",
-      "author": "HU",
-      "coauthor": "",
-      "reviewer": "REAL AI",
-      "off_wiki": false,
-      "realai_wiki_gap": true,
-      "review_done": false,
-      "review_note": null,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "MC-066"
-      },
-      "lesson_plan": {
-        "doc": "MC-066_Monitoring_Evaluation_Reporting_Media.docx",
-        "rel": "WP4.3 Media lesson plans/MC-066_Monitoring_Evaluation_Reporting_Media.docx",
-        "has_meta_block": true,
-        "date": "2026-05-27"
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-066_Monitoring,_Evaluation,_And_Reporting_On_The_Responsible_Use_Of_AI_In_Media",
-      "wiki_sections": null,
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": false,
-        "outcomes_present": false,
-        "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "wiki",
-        "lesson_plan",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-067",
-      "track": "Media",
-      "title": "MC-067 AI in Media That Fits: Participatory Design and Evaluation",
-      "lesson_type": "Interactive",
-      "duration": "90",
-      "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
-      "due_date": "",
-      "author": "HU",
-      "coauthor": "",
-      "reviewer": "REAL AI",
-      "off_wiki": false,
-      "realai_wiki_gap": true,
-      "review_done": false,
-      "review_note": null,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "MC-067"
-      },
-      "lesson_plan": {
-        "doc": "MC-067_Participatory_Design_Media.docx",
-        "rel": "WP4.3 Media lesson plans/MC-067_Participatory_Design_Media.docx",
-        "has_meta_block": true,
-        "date": "2026-05-27"
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-067_AI_in_Media_That_Fits:_Participatory_Design_and_Evaluation",
-      "wiki_sections": null,
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": false,
-        "outcomes_present": false,
-        "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "wiki",
-        "lesson_plan",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-068",
-      "track": "Media",
-      "title": "MC-068 Decision-Support Systems For Conflict Resolution - Human-Interaction Design Principles",
-      "lesson_type": "Interactive",
-      "duration": "90",
-      "job_role": "Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
-      "due_date": "",
-      "author": "HU",
-      "coauthor": "",
-      "reviewer": "REAL AI",
-      "off_wiki": false,
-      "realai_wiki_gap": true,
-      "review_done": false,
-      "review_note": null,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "MC-068"
-      },
-      "lesson_plan": {
-        "doc": "MC-068_Decision_Support_Conflict_Media.docx",
-        "rel": "WP4.3 Media lesson plans/MC-068_Decision_Support_Conflict_Media.docx",
-        "has_meta_block": true,
-        "date": "2026-05-27"
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-068_Decision-Support_Systems_For_Conflict_Resolution_-_Human-Interaction_Design_Principles",
-      "wiki_sections": null,
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": false,
-        "outcomes_present": false,
-        "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "wiki",
-        "lesson_plan",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-069",
-      "track": "Media",
-      "title": "MC-069 Data Problem-Solving Cycle: A Human-Centered AI Approach For Media",
-      "lesson_type": "Interactive",
-      "duration": "90",
-      "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
-      "due_date": "",
-      "author": "HU",
-      "coauthor": "",
-      "reviewer": "REAL AI",
-      "off_wiki": false,
-      "realai_wiki_gap": true,
-      "review_done": false,
-      "review_note": null,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "MC-069"
-      },
-      "lesson_plan": {
-        "doc": "MC-069_Data_Problem_Solving_Media.docx",
-        "rel": "WP4.3 Media lesson plans/MC-069_Data_Problem_Solving_Media.docx",
-        "has_meta_block": true,
-        "date": "2026-05-11"
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-069_Data_Problem-Solving_Cycle:_A_Human-Centered_AI_Approach_For_Media",
-      "wiki_sections": null,
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": false,
-        "outcomes_present": false,
-        "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "wiki",
-        "lesson_plan",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-100",
-      "track": "Media",
-      "title": "MC-100 The Economics Of Disinformation: Clickbait And Ad-Tech",
-      "lesson_type": "Lecture",
-      "duration": "90",
-      "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
-      "due_date": "",
-      "author": "Real AI",
-      "coauthor": "",
-      "reviewer": "",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "MC-100"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-100_The_Economics_Of_Disinformation:_Clickbait_And_Ad-Tech",
-      "wiki_sections": [
-        {
-          "name": "Administrative information",
-          "len": 164,
-          "empty": false,
-          "text": "Title\n\nThe Economics Of Disinformation: Clickbait And Ad-Tech\n\n\nCODE\n\nMC-100\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm"
-        },
-        {
-          "name": "Management information",
-          "len": 256,
-          "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\n\n\n\nReviewer Person\n\n\n\n\nStatus\n\n!Missing status!\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
-        },
-        {
-          "name": "Expected preparation",
-          "len": 137,
-          "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "MC-100\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 0,
-          "empty": true,
-          "text": ""
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "author",
-            "recipients": [
-              "tarry.singh@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": true,
-        "instructions_written": false,
-        "outcomes_present": true,
-        "materials_uploaded": false,
-        "wiki_missing": [
-          "Instructions for teachers (detailed)"
-        ],
-        "author_needs": [
-          "Instructions for teachers (detailed)",
-          "Upload materials (SharePoint)"
-        ],
-        "ready_to_review": false
-      },
-      "sources": [
-        "wiki",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-101",
-      "track": "Media",
-      "title": "MC-101 The Psychology Of Synthetic Media",
-      "lesson_type": "Lecture",
-      "duration": "90",
-      "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
-      "due_date": "",
-      "author": "Real AI",
-      "coauthor": "",
-      "reviewer": "",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "MC-101"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-101_The_Psychology_Of_Synthetic_Media",
-      "wiki_sections": [
-        {
-          "name": "Administrative information",
-          "len": 143,
-          "empty": false,
-          "text": "Title\n\nThe Psychology Of Synthetic Media\n\n\nCODE\n\nMC-101\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm"
-        },
-        {
-          "name": "Management information",
-          "len": 256,
-          "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\n\n\n\nReviewer Person\n\n\n\n\nStatus\n\n!Missing status!\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
-        },
-        {
-          "name": "Expected preparation",
-          "len": 137,
-          "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "MC-101\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 0,
-          "empty": true,
-          "text": ""
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "author",
-            "recipients": [
-              "tarry.singh@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": true,
-        "instructions_written": false,
-        "outcomes_present": true,
-        "materials_uploaded": false,
-        "wiki_missing": [
-          "Instructions for teachers (detailed)"
-        ],
-        "author_needs": [
-          "Instructions for teachers (detailed)",
-          "Upload materials (SharePoint)"
-        ],
         "ready_to_review": false
       },
       "sources": [
