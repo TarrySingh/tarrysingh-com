@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-07-01T20:18:20.357819+00:00",
-  "refreshed_at": "2026-07-01T20:18:20.357819+00:00",
+  "generated_at": "2026-07-02T00:38:37.603590+00:00",
+  "refreshed_at": "2026-07-02T00:38:37.603590+00:00",
   "refresh_history": [
     {
       "at": "2026-07-01T22:08:06.851274+02:00",
@@ -66,7 +66,7 @@
       "total": 55,
       "author": 11,
       "reviewer": 44,
-      "reviewed": 12,
+      "reviewed": 15,
       "by_status": {
         "In development": 15,
         "In review": 32,
@@ -3314,8 +3314,8 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Well-scoped, minor-to-moderate. Split the single run-on outcome; make the case expose one fluent-but-wrong AI variance commentary (verify the causal claim, not the prose) and one over-eager anomaly flag (false positives and alert fatigue); state who owns the narrative that reaches the board; add rubric, timing, prep. 'Analist' typo.",
       "materials": {
         "count": 0,
         "has": false,
@@ -3550,8 +3550,8 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "One of the strongest plans, minor and additive. Add the 2026-current regulatory reality: EU AI Act high-risk for credit (Annex III, obligations from Aug 2026), ECOA adverse-action reasons, the 21 Jul 2026 CFPB change ending ECOA disparate impact (now disparate treatment via proxies + Fair Housing Act), and model risk management after SR 11-7's April 2026 rescission. Temper the accuracy gain (modest but consistent) and name SHAP's limits.",
       "materials": {
         "count": 0,
         "has": false,
@@ -14321,8 +14321,8 @@
       "reviewer": "RealAI",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Good clinic-to-community idea, moderate revision. Lecture type clashes with the demonstrate/simulate/deploy outcomes (needs a practical, or reworded outcomes); the example tools (Heidi, Freed, Nabla, Ada) skew point-of-care, so point at their coordination features or use a real care-coordination platform; outcome 3 (integration) and outcome 5 (limitations) have nothing behind them yet; thin keywords, no prep or materials.",
       "materials": {
         "count": 0,
         "has": false,
@@ -23007,8 +23007,8 @@
       "reviewer": "RealAI",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Good clinic-to-community idea, moderate revision. Lecture type clashes with the demonstrate/simulate/deploy outcomes (needs a practical, or reworded outcomes); the example tools (Heidi, Freed, Nabla, Ada) skew point-of-care, so point at their coordination features or use a real care-coordination platform; outcome 3 (integration) and outcome 5 (limitations) have nothing behind them yet; thin keywords, no prep or materials.",
       "materials": {
         "count": 0,
         "has": false,
@@ -23937,8 +23937,8 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Well-scoped, minor-to-moderate. Split the single run-on outcome; make the case expose one fluent-but-wrong AI variance commentary (verify the causal claim, not the prose) and one over-eager anomaly flag (false positives and alert fatigue); state who owns the narrative that reaches the board; add rubric, timing, prep. 'Analist' typo.",
       "materials": {
         "count": 0,
         "has": false,
@@ -24114,8 +24114,8 @@
       "reviewer": "RAI",
       "off_wiki": false,
       "realai_wiki_gap": true,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "One of the strongest plans, minor and additive. Add the 2026-current regulatory reality: EU AI Act high-risk for credit (Annex III, obligations from Aug 2026), ECOA adverse-action reasons, the 21 Jul 2026 CFPB change ending ECOA disparate impact (now disparate treatment via proxies + Fair Housing Act), and model risk management after SR 11-7's April 2026 rescission. Temper the accuracy gain (modest but consistent) and name SHAP's limits.",
       "materials": {
         "count": 0,
         "has": false,
