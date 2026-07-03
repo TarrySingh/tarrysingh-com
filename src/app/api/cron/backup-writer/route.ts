@@ -11,6 +11,7 @@ import {
 } from "@/lib/drive/client"
 import { amsterdamDateToday, getBrief } from "@/lib/studio/daily-brief"
 import { processArticle } from "@/lib/studio/process-article"
+import { sendDispatchFailureAlert } from "@/lib/studio/email"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -238,6 +239,15 @@ async function handleTick(req: NextRequest) {
         debug: result.debug,
       }),
     )
+    // Shout immediately — the whole point of the 2026-06-30 fix: a failed
+    // morning write emails Tarry the exact error the instant it happens,
+    // instead of silently no-showing for days.
+    await sendDispatchFailureAlert({
+      stage: "generation",
+      error: result.error,
+      forDate: today,
+      debug: result.debug,
+    }).catch(() => {})
     return NextResponse.json(
       { ok: false, error: result.error, durationMs, debug: result.debug },
       { status: 502 },
@@ -291,6 +301,12 @@ async function handleTick(req: NextRequest) {
         durationMs,
       }),
     )
+    await sendDispatchFailureAlert({
+      stage: `process:${processed.stage}`,
+      error: processed.error,
+      forDate: today,
+      debug: "debug" in processed ? processed.debug : undefined,
+    }).catch(() => {})
     return NextResponse.json(
       {
         ok: false,

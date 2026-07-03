@@ -424,3 +424,86 @@ export async function sendApprovalEmail(
     }
   }
 }
+
+// ───────────────────────── Write-failure alert ─────────────────────────
+
+export interface SendDispatchFailureInput {
+  /** Which stage broke, e.g. "generation" or "process:email". */
+  stage: string
+  /** The machine error code, e.g. "ai_call_failed". */
+  error: string
+  /** Amsterdam-local date the write was for. */
+  forDate: string
+  /** Optional detail — the real API message, a status, etc. */
+  debug?: string
+  to?: string
+}
+
+/**
+ * Immediate alert when the morning Dispatch WRITE fails. Fires from the
+ * backup-writer at the moment of failure, naming the exact error — so a
+ * broken write can never silently no-show for days again. (The 2026-06-24
+ * adaptive-thinking 400 ran unseen for a week because nothing shouted at
+ * the point of failure; the daily heartbeat was the only net and it
+ * didn't land.) Fail-closed when Resend is unconfigured.
+ */
+export async function sendDispatchFailureAlert(
+  input: SendDispatchFailureInput,
+): Promise<SendApprovalEmailResult> {
+  const client = getClient()
+  if (!client) return { ok: false, error: "email_unconfigured" }
+  const to = input.to || process.env.STUDIO_APPROVAL_EMAIL || DEFAULT_TO
+  const from = process.env.STUDIO_APPROVAL_FROM || DEFAULT_FROM
+  const subject = `⚠ Studio · morning Dispatch write FAILED (${input.forDate})`
+  const debugBlock = input.debug
+    ? `<p style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;background:#f5e9e4;padding:10px 12px;border-radius:6px;white-space:pre-wrap;word-break:break-word;color:#7a2e12">${escapeHtml(input.debug).slice(0, 700)}</p>`
+    : ""
+  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Dispatch write failed</title></head>
+<body style="margin:0;background:#fbf7ec;font-family:'IBM Plex Serif',Georgia,serif;color:#0d1b3d">
+  <div style="max-width:560px;margin:0 auto;padding:32px 24px 48px">
+    <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.32em;text-transform:uppercase;color:#be123c;font-weight:600">Studio · write failure</div>
+    <hr style="border:0;height:1px;background:rgba(190,18,60,0.25);margin:16px 0 20px"/>
+    <h1 style="font-family:Gloock,Georgia,serif;font-weight:400;font-size:24px;line-height:1.2;margin:0 0 12px">Today's Dispatch didn't get written.</h1>
+    <p style="font-size:15px;line-height:1.55;margin:0 0 12px">The server-side backup-writer failed at <strong>${escapeHtml(input.stage)}</strong> for <code>${escapeHtml(input.forDate)}</code> — error <code>${escapeHtml(input.error)}</code>. No draft was created and no approval email was sent.</p>
+    ${debugBlock}
+    <p style="font-size:15px;line-height:1.55;margin:12px 0 0">Nothing publishes today until this is fixed. Check Vercel logs for <code>/api/cron/backup-writer</code>, then force a retry with <code>?force=1</code>.</p>
+    <p style="margin-top:24px;padding-top:14px;border-top:1px solid rgba(180,134,11,0.18);font-style:italic;font-size:13px;color:rgba(13,27,61,0.55)">Automated · fires the instant a morning write errors.</p>
+  </div></body></html>`
+  const text = [
+    "Studio · morning Dispatch write FAILED",
+    "—",
+    "",
+    `For date:  ${input.forDate}`,
+    `Stage:     ${input.stage}`,
+    `Error:     ${input.error}`,
+    input.debug ? `\nDetail:\n${input.debug.slice(0, 700)}` : "",
+    "",
+    "No draft, no approval email. Nothing publishes today until fixed.",
+    "Check Vercel logs for /api/cron/backup-writer, then retry with ?force=1.",
+  ]
+    .filter(Boolean)
+    .join("\n")
+  try {
+    const res = await client.emails.send({
+      from,
+      to: [to],
+      subject,
+      html,
+      text,
+      headers: { "X-Entity-Ref-ID": `studio-write-fail-${input.forDate}-${Date.now()}` },
+    })
+    if (res.error || !res.data?.id) {
+      console.error(
+        JSON.stringify({ tag: "studio.write_fail_alert.send_error", forDate: input.forDate, error: res.error }),
+      )
+      return { ok: false, error: "email_send_failed" }
+    }
+    return { ok: true, emailId: res.data.id }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    console.error(
+      JSON.stringify({ tag: "studio.write_fail_alert.send_exception", forDate: input.forDate, error: message }),
+    )
+    return { ok: false, error: "email_send_failed" }
+  }
+}

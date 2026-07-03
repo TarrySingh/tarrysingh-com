@@ -208,7 +208,11 @@ Write the article now. 1,400–1,600 words. Use web_search to ground every factu
     return {
       ok: false,
       error: "ai_call_failed",
-      debug: process.env.STUDIO_AI_DEBUG === "1" ? message : undefined,
+      // Always surface the real API message (truncated) — it flows into the
+      // write-failure alert email so the error is actionable without needing
+      // STUDIO_AI_DEBUG set. (Had this been on, the adaptive-thinking 400
+      // would have been named in an alert on day one, not found a week later.)
+      debug: message.slice(0, 400),
     }
   }
 
