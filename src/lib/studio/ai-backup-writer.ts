@@ -166,18 +166,29 @@ Write the article now. 1,400–1,600 words. Use web_search to ground every factu
     // keep (per the principle: thinking for first drafts, not for the
     // editor's incremental continue/rewrite/frontmatter fixes).
     //
-    // opus-4-8 uses the new adaptive thinking API
-    // (`thinking: { type: "adaptive" }` + `output_config.effort`); the
-    // old `enabled`/`budget_tokens` form is rejected. @anthropic-ai/sdk
-    // 0.79 doesn't type these fields yet but forwards them at runtime
-    // (verified), so we cast the params. `effort: "high"` = maximum
-    // reasoning for the from-scratch write. Bump the SDK later to drop
-    // the cast.
+    // Thinking config is model-family-specific — and getting it wrong is
+    // a HARD 400, not a soft degrade. Adaptive thinking
+    // (`thinking:{type:"adaptive"}` + `output_config.effort`) exists only
+    // on Opus 4.6+/Fable/Mythos. Sending it to Sonnet/Haiku returns
+    // `400 invalid_request_error: "adaptive thinking is not supported on
+    // this model"` — which is exactly what silently killed the daily
+    // Dispatch: the default model here is claude-sonnet-4-5 (cost
+    // control), so the backup-writer 502'd on EVERY morning tick from
+    // 2026-06-24, the filed brief never got written, and no email ever
+    // fired. Sonnet/Haiku use classic extended thinking
+    // (`{type:"enabled", budget_tokens}`), which they DO support, so we
+    // still get deep reasoning for the from-scratch write. @anthropic-ai/sdk
+    // 0.79 doesn't type these fields yet but forwards them at runtime, so
+    // we cast the params.
+    const supportsAdaptiveThinking =
+      /^claude-(?:opus-4-[678]|fable-5|mythos-(?:5|preview))/.test(model)
+    const thinkingConfig = supportsAdaptiveThinking
+      ? { thinking: { type: "adaptive" }, output_config: { effort: "high" } }
+      : { thinking: { type: "enabled", budget_tokens: 8000 } }
     const createParams = {
       model,
       max_tokens: DEFAULT_MAX_TOKENS,
-      thinking: { type: "adaptive" },
-      output_config: { effort: "high" },
+      ...thinkingConfig,
       tools: [
         {
           type: "web_search_20250305",
