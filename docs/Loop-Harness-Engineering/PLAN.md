@@ -13,7 +13,7 @@ engineering core of Real AI's AIOps strategy.
 
 | # | Non-negotiable | Enforced by |
 |---|---|---|
-| 1 | **Absolutely zero AI slop** | The Insights & Instrument Contract (CORE, realai-v2) adopted wholesale: binary truth gate, per-claim source+year, do-not-use list, banned-word gate, red-team pass. |
+| 1 | **Absolutely zero AI slop** | THREE binding artifacts, adopted wholesale: (a) the Insights & Instrument Contract (CORE, `realai-v2/docs/INSIGHTS-INSTRUMENT-CONTRACT-CORE.md`) — truth gate, do-not-use list, red-team; (b) the **living anti-LLM-smell contract** (`~/.claude/projects/-Users-tarrysingh-Documents-GitHub/memory/feedback_anti_llm_smell_contract.md`, weekly-refreshed by the `ai-slop-watch` cron) — NO em-dash, the banned-vocab + banned-phrase + structural-tell lists; (c) the **shared scanner** `realai-v2/scripts/check-llm-smell.mjs` — ported into tarrysingh-com in LH-P1 and wired as a pre-commit + CI gate over the Engine Room chapters AND instrument label strings (SVG text renders on the page; it is prose). |
 | 2 | **Very engineering-driven** | Real configs, real code panes, real terminal traces in every chapter; every instrument encodes a mechanism, not a metaphor. |
 | 3 | **15 sophisticated interactive visualizations** | The instrument roster in §4 — each RIS-grade (zone engine, expandable, deterministic, screenshot-QA'd at 3 widths), each *argues* its insight, each interaction-distinct from the other 14 AND from the existing synaptic catalogue. |
 | 4 | **30,000 words to the dot** | Word-gate script counts rendered prose; the chapter budget in §5 sums to exactly 30,000; final polish tunes to the dot. |
@@ -75,6 +75,14 @@ Decision needed before Ch12 drafts.
 - Reuses: PlateFrame/read-chart-kit patterns, LazyMount, JumpNav,
   SynapticSubscribe (already themes itself), inline subscribe bands, OG-image
   pattern, plate-cover workflow, per-chapter `Sources` ledger component.
+- **Anti-slop tooling (LH-P1 deliverable):** port `check-llm-smell.mjs` from
+  realai-v2 into `scripts/` here, scoped to the Engine Room chapter components
+  + instrument files; run in the gate alongside tsc/eslint/word-gate. Keep the
+  realai-v2 copy as the single upstream; ours tracks it.
+- **Term-of-art exemptions (write into the BINDING):** the *noun* "harness"
+  and "loop" are the essay's technical subject and are exempt; the figurative
+  *verb* "harness" ("harness the power of") stays banned. Same logic for
+  "hooks", "pipeline". No other exemptions without Tarry's sign-off.
 
 ---
 
@@ -218,3 +226,13 @@ hundred micro-commits, in the chokepoint cadence.
 3. **Accent**: phosphor green (recommended, terminal-true) vs electric cyan (closer to chokepoint kinship).
 4. **Role list in Ch11**: I'll propose ~8 roles with day-one task lists; Tarry prunes/adds from Real AI hiring reality.
 5. **The prologue uses our real outage** (recommended — it is the thesis in miniature) — comfort check that the story is fair game to publish.
+6. **Em-dash policy collision (needs a ruling).** The living anti-slop contract
+   bans the em-dash outright (the #1 tell) and realai-v2 enforces that on prose
+   AND instrument labels. But tarrysingh.com's existing house voice — the
+   dispatch writer prompt, the chokepoint essay, the synaptic plates — uses em
+   dashes deliberately as a signature. Recommendation: **the Engine Room
+   follows the anti-slop contract in full (zero em-dashes; middot `·` as the
+   instrument-label separator, which the synaptic kit already favours)** since
+   this plate doubles as the realai.eu derivative source. Decide separately
+   whether the wider tarrysingh.com house style migrates; this plan does not
+   force that.
