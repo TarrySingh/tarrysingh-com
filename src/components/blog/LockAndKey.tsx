@@ -381,7 +381,12 @@ export function LockAndKey() {
         {(() => {
           const px = 540
           const pw = W - px - 40
-          const py = H - 154
+          // Top-right, NOT bottom-right: the key rotates clockwise about the
+          // pivot, so the far teeth + their engraved labels sweep down-right
+          // straight through the lower-right quadrant — at the resist point
+          // "€2.5tn INDUSTRY" was overprinting "THE ASSET IN HAND". The
+          // upper-right quadrant is the one region the turn can never reach.
+          const py = 56
           const ph = 130
           return (
             <g>
