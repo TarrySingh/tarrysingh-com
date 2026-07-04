@@ -158,7 +158,7 @@ function BoreScene({ ctx }: { ctx: SceneCtx }) {
   }, [reduced, publicView])
 
   const W = compact ? 460 : 980
-  const H = compact ? 1170 : 560
+  const H = compact ? 1170 : 856
 
   // Core column geometry. The core is a vertical stack of strata bands whose
   // HEIGHT is uniform but whose VOLUME bar (to the right) encodes bulk.
@@ -170,16 +170,18 @@ function BoreScene({ ctx }: { ctx: SceneCtx }) {
   // Side lanes to the right of the core: VOLUME bar, VALUE glyph, READY gauge.
   // Compact packs them tighter so the widest row still clears the viewBox.
   const volX = core.x + core.w + 10 // volume bar left edge
-  const volMaxW = compact ? 120 : core.w // volume bar full-scale width
-  const glyphX = volX + volMaxW + (compact ? 24 : 26) // value glyph centre
+  const volMaxW = compact ? 120 : 300 // volume bar full-scale width
+  const glyphX = volX + volMaxW + (compact ? 24 : 44) // value glyph centre
   const glyphR = compact ? 13 : 16
-  const meterX = glyphX + glyphR + (compact ? 14 : 18) // readiness meter left
-  const meterW = compact ? 58 : 96
+  const meterX = glyphX + glyphR + (compact ? 14 : 32) // readiness meter left
+  const meterW = compact ? 58 : 240
 
-  // Readout panel sits to the right on desktop, below the core on compact.
+  // Readout panel sits BELOW the drill core (both layouts). On desktop the side
+  // lanes (VOLUME / VALUE / READY) already occupy the space to the right of the
+  // core, so the panel cannot also live there without overlapping them.
   const panel = compact
     ? { x: 40, y: 856, w: 380 }
-    : { x: 340, y: 120, w: 600 }
+    : { x: 70, y: 548, w: 860 }
 
   const fs = compact ? 17 : 13.5
 
@@ -277,18 +279,21 @@ function BoreScene({ ctx }: { ctx: SceneCtx }) {
                   )
                 })
               })()}
-              {/* stratum name inside the band */}
+              {/* stratum name. Desktop: centred in the band. Compact: the band is
+                  only ~150 wide but tall, and the long names ("DEAL MEMOS & LAB
+                  NOTEBOOKS") overrun the side lanes if centred, so lift the name and
+                  sub to the top of the band where the row to their right is empty. */}
               <text
                 x={core.x + 10}
-                y={y + bandH / 2 - 3}
+                y={y + (compact ? 26 : bandH / 2 - 3)}
                 fill={isSel ? p.signalHi : p.ink}
-                style={{ fontSize: fs - 2, fontWeight: 700, letterSpacing: "0.04em", fontFamily: "var(--font-mono), monospace" }}
+                style={{ fontSize: fs - (compact ? 3 : 2), fontWeight: 700, letterSpacing: "0.04em", fontFamily: "var(--font-mono), monospace" }}
               >
                 {st.name}
               </text>
               <text
                 x={core.x + 10}
-                y={y + bandH / 2 + 14}
+                y={y + (compact ? 44 : bandH / 2 + 14)}
                 fill={p.soft}
                 style={{ fontSize: fs - 4, fontFamily: "var(--font-mono), monospace" }}
               >
