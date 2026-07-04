@@ -208,7 +208,7 @@ export function AmericanLeash() {
                 y={b.y + b.h / 2 + 14}
                 textAnchor="middle"
                 fill={b.us ? rgba(p.glowRGB, lerp(0.7, 0.95, over ? t : 0)) : p.soft}
-                style={{ fontSize: 10 }}
+                style={{ fontSize: 11 }}
               >
                 {b.sub}
               </text>
@@ -238,7 +238,7 @@ export function AmericanLeash() {
           <text x={SD[0] - 2} y={SD[1] + 26} textAnchor="start" fill={p.squeezeHi} style={{ fontSize: 13, fontWeight: 700 }}>
             SAN DIEGO
           </text>
-          <text x={SD[0] - 2} y={SD[1] + 42} textAnchor="start" fill={p.muted} style={{ fontSize: 10 }}>
+          <text x={SD[0] - 2} y={SD[1] + 42} textAnchor="start" fill={p.muted} style={{ fontSize: 11.5 }}>
             Cymer · US export authority
           </text>
         </g>
@@ -247,7 +247,7 @@ export function AmericanLeash() {
           <text x={VH[0] + 2} y={VH[1] + 26} textAnchor="end" fill={over ? p.squeezeHi : p.leverageHi} style={{ fontSize: 13, fontWeight: 700 }}>
             VELDHOVEN
           </text>
-          <text x={VH[0] + 2} y={VH[1] + 42} textAnchor="end" fill={p.muted} style={{ fontSize: 10 }}>
+          <text x={VH[0] + 2} y={VH[1] + 42} textAnchor="end" fill={p.muted} style={{ fontSize: 11.5 }}>
             ASML · builds the machine
           </text>
         </g>
@@ -267,7 +267,7 @@ export function AmericanLeash() {
           y={midY + (over ? -10 : 18)}
           textAnchor="middle"
           fill={over ? p.squeezeHi : p.soft}
-          style={{ fontSize: 11, fontWeight: over ? 700 : 400, letterSpacing: "0.08em" }}
+          style={{ fontSize: 11.5, fontWeight: over ? 700 : 400, letterSpacing: "0.08em" }}
         >
           {over ? "RE-EXPORT JURISDICTION — ATTACHED" : "extraterritorial reach — slack"}
         </text>

@@ -64,7 +64,7 @@ type Tooth = {
 const TEETH: Tooth[] = [
   {
     key: "asml",
-    label: "ASML · EUV",
+    label: "EUV",
     metric: "100%",
     detail:
       "A 100% monopoly on EUV lithography — €677bn market cap, ZERO substitutes. Without ASML, no sub-5nm AI chip on Earth gets made.",
@@ -72,7 +72,7 @@ const TEETH: Tooth[] = [
   },
   {
     key: "savings",
-    label: "HOUSEHOLD SAVINGS",
+    label: "SAVINGS",
     metric: "€33.5tn",
     detail:
       "€33.5tn of household savings, atop €61tn of net wealth — the capital to fund a continent's own frontier, if it dared to deploy it.",
@@ -80,7 +80,7 @@ const TEETH: Tooth[] = [
   },
   {
     key: "market",
-    label: "SINGLE MARKET",
+    label: "MARKET",
     metric: "450M",
     detail:
       "A single market of 450 million people — the scale to set the rules rather than take them, the moment it acts as one.",
@@ -364,7 +364,7 @@ export function LockAndKey() {
                   y={PIVOT_Y + SHAFT_H / 2 + th + 30}
                   textAnchor="middle"
                   fill={p.soft}
-                  style={{ fontSize: 8.5, letterSpacing: "0.06em" }}
+                  style={{ fontSize: 12, letterSpacing: "0.04em" }}
                 >
                   {t.label}
                 </text>
