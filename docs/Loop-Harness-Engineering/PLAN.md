@@ -23,6 +23,9 @@ engineering core of Real AI's AIOps strategy.
 | 8 | **Use case: AI Loop & Harness R&D Researcher** (materials / multi-omics / drug discovery) — 100% realistic, market-relevant, no hallucination | Chapter 9 + instrument V12 — anchored ONLY to shipped systems (A-Lab, GNoME, Coscientist, AlphaFold-class, Insilico/Recursion pipelines), each claim red-teamed. |
 | 9 | **Corporate-data chapter ≥ 5,000 words** using the handover package | Chapter 7 (budgeted 5,200 words) built on `HANDOVER-data-asymmetry.md` — frozen figures, frozen copy, Data Iceberg + Vault Bore instruments. |
 | 10 | **Link to Real AI's AIOps strategy** | Chapter 12 + instrument V15 (the AIOps Command Deck); products-as-advice per contract criterion B; derivative pipeline in §9. |
+| 11 | **Quality no less than 10/10** (Tarry, 2026-07-04) | The CORE contract's "floor ≥8, target 10" does NOT apply to this flagship: **10/10 on all five criteria IS the ship floor.** Anything judged below 10 in red-team/design-panel goes back, not forward. |
+| 12 | **Audience locked**: engineers, software developers, engineering managers — startups, scaleups, enterprises | The BINDING's named expert reader: *a staff engineer or EM who has shipped (or is about to ship) an agent system to production.* Voice: engineering-native — code first, mechanisms named plainly (sandbox, eval, RLAIF), zero business-fluff, zero hand-holding. Criterion A is judged against this reader nodding in five seconds. |
+| 13 | **CTA layer with real provenance** (Tarry, 2026-07-04) | Four CTA moments, contract-compliant (data → advice → pointer, never pitch): see §6b. Includes the O&G/Earthscan six-years-of-automated-MLOps provenance, the Real AI "before it had a name" provenance, and the **Hominis Agentic OS** allusion pointing to realai.eu. |
 
 ---
 
@@ -181,6 +184,35 @@ materials companies already spend.
 
 ---
 
+## 6b. Audience & CTA architecture
+
+**The named expert reader (criterion A):** a staff engineer / senior developer /
+engineering manager at a startup, scaleup or enterprise who has shipped — or is
+six weeks from shipping — an agent system to production. They have opinions
+about eval design. They have been burned by a demo that died in prod. The essay
+speaks their language natively: real configs, real failure logs, mechanisms
+named plainly. (Note: the Agent OS *marketing* voice bans "sandbox/kernel/WASM"
+for client-facing copy — that rule does NOT apply here; our reader wants the
+mechanism. When we point at the realai.eu page we borrow its one-liner, not its
+vocabulary constraints.)
+
+**Four CTA moments — each obeys data → advice → pointer, never pitch:**
+
+| Where | The advice the data forces | The pointer | Provenance woven in |
+|---|---|---|---|
+| Ch7 · The Vault | Your proprietary corpus needs a sovereign stack — models you own, not rent | Hominis Foundation Stack → realai.eu | Real AI: "we were building loops and harnesses before either had a name" (founder-attested) |
+| Ch8 · Private Frontier | The layer between your models and your data is a harness; buy-or-build it deliberately | **Hominis Agentic OS** ("give your AI a real computer to work on — one you fully control"; its Deployment Harness) → realai.eu | The Hominis stack (model → agentic OS → apps) IS the run-book's architecture made product |
+| Ch9 · Discovery Loop | Closed-loop R&D is already normal in energy; the discipline transfers | Earthscan → earthscan.io | **Six years of automated MLOps in production O&G AI** — the loops ran before the vocabulary existed (founder-attested) |
+| Ch12 · Operating Intelligence | Operating agent fleets is a discipline with a control room | Real AI AIOps strategy + the Agent OS layer → realai.eu | The command deck (V15) as the strategy made visible |
+
+Rules: max four; each a short passage inside the chapter's advice beat, no
+banners, no superlatives-as-fact. Provenance claims are **founder-attested** —
+the red team labels them as such, and P3 asks Tarry for one concrete receipt
+each (a 2019-era pipeline artefact, an Earthscan MLOps run log, a date) so the
+engineering audience gets evidence, not assertion.
+
+---
+
 ## 7. Research plan (P0) — the sweep angles
 
 Workflow fan-out, one agent per angle, adversarial re-verification per the
@@ -236,3 +268,9 @@ hundred micro-commits, in the chokepoint cadence.
    this plate doubles as the realai.eu derivative source. Decide separately
    whether the wider tarrysingh.com house style migrates; this plan does not
    force that.
+7. **Provenance attribution for the six-years claim.** "Our O&G AI startup —
+   six years of automated MLOps" spans the deepkapha-era energy work through
+   Earthscan. Confirm during P3 how to attribute it (Earthscan as the named
+   vehicle, or "our energy-AI practice, now Earthscan"), and supply one
+   concrete receipt per provenance claim (a dated pipeline artefact or run
+   log) so the claims carry evidence for an engineering reader.
