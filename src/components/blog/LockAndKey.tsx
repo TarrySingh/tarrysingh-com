@@ -234,7 +234,7 @@ export function LockAndKey() {
 
         {/* schematic blueprint hairlines — the shop drawing the plan is written on */}
         <line x1={40} y1={PIVOT_Y} x2={W - 40} y2={PIVOT_Y} stroke={p.blueprint} strokeWidth={1} strokeDasharray="2 6" />
-        <text x={W - 44} y={PIVOT_Y - 10} textAnchor="end" fill={p.soft} style={{ fontSize: 10, letterSpacing: "0.2em" }}>
+        <text x={W - 44} y={PIVOT_Y - 10} textAnchor="end" fill={p.soft} style={{ fontSize: 12.5, letterSpacing: "0.2em" }}>
           THE KEY EUROPE HOLDS
         </text>
 
@@ -271,7 +271,7 @@ export function LockAndKey() {
               strokeLinecap="round"
             />
           </g>
-          <text x={LOCK_X + 20} y={LOCK_Y + 30} fill={p.squeezeHi} style={{ fontSize: 10.5, letterSpacing: "0.18em" }}>
+          <text x={LOCK_X + 20} y={LOCK_Y + 30} fill={p.squeezeHi} style={{ fontSize: 12.5, letterSpacing: "0.18em" }}>
             WHAT WASHINGTON OWNS
           </text>
 
@@ -386,7 +386,7 @@ export function LockAndKey() {
           return (
             <g>
               <rect x={px} y={py} width={pw} height={ph} rx={14} fill={p.hair} stroke={p.blueprint} strokeWidth={1} />
-              <text x={px + 22} y={py + 30} fill={p.soft} style={{ fontSize: 10.5, letterSpacing: "0.2em" }}>
+              <text x={px + 22} y={py + 30} fill={p.soft} style={{ fontSize: 12.5, letterSpacing: "0.2em" }}>
                 THE ASSET IN HAND
               </text>
               <text x={px + 22} y={py + 64} fill={keyHi} style={{ fontSize: 30, fontWeight: 800, letterSpacing: "-0.01em" }}>

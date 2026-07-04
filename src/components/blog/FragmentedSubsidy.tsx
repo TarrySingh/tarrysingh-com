@@ -228,7 +228,7 @@ export function FragmentedSubsidy() {
                       y={sh.cy + 3}
                       textAnchor="middle"
                       fill={on || sh.central ? hi : p.muted}
-                      style={{ fontSize: sh.r >= 18 ? 11 : 9.5, fontWeight: on || sh.central ? 700 : 400 }}
+                      style={{ fontSize: sh.r >= 18 ? 12 : 11, fontWeight: on || sh.central ? 700 : 400 }}
                     >
                       {sh.central ? "EU" : sh.label}
                     </text>
