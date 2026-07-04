@@ -313,7 +313,7 @@ function LoopScene({ ctx }: { ctx: SceneCtx }) {
         {/* centre readout */}
         <text
           x={ring.cx}
-          y={ring.cy - 8}
+          y={ring.cy - 12}
           textAnchor="middle"
           fill={divergent ? p.danger : p.signalHi}
           style={{ fontSize: compact ? 40 : 42, fontWeight: 800, fontFamily: "var(--font-mono), monospace" }}
@@ -322,7 +322,7 @@ function LoopScene({ ctx }: { ctx: SceneCtx }) {
         </text>
         <text
           x={ring.cx}
-          y={ring.cy + 18}
+          y={ring.cy + 24}
           textAnchor="middle"
           fill={p.soft}
           style={{ fontSize: fs - 1, letterSpacing: "0.16em", fontFamily: "var(--font-mono), monospace" }}
@@ -331,7 +331,7 @@ function LoopScene({ ctx }: { ctx: SceneCtx }) {
         </text>
         <text
           x={ring.cx}
-          y={ring.cy + 40}
+          y={ring.cy + 46}
           textAnchor="middle"
           fill={p.verdict}
           style={{ fontSize: fs - 1, fontFamily: "var(--font-mono), monospace" }}

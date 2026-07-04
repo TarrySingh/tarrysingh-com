@@ -1,7 +1,10 @@
 import type { ReactNode } from "react"
 
 import { TheLoop } from "@/components/loop/TheLoop"
+import { HarnessExploded } from "@/components/loop/HarnessExploded"
+import { VerifierGap } from "@/components/loop/VerifierGap"
 import { ContextRot } from "@/components/loop/ContextRot"
+import { HarnessOfRecord } from "@/components/loop/HarnessOfRecord"
 
 /**
  * THE ENGINE ROOM - Loop & Harness Engineering (Synaptic Plate V).
@@ -78,7 +81,7 @@ export default function LoopHarnessPage() {
               textTransform: "uppercase",
             }}
           >
-            Calibration · V1 + V4
+            The instruments · V1 to V5 live
           </span>
         </div>
 
@@ -87,7 +90,19 @@ export default function LoopHarnessPage() {
         </Stage>
 
         <Stage>
+          <HarnessExploded />
+        </Stage>
+
+        <Stage>
+          <VerifierGap />
+        </Stage>
+
+        <Stage>
           <ContextRot />
+        </Stage>
+
+        <Stage>
+          <HarnessOfRecord />
         </Stage>
       </section>
 

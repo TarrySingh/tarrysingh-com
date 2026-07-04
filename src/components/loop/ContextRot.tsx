@@ -151,7 +151,7 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
         </text>
         <text
           x={main.x0 + (compact ? 128 : 150)}
-          y={main.yTop - 26}
+          y={main.yTop - 32}
           fill={p.muted}
           style={{ fontSize: fs - 1, fontFamily: "var(--font-mono), monospace" }}
         >
