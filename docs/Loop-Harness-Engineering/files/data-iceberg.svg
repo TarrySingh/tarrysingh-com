@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="ui-sans-serif,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c1236"/><stop offset="1" stop-color="#0a0f2b"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1130"/><stop offset="1" stop-color="#05081c"/>
+    </linearGradient>
+    <linearGradient id="tipfill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="0.55" stop-color="#d3ddff"/><stop offset="1" stop-color="#aab8f2"/>
+    </linearGradient>
+    <linearGradient id="goldfill" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#ffd76b"/><stop offset="0.4" stop-color="#e0a63f"/><stop offset="0.75" stop-color="#b0722a"/><stop offset="1" stop-color="#6f451c"/>
+    </linearGradient>
+    <linearGradient id="wlGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2040df" stop-opacity="0"/><stop offset="0.5" stop-color="#4a68ff" stop-opacity="0.9"/><stop offset="1" stop-color="#2040df" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="196" fill="url(#sky)"/>
+  <rect x="0" y="196" width="1280" height="524" fill="url(#water)"/>
+
+  <!-- submerged mass -->
+  <path d="M 742 196 L 1096 196 L 1120 250 L 1078 306 L 1102 366 L 1052 438 L 1074 506 L 1010 566 L 1034 618 L 928 662 L 858 622 L 788 646 L 820 560 L 756 500 L 792 430 L 738 362 L 782 302 L 736 250 Z" fill="url(#goldfill)"/>
+  <path d="M 742 196 L 900 196 L 820 560 Z" fill="#000000" opacity="0.10"/>
+  <path d="M 1096 196 L 928 662 L 1010 566 L 1074 506 L 1052 438 L 1102 366 L 1078 306 Z" fill="#ffffff" opacity="0.06"/>
+  <path d="M 900 196 L 792 430 L 820 560 Z" fill="#ffffff" opacity="0.05"/>
+  <!-- tip -->
+  <path d="M 878 196 L 892 150 L 903 100 L 918 140 L 930 170 L 948 196 Z" fill="url(#tipfill)"/>
+  <path d="M 903 100 L 918 140 L 930 170 L 948 196 L 903 196 Z" fill="#9fb0ee" opacity="0.55"/>
+
+  <!-- waterline -->
+  <rect x="0" y="193" width="1280" height="6" fill="url(#wlGlow)" filter="url(#soft)"/>
+  <line x1="0" y1="196" x2="1280" y2="196" stroke="#2040df" stroke-width="1.4" opacity="0.85"/>
+  <text x="1252" y="188" text-anchor="end" font-size="11.5" letter-spacing="3.5" fill="#6f7bbf" font-weight="600">WATERLINE</text>
+
+  <!-- left column -->
+  <text x="72" y="96" font-size="13" letter-spacing="5" fill="#7c86bf" font-weight="700">THE DATA ASYMMETRY</text>
+  <text x="70" y="176" font-family="Georgia,'Times New Roman',serif" font-size="52" fill="#eef2ff" font-weight="700">The training set</text>
+  <text x="70" y="230" font-family="Georgia,'Times New Roman',serif" font-size="52" fill="#eef2ff" font-weight="700">is the <tspan fill="#c7d2fe">tip</tspan>.</text>
+  <text x="70" y="298" font-family="Georgia,'Times New Roman',serif" font-size="52" fill="#f4c04e" font-weight="700" font-style="italic">The value is underwater.</text>
+
+  <text x="72" y="356" font-size="16.5" fill="#aeb6e0">
+    <tspan x="72" dy="0">Frontier LLMs are trained on a distilled sliver of public</tspan>
+    <tspan x="72" dy="25">text. The world&#8217;s enterprise data &#8212; proprietary, resident,</tspan>
+    <tspan x="72" dy="25">unseen &#8212; is the mass below the line.</tspan>
+  </text>
+
+  <text x="92" y="480" font-size="12.5" letter-spacing="3" fill="#7c86bf" font-weight="700">TRAINING TEXT&#160;&#160;:&#160;&#160;STORED ENTERPRISE DATA</text>
+  <text x="90" y="534" font-family="Georgia,serif" font-size="42" fill="#e8ecff" font-weight="700">&#8776; 1 : <tspan fill="#f4c04e">1,000,000,000</tspan></text>
+  <text x="92" y="560" font-size="13" fill="#5b6392">by raw volume &#183; &gt;99.9999% never seen by any public model</text>
+
+  <!-- callouts -->
+  <text x="474" y="126" font-size="12.5" letter-spacing="3.5" fill="#c7d2fe" font-weight="700">TRAINED ON</text>
+  <text x="474" y="152" font-size="17.5" fill="#eef2ff" font-weight="600">&#8776; 44 TB curated text &#183; 15T tokens</text>
+  <text x="474" y="176" font-size="14.5" fill="#9aa4d6">distilled from &#8776; 40 PB of raw web crawl</text>
+  <line x1="694" y1="146" x2="874" y2="150" stroke="#c7d2fe" stroke-width="1" opacity="0.55"/>
+  <circle cx="874" cy="150" r="3" fill="#eef2ff"/>
+
+  <text x="452" y="360" font-size="12.5" letter-spacing="3.5" fill="#f4c04e" font-weight="700">NEVER SEEN</text>
+  <text x="452" y="388" font-size="19" fill="#f6d894" font-weight="700">&#8776; 10&#8211;20 ZB stored enterprise data</text>
+  <text x="452" y="414" font-size="14.5" fill="#cbb27a">= 10,000,000 PB &#183; ~2,000T tokens of all text ever</text>
+  <text x="452" y="436" font-size="14.5" fill="#cbb27a">your proprietary corpus &#8212; structurally out-of-distribution</text>
+  <line x1="700" y1="392" x2="742" y2="396" stroke="#f4c04e" stroke-width="1" opacity="0.6"/>
+  <circle cx="742" cy="396" r="3" fill="#f4c04e"/>
+
+  <!-- footer -->
+  <text x="72" y="700" font-size="13" fill="#8a93c2" font-weight="600">Real AI &#183; Hominis sovereign models</text>
+  <text x="1208" y="700" text-anchor="end" font-size="13" fill="#8a93c2">&#169; Tarry Singh</text>
+  <text x="72" y="716" font-size="10.5" fill="#454c78">Scale anchors: IDC Global DataSphere 2025 &#183; Hugging Face FineWeb &#183; Meta Llama 3.</text>
+</svg>
