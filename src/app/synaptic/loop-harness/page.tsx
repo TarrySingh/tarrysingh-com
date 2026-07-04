@@ -8,6 +8,9 @@ import { HarnessOfRecord } from "@/components/loop/HarnessOfRecord"
 import { FanoutEconomics } from "@/components/loop/FanoutEconomics"
 import { TheReactor } from "@/components/loop/TheReactor"
 import { GoodhartDial } from "@/components/loop/GoodhartDial"
+import { DataIceberg } from "@/components/loop/DataIceberg"
+import { VaultBore } from "@/components/loop/VaultBore"
+import { PrivateFrontierRunbook } from "@/components/loop/PrivateFrontierRunbook"
 
 /**
  * THE ENGINE ROOM - Loop & Harness Engineering (Synaptic Plate V).
@@ -67,7 +70,7 @@ export default function LoopHarnessPage() {
           Everyone argues about models. Whether a model ever does useful work is
           decided by two other things: the loop it runs in, and the standing
           structure that loop runs inside. This is a 30,000-word field manual for
-          the engineers who will build both. Eight of the fifteen instruments are
+          the engineers who will build both. Eleven of the fifteen instruments are
           live below; the rest, and the prose, are under construction.
         </p>
       </header>
@@ -84,7 +87,7 @@ export default function LoopHarnessPage() {
               textTransform: "uppercase",
             }}
           >
-            The instruments · V1 to V8 live
+            The instruments · V1 to V11 live
           </span>
         </div>
 
@@ -118,6 +121,18 @@ export default function LoopHarnessPage() {
 
         <Stage>
           <GoodhartDial />
+        </Stage>
+
+        <Stage>
+          <DataIceberg />
+        </Stage>
+
+        <Stage>
+          <VaultBore />
+        </Stage>
+
+        <Stage>
+          <PrivateFrontierRunbook />
         </Stage>
       </section>
 
