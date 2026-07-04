@@ -312,6 +312,9 @@ function LabScene({ ctx }: { ctx: SceneCtx }) {
           const anchor = st.angle === 0 ? "start" : st.angle === 180 ? "end" : "middle"
           return (
             <g key={`st-${st.key}`}>
+              {/* opaque backing so the ring stroke reads as passing BEHIND the
+                  node badge instead of cutting through the allocation number */}
+              <circle cx={x} cy={y} r={16} fill={p.bg} />
               <circle
                 cx={x}
                 cy={y}
