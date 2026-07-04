@@ -199,7 +199,9 @@ function LoopScene({ ctx }: { ctx: SceneCtx }) {
   const actualNow = Math.round(s.actual[k])
   const divergent = regime === "noVerify" || regime === "neither"
 
-  const fs = compact ? 15 : 13.5
+  // Compact renders ~460 viewBox units into a ~320px stage (scale ~0.7), so
+  // raw sizes run larger there to keep every label >= ~9.5px on screen.
+  const fs = compact ? 17 : 13.5
 
   return (
     <div>

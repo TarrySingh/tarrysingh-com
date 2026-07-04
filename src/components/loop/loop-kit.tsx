@@ -134,12 +134,19 @@ export function useContainerWidth(ref: RefObject<HTMLElement | null>): number | 
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    const measure = () => setW(el.getBoundingClientRect().width)
     const obs = new ResizeObserver((entries) => {
       for (const e of entries) setW(e.contentRect.width)
     })
     obs.observe(el)
-    setW(el.getBoundingClientRect().width)
-    return () => obs.disconnect()
+    // Belt and braces: some embedders resize the viewport without the
+    // ResizeObserver firing; a plain resize listener catches those.
+    window.addEventListener("resize", measure)
+    measure()
+    return () => {
+      obs.disconnect()
+      window.removeEventListener("resize", measure)
+    }
   }, [ref])
   return w
 }

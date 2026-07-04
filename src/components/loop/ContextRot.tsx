@@ -110,7 +110,9 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
   const colW = compact ? 64 : 92
   const gap = (span - nCols * colW) / (nCols + 1)
 
-  const fs = compact ? 15 : 13.5
+  // Compact renders ~460 viewBox units into a ~320px stage (scale ~0.7), so
+  // raw sizes run larger there to keep every label >= ~9.5px on screen.
+  const fs = compact ? 17 : 13.5
   const fmt = (n: number) => n.toLocaleString("en-GB")
 
   return (
@@ -131,7 +133,7 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
         {/* ===== main panel ===== */}
         <text
           x={main.x0}
-          y={main.yTop - 44}
+          y={main.yTop - 70}
           fill={p.soft}
           style={{ fontSize: fs - 2, letterSpacing: "0.18em", fontFamily: "var(--font-mono), monospace" }}
         >
@@ -198,9 +200,8 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
           fill={rgba(p.signalRGB, 0.06)}
         />
         <text
-          x={main.x1 - 4}
+          x={main.x0 + (compact ? 150 : 240)}
           y={yFor(100, main) + 14}
-          textAnchor="end"
           fill={p.signal}
           style={{ fontSize: fs - 2.5, letterSpacing: "0.12em", fontFamily: "var(--font-mono), monospace" }}
         >
@@ -218,13 +219,12 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
           strokeDasharray="6 5"
         />
         <text
-          x={main.x1 - 4}
+          x={main.x0 + 6}
           y={yFor(BASELINE, main) - 6}
-          textAnchor="end"
           fill={p.cool}
           style={{ fontSize: fs - 2.5, fontFamily: "var(--font-mono), monospace" }}
         >
-          full-history baseline · 71.0
+          {compact ? "baseline" : "C2 baseline · 71.0"}
         </text>
 
         {/* bars */}
@@ -262,15 +262,19 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
               >
                 {cfg.key}
               </text>
-              <text
-                x={x + colW / 2}
-                y={main.yBottom + 34}
-                textAnchor="middle"
-                fill={p.soft}
-                style={{ fontSize: fs - 3.5, fontFamily: "var(--font-mono), monospace" }}
-              >
-                {cfg.sub}
-              </text>
+              {/* the sub line is wider than the compact column pitch; the
+                  control pills below carry the full names there */}
+              {!compact && (
+                <text
+                  x={x + colW / 2}
+                  y={main.yBottom + 34}
+                  textAnchor="middle"
+                  fill={p.soft}
+                  style={{ fontSize: fs - 3.5, fontFamily: "var(--font-mono), monospace" }}
+                >
+                  {cfg.sub}
+                </text>
+              )}
             </g>
           )
         })}
@@ -278,7 +282,7 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
         {/* ===== NoLiMa inset ===== */}
         <text
           x={inset.x0}
-          y={inset.yTop - 30}
+          y={inset.yTop - 46}
           fill={p.soft}
           style={{ fontSize: fs - 2, letterSpacing: "0.18em", fontFamily: "var(--font-mono), monospace" }}
         >
@@ -286,7 +290,7 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
         </text>
         <text
           x={inset.x0}
-          y={inset.yTop - 12}
+          y={inset.yTop - 28}
           fill={p.soft}
           style={{ fontSize: fs - 3, fontFamily: "var(--font-mono), monospace" }}
         >
@@ -330,7 +334,7 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
               <line x1={inset.x0 + 16} y1={yA} x2={inset.x1 - 16} y2={yB} stroke={p.verdict} strokeWidth={2} strokeDasharray="6 5" />
               <circle cx={inset.x0 + 16} cy={yA} r={4.5} fill={p.verdict} />
               <circle cx={inset.x1 - 16} cy={yB} r={4.5} fill={p.verdict} />
-              <text x={inset.x0 + 24} y={yA - 8} fill={p.ink} style={{ fontSize: fs - 2, fontFamily: "var(--font-mono), monospace" }}>
+              <text x={inset.x0 + 24} y={yA + 20} fill={p.ink} style={{ fontSize: fs - 2, fontFamily: "var(--font-mono), monospace" }}>
                 99.3 · short baseline
               </text>
               <text x={inset.x1 - 24} y={yB + 20} textAnchor="end" fill={p.ink} style={{ fontSize: fs - 2, fontFamily: "var(--font-mono), monospace" }}>
