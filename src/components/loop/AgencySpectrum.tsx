@@ -296,12 +296,16 @@ function SpectrumScene({ ctx }: { ctx: SceneCtx }) {
               >
                 {lv.key}
               </text>
+              {/* per-level descriptor. Desktop: one row under the tick. Compact:
+                  neighbours would collide at 86px node spacing, so stagger them
+                  onto two rows (even index low, odd index lower) - no two share a
+                  row, so boxes never overlap horizontally. */}
               <text
                 x={x}
-                y={spine.y + 30}
+                y={spine.y + (compact ? (i % 2 === 0 ? 30 : 50) : 30)}
                 textAnchor="middle"
                 fill={p.soft}
-                style={{ fontSize: fs - 4, fontFamily: "var(--font-mono), monospace" }}
+                style={{ fontSize: fs - (compact ? 6 : 4), fontFamily: "var(--font-mono), monospace" }}
               >
                 {lv.short}
               </text>
@@ -310,24 +314,31 @@ function SpectrumScene({ ctx }: { ctx: SceneCtx }) {
         })}
 
         {/* end labels for the poles */}
-        <text
-          x={spine.x0}
-          y={spine.y + 52}
-          textAnchor="start"
-          fill={p.soft}
-          style={{ fontSize: fs - 3.5, letterSpacing: "0.1em", fontFamily: "var(--font-mono), monospace" }}
-        >
-          FULL AUTOMATION
-        </text>
-        <text
-          x={spine.x1}
-          y={spine.y + 52}
-          textAnchor="end"
-          fill={p.soft}
-          style={{ fontSize: fs - 3.5, letterSpacing: "0.1em", fontFamily: "var(--font-mono), monospace" }}
-        >
-          HUMAN AT THE CENTRE
-        </text>
+        {/* Pole labels: desktop only. In compact the H1 tick + "on its own"
+            descriptor (and H5 + "human-essential") already name the poles, and
+            there is no vertical room here without colliding the CAPABILITY axis. */}
+        {!compact && (
+          <text
+            x={spine.x0}
+            y={spine.y + 52}
+            textAnchor="start"
+            fill={p.soft}
+            style={{ fontSize: fs - 3.5, letterSpacing: "0.1em", fontFamily: "var(--font-mono), monospace" }}
+          >
+            FULL AUTOMATION
+          </text>
+        )}
+        {!compact && (
+          <text
+            x={spine.x1}
+            y={spine.y + 52}
+            textAnchor="end"
+            fill={p.soft}
+            style={{ fontSize: fs - 3.5, letterSpacing: "0.1em", fontFamily: "var(--font-mono), monospace" }}
+          >
+            HUMAN AT THE CENTRE
+          </text>
+        )}
 
         {/* ===== capability / investment marker (below spine, pulls toward H1) ===== */}
         {(() => {
@@ -355,7 +366,11 @@ function SpectrumScene({ ctx }: { ctx: SceneCtx }) {
 
         {/* ===== worker desire marker (above spine, sits near H3) ===== */}
         {(() => {
-          const y = spine.y - 74
+          // In compact the marker is raised so its label stack clears THE GAP
+          // label (which sits at spine.y - 62). The "where the vote lands" sub
+          // line is stacked ABOVE the WORKERS word, not below it, so it never
+          // lands on the WORKERS marker or on THE GAP band label.
+          const y = spine.y - (compact ? 88 : 74)
           const col = p.signal
           return (
             <g>
@@ -364,24 +379,49 @@ function SpectrumScene({ ctx }: { ctx: SceneCtx }) {
                 d={`M ${dX} ${y + 12} l -5 9 l 10 0 z`}
                 fill={col}
               />
-              <text
-                x={dX}
-                y={y - 6}
-                textAnchor="middle"
-                fill={p.signalHi}
-                style={{ fontSize: fs - 1, fontWeight: 800, fontFamily: "var(--font-mono), monospace" }}
-              >
-                WORKERS
-              </text>
-              <text
-                x={dX}
-                y={y + 8}
-                textAnchor="middle"
-                fill={col}
-                style={{ fontSize: fs - 3.5, letterSpacing: "0.08em", fontFamily: "var(--font-mono), monospace" }}
-              >
-                where the vote lands
-              </text>
+              {compact ? (
+                <>
+                  <text
+                    x={dX}
+                    y={y - 28}
+                    textAnchor="middle"
+                    fill={col}
+                    style={{ fontSize: fs - 6, letterSpacing: "0.08em", fontFamily: "var(--font-mono), monospace" }}
+                  >
+                    where the vote lands
+                  </text>
+                  <text
+                    x={dX}
+                    y={y - 6}
+                    textAnchor="middle"
+                    fill={p.signalHi}
+                    style={{ fontSize: fs - 1, fontWeight: 800, fontFamily: "var(--font-mono), monospace" }}
+                  >
+                    WORKERS
+                  </text>
+                </>
+              ) : (
+                <>
+                  <text
+                    x={dX}
+                    y={y - 6}
+                    textAnchor="middle"
+                    fill={p.signalHi}
+                    style={{ fontSize: fs - 1, fontWeight: 800, fontFamily: "var(--font-mono), monospace" }}
+                  >
+                    WORKERS
+                  </text>
+                  <text
+                    x={dX}
+                    y={y + 8}
+                    textAnchor="middle"
+                    fill={col}
+                    style={{ fontSize: fs - 3.5, letterSpacing: "0.08em", fontFamily: "var(--font-mono), monospace" }}
+                  >
+                    where the vote lands
+                  </text>
+                </>
+              )}
             </g>
           )
         })()}

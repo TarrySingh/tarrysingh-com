@@ -199,19 +199,28 @@ function LabScene({ ctx }: { ctx: SceneCtx }) {
 
   // ------- geometry -------
   const W = compact ? 460 : 980
-  const H = compact ? 900 : 594
+  const H = compact ? 940 : 594
 
   const ring = compact
     ? { cx: 230, cy: 214, r: 132 }
     : { cx: 268, cy: 288, r: 168 }
 
   // The readout panel (apparent vs validated bars).
+  // In compact the panel sits below the ring, so yTop is pushed down and the
+  // heading/subline offsets shrink (below) so they clear the ring's bottom
+  // TEST/assay labels instead of rising into them.
   const panel = compact
-    ? { x0: 60, x1: 404, yTop: 470, yBottom: 690 }
+    ? { x0: 60, x1: 404, yTop: 490, yBottom: 700 }
     : { x0: 560, x1: 936, yTop: 150, yBottom: 470 }
 
+  // Heading/subline offsets above the hero readout. Desktop values are tuned to
+  // sit above a fs44 hero; compact values keep the subline clear of the fs40
+  // hero box AND keep the heading clear of the ring's bottom labels.
+  const headOff = compact ? 62 : 70
+  const subOff = compact ? 44 : 54
+
   // Anchor strip.
-  const anchorY = compact ? 760 : 538
+  const anchorY = compact ? 792 : 538
 
   const fs = compact ? 17 : 13.5
 
@@ -235,8 +244,8 @@ function LabScene({ ctx }: { ctx: SceneCtx }) {
 
         {/* ===================== the DMTA ring ===================== */}
         <text
-          x={compact ? ring.cx : ring.cx}
-          y={compact ? 30 : 34}
+          x={ring.cx}
+          y={compact ? 16 : 34}
           textAnchor="middle"
           fill={p.soft}
           style={{ fontSize: fs - 2, letterSpacing: "0.2em", fontFamily: "var(--font-mono), monospace" }}
@@ -294,8 +303,11 @@ function LabScene({ ctx }: { ctx: SceneCtx }) {
               ? "none"
               : rgba(`${255},180,90`, 0.14)
             : rgba(p.signalRGB, 0.16)
-          // label placement per compass position
-          const labelDy = st.angle === -90 ? -30 : st.angle === 90 ? 40 : 5
+          // label placement per compass position. The top (-90) station stacks
+          // its label + sub above the ring; in compact it needs extra clearance
+          // from the DMTA title above and generous label/sub spacing below.
+          const topDy = compact ? -24 : -30
+          const labelDy = st.angle === -90 ? topDy : st.angle === 90 ? 40 : 5
           const labelDx = st.angle === 0 ? 26 : st.angle === 180 ? -26 : 0
           const anchor = st.angle === 0 ? "start" : st.angle === 180 ? "end" : "middle"
           return (
@@ -330,7 +342,7 @@ function LabScene({ ctx }: { ctx: SceneCtx }) {
               </text>
               <text
                 x={x + labelDx}
-                y={y + labelDy + (st.angle === -90 ? -16 : 16)}
+                y={y + labelDy + (st.angle === -90 ? (compact ? -24 : -16) : 16)}
                 textAnchor={anchor}
                 fill={p.soft}
                 style={{ fontSize: fs - 3, fontFamily: "var(--font-mono), monospace" }}
@@ -376,7 +388,7 @@ function LabScene({ ctx }: { ctx: SceneCtx }) {
           return (
             <text
               x={panel.x0}
-              y={panel.yTop - 70}
+              y={panel.yTop - headOff}
               fill={p.soft}
               style={{ fontSize: fs - 2, letterSpacing: "0.16em", fontFamily: "var(--font-mono), monospace" }}
             >
@@ -386,7 +398,7 @@ function LabScene({ ctx }: { ctx: SceneCtx }) {
         })()}
         <text
           x={panel.x0}
-          y={panel.yTop - 54}
+          y={panel.yTop - subOff}
           fill={p.soft}
           style={{ fontSize: fs - 3, fontFamily: "var(--font-mono), monospace" }}
         >
@@ -465,15 +477,17 @@ function LabScene({ ctx }: { ctx: SceneCtx }) {
                     >
                       {r.label}
                     </text>
-                    <text
-                      x={panel.x1}
-                      y={y - 6}
-                      textAnchor="end"
-                      fill={p.soft}
-                      style={{ fontSize: fs - 3.5, fontFamily: "var(--font-mono), monospace" }}
-                    >
-                      {r.note}
-                    </text>
+                    {!compact && (
+                      <text
+                        x={panel.x1}
+                        y={y - 6}
+                        textAnchor="end"
+                        fill={p.soft}
+                        style={{ fontSize: fs - 3.5, fontFamily: "var(--font-mono), monospace" }}
+                      >
+                        {r.note}
+                      </text>
+                    )}
                     <rect
                       x={panel.x0}
                       y={y}

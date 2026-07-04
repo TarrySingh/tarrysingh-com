@@ -206,12 +206,28 @@ function ConstellationScene({ ctx }: { ctx: SceneCtx }) {
   const py = (y: number) => plot.yBottom - (plot.yBottom - plot.yTop) * y
 
   // Side / lower panel for the day-one task list + signals.
+  // Compact panel starts well below the x-axis label (baseline ~464) so the
+  // DAY ONE header does not collide with ADOPTION TIME on the same band.
   const panel = compact
-    ? { x0: 40, x1: 430, yTop: 470 }
+    ? { x0: 40, x1: 430, yTop: 500 }
     : { x0: 672, x1: 952, yTop: 96 }
 
   const fs = compact ? 17 : 13.5
   const nodeR = compact ? 9 : 8
+
+  // Compact-only per-node label placement. The 460-wide scatter packs the seven
+  // labels too close for the shared desktop nearRight rule, so in compact each
+  // label gets a hand-tuned anchor + offset that fans it clear of its neighbours
+  // (>= 6px clear between every label box). Desktop keeps the nearRight logic.
+  const COMPACT_LABEL: Record<string, { anchor: "start" | "end"; dx: number; dy: number }> = {
+    loop: { anchor: "start", dx: nodeR + 6, dy: -10 },
+    verifier: { anchor: "end", dx: -(nodeR + 6), dy: -2 },
+    auditor: { anchor: "start", dx: nodeR + 6, dy: -8 },
+    context: { anchor: "end", dx: -(nodeR + 6), dy: -8 },
+    econ: { anchor: "end", dx: -(nodeR + 6), dy: 20 },
+    vault: { anchor: "end", dx: -(nodeR + 6), dy: 2 },
+    fleet: { anchor: "start", dx: nodeR + 6, dy: 4 },
+  }
 
   const accentFor = (r: Role) => (r.tier === "signal" ? p.signal : p.verdict)
 
@@ -347,10 +363,14 @@ function ConstellationScene({ ctx }: { ctx: SceneCtx }) {
           const cy = py(r.y)
           const isSel = r.key === selKey
           const accent = accentFor(r)
-          // Label placement: keep short labels off the right wall in compact.
-          const nearRight = cx > plot.x1 - (compact ? 96 : 128)
-          const anchor = nearRight ? "end" : "start"
-          const lx = nearRight ? cx - nodeR - 6 : cx + nodeR + 6
+          // Label placement. Compact uses the hand-tuned per-node offset map so
+          // the packed labels fan clear of each other; desktop keeps its
+          // nearRight rule (verified clean at 1280 and left untouched).
+          const cl = compact ? COMPACT_LABEL[r.key] : undefined
+          const nearRight = cx > plot.x1 - 128
+          const anchor = cl ? cl.anchor : nearRight ? "end" : "start"
+          const lx = cl ? cx + cl.dx : nearRight ? cx - nodeR - 6 : cx + nodeR + 6
+          const ly = cl ? cy + cl.dy : cy + 4
           return (
             <g key={r.key} style={{ cursor: "pointer" }} onClick={() => setSelKey(r.key)}>
               {isSel && (
@@ -369,11 +389,11 @@ function ConstellationScene({ ctx }: { ctx: SceneCtx }) {
               )}
               <text
                 x={lx}
-                y={cy + 4}
+                y={ly}
                 textAnchor={anchor}
                 fill={isSel ? p.ink : p.muted}
                 style={{
-                  fontSize: fs - (compact ? 3.5 : 2.5),
+                  fontSize: fs - (compact ? 6 : 2.5),
                   fontWeight: isSel ? 700 : 600,
                   letterSpacing: "0.03em",
                   fontFamily: "var(--font-mono), monospace",
