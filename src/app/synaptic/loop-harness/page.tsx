@@ -11,6 +11,10 @@ import { GoodhartDial } from "@/components/loop/GoodhartDial"
 import { DataIceberg } from "@/components/loop/DataIceberg"
 import { VaultBore } from "@/components/loop/VaultBore"
 import { PrivateFrontierRunbook } from "@/components/loop/PrivateFrontierRunbook"
+import { SelfDrivingLab } from "@/components/loop/SelfDrivingLab"
+import { AgencySpectrum } from "@/components/loop/AgencySpectrum"
+import { RoleConstellation } from "@/components/loop/RoleConstellation"
+import { AIOpsCommandDeck } from "@/components/loop/AIOpsCommandDeck"
 
 /**
  * THE ENGINE ROOM - Loop & Harness Engineering (Synaptic Plate V).
@@ -70,8 +74,8 @@ export default function LoopHarnessPage() {
           Everyone argues about models. Whether a model ever does useful work is
           decided by two other things: the loop it runs in, and the standing
           structure that loop runs inside. This is a 30,000-word field manual for
-          the engineers who will build both. Eleven of the fifteen instruments are
-          live below; the rest, and the prose, are under construction.
+          the engineers who will build both. All fifteen instruments are live
+          below; the 30,000 words of prose are under construction.
         </p>
       </header>
 
@@ -87,7 +91,7 @@ export default function LoopHarnessPage() {
               textTransform: "uppercase",
             }}
           >
-            The instruments · V1 to V11 live
+            The instruments · all fifteen live
           </span>
         </div>
 
@@ -133,6 +137,22 @@ export default function LoopHarnessPage() {
 
         <Stage>
           <PrivateFrontierRunbook />
+        </Stage>
+
+        <Stage>
+          <SelfDrivingLab />
+        </Stage>
+
+        <Stage>
+          <AgencySpectrum />
+        </Stage>
+
+        <Stage>
+          <RoleConstellation />
+        </Stage>
+
+        <Stage>
+          <AIOpsCommandDeck />
         </Stage>
       </section>
 
