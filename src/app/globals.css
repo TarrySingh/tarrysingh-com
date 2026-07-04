@@ -405,6 +405,67 @@ html {
   }
 }
 
+/* ───────────────────────────────────────────────────────────────────────────
+   THE ENGINE ROOM - Loop & Harness Engineering (Plate V).
+   Terminal-graphite room: a near-black, faintly green-cast field. Phosphor
+   green is the ONE live-signal accent; amber carries verdict readouts; rose
+   is reserved strictly for danger. Plex Mono carries every readout. House
+   rule for this room (anti-LLM-smell contract): no em-dash in any rendered
+   string; the separator is the middot.
+   ─────────────────────────────────────────────────────────────────────────── */
+.syn-loop {
+  --bg-deep: #070d0e;
+  --bg-mid: #0e1a18;
+  --project-accent: #53e08c;
+  --project-accent-hi: #8df0b4;
+  --lh-signal: #53e08c;
+  --lh-signal-hi: #8df0b4;
+  --lh-verdict: #e6b45a;
+  --lh-verdict-hi: #f4cd86;
+  --lh-danger: #f0708a;
+  --lh-danger-hi: #f59ab0;
+  --lh-ink: #e9f2ec;
+  --lh-muted: rgba(233, 242, 236, 0.66);
+  --lh-hair: rgba(160, 210, 185, 0.16);
+  --lh-grid: rgba(160, 210, 185, 0.08);
+}
+.syn-loop.syn-root {
+  background-color: #070d0e;
+  background-image: radial-gradient(
+    ellipse at center 32%,
+    #16241f 0%,
+    #101b18 32%,
+    #0a1211 64%,
+    #070d0e 100%
+  );
+}
+
+/* Inside a wide gallery wrapper, cancel the breakout margins the instrument
+   frames carry (same pattern as .cp-gallery / .sw3-gallery). */
+.syn-loop .lh-gallery > figure[data-read-surface] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@keyframes lh-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.lh-rise {
+  animation: lh-rise 760ms var(--ease-paper, cubic-bezier(0.33, 0, 0.2, 1)) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lh-rise {
+    animation: none;
+  }
+}
+
 /* Fixed starfield layer behind everything inside a syn-root page. */
 .syn-root::before {
   content: "";
