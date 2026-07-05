@@ -65,7 +65,7 @@ const MASS = {
 
 // Author arithmetic, ILLUSTRATIVE. 44 TB / 175 ZB = 1 : 3.98e9 (1 ZB = 1e9 TB).
 // The counter steps through DECADES to its last checkpoint, 1,000,000,000.
-const RATIO_ARITH = "44 TB / 175 ZB = 1 : 3.98 billion · rounded to one billion"
+const RATIO_ARITH = "44 TB / 175 ZB = 1 : 3.98 billion"
 const UNSEEN = "> 99.9999% never seen by any public model"
 
 // Order-of-magnitude checkpoints the counter steps through as you descend.

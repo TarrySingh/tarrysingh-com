@@ -167,11 +167,15 @@ export default async function BlogPostPage({
     .filter(Boolean)
     .join(" ")
   const headerClass = "relative pt-28 md:pt-36 pb-10 md:pb-14"
+  // Some plates read dark by default. THE ENGINE ROOM is a terminal-graphite
+  // essay whose fifteen instruments were built and tuned in dark mode, so it
+  // opens dark; the reader's stored preference still overrides (no-flash below).
+  const defaultReadMode = post.series?.key === "loop-harness" ? "dark" : "light"
 
   return (
     <article
       id="read-root"
-      data-read-mode="light"
+      data-read-mode={defaultReadMode}
       suppressHydrationWarning
       className={articleClass}
     >
@@ -182,7 +186,7 @@ export default async function BlogPostPage({
       <script
         dangerouslySetInnerHTML={{
           __html:
-            "(function(){try{var m=localStorage.getItem('dispatch-read-mode');if(m==='dark'){var r=document.getElementById('read-root');if(r)r.setAttribute('data-read-mode','dark')}}catch(e){}})()",
+            "(function(){try{var m=localStorage.getItem('dispatch-read-mode');if(m==='dark'||m==='light'){var r=document.getElementById('read-root');if(r)r.setAttribute('data-read-mode',m)}}catch(e){}})()",
         }}
       />
       <script

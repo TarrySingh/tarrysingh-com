@@ -34,6 +34,22 @@ import {
   ProductivityChart,
   PerCapitaChart,
 } from "@/components/blog/WorldEconomyKit"
+// THE ENGINE ROOM · Loop & Harness Engineering · the fifteen instruments (Plate V)
+import { TheLoop } from "@/components/loop/TheLoop"
+import { HarnessExploded } from "@/components/loop/HarnessExploded"
+import { VerifierGap } from "@/components/loop/VerifierGap"
+import { ContextRot } from "@/components/loop/ContextRot"
+import { HarnessOfRecord } from "@/components/loop/HarnessOfRecord"
+import { FanoutEconomics } from "@/components/loop/FanoutEconomics"
+import { TheReactor } from "@/components/loop/TheReactor"
+import { GoodhartDial } from "@/components/loop/GoodhartDial"
+import { DataIceberg } from "@/components/loop/DataIceberg"
+import { VaultBore } from "@/components/loop/VaultBore"
+import { PrivateFrontierRunbook } from "@/components/loop/PrivateFrontierRunbook"
+import { SelfDrivingLab } from "@/components/loop/SelfDrivingLab"
+import { AgencySpectrum } from "@/components/loop/AgencySpectrum"
+import { RoleConstellation } from "@/components/loop/RoleConstellation"
+import { AIOpsCommandDeck } from "@/components/loop/AIOpsCommandDeck"
 
 function flatten(node: ReactNode): string {
   if (node == null || node === false) return ""
@@ -332,4 +348,20 @@ export const mdxComponents = {
   RankFlipChart,
   ProductivityChart,
   PerCapitaChart,
+  // THE ENGINE ROOM · the fifteen loop-and-harness instruments
+  TheLoop,
+  HarnessExploded,
+  VerifierGap,
+  ContextRot,
+  HarnessOfRecord,
+  FanoutEconomics,
+  TheReactor,
+  GoodhartDial,
+  DataIceberg,
+  VaultBore,
+  PrivateFrontierRunbook,
+  SelfDrivingLab,
+  AgencySpectrum,
+  RoleConstellation,
+  AIOpsCommandDeck,
 }

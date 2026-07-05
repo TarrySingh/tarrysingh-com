@@ -249,7 +249,7 @@ function LoopScene({ ctx }: { ctx: SceneCtx }) {
           const [x, y] = polar(ring.cx, ring.cy, ring.r, st.angle)
           const off = stageOff(st.key)
           const labelDy = st.angle === -90 ? -26 : st.angle === 90 ? 38 : 5
-          const labelDx = st.angle === 0 ? 30 : st.angle === 180 ? -30 : 0
+          const labelDx = st.angle === 0 ? 30 : st.angle === 180 ? -16 : 0
           const anchor = st.angle === 0 ? "start" : st.angle === 180 ? "end" : "middle"
           return (
             <g key={st.key}>

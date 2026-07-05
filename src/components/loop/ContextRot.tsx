@@ -319,7 +319,7 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
                 fill={p.danger}
                 style={{ fontSize: fs - 3, fontFamily: "var(--font-mono), monospace" }}
               >
-                below half of baseline · 11 of 13 models end here
+                below half · 11 of 13 models end here
               </text>
             </>
           )

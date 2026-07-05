@@ -19,6 +19,7 @@ export type SeriesKey =
   | "economics"
   | "software-3"
   | "real-map-europe"
+  | "loop-harness"
 
 /** The shape carried in a post's frontmatter. */
 export interface SeriesRef {
@@ -77,6 +78,12 @@ export const SERIES: Record<SeriesKey, SeriesMeta> = {
     name: "The Real Map of Europe",
     tagline:
       "Two readings of Europe's economy — the global scoreboard everyone argues about, and the divergence inside the continent that the single average hides.",
+  },
+  "loop-harness": {
+    key: "loop-harness",
+    name: "The Engine Room",
+    tagline:
+      "Everyone argues about models. Whether a model ever does useful work is decided by two other things: the loop it runs in, and the standing structure that loop runs inside. A 30,000-word field manual on Loop and Harness Engineering, with fifteen interactive instruments.",
   },
 }
 
