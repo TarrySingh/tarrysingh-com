@@ -406,6 +406,20 @@ export default function SynapticPage() {
             </figure>
           </Link>
         </PlateCarousel>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/synaptic/plates"
+            className="inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-[11px] font-semibold uppercase tracking-[0.24em] transition-opacity hover:opacity-80"
+            style={{
+              fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+              color: "var(--ink)",
+              borderColor: "rgba(233,242,236,0.2)",
+            }}
+          >
+            See every plate up close →
+          </Link>
+        </div>
       </section>
 
       {/* partner pages strip */}
