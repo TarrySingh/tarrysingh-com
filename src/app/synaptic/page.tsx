@@ -10,6 +10,7 @@ import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { VisionHorizon } from "@/components/synaptic/VisionHorizon"
 import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
 import { EngineRoomPlate } from "@/components/synaptic/EngineRoomPlate"
+import { PlateCarousel } from "@/components/synaptic/PlateCarousel"
 
 export const metadata = {
   title:
@@ -142,74 +143,39 @@ export default function SynapticPage() {
         <Hairline className="mt-20" />
       </div>
 
-      {/* featured project cards */}
+      {/* the plates — an auto-advancing showcase, every plate at full size */}
       <section className="syn-column pt-20">
-        <div className="space-y-3 pb-12 text-center">
+        <div className="space-y-3 pb-14 text-center">
           <SmallCaps>Five cartographies</SmallCaps>
           <h2 className="syn-display mx-auto" style={sectionHeading}>
-            Pick a thread
+            The plates
           </h2>
         </div>
 
-        {/* ── featured: the flagship field guide ── */}
-        <Link
-          href="/synaptic/chokepoint-paradox"
-          className="syn-chokepoint group mb-14 block focus-visible:outline-none"
-        >
-          <figure className="grid items-center gap-10 lg:grid-cols-[minmax(0,460px)_1fr]">
-            <div
-              className="overflow-hidden rounded-[var(--radius-card)]"
-              style={{
-                boxShadow:
-                  "0 0 0 1px rgba(70,199,214,0.18), 0 22px 70px rgba(0,0,0,0.5)",
-              }}
-            >
-              <ChokepointPlate className="block h-auto w-full transition-transform duration-700 group-hover:scale-[1.01]" />
-            </div>
-            <figcaption>
-              <div>
-                <SmallCaps>Plate IV · the field guide</SmallCaps>
-                <h3
-                  className="syn-display mt-3"
-                  style={{
-                    fontSize: "3.1rem",
-                    color: "var(--ink)",
-                    lineHeight: 1,
-                    letterSpacing: "var(--track-display)",
-                    margin: 0,
-                  }}
-                >
-                  THE CHOKEPOINT PARADOX{" "}
-                  <span style={{ color: "#46c7d6" }}>→</span>
-                </h3>
-                <p className="syn-italic-caption mt-3" style={{ color: "#7fd4e0" }}>
-                  Europe holds the key; Washington owns the lock
-                </p>
+        <PlateCarousel>
+          {/* Plate V — The Engine Room */}
+          <Link
+            href="/synaptic/loop-harness"
+            className="syn-loop group block focus-visible:outline-none"
+          >
+            <figure className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+              <div
+                className="relative overflow-hidden rounded-[var(--radius-card)]"
+                style={{
+                  aspectRatio: "4 / 5",
+                  background: "#070d0e",
+                  boxShadow:
+                    "0 0 0 1px rgba(141,240,180,0.18), 0 22px 70px rgba(0,0,0,0.5)",
+                }}
+              >
+                <EngineRoomPlate className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-[1.01]" />
               </div>
-              <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
-                The flagship field guide to Europe&rsquo;s tech-sovereignty
-                failure &mdash; the machine that ships a continent&rsquo;s
-                wealth, talent and IP west, and the narrow door still open.
-                Twelve chapters, a coda, and roughly forty bespoke instruments,
-                each a citable argument. Current to July 2026.
-              </p>
-            </figcaption>
-          </figure>
-        </Link>
-
-        {/* ── featured: the field manual (newest plate) ── */}
-        <Link
-          href="/synaptic/loop-harness"
-          className="syn-loop group mb-14 block focus-visible:outline-none"
-        >
-          <figure className="grid items-center gap-10 lg:grid-cols-[1fr_minmax(0,460px)]">
-            <figcaption className="order-2 lg:order-1">
-              <div>
+              <figcaption>
                 <SmallCaps>Plate V · the field manual</SmallCaps>
                 <h3
                   className="syn-display mt-3"
                   style={{
-                    fontSize: "3.1rem",
+                    fontSize: "clamp(2.2rem, 4vw, 3.1rem)",
                     color: "var(--ink)",
                     lineHeight: 1,
                     letterSpacing: "var(--track-display)",
@@ -222,157 +188,97 @@ export default function SynapticPage() {
                 <p className="syn-italic-caption mt-3" style={{ color: "#8fd8b4" }}>
                   Loop &amp; Harness Engineering
                 </p>
+                <p style={{ color: "var(--ink-cool)", marginTop: "0.9rem", lineHeight: 1.65 }}>
+                  Everyone argues about models. Whether a model ever does useful
+                  work is decided by two other things: the loop it runs in, and
+                  the standing structure that loop runs inside. A 30,000-word
+                  field manual, fifteen interactive instruments, every figure
+                  citable.
+                </p>
+                <p className="syn-small-caps mt-5" style={{ color: "var(--ink-dim)" }}>
+                  Synaptic Cartography · July 2026
+                </p>
+              </figcaption>
+            </figure>
+          </Link>
+
+          {/* Plate IV — The Chokepoint Paradox */}
+          <Link
+            href="/synaptic/chokepoint-paradox"
+            className="syn-chokepoint group block focus-visible:outline-none"
+          >
+            <figure className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+              <div
+                className="relative overflow-hidden rounded-[var(--radius-card)]"
+                style={{
+                  aspectRatio: "4 / 5",
+                  background: "#07111c",
+                  boxShadow:
+                    "0 0 0 1px rgba(70,199,214,0.18), 0 22px 70px rgba(0,0,0,0.5)",
+                }}
+              >
+                <ChokepointPlate className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-[1.01]" />
               </div>
-              <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
-                Everyone argues about models. Whether a model ever does useful
-                work is decided by two other things: the loop it runs in, and the
-                standing structure that loop runs inside. A 30,000-word field
-                manual, fifteen interactive instruments, every figure citable.
-                Current to July 2026.
-              </p>
-            </figcaption>
-            <div
-              className="order-1 overflow-hidden rounded-[var(--radius-card)] lg:order-2"
-              style={{
-                boxShadow:
-                  "0 0 0 1px rgba(141,240,180,0.18), 0 22px 70px rgba(0,0,0,0.5)",
-              }}
-            >
-              <EngineRoomPlate className="block h-auto w-full transition-transform duration-700 group-hover:scale-[1.01]" />
-            </div>
-          </figure>
-        </Link>
-
-        <div className="grid gap-10 lg:grid-cols-3">
-          <Link
-            href="/synaptic/symphony"
-            className="syn-symphony group block focus-visible:outline-none"
-          >
-            <figure>
-              <Image
-                src={coverPlanisphere}
-                alt="Plate II — SYMPHONY cover planisphere, the hero of /synaptic/symphony."
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                placeholder="blur"
-                className="block h-auto w-full rounded-[var(--radius-card)] transition-opacity group-hover:opacity-90"
-              />
-              <figcaption className="pt-6">
-                <SmallCaps>Plate II · the planisphere</SmallCaps>
+              <figcaption>
+                <SmallCaps>Plate IV · the field guide</SmallCaps>
                 <h3
                   className="syn-display mt-3"
                   style={{
-                    fontSize: "2.6rem",
+                    fontSize: "clamp(2.2rem, 4vw, 3.1rem)",
                     color: "var(--ink)",
                     lineHeight: 1,
                     letterSpacing: "var(--track-display)",
                     margin: 0,
                   }}
                 >
-                  SYMPHONY{" "}
-                  <span style={{ color: "var(--symphony-violet)" }}>→</span>
+                  THE CHOKEPOINT PARADOX{" "}
+                  <span style={{ color: "#46c7d6" }}>→</span>
                 </h3>
-                <p
-                  className="syn-italic-caption mt-3"
-                  style={{ color: "var(--symphony-violet-hi)" }}
-                >
-                  A neuromimetic knowledge substrate for software systems
+                <p className="syn-italic-caption mt-3" style={{ color: "#7fd4e0" }}>
+                  Europe holds the key; Washington owns the lock
                 </p>
-                <p
-                  style={{
-                    color: "var(--ink-cool)",
-                    marginTop: "0.8rem",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  Multi-scale neuromodulation and low-bandwidth shared
-                  control for task-adaptive code comprehension. Twelve
-                  interactive plates · the full proposal · the four
-                  partners · the deep-dive on each.
+                <p style={{ color: "var(--ink-cool)", marginTop: "0.9rem", lineHeight: 1.65 }}>
+                  The flagship field guide to Europe&rsquo;s tech-sovereignty
+                  failure &mdash; the machine that ships a continent&rsquo;s
+                  wealth, talent and IP west, and the narrow door still open.
+                  Twelve chapters, a coda, and roughly forty bespoke instruments.
                 </p>
-                <p
-                  className="syn-small-caps mt-5"
-                  style={{ color: "var(--ink-dim)" }}
-                >
-                  EIC Pathfinder 2026 · May 2026
+                <p className="syn-small-caps mt-5" style={{ color: "var(--ink-dim)" }}>
+                  Synaptic Cartography · July 2026
                 </p>
               </figcaption>
             </figure>
           </Link>
 
-          <Link
-            href="/synaptic/memphis"
-            className="syn-memphis group block focus-visible:outline-none"
-          >
-            <figure>
-              <Image
-                src={chipPlate}
-                alt="Plate I (MEMPHIS) — the hippocampal-memristive chip plate, hero of /synaptic/memphis."
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                placeholder="blur"
-                className="block h-auto w-full rounded-[var(--radius-card)] transition-opacity group-hover:opacity-90"
-              />
-              <figcaption className="pt-6">
-                <SmallCaps>Plate I · the chip</SmallCaps>
-                <h3
-                  className="syn-display mt-3"
-                  style={{
-                    fontSize: "2.6rem",
-                    color: "var(--ink)",
-                    lineHeight: 1,
-                    letterSpacing: "var(--track-display)",
-                    margin: 0,
-                  }}
-                >
-                  MEMPHIS{" "}
-                  <span style={{ color: "var(--memphis-amber)" }}>→</span>
-                </h3>
-                <p
-                  className="syn-italic-caption mt-3"
-                  style={{ color: "var(--memphis-amber-hi)" }}
-                >
-                  A hippocampal · memristive · neuromorphic architecture
-                </p>
-                <p
-                  style={{
-                    color: "var(--ink-cool)",
-                    marginTop: "0.8rem",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  Memory and computation co-localised on a self-organising
-                  substrate driven by two-phase replay dynamics. Five
-                  interactive plates · STDP window · CA3 ↔ CA1 circuit ·
-                  the full proposal.
-                </p>
-                <p
-                  className="syn-small-caps mt-5"
-                  style={{ color: "var(--ink-dim)" }}
-                >
-                  EIC Pathfinder 2026 · May 2026
-                </p>
-              </figcaption>
-            </figure>
-          </Link>
-
+          {/* Plate III — Software 3.0 (landscape cover, letterboxed to the plate frame) */}
           <Link
             href="/synaptic/software-3"
             className="syn-software-3 group block focus-visible:outline-none"
           >
-            <figure>
-              <Image
-                src="/blog/covers/software-3-0-age-of-hyper-automation.png"
-                alt="Software 3.0 — the 2040 planisphere, hero of the /synaptic/software-3 gallery."
-                width={1200}
-                height={630}
-                sizes="(min-width: 1024px) 30vw, 100vw"
-                className="block h-auto w-full rounded-[var(--radius-card)] transition-opacity group-hover:opacity-90"
-              />
-              <figcaption className="pt-6">
+            <figure className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+              <div
+                className="relative overflow-hidden rounded-[var(--radius-card)]"
+                style={{
+                  aspectRatio: "4 / 5",
+                  background: "#0f1220",
+                  boxShadow:
+                    "0 0 0 1px rgba(232,164,74,0.18), 0 22px 70px rgba(0,0,0,0.5)",
+                }}
+              >
+                <Image
+                  src="/blog/covers/software-3-0-age-of-hyper-automation.png"
+                  alt="Software 3.0 — the 2040 planisphere gallery cover."
+                  fill
+                  sizes="(min-width: 1024px) 500px, 100vw"
+                  className="object-contain"
+                />
+              </div>
+              <figcaption>
                 <SmallCaps>Plate III · the gallery</SmallCaps>
                 <h3
                   className="syn-display mt-3"
                   style={{
-                    fontSize: "2.6rem",
+                    fontSize: "clamp(2.2rem, 4vw, 3.1rem)",
                     color: "var(--ink)",
                     lineHeight: 1,
                     letterSpacing: "var(--track-display)",
@@ -382,33 +288,129 @@ export default function SynapticPage() {
                   SOFTWARE 3.0{" "}
                   <span style={{ color: "var(--sw3-accent)" }}>→</span>
                 </h3>
-                <p
-                  className="syn-italic-caption mt-3"
-                  style={{ color: "var(--sw3-accent-hi)" }}
-                >
-                  The age of hyper-automation — a map to 2040
+                <p className="syn-italic-caption mt-3" style={{ color: "var(--sw3-accent-hi)" }}>
+                  The age of hyper-automation &mdash; a map to 2040
                 </p>
-                <p
-                  style={{
-                    color: "var(--ink-cool)",
-                    marginTop: "0.8rem",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  Fifteen interactive instruments at full size — the 2040
+                <p style={{ color: "var(--ink-cool)", marginTop: "0.9rem", lineHeight: 1.65 }}>
+                  Fifteen interactive instruments at full size &mdash; the 2040
                   planisphere, the silver thread, the convergence. The living
                   companion to the flagship essay.
                 </p>
-                <p
-                  className="syn-small-caps mt-5"
-                  style={{ color: "var(--ink-dim)" }}
-                >
+                <p className="syn-small-caps mt-5" style={{ color: "var(--ink-dim)" }}>
                   Essay companion · June 2026
                 </p>
               </figcaption>
             </figure>
           </Link>
-        </div>
+
+          {/* Plate II — SYMPHONY */}
+          <Link
+            href="/synaptic/symphony"
+            className="syn-symphony group block focus-visible:outline-none"
+          >
+            <figure className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+              <div
+                className="relative overflow-hidden rounded-[var(--radius-card)]"
+                style={{
+                  aspectRatio: "4 / 5",
+                  background: "#0d1027",
+                  boxShadow:
+                    "0 0 0 1px rgba(166,152,212,0.18), 0 22px 70px rgba(0,0,0,0.5)",
+                }}
+              >
+                <Image
+                  src={coverPlanisphere}
+                  alt="Plate II — SYMPHONY cover planisphere."
+                  fill
+                  placeholder="blur"
+                  sizes="(min-width: 1024px) 500px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption>
+                <SmallCaps>Plate II · the planisphere</SmallCaps>
+                <h3
+                  className="syn-display mt-3"
+                  style={{
+                    fontSize: "clamp(2.2rem, 4vw, 3.1rem)",
+                    color: "var(--ink)",
+                    lineHeight: 1,
+                    letterSpacing: "var(--track-display)",
+                    margin: 0,
+                  }}
+                >
+                  SYMPHONY{" "}
+                  <span style={{ color: "var(--symphony-violet)" }}>→</span>
+                </h3>
+                <p className="syn-italic-caption mt-3" style={{ color: "var(--symphony-violet-hi)" }}>
+                  A neuromimetic knowledge substrate for software systems
+                </p>
+                <p style={{ color: "var(--ink-cool)", marginTop: "0.9rem", lineHeight: 1.65 }}>
+                  Multi-scale neuromodulation and low-bandwidth shared control
+                  for task-adaptive code comprehension. Twelve interactive
+                  plates · the full proposal · the four partners.
+                </p>
+                <p className="syn-small-caps mt-5" style={{ color: "var(--ink-dim)" }}>
+                  EIC Pathfinder 2026 · May 2026
+                </p>
+              </figcaption>
+            </figure>
+          </Link>
+
+          {/* Plate I — MEMPHIS */}
+          <Link
+            href="/synaptic/memphis"
+            className="syn-memphis group block focus-visible:outline-none"
+          >
+            <figure className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+              <div
+                className="relative overflow-hidden rounded-[var(--radius-card)]"
+                style={{
+                  aspectRatio: "4 / 5",
+                  background: "#0c1524",
+                  boxShadow:
+                    "0 0 0 1px rgba(232,184,122,0.18), 0 22px 70px rgba(0,0,0,0.5)",
+                }}
+              >
+                <Image
+                  src={chipPlate}
+                  alt="Plate I (MEMPHIS) — the hippocampal-memristive chip plate."
+                  fill
+                  placeholder="blur"
+                  sizes="(min-width: 1024px) 500px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption>
+                <SmallCaps>Plate I · the chip</SmallCaps>
+                <h3
+                  className="syn-display mt-3"
+                  style={{
+                    fontSize: "clamp(2.2rem, 4vw, 3.1rem)",
+                    color: "var(--ink)",
+                    lineHeight: 1,
+                    letterSpacing: "var(--track-display)",
+                    margin: 0,
+                  }}
+                >
+                  MEMPHIS{" "}
+                  <span style={{ color: "var(--memphis-amber)" }}>→</span>
+                </h3>
+                <p className="syn-italic-caption mt-3" style={{ color: "var(--memphis-amber-hi)" }}>
+                  A hippocampal · memristive · neuromorphic architecture
+                </p>
+                <p style={{ color: "var(--ink-cool)", marginTop: "0.9rem", lineHeight: 1.65 }}>
+                  Memory and computation co-localised on a self-organising
+                  substrate driven by two-phase replay dynamics. Five
+                  interactive plates · STDP window · CA3 ↔ CA1 circuit.
+                </p>
+                <p className="syn-small-caps mt-5" style={{ color: "var(--ink-dim)" }}>
+                  EIC Pathfinder 2026 · May 2026
+                </p>
+              </figcaption>
+            </figure>
+          </Link>
+        </PlateCarousel>
       </section>
 
       {/* partner pages strip */}
