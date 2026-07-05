@@ -7,9 +7,8 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: "The Engine Room · Loop & Harness Engineering · Synaptic",
   description: DESCRIPTION,
-  // SHIP-GATE: flip to { index: true, follow: true } (or delete this line) to
-  // take the flagship public. Kept noindex until Tarry says go.
-  robots: { index: false, follow: false },
+  // Shipped 2026-07-05 — the flagship is public and search-indexable.
+  robots: { index: true, follow: true },
   openGraph: {
     title: "The Engine Room — Loop & Harness Engineering",
     description: DESCRIPTION,
