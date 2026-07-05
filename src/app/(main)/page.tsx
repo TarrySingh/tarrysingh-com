@@ -7,6 +7,7 @@ import coverPlanisphere from "@proposals/SYMPHONY/plates/plate-II-cover-planisph
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
 import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
 import { EngineRoomPlate } from "@/components/synaptic/EngineRoomPlate"
+import { Software3Plate } from "@/components/synaptic/Software3Plate"
 
 const stats = [
   { value: "30+", label: "Years of Experience" },
@@ -482,39 +483,9 @@ const Landing = () => {
             >
               <div
                 className="relative aspect-[4/5] w-full overflow-hidden rounded-xl"
-                style={{ background: "#140f0a" }}
+                style={{ background: "#0d0a14" }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/blog/covers/software-3-0-age-of-hyper-automation.png"
-                  alt="Software 3.0 — the gallery plate."
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-                <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
-                  <span
-                    className="font-mono uppercase"
-                    style={{
-                      color: "rgba(245,232,204,0.6)",
-                      fontSize: "10px",
-                      letterSpacing: "0.28em",
-                      textShadow: "0 1px 6px rgba(0,0,0,0.55)",
-                    }}
-                  >
-                    Interactive gallery
-                  </span>
-                  <span
-                    className="font-mono uppercase"
-                    style={{
-                      color: "#f4c482",
-                      fontSize: "12px",
-                      letterSpacing: "0.32em",
-                      textShadow: "0 1px 6px rgba(0,0,0,0.6)",
-                    }}
-                  >
-                    Enter →
-                  </span>
-                </div>
+                <Software3Plate className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.02]" />
               </div>
               <div className="mt-6">
                 <span

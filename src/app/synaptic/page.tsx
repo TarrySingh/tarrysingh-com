@@ -10,6 +10,7 @@ import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { VisionHorizon } from "@/components/synaptic/VisionHorizon"
 import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
 import { EngineRoomPlate } from "@/components/synaptic/EngineRoomPlate"
+import { Software3Plate } from "@/components/synaptic/Software3Plate"
 import { PlateCarousel } from "@/components/synaptic/PlateCarousel"
 
 export const metadata = {
@@ -260,18 +261,12 @@ export default function SynapticPage() {
                 className="relative overflow-hidden rounded-[var(--radius-card)]"
                 style={{
                   aspectRatio: "4 / 5",
-                  background: "#0f1220",
+                  background: "#0d0a14",
                   boxShadow:
                     "0 0 0 1px rgba(232,164,74,0.18), 0 22px 70px rgba(0,0,0,0.5)",
                 }}
               >
-                <Image
-                  src="/blog/covers/software-3-0-age-of-hyper-automation.png"
-                  alt="Software 3.0 — the 2040 planisphere gallery cover."
-                  fill
-                  sizes="(min-width: 1024px) 500px, 100vw"
-                  className="object-contain"
-                />
+                <Software3Plate className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-[1.01]" />
               </div>
               <figcaption>
                 <SmallCaps>Plate III · the gallery</SmallCaps>
