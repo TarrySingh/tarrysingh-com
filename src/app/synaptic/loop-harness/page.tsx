@@ -74,9 +74,21 @@ export default function LoopHarnessPage() {
           Everyone argues about models. Whether a model ever does useful work is
           decided by two other things: the loop it runs in, and the standing
           structure that loop runs inside. This is a 30,000-word field manual for
-          the engineers who will build both. All fifteen instruments are live
-          below; the 30,000 words of prose are under construction.
+          the engineers who will build both, and the fifteen instruments below are
+          its figures.
         </p>
+
+        <a
+          href="/blog/the-engine-room"
+          className="mt-8 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.16em] transition-opacity hover:opacity-80"
+          style={{
+            fontFamily: "var(--font-mono), monospace",
+            color: "var(--lh-signal-hi, #8df0b4)",
+            borderColor: "var(--lh-signal, #53e08c)",
+          }}
+        >
+          Read the field manual →
+        </a>
       </header>
 
       {/* CALIBRATION · the two exemplars that set the bar for the fleet */}
