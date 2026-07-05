@@ -795,6 +795,17 @@ html {
   color: var(--read-fg);
 }
 
+/* The Engine Room reader wears the loop's own faint-green palette rather than
+   the warm-navy read surface, so the page and its instruments read as one
+   room. A shade darker (dark) / lighter (light) than the instrument cards so
+   the plates still float. Scoped to this one essay via .read-loop-surface. */
+.read-loop-surface[data-read-mode="dark"] {
+  --read-bg: #0e1a18;
+}
+.read-loop-surface[data-read-mode="light"] {
+  --read-bg: #f2f7f2;
+}
+
 /* — Dark-mode body overrides. Light mode keeps the existing utility
      colours untouched; these only bite when data-read-mode="dark". — */
 [data-read-mode="dark"] .prose-tarry,

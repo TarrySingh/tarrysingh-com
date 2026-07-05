@@ -42,7 +42,7 @@ export default async function EngineRoomEssayPage() {
       id="read-root"
       data-read-mode="dark"
       suppressHydrationWarning
-      className={`theme-editorial min-h-screen ${isEssay ? "read-dropcap" : ""}`}
+      className={`read-loop-surface theme-editorial min-h-screen ${isEssay ? "read-dropcap" : ""}`}
     >
       {/* No-flash: apply the stored read-mode before the body paints. */}
       <script
