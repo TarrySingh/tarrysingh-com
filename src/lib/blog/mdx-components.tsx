@@ -206,7 +206,7 @@ async function Pre(props: ComponentPropsWithoutRef<"pre">) {
     const html = await highlight(code, lang)
     return (
       <div
-        className="my-8 rounded-xl border border-navy-100 overflow-hidden text-[0.92rem] leading-[1.55] [&_pre]:!p-5 [&_pre]:overflow-x-auto [&_pre]:!bg-[#f8f7f3] [&_code]:font-mono"
+        className="code-card my-8 rounded-xl border border-navy-100 overflow-hidden text-[0.92rem] leading-[1.55] [&_pre]:!p-5 [&_pre]:overflow-x-auto [&_pre]:!bg-[#f8f7f3] [&_code]:font-mono"
         style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
         dangerouslySetInnerHTML={{ __html: html }}
       />

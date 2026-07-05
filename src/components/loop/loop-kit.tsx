@@ -65,8 +65,8 @@ export interface LHPalette {
 
 const DARK: LHPalette = {
   mode: "dark",
-  bg: "#0c1416",
-  border: "rgba(140, 200, 170, 0.22)",
+  bg: "#14231d",
+  border: "rgba(141, 240, 180, 0.30)",
   ink: "#e9f2ec",
   inkRGB: "233,242,236",
   muted: "rgba(233,242,236,0.66)",
@@ -281,7 +281,14 @@ export function InstrumentFrame({
         className={`my-10 rounded-xl border p-3 sm:p-4 ${
           breakout ? "lg:-mx-12 xl:-mx-24" : ""
         }`}
-        style={{ background: p.bg, borderColor: p.border }}
+        style={{
+          background: p.bg,
+          borderColor: p.border,
+          boxShadow:
+            mode === "dark"
+              ? "0 10px 34px rgba(0,0,0,0.45)"
+              : "0 10px 30px rgba(16,35,29,0.08)",
+        }}
       >
         {headerLane(false)}
         <div ref={stageRef}>{children({ expanded: false, compact, p, reduced, mode })}</div>
