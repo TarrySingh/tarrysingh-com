@@ -6,6 +6,7 @@ import { ArrowRight, TrendingUp, Globe, Cpu, BarChart3, Bot, Home, Network, Gaug
 import coverPlanisphere from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
 import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
+import { EngineRoomPlate } from "@/components/synaptic/EngineRoomPlate"
 
 const stats = [
   { value: "30+", label: "Years of Experience" },
@@ -329,14 +330,79 @@ const Landing = () => {
                 lineHeight: 1.5,
               }}
             >
-              A ~45,000-word field guide and a frontier deep-tech proposal —
-              two plates from a studio that takes its time, with more
-              inside.
+              Four plates from a studio that takes its time · a 30,000-word
+              field manual, a ~45,000-word field guide, a frontier proposal,
+              and a map of the automated future.
             </p>
           </div>
 
           {/* feature cards */}
           <div className="mt-14 grid gap-8 lg:grid-cols-2">
+            {/* newest flagship: the field manual */}
+            <Link
+              href="/synaptic/loop-harness"
+              className="group block rounded-2xl border p-6 transition-opacity hover:opacity-95"
+              style={{
+                borderColor: "rgba(141,240,180,0.30)",
+                background:
+                  "linear-gradient(180deg, rgba(14,26,22,0.9), rgba(6,12,11,0.95))",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+              }}
+            >
+              <div
+                className="relative aspect-[4/5] w-full overflow-hidden rounded-xl"
+                style={{ background: "#070d0e" }}
+              >
+                <EngineRoomPlate className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.01]" />
+              </div>
+              <div className="mt-6">
+                <span
+                  className="text-[11px] font-mono uppercase"
+                  style={{ color: "rgba(141,240,180,0.8)", letterSpacing: "0.3em" }}
+                >
+                  The field manual · July 2026
+                </span>
+                <h3
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'Gloock', serif",
+                    fontSize: "1.7rem",
+                    letterSpacing: "0.04em",
+                    color: "#f6ead0",
+                    lineHeight: 1.05,
+                  }}
+                >
+                  THE ENGINE ROOM{" "}
+                  <span style={{ color: "#8df0b4" }}>→</span>
+                </h3>
+                <p
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'IBM Plex Serif', Georgia, serif",
+                    fontStyle: "italic",
+                    fontSize: "0.95rem",
+                    color: "#8fd8b4",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Loop &amp; Harness Engineering
+                </p>
+                <p
+                  className="mt-3"
+                  style={{
+                    color: "rgba(196,210,225,0.85)",
+                    fontSize: "0.92rem",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  30,000 words · fifteen interactive instruments · the loop
+                  every model runs in, and the standing structure that loop
+                  runs inside.
+                </p>
+              </div>
+            </Link>
+
             {/* flagship: the field guide */}
             <Link
               href="/synaptic/chokepoint-paradox"
@@ -398,6 +464,100 @@ const Landing = () => {
                   ~45,000 words · ~40 interactive instruments · the machine
                   that ships a continent&rsquo;s wealth, talent and IP west —
                   and the narrow door still open.
+                </p>
+              </div>
+            </Link>
+
+            {/* the mapped future */}
+            <Link
+              href="/synaptic/software-3"
+              className="group block rounded-2xl border p-6 transition-opacity hover:opacity-95"
+              style={{
+                borderColor: "rgba(232,164,74,0.24)",
+                background:
+                  "linear-gradient(180deg, rgba(38,30,20,0.86), rgba(20,15,10,0.92))",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+              }}
+            >
+              <div
+                className="relative aspect-[4/5] w-full overflow-hidden rounded-xl"
+                style={{ background: "#140f0a" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/blog/covers/software-3-0-age-of-hyper-automation.png"
+                  alt="Software 3.0 — the gallery plate."
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+                  <span
+                    className="font-mono uppercase"
+                    style={{
+                      color: "rgba(245,232,204,0.6)",
+                      fontSize: "10px",
+                      letterSpacing: "0.28em",
+                      textShadow: "0 1px 6px rgba(0,0,0,0.55)",
+                    }}
+                  >
+                    Interactive gallery
+                  </span>
+                  <span
+                    className="font-mono uppercase"
+                    style={{
+                      color: "#f4c482",
+                      fontSize: "12px",
+                      letterSpacing: "0.32em",
+                      textShadow: "0 1px 6px rgba(0,0,0,0.6)",
+                    }}
+                  >
+                    Enter →
+                  </span>
+                </div>
+              </div>
+              <div className="mt-6">
+                <span
+                  className="text-[11px] font-mono uppercase"
+                  style={{ color: "rgba(232,164,74,0.75)", letterSpacing: "0.3em" }}
+                >
+                  Plate III · the gallery · 2026
+                </span>
+                <h3
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'Gloock', serif",
+                    fontSize: "2rem",
+                    letterSpacing: "0.04em",
+                    color: "#f6ead0",
+                    lineHeight: 1.05,
+                  }}
+                >
+                  SOFTWARE 3.0{" "}
+                  <span style={{ color: "#e8a44a" }}>→</span>
+                </h3>
+                <p
+                  className="mt-3"
+                  style={{
+                    fontFamily: "'IBM Plex Serif', Georgia, serif",
+                    fontStyle: "italic",
+                    fontSize: "0.95rem",
+                    color: "#f0c489",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  The most plausible breathtaking future, mapped to 2040
+                </p>
+                <p
+                  className="mt-3"
+                  style={{
+                    color: "rgba(196,210,225,0.85)",
+                    fontSize: "0.92rem",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Fifteen interactive plates · the 15,000-word essay · intent
+                  becomes the program, agents become the workforce.
                 </p>
               </div>
             </Link>

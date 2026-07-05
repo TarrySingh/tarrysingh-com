@@ -9,12 +9,13 @@ import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { VisionHorizon } from "@/components/synaptic/VisionHorizon"
 import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
+import { EngineRoomPlate } from "@/components/synaptic/EngineRoomPlate"
 
 export const metadata = {
   title:
-    "Synaptic Cartography — The Chokepoint Paradox · SYMPHONY · MEMPHIS · tarrysingh.com",
+    "Synaptic Cartography — The Engine Room · The Chokepoint Paradox · SYMPHONY · tarrysingh.com",
   description:
-    "A studio of deep-tech proposals and long-form field guides presented as museum-grade interactive plates: THE CHOKEPOINT PARADOX — a ~45,000-word field guide to Europe's tech-sovereignty failure with ~40 instruments — alongside SYMPHONY and MEMPHIS, two EIC Pathfinder 2026 submissions, and the SOFTWARE 3.0 gallery.",
+    "A studio of deep-tech proposals and long-form field guides presented as museum-grade interactive plates: THE ENGINE ROOM — a 30,000-word field manual on loop and harness engineering with fifteen instruments — and THE CHOKEPOINT PARADOX — a ~45,000-word field guide to Europe's tech-sovereignty failure with ~40 instruments — alongside SYMPHONY and MEMPHIS, two EIC Pathfinder 2026 submissions, and the SOFTWARE 3.0 gallery.",
 }
 
 const proseStyle = {
@@ -84,7 +85,7 @@ export default function SynapticPage() {
             className="syn-small-caps mt-3"
             style={{ color: "var(--ink-dim)", letterSpacing: "0.3em" }}
           >
-            · four cartographies · the studio grows ·
+            · five cartographies · the studio grows ·
           </p>
         </div>
       </header>
@@ -144,7 +145,7 @@ export default function SynapticPage() {
       {/* featured project cards */}
       <section className="syn-column pt-20">
         <div className="space-y-3 pb-12 text-center">
-          <SmallCaps>Four cartographies</SmallCaps>
+          <SmallCaps>Five cartographies</SmallCaps>
           <h2 className="syn-display mx-auto" style={sectionHeading}>
             Pick a thread
           </h2>
@@ -193,6 +194,52 @@ export default function SynapticPage() {
                 each a citable argument. Current to July 2026.
               </p>
             </figcaption>
+          </figure>
+        </Link>
+
+        {/* ── featured: the field manual (newest plate) ── */}
+        <Link
+          href="/synaptic/loop-harness"
+          className="syn-loop group mb-14 block focus-visible:outline-none"
+        >
+          <figure className="grid items-center gap-10 lg:grid-cols-[1fr_minmax(0,460px)]">
+            <figcaption className="order-2 lg:order-1">
+              <div>
+                <SmallCaps>Plate V · the field manual</SmallCaps>
+                <h3
+                  className="syn-display mt-3"
+                  style={{
+                    fontSize: "3.1rem",
+                    color: "var(--ink)",
+                    lineHeight: 1,
+                    letterSpacing: "var(--track-display)",
+                    margin: 0,
+                  }}
+                >
+                  THE ENGINE ROOM{" "}
+                  <span style={{ color: "#8df0b4" }}>→</span>
+                </h3>
+                <p className="syn-italic-caption mt-3" style={{ color: "#8fd8b4" }}>
+                  Loop &amp; Harness Engineering
+                </p>
+              </div>
+              <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
+                Everyone argues about models. Whether a model ever does useful
+                work is decided by two other things: the loop it runs in, and the
+                standing structure that loop runs inside. A 30,000-word field
+                manual, fifteen interactive instruments, every figure citable.
+                Current to July 2026.
+              </p>
+            </figcaption>
+            <div
+              className="order-1 overflow-hidden rounded-[var(--radius-card)] lg:order-2"
+              style={{
+                boxShadow:
+                  "0 0 0 1px rgba(141,240,180,0.18), 0 22px 70px rgba(0,0,0,0.5)",
+              }}
+            >
+              <EngineRoomPlate className="block h-auto w-full transition-transform duration-700 group-hover:scale-[1.01]" />
+            </div>
           </figure>
         </Link>
 
