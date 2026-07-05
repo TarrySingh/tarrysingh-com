@@ -160,6 +160,23 @@ export async function getPost(slug: string): Promise<BlogPost | null> {
   }
 }
 
+/**
+ * Read a post's full content WITHOUT the draft gate. For curated surfaces
+ * that own their own visibility — e.g. the /synaptic plate that hosts a
+ * flagship essay behind its own `noindex` — and must render the essay even
+ * while it still carries `draft: true` in content/blog (so it never leaks
+ * into the public /blog index or its slug route). Not for the blog itself.
+ */
+export async function getPostAllowDraft(slug: string): Promise<BlogPost | null> {
+  const file = path.join(CONTENT_DIR, `${slug}.mdx`)
+  try {
+    const raw = await fs.readFile(file, "utf8")
+    return parseFrontmatter(raw, slug)
+  } catch {
+    return null
+  }
+}
+
 export function formatPostDate(iso: string): string {
   const d = new Date(iso)
   return d.toLocaleDateString("en-GB", {

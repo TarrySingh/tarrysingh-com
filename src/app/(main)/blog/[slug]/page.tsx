@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { notFound } from "next/navigation"
+import { notFound, redirect } from "next/navigation"
 import { MDXRemote } from "next-mdx-remote/rsc"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
@@ -77,6 +77,9 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
+  // The Engine Room now lives at /synaptic/loop-harness (the Chokepoint pattern);
+  // /blog stays free for its derivative articles.
+  if (slug === "the-engine-room") redirect("/synaptic/loop-harness")
   const post = await getPost(slug)
   if (!post) notFound()
 
