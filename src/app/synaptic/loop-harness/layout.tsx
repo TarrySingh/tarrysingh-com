@@ -1,12 +1,26 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
 
+const DESCRIPTION =
+  "A 30,000-word engineering field manual on loop and harness engineering: the two layers that decide whether a model ever does useful work. Fifteen interactive instruments, from a hobbyist's .claude folder to a frontier training run to a self-driving lab."
+
 export const metadata: Metadata = {
   title: "The Engine Room · Loop & Harness Engineering · Synaptic",
-  description:
-    "A 30,000-word engineering field manual on loop and harness engineering: the two layers that decide whether a model ever does useful work. Fifteen interactive instruments, from a hobbyist's .claude folder to a frontier training run to a self-driving lab.",
-  // Work-in-progress flagship: out of the index until it ships.
+  description: DESCRIPTION,
+  // SHIP-GATE: flip to { index: true, follow: true } (or delete this line) to
+  // take the flagship public. Kept noindex until Tarry says go.
   robots: { index: false, follow: false },
+  openGraph: {
+    title: "The Engine Room — Loop & Harness Engineering",
+    description: DESCRIPTION,
+    type: "article",
+    url: "https://tarrysingh.com/synaptic/loop-harness",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Engine Room — Loop & Harness Engineering",
+    description: DESCRIPTION,
+  },
 }
 
 export default function LoopHarnessLayout({ children }: { children: ReactNode }) {
