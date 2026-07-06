@@ -12,6 +12,7 @@ import {
   recordDriveIngest,
 } from "@/lib/studio/drive-ingest-log"
 import { processArticle } from "@/lib/studio/process-article"
+import { reprocessReadyStashed } from "@/lib/studio/reprocess-ready"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -131,6 +132,28 @@ async function handleTick(req: NextRequest): Promise<NextResponse> {
     lines.push({ ...line, reason: line.reason ? `retry:${line.reason}` : "retry" })
   }
 
+  // Reprocess pass — ship today's Dispatch if its article is already `ready` in
+  // studio_prepared_frontmatter but never became a draft. Covers the
+  // backup-writer path, which bypasses Drive: there's no Drive file for the
+  // retry pass above to re-ingest, so a stashed-then-`ready` body would
+  // otherwise sit forever with no draft + no approval email.
+  let reprocessed: Awaited<ReturnType<typeof reprocessReadyStashed>> | undefined
+  try {
+    reprocessed = await reprocessReadyStashed(origin)
+    if (reprocessed.shipped.length > 0 || reprocessed.errors.length > 0) {
+      console.log(
+        JSON.stringify({ tag: "studio.cron.reprocess_ready", ...reprocessed }),
+      )
+    }
+  } catch (err) {
+    console.error(
+      JSON.stringify({
+        tag: "studio.cron.reprocess_ready_failed",
+        error: err instanceof Error ? err.message : String(err),
+      }),
+    )
+  }
+
   const durationMs = Date.now() - startedAt
   console.log(
     JSON.stringify({
@@ -142,7 +165,7 @@ async function handleTick(req: NextRequest): Promise<NextResponse> {
       sinceIso: sinceIso ?? null,
     }),
   )
-  return NextResponse.json({ ok: true, durationMs, sinceIso: sinceIso ?? null, results: lines })
+  return NextResponse.json({ ok: true, durationMs, sinceIso: sinceIso ?? null, results: lines, reprocessed })
 }
 
 async function processOne(
