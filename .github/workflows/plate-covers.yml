@@ -58,6 +58,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No new covers to commit."
           else
-            git commit -m "chore(covers): generate plate covers [skip ci]"
+            git commit -m "chore(covers): generate plate covers"
             git push
           fi
