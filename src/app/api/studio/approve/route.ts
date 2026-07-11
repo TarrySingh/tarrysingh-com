@@ -164,11 +164,15 @@ export async function GET(req: NextRequest) {
     const heading =
       result.error === "slug_already_exists"
         ? "This Dispatch is already live"
-        : "Publish failed"
+        : result.error === "invalid_mdx"
+          ? "Post has invalid formatting"
+          : "Publish failed"
     const bodyText =
       result.error === "slug_already_exists"
         ? `<p>A post already exists at <code>content/blog/${slug}.mdx</code> on <code>main</code>. The draft was likely approved earlier; you can safely delete it from <a href="/studio">/studio</a>.</p><p><a href="https://www.tarrysingh.com/blog/${slug}">View on /blog/${slug}</a></p>`
-        : `<p>The publish step returned <code>${result.error}</code>. The draft is still in Supabase, so you can re-attempt manually via the editor:</p><p><a href="/studio/editor/${slug}">/studio/editor/${slug}</a></p>`
+        : result.error === "invalid_mdx"
+          ? `<p>The post body did not compile as MDX, so it was <strong>not</strong> published — this gate stops a broken post from freezing the whole site's build. Open it in the editor, fix the formatting, and publish again:</p><p><a href="/studio/editor/${slug}">/studio/editor/${slug}</a></p>`
+          : `<p>The publish step returned <code>${result.error}</code>. The draft is still in Supabase, so you can re-attempt manually via the editor:</p><p><a href="/studio/editor/${slug}">/studio/editor/${slug}</a></p>`
     const status = result.error === "slug_already_exists" ? 409 : 502
     return htmlResponse(renderHtmlPage({ status: "error", heading, body: bodyText }), status)
   }

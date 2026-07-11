@@ -109,6 +109,51 @@ export function markdownToEditorHtml(markdown: string): string {
 }
 
 /**
+ * A whole line that is nothing but an agent tool-call scaffolding tag.
+ * LLM article writers occasionally leak their function-call wrapper into
+ * the article body — the observed failure was a trailing `</textContent>`
+ * + `</invoke>` on the IndiaAI dispatch (2026-07-09), which is invalid MDX
+ * and failed the static prerender for the WHOLE site, freezing every
+ * production deploy for ~2 weeks. These tags are never legitimate prose.
+ */
+const SCAFFOLD_LINE =
+  /^\s*<\/?(?:antml:)?(?:invoke|parameter|textcontent|function_calls|function_results|tool_use|tool_result|tool_use_error|antthinking|thinking)\b[^>]*>\s*$/i
+
+/**
+ * Trim leaked tool-call scaffolding lines from the START and END of a body.
+ * Deliberately edge-only (tolerating blank lines between the tag and the
+ * content edge) so a genuine mid-body ```xml example that shows `<invoke>`
+ * is never touched — the real leak is always dangling closers at the tail.
+ */
+export function stripAgentScaffolding(body: string): string {
+  const lines = body.split("\n")
+  const isBlank = (l: string) => l.trim() === ""
+  const isScaffold = (l: string) => SCAFFOLD_LINE.test(l)
+
+  let end = lines.length
+  while (end > 0) {
+    let i = end - 1
+    while (i >= 0 && isBlank(lines[i])) i--
+    if (i >= 0 && isScaffold(lines[i])) end = i
+    else {
+      end = i + 1 // trim blank lines exposed above the last real content
+      break
+    }
+  }
+  let start = 0
+  while (start < end) {
+    let i = start
+    while (i < end && isBlank(lines[i])) i++
+    if (i < end && isScaffold(lines[i])) start = i + 1
+    else {
+      start = i // trim blank lines exposed below the first real content
+      break
+    }
+  }
+  return lines.slice(start, end).join("\n")
+}
+
+/**
  * Build the full .mdx text from frontmatter + body, ready to commit
  * to `content/blog/<slug>.mdx`.
  */
@@ -135,7 +180,7 @@ export function buildMdx(fm: DispatchFrontmatter, body: string): string {
   }
   lines.push("---")
   lines.push("")
-  lines.push(body.trim())
+  lines.push(stripAgentScaffolding(body).trim())
   lines.push("")
   return lines.join("\n")
 }

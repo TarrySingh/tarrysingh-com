@@ -14,6 +14,7 @@
     "blog:audit": "node scripts/blog/audit.mjs",
     "blog:promote": "node scripts/blog/promote.mjs",
     "blog:bake-nudge": "node scripts/blog/bake-nudge-card.mjs",
+  "blog:verify": "node scripts/verify-blog-mdx.mjs",
     "covers": "tsx scripts/plates/render-covers.ts",
     "reports:status:docx": "node scripts/reports/build-status-docx.mjs",
     "reports:uat-plan:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-plan.md",

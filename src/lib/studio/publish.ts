@@ -1,6 +1,7 @@
 import { Octokit } from "@octokit/rest"
 import type { DispatchFrontmatter } from "./types"
 import { buildMdx } from "./serialize"
+import { assertMdxCompiles } from "./validate-mdx"
 
 /**
  * Publishes a Dispatch by committing `content/blog/<slug>.mdx`
@@ -49,6 +50,7 @@ export type PublishOutcome =
         | "slug_already_exists"
         | "github_api_error"
         | "invalid_input"
+        | "invalid_mdx"
     }
 
 function getOctokit(): Octokit | null {
@@ -120,6 +122,24 @@ export async function publishDispatch(
   }
   delete fmForPublish.was_published
   const fullMdx = buildMdx(fmForPublish, input.body)
+
+  // Fail-closed MDX gate. A post that does not compile would fail the static
+  // prerender of its blog page and take down the WHOLE `next build`, freezing
+  // every production deploy (the IndiaAI incident, 2026-07-09). Reject it here
+  // so the bad content never reaches main; the draft stays in Supabase for a
+  // fix-and-retry rather than silently bricking the site.
+  const mdxCheck = await assertMdxCompiles(fullMdx)
+  if (!mdxCheck.ok) {
+    console.error(
+      JSON.stringify({
+        tag: "studio.publish.invalid_mdx",
+        slug: input.slug,
+        error: mdxCheck.error,
+      }),
+    )
+    return { ok: false, error: "invalid_mdx" }
+  }
+
   const contentBase64 = Buffer.from(fullMdx, "utf8").toString("base64")
 
   const isUpdate = Boolean(existingSha)
