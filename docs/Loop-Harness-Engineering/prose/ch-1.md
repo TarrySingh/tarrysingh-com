@@ -8,7 +8,7 @@ The first ran green all night. In the morning its log said `ALL 214 FEATURES PAS
 
 The second stalled at hour two. Its context window filled, it hit `context low, compacting...`, and on the far side of the compaction it turned to me and asked what the goal was again. It had not done the wrong thing. It had not done anything. It sat there, full, and forgot why it had started.
 
-From the outside these are one event. The agent didn't work. They are opposite bugs, in different layers, and you fix them in different rooms. The first agent's loop lied to it. The second agent's harness dropped it. Almost every argument I hear about agents is an argument about which model to use. The two things that actually decide whether a model does useful work are the loop and the harness, and they break in different places for different reasons. This chapter is the two words that tell them apart in five seconds, before you burn a week fixing the wrong one.
+From the outside these are one event. The agent didn't work. They are opposite bugs, in different layers, and you fix them in different rooms. The first agent's loop lied to it. The second agent's harness dropped it. Almost every argument I hear about agents is an argument about which model to use. The two things that actually decide whether a model does useful work are the loop and the harness, and they break in different places for different reasons. Two words tell them apart in five seconds, before you burn a week fixing the wrong one.
 
 ### The verb layer and the noun layer
 
@@ -16,11 +16,11 @@ The loop is the verb layer. Goal, plan, act, verify, persist, then continue or s
 
 The harness is the noun layer. It is the standing structure the loop runs inside, and it is what stays true between turns. Anthropic names it directly, calling the Claude Agent SDK "a powerful, general-purpose agent harness" for gathering context, planning, and executing across context windows (Effective harnesses for long-running agents, 2025). The harness is state and structure on disk. Context budget, permissions, the hooks that fire on their own, the verifiers, the tool surface, memory, the machinery for spinning up sub-agents. The loop is code the model animates. The harness is the room it wakes up in.
 
-Both words are already terms of art in Anthropic's own corpus, so naming the discipline that builds both on purpose is not a coinage flex. I call it Loop and Harness Engineering, and the rest of this book earns the name. One more definition belongs here, because it recurs. Context engineering is "the set of strategies for curating and maintaining the optimal set of tokens (information) during LLM inference" (Effective context engineering for AI agents, 2025). That is one organ of the harness, and a later chapter is built entirely on it.
+Both words are already terms of art in Anthropic's own corpus, so the discipline that builds both on purpose deserves a name. I call it Loop and Harness Engineering. One more definition belongs here, because it recurs. Context engineering is "the set of strategies for curating and maintaining the optimal set of tokens (information) during LLM inference" (Effective context engineering for AI agents, 2025). That is one organ of the harness, and a later chapter is built entirely on it.
 
 ### Name the layer first
 
-Here is the procedure I run on Monday morning when an agent misbehaves, before I touch a model or a prompt. One question. Did it do the wrong thing, or did it fail to do the thing?
+On Monday morning, when an agent misbehaves, before I touch a model or a prompt, I run one question. Did it do the wrong thing, or did it fail to do the thing?
 
 Wrong thing, done with confidence, is a loop bug. The verify stage is missing, weak, or gameable. Failed to proceed, forgot, drowned, repeated itself, reached for the wrong tool · that is a harness bug, and it usually lives in context, tools, or memory.
 
@@ -40,7 +40,7 @@ I have watched engineers spend a day tuning a prompt on the second agent, the ho
 
 ### The smallest complete organism
 
-Zoom all the way down, to a hobbyist's repo, and every organ of a frontier harness is already there in miniature. The proof is the `.claude/` folder, and I want to walk it one piece at a time, because the documented pieces each carry their own one-line purpose. I am not asserting a count of files. Anthropic does not publish one, and where I name a taxonomy below it is mine.
+Zoom all the way down, to a hobbyist's repo, and every organ of a frontier harness is already there in miniature. The proof is the `.claude/` folder. Walk it one piece at a time, because the documented pieces each carry their own one-line purpose. I am not asserting a count of files. Anthropic does not publish one, and where I name a taxonomy below it is mine.
 
 ```
 .claude/
@@ -56,7 +56,7 @@ Read the one-liners and the anatomy names itself (Claude Code docs, Explore the 
 
 That mapping is a taxonomy I impose to reason about scale, not a figure anyone documents. I count seven organs. Context, permissions, hooks, verifiers, tools, memory, orchestration. One sentence each. Context is what tokens the model sees this turn and the discipline that bounds them. Permissions are the allow and deny surface, what the agent may touch. Hooks are deterministic code fired on lifecycle events, `PreToolUse` and `PostToolUse` on every tool call, code the model cannot skip. Verifiers are the pluggable checks that decide whether work is actually done. Tools are the callable surface, curated so the choice is unambiguous · Anthropic's litmus is that "if a human engineer can't definitively say which tool should be used in a given situation, an AI agent can't be expected to do better" (Effective context engineering for AI agents, 2025). Memory is state persisted across sessions on disk. Orchestration is how sub-agents spin up and how their condensed results come back.
 
-Those are the seven words the rest of this book reuses. Here is one organ, wired for real · a hook that fires the verifier before an agent can call a destructive tool:
+Those are the seven words the rest of this book reuses. One organ, wired for real · a hook that fires the verifier before an agent can call a destructive tool:
 
 ```json
 // settings.json  · hooks + verifiers + permissions, one block
