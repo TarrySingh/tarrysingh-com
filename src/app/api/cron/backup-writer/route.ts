@@ -11,6 +11,7 @@ import {
 } from "@/lib/drive/client"
 import { amsterdamDateToday, getBrief } from "@/lib/studio/daily-brief"
 import { processArticle } from "@/lib/studio/process-article"
+import { hasArticleForDate } from "@/lib/studio/prepared-frontmatter"
 import { sendDispatchFailureAlert } from "@/lib/studio/email"
 
 export const runtime = "nodejs"
@@ -176,6 +177,32 @@ async function handleTick(req: NextRequest) {
       }),
     )
     // Fall through to article generation below.
+  }
+
+  // 1.5. Don't generate a second article for a day that already has one.
+  //
+  // The backup-writer fires twice (08:45 + 09:45 UTC). Without this gate both
+  // ticks generate independently, so a Mac-off day ends with one published
+  // Dispatch plus a wasted `ready` dedup-orphan — and which of the two topics
+  // wins is a coin-flip decided by processing order. If today already has a
+  // row in studio_prepared_frontmatter (awaiting / ready / drafted), the
+  // article is already in the pipeline; skip. `hasArticleForDate` fails open,
+  // so a Supabase hiccup can never make us miss the day's write. `?force=1`
+  // (Tarry's manual regenerate) bypasses, same as the send-window gate.
+  if (!force && (await hasArticleForDate(today))) {
+    console.log(
+      JSON.stringify({
+        tag: "studio.backup_writer.skipped",
+        reason: "already_queued_today",
+        today,
+      }),
+    )
+    return NextResponse.json({
+      ok: true,
+      skipped: true,
+      reason: "already_queued_today",
+      today,
+    })
   }
 
   // 2. Find today's brief — Drive first (Cowork's transport), then

@@ -55,6 +55,38 @@ export async function getPreparedFrontmatter(
   }
 }
 
+/**
+ * True if any article is already queued for `articleDate` — any status
+ * (awaiting / ready / drafted). The backup-writer uses this to avoid
+ * generating a SECOND article on a day that already has one: its two daily
+ * ticks (08:45 + 09:45 UTC) otherwise each write independently, so the day
+ * ends with one published Dispatch plus a wasted `ready` dedup-orphan
+ * (~$0.50 of tokens, and a coin-flip over which topic wins). Keyed on
+ * article_date so it also catches a Cowork/Drive article whose source file
+ * was already cleaned up after an earlier publish.
+ *
+ * Fail-OPEN: on a Supabase error we return false (proceed to generate),
+ * because a rare duplicate is far cheaper than a silently missed Dispatch.
+ */
+export async function hasArticleForDate(articleDate: string): Promise<boolean> {
+  const sb = createServiceClient()
+  const { count, error } = await sb
+    .from(TABLE)
+    .select("slug", { count: "exact", head: true })
+    .eq("article_date", articleDate)
+  if (error) {
+    console.error(
+      JSON.stringify({
+        tag: "studio.prepared_fm.count_for_date_error",
+        articleDate,
+        error,
+      }),
+    )
+    return false
+  }
+  return (count ?? 0) > 0
+}
+
 export async function upsertPreparedFrontmatter(input: {
   slug: string
   category: DispatchCategory
