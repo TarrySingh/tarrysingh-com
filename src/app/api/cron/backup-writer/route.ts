@@ -292,6 +292,36 @@ async function handleTick(req: NextRequest) {
         existingSlug: processed.slug,
       })
     }
+    // `awaiting_frontmatter` is NOT a failure — it is the expected async
+    // handoff on the backup-writer path. The body is safely stashed
+    // `awaiting`; the frontmatter-prep cloud routine (09:45 UTC), the
+    // ingest reprocessor, and the 10:30 UTC heartbeat self-heal all turn it
+    // into a draft + approval email within the hour. Alarming here fired a
+    // false "nothing publishes today" every Mac-off morning ~2 h before the
+    // pipeline healed itself. The 10:30 heartbeat is the single correct alarm
+    // for a genuinely stuck day — it only fires when NO draft and NO publish
+    // commit exist AND there is nothing left to self-heal. So this stage
+    // returns a soft 200 (queued), no alarm.
+    if (processed.stage === "awaiting_frontmatter") {
+      console.log(
+        JSON.stringify({
+          tag: "studio.backup_writer.queued_awaiting_frontmatter",
+          filename,
+          slug: result.slug,
+          title: result.title,
+          durationMs,
+        }),
+      )
+      return NextResponse.json({
+        ok: true,
+        queued: true,
+        reason: "awaiting_frontmatter",
+        filename,
+        title: result.title,
+        slug: result.slug,
+        note: "body stashed; frontmatter-prep routine + ingest reprocessor + heartbeat will draft and email within the hour",
+      })
+    }
     console.error(
       JSON.stringify({
         tag: "studio.backup_writer.process_failed",
