@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-07-14T10:28:55.050932+00:00",
-  "refreshed_at": "2026-07-14T10:28:55.050932+00:00",
+  "generated_at": "2026-07-14T11:11:12.719583+00:00",
+  "refreshed_at": "2026-07-14T11:11:12.719583+00:00",
   "refresh_history": [
     {
       "at": "2026-07-14T10:26:26.387000+00:00",
@@ -15693,7 +15693,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Good clinic-to-community idea, moderate revision. Lecture type clashes with the demonstrate/simulate/deploy outcomes (needs a practical, or reworded outcomes); the example tools (Heidi, Freed, Nabla, Ada) skew point-of-care, so point at their coordination features or use a real care-coordination platform; outcome 3 (integration) and outcome 5 (limitations) have nothing behind them yet; thin keywords, no prep or materials.",
+      "review_note": "Incomplete across most sections, needs a development pass before it is classroom-ready: no student prep, no materials yet, a thin six-term keyword list, no timing or rubric. Plus design fixes: the Lecture type clashes with the demonstrate/simulate/deploy outcomes; outcomes 3 (integration) and 5 (limitations) have no content behind them; the example tools (Heidi/Freed/Nabla/Ada) skew point-of-care. Direction is right, but this is a fuller draft, not fine-tuning.",
       "materials": {
         "count": 0,
         "has": false,
@@ -24464,7 +24464,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Good clinic-to-community idea, moderate revision. Lecture type clashes with the demonstrate/simulate/deploy outcomes (needs a practical, or reworded outcomes); the example tools (Heidi, Freed, Nabla, Ada) skew point-of-care, so point at their coordination features or use a real care-coordination platform; outcome 3 (integration) and outcome 5 (limitations) have nothing behind them yet; thin keywords, no prep or materials.",
+      "review_note": "Incomplete across most sections, needs a development pass before it is classroom-ready: no student prep, no materials yet, a thin six-term keyword list, no timing or rubric. Plus design fixes: the Lecture type clashes with the demonstrate/simulate/deploy outcomes; outcomes 3 (integration) and 5 (limitations) have no content behind them; the example tools (Heidi/Freed/Nabla/Ada) skew point-of-care. Direction is right, but this is a fuller draft, not fine-tuning.",
       "materials": {
         "count": 0,
         "has": false,
