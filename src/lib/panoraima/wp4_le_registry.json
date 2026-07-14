@@ -2,9 +2,16 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-07-02T00:38:37.603590+00:00",
-  "refreshed_at": "2026-07-02T00:38:37.603590+00:00",
+  "generated_at": "2026-07-14T10:28:55.050932+00:00",
+  "refreshed_at": "2026-07-14T10:28:55.050932+00:00",
   "refresh_history": [
+    {
+      "at": "2026-07-14T10:26:26.387000+00:00",
+      "wiki_captured": "2026-07-14T10:23:47.406Z",
+      "sharepoint_generated": "2026-07-14T12:26:26.323140Z",
+      "realai_total": 56,
+      "reviewed": 15
+    },
     {
       "at": "2026-07-01T22:08:06.851274+02:00",
       "wiki_captured": "2026-07-01T19:30:00.287Z",
@@ -23,14 +30,14 @@
   "data_sources": {
     "wiki": {
       "status": "live",
-      "captured_at": "2026-07-01T19:30:00.287Z",
+      "captured_at": "2026-07-14T10:23:47.406Z",
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-06-30T14:07:00.320241Z",
+      "generated_at": "2026-07-14T12:26:26.323140Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 63,
+        "with_materials": 79,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -47,28 +54,28 @@
       "Media": 89
     },
     "by_status": {
-      "In development": 182,
-      "Status not set": 116,
-      "In review": 124,
+      "In development": 181,
+      "Status not set": 111,
+      "In review": 130,
       "Materials in progress": 14
     },
-    "with_materials": 63,
-    "materials_pending": 373,
+    "with_materials": 79,
+    "materials_pending": 357,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 63,
-      "awaiting_material": 373,
+      "with_sharepoint_material": 79,
+      "awaiting_material": 357,
       "off_wiki": 86,
       "off_wiki_realai": 1,
-      "realai_wiki_gap": 25
+      "realai_wiki_gap": 19
     },
     "realai": {
-      "total": 55,
+      "total": 56,
       "author": 11,
-      "reviewer": 44,
+      "reviewer": 45,
       "reviewed": 15,
       "by_status": {
-        "In development": 15,
+        "In development": 16,
         "In review": 32,
         "Status not set": 7,
         "Not started": 1
@@ -293,7 +300,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -336,7 +343,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -379,7 +386,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -422,7 +429,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -465,7 +472,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -508,7 +515,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -551,7 +558,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "Real AI · Tarry Singh",
@@ -647,7 +654,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "Real AI · Tarry Singh",
@@ -743,7 +750,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "Real AI · Tarry Singh",
@@ -839,7 +846,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -882,7 +889,7 @@
       "job_role": "",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -934,7 +941,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -977,7 +984,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1020,7 +1027,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1063,7 +1070,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1106,7 +1113,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1149,7 +1156,7 @@
       "job_role": "",
       "status": "Status not set",
       "wiki_status": "!Missing status!",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Mary Hendrick",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1192,7 +1199,7 @@
       "job_role": "",
       "status": "Status not set",
       "wiki_status": "!Missing status!",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Mary Hendrick",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1235,7 +1242,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1278,7 +1285,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1321,7 +1328,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1364,7 +1371,7 @@
       "job_role": "",
       "status": "Status not set",
       "wiki_status": "!Missing status!",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Mary Hendrick",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
@@ -1407,7 +1414,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "KPI",
       "reviewer": "",
@@ -1450,7 +1457,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "KPI",
       "reviewer": "",
@@ -1493,7 +1500,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "KPI",
       "reviewer": "",
@@ -1536,7 +1543,7 @@
       "job_role": "",
       "status": "Status not set",
       "wiki_status": "!Missing status!",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD",
       "coauthor": "",
       "reviewer": "",
@@ -1579,7 +1586,7 @@
       "job_role": "BSAIC",
       "status": "In review",
       "wiki_status": "Lesson plan: review",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "KPI",
       "reviewer": "",
@@ -1621,7 +1628,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "KPI",
       "reviewer": "",
@@ -1664,7 +1671,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "KPI",
       "reviewer": "",
@@ -1707,7 +1714,7 @@
       "job_role": "",
       "status": "Status not set",
       "wiki_status": "!Missing status!",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Mary Hendrick",
       "coauthor": "KPI",
       "reviewer": "",
@@ -1750,7 +1757,7 @@
       "job_role": "",
       "status": "Status not set",
       "wiki_status": "!Missing status!",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Mary Hendrick",
       "coauthor": "KPI",
       "reviewer": "",
@@ -3311,9 +3318,9 @@
       "due_date": "",
       "author": "HU · Hubert Fonteijn",
       "coauthor": "",
-      "reviewer": "RAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": true,
       "review_note": "Well-scoped, minor-to-moderate. Split the single run-on outcome; make the case expose one fluent-but-wrong AI variance commentary (verify the causal claim, not the prose) and one over-eager anomaly flag (false positives and alert fatigue); state who owns the narrative that reaches the board; add rubric, timing, prep. 'Analist' typo.",
       "materials": {
@@ -3547,9 +3554,9 @@
       "due_date": "",
       "author": "HU · Hubert Fonteijn",
       "coauthor": "",
-      "reviewer": "RAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": true,
       "review_note": "One of the strongest plans, minor and additive. Add the 2026-current regulatory reality: EU AI Act high-risk for credit (Annex III, obligations from Aug 2026), ECOA adverse-action reasons, the 21 Jul 2026 CFPB change ending ECOA disparate impact (now disparate treatment via proxies + Fair Housing Act), and model risk management after SR 11-7's April 2026 rescission. Temper the accuracy gain (modest but consistent) and name SHAP's limits.",
       "materials": {
@@ -6311,10 +6318,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-01",
+        "files": [
+          {
+            "name": "Privacy_by_Design_v05.pptx",
+            "ext": "pptx",
+            "kb": 1745,
+            "date": "2026-07-01",
+            "sha": "2b5829a56febaaa6",
+            "rel": "4.1 Horizontal/H-211a/Privacy_by_Design_v05.pptx"
+          }
+        ],
         "folder": "H-211a"
       },
       "lesson_plan": {
@@ -7067,8 +7083,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Hédi Virág Csordás",
       "coauthor": "TUD · Mary Hendrick",
@@ -7078,10 +7094,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-09",
+        "files": [
+          {
+            "name": "H-243 NEW.pptx",
+            "ext": "pptx",
+            "kb": 5052,
+            "date": "2026-07-09",
+            "sha": "0ce5046102167ccc",
+            "rel": "4.1 Horizontal/H-243/H-243 NEW.pptx"
+          }
+        ],
         "folder": "H-243"
       },
       "lesson_plan": {
@@ -7120,10 +7145,43 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 4,
+        "has": true,
+        "newest": "2026-07-09",
+        "files": [
+          {
+            "name": "H-244 E_MAIL CARDS.png",
+            "ext": "png",
+            "kb": 1316,
+            "date": "2026-07-09",
+            "sha": "320dd1a4cfb02488",
+            "rel": "4.1 Horizontal/H-244/H-244 E_MAIL CARDS.png"
+          },
+          {
+            "name": "H-244 ROLE CARDS.png",
+            "ext": "png",
+            "kb": 1466,
+            "date": "2026-07-09",
+            "sha": "bd471bb9c34a6b1e",
+            "rel": "4.1 Horizontal/H-244/H-244 ROLE CARDS.png"
+          },
+          {
+            "name": "H-244 INFO CARDS.png",
+            "ext": "png",
+            "kb": 1624,
+            "date": "2026-07-09",
+            "sha": "48cbe8c5cfd7b1ad",
+            "rel": "4.1 Horizontal/H-244/H-244 INFO CARDS.png"
+          },
+          {
+            "name": "H-244.pptx",
+            "ext": "pptx",
+            "kb": 5674,
+            "date": "2026-07-09",
+            "sha": "dd773279cea27fd1",
+            "rel": "4.1 Horizontal/H-244/H-244.pptx"
+          }
+        ],
         "folder": "H-244"
       },
       "lesson_plan": {
@@ -7374,14 +7432,14 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-06-28",
+        "newest": "2026-07-08",
         "files": [
           {
             "name": "Prompt Log.xlsx",
             "ext": "xlsx",
-            "kb": 16,
-            "date": "2026-06-28",
-            "sha": "9a6c5ddd094fab3a",
+            "kb": 14,
+            "date": "2026-07-08",
+            "sha": "a5938545fc94fe94",
             "rel": "4.1 Horizontal/HC-016/Prompt Log.xlsx"
           },
           {
@@ -7507,10 +7565,10 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Sietske Tacoma",
       "coauthor": "BME · Béla Pataki",
       "reviewer": "",
       "off_wiki": false,
@@ -7518,10 +7576,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-10",
+        "files": [
+          {
+            "name": "HC-019 Introduction Machine Learning Types and Tasks.pptx",
+            "ext": "pptx",
+            "kb": 7625,
+            "date": "2026-07-10",
+            "sha": "d15769133bff1deb",
+            "rel": "4.1 Horizontal/HC-019/HC-019 Introduction Machine Learning Types and Tasks.pptx"
+          }
+        ],
         "folder": "HC-019"
       },
       "lesson_plan": {
@@ -7602,10 +7669,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-10",
+        "files": [
+          {
+            "name": "HC-021_IntroUnSupervisedLearningLearningMaterials.pptx",
+            "ext": "pptx",
+            "kb": 9726,
+            "date": "2026-07-10",
+            "sha": "f177a21ca8cb146f",
+            "rel": "4.1 Horizontal/HC-021/HC-021_IntroUnSupervisedLearningLearningMaterials.pptx"
+          }
+        ],
         "folder": "HC-021"
       },
       "lesson_plan": {
@@ -10069,7 +10145,7 @@
       "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "HU · Tina van der Linden",
-      "coauthor": "HAW",
+      "coauthor": "HAW · Michael Gille",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -10255,7 +10331,7 @@
       "due_date": "",
       "author": "BME · Tamás Puskás",
       "coauthor": "HU · Tina van der Linden",
-      "reviewer": "",
+      "reviewer": "KPI · Oksana Karpenko",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -10387,10 +10463,19 @@
       "review_done": true,
       "review_note": "Strong foundations plan, minor revision. Add the healthcare-critical evaluation pieces (calibration and AUPRC, external/temporal validation, data leakage), name a concrete flawed example, and add one worked mini-case so the 'evaluate' outcome has a student activity; line up the outcome tags.",
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-06-30",
+        "files": [
+          {
+            "name": "HL001_v1.pdf",
+            "ext": "pdf",
+            "kb": 2731,
+            "date": "2026-06-30",
+            "sha": "92a341d1106f76b9",
+            "rel": "4.2 Health & Lifescience/HL-001/HL001_v1.pdf"
+          }
+        ],
         "folder": "HL-001"
       },
       "lesson_plan": {
@@ -10454,7 +10539,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -10661,10 +10746,307 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 37,
+        "has": true,
+        "newest": "2026-07-10",
+        "files": [
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-10",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "quarto-search.js",
+            "ext": "js",
+            "kb": 42,
+            "date": "2026-07-10",
+            "sha": "1a23221f499b3993",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/quarto-search.js"
+          },
+          {
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-07-10",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-07-10",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-nav/quarto-nav.js"
+          },
+          {
+            "name": "headroom.min.js",
+            "ext": "js",
+            "kb": 4,
+            "date": "2026-07-10",
+            "sha": "5b80cc4165a661a3",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-nav/headroom.min.js"
+          },
+          {
+            "name": "fuse.min.js",
+            "ext": "js",
+            "kb": 22,
+            "date": "2026-07-10",
+            "sha": "c57339c3fa16b1d6",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/fuse.min.js"
+          },
+          {
+            "name": "autocomplete.umd.js",
+            "ext": "js",
+            "kb": 94,
+            "date": "2026-07-10",
+            "sha": "cd9db3b7d812139a",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/autocomplete.umd.js"
+          },
+          {
+            "name": "bootstrap-icons.woff",
+            "ext": "woff",
+            "kb": 176,
+            "date": "2026-07-10",
+            "sha": "f55513b7b591cb84",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-07-10",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-07-10",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-07-10",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-07-10",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-07-10",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-07-10",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "bootstrap-icons.css",
+            "ext": "css",
+            "kb": 97,
+            "date": "2026-07-10",
+            "sha": "01253947f506e030",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap-icons.css"
+          },
+          {
+            "name": "bootstrap.min.js",
+            "ext": "js",
+            "kb": 78,
+            "date": "2026-07-10",
+            "sha": "d2ea6c1e0cabca20",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap.min.js"
+          },
+          {
+            "name": "bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css",
+            "ext": "css",
+            "kb": 486,
+            "date": "2026-07-10",
+            "sha": "44a2ad8beb09b080",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css"
+          },
+          {
+            "name": "index.html",
+            "ext": "html",
+            "kb": 24,
+            "date": "2026-07-10",
+            "sha": "a48b9e972aee6e50",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/index.html"
+          },
+          {
+            "name": "search.json",
+            "ext": "json",
+            "kb": 29,
+            "date": "2026-07-10",
+            "sha": "03d80efb98dcc29c",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/search.json"
+          },
+          {
+            "name": "assignment1.html",
+            "ext": "html",
+            "kb": 41,
+            "date": "2026-07-10",
+            "sha": "18d7fcad31eb126a",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/assignment1.html"
+          },
+          {
+            "name": "assignment2.html",
+            "ext": "html",
+            "kb": 26,
+            "date": "2026-07-10",
+            "sha": "c7203f132bc34d5e",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/assignment2.html"
+          },
+          {
+            "name": "bootstrap-icons.woff",
+            "ext": "woff",
+            "kb": 176,
+            "date": "2026-07-10",
+            "sha": "f55513b7b591cb84",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-10",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-07-10",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "bootstrap-icons.css",
+            "ext": "css",
+            "kb": 97,
+            "date": "2026-07-10",
+            "sha": "01253947f506e030",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-icons.css"
+          },
+          {
+            "name": "bootstrap.min.js",
+            "ext": "js",
+            "kb": 78,
+            "date": "2026-07-10",
+            "sha": "d2ea6c1e0cabca20",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap.min.js"
+          },
+          {
+            "name": "bootstrap-138a6193a3bd40baf1e627da441a4734.min.css",
+            "ext": "css",
+            "kb": 420,
+            "date": "2026-07-10",
+            "sha": "a20d3d44875fd0fb",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-07-10",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-07-10",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-07-10",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-07-10",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-07-10",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-07-10",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "lessonplan.docx",
+            "ext": "docx",
+            "kb": 24,
+            "date": "2026-07-10",
+            "sha": "7ac18c25569575f0",
+            "rel": "4.2 Health & Lifescience/HL-005/lessonplan.docx"
+          },
+          {
+            "name": "1_standards_of_biomedicaldata_intro.pptx",
+            "ext": "pptx",
+            "kb": 801,
+            "date": "2026-07-10",
+            "sha": "ac760aaa55094319",
+            "rel": "4.2 Health & Lifescience/HL-005/1_standards_of_biomedicaldata_intro.pptx"
+          },
+          {
+            "name": "2_assignments_teacherInstructions.md",
+            "ext": "md",
+            "kb": 3,
+            "date": "2026-07-10",
+            "sha": "45765bab3e256e1b",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions.md"
+          },
+          {
+            "name": "2_assignments_teacherInstructions.html",
+            "ext": "html",
+            "kb": 22,
+            "date": "2026-07-10",
+            "sha": "37dcaf8c07439ac4",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions.html"
+          }
+        ],
         "folder": "HL-005"
       },
       "lesson_plan": {
@@ -10708,20 +11090,20 @@
         "newest": "2026-06-30",
         "files": [
           {
+            "name": "1_tutorial_fair_intro.pptx",
+            "ext": "pptx",
+            "kb": 6841,
+            "date": "2026-06-30",
+            "sha": "f922adb2e5e85963",
+            "rel": "4.2 Health & Lifescience/HL-006/1_tutorial_fair_intro.pptx"
+          },
+          {
             "name": "HL-006 Reviewer Comments.docx",
             "ext": "docx",
             "kb": 47,
             "date": "2026-06-30",
             "sha": "5bc6fa9e575aceee",
             "rel": "4.2 Health & Lifescience/HL-006/Reviewer Comments/HL-006 Reviewer Comments.docx"
-          },
-          {
-            "name": "1_tutorial_fair_intro.pptx",
-            "ext": "pptx",
-            "kb": 6840,
-            "date": "2026-06-29",
-            "sha": "a4a99c5dd10cefd4",
-            "rel": "4.2 Health & Lifescience/HL-006/1_tutorial_fair_intro.pptx"
           },
           {
             "name": "bootstrap-icons.css",
@@ -10764,20 +11146,20 @@
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/popper.min.js"
           },
           {
-            "name": "clipboard.min.js",
-            "ext": "js",
-            "kb": 8,
-            "date": "2026-06-19",
-            "sha": "e17a1d816e13c082",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/clipboard/clipboard.min.js"
-          },
-          {
             "name": "tabsets.js",
             "ext": "js",
             "kb": 2,
             "date": "2026-06-19",
             "sha": "a9c226bf70e82eaf",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-06-19",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/clipboard/clipboard.min.js"
           },
           {
             "name": "quarto.js",
@@ -11066,10 +11448,331 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 91,
+        "has": true,
+        "newest": "2026-07-09",
+        "files": [
+          {
+            "name": "README.md",
+            "ext": "md",
+            "kb": 0,
+            "date": "2026-07-09",
+            "sha": "63174e8ea95a2110",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/teacher_manual/README.md"
+          },
+          {
+            "name": "course_data_results_summary.md",
+            "ext": "md",
+            "kb": 4,
+            "date": "2026-07-09",
+            "sha": "d8954d9751339b49",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/teacher_manual/course_data_results_summary.md"
+          },
+          {
+            "name": "ONE_DAY_WORKSHOP_SUMMARY.md",
+            "ext": "md",
+            "kb": 8,
+            "date": "2026-07-09",
+            "sha": "a91bf13c00adc3b7",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/teacher_manual/ONE_DAY_WORKSHOP_SUMMARY.md"
+          },
+          {
+            "name": "INSTRUCTOR_GUIDE.md",
+            "ext": "md",
+            "kb": 8,
+            "date": "2026-07-09",
+            "sha": "e4f89693230349ba",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/teacher_manual/INSTRUCTOR_GUIDE.md"
+          },
+          {
+            "name": "vital_signs.csv",
+            "ext": "csv",
+            "kb": 4480,
+            "date": "2026-07-09",
+            "sha": "2f461e8dd2e5a2d3",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/vital_signs.csv"
+          },
+          {
+            "name": "lab_measurements.csv",
+            "ext": "csv",
+            "kb": 4923,
+            "date": "2026-07-09",
+            "sha": "7362a91df909d186",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/lab_measurements.csv"
+          },
+          {
+            "name": "outcomes.csv",
+            "ext": "csv",
+            "kb": 337,
+            "date": "2026-07-09",
+            "sha": "c42e57c36b54e85c",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/outcomes.csv"
+          },
+          {
+            "name": "demographics.csv",
+            "ext": "csv",
+            "kb": 425,
+            "date": "2026-07-09",
+            "sha": "83349555091e84fe",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/demographics.csv"
+          },
+          {
+            "name": "diagnoses.csv",
+            "ext": "csv",
+            "kb": 131,
+            "date": "2026-07-09",
+            "sha": "ea761391686bfbff",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/diagnoses.csv"
+          },
+          {
+            "name": "run_tutorial_code_on_course_data.py",
+            "ext": "py",
+            "kb": 12,
+            "date": "2026-07-09",
+            "sha": "0fcfe5447cc48312",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/run_tutorial_code_on_course_data.py"
+          },
+          {
+            "name": "create_course_csvs_from_nhanes.py",
+            "ext": "py",
+            "kb": 9,
+            "date": "2026-07-09",
+            "sha": "ce8d99554ac24226",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/create_course_csvs_from_nhanes.py"
+          },
+          {
+            "name": "download_chembl_homework_data.py",
+            "ext": "py",
+            "kb": 9,
+            "date": "2026-07-09",
+            "sha": "e86f8a8206cdcfc2",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/download_chembl_homework_data.py"
+          },
+          {
+            "name": "medications.csv",
+            "ext": "csv",
+            "kb": 307,
+            "date": "2026-07-09",
+            "sha": "bc98b7f75cae6e18",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/medications.csv"
+          },
+          {
+            "name": "clinical_demographics.csv",
+            "ext": "csv",
+            "kb": 431,
+            "date": "2026-07-09",
+            "sha": "a64dc3dc428382fa",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/clinical_demographics.csv"
+          },
+          {
+            "name": "clinical_sample.csv",
+            "ext": "csv",
+            "kb": 1639,
+            "date": "2026-07-09",
+            "sha": "430c392ecf801b83",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/clinical_sample.csv"
+          },
+          {
+            "name": "assays.csv",
+            "ext": "csv",
+            "kb": 3,
+            "date": "2026-07-09",
+            "sha": "003aea008bde1080",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/assays.csv"
+          },
+          {
+            "name": "molecules.csv",
+            "ext": "csv",
+            "kb": 21,
+            "date": "2026-07-09",
+            "sha": "e19e66a08c7caa84",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/molecules.csv"
+          },
+          {
+            "name": "activities.csv",
+            "ext": "csv",
+            "kb": 23,
+            "date": "2026-07-09",
+            "sha": "71f0d710724ba6f5",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/activities.csv"
+          },
+          {
+            "name": "targets.csv",
+            "ext": "csv",
+            "kb": 0,
+            "date": "2026-07-09",
+            "sha": "5335fb84685fe9a2",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/targets.csv"
+          },
+          {
+            "name": "dataset_size_and_download_practice.py",
+            "ext": "py",
+            "kb": 7,
+            "date": "2026-07-09",
+            "sha": "1f28b1dd1af42fbf",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/dataset_size_and_download_practice.py"
+          },
+          {
+            "name": "molecules.csv",
+            "ext": "csv",
+            "kb": 21,
+            "date": "2026-07-09",
+            "sha": "e19e66a08c7caa84",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data_chembl_homework/molecules.csv"
+          },
+          {
+            "name": "activities.csv",
+            "ext": "csv",
+            "kb": 23,
+            "date": "2026-07-09",
+            "sha": "71f0d710724ba6f5",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data_chembl_homework/activities.csv"
+          },
+          {
+            "name": "targets.csv",
+            "ext": "csv",
+            "kb": 0,
+            "date": "2026-07-09",
+            "sha": "5335fb84685fe9a2",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data_chembl_homework/targets.csv"
+          },
+          {
+            "name": "dataset_size_and_download_practice.py",
+            "ext": "py",
+            "kb": 7,
+            "date": "2026-07-09",
+            "sha": "1f28b1dd1af42fbf",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/scripts/dataset_size_and_download_practice.py"
+          },
+          {
+            "name": "run_tutorial_code_on_course_data.py",
+            "ext": "py",
+            "kb": 12,
+            "date": "2026-07-09",
+            "sha": "0fcfe5447cc48312",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/scripts/run_tutorial_code_on_course_data.py"
+          },
+          {
+            "name": "create_course_csvs_from_nhanes.py",
+            "ext": "py",
+            "kb": 9,
+            "date": "2026-07-09",
+            "sha": "ce8d99554ac24226",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/scripts/create_course_csvs_from_nhanes.py"
+          },
+          {
+            "name": "download_chembl_homework_data.py",
+            "ext": "py",
+            "kb": 9,
+            "date": "2026-07-09",
+            "sha": "e86f8a8206cdcfc2",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/scripts/download_chembl_homework_data.py"
+          },
+          {
+            "name": "lab_measurements.csv",
+            "ext": "csv",
+            "kb": 4923,
+            "date": "2026-07-09",
+            "sha": "7362a91df909d186",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/lab_measurements.csv"
+          },
+          {
+            "name": "vital_signs.csv",
+            "ext": "csv",
+            "kb": 4480,
+            "date": "2026-07-09",
+            "sha": "2f461e8dd2e5a2d3",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/vital_signs.csv"
+          },
+          {
+            "name": "clinical_practical_code_only.qmd",
+            "ext": "qmd",
+            "kb": 33,
+            "date": "2026-07-09",
+            "sha": "cb894dde7a676688",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/clinical_practical_code_only.qmd"
+          },
+          {
+            "name": "requirements.txt",
+            "ext": "txt",
+            "kb": 0,
+            "date": "2026-07-09",
+            "sha": "ebebd7609cc07fe5",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/requirements.txt"
+          },
+          {
+            "name": "chembl_homework_code_only.qmd",
+            "ext": "qmd",
+            "kb": 11,
+            "date": "2026-07-09",
+            "sha": "c957e24d164216af",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/chembl_homework_code_only.qmd"
+          },
+          {
+            "name": "README.md",
+            "ext": "md",
+            "kb": 2,
+            "date": "2026-07-09",
+            "sha": "79a40e0c2d67baa6",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/README.md"
+          },
+          {
+            "name": "assays.csv",
+            "ext": "csv",
+            "kb": 3,
+            "date": "2026-07-09",
+            "sha": "003aea008bde1080",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data_chembl_homework/assays.csv"
+          },
+          {
+            "name": "clinical_sample.csv",
+            "ext": "csv",
+            "kb": 1639,
+            "date": "2026-07-09",
+            "sha": "430c392ecf801b83",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/clinical_sample.csv"
+          },
+          {
+            "name": "diagnoses.csv",
+            "ext": "csv",
+            "kb": 131,
+            "date": "2026-07-09",
+            "sha": "ea761391686bfbff",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/diagnoses.csv"
+          },
+          {
+            "name": "student_files.zip",
+            "ext": "zip",
+            "kb": 3877,
+            "date": "2026-07-09",
+            "sha": "8a3463ca65f6fb96",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_files.zip"
+          },
+          {
+            "name": "README_STUDENT.md",
+            "ext": "md",
+            "kb": 8,
+            "date": "2026-07-09",
+            "sha": "8559158a221c3a2d",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/README_STUDENT.md"
+          },
+          {
+            "name": "requirements.txt",
+            "ext": "txt",
+            "kb": 0,
+            "date": "2026-07-09",
+            "sha": "ebebd7609cc07fe5",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/requirements.txt"
+          },
+          {
+            "name": "chembl_homework_code_only.qmd",
+            "ext": "qmd",
+            "kb": 11,
+            "date": "2026-07-09",
+            "sha": "c957e24d164216af",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/chembl_homework_code_only.qmd"
+          }
+        ],
         "folder": "HL-007"
       },
       "lesson_plan": {
@@ -11144,285 +11847,109 @@
       "due_date": "",
       "author": "HU · Bas van Gestel / René van der Ploeg",
       "coauthor": "UNINA",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
       "review_note": "Major revision. Part 2 is built on library-size confounding but never teaches the fix (CPM or size-factor normalisation), and Part 1's text mislabels log2(count+1) as 'normalization'; the definitions slide is in Dutch; the lesson plan is not on the wiki yet.",
       "materials": {
-        "count": 73,
+        "count": 142,
         "has": true,
-        "newest": "2026-06-29",
+        "newest": "2026-07-01",
         "files": [
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-06-29",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
-            "name": "cell-33-output-1.png",
-            "ext": "png",
-            "kb": 55,
-            "date": "2026-06-29",
-            "sha": "6038d05a7ea67c6d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-33-output-1.png"
-          },
-          {
-            "name": "cell-35-output-1.png",
-            "ext": "png",
-            "kb": 88,
-            "date": "2026-06-29",
-            "sha": "9331c4214723c5cd",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-35-output-1.png"
-          },
-          {
-            "name": "cell-39-output-1.png",
-            "ext": "png",
-            "kb": 57,
-            "date": "2026-06-29",
-            "sha": "0bc65d7d2f4ed721",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-39-output-1.png"
-          },
           {
             "name": "mermaid.min.js",
             "ext": "js",
             "kb": 2684,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "07e37dfa97b337cc",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.min.js"
           },
           {
-            "name": "cell-24-output-1.png",
-            "ext": "png",
-            "kb": 37,
-            "date": "2026-06-29",
-            "sha": "d6d36c9ef6db0e32",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-24-output-1.png"
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-01",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
           },
           {
-            "name": "cell-34-output-1.png",
-            "ext": "png",
-            "kb": 66,
-            "date": "2026-06-29",
-            "sha": "8229577a3dfc4c6d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-34-output-1.png"
+            "name": "quarto-search.js",
+            "ext": "js",
+            "kb": 42,
+            "date": "2026-07-01",
+            "sha": "1a23221f499b3993",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/quarto-search.js"
           },
           {
-            "name": "cell-21-output-1.png",
-            "ext": "png",
-            "kb": 63,
-            "date": "2026-06-29",
-            "sha": "dc4cf7b8bd534ba0",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-21-output-1.png"
+            "name": "autocomplete.umd.js",
+            "ext": "js",
+            "kb": 94,
+            "date": "2026-07-01",
+            "sha": "cd9db3b7d812139a",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/autocomplete.umd.js"
           },
           {
-            "name": "cell-27-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-06-29",
-            "sha": "6b26c655b73be758",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-27-output-1.png"
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-07-01",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-07-01",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "fuse.min.js",
+            "ext": "js",
+            "kb": 22,
+            "date": "2026-07-01",
+            "sha": "c57339c3fa16b1d6",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/fuse.min.js"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-07-01",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-07-01",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
           },
           {
             "name": "mermaid-init.js",
             "ext": "js",
             "kb": 13,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "a68a1b7deabddb8d",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid-init.js"
           },
           {
-            "name": "cell-28-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-06-29",
-            "sha": "8e66430c70498dcc",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-28-output-1.png"
-          },
-          {
-            "name": "cell-19-output-1.png",
-            "ext": "png",
-            "kb": 53,
-            "date": "2026-06-29",
-            "sha": "6f49e0438eddd74e",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-19-output-1.png"
-          },
-          {
-            "name": "cell-14-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-06-29",
-            "sha": "8573a7ea7cc56ad9",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-14-output-1.png"
-          },
-          {
-            "name": "cell-30-output-1.png",
-            "ext": "png",
-            "kb": 68,
-            "date": "2026-06-29",
-            "sha": "a932e44caba28abe",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-30-output-1.png"
-          },
-          {
-            "name": "cell-40-output-1.png",
-            "ext": "png",
-            "kb": 62,
-            "date": "2026-06-29",
-            "sha": "06e34c8903add62c",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-40-output-1.png"
-          },
-          {
-            "name": "cell-15-output-1.png",
-            "ext": "png",
-            "kb": 59,
-            "date": "2026-06-29",
-            "sha": "7eba804a8882d493",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-15-output-1.png"
-          },
-          {
-            "name": "cell-35-output-1.png",
-            "ext": "png",
-            "kb": 89,
-            "date": "2026-06-29",
-            "sha": "83b26cb5b38f7f52",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-35-output-1.png"
-          },
-          {
-            "name": "cell-39-output-1.png",
-            "ext": "png",
-            "kb": 57,
-            "date": "2026-06-29",
-            "sha": "99178a578c6c1b75",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-39-output-1.png"
-          },
-          {
-            "name": "mermaid.css",
-            "ext": "css",
-            "kb": 0,
-            "date": "2026-06-29",
-            "sha": "7cde9e49bfab3857",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
-          },
-          {
-            "name": "cell-29-output-1.png",
-            "ext": "png",
-            "kb": 88,
-            "date": "2026-06-29",
-            "sha": "6cc368350f8f7dfc",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-29-output-1.png"
-          },
-          {
-            "name": "cell-15-output-1.png",
-            "ext": "png",
-            "kb": 59,
-            "date": "2026-06-29",
-            "sha": "7eba804a8882d493",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-15-output-1.png"
-          },
-          {
-            "name": "cell-24-output-1.png",
-            "ext": "png",
-            "kb": 37,
-            "date": "2026-06-29",
-            "sha": "558cd420f18a585f",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-24-output-1.png"
-          },
-          {
-            "name": "cell-34-output-1.png",
-            "ext": "png",
-            "kb": 66,
-            "date": "2026-06-29",
-            "sha": "9871d22424a33df4",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-34-output-1.png"
-          },
-          {
-            "name": "cell-33-output-1.png",
-            "ext": "png",
-            "kb": 58,
-            "date": "2026-06-29",
-            "sha": "0aef2657d3e752e1",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-33-output-1.png"
-          },
-          {
-            "name": "cell-21-output-1.png",
-            "ext": "png",
-            "kb": 63,
-            "date": "2026-06-29",
-            "sha": "cf8ed93f65479315",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-21-output-1.png"
-          },
-          {
-            "name": "cell-27-output-1.png",
-            "ext": "png",
-            "kb": 55,
-            "date": "2026-06-29",
-            "sha": "fe2afccd6bb7081d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-27-output-1.png"
-          },
-          {
-            "name": "cell-29-output-1.png",
-            "ext": "png",
-            "kb": 88,
-            "date": "2026-06-29",
-            "sha": "63b749244bf7fce4",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-29-output-1.png"
-          },
-          {
-            "name": "cell-28-output-1.png",
-            "ext": "png",
-            "kb": 67,
-            "date": "2026-06-29",
-            "sha": "f63d7472ab403f78",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-28-output-1.png"
-          },
-          {
-            "name": "cell-19-output-1.png",
-            "ext": "png",
-            "kb": 58,
-            "date": "2026-06-29",
-            "sha": "7790940d748aa4ed",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-19-output-1.png"
-          },
-          {
-            "name": "cell-14-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-06-29",
-            "sha": "8573a7ea7cc56ad9",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-14-output-1.png"
-          },
-          {
-            "name": "cell-30-output-1.png",
-            "ext": "png",
-            "kb": 68,
-            "date": "2026-06-29",
-            "sha": "a932e44caba28abe",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-30-output-1.png"
-          },
-          {
-            "name": "cell-40-output-1.png",
-            "ext": "png",
-            "kb": 64,
-            "date": "2026-06-29",
-            "sha": "54f40be8c57fdcc2",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-40-output-1.png"
-          },
-          {
-            "name": "bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css",
-            "ext": "css",
-            "kb": 486,
-            "date": "2026-06-29",
-            "sha": "6383064d07eacf8e",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css"
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-07-01",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto.js"
           },
           {
             "name": "tippy.css",
             "ext": "css",
             "kb": 1,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "5969f497d9158d76",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tippy.css"
           },
@@ -11430,49 +11957,225 @@
             "name": "tippy.umd.min.js",
             "ext": "js",
             "kb": 23,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "41181eeec6d7ba64",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tippy.umd.min.js"
-          },
-          {
-            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
-            "ext": "css",
-            "kb": 3,
-            "date": "2026-06-29",
-            "sha": "34a771139d2d6c07",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
-          },
-          {
-            "name": "anchor.min.js",
-            "ext": "js",
-            "kb": 5,
-            "date": "2026-06-29",
-            "sha": "69098e105d990f83",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/anchor.min.js"
-          },
-          {
-            "name": "popper.min.js",
-            "ext": "js",
-            "kb": 19,
-            "date": "2026-06-29",
-            "sha": "4d50586b184724d3",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/popper.min.js"
-          },
-          {
-            "name": "quarto-nav.js",
-            "ext": "js",
-            "kb": 9,
-            "date": "2026-06-29",
-            "sha": "a3e9c8c52dd54d78",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
           },
           {
             "name": "headroom.min.js",
             "ext": "js",
             "kb": 4,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "5b80cc4165a661a3",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/headroom.min.js"
+          },
+          {
+            "name": "mermaid.css",
+            "ext": "css",
+            "kb": 0,
+            "date": "2026-07-01",
+            "sha": "7cde9e49bfab3857",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-07-01",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
+          },
+          {
+            "name": "cell-32-output-1.png",
+            "ext": "png",
+            "kb": 58,
+            "date": "2026-07-01",
+            "sha": "0aef2657d3e752e1",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-32-output-1.png"
+          },
+          {
+            "name": "cell-38-output-1.png",
+            "ext": "png",
+            "kb": 57,
+            "date": "2026-07-01",
+            "sha": "99178a578c6c1b75",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-38-output-1.png"
+          },
+          {
+            "name": "cell-39-output-1.png",
+            "ext": "png",
+            "kb": 64,
+            "date": "2026-07-01",
+            "sha": "54f40be8c57fdcc2",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-39-output-1.png"
+          },
+          {
+            "name": "cell-24-output-1.png",
+            "ext": "png",
+            "kb": 73,
+            "date": "2026-07-01",
+            "sha": "20705b99416400fd",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-24-output-1.png"
+          },
+          {
+            "name": "cell-34-output-1.png",
+            "ext": "png",
+            "kb": 89,
+            "date": "2026-07-01",
+            "sha": "83b26cb5b38f7f52",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-34-output-1.png"
+          },
+          {
+            "name": "cell-33-output-1.png",
+            "ext": "png",
+            "kb": 66,
+            "date": "2026-07-01",
+            "sha": "9871d22424a33df4",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-33-output-1.png"
+          },
+          {
+            "name": "cell-21-output-1.png",
+            "ext": "png",
+            "kb": 63,
+            "date": "2026-07-01",
+            "sha": "cf8ed93f65479315",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-21-output-1.png"
+          },
+          {
+            "name": "cell-27-output-1.png",
+            "ext": "png",
+            "kb": 55,
+            "date": "2026-07-01",
+            "sha": "fe2afccd6bb7081d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-27-output-1.png"
+          },
+          {
+            "name": "cell-19-output-1.png",
+            "ext": "png",
+            "kb": 58,
+            "date": "2026-07-01",
+            "sha": "7790940d748aa4ed",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-19-output-1.png"
+          },
+          {
+            "name": "cell-14-output-1.png",
+            "ext": "png",
+            "kb": 61,
+            "date": "2026-07-01",
+            "sha": "8573a7ea7cc56ad9",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-14-output-1.png"
+          },
+          {
+            "name": "cell-15-output-1.png",
+            "ext": "png",
+            "kb": 59,
+            "date": "2026-07-01",
+            "sha": "7eba804a8882d493",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-15-output-1.png"
+          },
+          {
+            "name": "cell-29-output-1.png",
+            "ext": "png",
+            "kb": 88,
+            "date": "2026-07-01",
+            "sha": "63b749244bf7fce4",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-29-output-1.png"
+          },
+          {
+            "name": "cell-28-output-1.png",
+            "ext": "png",
+            "kb": 67,
+            "date": "2026-07-01",
+            "sha": "f63d7472ab403f78",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-28-output-1.png"
+          },
+          {
+            "name": "cell-14-output-1.png",
+            "ext": "png",
+            "kb": 61,
+            "date": "2026-07-01",
+            "sha": "8573a7ea7cc56ad9",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-14-output-1.png"
+          },
+          {
+            "name": "cell-15-output-1.png",
+            "ext": "png",
+            "kb": 59,
+            "date": "2026-07-01",
+            "sha": "7eba804a8882d493",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-15-output-1.png"
+          },
+          {
+            "name": "cell-24-output-1.png",
+            "ext": "png",
+            "kb": 75,
+            "date": "2026-07-01",
+            "sha": "c8356e1a835fadd2",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-24-output-1.png"
+          },
+          {
+            "name": "cell-34-output-1.png",
+            "ext": "png",
+            "kb": 88,
+            "date": "2026-07-01",
+            "sha": "9331c4214723c5cd",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-34-output-1.png"
+          },
+          {
+            "name": "cell-33-output-1.png",
+            "ext": "png",
+            "kb": 66,
+            "date": "2026-07-01",
+            "sha": "8229577a3dfc4c6d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-33-output-1.png"
+          },
+          {
+            "name": "cell-21-output-1.png",
+            "ext": "png",
+            "kb": 63,
+            "date": "2026-07-01",
+            "sha": "dc4cf7b8bd534ba0",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-21-output-1.png"
+          },
+          {
+            "name": "cell-27-output-1.png",
+            "ext": "png",
+            "kb": 61,
+            "date": "2026-07-01",
+            "sha": "6b26c655b73be758",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-27-output-1.png"
+          },
+          {
+            "name": "cell-32-output-1.png",
+            "ext": "png",
+            "kb": 55,
+            "date": "2026-07-01",
+            "sha": "6038d05a7ea67c6d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-32-output-1.png"
+          },
+          {
+            "name": "cell-38-output-1.png",
+            "ext": "png",
+            "kb": 57,
+            "date": "2026-07-01",
+            "sha": "0bc65d7d2f4ed721",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-38-output-1.png"
+          },
+          {
+            "name": "cell-39-output-1.png",
+            "ext": "png",
+            "kb": 62,
+            "date": "2026-07-01",
+            "sha": "06e34c8903add62c",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-39-output-1.png"
+          },
+          {
+            "name": "cell-29-output-1.png",
+            "ext": "png",
+            "kb": 88,
+            "date": "2026-07-01",
+            "sha": "6cc368350f8f7dfc",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-29-output-1.png"
           }
         ],
         "folder": "HL-009"
@@ -11749,10 +12452,331 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 50,
+        "has": true,
+        "newest": "2026-07-14",
+        "files": [
+          {
+            "name": "README.md",
+            "ext": "md",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "811ead9c441105ab",
+            "rel": "4.2 Health & Lifescience/HL-013/README.md"
+          },
+          {
+            "name": "mermaid.min.js",
+            "ext": "js",
+            "kb": 2684,
+            "date": "2026-07-14",
+            "sha": "07e37dfa97b337cc",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-diagram/mermaid.min.js"
+          },
+          {
+            "name": "ngra_model_comparison.py",
+            "ext": "py",
+            "kb": 11,
+            "date": "2026-07-14",
+            "sha": "bc1b26c618aacbab",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/scripts/ngra_model_comparison.py"
+          },
+          {
+            "name": "in_vitro_case_evidence.csv",
+            "ext": "csv",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "49272445178e5d26",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/data/in_vitro_case_evidence.csv"
+          },
+          {
+            "name": "unknown_compounds.csv",
+            "ext": "csv",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "9419319b558b1b6d",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/data/unknown_compounds.csv"
+          },
+          {
+            "name": "mermaid-init.js",
+            "ext": "js",
+            "kb": 13,
+            "date": "2026-07-14",
+            "sha": "a68a1b7deabddb8d",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-diagram/mermaid-init.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-14",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-07-14",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "mermaid.css",
+            "ext": "css",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "7cde9e49bfab3857",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
+          },
+          {
+            "name": "bootstrap.min.js",
+            "ext": "js",
+            "kb": 78,
+            "date": "2026-07-14",
+            "sha": "d2ea6c1e0cabca20",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/bootstrap/bootstrap.min.js"
+          },
+          {
+            "name": "bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css",
+            "ext": "css",
+            "kb": 486,
+            "date": "2026-07-14",
+            "sha": "44a2ad8beb09b080",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/bootstrap/bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css"
+          },
+          {
+            "name": "bootstrap-icons.woff",
+            "ext": "woff",
+            "kb": 176,
+            "date": "2026-07-14",
+            "sha": "f55513b7b591cb84",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-07-14",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-07-14",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
+          },
+          {
+            "name": "headroom.min.js",
+            "ext": "js",
+            "kb": 4,
+            "date": "2026-07-14",
+            "sha": "5b80cc4165a661a3",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-nav/headroom.min.js"
+          },
+          {
+            "name": "fuse.min.js",
+            "ext": "js",
+            "kb": 22,
+            "date": "2026-07-14",
+            "sha": "c57339c3fa16b1d6",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-search/fuse.min.js"
+          },
+          {
+            "name": "quarto-search.js",
+            "ext": "js",
+            "kb": 42,
+            "date": "2026-07-14",
+            "sha": "1a23221f499b3993",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-search/quarto-search.js"
+          },
+          {
+            "name": "autocomplete.umd.js",
+            "ext": "js",
+            "kb": 94,
+            "date": "2026-07-14",
+            "sha": "cd9db3b7d812139a",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-search/autocomplete.umd.js"
+          },
+          {
+            "name": "ngra_case_study_worksheet.docx",
+            "ext": "docx",
+            "kb": 13,
+            "date": "2026-07-14",
+            "sha": "32ad7e425533a408",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/worksheets/ngra_case_study_worksheet.docx"
+          },
+          {
+            "name": "bootstrap-icons.css",
+            "ext": "css",
+            "kb": 97,
+            "date": "2026-07-14",
+            "sha": "01253947f506e030",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/bootstrap/bootstrap-icons.css"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-07-14",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-07-14",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-07-14",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-07-14",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-07-14",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "panoraima.png",
+            "ext": "png",
+            "kb": 62,
+            "date": "2026-07-14",
+            "sha": "490f6b31c9980972",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/assets/panoraima.png"
+          },
+          {
+            "name": "ngra_course_files.zip",
+            "ext": "zip",
+            "kb": 12,
+            "date": "2026-07-14",
+            "sha": "502fa07102d39d81",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/downloads/ngra_course_files.zip"
+          },
+          {
+            "name": "ngra_case_study_worksheet.docx",
+            "ext": "docx",
+            "kb": 13,
+            "date": "2026-07-14",
+            "sha": "e6190a599861f29a",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/worksheets/ngra_case_study_worksheet.docx"
+          },
+          {
+            "name": "ngra_model_comparison.py",
+            "ext": "py",
+            "kb": 11,
+            "date": "2026-07-14",
+            "sha": "bc1b26c618aacbab",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/scripts/ngra_model_comparison.py"
+          },
+          {
+            "name": "in_vitro_case_evidence.csv",
+            "ext": "csv",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "49272445178e5d26",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/data/in_vitro_case_evidence.csv"
+          },
+          {
+            "name": "unknown_compounds.csv",
+            "ext": "csv",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "9419319b558b1b6d",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/data/unknown_compounds.csv"
+          },
+          {
+            "name": "resources.html",
+            "ext": "html",
+            "kb": 45,
+            "date": "2026-07-14",
+            "sha": "4dd628a0f2725d43",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/resources.html"
+          },
+          {
+            "name": "background.html",
+            "ext": "html",
+            "kb": 49,
+            "date": "2026-07-14",
+            "sha": "3092d15a28ff5e2d",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/background.html"
+          },
+          {
+            "name": "practical.html",
+            "ext": "html",
+            "kb": 46,
+            "date": "2026-07-14",
+            "sha": "f9d2cf5f0732e87b",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/practical.html"
+          },
+          {
+            "name": "requirements.txt",
+            "ext": "txt",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "5b5b2c5799bc9e69",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/requirements.txt"
+          },
+          {
+            "name": "README.md",
+            "ext": "md",
+            "kb": 2,
+            "date": "2026-07-14",
+            "sha": "d67e68bb73b0aa2f",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/README.md"
+          },
+          {
+            "name": "README_MODEL_EXERCISE.md",
+            "ext": "md",
+            "kb": 1,
+            "date": "2026-07-14",
+            "sha": "ace1eff55985b231",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/README_MODEL_EXERCISE.md"
+          },
+          {
+            "name": "requirements.txt",
+            "ext": "txt",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "5b5b2c5799bc9e69",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/requirements.txt"
+          },
+          {
+            "name": "README.md",
+            "ext": "md",
+            "kb": 2,
+            "date": "2026-07-14",
+            "sha": "d67e68bb73b0aa2f",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/README.md"
+          },
+          {
+            "name": "README_MODEL_EXERCISE.md",
+            "ext": "md",
+            "kb": 1,
+            "date": "2026-07-14",
+            "sha": "ace1eff55985b231",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/README_MODEL_EXERCISE.md"
+          }
+        ],
         "folder": "HL-013"
       },
       "lesson_plan": {
@@ -11917,10 +12941,331 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 70,
+        "has": true,
+        "newest": "2026-07-14",
+        "files": [
+          {
+            "name": "0b_lessonplan_toxicology_revised_followup.docx",
+            "ext": "docx",
+            "kb": 25,
+            "date": "2026-07-14",
+            "sha": "c9c424305f9dc07a",
+            "rel": "4.2 Health & Lifescience/HL-017/0b_lessonplan_toxicology_revised_followup.docx"
+          },
+          {
+            "name": "0a_lessonplan_toxicology.docx",
+            "ext": "docx",
+            "kb": 25,
+            "date": "2026-07-14",
+            "sha": "b952b57af2c5359e",
+            "rel": "4.2 Health & Lifescience/HL-017/0a_lessonplan_toxicology.docx"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-14",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "case_05_tox21_nr_ppar_gamma.csv",
+            "ext": "csv",
+            "kb": 75,
+            "date": "2026-07-14",
+            "sha": "051bf54ecd62fbb7",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_05_tox21_nr_ppar_gamma.csv"
+          },
+          {
+            "name": "case_09_tox21_sr_mmp.csv",
+            "ext": "csv",
+            "kb": 70,
+            "date": "2026-07-14",
+            "sha": "ed24a099b3ccec08",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_09_tox21_sr_mmp.csv"
+          },
+          {
+            "name": "case_08_tox21_sr_hse.csv",
+            "ext": "csv",
+            "kb": 71,
+            "date": "2026-07-14",
+            "sha": "9b3e16e524a88df8",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_08_tox21_sr_hse.csv"
+          },
+          {
+            "name": "case_dataset_index.json",
+            "ext": "json",
+            "kb": 4,
+            "date": "2026-07-14",
+            "sha": "c3d0dcb6f487ec44",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_dataset_index.json"
+          },
+          {
+            "name": "README_CASE_DATASETS.md",
+            "ext": "md",
+            "kb": 1,
+            "date": "2026-07-14",
+            "sha": "24c014fa65ffb519",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/README_CASE_DATASETS.md"
+          },
+          {
+            "name": "case_10_tox21_sr_p53.csv",
+            "ext": "csv",
+            "kb": 71,
+            "date": "2026-07-14",
+            "sha": "f829b6d2db96a3ff",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_10_tox21_sr_p53.csv"
+          },
+          {
+            "name": "case_04_tox21_nr_er.csv",
+            "ext": "csv",
+            "kb": 71,
+            "date": "2026-07-14",
+            "sha": "eed13469e8adf64b",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_04_tox21_nr_er.csv"
+          },
+          {
+            "name": "case_06_tox21_sr_are.csv",
+            "ext": "csv",
+            "kb": 70,
+            "date": "2026-07-14",
+            "sha": "98971caf219a200a",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_06_tox21_sr_are.csv"
+          },
+          {
+            "name": "case_07_tox21_sr_atad5.csv",
+            "ext": "csv",
+            "kb": 72,
+            "date": "2026-07-14",
+            "sha": "664722d326b4eaab",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_07_tox21_sr_atad5.csv"
+          },
+          {
+            "name": "case_02_tox21_nr_ahr.csv",
+            "ext": "csv",
+            "kb": 71,
+            "date": "2026-07-14",
+            "sha": "4f323ee1b3ce3d31",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_02_tox21_nr_ahr.csv"
+          },
+          {
+            "name": "case_03_tox21_nr_aromatase.csv",
+            "ext": "csv",
+            "kb": 74,
+            "date": "2026-07-14",
+            "sha": "68f20093d059074b",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_03_tox21_nr_aromatase.csv"
+          },
+          {
+            "name": "case_dataset_index.csv",
+            "ext": "csv",
+            "kb": 2,
+            "date": "2026-07-14",
+            "sha": "78d15c4cb2044ee3",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_dataset_index.csv"
+          },
+          {
+            "name": "case_01_tox21_nr_ar.csv",
+            "ext": "csv",
+            "kb": 71,
+            "date": "2026-07-14",
+            "sha": "4d5ca9f3bd7e3d4d",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_01_tox21_nr_ar.csv"
+          },
+          {
+            "name": "bootstrap-icons.css",
+            "ext": "css",
+            "kb": 97,
+            "date": "2026-07-14",
+            "sha": "01253947f506e030",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/bootstrap/bootstrap-icons.css"
+          },
+          {
+            "name": "bootstrap.min.js",
+            "ext": "js",
+            "kb": 78,
+            "date": "2026-07-14",
+            "sha": "d2ea6c1e0cabca20",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/bootstrap/bootstrap.min.js"
+          },
+          {
+            "name": "bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css",
+            "ext": "css",
+            "kb": 486,
+            "date": "2026-07-14",
+            "sha": "6383064d07eacf8e",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css"
+          },
+          {
+            "name": "bootstrap-icons.woff",
+            "ext": "woff",
+            "kb": 176,
+            "date": "2026-07-14",
+            "sha": "f55513b7b591cb84",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-07-14",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-07-14",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-07-14",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-07-14",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "mermaid-init.js",
+            "ext": "js",
+            "kb": 13,
+            "date": "2026-07-14",
+            "sha": "a68a1b7deabddb8d",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-diagram/mermaid-init.js"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-07-14",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-07-14",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-07-14",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
+          },
+          {
+            "name": "headroom.min.js",
+            "ext": "js",
+            "kb": 4,
+            "date": "2026-07-14",
+            "sha": "5b80cc4165a661a3",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-nav/headroom.min.js"
+          },
+          {
+            "name": "quarto-search.js",
+            "ext": "js",
+            "kb": 42,
+            "date": "2026-07-14",
+            "sha": "1a23221f499b3993",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-search/quarto-search.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-07-14",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "create_case_datasets.cpython-314.pyc",
+            "ext": "pyc",
+            "kb": 14,
+            "date": "2026-07-14",
+            "sha": "94e2c6a4c65785be",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/__pycache__/create_case_datasets.cpython-314.pyc"
+          },
+          {
+            "name": "mermaid.css",
+            "ext": "css",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "7cde9e49bfab3857",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
+          },
+          {
+            "name": "mermaid.min.js",
+            "ext": "js",
+            "kb": 2684,
+            "date": "2026-07-14",
+            "sha": "07e37dfa97b337cc",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-diagram/mermaid.min.js"
+          },
+          {
+            "name": "fuse.min.js",
+            "ext": "js",
+            "kb": 22,
+            "date": "2026-07-14",
+            "sha": "c57339c3fa16b1d6",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-search/fuse.min.js"
+          },
+          {
+            "name": "autocomplete.umd.js",
+            "ext": "js",
+            "kb": 94,
+            "date": "2026-07-14",
+            "sha": "cd9db3b7d812139a",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-search/autocomplete.umd.js"
+          },
+          {
+            "name": "02_lab2_extra_teacher.py",
+            "ext": "py",
+            "kb": 499,
+            "date": "2026-07-14",
+            "sha": "6dd1639ebb1b3507",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/scripts/02_lab2_extra_teacher.py"
+          },
+          {
+            "name": "01_lab1_student.py",
+            "ext": "py",
+            "kb": 112,
+            "date": "2026-07-14",
+            "sha": "67801afcc5fffd26",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/scripts/01_lab1_student.py"
+          },
+          {
+            "name": "student_four_slide_template.pptx",
+            "ext": "pptx",
+            "kb": 34,
+            "date": "2026-07-14",
+            "sha": "6d57de25a4490083",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/downloads/student_four_slide_template.pptx"
+          },
+          {
+            "name": "02_lab2_extra_student.py",
+            "ext": "py",
+            "kb": 499,
+            "date": "2026-07-14",
+            "sha": "457e83c4587911d5",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/scripts/02_lab2_extra_student.py"
+          }
+        ],
         "folder": "HL-017"
       },
       "lesson_plan": {
@@ -12852,23 +14197,31 @@
       "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "HAW · Ahmad Khalidi",
-      "coauthor": "TUD · Aditya.grover@ucd.ie (CeADAR)",
-      "reviewer": "CeADAR",
+      "coauthor": "TUD",
+      "reviewer": "CeADAR · Aditya.grover@ucd.ie (CeADAR)",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-06-29",
+        "newest": "2026-07-10",
         "files": [
+          {
+            "name": "Reviewer-Checklist-HL042-CeADAR comments-10-Jul-2026.docx",
+            "ext": "docx",
+            "kb": 232,
+            "date": "2026-07-10",
+            "sha": "f69cdb57c4b92398",
+            "rel": "4.2 Health & Lifescience/HL-042/Reviewer-Checklist-HL042-CeADAR comments-10-Jul-2026.docx"
+          },
           {
             "name": "Slides.pptx",
             "ext": "pptx",
-            "kb": 8047,
-            "date": "2026-06-29",
-            "sha": "4cad7f8cb1fb32b0",
+            "kb": 8048,
+            "date": "2026-07-10",
+            "sha": "5ad09d6ea599a3d1",
             "rel": "4.2 Health & Lifescience/HL-042/Slides.pptx"
           },
           {
@@ -13088,14 +14441,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-29",
+        "newest": "2026-07-07",
         "files": [
           {
             "name": "Slides.potx",
             "ext": "potx",
-            "kb": 570,
-            "date": "2026-06-29",
-            "sha": "fbe1feb436330803",
+            "kb": 805,
+            "date": "2026-07-07",
+            "sha": "04ded12320816402",
             "rel": "4.2 Health & Lifescience/HL-047/Slides.potx"
           }
         ],
@@ -13140,22 +14493,22 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-06-29",
+        "newest": "2026-07-14",
         "files": [
           {
             "name": "HL-048_firstdraft_updating.pptx",
             "ext": "pptx",
-            "kb": 4547,
-            "date": "2026-06-29",
-            "sha": "11a7242905d76f6c",
+            "kb": 4935,
+            "date": "2026-07-14",
+            "sha": "41b828363418b0d4",
             "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
           },
           {
             "name": "lessonplan_HL-048-TUD.docx",
             "ext": "docx",
-            "kb": 34,
-            "date": "2026-06-06",
-            "sha": "d2f9e081d5051572",
+            "kb": 41,
+            "date": "2026-07-11",
+            "sha": "04d64d1a6245ce88",
             "rel": "4.2 Health & Lifescience/HL-048/lessonplan_HL-048-TUD.docx"
           }
         ],
@@ -13252,10 +14605,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-09",
+        "files": [
+          {
+            "name": "LE HL049.pdf",
+            "ext": "pdf",
+            "kb": 75,
+            "date": "2026-07-09",
+            "sha": "9d58111b7f80b923",
+            "rel": "4.2 Health & Lifescience/HL-049/LE HL049.pdf"
+          }
+        ],
         "folder": "HL-049"
       },
       "lesson_plan": {
@@ -13769,10 +15131,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-09",
+        "files": [
+          {
+            "name": "LE HL060.pdf",
+            "ext": "pdf",
+            "kb": 72,
+            "date": "2026-07-09",
+            "sha": "17997d831566c8de",
+            "rel": "4.2 Health & Lifescience/HL-060/LE HL060.pdf"
+          }
+        ],
         "folder": "HL-060"
       },
       "lesson_plan": {
@@ -14318,7 +15689,7 @@
       "due_date": "",
       "author": "TUD · Mary Hendrick",
       "coauthor": "UNINA",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -15634,7 +17005,7 @@
       "due_date": "",
       "author": "HAW · Michael Gille",
       "coauthor": "UNIWA",
-      "reviewer": "",
+      "reviewer": "KPI · Oksana Karpenko",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -16507,7 +17878,7 @@
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
-      "reviewer": "UNINA · Egidia",
+      "reviewer": "UNINA · Egidia Cirillo",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -16558,7 +17929,7 @@
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
-      "reviewer": "UNINA · Egidia",
+      "reviewer": "UNINA · Egidia Cirillo",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -16615,17 +17986,25 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-07-12",
         "files": [
           {
             "name": "MC_006_Sociological_research_of_corruption_indices_and_indicators.pptx",
             "ext": "pptx",
-            "kb": 4160,
-            "date": "2026-06-10",
-            "sha": "6f736a3d914b8119",
+            "kb": 4155,
+            "date": "2026-07-12",
+            "sha": "608d9ba6d7104cfb",
             "rel": "4.3 Media & Culture/MC-006/MC_006_Sociological_research_of_corruption_indices_and_indicators.pptx"
+          },
+          {
+            "name": "MC_006_Sociological_research_of_corruption_indices_and_indicators_backup_Na.pptx",
+            "ext": "pptx",
+            "kb": 4149,
+            "date": "2026-07-08",
+            "sha": "f772c49ad4b34407",
+            "rel": "4.3 Media & Culture/MC-006/MC_006_Sociological_research_of_corruption_indices_and_indicators_backup_Na.pptx"
           }
         ],
         "folder": "MC-006"
@@ -16658,7 +18037,7 @@
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "KPI",
+      "author": "KPI · Liubov Panchenko",
       "coauthor": "",
       "reviewer": "UNINA · Egidia Cirillo",
       "off_wiki": false,
@@ -16717,16 +18096,24 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-07-08",
         "files": [
+          {
+            "name": "MC_008_Media_Consumption_Factor_Analysis_Practice_Na_backup.pptx",
+            "ext": "pptx",
+            "kb": 7597,
+            "date": "2026-07-08",
+            "sha": "e13c12c9ef09d52b",
+            "rel": "4.3 Media & Culture/MC-008/MC_008_Media_Consumption_Factor_Analysis_Practice_Na_backup.pptx"
+          },
           {
             "name": "MC_008_Media_Consumption_Factor_Analysis_Practice.pptx",
             "ext": "pptx",
-            "kb": 7561,
-            "date": "2026-06-10",
-            "sha": "9cce3e4ce6f14c13",
+            "kb": 7597,
+            "date": "2026-07-08",
+            "sha": "de1c2f34fa7bc59b",
             "rel": "4.3 Media & Culture/MC-008/MC_008_Media_Consumption_Factor_Analysis_Practice.pptx"
           }
         ],
@@ -16978,17 +18365,25 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-07-11",
         "files": [
           {
             "name": "MC_014_Sampling_method_in_sociological_research_of_the_media_docx.pptx",
             "ext": "pptx",
-            "kb": 4148,
-            "date": "2026-06-10",
-            "sha": "73e93856b5f0f9c9",
+            "kb": 4205,
+            "date": "2026-07-11",
+            "sha": "229f4141651274b5",
             "rel": "4.3 Media & Culture/MC-014/MC_014_Sampling_method_in_sociological_research_of_the_media_docx.pptx"
+          },
+          {
+            "name": "MC_014_Sampling_method_in_sociological_research_of_the_media_docx_backup_Na.pptx",
+            "ext": "pptx",
+            "kb": 4205,
+            "date": "2026-07-08",
+            "sha": "0a3345cdc1f1df6c",
+            "rel": "4.3 Media & Culture/MC-014/MC_014_Sampling_method_in_sociological_research_of_the_media_docx_backup_Na.pptx"
           }
         ],
         "folder": "MC-014"
@@ -17825,14 +19220,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-07-08",
         "files": [
           {
             "name": "MC-031.pptx",
             "ext": "pptx",
-            "kb": 370,
-            "date": "2026-06-10",
-            "sha": "d434d653ee15d359",
+            "kb": 394,
+            "date": "2026-07-08",
+            "sha": "01da5eb00e42945a",
             "rel": "4.3 Media & Culture/MC-031/MC-031.pptx"
           }
         ],
@@ -18263,7 +19658,7 @@
       "due_date": "",
       "author": "BME · Dorottya Egres",
       "coauthor": "",
-      "reviewer": "KPI",
+      "reviewer": "KPI · Myroslava Kukhta",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -18314,7 +19709,7 @@
       "due_date": "",
       "author": "BME · Dorottya Egres",
       "coauthor": "",
-      "reviewer": "KPI",
+      "reviewer": "KPI · Myroslava Kukhta",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -18680,22 +20075,31 @@
       "title": "MC-061 AI-Generated Influencers, Avatars, And Synthetic Identities",
       "lesson_type": "Interactive",
       "duration": "90",
-      "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "job_role": "",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "TUD",
+      "author": "TUD · Na Li",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "HAW",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-10",
+        "files": [
+          {
+            "name": "lessonplan_MC-061-TUD.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-07-10",
+            "sha": "ff2bd998756498ab",
+            "rel": "4.3 Media & Culture/MC-061/lessonplan_MC-061-TUD.docx"
+          }
+        ],
         "folder": "MC-061"
       },
       "lesson_plan": {
@@ -18723,21 +20127,30 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "TUD",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "HAW",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-10",
+        "files": [
+          {
+            "name": "lessonplan_MC-062-TUD.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-07-10",
+            "sha": "6b1b94ae6c561101",
+            "rel": "4.3 Media & Culture/MC-062/lessonplan_MC-062-TUD.docx"
+          }
+        ],
         "folder": "MC-062"
       },
       "lesson_plan": {
@@ -18765,21 +20178,30 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "TUD",
+      "author": "TUD · Na Li",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "HAW",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-10",
+        "files": [
+          {
+            "name": "lessonplan_MC-063-TUD.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-07-10",
+            "sha": "e13bc4c80ac216ea",
+            "rel": "4.3 Media & Culture/MC-063/lessonplan_MC-063-TUD.docx"
+          }
+        ],
         "folder": "MC-063"
       },
       "lesson_plan": {
@@ -18807,21 +20229,30 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "TUD",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "UNINA",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-10",
+        "files": [
+          {
+            "name": "lessonplan_MC-064-TUD.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-07-10",
+            "sha": "50ea74064bbd021a",
+            "rel": "4.3 Media & Culture/MC-064/lessonplan_MC-064-TUD.docx"
+          }
+        ],
         "folder": "MC-064"
       },
       "lesson_plan": {
@@ -18852,9 +20283,9 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Marieke Peeters",
       "coauthor": "",
-      "reviewer": "HAW",
+      "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -18875,10 +20306,26 @@
       "wiki_page": "https://hcaim.bme.hu/wiki/MC-065_Social_Psychology_In-Group_Out-Group_Dynamics",
       "wiki_sections": null,
       "realai": {
-        "involved": false,
-        "roles": []
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
       },
-      "completeness": null,
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
       "sources": [
         "wiki",
         "lesson_plan",
@@ -18895,11 +20342,11 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Marieke Peeters",
       "coauthor": "",
-      "reviewer": "REAL AI",
+      "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
@@ -18954,11 +20401,11 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Marieke Peeters",
       "coauthor": "",
-      "reviewer": "REAL AI",
+      "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
@@ -19013,11 +20460,11 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Marieke Peeters",
       "coauthor": "",
-      "reviewer": "REAL AI",
+      "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
@@ -19072,11 +20519,11 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Marieke Peeters",
       "coauthor": "",
-      "reviewer": "REAL AI",
+      "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
@@ -20307,9 +21754,9 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "Real AI · Tarry Singh , Tannistha Maiti",
+      "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "HAW",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -20405,7 +21852,7 @@
       "due_date": "",
       "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "TUD",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -20499,9 +21946,9 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "Real AI · Dorottya Egres",
-      "coauthor": "BME",
-      "reviewer": "",
+      "author": "Real AI",
+      "coauthor": "BME · Dorottya Egres",
+      "reviewer": "TUD",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -21902,10 +23349,19 @@
       "review_done": true,
       "review_note": "Strong foundations plan, minor revision. Add the healthcare-critical evaluation pieces (calibration and AUPRC, external/temporal validation, data leakage), name a concrete flawed example, and add one worked mini-case so the 'evaluate' outcome has a student activity; line up the outcome tags.",
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-06-30",
+        "files": [
+          {
+            "name": "HL001_v1.pdf",
+            "ext": "pdf",
+            "kb": 2731,
+            "date": "2026-06-30",
+            "sha": "92a341d1106f76b9",
+            "rel": "4.2 Health & Lifescience/HL-001/HL001_v1.pdf"
+          }
+        ],
         "folder": "HL-001"
       },
       "lesson_plan": {
@@ -21969,7 +23425,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -22086,285 +23542,109 @@
       "due_date": "",
       "author": "HU · Bas van Gestel / René van der Ploeg",
       "coauthor": "UNINA",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
       "review_note": "Major revision. Part 2 is built on library-size confounding but never teaches the fix (CPM or size-factor normalisation), and Part 1's text mislabels log2(count+1) as 'normalization'; the definitions slide is in Dutch; the lesson plan is not on the wiki yet.",
       "materials": {
-        "count": 73,
+        "count": 142,
         "has": true,
-        "newest": "2026-06-29",
+        "newest": "2026-07-01",
         "files": [
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-06-29",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
-            "name": "cell-33-output-1.png",
-            "ext": "png",
-            "kb": 55,
-            "date": "2026-06-29",
-            "sha": "6038d05a7ea67c6d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-33-output-1.png"
-          },
-          {
-            "name": "cell-35-output-1.png",
-            "ext": "png",
-            "kb": 88,
-            "date": "2026-06-29",
-            "sha": "9331c4214723c5cd",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-35-output-1.png"
-          },
-          {
-            "name": "cell-39-output-1.png",
-            "ext": "png",
-            "kb": 57,
-            "date": "2026-06-29",
-            "sha": "0bc65d7d2f4ed721",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-39-output-1.png"
-          },
           {
             "name": "mermaid.min.js",
             "ext": "js",
             "kb": 2684,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "07e37dfa97b337cc",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.min.js"
           },
           {
-            "name": "cell-24-output-1.png",
-            "ext": "png",
-            "kb": 37,
-            "date": "2026-06-29",
-            "sha": "d6d36c9ef6db0e32",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-24-output-1.png"
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-01",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
           },
           {
-            "name": "cell-34-output-1.png",
-            "ext": "png",
-            "kb": 66,
-            "date": "2026-06-29",
-            "sha": "8229577a3dfc4c6d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-34-output-1.png"
+            "name": "quarto-search.js",
+            "ext": "js",
+            "kb": 42,
+            "date": "2026-07-01",
+            "sha": "1a23221f499b3993",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/quarto-search.js"
           },
           {
-            "name": "cell-21-output-1.png",
-            "ext": "png",
-            "kb": 63,
-            "date": "2026-06-29",
-            "sha": "dc4cf7b8bd534ba0",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-21-output-1.png"
+            "name": "autocomplete.umd.js",
+            "ext": "js",
+            "kb": 94,
+            "date": "2026-07-01",
+            "sha": "cd9db3b7d812139a",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/autocomplete.umd.js"
           },
           {
-            "name": "cell-27-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-06-29",
-            "sha": "6b26c655b73be758",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-27-output-1.png"
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-07-01",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-07-01",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "fuse.min.js",
+            "ext": "js",
+            "kb": 22,
+            "date": "2026-07-01",
+            "sha": "c57339c3fa16b1d6",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/fuse.min.js"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-07-01",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-07-01",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
           },
           {
             "name": "mermaid-init.js",
             "ext": "js",
             "kb": 13,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "a68a1b7deabddb8d",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid-init.js"
           },
           {
-            "name": "cell-28-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-06-29",
-            "sha": "8e66430c70498dcc",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-28-output-1.png"
-          },
-          {
-            "name": "cell-19-output-1.png",
-            "ext": "png",
-            "kb": 53,
-            "date": "2026-06-29",
-            "sha": "6f49e0438eddd74e",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-19-output-1.png"
-          },
-          {
-            "name": "cell-14-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-06-29",
-            "sha": "8573a7ea7cc56ad9",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-14-output-1.png"
-          },
-          {
-            "name": "cell-30-output-1.png",
-            "ext": "png",
-            "kb": 68,
-            "date": "2026-06-29",
-            "sha": "a932e44caba28abe",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-30-output-1.png"
-          },
-          {
-            "name": "cell-40-output-1.png",
-            "ext": "png",
-            "kb": 62,
-            "date": "2026-06-29",
-            "sha": "06e34c8903add62c",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-40-output-1.png"
-          },
-          {
-            "name": "cell-15-output-1.png",
-            "ext": "png",
-            "kb": 59,
-            "date": "2026-06-29",
-            "sha": "7eba804a8882d493",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-15-output-1.png"
-          },
-          {
-            "name": "cell-35-output-1.png",
-            "ext": "png",
-            "kb": 89,
-            "date": "2026-06-29",
-            "sha": "83b26cb5b38f7f52",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-35-output-1.png"
-          },
-          {
-            "name": "cell-39-output-1.png",
-            "ext": "png",
-            "kb": 57,
-            "date": "2026-06-29",
-            "sha": "99178a578c6c1b75",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-39-output-1.png"
-          },
-          {
-            "name": "mermaid.css",
-            "ext": "css",
-            "kb": 0,
-            "date": "2026-06-29",
-            "sha": "7cde9e49bfab3857",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
-          },
-          {
-            "name": "cell-29-output-1.png",
-            "ext": "png",
-            "kb": 88,
-            "date": "2026-06-29",
-            "sha": "6cc368350f8f7dfc",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-29-output-1.png"
-          },
-          {
-            "name": "cell-15-output-1.png",
-            "ext": "png",
-            "kb": 59,
-            "date": "2026-06-29",
-            "sha": "7eba804a8882d493",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-15-output-1.png"
-          },
-          {
-            "name": "cell-24-output-1.png",
-            "ext": "png",
-            "kb": 37,
-            "date": "2026-06-29",
-            "sha": "558cd420f18a585f",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-24-output-1.png"
-          },
-          {
-            "name": "cell-34-output-1.png",
-            "ext": "png",
-            "kb": 66,
-            "date": "2026-06-29",
-            "sha": "9871d22424a33df4",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-34-output-1.png"
-          },
-          {
-            "name": "cell-33-output-1.png",
-            "ext": "png",
-            "kb": 58,
-            "date": "2026-06-29",
-            "sha": "0aef2657d3e752e1",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-33-output-1.png"
-          },
-          {
-            "name": "cell-21-output-1.png",
-            "ext": "png",
-            "kb": 63,
-            "date": "2026-06-29",
-            "sha": "cf8ed93f65479315",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-21-output-1.png"
-          },
-          {
-            "name": "cell-27-output-1.png",
-            "ext": "png",
-            "kb": 55,
-            "date": "2026-06-29",
-            "sha": "fe2afccd6bb7081d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-27-output-1.png"
-          },
-          {
-            "name": "cell-29-output-1.png",
-            "ext": "png",
-            "kb": 88,
-            "date": "2026-06-29",
-            "sha": "63b749244bf7fce4",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-29-output-1.png"
-          },
-          {
-            "name": "cell-28-output-1.png",
-            "ext": "png",
-            "kb": 67,
-            "date": "2026-06-29",
-            "sha": "f63d7472ab403f78",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-28-output-1.png"
-          },
-          {
-            "name": "cell-19-output-1.png",
-            "ext": "png",
-            "kb": 58,
-            "date": "2026-06-29",
-            "sha": "7790940d748aa4ed",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-19-output-1.png"
-          },
-          {
-            "name": "cell-14-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-06-29",
-            "sha": "8573a7ea7cc56ad9",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-14-output-1.png"
-          },
-          {
-            "name": "cell-30-output-1.png",
-            "ext": "png",
-            "kb": 68,
-            "date": "2026-06-29",
-            "sha": "a932e44caba28abe",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-30-output-1.png"
-          },
-          {
-            "name": "cell-40-output-1.png",
-            "ext": "png",
-            "kb": 64,
-            "date": "2026-06-29",
-            "sha": "54f40be8c57fdcc2",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-40-output-1.png"
-          },
-          {
-            "name": "bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css",
-            "ext": "css",
-            "kb": 486,
-            "date": "2026-06-29",
-            "sha": "6383064d07eacf8e",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css"
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-07-01",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto.js"
           },
           {
             "name": "tippy.css",
             "ext": "css",
             "kb": 1,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "5969f497d9158d76",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tippy.css"
           },
@@ -22372,49 +23652,225 @@
             "name": "tippy.umd.min.js",
             "ext": "js",
             "kb": 23,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "41181eeec6d7ba64",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tippy.umd.min.js"
-          },
-          {
-            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
-            "ext": "css",
-            "kb": 3,
-            "date": "2026-06-29",
-            "sha": "34a771139d2d6c07",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
-          },
-          {
-            "name": "anchor.min.js",
-            "ext": "js",
-            "kb": 5,
-            "date": "2026-06-29",
-            "sha": "69098e105d990f83",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/anchor.min.js"
-          },
-          {
-            "name": "popper.min.js",
-            "ext": "js",
-            "kb": 19,
-            "date": "2026-06-29",
-            "sha": "4d50586b184724d3",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/popper.min.js"
-          },
-          {
-            "name": "quarto-nav.js",
-            "ext": "js",
-            "kb": 9,
-            "date": "2026-06-29",
-            "sha": "a3e9c8c52dd54d78",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
           },
           {
             "name": "headroom.min.js",
             "ext": "js",
             "kb": 4,
-            "date": "2026-06-29",
+            "date": "2026-07-01",
             "sha": "5b80cc4165a661a3",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/headroom.min.js"
+          },
+          {
+            "name": "mermaid.css",
+            "ext": "css",
+            "kb": 0,
+            "date": "2026-07-01",
+            "sha": "7cde9e49bfab3857",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-07-01",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
+          },
+          {
+            "name": "cell-32-output-1.png",
+            "ext": "png",
+            "kb": 58,
+            "date": "2026-07-01",
+            "sha": "0aef2657d3e752e1",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-32-output-1.png"
+          },
+          {
+            "name": "cell-38-output-1.png",
+            "ext": "png",
+            "kb": 57,
+            "date": "2026-07-01",
+            "sha": "99178a578c6c1b75",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-38-output-1.png"
+          },
+          {
+            "name": "cell-39-output-1.png",
+            "ext": "png",
+            "kb": 64,
+            "date": "2026-07-01",
+            "sha": "54f40be8c57fdcc2",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-39-output-1.png"
+          },
+          {
+            "name": "cell-24-output-1.png",
+            "ext": "png",
+            "kb": 73,
+            "date": "2026-07-01",
+            "sha": "20705b99416400fd",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-24-output-1.png"
+          },
+          {
+            "name": "cell-34-output-1.png",
+            "ext": "png",
+            "kb": 89,
+            "date": "2026-07-01",
+            "sha": "83b26cb5b38f7f52",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-34-output-1.png"
+          },
+          {
+            "name": "cell-33-output-1.png",
+            "ext": "png",
+            "kb": 66,
+            "date": "2026-07-01",
+            "sha": "9871d22424a33df4",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-33-output-1.png"
+          },
+          {
+            "name": "cell-21-output-1.png",
+            "ext": "png",
+            "kb": 63,
+            "date": "2026-07-01",
+            "sha": "cf8ed93f65479315",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-21-output-1.png"
+          },
+          {
+            "name": "cell-27-output-1.png",
+            "ext": "png",
+            "kb": 55,
+            "date": "2026-07-01",
+            "sha": "fe2afccd6bb7081d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-27-output-1.png"
+          },
+          {
+            "name": "cell-19-output-1.png",
+            "ext": "png",
+            "kb": 58,
+            "date": "2026-07-01",
+            "sha": "7790940d748aa4ed",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-19-output-1.png"
+          },
+          {
+            "name": "cell-14-output-1.png",
+            "ext": "png",
+            "kb": 61,
+            "date": "2026-07-01",
+            "sha": "8573a7ea7cc56ad9",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-14-output-1.png"
+          },
+          {
+            "name": "cell-15-output-1.png",
+            "ext": "png",
+            "kb": 59,
+            "date": "2026-07-01",
+            "sha": "7eba804a8882d493",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-15-output-1.png"
+          },
+          {
+            "name": "cell-29-output-1.png",
+            "ext": "png",
+            "kb": 88,
+            "date": "2026-07-01",
+            "sha": "63b749244bf7fce4",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-29-output-1.png"
+          },
+          {
+            "name": "cell-28-output-1.png",
+            "ext": "png",
+            "kb": 67,
+            "date": "2026-07-01",
+            "sha": "f63d7472ab403f78",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-28-output-1.png"
+          },
+          {
+            "name": "cell-14-output-1.png",
+            "ext": "png",
+            "kb": 61,
+            "date": "2026-07-01",
+            "sha": "8573a7ea7cc56ad9",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-14-output-1.png"
+          },
+          {
+            "name": "cell-15-output-1.png",
+            "ext": "png",
+            "kb": 59,
+            "date": "2026-07-01",
+            "sha": "7eba804a8882d493",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-15-output-1.png"
+          },
+          {
+            "name": "cell-24-output-1.png",
+            "ext": "png",
+            "kb": 75,
+            "date": "2026-07-01",
+            "sha": "c8356e1a835fadd2",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-24-output-1.png"
+          },
+          {
+            "name": "cell-34-output-1.png",
+            "ext": "png",
+            "kb": 88,
+            "date": "2026-07-01",
+            "sha": "9331c4214723c5cd",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-34-output-1.png"
+          },
+          {
+            "name": "cell-33-output-1.png",
+            "ext": "png",
+            "kb": 66,
+            "date": "2026-07-01",
+            "sha": "8229577a3dfc4c6d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-33-output-1.png"
+          },
+          {
+            "name": "cell-21-output-1.png",
+            "ext": "png",
+            "kb": 63,
+            "date": "2026-07-01",
+            "sha": "dc4cf7b8bd534ba0",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-21-output-1.png"
+          },
+          {
+            "name": "cell-27-output-1.png",
+            "ext": "png",
+            "kb": 61,
+            "date": "2026-07-01",
+            "sha": "6b26c655b73be758",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-27-output-1.png"
+          },
+          {
+            "name": "cell-32-output-1.png",
+            "ext": "png",
+            "kb": 55,
+            "date": "2026-07-01",
+            "sha": "6038d05a7ea67c6d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-32-output-1.png"
+          },
+          {
+            "name": "cell-38-output-1.png",
+            "ext": "png",
+            "kb": 57,
+            "date": "2026-07-01",
+            "sha": "0bc65d7d2f4ed721",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-38-output-1.png"
+          },
+          {
+            "name": "cell-39-output-1.png",
+            "ext": "png",
+            "kb": 62,
+            "date": "2026-07-01",
+            "sha": "06e34c8903add62c",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-39-output-1.png"
+          },
+          {
+            "name": "cell-29-output-1.png",
+            "ext": "png",
+            "kb": 88,
+            "date": "2026-07-01",
+            "sha": "6cc368350f8f7dfc",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-29-output-1.png"
           }
         ],
         "folder": "HL-009"
@@ -22512,22 +23968,22 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-06-29",
+        "newest": "2026-07-14",
         "files": [
           {
             "name": "HL-048_firstdraft_updating.pptx",
             "ext": "pptx",
-            "kb": 4547,
-            "date": "2026-06-29",
-            "sha": "11a7242905d76f6c",
+            "kb": 4935,
+            "date": "2026-07-14",
+            "sha": "41b828363418b0d4",
             "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
           },
           {
             "name": "lessonplan_HL-048-TUD.docx",
             "ext": "docx",
-            "kb": 34,
-            "date": "2026-06-06",
-            "sha": "d2f9e081d5051572",
+            "kb": 41,
+            "date": "2026-07-11",
+            "sha": "04d64d1a6245ce88",
             "rel": "4.2 Health & Lifescience/HL-048/lessonplan_HL-048-TUD.docx"
           }
         ],
@@ -23004,7 +24460,7 @@
       "due_date": "",
       "author": "TUD · Mary Hendrick",
       "coauthor": "UNINA",
-      "reviewer": "RealAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
@@ -23934,9 +25390,9 @@
       "due_date": "",
       "author": "HU · Hubert Fonteijn",
       "coauthor": "",
-      "reviewer": "RAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": true,
       "review_note": "Well-scoped, minor-to-moderate. Split the single run-on outcome; make the case expose one fluent-but-wrong AI variance commentary (verify the causal claim, not the prose) and one over-eager anomaly flag (false positives and alert fatigue); state who owns the narrative that reaches the board; add rubric, timing, prep. 'Analist' typo.",
       "materials": {
@@ -24111,9 +25567,9 @@
       "due_date": "",
       "author": "HU · Hubert Fonteijn",
       "coauthor": "",
-      "reviewer": "RAI",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": true,
       "review_note": "One of the strongest plans, minor and additive. Add the 2026-current regulatory reality: EU AI Act high-risk for credit (Annex III, obligations from Aug 2026), ECOA adverse-action reasons, the 21 Jul 2026 CFPB change ending ECOA disparate impact (now disparate treatment via proxies + Fair Housing Act), and model risk management after SR 11-7's April 2026 rescission. Temper the accuracy gain (modest but consistent) and name SHAP's limits.",
       "materials": {
@@ -24669,6 +26125,65 @@
       ]
     },
     {
+      "code": "MC-065",
+      "track": "Media",
+      "title": "MC-065 Social Psychology In-Group Out-Group Dynamics",
+      "lesson_type": "Lecture",
+      "duration": "60",
+      "job_role": "Conflict",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
+      "due_date": "",
+      "author": "HU · Marieke Peeters",
+      "coauthor": "",
+      "reviewer": "Real AI · Tarry Singh",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": false,
+      "review_note": null,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "MC-065"
+      },
+      "lesson_plan": {
+        "doc": "MC-065_SocialIdentityTheory.docx",
+        "rel": "WP4.3 Media lesson plans/MC-065_SocialIdentityTheory.docx",
+        "has_meta_block": true,
+        "date": "2026-05-27"
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-065_Social_Psychology_In-Group_Out-Group_Dynamics",
+      "wiki_sections": null,
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": false,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
+        "lesson_plan",
+        "materials"
+      ]
+    },
+    {
       "code": "MC-066",
       "track": "Media",
       "title": "MC-066 Monitoring, Evaluation, And Reporting On The Responsible Use Of AI In Media",
@@ -24678,11 +26193,11 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Marieke Peeters",
       "coauthor": "",
-      "reviewer": "REAL AI",
+      "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
@@ -24737,11 +26252,11 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Marieke Peeters",
       "coauthor": "",
-      "reviewer": "REAL AI",
+      "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
@@ -24796,11 +26311,11 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Marieke Peeters",
       "coauthor": "",
-      "reviewer": "REAL AI",
+      "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
@@ -24855,11 +26370,11 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
+      "author": "HU · Marieke Peeters",
       "coauthor": "",
-      "reviewer": "REAL AI",
+      "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
-      "realai_wiki_gap": true,
+      "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
@@ -24914,9 +26429,9 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "Real AI · Tarry Singh , Tannistha Maiti",
+      "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "HAW",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25012,7 +26527,7 @@
       "due_date": "",
       "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "TUD",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25106,9 +26621,9 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "Real AI · Dorottya Egres",
-      "coauthor": "BME",
-      "reviewer": "",
+      "author": "Real AI",
+      "coauthor": "BME · Dorottya Egres",
+      "reviewer": "TUD",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25300,7 +26815,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "Real AI · Tarry Singh",
@@ -25396,7 +26911,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "Real AI · Tarry Singh",
@@ -25492,7 +27007,7 @@
       "job_role": "BSAIC",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
-      "due_date": "",
+      "due_date": "2027-01-01",
       "author": "TUD · Maurice Martin",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "Real AI · Tarry Singh",
