@@ -2,15 +2,15 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-07-14T13:10:05.520713+00:00",
-  "refreshed_at": "2026-07-14T13:10:05.520713+00:00",
+  "generated_at": "2026-07-14T14:55:42.477889+00:00",
+  "refreshed_at": "2026-07-14T14:55:42.477889+00:00",
   "refresh_history": [
     {
       "at": "2026-07-14T10:26:26.387000+00:00",
       "wiki_captured": "2026-07-14T10:23:47.406Z",
       "sharepoint_generated": "2026-07-14T12:26:26.323140Z",
       "realai_total": 56,
-      "reviewed": 33
+      "reviewed": 38
     },
     {
       "at": "2026-07-01T22:08:06.851274+02:00",
@@ -73,7 +73,7 @@
       "total": 56,
       "author": 11,
       "reviewer": 45,
-      "reviewed": 33,
+      "reviewed": 38,
       "by_status": {
         "In development": 16,
         "In review": 32,
@@ -20288,8 +20288,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Strong social-psych plan; name the theory stack (Tajfel & Turner 1979, minimal group paradigm, Sherif, self-categorisation); teach algorithm-to-polarization as contested (2023 Facebook/Instagram Science studies), honest intervention effect sizes; add readings, a gradable activity, DSA/Code-of-Conduct overlay. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
@@ -20347,8 +20347,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Strong monitoring/evaluation arc; anchor to NIST AI RMF + EU HLEG seven requirements/ALTAI + a real bias taxonomy; name which regime bites (DSA Art 34/35, AI Act Art 50). Split the run-on outcomes; job role 'Comm$Conflict' is an unrendered separator; add rubric/refs. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
@@ -20406,8 +20406,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Good participatory-design plan (multiple outcomes); name VSD/Scandinavian PD, stakeholder salience, human-in/on/-command vocabulary + AI Act Art 14; oversight is not auto-effective (automation bias); fairness impossibility. Instructions section empty; 'Comm$Conflict' glitch. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
@@ -20465,8 +20465,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Multi-level DSS plan; ground situation awareness (Endsley), remap 'revocable AI' to meaningful human control + AI Act Art 14, add conflict-resolution theory (Fisher & Ury etc.); caution: explainability is not automatically a benefit (over-reliance/automation bias). Watch 4-Bloom load; add materials/rubric. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
@@ -20524,8 +20524,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Well-structured cycle; name the CRISP-DM lineage + VSD; fairness is not one metric (impossibility result, Kleinberg/Chouldechova); ground transparency in model cards/datasheets; misinformation-polarization link is contested. Keywords field reads 'None' (bug); add rubric/prep. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
@@ -26139,8 +26139,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Strong social-psych plan; name the theory stack (Tajfel & Turner 1979, minimal group paradigm, Sherif, self-categorisation); teach algorithm-to-polarization as contested (2023 Facebook/Instagram Science studies), honest intervention effect sizes; add readings, a gradable activity, DSA/Code-of-Conduct overlay. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
@@ -26198,8 +26198,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Strong monitoring/evaluation arc; anchor to NIST AI RMF + EU HLEG seven requirements/ALTAI + a real bias taxonomy; name which regime bites (DSA Art 34/35, AI Act Art 50). Split the run-on outcomes; job role 'Comm$Conflict' is an unrendered separator; add rubric/refs. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
@@ -26257,8 +26257,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Good participatory-design plan (multiple outcomes); name VSD/Scandinavian PD, stakeholder salience, human-in/on/-command vocabulary + AI Act Art 14; oversight is not auto-effective (automation bias); fairness impossibility. Instructions section empty; 'Comm$Conflict' glitch. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
@@ -26316,8 +26316,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Multi-level DSS plan; ground situation awareness (Endsley), remap 'revocable AI' to meaningful human control + AI Act Art 14, add conflict-resolution theory (Fisher & Ury etc.); caution: explainability is not automatically a benefit (over-reliance/automation bias). Watch 4-Bloom load; add materials/rubric. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
@@ -26375,8 +26375,8 @@
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Well-structured cycle; name the CRISP-DM lineage + VSD; fairness is not one metric (impossibility result, Kleinberg/Chouldechova); ground transparency in model cards/datasheets; misinformation-polarization link is contested. Keywords field reads 'None' (bug); add rubric/prep. Draft-stage.",
       "materials": {
         "count": 0,
         "has": false,
