@@ -852,6 +852,24 @@ html {
   background: var(--read-hair);
 }
 
+/* /blog Dispatches — "Slate" DARK sibling. The base [data-read-mode="dark"]
+   register is warm (cream ink #f6ead0 + amber #e8a44a); align /blog to the
+   Slate family instead — cool off-white ink + a periwinkle-indigo accent (the
+   dark sibling of #3355cc). The whole dark reader (prose, title, header
+   kicker/meta/pills, hairlines) is already token-driven, so overriding the
+   tokens here repaints all of it. --read-bg stays the cool navy. Scoped to
+   .read-dispatch, so /synaptic essays keep their warm dark register. */
+.read-dispatch[data-read-mode="dark"] {
+  --read-fg: #eceff5;
+  --read-fg-muted: rgba(236, 239, 245, 0.68);
+  --read-fg-soft: rgba(236, 239, 245, 0.46);
+  --read-accent: #8aa4f4;
+  --read-accent-soft: rgba(138, 164, 244, 0.5);
+  --read-hair: rgba(236, 239, 245, 0.14);
+  --read-surface: rgba(236, 239, 245, 0.05);
+  --read-surface-border: rgba(236, 239, 245, 0.12);
+}
+
 /* — Dark-mode body overrides. Light mode keeps the existing utility
      colours untouched; these only bite when data-read-mode="dark". — */
 [data-read-mode="dark"] .prose-tarry,
