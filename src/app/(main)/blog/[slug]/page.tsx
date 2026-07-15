@@ -164,6 +164,7 @@ export default async function BlogPostPage({
   // continuity, but the background now comes from --read-bg so the dark
   // toggle flips the whole surface. Drop-cap on Essays only.
   const articleClass = [
+    "read-dispatch",
     isStudioTheme ? "theme-studio" : "theme-editorial",
     post.category === "Essays" ? "read-dropcap" : "",
   ]

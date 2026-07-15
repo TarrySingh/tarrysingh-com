@@ -806,6 +806,52 @@ html {
   --read-bg: #f2f7f2;
 }
 
+/* ────────────────────────────────────────────────────────────────────
+   /blog Dispatches — "Slate" light paper. Scoped to .read-dispatch (only
+   the blog [slug] reader carries it) so /synaptic essays keep their own
+   surfaces. Dark mode is deliberately untouched — this only bites when
+   data-read-mode="light". Light-mode prose colours are NOT driven by the
+   --read-* tokens (they come from base .prose-tarry / .theme-studio, which
+   hard-code the old rust links), so we set both the tokens AND the prose
+   colours here, mirroring the dark-mode override block below.
+   ──────────────────────────────────────────────────────────────────── */
+.read-dispatch[data-read-mode="light"] {
+  --read-bg: #eceff3;
+  --read-fg: #101a2c;
+  --read-fg-muted: rgba(16, 26, 44, 0.63);
+  --read-fg-soft: rgba(16, 26, 44, 0.44);
+  --read-accent: #3355cc;
+  --read-accent-soft: rgba(51, 85, 204, 0.42);
+  --read-hair: rgba(16, 26, 44, 0.11);
+  --read-surface: rgba(16, 26, 44, 0.045);
+  --read-surface-border: rgba(16, 26, 44, 0.1);
+}
+.read-dispatch[data-read-mode="light"] .prose-tarry,
+.read-dispatch[data-read-mode="light"] .prose-tarry p,
+.read-dispatch[data-read-mode="light"] .prose-tarry li,
+.read-dispatch[data-read-mode="light"] .prose-tarry ul,
+.read-dispatch[data-read-mode="light"] .prose-tarry ol {
+  color: var(--read-fg-muted);
+}
+.read-dispatch[data-read-mode="light"] .prose-tarry h1,
+.read-dispatch[data-read-mode="light"] .prose-tarry h2,
+.read-dispatch[data-read-mode="light"] .prose-tarry h3,
+.read-dispatch[data-read-mode="light"] .prose-tarry strong,
+.read-dispatch[data-read-mode="light"] .prose-tarry em {
+  color: var(--read-fg);
+}
+.read-dispatch[data-read-mode="light"] .prose-tarry a {
+  color: var(--read-accent);
+  text-decoration-color: var(--read-accent-soft);
+}
+.read-dispatch[data-read-mode="light"] .prose-tarry blockquote {
+  border-left-color: var(--read-accent);
+  color: var(--read-fg-muted);
+}
+.read-dispatch[data-read-mode="light"] .prose-tarry hr {
+  background: var(--read-hair);
+}
+
 /* — Dark-mode body overrides. Light mode keeps the existing utility
      colours untouched; these only bite when data-read-mode="dark". — */
 [data-read-mode="dark"] .prose-tarry,
