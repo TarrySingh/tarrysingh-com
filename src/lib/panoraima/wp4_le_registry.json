@@ -2,9 +2,23 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-07-18T14:52:42.961041+00:00",
-  "refreshed_at": "2026-07-18T14:52:42.961041+00:00",
+  "generated_at": "2026-07-21T12:15:47.828982+00:00",
+  "refreshed_at": "2026-07-21T12:15:47.828982+00:00",
   "refresh_history": [
+    {
+      "at": "2026-07-21T12:15:47.828982+00:00",
+      "wiki_captured": "2026-07-21T12:14:10.880Z",
+      "sharepoint_generated": "2026-07-21T14:15:47.681664Z",
+      "realai_total": 56,
+      "reviewed": 38
+    },
+    {
+      "at": "2026-07-21T12:14:31.662492+00:00",
+      "wiki_captured": "2026-07-21T12:14:10.880Z",
+      "sharepoint_generated": "2026-07-21T14:14:31.607124Z",
+      "realai_total": 36,
+      "reviewed": 20
+    },
     {
       "at": "2026-07-18T14:52:42.961041+00:00",
       "wiki_captured": "2026-07-18T14:52:03.682Z",
@@ -37,14 +51,14 @@
   "data_sources": {
     "wiki": {
       "status": "live",
-      "captured_at": "2026-07-18T14:52:03.682Z",
+      "captured_at": "2026-07-21T12:14:10.880Z",
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-07-18T16:52:42.847282Z",
+      "generated_at": "2026-07-21T14:15:47.681664Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 79,
+        "with_materials": 80,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -61,17 +75,17 @@
       "Media": 89
     },
     "by_status": {
-      "In development": 190,
+      "In development": 192,
       "Status not set": 73,
-      "In review": 159,
-      "Materials in progress": 14
+      "In review": 155,
+      "Materials in progress": 16
     },
-    "with_materials": 79,
-    "materials_pending": 357,
+    "with_materials": 80,
+    "materials_pending": 356,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 79,
-      "awaiting_material": 357,
+      "with_sharepoint_material": 80,
+      "awaiting_material": 356,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -8853,8 +8867,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Dorottya Egres",
       "coauthor": "UNIWA · Dimitris Kogias",
@@ -8904,8 +8918,8 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Dorottya Egres",
       "coauthor": "UNIWA · Dimitrios Kogias",
@@ -9202,8 +9216,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Maria Nisheva",
       "coauthor": "BME · András Gézsi",
@@ -9254,8 +9268,8 @@
       "lesson_type": "Tutorial",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Maria Nisheva",
       "coauthor": "BME · András Gézsi",
@@ -9265,10 +9279,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-07-20",
+        "files": [
+          {
+            "name": "HC-152_Protege tutorial 2.pdf",
+            "ext": "pdf",
+            "kb": 1171,
+            "date": "2026-07-20",
+            "sha": "a579133e9e288c59",
+            "rel": "4.1 Horizontal/HC-152/HC-152_Protege tutorial 2.pdf"
+          },
+          {
+            "name": "Presentation HC-152.pdf",
+            "ext": "pdf",
+            "kb": 484,
+            "date": "2026-07-20",
+            "sha": "4333477984a279d6",
+            "rel": "4.1 Horizontal/HC-152/Presentation HC-152.pdf"
+          },
+          {
+            "name": "HC-152_Protege tutorial 1.pdf",
+            "ext": "pdf",
+            "kb": 2130,
+            "date": "2026-07-20",
+            "sha": "ce10a7da0f0a878d",
+            "rel": "4.1 Horizontal/HC-152/HC-152_Protege tutorial 1.pdf"
+          }
+        ],
         "folder": "HC-152"
       },
       "lesson_plan": {
@@ -10832,20 +10871,20 @@
         "newest": "2026-07-10",
         "files": [
           {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-07-10",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
             "name": "quarto-search.js",
             "ext": "js",
             "kb": 42,
             "date": "2026-07-10",
             "sha": "1a23221f499b3993",
             "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/quarto-search.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-10",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tabsets/tabsets.js"
           },
           {
             "name": "tippy.css",
@@ -11008,20 +11047,20 @@
             "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-icons.woff"
           },
           {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-07-10",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
             "name": "clipboard.min.js",
             "ext": "js",
             "kb": 8,
             "date": "2026-07-10",
             "sha": "e17a1d816e13c082",
             "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-10",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tabsets/tabsets.js"
           },
           {
             "name": "bootstrap-icons.css",
@@ -11227,20 +11266,20 @@
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/popper.min.js"
           },
           {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-06-19",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
             "name": "clipboard.min.js",
             "ext": "js",
             "kb": 8,
             "date": "2026-06-19",
             "sha": "e17a1d816e13c082",
             "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-06-19",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-006/3_resources_files/libs/quarto-html/tabsets/tabsets.js"
           },
           {
             "name": "quarto.js",
@@ -11606,30 +11645,6 @@
             "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/diagnoses.csv"
           },
           {
-            "name": "run_tutorial_code_on_course_data.py",
-            "ext": "py",
-            "kb": 12,
-            "date": "2026-07-09",
-            "sha": "0fcfe5447cc48312",
-            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/run_tutorial_code_on_course_data.py"
-          },
-          {
-            "name": "create_course_csvs_from_nhanes.py",
-            "ext": "py",
-            "kb": 9,
-            "date": "2026-07-09",
-            "sha": "ce8d99554ac24226",
-            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/create_course_csvs_from_nhanes.py"
-          },
-          {
-            "name": "download_chembl_homework_data.py",
-            "ext": "py",
-            "kb": 9,
-            "date": "2026-07-09",
-            "sha": "e86f8a8206cdcfc2",
-            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/download_chembl_homework_data.py"
-          },
-          {
             "name": "medications.csv",
             "ext": "csv",
             "kb": 307,
@@ -11654,44 +11669,28 @@
             "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/data/clinical_sample.csv"
           },
           {
-            "name": "assays.csv",
-            "ext": "csv",
-            "kb": 3,
-            "date": "2026-07-09",
-            "sha": "003aea008bde1080",
-            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/assays.csv"
-          },
-          {
-            "name": "molecules.csv",
-            "ext": "csv",
-            "kb": 21,
-            "date": "2026-07-09",
-            "sha": "e19e66a08c7caa84",
-            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/molecules.csv"
-          },
-          {
-            "name": "activities.csv",
-            "ext": "csv",
-            "kb": 23,
-            "date": "2026-07-09",
-            "sha": "71f0d710724ba6f5",
-            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/activities.csv"
-          },
-          {
-            "name": "targets.csv",
-            "ext": "csv",
-            "kb": 0,
-            "date": "2026-07-09",
-            "sha": "5335fb84685fe9a2",
-            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/targets.csv"
-          },
-          {
-            "name": "dataset_size_and_download_practice.py",
+            "name": "run_tutorial_code_on_course_data.py",
             "ext": "py",
-            "kb": 7,
+            "kb": 12,
             "date": "2026-07-09",
-            "sha": "1f28b1dd1af42fbf",
-            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/dataset_size_and_download_practice.py"
+            "sha": "0fcfe5447cc48312",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/run_tutorial_code_on_course_data.py"
+          },
+          {
+            "name": "create_course_csvs_from_nhanes.py",
+            "ext": "py",
+            "kb": 9,
+            "date": "2026-07-09",
+            "sha": "ce8d99554ac24226",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/create_course_csvs_from_nhanes.py"
+          },
+          {
+            "name": "download_chembl_homework_data.py",
+            "ext": "py",
+            "kb": 9,
+            "date": "2026-07-09",
+            "sha": "e86f8a8206cdcfc2",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/download_chembl_homework_data.py"
           },
           {
             "name": "molecules.csv",
@@ -11748,6 +11747,46 @@
             "date": "2026-07-09",
             "sha": "e86f8a8206cdcfc2",
             "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/student_package/scripts/download_chembl_homework_data.py"
+          },
+          {
+            "name": "assays.csv",
+            "ext": "csv",
+            "kb": 3,
+            "date": "2026-07-09",
+            "sha": "003aea008bde1080",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/assays.csv"
+          },
+          {
+            "name": "molecules.csv",
+            "ext": "csv",
+            "kb": 21,
+            "date": "2026-07-09",
+            "sha": "e19e66a08c7caa84",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/molecules.csv"
+          },
+          {
+            "name": "activities.csv",
+            "ext": "csv",
+            "kb": 23,
+            "date": "2026-07-09",
+            "sha": "71f0d710724ba6f5",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/activities.csv"
+          },
+          {
+            "name": "targets.csv",
+            "ext": "csv",
+            "kb": 0,
+            "date": "2026-07-09",
+            "sha": "5335fb84685fe9a2",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/data_chembl_homework/targets.csv"
+          },
+          {
+            "name": "dataset_size_and_download_practice.py",
+            "ext": "py",
+            "kb": 7,
+            "date": "2026-07-09",
+            "sha": "1f28b1dd1af42fbf",
+            "rel": "4.2 Health & Lifescience/HL-007/3_course_files/student_materials/course_workspace/scripts/dataset_size_and_download_practice.py"
           },
           {
             "name": "lab_measurements.csv",
@@ -11947,14 +11986,6 @@
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.min.js"
           },
           {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-07-01",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
             "name": "quarto-search.js",
             "ext": "js",
             "kb": 42,
@@ -11977,6 +12008,14 @@
             "date": "2026-07-01",
             "sha": "e17a1d816e13c082",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-01",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
           },
           {
             "name": "popper.min.js",
@@ -12051,22 +12090,6 @@
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/headroom.min.js"
           },
           {
-            "name": "mermaid.css",
-            "ext": "css",
-            "kb": 0,
-            "date": "2026-07-01",
-            "sha": "7cde9e49bfab3857",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
-          },
-          {
-            "name": "quarto-nav.js",
-            "ext": "js",
-            "kb": 9,
-            "date": "2026-07-01",
-            "sha": "a3e9c8c52dd54d78",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
-          },
-          {
             "name": "cell-32-output-1.png",
             "ext": "png",
             "kb": 58,
@@ -12089,6 +12112,22 @@
             "date": "2026-07-01",
             "sha": "54f40be8c57fdcc2",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-39-output-1.png"
+          },
+          {
+            "name": "mermaid.css",
+            "ext": "css",
+            "kb": 0,
+            "date": "2026-07-01",
+            "sha": "7cde9e49bfab3857",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-07-01",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
           },
           {
             "name": "cell-24-output-1.png",
@@ -12251,12 +12290,12 @@
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-39-output-1.png"
           },
           {
-            "name": "cell-29-output-1.png",
-            "ext": "png",
-            "kb": 88,
+            "name": "bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css",
+            "ext": "css",
+            "kb": 486,
             "date": "2026-07-01",
-            "sha": "6cc368350f8f7dfc",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-29-output-1.png"
+            "sha": "6383064d07eacf8e",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css"
           }
         ],
         "folder": "HL-009"
@@ -12552,6 +12591,30 @@
             "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-diagram/mermaid.min.js"
           },
           {
+            "name": "mermaid-init.js",
+            "ext": "js",
+            "kb": 13,
+            "date": "2026-07-14",
+            "sha": "a68a1b7deabddb8d",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-diagram/mermaid-init.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-07-14",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-14",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
             "name": "ngra_model_comparison.py",
             "ext": "py",
             "kb": 11,
@@ -12574,30 +12637,6 @@
             "date": "2026-07-14",
             "sha": "9419319b558b1b6d",
             "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/data/unknown_compounds.csv"
-          },
-          {
-            "name": "mermaid-init.js",
-            "ext": "js",
-            "kb": 13,
-            "date": "2026-07-14",
-            "sha": "a68a1b7deabddb8d",
-            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-diagram/mermaid-init.js"
-          },
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-07-14",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
-            "name": "clipboard.min.js",
-            "ext": "js",
-            "kb": 8,
-            "date": "2026-07-14",
-            "sha": "e17a1d816e13c082",
-            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
           },
           {
             "name": "mermaid.css",
@@ -12680,14 +12719,6 @@
             "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-search/autocomplete.umd.js"
           },
           {
-            "name": "ngra_case_study_worksheet.docx",
-            "ext": "docx",
-            "kb": 13,
-            "date": "2026-07-14",
-            "sha": "32ad7e425533a408",
-            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/worksheets/ngra_case_study_worksheet.docx"
-          },
-          {
             "name": "bootstrap-icons.css",
             "ext": "css",
             "kb": 97,
@@ -12736,20 +12767,12 @@
             "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/site_libs/quarto-html/popper.min.js"
           },
           {
-            "name": "panoraima.png",
-            "ext": "png",
-            "kb": 62,
+            "name": "ngra_case_study_worksheet.docx",
+            "ext": "docx",
+            "kb": 13,
             "date": "2026-07-14",
-            "sha": "490f6b31c9980972",
-            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/assets/panoraima.png"
-          },
-          {
-            "name": "ngra_course_files.zip",
-            "ext": "zip",
-            "kb": 12,
-            "date": "2026-07-14",
-            "sha": "502fa07102d39d81",
-            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/downloads/ngra_course_files.zip"
+            "sha": "32ad7e425533a408",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/worksheets/ngra_case_study_worksheet.docx"
           },
           {
             "name": "ngra_case_study_worksheet.docx",
@@ -12784,6 +12807,22 @@
             "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/data/unknown_compounds.csv"
           },
           {
+            "name": "panoraima.png",
+            "ext": "png",
+            "kb": 62,
+            "date": "2026-07-14",
+            "sha": "490f6b31c9980972",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/assets/panoraima.png"
+          },
+          {
+            "name": "ngra_course_files.zip",
+            "ext": "zip",
+            "kb": 12,
+            "date": "2026-07-14",
+            "sha": "502fa07102d39d81",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/downloads/ngra_course_files.zip"
+          },
+          {
             "name": "resources.html",
             "ext": "html",
             "kb": 45,
@@ -12813,30 +12852,6 @@
             "kb": 0,
             "date": "2026-07-14",
             "sha": "5b5b2c5799bc9e69",
-            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/requirements.txt"
-          },
-          {
-            "name": "README.md",
-            "ext": "md",
-            "kb": 2,
-            "date": "2026-07-14",
-            "sha": "d67e68bb73b0aa2f",
-            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/README.md"
-          },
-          {
-            "name": "README_MODEL_EXERCISE.md",
-            "ext": "md",
-            "kb": 1,
-            "date": "2026-07-14",
-            "sha": "ace1eff55985b231",
-            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/README_MODEL_EXERCISE.md"
-          },
-          {
-            "name": "requirements.txt",
-            "ext": "txt",
-            "kb": 0,
-            "date": "2026-07-14",
-            "sha": "5b5b2c5799bc9e69",
             "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/requirements.txt"
           },
           {
@@ -12854,6 +12869,30 @@
             "date": "2026-07-14",
             "sha": "ace1eff55985b231",
             "rel": "4.2 Health & Lifescience/HL-013/3_course_files/course_files/README_MODEL_EXERCISE.md"
+          },
+          {
+            "name": "requirements.txt",
+            "ext": "txt",
+            "kb": 0,
+            "date": "2026-07-14",
+            "sha": "5b5b2c5799bc9e69",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/requirements.txt"
+          },
+          {
+            "name": "README.md",
+            "ext": "md",
+            "kb": 2,
+            "date": "2026-07-14",
+            "sha": "d67e68bb73b0aa2f",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/README.md"
+          },
+          {
+            "name": "README_MODEL_EXERCISE.md",
+            "ext": "md",
+            "kb": 1,
+            "date": "2026-07-14",
+            "sha": "ace1eff55985b231",
+            "rel": "4.2 Health & Lifescience/HL-013/3_course_files/reader/course_files/README_MODEL_EXERCISE.md"
           }
         ],
         "folder": "HL-013"
@@ -13041,14 +13080,6 @@
             "rel": "4.2 Health & Lifescience/HL-017/0a_lessonplan_toxicology.docx"
           },
           {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-07-14",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
             "name": "case_05_tox21_nr_ppar_gamma.csv",
             "ext": "csv",
             "kb": 75,
@@ -13103,6 +13134,14 @@
             "date": "2026-07-14",
             "sha": "eed13469e8adf64b",
             "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/case_datasets/case_04_tox21_nr_er.csv"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-14",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
           },
           {
             "name": "case_06_tox21_sr_are.csv",
@@ -13217,6 +13256,14 @@
             "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-html/popper.min.js"
           },
           {
+            "name": "create_case_datasets.cpython-314.pyc",
+            "ext": "pyc",
+            "kb": 14,
+            "date": "2026-07-14",
+            "sha": "94e2c6a4c65785be",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/__pycache__/create_case_datasets.cpython-314.pyc"
+          },
+          {
             "name": "mermaid-init.js",
             "ext": "js",
             "kb": 13,
@@ -13273,12 +13320,20 @@
             "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
           },
           {
-            "name": "create_case_datasets.cpython-314.pyc",
-            "ext": "pyc",
-            "kb": 14,
+            "name": "02_lab2_extra_teacher.py",
+            "ext": "py",
+            "kb": 499,
             "date": "2026-07-14",
-            "sha": "94e2c6a4c65785be",
-            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/datasets/__pycache__/create_case_datasets.cpython-314.pyc"
+            "sha": "6dd1639ebb1b3507",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/scripts/02_lab2_extra_teacher.py"
+          },
+          {
+            "name": "01_lab1_student.py",
+            "ext": "py",
+            "kb": 112,
+            "date": "2026-07-14",
+            "sha": "67801afcc5fffd26",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/scripts/01_lab1_student.py"
           },
           {
             "name": "mermaid.css",
@@ -13313,36 +13368,20 @@
             "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/site_libs/quarto-search/autocomplete.umd.js"
           },
           {
-            "name": "02_lab2_extra_teacher.py",
-            "ext": "py",
-            "kb": 499,
+            "name": "POWERPOINT_OUTLINE.md",
+            "ext": "md",
+            "kb": 6,
             "date": "2026-07-14",
-            "sha": "6dd1639ebb1b3507",
-            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/scripts/02_lab2_extra_teacher.py"
+            "sha": "b96f7b350f41a037",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/teacher/slides/POWERPOINT_OUTLINE.md"
           },
           {
-            "name": "01_lab1_student.py",
-            "ext": "py",
-            "kb": 112,
-            "date": "2026-07-14",
-            "sha": "67801afcc5fffd26",
-            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/scripts/01_lab1_student.py"
-          },
-          {
-            "name": "student_four_slide_template.pptx",
+            "name": "01_ngra_intro.pptx",
             "ext": "pptx",
-            "kb": 34,
+            "kb": 208,
             "date": "2026-07-14",
-            "sha": "6d57de25a4490083",
-            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/reader/downloads/student_four_slide_template.pptx"
-          },
-          {
-            "name": "02_lab2_extra_student.py",
-            "ext": "py",
-            "kb": 499,
-            "date": "2026-07-14",
-            "sha": "457e83c4587911d5",
-            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/course_files/scripts/02_lab2_extra_student.py"
+            "sha": "70a7aff40f7d7194",
+            "rel": "4.2 Health & Lifescience/HL-017/3_course_files/teacher/slides/01_ngra_intro.pptx"
           }
         ],
         "folder": "HL-017"
@@ -14572,14 +14611,14 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-07-17",
+        "newest": "2026-07-19",
         "files": [
           {
             "name": "HL-048_firstdraft_updating.pptx",
             "ext": "pptx",
-            "kb": 4978,
-            "date": "2026-07-17",
-            "sha": "6e6570d2efb49904",
+            "kb": 5145,
+            "date": "2026-07-19",
+            "sha": "ca6f910b712ffc81",
             "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
           },
           {
@@ -20318,7 +20357,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "TUD",
+      "author": "TUD · Na Li",
       "coauthor": "",
       "reviewer": "UNINA",
       "off_wiki": false,
@@ -23643,14 +23682,6 @@
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.min.js"
           },
           {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-07-01",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
             "name": "quarto-search.js",
             "ext": "js",
             "kb": 42,
@@ -23673,6 +23704,14 @@
             "date": "2026-07-01",
             "sha": "e17a1d816e13c082",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-01",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
           },
           {
             "name": "popper.min.js",
@@ -23747,22 +23786,6 @@
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/headroom.min.js"
           },
           {
-            "name": "mermaid.css",
-            "ext": "css",
-            "kb": 0,
-            "date": "2026-07-01",
-            "sha": "7cde9e49bfab3857",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
-          },
-          {
-            "name": "quarto-nav.js",
-            "ext": "js",
-            "kb": 9,
-            "date": "2026-07-01",
-            "sha": "a3e9c8c52dd54d78",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
-          },
-          {
             "name": "cell-32-output-1.png",
             "ext": "png",
             "kb": 58,
@@ -23785,6 +23808,22 @@
             "date": "2026-07-01",
             "sha": "54f40be8c57fdcc2",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-39-output-1.png"
+          },
+          {
+            "name": "mermaid.css",
+            "ext": "css",
+            "kb": 0,
+            "date": "2026-07-01",
+            "sha": "7cde9e49bfab3857",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-07-01",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
           },
           {
             "name": "cell-24-output-1.png",
@@ -23947,12 +23986,12 @@
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-39-output-1.png"
           },
           {
-            "name": "cell-29-output-1.png",
-            "ext": "png",
-            "kb": 88,
+            "name": "bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css",
+            "ext": "css",
+            "kb": 486,
             "date": "2026-07-01",
-            "sha": "6cc368350f8f7dfc",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-29-output-1.png"
+            "sha": "6383064d07eacf8e",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css"
           }
         ],
         "folder": "HL-009"
@@ -24145,14 +24184,14 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-07-17",
+        "newest": "2026-07-19",
         "files": [
           {
             "name": "HL-048_firstdraft_updating.pptx",
             "ext": "pptx",
-            "kb": 4978,
-            "date": "2026-07-17",
-            "sha": "6e6570d2efb49904",
+            "kb": 5145,
+            "date": "2026-07-19",
+            "sha": "ca6f910b712ffc81",
             "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
           },
           {

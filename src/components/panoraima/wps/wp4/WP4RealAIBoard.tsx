@@ -297,17 +297,33 @@ function pillCounts(les: Wp4LE[]) {
   return { author, reviewer, needs, authorTodo, ready, reviewed }
 }
 
-// One-line state for an LE in the update report.
-function reportState(le: Wp4LE): string {
-  if (le.review_done) return "Reviewed (posted to wiki)"
-  const c = le.completeness
-  if (c?.ready_to_review) return "Ready to review"
-  if (c && c.author_needs.length > 0) return "Author content outstanding"
-  if (le.realai_wiki_gap || le.off_wiki) return "Pending wiki listing"
-  return "In progress"
+// Reviewer inbox — the addresses an author must ping when material/plan is ready.
+const REVIEW_INBOX = "tannistha.maiti@realai.eu, monira.majhabeen@realai.eu"
+
+// Is the SharePoint lesson material present for this LE?
+function hasMaterial(le: Wp4LE): boolean {
+  return le.materials?.has ?? le.completeness?.materials_uploaded ?? false
 }
 
-// Build a plain-text status report for a track lead — copy into an email or send as-is.
+// The concrete next step the responsible author must take before RealAI can move.
+// Derived from plan completeness (wiki) + material presence (SharePoint).
+function authorAction(le: Wp4LE): string {
+  const planDone = le.completeness?.instructions_written ?? false
+  if (!planDone) {
+    return "Complete the lesson plan on the wiki (the detailed teacher instructions are still missing), then create the lesson material and upload it to the SharePoint LE folder."
+  }
+  return "The lesson plan is in place — create the lesson material (slides / notebook) and upload it to the SharePoint LE folder."
+}
+
+// LE title with the leading code stripped, for report lines.
+function cleanTitle(le: Wp4LE): string {
+  let t = le.title?.trim() || ""
+  if (t.startsWith(le.code)) t = t.slice(le.code.length).replace(/^[\s—:-]+/, "").trim()
+  return t
+}
+
+// Build a plain-text status report for the track lead AND the concerned authors —
+// deterministic (registry-derived), track-scoped, ready to paste into an email.
 function buildReport(
   track: string | null,
   les: Wp4LE[],
@@ -318,34 +334,85 @@ function buildReport(
   const date = new Date(registry.refreshed_at || registry.generated_at)
     .toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
   const gap = les.filter(le => le.realai_wiki_gap || le.off_wiki).length
+
+  // Buckets, by who the ball is with.
+  const authored = les.filter(le => le.completeness?.is_author)          // RealAI authors these
+  const reviewer = les.filter(le => !le.completeness?.is_author)         // RealAI reviews these
+  const completed = reviewer.filter(le => le.review_done)
+  const waitingUs = reviewer.filter(le => !le.review_done && hasMaterial(le))
+  const waitingAuthor = reviewer.filter(le => !le.review_done && !hasMaterial(le))
+  const byCode = (a: Wp4LE, b: Wp4LE) => a.code.localeCompare(b.code)
+
   const L: string[] = []
-  L.push("RealAI — WP4 review status update")
-  L.push(`Track: ${trackName}`)
-  L.push(`Date: ${date}`)
-  L.push("Prepared by: RealAI (reviewing: Tannistha & Monira; authoring: Tarry Singh)")
+  L.push("RealAI — WP4 status update")
+  L.push(`Track: ${trackName}   ·   Date: ${date}`)
+  L.push("Prepared by RealAI · reviewing: Tannistha Maiti & Monira Majhabeen · authoring: Tarry Singh")
   L.push("")
+
+  // The standing reminder — the crucial part. Authors lead the hand-off back to us.
+  L.push("HOW THIS WORKS")
+  L.push("RealAI writes the lesson plan; the partner author then develops the lesson material")
+  L.push("(slides / notebook) into the SharePoint LE folder; RealAI reviews that material.")
+  L.push("We have automated our side: this dashboard, and an automatic alert the moment new")
+  L.push("material is dropped into a SharePoint LE folder. But a wiki-only edit does NOT signal")
+  L.push("us. So the next move is yours — once you have updated the plan or uploaded the")
+  L.push(`material, please email ${REVIEW_INBOX} so we can pick it up and review.`)
+  L.push("")
+
   L.push("SUMMARY")
   L.push(`RealAI is on ${les.length} Learning Event${les.length === 1 ? "" : "s"} in ${trackName}: ${counts.author} as author, ${counts.reviewer} as reviewer.`)
-  L.push(`Reviewed and posted: ${counts.reviewed}.  Ready to review: ${counts.ready}.  Author content outstanding: ${counts.authorTodo}.`)
-  if (gap) L.push(`${gap} not yet listed with RealAI as reviewer on the wiki master (the assignment is in the SharePoint M&F registry).`)
+  L.push(`  Completed reviews (posted to the wiki): ${completed.length}`)
+  L.push(`  Waiting on RealAI to review (material is in): ${waitingUs.length}`)
+  L.push(`  Waiting on the author (plan or material outstanding): ${waitingAuthor.length}`)
+  if (authored.length) L.push(`  RealAI-authored (our own next step): ${authored.length}`)
+  if (gap) L.push(`  Not yet listed with RealAI as reviewer on the wiki master: ${gap} (assignment is in the SharePoint M&F registry)`)
   L.push("")
-  L.push("LEARNING EVENTS")
-  const ordered = [...les].sort((a, b) => {
-    const rank = (le: Wp4LE) => le.review_done ? 0 : le.completeness?.ready_to_review ? 1 : 2
-    return rank(a) - rank(b) || a.code.localeCompare(b.code)
-  })
-  for (const le of ordered) {
-    const roles = le.realai.roles.map(r => ROLE_LABEL[r.role] ?? r.role).join(", ") || "—"
-    let title = le.title?.trim() || ""
-    if (title.startsWith(le.code)) title = title.slice(le.code.length).replace(/^[\s—:-]+/, "").trim()
+
+  if (completed.length) {
+    L.push(`COMPLETED — REVIEWED BY REALAI (${completed.length})`)
+    for (const le of [...completed].sort(byCode)) {
+      L.push("")
+      L.push(`${le.code} — ${cleanTitle(le)}`)
+      if (le.review_note) L.push(`    What we found: ${le.review_note}`)
+      if (le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
+    }
     L.push("")
-    L.push(`${le.code} — ${title}`)
-    L.push(`    Status: ${le.status || "—"}  |  RealAI: ${roles}  |  ${reportState(le)}`)
-    if (le.review_note) L.push(`    What we found: ${le.review_note}`)
-    if (le.review_done && le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
   }
-  L.push("")
-  L.push("Each reviewed LE has the full RealAI review on its wiki Discussion tab. Happy to walk through any of these.")
+
+  if (waitingUs.length) {
+    L.push(`WAITING ON REALAI TO REVIEW (${waitingUs.length})`)
+    L.push("The material is in SharePoint. This is on us — we will review it and post to the wiki.")
+    for (const le of [...waitingUs].sort(byCode)) {
+      L.push(`  ${le.code} — ${cleanTitle(le)}${le.author ? `   (author: ${le.author})` : ""}`)
+    }
+    L.push("")
+  }
+
+  if (waitingAuthor.length) {
+    L.push(`ACTION NEEDED FROM THE AUTHOR (${waitingAuthor.length})`)
+    for (const le of [...waitingAuthor].sort(byCode)) {
+      L.push("")
+      L.push(`${le.code} — ${cleanTitle(le)}`)
+      if (le.author) L.push(`    Author: ${le.author}${le.coauthor ? ` · ${le.coauthor}` : ""}`)
+      L.push(`    Needed: ${authorAction(le)}`)
+      L.push(`    Then: email ${REVIEW_INBOX} so RealAI can review.`)
+    }
+    L.push("")
+  }
+
+  if (authored.length) {
+    L.push(`REALAI-AUTHORED — OUR NEXT STEP (${authored.length})`)
+    for (const le of [...authored].sort(byCode)) {
+      const need = le.completeness?.author_needs?.length
+        ? le.completeness.author_needs.join("; ")
+        : "In progress"
+      L.push(`  ${le.code} — ${cleanTitle(le)}   →   ${need}`)
+    }
+    L.push("")
+  }
+
+  L.push("Every completed review is on the LE's wiki Discussion (Talk) tab.")
+  L.push(`Reminder: we move when you tell us the material is ready — please mail ${REVIEW_INBOX} when it is. Happy to walk through any of these.`)
   return L.join("\n")
 }
 
