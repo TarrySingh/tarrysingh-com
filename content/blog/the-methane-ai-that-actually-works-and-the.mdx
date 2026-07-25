@@ -1,0 +1,104 @@
+---
+title: "The Methane AI That Actually Works—And The Industry That Won't Respond"
+date: "2026-07-25"
+category: "Essays"
+excerpt: "UNEP's Methane Alert and Response System has processed over 1.3 million satellite observations since 2023, with AI models correctly flagging 80–85 per cent of confirmed methane detections before expert review — helping mitigate an estimated 1.2 million tonnes. Yet 88 per cent of MARS alerts still go unaddressed. The constraint is no longer algorithmic; it is the choice, made repeatedly by governments and operators, about which risks merit a response."
+draft: false
+tags: ["methane-emissions", "satellite-monitoring", "climate-ai", "energy-governance", "carbon-risk", "industrial-ai"]
+---
+
+On 15 July 2026, the UN Environment Programme published [numbers I would not have put in a pitch deck twelve months ago](https://www.unep.org/news-and-stories/press-release/ai-helping-un-detect-methane-emissions-and-spark-real-reductions). 
+
+UNEP's Methane Alert and Response System (MARS) has contributed to more than 40 methane mitigation actions since becoming fully operational in 2024, delivering a climate benefit comparable to removing the annual emissions of almost 24 million gasoline-powered passenger cars
+
+. 
+
+AI-assisted workflows identified 80–85 per cent of confirmed methane detections before expert review, helping to mitigate sources estimated to have emitted 1.2 million tonnes of methane
+
+.
+
+That is production AI at global scale, operating on a problem with regulatory teeth and a measurable climate wedge. The sort of thing Real AI would baseline in a diligence call. But before we hold the parade, here is the number UNEP buried seventeen paragraphs deep: 
+
+the response rate to MARS alerts has increased to more than 12 per cent, which means 88 per cent of alerts still go unaddressed
+
+. That figure is up from 
+
+only 1 per cent in 2024
+
+, so the trend is defensible—but it means the constraint is no longer the algorithm.
+
+The constraint is institutional inertia, regulatory fragmentation, and a sector that has spent three decades talking about operational excellence whilst ignoring emissions it cannot see from the ground. If you are running energy infrastructure strategy for a European operator or a national oil company, this is the sort of thing that gets raised by a non-executive director who actually reads UN reports, and you had better have a better answer than "we did not know."
+
+## Detection is no longer the bottleneck
+
+MARS is the first public global satellite detection and notification system providing actionable data on very large methane emissions, using data from more than 30 satellite instruments, coupled with scientific expertise and advanced AI models
+
+. 
+
+Since 2023, the system has analysed over 1.3 million satellite observations
+
+. The architecture is straightforward: ingest multi-spectral satellite imagery from providers including MethaneSAT, GHGSat's commercial constellation, and public instruments; apply lightweight neural networks to distinguish plume signatures from atmospheric noise and surface artefacts; route flagged detections to human analysts for verification; then push validated alerts to government focal points and OGMP 2.0 member companies.
+
+The methane-monitoring models were specifically designed to be lightweight and energy efficient, requiring only modest computing resources, and integrate data from more than 30 satellite instruments to distinguish methane emissions from environmental noise
+
+. That design choice matters. I have seen five vendor pitches this year claiming 'AI-powered climate monitoring' that would require a small data centre to train and a Scope 2 emissions profile large enough to dwarf the abatement they claim to enable. UNEP's team did the opposite: 
+
+human expertise remains central to the process, with every AI-flagged detection independently reviewed and verified by IMEO analysts before a notification is issued
+
+.
+
+This is not a vision model running inference on edge hardware in the Permian Basin. This is batch processing on satellite revisit cycles measured in days, with false-positive costs measured in wasted regulatory bandwidth, not safety-critical failures. The AI does triage; the analyst does attribution. That is the correct division of labour for a problem where ground truth is sparse and the penalty for a spurious alert is diplomatic friction with a hydrocarbon ministry.
+
+## Why 88 per cent non-response is a governance problem, not a data problem
+
+UNEP has sent more than 3,500 alerts across 33 countries since launching MARS three years ago
+
+. Some nations—Argentina is cited in one [UNEP case study](https://www.unep.org/technical-highlight/satellite-alerts-spur-methane-cuts-room-progress-remains)—have sub-national focal points who forward alerts to operators within 48 hours and track mitigation to closure. Others do not respond at all. The [IEA published guidance in May 2026](https://www.iea.org/reports/responding-to-satellite-notifications-from-the-methane-alert-and-response-system) on how governments should structure their MARS workflows, which tells you everything: if you need a how-to manual for 'forward this email to the company that owns the leaking well', the problem is not technical.
+
+In 2026, MARS expanded its detection capabilities to issue alerts to the coal and waste sectors
+
+, which moves the system beyond oil and gas into jurisdictions with even weaker monitoring regimes. That is the right strategic pivot—methane from abandoned coal mines and landfill is diffuse, poorly inventoried, and almost never measured top-down—but it will run into the same enforcement gap. Detecting a super-emitter in a Permian flare stack is one thing; attributing a plume to a specific landfill cell in a peri-urban waste cluster with overlapping concessions is another.
+
+The uncomfortable question is whether satellite detection without enforcement is theatre. 
+
+The UN Secretary-General has called on countries to respond to 80 per cent of methane alerts received through MARS
+
+, which frames non-response as a political failure, not a capability gap. I would frame it more bluntly: if you are a G20 energy ministry receiving fortnightly alerts about multi-tonne-per-hour leaks in your territory and you do not establish a response protocol, you have made a choice. That choice has a carbon intensity, and it shows up in your next NDC credibility assessment.
+
+## Where this heads in the next eighteen months
+
+Three forces will determine whether MARS turns into an enforcement tool or remains a high-resolution scorecard that everyone ignores.
+
+**Regulatory mandates with trade exposure.** The EU's methane regulation—[referenced by the World Economic Forum in June 2025](https://www.weforum.org/stories/2025/06/tackling-methane-emissions-satellite-technology/) as requiring monitoring, reporting, and verification across oil, gas, and coal operations, including imports—creates a wedge. If European buyers start requiring MARS response records as part of supplier due diligence, response rates will move. Not because of climate conscience, but because market access depends on it. The same logic applies to any large procurer with Scope 3 commitments enforceable through contract: if your LNG supplier is sitting on twelve unmitigated MARS alerts, that is a reputational and compliance risk you can quantify.
+
+**Operationalisation inside national oil companies.** 
+
+Companies that are members of UNEP's Oil and Gas Methane Partnership 2.0 receive direct MARS notifications, and member companies provide operational insights that help improve the MARS attribution process
+
+. That is the right model, but OGMP 2.0 coverage is still narrow—most NOCs in the Middle East, Central Asia, and sub-Saharan Africa are not members. The value proposition for them is not climate—it is gas that they are currently flaring or venting, which has a dollar value and an opportunity cost. If MARS helps them close leaks they did not know existed and monetise molecules they were wasting, adoption accelerates. The pilot to watch is whether any NOC starts publishing its own MARS response dashboard as proof of operational discipline.
+
+**Multi-satellite fusion and sub-daily revisit.** The current MARS architecture depends on orbital mechanics: a given basin might be imaged every three to seven days, depending on cloud cover and satellite tasking. 
+
+MethaneSAT achieved full operational capability by Q3 2024 and now provides area-flux measurements at 100–400 metre resolution with detection sensitivity below 2 kg/hour
+
+, whilst 
+
+GHGSat operates 12 commercial satellites delivering facility-level quantification at 25-metre resolution
+
+. As constellation density increases—[Carbon Mapper's Tanager-1 launched in summer 2024](https://www.sciencedirect.com/science/article/pii/S0924271625001182), with more to follow—temporal resolution compresses. If you can image a facility twice a day, you can start to distinguish operational flaring from unplanned venting from fugitive leaks, which turns MARS from 'you have a plume' into 'you have a stuck valve on compressor unit 3'. That level of attribution changes the enforcement calculus.
+
+## What I would do if I were advising a European utility with midstream exposure
+
+Set up a MARS integration into your asset integrity management system now. 
+
+UNEP is making key datasets and code openly available
+
+, which means you can stand up a pilot without vendor lock-in. Route MARS detections for your operated assets into the same workflow as ground-based continuous monitoring—Project Canary, Bridger Photonics, whichever system your US joint ventures already use—and treat satellite as another sensor layer, not a separate compliance workstream.
+
+For non-operated assets and third-party suppliers, require MARS response records in your annual ESG questionnaires. Not as a pass/fail gate, but as a leading indicator of operational maturity. If a midstream partner has six open MARS alerts from the past eighteen months and no documentation of investigation, that tells you something about how they run their business, and it probably correlates with how they handle other low-probability, high-consequence risks.
+
+The broader point: this is one of the few pieces of climate-adjacent AI that has moved from pilot to production scale, processed more than a million observations, demonstrated measurable mitigation, and published its methods. It is not vaporware. It is not a consultant's framework. It is a working system that routes data to the people who can fix the problem, and the fact that 88 per cent of them do not respond is a governance failure, not an algorithmic one. If you are the sort of executive who spent 2024 talking about AI transformation, and you are still not plugged into the one AI system that can flag multi-million-euro gas leaks in your supply chain, I would start asking why.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
