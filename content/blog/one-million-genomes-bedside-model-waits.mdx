@@ -1,0 +1,58 @@
+---
+title: "One Million Genomes Later, the Bedside Model Still Waits"
+date: "2026-07-29"
+category: "Essays"
+excerpt: "The UAE has assembled the most complete sovereign healthcare-AI stack any country has built — sovereign compute, a million-sample national genome programme, and a clinical model benchmarked ahead of GPT-4. The model's own authors say it is not yet fit for clinical use. That caveat is the most precise evidence about where the Gulf investment earns its return: in the biobank and data-sovereignty infrastructure, not in the generative layer that sits above them."
+draft: false
+tags: ["genomics", "clinical-ai", "ai-governance", "sovereign-ai", "healthcare", "gulf"]
+---
+
+# One Million Genomes Later, the Bedside Model Still Waits
+
+A genetic counselor pauses over a report. On her screen sit coloured bars, a probability, variants annotated in the same quiet blue the software uses for everything uncertain. She waits for the attending to finish rounds, because nothing in the report tells her what to say to the family in the next room, and the software on her workstation is not licensed to say it either.
+
+The workstation belongs to [Cleveland Clinic Abu Dhabi](https://www.clevelandclinicabudhabi.ae), which sits inside [M42](https://m42.ae/), the healthcare company [G42](https://www.g42.ai/) folded together with Mubadala Health in 2023. About forty kilometres away, on a rack she will never see, sits the largest national genomic database on earth. The [Emirati Genome Programme](https://m42.ae/what-we-do/integrated-health-solutions/emirati-genome-program/) crossed 750,000 samples earlier this year and, per [M42's May pitch to global partners in Semafor](https://www.semafor.com/article/05/13/2026/mubadala-backed-m42-pitches-genomics-data-platform-to-the-world), has moved past a million. Above that genome layer, an open-weight clinical model called Med42-v2 70B, trained on Cerebras hardware, has been [benchmarked at 79.1 on MedQA zero-shot](https://arxiv.org/abs/2408.06142), edging GPT-4 on most of the multiple-choice medical tasks in the paper. And around all of this, [US Trade.gov market intelligence notes that Federal Law No. 2 of 2019 and related health rules keep patient records inside UAE borders by default](https://www.trade.gov/market-intelligence/united-arab-emirates-regulations-limit-cross-border-health-data-flows), with exceptions granted case by case.
+
+Read those four together and you have as complete a sovereign healthcare-AI stack as any country has assembled. Sovereign compute at the bottom. Sovereign population data in the middle. A sovereign clinical model on top. A legal cage around the whole thing that says the data does not leave. If your reading of the Gulf move on AI stopped at data centres in 2023, the healthcare stack is where you find out you were reading it too small.
+
+The reason the counselor pauses, though, has nothing to do with the sovereignty argument. It has to do with the model.
+
+## The authors put the warning first
+
+The Med42 team publish their model to the world with a paragraph most vendor marketing would bury. On [the Hugging Face model card](https://huggingface.co/m42-health/Llama3-Med42-70B) that sits under the download button, they write that the model "is not ready for real clinical use" and that extensive human evaluation is required before it goes near a patient. The published paper carries the same caution in academic prose: benchmark metrics are insufficient evidence of safety and efficacy, and real-world evaluation across diverse patients and clinical scenarios is still to come.
+
+Take that seriously as evidence about the field, not just this model. When the group building the strongest open-weight medical LLM in the world, on the largest national genomic base in the world, tells you that scores in the high seventies on MedQA are not a licence to deploy, believe them. They are the party with the incentive to overclaim. They are also the party publishing the disclaimer.
+
+The gap between benchmark and bedside is not a soft-launch problem. It is a well-mapped literature. A [systematic review of bias in clinical LLMs across 45 studies](https://arxiv.org/abs/2504.02917), published in April 2025 by Poulain, Fayyaz and colleagues, catalogues systemic sensitivity to demographic cues, phrasing shifts and clinical writing style. Specific benchmarks such as BiasMedQA in that review report precision falling below 80% in general and to roughly 50% in some models, once the input starts looking like a real chart note instead of a licensing exam. The counselor at the terminal is not being cautious about a hypothetical. She is being cautious about a documented failure mode with a name.
+
+## Where the sovereign wrapper is already earning its keep
+
+None of that makes the Gulf investment wrong. It changes what the investment buys.
+
+Look at the two most concrete pieces of clinical impact in the region right now. First: [the Saudi Ministry of Health's own bulletin from June 2023](https://www.moh.gov.sa/en/Ministry/MediaCenter/News/Pages/News-2023-06-30-001.aspx) records that Seha Virtual Hospital activated Lunit INSIGHT CXR for chest X-ray analysis during the Hajj season, wired into a national pipeline that eventually spread across roughly 240 connected facilities. Second: the same Seha operation, described by the [World Economic Forum as the largest virtual hospital in the world by Guinness's count](https://www.weforum.org/videos/this-is-the-biggest-virtual-hospital-in-the-world/), pairs that chest X-ray AI with mammography screening from the same vendor. Both are narrow-task imaging models. Both carry regulatory-grade validation from before deployment. Neither is a generalist LLM being asked to reason its way into a discharge note. That is the shape of what works.
+
+The genome layer is doing something narrower too, and doing it well. [The Emirati Genome Programme surfaced under-reported inherited vision-loss risks specific to the Emirati population](https://www.thenationalnews.com/news/uae/2026/02/20/emirati-genome-programme-data-reveals-variations-in-risk-of-inherited-vision-loss/), findings that a European or American reference genome would not have produced. That is what a sovereign biobank buys: population coverage no external database offers, on a legal footing that lets it be used at scale for care and research inside the country. It is a real advance, and one the counselor in front of the terminal is quietly grateful for, even when the model sitting above the biobank is not yet asked to speak.
+
+What the biobank does not buy is a clinical LLM ready to sign anything.
+
+## The register the marketing wants and the register the ward has
+
+I've walked through a few of these hospitals in the Gulf over the last two years, quietly advising on model risk and deployment governance, and the thing that struck me first was how completely the vocabulary of the executive floor and the vocabulary of the ward had drifted apart. Upstairs, the pitch was sovereign, integrated, generative. Downstairs, at the workstation, the pitch was narrower and older: does this thing halve the time I spend on documentation, does it hallucinate a drug interaction, and who signs when it is wrong. Nurses and residents ask the second set of questions. Ministers give speeches about the first.
+
+Governance is what closes that gap. In Abu Dhabi, the [Department of Health treats the Emirati Reference Genome as a regulated research resource with its own consent, access and export rules](https://www.doh.gov.ae/en/research/the-emirati-reference-genome-programme). In Saudi Arabia, the SFDA's medical-device rules and SDAIA's ethics framework are meant to interlock over any deployed AI. The interlock is not yet clean. A generalist LLM that summarises a chart does not fit the software-as-medical-device categories the SFDA was built for, and neither health regulator has, yet, the model-risk vocabulary a bank supervisor would recognise. That vocabulary will come. In the meantime, the burden falls where it usually falls, on the clinician in front of the screen, who has been told the model is sovereign and is trying to work out whether that is a claim about the compute, the data, the weights, the jurisdiction, or the accountability. In different pitches it means each of those. In the ward it needs to mean the last one.
+
+## What the sovereign stack is really for
+
+Here is where I part company with the marketing that surrounds all of this. M42's own [press release headline reads "M42 Announces New Clinical LLM to Transform the Future of AI in Healthcare"](https://www.g42.ai/resources/news/m42-announces-new-clinical-llm-transform-future-ai-healthcare). Read that headline against the model's own README, and the framing collapses on itself. The strongest defence of the Gulf investment is not the top of the stack. It is the middle and the bottom.
+
+Sovereignty here is not, primarily, about resisting American technology. It is about keeping patient records inside a jurisdiction where the ministry can enforce access, and about building a biobank whose consent, ownership and export rules are all written under one law. That is a genuinely good reason. Countries that took the other route, and outsourced health data to platforms whose privacy stance shifts with the platform's next quarterly earnings, will regret it. I have said this out loud in enough rooms in Europe to know how uncomfortable it is to hear.
+
+The sovereign wrapper still does not substitute for the missing link. The missing link is an independent evaluation regime for clinical LLMs, staffed by people whose job is to grade the model and who cannot be paid by the party shipping it. Med42's own authors called for exactly that on their model page. The bias literature has been quietly begging for it for three years. Until such a regime exists inside the ministries that already control the data, and not inside the vendors that trained the model, the top layer of the sovereign stack is a proof of concept in a very expensive frame.
+
+## Back at the terminal
+
+The counselor closes the report. The attending appears at the door. She reads him the variants; he reads them back. Somewhere in a rack across the emirate a seventy-billion-parameter model, benchmarked against a licensing exam, waits to be asked. Neither of them ask it. The room is quiet, the family is waiting, and the sovereign part of the sovereign stack, the part the state actually built, is the one they use: the record, the biobank, the standing to talk to each other about a specific human being whose data is not going anywhere. Everything above that line, for now, still waits at the door.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io), an Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.*
