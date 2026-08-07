@@ -75,10 +75,13 @@ const RULES: Rule[] = [
     re: /^#{2,3}\s+(?:the stake|my stake|where I(?:'| w)|what I(?:'| w)|what I would|the verdict|my call|where I land)\b.*$/gim,
   },
   {
-    id: "coined-phrase-leak",
-    label: "phrase that leaked verbatim from the old prompt (was 26/116 files)",
+    // A deliberate Tarry-ism, so body use is allowed and rate-limited by the
+    // runbook. What is NOT allowed is promoting it to a heading, which is how
+    // it escaped its cap and reached 26 of 116 files.
+    id: "signature-phrase-as-heading",
+    label: "rate-limited signature phrase promoted to a heading",
     severity: "hard",
-    re: /\bthe honest measurement problem\b/gi,
+    re: /^#{2,3}\s+.*\b(?:the honest (?:measurement|reading|answer) problem|AI slop debt|geopatriation|centaur vs\.? autopilot)\b.*$/gim,
   },
   // ── Tier 2: rhythm tics ───────────────────────────────────────────────
   {
@@ -177,16 +180,17 @@ export function scanDispatchSlop(text: string): SlopHit[] {
     })
   }
 
-  // Em-dash budget: docs/runbooks/cowork-daily-blog-prompt.md allows roughly
-  // one per 150 words. Corpus measured one per 100.
-  const words = prose.split(/\s+/).filter(Boolean).length
+  // Em-dashes: ZERO, per the binding anti-slop contract (Tarry, 2026-08-07:
+  // "we need to adhere to anti-slop"). This supersedes the runbook's old
+  // one-per-150-words budget, which the corpus was running at double.
   const dashes = (prose.match(/—/g) ?? []).length
-  if (words > 200 && dashes > Math.ceil(words / 150)) {
+  const fauxDashes = (prose.match(/(?<!-)--(?!-)/g) ?? []).length
+  if (dashes + fauxDashes > 0) {
     hits.push({
-      id: "em-dash-budget",
-      label: `em-dash budget exceeded (${dashes} dashes in ${words} words; budget ${Math.ceil(words / 150)})`,
-      severity: "soft",
-      match: `${dashes} em-dashes`,
+      id: "em-dash",
+      label: "em-dash present (contract requires zero; the #1 tell)",
+      severity: "hard",
+      match: `${dashes} em-dashes${fauxDashes ? ` + ${fauxDashes} double-hyphen` : ""}`,
     })
   }
 
