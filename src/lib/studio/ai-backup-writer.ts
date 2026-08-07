@@ -1,4 +1,7 @@
+import fs from "node:fs/promises"
+import path from "node:path"
 import Anthropic from "@anthropic-ai/sdk"
+import { scanDispatchSlop, summariseSlop } from "./dispatch-slop"
 
 /**
  * Sprint follow-up — Vercel-side backup writer.
@@ -24,19 +27,53 @@ import Anthropic from "@anthropic-ai/sdk"
 const DEFAULT_MODEL = "claude-sonnet-4-5" // Sonnet for cost control. NB: claude-sonnet-4-6 broke the Dispatch 2026-06-20/21 (this studio key has no 4-6 access → ai_call_failed); 4-5 is confirmed working (earthscan) and still cheap. opus-4-8 is the known-good fallback. Overridden by STUDIO_AI_MODEL env var.
 const DEFAULT_MAX_TOKENS = 16000 // Article is ~1500 words ≈ 2000 tokens; budget extra for thinking + tool turns
 
+/**
+ * Rotation domains. Rewritten 2026-08-07 after a corpus audit showed the old
+ * list was NOT orthogonal, which is what made the blog feel samey:
+ *   - FOUR slots routed to Brussels (each carried "EU AI Act" or the EU skills
+ *     agenda in its own description) — 41 of 116 published files mentioned
+ *     Brussels, the Commission or the AI Act.
+ *   - THREE slots routed to compute-and-power — 54 of 116 files mentioned data
+ *     centres, gigawatts or capex.
+ *   - TWO slots ("Workforce Productivity" + "Enterprise Upskilling") pulled the
+ *     same McKinsey/Gartner survey tables, which is exactly where the
+ *     percentage-chain tell clustered.
+ * Regulation now has ONE home; physical plant is separate from macro; workforce
+ * is merged; health/life sciences added (the audit singled out the two pieces
+ * anchored on a person doing something physical as the least machine-like in
+ * the corpus). Descriptions deliberately carry NO coinable phrases — the old
+ * "the honest measurement problem" wording leaked verbatim into 26 files and
+ * was twice promoted to a heading.
+ */
 const ROTATION_DOMAINS: readonly string[] = [
-  "AI in Education — HCAIM, PANORAIMA, EU skills agenda, the 100M-citizens-by-2030 target, university curriculum reform, the credentialing question",
-  "AI in Financial Services — risk, fraud, capital markets, agentic finance ops, model risk management, the SR 11-7 / EU AI Act collision",
-  "AI in Energy — Oil & Gas AND Alternatives. Upstream optimization, grid AI, geothermal, hydrogen, solar/wind forecasting, methane leak detection, remote sensing",
-  "AI in Manufacturing — industrial copilots, digital twins, predictive maintenance, robotics, computer vision QA, OPC-UA + LLM glue",
-  "HPC + AI Infrastructure — interconnects, memory hierarchies, liquid cooling, sovereign compute, exascale, RDMA, NVLink/UALink/InfiniBand tradeoffs",
-  "Deep Technical — Design Patterns for Building & Deploying ML/AI — one architectural pattern per post (eval-optimizer, planner-executor, retrieval-augmented agent loop, guardrail-as-sidecar, semantic caching, hierarchical task decomposition, etc.)",
-  "Geopolitics & Sovereign AI — regulation, export controls, EU AI Act enforcement, BRICS+ alignment, talent flows, geopatriation of cloud workloads",
-  "Workforce Productivity — With and Without AI — the honest measurement problem; Microsoft/Gartner/McKinsey numbers and what they actually tell you",
-  "Enterprise Upskilling & Human Ingenuity — reskilling at scale, centaur vs autopilot, deliberate practice in the autocomplete era",
-  "Macroeconomics of the Technology Landscape — capex cycles, hyperscaler spend vs NPV, M&A patterns, talent comp inflation",
-  "The Debt Stack — Technical Debt + AI Slop Debt + Cost Overhang. AI slop debt = half-finished POCs, unevaluated agents, prompt sprawl, FinOps reckoning",
-  "Energy, Environment, Regulation & Risk — datacenter power/water, EU AI Act phase-in, NIST AI RMF, ISO 42001, IEA energy figures",
+  "AI in Education — HCAIM, PANORAIMA, university curriculum reform, credentialing, and what actually changes in a classroom",
+  "AI in Financial Services — risk, fraud, capital markets, agentic finance operations, model risk management",
+  "AI in Energy — oil and gas and alternatives. Upstream optimisation, grid AI, geothermal, hydrogen, solar and wind forecasting, methane leak detection, remote sensing",
+  "AI in Manufacturing — industrial copilots, digital twins, predictive maintenance, robotics, computer vision QA, OPC-UA and LLM glue",
+  "AI in Health and Life Sciences — diagnostics at the point of care, trial operations, lab automation, imaging triage, and what a clinician is willing to sign",
+  "HPC and Silicon — interconnects, memory hierarchies, packaging, exascale, RDMA, NVLink/UALink/InfiniBand tradeoffs. The chip and the fabric, not the building",
+  "Deep Technical — design patterns for building and deploying ML/AI, one architectural pattern per post (eval-optimizer, planner-executor, retrieval-augmented agent loop, guardrail-as-sidecar, semantic caching, hierarchical task decomposition)",
+  "Regulation and Sovereignty — the ONLY rotation slot for rulemaking. EU AI Act phase-in and enforcement, export controls, NIST AI RMF, ISO 42001, data residency, talent flows. No other domain may build its piece on a regulator",
+  "Work and Measurement — what a specific job looks like after the tool lands, who measures it, and where the measurement misleads. Ground it in one role, not a survey table",
+  "Macroeconomics of the Technology Landscape — capex cycles, hyperscaler spend against NPV, M&A patterns, compensation inflation",
+  "The Debt Stack — technical debt, AI slop debt and cost overhang: half-finished POCs, unevaluated agents, prompt sprawl, the FinOps reckoning",
+  "Datacentre Physical Plant — power procurement, water, siting, grid interconnect queues, heat reuse, and the communities negotiating with all of it",
+] as const
+
+/**
+ * Second rotation axis: WHOSE vantage point the piece is written from. The old
+ * rotation had one dimension (sector), so every piece defaulted to an
+ * institution announcing something. Seven lenses, deliberately coprime with the
+ * twelve domains so a given domain meets a different lens on every visit.
+ */
+const ROTATION_LENSES: readonly string[] = [
+  "the operator who gets paged at 3 a.m. when it breaks",
+  "the person whose job changes shape because of it",
+  "the buyer who has to sign the contract and defend it later",
+  "the engineer inside the vendor who knows what was cut to ship",
+  "the finance owner who receives the bill nobody forecast",
+  "the regulator or auditor who has to make a rule stick",
+  "the customer or citizen on the receiving end, who never chose any of it",
 ] as const
 
 const VOICE_SYSTEM_PROMPT = `You are writing as Tarry Singh on tarrysingh.com.
@@ -67,9 +104,15 @@ delve, navigate, landscape, ever-evolving, in the realm of, robust, leverage (ve
 
 Banned structural tics:
 - Every paragraph starting with a different transitional adverb.
-- Tricolons in every sentence ("faster, cheaper, better").
-- "However," as the sole pivot — vary with "But", "That said", "The catch:", "Here's where it gets uncomfortable".
-- Closing with "I hope this helps" or "feel free to reach out".
+- Announced triads. Do not promise a count and then enumerate it, and do not stack three adjectives for rhythm.
+- Manufactured suspense. Never open a paragraph or section by announcing that something notable, uncomfortable or surprising is about to be said. Say the thing. A pivot is a fact that turns the argument, not a drum roll.
+- Do not lean on one pivot word. Vary how the argument turns, and let some turns carry no signposting at all.
+- Reader-instruction imperatives. Do not tell the reader to re-read, pause, sit with, picture, or line anything up. If a number needs weight, give it a referent, not a command.
+- Negation-then-substitution as a rhythm. The shape "it is not A, it is B" (and its trailing-clause variant) is the model's default way of sounding decisive; used more than once per piece it is the loudest tell in the corpus. Make the point directly.
+- The verdict section. Do not end on a section whose heading announces your own position, and do not close with a counterfactual seat at someone's table.
+- Assistant register of any kind at the close.
+
+Cadence self-check before you output: no two paragraphs may open with the same grammatical move, and no rhythmic shape from the list above may appear twice.
 
 Required cadence:
 - Mix sentence lengths aggressively. Short. Long sentences that earn their length by carrying genuine analytical content. Then short again.
@@ -147,6 +190,66 @@ function isSunday(forDate: string): boolean {
   return !Number.isNaN(d.getTime()) && d.getUTCDay() === 0
 }
 
+/**
+ * The last few published Dispatches, reduced to the things that repeat: the
+ * title, the opening line, every H2, and the closing line. Injected into the
+ * prompt as an EXCLUSION set.
+ *
+ * The corpus audit found the pipeline had no memory of itself, so coined
+ * phrases recurred as if fresh — one was promoted to a heading three weeks
+ * after it closed another piece — and two articles dated a day apart opened
+ * with the same sentence, one noun swapped. A signature phrase is an asset the
+ * first time and a tell the second.
+ *
+ * Reads the deployed content directory (same access pattern as
+ * reprocess-ready.ts). Fails OPEN: any error returns "" and the writer runs
+ * exactly as before, because a missed exclusion set is far cheaper than a
+ * missed Dispatch.
+ */
+async function recentPublishedContext(limit = 5): Promise<string> {
+  try {
+    const dir = path.join(process.cwd(), "content", "blog")
+    const names = (await fs.readdir(dir)).filter((f) => f.endsWith(".mdx"))
+    const posts: { date: string; title: string; open: string; heads: string[]; close: string }[] = []
+
+    for (const name of names) {
+      const raw = await fs.readFile(path.join(dir, name), "utf8")
+      const date = raw.match(/^date:\s*"?([0-9]{4}-[0-9]{2}-[0-9]{2})/m)?.[1] ?? ""
+      const title = raw.match(/^title:\s*"(.+?)"\s*$/m)?.[1] ?? name.replace(/\.mdx$/, "")
+      if (!date) continue
+      const body = raw.replace(/^---\n[\s\S]*?\n---\n/, "")
+      const prose = body
+        .split("\n")
+        .filter((l) => l.trim() && !/^[#>|`\-*!]/.test(l.trim()))
+      const heads = (body.match(/^##\s+(.+)$/gm) ?? []).map((h) =>
+        h.replace(/^##\s+/, "").trim(),
+      )
+      posts.push({
+        date,
+        title,
+        open: (prose[0] ?? "").slice(0, 160),
+        heads: heads.slice(0, 8),
+        close: (prose[prose.length - 1] ?? "").slice(-160),
+      })
+    }
+
+    const recent = posts.sort((a, b) => b.date.localeCompare(a.date)).slice(0, limit)
+    if (recent.length === 0) return ""
+
+    const lines = recent.map(
+      (p) =>
+        `- ${p.date} "${p.title}"\n    opened: ${p.open}\n    headings: ${p.heads.join(" | ") || "(none)"}\n    closed: ${p.close}`,
+    )
+    return `DO NOT REPEAT YOURSELF. These are the last ${recent.length} Dispatches published:
+
+${lines.join("\n")}
+
+Hard constraints against that list: do not reuse any heading, any coined noun-phrase from a heading, any opening move, or any closing move. Do not reuse a framing device one of them already used. If your draft's shape resembles one of these, change the shape, not the wording.`
+  } catch {
+    return ""
+  }
+}
+
 function slugFromTitle(title: string): string {
   return title
     .toLowerCase()
@@ -167,6 +270,11 @@ export async function aiBackupWriter(
 
   const rotationIndex = input.dayOfYear % ROTATION_DOMAINS.length
   const rotationDomain = ROTATION_DOMAINS[rotationIndex]
+  // 7 lenses against 12 domains (coprime) so a domain meets a different
+  // vantage point on every visit instead of defaulting to "institution
+  // announces thing" every time.
+  const lens = ROTATION_LENSES[input.dayOfYear % ROTATION_LENSES.length]
+  const exclusions = await recentPublishedContext()
 
   const briefBlock = input.brief.trim()
     ? `Tarry has filed a brief for today. Use this as the primary frame, topic, links, and angle — it overrides the rotation. Treat it as if Tarry hand-wrote today's prompt:
@@ -177,7 +285,9 @@ ${input.brief.trim()}`
 
 ${rotationDomain}
 
-Pick a current, specific, well-sourced angle within this domain — something that broke in the last 21 days.`
+Today's LENS — write from this vantage point, not from the institution's: ${lens}. Anchor the piece on what this person can see, decide, or is stuck with. An announcement is the occasion for the piece, never its subject.
+
+Pick a specific angle inside that domain from the last 45 days, and pick one no wire service already ran. If your angle is the same one the press release had, you have the occasion, not the story — go one layer down to the consequence.`
 
   const sunday = isSunday(input.forDate)
   const dayTypeBlock = sunday
@@ -189,6 +299,8 @@ Pick a current, specific, well-sourced angle within this domain — something th
 ${dayTypeBlock}
 
 ${briefBlock}
+${exclusions ? `\n${exclusions}\n` : ""}
+Before drafting, name the structural form you are using (single-thread narrative with no headings, an annotated read of one document, a numbered ledger, a reported scene, or a standard essay) and then commit to it. Do not reuse the form any of the recent pieces above used. Roughly two pieces in ten should carry no H2 headings at all — if this is one, write it as continuous prose.
 
 Write the article now. Use web_search to ground every factual claim — at least 6 distinct primary sources cited as inline markdown links. Honour all voice + format rules from the system prompt, especially the em-dash budget, the spoken form for numbers, and the closing rules. The first line of your output MUST be \`# <title>\` (a single H1). The last block must be the exact author bio footer specified.`
 
@@ -289,6 +401,28 @@ Write the article now. Use web_search to ground every factual claim — at least
 
   // Body = everything (the H1 stays in for the existing parser).
   const wordCount = fullText.split(/\s+/).filter(Boolean).length
+
+  // Post-generation slop gate. Deliberately NON-BLOCKING: it logs what the
+  // draft tripped so regressions are visible in the Vercel logs (and so the
+  // weekly slop-watch has a signal), but never fails the Dispatch — shipping a
+  // piece with one tell beats shipping nothing. The exact banned strings live
+  // in dispatch-slop.ts precisely so they never appear in the prompt, where
+  // quoting them is what taught the model to use them in the first place.
+  try {
+    const hits = scanDispatchSlop(fullText)
+    console.log(
+      JSON.stringify({
+        tag: "studio.backup_writer.slop_scan",
+        slug: slugFromTitle(h1Match[1].trim()),
+        hits: hits.length,
+        hard: hits.filter((h) => h.severity === "hard").length,
+        summary: summariseSlop(hits),
+        worst: hits.filter((h) => h.severity === "hard").slice(0, 3).map((h) => h.match),
+      }),
+    )
+  } catch {
+    /* scanning must never break the publish path */
+  }
   if (wordCount < 800) {
     return {
       ok: false,
