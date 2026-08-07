@@ -6,7 +6,6 @@ excerpt: "A new MIT preprint draws the line between search and discovery in cate
 draft: false
 tags: ["category-theory", "ai-discovery", "agentic-systems", "provenance", "scientific-method"]
 ---
-
 Your model is a world-class recombiner. That's not an insult — it's a category error to call it anything else.
 
 Hand it the whole corpus of structural biology and it will produce fluent, plausible, occasionally correct recombinations of everything already written down. What it won't do, on its own, is notice that the *vocabulary* it's reasoning in is the thing that's wrong, tear it up, and prove the replacement earned its place. That gap finally has a name — and, for once, a piece of real mathematics behind it.
@@ -99,9 +98,7 @@ $$C_{pi} = (\Gamma_p^{+})_{ii} = \sum_{\lambda_{pk}>0} \frac{u_{pik}^{2}}{\lambd
 
 This isn't a learned feature; it's the harmonic mobility implied by the contacts, and standard GNM ties it straight to the crystallographic B-factor. Because the target is normalised within each chain, the global constants drop out — the task is to explain the *pattern* of flexibility, not its absolute scale. The two features the run lands on are a compressed log-compliance coordinate and a clipped slow-mode participation weight:
 
-$$\phi_{pi} = z_p\!\bigl(\log(C_{pi}+\epsilon)\bigr), \qquad \psi_{pi} = \bigl[\, z_p(|u_{pi2}|) + \theta \,\bigr]_{+},$$
-
-where $u_{p2}$ is the first nonzero mode — the dominant collective deformation. After paired refitting under the gate, the surviving law is strikingly compact:
+$$\phi_{pi} = z_p\!\bigl(\log(C_{pi}+\epsilon)\bigr), \qquad \psi_{pi} = \bigl[\, z_p(|u_{pi2}|) + \theta \,\bigr]_{+},$$ where $u_{p2}$ is the first nonzero mode — the dominant collective deformation. After paired refitting under the gate, the surviving law is strikingly compact:
 
 $$\widehat{B}^{(z)}_{pi} = \alpha + \beta\,\phi_{pi}\,\psi_{pi}, \qquad \alpha=-0.1332,\ \ \beta=0.2239,\ \ \theta=2.2678.$$
 
@@ -131,9 +128,7 @@ Without it, you would log "model improved, then got worse, then simpler." With i
 
 Everything above hinges on the verifier $V_b$ — the thing that refuses to commit an artifact just because an agent proposed it. The Builder/Breaker loop runs on **Minimum Description Length**: score a model by the total bits to state the model *and* the data given it,
 
-$$L(M, D) = L_{\text{model}}(M) + L_{\text{data}}(D \mid M),$$
-
-and admit a revision $M'$ only if it pays for itself on the *enlarged, shared* evidence after both are refit: $L(M', D \cup E) < L(M, D \cup E)$. That's the formal sense in which a productive failure becomes structure — which is exactly why a monotone single-number score is the *wrong* thing to track. The second case study swaps in **Akaike**, $\mathrm{AIC} = 2k - 2\ln\hat{L}$ (lower wins), to select an anisotropic orientation-tensor stiffness surrogate over a simpler isotropic fiber-count descriptor — and the rejected descriptor isn't deleted, it's kept as typed provenance. Of course it is. *That's the contract.*
+$$L(M, D) = L_{\text{model}}(M) + L_{\text{data}}(D \mid M),$$ and admit a revision $M'$ only if it pays for itself on the *enlarged, shared* evidence after both are refit: $L(M', D \cup E) < L(M, D \cup E)$. That's the formal sense in which a productive failure becomes structure — which is exactly why a monotone single-number score is the *wrong* thing to track. The second case study swaps in **Akaike**, $\mathrm{AIC} = 2k - 2\ln\hat{L}$ (lower wins), to select an anisotropic orientation-tensor stiffness surrogate over a simpler isotropic fiber-count descriptor — and the rejected descriptor isn't deleted, it's kept as typed provenance. Of course it is. *That's the contract.*
 
 ## 06 · What this means if you ship agents
 

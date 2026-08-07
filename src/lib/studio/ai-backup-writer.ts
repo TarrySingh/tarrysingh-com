@@ -223,7 +223,15 @@ Write the article now. 1,400–1,600 words. Use web_search to ground every factu
   for (const block of response.content) {
     if (block.type === "text") textParts.push(block.text)
   }
-  const fullText = textParts.join("\n\n").trim()
+  // Join with "" — NOT "\n\n". With web_search + citations the model's prose
+  // arrives as MANY text blocks: every cited span is its own block, split
+  // mid-sentence at the citation boundary. Joining with a blank line therefore
+  // injected a paragraph break inside sentences, which is what produced the
+  // published corruption — orphaned full stops starting a paragraph
+  // (". Three months later,"), mid-sentence gaps, and split fenced blocks.
+  // The blocks are a continuous stream; the model's own text already carries
+  // whatever paragraph breaks it wants.
+  const fullText = textParts.join("").trim()
 
   if (!fullText) {
     return {

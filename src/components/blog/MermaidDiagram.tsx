@@ -5,18 +5,19 @@ import { useEffect, useId, useRef, useState } from "react"
 /**
  * Sprint 10 / Dispatches v2 — in-blog diagram rendering.
  *
- * Renders a Mermaid source string to SVG, client-side, in the Synaptic
- * studio palette so diagrams read like plates, not GitHub-issue charts.
+ * Renders a Mermaid source string to SVG, client-side, themed to match The
+ * Read it sits in — so diagrams read like plates, not GitHub-issue charts.
  *
- * v2: two palettes (light cream / dark navy) chosen from the nearest
- * `[data-read-mode]` ancestor (The Read's light/dark toggle). A
- * MutationObserver re-themes the diagram live when the reader flips the
- * toggle — zero per-post work; the publish flow's on-the-fly ```mermaid
- * emission is untouched.
+ * v3: the palette is READ from the nearest `[data-read-mode]` ancestor's
+ * `--read-*` CSS tokens instead of being hard-coded. So the diagram follows
+ * whatever the reader wears — /blog's "Slate" (slate paper + indigo/periwinkle)
+ * or /synaptic's own register — with zero per-surface work, and stays correct
+ * for any future repaint. A MutationObserver re-renders live when the reader
+ * flips the light/dark toggle (Mermaid bakes concrete colours into the SVG, so
+ * it must re-render; the figure chrome uses the vars directly and just reflows).
  *
- * Mermaid is lazy-loaded so the ~280 kB ES module only ships on pages
- * that actually have a diagram. Errors render as a small editorial
- * fallback (source + parse error) rather than a blank space.
+ * Mermaid is lazy-loaded so the ~280 kB ES module only ships on pages that
+ * actually have a diagram.
  */
 
 interface Props {
@@ -27,71 +28,72 @@ interface Props {
 
 type ReadMode = "light" | "dark"
 
-// Light palette — the cream studio register (mirrors globals.css).
-const LIGHT_THEME_VARIABLES = {
-  background: "#fbf7ec",
-  mainBkg: "#fdfaf2",
-  secondBkg: "#f6efd9",
-  tertiaryBkg: "#efe4c0",
-  primaryColor: "#fdfaf2",
-  primaryTextColor: "#0d1b3d",
-  primaryBorderColor: "#b45309",
-  lineColor: "rgba(13,27,61,0.4)",
-  textColor: "#0d1b3d",
-  nodeBkg: "#fdfaf2",
-  nodeBorder: "#b45309",
-  nodeTextColor: "#0d1b3d",
-  clusterBkg: "rgba(180,134,11,0.06)",
-  clusterBorder: "rgba(180,134,11,0.35)",
-  edgeLabelBackground: "#fbf7ec",
-  noteBkgColor: "#fffaf0",
-  noteBorderColor: "#b45309",
-  noteTextColor: "#0d1b3d",
-  actorBkg: "#fdfaf2",
-  actorBorder: "#b45309",
-  actorTextColor: "#0d1b3d",
-  signalColor: "rgba(13,27,61,0.55)",
-  signalTextColor: "#0d1b3d",
-  labelBoxBkgColor: "#fdfaf2",
-  labelBoxBorderColor: "#b45309",
-  labelTextColor: "#0d1b3d",
-  mindmapBkg: "#fdfaf2",
-} as const
+// Fallback palette if a diagram ever renders outside a [data-read-mode] reader
+// (mirrors the /blog Slate light tokens).
+const FALLBACK = {
+  bg: "#eceff3",
+  fg: "#101a2c",
+  muted: "rgba(16,26,44,0.63)",
+  soft: "rgba(16,26,44,0.44)",
+  accent: "#3355cc",
+  accentSoft: "rgba(51,85,204,0.42)",
+  surface: "rgba(16,26,44,0.045)",
+  hair: "rgba(16,26,44,0.11)",
+}
+type Tokens = typeof FALLBACK
 
-// Dark palette — warm navy + cream + brightened copper (The Read dark).
-const DARK_THEME_VARIABLES = {
-  background: "#0c1828",
-  mainBkg: "#14223b",
-  secondBkg: "#1b2b47",
-  tertiaryBkg: "#22344f",
-  primaryColor: "#14223b",
-  primaryTextColor: "#f6ead0",
-  primaryBorderColor: "#e8a44a",
-  lineColor: "rgba(246,234,208,0.4)",
-  textColor: "#f6ead0",
-  nodeBkg: "#14223b",
-  nodeBorder: "#e8a44a",
-  nodeTextColor: "#f6ead0",
-  clusterBkg: "rgba(232,164,74,0.08)",
-  clusterBorder: "rgba(232,164,74,0.4)",
-  edgeLabelBackground: "#0c1828",
-  noteBkgColor: "#1b2b47",
-  noteBorderColor: "#e8a44a",
-  noteTextColor: "#f6ead0",
-  actorBkg: "#14223b",
-  actorBorder: "#e8a44a",
-  actorTextColor: "#f6ead0",
-  signalColor: "rgba(246,234,208,0.55)",
-  signalTextColor: "#f6ead0",
-  labelBoxBkgColor: "#14223b",
-  labelBoxBorderColor: "#e8a44a",
-  labelTextColor: "#f6ead0",
-  mindmapBkg: "#14223b",
-} as const
+function readTokens(root: HTMLElement | null): Tokens {
+  if (!root) return { ...FALLBACK }
+  const cs = getComputedStyle(root)
+  const v = (name: string, fb: string) => cs.getPropertyValue(name).trim() || fb
+  return {
+    bg: v("--read-bg", FALLBACK.bg),
+    fg: v("--read-fg", FALLBACK.fg),
+    muted: v("--read-fg-muted", FALLBACK.muted),
+    soft: v("--read-fg-soft", FALLBACK.soft),
+    accent: v("--read-accent", FALLBACK.accent),
+    accentSoft: v("--read-accent-soft", FALLBACK.accentSoft),
+    surface: v("--read-surface", FALLBACK.surface),
+    hair: v("--read-hair", FALLBACK.hair),
+  }
+}
 
-function themeCSSFor(mode: ReadMode): string {
-  const edge = mode === "dark" ? "rgba(246,234,208,0.72)" : "rgba(13,27,61,0.72)"
-  const clusterLabel = mode === "dark" ? "#e8a44a" : "#b45309"
+// Map the reader tokens onto Mermaid's base-theme variables. Boxes use the
+// faint --read-surface fill over the paper with the accent as their border;
+// text is the ink; arrows/lines are the soft ink.
+function themeVariablesFrom(t: Tokens) {
+  return {
+    background: t.bg,
+    mainBkg: t.surface,
+    secondBkg: t.surface,
+    tertiaryBkg: t.surface,
+    primaryColor: t.surface,
+    primaryTextColor: t.fg,
+    primaryBorderColor: t.accent,
+    lineColor: t.soft,
+    textColor: t.fg,
+    nodeBkg: t.surface,
+    nodeBorder: t.accent,
+    nodeTextColor: t.fg,
+    clusterBkg: t.surface,
+    clusterBorder: t.accentSoft,
+    edgeLabelBackground: t.bg,
+    noteBkgColor: t.surface,
+    noteBorderColor: t.accent,
+    noteTextColor: t.fg,
+    actorBkg: t.surface,
+    actorBorder: t.accent,
+    actorTextColor: t.fg,
+    signalColor: t.muted,
+    signalTextColor: t.fg,
+    labelBoxBkgColor: t.surface,
+    labelBoxBorderColor: t.accent,
+    labelTextColor: t.fg,
+    mindmapBkg: t.surface,
+  }
+}
+
+function themeCSSFrom(t: Tokens): string {
   return `
     .nodeLabel, .edgeLabel, .label, foreignObject div {
       font-family: 'IBM Plex Serif', Georgia, serif !important;
@@ -104,7 +106,7 @@ function themeCSSFor(mode: ReadMode): string {
       font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
       font-size: 12px !important;
       letter-spacing: 0.06em !important;
-      color: ${edge} !important;
+      color: ${t.muted} !important;
     }
     .cluster-label .nodeLabel,
     .cluster-label foreignObject div {
@@ -112,7 +114,7 @@ function themeCSSFor(mode: ReadMode): string {
       font-size: 12px !important;
       letter-spacing: 0.22em !important;
       text-transform: uppercase !important;
-      color: ${clusterLabel} !important;
+      color: ${t.accent} !important;
     }
   `
 }
@@ -126,7 +128,9 @@ export function MermaidDiagram({ code, caption }: Props) {
   const [mode, setMode] = useState<ReadMode>("light")
   const renderSeq = useRef(0)
 
-  // Track the nearest [data-read-mode] ancestor + re-theme on its change.
+  // Track the nearest [data-read-mode] ancestor + re-render on its change.
+  // `mode` is only a re-render trigger — the actual colours are read from the
+  // reader's live tokens at render time, so a repaint needs no change here.
   useEffect(() => {
     const root = figureRef.current?.closest(
       "[data-read-mode]",
@@ -146,11 +150,14 @@ export function MermaidDiagram({ code, caption }: Props) {
     async function run() {
       try {
         const mermaid = (await import("mermaid")).default
+        const root = figureRef.current?.closest(
+          "[data-read-mode]",
+        ) as HTMLElement | null
+        const tokens = readTokens(root)
         mermaid.initialize({
           startOnLoad: false,
           theme: "base",
-          themeVariables:
-            mode === "dark" ? DARK_THEME_VARIABLES : LIGHT_THEME_VARIABLES,
+          themeVariables: themeVariablesFrom(tokens),
           fontFamily: "'IBM Plex Serif', Georgia, serif",
           flowchart: { curve: "basis", padding: 18, htmlLabels: true },
           sequence: {
@@ -160,7 +167,7 @@ export function MermaidDiagram({ code, caption }: Props) {
             messageFontSize: 14,
             wrap: true,
           },
-          themeCSS: themeCSSFor(mode),
+          themeCSS: themeCSSFrom(tokens),
         })
         // Bump the render id each pass so a re-theme never collides with
         // the previous render's element ids in the document.
@@ -199,21 +206,18 @@ export function MermaidDiagram({ code, caption }: Props) {
     }
   }, [code, caption, baseId, mode])
 
-  const dark = mode === "dark"
-
   return (
     <figure
       ref={figureRef}
       data-read-surface
       // Breakout — at lg/xl the figure pulls outside the max-w-3xl
-      // column (48/96 px each side) so wide diagrams get room.
+      // column (48/96 px each side) so wide diagrams get room. Chrome uses
+      // the reader tokens directly, so it follows any repaint automatically.
       className="my-10 rounded-xl border p-4 sm:p-5 lg:-mx-12 xl:-mx-24"
       style={{
-        background: dark ? "#11203a" : "#fdfaf2",
-        borderColor: dark ? "rgba(232,164,74,0.25)" : "rgba(180,134,11,0.18)",
-        boxShadow: dark
-          ? "0 1px 0 rgba(232,164,74,0.08)"
-          : "0 1px 0 rgba(180,134,11,0.08)",
+        background: "var(--read-bg)",
+        borderColor: "var(--read-hair)",
+        boxShadow: "none",
       }}
     >
       {error ? (
@@ -245,7 +249,7 @@ export function MermaidDiagram({ code, caption }: Props) {
           style={{
             fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
             lineHeight: 1.55,
-            color: dark ? "rgba(246,234,208,0.66)" : "rgba(13,27,61,0.6)",
+            color: "var(--read-fg-muted)",
           }}
         >
           {caption}
