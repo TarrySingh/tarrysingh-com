@@ -30,7 +30,6 @@ flowchart TD
   H -. "onboarding lag" .-> M
   I -. "shadow IT" .-> M
   L -. "policy lag" .-> S
-
 ```
 
 ## The bottleneck is the edges, not the nodes
@@ -56,7 +55,6 @@ flowchart LR
     B_H ~~~ B_DESC
     B_DESC ~~~ B1
   end
-
   subgraph IGNORED[" "]
     direction TB
     I_H["IGNORED EDGE"]
@@ -69,7 +67,6 @@ flowchart LR
     I_H ~~~ I_DESC
     I_DESC ~~~ I1
   end
-
   subgraph INCOMPLETE[" "]
     direction TB
     IC_H["INCOMPLETE EDGE"]
@@ -82,7 +79,6 @@ flowchart LR
     IC_H ~~~ IC_DESC
     IC_DESC ~~~ IC1
   end
-
   subgraph TAKEAWAY[" "]
     direction TB
     T_H["EVERY 'ALIGNMENT ISSUE'\nIS ONE OF THESE THREE"]
@@ -91,11 +87,9 @@ flowchart LR
     T_H ~~~ T1
     T1 ~~~ T2
   end
-
   BROKEN ~~~ IGNORED
   IGNORED ~~~ INCOMPLETE
   INCOMPLETE --> TAKEAWAY
-
   classDef hdrRose fill:#cf7d5a,stroke:#cf7d5a,color:#0c1828,font-weight:bold
   classDef hdrCopper fill:#c98e4f,stroke:#c98e4f,color:#0c1828,font-weight:bold
   classDef hdrCool fill:#849cc8,stroke:#849cc8,color:#0c1828,font-weight:bold
@@ -104,7 +98,6 @@ flowchart LR
   classDef deptNode stroke:#c98e4f,stroke-width:1.5px
   classDef failNode stroke:#cf7d5a,stroke-width:1.5px,font-weight:bold
   classDef takeawayNode stroke:#a698d4,stroke-width:1.5px,font-weight:bold
-
   class B_H hdrRose
   class I_H hdrCopper
   class IC_H hdrCool
@@ -113,7 +106,6 @@ flowchart LR
   class B3,I3,IC3 failNode
   class T_H hdrViolet
   class T1,T2 takeawayNode
-
   style BROKEN fill:none,stroke:#cf7d5a,stroke-width:1.5px,rx:8
   style IGNORED fill:none,stroke:#c98e4f,stroke-width:1.5px,rx:8
   style INCOMPLETE fill:none,stroke:#849cc8,stroke-width:1.5px,rx:8
@@ -135,7 +127,6 @@ flowchart TD
     direction TB
     BEF_H["BEFORE — VENDOR SPRAWL"]
     BEF_STAT["60–200 tools per department\n$21M/yr unused licences\n52.7% seats idle"]
-
     subgraph BF_MKT[" "]
       BM_H["Marketing · 60–100 tools"]
       BM1["CDP"] --- BM2["Automation"] --- BM3["Attribution"]
@@ -145,7 +136,6 @@ flowchart TD
       BM1 ~~~ BM4
       BM4 ~~~ BM7
     end
-
     subgraph BF_SALES[" "]
       BS_H["Sales · 80–200 tools"]
       BS1["CRM"] --- BS2["Outreach/\nSalesloft"] --- BS3["Gong"]
@@ -155,11 +145,9 @@ flowchart TD
       BS1 ~~~ BS4
       BS4 ~~~ BS7
     end
-
     BEF_H ~~~ BEF_STAT
     BEF_STAT ~~~ BF_MKT
   end
-
   subgraph TRANSFORM[" "]
     direction TB
     TR_H["THE TRANSFORMATION"]
@@ -170,11 +158,9 @@ flowchart TD
     TR_H ~~~ TR1
     TR1 --> TR2 --> TR3 --> TR4
   end
-
   subgraph AFTER[" "]
     direction TB
     AFT_H["AFTER — AGENT ORCHESTRATION"]
-
     subgraph AF_CORE[" "]
       AC_H["Unified Data Layer"]
       AC1["3–5 systems\nof record"]
@@ -183,7 +169,6 @@ flowchart TD
       AC_H ~~~ AC1
       AC1 --> AC2 --> AC3
     end
-
     subgraph AF_RESULT[" "]
       AR_H["RESULT"]
       AR1["30–50% fewer vendors"]
@@ -195,12 +180,9 @@ flowchart TD
       AR2 ~~~ AR3
       AR3 ~~~ AR4
     end
-
     AFT_H ~~~ AF_CORE
   end
-
   BEFORE --> TRANSFORM --> AFTER
-
   classDef hdrRose fill:#cf7d5a,stroke:#cf7d5a,color:#0c1828,font-weight:bold
   classDef hdrCopper fill:#c98e4f,stroke:#c98e4f,color:#0c1828,font-weight:bold
   classDef hdrCool fill:#849cc8,stroke:#849cc8,color:#0c1828,font-weight:bold
@@ -209,7 +191,6 @@ flowchart TD
   classDef toolNode stroke:#849cc8,stroke-width:1px
   classDef stepNode stroke:#c98e4f,stroke-width:1.5px,font-weight:bold
   classDef goodNode stroke:#5fa6b4,stroke-width:1.5px
-
   class BEF_H hdrRose
   class BEF_STAT statNode
   class BM_H,BS_H hdrCool
@@ -219,7 +200,6 @@ flowchart TD
   class AFT_H hdrTeal
   class AC_H,AR_H hdrTeal
   class AC1,AC2,AC3,AR1,AR2,AR3,AR4 goodNode
-
   style BEFORE fill:none,stroke:#cf7d5a,stroke-width:1.5px,rx:8
   style BF_MKT fill:none,stroke:#849cc8,stroke-width:1px,rx:6
   style BF_SALES fill:none,stroke:#849cc8,stroke-width:1px,rx:6
@@ -319,7 +299,6 @@ flowchart TD
   subgraph SPONSOR[" "]
     direction TB
     SP_H["PE SPONSOR — AGENTIC AUDIT PLAYBOOK"]
-
     subgraph ACQUIRE[" "]
       direction TB
       ACQ_H["ACQUIRE"]
@@ -329,7 +308,6 @@ flowchart TD
       ACQ_H ~~~ A1
       A1 --> A2 --> A3
     end
-
     subgraph AUDIT[" "]
       direction TB
       AUD_H["AUDIT"]
@@ -339,7 +317,6 @@ flowchart TD
       AUD_H ~~~ AU1
       AU1 --> AU2 --> AU3
     end
-
     subgraph OPTIMISE[" "]
       direction TB
       OPT_H["OPTIMISE"]
@@ -349,7 +326,6 @@ flowchart TD
       OPT_H ~~~ O1
       O1 --> O2 --> O3
     end
-
     subgraph EXIT[" "]
       direction TB
       EX_H["EXIT"]
@@ -359,15 +335,12 @@ flowchart TD
       EX_H ~~~ E1
       E1 --> E2 --> E3
     end
-
     ACQUIRE --> AUDIT --> OPTIMISE --> EXIT
     SP_H ~~~ ACQUIRE
   end
-
   subgraph COMPOUND[" "]
     direction TB
     CP_H["THE COMPOUNDING EFFECT"]
-
     subgraph PORTFOLIO[" "]
       direction LR
       PF1["PortCo 1\nPlaybook v1"]
@@ -376,12 +349,10 @@ flowchart TD
       PF4["PortCo N\nPlaybook vN"]
       PF1 --> PF2 --> PF3 -. "..." .-> PF4
     end
-
     CP_STAT["Each audit refines a shared artifact.\nDiligence cost ↓ · Accuracy ↑ · Time-to-value ↓"]
     CP_H ~~~ PORTFOLIO
     PORTFOLIO ~~~ CP_STAT
   end
-
   subgraph MATH[" "]
     direction TB
     MA_H["THE ARITHMETIC"]
@@ -394,17 +365,14 @@ flowchart TD
     MA2 ~~~ MA3
     MA3 ~~~ MA4
   end
-
   EXIT -. "playbook\ncompounds" .-> COMPOUND
   COMPOUND --> MATH
-
   classDef hdrCopper fill:#c98e4f,stroke:#c98e4f,color:#0c1828,font-weight:bold
   classDef hdrTeal fill:#5fa6b4,stroke:#5fa6b4,color:#0c1828,font-weight:bold
   classDef actionNode stroke:#849cc8,stroke-width:1.5px
   classDef portcoNode stroke:#a698d4,stroke-width:1.5px,font-weight:bold
   classDef statNode stroke:#5fa6b4,stroke-width:1.5px,font-weight:bold
   classDef mathNode stroke:#c98e4f,stroke-width:1.5px
-
   class SP_H hdrCopper
   class ACQ_H,AUD_H,OPT_H,EX_H hdrCopper
   class A1,A2,A3,AU1,AU2,AU3,O1,O2,O3,E1,E2,E3 actionNode
@@ -414,7 +382,6 @@ flowchart TD
   class MA_H hdrCopper
   class MA1,MA2,MA3 mathNode
   class MA4 hdrCopper
-
   style SPONSOR fill:none,stroke:#c98e4f,stroke-width:1.5px,rx:8
   style ACQUIRE fill:none,stroke:#849cc8,stroke-width:1px,rx:6
   style AUDIT fill:none,stroke:#849cc8,stroke-width:1px,rx:6

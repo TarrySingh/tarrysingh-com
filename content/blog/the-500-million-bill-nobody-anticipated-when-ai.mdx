@@ -6,7 +6,6 @@ excerpt: "An enterprise client burned $500 million on AI services in a single mo
 draft: false
 tags: ["enterprise-ai", "ai-governance", "finops", "ai-agents", "technical-debt", "cost-management"]
 ---
-
 An enterprise client spent $500 million in a single month on AI services after failing to implement usage controls or cost monitoring.
 
  No one had reviewed consumption patterns until the invoice arrived in June 2026. That is not a hypothetical vendor horror story. It happened. 
@@ -26,8 +25,6 @@ A review of 127 enterprise agentic AI implementations found that 73% went over b
 The pattern is consistent. 
 
 Forty-two percent of enterprises abandoned most of their AI initiatives in 2025, up from 17% in 2024, a near-tripling in a single year.
-
- 
 
 The average organization scrapped 46% of AI proofs of concept before reaching production.
 
@@ -53,15 +50,11 @@ Prompt sprawl crept up silently, turning content teams into firefighters battlin
 
 Prompts are quietly becoming enterprise interfaces, but without the governance structures we instinctively apply to data, code or systems, and prompt sprawl creates reliability issues, inefficiency and risk long before leadership realizes what's happening.
 
- 
-
 Governed prompts are repeatable, auditable, and improvable. Ungoverned ones are none of the three. The shift from prompt sprawl to prompt governance is what allows an organisation to scale AI adoption without proportionally scaling the risk.
 
 But most teams skipped governance. They were told to move fast. They moved fast. Now they have agent sprawl. 
 
 LangChain, LangGraph, Pydantic AI, Vercel AI SDK adoption went from 9% of organizations in early 2025 to nearly 18% by 2026, and services using agentic frameworks more than doubled.
-
- 
 
 78% of enterprises run AI agent pilots but fewer than 15% reach production scale.
 
@@ -83,11 +76,9 @@ flowchart TD
     K --> L[Finance flags spend]
     L --> M[POC shelved]
     M --> N[Debt persists]
-    
     style H fill:#f96
     style N fill:#f96
     style E fill:#fc6
-
 %% Most POCs skip governance, accumulate infrastructure and integration debt, blow the budget, and get shelved—but the infrastructure keeps billing and the technical debt persists.
 ```
 
@@ -95,13 +86,9 @@ flowchart TD
 
 IBM CEO Arvind Krishna attributed much of the company's revenue shortfall to an abrupt shift in customer capital spending during the final weeks of June, with enterprise customers moving spending toward servers, storage and memory to secure supply-constrained infrastructure before anticipated price increases, reducing spending on IBM's Z mainframes and the associated transaction-processing software.
 
-That is the canary. When enterprises reprioritize CapEx *away* from transactional workloads to secure AI infrastructure supply, then discover they cannot afford to run what they just bought, something breaks. The companies that locked in $700 billion in hyperscale buildout commitments — 
+That is the canary. When enterprises reprioritize CapEx *away* from transactional workloads to secure AI infrastructure supply, then discover they cannot afford to run what they just bought, something breaks. The companies that locked in $700 billion in hyperscale buildout commitments — with capital expenditures reaching $650 billion in 2026 and surpassing $1.1 trillion in 2027
 
-with capital expenditures reaching $650 billion in 2026 and surpassing $1.1 trillion in 2027
-
- — are betting that enterprises will absorb the inference cost. But 
-
-the FinOps Foundation locates 80 to 90 percent of AI expenditures in inference, not in training, yet GPU utilization during operation often ranges from 15 to 30 percent.
+ — are betting that enterprises will absorb the inference cost. But the FinOps Foundation locates 80 to 90 percent of AI expenditures in inference, not in training, yet GPU utilization during operation often ranges from 15 to 30 percent.
 
 That is the FinOps reckoning. Paying premium rates for capacity you use at 20%. Paying consumption-based pricing for agents you cannot turn off because no one documented which API calls are production-critical and which are leftover from a demo. Paying for three different LLM providers because three different teams picked three different models and no one centralized routing.
 
@@ -112,8 +99,6 @@ The enterprises running production-grade agents at scale — the ones *not* in p
 They define governance before they write code. They design for failure, not just for the happy path. And they treat the agent architecture as a system to be maintained, not a project to be shipped.
 
 Narrow single-function agents scale more reliably than broad multi-function ones, with successful deployments starting with agents scoped to a single, well-defined task, and scope expansion happening only after the narrow version proved stable for 90+ days, according to a March 2026 survey.
-
- 
 
 Every time teams said "we'll add logging later," later meant debugging a failure with no data. The cost of adding structured logging to a prototype is low. The cost of reconstructing what happened in a production failure without it is high.
 

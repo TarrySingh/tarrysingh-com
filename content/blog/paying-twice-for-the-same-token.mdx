@@ -41,7 +41,6 @@ flowchart TD
   D -- miss --> F{Engine: KV prefix cache}
   F -- hit --> G[Skip prefill compute]
   F -- miss --> H[Full inference]
-
 ```
 
 That is the entire pattern. It is not subtle. It is just rarely implemented in the right order.

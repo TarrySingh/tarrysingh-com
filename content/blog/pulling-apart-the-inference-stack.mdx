@@ -32,7 +32,6 @@ flowchart LR
   D --> E[Token stream back to client]
   B -.cache lookup.-> F[(Distributed KV store)]
   F -.prefix hit.-> D
-
 ```
 
 The router is the new control point. It owns three decisions a single-pool server never had to make: which prefill worker takes this prompt, which decode worker will host the resulting KV cache, and whether any of the prompt is already cached somewhere from a prior session. The transport layer underneath — [NVIDIA's NIXL](https://developer.nvidia.com/blog/enhancing-distributed-inference-performance-with-the-nvidia-inference-transfer-library/) on one side, the Mooncake Transfer Engine on the other — exists to move KV cache blocks between GPUs without going anywhere near the host CPU. Most production deployments use NVLink or InfiniBand for this. RoCE works but with worse tail behaviour.

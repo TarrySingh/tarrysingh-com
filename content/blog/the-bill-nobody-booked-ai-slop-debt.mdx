@@ -38,7 +38,6 @@ flowchart TD
   L2 --> L3[Agent runtime debt — unevaluated chains, prompt sprawl, no kill switches]
   L3 --> L4[AI slop debt — abandoned pilots, redundant copilots, ghost fine-tunes]
   L4 --> B[Visible monthly inference bill]
-
 ```
 
 Each layer makes the one above it more expensive. A retrieval pipeline sitting on top of a legacy product database with no schema documentation will quietly multiply its inference cost because nobody knows how to prune the index. An agent runtime layered on top of MLOps nobody owns will hit the model more often because nobody has measured how often it needs to. The slop layer is where the entire stack capitalises itself into your monthly cloud invoice.
