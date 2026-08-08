@@ -1,8 +1,8 @@
 ---
-title: "The Grid Can't Keep Up — and AI Is on Both Sides of the Problem"
+title: "The Grid Can't Keep Up · AI Is on Both Sides of the Problem"
 date: "2026-05-26"
 category: "Essays"
-excerpt: "AI is the tool that could compress seismic interpretation from months to days — and the workload that is breaking the grid it depends on. Anyone selling you one half of that story is selling you half a story."
+excerpt: "AI is the tool that could compress seismic interpretation from months to days. It is also the workload that is breaking the grid it depends on. Anyone selling you one half of that story is selling you half a story."
 draft: false
 tags: ["energy-grid-crisis", "ai-demand-forecasting", "upstream-oil-and-gas", "pjm-market-reform", "flexible-data-centres"]
 series: { key: "enterprise", part: 2 }
@@ -12,7 +12,7 @@ Three things landed on my desk in May that, taken together, tell a single story 
 
 First:
 
-on 6 May 2026, PJM Interconnection — the largest US grid operator, serving 13 states — proposed three broad frameworks for reforming its wholesale electricity markets. The white paper, titled *Powering Reliability Through Market Design*, reads like a crisis document.
+on 6 May 2026, PJM Interconnection (the largest US grid operator, serving 13 states) proposed three broad frameworks for reforming its wholesale electricity markets. The white paper, titled *Powering Reliability Through Market Design*, reads like a crisis document.
 
 PJM CEO David Mills stated bluntly: "The current situation is not tenable."
 
@@ -24,7 +24,7 @@ Norway's Equinor generated around $200 million in AI-related savings between 202
 
 Good numbers. Real numbers.
 
-Third: NVIDIA and a startup called Emerald AI are building something that sits squarely at the intersection of the first two. I'll get to that.
+Third: NVIDIA and a startup called Emerald AI are building something that sits squarely at the intersection of the first two.
 
 ## The PJM crisis is an AI crisis
 
@@ -34,7 +34,7 @@ Since PJM recently reopened its interconnection queue, power companies and devel
 
 That is not a typo. Two hundred and twenty gigawatts.
 
-PJM's own long-term load forecast projects summer peak demand will rise to 253 GW by 2046, up from 160 GW in 2025 — a 58% increase driven primarily by data centres.
+PJM's own long-term load forecast projects summer peak demand will rise to 253 GW by 2046, up from 160 GW in 2025. That is a 58% increase driven primarily by data centres.
 
 The white paper lays out three paths.
 
@@ -44,11 +44,11 @@ Path B, in plain language, means that customers who pay less could get their pow
 
 Meanwhile, American Electric Power (AEP) is considering pulling out of PJM entirely.
 
-I'd bet against Path A. Patching a market whose prices have spiked 10× in two auction cycles is not reform — it's stalling. The real question is whether PJM can execute Path C's multi-year transition before something breaks.
+Path A looks to me like the weakest of the three. Patching a market whose prices have spiked 10× in two auction cycles is stalling dressed as reform. The real question is whether PJM can execute Path C's multi-year transition before something breaks.
 
 PJM itself concedes it "may be operating on multiple tracks simultaneously" through 2030.
 
-## $500 billion — with an asterisk\*
+## $500 billion, with an asterisk\*
 
 The Rystad report is the most granular attempt I've seen to quantify what AI is worth to upstream oil and gas specifically.
 
@@ -58,11 +58,11 @@ E&P players currently investing in digital and AI are expected to capture an add
 
 The asterisk:
 
-most current AI applications in upstream rely on traditional machine learning models trained on equipment- and workflow-specific data, which takes years to accumulate, and models rarely transfer across assets without significant rework. This is the part the press releases skip over. You don't drop a foundation model onto a drilling rig the way you drop ChatGPT onto a customer support desk.
+most current AI applications in upstream rely on traditional machine learning models trained on equipment- and workflow-specific data, which takes years to accumulate, and models rarely transfer across assets without significant rework. You don't drop a foundation model onto a drilling rig the way you drop ChatGPT onto a customer support desk.
 
-A consistent finding across all four workflow categories is that AI typically does not raise the upper limit for the best performers — and the main obstacle to capturing value is not technology availability but large-scale deployment.
+A consistent finding across all four workflow categories is that AI typically does not raise the upper limit for the best performers. The main obstacle to capturing value is not technology availability but large-scale deployment.
 
-Rystad estimates that for US land wells, the average improvement potential is around 10%, while for complex deepwater wells, savings can exceed 50% in extreme cases — though 15–20% is more representative. That range matters. A board hearing "50%" and a board hearing "15%" will fund very different programmes.
+Rystad estimates that for US land wells, the average improvement potential is around 10%. For complex deepwater wells, savings can exceed 50% in extreme cases, though 15–20% is more representative. That range matters. A board hearing "50%" and a board hearing "15%" will fund very different programmes.
 
 E&Ps are estimated to have spent around $25 billion on digital and AI purchases last year.
 
@@ -70,14 +70,14 @@ The market for those tools and services is expected to grow by more than $10 bil
 
 The question is whether the marginal dollar in digital capex yields more value than the marginal dollar in a conventional well intervention. For most operators, that arithmetic hasn't been done properly.
 
-## Flexible AI factories: clever idea, unfinished story
+## Flexible AI factories
 
 At [CERAWeek in Houston on 23 March 2026](https://nvidianews.nvidia.com/news/nvidia-and-emerald-ai-join-leading-energy-companies-to-pioneer-flexible-ai-factories-as-grid-assets),
 
 NVIDIA and Emerald AI announced a collaboration with AES, Constellation, Invenergy, NextEra Energy, Nscale Energy & Power and Vistra to build a new class of "AI factories" that connect to the grid faster and operate as flexible energy assets. The architecture is called Vera Rubin DSX, and the key piece is a software library, DSX Flex, that enables AI facilities to operate as flexible energy assets, balancing high-performance compute workloads with real-time grid responsiveness.
 
 ```mermaid
-%% caption: The DSX Flex model turns an AI data centre from a static load into a dispatchable grid asset — at least in theory.
+%% caption: The DSX Flex model turns an AI data centre from a static load into a dispatchable grid asset, at least in theory.
 flowchart LR
     A[Grid Signal<br/>price / stress] --> B[DSX Flex<br/>software layer]
     B --> C[Reduce GPU<br/>load 20–30%]
@@ -93,25 +93,23 @@ A peer-reviewed paper from an earlier Phoenix trial with Oracle was published in
 
 That's more validation than most infrastructure announcements can claim.
 
-But here's where it gets uncomfortable.
+The CERAWeek announcement is light on firm project commitments or timelines, which suggests that for now the effort is more a framework for collaboration than a buildout plan.
 
-The CERAWeek announcement is light on firm project commitments or timelines, suggesting the effort is — for now — more of a framework for collaboration than a buildout plan.
-
-A 30% power reduction on a Blackwell cluster is a 30% throughput reduction on whatever workload is running — for inference serving, that means slower responses or dropped requests.
+A 30% power reduction on a Blackwell cluster is a 30% throughput reduction on whatever workload is running. For inference serving, that means slower responses or dropped requests.
 
 Any hyperscaler with a fully loaded cluster and binding SLAs is going to push back hard on which jobs get paused.
 
-The first commercial-scale flexible AI factory is NVIDIA's own 96 MW Aurora data centre in Manassas, Virginia, with deployment involving Digital Realty and PJM — expected to launch later in 2026.
+The first commercial-scale flexible AI factory is NVIDIA's own 96 MW Aurora data centre in Manassas, Virginia, with deployment involving Digital Realty and PJM. Launch is expected later in 2026.
 
 Note: in PJM's territory. That's not a coincidence.
 
-## My calibrated opinion
+## Funding a digital programme
 
-If I were on the board of a mid-cap E&P weighing a $200 million digital investment, I'd insist on three things that neither the Rystad report nor the vendor pitches emphasise enough. One: contractually ring-fenced pilot-to-production gates with kill switches tied to measurable value per barrel. Two: a sober assessment of data debt — how many years of sensor data you actually have, and how much rework your ML models will need per asset class. Three: explicit modelling of the power-availability risk. Your shiny cloud-native subsurface platform doesn't run without electrons, and the grid you're plugged into may be rationing them within eighteen months.
+A mid-cap E&P weighing a $200 million digital investment should attach conditions before signing. Start with contractually ring-fenced pilot-to-production gates, with kill switches tied to measurable value per barrel. Then a sober assessment of data debt: how many years of sensor data you actually have, and how much rework your ML models will need per asset class. Then explicit modelling of the power-availability risk. Your shiny cloud-native subsurface platform doesn't run without electrons, and the grid you're plugged into may be rationing them within eighteen months.
 
-The NVIDIA–Emerald AI approach is the first serious engineering attempt to make data centres part of the solution rather than just the demand curve. But it's pre-revenue, lightly committed, and dependent on regulatory frameworks that don't yet exist in most US utility territories. I'd bet it works technically. Whether it works politically — inside PJM's stakeholder process, inside FERC filings, inside utility rate cases — is a different question entirely.
+The NVIDIA–Emerald AI approach is the first serious engineering attempt to make data centres part of the solution rather than just the demand curve. But it's pre-revenue, lightly committed, and dependent on regulatory frameworks that don't yet exist in most US utility territories. On the engineering, I expect it to work. Whether it works politically, inside PJM's stakeholder process, inside FERC filings, inside utility rate cases, is a different question entirely.
 
-The uncomfortable truth is that AI in energy now sits on both sides of the ledger. It's the tool that could compress seismic interpretation from months to days and cut drilling non-productive time by double digits. It's also the workload that's breaking the grid it depends on. Anyone selling you one half of that story is selling you half a story.
+AI in energy now sits on both sides of the ledger. It's the tool that could compress seismic interpretation from months to days and cut drilling non-productive time by double digits. It's also the workload that's breaking the grid it depends on. Anyone selling you one half of that story is selling you half a story.
 
 * * *
 

@@ -2,31 +2,31 @@
 title: "Your AI Doesn't Discover Anything. Here's the Math That Proves It."
 date: "2026-06-08"
 category: "Essays"
-excerpt: "A new MIT preprint draws the line between search and discovery in category theory — and that single empty set is the formal wall most agent stacks will never cross. Searching harder inside a fixed vocabulary is not the same operation as minting a new one."
+excerpt: "A new MIT preprint draws the line between search and discovery in category theory, and one empty set turns out to be the formal wall most agent stacks will never cross. Searching harder inside a fixed vocabulary is a different operation from minting a new one."
 draft: false
 tags: ["category-theory", "ai-discovery", "agentic-systems", "provenance", "scientific-method"]
 ---
-Your model is a world-class recombiner. That's not an insult — it's a category error to call it anything else.
+Your model is a formidable recombiner. Calling it anything else is a category error.
 
-Hand it the whole corpus of structural biology and it will produce fluent, plausible, occasionally correct recombinations of everything already written down. What it won't do, on its own, is notice that the *vocabulary* it's reasoning in is the thing that's wrong, tear it up, and prove the replacement earned its place. That gap finally has a name — and, for once, a piece of real mathematics behind it.
+Hand it the whole corpus of structural biology and it will produce fluent, plausible, occasionally correct recombinations of everything already written down. What it won't do, on its own, is notice that the *vocabulary* it's reasoning in is the thing that's wrong, tear it up, and prove the replacement earned its place. That gap finally has a name. It also has, for once, a piece of real mathematics behind it.
 
-A new MIT preprint draws the line cleanly. Fiona Y. Wang and Markus J. Buehler give *discovery* a precise shape in category theory — not "a sufficiently surprising output," but a structural fact you can record, verify, and price in bits. The paper is [*Self-Revising Discovery Systems for Science*](https://arxiv.org/abs/2606.01444), posted to arXiv on 31 May 2026. It's a preprint, not peer-reviewed, and the demonstrations are narrow materials-science cases — keep that firmly in mind before anyone sells you a "self-evolving AI scientist" on the strength of it.
+A new MIT preprint draws the line cleanly. Fiona Y. Wang and Markus J. Buehler give *discovery* a precise shape in category theory: a structural fact you can record, verify, and price in bits, in place of "a sufficiently surprising output." The paper is [*Self-Revising Discovery Systems for Science*](https://arxiv.org/abs/2606.01444), posted to arXiv on 31 May 2026. It's a preprint, not peer-reviewed, and the demonstrations are narrow materials-science cases. Keep that firmly in mind before anyone sells you a "self-evolving AI scientist" on the strength of it.
 
 But the spine of the argument is the most useful thing I've read on agentic systems in months. Once you can say *formally* what it means to change the representational regime, you can also say how a verifier should be built, what provenance must be recorded, how much was actually discovered, and why scaling a fixed model is categorically different from building a system that can mint new commitments.
 
 ## Why a builder should care
 
-I build agent systems that have to survive an audit. Typed artifacts, provenance, gates in the path, and — the unglamorous one nobody funds — knowing whether a step actually *changed the model* or just overwrote a number. This paper is a formal account of exactly that distinction, which is why I'm writing about it instead of the week's model releases.
+I build agent systems that have to survive an audit. Typed artifacts, provenance, gates in the path, and the unglamorous one nobody funds: knowing whether a step actually *changed the model* or just overwrote a number. This paper is a formal account of exactly that distinction, which is why I'm writing about it instead of the week's model releases.
 
-The authors separate three operations that practitioners constantly blur into one undifferentiated "the agent did stuff" log. The difference isn't about how impressive the output looks — it's structural.
+The authors separate three operations that practitioners constantly blur into one undifferentiated "the agent did stuff" log. The difference is structural, and has nothing to do with how impressive the output looks.
 
 <OpsTriad />
 
-The first two never alter what *kinds* of things can exist. Only the third does. That gives you a definition of discovery with **no appeal to subjective novelty**: you don't ask whether the output *feels* new, you ask whether the space of admissible artifacts changed. That's a structural fact about the system — and structural facts can be audited. That's the whole game. The lineage is Popper, Kuhn, Lakatos: science as the revision of frameworks, not the accumulation of answers. The contribution is making "revision of framework" precise enough to *check*.
+The first two never alter what *kinds* of things can exist. Only the third does. That gives you a definition of discovery with **no appeal to subjective novelty**: you don't ask whether the output *feels* new, you ask whether the space of admissible artifacts changed. That's a structural fact about the system, and structural facts can be audited. The lineage is Popper, Kuhn, Lakatos: science as the revision of frameworks rather than the accumulation of answers. The contribution is making "revision of framework" precise enough to *check*.
 
 ## 01 · A discovery system's state is a copresheaf
 
-Here's the central modelling choice, and it's the one worth slowing down for. The persistent state of an agentic discovery system is *not* a chat transcript, a hidden vector, or a single checkpoint. It is a growing, typed record of artifacts and how each one was produced.
+A chat transcript, a hidden vector, a single checkpoint: none of those is the persistent state of an agentic discovery system. That state is a growing, typed record of artifacts and how each one was produced.
 
 Formalise it. A regime carries a **schema category** $\mathcal{S}_b$: its objects are artifact *types* (a sequence, a structure, a contact graph, a symbolic model, a measurement, a report) and its morphisms are the *operations* allowed between them. The system's state at time $t$ is then a covariant, $\mathbf{Set}$-valued functor:
 
@@ -34,15 +34,15 @@ $$I_t : \mathcal{S}_b \longrightarrow \mathbf{Set}.$$
 
 For each type $A$, the set $I_t(A)$ holds the actual artifacts of that type the system currently has; for each operation $f : A \to B$, the function $I_t(f) : I_t(A) \to I_t(B)$ records how applying it turns an $A$-artifact into a $B$-artifact. The functor cleanly separates the *regime* (the schema, which can stay fixed) from its *contents* (the population, which grows).
 
-Now take the **category of elements** of that functor, written $\int_{\mathcal{S}_b} I_t$. Its objects are pairs $(A,x)$ — a type and an actual artifact of it — and a morphism $(A,x)\to(B,y)$ exists exactly when some operation $f$ satisfies $I_t(f)(x)=y$. There's a provenance edge from $x$ to $y$ precisely when a legal operation actually produced $y$ from $x$. The category of elements does not *depict* a provenance graph. It **is** the typed provenance DAG — every accepted artifact, its parents, and the operation that made it. This is the part the vendors gloss. Everyone ships a "lineage view." Almost no one has lineage as the *substrate the reasoning actually runs on*.
+Now take the **category of elements** of that functor, written $\int_{\mathcal{S}_b} I_t$. Its objects are pairs $(A,x)$, a type and an actual artifact of it, and a morphism $(A,x)\to(B,y)$ exists exactly when some operation $f$ satisfies $I_t(f)(x)=y$. There's a provenance edge from $x$ to $y$ precisely when a legal operation actually produced $y$ from $x$. The category of elements does not *depict* a provenance graph. It **is** the typed provenance DAG: every accepted artifact, its parents, and the operation that made it. Vendors gloss this. Everyone ships a "lineage view." Almost no one has lineage as the *substrate the reasoning actually runs on*.
 
 <Callout label="Yoneda, read operationally">
 
-By the covariant Yoneda lemma, an artifact $x \in I_t(A)$ is known entirely by the typed operations it can enter and the things those operations make of it. A thing *is* what you can do with it and what comes out — identity by lineage, not by vibes. That is exactly the discipline you want in an agent's memory.
+By the covariant Yoneda lemma, an artifact $x \in I_t(A)$ is known entirely by the typed operations it can enter and the things those operations make of it. A thing *is* what you can do with it and what comes out. Identity comes from lineage rather than vibes. That is exactly the discipline you want in an agent's memory.
 
 </Callout>
 
-Bundle the regime as a tuple $b = (\mathcal{S}_b, \Gamma_b, V_b, L_b)$ — schema, generators, a **verifier**, and an optional description-length functional — and the full live state becomes a single object the paper calls a knowledge–computation graph:
+Bundle the regime as a tuple $b = (\mathcal{S}_b, \Gamma_b, V_b, L_b)$, meaning schema, generators, a **verifier**, and an optional description-length functional. The full live state then becomes a single object the paper calls a knowledge-computation graph:
 
 $$\mathfrak{K}_t^{\,b} = \bigl(\mathcal{S}_b,\ \Gamma_b,\ I_t,\ \mathsf{Prov}_t,\ V_b,\ L_b,\ \mathsf{D}_t,\ \pi_t\bigr).$$
 
@@ -50,11 +50,11 @@ Forget everything but $\mathcal{S}_b$ and a flattened $\mathsf{Prov}_t$ and you 
 
 ## 02 · The audit contract most stacks quietly fail
 
-Inside a fixed regime, an agent just updates the state — an endofunctor on the category of copresheaves:
+Inside a fixed regime, an agent just updates the state, which is an endofunctor on the category of copresheaves:
 
 $$\Phi_b : [\mathcal{S}_b,\mathbf{Set}] \longrightarrow [\mathcal{S}_b,\mathbf{Set}].$$
 
-Here's where the formalism earns its keep as engineering rather than ornament. Saying $\Phi_b$ is an **endofunctor** is a real claim, not free notation. A raw program that maps one JSON ledger to another is merely an endomap. It becomes a *functor* only when it preserves refinement: if a state $J$ extends a state $I$ by adding verified artifacts without overwriting prior provenance, then $\Phi_b(J)$ must extend $\Phi_b(I)$ the same way.
+Saying $\Phi_b$ is an **endofunctor** is a substantive claim about the implementation. A raw program that maps one JSON ledger to another is merely an endomap. It becomes a *functor* only when it preserves refinement: if a state $J$ extends a state $I$ by adding verified artifacts without overwriting prior provenance, then $\Phi_b(J)$ must extend $\Phi_b(I)$ the same way.
 
 <Callout label="The audit contract" variant="key">
 
@@ -62,15 +62,15 @@ Functoriality is a checklist a real system passes or fails. To earn it the imple
 
 </Callout>
 
-I'll put it more bluntly than the paper does. If your agent framework mutates records in place, reuses IDs, or drops failed calls on the floor, you don't have a discovery system. You have a confident text generator with a database bolted to it, and none of the mathematics below applies to you. Fix the contract first. And before anyone objects that reality is stochastic — agents sample, tools fail, schedulers branch — the framework absorbs that without flinching: read $\Phi_b$ as a stochastic kernel, a morphism in the Kleisli category of a probability monad. The structural claims survive.
+I'll put it more bluntly than the paper does. If your agent framework mutates records in place, reuses IDs, or drops failed calls on the floor, what you have is a confident text generator with a database bolted to it, and none of the mathematics below applies to you. Fix the contract first. And before anyone objects that reality is stochastic (agents sample, tools fail, schedulers branch), the framework absorbs that without flinching: read $\Phi_b$ as a stochastic kernel, a morphism in the Kleisli category of a probability monad. The structural claims survive.
 
 ## 03 · Discovery = transport + residual
 
-Now the real move. Search is iterating $\Phi_b$ inside one regime; discovery is moving to a new one. A genuine regime change is a schema map $u : \mathcal{S}_b \to \mathcal{S}_{b'}$ — a translation from the old vocabulary into a richer one. The old evidence is carried into the new schema by a **left Kan extension** $\operatorname{Lan}_u I_t$: the *least* committal way to reinterpret old data in the new vocabulary, adding nothing it isn't forced to. Then a verified transition supplies a **comparison map**
+Search is iterating $\Phi_b$ inside one regime; discovery is moving to a new one. A genuine regime change is a schema map $u : \mathcal{S}_b \to \mathcal{S}_{b'}$, a translation from the old vocabulary into a richer one. The old evidence is carried into the new schema by a **left Kan extension** $\operatorname{Lan}_u I_t$: the *least* committal way to reinterpret old data in the new vocabulary, adding nothing it isn't forced to. Then a verified transition supplies a **comparison map**
 
 $$\bar\rho : \operatorname{Lan}_u I_t \longrightarrow I'_{t+1}.$$
 
-The *image* of $\bar\rho$ is everything the new world can explain by merely reinterpreting the old. Everything *outside* that image is genuinely new content — and because this is all set-valued, you can price it in bits.
+The *image* of $\bar\rho$ is everything the new world can explain by merely reinterpreting the old. Everything *outside* that image is genuinely new content. Because this is all set-valued, you can price it in bits.
 
 <TransportResidual />
 
@@ -80,11 +80,11 @@ $$(\operatorname{Lan}_u I_t)(A') = \varnothing.$$
 
 <PullQuote>You cannot conjure a new variable by reinterpreting old data. That single empty set is the formal wall between search and discovery.</PullQuote>
 
-An isolated new type — a quantity nothing old can produce — starts life genuinely empty. The only way to populate it is to go get new evidence, run a new tool, admit a new construction. Discovery is **transport plus residual — never transport alone.**
+An isolated new type, a quantity nothing old can produce, starts life genuinely empty. The only way to populate it is to go get new evidence, run a new tool, admit a new construction. Discovery is **transport plus residual**, and transport alone never gets you there.
 
 ## 04 · The protein example, end to end
 
-Abstraction is cheap; the paper's most convincing section is a concrete run. A **Builder/Breaker** loop tries to learn a symbolic law for how flexible each residue in a protein is. A *Breaker* picks new proteins designed to expose the current model's failures; a *Builder* edits a symbolic computation graph; a gate decides what survives. The physics base is the Gaussian Network Model, where a protein's slow collective motions and per-residue mobility fall out of its contact topology alone.
+Abstraction is cheap; the paper's most convincing section is a worked run. A **Builder/Breaker** loop tries to learn a symbolic law for how flexible each residue in a protein is. A *Breaker* picks new proteins designed to expose the current model's failures; a *Builder* edits a symbolic computation graph; a gate decides what survives. The physics base is the Gaussian Network Model, where a protein's slow collective motions and per-residue mobility fall out of its contact topology alone.
 
 Start from a chain $p$ with residues $i = 1,\dots,N_p$ and Cα coordinates $\mathbf{r}_{pi}\in\mathbb{R}^3$. Build the contact graph by thresholding distance, then form the GNM Kirchhoff (graph-Laplacian) matrix:
 
@@ -92,19 +92,19 @@ $$A^{(p)}_{ij} = \mathbf{1}\{\, i \neq j,\ \|\mathbf{r}_{pi}-\mathbf{r}_{pj}\| <
 
 $$\Gamma^{(p)}_{ij} = \begin{cases} -A^{(p)}_{ij}, & i \neq j, \\ \sum_{k\neq i} A^{(p)}_{ik}, & i = j. \end{cases}$$
 
-Diagonalise it, $\Gamma_p\,\mathbf{u}_{pk} = \lambda_{pk}\,\mathbf{u}_{pk}$, and the all-mode **compliance** of a residue — its softness summed over every nonzero mode — is the diagonal of the pseudoinverse:
+Diagonalise it, $\Gamma_p\,\mathbf{u}_{pk} = \lambda_{pk}\,\mathbf{u}_{pk}$, and the all-mode **compliance** of a residue, its softness summed over every nonzero mode, is the diagonal of the pseudoinverse:
 
 $$C_{pi} = (\Gamma_p^{+})_{ii} = \sum_{\lambda_{pk}>0} \frac{u_{pik}^{2}}{\lambda_{pk}}.$$
 
-This isn't a learned feature; it's the harmonic mobility implied by the contacts, and standard GNM ties it straight to the crystallographic B-factor. Because the target is normalised within each chain, the global constants drop out — the task is to explain the *pattern* of flexibility, not its absolute scale. The two features the run lands on are a compressed log-compliance coordinate and a clipped slow-mode participation weight:
+No learning produced this feature. It is the harmonic mobility implied by the contacts, and standard GNM ties it straight to the crystallographic B-factor. Because the target is normalised within each chain, the global constants drop out. What remains to explain is the *pattern* of flexibility, with absolute scale set aside. The two features the run lands on are a compressed log-compliance coordinate and a clipped slow-mode participation weight:
 
-$$\phi_{pi} = z_p\!\bigl(\log(C_{pi}+\epsilon)\bigr), \qquad \psi_{pi} = \bigl[\, z_p(|u_{pi2}|) + \theta \,\bigr]_{+},$$ where $u_{p2}$ is the first nonzero mode — the dominant collective deformation. After paired refitting under the gate, the surviving law is strikingly compact:
+$$\phi_{pi} = z_p\!\bigl(\log(C_{pi}+\epsilon)\bigr), \qquad \psi_{pi} = \bigl[\, z_p(|u_{pi2}|) + \theta \,\bigr]_{+},$$ where $u_{p2}$ is the first nonzero mode, the dominant collective deformation. After paired refitting under the gate, the surviving law is strikingly compact:
 
 $$\widehat{B}^{(z)}_{pi} = \alpha + \beta\,\phi_{pi}\,\psi_{pi}, \qquad \alpha=-0.1332,\ \ \beta=0.2239,\ \ \theta=2.2678.$$
 
-The mechanical reading is clean: *experimental flexibility is best compressed as local compliance expressed through participation in the dominant collective mode.* And the physics lives entirely in a typed, interpretable pipeline, $\{\mathbf{r}_{pi}\} \mapsto A_p \mapsto \Gamma_p \mapsto \{(\lambda_{pk},\mathbf{u}_{pk})\}_k \mapsto (C_{pi},|u_{pi2}|) \mapsto \widehat{B}^{(z)}_{pi}$, not in an opaque regressor.
+The mechanical reading is clean: *experimental flexibility is best compressed as local compliance expressed through participation in the dominant collective mode.* And the physics lives entirely in a typed, interpretable pipeline, $\{\mathbf{r}_{pi}\} \mapsto A_p \mapsto \Gamma_p \mapsto \{(\lambda_{pk},\mathbf{u}_{pk})\}_k \mapsto (C_{pi},|u_{pi2}|) \mapsto \widehat{B}^{(z)}_{pi}$, with no opaque regressor anywhere in it.
 
-Now the categorical payoff, and it's genuinely illuminating. The discovery is *not* "the system used a normal mode" — modes were in the schema from the start. What changed is that the regime came to admit a new multi-input morphism:
+Modes were in the schema from the start, so the discovery is not "the system used a normal mode." What changed is that the regime came to admit a new multi-input morphism:
 
 $$\texttt{LogNormCompliance} \times \texttt{ReLUModeAmpl} \longrightarrow \texttt{ModeConditionedCompliance}.$$
 
@@ -116,7 +116,7 @@ Run a Kan-transport audit over each accepted transition and every new type sorts
 | 1 → 2 | ontology break | none beyond GNM base | −14.4 bits | +37.3 bits |
 | 2 → 3 | regime split | mode-conditioned compliance | −10.3 bits | +54.3 bits |
 
-Read the last two columns together and you see what a naive "accuracy went up" story misses entirely: the later accepted transitions **shrink** the model code while delivering the **largest** compression gains. The law gets *simpler* even as it explains more. Discovery here includes retraction and compression, not just accretion. The descriptive fit even wanders the wrong way — $R^2$ goes $0.48 \to 0.68 \to 0.54 \to 0.41$ — because each score is on a *harder, larger* evidence set as the Breaker adds adversarial proteins (open and closed adenylate kinase, PDB 4AKE and 1AKE). Across the whole run the gate admits **25 of 388** proposed edits — about 6.4%.
+The last two columns are what a naive "accuracy went up" story misses entirely: the later accepted transitions **shrink** the model code while delivering the **largest** compression gains. The law gets *simpler* even as it explains more. Discovery here includes retraction and compression as well as accretion. The descriptive fit even wanders the wrong way, with $R^2$ going $0.48 \to 0.68 \to 0.54 \to 0.41$, because each score is on a *harder, larger* evidence set as the Breaker adds adversarial proteins (open and closed adenylate kinase, PDB 4AKE and 1AKE). Across the whole run the gate admits **25 of 388** proposed edits, about 6.4 per cent.
 
 <Callout label="Why the formalism was worth it" variant="key">
 
@@ -126,9 +126,9 @@ Without it, you would log "model improved, then got worse, then simpler." With i
 
 ## 05 · The gates: MDL and AIC
 
-Everything above hinges on the verifier $V_b$ — the thing that refuses to commit an artifact just because an agent proposed it. The Builder/Breaker loop runs on **Minimum Description Length**: score a model by the total bits to state the model *and* the data given it,
+Everything above hinges on the verifier $V_b$, the thing that refuses to commit an artifact just because an agent proposed it. The Builder/Breaker loop runs on **Minimum Description Length**: score a model by the total bits to state the model *and* the data given it,
 
-$$L(M, D) = L_{\text{model}}(M) + L_{\text{data}}(D \mid M),$$ and admit a revision $M'$ only if it pays for itself on the *enlarged, shared* evidence after both are refit: $L(M', D \cup E) < L(M, D \cup E)$. That's the formal sense in which a productive failure becomes structure — which is exactly why a monotone single-number score is the *wrong* thing to track. The second case study swaps in **Akaike**, $\mathrm{AIC} = 2k - 2\ln\hat{L}$ (lower wins), to select an anisotropic orientation-tensor stiffness surrogate over a simpler isotropic fiber-count descriptor — and the rejected descriptor isn't deleted, it's kept as typed provenance. Of course it is. *That's the contract.*
+$$L(M, D) = L_{\text{model}}(M) + L_{\text{data}}(D \mid M),$$ and admit a revision $M'$ only if it pays for itself on the *enlarged, shared* evidence after both are refit: $L(M', D \cup E) < L(M, D \cup E)$. That's the formal sense in which a productive failure becomes structure, and it is exactly why a monotone single-number score is the *wrong* thing to track. The second case study swaps in **Akaike**, $\mathrm{AIC} = 2k - 2\ln\hat{L}$ (lower wins), to select an anisotropic orientation-tensor stiffness surrogate over a simpler isotropic fibre-count descriptor. The rejected descriptor is kept as typed provenance instead of deleted, which is what the contract requires.
 
 ## 06 · What this means if you ship agents
 
@@ -136,13 +136,13 @@ The mathematics does two jobs at once. As a *language*, it gives discovery a def
 
 <Callout label="If you're building one of these">
 
-**Type your artifacts and operations** — untyped graphs collapse retrieval, search, and discovery into mush. **Make provenance the category of elements** — stable IDs, real parent edges, append-only or explicit supersession, no silent merges; that's what makes your update an endofunctor instead of a script. **Put a principled gate in the path** (MDL, AIC, paired tests) so commitment is a decision, not a default. And **when evidence won't fit, transport explicitly** via a regime map, then compute the residual — that residual is your discovery, and the Kan obstruction tells you honestly when you must go get new data rather than reinterpret old.
+**Type your artifacts and operations.** Untyped graphs collapse retrieval, search, and discovery into mush. **Make provenance the category of elements:** stable IDs, real parent edges, append-only or explicit supersession, no silent merges. That's what makes your update an endofunctor instead of a script. **Put a principled gate in the path** (MDL, AIC, paired tests) so commitment becomes a decision instead of a default. And **when evidence won't fit, transport explicitly** via a regime map, then compute the residual. That residual is your discovery, and the Kan obstruction tells you honestly when you must go get new data rather than reinterpret old.
 
 </Callout>
 
-Here's the part that should change how you budget. Searching harder inside a fixed regime — however vast — is a *categorically different operation* from minting a new representational commitment and proving, against preserved old evidence, that it added something transport couldn't. A bigger model gets superhuman at recombination and may never, once, change the vocabulary. That is not a scale problem you spend your way out of. It's a structure problem, and the empty set $(\operatorname{Lan}_u I_t)(A') = \varnothing$ is the proof.
+Searching harder inside a fixed regime, however vast, is a *categorically different operation* from minting a new representational commitment and proving, against preserved old evidence, that it added something transport couldn't. A bigger model gets superhuman at recombination and may never, once, change the vocabulary. You cannot spend your way out of that. It is a structure problem, and the empty set $(\operatorname{Lan}_u I_t)(A') = \varnothing$ is the proof.
 
-So read [the paper](https://arxiv.org/abs/2606.01444) — and then go check whether your stack could even pass the audit contract. Most can't. Mine has work to do too. That's the useful kind of paper: not the one that tells you you're winning, the one that hands you the test you've been failing without a name for it.
+So read [the paper](https://arxiv.org/abs/2606.01444), then check whether your stack could even pass the audit contract. Most can't. Mine has work to do too. That's the useful kind of paper: the one that hands you the test you've been failing without a name for it.
 
 ---
 

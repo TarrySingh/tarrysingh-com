@@ -1,8 +1,8 @@
 ---
-title: "Sunday Essay — Two Models, One Mistake: Notes on the Evaluator-Optimizer Pattern After PocketOS"
+title: "Sunday Essay · Two Models, One Mistake: Notes on the Evaluator-Optimizer Pattern After PocketOS"
 date: "2026-05-17"
 category: "Essays"
-excerpt: "The failure was never the bad command. It was the absence of a check between the command and the consequence. The evaluator-optimizer pattern is barely an idea—but it is the one still running on Monday morning."
+excerpt: "The failure was never the bad command. It was the absence of a check between the command and the consequence. The evaluator-optimizer pattern is barely an idea, but it is the one still running on Monday morning."
 draft: false
 tags: ["evaluator-optimizer", "production-agents", "model-risk", "agentic-evals", "pocketos-incident"]
 series: { key: "build", part: 3 }
@@ -18,7 +18,21 @@ That second pair of eyes has a name now. The Anthropic engineering team calls it
 
 ## The shape of the loop
 
-A generator produces. An evaluator scores. If the score clears a threshold, the output ships. If it does not, the evaluator's critique becomes context for the next attempt. Three things matter here and almost everyone gets at least one of them wrong.
+A generator produces. An evaluator scores. If the score clears a threshold, the output ships. If it does not, the evaluator's critique becomes context for the next attempt.
+
+```mermaid
+%% caption: The loop that was missing from the Cursor run: nothing reaches the side-effect until a second model has scored it.
+flowchart LR
+  U[User goal] --> G[Generator with a scoped tool surface]
+  G --> P[Proposed action]
+  P --> E[Evaluator on a separate model]
+  E -->|score clears the rubric| C[Commit the side-effect]
+  E -->|score below the rubric| R[Critique becomes context]
+  R --> G
+  R -->|cap on turns, cost, time| H[Halt and escalate to a human]
+```
+
+Almost every team gets at least one of the next three points wrong.
 
 The first is **independence**. The generator and the evaluator should not be the same model with the same prompt at a different temperature. They should be different model families, or at minimum different prompts with different reference material, ideally maintained by different people. The teaching examples are blunt about this: pair a GPT-class model with a DeepSeek or Claude judge, on the grounds that a model is a poor inspector of its own confabulations. I would go further. The evaluator should not have access to the generator's chain of thought. Reading it contaminates the judgment in ways that are easy to measure if you bother to A/B it, and almost nobody does.
 
@@ -30,9 +44,9 @@ The third is **the exit condition**. The loop must terminate. I have seen evalua
 
 Because the 2026 production data is in and the news is bad in a useful way.
 
-LangChain's [State of AI Agents report](https://www.langchain.com/state-of-agent-engineering) put hard numbers on what most of us were seeing in client work. Fifty-seven percent of organizations have agents in production. Thirty-two percent cite quality as the top barrier to deployment, the single largest blocker, ahead of latency at 20% and cost. Among enterprises with more than 2,000 employees, security overtakes latency as the second worry at 24.9%. The interesting line in the report is the one nobody is quoting in their LinkedIn posts: 89% of respondents have implemented observability, but only 52% have implemented evals. That gap — observability without evaluation — is precisely the gap the evaluator-optimizer pattern is supposed to close at runtime, and where most teams are still relying on dashboards that tell them an agent did something without telling them whether what it did was correct.
+LangChain's [State of AI Agents report](https://www.langchain.com/state-of-agent-engineering) put hard numbers on what most of us were seeing in client work. Fifty-seven per cent of organizations have agents in production. Thirty-two per cent cite quality as the top barrier to deployment, the single largest blocker, ahead of latency at 20 per cent and cost. Among enterprises with more than 2,000 employees, security overtakes latency as the second worry at 24.9 per cent. The interesting line in the report is the one nobody is quoting in their LinkedIn posts: 89 per cent of respondents have implemented observability, but only 52 per cent have implemented evals. That gap, observability without evaluation, is precisely the gap the evaluator-optimizer pattern is supposed to close at runtime, and where most teams are still relying on dashboards that tell them an agent did something without telling them whether what it did was correct.
 
-This is where I would push back on the vendor narrative, gently. Every observability vendor in this market — and there are now more LLM-ops tools than there are useful agents — will tell you they have evals. What many of them actually have is an LLM-as-judge running asynchronously over sampled traces, useful for drift detection, useless for stopping a destructive action in flight. The evaluator-optimizer pattern is something different. It is inline. It runs before the side-effect. It is the difference between a doorbell camera that records the break-in and a deadbolt that prevents it.
+This is where I would push back on the vendor narrative, gently. Every observability vendor in this market (and there are now more LLM-ops tools than there are useful agents) will tell you they have evals. What many of them actually have is an LLM-as-judge running asynchronously over sampled traces, useful for drift detection, useless for stopping a destructive action in flight. The evaluator-optimizer pattern is something different. It is inline. It runs before the side-effect. It is the difference between a doorbell camera that records the break-in and a deadbolt that prevents it.
 
 Which brings us back to Pocket.
 
@@ -48,13 +62,13 @@ I have been told, in client conversations all spring, that adding an evaluator s
 
 ## Eval as guardrail
 
-There is a quieter shift happening alongside the pattern itself, and it is the one I would tell any CTO to plan for in the second half of 2026. Evals are migrating into the deployment pipeline as guardrails. The same rubric that scores an agent's output during pre-production testing now sits in the request path during production traffic, scoring in real time and refusing the action if the score is too low. Vendors like Galileo led the pattern; most of the serious LLMOps platforms — [Future AGI's recent overview](https://futureagi.com/blog/agent-evaluation-frameworks-2026) catalogs seven of them — now treat eval-to-guardrail promotion as a first-class workflow. It is a small change in tooling and a large change in posture. You stop thinking of evals as a quality gate before deploy and start thinking of them as an immune system after deploy.
+There is a quieter shift happening alongside the pattern itself, and it is the one I would tell any CTO to plan for in the second half of 2026. Evals are migrating into the deployment pipeline as guardrails. The same rubric that scores an agent's output during pre-production testing now sits in the request path during production traffic, scoring in real time and refusing the action if the score is too low. Vendors like Galileo led the pattern, and most of the serious LLMOps platforms now treat eval-to-guardrail promotion as a first-class workflow; [Future AGI's recent overview](https://futureagi.com/blog/agent-evaluation-frameworks-2026) catalogs seven of them. It is a small change in tooling and a large change in posture. You stop thinking of evals as a quality gate before deploy and start thinking of them as an immune system after deploy.
 
 This is exactly the architectural move that operations teams made when they finally accepted, around 2015, that monitoring was not separate from the application but part of it. The same lesson, one stack up. It took us a decade to internalize it for distributed systems. We do not have a decade for agents.
 
 ## A note from a board meeting last quarter
 
-A CFO at a European insurer asked me — in front of a board I was advising — what the cheapest version of doing this right would look like, because his internal team had floated the evaluator-optimizer pattern and his instinct was that two model calls instead of one would double their inference bill. He was right about the math and wrong about the conclusion. Two well-chosen models, one a small distilled evaluator running at a fraction of the generator's per-token cost, do not double the bill. They add somewhere between 8% and 25%, depending on how often the loop retries, and they reduce the catastrophic-action rate by something that is hard to publish but easy to feel inside a quarterly risk review.
+A CFO at a European insurer asked me, in front of a board I was advising, what the cheapest version of doing this right would look like, because his internal team had floated the evaluator-optimizer pattern and his instinct was that two model calls instead of one would double their inference bill. He was right about the math and wrong about the conclusion. Two well-chosen models, one a small distilled evaluator running at a fraction of the generator's per-token cost, do not double the bill. They add somewhere between 8 per cent and 25 per cent, depending on how often the loop retries, and they reduce the catastrophic-action rate by something that is hard to publish but easy to feel inside a quarterly risk review.
 
 I told him the truth, which is that the right question is not "what does the evaluator cost" but "what does the *un-evaluated* generator cost in expected-value terms across a year." He went quiet for about thirty seconds, then asked his team to come back in two weeks with a number. The number they came back with, conservatively, was three orders of magnitude larger than the inference uplift. The pattern got approved before the coffee finished percolating.
 
@@ -62,9 +76,9 @@ I told him the truth, which is that the right question is not "what does the eva
 
 If you are sketching this on a whiteboard tomorrow, the minimum viable version has six moving parts. A generator with a tightly scoped tool surface. An evaluator running on a separate model with a different rubric and no access to the generator's reasoning trace. A persistent store for the rubric, versioned alongside the agent code. A scoring function that emits a numeric grade plus structured critique. A retry policy with an explicit cap on turns, cost, and elapsed time. And a halt-and-escalate path that surfaces the failed transaction to a human queue with full context, not just an error.
 
-Notice what is not on that list. There is no fine-tuned reward model. There is no reinforcement learning. There is no novel architecture. The evaluator-optimizer pattern is so unromantic that it loses every conference-stage debate against the latest agentic framework. It is also what is left running on Monday morning when the conference is over.
+What is absent from that list matters too. There is no fine-tuned reward model. There is no reinforcement learning. There is no novel architecture. The evaluator-optimizer pattern is so unromantic that it loses every conference-stage debate against the latest agentic framework. It is also what is left running on Monday morning when the conference is over.
 
-I will go further. If you are running production agents in 2026 and you have not separated generation from evaluation, you have a vulnerability that is not a bug, not a config error, and not a Claude problem. It is a design problem. I would not deploy another customer-facing or system-modifying agent without the second pair of eyes, even a cheap one. The Stanford Digital Economy Lab's [enterprise AI playbook drawn from 51 deployments](https://digitaleconomy.stanford.edu/app/uploads/2026/03/EnterpriseAIPlaybook_PereiraGraylinBrynjolfsson.pdf) makes the same point in less direct language. The deployments that survived contact with users were almost universally the ones with explicit evaluation surfaces between the model and the world.
+I will go further. If you are running production agents in 2026 and you have not separated generation from evaluation, you have a design problem. Not a bug, not a config error, and not a Claude problem. I would not deploy another customer-facing or system-modifying agent without the second pair of eyes, even a cheap one. The Stanford Digital Economy Lab's [enterprise AI playbook drawn from 51 deployments](https://digitaleconomy.stanford.edu/app/uploads/2026/03/EnterpriseAIPlaybook_PereiraGraylinBrynjolfsson.pdf) makes the same point in less direct language. The deployments that survived contact with users were almost universally the ones with explicit evaluation surfaces between the model and the world.
 
 The PocketOS founder will, with luck, rebuild. The companies that built their workflows on his platform have already done the manual reconciliation work. The agent has been retired. The credential discovery path has been closed. The token rotation policies have been tightened. All necessary. None sufficient. The pattern that was missing from the Cursor loop will be missing from a thousand other loops next quarter unless we treat the design choice as primary and the credential hygiene as secondary.
 

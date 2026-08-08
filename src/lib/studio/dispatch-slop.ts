@@ -113,11 +113,16 @@ const RULES: Rule[] = [
   },
   // ── Numbers ───────────────────────────────────────────────────────────
   {
+    // Only fires on an UNCITED decimal. A figure sitting next to a source link
+    // must keep its precision: rounding "31.5%" to "about a third" beside a live
+    // citation destroys the claim, which is exactly the damage a 2026-08-08
+    // rewrite pass did before this carve-out existed. Precision next to a source
+    // is correct writing, not a tell.
     id: "decimal-percent",
-    label: "false-precision decimal percentage (was 185 in 54 files)",
+    label: "false-precision decimal percentage with no source attached",
     severity: "soft",
     allow: 0,
-    re: /\b\d+\.\d+\s?%/g,
+    re: /(?![^\n]*\]\(https?:)(?![^\n]*\bhttps?:\/\/)^[^\n]*?\b\d+\.\d+\s?%[^\n]*$/gm,
   },
   {
     id: "percent-chain",
@@ -183,8 +188,13 @@ export function scanDispatchSlop(text: string): SlopHit[] {
   // Em-dashes: ZERO, per the binding anti-slop contract (Tarry, 2026-08-07:
   // "we need to adhere to anti-slop"). This supersedes the runbook's old
   // one-per-150-words budget, which the corpus was running at double.
-  const dashes = (prose.match(/—/g) ?? []).length
-  const fauxDashes = (prose.match(/(?<!-)--(?!-)/g) ?? []).length
+  // URLs legitimately contain "--" (e.g. a slug like ".../rubin--six-new-chips"),
+  // so strip link targets before looking for a double-hyphen standing in for an
+  // em-dash. Without this the gate reports false positives on correctly-cited
+  // articles, and a noisy gate is a bypassed gate.
+  const proseNoUrls = prose.replace(/https?:\/\/[^\s)\]]+/g, "")
+  const dashes = (proseNoUrls.match(/—/g) ?? []).length
+  const fauxDashes = (proseNoUrls.match(/(?<!-)--(?!-)/g) ?? []).length
   if (dashes + fauxDashes > 0) {
     hits.push({
       id: "em-dash",

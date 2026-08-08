@@ -2,7 +2,7 @@
 title: "The Chart Is Wrong"
 date: "2026-06-10"
 category: "Essays"
-excerpt: "A viral chart says China is 30% of the world economy and Europe 15%. Almost every number on it is wrong — and which ruler you use flips who's winning. The real scoreboard, read honestly. Part 1 of The Real Map of Europe."
+excerpt: "A viral chart says China is 30% of the world economy and Europe 15%. Almost every number on it is wrong, and which ruler you use flips who's winning. The real scoreboard, read honestly. Part 1 of The Real Map of Europe."
 draft: false
 tags: ["Europe", "economics", "China", "nominal vs PPP", "Draghi report", "geopolitics"]
 series: { key: "real-map-europe", part: 1, total: 2 }
@@ -12,17 +12,17 @@ A chart has been doing the rounds. You've probably seen it: four lines, three de
 
 It's a good chart. It's also wrong.
 
-Not wrong in spirit — wrong in the numbers. I went and checked it against the actual data, because that's a habit I can't switch off, and almost every figure on it is off by enough to matter. China isn't 30% of the world economy on any standard measure. The United States isn't 23%. Europe at 15% happens to be roughly right under exactly one definition, and dead wrong under the one most people assume the chart is using.
+The spirit of it is right. The arithmetic is where it falls apart. I went and checked it against the actual data, because that's a habit I can't switch off, and almost every figure on it is off by enough to matter. China isn't 30% of the world economy on any standard measure. The United States isn't 23%. Europe at 15% happens to be roughly right under exactly one definition, and dead wrong under the one most people assume the chart is using.
 
-Here's the part that should bother you. The chart being wrong is not the comforting news it sounds like — because the real numbers, read honestly, tell a story that is *worse* for Europe than the fake ones, and most of the public argument about it is being conducted in the wrong units, by people who don't realise they've picked a side just by choosing a denominator.
+The chart being wrong is not the comforting news it sounds like. The real numbers, read honestly, tell a story that is *worse* for Europe than the fake ones. And most of the public argument about it is being conducted in the wrong units, by people who don't realise they've picked a side just by choosing a denominator.
 
-This is Part 1 of two. Here I replace the bad chart with the real one and show you exactly where the headline figures come from. In Part 2 I'll show you the thing the real chart *still* hides — because even when you get every number right, "Europe" turns out to be the wrong unit.
+This is Part 1 of two. Here I replace the bad chart with the real one and show you exactly where the headline figures come from. In Part 2 I'll show you what the real chart *still* hides. Even when you get every number right, "Europe" turns out to be the wrong unit.
 
-## Why I'm the wrong person to be relaxed about this
+## The machinery under the headlines
 
-I build agentic AI systems for a living, in Europe, and I build them to be auditable and governable — the kind of work where provenance is a feature and "sovereign" describes who controls the compute, the weights and the data, not a marketing word. That puts me in a strange spot when one of these macro charts goes viral. I deal in the machinery under the headlines — the GPUs, the models, the energy contracts — and I get to watch a single misleading image shape how an entire continent argues about its own future.
+I build agentic AI systems for a living, in Europe, and I build them to be auditable and governable. It is the kind of work where provenance is a feature and "sovereign" describes who controls the compute, the weights and the data, well before it describes a marketing position. That puts me in a strange spot when one of these macro charts goes viral. I deal in the machinery under the headlines: the GPUs, the models, the energy contracts. And I get to watch a single misleading image shape how an entire continent argues about its own future.
 
-Because Europe is making strategy off these charts right now. The Draghi report, the competitiveness panic, the sudden urgency about AI and energy and capital markets — all of it runs on a shared mental image of Europe shrinking. That image is mostly correct. But "mostly correct, wrong in the specifics" is a dangerous place to make billion-euro decisions from, because the specifics decide what you actually *do*. If you think Europe collapsed to a fifteenth of the world economy, you reach for panic. If you understand what really happened, you reach for something more precise. So I'm not relaxed about it. I just want us alarmed about the right thing.
+Because Europe is making strategy off these charts right now. The Draghi report, the competitiveness panic, the sudden urgency about AI and energy and capital markets: all of it runs on a shared mental image of Europe shrinking. That image is mostly correct. But "mostly correct, wrong in the specifics" is a dangerous place to make billion-euro decisions from, because the specifics decide what you actually *do*. If you think Europe collapsed to a fifteenth of the world economy, you reach for panic. If you understand what really happened, you reach for something more precise. The alarm is warranted. It should point at the right thing.
 
 ## "Share of the world economy" is at least two numbers
 
@@ -32,77 +32,77 @@ The simplest version: take each economy's GDP, divide by the sum of everyone's.
 
 $$ \text{share}_i \;=\; \frac{\text{GDP}_i}{\sum_j \text{GDP}_j} $$
 
-The trap is hiding inside $\text{GDP}_i$. To add up China's output and America's and Europe's, you have to express them all in one currency — and there are two completely different ways to do that, which produce two completely different worlds.
+The trap is hiding inside $\text{GDP}_i$. To add up China's output and America's and Europe's, you have to express them all in one currency. There are two completely different ways to do that, and they produce two completely different worlds.
 
-The first converts everything at **market exchange rates** — the rate you'd get at a bank. Call it nominal. If an economy produces $\text{GDP}^{\text{local}}$ in its own currency and the market rate is $e$ units of local currency per dollar, its dollar GDP is roughly
+The first converts everything at **market exchange rates**, the rate you'd get at a bank. Call it nominal. If an economy produces $\text{GDP}^{\text{local}}$ in its own currency and the market rate is $e$ units of local currency per dollar, its dollar GDP is roughly
 
 $$ \text{GDP}^{\$}_{\text{nominal}} \;=\; \frac{\text{GDP}^{\text{local}}}{e}. $$
 
-The second converts at **purchasing power parity** — adjusting for the fact that a haircut or a bowl of noodles costs far less in Chengdu than in Munich. Here you divide by a price level $P$ instead of an exchange rate:
+The second converts at **purchasing power parity**, which adjusts for the fact that a haircut or a bowl of noodles costs far less in Chengdu than in Munich. Here you divide by a price level $P$ instead of an exchange rate:
 
 $$ \text{GDP}^{\text{PPP}} \;=\; \frac{\text{GDP}^{\text{local}}}{P}. $$
 
-That single choice — divide by $e$ or divide by $P$ — is the whole ballgame. It decides who's biggest. It decides whether China overtook America a decade ago or hasn't yet. And the viral chart picks neither cleanly, which is how you end up with numbers that match no real series at all.
+That single choice, divide by $e$ or divide by $P$, is the whole ballgame. It decides who's biggest. It decides whether China overtook America a decade ago or hasn't yet. And the viral chart picks neither cleanly, which is how you end up with numbers that match no real series at all.
 
 <GdpShareChart />
 
-Drag that toggle and you've understood more than most of the people sharing the original. Under nominal accounting the US is comfortably first and China sits *below* the EU. Flip to PPP and China is the world's largest economy, with the US and EU trailing. Nothing changed about the world between those two views except the question you asked of it.
+The toggle on that chart is the entire argument in one control. Under nominal accounting the US is comfortably first and China sits *below* the EU. Flip to PPP and China is the world's largest economy, with the US and EU trailing. Nothing changed about the world between those two views except the question you asked of it.
 
-Now line that up against the chart that's circulating. It claims China at 30%. Reality: about 16.6% nominal, ~19% PPP. It claims the US at 23% — a figure that matches neither (~26% nominal, ~15% PPP). The only number that survives contact with the data is Europe at ~15% — and that's the *PPP* figure, sitting on a chart whose other numbers only make sense if you assume nominal. It's internally incoherent. It's a vibe with axes.
+Now line that up against the chart that's circulating. It claims China at 30%. Reality: about 16.6% nominal, ~19% PPP. It claims the US at 23%. That figure matches neither measure: the US is about 26% nominal and ~15% PPP. The only number that survives contact with the data is Europe at ~15%. That is the *PPP* figure, sitting on a chart whose other numbers only make sense if you assume nominal. It's internally incoherent. It's a vibe with axes.
 
-## The detail nobody mentions: China already peaked
+## China already peaked
 
 Everyone "knows" China's share of the world economy is on a relentless upward march. At market exchange rates, that stopped being true years ago.
 
 <ChinaPeakChart />
 
-China's nominal share climbed from under 2% in the late 1980s to about 18.5% in 2021 — and has slipped since, to around 16.6%. A weaker yuan, a long property hangover, outright deflation in stretches, slower headline growth: all of it pulled the dollar value of Chinese output down relative to the rest of the world. The relentless-rise story you carry in your head is a *purchasing-power* story. In the currency the world actually trades and invests in, China's slice topped out and has been drifting down for several years.
+China's nominal share climbed from under 2% in the late 1980s to about 18.5% in 2021. It has slipped since, to around 16.6%. A weaker yuan, a long property hangover, outright deflation in stretches, slower headline growth: all of it pulled the dollar value of Chinese output down relative to the rest of the world. The relentless-rise story you carry in your head is a *purchasing-power* story. In the currency the world actually trades and invests in, China's slice topped out and has been drifting down for several years.
 
-"China keeps gaining" and "China peaked in 2021" are both true. They describe the same country in the same years. They differ only in the ruler. If you don't say which one you mean, you're not informing anyone — you're picking the version that flatters your argument and hoping nobody checks.
+"China keeps gaining" and "China peaked in 2021" are both true. They describe the same country in the same years. They differ only in the ruler. If you don't say which one you mean, you are picking the version that flatters your argument and hoping nobody checks.
 
 ## Nominal versus PPP: two real questions
 
-People treat the nominal-versus-PPP distinction as a technicality, something for economists to bicker about in footnotes. It isn't. The two measures answer two genuinely different questions, and both are legitimate.
+People treat the nominal-versus-PPP distinction as a technicality, something for economists to bicker about in footnotes. The two measures answer two genuinely different questions, and both are legitimate.
 
-**Nominal GDP — converted at market rates — measures clout in the world as it's priced.** Who can buy whose companies, who funds whose deficits, how big a market is to an exporter charging in euros or dollars. When you ask "how much of the world's *money* runs through here," you want nominal. By that measure the US is dominant, the dollar is the gravitational centre, and Europe — for all its troubles — is still a larger financial entity than China.
+**Nominal GDP, converted at market rates, measures clout in the world as it's priced.** Who can buy whose companies, who funds whose deficits, how big a market is to an exporter charging in euros or dollars. When you ask "how much of the world's *money* runs through here," you want nominal. By that measure the US is dominant, the dollar is the gravitational centre, and Europe, for all its troubles, is still a larger financial entity than China.
 
-**PPP GDP — converted at price levels — measures the real volume of stuff.** Tonnes of steel, kilowatt-hours, engineers, hospital beds, server racks. When you ask "how much can this economy actually *make, build, field, deploy*," you want PPP. By that measure China has been the world's largest economy since around 2014, and the gap is widening, not closing.
+**PPP GDP, converted at price levels, measures the real volume of stuff.** Tonnes of steel, kilowatt-hours, engineers, hospital beds, server racks. When you ask "how much can this economy actually *make, build, field, deploy*," you want PPP. By that measure China has been the world's largest economy since around 2014, and the gap is still widening.
 
-Hold both in your head at once and the geopolitics snaps into focus. The United States wins the money game. China wins the volume game. Those aren't contradictory; they're the actual shape of the world. A country can be the biggest factory floor on earth and still not be the biggest bank.
+The two readings together are the geopolitics. The United States wins the money game. China wins the volume game. There is no contradiction; that is the actual shape of the world. A country can be the biggest factory floor on earth and still not be the biggest bank.
 
 <RankFlipChart />
 
-And Europe is the uncomfortable case — not clearly winning either game. The second-largest pool of financial weight in nominal terms, a fading third in real volume, with no obvious lever to change either trajectory. The viral chart's instinct — Europe shrinking — is right. It just dramatised the wrong magnitude and skipped the reason.
+And Europe is the uncomfortable case, winning neither game clearly. The second-largest pool of financial weight in nominal terms, a fading third in real volume, with no obvious lever to change either trajectory. The viral chart's instinct, Europe shrinking, is right. It just dramatised the wrong magnitude and skipped the reason.
 
-## The real worry is the slope, not the level
+## The slope of European productivity
 
-Whether Europe is 15% or 18% of the world economy this year is almost irrelevant. A share is a snapshot. What kills you, slowly, is the rate of change — the slope. And Europe's slope is the real story, the one the Draghi report told bluntly enough to cause a continental flinch.
+Whether Europe is 15% or 18% of the world economy this year is almost irrelevant. A share is a snapshot. What kills you, slowly, is the rate of change. Europe's slope is the story the Draghi report told bluntly enough to cause a continental flinch.
 
 Strip everything away and the engine under all these GDP figures is productivity: how much output you get per hour of work. That's where Europe's problem actually lives.
 
 <ProductivityChart />
 
-European labour productivity converged toward the American level for decades after the war — climbing to about 95% of US output per hour by the mid-1990s. Near parity. And then it stalled, and slid back below 80%. Read that arc carefully, because it's the most important line in this whole piece. Europe didn't fail to grow. Europe nearly caught the most dynamic large economy on earth — and then, right as the digital era began, fell back. The level on that chart isn't the alarm. The shape is.
+European labour productivity converged toward the American level for decades after the war, climbing to about 95% of US output per hour by the mid-1990s. Near parity. And then it stalled, and slid back below 80%. Europe kept growing the whole time. It simply stopped closing the gap, right as the digital era began, and then started losing ground. The shape of that line is the alarm, far more than its level.
 
-The report put hard numbers on the cost. Real disposable income has grown almost twice as much in the United States as in the EU since 2000. Around 70% of the per-capita GDP gap with the US, measured in PPP terms, is explained by Europe's lower productivity. And here's the detail the headlines dropped: strip out the information and communications technology sector and European productivity broadly matched the US across 2000–2019. Europe didn't fall behind at everything. It fell behind at the one thing that compounds — digital technology — and let that single gap drag down the whole average.
+The report put hard numbers on the cost. Real disposable income has grown almost twice as much in the United States as in the EU since 2000. Around 70% of the per-capita GDP gap with the US, measured in PPP terms, is explained by Europe's lower productivity. Then there is the sector breakdown. Strip out information and communications technology and European productivity broadly matched the US across 2000–2019. The gap sits almost entirely in the one sector that compounds, digital technology, and that single gap drags the whole average down.
 
-## The honest counterpoint — because the cliff-edge charts lie too
+## The "half of America" figure
 
-Now I have to do something the panic merchants never do, which is argue against my own dramatic charts.
+The same scepticism has to apply to the charts that flatter my own argument.
 
-You'll see figures claiming Europe collapsed to 50% of the US level of GDP per capita. They look apocalyptic. They're also mostly an artefact of the measuring stick — a market-exchange-rate comparison hammered by a strong dollar and a weak euro as much as by any real divergence. It's the same trick as the viral chart, just pointed in a gloomier direction.
+You'll see figures claiming Europe collapsed to 50% of the US level of GDP per capita. They look apocalyptic. They are also mostly an artefact of the measuring stick: a market-exchange-rate comparison hammered by a strong dollar and a weak euro as much as by any real divergence. It's the same trick as the viral chart, pointed in a gloomier direction.
 
 <PerCapitaChart />
 
-Measure the thing that actually matters to living standards — real output per person, each economy in its own constant prices — and the gap is real but far more modest. The two lines track together until the 2008 crisis, then the US pulls ahead while the euro area double-dips through 2011–2013. By today the US is up around 38% since 2000; the EU, around 24%. A meaningful gap, pointing the wrong way — but nowhere near "Europe is half of America." On a purchasing-power, per-capita basis the EU still sits around 70% of the US level.
+Measure the thing that actually matters to living standards, real output per person with each economy in its own constant prices, and the gap is real but far more modest. The two lines track together until the 2008 crisis, then the US pulls ahead while the euro area double-dips through 2011–2013. By today the US is up around 38% since 2000; the EU, around 24%. That is a meaningful gap pointing the wrong way. It is nowhere near "Europe is half of America." On a purchasing-power, per-capita basis the EU still sits around 70% of the US level.
 
-So which is it — disaster or drift? Both, and the resolution is the thing I keep coming back to. The *level* gap is moderate and partly a currency mirage. The *productivity and innovation* gap is the genuine alarm.
+So which is it, disaster or drift? Both. The *level* gap is moderate and partly a currency mirage. The *productivity and innovation* gap is the genuine alarm.
 
-## What the chart got right — and the question it can't answer
+## What the chart got right
 
-I've spent the whole piece telling you the viral chart is wrong, so let me end that thread fairly: its instincts were sound even when its numbers weren't. China genuinely rose — from a rounding error to the largest real economy on earth in a single generation. The United States genuinely held the line — its share of world output has been remarkably stable for decades, which quietly demolishes a lot of declinist commentary about America. Europe genuinely drifted. The magnitude in the viral chart was fiction. The trajectory wasn't.
+I've spent the whole piece telling you the viral chart is wrong, so let me end that thread fairly: its instincts were sound even when its numbers weren't. China genuinely rose, from a rounding error to the largest real economy on earth in a single generation. The United States genuinely held the line. Its share of world output has been remarkably stable for decades, which quietly demolishes a lot of declinist commentary about America. Europe genuinely drifted. The magnitude in the viral chart was fiction. The trajectory was real.
 
-But there's one thing even the *corrected* chart can't show you, and it's the most important of all. Every chart in this piece — mine included — treats "Europe" as a single line. One number, one trajectory, one fate. And that, it turns out, is the biggest distortion of the lot. Average a whole continent into one falling line and you erase the most interesting fact about it: that there isn't *one* Europe on that line. There are two, moving in opposite directions — a converging East and a stalling West — and the country-by-country map of who's rising and who's declining is almost the exact opposite of the one in your head.
+Even the *corrected* chart hides something. Every chart in this piece, mine included, treats "Europe" as a single line. One number, one trajectory, one fate. That is the biggest distortion of the lot. Average a whole continent into one falling line and you erase the most interesting fact about it: there are two Europes on that line, moving in opposite directions. A converging East, a stalling West. The country-by-country map of who's rising and who's declining is almost the exact opposite of the one in your head.
 
 That's Part 2.
 
@@ -110,8 +110,8 @@ That's Part 2.
 
 ### Sources and notes
 
-- Shares of world GDP (nominal and PPP): International Monetary Fund, *World Economic Outlook*; World Bank *International Comparison Program* (ICP 2021); Eurostat. China's nominal share peaked near 18.5% in 2021 before easing to ≈16.6%; PPP shares put China largest (~19%) with the US (~15%) and EU (~14–15%) below.
+- Shares of world GDP (nominal and PPP): International Monetary Fund, *World Economic Outlook*; World Bank *International Comparison Program* (ICP 2021); Eurostat. China's nominal share peaked near 18.5% in 2021 before easing to ≈16.6%. PPP shares put China largest (~19%), with the US (~15%) and EU (~14–15%) below.
 - The productivity arc (EU labour productivity ≈95% of the US level in 1995, since fallen below 80%), the ≈2× US/EU disposable-income gap since 2000, the "70% of the per-capita gap is productivity," the four-of-fifty top-tech-firms figure, and the ICT-sector point are from Mario Draghi, *The future of European competitiveness* (European Commission, September 2024).
-- The "EU on the fairest per-capita measure" framing — EU ≈70% of the US level in PPP, and a modest total real-output gap — draws on Bruegel, *The European Union's remarkable growth performance relative to the United States* (2024). The post-pandemic divergence (US real GDP +8% vs euro-area +3%, 2019–2023) is from the European Central Bank *Economic Bulletin* (2024).
+- The "EU on the fairest per-capita measure" framing (EU ≈70% of the US level in PPP, and a modest total real-output gap) draws on Bruegel, *The European Union's remarkable growth performance relative to the United States* (2024). The post-pandemic divergence (US real GDP +8% vs euro-area +3%, 2019–2023) is from the European Central Bank *Economic Bulletin* (2024).
 - The dramatic "EU fell to ~50% of US GDP per capita" figure is a nominal, market-exchange-rate comparison, heavily affected by the euro–dollar rate; it is not the real-volume per-capita measure shown above.
-- Charts are source-pinned at anchor years (the verified PPP figures, China's 2021 nominal peak, the productivity endpoints, the per-capita endpoints +38%/+24%); intermediate years on the productivity and per-capita series are interpolated along the documented trajectory and are indicative. Data through 2024 — Eurostat's most recent purchasing-power release at the time of writing.
+- Charts are source-pinned at anchor years (the verified PPP figures, China's 2021 nominal peak, the productivity endpoints, the per-capita endpoints +38%/+24%); intermediate years on the productivity and per-capita series are interpolated along the documented trajectory and are indicative. Data through 2024, Eurostat's most recent purchasing-power release at the time of writing.

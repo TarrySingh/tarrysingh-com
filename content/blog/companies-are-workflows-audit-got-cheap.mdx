@@ -90,14 +90,6 @@ flowchart LR
   BROKEN ~~~ IGNORED
   IGNORED ~~~ INCOMPLETE
   INCOMPLETE --> TAKEAWAY
-  classDef hdrRose fill:#cf7d5a,stroke:#cf7d5a,color:#0c1828,font-weight:bold
-  classDef hdrCopper fill:#c98e4f,stroke:#c98e4f,color:#0c1828,font-weight:bold
-  classDef hdrCool fill:#849cc8,stroke:#849cc8,color:#0c1828,font-weight:bold
-  classDef hdrViolet fill:#a698d4,stroke:#a698d4,color:#0c1828,font-weight:bold
-  classDef descNode stroke:#849cc8,stroke-width:1px
-  classDef deptNode stroke:#c98e4f,stroke-width:1.5px
-  classDef failNode stroke:#cf7d5a,stroke-width:1.5px,font-weight:bold
-  classDef takeawayNode stroke:#a698d4,stroke-width:1.5px,font-weight:bold
   class B_H hdrRose
   class I_H hdrCopper
   class IC_H hdrCool
@@ -183,14 +175,6 @@ flowchart TD
     AFT_H ~~~ AF_CORE
   end
   BEFORE --> TRANSFORM --> AFTER
-  classDef hdrRose fill:#cf7d5a,stroke:#cf7d5a,color:#0c1828,font-weight:bold
-  classDef hdrCopper fill:#c98e4f,stroke:#c98e4f,color:#0c1828,font-weight:bold
-  classDef hdrCool fill:#849cc8,stroke:#849cc8,color:#0c1828,font-weight:bold
-  classDef hdrTeal fill:#5fa6b4,stroke:#5fa6b4,color:#0c1828,font-weight:bold
-  classDef statNode stroke:#cf7d5a,stroke-width:1.5px,font-weight:bold
-  classDef toolNode stroke:#849cc8,stroke-width:1px
-  classDef stepNode stroke:#c98e4f,stroke-width:1.5px,font-weight:bold
-  classDef goodNode stroke:#5fa6b4,stroke-width:1.5px
   class BEF_H hdrRose
   class BEF_STAT statNode
   class BM_H,BS_H hdrCool
@@ -367,12 +351,6 @@ flowchart TD
   end
   EXIT -. "playbook\ncompounds" .-> COMPOUND
   COMPOUND --> MATH
-  classDef hdrCopper fill:#c98e4f,stroke:#c98e4f,color:#0c1828,font-weight:bold
-  classDef hdrTeal fill:#5fa6b4,stroke:#5fa6b4,color:#0c1828,font-weight:bold
-  classDef actionNode stroke:#849cc8,stroke-width:1.5px
-  classDef portcoNode stroke:#a698d4,stroke-width:1.5px,font-weight:bold
-  classDef statNode stroke:#5fa6b4,stroke-width:1.5px,font-weight:bold
-  classDef mathNode stroke:#c98e4f,stroke-width:1.5px
   class SP_H hdrCopper
   class ACQ_H,AUD_H,OPT_H,EX_H hdrCopper
   class A1,A2,A3,AU1,AU2,AU3,O1,O2,O3,E1,E2,E3 actionNode

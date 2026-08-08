@@ -8,9 +8,9 @@ tags: ["agentic-ai", "model-risk-management", "eu-ai-act", "banking-regulation",
 series: { key: "sovereign", part: 3 }
 ---
 
-Three things happened inside five weeks that, taken together, describe a regulatory vacuum I haven't seen since the pre-crisis era of off-balance-sheet vehicles. On 17 April 2026 the US banking agencies killed SR 11-7. On 4 May FIS and Anthropic announced the first production-grade agentic AI system for anti-money-laundering investigations. And on 19 May the European Commission finally dropped its draft high-risk classification guidelines — three-and-a-half months late and with the enforcement clock already ticking. If I were on the board of any bank with assets above $30 billion, I'd be asking one question: who owns the risk for the models that nobody's framework explicitly covers?
+Inside five weeks the regulatory picture opened a vacuum I haven't seen since the pre-crisis era of off-balance-sheet vehicles. On 17 April 2026 the US banking agencies killed SR 11-7. On 4 May FIS and Anthropic announced the first production-grade agentic AI system for anti-money-laundering investigations. And on 19 May the European Commission finally dropped its draft high-risk classification guidelines, three-and-a-half months late and with the enforcement clock already ticking. Any bank with assets above $30 billion now faces a single question: who owns the risk for the models that nobody's framework explicitly covers?
 
-## SR 11-7 is gone. What replaces it?
+## SR 26-2 and what it leaves out
 
 On 17 April 2026 the Federal Reserve issued SR 26-2, superseding SR 11-7 and the 2021 interagency statement addressing BSA/AML systems.
 
@@ -18,11 +18,9 @@ On 17 April 2026 the Federal Reserve issued SR 26-2, superseding SR 11-7 and the
 
 The new guidance preserves the foundational principles of sound model risk management but introduces a more modern, risk-based, and scalable supervisory framework.
 
- Read that carefully. 
+
 
 The revised guidance represents a shift toward a more flexible, principles-based approach, with a narrower definition of 'model', an explicit exclusion of generative and agentic AI models from its scope, and adoption of a new $30 billion asset threshold for applicability.
-
-That last bit is the one that should give you pause. 
 
 The [OCC](https://www.occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-13.html) states plainly: "Generative AI and agentic AI models are novel and rapidly evolving. As such, they are not within the scope of this guidance."
 
@@ -30,7 +28,7 @@ The [OCC](https://www.occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-
 
 The OCC's press release says the agencies are "planning to issue a request for information on model risk management that considers banks' use of AI, including generative and agentic AI and AI-based models."
 
-An RFI. Not guidance. Not even a proposed rule. An RFI — the regulatory equivalent of "we'll get back to you." Meanwhile, banks are deploying.
+An RFI sits below guidance and well below a proposed rule. It is the regulatory equivalent of "we'll get back to you." Meanwhile, banks are deploying.
 
 ## FIS × Anthropic: the agent-first bank arrives
 
@@ -44,37 +42,33 @@ The numbers explain the urgency.
 
 US financial institutions spend $35 billion to $40 billion annually on AML operations.
 
- Most of that time goes on evidence-gathering, not analysis. 
+ Most of that spend goes on evidence-gathering rather than analysis.
 
 FIS claims the agent will compress AML alert and case investigations from days to minutes, reduce false positives, and enhance SAR narrative quality.
 
  That's a vendor claim, and I'd discount it by at least half until I see production metrics from an independent audit. But even half of those gains shifts millions of investigator-hours.
 
-Here's where it gets uncomfortable: 
-
 human investigators will retain full authority over decision-making, including Suspicious Activity Report filings, with outputs designed to be transparent, traceable, and auditable.
 
- That human-in-the-loop framing is doing enormous load-bearing work. The agent assembles the evidence, evaluates activity against typologies, and surfaces the highest-risk cases. The investigator "decides." But if the agent's pre-screening systematically deprioritises a typology, the investigator never sees it. The decision was made by omission, not approval.
+ That human-in-the-loop framing is doing enormous load-bearing work. The agent assembles the evidence, evaluates activity against typologies, and surfaces the highest-risk cases. The investigator "decides." But if the agent's pre-screening systematically deprioritises a typology, the investigator never sees it. The decision gets made by omission.
 
-[Fiserv](https://investors.fiserv.com/news-releases/news-release-details/fiserv-launches-agentos-operating-system-agentic-ai-banking) launched agentOS the same week — six financial institutions co-developing, two running agents in beta, with general availability expected by August 2026. Built natively across Fiserv's platforms, agentOS enables banks to move beyond disconnected agentic pilots to enterprise-grade deployment with policy controls, auditability, and human oversight embedded in the design.
+[Fiserv](https://investors.fiserv.com/news-releases/news-release-details/fiserv-launches-agentos-operating-system-agentic-ai-banking) launched agentOS the same week, with six financial institutions co-developing, two running agents in beta, and general availability expected by August 2026. Built natively across Fiserv's platforms, agentOS enables banks to move beyond disconnected agentic pilots to enterprise-grade deployment with policy controls, auditability, and human oversight embedded in the design.
 
- Two core banking infrastructure providers, both shipping agentic platforms into AML and financial crime, both citing "human oversight." Neither referencing a specific regulatory framework for the agent itself — because none exists.
+ Two core banking infrastructure providers, both shipping agentic platforms into AML and financial crime, both citing "human oversight." Neither references a specific regulatory framework for the agent itself, because none exists.
 
 ## The EU catches up, sort of
 
 On 19 May 2026 the European Commission published its long-anticipated [draft guidelines on the classification of high-risk AI systems](https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems) for stakeholder consultation.
 
- The guidelines cover three documents: general principles, the Annex I (product safety) route, and the Annex III (use case) route — the latter being where financial services sits. 
+ The guidelines cover three documents: general principles, the Annex I (product safety) route, and the Annex III (use case) route, which is where financial services sits. 
 
 This guidance had initially been expected by 2 February 2026. The absence of final guidance, together with delays in standards development, became a central issue in broader discussions on operational readiness. Those concerns contributed to the recent Digital Omnibus on AI, which revised the implementation schedule.
 
-And here's the punchline: 
+The publication aligns with recently updated timelines under the [Digital Omnibus on AI](https://connectontech.bakermckenzie.com/european-commission-publishes-draft-guidance-on-the-classification-of-high-risk-ai-systems/) package. The revised schedule delays the application of key high-risk obligations, with rules for most Annex III systems now applying from 2 December 2027.
 
-the publication aligns with recently updated timelines under the [Digital Omnibus on AI](https://connectontech.bakermckenzie.com/european-commission-publishes-draft-guidance-on-the-classification-of-high-risk-ai-systems/) package. The revised schedule delays the application of key high-risk obligations, with rules for most Annex III systems now applying from 2 December 2027.
+ That's a sixteen-month push to the right from the original 2 August 2026 deadline. The Commission's own consultation on these draft guidelines runs until 23 June 2026, five weeks before the original enforcement date would have bitten.
 
- That's a sixteen-month push to the right from the original 2 August 2026 deadline. The Commission's own consultation on these draft guidelines runs until 23 June 2026 — five weeks before the original enforcement date would have bitten.
-
-For banks deploying credit-scoring models, AML risk-profiling systems, or insurance-pricing engines, the question is no longer "are we compliant by August?" 
+For banks deploying credit-scoring models, AML risk-profiling systems, or insurance-pricing engines, the question is no longer whether they are compliant by August.
 
 Three categories in Annex III sit squarely on the desks of financial services compliance teams: creditworthiness assessment, risk assessment and pricing in life and health insurance, and AI systems used to evaluate the financial standing of individuals.
 
@@ -82,7 +76,7 @@ Three categories in Annex III sit squarely on the desks of financial services co
 
 ## The vacuum in the middle
 
-Let me spell out what this collision looks like from the practitioner's chair.
+From the practitioner's chair the collision looks like this.
 
 In the US: SR 26-2 governs traditional quantitative models. GenAI and agentic AI are explicitly out of scope. A future RFI is promised. 
 
@@ -90,27 +84,25 @@ Generative and agentic AI are explicitly outside the guidance's scope, signallin
 
 In the EU: high-risk classification guidelines are still in draft. The Omnibus has pushed enforcement to late 2027. 
 
-DORA and the AI Act were developed separately but create compound obligations for financial institutions
-
- — ICT risk management, third-party oversight, fundamental rights impact assessments — but the practical playbook for integrating them is still being written.
+DORA and the AI Act were developed separately but create compound obligations for financial institutions: ICT risk management, third-party oversight, fundamental rights impact assessments. The practical playbook for integrating them is still being written.
 
 In the UK: 
 
 the Financial Policy Committee has asked the Bank of England and FCA to undertake further work on agentic AI, focused on use cases in payments and financial markets.
 
- Focused work. Not rules.
+ Further work, then. No rules yet.
 
 Into this three-jurisdiction gap, vendors are shipping. 
 
 Gartner predicts that 40 per cent of financial services firms will use AI agents by 2026, though it warns that more than 40 per cent of projects across industries could fail by 2027 due to cost pressures and unclear benefits.
 
- I'd bet against the 40 per cent adoption number — the pilots are real, the production deployments are fewer — but even at half that penetration, you have a fifth of the industry running autonomous decision-support systems under no framework designed for them.
+ I doubt the 40 per cent adoption number holds. The pilots are real; the production deployments are fewer. Even at half that penetration, a fifth of the industry is running autonomous decision-support systems under no framework designed for them.
 
-## What a board should be asking right now
+## The risk committee's agenda
 
-If I were sitting in that risk committee meeting, I'd push for three things.
+Three items belong on that agenda.
 
-**First**, extend the model risk inventory to cover every agentic system, regardless of SR 26-2's scope exclusion. The agencies explicitly said they'll return to this. When they do, they won't start from scratch — they'll ask what you've already got. Being caught without an inventory is worse than being caught with a conservative one.
+**First**, extend the model risk inventory to cover every agentic system, regardless of SR 26-2's scope exclusion. The agencies explicitly said they'll return to this. When they do, they won't start from scratch. They'll ask what you've already got. Being caught without an inventory is worse than being caught with a conservative one.
 
 **Second**, treat the EU AI Act's Annex III classification as the binding standard now, even with the Omnibus delay. 
 
@@ -126,9 +118,9 @@ Only 26.4 per cent of financial institutions express confidence in their AI comp
 
 Both providers and deployers have obligations under the EU AI Act, but deployers cannot outsource their compliance to the vendor.
 
-## A calibrated bet
+## Where the first action lands
 
-Here's my stake: the period between now and late 2027 will produce the first serious enforcement action involving an agentic AI system at a regulated financial institution. Not because the technology is inherently dangerous — it's genuinely useful for evidence triage and pattern detection. But because the governance gap is too wide, the deployment pace too fast, and the regulatory apparatus too fragmented across jurisdictions. The institution that draws the short straw will be one that treated "human-in-the-loop" as a checkbox rather than an architecture.
+The period between now and late 2027 will, I expect, produce the first serious enforcement action involving an agentic AI system at a regulated financial institution. The technology itself is not the danger; it is genuinely useful for evidence triage and pattern detection. The governance gap is too wide, the deployment pace too fast, and the regulatory apparatus too fragmented across jurisdictions. The institution that draws the short straw will be one that treated "human-in-the-loop" as a checkbox rather than an architecture.
 
 The tools are real. The risk is real. The frameworks are not.
 
