@@ -28,9 +28,7 @@ The first two never alter what *kinds* of things can exist. Only the third does.
 
 A chat transcript, a hidden vector, a single checkpoint: none of those is the persistent state of an agentic discovery system. That state is a growing, typed record of artifacts and how each one was produced.
 
-Formalise it. A regime carries a **schema category** $\mathcal{S}_b$: its objects are artifact *types* (a sequence, a structure, a contact graph, a symbolic model, a measurement, a report) and its morphisms are the *operations* allowed between them. The system's state at time $t$ is then a covariant, $\mathbf{Set}$-valued functor:
-
-$$I_t : \mathcal{S}_b \longrightarrow \mathbf{Set}.$$
+Formalise it. A regime carries a **schema category** $\mathcal{S}_b$: its objects are artifact *types* (a sequence, a structure, a contact graph, a symbolic model, a measurement, a report) and its morphisms are the *operations* allowed between them. The system's state at time $t$ is then a covariant, $\mathbf{Set}$-valued functor: $$I_t : \mathcal{S}_b \longrightarrow \mathbf{Set}.$$
 
 For each type $A$, the set $I_t(A)$ holds the actual artifacts of that type the system currently has; for each operation $f : A \to B$, the function $I_t(f) : I_t(A) \to I_t(B)$ records how applying it turns an $A$-artifact into a $B$-artifact. The functor cleanly separates the *regime* (the schema, which can stay fixed) from its *contents* (the population, which grows).
 
@@ -42,17 +40,13 @@ By the covariant Yoneda lemma, an artifact $x \in I_t(A)$ is known entirely by t
 
 </Callout>
 
-Bundle the regime as a tuple $b = (\mathcal{S}_b, \Gamma_b, V_b, L_b)$, meaning schema, generators, a **verifier**, and an optional description-length functional. The full live state then becomes a single object the paper calls a knowledge-computation graph:
-
-$$\mathfrak{K}_t^{\,b} = \bigl(\mathcal{S}_b,\ \Gamma_b,\ I_t,\ \mathsf{Prov}_t,\ V_b,\ L_b,\ \mathsf{D}_t,\ \pi_t\bigr).$$
+Bundle the regime as a tuple $b = (\mathcal{S}_b, \Gamma_b, V_b, L_b)$, meaning schema, generators, a **verifier**, and an optional description-length functional. The full live state then becomes a single object the paper calls a knowledge-computation graph: $$\mathfrak{K}_t^{\,b} = \bigl(\mathcal{S}_b,\ \Gamma_b,\ I_t,\ \mathsf{Prov}_t,\ V_b,\ L_b,\ \mathsf{D}_t,\ \pi_t\bigr).$$
 
 Forget everything but $\mathcal{S}_b$ and a flattened $\mathsf{Prov}_t$ and you recover an ordinary knowledge graph; keep the production edges but drop the gates and you recover a workflow-provenance graph. The claim is that you want all of it at once, in one executable, verifier-aware object.
 
 ## 02 · The audit contract most stacks quietly fail
 
-Inside a fixed regime, an agent just updates the state, which is an endofunctor on the category of copresheaves:
-
-$$\Phi_b : [\mathcal{S}_b,\mathbf{Set}] \longrightarrow [\mathcal{S}_b,\mathbf{Set}].$$
+Inside a fixed regime, an agent just updates the state, which is an endofunctor on the category of copresheaves: $$\Phi_b : [\mathcal{S}_b,\mathbf{Set}] \longrightarrow [\mathcal{S}_b,\mathbf{Set}].$$
 
 Saying $\Phi_b$ is an **endofunctor** is a substantive claim about the implementation. A raw program that maps one JSON ledger to another is merely an endomap. It becomes a *functor* only when it preserves refinement: if a state $J$ extends a state $I$ by adding verified artifacts without overwriting prior provenance, then $\Phi_b(J)$ must extend $\Phi_b(I)$ the same way.
 
@@ -74,9 +68,7 @@ The *image* of $\bar\rho$ is everything the new world can explain by merely rein
 
 <TransportResidual />
 
-The sharpest line in the paper is the **Kan obstruction**. If the new regime introduces a type $A'$ that no operation reaches from the old world, the comma category indexing the colimit is empty, so transport hands it the empty set:
-
-$$(\operatorname{Lan}_u I_t)(A') = \varnothing.$$
+The sharpest line in the paper is the **Kan obstruction**. If the new regime introduces a type $A'$ that no operation reaches from the old world, the comma category indexing the colimit is empty, so transport hands it the empty set: $$(\operatorname{Lan}_u I_t)(A') = \varnothing.$$
 
 <PullQuote>You cannot conjure a new variable by reinterpreting old data. That single empty set is the formal wall between search and discovery.</PullQuote>
 
@@ -86,27 +78,17 @@ An isolated new type, a quantity nothing old can produce, starts life genuinely 
 
 Abstraction is cheap; the paper's most convincing section is a worked run. A **Builder/Breaker** loop tries to learn a symbolic law for how flexible each residue in a protein is. A *Breaker* picks new proteins designed to expose the current model's failures; a *Builder* edits a symbolic computation graph; a gate decides what survives. The physics base is the Gaussian Network Model, where a protein's slow collective motions and per-residue mobility fall out of its contact topology alone.
 
-Start from a chain $p$ with residues $i = 1,\dots,N_p$ and Cα coordinates $\mathbf{r}_{pi}\in\mathbb{R}^3$. Build the contact graph by thresholding distance, then form the GNM Kirchhoff (graph-Laplacian) matrix:
-
-$$A^{(p)}_{ij} = \mathbf{1}\{\, i \neq j,\ \|\mathbf{r}_{pi}-\mathbf{r}_{pj}\| < r_c \,\}, \qquad r_c = 10\,\text{Å},$$
+Start from a chain $p$ with residues $i = 1,\dots,N_p$ and Cα coordinates $\mathbf{r}_{pi}\in\mathbb{R}^3$. Build the contact graph by thresholding distance, then form the GNM Kirchhoff (graph-Laplacian) matrix: $$A^{(p)}_{ij} = \mathbf{1}\{\, i \neq j,\ \|\mathbf{r}_{pi}-\mathbf{r}_{pj}\| < r_c \,\}, \qquad r_c = 10\,\text{Å},$$
 
 $$\Gamma^{(p)}_{ij} = \begin{cases} -A^{(p)}_{ij}, & i \neq j, \\ \sum_{k\neq i} A^{(p)}_{ik}, & i = j. \end{cases}$$
 
-Diagonalise it, $\Gamma_p\,\mathbf{u}_{pk} = \lambda_{pk}\,\mathbf{u}_{pk}$, and the all-mode **compliance** of a residue, its softness summed over every nonzero mode, is the diagonal of the pseudoinverse:
+Diagonalise it, $\Gamma_p\,\mathbf{u}_{pk} = \lambda_{pk}\,\mathbf{u}_{pk}$, and the all-mode **compliance** of a residue, its softness summed over every nonzero mode, is the diagonal of the pseudoinverse: $$C_{pi} = (\Gamma_p^{+})_{ii} = \sum_{\lambda_{pk}>0} \frac{u_{pik}^{2}}{\lambda_{pk}}.$$
 
-$$C_{pi} = (\Gamma_p^{+})_{ii} = \sum_{\lambda_{pk}>0} \frac{u_{pik}^{2}}{\lambda_{pk}}.$$
-
-No learning produced this feature. It is the harmonic mobility implied by the contacts, and standard GNM ties it straight to the crystallographic B-factor. Because the target is normalised within each chain, the global constants drop out. What remains to explain is the *pattern* of flexibility, with absolute scale set aside. The two features the run lands on are a compressed log-compliance coordinate and a clipped slow-mode participation weight:
-
-$$\phi_{pi} = z_p\!\bigl(\log(C_{pi}+\epsilon)\bigr), \qquad \psi_{pi} = \bigl[\, z_p(|u_{pi2}|) + \theta \,\bigr]_{+},$$ where $u_{p2}$ is the first nonzero mode, the dominant collective deformation. After paired refitting under the gate, the surviving law is strikingly compact:
-
-$$\widehat{B}^{(z)}_{pi} = \alpha + \beta\,\phi_{pi}\,\psi_{pi}, \qquad \alpha=-0.1332,\ \ \beta=0.2239,\ \ \theta=2.2678.$$
+No learning produced this feature. It is the harmonic mobility implied by the contacts, and standard GNM ties it straight to the crystallographic B-factor. Because the target is normalised within each chain, the global constants drop out. What remains to explain is the *pattern* of flexibility, with absolute scale set aside. The two features the run lands on are a compressed log-compliance coordinate and a clipped slow-mode participation weight: $$\phi_{pi} = z_p\!\bigl(\log(C_{pi}+\epsilon)\bigr), \qquad \psi_{pi} = \bigl[\, z_p(|u_{pi2}|) + \theta \,\bigr]_{+},$$ where $u_{p2}$ is the first nonzero mode, the dominant collective deformation. After paired refitting under the gate, the surviving law is strikingly compact: $$\widehat{B}^{(z)}_{pi} = \alpha + \beta\,\phi_{pi}\,\psi_{pi}, \qquad \alpha=-0.1332,\ \ \beta=0.2239,\ \ \theta=2.2678.$$
 
 The mechanical reading is clean: *experimental flexibility is best compressed as local compliance expressed through participation in the dominant collective mode.* And the physics lives entirely in a typed, interpretable pipeline, $\{\mathbf{r}_{pi}\} \mapsto A_p \mapsto \Gamma_p \mapsto \{(\lambda_{pk},\mathbf{u}_{pk})\}_k \mapsto (C_{pi},|u_{pi2}|) \mapsto \widehat{B}^{(z)}_{pi}$, with no opaque regressor anywhere in it.
 
-Modes were in the schema from the start, so the discovery is not "the system used a normal mode." What changed is that the regime came to admit a new multi-input morphism:
-
-$$\texttt{LogNormCompliance} \times \texttt{ReLUModeAmpl} \longrightarrow \texttt{ModeConditionedCompliance}.$$
+Modes were in the schema from the start, so the discovery is not "the system used a normal mode." What changed is that the regime came to admit a new multi-input morphism: $$\texttt{LogNormCompliance} \times \texttt{ReLUModeAmpl} \longrightarrow \texttt{ModeConditionedCompliance}.$$
 
 Run a Kan-transport audit over each accepted transition and every new type sorts into three buckets: **generator-reachable** (an old type hands it an immediate unary morphism), **composite-reachable** (it only appears once a new multi-input composition is admitted), or **isolated** (even composites can't reach it). The two ingredient features are generator-reachable. But `ModeConditionedCompliance` is composite-reachable *only*: it cannot exist until the regime admits the product that multiplies the two. **That product is the scientific commitment. That is the discovery, located exactly.**
 
@@ -126,9 +108,7 @@ Without it, you would log "model improved, then got worse, then simpler." With i
 
 ## 05 · The gates: MDL and AIC
 
-Everything above hinges on the verifier $V_b$, the thing that refuses to commit an artifact just because an agent proposed it. The Builder/Breaker loop runs on **Minimum Description Length**: score a model by the total bits to state the model *and* the data given it,
-
-$$L(M, D) = L_{\text{model}}(M) + L_{\text{data}}(D \mid M),$$ and admit a revision $M'$ only if it pays for itself on the *enlarged, shared* evidence after both are refit: $L(M', D \cup E) < L(M, D \cup E)$. That's the formal sense in which a productive failure becomes structure, and it is exactly why a monotone single-number score is the *wrong* thing to track. The second case study swaps in **Akaike**, $\mathrm{AIC} = 2k - 2\ln\hat{L}$ (lower wins), to select an anisotropic orientation-tensor stiffness surrogate over a simpler isotropic fibre-count descriptor. The rejected descriptor is kept as typed provenance instead of deleted, which is what the contract requires.
+Everything above hinges on the verifier $V_b$, the thing that refuses to commit an artifact just because an agent proposed it. The Builder/Breaker loop runs on **Minimum Description Length**: score a model by the total bits to state the model *and* the data given it, $$L(M, D) = L_{\text{model}}(M) + L_{\text{data}}(D \mid M),$$ and admit a revision $M'$ only if it pays for itself on the *enlarged, shared* evidence after both are refit: $L(M', D \cup E) < L(M, D \cup E)$. That's the formal sense in which a productive failure becomes structure, and it is exactly why a monotone single-number score is the *wrong* thing to track. The second case study swaps in **Akaike**, $\mathrm{AIC} = 2k - 2\ln\hat{L}$ (lower wins), to select an anisotropic orientation-tensor stiffness surrogate over a simpler isotropic fibre-count descriptor. The rejected descriptor is kept as typed provenance instead of deleted, which is what the contract requires.
 
 ## 06 · What this means if you ship agents
 

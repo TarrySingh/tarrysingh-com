@@ -58,6 +58,24 @@ function startsLower(block) {
   return /^[a-z(“"'’]/.test(block.trimStart())
 }
 
+/**
+ * A paragraph that ends mid-clause. Pass 1 only merged when the CONTINUATION
+ * started lowercase, so a split landing before a capital letter survived, e.g.
+ *
+ *     For comparison,
+ *     <blank>
+ *     Microsoft's most recently reported WUE was 0.27 litres per kilowatt hour.
+ *
+ * A humanness audit found these all over the corpus (stranded quote lead-ins,
+ * paragraphs ending on a dangling "and"), so match on the LEFT side instead:
+ * prose paragraphs do not end in a comma, a semicolon, or a conjunction.
+ */
+function endsMidClause(block) {
+  const s = block.trimEnd()
+  if (/[,;:]$/.test(s)) return true
+  return /\b(?:and|or|but|with|of|to|in|for|as|that|which|than|from|by|at|the|a|an|is|are|was|were)$/i.test(s)
+}
+
 function repairBody(body) {
   const lines = body.split("\n")
   // Mask fenced regions so we never merge across/inside them.
@@ -104,6 +122,10 @@ function repairBody(body) {
     if (startsWithOrphanPunct(b)) {
       merges.push({ a: i - 1, b: i, glue: "" })
     } else if (!endsClosed(a) && startsLower(b)) {
+      merges.push({ a: i - 1, b: i, glue: " " })
+    } else if (endsMidClause(a)) {
+      // Left-side match: the previous paragraph ends mid-clause, so whatever
+      // follows is its continuation regardless of how it starts.
       merges.push({ a: i - 1, b: i, glue: " " })
     }
   }

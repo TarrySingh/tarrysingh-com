@@ -24,15 +24,11 @@ Chaining multiple MCP tools together involves passing their responses through th
 
  If you fetch a 40,000-token meeting transcript with one tool and write it to a CRM with another, that transcript travels through the model twice for no logical reason. The model is acting as a very expensive data bus.
 
-Code-as-action removes the bus. The model writes a short program; the program calls the tools; the large payloads stay inside the execution environment; only the summary comes back. The reason is simple: 
-
-LLMs are better at writing code than making individual tool calls: they have seen millions of lines of real-world code but only contrived tool-calling examples.
+Code-as-action removes the bus. The model writes a short program; the program calls the tools; the large payloads stay inside the execution environment; only the summary comes back. The reason is simple: LLMs are better at writing code than making individual tool calls: they have seen millions of lines of real-world code but only contrived tool-calling examples.
 
 ## not new, but newly productised
 
-The pattern itself was formalised at ICML 2024. Xingyao Wang and colleagues argued that 
-
-LLM agents are typically prompted to produce actions by generating JSON or text in a pre-defined format, which is usually limited by constrained action space and restricted flexibility, and proposed using executable Python code to consolidate LLM agents' actions into a unified action space.
+The pattern itself was formalised at ICML 2024. Xingyao Wang and colleagues argued that LLM agents are typically prompted to produce actions by generating JSON or text in a pre-defined format, which is usually limited by constrained action space and restricted flexibility, and proposed using executable Python code to consolidate LLM agents' actions into a unified action space.
 
  Their CodeActAgent, fine-tuned from Llama 2 and Mistral, posted up to a 20 per cent higher success rate against text and JSON baselines. Worth a sceptical footnote: that was a 2024 result on 7B-class models and curated benchmarks, so it says little about anyone's production stack.
 
@@ -48,9 +44,7 @@ Cloudflare released Dynamic Worker Loader into open beta, offering V8 isolate-ba
 
 Anthropic published the MCP variant, where direct tool calls consume context for each definition and result, and agents scale better by writing code to call tools instead.
 
- They productised it as Programmatic Tool Calling. The mechanics matter for anyone wiring it up: 
-
-Anthropic's Programmatic Tool Calling is the production instantiation of the same core insight, with two additions: the allowed_callers opt-in and explicit caller provenance in every tool_use block.
+ They productised it as Programmatic Tool Calling. The mechanics matter for anyone wiring it up: Anthropic's Programmatic Tool Calling is the production instantiation of the same core insight, with two additions: the allowed_callers opt-in and explicit caller provenance in every tool_use block.
 
 And then Microsoft. At Build 2026, held 2–3 June, Microsoft Agent Framework shipped CodeAct on top of its Hyperlight micro-VM runtime. 
 
@@ -80,21 +74,15 @@ The token-reduction figures are eye-watering, which is exactly when a practition
 
 Code Mode using 32 per cent fewer tokens than direct tool calling for a single-event task, and 81 per cent fewer for a complex 31-event task.
 
-The 98.7 per cent is one cherry-picked scenario: a large payload moving between two tools, the single worst case for the old pattern. An independent test by AIMultiple, using a different setup, landed lower: 
+The 98.7 per cent is one cherry-picked scenario: a large payload moving between two tools, the single worst case for the old pattern. An independent test by AIMultiple, using a different setup, landed lower: code execution used 78.5 per cent fewer input tokens, 165K versus 771K.
 
-code execution used 78.5 per cent fewer input tokens, 165K versus 771K.
-
- Still large, but it tells you the headline number moves with the workload. The savings scale with payload size and call count. For an agent that makes three small, well-defined calls in a fixed order, you'll save almost nothing and add a sandbox to your ops burden. Cloudflare's own docs say it plainly: 
-
-for simple, single tool calls, standard AI SDK tool calling is simpler and sufficient.
+ Still large, but it tells you the headline number moves with the workload. The savings scale with payload size and call count. For an agent that makes three small, well-defined calls in a fixed order, you'll save almost nothing and add a sandbox to your ops burden. Cloudflare's own docs say it plainly: for simple, single tool calls, standard AI SDK tool calling is simpler and sufficient.
 
 ## where the risk actually moved
 
 Code-as-action doesn't remove risk. It relocates it. You've swapped a schema parser for a code executor, and a prompt injection that reaches a code executor is a different class of problem than one reaching a schema parser.
 
-The sandbox is the architecture. The three vendors drew the hardware boundary in three different places. Cloudflare went with V8 isolates and was refreshingly candid about the trade: 
-
-isolate-based sandboxing presents a more complex attack surface than hardware virtual machines, noting that V8 security bugs are more common than hypervisor vulnerabilities, mitigated by automatic V8 patching within hours, a second-layer sandbox, MPK, and Spectre defences.
+The sandbox is the architecture. The three vendors drew the hardware boundary in three different places. Cloudflare went with V8 isolates and was refreshingly candid about the trade: isolate-based sandboxing presents a more complex attack surface than hardware virtual machines, noting that V8 security bugs are more common than hypervisor vulnerabilities, mitigated by automatic V8 patching within hours, a second-layer sandbox, MPK, and Spectre defences.
 
  Microsoft went the other way, putting a hardware boundary around every single call. 
 
