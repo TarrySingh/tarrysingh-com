@@ -192,7 +192,14 @@ export function scanDispatchSlop(text: string): SlopHit[] {
   // so strip link targets before looking for a double-hyphen standing in for an
   // em-dash. Without this the gate reports false positives on correctly-cited
   // articles, and a noisy gate is a bypassed gate.
-  const proseNoUrls = prose.replace(/https?:\/\/[^\s)\]]+/g, "")
+  const proseNoUrls = prose
+    .replace(/https?:\/\/[^\s)\]]+/g, "")
+    // Indented (4-space) code blocks are not caught by the fence strip above,
+    // and shell examples legitimately contain long flags such as "-- --run" or
+    // "--model_args". A CLI flag is not an em-dash substitute.
+    .replace(/^ {4,}.*$/gm, "")
+    .replace(/`[^`\n]*`/g, "")
+    .replace(/--(?=[A-Za-z])/g, "")
   const dashes = (proseNoUrls.match(/—/g) ?? []).length
   const fauxDashes = (proseNoUrls.match(/(?<!-)--(?!-)/g) ?? []).length
   if (dashes + fauxDashes > 0) {

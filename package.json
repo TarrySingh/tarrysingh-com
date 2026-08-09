@@ -14,12 +14,13 @@
     "blog:audit": "node scripts/blog/audit.mjs",
     "blog:promote": "node scripts/blog/promote.mjs",
     "blog:bake-nudge": "node scripts/blog/bake-nudge-card.mjs",
-  "blog:verify": "node scripts/verify-blog-mdx.mjs",
-  "blog:slop": "tsx scripts/scan-dispatch-slop.ts",
+    "blog:verify": "node scripts/verify-blog-mdx.mjs",
+    "blog:slop": "tsx scripts/scan-dispatch-slop.ts",
     "covers": "tsx scripts/plates/render-covers.ts",
     "reports:status:docx": "node scripts/reports/build-status-docx.mjs",
     "reports:uat-plan:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-plan.md",
-    "reports:uat-results:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-results.md"
+    "reports:uat-results:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-results.md",
+    "blog:sweep": "node scripts/live-slop-sweep.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.79.0",
