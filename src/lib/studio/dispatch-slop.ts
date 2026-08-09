@@ -146,6 +146,32 @@ const RULES: Rule[] = [
   },
 ]
 
+/**
+ * The STATISTIC DUMP: several figures stacked with nothing between them, each
+ * sentence shaped [number][verb][outcome], source dropped in afterwards. Tarry
+ * flagged it 2026-08-09 ("really bad") and it is the most common way the blog
+ * stops sounding human. Two document-level signals, because it is a property of
+ * a paragraph rather than of any single phrase.
+ */
+function statDumpParagraphs(text: string): number {
+  const PCT = /\d[\d.,]*\s?(?:per cent|%)|(?:one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)[a-z-]*\s(?:per cent|%)/gi
+  return text
+    .split(/\n\s*\n/)
+    .filter((p) => {
+      const t = p.trim()
+      if (t.length < 80 || /^[#>|\-*]/.test(t)) return false
+      return (t.match(PCT) ?? []).length >= 3
+    }).length
+}
+
+/**
+ * A sentence that OPENS on a figure puts the percentage in the subject slot, so
+ * the number acts and the people disappear. Spelling it out makes it worse, not
+ * more conversational.
+ */
+const NUMBER_OPENS_SENTENCE =
+  /(?:^|[.!?]["'’”)]?\s+)(?:\d[\d.,]*|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Twenty|Thirty|Forty|Fifty|Sixty|Seventy|Eighty|Ninety)[a-z-]*\s?(?:per cent|%)/g
+
 /** Percent-style consistency is a document-level check, not a regex-per-hit. */
 function percentStyleMixed(text: string): boolean {
   const styles = [/\d\s?%/.test(text), /\bper cent\b/i.test(text), /\bpercent\b/i.test(text)]
@@ -174,6 +200,24 @@ export function scanDispatchSlop(text: string): SlopHit[] {
         match: m.replace(/\s+/g, " ").trim().slice(0, 120),
       })
     }
+  }
+
+  const dumps = statDumpParagraphs(prose)
+  if (dumps > 0) {
+    hits.push({
+      id: "statistic-dump",
+      label: `${dumps} paragraph(s) stack 3+ statistics — lead with the meaning, one figure per sentence`,
+      severity: "hard",
+      match: `${dumps} paragraphs`,
+    })
+  }
+  for (const m of prose.match(NUMBER_OPENS_SENTENCE) ?? []) {
+    hits.push({
+      id: "number-opens-sentence",
+      label: "sentence opens on a figure, putting the number in the subject slot instead of a person",
+      severity: "hard",
+      match: m.replace(/\s+/g, " ").trim().slice(0, 60),
+    })
   }
 
   if (percentStyleMixed(prose)) {

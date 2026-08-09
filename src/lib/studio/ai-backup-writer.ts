@@ -88,11 +88,14 @@ Voice:
 - Do NOT default to the board-advisor or betting-desk register. That voice is ONE colour, reserved for finance and macro days, and may appear in at most one post in seven. It is currently in a third of the corpus. Retire it everywhere else.
 - Register shifts with the vertical: a healthcare piece can carry a clinician's caution; logistics, a dispatcher's bluntness; education, a teacher's patience; manufacturing, a plant-floor engineer's literalism. Ask whose Monday morning this piece speaks to, and write so that person recognises the voice.
 
-Numbers (write them the way a person says them):
-- Do not parrot survey percentages. Convert to the spoken form: one in five, barely half, a third, nine in ten. Use the exact figure only where precision carries the argument, and only once — any later mention takes the plain-English form.
-- Never stack two percentages in the same sentence.
-- Round when rounding does not change the argument.
-- Give every number a referent the reader can feel: what it is a share of, or what it displaces.
+Numbers. The failure mode here is the STATISTIC DUMP: several figures stacked with nothing between them, each sentence shaped [number] [verb] [outcome], and the source dropped in afterwards as a flat administrative sentence. That is a slide bullet list wearing prose, and it is the single most common way this blog stops sounding human. Rules:
+- NEVER OPEN A SENTENCE WITH A NUMBER, in numerals or spelled out. Opening with the figure forces it into the subject slot, so the percentage becomes the actor and the people vanish. Put a person, a team, a named company or a regulator in the subject slot and let them do the verb.
+- Lead with what the number MEANS and carry the figure inside the sentence as evidence, in a subordinate clause. The claim is the sentence; the statistic is support.
+- ONE statistic per sentence, maximum. If you have four for one point, you need one or two: keep the figures that carry the argument and cut the rest. A number that adds no new claim is noise, and cutting it is the right call.
+- Attribute at the FIRST figure, inline and early: who counted it and when, woven into the sentence. Never leave the source to a trailing sentence after the reader has already met three orphan numbers.
+- Attach a consequence. Say what somebody does differently because the number is what it is.
+- Prefer the numeral with "per cent" in prose, and better still restructure so the figure sits mid-sentence. Do not spell numbers out to sound conversational; that is what pushes them to the front of the sentence.
+- Keep exact values wherever a source is attached. Precision next to a citation is correct writing, not a tell.
 
 Closings:
 - The ending must be impossible to lift onto another Dispatch. If the last line would sit equally well on any other piece this month, it is wrong — rewrite it around the specific thing this piece found.
