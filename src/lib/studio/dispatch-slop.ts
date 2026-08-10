@@ -170,7 +170,18 @@ function statDumpParagraphs(text: string): number {
  * more conversational.
  */
 const NUMBER_OPENS_SENTENCE =
-  /(?:^|[.!?]["'’”)]?\s+)(?:\d[\d.,]*|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Twenty|Thirty|Forty|Fifty|Sixty|Seventy|Eighty|Ninety)[a-z-]*\s?(?:per cent|%)/g
+  /(?:^|[.!?]["'’”)]?\s+)(?:\d[\d.,]*|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Twenty|Thirty|Forty|Fifty|Sixty|Seventy|Eighty|Ninety)[a-z-]*\s?(?:per cent|%)/gm
+
+/**
+ * The EXCERPT is the most-read sentence on the site: it is the /blog card, the
+ * meta description and the social image. It sits in frontmatter, which the body
+ * scan strips, so a statistic-led excerpt survived every earlier pass and was
+ * caught by Tarry reading the live page. Scan it explicitly.
+ * Only a SURVEY STATISTIC counts here: a count of concrete things ("Four US
+ * banks...", "Two energy curves...") is legitimate and often the better opening.
+ */
+const EXCERPT_OPENS_ON_STAT =
+  /^excerpt:\s*"(?:\d[\d.,]*|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Twenty|Thirty|Forty|Fifty|Sixty|Seventy|Eighty|Ninety)[a-z-]*\s?(?:per cent|%)/im
 
 /** Percent-style consistency is a document-level check, not a regex-per-hit. */
 function percentStyleMixed(text: string): boolean {
@@ -200,6 +211,16 @@ export function scanDispatchSlop(text: string): SlopHit[] {
         match: m.replace(/\s+/g, " ").trim().slice(0, 120),
       })
     }
+  }
+
+  // Checked against the RAW text, because frontmatter is stripped from `prose`.
+  if (EXCERPT_OPENS_ON_STAT.test(text)) {
+    hits.push({
+      id: "excerpt-opens-on-statistic",
+      label: "excerpt opens on a survey statistic (this is the /blog card, meta description and social image)",
+      severity: "hard",
+      match: (text.match(EXCERPT_OPENS_ON_STAT) ?? [""])[0].slice(0, 70),
+    })
   }
 
   const dumps = statDumpParagraphs(prose)
