@@ -183,10 +183,14 @@ const NUMBER_OPENS_SENTENCE =
 const EXCERPT_OPENS_ON_STAT =
   /^excerpt:\s*"(?:\d[\d.,]*|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Twenty|Thirty|Forty|Fifty|Sixty|Seventy|Eighty|Ninety)[a-z-]*\s?(?:per cent|%)/im
 
-/** Percent-style consistency is a document-level check, not a regex-per-hit. */
-function percentStyleMixed(text: string): boolean {
-  const styles = [/\d\s?%/.test(text), /\bper cent\b/i.test(text), /\bpercent\b/i.test(text)]
-  return styles.filter(Boolean).length > 1
+/**
+ * House style is the % SYMBOL, always (Tarry, 2026-08-10, with examples:
+ * "62 per cent of organisations" BAD, "62% of organisations" GOOD; the same for
+ * titles). So this is no longer a consistency check: the spelled-out forms are
+ * simply wrong, wherever they appear, including frontmatter.
+ */
+function spelledOutPercent(text: string): number {
+  return (text.match(/\bper\s?cent\b/gi) ?? []).length
 }
 
 /**
@@ -241,12 +245,14 @@ export function scanDispatchSlop(text: string): SlopHit[] {
     })
   }
 
-  if (percentStyleMixed(prose)) {
+  // Checked against the RAW text so the title and excerpt are in scope.
+  const spelled = spelledOutPercent(text)
+  if (spelled > 0) {
     hits.push({
-      id: "percent-style-mixed",
-      label: "mixes %, 'per cent' and 'percent' in one piece (was 37/116 files)",
-      severity: "soft",
-      match: "document-level",
+      id: "spelled-out-percent",
+      label: `"per cent" written out ${spelled}x — house style is the % symbol everywhere, including title and excerpt`,
+      severity: "hard",
+      match: `${spelled} occurrences`,
     })
   }
 

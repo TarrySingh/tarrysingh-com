@@ -30,7 +30,7 @@ Code-as-action removes the bus. The model writes a short program; the program ca
 
 The pattern itself was formalised at ICML 2024. Xingyao Wang and colleagues argued that LLM agents are typically prompted to produce actions by generating JSON or text in a pre-defined format, which is usually limited by constrained action space and restricted flexibility, and proposed using executable Python code to consolidate LLM agents' actions into a unified action space.
 
- Their CodeActAgent, fine-tuned from Llama 2 and Mistral, posted up to a 20 per cent higher success rate against text and JSON baselines. Worth a sceptical footnote: that was a 2024 result on 7B-class models and curated benchmarks, so it says little about anyone's production stack.
+ Their CodeActAgent, fine-tuned from Llama 2 and Mistral, posted up to a 20% higher success rate against text and JSON baselines. Worth a sceptical footnote: that was a 2024 result on 7B-class models and curated benchmarks, so it says little about anyone's production stack.
 
 What changed is that the research pattern became three shipping products in roughly six months, and the last leg landed in the past few weeks.
 
@@ -68,13 +68,13 @@ flowchart TD
 
 ## the numbers, discounted
 
-The token-reduction figures are eye-watering, which is exactly when a practitioner should slow down. Anthropic reports a workflow that previously consumed about 150,000 tokens when tools and intermediate data were passed directly through the model was reimplemented with code execution and filesystem-based MCP APIs and used about 2,000 tokens, a 98.7 per cent reduction for that scenario.
+The token-reduction figures are eye-watering, which is exactly when a practitioner should slow down. Anthropic reports a workflow that previously consumed about 150,000 tokens when tools and intermediate data were passed directly through the model was reimplemented with code execution and filesystem-based MCP APIs and used about 2,000 tokens, a 98.7% reduction for that scenario.
 
  Cloudflare's demo showed 
 
-Code Mode using 32 per cent fewer tokens than direct tool calling for a single-event task, and 81 per cent fewer for a complex 31-event task.
+Code Mode using 32% fewer tokens than direct tool calling for a single-event task, and 81% fewer for a complex 31-event task.
 
-The 98.7 per cent is one cherry-picked scenario: a large payload moving between two tools, the single worst case for the old pattern. An independent test by AIMultiple, using a different setup, landed lower: code execution used 78.5 per cent fewer input tokens, 165K versus 771K.
+The 98.7% is one cherry-picked scenario: a large payload moving between two tools, the single worst case for the old pattern. An independent test by AIMultiple, using a different setup, landed lower: code execution used 78.5% fewer input tokens, 165K versus 771K.
 
  Still large, but it tells you the headline number moves with the workload. The savings scale with payload size and call count. For an agent that makes three small, well-defined calls in a fixed order, you'll save almost nothing and add a sandbox to your ops burden. Cloudflare's own docs say it plainly: for simple, single tool calls, standard AI SDK tool calling is simpler and sufficient.
 

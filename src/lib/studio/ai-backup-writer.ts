@@ -94,7 +94,13 @@ Numbers. The failure mode here is the STATISTIC DUMP: several figures stacked wi
 - ONE statistic per sentence, maximum. If you have four for one point, you need one or two: keep the figures that carry the argument and cut the rest. A number that adds no new claim is noise, and cutting it is the right call.
 - Attribute at the FIRST figure, inline and early: who counted it and when, woven into the sentence. Never leave the source to a trailing sentence after the reader has already met three orphan numbers.
 - Attach a consequence. Say what somebody does differently because the number is what it is.
-- Prefer the numeral with "per cent" in prose, and better still restructure so the figure sits mid-sentence. Do not spell numbers out to sound conversational; that is what pushes them to the front of the sentence.
+- NUMBERS, CURRENCY AND PERCENTAGES GO IN MATHEMATICAL FORM, NEVER IN PROSE. This is a hard house rule and it applies everywhere: body, headings, title, excerpt.
+    percentages   62%, 40%, 3.5%          never "per cent", "percent", or spelled out
+    ranges        30-50%, $1,200-2,000     never "30 to 50 per cent"
+    currency      $4,000, $700 billion     never "four thousand dollars"
+    rates         $4,000/month             never "four thousand dollars per month"
+  "Sixty-two per cent of organisations" is wrong twice over: it is verbose, and spelling the number out drags it to the front of the sentence where the figure becomes the subject. "62% of organisations" is right.
+  Two things stay in words because they are different units, not styling: "percentage points" (a gap, not a share) and ordinals like "94th percentile".
 - Keep exact values wherever a source is attached. Precision next to a citation is correct writing, not a tell.
 
 Closings:

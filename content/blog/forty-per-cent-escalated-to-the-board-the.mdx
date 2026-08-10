@@ -1,46 +1,38 @@
 ---
-title: "Forty Per Cent Escalated to the Board: The AI Invoice Surprise of 2026"
+title: "40% Escalated to the Board: The AI Invoice Surprise of 2026"
 date: "2026-08-02"
 category: "Essays"
-excerpt: "Unexpected AI costs changed a business decision at 62 per cent of organisations this year, and 40 per cent of organisations had to take the bill to the board. A charge only reaches directors once it has cleared the spending authority of whoever caused it. Budgets set in 2025, before agentic workloads ran at production scale, are now carrying orphaned agents that burn tokens with no owner and no attributed business outcome."
+excerpt: "Uber burned its entire 2026 AI coding budget by April, and it is not an outlier: unexpected AI costs changed a business decision at 62% of organisations this year. A charge only reaches directors once it has cleared the spending authority of whoever caused it. Budgets set in 2025, before agentic workloads ran at production scale, are now carrying orphaned agents that burn tokens with no owner and no attributed business outcome."
 draft: false
 tags: ["ai-cost-governance", "finops", "agentic-ai", "technical-debt", "enterprise-ai", "ai-spending"]
 ---
-Finance teams spent the past year explaining AI charges nobody had forecast. Mavvrik has now put a number on it. Its 2026 State of AI Cost Governance Report, published on 29 July 2026, surveyed how enterprises forecast, attribute, and govern AI spending, and found 62 per cent of organisations saying an unexpected AI cost had materially altered a business decision. At 40 per cent of organisations, the explaining had to be done in front of the board.
+Uber exhausted its entire 2026 AI coding budget by April. Four months in. Coding-agent adoption across a roughly 5,000-engineer organisation went from 32-84% in about a month, and 95% of its engineers now use AI tools monthly. Nobody there did anything wrong. The adoption curve simply outran the budget cycle, which is a sentence I have now heard in some form from four different CFOs this year.
 
-Mavvrik counted the fallout too. Enough teams reached for the emergency brake that 33 per cent of organisations imposed a spending freeze, and another 25 per cent delayed or cancelled an AI initiative outright.
+Mavvrik put a number on how common that is. Its 2026 State of AI Cost Governance Report, published on 29 July 2026, found unexpected AI costs materially altering a business decision at 62% of organisations. At 40%, the explaining had to be done in front of the board.
 
-I discount vendor surveys by default. This one carries a number I could not talk myself out of.
+I discount vendor surveys by default. That second number I could not talk myself out of.
 
-The 40 per cent that went to the board is what I keep returning to. Cloud waste does not reach a board. Infrastructure variance does not reach a board. A cost reaches a board once it has cleared the spending authority of whoever caused it, and somebody has to explain to directors a charge nobody forecast.
+Cloud waste does not reach a board. Infrastructure variance does not reach a board. A cost reaches a board once it has cleared the spending authority of whoever caused it, and then somebody has to stand up and explain a charge nobody forecast. Two in five enterprises had that meeting.
 
-The security firm WitnessAI reported on 22 July 2026 that 68 per cent of U.S. companies had watched at least some of their artificial intelligence initiatives run over budget in the past year. Overruns were rarely a one-off, either, with 33 per cent of U.S. companies saying they happened mostly or always.
+## The slop layer
 
-Uber exhausted its entire 2026 AI coding budget by April. Four months in. Coding-agent adoption across a roughly 5,000-engineer org went from 32 to 84 per cent in about a month, and 95 per cent of its engineers now use AI tools monthly. That is an adoption curve outrunning a budget cycle.
+Harness published its own survey the same day, and its finding was the polite version of what I hear in the room: enterprise AI spend has outgrown the ownership, visibility and governance needed to manage it. When the bill jumps, nobody can say who owns it, why it moved, or whether it bought anything.
 
-The FinOps Foundation surveyed 1,192 practitioners responsible for more than $83 billion in annual cloud spend for its State of FinOps 2026, and found 73 per cent of organisations reporting AI costs above original projections. Every vendor lead-gen blog now repeats that figure, and it is accurate. It also understates the problem, because it measures the overrun and not its cause.
+Underneath sits what we started calling AI slop debt a year ago. Half-finished proofs of concept that never shipped and never got switched off. Unevaluated agents consuming tokens in production. Prompt sprawl, which is a tidiness word for a cost problem: run hundreds of prompts across several models and you get inconsistent outputs, compliance headaches, and a bill nobody budgeted for.
 
-## The Slop Layer
+Shadow AI is a real category now, with teams running unauthorised models outside central visibility and cost allocation. PayPal described the end state as "context sprawl where you have 30 different agents…a bunch of different sources of truth."
 
-Harness put out the 2026 State of AI in FinOps on the same day Mavvrik published, 29 July 2026. Enterprise AI spend, it found, has outgrown the ownership, visibility, and governance needed to manage it. Which is the polite version of what I hear. When the bill jumps, nobody can say who owns it, why it moved, or whether it bought anything.
+The cost structure changed mid-flight, and that is the part the budget could not have anticipated. Somebody set the 2026 numbers in 2025, before token-burning agents existed at production scale. Teams deployed chatbots with one token profile. Coding assistants arrived with another, and far more volume. Then agentic workflows, different again and worse again. At agentic scale, an architectural decision that cost almost nothing during the pilot executes thousands of times a day against a bill nobody modelled.
 
-What sits underneath those numbers is what we started calling "AI slop debt" a year ago. Half-finished POCs that never shipped and never got switched off. Unevaluated agents consuming tokens in production. Prompt sprawl, a tidiness word for a cost problem. Organisations managing hundreds of prompts across multiple models get inconsistent outputs, compliance headaches, and costs nobody budgeted.
+## The FinOps reckoning
 
-Shadow AI is a real category now: teams running unauthorised models outside central visibility and cost allocation. PayPal named the end state as "context sprawl where you have 30 different agents…a bunch of different sources of truth." The arithmetic is worse than the anecdote. Organisations forecasted their 2026 AI spend months ago. By 9 June, many had already burned through 3× that entire annual budget.
+The FinOps Foundation surveyed 1,192 practitioners responsible for more than $83 billion in annual cloud spend, and found nearly all of them, 98%, now managing AI spend. Two years ago it was 31%. That is not adoption. That is reclassification: AI cost management was absorbed wholesale into the FinOps function inside 24 months, and people who built careers arguing about reserved instances are now asked to forecast token consumption for workloads younger than a fiscal year.
 
-The cost structure changed mid-flight. Somebody set the 2026 budget in 2025, before token-burning agents existed at production scale. Teams deployed chatbots with one token profile. Coding assistants arrived with another, and far more volume. Then agentic workflows, different again and worse again. At agentic scale, the architectural decision that cost almost nothing during the pilot now executes thousands of times a day against a bill nobody modelled.
+Where those practices report tells you how the problem is being classified. In the same survey, 78% sit under the CTO or CIO and only 8% under the CFO. Structurally that is correct, because the decisions that determine the bill are taken in engineering. It also means finance sees the damage after it has been committed.
 
-## The FinOps Reckoning
+KPMG asked 204 US business leaders at billion-dollar-plus organisations whether they had full, real-time visibility into what their AI systems cost to run. Only a quarter said yes. You cannot control what you cannot see, and most enterprises cannot see AI costs at the granularity where the overrun actually happens.
 
-In the same FinOps Foundation survey, 98 per cent of practices now manage AI spend, up from 31 per cent in 2024. Read that as reclassification, not adoption.
-
-That took 24 months. AI cost management was absorbed wholesale into the FinOps function, and the people who built careers arguing about reserved instances and savings plans are now asked to forecast token consumption for workloads that have existed for less than a fiscal year.
-
-The FinOps Foundation's 2026 data shows 78 per cent of practices reporting into the CTO or CIO organisation, up 18 points from 2023, with only 8 per cent reporting to the CFO. That classifies AI cost governance as an architecture capability, not a finance one. Structurally, that is correct. The decisions that determine the bill are taken in engineering. It also means the finance team sees the damage after it has already been committed.
-
-KPMG's Q2 2026 AI Pulse survey asked 204 US business leaders at $1B+ revenue organisations whether they had full, real-time visibility into what their AI systems cost to operate. Only 26 per cent said yes. KPMG's parallel global survey of 2,145 leaders across 20 markets found 42 per cent with only partial visibility into AI spending. You cannot control what you cannot see, and most enterprises cannot see AI costs at the granularity where the overrun actually occurs.
-
-Agentic AI breaks attribution outright. A single customer query in a banking workflow can trigger an orchestrator, three retrievers, four tool calls, and seven model invocations across multiple providers. The bill arrives at an aggregated tenant level, and the cost driver sits six layers down in the agent graph.
+Agentic AI breaks attribution outright. A single customer query in a banking workflow can trigger an orchestrator, three retrievers, four tool calls and seven model invocations across multiple providers. The invoice arrives at an aggregated tenant level, with the cost driver sitting six layers down in the agent graph.
 
 ```mermaid
 %% caption: One customer query fans out across providers, and the invoice arrives with the fan-out flattened.
@@ -58,35 +50,33 @@ flowchart TD
   H --> I[Cost driver six layers down, unattributed]
 ```
 
-## What Compounds
+## What compounds
 
-Code holds still. AI debt does not. The data underneath it changes, the model drifts, the regulator moves, and the prompt that worked at launch keeps billing months later while quietly returning worse answers. That is why it compounds faster than the debt engineering teams are used to carrying. Every layer beneath it is moving.
+Code holds still. AI debt does not. The data underneath it changes, the model drifts, the regulator moves, and the prompt that worked at launch keeps billing months later while quietly returning worse answers. That is why it compounds faster than the debt engineering teams are used to carrying: every layer beneath it is moving.
 
 Nobody decides to accumulate this. A team ships something that works, the engineer moves on, and the system stays up because switching it off needs someone willing to own that call. A few budget cycles later, the maintenance bill has no name on it.
 
-Forrester found 75 per cent of technology decision-makers expect technical debt to rise to a "severe" level in 2026. A recent CAST report estimated that technical debt worldwide has amounted to 61 billion workdays. Gartner's "Predicts 2026" report predicts that "a new remediation market will emerge for specialised tools and consulting services that can audit, identify, and refactor the 'AI-generated technical debt' that companies accumulate." When Gartner sizes the cleanup market, the mess is already a business.
+Gartner now predicts a remediation market will emerge for tools and consultants that can audit and refactor the AI-generated technical debt companies are accumulating. When Gartner sizes the cleanup, the mess is already a business.
 
-The stack has grown well past code and cloud waste: code, unmanaged prompts, orphaned agents, token consumption with no owner, and infrastructure locked to vendors who price by usage. The last item is the only one somebody else controls. AI systems ingest more data and interact with more environments than the code they replaced, so the debt forms quickly and goes unnoticed until it fuels a major breach.
+The stack has grown well past code and cloud waste: unmanaged prompts, orphaned agents, token consumption with no owner, and infrastructure locked to vendors who price by usage. That last item is the only one somebody else controls.
 
-## The Debt Behind the Buildout
+## The debt behind the buildout
 
-According to Bloomberg, Big Tech's debt for AI infrastructure has doubled to $350 billion. Bank of America estimates that AI-related bonds will reach $270 billion in 2026, up from $136 billion in 2025.
+The same pattern is visible one level up, on the balance sheets funding the buildout. Big Tech's borrowing for AI infrastructure has doubled to $350 billion, on Bloomberg's count, and Goldman Sachs strategist Amanda Lynam puts AI-related debt issued in 2026 at $489 billion, already past Goldman's $322 billion estimate for all of last year.
 
-Goldman Sachs strategist Amanda Lynam estimated that $489 billion of AI-related debt has been issued in 2026, already above Goldman's estimate of $322 billion for how much came to market last year.
+That is not a crisis. Bond demand is softening rather than breaking, and coverage ratios on hyperscaler bonds are declining. What I would watch instead is where the financing is moving: an estimated $800 billion for data centres is shifting towards private credit and off-balance-sheet structures. Public balance sheets then stop telling you who bears the risk if AI returns arrive late or small.
 
-Global AI-related debt issuance is projected to hit $570 billion by 2026, and the buildout is significantly affecting credit markets. This is not a crisis. But bond demand is softening, evidenced by declining coverage ratios for hyperscaler bonds, and investors may soon demand higher yields.
+## What a board should ask for
 
-Vendor bonds are only part of it. The bigger concern is the shift of financing towards less transparent private credit and off-balance-sheet structures, estimated at $800 billion for data centres. That move makes potential losses harder to track, because public balance sheets no longer tell the full story of who bears the risk if AI returns are delayed or fall short.
-
-Boards at 40 per cent of enterprises were briefed on unplanned AI costs in the last year. Any board carrying material AI spend needs three things before the next invoice cycle:
+Any board carrying material AI spend needs three things before the next invoice cycle:
 
 - A named human owner for every production agent.
-- A real-time cost model that attributes spend to business outcome as well as to infrastructure.
-- An audit of what is running, why it was started, and whether it is delivering value. Much of it comes back empty, which is the part that pays for it.
+- A real-time cost model that attributes spend to a business outcome, not only to infrastructure.
+- An audit of what is running, why it was started, and whether it is delivering anything. Much of it comes back empty, and that is the part that pays for the exercise.
 
-The organisations that come through this cycle will treat AI spend as a capital allocation problem with architectural consequences. Treating it as a technology question with a FinOps wrapper is what produced this year's surprises. The CFO patience that allowed most companies to report 1-5 per cent ROI has run out. The next round of invoices will separate the AI projects that had a business case from the ones that had momentum.
+The organisations that come through this cycle will treat AI spend as a capital allocation problem with architectural consequences. Treating it as a technology question with a FinOps wrapper is what produced this year's surprises. The CFO patience that tolerated single-digit returns has run out, and the next round of invoices will separate the projects that had a business case from the ones that had momentum.
 
-There is a reading of that 40 per cent that is less alarming. A board briefing on unplanned AI cost can mean a company lost control of its spending. It can equally mean the company saw its spending clearly enough to explain it. Opposite conditions, same survey answer, and I would want to know which one I was in.
+There is a reading of that 40% that is less alarming, and I keep turning it over. A board briefing on unplanned AI cost can mean a company lost control of its spending. It can equally mean the company could see its spending clearly enough to explain it. Opposite conditions, same survey answer, and I would want to know which one I was in.
 
 ---
 
