@@ -1,0 +1,68 @@
+---
+title: "The Second Read That Happens Before You Press Send"
+date: "2026-08-12"
+category: "Essays"
+excerpt: "A study published in Radiology found that general radiologists using an AI-driven workflow matched subspecialist cancer detection rates across nearly 578,000 scans. The result is real, but detection rate is not throughput — and the staffing crisis driving 2.5% annual attrition in radiology remains unmeasured. The clinical win and the capacity win require different budgets; the trial answered only one."
+draft: false
+tags: ["radiology", "medical-ai", "ai-workflow", "workforce-shortage", "mammography", "teleradiology"]
+---
+
+A study published in *Radiology* on 23 July 2026 found that general radiologists reading screening mammograms with an AI-driven workflow detected cancer at 4.99 per 1,000 exams, statistically indistinguishable from the 4.76 rate achieved by fellowship-trained breast imaging specialists using the same tools. About 70% of screening mammogram interpretations in the United States are handled by general radiologists, not subspecialists. The workflow in question is DeepHealth's Safeguard Review protocol, which flags high-suspicion cases and triggers a second review by a breast imaging expert before the original read is finalised. The trial involved 95 radiologists and nearly 578,000 scans.
+
+The press summary called it a breakthrough in equitable access, and it probably is. The measurement is real. But the measurement does not tell you what happened to the radiologist's night.
+
+### what the workflow change looks like from a midnight PACS queue
+
+Weekend and overnight teleradiology shifts carry a 25% to 75% premium over the equivalent daytime per-study rate, reflecting radiologist scarcity at non-standard hours and a case mix that skews toward STAT reads. The shortage is most acute in rural and semi-rural markets, smaller community hospitals, and overnight and weekend coverage roles, which teleradiology has moved aggressively to fill. A general radiologist logging in at 11 p.m. Pacific to clear a queue for a multi-site imaging group is not working banker's hours. They are being paid to move volume, and the implicit deal is speed for premium rate.
+
+The AI layer does three things in sequence. First, it scores every screening mammogram for suspicion level. Second, it auto-routes high-scoring cases into a separate queue monitored by a breast specialist. Third, it surfaces findings and measurements so the generalist who reads the remaining cases can review a pre-populated draft rather than start cold. Radiologists review AI-supported draft content, refine it as needed, and finalise reports within a connected environment without manual data transfer.
+
+The study outcome says detection rates converged. It does not report whether the generalist's reads-per-hour went up, stayed flat, or dropped. That number determines whether the AI alleviates the shortage or just redistributes the error budget. If a general radiologist now takes the same time per case but catches more cancers, patient outcomes improve and hospital liability probably drops. The staffing model does not change. If they take longer per case because they are now verifying AI findings rather than making an independent call, throughput falls and you need more bodies, not fewer. If they move faster because the AI does the measurement grunt work, the night shift becomes tolerable and maybe you retain people who would have quit. The paper does not say which it is.
+
+### the split nobody is pricing in yet
+
+Radiologist attrition in the United States more than doubled from 1.1% per year in 2014 to 2.5% per year in 2022. It takes an average of 130 days to fill a full-time radiology position. Diagnostic radiology programmes match approximately 1,200 positions annually, with interventional radiology adding several hundred more, but that pipeline has not expanded proportionally with imaging volume. The supply constraint is real and it is getting worse.
+
+The Safeguard workflow introduces a new division of labour. General radiologists now handle the lower-suspicion majority. Breast specialists review only the flagged cases. That sounds like specialisation, and in theory it should let you run a leaner specialist roster because they are no longer reading routine negatives. But teleradiology economics do not work that way. The specialist premium exists because there are not enough of them. If you reduce their per-case workload without reducing total case volume, you have just made the specialist bottleneck tighter. The flagged cases still need a human read, the flag rate determines how many specialists you need on call, and the AI does not tell you what threshold to set before you have lived with it for six months.
+
+Positive predictive value of recalls among generalists increased 15.09%, from 3.38% to 3.89%, despite a 14.79% relative increase in recall rate, from 9.06% to 10.4%. More recalls, better precision. That is the clinical win. The operational cost is that every additional recall generates downstream workflow: callback appointments, diagnostic mammography, possibly ultrasound or biopsy. Those appointments require scheduling, technologist time, and another radiologist read when the diagnostic study comes back. None of that work is captured in a detection-rate table, and all of it contributes to the system bottleneck that the shortage reflects.
+
+### the number teleradiology companies will watch, quietly
+
+AI-native workflow platforms report that the same radiologist can read 120 to 160 studies per 10-hour shift, a 40% to 60% productivity lift, with the same diagnostic accuracy. That metric is for generic AI-assisted reporting, not the Safeguard Review protocol specifically. But the direction matters. If the DeepHealth workflow delivers a similar lift, then the generalist on the night shift clears the queue faster, earns the same per-study rate, and goes home earlier or picks up a second contract. If it does not, the workflow is a quality improvement that does nothing for capacity.
+
+Teleradiology operators price their contracts on turnaround time and per-study cost. A hospital buying overnight coverage wants a guaranteed read within 30 minutes for STAT cases and same-shift for routine. The vendor staffs to meet that SLA, and the number of radiologists they need is a function of studies per hour, case mix, and reads per shift per radiologist. If AI raises the denominator, margins improve. If AI lowers it because verification overhead climbs, margins compress and either prices go up or vendors pull out of low-margin contracts. The market has not settled that question yet because the tools are still new and multi-site data on throughput are not public.
+
+Radiologist shortage is projected to reach about 15% by 2029 in the United States and approximately 40% by 2030 in certain European countries, with reporting remaining one of the most time-intensive and cognitively demanding steps. If AI compresses reporting time, the 15% gap narrows. If it compresses only error rates, the gap stays open and you solve for quality instead of capacity. Both are valuable. Only one solves the staffing crisis that is driving hospitals to pay overnight premiums they cannot afford.
+
+### what the operator sees at 3 a.m.
+
+A case comes in. The AI scores it medium-low. The generalist opens it, sees the AI has already marked three areas and measured breast density. The measurements match what the generalist would have called. The areas flagged are real but borderline. The AI suggests "recommend continued annual screening". The generalist agrees, adds a sentence about stable architecture, signs. Four minutes, maybe five. Next case.
+
+A case comes in. The AI scores it high. It goes into the specialist queue automatically. The generalist never sees it. The specialist picks it up 20 minutes later, confirms a spiculated mass upper outer left, recalls for diagnostic views, signs. The specialist has cleared eight flagged cases in an hour because none of them were negatives and the AI pre-populated the measurements. The generalist has cleared 30 in the same hour because the borderline calls were already triaged out.
+
+That is the theory. The reality includes cases where the AI flags something the specialist downgrades, where the generalist disagrees with the AI's non-flag and manually escalates, where the measurements are close but not quite right and the radiologist re-does them to be sure, where the prior study is three years old and the comparison is harder than the AI assumed. All of that is friction. Some of it is learning curve. Some of it is intrinsic to any handoff workflow. The measurement does not capture it, and the measurement is what gets published.
+
+The operator who gets paged at 3 a.m. is not paged because the AI failed. They are paged because the specialist queue has 12 cases in it, the contracted SLA says STAT reads in 30 minutes, and there is one breast specialist on shift covering four time zones. The AI did its job. The workflow did its job. The maths did not add up.
+
+### what an honest ROI model would include
+
+Detection rate improvement: clinical benefit, liability reduction, possibly reimbursement upside if payers start paying for quality metrics. Measurable, already documented in the study.
+
+Recall precision improvement: fewer false positives per cancer found, less patient anxiety, lower callback cost per diagnosis. Measurable, also in the study.
+
+Throughput change: reads per hour per generalist, reads per hour per specialist, flagged case rate, time to clear queue. Not in the study. This is the number that determines whether the tool pays for itself in labour savings or just rebalances the error budget at the same cost.
+
+Retention effect: does the workflow make the night shift less miserable, and if so, does attrition drop? Not measured. Probably not measurable for two years. Matters more than anything else if the core problem is that people are quitting.
+
+Training substitution: can a hospital that could not recruit a breast specialist now cover that service line with generalists plus AI routing? Not studied. Strategically significant if true. Changes the hiring model for every community hospital that runs breast screening.
+
+DeepHealth launched Reporting Pro on 10 June 2026, an AI-powered reporting solution that integrates speech recognition, AI-generated clinical findings, measurements, impressions, quality assurance, and structured reporting into one workflow. The platform is live across RadNet, which is the parent company, so there is scale deployment data somewhere. It is not public. The missing number is how many studies per shift a RadNet radiologist was completing in May 2026 versus July 2026, and whether the variance is statistically significant. That number would tell you whether this is a tool that saves time or a tool that saves errors. You need different budgets for each.
+
+I have walked into enough vendor deployments to know that "statistically indistinguishable detection rates" does not mean frictionless operations. It means the clinical endpoint held up under trial conditions. Operations are what happen when the trial ends and the tool goes into the Monday morning queue with eight other tools, none of which talk to each other, all of which assume they are the only workflow layer that matters. The radiologist at 3 a.m. is the person who reconciles that stack, and the measurement you publish does not capture the reconciliation cost.
+
+The DeepHealth result is real. The workflow will spread. The question is whether it spreads because it makes the job faster, or because it makes the job safer at the same speed, or because hospitals can no longer recruit breast specialists and this is the least-bad substitute. All three are plausible. The study answered one question. The operator on the night shift is living with the other two.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
