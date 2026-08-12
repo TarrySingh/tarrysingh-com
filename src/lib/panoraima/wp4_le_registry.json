@@ -2,9 +2,16 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-07-21T12:15:47.828982+00:00",
-  "refreshed_at": "2026-07-21T12:15:47.828982+00:00",
+  "generated_at": "2026-08-12T15:01:19.979396+00:00",
+  "refreshed_at": "2026-08-12T15:01:19.979396+00:00",
   "refresh_history": [
+    {
+      "at": "2026-08-12T15:01:19.979396+00:00",
+      "wiki_captured": "2026-08-12T15:00:26.330Z",
+      "sharepoint_generated": "2026-08-12T17:01:19.800869Z",
+      "realai_total": 56,
+      "reviewed": 38
+    },
     {
       "at": "2026-07-21T12:15:47.828982+00:00",
       "wiki_captured": "2026-07-21T12:14:10.880Z",
@@ -51,14 +58,14 @@
   "data_sources": {
     "wiki": {
       "status": "live",
-      "captured_at": "2026-07-21T12:14:10.880Z",
+      "captured_at": "2026-08-12T15:00:26.330Z",
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-07-21T14:15:47.681664Z",
+      "generated_at": "2026-08-12T17:01:19.800869Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 80,
+        "with_materials": 137,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -75,17 +82,18 @@
       "Media": 89
     },
     "by_status": {
-      "In development": 192,
-      "Status not set": 73,
-      "In review": 155,
-      "Materials in progress": 16
+      "In development": 190,
+      "Status not set": 71,
+      "In review": 162,
+      "Materials in progress": 12,
+      "Not started": 1
     },
-    "with_materials": 80,
-    "materials_pending": 356,
+    "with_materials": 137,
+    "materials_pending": 299,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 80,
-      "awaiting_material": 356,
+      "with_sharepoint_material": 137,
+      "awaiting_material": 299,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -97,8 +105,7 @@
       "reviewed": 38,
       "by_status": {
         "In development": 15,
-        "In review": 39,
-        "Status not set": 1,
+        "In review": 40,
         "Not started": 1
       },
       "needs_action": 25,
@@ -4117,7 +4124,7 @@
       "duration": "60",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "TUD",
@@ -4127,10 +4134,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "H014_Introduction_to_LLMs.pptx",
+            "ext": "pptx",
+            "kb": 3841,
+            "date": "2026-08-04",
+            "sha": "65e9e3429e972471",
+            "rel": "4.1 Horizontal/H-014/H014_Introduction_to_LLMs.pptx"
+          }
+        ],
         "folder": "H-014"
       },
       "lesson_plan": {
@@ -5713,7 +5729,7 @@
       "duration": "90",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "",
@@ -5723,10 +5739,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "H128 Statistics_Uncertainty_Calibration.pdf",
+            "ext": "pdf",
+            "kb": 738,
+            "date": "2026-08-04",
+            "sha": "a34cfbcbd2f9ab4e",
+            "rel": "4.1 Horizontal/H-128/H128 Statistics_Uncertainty_Calibration.pdf"
+          }
+        ],
         "folder": "H-128"
       },
       "lesson_plan": {
@@ -5755,7 +5780,7 @@
       "duration": "90",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "",
@@ -5765,10 +5790,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "H129 Statistics_Robustness_Validation.pdf",
+            "ext": "pdf",
+            "kb": 633,
+            "date": "2026-08-04",
+            "sha": "a8ebfd606c500063",
+            "rel": "4.1 Horizontal/H-129/H129 Statistics_Robustness_Validation.pdf"
+          }
+        ],
         "folder": "H-129"
       },
       "lesson_plan": {
@@ -5797,7 +5831,7 @@
       "duration": "120",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "TUD",
@@ -5807,10 +5841,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "H130_H131_Statistics_in_Practice_final.ipynb",
+            "ext": "ipynb",
+            "kb": 975,
+            "date": "2026-08-04",
+            "sha": "5e403afa23f26819",
+            "rel": "4.1 Horizontal/H-130/H130_H131_Statistics_in_Practice_final.ipynb"
+          }
+        ],
         "folder": "H-130"
       },
       "lesson_plan": {
@@ -5839,7 +5882,7 @@
       "duration": "120",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "TUD",
@@ -5849,10 +5892,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "H_132-H_133 Typical approach to AI project.pptx",
+            "ext": "pptx",
+            "kb": 6712,
+            "date": "2026-08-04",
+            "sha": "b5b6d0c6a84340b6",
+            "rel": "4.1 Horizontal/H-132/H_132-H_133 Typical approach to AI project.pptx"
+          },
+          {
+            "name": "H_132-H_133 Typical approach to AI project - Canvas.docx",
+            "ext": "docx",
+            "kb": 48,
+            "date": "2026-08-04",
+            "sha": "ee786d02a60d034b",
+            "rel": "4.1 Horizontal/H-132/H_132-H_133 Typical approach to AI project - Canvas.docx"
+          }
+        ],
         "folder": "H-132"
       },
       "lesson_plan": {
@@ -6108,7 +6168,7 @@
       "duration": "60",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "",
@@ -6118,10 +6178,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "H-147 Time series forecasting for demand cost and capacity.pptx",
+            "ext": "pptx",
+            "kb": 9721,
+            "date": "2026-08-04",
+            "sha": "88596e3702667ffa",
+            "rel": "4.1 Horizontal/H-147/H-147 Time series forecasting for demand cost and capacity.pptx"
+          }
+        ],
         "folder": "H-147"
       },
       "lesson_plan": {
@@ -6579,8 +6648,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "BME · Tegza Badacsonyi",
       "coauthor": "HAW · Michael Gille",
@@ -6880,13 +6949,13 @@
       "track": "Horizontal",
       "title": "H-230 Risk management & Risk mitigation - principles",
       "lesson_type": "Lecture",
-      "duration": "30",
-      "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "duration": "60",
+      "job_role": "Any",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU",
-      "coauthor": "HAW",
+      "author": "HU · Sieuwert van Otterloo",
+      "coauthor": "HAW · Michael Gille",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -7514,8 +7583,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "HAW · Ahmad Khalidi",
       "coauthor": "UNINA · Stefano Marrone",
@@ -7525,17 +7594,57 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 2,
+        "count": 7,
         "has": true,
-        "newest": "2026-07-08",
+        "newest": "2026-07-24",
         "files": [
+          {
+            "name": "Prompt Log Example Solutions.xlsx",
+            "ext": "xlsx",
+            "kb": 23,
+            "date": "2026-07-24",
+            "sha": "290507d7a0fe79a1",
+            "rel": "4.1 Horizontal/HC-016/Prompt Log Example Solutions.xlsx"
+          },
           {
             "name": "Prompt Log.xlsx",
             "ext": "xlsx",
             "kb": 14,
-            "date": "2026-07-08",
-            "sha": "a5938545fc94fe94",
+            "date": "2026-07-24",
+            "sha": "fe3f73bc48f24814",
             "rel": "4.1 Horizontal/HC-016/Prompt Log.xlsx"
+          },
+          {
+            "name": "IPE_1_Discussions.pptx",
+            "ext": "pptx",
+            "kb": 464,
+            "date": "2026-07-24",
+            "sha": "f8af8da027d783a7",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Discussions.pptx"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
+            "ext": "pptx",
+            "kb": 840,
+            "date": "2026-07-24",
+            "sha": "e2b1b3a0e9c99d5c",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Assignments.pptx"
+          },
+          {
+            "name": "IPE_1_Introduction.pptx",
+            "ext": "pptx",
+            "kb": 669,
+            "date": "2026-07-24",
+            "sha": "bdb4e8465ffef3c2",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Introduction.pptx"
+          },
+          {
+            "name": "Setup LM Studio.pptx",
+            "ext": "pptx",
+            "kb": 636,
+            "date": "2026-07-24",
+            "sha": "737abf839b98846e",
+            "rel": "4.1 Horizontal/HC-016/Setup LM Studio.pptx"
           },
           {
             "name": "Slides.pptx",
@@ -7660,8 +7769,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "HU · Sietske Tacoma",
       "coauthor": "BME · Béla Pataki",
@@ -7864,7 +7973,7 @@
       "duration": "60",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "HAW · Ahmad Khalidi",
@@ -7874,10 +7983,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "HC-023_Introduction_to_Natural_Language_Processing.pptx",
+            "ext": "pptx",
+            "kb": 10704,
+            "date": "2026-08-04",
+            "sha": "353d9b1590ecfecb",
+            "rel": "4.1 Horizontal/HC-023/HC-023_Introduction_to_Natural_Language_Processing.pptx"
+          }
+        ],
         "folder": "HC-023"
       },
       "lesson_plan": {
@@ -7905,8 +8023,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "UNINA · Stefano Marrone",
@@ -7916,10 +8034,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "819bdef91fbaa14b",
+            "rel": "4.1 Horizontal/HC-024/Link to editable source.docx"
+          },
+          {
+            "name": "HC-024 Introduction to Ethical Frameworks.pdf",
+            "ext": "pdf",
+            "kb": 239,
+            "date": "2026-08-07",
+            "sha": "9ecf86879b522416",
+            "rel": "4.1 Horizontal/HC-024/HC-024 Introduction to Ethical Frameworks.pdf"
+          }
+        ],
         "folder": "HC-024"
       },
       "lesson_plan": {
@@ -7947,8 +8082,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "UNINA · Stefano Marrone",
@@ -7958,10 +8093,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "fef13476cf029186",
+            "rel": "4.1 Horizontal/HC-025/Link to editable source.docx"
+          },
+          {
+            "name": "HC-025 Introduction to Introduction to Duty Ethics, Virtue Ethics.pdf",
+            "ext": "pdf",
+            "kb": 198,
+            "date": "2026-08-07",
+            "sha": "dc36ba022a91c18b",
+            "rel": "4.1 Horizontal/HC-025/HC-025 Introduction to Introduction to Duty Ethics, Virtue Ethics.pdf"
+          }
+        ],
         "folder": "HC-025"
       },
       "lesson_plan": {
@@ -7989,8 +8141,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "UNINA · Stefano Marrone",
@@ -8000,10 +8152,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "8f1f231fb2a95f95",
+            "rel": "4.1 Horizontal/HC-026/Link to editable source.docx"
+          },
+          {
+            "name": "HC-026 Introduction to Utilitarianism.pdf",
+            "ext": "pdf",
+            "kb": 392,
+            "date": "2026-08-07",
+            "sha": "855a902826c91c41",
+            "rel": "4.1 Horizontal/HC-026/HC-026 Introduction to Utilitarianism.pdf"
+          }
+        ],
         "folder": "HC-026"
       },
       "lesson_plan": {
@@ -8031,8 +8200,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "KPI",
@@ -8042,10 +8211,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "d33c6727d5e7af05",
+            "rel": "4.1 Horizontal/HC-027/Link to editable source.docx"
+          },
+          {
+            "name": "HC-027 Introduction to Social Contact Theory.pdf",
+            "ext": "pdf",
+            "kb": 1032,
+            "date": "2026-08-07",
+            "sha": "f0ffc5a0b9c082fc",
+            "rel": "4.1 Horizontal/HC-027/HC-027 Introduction to Social Contact Theory.pdf"
+          }
+        ],
         "folder": "HC-027"
       },
       "lesson_plan": {
@@ -8073,8 +8259,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "UNINA · Stefano Marrone",
@@ -8084,10 +8270,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "150ce196a7dc8930",
+            "rel": "4.1 Horizontal/HC-028/Link to editable source.docx"
+          },
+          {
+            "name": "Document.docx",
+            "ext": "docx",
+            "kb": 19,
+            "date": "2026-08-07",
+            "sha": "7a289d9338a9cc09",
+            "rel": "4.1 Horizontal/HC-028/Document.docx"
+          },
+          {
+            "name": "HC-028 Justice and Fairness Definitions.pdf",
+            "ext": "pdf",
+            "kb": 872,
+            "date": "2026-08-07",
+            "sha": "9e3906c6837d7121",
+            "rel": "4.1 Horizontal/HC-028/HC-028 Justice and Fairness Definitions.pdf"
+          }
+        ],
         "folder": "HC-028"
       },
       "lesson_plan": {
@@ -8115,8 +8326,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "UNINA · Stefano Marrone",
@@ -8126,10 +8337,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "a4b38f8206877e81",
+            "rel": "4.1 Horizontal/HC-029/Link to editable source.docx"
+          },
+          {
+            "name": "HC-029 Foundational concepts and Types of bias.pdf",
+            "ext": "pdf",
+            "kb": 1170,
+            "date": "2026-08-07",
+            "sha": "5dba3af8838196d5",
+            "rel": "4.1 Horizontal/HC-029/HC-029 Foundational concepts and Types of bias.pdf"
+          }
+        ],
         "folder": "HC-029"
       },
       "lesson_plan": {
@@ -8157,8 +8385,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "HAW · Ahmad Khalidi",
@@ -8168,10 +8396,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "26b133ff43f43d42",
+            "rel": "4.1 Horizontal/HC-030/Link to editable source.docx"
+          },
+          {
+            "name": "HC-030 Group Fairness Definitions - Equal opportunity and equalized odds.pdf",
+            "ext": "pdf",
+            "kb": 224,
+            "date": "2026-08-07",
+            "sha": "cb061fc9f4e2a4b7",
+            "rel": "4.1 Horizontal/HC-030/HC-030 Group Fairness Definitions - Equal opportunity and equalized odds.pdf"
+          }
+        ],
         "folder": "HC-030"
       },
       "lesson_plan": {
@@ -8199,8 +8444,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "TUD",
@@ -8210,10 +8455,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "2c2462e4ba2db60f",
+            "rel": "4.1 Horizontal/HC-032/Link to editable source.docx"
+          },
+          {
+            "name": "HC-032 Bias mitigation strategies - pre-processing and in-processing.pdf",
+            "ext": "pdf",
+            "kb": 171,
+            "date": "2026-08-07",
+            "sha": "f37a4aa086b6a342",
+            "rel": "4.1 Horizontal/HC-032/HC-032 Bias mitigation strategies - pre-processing and in-processing.pdf"
+          }
+        ],
         "folder": "HC-032"
       },
       "lesson_plan": {
@@ -8241,8 +8503,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "UNINA · Stefano Marrone",
@@ -8252,10 +8514,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "94aa095a2f882766",
+            "rel": "4.1 Horizontal/HC-033/Link to editable source.docx"
+          },
+          {
+            "name": "HC-033 Bias mitigation strategies - post-processing.pdf",
+            "ext": "pdf",
+            "kb": 154,
+            "date": "2026-08-07",
+            "sha": "3a9193bf04cdf0fc",
+            "rel": "4.1 Horizontal/HC-033/HC-033 Bias mitigation strategies - post-processing.pdf"
+          }
+        ],
         "folder": "HC-033"
       },
       "lesson_plan": {
@@ -8335,8 +8614,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "UNIWA",
@@ -8346,10 +8625,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "9effadb8cc5d3257",
+            "rel": "4.1 Horizontal/HC-035/Link to editable source.docx"
+          },
+          {
+            "name": "Document.docx",
+            "ext": "docx",
+            "kb": 19,
+            "date": "2026-08-07",
+            "sha": "8f3780aeef89fbd5",
+            "rel": "4.1 Horizontal/HC-035/Document.docx"
+          },
+          {
+            "name": "HC-035 Impact of AI on the labour market.pdf",
+            "ext": "pdf",
+            "kb": 2163,
+            "date": "2026-08-07",
+            "sha": "f2fe55607b46cfd3",
+            "rel": "4.1 Horizontal/HC-035/HC-035 Impact of AI on the labour market.pdf"
+          }
+        ],
         "folder": "HC-035"
       },
       "lesson_plan": {
@@ -8378,7 +8682,7 @@
       "duration": "60",
       "job_role": "Any",
       "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "HAW · Alena Störmer",
       "coauthor": "KPI · Myroslava Kukhta",
@@ -8430,7 +8734,7 @@
       "duration": "60",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "HU · Sieuwert van Otterloo",
@@ -8440,10 +8744,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "HC-040_Explainability_Right_to_Explanation_XAI.pptx",
+            "ext": "pptx",
+            "kb": 11444,
+            "date": "2026-08-04",
+            "sha": "0ba91cdfd55fd776",
+            "rel": "4.1 Horizontal/HC-040/HC-040_Explainability_Right_to_Explanation_XAI.pptx"
+          }
+        ],
         "folder": "HC-040"
       },
       "lesson_plan": {
@@ -8471,8 +8784,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "KPI",
@@ -8482,10 +8795,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "3ba6c0980ee5ed46",
+            "rel": "4.1 Horizontal/HC-043/Link to editable source.docx"
+          },
+          {
+            "name": "HC-043 Introduction to Meaningful Human Oversight.pdf",
+            "ext": "pdf",
+            "kb": 210,
+            "date": "2026-08-07",
+            "sha": "95d275e7befa91c4",
+            "rel": "4.1 Horizontal/HC-043/HC-043 Introduction to Meaningful Human Oversight.pdf"
+          }
+        ],
         "folder": "HC-043"
       },
       "lesson_plan": {
@@ -8878,10 +9208,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-28",
+        "newest": "2026-07-28",
         "files": [
+          {
+            "name": "HC-075a_v2.pptx",
+            "ext": "pptx",
+            "kb": 2325,
+            "date": "2026-07-28",
+            "sha": "685af3e7aa2be79a",
+            "rel": "4.1 Horizontal/HC-075a/HC-075a_v2.pptx"
+          },
           {
             "name": "HC-075a.pptx",
             "ext": "pptx",
@@ -8929,10 +9267,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-28",
+        "newest": "2026-07-28",
         "files": [
+          {
+            "name": "HC-075b_v2.pptx",
+            "ext": "pptx",
+            "kb": 9856,
+            "date": "2026-07-28",
+            "sha": "a4742b5defab0651",
+            "rel": "4.1 Horizontal/HC-075b/HC-075b_v2.pptx"
+          },
           {
             "name": "HC-075b.pptx",
             "ext": "pptx",
@@ -9084,14 +9430,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-29",
+        "newest": "2026-07-23",
         "files": [
           {
             "name": "HC-141a.pptx",
             "ext": "pptx",
-            "kb": 226,
-            "date": "2026-06-29",
-            "sha": "dd3b04efa7a7b308",
+            "kb": 223,
+            "date": "2026-07-23",
+            "sha": "9f0f6b545ec783e0",
             "rel": "4.1 Horizontal/HC-141a/HC-141a.pptx"
           }
         ],
@@ -9133,10 +9479,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-09",
+        "files": [
+          {
+            "name": "HC-141b.pptx",
+            "ext": "pptx",
+            "kb": 362,
+            "date": "2026-08-09",
+            "sha": "b62dff15e3302d25",
+            "rel": "4.1 Horizontal/HC-141b/HC-141b.pptx"
+          }
+        ],
         "folder": "HC-141b"
       },
       "lesson_plan": {
@@ -9281,8 +9636,16 @@
       "materials": {
         "count": 3,
         "has": true,
-        "newest": "2026-07-20",
+        "newest": "2026-07-21",
         "files": [
+          {
+            "name": "Presentation HC-152.pdf",
+            "ext": "pdf",
+            "kb": 480,
+            "date": "2026-07-21",
+            "sha": "d2ed960e89b35e91",
+            "rel": "4.1 Horizontal/HC-152/Presentation HC-152.pdf"
+          },
           {
             "name": "HC-152_Protege tutorial 2.pdf",
             "ext": "pdf",
@@ -9290,14 +9653,6 @@
             "date": "2026-07-20",
             "sha": "a579133e9e288c59",
             "rel": "4.1 Horizontal/HC-152/HC-152_Protege tutorial 2.pdf"
-          },
-          {
-            "name": "Presentation HC-152.pdf",
-            "ext": "pdf",
-            "kb": 484,
-            "date": "2026-07-20",
-            "sha": "4333477984a279d6",
-            "rel": "4.1 Horizontal/HC-152/Presentation HC-152.pdf"
           },
           {
             "name": "HC-152_Protege tutorial 1.pdf",
@@ -9336,8 +9691,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Maria Nisheva",
       "coauthor": "BME · András Gézsi",
@@ -9347,10 +9702,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-11",
+        "files": [
+          {
+            "name": "Presentation HC-154.pdf",
+            "ext": "pdf",
+            "kb": 619,
+            "date": "2026-08-11",
+            "sha": "75b0e95bb0d2a656",
+            "rel": "4.1 Horizontal/HC-154/Presentation HC-154.pdf"
+          }
+        ],
         "folder": "HC-154"
       },
       "lesson_plan": {
@@ -9422,8 +9786,8 @@
       "lesson_type": "Lecture",
       "duration": "180",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Maria Nisheva",
       "coauthor": "HAW · Ahmad Khalidi",
@@ -9433,10 +9797,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-25",
+        "files": [
+          {
+            "name": "Presentation HC-158.pdf",
+            "ext": "pdf",
+            "kb": 1332,
+            "date": "2026-07-25",
+            "sha": "58ea3aef7950163a",
+            "rel": "4.1 Horizontal/HC-158/Presentation HC-158.pdf"
+          }
+        ],
         "folder": "HC-158"
       },
       "lesson_plan": {
@@ -9465,8 +9838,8 @@
       "lesson_type": "Lecture",
       "duration": "180",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Maria Nisheva",
       "coauthor": "HAW · Ahmad Khalidi",
@@ -9476,10 +9849,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-26",
+        "files": [
+          {
+            "name": "Presentation HC-161.pdf",
+            "ext": "pdf",
+            "kb": 805,
+            "date": "2026-07-26",
+            "sha": "5d453fe0e1089563",
+            "rel": "4.1 Horizontal/HC-161/Presentation HC-161.pdf"
+          }
+        ],
         "folder": "HC-161"
       },
       "lesson_plan": {
@@ -9691,10 +10073,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-29",
+        "files": [
+          {
+            "name": "Presentation HC-172.pdf",
+            "ext": "pdf",
+            "kb": 597,
+            "date": "2026-07-29",
+            "sha": "3e758ffd443311c6",
+            "rel": "4.1 Horizontal/HC-172/Presentation HC-172.pdf"
+          }
+        ],
         "folder": "HC-172"
       },
       "lesson_plan": {
@@ -9734,10 +10125,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-31",
+        "files": [
+          {
+            "name": "Presentation HC-174.pdf",
+            "ext": "pdf",
+            "kb": 449,
+            "date": "2026-07-31",
+            "sha": "d744235c76335a62",
+            "rel": "4.1 Horizontal/HC-174/Presentation HC-174.pdf"
+          }
+        ],
         "folder": "HC-174"
       },
       "lesson_plan": {
@@ -9829,10 +10229,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-02",
+        "files": [
+          {
+            "name": "HC 178 Data-2 v1.pdf",
+            "ext": "pdf",
+            "kb": 1102,
+            "date": "2026-08-02",
+            "sha": "30d2f19d2c707921",
+            "rel": "4.1 Horizontal/HC-178/HC 178 Data-2 v1.pdf"
+          }
+        ],
         "folder": "HC-178"
       },
       "lesson_plan": {
@@ -9861,8 +10270,8 @@
       "lesson_type": "Lecture",
       "duration": "180",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Maria Nisheva",
       "coauthor": "UNIWA",
@@ -9872,10 +10281,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-06",
+        "files": [
+          {
+            "name": "Presentation HC-180.pdf",
+            "ext": "pdf",
+            "kb": 616,
+            "date": "2026-08-06",
+            "sha": "b6bff6572a0572fd",
+            "rel": "4.1 Horizontal/HC-180/Presentation HC-180.pdf"
+          }
+        ],
         "folder": "HC-180"
       },
       "lesson_plan": {
@@ -9904,8 +10322,8 @@
       "lesson_type": "Tutorial",
       "duration": "180",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Maria Nisheva",
       "coauthor": "UNIWA",
@@ -9915,10 +10333,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "HC-183-Orange Hands-on Course.pdf",
+            "ext": "pdf",
+            "kb": 12921,
+            "date": "2026-08-07",
+            "sha": "944719ecf73e0550",
+            "rel": "4.1 Horizontal/HC-183/HC-183-Orange Hands-on Course.pdf"
+          },
+          {
+            "name": "HC-183_Orange Canvas Tutorial.pdf",
+            "ext": "pdf",
+            "kb": 2351,
+            "date": "2026-08-07",
+            "sha": "62ae7dde6d31a73c",
+            "rel": "4.1 Horizontal/HC-183/HC-183_Orange Canvas Tutorial.pdf"
+          },
+          {
+            "name": "Presentation HC-183.pdf",
+            "ext": "pdf",
+            "kb": 665,
+            "date": "2026-08-07",
+            "sha": "63fb563a37123a22",
+            "rel": "4.1 Horizontal/HC-183/Presentation HC-183.pdf"
+          }
+        ],
         "folder": "HC-183"
       },
       "lesson_plan": {
@@ -9947,8 +10390,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Maria Nisheva",
       "coauthor": "TUD",
@@ -9958,10 +10401,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-09",
+        "files": [
+          {
+            "name": "Presentation HC-186.pdf",
+            "ext": "pdf",
+            "kb": 631,
+            "date": "2026-08-09",
+            "sha": "ecea525ac65a42e9",
+            "rel": "4.1 Horizontal/HC-186/Presentation HC-186.pdf"
+          }
+        ],
         "folder": "HC-186"
       },
       "lesson_plan": {
@@ -10168,8 +10620,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "HU · Tina van der Linden",
       "coauthor": "UNINA? (tbc)",
@@ -10181,14 +10633,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-06",
+        "newest": "2026-07-31",
         "files": [
           {
             "name": "HC199-Fundamental-Human-Rights-in-the-Use-of-AI.pptx",
             "ext": "pptx",
-            "kb": 1965,
-            "date": "2026-06-06",
-            "sha": "e6dee9961b4c5808",
+            "kb": 1954,
+            "date": "2026-07-31",
+            "sha": "82a6c6df48273e28",
             "rel": "4.1 Horizontal/HC-199/HC199-Fundamental-Human-Rights-in-the-Use-of-AI.pptx"
           }
         ],
@@ -10320,8 +10772,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "BME · Edit Tomasovszky",
       "coauthor": "HAW · Michael Gille",
@@ -10362,8 +10814,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "BME · Edit Tomasovszky",
       "coauthor": "HAW · Michael Gille",
@@ -10530,8 +10982,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "BME · Edit Tomasovszky",
       "coauthor": "HAW · Michael Gille",
@@ -10572,21 +11024,37 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "All three roles",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "UNINA · Stefano Marrone",
-      "reviewer": "RealAI · Monira Majhabeen",
+      "reviewer": "RealAI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
       "review_note": "Strong foundations plan, minor revision. Add the healthcare-critical evaluation pieces (calibration and AUPRC, external/temporal validation, data leakage), name a concrete flawed example, and add one worked mini-case so the 'evaluate' outcome has a student activity; line up the outcome tags.",
       "materials": {
-        "count": 1,
+        "count": 3,
         "has": true,
-        "newest": "2026-06-30",
+        "newest": "2026-08-04",
         "files": [
+          {
+            "name": "HL001_Foundations_AI_Healthcare.pdf",
+            "ext": "pdf",
+            "kb": 1898,
+            "date": "2026-08-04",
+            "sha": "1e807adc1be11883",
+            "rel": "4.2 Health & Lifescience/HL-001/HL001_Foundations_AI_Healthcare.pdf"
+          },
+          {
+            "name": "HL001_Teacher_Guide.pdf",
+            "ext": "pdf",
+            "kb": 208,
+            "date": "2026-08-04",
+            "sha": "846f7bf3ca0960a3",
+            "rel": "4.2 Health & Lifescience/HL-001/HL001_Teacher_Guide.pdf"
+          },
           {
             "name": "HL001_v1.pdf",
             "ext": "pdf",
@@ -10614,9 +11082,9 @@
         },
         {
           "name": "Management information",
-          "len": 1278,
+          "len": 1303,
           "empty": false,
-          "text": "Author Organisation 1\n\nBME\n\n\nAuthor Person 1\n\nAndrás Gézsi\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\nStefano Marrone\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen\n\n\nStatus\n\n!Missing status!\nLearning Outcomes:\nExplain the main paradigms of artificial intelligence and machine learning in the context of healthcare data and clinical decision-making tasks. (knowledge, intermediate level)Differentiate between common machine learning problem formulations (classification, regression, clustering) and map them to typical healthcare applications. (cognitive skill, intermediate level)Interpret the relationship between data characteristics (e.g., noise, missingness, bias) and model performance in real-world healthcare settings. (cognitive skill, intermediate level)Evaluate the suitability of different AI approaches for specific biomedical problems using simple performance metrics and domain constraints. (cognitive skill, basic level)Recognize key limitations and risks of AI systems in healthcare, including generalization issues and potential biases. (competence, basic level)\nLearning Events to be completed before:\nNone.\nKeywords:\nAI in the context of healthcare, overview of data types, predictive models and performance metrics in healthcare,"
+          "text": "Author Organisation 1\n\nBME\n\n\nAuthor Person 1\n\nAndrás Gézsi\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\nStefano Marrone\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nExplain the main paradigms of artificial intelligence and machine learning in the context of healthcare data and clinical decision-making tasks. (knowledge, intermediate level)Differentiate between common machine learning problem formulations (classification, regression, clustering) and map them to typical healthcare applications. (cognitive skill, intermediate level)Explain how noise, informative missingness, class imbalance, bias, and dataset shift can affect model development and performance in healthcare.\n(cognitive skill, intermediate level)Interpret a simple confusion matrix and compare candidate models using appropriate performance measures and clinical constraints.\n(cognitive skill, intermediate level)Critique a simplified healthcare-AI study with respect to leakage, overfitting, validation, calibration, bias, and generalizability.\n(cognitive skill, intermediate level)\nLearning Events to be completed before:\nNone.\nKeywords:\nAI in the context of healthcare, overview of data types, predictive models and performance metrics in healthcare,"
         },
         {
           "name": "Expected preparation",
@@ -10638,9 +11106,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 1461,
+          "len": 2191,
           "empty": false,
-          "text": "0 - 10 minutes\n- Introduce real-world examples of AI in healthcare (e.g., diagnosis, risk prediction)\n- Motivate the need for AI in clinical decision-making\n- Discuss why healthcare problems are fundamentally challenging (data quality, uncertainty)\n10 - 35 minutes\n- Explain the concepts of AI, machine learning, and deep learning\n- Introduce supervised vs unsupervised learning\n- Map learning paradigms to healthcare tasks (diagnosis, prognosis, patient stratification)\n35 - 60 minutes\n- Present main healthcare data types (EHR, imaging, time series, omics)\n- Explain key characteristics (structure, dimensionality, noise, missingness)\n- Interactive: students classify example problems into task types\n60 - 80 minutes\n- Introduce major model families (linear models, tree-based models, neural networks)\n- Explain their assumptions and typical use cases\n- Relate models to healthcare data modalities\n80 - 100 minutes\n- Explain evaluation concepts (train/test split, generalization, overfitting)\n- Introduce performance metrics (accuracy, AUROC, precision/recall)\n- Discuss healthcare-specific challenges (class imbalance, label noise, dataset shift)\n100 - 115 minutes\n- Present a simplified flawed healthcare AI example\n- Interactive discussion: identify problems (bias, overfitting, poor validation)\n- Emphasize limitations and risks of AI in healthcare\n115 - 120 minutes\n- Summarize key concepts (data -> task -> model -> evaluation -> limitation)\n- Short Q&A"
+          "text": "0 - 10 minutes\n- Introduce real-world examples of AI in healthcare (e.g., diagnosis, risk prediction)\n- Motivate the need for AI in clinical decision-making\n- Discuss why healthcare problems are fundamentally challenging (data quality, uncertainty)\n10 - 35 minutes\n- Explain the concepts of AI, machine learning, and deep learning\n- Introduce supervised vs unsupervised learning\n- Map learning paradigms to healthcare tasks (diagnosis, prognosis, patient stratification)\n35 - 60 minutes\n- Present main healthcare data types (EHR, imaging, time series, omics)\n- Explain key characteristics (structure, dimensionality, noise, missingness)\n- Interactive: students classify example problems into task types\n60 - 80 minutes\n- Introduce major model families (linear models, tree-based models, neural networks)\n- Explain their assumptions and typical use cases\n- Relate models to healthcare data modalities\n80 - 100 minutes\n- Explain evaluation concepts (train/test split, generalization, overfitting)\n- Confusion matrix, sensitivity, specificity, PPV/NPV, AUROC/AUPRC, calibration and threshold selection\n- Discuss healthcare-specific challenges (class imbalance, label noise, dataset shift)\n100 - 115 minutes\n- Integrated healthcare mini-case: select a model and identify methodological flaws\n- Interactive discussion: identify problems (bias, overfitting, poor validation)\n- Emphasize limitations and risks of AI in healthcare\n115 - 120 minutes\n- Summarize key concepts (data -> task -> model -> evaluation -> limitation)\n- Short Q&A\nThe healthcare mini-case:\nA hospital develops a model for predicting a rare adverse event. Students receive the prevalence and confusion matrices for two models. They compare sensitivity, PPV and false positives, choose a deployment threshold, and discuss whether the model is suitable. They then learn that preprocessing occurred before the split, some patients appeared in both sets, and performance deteriorated at another hospital.\nThis single case covers:\n- prevalence and PPV;\n- model selection;\n- threshold trade-offs;\n- leakage;\n- internal versus external validation;\n- dataset shift;\n- generalizability;\n- clinician, developer and manager perspectives."
         }
       ],
       "realai": {
@@ -10677,20 +11145,37 @@
       "duration": "120",
       "job_role": "All three roles",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "BME · Mihály Héder",
-      "coauthor": "Sofia University",
-      "reviewer": "ENEA",
+      "author": "BME · Mihaly Heder",
+      "coauthor": "UNINA · Michela Gravina",
+      "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "ab850958df65a0a4",
+            "rel": "4.2 Health & Lifescience/HL-002/Link to editable source.docx"
+          },
+          {
+            "name": "HL-002 Bio-Ethical Principles.pdf",
+            "ext": "pdf",
+            "kb": 260,
+            "date": "2026-08-07",
+            "sha": "7baab2b9245b9bf8",
+            "rel": "4.2 Health & Lifescience/HL-002/HL-002 Bio-Ethical Principles.pdf"
+          }
+        ],
         "folder": "HL-002"
       },
       "lesson_plan": {
@@ -10866,10 +11351,26 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 37,
+        "count": 39,
         "has": true,
-        "newest": "2026-07-10",
+        "newest": "2026-07-27",
         "files": [
+          {
+            "name": "Reviewer-Checklist-HL005-ENEA-21-Jul-2026.docx",
+            "ext": "docx",
+            "kb": 199,
+            "date": "2026-07-27",
+            "sha": "8d9326fcb5bb08ed",
+            "rel": "4.2 Health & Lifescience/HL-005/Reviewer-Checklist-HL005-ENEA-21-Jul-2026.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL005-ENEA-21-Jul-2026.docx",
+            "ext": "docx",
+            "kb": 197,
+            "date": "2026-07-27",
+            "sha": "a996c4a3db9c1b20",
+            "rel": "4.2 Health & Lifescience/HL-005/Learning-Outcomes-Reviewer-Checklist-HL005-ENEA-21-Jul-2026.docx"
+          },
           {
             "name": "quarto-search.js",
             "ext": "js",
@@ -11931,10 +12432,43 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 4,
+        "has": true,
+        "newest": "2026-07-31",
+        "files": [
+          {
+            "name": "HL-008_UNINA_Tutorial_Image_Data_for_Trustworthy_AI.pptx",
+            "ext": "pptx",
+            "kb": 9553,
+            "date": "2026-07-31",
+            "sha": "c2e6162403163924",
+            "rel": "4.2 Health & Lifescience/HL-008/HL-008_UNINA_Tutorial_Image_Data_for_Trustworthy_AI.pptx"
+          },
+          {
+            "name": "HL-008_Image_Data_Tutorial_Notebook.ipynb",
+            "ext": "ipynb",
+            "kb": 3821,
+            "date": "2026-07-31",
+            "sha": "da8e61f8d445a115",
+            "rel": "4.2 Health & Lifescience/HL-008/HL-008_Image_Data_Tutorial_Notebook.ipynb"
+          },
+          {
+            "name": "requirements.txt",
+            "ext": "txt",
+            "kb": 0,
+            "date": "2026-07-31",
+            "sha": "56c542ce7ef220e5",
+            "rel": "4.2 Health & Lifescience/HL-008/requirements.txt"
+          },
+          {
+            "name": "HL-008_UNINA_Tutorial — Image Data (LE 10).docx",
+            "ext": "docx",
+            "kb": 27,
+            "date": "2026-07-31",
+            "sha": "a4c048b2ee701e89",
+            "rel": "4.2 Health & Lifescience/HL-008/HL-008_UNINA_Tutorial — Image Data (LE 10).docx"
+          }
+        ],
         "folder": "HL-008"
       },
       "lesson_plan": {
@@ -13464,10 +13998,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-07-31",
+        "files": [
+          {
+            "name": "HL-019_AI_in_Clinical_Contexts_and_Data_Standards_Lesson_Slides.pptx",
+            "ext": "pptx",
+            "kb": 1026,
+            "date": "2026-07-31",
+            "sha": "5dd690dfab902759",
+            "rel": "4.2 Health & Lifescience/HL-019/HL-019_AI_in_Clinical_Contexts_and_Data_Standards_Lesson_Slides.pptx"
+          },
+          {
+            "name": "HL-019_UNINA_AI in Clinical Contexts and Data Standards.docx",
+            "ext": "docx",
+            "kb": 27,
+            "date": "2026-07-31",
+            "sha": "049bb69d338277dc",
+            "rel": "4.2 Health & Lifescience/HL-019/HL-019_UNINA_AI in Clinical Contexts and Data Standards.docx"
+          }
+        ],
         "folder": "HL-019"
       },
       "lesson_plan": {
@@ -13579,8 +14130,8 @@
       "lesson_type": "Lecture/tutorial",
       "duration": "120",
       "job_role": "Researcher",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "UNINA",
       "coauthor": "TUD",
@@ -13590,10 +14141,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-11",
+        "files": [
+          {
+            "name": "Review-HL022-CeADAR-Aug-2026.docx",
+            "ext": "docx",
+            "kb": 205,
+            "date": "2026-08-11",
+            "sha": "bfad538350f3f2f1",
+            "rel": "4.2 Health & Lifescience/HL-022/Review-HL022-CeADAR-Aug-2026.docx"
+          },
+          {
+            "name": "HL-022_UNINA_Multimodal_AI_for_Healthcare.pptx",
+            "ext": "pptx",
+            "kb": 1463,
+            "date": "2026-08-11",
+            "sha": "b0e991a3f44eb015",
+            "rel": "4.2 Health & Lifescience/HL-022/HL-022_UNINA_Multimodal_AI_for_Healthcare.pptx"
+          },
+          {
+            "name": "HL-022_UNINA_Multimodal AI.docx",
+            "ext": "docx",
+            "kb": 27,
+            "date": "2026-07-31",
+            "sha": "52ef52a1b3adfb1c",
+            "rel": "4.2 Health & Lifescience/HL-022/HL-022_UNINA_Multimodal AI.docx"
+          }
+        ],
         "folder": "HL-022"
       },
       "lesson_plan": {
@@ -13622,7 +14198,7 @@
       "duration": "120",
       "job_role": "Researcher",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
@@ -13632,10 +14208,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "HL023_Student.ipynb",
+            "ext": "ipynb",
+            "kb": 36,
+            "date": "2026-08-04",
+            "sha": "b35e561d658fc69a",
+            "rel": "4.2 Health & Lifescience/HL-023/HL023_Student.ipynb"
+          },
+          {
+            "name": "HL023_Teacher.ipynb",
+            "ext": "ipynb",
+            "kb": 58,
+            "date": "2026-08-04",
+            "sha": "cc644a774c34ad11",
+            "rel": "4.2 Health & Lifescience/HL-023/HL023_Teacher.ipynb"
+          }
+        ],
         "folder": "HL-023"
       },
       "lesson_plan": {
@@ -13710,7 +14303,7 @@
       "due_date": "",
       "author": "Sofia University · Kalinka Kaloyanova",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
-      "reviewer": "Nathean · John Pugh",
+      "reviewer": "QTICS · Ákos Molnár",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -13758,10 +14351,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "HL 026 - v1.pdf",
+            "ext": "pdf",
+            "kb": 371,
+            "date": "2026-08-07",
+            "sha": "28ca48389e677030",
+            "rel": "4.2 Health & Lifescience/HL-026/HL 026 - v1.pdf"
+          }
+        ],
         "folder": "HL-026"
       },
       "lesson_plan": {
@@ -13800,10 +14402,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-29",
+        "newest": "2026-07-30",
         "files": [
+          {
+            "name": "HL 30  July-2026.pdf",
+            "ext": "pdf",
+            "kb": 993,
+            "date": "2026-07-30",
+            "sha": "213a30e647010105",
+            "rel": "4.2 Health & Lifescience/HL-028/HL 30  July-2026.pdf"
+          },
           {
             "name": "HL 28  v1.pdf",
             "ext": "pdf",
@@ -13925,20 +14535,45 @@
       "duration": "60",
       "job_role": "All three roles",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
-      "coauthor": "West Attica",
+      "coauthor": "HU · Tina van der Linden",
       "reviewer": "QTICS · Ákos Molnár",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "0524b9f6e97ed815",
+            "rel": "4.2 Health & Lifescience/HL-031/Link to editable source.docx"
+          },
+          {
+            "name": "Document.docx",
+            "ext": "docx",
+            "kb": 19,
+            "date": "2026-08-07",
+            "sha": "befe53ce6fcf5647",
+            "rel": "4.2 Health & Lifescience/HL-031/Document.docx"
+          },
+          {
+            "name": "HL-031 Beneficience-1.pdf",
+            "ext": "pdf",
+            "kb": 130,
+            "date": "2026-08-07",
+            "sha": "2bd756e04efc4124",
+            "rel": "4.2 Health & Lifescience/HL-031/HL-031 Beneficience-1.pdf"
+          }
+        ],
         "folder": "HL-031"
       },
       "lesson_plan": {
@@ -13970,17 +14605,34 @@
       "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
-      "coauthor": "HAW",
+      "coauthor": "HU · Tina van der Linden",
       "reviewer": "QTICS · Ákos Molnár",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "fe5baac1486eacc2",
+            "rel": "4.2 Health & Lifescience/HL-032/Link to editable source.docx"
+          },
+          {
+            "name": "HL-032 Nonmaleficience-1.pdf",
+            "ext": "pdf",
+            "kb": 129,
+            "date": "2026-08-07",
+            "sha": "1fd930094fa44355",
+            "rel": "4.2 Health & Lifescience/HL-032/HL-032 Nonmaleficience-1.pdf"
+          }
+        ],
         "folder": "HL-032"
       },
       "lesson_plan": {
@@ -14009,20 +14661,45 @@
       "duration": "60",
       "job_role": "Practitioner and Governance",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "HU · Tina van der Linden",
-      "reviewer": "Nathean",
+      "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-07",
+            "sha": "eec9819a21207932",
+            "rel": "4.2 Health & Lifescience/HL-033/Link to editable source.docx"
+          },
+          {
+            "name": "Document.docx",
+            "ext": "docx",
+            "kb": 19,
+            "date": "2026-08-07",
+            "sha": "fd8fac8e1039b239",
+            "rel": "4.2 Health & Lifescience/HL-033/Document.docx"
+          },
+          {
+            "name": "HL-033 Autonomy.pdf",
+            "ext": "pdf",
+            "kb": 141,
+            "date": "2026-08-07",
+            "sha": "7f717a1592e29d45",
+            "rel": "4.2 Health & Lifescience/HL-033/HL-033 Autonomy.pdf"
+          }
+        ],
         "folder": "HL-033"
       },
       "lesson_plan": {
@@ -14051,7 +14728,7 @@
       "duration": "60",
       "job_role": "All three roles",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "HU · Tina van der Linden",
@@ -14061,10 +14738,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-08",
+        "files": [
+          {
+            "name": "Link to editable source.docx",
+            "ext": "docx",
+            "kb": 20,
+            "date": "2026-08-08",
+            "sha": "547a784241840f81",
+            "rel": "4.2 Health & Lifescience/HL-034/Link to editable source.docx"
+          },
+          {
+            "name": "HL-034 Justice.pdf",
+            "ext": "pdf",
+            "kb": 136,
+            "date": "2026-08-07",
+            "sha": "cff858881f33da89",
+            "rel": "4.2 Health & Lifescience/HL-034/HL-034 Justice.pdf"
+          }
+        ],
         "folder": "HL-034"
       },
       "lesson_plan": {
@@ -14093,20 +14787,37 @@
       "duration": "60",
       "job_role": "All three roles",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "UNINA · Stefano Marrone",
-      "reviewer": "QTICS (proposed)",
+      "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "HL035_Accountability_Traceability_Medical_AI.pdf",
+            "ext": "pdf",
+            "kb": 378,
+            "date": "2026-08-04",
+            "sha": "a01b0e3f9ba013c2",
+            "rel": "4.2 Health & Lifescience/HL-035/HL035_Accountability_Traceability_Medical_AI.pdf"
+          },
+          {
+            "name": "HL035_Teacher_Guide.pdf",
+            "ext": "pdf",
+            "kb": 241,
+            "date": "2026-08-04",
+            "sha": "fab1a47a399176d6",
+            "rel": "4.2 Health & Lifescience/HL-035/HL035_Teacher_Guide.pdf"
+          }
+        ],
         "folder": "HL-035"
       },
       "lesson_plan": {
@@ -14135,7 +14846,7 @@
       "duration": "60",
       "job_role": "All three roles",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · András Gézsi",
       "coauthor": "TUD",
@@ -14145,10 +14856,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "HL036_Trust_in_Medical_AI.pdf",
+            "ext": "pdf",
+            "kb": 305,
+            "date": "2026-08-04",
+            "sha": "8b56e3f880c8e324",
+            "rel": "4.2 Health & Lifescience/HL-036/HL036_Trust_in_Medical_AI.pdf"
+          },
+          {
+            "name": "HL036_Teacher_Guide.pdf",
+            "ext": "pdf",
+            "kb": 228,
+            "date": "2026-08-04",
+            "sha": "7d28d9c0fff5d4d6",
+            "rel": "4.2 Health & Lifescience/HL-036/HL036_Teacher_Guide.pdf"
+          }
+        ],
         "folder": "HL-036"
       },
       "lesson_plan": {
@@ -14181,7 +14909,7 @@
       "due_date": "",
       "author": "HAW",
       "coauthor": "All Partners",
-      "reviewer": "CNR",
+      "reviewer": "QTICS · Ákos Molnár",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -14229,10 +14957,43 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 4,
+        "has": true,
+        "newest": "2026-08-11",
+        "files": [
+          {
+            "name": "Ethical_Frameworks_RAISE-U_template_fixed.pptx",
+            "ext": "pptx",
+            "kb": 366,
+            "date": "2026-08-11",
+            "sha": "8e25f5f52267947d",
+            "rel": "4.2 Health & Lifescience/HL-039/Ethical_Frameworks_RAISE-U_template_fixed.pptx"
+          },
+          {
+            "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
+            "ext": "docx",
+            "kb": 238,
+            "date": "2026-08-05",
+            "sha": "17e757258a13e6db",
+            "rel": "4.2 Health & Lifescience/HL-039/Reviewer-Checklist-template-V3.0-July-2026.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist.docx",
+            "ext": "docx",
+            "kb": 241,
+            "date": "2026-08-05",
+            "sha": "c69f9d389c71d58d",
+            "rel": "4.2 Health & Lifescience/HL-039/Learning-Outcomes-Reviewer-Checklist.docx"
+          },
+          {
+            "name": "Ethical Frameworks.pptx",
+            "ext": "pptx",
+            "kb": 3802,
+            "date": "2026-07-31",
+            "sha": "38ba8f3163bdc519",
+            "rel": "4.2 Health & Lifescience/HL-039/Ethical Frameworks.pptx"
+          }
+        ],
         "folder": "HL-039"
       },
       "lesson_plan": {
@@ -14271,10 +15032,26 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 3,
         "has": true,
-        "newest": "2026-06-30",
+        "newest": "2026-07-27",
         "files": [
+          {
+            "name": "Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx",
+            "ext": "docx",
+            "kb": 198,
+            "date": "2026-07-27",
+            "sha": "0bf5be503486d7ec",
+            "rel": "4.2 Health & Lifescience/HL-040/Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx",
+            "ext": "docx",
+            "kb": 198,
+            "date": "2026-07-27",
+            "sha": "d3d99c56df5b2360",
+            "rel": "4.2 Health & Lifescience/HL-040/Learning-Outcomes-Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx"
+          },
           {
             "name": "LE HL040.pdf",
             "ext": "pdf",
@@ -14546,21 +15323,45 @@
       "lesson_type": "Tutorial",
       "duration": "60",
       "job_role": "Researcher",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "HAW · Ahmad Khalidi",
       "coauthor": "BME · András Gézsi",
-      "reviewer": "CeADAR",
+      "reviewer": "CeADAR · Aditya Grover",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 4,
         "has": true,
-        "newest": "2026-07-07",
+        "newest": "2026-07-29",
         "files": [
+          {
+            "name": "Slides.pptx",
+            "ext": "pptx",
+            "kb": 2632,
+            "date": "2026-07-29",
+            "sha": "dfc116d2e438376c",
+            "rel": "4.2 Health & Lifescience/HL-047/Slides.pptx"
+          },
+          {
+            "name": "Slides_depricated.potx",
+            "ext": "potx",
+            "kb": 805,
+            "date": "2026-07-29",
+            "sha": "268755e4288675e3",
+            "rel": "4.2 Health & Lifescience/HL-047/Slides_depricated.potx"
+          },
+          {
+            "name": "Reviewer-Checklist-HL047-CeADAR-July-2026.docx",
+            "ext": "docx",
+            "kb": 205,
+            "date": "2026-07-22",
+            "sha": "aaa29a111fceea07",
+            "rel": "4.2 Health & Lifescience/HL-047/Reviewer-Checklist-HL047-CeADAR-July-2026.docx"
+          },
           {
             "name": "Slides.potx",
             "ext": "potx",
@@ -14601,7 +15402,7 @@
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "TUD · Ahmad",
+      "author": "TUD · Na Li / Ahmad",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "RealAI · Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
@@ -14611,14 +15412,14 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-07-19",
+        "newest": "2026-07-23",
         "files": [
           {
             "name": "HL-048_firstdraft_updating.pptx",
             "ext": "pptx",
-            "kb": 5145,
-            "date": "2026-07-19",
-            "sha": "ca6f910b712ffc81",
+            "kb": 5159,
+            "date": "2026-07-23",
+            "sha": "45739a2d032f491a",
             "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
           },
           {
@@ -14648,9 +15449,9 @@
         },
         {
           "name": "Management information",
-          "len": 756,
+          "len": 764,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nAhmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li / Ahmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
         },
         {
           "name": "Expected preparation",
@@ -14784,16 +15585,57 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "West Attica",
-      "reviewer": "CeADAR",
+      "reviewer": "QTICS · Ákos Molnár",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 5,
+        "has": true,
+        "newest": "2026-08-06",
+        "files": [
+          {
+            "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
+            "ext": "docx",
+            "kb": 238,
+            "date": "2026-08-06",
+            "sha": "fcf977a3358d0257",
+            "rel": "4.2 Health & Lifescience/HL-050/Reviewer-Checklist-template-V3.0-July-2026.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist.docx",
+            "ext": "docx",
+            "kb": 209,
+            "date": "2026-08-05",
+            "sha": "0c8074b68a44ff2a",
+            "rel": "4.2 Health & Lifescience/HL-050/Learning-Outcomes-Reviewer-Checklist.docx"
+          },
+          {
+            "name": "Trustworthy AI in Healthcare - Human in the Loop.pptx",
+            "ext": "pptx",
+            "kb": 427,
+            "date": "2026-07-31",
+            "sha": "d7053e71ba58c816",
+            "rel": "4.2 Health & Lifescience/HL-050/Trustworthy AI in Healthcare - Human in the Loop.pptx"
+          },
+          {
+            "name": "Facilitator Guide - Checklists and Model Answers.docx",
+            "ext": "docx",
+            "kb": 33,
+            "date": "2026-07-31",
+            "sha": "f0c9af1565f99b08",
+            "rel": "4.2 Health & Lifescience/HL-050/Facilitator Guide - Checklists and Model Answers.docx"
+          },
+          {
+            "name": "HL-050_UNINA_Human-in-the-loophuman-centred oversight.docx",
+            "ext": "docx",
+            "kb": 27,
+            "date": "2026-07-31",
+            "sha": "25355b3f1816a888",
+            "rel": "4.2 Health & Lifescience/HL-050/HL-050_UNINA_Human-in-the-loophuman-centred oversight.docx"
+          }
+        ],
         "folder": "HL-050"
       },
       "lesson_plan": {
@@ -15267,22 +16109,22 @@
       "materials": {
         "count": 3,
         "has": true,
-        "newest": "2026-07-16",
+        "newest": "2026-07-22",
         "files": [
           {
             "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
             "ext": "docx",
-            "kb": 206,
-            "date": "2026-07-16",
-            "sha": "d1200681da2a5dfd",
+            "kb": 239,
+            "date": "2026-07-22",
+            "sha": "da0470d91b76a70b",
             "rel": "4.2 Health & Lifescience/HL-060/Reviewer-Checklist-template-V3.0-July-2026.docx"
           },
           {
             "name": "Learning-Outcomes-Reviewer-Checklist.docx",
             "ext": "docx",
-            "kb": 199,
-            "date": "2026-07-16",
-            "sha": "146e5d8903530b0b",
+            "kb": 200,
+            "date": "2026-07-21",
+            "sha": "f7b8b68e9755d18f",
             "rel": "4.2 Health & Lifescience/HL-060/Learning-Outcomes-Reviewer-Checklist.docx"
           },
           {
@@ -15513,10 +16355,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "LE HL064.pdf",
+            "ext": "pdf",
+            "kb": 94,
+            "date": "2026-08-07",
+            "sha": "48ee6064d19ab282",
+            "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pdf"
+          }
+        ],
         "folder": "HL-064"
       },
       "lesson_plan": {
@@ -15580,7 +16431,7 @@
         "is_author": false,
         "instructions_written": false,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [
           "Instructions for teachers (detailed)"
         ],
@@ -15929,8 +16780,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "BME · Tegza Badacsonyi",
       "coauthor": "HAW · Michael Gille",
@@ -16067,10 +16918,10 @@
       "duration": "90",
       "job_role": "Any",
       "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "BME · Zoltán Víg",
-      "coauthor": "T.B.D",
+      "coauthor": "KPI · Kostiantyn Popov",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -16106,7 +16957,7 @@
       "track": "Law & Compliance",
       "title": "LC-004 Regulatory Sandboxes",
       "lesson_type": "Lecture",
-      "duration": "30",
+      "duration": "45",
       "job_role": "Any",
       "status": "In review",
       "wiki_status": "Lesson plan: review",
@@ -16119,10 +16970,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-03",
+        "files": [
+          {
+            "name": "LC-004_Regulatory sandboxes.pptx",
+            "ext": "pptx",
+            "kb": 413,
+            "date": "2026-08-03",
+            "sha": "b25852d6e8107eea",
+            "rel": "4.4 Law & Compliance/LC-004/LC-004_Regulatory sandboxes.pptx"
+          }
+        ],
         "folder": "LC-004"
       },
       "lesson_plan": {
@@ -16153,8 +17013,8 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "UNINA",
-      "coauthor": "BME",
+      "author": "BME",
+      "coauthor": "UNINA",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -16326,13 +17186,13 @@
       "code": "LC-013",
       "track": "Law & Compliance",
       "title": "LC-013 Innovation Regulation, Innovation Strategy",
-      "lesson_type": "MISSING",
-      "duration": "",
-      "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "EU AI Compliance Specialist, AI Privacy Officer",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "BME",
+      "author": "BME · Edit Tomasovszky",
       "coauthor": "T.B.D",
       "reviewer": "",
       "off_wiki": false,
@@ -16601,23 +17461,32 @@
       "track": "Law & Compliance",
       "title": "LC-017 General Purpose AI (GPAI) Governance",
       "lesson_type": "Lecture",
-      "duration": "60",
-      "job_role": "Any",
+      "duration": "90",
+      "job_role": "EU AI Compliance Specialist, AI Privacy Officer",
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "HAW · Michael Gille",
-      "coauthor": "Sieuwert",
+      "coauthor": "HU · Sieuwert van Otterloo",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-03",
+        "files": [
+          {
+            "name": "LC-017_General Purpose AI Governance.pptx",
+            "ext": "pptx",
+            "kb": 512,
+            "date": "2026-08-03",
+            "sha": "27e8c519b1b82da0",
+            "rel": "4.4 Law & Compliance/LC-017/LC-017_General Purpose AI Governance.pptx"
+          }
+        ],
         "folder": "LC-017"
       },
       "lesson_plan": {
@@ -16644,12 +17513,12 @@
       "title": "LC-018 Open Source AI Governance",
       "lesson_type": "Lecture",
       "duration": "60",
-      "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "job_role": "EU AI Compliance Specialist",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "HU (Sieuwert van Otterloo) · Sieuwert van Otterloo",
-      "coauthor": "T.B.D",
+      "author": "HU · Sieuwert van Otterloo",
+      "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -16824,7 +17693,7 @@
       "title": "LC-021 Drafting an AI compliance policy - practice",
       "lesson_type": "Practical",
       "duration": "60",
-      "job_role": "",
+      "job_role": "EU AI Compliance Specialist",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
@@ -17128,7 +17997,7 @@
       "track": "Law & Compliance",
       "title": "LC-033 Prohibited AI Practices (Art 5)",
       "lesson_type": "Lecture",
-      "duration": "45",
+      "duration": "90",
       "job_role": "Any",
       "status": "In review",
       "wiki_status": "Lesson plan: review",
@@ -17141,10 +18010,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-03",
+        "files": [
+          {
+            "name": "LC-033_Prohibited AI Practices (Art. 5).pptx",
+            "ext": "pptx",
+            "kb": 529,
+            "date": "2026-08-03",
+            "sha": "662a89c19085b671",
+            "rel": "4.4 Law & Compliance/LC-033/LC-033_Prohibited AI Practices (Art. 5).pptx"
+          }
+        ],
         "folder": "LC-033"
       },
       "lesson_plan": {
@@ -17270,7 +18148,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "",
+      "author": "TUD",
       "coauthor": "",
       "reviewer": "REAL AI · Tarry Singh",
       "off_wiki": false,
@@ -17300,9 +18178,9 @@
         },
         {
           "name": "Management information",
-          "len": 2433,
+          "len": 2436,
           "empty": false,
-          "text": "Author Organisation 1\n\n\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nREAL AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nUpon successful completion of the Learning Event, students will be able to:Explain the legal basis and purpose of technical documentation under EU AI Act Article 11: that it must be drawn up before a high-risk system is placed on the market and kept up to date, that it is the central evidence file for conformity assessment, that it feeds the EU declaration of conformity (Article 47), and that it must be kept at the disposal of authorities for ten years (Article 18).Reproduce the nine categories Annex IV requires, in order, and explain what each demands of a high-risk AI system's documentation.Draft or evaluate the system description in Annex IV elements 1 and 2: the general description (intended purpose, provider, versions, interactions, forms of distribution, hardware, user interface, instructions for use) and the detailed development description (architecture, data requirements as datasheets, human oversight, validation and testing, cybersecurity).Explain the record-keeping and logging obligations under Article 12, including the three purposes the logs must serve and the heightened minimum logging for remote biometric identification systems, and locate the related duties of providers (Article 19) and deployers (Article 26(6)).Explain how the technical documentation connects to the instructions for use under Article 13, in particular the accuracy, robustness and cybersecurity metrics under Article 13(3)(b) and the description of the logging mechanisms under Article 13(3)(f).Apply the requirements to draft or critique a section of technical documentation for a given high-risk system, and account for the current state of the harmonised standards, the simplified form for SMEs, and the 2 December 2027 application date.\nLearning Events to be completed before:\nNone.\nKeywords:\nAnnex IV,System description,Logging (Article 12),Technical documentation (Article 11),EU declaration of conformity (Article 47),Record-keeping and traceability,Datasheets for datasets,Instructions for use (Article 13),Human oversight (Article 14),Remote biometric identification logging,Simplified documentation form for SMEs,Retention for ten years (Article 18),Harmonised standards (M/593),Living document and version control,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nREAL AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nUpon successful completion of the Learning Event, students will be able to:Explain the legal basis and purpose of technical documentation under EU AI Act Article 11: that it must be drawn up before a high-risk system is placed on the market and kept up to date, that it is the central evidence file for conformity assessment, that it feeds the EU declaration of conformity (Article 47), and that it must be kept at the disposal of authorities for ten years (Article 18).Reproduce the nine categories Annex IV requires, in order, and explain what each demands of a high-risk AI system's documentation.Draft or evaluate the system description in Annex IV elements 1 and 2: the general description (intended purpose, provider, versions, interactions, forms of distribution, hardware, user interface, instructions for use) and the detailed development description (architecture, data requirements as datasheets, human oversight, validation and testing, cybersecurity).Explain the record-keeping and logging obligations under Article 12, including the three purposes the logs must serve and the heightened minimum logging for remote biometric identification systems, and locate the related duties of providers (Article 19) and deployers (Article 26(6)).Explain how the technical documentation connects to the instructions for use under Article 13, in particular the accuracy, robustness and cybersecurity metrics under Article 13(3)(b) and the description of the logging mechanisms under Article 13(3)(f).Apply the requirements to draft or critique a section of technical documentation for a given high-risk system, and account for the current state of the harmonised standards, the simplified form for SMEs, and the 2 December 2027 application date.\nLearning Events to be completed before:\nNone.\nKeywords:\nAnnex IV,System description,Logging (Article 12),Technical documentation (Article 11),EU declaration of conformity (Article 47),Record-keeping and traceability,Datasheets for datasets,Instructions for use (Article 13),Human oversight (Article 14),Remote biometric identification logging,Simplified documentation form for SMEs,Retention for ten years (Article 18),Harmonised standards (M/593),Living document and version control,"
         },
         {
           "name": "Expected preparation",
@@ -17443,13 +18321,13 @@
       "code": "LC-045",
       "track": "Law & Compliance",
       "title": "LC-045 Privacy Enhancing Technologies (PETs)",
-      "lesson_type": "MISSING",
-      "duration": "",
-      "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "lesson_type": "Lecture",
+      "duration": "90 min",
+      "job_role": "AI Privacy Officer",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "T.B.D",
+      "author": "",
       "coauthor": "",
       "reviewer": "",
       "off_wiki": false,
@@ -17485,15 +18363,15 @@
       "code": "LC-046",
       "track": "Law & Compliance",
       "title": "LC-046 Auditing frameworks of privacy and data protection",
-      "lesson_type": "MISSING",
-      "duration": "",
-      "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "lesson_type": "Practical",
+      "duration": "60",
+      "job_role": "AI Privacy Officer",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "QTICS",
-      "coauthor": "BME",
-      "reviewer": "",
+      "author": "BME",
+      "coauthor": "",
+      "reviewer": "QTICS",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -17534,8 +18412,8 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "KPI · Oksana Karpenko",
-      "coauthor": "QTICS",
-      "reviewer": "",
+      "coauthor": "",
+      "reviewer": "QTICS",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -17569,11 +18447,11 @@
       "code": "LC-048",
       "track": "Law & Compliance",
       "title": "LC-048 Cybersecurity threats in AI Systems; AI and GDPR",
-      "lesson_type": "MISSING",
-      "duration": "",
-      "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "lesson_type": "Lecture",
+      "duration": "90 min",
+      "job_role": "AI Privacy Officer",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "BME",
       "coauthor": "QTICS",
@@ -17611,11 +18489,11 @@
       "code": "LC-049",
       "track": "Law & Compliance",
       "title": "LC-049 AI in the Boardroom",
-      "lesson_type": "MISSING",
-      "duration": "",
-      "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "lesson_type": "Lecture",
+      "duration": "120 min",
+      "job_role": "EU AI Compliance Specialist",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "KPI",
       "coauthor": "",
@@ -17653,11 +18531,11 @@
       "code": "LC-052",
       "track": "Law & Compliance",
       "title": "LC-052 AI-assisted law enforcement",
-      "lesson_type": "MISSING",
-      "duration": "",
-      "job_role": "",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "EU AI Compliance Specialist",
+      "status": "In development",
+      "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "UNIWA",
       "coauthor": "BME",
@@ -17750,10 +18628,18 @@
       "review_done": true,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-07",
         "files": [
+          {
+            "name": "MC_001_Scientific_Landscape_Bibliometric_Analysis_and_Visualization.pptx",
+            "ext": "pptx",
+            "kb": 6069,
+            "date": "2026-08-07",
+            "sha": "0bef514079dbde9e",
+            "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Bibliometric_Analysis_and_Visualization.pptx"
+          },
           {
             "name": "MC_001_Scientific_Landscape_Practice.pptx",
             "ext": "pptx",
@@ -17854,10 +18740,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-07",
         "files": [
+          {
+            "name": "MC_002_Toxicity_and_Polarization_Monitoring_in_Online_Discourse.pptx",
+            "ext": "pptx",
+            "kb": 5818,
+            "date": "2026-08-07",
+            "sha": "52381899d7b0064a",
+            "rel": "4.3 Media & Culture/MC-002/MC_002_Toxicity_and_Polarization_Monitoring_in_Online_Discourse.pptx"
+          },
           {
             "name": "MC_002_Social_Networks_Analysis_Lecture.pptx",
             "ext": "pptx",
@@ -17905,10 +18799,18 @@
       "review_done": true,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-07",
         "files": [
+          {
+            "name": "MC_003_Social_Network_Analysis_Theoretical_Foundations.pptx",
+            "ext": "pptx",
+            "kb": 7460,
+            "date": "2026-08-07",
+            "sha": "1a8b9ced99c3876a",
+            "rel": "4.3 Media & Culture/MC-003/MC_003_Social_Network_Analysis_Theoretical_Foundations.pptx"
+          },
           {
             "name": "MC_003_Toxicity_Polarization_Monitoring_Practice.pptx",
             "ext": "pptx",
@@ -17998,8 +18900,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -18011,14 +18913,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-07",
         "files": [
           {
             "name": "MC_004_Using_AI_in_the_Preparation_of_Social_Programs_and_Projects.pptx",
             "ext": "pptx",
-            "kb": 4147,
-            "date": "2026-06-10",
-            "sha": "c796853630d21955",
+            "kb": 4134,
+            "date": "2026-08-07",
+            "sha": "9b6d2070db25a6c8",
             "rel": "4.3 Media & Culture/MC-004/MC_004_Using_AI_in_the_Preparation_of_Social_Programs_and_Projects.pptx"
           }
         ],
@@ -18049,8 +18951,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -18062,14 +18964,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-17",
+        "newest": "2026-08-07",
         "files": [
           {
             "name": "MC-005 Social Data Analysis OSINT Fundamentals.pptx",
             "ext": "pptx",
-            "kb": 4157,
-            "date": "2026-06-17",
-            "sha": "e3320f82ab217de9",
+            "kb": 4143,
+            "date": "2026-08-07",
+            "sha": "9c8bf61cbf8322e3",
             "rel": "4.3 Media & Culture/MC-005/MC-005 Social Data Analysis OSINT Fundamentals.pptx"
           }
         ],
@@ -18100,8 +19002,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "status": "Status not set",
+      "wiki_status": "!Missing status!",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -18113,14 +19015,14 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-07-12",
+        "newest": "2026-08-07",
         "files": [
           {
             "name": "MC_006_Sociological_research_of_corruption_indices_and_indicators.pptx",
             "ext": "pptx",
-            "kb": 4155,
-            "date": "2026-07-12",
-            "sha": "608d9ba6d7104cfb",
+            "kb": 4159,
+            "date": "2026-08-07",
+            "sha": "a309381bcda422de",
             "rel": "4.3 Media & Culture/MC-006/MC_006_Sociological_research_of_corruption_indices_and_indicators.pptx"
           },
           {
@@ -18170,10 +19072,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-07",
         "files": [
+          {
+            "name": "MC_007_Factor_Analysis_in_Media_and_Culture_Research_Theoretical.pptx",
+            "ext": "pptx",
+            "kb": 8078,
+            "date": "2026-08-07",
+            "sha": "39a99ca37ae07a2e",
+            "rel": "4.3 Media & Culture/MC-007/MC_007_Factor_Analysis_in_Media_and_Culture_Research_Theoretical.pptx"
+          },
           {
             "name": "MC_007_Factor_Analysis_Lecture.pptx",
             "ext": "pptx",
@@ -18221,10 +19131,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-07-08",
+        "newest": "2026-08-07",
         "files": [
+          {
+            "name": "MC_008_Identifying_Latent_Patterns_of_Media_Consumption_Using_Factor.pptx",
+            "ext": "pptx",
+            "kb": 7422,
+            "date": "2026-08-07",
+            "sha": "3494b2d1589e1ea2",
+            "rel": "4.3 Media & Culture/MC-008/MC_008_Identifying_Latent_Patterns_of_Media_Consumption_Using_Factor.pptx"
+          },
           {
             "name": "MC_008_Media_Consumption_Factor_Analysis_Practice_Na_backup.pptx",
             "ext": "pptx",
@@ -18269,8 +19187,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Not started",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Hennadii Korzhov",
       "coauthor": "",
@@ -18479,8 +19397,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -18492,14 +19410,14 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-07-11",
+        "newest": "2026-08-07",
         "files": [
           {
             "name": "MC_014_Sampling_method_in_sociological_research_of_the_media_docx.pptx",
             "ext": "pptx",
-            "kb": 4205,
-            "date": "2026-07-11",
-            "sha": "229f4141651274b5",
+            "kb": 4436,
+            "date": "2026-08-07",
+            "sha": "a741e4d465ed0a70",
             "rel": "4.3 Media & Culture/MC-014/MC_014_Sampling_method_in_sociological_research_of_the_media_docx.pptx"
           },
           {
@@ -18551,14 +19469,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-03",
         "files": [
           {
             "name": "MC_015_Foundations_of_Mediation_and_Conflict_Dynamics_in_Decision.pptx",
             "ext": "pptx",
-            "kb": 4500,
-            "date": "2026-06-10",
-            "sha": "63bf3e6bfbe145de",
+            "kb": 4534,
+            "date": "2026-08-03",
+            "sha": "fd1941afda297381",
             "rel": "4.3 Media & Culture/MC-015/MC_015_Foundations_of_Mediation_and_Conflict_Dynamics_in_Decision.pptx"
           }
         ],
@@ -18602,14 +19520,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-03",
         "files": [
           {
             "name": "MC_016_Mediation_as_a_Structured_Communication_Process_in_Conflict.pptx",
             "ext": "pptx",
-            "kb": 4529,
-            "date": "2026-06-10",
-            "sha": "e2eef2c57b19820f",
+            "kb": 5352,
+            "date": "2026-08-03",
+            "sha": "1f412de1db120181",
             "rel": "4.3 Media & Culture/MC-016/MC_016_Mediation_as_a_Structured_Communication_Process_in_Conflict.pptx"
           }
         ],
@@ -18653,14 +19571,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-03",
         "files": [
           {
             "name": "MC_017_AI_Supported_Mediation.pptx",
             "ext": "pptx",
-            "kb": 4551,
-            "date": "2026-06-10",
-            "sha": "19cc732bc5501ed4",
+            "kb": 4568,
+            "date": "2026-08-03",
+            "sha": "f9fd0337139dcc48",
             "rel": "4.3 Media & Culture/MC-017/MC_017_AI_Supported_Mediation.pptx"
           }
         ],
@@ -18691,8 +19609,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -18704,14 +19622,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-17",
+        "newest": "2026-08-07",
         "files": [
           {
             "name": "MC-018 Crisis Communication AI-Driven Response Simulation+.pptx",
             "ext": "pptx",
-            "kb": 4134,
-            "date": "2026-06-17",
-            "sha": "d72ffd5a3ee1287f",
+            "kb": 4124,
+            "date": "2026-08-07",
+            "sha": "8d2d1ca8c122c1b9",
             "rel": "4.3 Media & Culture/MC-018/MC-018 Crisis Communication AI-Driven Response Simulation+.pptx"
           }
         ],
@@ -19789,10 +20707,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-18",
+        "newest": "2026-08-01",
         "files": [
+          {
+            "name": "MC-047_v2.pptx",
+            "ext": "pptx",
+            "kb": 16146,
+            "date": "2026-08-01",
+            "sha": "bf2ea5db1f58a225",
+            "rel": "4.3 Media & Culture/MC-047/MC-047_v2.pptx"
+          },
           {
             "name": "MC-047.pptx",
             "ext": "pptx",
@@ -19840,10 +20766,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-28",
+        "newest": "2026-08-01",
         "files": [
+          {
+            "name": "MC-048_v2.pptx",
+            "ext": "pptx",
+            "kb": 1245,
+            "date": "2026-08-01",
+            "sha": "1a96729b2355e043",
+            "rel": "4.3 Media & Culture/MC-048/MC-048_v2.pptx"
+          },
           {
             "name": "MC-048.pptx",
             "ext": "pptx",
@@ -22425,10 +23359,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-02 Language Model Settings.pdf",
+            "ext": "pdf",
+            "kb": 396,
+            "date": "2026-07-24",
+            "sha": "79dd4a1c8477f928",
+            "rel": "4.5 Management & Finance/MF-02/MF-02 Language Model Settings.pdf"
+          }
+        ],
         "folder": "MF-02"
       },
       "lesson_plan": {
@@ -22468,10 +23411,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-03 Model customization.pdf",
+            "ext": "pdf",
+            "kb": 442,
+            "date": "2026-07-24",
+            "sha": "838681969656b817",
+            "rel": "4.5 Management & Finance/MF-03/MF-03 Model customization.pdf"
+          }
+        ],
         "folder": "MF-03"
       },
       "lesson_plan": {
@@ -22511,10 +23463,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-04 Prompting Principles for Analysts.pdf",
+            "ext": "pdf",
+            "kb": 462,
+            "date": "2026-07-24",
+            "sha": "a8d6ea87578c3db0",
+            "rel": "4.5 Management & Finance/MF-04/MF-04 Prompting Principles for Analysts.pdf"
+          }
+        ],
         "folder": "MF-04"
       },
       "lesson_plan": {
@@ -22554,10 +23515,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-05 Prompt Applications.pdf",
+            "ext": "pdf",
+            "kb": 496,
+            "date": "2026-07-24",
+            "sha": "80caa1ca83e9a14d",
+            "rel": "4.5 Management & Finance/MF-05/MF-05 Prompt Applications.pdf"
+          }
+        ],
         "folder": "MF-05"
       },
       "lesson_plan": {
@@ -22597,10 +23567,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-06 Ethical Prompting.pdf",
+            "ext": "pdf",
+            "kb": 430,
+            "date": "2026-07-24",
+            "sha": "c56ad42adf7fda56",
+            "rel": "4.5 Management & Finance/MF-06/MF-06 Ethical Prompting.pdf"
+          }
+        ],
         "folder": "MF-06"
       },
       "lesson_plan": {
@@ -22726,10 +23705,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-09 Data Flows.pdf",
+            "ext": "pdf",
+            "kb": 329,
+            "date": "2026-07-24",
+            "sha": "1f9d626ba43b7212",
+            "rel": "4.5 Management & Finance/MF-09/MF-09 Data Flows.pdf"
+          }
+        ],
         "folder": "MF-09"
       },
       "lesson_plan": {
@@ -22769,10 +23757,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-10 data connections & bias.pdf",
+            "ext": "pdf",
+            "kb": 376,
+            "date": "2026-07-24",
+            "sha": "2970f4f5bd1555ef",
+            "rel": "4.5 Management & Finance/MF-10/MF-10 data connections & bias.pdf"
+          }
+        ],
         "folder": "MF-10"
       },
       "lesson_plan": {
@@ -22812,10 +23809,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-11 Data Integration.pdf",
+            "ext": "pdf",
+            "kb": 392,
+            "date": "2026-07-24",
+            "sha": "57dc4528de3d2c5c",
+            "rel": "4.5 Management & Finance/MF-11/MF-11 Data Integration.pdf"
+          }
+        ],
         "folder": "MF-11"
       },
       "lesson_plan": {
@@ -22855,10 +23861,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-12 Data Readiness.pdf",
+            "ext": "pdf",
+            "kb": 417,
+            "date": "2026-07-24",
+            "sha": "ba7d5209c11060a5",
+            "rel": "4.5 Management & Finance/MF-12/MF-12 Data Readiness.pdf"
+          }
+        ],
         "folder": "MF-12"
       },
       "lesson_plan": {
@@ -22950,10 +23965,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-07-24",
+        "files": [
+          {
+            "name": "MF-14 Data Lineage.pdf",
+            "ext": "pdf",
+            "kb": 523,
+            "date": "2026-07-24",
+            "sha": "22960e1f7aa0c6c7",
+            "rel": "4.5 Management & Finance/MF-14/MF-14 Data Lineage.pdf"
+          }
+        ],
         "folder": "MF-14"
       },
       "lesson_plan": {
@@ -23652,6 +24676,126 @@
   ],
   "realai_board": [
     {
+      "code": "HL-001",
+      "track": "Health",
+      "title": "HL-001 Foundations of AI in Healthcare",
+      "lesson_type": "Lecture",
+      "duration": "120",
+      "job_role": "All three roles",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
+      "due_date": "",
+      "author": "BME · András Gézsi",
+      "coauthor": "UNINA · Stefano Marrone",
+      "reviewer": "RealAI · Tarry Singh",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": true,
+      "review_note": "Strong foundations plan, minor revision. Add the healthcare-critical evaluation pieces (calibration and AUPRC, external/temporal validation, data leakage), name a concrete flawed example, and add one worked mini-case so the 'evaluate' outcome has a student activity; line up the outcome tags.",
+      "materials": {
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-04",
+        "files": [
+          {
+            "name": "HL001_Foundations_AI_Healthcare.pdf",
+            "ext": "pdf",
+            "kb": 1898,
+            "date": "2026-08-04",
+            "sha": "1e807adc1be11883",
+            "rel": "4.2 Health & Lifescience/HL-001/HL001_Foundations_AI_Healthcare.pdf"
+          },
+          {
+            "name": "HL001_Teacher_Guide.pdf",
+            "ext": "pdf",
+            "kb": 208,
+            "date": "2026-08-04",
+            "sha": "846f7bf3ca0960a3",
+            "rel": "4.2 Health & Lifescience/HL-001/HL001_Teacher_Guide.pdf"
+          },
+          {
+            "name": "HL001_v1.pdf",
+            "ext": "pdf",
+            "kb": 2731,
+            "date": "2026-06-30",
+            "sha": "92a341d1106f76b9",
+            "rel": "4.2 Health & Lifescience/HL-001/HL001_v1.pdf"
+          }
+        ],
+        "folder": "HL-001"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/HL-001_Foundations_of_AI_in_Healthcare",
+      "wiki_sections": [
+        {
+          "name": "Administrative information",
+          "len": 157,
+          "empty": false,
+          "text": "Title\n\nFoundations of AI in Healthcare\n\n\nCODE\n\nHL-001\n\n\nDuration\n\n120\n\n\nTrack\n\nHealth\n\n\nLesson Type\n\nlecture\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nAll three roles"
+        },
+        {
+          "name": "Management information",
+          "len": 1303,
+          "empty": false,
+          "text": "Author Organisation 1\n\nBME\n\n\nAuthor Person 1\n\nAndrás Gézsi\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\nStefano Marrone\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nExplain the main paradigms of artificial intelligence and machine learning in the context of healthcare data and clinical decision-making tasks. (knowledge, intermediate level)Differentiate between common machine learning problem formulations (classification, regression, clustering) and map them to typical healthcare applications. (cognitive skill, intermediate level)Explain how noise, informative missingness, class imbalance, bias, and dataset shift can affect model development and performance in healthcare.\n(cognitive skill, intermediate level)Interpret a simple confusion matrix and compare candidate models using appropriate performance measures and clinical constraints.\n(cognitive skill, intermediate level)Critique a simplified healthcare-AI study with respect to leakage, overfitting, validation, calibration, bias, and generalizability.\n(cognitive skill, intermediate level)\nLearning Events to be completed before:\nNone.\nKeywords:\nAI in the context of healthcare, overview of data types, predictive models and performance metrics in healthcare,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 137,
+          "empty": false,
+          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 80,
+          "empty": false,
+          "text": "HL-001\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 2191,
+          "empty": false,
+          "text": "0 - 10 minutes\n- Introduce real-world examples of AI in healthcare (e.g., diagnosis, risk prediction)\n- Motivate the need for AI in clinical decision-making\n- Discuss why healthcare problems are fundamentally challenging (data quality, uncertainty)\n10 - 35 minutes\n- Explain the concepts of AI, machine learning, and deep learning\n- Introduce supervised vs unsupervised learning\n- Map learning paradigms to healthcare tasks (diagnosis, prognosis, patient stratification)\n35 - 60 minutes\n- Present main healthcare data types (EHR, imaging, time series, omics)\n- Explain key characteristics (structure, dimensionality, noise, missingness)\n- Interactive: students classify example problems into task types\n60 - 80 minutes\n- Introduce major model families (linear models, tree-based models, neural networks)\n- Explain their assumptions and typical use cases\n- Relate models to healthcare data modalities\n80 - 100 minutes\n- Explain evaluation concepts (train/test split, generalization, overfitting)\n- Confusion matrix, sensitivity, specificity, PPV/NPV, AUROC/AUPRC, calibration and threshold selection\n- Discuss healthcare-specific challenges (class imbalance, label noise, dataset shift)\n100 - 115 minutes\n- Integrated healthcare mini-case: select a model and identify methodological flaws\n- Interactive discussion: identify problems (bias, overfitting, poor validation)\n- Emphasize limitations and risks of AI in healthcare\n115 - 120 minutes\n- Summarize key concepts (data -> task -> model -> evaluation -> limitation)\n- Short Q&A\nThe healthcare mini-case:\nA hospital develops a model for predicting a rare adverse event. Students receive the prevalence and confusion matrices for two models. They compare sensitivity, PPV and false positives, choose a deployment threshold, and discuss whether the model is suitable. They then learn that preprocessing occurred before the split, some patients appeared in both sets, and performance deteriorated at another hospital.\nThis single case covers:\n- prevalence and PPV;\n- model selection;\n- threshold trade-offs;\n- leakage;\n- internal versus external validation;\n- dataset shift;\n- generalizability;\n- clinician, developer and manager perspectives."
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": true,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": true
+      },
+      "sources": [
+        "wiki",
+        "materials"
+      ]
+    },
+    {
       "code": "HL-009",
       "track": "Health",
       "title": "HL-009 Tutorial — Omics Data",
@@ -24174,7 +25318,7 @@
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "TUD · Ahmad",
+      "author": "TUD · Na Li / Ahmad",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "RealAI · Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
@@ -24184,14 +25328,14 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-07-19",
+        "newest": "2026-07-23",
         "files": [
           {
             "name": "HL-048_firstdraft_updating.pptx",
             "ext": "pptx",
-            "kb": 5145,
-            "date": "2026-07-19",
-            "sha": "ca6f910b712ffc81",
+            "kb": 5159,
+            "date": "2026-07-23",
+            "sha": "45739a2d032f491a",
             "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
           },
           {
@@ -24221,9 +25365,9 @@
         },
         {
           "name": "Management information",
-          "len": 756,
+          "len": 764,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nAhmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li / Ahmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
         },
         {
           "name": "Expected preparation",
@@ -24490,10 +25634,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "LE HL064.pdf",
+            "ext": "pdf",
+            "kb": 94,
+            "date": "2026-08-07",
+            "sha": "48ee6064d19ab282",
+            "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pdf"
+          }
+        ],
         "folder": "HL-064"
       },
       "lesson_plan": {
@@ -24557,7 +25710,7 @@
         "is_author": false,
         "instructions_written": false,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [
           "Instructions for teachers (detailed)"
         ],
@@ -24874,10 +26027,18 @@
       "review_done": true,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-07",
         "files": [
+          {
+            "name": "MC_001_Scientific_Landscape_Bibliometric_Analysis_and_Visualization.pptx",
+            "ext": "pptx",
+            "kb": 6069,
+            "date": "2026-08-07",
+            "sha": "0bef514079dbde9e",
+            "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Bibliometric_Analysis_and_Visualization.pptx"
+          },
           {
             "name": "MC_001_Scientific_Landscape_Practice.pptx",
             "ext": "pptx",
@@ -24978,10 +26139,18 @@
       "review_done": true,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-07",
         "files": [
+          {
+            "name": "MC_003_Social_Network_Analysis_Theoretical_Foundations.pptx",
+            "ext": "pptx",
+            "kb": 7460,
+            "date": "2026-08-07",
+            "sha": "1a8b9ced99c3876a",
+            "rel": "4.3 Media & Culture/MC-003/MC_003_Social_Network_Analysis_Theoretical_Foundations.pptx"
+          },
           {
             "name": "MC_003_Toxicity_Polarization_Monitoring_Practice.pptx",
             "ext": "pptx",
@@ -25740,7 +26909,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "",
+      "author": "TUD",
       "coauthor": "",
       "reviewer": "REAL AI · Tarry Singh",
       "off_wiki": false,
@@ -25770,9 +26939,9 @@
         },
         {
           "name": "Management information",
-          "len": 2433,
+          "len": 2436,
           "empty": false,
-          "text": "Author Organisation 1\n\n\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nREAL AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nUpon successful completion of the Learning Event, students will be able to:Explain the legal basis and purpose of technical documentation under EU AI Act Article 11: that it must be drawn up before a high-risk system is placed on the market and kept up to date, that it is the central evidence file for conformity assessment, that it feeds the EU declaration of conformity (Article 47), and that it must be kept at the disposal of authorities for ten years (Article 18).Reproduce the nine categories Annex IV requires, in order, and explain what each demands of a high-risk AI system's documentation.Draft or evaluate the system description in Annex IV elements 1 and 2: the general description (intended purpose, provider, versions, interactions, forms of distribution, hardware, user interface, instructions for use) and the detailed development description (architecture, data requirements as datasheets, human oversight, validation and testing, cybersecurity).Explain the record-keeping and logging obligations under Article 12, including the three purposes the logs must serve and the heightened minimum logging for remote biometric identification systems, and locate the related duties of providers (Article 19) and deployers (Article 26(6)).Explain how the technical documentation connects to the instructions for use under Article 13, in particular the accuracy, robustness and cybersecurity metrics under Article 13(3)(b) and the description of the logging mechanisms under Article 13(3)(f).Apply the requirements to draft or critique a section of technical documentation for a given high-risk system, and account for the current state of the harmonised standards, the simplified form for SMEs, and the 2 December 2027 application date.\nLearning Events to be completed before:\nNone.\nKeywords:\nAnnex IV,System description,Logging (Article 12),Technical documentation (Article 11),EU declaration of conformity (Article 47),Record-keeping and traceability,Datasheets for datasets,Instructions for use (Article 13),Human oversight (Article 14),Remote biometric identification logging,Simplified documentation form for SMEs,Retention for ten years (Article 18),Harmonised standards (M/593),Living document and version control,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nREAL AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nUpon successful completion of the Learning Event, students will be able to:Explain the legal basis and purpose of technical documentation under EU AI Act Article 11: that it must be drawn up before a high-risk system is placed on the market and kept up to date, that it is the central evidence file for conformity assessment, that it feeds the EU declaration of conformity (Article 47), and that it must be kept at the disposal of authorities for ten years (Article 18).Reproduce the nine categories Annex IV requires, in order, and explain what each demands of a high-risk AI system's documentation.Draft or evaluate the system description in Annex IV elements 1 and 2: the general description (intended purpose, provider, versions, interactions, forms of distribution, hardware, user interface, instructions for use) and the detailed development description (architecture, data requirements as datasheets, human oversight, validation and testing, cybersecurity).Explain the record-keeping and logging obligations under Article 12, including the three purposes the logs must serve and the heightened minimum logging for remote biometric identification systems, and locate the related duties of providers (Article 19) and deployers (Article 26(6)).Explain how the technical documentation connects to the instructions for use under Article 13, in particular the accuracy, robustness and cybersecurity metrics under Article 13(3)(b) and the description of the logging mechanisms under Article 13(3)(f).Apply the requirements to draft or critique a section of technical documentation for a given high-risk system, and account for the current state of the harmonised standards, the simplified form for SMEs, and the 2 December 2027 application date.\nLearning Events to be completed before:\nNone.\nKeywords:\nAnnex IV,System description,Logging (Article 12),Technical documentation (Article 11),EU declaration of conformity (Article 47),Record-keeping and traceability,Datasheets for datasets,Instructions for use (Article 13),Human oversight (Article 14),Remote biometric identification logging,Simplified documentation form for SMEs,Retention for ten years (Article 18),Harmonised standards (M/593),Living document and version control,"
         },
         {
           "name": "Expected preparation",
@@ -28491,110 +29660,6 @@
       "sources": [
         "wiki",
         "registry",
-        "materials"
-      ]
-    },
-    {
-      "code": "HL-001",
-      "track": "Health",
-      "title": "HL-001 Foundations of AI in Healthcare",
-      "lesson_type": "Lecture",
-      "duration": "120",
-      "job_role": "All three roles",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
-      "due_date": "",
-      "author": "BME · András Gézsi",
-      "coauthor": "UNINA · Stefano Marrone",
-      "reviewer": "RealAI · Monira Majhabeen",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": true,
-      "review_note": "Strong foundations plan, minor revision. Add the healthcare-critical evaluation pieces (calibration and AUPRC, external/temporal validation, data leakage), name a concrete flawed example, and add one worked mini-case so the 'evaluate' outcome has a student activity; line up the outcome tags.",
-      "materials": {
-        "count": 1,
-        "has": true,
-        "newest": "2026-06-30",
-        "files": [
-          {
-            "name": "HL001_v1.pdf",
-            "ext": "pdf",
-            "kb": 2731,
-            "date": "2026-06-30",
-            "sha": "92a341d1106f76b9",
-            "rel": "4.2 Health & Lifescience/HL-001/HL001_v1.pdf"
-          }
-        ],
-        "folder": "HL-001"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/HL-001_Foundations_of_AI_in_Healthcare",
-      "wiki_sections": [
-        {
-          "name": "Administrative information",
-          "len": 157,
-          "empty": false,
-          "text": "Title\n\nFoundations of AI in Healthcare\n\n\nCODE\n\nHL-001\n\n\nDuration\n\n120\n\n\nTrack\n\nHealth\n\n\nLesson Type\n\nlecture\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nAll three roles"
-        },
-        {
-          "name": "Management information",
-          "len": 1278,
-          "empty": false,
-          "text": "Author Organisation 1\n\nBME\n\n\nAuthor Person 1\n\nAndrás Gézsi\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\nStefano Marrone\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen\n\n\nStatus\n\n!Missing status!\nLearning Outcomes:\nExplain the main paradigms of artificial intelligence and machine learning in the context of healthcare data and clinical decision-making tasks. (knowledge, intermediate level)Differentiate between common machine learning problem formulations (classification, regression, clustering) and map them to typical healthcare applications. (cognitive skill, intermediate level)Interpret the relationship between data characteristics (e.g., noise, missingness, bias) and model performance in real-world healthcare settings. (cognitive skill, intermediate level)Evaluate the suitability of different AI approaches for specific biomedical problems using simple performance metrics and domain constraints. (cognitive skill, basic level)Recognize key limitations and risks of AI systems in healthcare, including generalization issues and potential biases. (competence, basic level)\nLearning Events to be completed before:\nNone.\nKeywords:\nAI in the context of healthcare, overview of data types, predictive models and performance metrics in healthcare,"
-        },
-        {
-          "name": "Expected preparation",
-          "len": 137,
-          "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "HL-001\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 1461,
-          "empty": false,
-          "text": "0 - 10 minutes\n- Introduce real-world examples of AI in healthcare (e.g., diagnosis, risk prediction)\n- Motivate the need for AI in clinical decision-making\n- Discuss why healthcare problems are fundamentally challenging (data quality, uncertainty)\n10 - 35 minutes\n- Explain the concepts of AI, machine learning, and deep learning\n- Introduce supervised vs unsupervised learning\n- Map learning paradigms to healthcare tasks (diagnosis, prognosis, patient stratification)\n35 - 60 minutes\n- Present main healthcare data types (EHR, imaging, time series, omics)\n- Explain key characteristics (structure, dimensionality, noise, missingness)\n- Interactive: students classify example problems into task types\n60 - 80 minutes\n- Introduce major model families (linear models, tree-based models, neural networks)\n- Explain their assumptions and typical use cases\n- Relate models to healthcare data modalities\n80 - 100 minutes\n- Explain evaluation concepts (train/test split, generalization, overfitting)\n- Introduce performance metrics (accuracy, AUROC, precision/recall)\n- Discuss healthcare-specific challenges (class imbalance, label noise, dataset shift)\n100 - 115 minutes\n- Present a simplified flawed healthcare AI example\n- Interactive discussion: identify problems (bias, overfitting, poor validation)\n- Emphasize limitations and risks of AI in healthcare\n115 - 120 minutes\n- Summarize key concepts (data -> task -> model -> evaluation -> limitation)\n- Short Q&A"
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": true,
-        "outcomes_present": true,
-        "materials_uploaded": true,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": true
-      },
-      "sources": [
-        "wiki",
         "materials"
       ]
     },
