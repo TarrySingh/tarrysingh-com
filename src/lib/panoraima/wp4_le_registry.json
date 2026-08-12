@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-08-12T15:01:19.979396+00:00",
-  "refreshed_at": "2026-08-12T15:01:19.979396+00:00",
+  "generated_at": "2026-08-12T16:20:37.703941+00:00",
+  "refreshed_at": "2026-08-12T16:20:37.703941+00:00",
   "refresh_history": [
     {
       "at": "2026-08-12T15:01:19.979396+00:00",
@@ -102,7 +102,7 @@
       "total": 56,
       "author": 4,
       "reviewer": 52,
-      "reviewed": 38,
+      "reviewed": 39,
       "by_status": {
         "In development": 15,
         "In review": 40,
@@ -16352,8 +16352,8 @@
       "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Lesson-material deep pass. Strong dermatology role-play, but the wiki lesson plan is empty (plan lives only in the PDF). Fixes: ground the comms half in SPIKES/Calgary-Cambridge/SDM, use natural frequencies for risk, add the derm-AI skin-tone equity point, and resolve the transparency-vs-paternalism tension. Author must put the plan on the wiki.",
       "materials": {
         "count": 1,
         "has": true,
@@ -25631,8 +25631,8 @@
       "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Lesson-material deep pass. Strong dermatology role-play, but the wiki lesson plan is empty (plan lives only in the PDF). Fixes: ground the comms half in SPIKES/Calgary-Cambridge/SDM, use natural frequencies for risk, add the derm-AI skin-tone equity point, and resolve the transparency-vs-paternalism tension. Author must put the plan on the wiki.",
       "materials": {
         "count": 1,
         "has": true,
