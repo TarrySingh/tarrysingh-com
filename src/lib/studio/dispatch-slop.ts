@@ -340,12 +340,19 @@ export function scanDispatchSlop(text: string): SlopHit[] {
     .replace(/--(?=[A-Za-z])/g, "")
   const dashes = (proseNoUrls.match(/—/g) ?? []).length
   const fauxDashes = (proseNoUrls.match(/(?<!-)--(?!-)/g) ?? []).length
-  if (dashes + fauxDashes > 0) {
+  // HTML-ENTITY em-dashes render exactly like the literal character but were
+  // invisible to every pass, because the sweep and this gate both searched for
+  // the character itself. Found on 2026-08-13 by scanning the LIVE pages rather
+  // than the source: /blog/your-ai-doesn-t-discover-anything-here-s showed a
+  // dash the file scan swore was not there. It was `&#8212;` in an instrument
+  // caption. A repo-wide count then turned up 580 more.
+  const entityDashes = (proseNoUrls.match(/&mdash;|&#8212;|&#x2014;/gi) ?? []).length
+  if (dashes + fauxDashes + entityDashes > 0) {
     hits.push({
       id: "em-dash",
       label: "em-dash present (contract requires zero; the #1 tell)",
       severity: "hard",
-      match: `${dashes} em-dashes${fauxDashes ? ` + ${fauxDashes} double-hyphen` : ""}`,
+      match: `${dashes} em-dashes${fauxDashes ? ` + ${fauxDashes} double-hyphen` : ""}${entityDashes ? ` + ${entityDashes} HTML-entity` : ""}`,
     })
   }
 

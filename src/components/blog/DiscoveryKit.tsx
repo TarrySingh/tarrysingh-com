@@ -149,7 +149,7 @@ export function TransportResidual() {
           <text x="782" y="108" textAnchor="middle" fontFamily="serif" fontSize="20" fill={fg}>I&#8242;&#8348;&#8330;&#8321;</text>
           <text x="782" y="125" textAnchor="middle" fontFamily="serif" fontSize="12.5" fill={accent} fontStyle="italic">residual = genuinely new content</text>
           <text x="782" y="184" textAnchor="middle" fontFamily="serif" fontSize="12.5" fill={muted} fontStyle="italic">im(&#961;&#772;): explained by transport</text>
-          <text x="470" y="270" textAnchor="middle" fontFamily="serif" fontSize="15" fill={muted}>free transport carries what it can &#8212; the gap is the discovery</text>
+          <text x="470" y="270" textAnchor="middle" fontFamily="serif" fontSize="15" fill={muted}>free transport carries what it can · the gap is the discovery</text>
         </svg>
       </div>
       <figcaption
