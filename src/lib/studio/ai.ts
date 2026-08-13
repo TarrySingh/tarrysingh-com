@@ -41,7 +41,7 @@ Voice rules (non-negotiable):
   - British English: -ise / -our / -re / -our (organise, colour, centre, behaviour, modelling, analyse).
   - Never use SaaS-marketing slop: leverage, ideate, unlock, seamless, supercharge, revolutionary, game-changing, best-in-class, world-class, thought leader, synergy.
   - Never use surveillance vocabulary or hedge-talk (very unique, really really).
-  - One italic close per page — the final paragraph should carry a single italicised phrase.
+  - One italic close per page, the final paragraph should carry a single italicised phrase.
   - No emoji.
   - First paragraph carries the whole argument. A reader who never scrolls past should still know the claim.
   - Plates and figures are working drawings, not posters. Honest about projections vs measurements.
@@ -50,7 +50,7 @@ Format rules:
 
   - Output Markdown only. No HTML, no YAML, no commentary about what you wrote.
   - Use ## for section headings, ### for sub-sections.
-  - Em dashes (—) not double hyphens.
+  - Em dashes (, ) not double hyphens.
   - Smart quotes ('') not straight quotes ('').
   - Match the surrounding rhythm: if the existing prose runs in short paragraphs, keep paragraphs short.`
 
@@ -169,7 +169,7 @@ ${input.beforeCursor}
 
 ${input.afterCursor || "(end of document)"}
 
-Continue from the cursor. Write 1–3 paragraphs that pick up the prose naturally. Stop when the thought is complete — don't pad. Match the voice of the existing text exactly.
+Continue from the cursor. Write 1–3 paragraphs that pick up the prose naturally. Stop when the thought is complete, don't pad. Match the voice of the existing text exactly.
 
 Return Markdown only.`
 
@@ -214,7 +214,7 @@ export async function aiRewrite(
 
   const userPrompt = `Rewrite the selected passage in the studio voice.
 
-Surrounding context (do NOT rewrite this — it's here for tone reference):
+Surrounding context (do NOT rewrite this, it's here for tone reference):
 
 ${input.surroundingContext}
 
@@ -289,7 +289,7 @@ BODY:
 
 ${input.body}
 
-Return STRICT JSON only — no prose, no markdown fences. The shape is:
+Return STRICT JSON only, no prose, no markdown fences. The shape is:
 
 {
   "category": "Essays" | "Notes" | "Studio",
@@ -400,11 +400,11 @@ ${input.body}
 
 Voice rules (non-negotiable):
 
-  - 60-90 words. Plex Serif rhythm. One italic close per the studio voice — the last phrase or sentence in italics, nothing else.
-  - Reference the SPECIFIC argument of the piece in the first sentence. Not "subscribe for more like this." Something like *"If the argument held — Tuesday's Dispatch carries it forward."* with the actual claim of the piece named.
+  - 60-90 words. Plex Serif rhythm. One italic close per the studio voice, the last phrase or sentence in italics, nothing else.
+  - Reference the SPECIFIC argument of the piece in the first sentence. Not "subscribe for more like this." Something like *"If the argument held, Tuesday's Dispatch carries it forward."* with the actual claim of the piece named.
   - No SaaS slop: leverage, ideate, unlock, seamless, supercharge, revolutionary, game-changing, best-in-class, world-class, thought leader, synergy.
   - No tracking-vocabulary: convert, optimise, acquire, capture, monetise.
-  - End by inviting the reader to subscribe via the existing newsletter form — but don't call it a "newsletter" — call it "the next Dispatch" or "one quiet plate when it ships."
+  - End by inviting the reader to subscribe via the existing newsletter form, but don't call it a "newsletter", call it "the next Dispatch" or "one quiet plate when it ships."
   - British English. Em dashes. Smart quotes.
   - No headings. Plain prose, in Markdown.
 
@@ -491,7 +491,7 @@ VISUAL VOICE (non-negotiable):
   - NO photoreal humans. NO photoreal anything. NO Pixar-cute. NO stock-photo cliches (suits, handshakes, lightbulbs, gears). NO SaaS-marketing aesthetics.
   - NO text in the image. NO captions. NO labels. (The post template adds the title separately.)
   - Aspect ratio: 16:9 hero composition. Subject central; framing leaves a quiet zone in the upper-left or upper-right where a title could float.
-  - Honest about the subject — if the Dispatch argues something specific, the image carries that argument visually, not generically.
+  - Honest about the subject, if the Dispatch argues something specific, the image carries that argument visually, not generically.
 
 OUTPUT FORMAT:
 

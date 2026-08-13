@@ -101,7 +101,7 @@ function isBylineLine(line: string): boolean {
   if (!trimmed) return false
   // Strip surrounding *…* or _…_ italic markers if present.
   const inner = trimmed.replace(/^[*_]+|[*_]+$/g, "").trim()
-  return /^By\s+[A-Z][\w\-' ]+\s+[—\-–]\s+\w+/i.test(inner)
+  return /^By\s+[A-Z][\w\-' ]+\s+[, \-–]\s+\w+/i.test(inner)
 }
 
 /**

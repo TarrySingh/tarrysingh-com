@@ -81,7 +81,7 @@ function renderHtml(input: SendApprovalEmailInput): string {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Preview ready — ${escapeHtml(input.title)}</title>
+    <title>Preview ready · ${escapeHtml(input.title)}</title>
     <style>
       body { margin: 0; padding: 0; background: #fbf7ec; }
       .wrap { max-width: 560px; margin: 0 auto; padding: 32px 24px 48px; }
@@ -178,8 +178,8 @@ function renderHtml(input: SendApprovalEmailInput): string {
 function renderText(input: SendApprovalEmailInput): string {
   const minutes = Math.max(1, Math.round(input.wordCount / 220))
   return [
-    "Studio · Dispatches — preview ready",
-    "—",
+    "Studio · Dispatches, preview ready",
+    ", ",
     "",
     input.title,
     "",
@@ -292,14 +292,14 @@ function renderBriefPromptHtml(input: SendBriefPromptInput): string {
 function renderBriefPromptText(input: SendBriefPromptInput): string {
   return [
     "Studio · Tomorrow's Dispatch",
-    "—",
+    ", ",
     "",
     `Anything to fold into the morning piece for ${input.forDate}?`,
     "",
-    "Yes — add a brief:",
+    "Yes, add a brief:",
     input.yesUrl,
     "",
-    "No — use the default rotation:",
+    "No, use the default rotation:",
     input.noUrl,
     "",
     "Link valid for 30 hours. Silence = no.",
@@ -464,14 +464,14 @@ export async function sendDispatchFailureAlert(
     <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.32em;text-transform:uppercase;color:#be123c;font-weight:600">Studio · write failure</div>
     <hr style="border:0;height:1px;background:rgba(190,18,60,0.25);margin:16px 0 20px"/>
     <h1 style="font-family:Gloock,Georgia,serif;font-weight:400;font-size:24px;line-height:1.2;margin:0 0 12px">Today's Dispatch didn't get written.</h1>
-    <p style="font-size:15px;line-height:1.55;margin:0 0 12px">The server-side backup-writer failed at <strong>${escapeHtml(input.stage)}</strong> for <code>${escapeHtml(input.forDate)}</code> — error <code>${escapeHtml(input.error)}</code>. No draft was created and no approval email was sent.</p>
+    <p style="font-size:15px;line-height:1.55;margin:0 0 12px">The server-side backup-writer failed at <strong>${escapeHtml(input.stage)}</strong> for <code>${escapeHtml(input.forDate)}</code>, error <code>${escapeHtml(input.error)}</code>. No draft was created and no approval email was sent.</p>
     ${debugBlock}
     <p style="font-size:15px;line-height:1.55;margin:12px 0 0">Nothing publishes today until this is fixed. Check Vercel logs for <code>/api/cron/backup-writer</code>, then force a retry with <code>?force=1</code>.</p>
     <p style="margin-top:24px;padding-top:14px;border-top:1px solid rgba(180,134,11,0.18);font-style:italic;font-size:13px;color:rgba(13,27,61,0.55)">Automated · fires the instant a morning write errors.</p>
   </div></body></html>`
   const text = [
     "Studio · morning Dispatch write FAILED",
-    "—",
+    ", ",
     "",
     `For date:  ${input.forDate}`,
     `Stage:     ${input.stage}`,
