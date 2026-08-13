@@ -583,12 +583,12 @@ export function StdpWindow() {
               >
                 A pre-synaptic spike that <em>precedes</em> a post-synaptic
                 spike by a few milliseconds strengthens the connection
-                between them — Hebb&rsquo;s 'cells that fire together'
+                between them, Hebb&rsquo;s 'cells that fire together'
                 stated precisely. Reverse the order and the connection
                 weakens. The exponential window is biology&rsquo;s
                 primitive for credit assignment in time. MEMPHIS demands
                 that the memristive substrate produce this curve
-                <em>intrinsically</em> from device physics — not from a
+                <em>intrinsically</em> from device physics, not from a
                 software training rule applied over the top.
               </div>
             </foreignObject>

@@ -89,7 +89,7 @@ const ERAS = [
     key: "intent",
     n: "3.0",
     title: "Intent",
-    who: "you write it — in plain language",
+    who: "you write it, in plain language",
     example: "“ship a landing page that…”",
     tone: "violet" as Tone,
     program: "the program is a prompt; agents are the workforce",
@@ -385,7 +385,7 @@ export function ThreeErasOfSoftware() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker={`Fig. — Three eras of software · the same program, three ways`}
+      kicker={`Fig., Three eras of software · the same program, three ways`}
       controls={
         <div role="tablist" aria-label="Choose a software era" className="flex gap-1">
           {ERAS.map((e, i) => {
@@ -416,7 +416,7 @@ export function ThreeErasOfSoftware() {
       caption={
         <>
           <strong style={{ color: p.ink, fontStyle: "normal" }}>
-            Software {nearEra.n} — {nearEra.title}:
+            Software {nearEra.n}, {nearEra.title}:
           </strong>{" "}
           {nearEra.program}; {nearEra.who}{" "}
           <span
@@ -428,9 +428,9 @@ export function ThreeErasOfSoftware() {
           >
             {nearEra.example}
           </span>
-          . The forty marks are one program; switch eras to watch it change phase — code
+          . The forty marks are one program; switch eras to watch it change phase, code
           lattice → neural mesh → a single intent radiating into agents and their tools.
-          After Andrej Karpathy — <em>Software 2.0</em> (2017), <em>Software 3.0</em> (2025).
+          After Andrej Karpathy, <em>Software 2.0</em> (2017), <em>Software 3.0</em> (2025).
         </>
       }
     >
@@ -440,10 +440,10 @@ export function ThreeErasOfSoftware() {
         role="img"
         aria-label={
           "Three eras of software, after Andrej Karpathy, shown as one program of forty marks that morphs between three forms. " +
-          "Software 1.0 is code: the marks form a neat lattice of code-lines with a line-number gutter — hand-written instructions a human engineer writes, for example 'if x greater than 0'. " +
+          "Software 1.0 is code: the marks form a neat lattice of code-lines with a line-number gutter, hand-written instructions a human engineer writes, for example 'if x greater than 0'. " +
           "Software 2.0 is weights: the same marks flow into a four-layer neural mesh whose edges, lit by weight, are written by optimisation from data, for example a vector of numbers like 0.21, minus 0.04. " +
-          "Software 3.0 is intent: the marks collapse to a single bright intent spark that radiates into four autonomous agent glyphs fanning out to their tools — a prompt you write in plain language, for example 'ship a landing page that …', with large language models as the runtime and agents as the workforce. " +
-          `Currently showing Software ${cur.n} — ${cur.title}.`
+          "Software 3.0 is intent: the marks collapse to a single bright intent spark that radiates into four autonomous agent glyphs fanning out to their tools, a prompt you write in plain language, for example 'ship a landing page that …', with large language models as the runtime and agents as the workforce. " +
+          `Currently showing Software ${cur.n}, ${cur.title}.`
         }
       >
         <defs>

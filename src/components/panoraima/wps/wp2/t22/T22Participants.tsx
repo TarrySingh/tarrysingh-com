@@ -105,7 +105,7 @@ export default function T22Participants({ detail }: Props) {
                   return (
                     <div
                       key={role}
-                      title={`${role}${slot?.name ? ` — ${slot.name}` : " — (not filled)"}`}
+                      title={`${role}${slot?.name ? ` · ${slot.name}` : " · (not filled)"}`}
                       className="aspect-square rounded-lg flex items-center justify-center relative"
                       style={slotStyle}
                     >

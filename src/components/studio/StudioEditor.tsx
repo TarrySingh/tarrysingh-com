@@ -1186,7 +1186,7 @@ function EditorToolbar({
         className="text-[10px] tracking-wide text-navy-400"
         style={mono}
       >
-        drop · paste · click — Supabase Storage, content-addressed CDN
+        drop · paste · click, Supabase Storage, content-addressed CDN
       </span>
       <span className="flex-1" />
       {isUploading ? (
@@ -1460,7 +1460,7 @@ function FrontmatterForm({
           <div className="col-span-2">
             <label className="block text-[10px] uppercase tracking-[0.28em] text-navy-400 mb-2"
               style={{ fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
-            >Cover PNG (optional — omit for slug-deterministic cover)</label>
+            >Cover PNG (optional, omit for slug-deterministic cover)</label>
             <input
               type="text"
               value={frontmatter.cover ?? ""}

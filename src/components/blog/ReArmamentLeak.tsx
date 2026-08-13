@@ -64,7 +64,7 @@ const BRANCHES: Branch[] = [
     key: "us",
     label: "TO THE UNITED STATES",
     detail:
-      "~49% in the surge — Draghi: ~€49bn of €75bn. SIPRI: the US is ~64% of European NATO arms imports (2020–24), up from 52%.",
+      "~49% in the surge, Draghi: ~€49bn of €75bn. SIPRI: the US is ~64% of European NATO arms imports (2020–24), up from 52%.",
     surge: 49,
     target: 28,
     kind: "leak",
@@ -73,7 +73,7 @@ const BRANCHES: Branch[] = [
     key: "other",
     label: "TO OTHER NON-EU",
     detail:
-      "~29% in the surge — the rest of ~78% extra-EU procurement (Draghi: ~€58bn of €75bn went non-EU). UK, South Korea, Israel and the like.",
+      "~29% in the surge, the rest of ~78% extra-EU procurement (Draghi: ~€58bn of €75bn went non-EU). UK, South Korea, Israel and the like.",
     surge: 29,
     target: 17,
     kind: "leak",
@@ -82,7 +82,7 @@ const BRANCHES: Branch[] = [
     key: "eu",
     label: "STAYS IN THE EU",
     detail:
-      "~22% in the surge — only this thin thread is sovereign spend. The EU target: ≥55% by 2030 (≤45% extra-EU; 40% joint procurement by 2027).",
+      "~22% in the surge, only this thin thread is sovereign spend. The EU target: ≥55% by 2030 (≤45% extra-EU; 40% joint procurement by 2027).",
     surge: 22,
     target: 55,
     kind: "retained",
@@ -202,8 +202,8 @@ export function ReArmamentLeak() {
       }
       caption={
         <>
-          Europe&rsquo;s ~&euro;800bn surge — <span style={{ color: p.leverage }}>ReArm Europe / Readiness 2030</span>{" "}
-          plus the NATO 5%-of-GDP pledge — splits mostly <span style={{ color: p.squeeze }}>out</span>. In the
+          Europe&rsquo;s ~&euro;800bn surge, <span style={{ color: p.leverage }}>ReArm Europe / Readiness 2030</span>{" "}
+          plus the NATO 5%-of-GDP pledge, splits mostly <span style={{ color: p.squeeze }}>out</span>. In the
           2022&ndash;23 Ukraine surge ~78% of procurement went non-EU, ~63% of that to the{" "}
           <span style={{ color: p.squeezeHi }}>United States</span>; only ~22% <span style={{ color: p.leverageHi }}>stayed in the EU</span>.
           Hover a stream for its figure, then flip <em>buy European</em> to pull the red leak toward the EU&rsquo;s
@@ -216,9 +216,9 @@ export function ReArmamentLeak() {
         role="img"
         aria-label={`Sankey of Europe's ~€800bn defence surge. Today ~${Math.round(
           totalLeak,
-        )}% leaks to non-EU suppliers — ~${Math.round(
+        )}% leaks to non-EU suppliers, ~${Math.round(
           shares[0],
-        )}% to the United States — and only ~${Math.round(
+        )}% to the United States, and only ~${Math.round(
           retained,
         )}% stays in the EU. The biggest re-armament since the Cold War is the biggest transatlantic wealth transfer of the decade.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
@@ -467,7 +467,7 @@ export function ReArmamentLeak() {
         <span style={{ color: p.squeezeHi, fontStyle: "normal", fontWeight: 700 }}>
           The biggest re-armament since the Cold War
         </span>{" "}
-        is the biggest transatlantic wealth transfer of the decade — autonomy paid for in dependence.
+        is the biggest transatlantic wealth transfer of the decade, autonomy paid for in dependence.
       </p>
     </PlateFrame>
   )

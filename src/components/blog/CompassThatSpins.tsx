@@ -154,7 +154,7 @@ export function CompassThatSpins() {
       caption={
         <>
           Inertia as rule of law: Europe keeps setting north and never sailing.
-          Press ▶ — the needle spins toward each new{" "}
+          Press ▶, the needle spins toward each new{" "}
           <span style={{ color: p.squeeze }}>deadline</span> on the rim, then slips
           past it; the <span style={{ color: p.squeeze }}>slippage</span> meter
           climbs while the <span style={{ color: p.leverage }}>delivered</span>{" "}
@@ -318,7 +318,7 @@ export function CompassThatSpins() {
           <span style={{ color: p.squeeze, fontStyle: "normal", fontWeight: 700 }}>
             Motion without movement
           </span>{" "}
-          — the needle spins, the meeting reconvenes, north keeps moving to next summer.
+, the needle spins, the meeting reconvenes, north keeps moving to next summer.
         </p>
 
         {/* play + scrub the milestone chain */}

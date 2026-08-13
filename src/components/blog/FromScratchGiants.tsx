@@ -39,7 +39,7 @@ type Co = {
 // Public, from scratch, < 50 years old, $10bn+ market cap (~2024).
 const US_2024: Co[] = [
   { name: "Apple", v: 3400, sector: "Consumer tech", note: "The most valuable company ever built." },
-  { name: "Nvidia", v: 5140, sector: "AI compute", note: "The picks-and-shovels monopoly of the AI boom — and now the world's most valuable company.", src: "https://companiesmarketcap.com/nvidia/marketcap/" },
+  { name: "Nvidia", v: 5140, sector: "AI compute", note: "The picks-and-shovels monopoly of the AI boom · and now the world's most valuable company.", src: "https://companiesmarketcap.com/nvidia/marketcap/" },
   { name: "Microsoft", v: 3100, sector: "Software & cloud", note: "Azure + the OpenAI alliance." },
   { name: "Alphabet", v: 2100, sector: "Search & AI", note: "Google, DeepMind, Waymo." },
   { name: "Amazon", v: 1900, sector: "Commerce & cloud", note: "AWS funds everything else." },
@@ -60,11 +60,11 @@ const US_2024: Co[] = [
   { name: "Booking", v: 170, sector: "Travel", note: "" },
   { name: "Uber", v: 160, sector: "Mobility", note: "" },
   { name: "BlackRock", v: 150, sector: "Asset management", note: "" },
-  { name: "Micron", v: 110, sector: "Memory", note: "HBM — the other AI bottleneck." },
+  { name: "Micron", v: 110, sector: "Memory", note: "HBM · the other AI bottleneck." },
   { name: "Airbnb", v: 90, sector: "Travel", note: "" },
 ]
 const EU_2024: Co[] = [
-  { name: "ASML", v: 320, sector: "Semiconductor tools", note: "The one machine the world can't replace — and the whole point of this essay." },
+  { name: "ASML", v: 320, sector: "Semiconductor tools", note: "The one machine the world can't replace · and the whole point of this essay." },
   { name: "Spotify", v: 75, sector: "Media", note: "Europe's rare consumer-software champion." },
   { name: "Adyen", v: 50, sector: "Fintech", note: "" },
   { name: "argenx", v: 45, sector: "Biotech", note: "" },
@@ -79,30 +79,30 @@ const EU_2024: Co[] = [
 // the rest mostly private (ringed) at last-round valuations. Values verified
 // in the mid-2026 sweep; treat as approximate.
 const US_NEXT: Co[] = [
-  { name: "SpaceX", v: 2100, sector: "Space · defence · AI", note: "The largest IPO in history (Jun 2026) — and now a conglomerate: it absorbed xAI (Feb) and bought Cursor for $60bn (Jun). Starship, Starlink, Grok, all under one roof.", src: "https://www.cnbc.com/2026/06/12/spacex-stock-jumps-2-trillion.html" },
-  { name: "Anthropic", v: 965, priv: true, sector: "Frontier AI", note: "Claude — a near-trillion-dollar private lab (Series H, May 2026).", src: "https://www.anthropic.com/news/series-h" },
-  { name: "OpenAI", v: 852, priv: true, sector: "Frontier AI", note: "ChatGPT — the consumer-AI default; an IPO is being prepared.", src: "https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html" },
+  { name: "SpaceX", v: 2100, sector: "Space · defence · AI", note: "The largest IPO in history (Jun 2026) · and now a conglomerate: it absorbed xAI (Feb) and bought Cursor for $60bn (Jun). Starship, Starlink, Grok, all under one roof.", src: "https://www.cnbc.com/2026/06/12/spacex-stock-jumps-2-trillion.html" },
+  { name: "Anthropic", v: 965, priv: true, sector: "Frontier AI", note: "Claude · a near-trillion-dollar private lab (Series H, May 2026).", src: "https://www.anthropic.com/news/series-h" },
+  { name: "OpenAI", v: 852, priv: true, sector: "Frontier AI", note: "ChatGPT · the consumer-AI default; an IPO is being prepared.", src: "https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html" },
   { name: "Stripe", v: 159, priv: true, sector: "Fintech infra", note: "Payment rails for the internet economy.", src: "https://www.cnbc.com/2026/02/24/stripe-value-stock-sale-tender-offer.html" },
-  { name: "Databricks", v: 134, priv: true, sector: "Data & AI", note: "The lakehouse — enterprise AI's data plane.", src: "https://www.cnbc.com/2026/02/09/databricks-completes-5-billion-funding-round-with-2-billion-in-debt.html" },
+  { name: "Databricks", v: 134, priv: true, sector: "Data & AI", note: "The lakehouse · enterprise AI's data plane.", src: "https://www.cnbc.com/2026/02/09/databricks-completes-5-billion-funding-round-with-2-billion-in-debt.html" },
   { name: "Scale AI", v: 74, priv: true, sector: "AI data", note: "Training-data and eval backbone.", src: "https://www.premieralts.com/companies/scale-ai" },
   { name: "Anduril", v: 61, priv: true, sector: "Defence tech", note: "Autonomous defence; the Lattice OS (Series H, May 2026).", src: "https://www.bloomberg.com/news/articles/2026-05-13/anduril-valued-at-61-billion-in-round-led-by-thrive-andreessen" },
-  { name: "Cerebras", v: 51, sector: "AI compute", note: "Wafer-scale inference silicon — public since its 2026 IPO.", src: "https://finance.yahoo.com/quote/CBRS/" },
+  { name: "Cerebras", v: 51, sector: "AI compute", note: "Wafer-scale inference silicon · public since its 2026 IPO.", src: "https://finance.yahoo.com/quote/CBRS/" },
   { name: "Thinking Machines", v: 50, priv: true, sector: "Frontier AI", note: "Mira Murati's research lab (Series B, Mar 2026).", src: "https://www.startuphub.ai/ai-news/ai-figures/2026/figure-mira-murati-company-financial-breakdown-2026-06-02" },
   { name: "Ramp", v: 44, priv: true, sector: "Fintech", note: "AI-native finance automation (Series F, Jun 2026).", src: "https://techcrunch.com/2026/06/04/ramp-raises-750m-at-44b-valuation-as-investors-hunger-for-fintechs-with-an-ai-story/" },
   { name: "Figure", v: 39, priv: true, sector: "Humanoid robotics", note: "General-purpose humanoid workers.", src: "https://www.figure.ai/news/series-c" },
   { name: "SSI", v: 32, priv: true, sector: "Frontier AI", note: "Sutskever's single-product superintelligence lab.", src: "https://www.startuphub.ai/ai-news/ai-figures/2026/figure-ilya-sutskever-ssi-financial-breakdown-2026-06-06" },
   { name: "Perplexity", v: 20, priv: true, sector: "AI search", note: "The answer-engine taking aim at Google (Series E, Jun 2026).", src: "https://www.cnbc.com/2026/06/09/perplexity-ipo-2028-as-anthropic-openai-prepare-listings.html" },
   { name: "Sierra", v: 16, priv: true, sector: "Agentic AI", note: "Bret Taylor's enterprise AI agents (Series E, May 2026).", src: "https://www.cnbc.com/2026/05/04/bret-taylor-sierra-fundraise-openai.html" },
-  { name: "Shield AI", v: 13, priv: true, sector: "Defence tech", note: "Autonomous aircraft (Hivemind) — up 140% after a USAF deal.", src: "https://techcrunch.com/2026/03/26/defense-startup-shield-ai-lands-12-7b-valuation-up-140-after-u-s-air-force-deal/" },
+  { name: "Shield AI", v: 13, priv: true, sector: "Defence tech", note: "Autonomous aircraft (Hivemind) · up 140% after a USAF deal.", src: "https://techcrunch.com/2026/03/26/defense-startup-shield-ai-lands-12-7b-valuation-up-140-after-u-s-air-force-deal/" },
   { name: "Physical Int.", v: 11, priv: true, sector: "Robotics AI", note: "Foundation models for robots (ex-DeepMind founders).", src: "https://www.bloomberg.com/news/articles/2026-03-27/ex-deepmind-staffers-robotics-startup-in-talks-for-11-billion-valuation" },
   { name: "Neuralink", v: 10, priv: true, sector: "Neurotech", note: "Brain–computer interface.", src: "https://neuralink.com/updates/neuralink-raises-650m-series-e/" },
-  { name: "Groq", v: 7, priv: true, sector: "AI compute", note: "LPU inference — speed as the moat.", src: "https://groq.com/newsroom/groq-raises-750-million-as-inference-demand-surges" },
+  { name: "Groq", v: 7, priv: true, sector: "AI compute", note: "LPU inference · speed as the moat.", src: "https://groq.com/newsroom/groq-raises-750-million-as-inference-demand-surges" },
   { name: "Relativity", v: 4, priv: true, sector: "Space", note: "3D-printed rockets.", src: "https://finance.yahoo.com/quote/RESP.PVT/" },
 ]
 const CN_NEXT: Co[] = [
-  { name: "ByteDance", v: 600, priv: true, sector: "Social & AI", note: "TikTok / Douyin — a private giant; a Jun-2026 secondary put it at a record ~$600bn.", src: "https://www.scmp.com/tech/big-tech/article/3349337/bytedance-valuation-surges-record-high-over-us600b-proposed-equity-sale-sources" },
-  { name: "Tencent", v: 499, sector: "Internet & gaming", note: "WeChat — the everything app.", src: "https://www.bloomberg.com/quote/700:HK" },
-  { name: "Alibaba", v: 200, sector: "Commerce & cloud", note: "Qwen — China's open-weight frontier." },
+  { name: "ByteDance", v: 600, priv: true, sector: "Social & AI", note: "TikTok / Douyin · a private giant; a Jun-2026 secondary put it at a record ~$600bn.", src: "https://www.scmp.com/tech/big-tech/article/3349337/bytedance-valuation-surges-record-high-over-us600b-proposed-equity-sale-sources" },
+  { name: "Tencent", v: 499, sector: "Internet & gaming", note: "WeChat · the everything app.", src: "https://www.bloomberg.com/quote/700:HK" },
+  { name: "Alibaba", v: 200, sector: "Commerce & cloud", note: "Qwen · China's open-weight frontier." },
   { name: "BYD", v: 150, sector: "EV", note: "The EV maker outselling Tesla (market cap approximate)." },
   { name: "PDD", v: 130, sector: "Commerce", note: "Pinduoduo / Temu.", src: "https://companiesmarketcap.com/pinduoduo/marketcap/" },
   { name: "Meituan", v: 95, sector: "Local services", note: "" },
@@ -117,12 +117,12 @@ const EU_NEXT: Co[] = [
 // India — the fourth pole: a from-scratch new-economy + IT cohort that now
 // rivals Europe's. Jio's IPO was filed Jun 2026; several listed in 2024-26.
 const IN_NEXT: Co[] = [
-  { name: "Jio Platforms", v: 157, priv: true, sector: "Telecom & digital", note: "Reliance's digital arm — IPO filed Jun 2026, expected ~$133–180bn.", src: "https://www.businesstoday.in/markets/ipo-corner/story/jio-platforms-ipo-all-eyes-on-reliance-agm-2026-on-19-june-issue-valuation-expectations-537207-2026-06-16" },
+  { name: "Jio Platforms", v: 157, priv: true, sector: "Telecom & digital", note: "Reliance's digital arm · IPO filed Jun 2026, expected ~$133–180bn.", src: "https://www.businesstoday.in/markets/ipo-corner/story/jio-platforms-ipo-all-eyes-on-reliance-agm-2026-on-19-june-issue-valuation-expectations-537207-2026-06-16" },
   { name: "HDFC Bank", v: 127, sector: "Banking", note: "India's largest private bank (founded 1994).", src: "https://companiesmarketcap.com/hdfc-bank/marketcap/" },
   { name: "Bharti Airtel", v: 122, sector: "Telecom", note: "The South-Asian + African carrier (founded 1995).", src: "https://companiesmarketcap.com/inr/bharti-airtel/marketcap/" },
   { name: "Infosys", v: 51, sector: "IT services", note: "The original Indian software champion.", src: "https://companiesmarketcap.com/infosys/marketcap/" },
   { name: "Flipkart", v: 36, priv: true, sector: "E-commerce", note: "Walmart-owned; the home-grown Amazon rival.", src: "https://tracxn.com/d/companies/flipkart" },
-  { name: "Eternal", v: 29, sector: "Delivery & commerce", note: "Zomato's parent — food + quick-commerce (Blinkit).", src: "https://companiesmarketcap.com/inr/eternal-zomato/marketcap/" },
+  { name: "Eternal", v: 29, sector: "Delivery & commerce", note: "Zomato's parent · food + quick-commerce (Blinkit).", src: "https://companiesmarketcap.com/inr/eternal-zomato/marketcap/" },
   { name: "Groww", v: 15, sector: "Fintech", note: "The retail-investing platform that IPO'd in 2026.", src: "https://finance.yahoo.com/quote/GROWW.NS/" },
   { name: "PhonePe", v: 12, priv: true, sector: "Fintech", note: "India's dominant UPI payments app.", src: "https://tracxn.com/d/companies/phonepe" },
   { name: "Nykaa", v: 10, sector: "E-commerce", note: "Beauty + fashion commerce.", src: "https://companiesmarketcap.com/inr/nykaa/marketcap/" },
@@ -403,7 +403,7 @@ export function FromScratchGiants() {
         {next && <span style={{ color: region.cn.hi, fontSize: 15, fontWeight: 700 }}>China {fmtT(cnTot)}</span>}
         {next && <span style={{ color: region.in.hi, fontSize: 15, fontWeight: 700 }}>India {fmtT(inTot)}</span>}
         <span style={{ color: p.muted, fontSize: 13 }}>
-          {ratio}× the gap{next ? " — and widening" : ""}
+          {ratio}× the gap{next ? ", and widening" : ""}
         </span>
       </div>
     </PlateFrame>

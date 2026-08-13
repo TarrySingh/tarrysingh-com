@@ -70,7 +70,7 @@ const PENALTIES: Penalty[] = [
     points: 26,
     factor: "≈2.65×",
     gloss:
-      "EU industrial electricity ~€0.199/kWh against ~€0.075 on the US grid — the same machines, billed ~2.65× (Eurostat / IEA).",
+      "EU industrial electricity ~€0.199/kWh against ~€0.075 on the US grid, the same machines, billed ~2.65× (Eurostat / IEA).",
   },
   {
     key: "gas",
@@ -79,7 +79,7 @@ const PENALTIES: Penalty[] = [
     points: 18,
     factor: "≈5×",
     gloss:
-      "TTF gas trades ~5× Henry Hub (Jun 2026) — the feedstock and heat for every furnace, priced at a multiple US rivals never see.",
+      "TTF gas trades ~5× Henry Hub (Jun 2026), the feedstock and heat for every furnace, priced at a multiple US rivals never see.",
   },
   {
     key: "carbon",
@@ -88,7 +88,7 @@ const PENALTIES: Penalty[] = [
     points: 9,
     factor: "ETS",
     gloss:
-      "Every tonne emitted carries an EU ETS price — a line item a Gulf Coast plant simply does not have on its bill.",
+      "Every tonne emitted carries an EU ETS price, a line item a Gulf Coast plant simply does not have on its bill.",
   },
   {
     key: "reg",
@@ -97,7 +97,7 @@ const PENALTIES: Penalty[] = [
     points: 8,
     factor: "Draghi",
     gloss:
-      "Permitting, reporting and compliance load — the Draghi report's implicit tax on operating inside the single market.",
+      "Permitting, reporting and compliance load, the Draghi report's implicit tax on operating inside the single market.",
   },
 ]
 
@@ -156,7 +156,7 @@ export function EuroCostTax() {
     ? {
         word: "A SURCHARGE",
         color: p.squeeze,
-        line: "the same plant, the same output — billed at a premium for its postcode",
+        line: "the same plant, the same output, billed at a premium for its postcode",
       }
     : {
         word: "PARITY",
@@ -183,7 +183,7 @@ export function EuroCostTax() {
           Take one industrial producer and move it from the US Gulf Coast to Europe. The US plant is{" "}
           <span style={{ color: p.leverage }}>the 100 baseline</span>; each{" "}
           <span style={{ color: p.squeeze }}>red bar</span> is a real input premium Europe pays for nothing but
-          its location — toggle them on and off. Electricity{" "}
+          its location, toggle them on and off. Electricity{" "}
           <span style={{ color: p.squeeze }}>~2.65×</span> (€0.199 vs €0.075/kWh), gas{" "}
           <span style={{ color: p.squeeze }}>~5×</span> TTF over Henry Hub, the EU ETS carbon price, and the
           regulatory load build a European cost index far above 100. Sources: Eurostat / IEA; TTF vs Henry Hub

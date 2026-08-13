@@ -141,8 +141,8 @@ export function VanishingPaycheck() {
           The same researcher, two continents. A senior AI researcher earns{" "}
           <span style={{ color: p.leverage }}>~€120–180k</span> in a European hub; cross to a{" "}
           <span style={{ color: p.squeeze }}>US frontier lab</span> and total comp reappears at{" "}
-          <span style={{ color: p.squeeze }}>$600k–$1,000,000+</span> — same person, same skills, ~3–5× the
-          pay. Drag the researcher across the Atlantic — or press ▶ — and watch the paycheck multiply.
+          <span style={{ color: p.squeeze }}>$600k–$1,000,000+</span>, same person, same skills, ~3–5× the
+          pay. Drag the researcher across the Atlantic, or press ▶, and watch the paycheck multiply.
           Sources: Stanford AI Index 2026; Levels.fyi (2026); Atomico 2025.
         </>
       }
@@ -152,7 +152,7 @@ export function VanishingPaycheck() {
         role="img"
         aria-label={`Two paycheck bars. A European senior AI researcher's total comp of about €150,000 stands beside a US frontier-lab paycheck currently ${usd(
           usTotal,
-        )} — ${multiple.toFixed(1)} times higher.`}
+        )}, ${multiple.toFixed(1)} times higher.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
@@ -276,7 +276,7 @@ export function VanishingPaycheck() {
         <p className="mt-3 text-[15px]" style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}>
           The paycheck that <span style={{ color: p.leverage, fontStyle: "normal", fontWeight: 700 }}>vanishes</span> in
           Europe reappears, <span style={{ color: p.squeeze, fontStyle: "normal", fontWeight: 700 }}>multiplied</span>, in
-          California — same person, same skills.
+          California, same person, same skills.
         </p>
 
         {/* play + slider — the reader drives the crossing */}
@@ -313,7 +313,7 @@ export function VanishingPaycheck() {
                 setRaw(clamp01(Number(e.target.value) / 100))
               }}
               aria-label="Relocate the researcher from a European hub to a US frontier lab"
-              aria-valuetext={`${multiple.toFixed(1)}× — ${usd(usTotal)}`}
+              aria-valuetext={`${multiple.toFixed(1)}×, ${usd(usTotal)}`}
               className="h-1 flex-1 cursor-pointer appearance-none rounded-full"
               style={{ accentColor: p.squeeze, background: p.hair }}
             />

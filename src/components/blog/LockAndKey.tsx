@@ -67,7 +67,7 @@ const TEETH: Tooth[] = [
     label: "EUV",
     metric: "100%",
     detail:
-      "A 100% monopoly on EUV lithography — €677bn market cap, ZERO substitutes. Without ASML, no sub-5nm AI chip on Earth gets made.",
+      "A 100% monopoly on EUV lithography, €677bn market cap, ZERO substitutes. Without ASML, no sub-5nm AI chip on Earth gets made.",
     cut: 1,
   },
   {
@@ -75,7 +75,7 @@ const TEETH: Tooth[] = [
     label: "SAVINGS",
     metric: "€33.5tn",
     detail:
-      "€33.5tn of household savings, atop €61tn of net wealth — the capital to fund a continent's own frontier, if it dared to deploy it.",
+      "€33.5tn of household savings, atop €61tn of net wealth, the capital to fund a continent's own frontier, if it dared to deploy it.",
     cut: 0.74,
   },
   {
@@ -83,7 +83,7 @@ const TEETH: Tooth[] = [
     label: "MARKET",
     metric: "450M",
     detail:
-      "A single market of 450 million people — the scale to set the rules rather than take them, the moment it acts as one.",
+      "A single market of 450 million people, the scale to set the rules rather than take them, the moment it acts as one.",
     cut: 0.58,
   },
   {
@@ -91,7 +91,7 @@ const TEETH: Tooth[] = [
     label: "SCIENCE",
     metric: "22%",
     detail:
-      "22% of the world's scientific papers — more than the United States. The discovery base is already here; only the will to commercialise it is missing.",
+      "22% of the world's scientific papers, more than the United States. The discovery base is already here; only the will to commercialise it is missing.",
     cut: 0.86,
   },
   {
@@ -99,7 +99,7 @@ const TEETH: Tooth[] = [
     label: "INDUSTRY",
     metric: "€2.5tn",
     detail:
-      "€2.5tn of manufacturing value-added — a real economy that makes real things, the ballast a software-only rival cannot improvise.",
+      "€2.5tn of manufacturing value-added, a real economy that makes real things, the ballast a software-only rival cannot improvise.",
     cut: 0.66,
   },
 ]
@@ -183,7 +183,7 @@ export function LockAndKey() {
   const verdict = turned
     ? { word: "THE KEY TURNS", color: p.wonderHi }
     : turn > RESIST_FRAC + 0.05
-      ? { word: "IT GIVES — KEEP HOLDING", color: p.wonderHi }
+      ? { word: "IT GIVES, KEEP HOLDING", color: p.wonderHi }
       : { word: "IT RESISTS", color: p.leverageHi }
 
   return (
@@ -203,14 +203,14 @@ export function LockAndKey() {
       caption={
         <>
           Europe is not poor, or stupid, or weak. The key&rsquo;s teeth are the assets it actually{" "}
-          <span style={{ color: p.leverage }}>holds</span> — <span style={{ color: p.leverage }}>ASML&rsquo;s
-          100% EUV monopoly</span> (€677bn; <em>zero</em> substitutes — no sub-5nm AI chip on Earth without it),{" "}
+          <span style={{ color: p.leverage }}>holds</span>, <span style={{ color: p.leverage }}>ASML&rsquo;s
+          100% EUV monopoly</span> (€677bn; <em>zero</em> substitutes, no sub-5nm AI chip on Earth without it),{" "}
           €33.5tn household savings, a 450-million single market, 22% of the world&rsquo;s papers, €2.5tn of
           industry. The lock&rsquo;s pins are what Washington owns —{" "}
           <span style={{ color: p.squeeze }}>platforms, frontier models, capital markets, the cloud</span>.{" "}
           Hover a tooth to name the asset; <strong>press and hold</strong> (or hold Space) to turn the key. It{" "}
           <span style={{ color: p.leverage }}>resists</span>, then turns{" "}
-          <span style={{ color: p.wonderHi }}>gold</span> — full only while you hold the nerve. Sources:
+          <span style={{ color: p.wonderHi }}>gold</span>, full only while you hold the nerve. Sources:
           ASML/IMEC/Zeiss; ECB/BCG (savings); Eurostat (market, industry); Elsevier (22% of papers).
         </>
       }
@@ -218,7 +218,7 @@ export function LockAndKey() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`A lock and key. The key's teeth are the irreplaceable assets Europe holds — ASML's 100% EUV-lithography monopoly (€677bn, zero substitutes), €33.5tn household savings, a 450-million single market, 22% of the world's scientific papers, €2.5tn of manufacturing value-added. The lock's pins are what Washington owns — platforms, frontier models, capital markets and the cloud. The key resists turning; it completes, glowing gold, only while held — the coordinated nerve Europe has never summoned. ${turned ? "Right now the key is fully turned and the lock is open." : "Right now the key sits partway, resisting."}`}
+        aria-label={`A lock and key. The key's teeth are the irreplaceable assets Europe holds, ASML's 100% EUV-lithography monopoly (€677bn, zero substitutes), €33.5tn household savings, a 450-million single market, 22% of the world's scientific papers, €2.5tn of manufacturing value-added. The lock's pins are what Washington owns, platforms, frontier models, capital markets and the cloud. The key resists turning; it completes, glowing gold, only while held, the coordinated nerve Europe has never summoned. ${turned ? "Right now the key is fully turned and the lock is open." : "Right now the key sits partway, resisting."}`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
@@ -445,7 +445,7 @@ export function LockAndKey() {
           <span style={{ color: p.wonderHi, fontStyle: "normal", fontWeight: 700 }}>
             Not poor, or stupid, or weak
           </span>{" "}
-          — Europe holds the single most irreplaceable chokepoint asset on Earth. The key has simply never been
+, Europe holds the single most irreplaceable chokepoint asset on Earth. The key has simply never been
           turned.
         </p>
 
@@ -473,7 +473,7 @@ export function LockAndKey() {
               }
             }}
             onBlur={endHold}
-            aria-label="Press and hold to turn the key — it completes only while held"
+            aria-label="Press and hold to turn the key, it completes only while held"
             aria-pressed={holding}
             style={{
               fontFamily: "var(--font-mono), monospace",
@@ -489,7 +489,7 @@ export function LockAndKey() {
               touchAction: "none",
             }}
           >
-            {turned ? "✓ turned — keep holding" : holding ? "holding the nerve…" : "▶ press & hold to turn"}
+            {turned ? "✓ turned, keep holding" : holding ? "holding the nerve…" : "▶ press & hold to turn"}
           </button>
           <span
             className="tabular-nums"
@@ -506,7 +506,7 @@ export function LockAndKey() {
         </div>
 
         <p className="mt-2 text-[13px]" style={{ fontFamily: "var(--font-mono), monospace", color: p.muted }}>
-          <span style={{ color: keyHi, fontWeight: 700 }}>{cur.label}</span> · {cur.metric} — {cur.detail}
+          <span style={{ color: keyHi, fontWeight: 700 }}>{cur.label}</span> · {cur.metric}, {cur.detail}
         </p>
       </div>
     </PlateFrame>

@@ -167,8 +167,8 @@ export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
                   className="hidden md:inline-flex items-center px-2 py-1 rounded font-mono text-[11px] uppercase tracking-[0.1em] flex-shrink-0 border border-[#E6BFB4] bg-[#FBEAE5]"
                   style={{ color: "#9A3318" }}
                   title={le.off_wiki
-                    ? "This code isn't on the wiki master yet — SharePoint registry only."
-                    : "On the wiki, but the wiki doesn't list RealAI as reviewer yet — assignment is in the SharePoint M&F registry."}
+                    ? "This code isn't on the wiki master yet, SharePoint registry only."
+                    : "On the wiki, but the wiki doesn't list RealAI as reviewer yet, assignment is in the SharePoint M&F registry."}
                 >
                   {le.off_wiki ? "not on wiki" : "wiki omits RealAI"}
                 </span>
@@ -192,7 +192,7 @@ export default function WP4Explorer({ registry }: { registry: Wp4Registry }) {
 
       {filtered.length > RENDER_CAP && (
         <div className="mt-4 text-center font-mono text-[13px] text-[#444A55]">
-          Showing the first {RENDER_CAP} of {filtered.length} matches — refine your search to narrow the list.
+          Showing the first {RENDER_CAP} of {filtered.length} matches, refine your search to narrow the list.
         </div>
       )}
 
@@ -279,7 +279,7 @@ function LEDrawer({ le, onClose }: { le: Wp4LE; onClose: () => void }) {
                 className="inline-flex items-center gap-1 px-2.5 py-1 rounded font-mono text-[11px] uppercase tracking-[0.1em] border border-[#E6BFB4] bg-[#FBEAE5]"
                 style={{ color: "#9A3318" }}
                 title={le.off_wiki
-                  ? "This code isn't on the wiki master yet — SharePoint registry only."
+                  ? "This code isn't on the wiki master yet, SharePoint registry only."
                   : "On the wiki, but the wiki doesn't list RealAI as reviewer yet."}
               >
                 {le.off_wiki ? "SharePoint · not on wiki" : "wiki omits RealAI as reviewer"}
@@ -437,7 +437,7 @@ function MetaCell({ label, value, icon }: { label: string; value: string; icon: 
         {icon}
         {label}
       </div>
-      <div className="mt-0.5 text-[14.5px] text-[#16181D] font-medium tabular-nums">{value || "—"}</div>
+      <div className="mt-0.5 text-[14.5px] text-[#16181D] font-medium tabular-nums">{value || ", "}</div>
     </div>
   )
 }
@@ -506,7 +506,7 @@ function CompletenessBlock({ c }: { c: Wp4Completeness }) {
           ) : (
             <div className="inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-[#FAFAF9] px-3 py-2 text-[13.5px] font-medium text-[#444A55]">
               <AlertCircle className="w-4 h-4 text-[#5B616B]" />
-              Not written yet — nothing to review
+              Not written yet, nothing to review
             </div>
           )}
           <div className="grid grid-cols-1 gap-1.5">

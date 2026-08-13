@@ -90,7 +90,7 @@ export function ChokepointParadox() {
       }
       caption={
         <>
-          Europe owns the single most important machine in the chip supply chain — and Washington holds
+          Europe owns the single most important machine in the chip supply chain, and Washington holds
           the trigger. Drag from <span style={{ color: p.leverage }}>leverage</span> to{" "}
           <span style={{ color: p.squeeze }}>squeeze</span>: the strength and the exposure are the same
           node. Sources: ASML FY2025; US/EU export controls (“Pax Silica”, Dec 2025); ASML China revenue
@@ -226,7 +226,7 @@ export function ChokepointParadox() {
           <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>
             {verdict.word}
           </span>{" "}
-          — {verdict.line}.
+, {verdict.line}.
         </p>
 
         {/* leverage ⟷ squeeze meter */}

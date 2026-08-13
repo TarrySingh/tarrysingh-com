@@ -49,7 +49,7 @@ const OPS = [
   {
     tag: "Operation A",
     title: "Retrieval",
-    body: "Add an artifact the schema can already express. Nothing about the vocabulary changes — you now simply hold a thing you could always have described.",
+    body: "Add an artifact the schema can already express. Nothing about the vocabulary changes, you now simply hold a thing you could always have described.",
     disc: false,
   },
   {
@@ -61,7 +61,7 @@ const OPS = [
   {
     tag: "Operation C",
     title: "Discovery",
-    body: "Change the regime itself — add or revise the types, operations, tools, or verifiers under which every future artifact will be judged.",
+    body: "Change the regime itself, add or revise the types, operations, tools, or verifiers under which every future artifact will be judged.",
     disc: true,
   },
 ]

@@ -75,7 +75,7 @@ export function EngineRoomPlate({ className }: { className?: string }) {
       viewBox="0 0 1000 1250"
       className={className}
       role="img"
-      aria-label="The Engine Room — a folio plate: a phosphor-green loop (gather, act, verify, persist) running clockwise inside the harness that holds it, ringed by six figures from the field manual."
+      aria-label="The Engine Room, a folio plate: a phosphor-green loop (gather, act, verify, persist) running clockwise inside the harness that holds it, ringed by six figures from the field manual."
       preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -270,7 +270,7 @@ export function EngineRoomPlate({ className }: { className?: string }) {
 
       {/* ════════ FIG. A — the three organs ════════ */}
       <line x1="54" y1="906" x2="946" y2="906" stroke={SIGNAL} strokeOpacity="0.18" strokeWidth="0.7" />
-      <text x="54" y="934" fill={DIM} style={{ fontFamily: "'IBM Plex Mono', monospace" }} fontSize="11" letterSpacing="2.5">FIG. A — SAME ANATOMY, LAPTOP TO CLUSTER · loop · harness · verifier</text>
+      <text x="54" y="934" fill={DIM} style={{ fontFamily: "'IBM Plex Mono', monospace" }} fontSize="11" letterSpacing="2.5">FIG. A, SAME ANATOMY, LAPTOP TO CLUSTER · loop · harness · verifier</text>
 
       <g>
         {[

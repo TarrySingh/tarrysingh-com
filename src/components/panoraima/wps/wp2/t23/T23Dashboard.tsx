@@ -93,7 +93,7 @@ export default function T23Dashboard({ detail }: Props) {
                 Everything T2.3 is built on
               </h2>
               <p className="mt-1 text-sm text-[#51607A] max-w-xl">
-                Just two documents — the HAW task-brief deck and the
+                Just two documents, the HAW task-brief deck and the
                 &ldquo;ausgef&uuml;llt&rdquo; (filled-in) partner status
                 spreadsheet.
               </p>

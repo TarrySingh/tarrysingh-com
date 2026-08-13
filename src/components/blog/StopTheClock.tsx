@@ -86,7 +86,7 @@ const STEPS: Step[] = [
   },
   {
     date: "7 May 2026",
-    title: "Digital Omnibus — Stop the Clock",
+    title: "Digital Omnibus · Stop the Clock",
     detail: "provisional agreement delays high-risk enforcement",
     deadlineM: DUE_DEFERRED,
     deadlineLabel: "2 Dec 2027",
@@ -94,7 +94,7 @@ const STEPS: Step[] = [
   {
     date: "2 Dec 2027",
     title: "High-risk duties now due",
-    detail: "Annex III obligations — 16 months late",
+    detail: "Annex III obligations, 16 months late",
     deadlineM: DUE_DEFERRED,
     deadlineLabel: "2 Dec 2027",
   },
@@ -202,7 +202,7 @@ export function StopTheClock() {
     : {
         word: "CLOCK STOPPED",
         color: p.squeeze,
-        line: "Europe dragged its own enforcement hand back to 2 Dec 2027 — the rulebook outran the capacity to follow it",
+        line: "Europe dragged its own enforcement hand back to 2 Dec 2027, the rulebook outran the capacity to follow it",
       }
 
   // Arc sweep from original → deferred, drawn red, the visible "dragging back".
@@ -234,13 +234,13 @@ export function StopTheClock() {
       }
       caption={
         <>
-          Europe wrote the rulebook, then hit pause on itself. Advance the regime — range, ▶ or
-          ←/→ — from the AI Act entering force to the{" "}
+          Europe wrote the rulebook, then hit pause on itself. Advance the regime, range, ▶ or
+          ←/→, from the AI Act entering force to the{" "}
           <span style={{ color: p.squeeze }}>Digital Omnibus</span> (provisional agreement 7 May
           2026), and watch the EU drag its own high-risk (Annex&nbsp;III) enforcement hand{" "}
           <span style={{ color: p.squeeze }}>backwards</span> from{" "}
           <span style={{ color: p.leverage }}>2 Aug 2026</span> to{" "}
-          <span style={{ color: p.squeeze }}>2 Dec 2027</span> — a 16-month slip (product-embedded
+          <span style={{ color: p.squeeze }}>2 Dec 2027</span>, a 16-month slip (product-embedded
           Annex&nbsp;I pushed to 2 Aug 2028). By April 2026 ~78% of organisations had taken no
           compliance steps; penalties of up to €35m or 7% of global turnover loom behind the dial.
           Sources: EU AI Act; Digital Omnibus agreement (7 May 2026); Gibson Dunn / European
@@ -354,7 +354,7 @@ export function StopTheClock() {
               fill={p.leverage}
               style={{ fontSize: 10.5, letterSpacing: "0.04em" }}
             >
-              2 Aug 2026 — promised
+              2 Aug 2026, promised
             </text>
           </g>
         )}
@@ -454,7 +454,7 @@ export function StopTheClock() {
 
         {/* current-step caption beneath the clock */}
         <text x={CX} y={H - 18} textAnchor="middle" fill={p.muted} style={{ fontSize: 12.5, fontWeight: 600 }}>
-          {cur.title} — {cur.detail}
+          {cur.title}, {cur.detail}
         </text>
       </svg>
 
@@ -487,7 +487,7 @@ export function StopTheClock() {
         </div>
 
         <p className="mt-3 text-[15px]" style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}>
-          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> — {verdict.line}.
+          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span>, {verdict.line}.
         </p>
 
         {/* scrubber + play + step tabs — the reader advances the regime */}
@@ -520,7 +520,7 @@ export function StopTheClock() {
               setStep(clamp(Number(e.target.value), 0, N))
             }}
             aria-label="Advance the AI Act regime from the Act entering force to the Digital Omnibus stopping the clock"
-            aria-valuetext={`${cur.date}: ${cur.title} — high-risk enforcement ${cur.deadlineLabel}${dragged ? ", dragged back 16 months from 2 Aug 2026" : ""}`}
+            aria-valuetext={`${cur.date}: ${cur.title}, high-risk enforcement ${cur.deadlineLabel}${dragged ? ", dragged back 16 months from 2 Aug 2026" : ""}`}
             className="h-1 flex-1 cursor-pointer appearance-none rounded-full"
             style={{ accentColor: dragged ? p.squeeze : p.leverage, background: p.hair }}
           />

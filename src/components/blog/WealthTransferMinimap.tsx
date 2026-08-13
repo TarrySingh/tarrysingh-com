@@ -99,7 +99,7 @@ export function WealthTransferMinimap({
           Where the surplus is on its loop. Europe <span style={{ color: p.wonder }}>SAVES</span>,
           the savings <span style={{ color: p.leverage }}>FUND</span> and{" "}
           <span style={{ color: p.leverage }}>POACH</span> abroad, and the capability is{" "}
-          <span style={{ color: p.squeeze }}>SOLD BACK</span> as rent. A navigation aid — later it
+          <span style={{ color: p.squeeze }}>SOLD BACK</span> as rent. A navigation aid, later it
           rides sticky beside the prose. Source: essay sections, “The Chokepoint Paradox”.
         </>
       }
@@ -287,7 +287,7 @@ export function WealthTransferMinimap({
               type="button"
               onClick={() => onSelect?.(i)}
               aria-pressed={isActive}
-              aria-label={`Stage ${i + 1}: ${st.label} — ${st.gloss}`}
+              aria-label={`Stage ${i + 1}: ${st.label}, ${st.gloss}`}
               className="rounded-md border px-2 py-1.5 text-left transition-colors"
               style={{
                 borderColor: isActive ? col : p.hair,

@@ -357,7 +357,7 @@ export function LLMflationCurve() {
         {/* the active beat — a single status line under the readout */}
         <text x={W / 2} y={PADT - 16} textAnchor="middle" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.03em" }}>
           {pastCross
-            ? "price and demand have crossed — deflation now concentrates, it does not democratise"
+            ? "price and demand have crossed, deflation now concentrates, it does not democratise"
             : "the good-enough tier is in free-fall · drag toward the present ▸"}
         </text>
       </svg>

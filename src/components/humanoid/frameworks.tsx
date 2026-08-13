@@ -16,12 +16,12 @@ const FRAMEWORKS: Framework[] = [
       { t: "Quality focus", items: [["+", "ISO 9001/13485 integrated throughout"], ["+", "Lower defect rates (0.8–1.2%)"], ["−", "Validation cycles add 30–45% to timeline"]] },
       { t: "Cost structure", items: [["−", "35–50% higher labor costs"], ["−", "Greater regulatory compliance expense"], ["+", "Automation cuts long-run variable cost"]] },
       { t: "Scalability", items: [["−", "8–12 month line lead times"], ["+", "Adaptive to low-volume, high-mix"]] },
-    ], ex: "Boston Dynamics emphasizes tight QC and extensive validation — higher unit cost, exceptional reliability." },
+    ], ex: "Boston Dynamics emphasizes tight QC and extensive validation, higher unit cost, exceptional reliability." },
     R: { name: "Asia-based Manufacturing", tag: "China · Japan · Korea", rows: [
       { t: "Quality focus", items: [["−", "Higher component variability (1.5–3.2%)"], ["+", "Japan leads precision actuator quality"], ["~", "Chinese facilities closing the gap fast"]] },
       { t: "Cost structure", items: [["+", "25–40% lower total production cost"], ["+", "State subsidies reduce capex"], ["+", "Vertical integration cuts logistics"]] },
       { t: "Scalability", items: [["+", "3–6 month line deployment"], ["+", "Rapid workforce scaling"], ["−", "Less flexible for design iterations"]] },
-    ], ex: "UBTECH's Shenzhen ecosystem enables ~60% cost advantage and 2× faster scaling — but needs high minimum volumes." },
+    ], ex: "UBTECH's Shenzhen ecosystem enables ~60% cost advantage and 2× faster scaling, but needs high minimum volumes." },
   },
   {
     id: "esg", tab: "ESG Rules", title: "US vs. EU & China ESG regimes", sub: "Regulatory requirements and implications for robotics manufacturers",
@@ -29,7 +29,7 @@ const FRAMEWORKS: Framework[] = [
       { t: "Disclosure", items: [["+", "Scope 1 & 2 with third-party verification"], ["+", "Climate risk in financial statements"], ["~", "Flexible, materiality-driven"]] },
       { t: "Robotics-specific", items: [["~", "Fleet energy-consumption reporting"], ["~", "Workforce-displacement disclosure"], ["−", "Rare-earth sourcing impact"]] },
       { t: "Timeline", items: [["+", "Large filers FY2025 → report 2026"], ["~", "Phased through FY2027"]] },
-    ], ex: "US rules focus on financial materiality over prescriptive standards — flexibility, but comprehensive assessment required." },
+    ], ex: "US rules focus on financial materiality over prescriptive standards, flexibility, but comprehensive assessment required." },
     R: { name: "EU & China", tag: "Taxonomy + Green Cert", rows: [
       { t: "Disclosure", items: [["−", "CSRD + double-materiality assessment"], ["−", "Six-objective taxonomy alignment"], ["−", "Technical screening criteria"]] },
       { t: "Robotics-specific", items: [["−", "Energy-efficiency mandates (CN)"], ["−", "Mandatory recycling metrics"], ["~", "Green Factory integration"]] },
@@ -42,7 +42,7 @@ const FRAMEWORKS: Framework[] = [
       { t: "Governance", items: [["+", "Decentralized, distributed decisions"], ["+", "Strong university research integration"], ["~", "Open, investment-based membership"]] },
       { t: "Funding", items: [["~", "1:1 matching public-private grants"], ["+", "Strategic corporate VC"], ["~", "Project-based, not entity-level"]] },
       { t: "Tech transfer & IP", items: [["+", "Strong IP protection, controlled licensing"], ["+", "Defensive patent strategies"]] },
-    ], ex: "The ARM Institute unites 300+ members with $80M federal + $173M private/state funding — workforce alongside tech." },
+    ], ex: "The ARM Institute unites 300+ members with $80M federal + $173M private/state funding, workforce alongside tech." },
     R: { name: "Asian Consortia", tag: "CN · JP · KR alliances", rows: [
       { t: "Governance", items: [["~", "Centralized, strategic coordination"], ["~", "China: state-guided targets"], ["~", "Japan keiretsu / Korea chaebol-led"]] },
       { t: "Funding", items: [["+", "Direct state investment via funds"], ["+", "Subsidized facilities & equipment"], ["+", "Guaranteed public procurement"]] },
@@ -50,7 +50,7 @@ const FRAMEWORKS: Framework[] = [
     ], ex: "China's '1M AI Robots Plan' directs $15B across five hubs; LeaderDrive's actuator output rose 15× via guaranteed orders." },
   },
   {
-    id: "transform", tab: "Success vs Failure", title: "Why robotics transformations succeed — or fail", sub: "Side-by-side analysis of high-ROI projects vs. abandoned ones",
+    id: "transform", tab: "Success vs Failure", title: "Why robotics transformations succeed · or fail", sub: "Side-by-side analysis of high-ROI projects vs. abandoned ones",
     L: { name: "Successful Transformations", tag: "High-ROI projects", rows: [
       { t: "Leadership", items: [["+", "C-suite directly accountable for outcomes"], ["+", "Cross-functional executive steering committee"], ["+", "Clear vision with measurable milestones"]] },
       { t: "Governance", items: [["+", "Dedicated transformation office with authority"], ["+", "Clear decision rights & escalation paths"], ["+", "Balanced technical + business-value metrics"]] },
@@ -62,20 +62,20 @@ const FRAMEWORKS: Framework[] = [
       { t: "Governance", items: [["−", "Fragmented oversight across committees"], ["−", "Inconsistent annual-budget-cycle funding"], ["−", "Success measured on deployment, not value"]] },
       { t: "Tech stack", items: [["−", "Heavy customization of platforms"], ["−", "Underinvestment in data infrastructure"], ["−", "Neglect of operational-technology security"]] },
       { t: "Culture", items: [["−", "Workforce informed late in the process"], ["−", "Training delayed until after deployment"], ["−", "Fear-based narratives around automation"]] },
-    ], ex: "The difference between success and failure is rarely the technology — it's the organizational scaffolding around it." },
+    ], ex: "The difference between success and failure is rarely the technology, it's the organizational scaffolding around it." },
   },
   {
-    id: "partner", tab: "Partnerships", title: "Partnership archetypes — pros & cons", sub: "Four models for global robotics scale, and where each one wins",
+    id: "partner", tab: "Partnerships", title: "Partnership archetypes · pros & cons", sub: "Four models for global robotics scale, and where each one wins",
     L: { name: "Strategic Integration", tag: "Deep alignment & resource sharing", rows: [
       { t: "Joint ventures (JVs)", items: [["+", "Deep tech integration & shared IP creation"], ["−", "Complex governance, cultural friction"], ["~", "Ideal: cross-border, capital-intensive"]] },
       { t: "Examples", items: [["+", "Hyundai–Boston Dynamics"], ["+", "Google–Honda Robotics"], ["+", "BMW–Figure AI"]] },
       { t: "Co-development", items: [["+", "Accelerated R&D, shared risk"], ["−", "IP-ownership disputes, mission creep"], ["~", "NVIDIA–Sanctuary · SoftBank–Agility"]] },
-    ], ex: "For humanoids, JVs are emerging as the preferred model for automotive partnerships — true integration into manufacturing systems." },
+    ], ex: "For humanoids, JVs are emerging as the preferred model for automotive partnerships, true integration into manufacturing systems." },
     R: { name: "Flexible Relationship", tag: "Flexibility & market access", rows: [
       { t: "Licensing", items: [["+", "Rapid expansion, low capital, IP control"], ["−", "Limited integration; partners may rival"], ["~", "Ideal: mature tech, market penetration"]] },
       { t: "Open alliance", items: [["+", "Fast ecosystem growth, shared R&D cost"], ["−", "Reduced competitive advantage"], ["~", "Standards: Rust Robotics, EU Robotics Alliance"]] },
       { t: "Best practice", items: [["~", "Hybrid: deeper for hardware, open for software"]] },
-    ], ex: "Successful global players use different models per market and tech layer — hardware needs JVs; software benefits from open models." },
+    ], ex: "Successful global players use different models per market and tech layer, hardware needs JVs; software benefits from open models." },
   },
 ]
 const MARK: Record<MarkKey, { c: string; s: string }> = { "+": { c: "var(--pos)", s: "Strength" }, "−": { c: "var(--neg)", s: "Challenge" }, "~": { c: "var(--c-amber)", s: "Trend" } }

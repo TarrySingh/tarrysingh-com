@@ -171,7 +171,7 @@ export default function T21StakeholderMatrix({ detail }: Props) {
             >
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div className="font-semibold text-sm leading-tight truncate" style={{ color: INK }}>
-                  {r.org || "—"}
+                  {r.org || ", "}
                 </div>
                 <span
                   className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-mono text-[9px] font-bold uppercase tracking-wider border flex-shrink-0"
@@ -192,7 +192,7 @@ export default function T21StakeholderMatrix({ detail }: Props) {
       </div>
       {filtered.length > 30 && (
         <div className="mt-4 text-center text-[11px]" style={{ color: MUTE }}>
-          Showing first 30 — narrow your filters to see more.
+          Showing first 30, narrow your filters to see more.
         </div>
       )}
 

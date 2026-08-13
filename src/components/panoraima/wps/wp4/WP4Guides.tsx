@@ -110,7 +110,7 @@ export default function WP4Guides({ registry }: { registry: Wp4Registry }) {
           How to fill in &amp; review
         </h2>
         <p className="mt-2 text-[15px] leading-relaxed text-[#444A55] max-w-2xl">
-          The references the team uses to author and review Learning Events efficiently —
+          The references the team uses to author and review Learning Events efficiently,
           what a finished LE needs, how to review it, and how to drive Claude along the way.
         </p>
       </div>
@@ -180,7 +180,7 @@ export default function WP4Guides({ registry }: { registry: Wp4Registry }) {
                   <CheckCircle className="w-3 h-3 flex-shrink-0 mt-0.5" style={{ color: RUST }} />
                   <span className="text-[13px] leading-snug" style={{ color: "#8F3119" }}>
                     <span className="font-semibold">{r.rule}</span>
-                    {r.detail ? <span className="text-[#444A55]"> — {r.detail}</span> : null}
+                    {r.detail ? <span className="text-[#444A55]">, {r.detail}</span> : null}
                   </span>
                 </li>
               ))}

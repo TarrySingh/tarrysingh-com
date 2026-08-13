@@ -163,7 +163,7 @@ export function TwentySevenMaze() {
       ? {
           word: "SEALED IN",
           color: p.squeeze,
-          line: "27 mazes wearing the name of a single market — the drawbridge seals the founder in",
+          line: "27 mazes wearing the name of a single market, the drawbridge seals the founder in",
         }
       : step === 0
         ? { word: "AT THE GATE", color: p.leverageHi, line: "one founder, 27 national mazes still to run" }

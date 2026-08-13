@@ -47,7 +47,7 @@ export function ReturningReaderHero() {
 
   const copy =
     variant === "second"
-      ? "You've been here before. The next Dispatch — when it's ready, in your inbox, no cadence theatre."
+      ? "You've been here before. The next Dispatch, when it's ready, in your inbox, no cadence theatre."
       : "Back again. Tarry doesn't post on a schedule, but he does send Dispatches to a small list when one ships."
 
   function scrollToNewsletter() {

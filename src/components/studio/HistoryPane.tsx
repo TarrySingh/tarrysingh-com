@@ -103,7 +103,7 @@ export function HistoryPane({ slug, onClose, onReverted }: Props) {
         if (!res.ok || !j.ok) {
           let hint: string | undefined
           if (j.error === "not_found") {
-            hint = "This Dispatch has no git history yet — publish it first to start tracking versions."
+            hint = "This Dispatch has no git history yet, publish it first to start tracking versions."
           } else if (j.error === "github_unconfigured") {
             hint = "Set STUDIO_GITHUB_TOKEN on the Vercel project (Settings → Environment Variables) and redeploy."
           }
@@ -220,7 +220,7 @@ export function HistoryPane({ slug, onClose, onReverted }: Props) {
       if (!res.ok || !j.ok) {
         const hint =
           j.error === "no_change"
-            ? "Revert would produce the same content as currently on main — already at this version."
+            ? "Revert would produce the same content as currently on main, already at this version."
             : undefined
         setRevertStatus({
           kind: "error",
@@ -467,7 +467,7 @@ export function HistoryPane({ slug, onClose, onReverted }: Props) {
                   style={serif}
                 >
                   <p className="text-sm italic text-navy-500">
-                    Pick a commit on the left to see what changed — or
+                    Pick a commit on the left to see what changed, or
                     switch to Snapshot for the full Dispatch as it existed
                     then.
                   </p>

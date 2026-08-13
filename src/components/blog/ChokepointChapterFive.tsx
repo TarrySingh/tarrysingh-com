@@ -310,16 +310,16 @@ export function ChokepointChapterFive() {
       <Sources
         items={[
           "Prosus, “The State of AI in Europe”: ~73% of lead investors in large European rounds are American; US late-stage funding ~$141bn vs Europe ~$12bn (~9:1), Q1 2026.",
-          "Cap-table captures (company filings/announcements): Arm — SoftBank ~87%, Nasdaq; DeepMind — wholly owned by Alphabet/Google; Wayve — $8.6bn (Series D, Feb 2026; SoftBank/Microsoft/Nvidia); Helsing — $18bn round US-led (Dragoneer/Lightspeed, May 2026), ~80% European-owned; Aleph Alpha — absorbed into Cohere (Canada), Apr 2026; Klarna — NYSE (Sept 2025); Wise — Nasdaq primary (May 2026).",
+          "Cap-table captures (company filings/announcements): Arm, SoftBank ~87%, Nasdaq; DeepMind, wholly owned by Alphabet/Google; Wayve, $8.6bn (Series D, Feb 2026; SoftBank/Microsoft/Nvidia); Helsing, $18bn round US-led (Dragoneer/Lightspeed, May 2026), ~80% European-owned; Aleph Alpha, absorbed into Cohere (Canada), Apr 2026; Klarna, NYSE (Sept 2025); Wise, Nasdaq primary (May 2026).",
           "Market depth: ASML ~$743bn, SAP, Novo Nordisk, LVMH among Europe's largest; US “Magnificent Seven” combined >$20tn (companiesmarketcap.com, mid-2026).",
           "Novo Nordisk vs Eli Lilly: Novo ~$604bn peak (Jun 2024) → ~$197bn (Jun 2026), ~67% fall (~50% in 2025); Eli Lilly first healthcare company to $1tn (24 Nov 2025), ~$1.01tn mid-2026 (~5× Novo); CagriSema 22.7% vs ~25% target (Feb 2026). CNBC; MacroTrends.",
-          "Mistral AI ~€20bn (2026) vs Anthropic ~$965bn / OpenAI ~$852bn — Europe's best lab ~40× smaller; runs on rented Nvidia silicon, part-owned by ASML. Dealroom; company announcements.",
+          "Mistral AI ~€20bn (2026) vs Anthropic ~$965bn / OpenAI ~$852bn, Europe's best lab ~40× smaller; runs on rented Nvidia silicon, part-owned by ASML. Dealroom; company announcements.",
           "The tenant-farm roll-call: Spotify (NYSE, Tencent stake), Supercell & Skype & Mojang/Minecraft (Tencent/Microsoft), DeepMind (Google; AlphaFold won the 2024 Chemistry Nobel, IP Alphabet's), ARM (SoftBank/Nasdaq), Wise/Revolut (US VC). Company filings; Nobel.",
           "Novo Nordisk invented the GLP-1 category, then ~halved in value through 2025 as Eli Lilly out-scaled it (Lilly toward ~$1tn); Wayve (UK AV) backed by SoftBank/Microsoft/Nvidia. Reuters; company filings.",
           "Public-market ceilings: Spotify hands ~70% of revenue to US labels; Klarna trades ~56% below its 2025 IPO price; Zalando ~75% below its 2021 peak. Company filings.",
           "Pharma erosion: EU active-pharmaceutical-ingredient manufacturing fell from ~63% (1981) to ~6% (2024); EU biotech VC ~€25bn vs US ~€200bn over a decade; 66 of 67 European biotech IPOs listed abroad. ICIS; Atomico.",
-          "Biotech consolidation vs flight (2026): Genmab–Merus ~€8bn; BioNTech–CureVac all-stock; yet of EU-domiciled biotechs public in six years, all but one listed abroad — Belgium’s Agomab IPO’d on Nasdaq (Feb 2026). Company filings.",
-          "Software giants squeezed: SAP (~$180–200bn, P/E below US peers), Dassault Systèmes, Schneider/Hexagon — margins compressing in the AI/cloud shift; even Bending Spoons (Italy) filed a ~$19bn Nasdaq IPO (Jun 2026). Company filings.",
+          "Biotech consolidation vs flight (2026): Genmab–Merus ~€8bn; BioNTech–CureVac all-stock; yet of EU-domiciled biotechs public in six years, all but one listed abroad, Belgium’s Agomab IPO’d on Nasdaq (Feb 2026). Company filings.",
+          "Software giants squeezed: SAP (~$180–200bn, P/E below US peers), Dassault Systèmes, Schneider/Hexagon, margins compressing in the AI/cloud shift; even Bending Spoons (Italy) filed a ~$19bn Nasdaq IPO (Jun 2026). Company filings.",
           "The eastern tether: Tencent holds ~20% of Universal Music Group and ~swapped stakes with Spotify; Prosus's value rides on a ~quarter-stake in Tencent. Billboard; company filings.",
         ]}
       />

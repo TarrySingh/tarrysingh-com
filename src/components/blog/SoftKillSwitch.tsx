@@ -62,31 +62,31 @@ const LEVERS: Lever[] = [
   {
     key: "ready",
     label: "SUPPORT FLOWING",
-    detail: "spares, ODIN feeds + maintenance all delivered — fleet mission-capable",
+    detail: "spares, ODIN feeds + maintenance all delivered, fleet mission-capable",
     bite: 0,
   },
   {
     key: "spares",
     label: "SPARES",
-    detail: "spare-parts pipeline slowed — availability decays within weeks",
+    detail: "spare-parts pipeline slowed, availability decays within weeks",
     bite: 0.28,
   },
   {
     key: "software",
     label: "SOFTWARE / ODIN",
-    detail: "ODIN/ALIS software + update pipeline frozen — no patches, degraded health",
+    detail: "ODIN/ALIS software + update pipeline frozen, no patches, degraded health",
     bite: 0.55,
   },
   {
     key: "mission",
     label: "MISSION DATA",
-    detail: "mission-data files withheld — sensors can't classify the threat library",
+    detail: "mission-data files withheld, sensors can't classify the threat library",
     bite: 0.82,
   },
   {
     key: "maint",
     label: "MAINTENANCE",
-    detail: "depot + sustainment support withdrawn — the fleet is grounded",
+    detail: "depot + sustainment support withdrawn, the fleet is grounded",
     bite: 1,
   },
 ]
@@ -189,10 +189,10 @@ export function SoftKillSwitch() {
 
   const verdict =
     step === 0
-      ? { word: "MISSION-CAPABLE", color: p.leverage, line: "every jet flies — while the supply line runs through Washington" }
+      ? { word: "MISSION-CAPABLE", color: p.leverage, line: "every jet flies, while the supply line runs through Washington" }
       : step <= 2
-        ? { word: "THE LEASH PULLS", color: p.squeezeHi, line: "no literal switch — but spares and ODIN are leverage all the same" }
-        : { word: "GROUNDED", color: p.squeeze, line: "not a switch you can see — a leash you cannot cut" }
+        ? { word: "THE LEASH PULLS", color: p.squeezeHi, line: "no literal switch, but spares and ODIN are leverage all the same" }
+        : { word: "GROUNDED", color: p.squeeze, line: "not a switch you can see, a leash you cannot cut" }
 
   return (
     <PlateFrame
@@ -211,13 +211,13 @@ export function SoftKillSwitch() {
       caption={
         <>
           European NATO has ordered ~630–668 <span style={{ color: p.leverage }}>F-35s</span> (~180–200
-          delivered). There is no literal kill switch — the Pentagon&rsquo;s JPO{" "}
-          <span style={{ color: p.muted }}>denied one (Mar 2025)</span> — but US control of the supply line is
+          delivered). There is no literal kill switch, the Pentagon&rsquo;s JPO{" "}
+          <span style={{ color: p.muted }}>denied one (Mar 2025)</span>, but US control of the supply line is
           the functional equivalent. Turn the dial through{" "}
           <span style={{ color: p.squeeze }}>SPARES</span>,{" "}
           <span style={{ color: p.squeeze }}>SOFTWARE/ODIN</span>,{" "}
           <span style={{ color: p.squeeze }}>MISSION DATA</span> and{" "}
-          <span style={{ color: p.squeeze }}>MAINTENANCE</span> — or press ▶ — and watch the fleet grey to{" "}
+          <span style={{ color: p.squeeze }}>MAINTENANCE</span>, or press ▶, and watch the fleet grey to{" "}
           <span style={{ color: p.squeeze }}>inoperable</span>. The 2025 US policy shift on Ukraine had{" "}
           <span style={{ color: p.wonderHi }}>Portugal</span> and{" "}
           <span style={{ color: p.wonderHi }}>Canada</span> reconsider their buys. Sources: SIPRI / Lockheed
@@ -230,7 +230,7 @@ export function SoftKillSwitch() {
         role="img"
         aria-label={`A European F-35 fleet on a dependency dial. With the dial at "${cur.label}", ${intFmt(
           jetsAffected,
-        )} of the ~${DELIVERED} delivered jets are rendered inoperable through ${cur.detail}. There is no literal kill switch — US control of spares, the ODIN/ALIS software pipeline, mission data and maintenance is the functional equivalent.`}
+        )} of the ~${DELIVERED} delivered jets are rendered inoperable through ${cur.detail}. There is no literal kill switch, US control of spares, the ODIN/ALIS software pipeline, mission data and maintenance is the functional equivalent.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
@@ -381,7 +381,7 @@ export function SoftKillSwitch() {
           />
           <circle cx={88} cy={H - 86} r={5} fill={triggered ? p.squeeze : p.soft} />
           <text x={104} y={H - 90} fill={triggered ? p.squeezeHi : p.soft} style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.04em" }}>
-            2025 · US POLICY SHIFT ON UKRAINE — THE TRIGGER
+            2025 · US POLICY SHIFT ON UKRAINE, THE TRIGGER
           </text>
           {/* fallout: Portugal + Canada reconsider */}
           {[
@@ -453,7 +453,7 @@ export function SoftKillSwitch() {
               setStep(clamp(Number(e.target.value), 0, N))
             }}
             aria-label="Turn the dependency dial through the four withholding levers"
-            aria-valuetext={`${cur.label}: ${cur.detail} — ${intFmt(jetsAffected)} of ~${DELIVERED} delivered jets inoperable`}
+            aria-valuetext={`${cur.label}: ${cur.detail}, ${intFmt(jetsAffected)} of ~${DELIVERED} delivered jets inoperable`}
             className="h-1 flex-1 cursor-pointer appearance-none rounded-full"
             style={{ accentColor: p.squeeze, background: p.hair }}
           />
@@ -467,7 +467,7 @@ export function SoftKillSwitch() {
 
         {/* the focused lever's detail line */}
         <p className="mt-2 text-[13px]" style={{ fontFamily: "var(--font-mono), monospace", color: p.muted }}>
-          <span style={{ color: needleColor, fontWeight: 700 }}>{cur.label}</span> — {cur.detail}.
+          <span style={{ color: needleColor, fontWeight: 700 }}>{cur.label}</span>, {cur.detail}.
         </p>
       </div>
     </PlateFrame>

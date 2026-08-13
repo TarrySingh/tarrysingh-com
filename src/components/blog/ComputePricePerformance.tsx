@@ -156,17 +156,17 @@ export function ComputePricePerformance() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — Compute price-performance · calculations/sec per $1,000 · the Law of Accelerating Returns"
+      kicker="Fig., Compute price-performance · calculations/sec per $1,000 · the Law of Accelerating Returns"
       caption={
         <>
           <strong style={{ color: p.ink, fontStyle: "normal" }}>
             {Math.round(aYear)} · {activePt.era}
           </strong>{" "}
-          — ≈{fmtCps(aCps)} for $1,000{aProj ? " (projection)" : ""}. From electromechanical
+, ≈{fmtCps(aCps)} for $1,000{aProj ? " (projection)" : ""}. From electromechanical
           relays to a grand&rsquo;s worth of silicon meeting one human cortex around 2020 on Kurzweil&rsquo;s mark, climbing
           toward the singularity. Trajectory right, dates contested; order-of-magnitude only.
           Source: Kurzweil, <span style={{ fontStyle: "italic" }}>The Singularity Is Nearer</span>{" "}
-          (2024) — skeptics cite S-curve saturation.
+          (2024), skeptics cite S-curve saturation.
         </>
       }
       controls={
@@ -183,7 +183,7 @@ export function ComputePricePerformance() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none select-none"
         role="img"
-        aria-label="Computing power per constant $1,000 plotted on a logarithmic scale from 1900 to 2045, rising from about ten-to-the-minus-five calculations per second to ten-to-the-sixteenth around 2020 — roughly one human brain for a thousand dollars — and projected, dashed and contested, to ten-to-the-twenty-sixth by 2045, the scale of all human brains combined, marked as the singularity. The straight diagonal of the log plot is Kurzweil's Law of Accelerating Returns. Order-of-magnitude, illustrative."
+        aria-label="Computing power per constant $1,000 plotted on a logarithmic scale from 1900 to 2045, rising from about ten-to-the-minus-five calculations per second to ten-to-the-sixteenth around 2020, roughly one human brain for a thousand dollars, and projected, dashed and contested, to ten-to-the-twenty-sixth by 2045, the scale of all human brains combined, marked as the singularity. The straight diagonal of the log plot is Kurzweil's Law of Accelerating Returns. Order-of-magnitude, illustrative."
         onPointerMove={onMove}
       >
         <defs>

@@ -133,7 +133,7 @@ export function CloudActSwitch() {
   const darkN = thrown ? EXPOSED : 0
 
   const verdict = thrown
-    ? { word: "INACCESSIBLE", color: p.squeeze, line: "someone abroad threw the switch — and Europe's government went dark" }
+    ? { word: "INACCESSIBLE", color: p.squeeze, line: "someone abroad threw the switch, and Europe's government went dark" }
     : { word: "WIRED IN", color: p.leverage, line: "~80% of the public estate runs on a platform with a foreign off-switch" }
 
   // The current sweep reaches a cell when sweep passes the cell's column fraction.
@@ -161,12 +161,12 @@ export function CloudActSwitch() {
         <>
           Europe&rsquo;s public sector runs <span style={{ color: p.squeeze }}>~80%</span> of its
           productivity software on Microsoft, and US-hosted data falls under US jurisdiction (the{" "}
-          <span style={{ color: p.squeeze }}>CLOUD Act</span>). Throw the switch — click, or Space/Enter —
+          <span style={{ color: p.squeeze }}>CLOUD Act</span>). Throw the switch, click, or Space/Enter,
           and watch a set of accounts go <span style={{ color: p.squeeze }}>dark</span>. In 2025 the{" "}
           <span style={{ color: p.squeezeHi }}>ICC prosecutor&rsquo;s</span> Microsoft email went dark after a
           US sanction (he moved to Proton); attribution is disputed. The{" "}
-          <span style={{ color: p.wonderHi }}>gold</span> cells — Euro-Office (Jun 2026), Denmark, Austria,
-          France — are migrating off. Sources: Open Cloud Coalition / Compass Lexecon (~80% Microsoft,
+          <span style={{ color: p.wonderHi }}>gold</span> cells, Euro-Office (Jun 2026), Denmark, Austria,
+          France, are migrating off. Sources: Open Cloud Coalition / Compass Lexecon (~80% Microsoft,
           Jul 2025); reporting on K. Khan / ICC (2025–26); Euro-Office (Jun 2026).
         </>
       }
@@ -176,7 +176,7 @@ export function CloudActSwitch() {
         role="img"
         aria-label={`A panel of ${CELLS.length} European public-sector accounts. ${EXPOSED} run on a US-controlled Microsoft platform, exposed to the CLOUD Act. ${
           thrown
-            ? `The switch is thrown: ${darkN} accounts have gone dark and inaccessible, including the ICC prosecutor's email — which went inaccessible after a US sanction in 2025, attribution disputed.`
+            ? `The switch is thrown: ${darkN} accounts have gone dark and inaccessible, including the ICC prosecutor's email, which went inaccessible after a US sanction in 2025, attribution disputed.`
             : "The switch is off; the panel is powered and the wiring is on show."
         } ${RESIST} accounts have migrated off the platform to sovereign suites.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
@@ -283,8 +283,8 @@ export function CloudActSwitch() {
                 c.resist
                   ? `${c.label}: migrated off the US platform to a sovereign suite (Euro-Office, Jun 2026)`
                   : c.emblem
-                    ? `${c.label}: the ICC chief prosecutor's Microsoft email went dark after a US sanction in 2025 — attribution disputed; he moved to Proton Mail. ${isDark ? "Currently inaccessible." : "On the US platform."}`
-                    : `${c.label}: runs on the US-controlled platform. ${isDark ? "Inaccessible — the switch is thrown." : "Powered."}`
+                    ? `${c.label}: the ICC chief prosecutor's Microsoft email went dark after a US sanction in 2025, attribution disputed; he moved to Proton Mail. ${isDark ? "Currently inaccessible." : "On the US platform."}`
+                    : `${c.label}: runs on the US-controlled platform. ${isDark ? "Inaccessible, the switch is thrown." : "Powered."}`
               }
               onFocus={() => setFocus(i)}
               onBlur={() => setFocus((f) => (f === i ? null : f))}
@@ -437,8 +437,8 @@ export function CloudActSwitch() {
             aria-pressed={thrown}
             aria-label={
               thrown
-                ? "Reset the switch — restore the accounts"
-                : "Throw the US SANCTIONS / CLOUD ACT switch — darken the accounts on the US platform"
+                ? "Reset the switch, restore the accounts"
+                : "Throw the US SANCTIONS / CLOUD ACT switch, darken the accounts on the US platform"
             }
             style={{
               fontFamily: "var(--font-mono), monospace",
@@ -454,7 +454,7 @@ export function CloudActSwitch() {
               background: thrown ? p.squeeze : "transparent",
             }}
           >
-            {thrown ? "◼ RESET — RESTORE ACCOUNTS" : "⏻ THROW THE SWITCH"}
+            {thrown ? "◼ RESET, RESTORE ACCOUNTS" : "⏻ THROW THE SWITCH"}
           </button>
           <span
             className="tabular-nums"

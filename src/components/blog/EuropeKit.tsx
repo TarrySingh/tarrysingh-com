@@ -77,7 +77,7 @@ const C: Country[] = [
   { code: "SE", name: "Sweden", bloc: "nordic", a: 126, b: 119, r: 1, c: 6 },
   { code: "FI", name: "Finland", bloc: "nordic", a: 116, b: 109, r: 1, c: 7 },
   // row 2
-  { code: "IE", name: "Ireland", bloc: "core", a: 143, b: 211, r: 2, c: 1, note: "Distorted by multinational profit-shifting — treat with care." },
+  { code: "IE", name: "Ireland", bloc: "core", a: 143, b: 211, r: 2, c: 1, note: "Distorted by multinational profit-shifting · treat with care." },
   { code: "GB", name: "United Kingdom", bloc: "na", a: 0, b: 0, r: 2, c: 2 },
   { code: "NL", name: "Netherlands", bloc: "core", a: 133, b: 130, r: 2, c: 4 },
   { code: "DK", name: "Denmark", bloc: "nordic", a: 126, b: 137, r: 2, c: 5 },
@@ -234,7 +234,7 @@ export function EuropeConvergenceMap() {
         <>
           Each tile is a country, placed roughly geographically. Colour is the{" "}
           <b style={{ color: INK }}>change in position</b> relative to the EU
-          average between 2004 and 2024 — not the level. The East climbs toward
+          average between 2004 and 2024, not the level. The East climbs toward
           the mean; France, Italy, Spain and especially Greece fall away from
           it. Ireland and Luxembourg are flagged: their headline figures are
           distorted by multinational accounting and cross-border labour.
@@ -369,7 +369,7 @@ export function EuropeConvergenceMap() {
           {hc ? (
             hc.a === 0 ? (
               <span style={{ fontSize: "0.86rem", color: MUTED }}>
-                <b style={{ color: INK }}>{hc.name}</b> — outside the EU index
+                <b style={{ color: INK }}>{hc.name}</b>, outside the EU index
                 (no EU = 100 series).
               </span>
             ) : (
@@ -435,7 +435,7 @@ export function EuropeMovers() {
           Sorted by the size of the move. Every one of the eleven biggest
           gainers is a 2004-or-later member from the East; every faller is in
           the West or South. The vertical line is the EU average (100).
-          Luxembourg and Ireland are omitted — their numbers are accounting
+          Luxembourg and Ireland are omitted, their numbers are accounting
           artefacts, not living standards.
         </>
       }
@@ -535,7 +535,7 @@ export function EuropeScissor() {
     <Panel
       kicker="Convergence · GDP per capita, EU = 100"
       title="The scissor: the East climbs as the South sinks"
-      sub="Bloc averages, 2004–2024. The single biggest peaceful income convergence in modern Europe — and a Southern stall underneath it."
+      sub="Bloc averages, 2004–2024. The single biggest peaceful income convergence in modern Europe, and a Southern stall underneath it."
       caption={
         <>
           <b style={{ color: RISE }}>East</b> = the 2004/2007/2013 entrants
@@ -623,7 +623,7 @@ export function EuropeChips() {
     { big: "43 → 69", unit: "% of EU avg", lab: "Central & Eastern Europe's GDP per capita, 2004 → 2023", color: RISE },
     { big: "+43 pp", unit: "Romania", lab: "biggest single climb toward the EU average since 2004", color: RISE },
     { big: "−27 pp", unit: "Greece", lab: "steepest fall relative to the EU average over the same span", color: FALL },
-    { big: "~0%", unit: "Italy, since 2000", lab: "real GDP per capita growth — the only large advanced economy to go backwards", color: SOUTH },
+    { big: "~0%", unit: "Italy, since 2000", lab: "real GDP per capita growth, the only large advanced economy to go backwards", color: SOUTH },
   ]
   return (
     <figure

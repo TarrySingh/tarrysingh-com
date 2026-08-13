@@ -152,7 +152,7 @@ function MatrixCard({
                     style={{ color: cell ? INK : FAINT }}
                     title={matrix.columns[i]}
                   >
-                    {cell || "—"}
+                    {cell || ", "}
                   </td>
                 ))}
               </tr>

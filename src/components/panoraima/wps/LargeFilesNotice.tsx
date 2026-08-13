@@ -32,7 +32,7 @@ export default function LargeFilesNotice({ manifest }: { manifest: LargeFilesMan
             </span>
           </h3>
           <p className="mt-1.5 text-[13px] leading-relaxed max-w-2xl" style={{ color: SLATE }}>
-            Recordings &amp; videos are skipped by default syncs (they grow over time) — they live in the
+            Recordings &amp; videos are skipped by default syncs (they grow over time), they live in the
             consortium SharePoint. Look them up there.
           </p>
         </div>

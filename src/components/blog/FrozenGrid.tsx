@@ -168,7 +168,7 @@ export function FrozenGrid() {
 
   const verdict =
     n === 0
-      ? { word: "EMPTY GRID", color: p.leverage, line: "headroom to spare — add demand and watch it freeze" }
+      ? { word: "EMPTY GRID", color: p.leverage, line: "headroom to spare, add demand and watch it freeze" }
       : allFrozen
         ? { word: "FROZEN", color: p.squeeze, line: "the wires are full; even the company that wants to build cannot get plugged in" }
         : { word: "WAITLISTED", color: counterColor, line: "new demand joins the back of a multi-year line" }
@@ -191,8 +191,8 @@ export function FrozenGrid() {
         <>
           The Netherlands grid is full. Some{" "}
           <span style={{ color: p.squeeze }}>~{fmtInt(REGIONAL_REQUESTS)}</span> regional and{" "}
-          <span style={{ color: p.squeeze }}>{NATIONAL_REQUESTS}</span> national connection requests —
-          roughly <span style={{ color: p.squeeze }}>~{TOTAL_GW} GW</span> — sit on waiting lists, with
+          <span style={{ color: p.squeeze }}>{NATIONAL_REQUESTS}</span> national connection requests,
+          roughly <span style={{ color: p.squeeze }}>~{TOTAL_GW} GW</span>, sit on waiting lists, with
           waits reaching <span style={{ color: p.squeeze }}>~{MAX_WAIT} years</span>. Press{" "}
           <span style={{ color: p.leverage }}>add demand</span> (or use ←/→): each request joins the
           queue cyan and turns red as it crosses the multi-year wait. TenneT warns the network will fail
@@ -248,7 +248,7 @@ export function FrozenGrid() {
                 fill={p.squeezeHi}
                 style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: "0.1em" }}
               >
-                {SHORTFALL_YEAR} SHORTFALL — TenneT: grid fails past here →
+                {SHORTFALL_YEAR} SHORTFALL, TenneT: grid fails past here →
               </text>
             </g>
           )
@@ -354,7 +354,7 @@ export function FrozenGrid() {
         {/* bottom readout — frozen tally + Randstad note */}
         <text x={PADL} y={H - 18} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.04em" }}>
           {n === 0
-            ? `queue empty — ${TOTAL_GW} GW of headroom on paper, ${fmtInt(REGIONAL_REQUESTS + NATIONAL_REQUESTS)} requests waiting in reality`
+            ? `queue empty, ${TOTAL_GW} GW of headroom on paper, ${fmtInt(REGIONAL_REQUESTS + NATIONAL_REQUESTS)} requests waiting in reality`
             : `${frozenCount} of ${n} tickets past the ${FREEZE_AT}-year freeze · Randstad / Amsterdam-Schiphol frozen to ~${FROZEN_YEAR}`}
         </text>
       </svg>

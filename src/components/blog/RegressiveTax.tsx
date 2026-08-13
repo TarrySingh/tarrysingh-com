@@ -69,12 +69,12 @@ type Firm = {
 }
 
 const FIRMS: Firm[] = [
-  { key: "seed", label: "Seed startup", short: "SEED", budget: 400_000, gloss: "€0.4M of runway — the compliance bill eats it whole; the company is dead before its first model ships." },
-  { key: "pre", label: "Pre-seed scale", short: "PRE-A", budget: 2_000_000, gloss: "€2M raised — over a third of the round is spent proving conformity, not building product." },
-  { key: "a", label: "Series A", short: "SER. A", budget: 12_000_000, gloss: "€12M — the fixed bill is now a noticeable tax, but survivable; the moat is starting to flatten." },
-  { key: "scale", label: "Scale-up", short: "SCALE", budget: 90_000_000, gloss: "€90M — under 1% of budget; the rulebook barely registers." },
-  { key: "large", label: "Large EU firm", short: "LARGE", budget: 1_400_000_000, gloss: "€1.4bn — the compliance cost has shrunk to a rounding error in the accounts." },
-  { key: "bigtech", label: "Big Tech", short: "BIGTECH", budget: 120_000_000_000, gloss: "€120bn — the same bill is 0.0006% of budget; the incumbent it feared pays it without noticing." },
+  { key: "seed", label: "Seed startup", short: "SEED", budget: 400_000, gloss: "€0.4M of runway, the compliance bill eats it whole; the company is dead before its first model ships." },
+  { key: "pre", label: "Pre-seed scale", short: "PRE-A", budget: 2_000_000, gloss: "€2M raised, over a third of the round is spent proving conformity, not building product." },
+  { key: "a", label: "Series A", short: "SER. A", budget: 12_000_000, gloss: "€12M, the fixed bill is now a noticeable tax, but survivable; the moat is starting to flatten." },
+  { key: "scale", label: "Scale-up", short: "SCALE", budget: 90_000_000, gloss: "€90M, under 1% of budget; the rulebook barely registers." },
+  { key: "large", label: "Large EU firm", short: "LARGE", budget: 1_400_000_000, gloss: "€1.4bn, the compliance cost has shrunk to a rounding error in the accounts." },
+  { key: "bigtech", label: "Big Tech", short: "BIGTECH", budget: 120_000_000_000, gloss: "€120bn, the same bill is 0.0006% of budget; the incumbent it feared pays it without noticing." },
 ]
 const N = FIRMS.length - 1
 
@@ -181,7 +181,7 @@ export function RegressiveTax() {
   const yTicks = [1, 0.1, 0.01, 0.001, 0.0001, 0.00001]
 
   const verdict = fatal
-    ? { word: "DROWNED", color: p.squeeze, line: "the fixed bill is larger than the firm — the challenger dies before it ships" }
+    ? { word: "DROWNED", color: p.squeeze, line: "the fixed bill is larger than the firm, the challenger dies before it ships" }
     : share >= 0.05
       ? { word: "TAXED", color: p.squeezeHi, line: "survivable, but a fifth of the round is spent on conformity, not product" }
       : { word: "ROUNDING ERROR", color: p.leverage, line: "the same bill is invisible to the incumbent the rulebook feared" }
@@ -204,8 +204,8 @@ export function RegressiveTax() {
         <>
           The Brussels Effect, inverted. The <span style={{ color: p.leverage }}>same ~€690k</span> of
           AI-Act high-risk conformity (€200k–600k), a QMS (€193k–330k) and ~€29k/yr per model is a fixed
-          cost — so as a <span style={{ color: p.squeeze }}>share of budget</span> it plunges from over 170%
-          for a seed startup to ~0.0006% for a hyperscaler. Scrub firm size — range, ←/→ — and watch the
+          cost, so as a <span style={{ color: p.squeeze }}>share of budget</span> it plunges from over 170%
+          for a seed startup to ~0.0006% for a hyperscaler. Scrub firm size, range, ←/→, and watch the
           moat aimed at the giants land as a <span style={{ color: p.squeeze }}>regressive tax</span> on
           Europe&rsquo;s own challengers: GDPR already cut US-led EU venture deals ~20.6%, and the regime
           costs ~€3.3bn/yr EU-wide. Sources: NBER WP&nbsp;33909 (2025); DIGITALEUROPE; CEPS.
@@ -255,7 +255,7 @@ export function RegressiveTax() {
         role="img"
         aria-label={`The fixed ~€690k EU compliance bill as a share of a firm's annual budget, by firm size. At ${f.label} (budget ${eur(
           f.budget,
-        )}), the same bill is ${pct(share)} of budget — ${
+        )}), the same bill is ${pct(share)} of budget, ${
           fatal ? "fatal to the challenger" : "a survivable or negligible cost"
         }. The curve plunges from over 170% for a seed startup to ~0.0006% for a hyperscaler: a regressive tax that drowns the small and is invisible to the incumbent.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
@@ -315,7 +315,7 @@ export function RegressiveTax() {
           strokeDasharray="2 5"
         />
         <text x={W - PADR} y={fatalY - 7} textAnchor="end" fill={p.squeezeHi} style={{ fontSize: 10.5, letterSpacing: "0.12em" }}>
-          25% OF BUDGET — EFFECTIVELY FATAL
+          25% OF BUDGET, EFFECTIVELY FATAL
         </text>
 
         {/* burden region + the regressive curve */}

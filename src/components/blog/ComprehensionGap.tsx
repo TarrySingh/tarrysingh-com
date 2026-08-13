@@ -231,7 +231,7 @@ export function ComprehensionGap() {
           className="text-[10px] font-semibold uppercase tracking-[0.22em]"
           style={{ fontFamily: "var(--font-mono), monospace", color: "rgba(" + ink + ",0.5)" }}
         >
-          Fig. — Complexity × Comprehension
+          Fig., Complexity × Comprehension
         </span>
         <span
           className="text-[10px] uppercase tracking-[0.22em]"

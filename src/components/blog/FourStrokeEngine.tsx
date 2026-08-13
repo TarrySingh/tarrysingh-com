@@ -432,7 +432,7 @@ export function FourStrokeEngine() {
           —{" "}
           {reverse
             ? "the loop runs backwards: the savings come home and stay invested."
-            : "each revolution the ring widens — the transfer compounds, wider than the last."}
+            : "each revolution the ring widens, the transfer compounds, wider than the last."}
         </p>
       </div>
     </PlateFrame>

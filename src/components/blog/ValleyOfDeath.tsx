@@ -63,7 +63,7 @@ const GAPS: Gap[] = [
     fromPct: 100,
     toPct: 40,
     cheque: "€200k",
-    note: "proof-of-concept grant — the lab-to-prototype gap",
+    note: "proof-of-concept grant, the lab-to-prototype gap",
   },
   {
     key: "g1",
@@ -72,7 +72,7 @@ const GAPS: Gap[] = [
     fromPct: 40,
     toPct: 15,
     cheque: "€500k–€1M",
-    note: "the missing middle — no seed cheque to reach a pilot",
+    note: "the missing middle, no seed cheque to reach a pilot",
   },
   {
     key: "g2",
@@ -81,7 +81,7 @@ const GAPS: Gap[] = [
     fromPct: 15,
     toPct: 8,
     cheque: "€1–2M",
-    note: "growth capital to industrialise — the scale gap",
+    note: "growth capital to industrialise, the scale gap",
   },
   {
     key: "g3",
@@ -90,7 +90,7 @@ const GAPS: Gap[] = [
     fromPct: 8,
     toPct: 5,
     cheque: "€1–2M",
-    note: "the last mile to revenue — most never clear it",
+    note: "the last mile to revenue, most never clear it",
   },
 ]
 
@@ -138,7 +138,7 @@ export function ValleyOfDeath() {
       caption={
         <>
           Of Dutch research, only ~5% ever reaches revenue. Hover or focus each{" "}
-          <span style={{ color: p.squeeze }}>gap</span> to read the missing cheque — the financing that
+          <span style={{ color: p.squeeze }}>gap</span> to read the missing cheque, the financing that
           wasn&rsquo;t there. The deepest leak is{" "}
           <span style={{ color: p.squeezeHi }}>prototype→pilot</span> (~62.5% lost): the missing middle.
           The surviving <span style={{ color: p.wonderHi }}>~5%</span> reaches revenue. Illustrative funnel; source: Dutch
@@ -426,7 +426,7 @@ export function ValleyOfDeath() {
         style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}
       >
         <span style={{ color: p.squeezeHi, fontStyle: "normal", fontWeight: 700 }}>The Valley of Death</span> isn&rsquo;t
-        a metaphor — it is a haemorrhage at the exact point where the cheque should have been.
+        a metaphor, it is a haemorrhage at the exact point where the cheque should have been.
       </p>
     </PlateFrame>
   )

@@ -71,7 +71,7 @@ const SPINE: Vertebra[] = [
     resistance: false,
     metric: "~64%",
     detail:
-      "Around 64% of EU arms imports are American — the F-35 is the spine of allied air power, and its mission-data, sustainment and software updates run through US hands.",
+      "Around 64% of EU arms imports are American, the F-35 is the spine of allied air power, and its mission-data, sustainment and software updates run through US hands.",
     alt: "No live sovereign substitute in service; the alternative is a programme, not a jet (see SOVEREIGN, below).",
   },
   {
@@ -82,8 +82,8 @@ const SPINE: Vertebra[] = [
     resistance: true,
     metric: "Apr 2026",
     detail:
-      "Palantir's Maven Smart System was adopted across NATO (SHAPE, Mar 2025) — the targeting brain, foreign-owned. Then Germany REJECTED Palantir (Apr 2026).",
-    alt: "France, the Netherlands and Denmark are building sovereign alternatives (Arcadia). The first vertebra to resist — gold.",
+      "Palantir's Maven Smart System was adopted across NATO (SHAPE, Mar 2025), the targeting brain, foreign-owned. Then Germany REJECTED Palantir (Apr 2026).",
+    alt: "France, the Netherlands and Denmark are building sovereign alternatives (Arcadia). The first vertebra to resist, gold.",
   },
   {
     key: "munitions",
@@ -93,7 +93,7 @@ const SPINE: Vertebra[] = [
     resistance: false,
     metric: "~78%",
     detail:
-      "At the surge peak, ~78% of European defence procurement spend went extra-EU — the re-armament cheque clears abroad, not at home.",
+      "At the surge peak, ~78% of European defence procurement spend went extra-EU, the re-armament cheque clears abroad, not at home.",
     alt: "EU procurement targets push toward buying European, but the muscle isn't built yet; most of the surge still leaks out.",
   },
   {
@@ -104,7 +104,7 @@ const SPINE: Vertebra[] = [
     resistance: false,
     metric: "~22%",
     detail:
-      "FCAS and Eurofighter are the ~22% kept home — the sovereign core of the stack, European-designed and European-owned.",
+      "FCAS and Eurofighter are the ~22% kept home, the sovereign core of the stack, European-designed and European-owned.",
     alt: "This IS the alternative: the slow, expensive, jointly-built backbone the rest of the spine is meant to grow toward.",
   },
 ]
@@ -173,11 +173,11 @@ export function DependencySpine() {
       }
       caption={
         <>
-          Europe&rsquo;s defence stack, vertebra by vertebra — each split into the share that is{" "}
+          Europe&rsquo;s defence stack, vertebra by vertebra, each split into the share that is{" "}
           <span style={{ color: p.squeeze }}>US-dependent</span> and the share that is{" "}
           <span style={{ color: p.leverage }}>European-sovereign</span>. Click any vertebra for its
-          dependence detail. The one <span style={{ color: p.wonderHi }}>gold</span> joint —
-          battle-management software — is where Germany rejected Palantir and France, the Netherlands and
+          dependence detail. The one <span style={{ color: p.wonderHi }}>gold</span> joint,
+          battle-management software, is where Germany rejected Palantir and France, the Netherlands and
           Denmark began building their own (Arcadia): the first vertebra of a spine of resistance. Sources:
           SIPRI; SHAPE/NATO (Maven Smart System, Mar 2025); German MoD (Palantir rejection, Apr 2026); EU
           procurement targets.
@@ -187,7 +187,7 @@ export function DependencySpine() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`The Dependency Spine: Europe's defence stack as four stacked vertebrae. Aircraft ~64% US-dependent, munitions/imports ~78% extra-EU, sovereign programmes only ~22% foreign — and one gold joint, battle-management software, where Germany rejected Palantir (Apr 2026) and France, the Netherlands and Denmark are building Arcadia: the first sign of a spine of resistance.`}
+        aria-label={`The Dependency Spine: Europe's defence stack as four stacked vertebrae. Aircraft ~64% US-dependent, munitions/imports ~78% extra-EU, sovereign programmes only ~22% foreign, and one gold joint, battle-management software, where Germany rejected Palantir (Apr 2026) and France, the Netherlands and Denmark are building Arcadia: the first sign of a spine of resistance.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
@@ -231,7 +231,7 @@ export function DependencySpine() {
               key={v.key}
               role="button"
               tabIndex={0}
-              aria-label={`${v.label}: ${v.usDep}% US-dependent${v.resistance ? " — but Europe is building an alternative here" : ""}`}
+              aria-label={`${v.label}: ${v.usDep}% US-dependent${v.resistance ? ", but Europe is building an alternative here" : ""}`}
               onMouseEnter={() => setActive(v.key)}
               onFocus={() => setActive(v.key)}
               onClick={() => setActive(v.key)}
@@ -411,7 +411,7 @@ export function DependencySpine() {
 
         <p className="mt-3 text-[15px]" style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}>
           <span style={{ color: p.wonderHi, fontStyle: "normal", fontWeight: 700 }}>Paying for dependence, calling it autonomy</span>{" "}
-          — but, vertebra by vertebra, a spine of resistance is finally setting.
+, but, vertebra by vertebra, a spine of resistance is finally setting.
         </p>
       </div>
     </PlateFrame>

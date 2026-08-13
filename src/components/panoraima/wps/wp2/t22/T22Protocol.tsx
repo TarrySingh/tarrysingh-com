@@ -72,7 +72,7 @@ export default function T22Protocol({ detail }: Props) {
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/85">
               Submitted to and approved by the UNIWA Ethics Committee. Two focus
-              groups were planned — Pedagogic Needs and Organisational Needs —
+              groups were planned, Pedagogic Needs and Organisational Needs,
               with the first run on {focus_group.date} over {focus_group.duration_min} minutes via {focus_group.platform}.
             </p>
           </div>
@@ -128,8 +128,8 @@ export default function T22Protocol({ detail }: Props) {
           </div>
           <div className="text-sm font-bold mb-1" style={{ color: INK }}>Mentimeter · two-phase design</div>
           <p className="text-[12.5px] leading-snug" style={{ color: SLATE }}>
-            Phase 1 — each participant answers all questions individually.
-            Phase 2 — facilitator shares aggregated answers back and opens the
+            Phase 1, each participant answers all questions individually.
+            Phase 2, facilitator shares aggregated answers back and opens the
             floor for group discussion.
           </p>
         </div>

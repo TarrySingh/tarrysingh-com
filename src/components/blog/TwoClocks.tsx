@@ -169,9 +169,9 @@ export function TwoClocks() {
       caption={
         <>
           Spin the <span style={{ color: p.squeeze }}>4-year political dial</span> and watch the{" "}
-          <span style={{ color: p.leverage }}>40-year asset dial</span> barely move — geared 1:10. Every term
+          <span style={{ color: p.leverage }}>40-year asset dial</span> barely move, geared 1:10. Every term
           the <span style={{ color: p.wonderHi }}>strategy arc</span> resets to zero and the volatility premium
-          climbs; the €20bn Nationaal Groeifonds — its final €6.8bn cut in 2024 — flies off at the first reset. You cannot build a 40-year
+          climbs; the €20bn Nationaal Groeifonds, its final €6.8bn cut in 2024, flies off at the first reset. You cannot build a 40-year
           capability on a 4-year attention span. Source: Dutch competitiveness deck (B03 / B04, p34 / p49).
         </>
       }
@@ -300,7 +300,7 @@ export function TwoClocks() {
       {/* ── readouts + controls ────────────────────────────────────────────── */}
       <div className="mt-2 px-1">
         <p className="text-[15px]" style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}>
-          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> — a
+          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span>, a
           forty-year capability cannot be built on a four-year attention span.
         </p>
 

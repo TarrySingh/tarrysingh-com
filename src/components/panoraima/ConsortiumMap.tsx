@@ -267,7 +267,7 @@ export default function ConsortiumMap({
         index="02"
         kicker="The consortium"
         title="Fifteen partners, eight countries"
-        subtitle="Engagement and submission strength by partner — select a marker for its activity profile."
+        subtitle="Engagement and submission strength by partner, select a marker for its activity profile."
         right={styleToggle}
       />
 

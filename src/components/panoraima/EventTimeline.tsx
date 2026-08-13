@@ -104,7 +104,7 @@ export default function EventTimeline({ events, selectedId, onSelect }: Props) {
         index="01"
         kicker="Project timeline"
         title="Eighteen months, meeting by meeting"
-        subtitle="Every PMC, worksprint and review across the project calendar — select a node for its full report."
+        subtitle="Every PMC, worksprint and review across the project calendar, select a node for its full report."
         right={scrollControls}
       />
 
@@ -181,10 +181,10 @@ export default function EventTimeline({ events, selectedId, onSelect }: Props) {
                         className="text-[11px] mt-0.5 font-medium max-w-[90px] leading-tight"
                         style={{ color: isSelected ? INK : SLATE }}
                       >
-                        {e.type === "worksprint" && e.title.replace("Worksprint — ", "")}
+                        {e.type === "worksprint" && e.title.replace("Worksprint, ", "")}
                         {e.type === "pmc" && "PMC"}
                         {e.type === "kickoff" && "Kick-off"}
-                        {e.type === "cancelled" && "—"}
+                        {e.type === "cancelled" && ", "}
                         {e.type === "review" && "Review"}
                       </div>
                     </div>

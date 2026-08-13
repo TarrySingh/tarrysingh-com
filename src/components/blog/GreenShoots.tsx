@@ -74,7 +74,7 @@ const SHOOTS: Shoot[] = [
     vigour: 1,
     metric: "~€800bn",
     detail:
-      "ReArm Europe / Readiness 2030 — up to ~€800bn mobilised for the largest defence build-up since the Cold War, after a decade of flat budgets.",
+      "ReArm Europe / Readiness 2030, up to ~€800bn mobilised for the largest defence build-up since the Cold War, after a decade of flat budgets.",
     fear: "Watered by fear: a US security guarantee that no longer looks unconditional.",
     source: "European Commission",
   },
@@ -86,7 +86,7 @@ const SHOOTS: Shoot[] = [
     vigour: 0.94,
     metric: "$400M ARR",
     detail:
-      "Mistral raising ~€3bn at a ~€20bn valuation, annualised revenue past $400M — Europe's flagship lab finally scaling on European terms.",
+      "Mistral raising ~€3bn at a ~€20bn valuation, annualised revenue past $400M, Europe's flagship lab finally scaling on European terms.",
     fear: "Watered by fear: the realisation that the entire stack was being rented from abroad.",
     source: "TechCrunch, Jun 2026",
   },
@@ -98,7 +98,7 @@ const SHOOTS: Shoot[] = [
     vigour: 0.88,
     metric: "Apr 2026",
     detail:
-      "Germany REJECTED Palantir for federal police analytics — the first big public 'no' to baking a foreign veto into the security core.",
+      "Germany REJECTED Palantir for federal police analytics, the first big public 'no' to baking a foreign veto into the security core.",
     fear: "Watered by fear: a foreign company holding the keys to the state's own data.",
     source: "German MoD",
   },
@@ -110,7 +110,7 @@ const SHOOTS: Shoot[] = [
     vigour: 0.82,
     metric: "Launched",
     detail:
-      "Euro-Office — a sovereign productivity suite — LAUNCHED, a credible European answer to the office monoculture the public sector runs on.",
+      "Euro-Office, a sovereign productivity suite, LAUNCHED, a credible European answer to the office monoculture the public sector runs on.",
     fear: "Watered by fear: licence terms and data residency dictated from another jurisdiction.",
     source: "Euro-Office",
   },
@@ -122,7 +122,7 @@ const SHOOTS: Shoot[] = [
     vigour: 0.66,
     metric: "3 states",
     detail:
-      "Denmark, Austria and France are MIGRATING public administrations off Microsoft toward open, sovereign stacks — slow, real, and spreading.",
+      "Denmark, Austria and France are MIGRATING public administrations off Microsoft toward open, sovereign stacks, slow, real, and spreading.",
     fear: "Watered by fear: the CLOUD Act and a single vendor's hand on the off-switch.",
     source: "national digital ministries",
   },
@@ -134,7 +134,7 @@ const SHOOTS: Shoot[] = [
     vigour: 0.58,
     metric: "Signed",
     detail:
-      "Letta's 'One Europe, One Market' roadmap SIGNED — a written, costed plan to finish the single market the continent has half-built for thirty years.",
+      "Letta's 'One Europe, One Market' roadmap SIGNED, a written, costed plan to finish the single market the continent has half-built for thirty years.",
     fear: "Watered by fear: a productivity gap with the US that stopped being deniable.",
     source: "Letta report",
   },
@@ -146,7 +146,7 @@ const SHOOTS: Shoot[] = [
     vigour: 0.52,
     metric: "SIU",
     detail:
-      "The Savings & Investments Union measures — the first concrete moves to keep ~€300bn of European savings working in Europe rather than wired abroad.",
+      "The Savings & Investments Union measures, the first concrete moves to keep ~€300bn of European savings working in Europe rather than wired abroad.",
     fear: "Watered by fear: a generation's pensions financing someone else's frontier.",
     source: "European Commission",
   },
@@ -158,7 +158,7 @@ const SHOOTS: Shoot[] = [
     vigour: 0.46,
     metric: "24 langs",
     detail:
-      "EUROPA — an open-source model covering all 24 EU languages — the smallest shoot, but the one that says sovereignty can be open, not walled.",
+      "EUROPA, an open-source model covering all 24 EU languages, the smallest shoot, but the one that says sovereignty can be open, not walled.",
     fear: "Watered by fear: a frontier of intelligence that spoke everyone's language but Europe's.",
     source: "EU open-source initiative",
   },
@@ -238,10 +238,10 @@ export function GreenShoots() {
       }
       caption={
         <>
-          A field of <span style={{ color: p.wonderHi }}>green shoots</span> — every one a real, dated sign of
+          A field of <span style={{ color: p.wonderHi }}>green shoots</span>, every one a real, dated sign of
           life. The <span style={{ color: p.wonderHi }}>tallest</span>, in full gold, are load-bearing; the{" "}
           <span style={{ color: p.wonder }}>amber</span> ones are early and fragile. Hover or click any shoot for
-          the story — and the <span style={{ color: p.squeeze }}>fear</span> that watered it. Flip the field to{" "}
+          the story, and the <span style={{ color: p.squeeze }}>fear</span> that watered it. Flip the field to{" "}
           <span style={{ color: p.squeeze }}>2015–2024</span> and watch it go dormant: a decade of reports that
           never broke ground. Sources: German MoD; Euro-Office; TechCrunch (Mistral, Jun 2026); European
           Commission; Letta report.
@@ -251,7 +251,7 @@ export function GreenShoots() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`A field of eight real European signs of life, dated 2025–2026, sprouting from a dark soil-line: ReArm Europe (~€800bn), Mistral ($400M ARR), Germany's rejection of Palantir, the Euro-Office launch, Denmark/Austria/France migrating off Microsoft, Letta's One Market roadmap, the Savings & Investments Union, and the EUROPA open-source model. Flipped to the 2015–2024 epoch the field is dormant — none broke ground. ${
+        aria-label={`A field of eight real European signs of life, dated 2025–2026, sprouting from a dark soil-line: ReArm Europe (~€800bn), Mistral ($400M ARR), Germany's rejection of Palantir, the Euro-Office launch, Denmark/Austria/France migrating off Microsoft, Letta's One Market roadmap, the Savings & Investments Union, and the EUROPA open-source model. Flipped to the 2015–2024 epoch the field is dormant, none broke ground. ${
           sprouting
             ? `${live} of ${SHOOTS.length} shoots have broken the soil.`
             : "The field is dormant; a decade of reports that never broke ground."
@@ -290,7 +290,7 @@ export function GreenShoots() {
         <rect x={FIELD_X0 - 8} y={SOIL_Y} width={FIELD_X1 - FIELD_X0 + 16} height={48} rx={6} fill={soil} />
         <line x1={FIELD_X0 - 8} y1={SOIL_Y} x2={FIELD_X1 + 8} y2={SOIL_Y} stroke={p.wonder} strokeWidth={1.4} strokeOpacity={0.5} />
         <text x={FIELD_X0} y={SOIL_Y + 30} fill={rgba(p.glowRGB, 0.7)} style={{ fontSize: 11.5, letterSpacing: "0.22em" }}>
-          {sprouting ? "2025–2026 · THE GROUND BREAKS" : "2015–2024 · BARREN — REPORTS FILED, SHELVED"}
+          {sprouting ? "2025–2026 · THE GROUND BREAKS" : "2015–2024 · BARREN, REPORTS FILED, SHELVED"}
         </text>
 
         {/* THE SHOOTS */}
@@ -310,7 +310,7 @@ export function GreenShoots() {
                 key={s.key}
                 role="button"
                 tabIndex={0}
-                aria-label={`${s.label} (${s.date}) — dormant in 2015–2024: this sign of life had not yet broken ground.`}
+                aria-label={`${s.label} (${s.date}), dormant in 2015–2024: this sign of life had not yet broken ground.`}
                 onMouseEnter={() => setActive(s.key)}
                 onFocus={() => setActive(s.key)}
                 onClick={() => setActive(s.key)}
@@ -509,7 +509,7 @@ export function GreenShoots() {
           <span style={{ color: sprouting ? p.wonderHi : p.squeeze, fontStyle: "normal", fontWeight: 700 }}>
             {sprouting ? "The ground is breaking" : "A decade dormant"}
           </span>{" "}
-          — the continent that spent ten years managing its decline has, in eighteen months, haltingly and
+, the continent that spent ten years managing its decline has, in eighteen months, haltingly and
           unevenly but unmistakably, begun to fight back. Every shoot watered by fear, not foresight.
         </p>
       </div>

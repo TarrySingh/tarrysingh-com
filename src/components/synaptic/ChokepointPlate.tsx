@@ -65,7 +65,7 @@ export function ChokepointPlate({ className }: { className?: string }) {
       viewBox="0 0 1000 1250"
       className={className}
       role="img"
-      aria-label="The Chokepoint Paradox — a folio plate: a luminous gold key as Europe's core, its value streaming west, two empires pressing in."
+      aria-label="The Chokepoint Paradox, a folio plate: a luminous gold key as Europe's core, its value streaming west, two empires pressing in."
       preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -243,7 +243,7 @@ export function ChokepointPlate({ className }: { className?: string }) {
 
       {/* ════════ FIG. A — the four strokes ════════ */}
       <line x1="54" y1="906" x2="946" y2="906" stroke={CYAN} strokeOpacity="0.2" strokeWidth="0.7" />
-      <text x="54" y="934" fill={DIM} style={{ fontFamily: "'IBM Plex Mono', monospace" }} fontSize="11" letterSpacing="2.5">FIG. A — THE WHEEL TURNS WEST · save · fund · train · buy back</text>
+      <text x="54" y="934" fill={DIM} style={{ fontFamily: "'IBM Plex Mono', monospace" }} fontSize="11" letterSpacing="2.5">FIG. A, THE WHEEL TURNS WEST · save · fund · train · buy back</text>
 
       <g>
         {[

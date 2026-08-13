@@ -40,7 +40,7 @@ const METHOD_SUMMARY: Record<string, string> = {
   ireland: "Five dated focus-group sessions, video-recorded and transcribed. A 67-organisation stakeholder register drives the outreach funnel.",
   netherlands: "Seven CEO 1-1 interviews captured via Otter.ai (video + audio + transcript), synthesised into one consolidated qualitative report.",
   hamburg: "Five written interview reports (AR, BT, JS, LH, MI) + one consolidated focus-group summary. Text-first methodology.",
-  greece: "Desktop-research-driven: 148 research rows, 31 academia survey responses, 28 SME interviews — all in spreadsheet form.",
+  greece: "Desktop-research-driven: 148 research rows, 31 academia survey responses, 28 SME interviews, all in spreadsheet form.",
 }
 
 export default function T21Methodology({ detail }: Props) {
@@ -60,7 +60,7 @@ export default function T21Methodology({ detail }: Props) {
         </h2>
         <p className="mt-1 text-sm max-w-xl" style={{ color: SLATE }}>
           Each working group designed its own evidence-gathering approach.
-          That heterogeneity is a feature — different stakeholder classes
+          That heterogeneity is a feature, different stakeholder classes
           respond to different instruments.
         </p>
       </div>

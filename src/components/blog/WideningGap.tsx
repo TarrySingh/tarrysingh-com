@@ -100,7 +100,7 @@ const DIMS: Dim[] = [
     usLabel: "~12%",
     factor: 2.8,
     factorLabel: "~2.8×",
-    gloss: "European savings sit in deposits, not equity — capital that never compounds.",
+    gloss: "European savings sit in deposits, not equity, capital that never compounds.",
   },
 ]
 
@@ -170,7 +170,7 @@ export function WideningGap() {
       caption={
         <>
           The Draghi report mapped the gap on every metric that compounds; eighteen months on, each had
-          widened. Click — or use ←/→ — through the dimensions. <span style={{ color: p.leverage }}>Europe</span>{" "}
+          widened. Click, or use ←/→, through the dimensions. <span style={{ color: p.leverage }}>Europe</span>{" "}
           in cyan, the <span style={{ color: p.squeeze }}>United States</span> in red: not one gap but a fan
           of them, all opening. Sources: Draghi 2024; Letta 2024; Atomico State of European Tech 2025; ITIF;
           ECB (2026).
@@ -216,7 +216,7 @@ export function WideningGap() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`${d.label}: Europe ${d.euLabel} versus the United States ${d.usLabel} — a gap of about ${fmtFactor(
+        aria-label={`${d.label}: Europe ${d.euLabel} versus the United States ${d.usLabel}, a gap of about ${fmtFactor(
           d.factor,
         )} times`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}

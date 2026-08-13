@@ -11,11 +11,11 @@ import { useState, useMemo, type ChangeEvent } from "react"
 /* ---------- Market Forecast scenario model ---------- */
 interface Scenario { base: number; cagr: number; label: string; note: string }
 const SCENARIOS: Record<string, Scenario> = {
-  goldman: { base: 3.2, cagr: 26, label: "Goldman", note: "Goldman Sachs — conservative, ~26% CAGR → ~$38B by 2035" },
-  mm: { base: 3.0, cagr: 39, label: "M&M", note: "MarketsandMarkets — 39.2% CAGR to 2030 ($15.3B)" },
-  nester: { base: 4.4, cagr: 44, label: "R. Nester", note: "Research Nester — 44.1% CAGR → $372B by 2037" },
-  coherent: { base: 4.3, cagr: 49, label: "Coherent", note: "Coherent Market — 48.8% CAGR to 2032 ($70B)" },
-  globe: { base: 3.0, cagr: 49, label: "GlobeNewswire", note: "GlobeNewswire — aggressive, 49.2% CAGR → ~$243B by 2035" },
+  goldman: { base: 3.2, cagr: 26, label: "Goldman", note: "Goldman Sachs, conservative, ~26% CAGR → ~$38B by 2035" },
+  mm: { base: 3.0, cagr: 39, label: "M&M", note: "MarketsandMarkets, 39.2% CAGR to 2030 ($15.3B)" },
+  nester: { base: 4.4, cagr: 44, label: "R. Nester", note: "Research Nester, 44.1% CAGR → $372B by 2037" },
+  coherent: { base: 4.3, cagr: 49, label: "Coherent", note: "Coherent Market, 48.8% CAGR to 2032 ($70B)" },
+  globe: { base: 3.0, cagr: 49, label: "GlobeNewswire", note: "GlobeNewswire, aggressive, 49.2% CAGR → ~$243B by 2035" },
 }
 const fmtB = (v: number) => (v >= 100 ? `$${Math.round(v)}B` : `$${v.toFixed(1)}B`)
 
@@ -96,7 +96,7 @@ export function MarketModel() {
             <button key={k} className={"mm-btn" + (active === k ? " on" : "")} onClick={() => applyScenario(k)}>{s.label}</button>
           ))}
         </div>
-        <div className="mm-note">{active ? SCENARIOS[active].note : "Custom scenario — drag the sliders."}</div>
+        <div className="mm-note">{active ? SCENARIOS[active].note : "Custom scenario, drag the sliders."}</div>
       </div>
     </div>
   )
@@ -111,16 +111,16 @@ const CHAPTERS: Chapter[] = [
   { n: "04", t: "Ecosystem Map", s: "Drag the network of makers, suppliers & capital", href: "#ecosystem", tag: "Interactive" },
   { n: "05", t: "Technical Deep-Dive", s: "Quantum sensing + sector-impact radar", href: "#tech", tag: "Interactive" },
   { n: "06", t: "Competitive Landscape", s: "Re-rank 7 robots on payload, runtime, price", href: "#compete", tag: "Interactive" },
-  { n: "07", t: "Market Concentration", s: "HHI, CR3 56% — the early oligopoly, charted", href: "#concentration", tag: "Interactive" },
-  { n: "08", t: "Comparative Frameworks", s: "East vs. West — 5 strategic frameworks", href: "#frameworks", tag: "Interactive" },
+  { n: "07", t: "Market Concentration", s: "HHI, CR3 56%, the early oligopoly, charted", href: "#concentration", tag: "Interactive" },
+  { n: "08", t: "Comparative Frameworks", s: "East vs. West, 5 strategic frameworks", href: "#frameworks", tag: "Interactive" },
   { n: "09", t: "ROI / Payback Lab", s: "Size a fleet, model the business case", href: "#roi", tag: "Interactive" },
   { n: "10", t: "Geopolitics", s: "US · China · Korea supply-chain war map", href: "#geo", tag: "Interactive" },
   { n: "11", t: "Regional Analysis", s: "Five regions, real share, CAGR & players", href: "#regions", tag: "Interactive" },
   { n: "12", t: "Deployment Timeline", s: "2024 → 2027, scroll-driven", href: "#timeline", tag: "Interactive" },
-  { n: "13", t: "Application Case Studies", s: "BMW · GXO/Amazon · hospitals — real ROI", href: "#cases", tag: "Interactive" },
+  { n: "13", t: "Application Case Studies", s: "BMW · GXO/Amazon · hospitals, real ROI", href: "#cases", tag: "Interactive" },
   { n: "14", t: "The Workshop", s: "Actuator lab + incident-response sim", href: "#workshop", tag: "Premium" },
   { n: "15", t: "Certification Path", s: "Five-stage curriculum to credential", href: "#cert", tag: "Premium" },
-  { n: "16", t: "The Full Deck", s: "All 60 slides, embedded — or open standalone", href: "#tools", tag: "Read" },
+  { n: "16", t: "The Full Deck", s: "All 60 slides, embedded, or open standalone", href: "#tools", tag: "Read" },
 ]
 
 export function SectionMap() {
@@ -157,7 +157,7 @@ export function DecisionTree() {
     <div className="dt">
       <div className="dt-scenario">
         <div className="dt-tag">Workshop simulation · Safety breach</div>
-        <p className="dt-desc">A Figure 02 on the assembly line detects unusual resistance handling a door panel but keeps operating with increasing force — exceeding the safety threshold by <span className="accent">150%</span> — without triggering an emergency stop. Two workers are in proximity. <strong>Walk the response protocol.</strong></p>
+        <p className="dt-desc">A Figure 02 on the assembly line detects unusual resistance handling a door panel but keeps operating with increasing force, exceeding the safety threshold by <span className="accent">150%</span>, without triggering an emergency stop. Two workers are in proximity. <strong>Walk the response protocol.</strong></p>
       </div>
       <div className="dt-flow">
         {IR_STEPS.map((s, i) => (

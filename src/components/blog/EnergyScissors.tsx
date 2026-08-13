@@ -232,7 +232,7 @@ export function EnergyScissors() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — The energy scissors · cost per unit of intelligence ↓ vs total AI electricity ↑ · 2021–2030"
+      kicker="Fig., The energy scissors · cost per unit of intelligence ↓ vs total AI electricity ↑ · 2021–2030"
       caption={
         <>
           <strong style={{ color: p.ink, fontStyle: "normal" }}>
@@ -240,7 +240,7 @@ export function EnergyScissors() {
             {fmtTwh(aTwh)}, ~{aShare.toFixed(1)}% of global
           </strong>
           {aProj ? " (projection)" : ""}. The deflation is in the unit; the explosion is in
-          the volume — Jevons, drawn once. Total energy is the binding constraint. Source: IEA{" "}
+          the volume, Jevons, drawn once. Total energy is the binding constraint. Source: IEA{" "}
           <span style={{ fontStyle: "italic" }}>Energy and AI</span> (2025) · Epoch AI.
         </>
       }
@@ -258,7 +258,7 @@ export function EnergyScissors() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none select-none"
         role="img"
-        aria-label="The energy scissors, 2021 to 2030. A falling copper line on a logarithmic left axis shows the cost of a unit of intelligence collapsing from one hundred percent of its 2021 value to about one-thousandth of a percent — roughly a thousandfold cheaper. A rising teal line and bars on a linear right axis show total AI and data-centre electricity climbing from about 230 terawatt-hours to 945 terawatt-hours by 2030, around three percent of global electricity and comparable to Japan's entire consumption. The two curves cross around the mid-2020s: the Jevons paradox, where each unit gets cheaper yet the total burned explodes. An inset tracks frontier training-run power rising from roughly 125 megawatts in 2024 toward 4 to 16 gigawatts by 2030. Historical through 2024, projection thereafter. Sources: the IEA Energy and AI report 2025 and Epoch AI."
+        aria-label="The energy scissors, 2021 to 2030. A falling copper line on a logarithmic left axis shows the cost of a unit of intelligence collapsing from one hundred percent of its 2021 value to about one-thousandth of a percent, roughly a thousandfold cheaper. A rising teal line and bars on a linear right axis show total AI and data-centre electricity climbing from about 230 terawatt-hours to 945 terawatt-hours by 2030, around three percent of global electricity and comparable to Japan's entire consumption. The two curves cross around the mid-2020s: the Jevons paradox, where each unit gets cheaper yet the total burned explodes. An inset tracks frontier training-run power rising from roughly 125 megawatts in 2024 toward 4 to 16 gigawatts by 2030. Historical through 2024, projection thereafter. Sources: the IEA Energy and AI report 2025 and Epoch AI."
         onPointerMove={onMove}
       >
         <defs>

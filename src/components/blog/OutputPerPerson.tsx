@@ -96,7 +96,7 @@ const FORKS: Fork[] = [
     label: "ARK · bull",
     source: "ARK Big Ideas 2025",
     figure:
-      "ARK (bull): a disruptive-innovation inflection drives global real GDP growth past 7% — ARK floats a 7–10% range — by 2030, against a ~3% long-run average.",
+      "ARK (bull): a disruptive-innovation inflection drives global real GDP growth past 7%, ARK floats a 7–10% range, by 2030, against a ~3% long-run average.",
     tone: "gold",
     endLabel: "7–10%",
     pts: [
@@ -113,7 +113,7 @@ const FORKS: Fork[] = [
     label: "Acemoglu · skeptic",
     source: "Acemoglu, MIT / NBER 2024",
     figure:
-      "Acemoglu (bear): only +0.7% TFP and ~+1.1% GDP over ten years — a small bump to ~3.2%.",
+      "Acemoglu (bear): only +0.7% TFP and ~+1.1% GDP over ten years, a small bump to ~3.2%.",
     tone: "rose",
     endLabel: "3.2%",
     pts: [
@@ -128,7 +128,7 @@ const FORKS: Fork[] = [
     label: "IMF · consensus",
     source: "IMF · WEO baseline",
     figure:
-      "IMF / consensus: the baseline stays roughly flat at ~3.1% — AI shows up in pockets, not the aggregate.",
+      "IMF / consensus: the baseline stays roughly flat at ~3.1%, AI shows up in pockets, not the aggregate.",
     tone: "cool",
     endLabel: "3.1%",
     pts: [
@@ -191,13 +191,13 @@ export function OutputPerPerson() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — Output per person · global real GDP growth (% / yr) · the fork in the forecast"
+      kicker="Fig., Output per person · global real GDP growth (% / yr) · the fork in the forecast"
       caption={
         <>
           <strong style={{ color: p.ink, fontStyle: "normal" }}>{activeFork.label}.</strong>{" "}
           {activeFork.figure}{" "}
           <span style={{ color: p.soft }}>
-            A century of flat ~3% growth forks by 2–4× after 2024 — even the experts disagree.
+            A century of flat ~3% growth forks by 2–4× after 2024, even the experts disagree.
             Sources: ARK 2025 · IMF · Acemoglu (MIT/NBER 2024) · Goldman 2023 · McKinsey 2023 · WEF 2025.
           </span>
         </>
@@ -233,7 +233,7 @@ export function OutputPerPerson() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full"
         role="img"
-        aria-label="The fork in the forecast. Global real GDP growth was roughly flat for a century — about 1.5 percent per year in 1900 rising to 3.1 percent in 2024. From 2026 three expert projections diverge sharply to 2030: ARK's bull case reaches past 7 percent — a 7-to-10 percent range — the IMF and consensus baseline stays near 3.1 percent, and Acemoglu's skeptic case rises only slightly to 3.2 percent. The wedge between the bull case and the baseline is shaded as the disagreement. Even credible experts differ by two to fourfold."
+        aria-label="The fork in the forecast. Global real GDP growth was roughly flat for a century, about 1.5 percent per year in 1900 rising to 3.1 percent in 2024. From 2026 three expert projections diverge sharply to 2030: ARK's bull case reaches past 7 percent, a 7-to-10 percent range, the IMF and consensus baseline stays near 3.1 percent, and Acemoglu's skeptic case rises only slightly to 3.2 percent. The wedge between the bull case and the baseline is shaded as the disagreement. Even credible experts differ by two to fourfold."
       >
         <defs>
           <linearGradient id="opp-wedge" x1="0" y1="0" x2="0" y2="1">

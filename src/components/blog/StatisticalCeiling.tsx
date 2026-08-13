@@ -141,7 +141,7 @@ export function StatisticalCeiling() {
     ctx.textBaseline = "bottom"
     ctx.font = "italic 11px 'IBM Plex Serif', serif"
     ctx.fillStyle = "rgba(" + COOL + ",0.9)"
-    ctx.fillText("Opus 4.5 — first past 80% (80.9%)", x1 - 2, y80 - 4)
+    ctx.fillText("Opus 4.5, first past 80% (80.9%)", x1 - 2, y80 - 4)
 
     const n = BARS.length
     const slot = (x1 - x0) / n
@@ -204,7 +204,7 @@ export function StatisticalCeiling() {
           className="text-[10px] font-semibold uppercase tracking-[0.22em]"
           style={{ fontFamily: "var(--font-mono), monospace", color: "rgba(" + ink + ",0.5)" }}
         >
-          Fig. — What SWE-bench actually measures
+          Fig., What SWE-bench actually measures
         </span>
         <div className="inline-flex overflow-hidden rounded-full border" style={{ borderColor: "rgba(" + ink + ",0.18)" }}>
           <button

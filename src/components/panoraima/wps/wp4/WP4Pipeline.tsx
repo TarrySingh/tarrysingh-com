@@ -173,7 +173,7 @@ export default function WP4Pipeline({ registry }: Props) {
         <ClipboardCheck className="w-4 h-4 flex-shrink-0 mt-0.5" strokeWidth={1.75} />
         <span>
           QA/QC stage reflects the wiki status (which tracks the <em>lesson plan</em>). Material-level
-          review sign-off isn&apos;t tracked in the source yet — it&apos;ll light up once reviewers record it
+          review sign-off isn&apos;t tracked in the source yet, it&apos;ll light up once reviewers record it
           (a planned in-tool action), or via a wiki/SharePoint status we wire in.
         </span>
       </div>

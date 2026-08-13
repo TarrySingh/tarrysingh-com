@@ -150,7 +150,7 @@ export function HumanoidAdoption() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — Humanoid adoption · global installed base to 2040 (illustrative) · the TAM gulf"
+      kicker="Fig., Humanoid adoption · global installed base to 2040 (illustrative) · the TAM gulf"
       controls={
         <span
           className="tabular-nums text-[13px] font-semibold"
@@ -164,13 +164,13 @@ export function HumanoidAdoption() {
           <strong style={{ color: p.ink, fontStyle: "normal" }}>
             {year}: ~{fmtUnits(activeBase)} humanoids installed
           </strong>{" "}
-          (illustrative S-curve){inCrossover ? " — inside the NPV crossover" : ""}. The curve
+          (illustrative S-curve){inCrossover ? ", inside the NPV crossover" : ""}. The curve
           inflects ~2028–30, when a robot costs less than the ~$550k 10-yr NPV of the worker it
           replaces. The TAM gulf is real: ARK&apos;s {fmtUSD(ARK)}+ is a theoretical
           labour-replacement <em>ceiling</em> (it counts unpaid household labour), not a 2030
-          product market — ~1,000× the {fmtUSD(GOLDMAN)} consensus humanoid market by 2035.
+          product market, ~1,000× the {fmtUSD(GOLDMAN)} consensus humanoid market by 2035.
           Source: ARK Big Ideas 2025 (bull case) · Goldman Sachs (consensus). Unit curve
-          illustrative — ARK publishes none.
+          illustrative, ARK publishes none.
         </>
       }
     >
@@ -179,7 +179,7 @@ export function HumanoidAdoption() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none"
         role="img"
-        aria-label={`An illustrative logistic S-curve of the global humanoid-robot installed base from 2025 to 2040, drawn on a logarithmic axis: about ten thousand units in 2025 rising past five million around 2031 to roughly five hundred million by 2040. Adoption inflects in the 2028 to 2030 NPV-crossover band, when a robot becomes cheaper than the ${"~$550k"} ten-year net present value of the US worker it replaces. Beside it, a logarithmic gulf bar contrasts ARK's twenty-six-trillion-dollar annual labour-replacement ceiling against the roughly thirty-eight-billion-dollar consensus humanoid market by 2035 — a thousandfold gap. Currently showing the year ${year} at about ${fmtUnits(activeBase)} installed units.`}
+        aria-label={`An illustrative logistic S-curve of the global humanoid-robot installed base from 2025 to 2040, drawn on a logarithmic axis: about ten thousand units in 2025 rising past five million around 2031 to roughly five hundred million by 2040. Adoption inflects in the 2028 to 2030 NPV-crossover band, when a robot becomes cheaper than the ${"~$550k"} ten-year net present value of the US worker it replaces. Beside it, a logarithmic gulf bar contrasts ARK's twenty-six-trillion-dollar annual labour-replacement ceiling against the roughly thirty-eight-billion-dollar consensus humanoid market by 2035, a thousandfold gap. Currently showing the year ${year} at about ${fmtUnits(activeBase)} installed units.`}
         onPointerMove={onMove}
       >
         <defs>
@@ -296,7 +296,7 @@ export function HumanoidAdoption() {
           letterSpacing={2}
           fill={p.soft}
         >
-          ILLUSTRATIVE LOGISTIC — NOT AN ARK FORECAST
+          ILLUSTRATIVE LOGISTIC, NOT AN ARK FORECAST
         </text>
 
         {/* area + S-curve */}

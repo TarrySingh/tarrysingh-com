@@ -228,7 +228,7 @@ export function TwoStockBench() {
           type="button"
           role="switch"
           aria-checked={injured}
-          aria-label="Bench Novo Nordisk — knock 67% off its value (its 2024→2026 fall)"
+          aria-label="Bench Novo Nordisk, knock 67% off its value (its 2024→2026 fall)"
           onClick={toggle}
           onKeyDown={onKey}
           style={{
@@ -250,11 +250,11 @@ export function TwoStockBench() {
       }
       caption={
         <>
-          Two benches, side by side. <span style={{ color: p.leverage }}>Europe&rsquo;s top tier</span> — a
-          handful of names, ASML the lone giant — set against the{" "}
+          Two benches, side by side. <span style={{ color: p.leverage }}>Europe&rsquo;s top tier</span>, a
+          handful of names, ASML the lone giant, set against the{" "}
           <span style={{ color: p.squeeze }}>US &ldquo;Mag-7&rdquo;</span>, seven deep and worth more than
           $20 trillion combined. Click <em>Bench Novo Nordisk</em> to knock ~67% off one champion (its
-          2024→2026 fall) and watch how much of Europe&rsquo;s top-tier cap vanishes — there is no depth
+          2024→2026 fall) and watch how much of Europe&rsquo;s top-tier cap vanishes, there is no depth
           behind the star. Sources: market caps mid-2026 (companiesmarketcap.com); Mag-7 &gt; $20tn.
         </>
       }
@@ -262,13 +262,13 @@ export function TwoStockBench() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`Two benches by market cap. Europe's top tier — ASML $743bn, SAP, Novo Nordisk, LVMH — totals about ${fmtTn(
+        aria-label={`Two benches by market cap. Europe's top tier, ASML $743bn, SAP, Novo Nordisk, LVMH, totals about ${fmtTn(
           euTotalFull,
         )}, against the US Mag-7 at about ${fmtTn(
           MAG7_TOTAL,
         )} across seven names. Benching Novo Nordisk knocks 67% off and erases about ${fmtBn(
           euTotalFull - EUROPE.reduce((s, pl) => s + (pl.injured ?? pl.cap), 0),
-        )} of Europe's top-tier cap — a shallow bench with no depth behind the star.`}
+        )} of Europe's top-tier cap, a shallow bench with no depth behind the star.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         {/* ---------- EUROPE — the shallow bench (cyan) ---------- */}
@@ -341,7 +341,7 @@ export function TwoStockBench() {
             A two-player bench against a seven.
           </span>{" "}
           {hurt > 0.5
-            ? "Novo falls, and there is no one behind it — the whole top tier feels the loss."
+            ? "Novo falls, and there is no one behind it, the whole top tier feels the loss."
             : "Bench one champion and watch the index buckle; depth is the thing Europe does not have."}
         </p>
       </div>

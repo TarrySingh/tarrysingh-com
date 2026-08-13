@@ -159,13 +159,13 @@ export function FinishingSchool() {
       }
       caption={
         <>
-          Europe trains the elite — ~17&ndash;20% of the world&rsquo;s{" "}
+          Europe trains the elite, ~17&ndash;20% of the world&rsquo;s{" "}
           <span style={{ color: p.leverage }}>most-cited research</span> enters on the left. But it captures
           only <span style={{ color: p.squeeze }}>~5% of AI patents</span>, and ~57% of relocating founders
           move to the US: the cohort drains <span style={{ color: p.squeeze }}>red</span>, leaving a thin{" "}
           <span style={{ color: p.leverage }}>cyan thread</span>. Raise the{" "}
           <span style={{ color: p.wonder }}>Choose Europe for Science</span> valve (~&euro;900m, ~101 schemes,
-          2026) — or press &#9654; — to claw some home. Sources: WIPO / EPO / Clarivate; Atomico 2025;
+          2026), or press &#9654;, to claw some home. Sources: WIPO / EPO / Clarivate; Atomico 2025;
           European Commission (Jan 2026).
         </>
       }

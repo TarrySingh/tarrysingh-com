@@ -7,8 +7,8 @@ import { useState, useRef, useEffect, type CSSProperties } from "react"
 /* ---------- Deployment Timeline (2024 → 2027) ---------- */
 interface TlStop { y: string; c: string; title: string; items: [string, string][]; future?: boolean }
 const TL: TlStop[] = [
-  { y: "2024", c: "var(--c-blue)", title: "First commercial deployment", items: [["Jun", "Agility Digit goes commercial at GXO — first paid humanoid"], ["—", "Figure 02 begins the BMW Spartanburg pilot"], ["—", "Tesla shows Optimus Gen 2 working inside its factories"]] },
-  { y: "2025", c: "var(--c-cyan)", title: "Capital + capability inflection", items: [["Feb", "Figure exits OpenAI; bets on in-house Helix"], ["Sep", "Figure Series C: $1B+ at $39B — 15× in 19 months"], ["Oct", "Figure 03 launches; BotQ targets mass production"], ["Nov", "BMW pilot completes — 30,000 cars, 1,250 hours"]] },
+  { y: "2024", c: "var(--c-blue)", title: "First commercial deployment", items: [["Jun", "Agility Digit goes commercial at GXO · first paid humanoid"], ["—", "Figure 02 begins the BMW Spartanburg pilot"], ["—", "Tesla shows Optimus Gen 2 working inside its factories"]] },
+  { y: "2025", c: "var(--c-cyan)", title: "Capital + capability inflection", items: [["Feb", "Figure exits OpenAI; bets on in-house Helix"], ["Sep", "Figure Series C: $1B+ at $39B · 15× in 19 months"], ["Oct", "Figure 03 launches; BotQ targets mass production"], ["Nov", "BMW pilot completes · 30,000 cars, 1,250 hours"]] },
   { y: "2026", c: "var(--c-violet)", title: "From pilot to production", items: [["Jan", "Production Atlas unveiled at CES; Hyundai commits 25,000 units"], ["Feb", "Apptronik raises $520M (Google-led) at ~$5B"], ["H1", "Apollo pilots scale at Mercedes-Benz, GXO, Jabil"], ["H2", "Tesla converts Fremont lines toward Optimus; external pilots begin"]] },
   { y: "2027", c: "var(--c-magenta)", title: "Scaled rollout begins", items: [["—", "Atlas opens to external customers beyond Hyundai"], ["—", "Multi-thousand-unit fleets across automotive & logistics"], ["—", "Home-robot betas widen (1X Neo, Figure Project Go-Big)"]], future: true },
 ]
@@ -106,7 +106,7 @@ export function ValueSankey() {
           )
         })}
       </svg>
-      <div className="sank-note">{hover ? <span><b style={{ color: SANK_NODES[hover].c }}>{SANK_NODES[hover].label.split(" · ")[0]}</b> — {SANK_NODES[hover].v}% of the bill of materials.</span> : <span>Hover a flow. Over half of every humanoid&apos;s hardware cost pours into the <b className="accent">actuators</b>.</span>}</div>
+      <div className="sank-note">{hover ? <span><b style={{ color: SANK_NODES[hover].c }}>{SANK_NODES[hover].label.split(" · ")[0]}</b>, {SANK_NODES[hover].v}% of the bill of materials.</span> : <span>Hover a flow. Over half of every humanoid&apos;s hardware cost pours into the <b className="accent">actuators</b>.</span>}</div>
     </div>
   )
 }
