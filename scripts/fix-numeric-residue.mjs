@@ -151,6 +151,11 @@ function convert(text, log) {
     // currency word too. Mechanical substitution would leave "700
     // billion-dollar". Left for hand-editing; the gate still reports them.
     if (full[offset + w.length] === "-") return w
+    // A Title Case run running into another capitalised word is a NAME, not a
+    // figure: Nigeria's "Three Million Technical Talent programme" must not be
+    // renamed to "3 million Technical Talent". Rewriting an institution is a
+    // factual error, not a style fix.
+    if (/^[A-Z]/.test(w) && /^\s+[A-Z]/.test(full.slice(offset + w.length, offset + w.length + 3))) return w
     const v = parseWords(w)
     if (v === null || v < 100) return w
     const r = withScale(v)

@@ -296,10 +296,13 @@ export function scanDispatchSlop(text: string): SlopHit[] {
     for (const m of text.match(rule.re) ?? []) {
       // A vague quantifier ahead of the match makes it legitimate English:
       // "a few thousand engineers" is not a spelled-out quantity.
-      if (rule.guard) {
-        const at = text.indexOf(m)
-        if (at > 0 && rule.guard.test(text.slice(Math.max(0, at - 24), at))) continue
-      }
+      const at = text.indexOf(m)
+      if (rule.guard && at > 0 && rule.guard.test(text.slice(Math.max(0, at - 24), at))) continue
+      // A Title Case run running into another capitalised word is a NAME, not
+      // a figure. Nigeria's "Three Million Technical Talent programme" is what
+      // the programme is called; reporting it as a style violation invites the
+      // next sweep to rename an institution, which is a factual error.
+      if (at >= 0 && /^[A-Z]/.test(m) && /^\s+[A-Z]/.test(text.slice(at + m.length, at + m.length + 3))) continue
       hits.push({
         id: rule.id,
         label: rule.label,
