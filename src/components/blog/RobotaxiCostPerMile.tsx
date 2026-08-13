@@ -54,7 +54,7 @@ const CAR: Pt[] = [
   { year: 1934, cost: 0.71, note: "owned car ≈ $0.70" },
   { year: 1960, cost: 0.69 },
   { year: 1985, cost: 0.72 },
-  { year: 2016, cost: 0.7, note: "still ≈ $0.70 — 80 yrs flat" },
+  { year: 2016, cost: 0.7, note: "still ≈ $0.70, 80 yrs flat" },
 ]
 const CAR_LEVEL = 0.7 // the reference the robotaxi dips below
 
@@ -177,17 +177,17 @@ export function RobotaxiCostPerMile() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — The cost of a mile · $ / mile · constant ~2020 USD · log scale"
+      kicker="Fig., The cost of a mile · $ / mile · constant ~2020 USD · log scale"
       caption={
         <>
           <strong style={{ color: p.ink, fontStyle: "normal" }}>
-            {active}: {fmtCost(liveCost)}/mi — {liveLabel}
+            {active}: {fmtCost(liveCost)}/mi, {liveLabel}
           </strong>{" "}
           ({vsCarLabel}). The owned car held ~$0.70/mile for{" "}
           <em style={{ fontStyle: "italic" }}>eighty years</em>; autonomy is the first
-          thing to break the line — to ~$0.25 (ARK &ldquo;Cybercab at scale&rdquo; ~$0.20),
+          thing to break the line, to ~$0.25 (ARK &ldquo;Cybercab at scale&rdquo; ~$0.20),
           cheaper than the car already in your drive. The $0.25 and the $34T platform are
-          ARK projections, contingent on regulators clearing driverless at scale — timelines
+          ARK projections, contingent on regulators clearing driverless at scale, timelines
           have slipped. Source: ARK Big Ideas 2024 / 2025.
         </>
       }
@@ -205,7 +205,7 @@ export function RobotaxiCostPerMile() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none"
         role="img"
-        aria-label="The cost per mile of personal mobility in constant 2020 dollars, on a log scale, from 1930 to 2030. A privately owned car held essentially flat at about $0.70 per mile for eighty years, from 1934 to 2016. Human-driven ride-hail sits at the high-water mark, about $2.00 per mile all-in today. Autonomous robotaxis at scale collapse toward $0.25 per mile by 2030, with an ARK Cybercab-at-scale floor near $0.20 that dips below the owned-car line — cheaper than the car already in your drive. The $0.25 and a $34 trillion robotaxi platform are ARK projections contingent on regulators clearing driverless at scale; historical data is solid, the projection dashed."
+        aria-label="The cost per mile of personal mobility in constant 2020 dollars, on a log scale, from 1930 to 2030. A privately owned car held essentially flat at about $0.70 per mile for eighty years, from 1934 to 2016. Human-driven ride-hail sits at the high-water mark, about $2.00 per mile all-in today. Autonomous robotaxis at scale collapse toward $0.25 per mile by 2030, with an ARK Cybercab-at-scale floor near $0.20 that dips below the owned-car line, cheaper than the car already in your drive. The $0.25 and a $34 trillion robotaxi platform are ARK projections contingent on regulators clearing driverless at scale; historical data is solid, the projection dashed."
         onPointerMove={onMove}
       >
         <defs>
@@ -310,7 +310,7 @@ export function RobotaxiCostPerMile() {
           fontSize={15}
           fill={p.series.cool}
         >
-          a privately owned car — flat for eighty years
+          a privately owned car, flat for eighty years
         </text>
 
         {/* ── HUMAN-DRIVEN RIDE-HAIL — the high point ────────────────── */}
@@ -413,7 +413,7 @@ export function RobotaxiCostPerMile() {
             fontSize={11}
             fill={p.muted}
           >
-            ceiling, not forecast — assumes regulators clear driverless at scale
+            ceiling, not forecast, assumes regulators clear driverless at scale
           </text>
         </g>
 

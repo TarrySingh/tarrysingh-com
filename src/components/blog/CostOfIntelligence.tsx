@@ -101,13 +101,13 @@ export function CostOfIntelligence() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — The cost of intelligence · $/million tokens · GPT-3-grade quality"
+      kicker="Fig., The cost of intelligence · $/million tokens · GPT-3-grade quality"
       caption={
         <>
           <strong style={{ color: p.ink, fontStyle: "normal" }}>
             {activePt.year}: {fmtCost(activePt.cost)}/M
           </strong>{" "}
-          — {cheaperLabel} cheaper than 2021{activePt.proj ? " (projected, bending to a floor)" : ""}.{" "}
+, {cheaperLabel} cheaper than 2021{activePt.proj ? " (projected, bending to a floor)" : ""}.{" "}
           The naïve 10×/yr line (faint) plunges off the chart; the real curve must bend. Source: a16z LLMflation 2024 · Epoch AI 2025.
         </>
       }
@@ -117,7 +117,7 @@ export function CostOfIntelligence() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none"
         role="img"
-        aria-label="The cost of GPT-3-grade intelligence per million tokens fell from $60 in 2021 to $0.06 in 2024, about a thousandfold, and continues to fall while bending toward an energy and silicon floor near $0.0001. A faint ghost line shows where a naïve tenfold-per-year extrapolation would go — physically absurd."
+        aria-label="The cost of GPT-3-grade intelligence per million tokens fell from $60 in 2021 to $0.06 in 2024, about a thousandfold, and continues to fall while bending toward an energy and silicon floor near $0.0001. A faint ghost line shows where a naïve tenfold-per-year extrapolation would go, physically absurd."
         onPointerMove={onMove}
       >
         <defs>

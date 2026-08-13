@@ -142,7 +142,7 @@ export function KillSwitchTimeline() {
     step <= 1
       ? { word: "ONE TURN", color: p.leverage, line: "the dial has begun to close, and it only turns one way" }
       : step <= 3
-        ? { word: "TIGHTENING", color: p.squeezeHi, line: "each stop snaps the tether tighter — never looser" }
+        ? { word: "TIGHTENING", color: p.squeezeHi, line: "each stop snaps the tether tighter, never looser" }
         : { word: "OFF-SWITCH", color: p.squeeze, line: "the machine is Europe's; the off-switch is Washington's" }
 
   return (
@@ -161,7 +161,7 @@ export function KillSwitchTimeline() {
       }
       caption={
         <>
-          Europe builds the EUV machine; Washington owns the dial. Scrub the timeline — or press ▶ — from{" "}
+          Europe builds the EUV machine; Washington owns the dial. Scrub the timeline, or press ▶, from{" "}
           <span style={{ color: p.leverage }}>2019</span> to the proposed{" "}
           <span style={{ color: p.squeeze }}>MATCH Act</span>, and watch the{" "}
           <span style={{ color: p.squeeze }}>tether tighten</span> while ASML&rsquo;s{" "}
@@ -176,7 +176,7 @@ export function KillSwitchTimeline() {
         role="img"
         aria-label={`Kill-switch timeline: by ${cur.date} (${cur.title}), the US-led export-control tether has tightened around ASML's EUV machine and cut China revenue from 49% to ${pctFmt(
           cur.china,
-        )} of sales — a ${pctFmt(cut)}-point cut. The off-switch only moves one direction.`}
+        )} of sales, a ${pctFmt(cut)}-point cut. The off-switch only moves one direction.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
@@ -443,7 +443,7 @@ export function KillSwitchTimeline() {
               setStep(clamp(Number(e.target.value), 0, N))
             }}
             aria-label="Scrub the export-control timeline from 2019 to the proposed MATCH Act"
-            aria-valuetext={`${cur.date}: ${cur.title} — ASML China revenue ${pctFmt(cur.china)}, a ${pctFmt(
+            aria-valuetext={`${cur.date}: ${cur.title}, ASML China revenue ${pctFmt(cur.china)}, a ${pctFmt(
               cut,
             )}-point cut`}
             className="h-1 flex-1 cursor-pointer appearance-none rounded-full"

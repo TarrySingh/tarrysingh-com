@@ -261,7 +261,7 @@ export function TarryPeekABoo({
                   fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
                 }}
               >
-                Psst — from Tarry
+                Psst, from Tarry
               </span>
             </div>
 

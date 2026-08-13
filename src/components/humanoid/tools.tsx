@@ -124,7 +124,7 @@ export function ROICalculator() {
       <div className="roi-out">
         <div className="roi-hero">
           <div className="roi-k">{model === "buy" ? "Payback period" : "Net positive"}</div>
-          <div className="roi-big">{model === "buy" ? (isFinite(calc.paybackMo) ? Math.round(calc.paybackMo) + " mo" : "—") : "Month 1"}</div>
+          <div className="roi-big">{model === "buy" ? (isFinite(calc.paybackMo) ? Math.round(calc.paybackMo) + " mo" : ", ") : "Month 1"}</div>
           <div className="roi-sub">{model === "buy" ? `on ${usd(calc.capex)} capex` : "no upfront capex"}</div>
         </div>
         <div className="roi-lines">

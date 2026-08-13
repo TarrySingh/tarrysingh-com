@@ -25,8 +25,8 @@ const PARTNERS = [
     col: COOL,
     angle: -Math.PI / 2,
     contrib:
-      "The four-scale neuromodulation framework — the mathematical template for how a fixed substrate reconfigures on a task signal. Trained in the Blue Brain tradition; also runs the equitable-access user study.",
-    cost: "Without it, no principled model for how activation should change — only hand-engineered routing heuristics.",
+      "The four-scale neuromodulation framework, the mathematical template for how a fixed substrate reconfigures on a task signal. Trained in the Blue Brain tradition; also runs the equitable-access user study.",
+    cost: "Without it, no principled model for how activation should change, only hand-engineered routing heuristics.",
   },
   {
     name: "CREATE · Siciliano",
@@ -34,8 +34,8 @@ const PARTNERS = [
     col: TEAL,
     angle: 0,
     contrib:
-      "The hardware-validated control formalism by which a low-bandwidth signal reshapes a high-DOF controller without rewriting it — transposed into SYMPHONY's narrow, auditable task surface.",
-    cost: "Without it, the task interface defaults to a prompt window — the unbounded surface the project exists to reject.",
+      "The hardware-validated control formalism by which a low-bandwidth signal reshapes a high-DOF controller without rewriting it, transposed into SYMPHONY's narrow, auditable task surface.",
+    cost: "Without it, the task interface defaults to a prompt window, the unbounded surface the project exists to reject.",
   },
   {
     name: "Real AI · Singh",
@@ -43,7 +43,7 @@ const PARTNERS = [
     col: COPPER,
     angle: Math.PI / 2,
     contrib:
-      "HOMINIS on the Leonardo supercomputer (~14,000 GPUs) — foundation-model engineering at scale, plus the sovereign, human-centric governance posture that makes the substrate readable to European frameworks.",
+      "HOMINIS on the Leonardo supercomputer (~14,000 GPUs), foundation-model engineering at scale, plus the sovereign, human-centric governance posture that makes the substrate readable to European frameworks.",
     cost: "Without it, the science stays a demonstration, with no path to a deployable, governable European artefact.",
   },
   {
@@ -52,7 +52,7 @@ const PARTNERS = [
     col: ROSE,
     angle: Math.PI,
     contrib:
-      "The industrial coalface — a production codebase with real version drift and undocumented decisions, the engineering-task ontology, and the EU-anchored joint-venture entity.",
+      "The industrial coalface, a production codebase with real version drift and undocumented decisions, the engineering-task ontology, and the EU-anchored joint-venture entity.",
     cost: "Without it, SYMPHONY is judged only on open-source toys, and any win invites the objection it was never tested where impact lives.",
   },
 ]

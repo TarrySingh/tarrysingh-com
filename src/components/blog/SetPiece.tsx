@@ -289,13 +289,13 @@ const GAP_STEPS = [
   { k: "1970 · Baseline", h: "A system you could hold in one head", p: "The first decade. System complexity and human comprehension start at the same point. The lines are together." },
   { k: "1990 · Divergence", h: "An order of magnitude, already", p: "Twenty years in, complexity is 32× the baseline. Comprehension has barely moved off 1×. The wedge begins." },
   { k: "2010 · Structural", h: "A thousand to one", p: "The gap is no longer a matter of effort. No amount of reading closes three orders of magnitude." },
-  { k: "2025 · The ceiling", h: "Sixteen-thousand to one", p: "The ceiling becomes visible. Independent re-evaluations collapse the headline capability numbers — but the complexity curve does not bend." },
+  { k: "2025 · The ceiling", h: "Sixteen-thousand to one", p: "The ceiling becomes visible. Independent re-evaluations collapse the headline capability numbers, but the complexity curve does not bend." },
   { k: "2030 · The fork", h: "The bridge, or the gap is permanent", p: "The substrate is either the bridge by 2030, or the divergence is a permanent feature of how we build." },
 ]
 const BAR_STEPS = [
-  { k: "GPU AI · today", h: "One nanojoule per event", p: "Transformer inference on GPUs. The reference point — and the most expensive way we have to think." },
-  { k: "Neuromorphic", h: "Two orders better", p: "Loihi and TrueNorth-class silicon. State of the art — and still far from the only existence proof that matters." },
-  { k: "Biology", h: "The real benchmark", p: "Mammalian cortex, at roughly 100 femtojoules. Not the next increment — the target." },
+  { k: "GPU AI · today", h: "One nanojoule per event", p: "Transformer inference on GPUs. The reference point, and the most expensive way we have to think." },
+  { k: "Neuromorphic", h: "Two orders better", p: "Loihi and TrueNorth-class silicon. State of the art, and still far from the only existence proof that matters." },
+  { k: "Biology", h: "The real benchmark", p: "Mammalian cortex, at roughly 100 femtojoules. Not the next increment, the target." },
   { k: "MEMPHIS · target", h: "Below biology", p: "A self-organising memristive substrate, under 10 fJ. Five orders of magnitude from where we started." },
 ]
 
@@ -446,7 +446,7 @@ export function SetPiece({ post }: { post: BlogPostMeta }) {
           capacity to hold them in mind.
         </p>
         <p className="mt-6 text-xl leading-relaxed" style={{ ...serif, color: "rgba(246,234,208,0.7)" }}>
-          We have answered that divergence the only way we knew how — by
+          We have answered that divergence the only way we knew how, by
           enlarging the engineer. More abstraction. More tooling. More
           documentation laid over an artefact that keeps getting larger
           underneath it.
@@ -528,7 +528,7 @@ export function SetPiece({ post }: { post: BlogPostMeta }) {
         </p>
         <p className="mt-6 text-xl leading-relaxed" style={{ ...serif, color: "rgba(246,234,208,0.7)" }}>
           Every closed gap has a price measured in joules. The substrate that
-          finally attends must also be the substrate that can afford to — and
+          finally attends must also be the substrate that can afford to, and
           on that axis, today&apos;s machine intelligence sits{" "}
           <strong style={{ color: cream, fontWeight: 500 }}>
             six orders of magnitude above the brain it imitates.

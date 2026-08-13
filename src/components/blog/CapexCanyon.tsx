@@ -160,9 +160,9 @@ export function CapexCanyon() {
           The capital-intensity race Europe is not in. The four US hyperscalers&rsquo;{" "}
           <span style={{ color: p.squeeze }}>~${US_CAPEX}bn</span> of 2026 AI / data-centre capex (up ~77%
           year-on-year; ~${US_PLUS}bn including xAI + Stargate) towers over Europe&rsquo;s combined{" "}
-          <span style={{ color: p.leverage }}>~${EU_CAPEX}bn</span> — a ~{RATIO.toFixed(0)}× canyon, drawn
-          literally to scale. Toggle <strong>to scale</strong> and watch the European ledge — the EU AI
-          Gigafactories (~$20bn) and Mistral&rsquo;s raises (~€11.7bn → ~€20bn) — nearly vanish. The lab gap is
+          <span style={{ color: p.leverage }}>~${EU_CAPEX}bn</span>, a ~{RATIO.toFixed(0)}× canyon, drawn
+          literally to scale. Toggle <strong>to scale</strong> and watch the European ledge, the EU AI
+          Gigafactories (~$20bn) and Mistral&rsquo;s raises (~€11.7bn → ~€20bn), nearly vanish. The lab gap is
           the same shape: OpenAI ~$852bn and Anthropic ~$965bn against Mistral ~$23bn (Europe&rsquo;s best, ~40×
           smaller; ~$0.4bn ARR vs Anthropic ~$47bn). Sources: CNBC / company filings (2026 capex); Stanford AI
           Index; TechCrunch (Mistral).
@@ -172,7 +172,7 @@ export function CapexCanyon() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`The 2026 AI capex canyon. On the near rim, the four US hyperscalers' combined ~$${US_CAPEX} billion of AI and data-centre capex (up ~77% year-on-year; ~$${US_PLUS} billion including xAI and Stargate). On the far rim, Europe's combined ~$${EU_CAPEX} billion — a roughly ${RATIO.toFixed(
+        aria-label={`The 2026 AI capex canyon. On the near rim, the four US hyperscalers' combined ~$${US_CAPEX} billion of AI and data-centre capex (up ~77% year-on-year; ~$${US_PLUS} billion including xAI and Stargate). On the far rim, Europe's combined ~$${EU_CAPEX} billion, a roughly ${RATIO.toFixed(
           0,
         )}-times canyon. Europe's whole response, the EU AI Gigafactories at ~$20 billion and Mistral's raises, stacks onto that low ledge. ${
           toScale

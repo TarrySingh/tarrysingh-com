@@ -141,7 +141,7 @@ export function SeventeenHundredMeter() {
           A productivity gap, turned into money leaving each pocket. The{" "}
           <span style={{ color: p.wonder }}>path not taken</span> grows at the ~1.6%/yr frontier rate; the{" "}
           <span style={{ color: p.muted, fontStyle: "normal" }}>actual Dutch path</span> averaged ~0.4% over 2014&ndash;24.
-          Scrub the year — or press ▶ — and the <span style={{ color: p.squeeze }}>wedge</span> between them
+          Scrub the year, or press ▶, and the <span style={{ color: p.squeeze }}>wedge</span> between them
           is what each citizen forgoes, compounding toward €1,700/yr. Illustrative accumulation of an annual
           gap, not telemetry. Source: Dutch competitiveness deck (B01).
         </>
@@ -285,7 +285,7 @@ export function SeventeenHundredMeter() {
           style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}
         >
           <span style={{ color: p.squeeze, fontStyle: "normal", fontWeight: 700 }}>{eur(cur.gap)}</span>{" "}
-          a year, every year — the abstraction was a salary all along.
+          a year, every year, the abstraction was a salary all along.
         </p>
 
         {/* scrubber + play — the reader drives the accumulation */}

@@ -132,7 +132,7 @@ const CURVES: Curve[] = [
     tone: "violet",
     label: "intelligence",
     multiple: "intelligence ~10⁶× ↓",
-    figure: "$/token for GPT-3-grade intelligence fell ~1,000,000× in four years (2021→2025) — the steepest collapse on record (a16z, LLMflation 2024).",
+    figure: "$/token for GPT-3-grade intelligence fell ~1,000,000× in four years (2021→2025), the steepest collapse on record (a16z, LLMflation 2024).",
     pts: INTELLIGENCE,
   },
   {
@@ -140,7 +140,7 @@ const CURVES: Curve[] = [
     tone: "gold",
     label: "solar",
     multiple: "solar ~10× ↓",
-    figure: "Solar fell from ~$2/W (2010) to ~$0.22/W (2024) — roughly 10×, and module costs keep falling toward a hard physics floor (BNEF / IRENA).",
+    figure: "Solar fell from ~$2/W (2010) to ~$0.22/W (2024), roughly 10×, and module costs keep falling toward a hard physics floor (BNEF / IRENA).",
     pts: SOLAR,
   },
   {
@@ -148,7 +148,7 @@ const CURVES: Curve[] = [
     tone: "teal",
     label: "genome",
     multiple: "genome ~250× ↓",
-    figure: "A human genome fell from ~$50,000 (2010) to ~$200 (2023) — about 250×, faster than Moore's law for over a decade (NHGRI / ARK).",
+    figure: "A human genome fell from ~$50,000 (2010) to ~$200 (2023), about 250×, faster than Moore's law for over a decade (NHGRI / ARK).",
     pts: GENOME,
   },
 ]
@@ -186,7 +186,7 @@ export function AbundanceProjection() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — Abundance projection · cost relative to 2010 = 100% · log scale"
+      kicker="Fig., Abundance projection · cost relative to 2010 = 100% · log scale"
       caption={
         activeCurve ? (
           <>
@@ -197,11 +197,11 @@ export function AbundanceProjection() {
           </>
         ) : (
           <>
-            Three foundational costs — intelligence, energy and biology — collapsing
+            Three foundational costs, intelligence, energy and biology, collapsing
             in parallel toward a near-zero floor. The marginal cost trends to{" "}
             <strong style={{ color: p.ink, fontStyle: "normal" }}>~0</strong>; the
             open question is who captures the value. These are demonetisation{" "}
-            <em>trajectories</em>, not guarantees — the floor is real (energy,
+            <em>trajectories</em>, not guarantees, the floor is real (energy,
             physics). Sources: a16z 2024 · BNEF/IRENA · NHGRI · Rifkin 2014 · Diamandis 2012.
           </>
         )
@@ -388,7 +388,7 @@ export function AbundanceProjection() {
           fontSize={13}
           fill={p.ink}
         >
-          the pie becomes nearly free to copy —
+          the pie becomes nearly free to copy,
         </text>
         <text
           x={VW - PAD_R}

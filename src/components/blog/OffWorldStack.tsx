@@ -122,8 +122,8 @@ const NODES: Node[] = [
     alt: 0.1,
     dx: 96,
     year: 2025,
-    short: "Starcloud-1 — first H100 in orbit",
-    milestone: "Starcloud-1 carries the first NVIDIA H100 GPU into orbit — datacentre-class AI silicon running off-planet.",
+    short: "Starcloud-1, first H100 in orbit",
+    milestone: "Starcloud-1 carries the first NVIDIA H100 GPU into orbit, datacentre-class AI silicon running off-planet.",
     who: "Starcloud (Nov 2025)",
     conf: "done",
   },
@@ -133,8 +133,8 @@ const NODES: Node[] = [
     alt: 0.24,
     dx: -104,
     year: 2027,
-    short: "Project Suncatcher — TPU prototype sats",
-    milestone: "Google's Project Suncatcher flies prototype TPU satellites, alongside Starcloud-2 — testing solar-powered orbital compute constellations.",
+    short: "Project Suncatcher, TPU prototype sats",
+    milestone: "Google's Project Suncatcher flies prototype TPU satellites, alongside Starcloud-2, testing solar-powered orbital compute constellations.",
     who: "Google · Starcloud (early 2027, announced)",
     conf: "scheduled",
   },
@@ -145,7 +145,7 @@ const NODES: Node[] = [
     dx: 110,
     year: 2041,
     short: "Gigawatt orbital data-centres",
-    milestone: "Gigawatt-scale orbital data-centres — continuous sunlight, radiative cooling, no land or water. The end-state the prototypes are reaching toward.",
+    milestone: "Gigawatt-scale orbital data-centres, continuous sunlight, radiative cooling, no land or water. The end-state the prototypes are reaching toward.",
     who: "industry vision (beyond 2040)",
     conf: "aspirational",
     note: "Speculative: depends on launch cost, in-space assembly and thermal management none of which exist at scale yet.",
@@ -157,8 +157,8 @@ const NODES: Node[] = [
     alt: 0.5,
     dx: -98,
     year: 2026,
-    short: "Artemis II — crewed lunar flyby",
-    milestone: "Artemis II — the first crewed flight around the Moon since Apollo 17, carrying four astronauts on a free-return flyby.",
+    short: "Artemis II, crewed lunar flyby",
+    milestone: "Artemis II, the first crewed flight around the Moon since Apollo 17, carrying four astronauts on a free-return flyby.",
     who: "NASA (Apr 2026)",
     conf: "done",
   },
@@ -168,11 +168,11 @@ const NODES: Node[] = [
     alt: 0.6,
     dx: 104,
     year: 2028,
-    short: "Artemis IV — first crewed landing since 1972",
-    milestone: "Artemis IV — boots on the lunar surface for the first time since 1972, with a stay at the Gateway station.",
+    short: "Artemis IV, first crewed landing since 1972",
+    milestone: "Artemis IV, boots on the lunar surface for the first time since 1972, with a stay at the Gateway station.",
     who: "NASA (~2028, scheduled)",
     conf: "scheduled",
-    note: "Schedule will almost certainly slip — every Artemis milestone so far has.",
+    note: "Schedule will almost certainly slip, every Artemis milestone so far has.",
   },
   {
     id: "china-moon",
@@ -181,7 +181,7 @@ const NODES: Node[] = [
     dx: -96,
     year: 2030,
     short: "China crewed lunar landing",
-    milestone: "China lands taikonauts on the Moon — a stated programme with hardware (Long March 10, Mengzhou, Lanyue) in test.",
+    milestone: "China lands taikonauts on the Moon, a stated programme with hardware (Long March 10, Mengzhou, Lanyue) in test.",
     who: "CNSA (2029–30, target)",
     conf: "target",
   },
@@ -204,7 +204,7 @@ const NODES: Node[] = [
     dx: -88,
     year: 2040,
     short: "First human bootprints on Mars",
-    milestone: "The first human bootprints on Mars — NASA's long-stated, “audacious” horizon goal.",
+    milestone: "The first human bootprints on Mars, NASA's long-stated, “audacious” horizon goal.",
     who: "NASA (~2040, aspirational)",
     conf: "aspirational",
     note: "Unfunded as a programme. The date is a banner, not a manifest.",
@@ -215,7 +215,7 @@ const NODES: Node[] = [
     alt: 0.96,
     dx: 84,
     year: 2042,
-    short: "Terraforming — a horizon of centuries",
+    short: "Terraforming, a horizon of centuries",
     milestone: "Terraforming Mars into a habitable world: a project of centuries, and “not possible using present-day technology.”",
     who: "Jakosky & Edwards · Nature Astronomy 2018",
     conf: "aspirational",
@@ -288,12 +288,12 @@ export function OffWorldStack() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker={`Fig. — The off-world stack · ${reachedCount}/${NODES.length} milestones reached by ${year}`}
+      kicker={`Fig., The off-world stack · ${reachedCount}/${NODES.length} milestones reached by ${year}`}
       caption={
         activeNode ? (
           <>
             <strong style={{ color: p.ink, fontStyle: "normal" }}>
-              {activeNode.year} — {activeNode.milestone}
+              {activeNode.year}, {activeNode.milestone}
             </strong>{" "}
             {activeNode.who}
             <span style={{ color: confColor(activeNode.conf) }}>
@@ -301,12 +301,12 @@ export function OffWorldStack() {
               · {CONF[activeNode.conf].label}
             </span>
             {activeNode.note ? (
-              <span style={{ color: p.soft }}> — {activeNode.note}</span>
+              <span style={{ color: p.soft }}>, {activeNode.note}</span>
             ) : null}
           </>
         ) : (
           <>
-            The industrial base climbs off Earth — orbital compute, then the
+            The industrial base climbs off Earth, orbital compute, then the
             Moon, then the long horizon of Mars. Drag the altitude-hand to scrub
             the year; hover a node for the milestone and who is behind it. The
             higher you climb, the fainter the marks: that fade toward Mars and
@@ -328,7 +328,7 @@ export function OffWorldStack() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none select-none"
         role="img"
-        aria-label={`The off-world stack — an ascending cross-section of humanity's industrial base leaving Earth. From the Earth limb at the bottom, up through low Earth orbit (orbital AI compute), to the Moon (return and permanence), to the faint red horizon of Mars (the long, aspirational goal). ${NODES.length} milestones are placed at their altitude and tagged by year and an honest confidence level — solid and bright where things have happened near Earth, faint and dashed toward Mars where they remain hopes. Currently showing the year ${year}, with ${reachedCount} of ${NODES.length} milestones reached.`}
+        aria-label={`The off-world stack, an ascending cross-section of humanity's industrial base leaving Earth. From the Earth limb at the bottom, up through low Earth orbit (orbital AI compute), to the Moon (return and permanence), to the faint red horizon of Mars (the long, aspirational goal). ${NODES.length} milestones are placed at their altitude and tagged by year and an honest confidence level, solid and bright where things have happened near Earth, faint and dashed toward Mars where they remain hopes. Currently showing the year ${year}, with ${reachedCount} of ${NODES.length} milestones reached.`}
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerLeave={endDrag}
@@ -524,7 +524,7 @@ export function OffWorldStack() {
               key={n.id}
               tabIndex={0}
               role="button"
-              aria-label={`${n.year}: ${n.milestone} — ${n.who}, ${CONF[n.conf].label}`}
+              aria-label={`${n.year}: ${n.milestone}, ${n.who}, ${CONF[n.conf].label}`}
               onMouseEnter={() => setActive(n.id)}
               onMouseLeave={() => setActive((cur) => (cur === n.id ? null : cur))}
               onFocus={() => setActive(n.id)}

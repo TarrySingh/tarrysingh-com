@@ -63,7 +63,7 @@ export function SynapticSubscribeInline({
       setEmail("")
     } catch {
       setStatus("error")
-      setMessage("Something snagged — try again in a moment?")
+      setMessage("Something snagged, try again in a moment?")
     }
   }
 
@@ -111,7 +111,7 @@ export function SynapticSubscribeInline({
             margin: 0,
           }}
         >
-          Following the argument? Get the next dispatch in your inbox — what
+          Following the argument? Get the next dispatch in your inbox, what
           I&rsquo;m building, what I&rsquo;m reading. No funnels.
         </p>
 

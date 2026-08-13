@@ -108,7 +108,7 @@ export function TwentyPercentMirage() {
       caption={
         <>
           The EU Chips Act set a target: <span style={{ color: p.wonder }}>20% of global chip
-          manufacturing by 2030</span>. The actual trajectory — ~10% today, ~11.7% projected —{" "}
+          manufacturing by 2030</span>. The actual trajectory, ~10% today, ~11.7% projected —{" "}
           falls far short; the European Court of Auditors calls it{" "}
           <span style={{ color: p.squeeze }}>&ldquo;very unlikely&rdquo;</span>. Flip from the press
           release to the <span style={{ color: p.squeeze }}>field in Saxony-Anhalt</span>, where
@@ -312,7 +312,7 @@ export function TwentyPercentMirage() {
           style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}
         >
           <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span>{" "}
-          — {verdict.line}.
+, {verdict.line}.
         </p>
 
         {/* the toggle — press release ⟷ field in Saxony-Anhalt */}
@@ -324,8 +324,8 @@ export function TwentyPercentMirage() {
             onClick={() => setField((v) => !v)}
             aria-label={
               field
-                ? "Showing the field in Saxony-Anhalt — switch back to the press release"
-                : "Showing the press release — switch to the field in Saxony-Anhalt"
+                ? "Showing the field in Saxony-Anhalt, switch back to the press release"
+                : "Showing the press release, switch to the field in Saxony-Anhalt"
             }
             className="inline-flex items-center gap-2"
             style={{

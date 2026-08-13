@@ -192,7 +192,7 @@ const CERT_STEPS: CertStep[] = [
   { k: "Safety & Ops", t: "2 days", d: "Incident-response protocols, ISO 25785 readiness, and change management. Simulation: run a safety breach.", out: "Operational safety" },
   { k: "Capstone", t: "1 day", d: "Present three deliverables to a review panel: Strategic Implementation Plan, Technical Integration Blueprint, Transformation Risk Assessment.", out: "Certified Practitioner" },
 ]
-const CERT_TRACKS = ["Technical Innovators — implementation expertise", "Executive Leaders — transformation governance"]
+const CERT_TRACKS = ["Technical Innovators, implementation expertise", "Executive Leaders, transformation governance"]
 
 export function CertStepper() {
   const [step, setStep] = useState(0)

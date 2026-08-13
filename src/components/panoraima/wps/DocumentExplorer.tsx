@@ -233,7 +233,7 @@ export default function DocumentExplorer({ catalogue }: Props) {
 
       {filtered.length > 40 && (
         <div className="mt-4 text-center text-[11px]" style={{ color: MUTE }}>
-          Showing the first 40 — narrow your search to see more.
+          Showing the first 40, narrow your search to see more.
         </div>
       )}
 

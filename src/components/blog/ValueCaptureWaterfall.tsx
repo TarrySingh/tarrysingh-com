@@ -65,7 +65,7 @@ type Step = {
 // The waterfall: a 100-unit bar stepped down by red deductions to a thin
 // retained sliver. Cuts sum to 92 → ~8 retained in Europe at full run.
 const STEPS: Step[] = [
-  { key: "hyper", cut: 44, label: "US hyperscaler fees", detail: "AWS · Azure · Google — ~70% of cloud spend" },
+  { key: "hyper", cut: 44, label: "US hyperscaler fees", detail: "AWS · Azure · Google, ~70% of cloud spend" },
   { key: "saas", cut: 20, label: "Other US cloud & SaaS", detail: "the rest of US cloud + licence fees" },
   { key: "ip", cut: 18, label: "IP & gross margin", detail: "booked in the United States" },
   { key: "equity", cut: 10, label: "Equity compounding", detail: "shares appreciate in US capital markets" },
@@ -156,7 +156,7 @@ export function ValueCaptureWaterfall() {
     step === 0
       ? { word: "BOOKED IN FULL", color: p.leverage, line: "every unit of value still stands in the European ledger" }
       : step < N
-        ? { word: "CARVED AWAY", color: p.squeezeHi, line: "each step ships another slice abroad — billed annually, renewed by default" }
+        ? { word: "CARVED AWAY", color: p.squeezeHi, line: "each step ships another slice abroad, billed annually, renewed by default" }
         : { word: "THE TRIBUTE", color: p.squeeze, line: "Europe keeps the basis points and ships the compounding" }
 
   // Running top-of-bar as deductions stack: the cyan that survives each step.
@@ -184,9 +184,9 @@ export function ValueCaptureWaterfall() {
       caption={
         <>
           Of the cloud &amp; software value Europe consumes,{" "}
-          <span style={{ color: p.squeeze }}>~€{TRIBUTE_EUR}bn a year</span> flows to US providers — about
+          <span style={{ color: p.squeeze }}>~€{TRIBUTE_EUR}bn a year</span> flows to US providers, about
           80–83% of EU professional cloud spend, ~{HYPERSCALER_PCT}% to the three US hyperscalers. Scrub the
-          waterfall — range, ▶ or ←/→ — and watch the{" "}
+          waterfall, range, ▶ or ←/→, and watch the{" "}
           <span style={{ color: p.leverage }}>100-unit cyan bar</span> step down through{" "}
           <span style={{ color: p.squeeze }}>red deductions</span> to the thin sliver{" "}
           <span style={{ color: p.leverage }}>retained in Europe</span> (the wages, the reseller margin, the
@@ -202,7 +202,7 @@ export function ValueCaptureWaterfall() {
           retained,
         )} of every 100 units of consumed value is retained in Europe and ${fmtUnit(
           cutSoFar,
-        )} has been shipped to US providers — about €${eurOut} billion of the ~€${TRIBUTE_EUR} billion annual tribute. At full run only ~${RETAINED_FLOOR} of 100 stays: Europe keeps the basis points and ships the compounding.`}
+        )} has been shipped to US providers, about €${eurOut} billion of the ~€${TRIBUTE_EUR} billion annual tribute. At full run only ~${RETAINED_FLOOR} of 100 stays: Europe keeps the basis points and ships the compounding.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
@@ -383,7 +383,7 @@ export function ValueCaptureWaterfall() {
         {/* the active step's detail line, anchored under the readout */}
         <text x={W / 2} y={PADT - 18} textAnchor="middle" fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.04em" }}>
           {step === 0
-            ? "100 units stand — nothing carved yet · step the deductions ▸"
+            ? "100 units stand, nothing carved yet · step the deductions ▸"
             : `${STEPS[clamp(step - 1, 0, N - 1)].label}: −${STEPS[clamp(step - 1, 0, N - 1)].cut} · ${STEPS[clamp(step - 1, 0, N - 1)].detail}`}
         </text>
       </svg>

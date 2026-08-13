@@ -121,7 +121,7 @@ export default function DocumentDrawer({ deliverable, open, onClose, wpColor }: 
               </code>
               <p className="mt-3 text-[11px] leading-relaxed" style={{ color: MUTE }}>
                 Deliverables live on the consortium SharePoint. This dashboard shows the first
-                few paragraphs only — open the file in SharePoint/OneDrive for the full content.
+                few paragraphs only, open the file in SharePoint/OneDrive for the full content.
               </p>
             </div>
           )}

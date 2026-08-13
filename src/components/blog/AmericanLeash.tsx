@@ -75,7 +75,7 @@ const BUS: Array<[number, number, number, number]> = [
 function fmtVerdict(over: boolean) {
   return over
     ? { word: "LEASH TAUT", line: "Washington holds the off-switch to Europe's crown jewel" }
-    : { word: "SLACK", line: "below the rule — the machine answers to Veldhoven alone" }
+    : { word: "SLACK", line: "below the rule, the machine answers to Veldhoven alone" }
 }
 
 export function AmericanLeash() {
@@ -126,7 +126,7 @@ export function AmericanLeash() {
           Europe builds the EUV machine; raise its{" "}
           <span style={{ color: p.squeeze }}>US-origin content</span> past the{" "}
           <span style={{ color: p.squeeze }}>Foreign Direct Product Rule</span> threshold and the
-          jurisdiction tether from San Diego snaps taut — the machine greys to a{" "}
+          jurisdiction tether from San Diego snaps taut, the machine greys to a{" "}
           <span style={{ color: p.squeeze }}>foreign veto</span>. Sources: ASML/Cymer
           bill-of-materials (Cymer light source 100% US-origin); US Foreign Direct Product Rule;
           the US-led &ldquo;Pax Silica&rdquo; alliance (Dec 2025, EU joined Jun 2026).
@@ -269,7 +269,7 @@ export function AmericanLeash() {
           fill={over ? p.squeezeHi : p.soft}
           style={{ fontSize: 11.5, fontWeight: over ? 700 : 400, letterSpacing: "0.08em" }}
         >
-          {over ? "RE-EXPORT JURISDICTION — ATTACHED" : "extraterritorial reach — slack"}
+          {over ? "RE-EXPORT JURISDICTION, ATTACHED" : "extraterritorial reach, slack"}
         </text>
       </svg>
 
@@ -282,7 +282,7 @@ export function AmericanLeash() {
           <span style={{ color: verdictColor, fontStyle: "normal", fontWeight: 700 }}>
             {verdict.word}
           </span>{" "}
-          — {verdict.line}.
+, {verdict.line}.
         </p>
 
         {/* threshold meter: a marked FDPR line the fill crosses */}
@@ -317,7 +317,7 @@ export function AmericanLeash() {
             max={100}
             value={pct}
             onChange={(e) => setPct(clamp(Math.round(Number(e.target.value)), 0, 100))}
-            aria-label="US-origin content of the machine, percent — raise past the Foreign Direct Product Rule threshold to pull the jurisdiction leash taut"
+            aria-label="US-origin content of the machine, percent, raise past the Foreign Direct Product Rule threshold to pull the jurisdiction leash taut"
             className="h-1 flex-1 cursor-pointer appearance-none rounded-full"
             style={{ accentColor: over ? p.squeeze : p.leverage, background: p.hair }}
           />

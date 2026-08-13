@@ -61,16 +61,16 @@ const NODES: PNode[] = [
   { id: "cost-2025", year: 2025, ring: 1, title: "GPT-3-grade intelligence at ~$0.006 / million tokens", source: "a16z · LLMflation 2024" },
   { id: "models-2030", year: 2030, ring: 1, title: "AI-software market $7–14T; 4–16 GW training runs", source: "ARK · Epoch AI", flag: "ARK bull case" },
   { id: "agents-2028", year: 2028, ring: 2, title: "First one-person, billion-dollar company", source: "Altman · founder bet (median 2028)" },
-  { id: "agents-2029", year: 2029, ring: 2, title: "Human-level AI — passes the Turing test", source: "Kurzweil · The Singularity Is Nearer 2024", flag: "trajectory right, date optimistic" },
+  { id: "agents-2029", year: 2029, ring: 2, title: "Human-level AI · passes the Turing test", source: "Kurzweil · The Singularity Is Nearer 2024", flag: "trajectory right, date optimistic" },
   { id: "equity-2030", year: 2030, ring: 2, title: "Disruptive innovation = two-thirds of global equity ($140T)", source: "ARK · Big Ideas 2025", flag: "ARK bull case" },
   { id: "robotaxi-2030", year: 2030, ring: 3, title: "Robotaxis: ~$34T enterprise value; 50M fleet; $0.25 / mile", source: "ARK · Big Ideas 2025", flag: "ARK bull case" },
-  { id: "humanoid-2032", year: 2032, ring: 3, title: "Humanoid robotics — a $26T annual opportunity", source: "ARK · Big Ideas 2025", flag: "ARK bull case · vs ~$38bn consensus" },
+  { id: "humanoid-2032", year: 2032, ring: 3, title: "Humanoid robotics · a $26T annual opportunity", source: "ARK · Big Ideas 2025", flag: "ARK bull case · vs ~$38bn consensus" },
   { id: "genome-2030", year: 2030, ring: 4, title: "Whole human genome for ~$1–10", source: "ARK · faster-than-Moore" },
   { id: "drugs-2031", year: 2031, ring: 4, title: "AI-designed drugs: $2.4B → $0.6B, ~40% faster", source: "ARK · Big Ideas 2025" },
   { id: "suncatcher-2027", year: 2027, ring: 5, title: "First TPU/GPU data-centre satellites fly", source: "Google Suncatcher · Starcloud" },
-  { id: "artemis-2028", year: 2028, ring: 5, title: "Artemis IV — first crewed lunar landing since 1972", source: "NASA", flag: "schedule will likely slip" },
+  { id: "artemis-2028", year: 2028, ring: 5, title: "Artemis IV · first crewed lunar landing since 1972", source: "NASA", flag: "schedule will likely slip" },
   { id: "ilrs-2035", year: 2035, ring: 5, title: "Lunar station + ISRU; launch < $200 / kg", source: "CNSA · Google" },
-  { id: "mars-2040", year: 2040, ring: 5, title: "First human bootprints on Mars", source: "NASA — an “audacious,” unfunded goal", flag: "aspirational" },
+  { id: "mars-2040", year: 2040, ring: 5, title: "First human bootprints on Mars", source: "NASA · an “audacious,” unfunded goal", flag: "aspirational" },
 ]
 
 // a few couplings: cheap intelligence cascading into the outer frontiers
@@ -162,7 +162,7 @@ export function TwentyFortyPlanisphere() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker={`Fig. — The 2040 Planisphere · ${litCount}/${NODES.length} forecasts in view`}
+      kicker={`Fig., The 2040 Planisphere · ${litCount}/${NODES.length} forecasts in view`}
       caption={
         activeNode ? (
           <>
@@ -171,7 +171,7 @@ export function TwentyFortyPlanisphere() {
             {activeNode.flag ? <span style={{ color: p.accent }}> · {activeNode.flag}</span> : null}
           </>
         ) : (
-          <>Drag the year-hand from 2025 to 2040 — each frontier lights as the forecasts behind it come due. Hover any node for the claim and who made it. Inner rings are software; the outer rings are where automation leaves the screen.</>
+          <>Drag the year-hand from 2025 to 2040, each frontier lights as the forecasts behind it come due. Hover any node for the claim and who made it. Inner rings are software; the outer rings are where automation leaves the screen.</>
         )
       }
       controls={
@@ -188,7 +188,7 @@ export function TwentyFortyPlanisphere() {
         viewBox={`0 0 ${VIEW} ${VIEW}`}
         className="block h-auto w-full touch-none select-none"
         role="img"
-        aria-label={`The 2040 Planisphere — a cartographic time-dial of the path to 2040. Six concentric rings (code, models, agents, embodiment, biology, off-world) cross a rim of years 2025 to 2040. ${NODES.length} attributed forecasts ignite as the year advances. Currently showing the year ${Math.floor(year)}.`}
+        aria-label={`The 2040 Planisphere, a cartographic time-dial of the path to 2040. Six concentric rings (code, models, agents, embodiment, biology, off-world) cross a rim of years 2025 to 2040. ${NODES.length} attributed forecasts ignite as the year advances. Currently showing the year ${Math.floor(year)}.`}
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerLeave={endDrag}

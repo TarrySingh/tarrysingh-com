@@ -68,7 +68,7 @@ export function Software3Plate({ className }: { className?: string }) {
       viewBox="0 0 1000 1250"
       className={className}
       role="img"
-      aria-label="Software 3.0 — a folio plate: a planisphere of the automated future, three era rings dialled to a luminous 2040 apex, ringed by six figures from the essay."
+      aria-label="Software 3.0, a folio plate: a planisphere of the automated future, three era rings dialled to a luminous 2040 apex, ringed by six figures from the essay."
       preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -234,7 +234,7 @@ export function Software3Plate({ className }: { className?: string }) {
 
       {/* ════════ FIG. A — the three eras ════════ */}
       <line x1="54" y1="906" x2="946" y2="906" stroke={AMBER} strokeOpacity="0.18" strokeWidth="0.7" />
-      <text x="54" y="934" fill={DIM} style={{ fontFamily: "'IBM Plex Mono', monospace" }} fontSize="11" letterSpacing="2.5">FIG. A — THE INSTRUCTION MOVES UP THE STACK · code · weights · intent</text>
+      <text x="54" y="934" fill={DIM} style={{ fontFamily: "'IBM Plex Mono', monospace" }} fontSize="11" letterSpacing="2.5">FIG. A, THE INSTRUCTION MOVES UP THE STACK · code · weights · intent</text>
 
       <g>
         {[

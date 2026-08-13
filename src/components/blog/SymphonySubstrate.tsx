@@ -333,7 +333,7 @@ export function SymphonySubstrate() {
       </div>
       <canvas
         ref={canvasRef}
-        aria-label="SYMPHONY's four-layer code substrate — Structure, Behaviour, History, Rationale — with a neuromodulatory task baton lighting a different subnetwork per engineering task."
+        aria-label="SYMPHONY's four-layer code substrate, Structure, Behaviour, History, Rationale, with a neuromodulatory task baton lighting a different subnetwork per engineering task."
         style={{ width: "100%", height: "clamp(380px, 56vh, 520px)", display: "block" }}
       />
       <figcaption
@@ -344,7 +344,7 @@ export function SymphonySubstrate() {
           color: dark ? "rgba(246,234,208,0.6)" : "rgba(13,27,61,0.6)",
         }}
       >
-        One substrate, four layers. The baton doesn&apos;t rebuild the graph —
+        One substrate, four layers. The baton doesn&apos;t rebuild the graph,
         it changes what each layer foregrounds. Switch the task and watch a
         different subnetwork come into the light.
       </figcaption>

@@ -282,7 +282,7 @@ export function PlateEditor({
               {publishResult.ok ? (
                 <>
                   {publishResult.outcome === "unchanged"
-                    ? "No changes vs the published copy — nothing to commit."
+                    ? "No changes vs the published copy, nothing to commit."
                     : "Published. Vercel will redeploy in ~90s."}{" "}
                   {publishResult.commitUrl && (
                     <a

@@ -149,13 +149,13 @@ export function EighteenMonthDecapitation() {
       }
       caption={
         <>
-          Drag the handle — or use ←/→ — across eighteen months.{" "}
+          Drag the handle, or use ←/→, across eighteen months.{" "}
           <span style={{ color: p.leverage }}>Novo Nordisk</span>, Europe&rsquo;s most valuable
           company, peaks near $604bn and collapses two-thirds;{" "}
           <span style={{ color: p.squeeze }}>Eli Lilly</span> climbs past it to become the first
           $1-trillion healthcare company (24 Nov 2025) and roughly 5× Novo. The{" "}
-          <span style={{ color: p.wonder }}>CagriSema miss</span> — 22.7% weight loss against a
-          ~25% target — is where the cyan line breaks. Sources: market-cap data (MacroTrends /
+          <span style={{ color: p.wonder }}>CagriSema miss</span>, 22.7% weight loss against a
+          ~25% target, is where the cyan line breaks. Sources: market-cap data (MacroTrends /
           companiesmarketcap.com); Eli Lilly $1tn (CNBC, 24 Nov 2025); CagriSema results (Feb 2026).
         </>
       }
@@ -163,9 +163,9 @@ export function EighteenMonthDecapitation() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`Twin market-cap lines, mid-2024 to mid-2026. Novo Nordisk falls from about $604bn to about $197bn — a ${Math.round(
+        aria-label={`Twin market-cap lines, mid-2024 to mid-2026. Novo Nordisk falls from about $604bn to about $197bn, a ${Math.round(
           novoFall,
-        )} percent fall — while Eli Lilly climbs to about $1.01 trillion, roughly five times Novo, after becoming the first $1-trillion healthcare company on 24 November 2025. At ${cur.label}: Novo ${fmtCap(
+        )} percent fall, while Eli Lilly climbs to about $1.01 trillion, roughly five times Novo, after becoming the first $1-trillion healthcare company on 24 November 2025. At ${cur.label}: Novo ${fmtCap(
           novoNow,
         )}, Lilly ${fmtCap(lillyNow)}, a multiple of ${mult.toFixed(1)} times.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
@@ -356,7 +356,7 @@ export function EighteenMonthDecapitation() {
         <span style={{ color: p.squeeze, fontStyle: "normal", fontWeight: 700 }}>
           {Math.round(novoFall)}% gone
         </span>{" "}
-        — Europe&rsquo;s biggest champion, more than halved and dethroned, in the time it takes to
+, Europe&rsquo;s biggest champion, more than halved and dethroned, in the time it takes to
         run a clinical trial.
       </p>
     </PlateFrame>

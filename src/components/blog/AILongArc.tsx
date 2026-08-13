@@ -64,17 +64,17 @@ interface Milestone {
 
 // dated to the brief; spiral order is strictly chronological
 const MILES: Milestone[] = [
-  { id: "perceptron", year: 1958, label: "Perceptron", who: "Frank Rosenblatt · Cornell", sig: "The first trainable neural net — a machine that learns its own weights. (Mark I built 1960.)", tone: "cool" },
-  { id: "perceptrons-book", year: 1969, label: "Perceptrons", who: "Minsky & Papert · MIT", sig: "A book proves the single layer can’t learn XOR. Funding evaporates — the 1st AI winter.", tone: "rose" },
+  { id: "perceptron", year: 1958, label: "Perceptron", who: "Frank Rosenblatt · Cornell", sig: "The first trainable neural net, a machine that learns its own weights. (Mark I built 1960.)", tone: "cool" },
+  { id: "perceptrons-book", year: 1969, label: "Perceptrons", who: "Minsky & Papert · MIT", sig: "A book proves the single layer can’t learn XOR. Funding evaporates, the 1st AI winter.", tone: "rose" },
   { id: "backprop", year: 1986, label: "Backprop popularised", who: "Rumelhart, Hinton & Williams", sig: "Errors flow backward through many layers. Derived in 1974; this is the paper that lit the fuse.", tone: "violet" },
   { id: "alexnet", year: 2012, label: "AlexNet", who: "Krizhevsky, Sutskever & Hinton", sig: "A deep CNN on two GPUs halves the ImageNet error rate. The ignition of the modern era.", tone: "gold", ignition: true },
-  { id: "transformer", year: 2017, label: "Transformer", who: "Vaswani et al. · Google", sig: "“Attention Is All You Need.” Drops recurrence — the architecture every LLM is built on.", tone: "teal" },
+  { id: "transformer", year: 2017, label: "Transformer", who: "Vaswani et al. · Google", sig: "“Attention Is All You Need.” Drops recurrence, the architecture every LLM is built on.", tone: "teal" },
   { id: "gpt1", year: 2018, label: "GPT-1", who: "Alec Radford et al. · OpenAI", sig: "Generative pre-training, then fine-tune. The recipe that scaled into everything after.", tone: "copper" },
   { id: "gpt3", year: 2020, label: "GPT-3 + scaling laws", who: "Brown, Kaplan et al. · OpenAI", sig: "175B parameters; few-shot from a prompt. Scaling laws say bigger keeps paying off.", tone: "violet" },
-  { id: "chatgpt", year: 2022, frac: 0.91, label: "ChatGPT", who: "OpenAI · 30 Nov 2022", sig: "A chat box puts the model in everyone’s hands. ~100M users in two months — fastest ever.", tone: "gold" },
+  { id: "chatgpt", year: 2022, frac: 0.91, label: "ChatGPT", who: "OpenAI · 30 Nov 2022", sig: "A chat box puts the model in everyone’s hands. ~100M users in two months, fastest ever.", tone: "gold" },
   { id: "gpt4", year: 2023, frac: 0.2, label: "GPT-4", who: "OpenAI", sig: "Multimodal, near-expert on hard exams. The frontier becomes broadly, reliably useful.", tone: "teal" },
   { id: "nobel", year: 2024, frac: 0.78, label: "Hinton’s Nobel", who: "Hinton, w/ John Hopfield", sig: "The Nobel Prize in Physics for the foundations of learning machines. The field, vindicated.", tone: "gold" },
-  { id: "agentic", year: 2025.4, label: "The agentic turn", who: "the frontier labs", sig: "Models stop answering and start doing — planning, tool-use, multi-step work. 2023→26.", tone: "copper" },
+  { id: "agentic", year: 2025.4, label: "The agentic turn", who: "the frontier labs", sig: "Models stop answering and start doing, planning, tool-use, multi-step work. 2023→26.", tone: "copper" },
 ]
 
 // Two winters as year-ranges → dim, desaturated stretches of the coil.
@@ -166,13 +166,13 @@ export function AILongArc() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — The Long Arc · Rosenblatt 1958 → now · a spiral that accelerates"
+      kicker="Fig., The Long Arc · Rosenblatt 1958 → now · a spiral that accelerates"
       caption={
         <>
           <strong style={{ color: p.ink, fontStyle: "normal" }}>
             {Math.floor(active.year)} · {active.label}.
           </strong>{" "}
-          {active.who} — {active.sig} The spiral winds out from a 1958 seed: the
+          {active.who}, {active.sig} The spiral winds out from a 1958 seed: the
           early decades crowd the core through two cold{" "}
           <span style={{ color: p.accent }}>winters</span>, then the post-2012 era
           fans across the rim, each year a longer stride than the last.
@@ -184,7 +184,7 @@ export function AILongArc() {
         className="block h-auto w-full touch-none select-none"
         role="img"
         aria-label={
-          "The long arc of AI as a logarithmic spiral that accelerates outward. From a 1958 seed at the core — Rosenblatt's perceptron — the coil winds through the two AI winters (1969–80 and 1987–93), shown as dim stretches, then surges after AlexNet in 2012: Transformer 2017, GPT-1 2018, GPT-3 2020, ChatGPT 2022, GPT-4 2023, Hinton's 2024 Nobel in Physics, and the agentic turn to 2026. Each later year sweeps a longer arc than the one before. Select a milestone for details."
+          "The long arc of AI as a logarithmic spiral that accelerates outward. From a 1958 seed at the core, Rosenblatt's perceptron, the coil winds through the two AI winters (1969–80 and 1987–93), shown as dim stretches, then surges after AlexNet in 2012: Transformer 2017, GPT-1 2018, GPT-3 2020, ChatGPT 2022, GPT-4 2023, Hinton's 2024 Nobel in Physics, and the agentic turn to 2026. Each later year sweeps a longer arc than the one before. Select a milestone for details."
         }
       >
         <defs>
@@ -340,7 +340,7 @@ export function AILongArc() {
           // keep labels from drifting off-canvas on the right edge
           const anchor: "start" | "end" | "middle" =
             nx > 0.35 ? "start" : nx < -0.35 ? "end" : "middle"
-          const detail = `${i + 1}. ${m.label}, ${Math.floor(m.year)} — ${m.who}. ${m.sig}`
+          const detail = `${i + 1}. ${m.label}, ${Math.floor(m.year)}, ${m.who}. ${m.sig}`
           return (
             <g
               key={m.id}

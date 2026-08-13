@@ -274,7 +274,7 @@ export function FirmMorph() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker={`Fig. — The firm, reinvented · AI leverage ${leveragePct}% · ~${yearLabel}`}
+      kicker={`Fig., The firm, reinvented · AI leverage ${leveragePct}% · ~${yearLabel}`}
       controls={
         <span
           className="tabular-nums text-[13px] font-semibold"
@@ -288,10 +288,10 @@ export function FirmMorph() {
           Slide AI leverage and the bounded industrial firm{" "}
           <strong style={{ color: p.ink, fontStyle: "normal" }}>divides</strong> into a swarm of
           tiny, agent-amplified micro-companies. The revenue/employee figures are{" "}
-          <em>directional</em>, not audited — Midjourney was{" "}
+          <em>directional</em>, not audited, Midjourney was{" "}
           <em>reportedly</em> near $3–5M/employee against ~$200k at a typical SaaS firm (private
           companies; journalist estimates). The “one-person, $1B company (~2028)” is Sam
-          Altman’s <em>prediction</em> — a founder’s bet, median guess, not a confirmed fact.
+          Altman’s <em>prediction</em>, a founder’s bet, median guess, not a confirmed fact.
         </>
       }
     >
@@ -299,7 +299,7 @@ export function FirmMorph() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none select-none"
         role="img"
-        aria-label={`The firm reinvented — an interactive morph. At low AI leverage, one industrial firm holds about ${N_HUMANS} people in a single hierarchy at roughly two hundred thousand dollars of revenue per employee. As leverage rises toward the year 2030, the firm fractures into ${N_FIRMS} micro-companies, each a few people orbited by many AI agents, with revenue per employee rising into the millions, including a one-person billion-dollar company. Currently at ${leveragePct}% leverage, around the year ${yearLabel}.`}
+        aria-label={`The firm reinvented, an interactive morph. At low AI leverage, one industrial firm holds about ${N_HUMANS} people in a single hierarchy at roughly two hundred thousand dollars of revenue per employee. As leverage rises toward the year 2030, the firm fractures into ${N_FIRMS} micro-companies, each a few people orbited by many AI agents, with revenue per employee rising into the millions, including a one-person billion-dollar company. Currently at ${leveragePct}% leverage, around the year ${yearLabel}.`}
       >
         <defs>
           <radialGradient id="fm-bloom" cx="50%" cy="46%" r="62%">
@@ -540,7 +540,7 @@ export function FirmMorph() {
           step={1}
           value={raw}
           onChange={(ev) => setRaw(Number(ev.target.value))}
-          aria-label="AI leverage — slide from the 2020 industrial firm to the 2030 Cambrian constellation of micro-companies"
+          aria-label="AI leverage, slide from the 2020 industrial firm to the 2030 Cambrian constellation of micro-companies"
           aria-valuetext={`${leveragePct}% AI leverage, around the year ${yearLabel}`}
           className="h-1 flex-1 cursor-pointer appearance-none rounded-full"
           style={{ accentColor: p.accent, background: p.hair }}

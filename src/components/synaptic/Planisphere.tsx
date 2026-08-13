@@ -44,7 +44,7 @@ export function Planisphere({
       viewBox={`0 0 ${VIEW} ${VIEW}`}
       className={`block h-auto w-full ${className}`}
       role="img"
-      aria-label="SYMPHONY planisphere — four concentric layers (rationale, historical, behavioural, structural) crossed with twelve engineering-task sectors. The violet task baton activates a three-sector fan; nodes in the fan brighten and a filament threads through the four layers."
+      aria-label="SYMPHONY planisphere, four concentric layers (rationale, historical, behavioural, structural) crossed with twelve engineering-task sectors. The violet task baton activates a three-sector fan; nodes in the fan brighten and a filament threads through the four layers."
     >
       <defs>
         <radialGradient id="syn-planisphere-centre" cx="50%" cy="50%" r="35%">

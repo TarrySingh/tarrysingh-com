@@ -109,7 +109,7 @@ export function SilverThread() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — The silver thread · one intent, six frontiers, reaching outward"
+      kicker="Fig., The silver thread · one intent, six frontiers, reaching outward"
       controls={
         <span
           className="tabular-nums text-[13px] font-semibold"
@@ -124,13 +124,13 @@ export function SilverThread() {
             <strong style={{ color: p.ink, fontStyle: "normal" }}>
               {active.label}
             </strong>{" "}
-            — {active.sub}. The cascade reaches this shell around {active.year};{" "}
+, {active.sub}. The cascade reaches this shell around {active.year};{" "}
             {year >= active.year ? "by " + year + " it is live." : "still latent at " + year + "."}
           </>
         ) : (
           <>
             One stated <strong style={{ color: p.ink, fontStyle: "normal" }}>intent</strong> at the
-            apex, cascading down through six frontiers and multiplying as it falls — agents, tools,
+            apex, cascading down through six frontiers and multiplying as it falls, agents, tools,
             robots, cells, orbital machines. Drag the year-hand: cheap intelligence reaches one shell
             further each year. {liveCount} of 6 frontiers live at {year}.
           </>
@@ -141,7 +141,7 @@ export function SilverThread() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none"
         role="img"
-        aria-label={`The silver thread: a single point of intent at the top branches downward through six frontiers — code, models, agents, embodiment, biology and off-world — multiplying as it descends. A year control from 2025 to 2040 sets how deep the cascade reaches; at ${year}, ${liveCount} of the six frontiers are live.`}
+        aria-label={`The silver thread: a single point of intent at the top branches downward through six frontiers, code, models, agents, embodiment, biology and off-world, multiplying as it descends. A year control from 2025 to 2040 sets how deep the cascade reaches; at ${year}, ${liveCount} of the six frontiers are live.`}
       >
         <defs>
           <radialGradient id="st-intent" cx="50%" cy="50%" r="50%">

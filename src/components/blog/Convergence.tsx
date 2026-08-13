@@ -58,7 +58,7 @@ const CURVES: Curve[] = [
     label: "Cost of intelligence",
     end: "intelligence",
     tone: "copper",
-    note: "$/token for a fixed quality — a thousandfold collapse in three years, the steepest curve here.",
+    note: "$/token for a fixed quality, a thousandfold collapse in three years, the steepest curve here.",
     pts: [
       [2021, 100], [2022, 10], [2023, 1], [2024, 0.1], [2025, 0.02],
       [2027, 0.006], [2030, 0.003], [2035, 0.0018], [2040, 0.0012],
@@ -69,7 +69,7 @@ const CURVES: Curve[] = [
     label: "Price of computation",
     end: "compute",
     tone: "gold",
-    note: "calculations per $ — Kurzweil's century-long ramp, halving roughly every other year across five paradigms.",
+    note: "calculations per $, Kurzweil's century-long ramp, halving roughly every other year across five paradigms.",
     pts: [
       [2010, 100], [2015, 10], [2020, 1], [2025, 0.1], [2030, 0.012],
       [2035, 0.0018], [2040, 0.0004],
@@ -80,7 +80,7 @@ const CURVES: Curve[] = [
     label: "Reading a genome",
     end: "genome",
     tone: "teal",
-    note: "$/genome — a ten-million-fold fall in twenty years, faster than Moore's Law.",
+    note: "$/genome, a ten-million-fold fall in twenty years, faster than Moore's Law.",
     pts: [
       [2010, 100], [2014, 8], [2018, 1.2], [2021, 0.3], [2023, 0.07],
       [2025, 0.03], [2030, 0.006], [2035, 0.003], [2040, 0.002],
@@ -91,7 +91,7 @@ const CURVES: Curve[] = [
     label: "A watt of solar",
     end: "solar",
     tone: "violet",
-    note: "$/watt — energy's own deflation: gentler than the bits, but relentless.",
+    note: "$/watt, energy's own deflation: gentler than the bits, but relentless.",
     pts: [
       [2010, 100], [2015, 42], [2020, 18], [2025, 10], [2030, 6.2],
       [2035, 4.3], [2040, 3.2],
@@ -102,7 +102,7 @@ const CURVES: Curve[] = [
     label: "A mile of mobility",
     end: "mobility",
     tone: "rose",
-    note: "$/mile — flat for eighty years, then autonomy: atoms resist longer than bits, so it descends least.",
+    note: "$/mile, flat for eighty years, then autonomy: atoms resist longer than bits, so it descends least.",
     pts: [
       [2010, 100], [2024, 100], [2026, 88], [2028, 52], [2030, 34],
       [2033, 26], [2037, 21], [2040, 18],
@@ -114,7 +114,7 @@ const CURVES: Curve[] = [
     end: "Jevons ↑",
     tone: "cool",
     rising: true,
-    note: "Jevons' revenge — cheaper per unit, so we point it at a million more things: total spend climbs even as every unit collapses.",
+    note: "Jevons' revenge, cheaper per unit, so we point it at a million more things: total spend climbs even as every unit collapses.",
     pts: [
       [2021, 100], [2023, 210], [2025, 560], [2027, 1100], [2030, 2400],
       [2034, 4200], [2040, 7000],
@@ -146,7 +146,7 @@ export function Convergence() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — The convergence · everything expensive, normalised to its baseline, falling toward a floor"
+      kicker="Fig., The convergence · everything expensive, normalised to its baseline, falling toward a floor"
       caption={
         activeCurve ? (
           <>
@@ -156,7 +156,7 @@ export function Convergence() {
         ) : (
           <>
             Five costs, each indexed to <strong style={{ color: p.ink, fontStyle: "normal" }}>100%</strong>{" "}
-            at its own baseline, collapsing together toward a near-zero floor — and the one line that
+            at its own baseline, collapsing together toward a near-zero floor, and the one line that
             rises against them, total spend. The deflation is in the price of a unit; the explosion is
             in the number of units. Hover a curve to read it.
           </>
@@ -167,7 +167,7 @@ export function Convergence() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full"
         role="img"
-        aria-label="A logarithmic chart from 2010 to 2040. Five cost curves — intelligence, computation, genome reading, solar, and mobility — each normalised to 100 percent at its baseline, all descend toward a shared near-zero-marginal-cost floor, intelligence the steepest and mobility the shallowest. A sixth line, total spend, rises far above the 100 percent baseline: Jevons' paradox, where cheaper units drive more total consumption."
+        aria-label="A logarithmic chart from 2010 to 2040. Five cost curves, intelligence, computation, genome reading, solar, and mobility, each normalised to 100 percent at its baseline, all descend toward a shared near-zero-marginal-cost floor, intelligence the steepest and mobility the shallowest. A sixth line, total spend, rises far above the 100 percent baseline: Jevons' paradox, where cheaper units drive more total consumption."
         onMouseLeave={() => setActive(null)}
       >
         {/* decade gridlines + multiplier labels */}

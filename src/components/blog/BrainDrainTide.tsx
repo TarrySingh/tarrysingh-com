@@ -138,9 +138,9 @@ export function BrainDrainTide() {
 
   const verdict =
     step === 0
-      ? { word: "FULL TIDE · 2022", color: p.leverage, line: "Europe still pulls talent in — net +52,000 a year" }
+      ? { word: "FULL TIDE · 2022", color: p.leverage, line: "Europe still pulls talent in, net +52,000 a year" }
       : step === N
-        ? { word: "EBBING · 2024", color: p.squeeze, line: "the inflow has halved in two years — net +26,000" }
+        ? { word: "EBBING · 2024", color: p.squeeze, line: "the inflow has halved in two years, net +26,000" }
         : { word: "RECEDING · 2023", color: p.wonderHi, line: "the tide is turning; the net is falling" }
 
   function play() {
@@ -174,7 +174,7 @@ export function BrainDrainTide() {
       caption={
         <>
           Europe trains the talent and the tide carries it west. Europe still ran a{" "}
-          <span style={{ color: p.leverage }}>net inflow</span> of AI talent — but scrub 2022&nbsp;→&nbsp;2024 and it{" "}
+          <span style={{ color: p.leverage }}>net inflow</span> of AI talent, but scrub 2022&nbsp;→&nbsp;2024 and it{" "}
           <span style={{ color: p.squeeze }}>halves, +52k → +26k</span>, even as Europe stays a long-run net exporter to
           the US. Below: the top US hub runs ~5&ndash;10&times; the talent density of the top European one
           (San Francisco ~23.9 vs Ireland ~4.2 per 1,000). The talent is trained here and works there. Sources:
@@ -185,9 +185,9 @@ export function BrainDrainTide() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`Two basins — Europe and the United States — with talent flowing west across the strait between them. In ${year}, Europe's net inflow of AI talent is ${fmtFull(
+        aria-label={`Two basins, Europe and the United States, with talent flowing west across the strait between them. In ${year}, Europe's net inflow of AI talent is ${fmtFull(
           net,
-        )} people a year, down from +52,000 in 2022. The top US hub, San Francisco, holds ${SF_DENSITY} AI researchers per 1,000 workers versus ${IE_DENSITY} for Ireland, the top European hub — roughly ${DENSITY_RATIO.toFixed(
+        )} people a year, down from +52,000 in 2022. The top US hub, San Francisco, holds ${SF_DENSITY} AI researchers per 1,000 workers versus ${IE_DENSITY} for Ireland, the top European hub, roughly ${DENSITY_RATIO.toFixed(
           1,
         )} times the density.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}

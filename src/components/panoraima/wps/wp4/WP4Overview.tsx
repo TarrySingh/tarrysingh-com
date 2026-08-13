@@ -51,7 +51,7 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
         </h2>
         <p className="mt-2 text-[15px] leading-relaxed text-[#444A55] max-w-2xl">
           A live read on the {summary.total_les} Learning Events spread across the four
-          curriculum tracks — what has materials, what is pending, and where our
+          curriculum tracks, what has materials, what is pending, and where our
           RealAI authoring &amp; review commitments sit.
         </p>
       </div>
@@ -124,7 +124,7 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
           </div>
           {registry.summary.coverage.off_wiki > 0 && (
             <div className="mt-5 pt-4 border-t border-[#E7E7EA] text-[13.5px] leading-relaxed text-[#444A55]">
-              <span className="font-mono font-bold tabular-nums text-[#16181D]">{registry.summary.coverage.off_wiki}</span> draft/planned codes exist in SharePoint registries but aren&apos;t on the wiki master yet — a reconciliation gap to close (ideally the two lists match exactly).
+              <span className="font-mono font-bold tabular-nums text-[#16181D]">{registry.summary.coverage.off_wiki}</span> draft/planned codes exist in SharePoint registries but aren&apos;t on the wiki master yet, a reconciliation gap to close (ideally the two lists match exactly).
             </div>
           )}
         </div>

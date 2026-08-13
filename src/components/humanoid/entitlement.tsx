@@ -130,7 +130,7 @@ export function Gate({
               {HAEntitlement.demo && <button className="gate-btn ghost" onClick={() => HAEntitlement.grant(sku)}>Preview (demo)</button>}
               <button className="gate-btn" onClick={buy}>{cta || "Get access"} ↗</button>
             </div>
-            <div className="gate-note">{peekable && left === 0 ? "Preview limit reached — get access to continue." : (note || "Live workshops & certification — licensed per cohort.")}</div>
+            <div className="gate-note">{peekable && left === 0 ? "Preview limit reached, get access to continue." : (note || "Live workshops & certification, licensed per cohort.")}</div>
           </div>
         </div>
       )}
@@ -150,9 +150,9 @@ export function PremiumDownloads() {
   if (open) {
     return (
       <div className="pkg-cta unlocked">
-        <a className="pkg-btn gold" href="/humanoid/deck">Open the full deck — native ↗</a>
+        <a className="pkg-btn gold" href="/humanoid/deck">Open the full deck, native ↗</a>
         <a className="pkg-btn ghost" href="/humanoid/deck?print=1">Print / save as PDF</a>
-        <div className="pkg-note done">✓ Full package unlocked — the workshop pages, labs, certification &amp; downloads are open.</div>
+        <div className="pkg-note done">✓ Full package unlocked, the workshop pages, labs, certification &amp; downloads are open.</div>
       </div>
     )
   }
@@ -161,8 +161,8 @@ export function PremiumDownloads() {
     <div className="pkg-cta">
       <button className="pkg-btn gold" onClick={buy}>Get the full package ↗</button>
       {HAEntitlement.demo && <button className="pkg-btn ghost" onClick={() => HAEntitlement.grant("full-package")}>Preview (demo)</button>}
-      <a className="pkg-btn ghost" href="/humanoid/deck">Browse the deck — workshop pages locked ↗</a>
-      <div className="pkg-note">The full deck is native — every page rebuilt, the data live. The 60 workshop pages, the labs and certification unlock on purchase.</div>
+      <a className="pkg-btn ghost" href="/humanoid/deck">Browse the deck, workshop pages locked ↗</a>
+      <div className="pkg-note">The full deck is native, every page rebuilt, the data live. The 60 workshop pages, the labs and certification unlock on purchase.</div>
     </div>
   )
 }

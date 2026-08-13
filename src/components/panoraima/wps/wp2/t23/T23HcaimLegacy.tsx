@@ -36,7 +36,7 @@ export default function T23HcaimLegacy({ detail }: Props) {
           Can we reuse what HCAIM already built?
         </h2>
         <p className="mt-1 text-sm max-w-xl" style={{ color: MUTE }}>
-          A shortcut through the accreditation maze — if the consortium can
+          A shortcut through the accreditation maze, if the consortium can
           decide whether to extend HCAIM&apos;s Masters programme or launch
           PANORAIMA as a greenfield one.
         </p>
@@ -76,7 +76,7 @@ export default function T23HcaimLegacy({ detail }: Props) {
                 style={{ color: SLATE }}
               >
                 <AlertCircle className="w-3 h-3" style={{ color: BAD }} />
-                Flagged by — {f.who}
+                Flagged by, {f.who}
               </div>
               <p className="text-[13px] italic leading-relaxed" style={{ color: SLATE }}>
                 &ldquo;{f.quote}&rdquo;

@@ -121,7 +121,7 @@ export function IrishMirage() {
     ? {
         word: "THE MIRAGE",
         color: p.wonderHi,
-        line: "the headline reads like a surplus — the one number that looked like winning",
+        line: "the headline reads like a surplus, the one number that looked like winning",
       }
     : {
         word: "THE REAL LEDGER",
@@ -435,7 +435,7 @@ export function IrishMirage() {
 
         {/* headline counter — Plex Serif italic verdict, mono figure */}
         <p className="mt-3 text-[13px]" style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}>
-          Europe loses on both the bet and the fold — even the one number that looked like winning reads{" "}
+          Europe loses on both the bet and the fold, even the one number that looked like winning reads{" "}
           <span style={{ fontFamily: "var(--font-mono), monospace", fontStyle: "normal", fontWeight: 700, color: isMirage ? p.wonderHi : p.squeeze }}>
             {headlineFig}
           </span>

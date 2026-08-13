@@ -135,7 +135,7 @@ export function DraghiTracker() {
       }
       caption={
         <>
-          383 recommendations, one cell each. Scrub the timeline — or press ▶ — from{" "}
+          383 recommendations, one cell each. Scrub the timeline, or press ▶, from{" "}
           <span style={{ color: p.muted, fontStyle: "normal" }}>Sept 2024</span> to{" "}
           <span style={{ color: p.muted, fontStyle: "normal" }}>Jun 2026</span> and watch the few{" "}
           <span style={{ color: p.leverage }}>walked</span> light up against the map{" "}
@@ -299,7 +299,7 @@ export function DraghiTracker() {
           <span style={{ color: p.leverage, fontStyle: "normal", fontWeight: 700 }}>
             {pctFmt(cur.pct)}%
           </span>{" "}
-          walked in {Math.round(lerp(0, 21, step / N))} months — the map was drawn in full; almost none of it was.
+          walked in {Math.round(lerp(0, 21, step / N))} months, the map was drawn in full; almost none of it was.
         </p>
 
         {/* scrubber + play — the reader drives the crawl */}

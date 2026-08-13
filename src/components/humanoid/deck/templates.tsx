@@ -48,7 +48,7 @@ function SlideChrome({ slide, center, children }: { slide: Slide; center?: boole
       )}
       <div className="hd-body">{children}</div>
       <div className="hd-foot">
-        <span>Tarry Singh — Embodied AI · {DECK_YEAR}</span>
+        <span>Tarry Singh, Embodied AI · {DECK_YEAR}</span>
         <span className="hd-trace">
           {slide.replaces && <em>{slide.replaces} · </em>}s{String(slide.src).padStart(3, "0")}
         </span>

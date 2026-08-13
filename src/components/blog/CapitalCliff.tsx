@@ -55,9 +55,9 @@ type Stage = {
 // The coverage curve: European leadership share by funding stage. Birth is
 // European; the scale-up is sold. (Invest Europe / Dealroom 2025; Letta.)
 const STAGES: Stage[] = [
-  { key: "seed", label: "Seed", short: "SEED", eu: 0.78, euLabel: "78%", gloss: "Europe leads ~78% of seed rounds — the birth is funded at home." },
+  { key: "seed", label: "Seed", short: "SEED", eu: 0.78, euLabel: "78%", gloss: "Europe leads ~78% of seed rounds, the birth is funded at home." },
   { key: "a", label: "Series A", short: "SER. A", eu: 0.62, euLabel: "62%", gloss: "By Series A the home share is already slipping past the half-way mark." },
-  { key: "b", label: "Series B", short: "SER. B", eu: 0.41, euLabel: "41%", gloss: "At Series B foreign capital starts leading the round — the cliff begins." },
+  { key: "b", label: "Series B", short: "SER. B", eu: 0.41, euLabel: "41%", gloss: "At Series B foreign capital starts leading the round, the cliff begins." },
   { key: "c", label: "Series C", short: "SER. C", eu: 0.27, euLabel: "27%", gloss: "By Series C most of the cheque, and the board, answer to a US fund." },
   { key: "growth", label: "Growth / late", short: "GROWTH", eu: 0.18, euLabel: "18%", gloss: "At scale-up Europe leads just ~18%; ~82% is foreign-led, and the firm follows the money." },
 ]
@@ -148,8 +148,8 @@ export function CapitalCliff() {
   const markerX = inUS ? lerp(euAnchorX, usAnchorX, reduced ? 1 : Math.max(0.55, relo)) : euAnchorX
 
   const verdict = inUS
-    ? { word: "CAPTURED", color: p.squeeze, line: "foreign capital leads the round — the company follows the money to the US" }
-    : { word: "AT HOME", color: p.leverage, line: "European capital still leads — the company is funded where it was born" }
+    ? { word: "CAPTURED", color: p.squeeze, line: "foreign capital leads the round, the company follows the money to the US" }
+    : { word: "AT HOME", color: p.leverage, line: "European capital still leads, the company is funded where it was born" }
 
   return (
     <PlateFrame
@@ -167,7 +167,7 @@ export function CapitalCliff() {
       }
       caption={
         <>
-          European capital funds the birth and sells the adulthood. Scrub the stages — range, buttons or
+          European capital funds the birth and sells the adulthood. Scrub the stages, range, buttons or
           ←/→: <span style={{ color: p.leverage }}>European-led</span> coverage starts at ~78% and falls off
           a cliff to ~18%, the gap filling with <span style={{ color: p.squeeze }}>US-led</span> red. Once
           foreign capital leads, the company relocates to where its backers&rsquo; portfolio lives. The €5bn
@@ -244,7 +244,7 @@ export function CapitalCliff() {
           strokeDasharray="2 5"
         />
         <text x={W - PADR} y={yFor(CROSS) - 7} textAnchor="end" fill={p.soft} style={{ fontSize: 10.5, letterSpacing: "0.14em" }}>
-          50% — WHERE THE LEAD CHANGES HANDS
+          50%, WHERE THE LEAD CHANGES HANDS
         </text>
 
         {/* red region (US-led capture) above the curve */}

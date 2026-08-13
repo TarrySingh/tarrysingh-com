@@ -346,8 +346,8 @@ export function ChokepointChapterThree() {
           "The transfer made explicit: under the 2025 EU–US trade understanding, EU companies expressed interest in ~$600bn of investment in the US by 2029 (non-binding interest, not a Commission pledge); equity-fund flows diverged ~€540bn toward US funds (2009–2026). Intereconomics; Morningstar.",
           "Norges Bank IM (~$2.2tn, Europe’s largest capital pool): CEO Tangen warned of “unprecedented” big-tech concentration; biggest positions in Apple & Microsoft; the fund fell 1.9% in Q1 2026 as US tech slid. NBIM; AMWatch.",
           "European scale-up funding cliff (Invest Europe / Dealroom 2025; Letta report): European capital leads ~78% of early-stage but ~18% of late-stage rounds; ~82% of scale-up rounds foreign-led. Scaleup Europe Fund (~€5bn, EQT-managed, first close autumn 2026).",
-          "Champion captures (company filings/announcements): Klarna NYSE listing, Sept 2025; Wise primary listing moved to Nasdaq, May 2026 (LSE secondary retained); Arm — SoftBank-owned, Nasdaq-listed; DeepMind — a Google division.",
-          "Norway Government Pension Fund Global (NBIM, 2026): ~€1.7tn fund; ~$49bn in Apple, ~$42bn in Microsoft (~1.3% each) — a major but not top-5 holder.",
+          "Champion captures (company filings/announcements): Klarna NYSE listing, Sept 2025; Wise primary listing moved to Nasdaq, May 2026 (LSE secondary retained); Arm, SoftBank-owned, Nasdaq-listed; DeepMind, a Google division.",
+          "Norway Government Pension Fund Global (NBIM, 2026): ~€1.7tn fund; ~$49bn in Apple, ~$42bn in Microsoft (~1.3% each), a major but not top-5 holder.",
           "Pension-fund venture allocation (two metrics): on TOTAL venture capital, EU pension funds ~0.018% of assets vs US ~1.9% (~100×; rooted in the 1979 US ERISA “prudent-man” rule change Europe never matched); on the DOMESTIC-VC subset, EU ~0.01% vs US ~0.03% (~3×). ECB (May 2026); Lazard/Draghi.",
         ]}
       />

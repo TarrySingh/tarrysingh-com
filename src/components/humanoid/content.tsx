@@ -13,7 +13,7 @@ const DRIVERS: Record<string, DriverSide> = {
     groups: [
       { h: "Global labor shortages", items: ["US: 2.1M unfilled factory jobs by 2030 (Deloitte)", "Japan: −35% working-age population by 2040", "Wage inflation: +15–30% in factory labor since 2021"], tags: ["Japan", "Germany", "US", "South Korea"] },
       { h: "Cost-curve acceleration", items: ["ROI timeline shortening: 5+ yrs → 2–3 yrs by 2027", "−22% actuator cost per doubling of volume", "Unit price target: $20–50k (human-labor threshold)"], tags: ["Tesla", "Figure AI", "BYD"] },
-      { h: "Government incentives", items: ["China '1M AI Robots Plan' — $15B in subsidies", "US CHIPS Act extension to components (debated)", "EU €2.7B Advanced Manufacturing Initiative"], tags: ["Guangdong", "Baden-Württemberg", "Michigan"] },
+      { h: "Government incentives", items: ["China '1M AI Robots Plan', $15B in subsidies", "US CHIPS Act extension to components (debated)", "EU €2.7B Advanced Manufacturing Initiative"], tags: ["Guangdong", "Baden-Württemberg", "Michigan"] },
     ],
   },
   supply: {
@@ -47,7 +47,7 @@ export function GrowthDrivers() {
           </div>
         ))}
       </div>
-      <div className="gd-note">{side === "demand" ? "65% of surveyed manufacturers cite workforce challenges as the primary motivation for exploring humanoids." : "Technological readiness is now outpacing market adoption — the gating factor is organizational, not technical."}</div>
+      <div className="gd-note">{side === "demand" ? "65% of surveyed manufacturers cite workforce challenges as the primary motivation for exploring humanoids." : "Technological readiness is now outpacing market adoption, the gating factor is organizational, not technical."}</div>
     </div>
   )
 }

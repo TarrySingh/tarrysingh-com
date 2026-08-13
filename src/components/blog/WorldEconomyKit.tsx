@@ -685,7 +685,7 @@ export function GdpShareChart() {
       <EcMeta
         kicker="Share of world GDP · 1990 → 2024"
         title="One world, two answers"
-        sub="Percent of world output. Drag the toggle — market exchange rates versus purchasing power."
+        sub="Percent of world output. Drag the toggle, market exchange rates versus purchasing power."
       />
       <div className="ec-head">
         <div className="ec-toggle" role="tablist" aria-label="GDP measure">
@@ -722,14 +722,14 @@ export function ChinaPeakChart() {
       <EcMeta
         kicker="China's share of world GDP · market exchange rates"
         title="China already peaked"
-        sub="Percent of world output, nominal — the rise everyone assumes is still climbing."
+        sub="Percent of world output, nominal, the rise everyone assumes is still climbing."
       />
       <div className="ec-box">
         <svg viewBox="0 0 440 280" role="img" aria-label="China's nominal GDP share over time" />
       </div>
       <EcCap>
         At market rates China's slice topped out near <b>18.5% in 2021</b> and has
-        slipped to about 16.6% since — on a weaker yuan, a property hangover and
+        slipped to about 16.6% since, on a weaker yuan, a property hangover and
         stretches of deflation. The relentless-rise story is a purchasing-power
         story; in the currency the world trades in, the peak is already behind us.
       </EcCap>
@@ -753,7 +753,7 @@ export function RankFlipChart() {
       <EcCap>
         Flip from nominal to PPP and the order inverts: the <b>US leads on market
         value</b>, <b>China on real volume</b>, the EU trails on both. Same year,
-        same countries, opposite headline — biggest at <i>what</i>?
+        same countries, opposite headline, biggest at <i>what</i>?
       </EcCap>
     </figure>
   )
@@ -767,14 +767,14 @@ export function ProductivityChart() {
       <EcMeta
         kicker="EU labour productivity vs the US · 1960 → 2024"
         title="Caught up, then slipped back"
-        sub="Output per hour, US = 100 — the engine under every GDP number here."
+        sub="Output per hour, US = 100, the engine under every GDP number here."
       />
       <div className="ec-box">
         <svg viewBox="0 0 900 340" role="img" aria-label="EU labour productivity relative to the US, 1960 to 2024" />
       </div>
       <EcCap>
         European productivity climbed from under half the US level after the war to
-        about <b>95% by the mid-1990s</b> — near parity — then stalled and fell back
+        about <b>95% by the mid-1990s</b>, near parity, then stalled and fell back
         below <b>80%</b>, largely an information-technology story. The level isn't
         the alarm. The slope is. (Draghi, 2024.)
       </EcCap>
@@ -808,7 +808,7 @@ export function PerCapitaChart() {
       <EcCap>
         The two tracked together until 2008, then the US pulled ahead while the euro
         area double-dipped through 2011–2013. By 2024 American output per head is up
-        about <b>+38%</b> since 2000, the EU's about <b>+24%</b> — a real gap, but
+        about <b>+38%</b> since 2000, the EU's about <b>+24%</b>, a real gap, but
         nowhere near the “Europe is half of America” headlines, which are nominal
         market-FX comparisons flattered by a strong dollar.
       </EcCap>

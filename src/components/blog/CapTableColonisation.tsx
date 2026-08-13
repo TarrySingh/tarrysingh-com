@@ -75,7 +75,7 @@ const JEWELS: Jewel[] = [
     capture: 0.34,
     date: "2025",
     gloss:
-      "Still ~80% European-owned — the closest thing to a clean bright spot — yet the round that crowned it was led from the US by Dragoneer and Lightspeed. Even the exception leans on an American lead.",
+      "Still ~80% European-owned, the closest thing to a clean bright spot, yet the round that crowned it was led from the US by Dragoneer and Lightspeed. Even the exception leans on an American lead.",
   },
   {
     key: "mistral",
@@ -83,13 +83,13 @@ const JEWELS: Jewel[] = [
     builtIn: "France",
     builtFlag: "FR",
     wonderLabel: "Europe's frontier lab",
-    captureLabel: "€14bn — a fraction of US peers",
+    captureLabel: "€14bn, a fraction of US peers",
     stat: "€14bn",
     statSub: "vs US frontier labs' war chests",
     capture: 0.42,
     date: "2025",
     gloss:
-      "France's frontier hope, valued at €14bn — real, and a fraction of what a single US lab raises in a quarter. The jewel is genuine; the scale that decides the frontier is not Europe's to set.",
+      "France's frontier hope, valued at €14bn, real, and a fraction of what a single US lab raises in a quarter. The jewel is genuine; the scale that decides the frontier is not Europe's to set.",
   },
   {
     key: "wayve",
@@ -97,13 +97,13 @@ const JEWELS: Jewel[] = [
     builtIn: "United Kingdom",
     builtFlag: "UK",
     wonderLabel: "UK self-driving champion",
-    captureLabel: "$8.6bn — SoftBank / Microsoft / Nvidia",
+    captureLabel: "$8.6bn, SoftBank / Microsoft / Nvidia",
     stat: "$8.6bn",
     statSub: "SoftBank · Microsoft · Nvidia",
     capture: 0.6,
     date: "2024",
     gloss:
-      "London's autonomy crown-jewel, funded by SoftBank, Microsoft and Nvidia. British by invention, foreign by cap table — the backers who decide its fate sit in Tokyo and Seattle.",
+      "London's autonomy crown-jewel, funded by SoftBank, Microsoft and Nvidia. British by invention, foreign by cap table, the backers who decide its fate sit in Tokyo and Seattle.",
   },
   {
     key: "klarna",
@@ -117,7 +117,7 @@ const JEWELS: Jewel[] = [
     capture: 0.66,
     date: "Sept 2025",
     gloss:
-      "Built in Stockholm, it rang the bell in New York. The equity now compounds — and the governance gravity now sits — on a US exchange, not a Swedish one.",
+      "Built in Stockholm, it rang the bell in New York. The equity now compounds, and the governance gravity now sits, on a US exchange, not a Swedish one.",
   },
   {
     key: "wise",
@@ -131,7 +131,7 @@ const JEWELS: Jewel[] = [
     capture: 0.7,
     date: "May 2026",
     gloss:
-      "London kept only a secondary listing; the primary venue — and the index inclusion that follows the capital — moved to New York in 2026.",
+      "London kept only a secondary listing; the primary venue, and the index inclusion that follows the capital, moved to New York in 2026.",
   },
   {
     key: "arm",
@@ -173,7 +173,7 @@ const JEWELS: Jewel[] = [
     capture: 1,
     date: "since 2014",
     gloss:
-      "The off-switch in its purest form: a wholly-owned arm of a Californian company. The frontier research, the patents, the upside — every share of it captured.",
+      "The off-switch in its purest form: a wholly-owned arm of a Californian company. The frontier research, the patents, the upside, every share of it captured.",
   },
 ]
 
@@ -269,8 +269,8 @@ export function CapTableColonisation() {
       caption={
         <>
           Every European <span style={{ color: p.wonder }}>jewel</span> held up as the rebuttal has, on
-          inspection, a foreign <span style={{ color: p.squeeze }}>cap table</span> — an owner, a listing, or
-          an off-switch. Click — or use ←/→ — through the bright spots; the capture meter fills as control
+          inspection, a foreign <span style={{ color: p.squeeze }}>cap table</span>, an owner, a listing, or
+          an off-switch. Click, or use ←/→, through the bright spots; the capture meter fills as control
           moves abroad. Above it sits the verdict that never moves: ~{US_LEAD_SHARE}% of large-round leads are
           American, and US late-stage funding (~${US_LATE}bn) dwarfs Europe&rsquo;s (~${EU_LATE}bn) {RATIO}.
           The bright spots are the proof, not the rebuttal. Sources: Prosus &ldquo;State of AI in
@@ -362,7 +362,7 @@ export function CapTableColonisation() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`${c.name}, built in ${c.builtIn}: ${c.wonderLabel}, now ${c.captureLabel} (${c.stat}, ${c.date}) — roughly ${capPct}% of control captured abroad. Across Europe's bright spots, about ${US_LEAD_SHARE}% of large-round leads are American and US late-stage funding of about ${US_LATE} billion dollars dwarfs Europe's ${EU_LATE} billion ${RATIO}.`}
+        aria-label={`${c.name}, built in ${c.builtIn}: ${c.wonderLabel}, now ${c.captureLabel} (${c.stat}, ${c.date}), roughly ${capPct}% of control captured abroad. Across Europe's bright spots, about ${US_LEAD_SHARE}% of large-round leads are American and US late-stage funding of about ${US_LATE} billion dollars dwarfs Europe's ${EU_LATE} billion ${RATIO}.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
@@ -448,7 +448,7 @@ export function CapTableColonisation() {
           fill={p.squeeze}
           style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.14em" }}
         >
-          THE CAP TABLE — CONTROL CAPTURED ABROAD
+          THE CAP TABLE, CONTROL CAPTURED ABROAD
         </text>
         {/* meter track (the whole jewel) */}
         <rect
@@ -559,7 +559,7 @@ export function CapTableColonisation() {
           <span style={{ color: p.squeeze, fontStyle: "normal", fontWeight: 700 }}>
             {c.builtFlag} → {capPct}% captured
           </span>{" "}
-          — {c.gloss}
+, {c.gloss}
         </p>
       </div>
     </PlateFrame>

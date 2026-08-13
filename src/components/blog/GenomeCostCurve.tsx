@@ -147,16 +147,16 @@ export function GenomeCostCurve() {
     <PlateFrame
       wrapRef={wrapRef}
       mode={mode}
-      kicker="Fig. — The cost to sequence one human genome · log scale · $"
+      kicker="Fig., The cost to sequence one human genome · log scale · $"
       caption={
         <>
           <strong style={{ color: p.ink, fontStyle: "normal" }}>
             {activePt.year}: {fmtCost(activePt.cost)}
             {activePt.note ? ` (${activePt.note})` : ""}
           </strong>{" "}
-          — {fmtTimes(cheaper)} cheaper than 2003
+, {fmtTimes(cheaper)} cheaper than 2003
           {activePt.proj ? " (ARK extrapolation)" : ""}. This is the least-controversial
-          curve in the deck — the industry agrees on its shape; only the →$1–10 by 2030
+          curve in the deck, the industry agrees on its shape; only the →$1–10 by 2030
           endpoint is ARK&rsquo;s call. Source: ARK Big Ideas 2025 · NHGRI.
         </>
       }
@@ -174,7 +174,7 @@ export function GenomeCostCurve() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none"
         role="img"
-        aria-label="The cost to sequence one whole human genome fell from about $2.7 billion in 2003 to under $100 in 2024 — a roughly ten-million-fold collapse in twenty years, faster than Moore's Law. A faint Moore's-Law counterfactual line, halving every two years from the 2003 point, stays thousands of times above the real curve by 2024; the wedge between them is the genome's faster-than-Moore lead. ARK projects roughly $1 to $10 per genome by 2030."
+        aria-label="The cost to sequence one whole human genome fell from about $2.7 billion in 2003 to under $100 in 2024, a roughly ten-million-fold collapse in twenty years, faster than Moore's Law. A faint Moore's-Law counterfactual line, halving every two years from the 2003 point, stays thousands of times above the real curve by 2024; the wedge between them is the genome's faster-than-Moore lead. ARK projects roughly $1 to $10 per genome by 2030."
         onPointerMove={onMove}
       >
         <defs>

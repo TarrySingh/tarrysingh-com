@@ -13,10 +13,10 @@ const NATIONS: Record<NationKey, { name: string; color: string; hex: string; str
 }
 interface Layer { id: string; label: string; US: number; China: number; Korea: number; note: string; hot?: boolean }
 const LAYERS: Layer[] = [
-  { id: "brain", label: "The Brain — AI & chips", US: 70, China: 22, Korea: 8, note: "NVIDIA & Google set the pace; China closing on models, gated on advanced chips." },
+  { id: "brain", label: "The Brain, AI & chips", US: 70, China: 22, Korea: 8, note: "NVIDIA & Google set the pace; China closing on models, gated on advanced chips." },
   { id: "sensors", label: "Sensors & vision", US: 38, China: 50, Korea: 12, note: "Western force/torque leadership; LiDAR increasingly China-made." },
-  { id: "actuators", label: "Actuators — the muscles", US: 14, China: 56, Korea: 30, note: "China dominates roller-screw capacity; Korea's Mobis is the vertical wildcard.", hot: true },
-  { id: "magnets", label: "Rare-earth magnets", US: 6, China: 86, Korea: 8, note: "China refines ~85%+ of rare earths — the deepest single dependency." },
+  { id: "actuators", label: "Actuators, the muscles", US: 14, China: 56, Korea: 30, note: "China dominates roller-screw capacity; Korea's Mobis is the vertical wildcard.", hot: true },
+  { id: "magnets", label: "Rare-earth magnets", US: 6, China: 86, Korea: 8, note: "China refines ~85%+ of rare earths, the deepest single dependency." },
   { id: "assembly", label: "Integration & assembly", US: 40, China: 45, Korea: 15, note: "77% of integrators are Chinese by count; US leads on brand & data." },
 ]
 const NATION_ORDER: NationKey[] = ["US", "China", "Korea"]
@@ -130,7 +130,7 @@ export function ActuatorLab() {
             </div>
           ))}
         </div>
-        <p className="lab-foot">Module 1 · Actuator selection bench. Scores weight each actuator&apos;s characteristics by your requirement priorities — a teaching model, not a procurement spec.</p>
+        <p className="lab-foot">Module 1 · Actuator selection bench. Scores weight each actuator&apos;s characteristics by your requirement priorities, a teaching model, not a procurement spec.</p>
       </div>
     </div>
   )

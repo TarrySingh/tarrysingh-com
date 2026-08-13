@@ -80,7 +80,7 @@ const CASES: Case[] = [
     stat: "NYSE",
     statSub: "IPO · Sept 2025",
     gloss:
-      "Europe's fintech standard-bearer rang the bell in New York, not Stockholm — the equity now compounds on a US exchange.",
+      "Europe's fintech standard-bearer rang the bell in New York, not Stockholm, the equity now compounds on a US exchange.",
   },
   {
     key: "wise",
@@ -95,7 +95,7 @@ const CASES: Case[] = [
     stat: "Nasdaq",
     statSub: "primary listing · May 2026",
     gloss:
-      "London kept only a secondary listing; the primary venue — and the index inclusion that follows — moved to New York.",
+      "London kept only a secondary listing; the primary venue, and the index inclusion that follows, moved to New York.",
   },
   {
     key: "arm",
@@ -125,7 +125,7 @@ const CASES: Case[] = [
     stat: "Google",
     statSub: "wholly owned",
     gloss:
-      "Britain's crown-jewel AI lab is a wholly-owned arm of a Californian company — the frontier research, the patents, the upside, all captured.",
+      "Britain's crown-jewel AI lab is a wholly-owned arm of a Californian company, the frontier research, the patents, the upside, all captured.",
   },
   {
     key: "adyen",
@@ -140,7 +140,7 @@ const CASES: Case[] = [
     stat: "US$",
     statSub: "growth capital + exits",
     gloss:
-      "Dutch payments champions scaled on US growth capital and toward US liquidity — the cap table tilts west long before the IPO bell.",
+      "Dutch payments champions scaled on US growth capital and toward US liquidity, the cap table tilts west long before the IPO bell.",
   },
   {
     key: "nbim",
@@ -155,7 +155,7 @@ const CASES: Case[] = [
     stat: "~$91bn",
     statSub: "Apple ~$49bn · Microsoft ~$42bn",
     gloss:
-      "The sovereign wealth Norway pumped from its own shelf is now a major (not top-five) holder of Apple and Microsoft — about 1.3% of each. The fund built on European oil compounds American equity.",
+      "The sovereign wealth Norway pumped from its own shelf is now a major (not top-five) holder of Apple and Microsoft, about 1.3% of each. The fund built on European oil compounds American equity.",
   },
 ]
 
@@ -260,9 +260,9 @@ export function ExitValueScissors() {
       caption={
         <>
           Two blades, one hinge: the value{" "}
-          <span style={{ color: p.leverage }}>created in Europe</span> — the talent, the IP, the company —
-          versus the value <span style={{ color: p.squeeze }}>captured in the US</span> — the listing, the
-          ownership, the compounding equity. Click — or use ←/→ — through the champions; the scissors open
+          <span style={{ color: p.leverage }}>created in Europe</span>, the talent, the IP, the company,
+          versus the value <span style={{ color: p.squeeze }}>captured in the US</span>, the listing, the
+          ownership, the compounding equity. Click, or use ←/→, through the champions; the scissors open
           wider each time. Europe runs the finishing school; America keeps the graduates&rsquo; equity.
           Sources: Klarna NYSE 2025; Wise Nasdaq 2026; ARM/SoftBank; DeepMind/Google; NBIM holdings 2026.
         </>
@@ -478,7 +478,7 @@ export function ExitValueScissors() {
           style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}
         >
           <span style={{ color: p.squeeze, fontStyle: "normal", fontWeight: 700 }}>{c.builtFlag} → US</span>{" "}
-          — {c.gloss}
+, {c.gloss}
         </p>
       </div>
     </PlateFrame>

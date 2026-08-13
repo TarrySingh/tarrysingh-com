@@ -154,7 +154,7 @@ export default function WPCard({ entry, delay = 0 }: Props) {
             style={{ color: MUTE }}
           >
             <AlertCircle className="w-3.5 h-3.5" />
-            Source folder empty — awaiting first deliverable
+            Source folder empty, awaiting first deliverable
           </div>
         )}
 

@@ -52,7 +52,7 @@ export default function WorkPackagesHub({ meta, largeFiles }: Props) {
           </h1>
           <p className="animate-fade-up delay-200 text-base md:text-lg text-white/70 leading-relaxed max-w-2xl">
             PANORAIMA runs six active work packages beyond project management. Each one owns a
-            slice of the mission — from market research in four countries to responsible-AI
+            slice of the mission, from market research in four countries to responsible-AI
             ethics to consortium-wide dissemination. Pick a card to dive in.
           </p>
 

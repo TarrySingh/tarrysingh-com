@@ -75,7 +75,7 @@ const LEVERS: Lever[] = [
     prize: "€2.8tn",
     prizeNote: "of GDP on the table",
     detail:
-      "Internal barriers ≈ 54% (goods) / 95% (services) tariff-equivalents. The Letta 'One Europe, One Market' roadmap — deadline Dec 2027.",
+      "Internal barriers ≈ 54% (goods) / 95% (services) tariff-equivalents. The Letta 'One Europe, One Market' roadmap, deadline Dec 2027.",
     impl: 0.14,
   },
   {
@@ -84,7 +84,7 @@ const LEVERS: Lever[] = [
     prize: "EuroStack",
     prizeNote: "the sovereign-tech turn",
     detail:
-      "Procure and build the sovereign technology stack at home — the EuroStack turn — instead of wiring the cheque to US hyperscalers.",
+      "Procure and build the sovereign technology stack at home, the EuroStack turn, instead of wiring the cheque to US hyperscalers.",
     impl: 0.12,
   },
   {
@@ -102,7 +102,7 @@ const LEVERS: Lever[] = [
     prize: "the grid",
     prizeNote: "energy price, solved",
     detail:
-      "Fix the grid and the energy price — the solvable Chapter-7 problem. Cheap, clean, abundant power is the input under every other lever.",
+      "Fix the grid and the energy price, the solvable Chapter-7 problem. Cheap, clean, abundant power is the input under every other lever.",
     impl: 0.13,
   },
 ]
@@ -229,16 +229,16 @@ export function ReversalLevers() {
       }
       caption={
         <>
-          Five costed levers Europe already holds — each with its real prize and its real 2026{" "}
+          Five costed levers Europe already holds, each with its real prize and its real 2026{" "}
           <span style={{ color: p.squeeze }}>implementation rate</span>. Throw a lever (cyan{" "}
           <span style={{ color: p.leverage }}>armed</span> → gold{" "}
-          <span style={{ color: p.wonderHi }}>pulled</span>) — or press ▶ — and its gap-bar narrows toward the
+          <span style={{ color: p.wonderHi }}>pulled</span>), or press ▶, and its gap-bar narrows toward the
           prize: <span style={{ color: p.wonderHi }}>€300bn/yr</span> saved (SIU),{" "}
           <span style={{ color: p.wonderHi }}>€2.8tn</span> of single-market GDP (Letta, Dec 2027),{" "}
           the EuroStack turn, <span style={{ color: p.wonderHi }}>€200bn</span> behind the frontier (InvestAI),
           and the grid. The master gauge starts at the real{" "}
-          <span style={{ color: p.squeeze }}>~13%</span> — Draghi&rsquo;s recommendations ~11–15% fully
-          implemented, early 2026. Built, labelled, within reach — and barely pulled. Sources: European
+          <span style={{ color: p.squeeze }}>~13%</span>, Draghi&rsquo;s recommendations ~11–15% fully
+          implemented, early 2026. Built, labelled, within reach, and barely pulled. Sources: European
           Commission (SIU, InvestAI); ECB (single-market barriers); Letta report; Draghi audits (2026).
         </>
       }
@@ -246,7 +246,7 @@ export function ReversalLevers() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`A console of five reversal levers Europe already holds. Mobilise the savings (stop the ~€300bn/yr leak), complete the single market (~€2.8tn of GDP; Letta, Dec 2027), buy & build European (EuroStack), back the frontier (InvestAI ~€200bn → 5 AI Gigafactories) and power it (fix the grid). The plans are written and costed — but the master implementation gauge sits at only ~13%, the Draghi audits' early-2026 figure. The levers are built, labelled and within reach, and barely pulled.`}
+        aria-label={`A console of five reversal levers Europe already holds. Mobilise the savings (stop the ~€300bn/yr leak), complete the single market (~€2.8tn of GDP; Letta, Dec 2027), buy & build European (EuroStack), back the frontier (InvestAI ~€200bn → 5 AI Gigafactories) and power it (fix the grid). The plans are written and costed, but the master implementation gauge sits at only ~13%, the Draghi audits' early-2026 figure. The levers are built, labelled and within reach, and barely pulled.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
@@ -267,7 +267,7 @@ export function ReversalLevers() {
           THE KEY EUROPE HOLDS
         </text>
         <text x={SLOT_X} y={118} fill={p.muted} style={{ fontSize: 12.5, fontFamily: "var(--font-serif), serif", fontStyle: "italic" }}>
-          not poor, not weak — it has simply never summoned the nerve to turn the key
+          not poor, not weak, it has simply never summoned the nerve to turn the key
         </text>
 
         {/* the five lever rows */}
@@ -443,7 +443,7 @@ export function ReversalLevers() {
           <span style={{ color: allPulled ? p.wonderHi : p.squeeze, fontStyle: "normal", fontWeight: 700 }}>
             {allPulled ? "The key turns" : "Built, labelled, within reach"}
           </span>{" "}
-          — {allPulled
+, {allPulled
             ? "every lever is written, costed and signed; the only missing input was ever the nerve to pull them."
             : "the plans are not missing. The nerve is."}
         </p>

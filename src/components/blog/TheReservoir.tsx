@@ -115,7 +115,7 @@ export function TheReservoir() {
       caption={
         <>
           Europe holds <span style={{ color: p.leverage }}>€33tn</span> in private wealth, ~€10tn idle in
-          deposits — yet <span style={{ color: p.squeeze }}>~€300bn a year</span> spills over the dam to US
+          deposits, yet <span style={{ color: p.squeeze }}>~€300bn a year</span> spills over the dam to US
           markets. Drag the valve to redirect the idle deposits into European equity and watch the spill
           turn home. Sources: Letta report 2024 (€33tn; ~€300bn/yr out); EU Savings &amp; Investments Union
           2025 (~€10tn deposits, ~70% of savings).

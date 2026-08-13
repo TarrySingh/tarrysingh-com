@@ -287,9 +287,9 @@ export function ChokepointPrologue() {
           "ASML Q4 2025 results (asml.com, reported 28 Jan 2026): FY2025 revenue €32.7bn; net income €9.6bn; backlog €38.8bn; 2026 guidance €34–39bn.",
           "ASML Q1 2026 results (SEC Form 6-K, Apr 2026): China = 19% of system sales; trajectory ~49% (2024) → 36% (Q4 2025) → 19% (Q1 2026).",
           "ASML / Cymer bill-of-materials: Cymer (San Diego) sole EUV light-source supplier, 100% US-origin; Carl Zeiss SMT (Germany) sole optics supplier.",
-          "US Foreign Direct Product Rule — extraterritorial re-export control over US-origin technology embedded in foreign-made goods.",
+          "US Foreign Direct Product Rule, extraterritorial re-export control over US-origin technology embedded in foreign-made goods.",
           "Netherlands tiered export controls on ASML lithography (in force 15 Jan 2025; amended 1 Apr 2025; expanded to service & spare-parts licensing, Jun 2026).",
-          "“Pax Silica” — US-led multilateral export-control alliance (launched Dec 2025; EU joined 4 Jun 2026). US Department of State.",
+          "“Pax Silica”, US-led multilateral export-control alliance (launched Dec 2025; EU joined 4 Jun 2026). US Department of State.",
           "Dutch Competitiveness Strategy, Part A (2026): “100% of EUV, 85% of global chip manufacturing relies on Dutch tech.”",
         ]}
       />

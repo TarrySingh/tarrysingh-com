@@ -53,7 +53,7 @@ export const STATUS_STYLE: Record<string, StatusStyle> = {
 }
 
 export function statusStyle(status: string): StatusStyle {
-  return STATUS_STYLE[status] || { label: status || "—", color: MUTE, bg: "bg-[#F1F2F4] border-[#D7D9DE]", text: "text-[#444A55]" }
+  return STATUS_STYLE[status] || { label: status || ", ", color: MUTE, bg: "bg-[#F1F2F4] border-[#D7D9DE]", text: "text-[#444A55]" }
 }
 
 export const ROLE_LABEL: Record<string, string> = {

@@ -23,7 +23,7 @@ function classify(raw: string, axis: "acc" | "action" | "roadmap"): Cell {
   if (axis === "acc") {
     if (v === "yes") return { value: v, tone: "positive", display: "✓" }
     if (v === "no")  return { value: v, tone: "negative", display: "✗" }
-    return { value: v, tone: "muted", display: "—" }
+    return { value: v, tone: "muted", display: ", " }
   }
   if (axis === "action") {
     // treat filled non-"no further" action text as "action needed"
@@ -32,12 +32,12 @@ function classify(raw: string, axis: "acc" | "action" | "roadmap"): Cell {
       return { value: "needed", tone: "caution", display: "needed" }
     }
     if (v.includes("no further actions"))             return { value: "done", tone: "positive", display: "done" }
-    return { value: "blank", tone: "muted", display: "—" }
+    return { value: "blank", tone: "muted", display: ", " }
   }
   // roadmap
   if (v === "yes")          return { value: "yes",  tone: "caution",  display: "planned" }
   if (v === "not needed")   return { value: "none", tone: "positive", display: "not needed" }
-  return { value: "blank", tone: "muted", display: "—" }
+  return { value: "blank", tone: "muted", display: ", " }
 }
 
 const TONE: Record<string, { style: CSSProperties; dashed?: boolean }> = {
@@ -69,7 +69,7 @@ export default function T23StatusMatrix({ detail }: Props) {
           8 partners × 4 status dimensions
         </h2>
         <p className="mt-1 text-sm max-w-xl" style={{ color: SLATE }}>
-          The whole T2.3 coordination state on one grid — quickly spot where
+          The whole T2.3 coordination state on one grid, quickly spot where
           HAW still needs to chase, and where the next follow-up belongs.
         </p>
       </div>
@@ -125,7 +125,7 @@ export default function T23StatusMatrix({ detail }: Props) {
                   </td>
                   <td className="py-2.5 px-3 text-center">
                     <span className="font-mono text-sm font-bold tabular-nums" style={{ color: INK }}>
-                      {p.programmes || "—"}
+                      {p.programmes || ", "}
                     </span>
                   </td>
                   {cells.map((c, i) => (

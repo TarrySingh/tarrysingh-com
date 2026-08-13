@@ -312,7 +312,7 @@ export function ChokepointChapterEight() {
       <Sources
         items={[
           "NATO 5%-of-GDP defence pledge (Hague summit, 2025): 3.5% core + 1.5% infrastructure/cyber by 2035; European allies +20% vs 2024 (>$574bn in 2025). NATO.",
-          "EU defence surge: the ~€800bn “ReArm Europe / Readiness 2030” plan (2025) — note the discrete EU instrument (European Defence Fund) is ~€8bn; the ~€800bn is a mobilisation ambition (SAFE loans + national fiscal space). European Commission.",
+          "EU defence surge: the ~€800bn “ReArm Europe / Readiness 2030” plan (2025), note the discrete EU instrument (European Defence Fund) is ~€8bn; the ~€800bn is a mobilisation ambition (SAFE loans + national fiscal space). European Commission.",
           "US share of European arms imports: ~64% of European NATO members' major-arms imports (2020–24), up from 52% (2015–19). SIPRI (Mar 2025).",
           "Procurement leakage (Draghi report, 2024, citing Feb 2022–Jun 2023): ~€75bn EU defence equipment spend, ~78% to non-EU suppliers, ~63% of that to the US; EU targets ≤45% extra-EU by 2030, 40% joint procurement by 2027.",
           "F-35: ~630–668 ordered by European NATO members (~180–200 delivered, 2026). No literal “kill switch” (Pentagon JPO, Mar 2025), but US logistical/software control (spares, ODIN/ALIS, maintenance) is the functional equivalent; Portugal & Canada reconsidered F-35 buys. SIPRI/Lockheed; Breaking Defense.",
@@ -320,9 +320,9 @@ export function ChokepointChapterEight() {
           "F-35 dependence: ~600 jets across European NATO (UK 138, Finland 64, Italy ~90, +NL/Norway/Belgium/Denmark/Poland/Czechia), flying on US spares/software/mission-data. Lockheed/SIPRI; national MoDs.",
           "The soft kill-switch made literal: the US paused intelligence-sharing with Ukraine for ~6 days (Mar 2025); ITAR gives Washington a re-export/use veto over US components in EU weapons. Reporting; US ITAR.",
           "Capability gaps: Europe leans on ~3 shared C-17 airlifters; Copernicus imagery too coarse for military vehicles; no credible European SEAD; no European SpaceX; IRIS² satcom not due until 2029. SAC; Copernicus; ESA.",
-          "The European defence-tech boom: Helsing (~$18bn), Rheinmetall (toward ~€50bn by 2030), Quantum Systems, Stark, ARX — many engineered ITAR-free for the SAFE 65%-EU-content rule. TechCrunch; CNBC.",
+          "The European defence-tech boom: Helsing (~$18bn), Rheinmetall (toward ~€50bn by 2030), Quantum Systems, Stark, ARX, many engineered ITAR-free for the SAFE 65%-EU-content rule. TechCrunch; CNBC.",
           "Spending vs capability: NATO Europe ~€130bn (2025 record); SAFE's first ~€38bn disbursed (Jan 2026); but European Sky Shield (~two dozen nations) has no system deployed, and the Franco-German FCAS fighter stalled (2026). NATO; EU; Asia Times.",
-          "The warfare shift: at NATO's Hedgehog exercise (Estonia, 2025), ~10 Ukrainian drone operators reportedly defeated two NATO battalions — a contest of cheap iteration where Europe could excel. Reporting.",
+          "The warfare shift: at NATO's Hedgehog exercise (Estonia, 2025), ~10 Ukrainian drone operators reportedly defeated two NATO battalions, a contest of cheap iteration where Europe could excel. Reporting.",
         ]}
       />
     </section>

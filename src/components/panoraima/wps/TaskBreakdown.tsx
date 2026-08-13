@@ -24,7 +24,7 @@ const STATUS_STYLE: Record<string, { label: string; fg: string; bg: string; bd: 
   final:    { label: "Final",     fg: OK,    bg: OK_SOFT,     bd: OK },
   reviewed: { label: "In review", fg: COBALT, bg: COBALT_SOFT, bd: COBALT_LINE },
   draft:    { label: "Draft",     fg: WARN,  bg: WARN_SOFT,   bd: WARN },
-  unknown:  { label: "—",         fg: MUTE,  bg: SURFACE,     bd: LINE },
+  unknown:  { label: ", ",         fg: MUTE,  bg: SURFACE,     bd: LINE },
 }
 
 export default function TaskBreakdown({
@@ -119,7 +119,7 @@ export default function TaskBreakdown({
                   )}
                   {deliverables.length === 0 ? (
                     <p className="mt-4 text-[12px] italic" style={{ color: MUTE }}>
-                      No formal deliverables attached to this task yet — the {t.file_count} file
+                      No formal deliverables attached to this task yet, the {t.file_count} file
                       {t.file_count === 1 ? "" : "s"} in this task are working docs, research notes
                       or meeting outputs.
                     </p>

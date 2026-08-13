@@ -55,7 +55,7 @@ function flagClass(v: string) {
 function flagLabel(v: string) {
   if (v === "yes") return "Yes"
   if (v === "no")  return "No"
-  if (v === "blank" || !v) return "—"
+  if (v === "blank" || !v) return ", "
   return v
 }
 
@@ -171,7 +171,7 @@ export default function T23Landscape({ detail }: Props) {
               {/* Actions */}
               <div className="rounded-xl border border-[#C9D4FF] bg-[#EEF2FF]/40 p-4">
                 <div className="font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-[#2251FF] mb-2">
-                  Actions required in PANORAIMA — in the partner&apos;s own words
+                  Actions required in PANORAIMA, in the partner&apos;s own words
                 </div>
                 {active.action_text ? (
                   <p className="text-[13px] text-[#51607A] leading-relaxed whitespace-pre-line">

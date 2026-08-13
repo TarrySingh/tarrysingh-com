@@ -135,7 +135,7 @@ export function FragmentedSubsidy() {
       caption={
         <>
           The EU Chips Act&rsquo;s <span style={{ color: p.squeeze }}>~€{EU_TOTAL}bn</span> arrives
-          shattered into national-subsidy shards — only{" "}
+          shattered into national-subsidy shards, only{" "}
           <span style={{ color: p.wonderHi }}>~{CENTRAL_PCT}%</span> is directly EU-managed (the ECA
           estimate). Toggle to the rivals&rsquo;{" "}
           <span style={{ color: p.leverage }}>coordinated</span> blocks, or hover a shard to read it.
@@ -241,7 +241,7 @@ export function FragmentedSubsidy() {
             <text x={80} y={444} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.04em" }}>
               {hover !== null
                 ? `${SHARDS[hover].label} · €${eurFmt(SHARDS[hover].eur)}bn${SHARDS[hover].central ? ` · directly EU-managed (~${CENTRAL_PCT}%)` : " · national subsidy"}`
-                : `hover a shard — only the lit core (~${CENTRAL_PCT}%) is steered from Brussels`}
+                : `hover a shard, only the lit core (~${CENTRAL_PCT}%) is steered from Brussels`}
             </text>
           </g>
         ) : (
@@ -320,7 +320,7 @@ export function FragmentedSubsidy() {
             </text>
 
             <text x={80} y={444} fill={p.soft} style={{ fontSize: 11, letterSpacing: "0.04em" }}>
-              ${rivalSum.toFixed(1)}bn of coordinated public programmes — decided once, spent as one.
+              ${rivalSum.toFixed(1)}bn of coordinated public programmes, decided once, spent as one.
             </text>
           </g>
         )}
@@ -335,7 +335,7 @@ export function FragmentedSubsidy() {
           <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>
             {verdict.word}
           </span>{" "}
-          — {verdict.line}.
+, {verdict.line}.
         </p>
 
         {/* fragmentation meter: EU's coordinated sliver vs the scattered remainder */}

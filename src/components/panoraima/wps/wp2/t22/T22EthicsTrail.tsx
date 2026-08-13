@@ -35,7 +35,7 @@ export default function T22EthicsTrail({ detail }: Props) {
           Governance trail
         </span>
         <h2 className="mt-2 text-2xl md:text-3xl font-bold text-[#0A1F33]">
-          Research governance — from application to report
+          Research governance, from application to report
         </h2>
         <p className="mt-1 text-sm text-[#6B7686] max-w-xl">
           The ethics process behind the focus group, traced through the actual

@@ -112,7 +112,7 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
               className="text-sm italic text-navy-700"
               style={{ fontFamily: "var(--font-serif), 'IBM Plex Serif', serif" }}
             >
-              You&rsquo;re on the list. The next Dispatch lands when it&rsquo;s ready —
+              You&rsquo;re on the list. The next Dispatch lands when it&rsquo;s ready,
               <em> no cadence theatre.</em>
             </p>
           ) : (
@@ -127,8 +127,8 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
                 className="text-base italic text-navy-700 leading-relaxed mb-4"
                 style={{ fontFamily: "var(--font-serif), 'IBM Plex Serif', serif" }}
               >
-                The argument turns from here. If you want the next one in your inbox —
-                no schedule, no marketing — leave an address.
+                The argument turns from here. If you want the next one in your inbox,
+                no schedule, no marketing, leave an address.
               </p>
               <form
                 onSubmit={onSubmit}

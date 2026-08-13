@@ -319,18 +319,18 @@ export function ChokepointChapterFour() {
         items={[
           "ASML: market capitalisation ~$743bn (companiesmarketcap.com, 22 Jun 2026); China share of sales ~49% (2024) → ~36% (Q4 2025) → ~20% (2026 guidance) (ASML filings).",
           "US export controls on lithography: EUV-to-China ban (2019); advanced DUV restrictions (2023); Netherlands tiered controls (Jan 2025) extended to servicing/spare-parts (Jun 2026); “Pax Silica” bloc (Dec 2025, EU joined Jun 2026); proposed US MATCH Act (Apr 2026). US BIS / Export Administration Regulations.",
-          "EU Chips Act (€43bn): EU share of global semiconductor manufacturing ~10% (2022) → ~11.7% projected for 2030 vs the 20% target — “very unlikely” per European Court of Auditors, Special Report 12/2025; Chips Act 2.0 launched Jun 2026.",
+          "EU Chips Act (€43bn): EU share of global semiconductor manufacturing ~10% (2022) → ~11.7% projected for 2030 vs the 20% target, “very unlikely” per European Court of Auditors, Special Report 12/2025; Chips Act 2.0 launched Jun 2026.",
           "Intel Magdeburg fab: ~€30bn investment + ~€9.9–10bn German state aid; cancelled 24 Jul 2025 (Intel); site reverting to a business park.",
           "ESMC (TSMC + Bosch/Infineon/NXP), Dresden: topping-out Jan 2026; 28/22nm + 16/12nm; ~40k wafers/month; production target late 2027; ~€10bn+ (€5bn state aid). TrendForce, Nov 2025.",
           "Chips Act fragmentation: ~€86bn mostly national subsidies; ~5% centrally EU-managed (ECA SR 12/2025). Rival semiconductor capex ~$580bn (2020–23); US CHIPS Act $52.7bn federal; China $40bn+ state funds (SEMI 2025).",
-          "Design IP: Arm — SoftBank-owned, Nasdaq-listed; Graphcore — acquired by SoftBank, 2024.",
+          "Design IP: Arm, SoftBank-owned, Nasdaq-listed; Graphcore, acquired by SoftBank, 2024.",
           "Chips Act: ~€86bn headline but the Commission directly controls only ~€4.5bn (~5%); on track to ~11.7% of the 20%-by-2030 target. Ex-ASML CEO Wennink called the 20% goal “totally unrealistic.” The Register; Bruegel; Wennink interview.",
-          "The single points: Cymer (San Diego, US) sole EUV light source; Zeiss (Germany) sole optics; ASML remotely monitors every EUV system it has shipped and licenses spares/servicing — leverage that became liability as China fell 49%→19% of sales. ASML; technode.",
+          "The single points: Cymer (San Diego, US) sole EUV light source; Zeiss (Germany) sole optics; ASML remotely monitors every EUV system it has shipped and licenses spares/servicing, leverage that became liability as China fell 49%→19% of sales. ASML; technode.",
           "The smarter bet: Europe leads power semis (Infineon/STMicro SiC & GaN); STMicro began high-volume silicon-photonics production at Crolles (2026); Silicon Box (Novara, Italy) won EU “Open EU Foundry” status for advanced chiplet packaging. STMicro; EC.",
           "Demand & policy: SK hynix placed the largest-ever EUV order (~$8bn / ~30 machines); Chips Act 2.0 (Jun 2026) targets ~€120bn by 2035; High-NA EXE:5200 (~$350–400m) shipped to imec (2026). SK hynix; EC; imec.",
           "The pain & the bright spot: STMicro ~5,000 job cuts; Intel's Magdeburg cancellation took ~18,000 supplier jobs; but Infineon opened a €5bn Dresden power-chip fab (Jul 2026) and GlobalFoundries ran Europe's first end-to-end sovereign flow (Jun 2026). STMicro; Infineon; GlobalFoundries.",
           "Nexperia & materials: the Dutch government seized governance of Chinese-owned Nexperia (Oct 2025), idling EU car plants; China controls ~98% of refined gallium/germanium and uses export licensing as leverage. Reporting; USGS.",
-          "No leading-edge logic fab exists in Europe; the one new fab (ESMC Dresden, ~2027) makes 28/22nm — a decade behind. Contrast: Taiwan built TSMC in 14 years, Korea over 50, with sustained state backing. ESMC; ITRI.",
+          "No leading-edge logic fab exists in Europe; the one new fab (ESMC Dresden, ~2027) makes 28/22nm, a decade behind. Contrast: Taiwan built TSMC in 14 years, Korea over 50, with sustained state backing. ESMC; ITRI.",
         ]}
       />
     </section>

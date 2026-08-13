@@ -174,9 +174,9 @@ export function AccelerantEngine() {
 
   const verdict =
     throttle < 0.04
-      ? { word: "AT REST", color: p.leverage, line: "every chapter you just read — the gaps exactly as you left them" }
+      ? { word: "AT REST", color: p.leverage, line: "every chapter you just read, the gaps exactly as you left them" }
       : throttle < 0.97
-        ? { word: "ENGAGING", color: p.squeezeHi, line: "the same gaps, springing out — the multiplier is winding up" }
+        ? { word: "ENGAGING", color: p.squeezeHi, line: "the same gaps, springing out, the multiplier is winding up" }
         : { word: "FULL POWER", color: p.squeeze, line: "a turbocharger, bolted to the side that was already winning" }
 
   return (
@@ -195,9 +195,9 @@ export function AccelerantEngine() {
       }
       caption={
         <>
-          AI opens no new gap — it multiplies every gap already in this essay, because it rewards exactly what
+          AI opens no new gap, it multiplies every gap already in this essay, because it rewards exactly what
           Europe lacks: scale, capital, cheap energy, data, frontier compute. Pull the{" "}
-          <span style={{ color: p.squeeze }}>ACCELERANT</span> lever — range, ▶ or ←/→ — and watch each{" "}
+          <span style={{ color: p.squeeze }}>ACCELERANT</span> lever, range, ▶ or ←/→, and watch each{" "}
           <span style={{ color: p.leverage }}>cyan &ldquo;before&rdquo; gap</span> spring out into its{" "}
           <span style={{ color: p.squeeze }}>multiplied red</span>. The lever is the AI era being switched on.
           Sources: Stanford AI Index 2026 (US 50 notable models in 2025 vs Europe&rsquo;s ~3; US ~74% of AI
@@ -210,7 +210,7 @@ export function AccelerantEngine() {
         role="img"
         aria-label={`The accelerant engine. With the AI throttle at ${Math.round(
           throttle * 100,
-        )} percent, the essay's five gaps — capital, talent, energy, scale and frontier compute — are amplified by an aggregate of ${liveAgg.toFixed(
+        )} percent, the essay's five gaps, capital, talent, energy, scale and frontier compute, are amplified by an aggregate of ${liveAgg.toFixed(
           1,
         )} times. The frontier-compute gap multiplies the most, by thirteen times. Every chapter you read was the "before"; this is the multiplier, bolted to the side already winning.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
@@ -377,7 +377,7 @@ export function AccelerantEngine() {
           <button
             type="button"
             onClick={() => (running ? setRunning(false) : sweep())}
-            aria-label={running ? "Pause the accelerant sweep" : "Engage the accelerant — sweep the throttle from rest to full power"}
+            aria-label={running ? "Pause the accelerant sweep" : "Engage the accelerant, sweep the throttle from rest to full power"}
             style={{
               fontFamily: "var(--font-mono), monospace",
               fontSize: 12,

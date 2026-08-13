@@ -101,7 +101,7 @@ export default function T22PedagogicFramework({ detail }: Props) {
       {/* Modern learning schools */}
       <div className="mb-8">
         <h3 className={`${KICKER} text-[10px] text-[#6B7686] mb-3`}>
-          Modern learning schools — three lenses
+          Modern learning schools, three lenses
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {pf.modern_learning_schools.map((s, i) => {
@@ -140,7 +140,7 @@ export default function T22PedagogicFramework({ detail }: Props) {
       {/* AI skill categories strip */}
       <div className="mb-8">
         <h3 className={`${KICKER} text-[10px] text-[#6B7686] mb-3`}>
-          AI skill categories — the 7 buckets
+          AI skill categories, the 7 buckets
         </h3>
         <div className="flex flex-wrap gap-2">
           {pf.ai_skill_categories.map((c) => {

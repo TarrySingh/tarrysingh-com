@@ -44,7 +44,7 @@ export function DraftListItem({ draft }: Props) {
     e.preventDefault()
     e.stopPropagation()
     const title = draft.frontmatter.title || draft.slug
-    if (!confirm(`Delete the draft "${title}"?\n\nThis is irreversible — the body and frontmatter both disappear from Supabase. Published Dispatches are untouched.`)) {
+    if (!confirm(`Delete the draft "${title}"?\n\nThis is irreversible, the body and frontmatter both disappear from Supabase. Published Dispatches are untouched.`)) {
       return
     }
     setError(null)

@@ -41,7 +41,7 @@ export default function T23TaskBrief({ detail }: Props) {
           {/* Memo header */}
           <div className="flex flex-wrap items-baseline gap-4 border-b border-white/10 pb-4 mb-6">
             <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7DA0FF]">
-              MEMO — PANORAIMA · T2.3
+              MEMO, PANORAIMA · T2.3
             </div>
             <div className="text-[11px] font-mono tabular-nums text-white/55">
               {new Date(brief.authored_at).toLocaleDateString("en-GB", {

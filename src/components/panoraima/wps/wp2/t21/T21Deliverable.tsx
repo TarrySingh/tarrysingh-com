@@ -51,10 +51,10 @@ export default function T21Deliverable({ detail }: Props) {
           The deliverable
         </span>
         <h2 className="mt-2 text-2xl md:text-3xl font-bold text-[#0A1F33]">
-          Deliverable 2.1 — Market &amp; Needs Analysis
+          Deliverable 2.1, Market &amp; Needs Analysis
         </h2>
         <p className="mt-1 text-sm text-[#51607A] max-w-xl">
-          The culmination of Task 2.1 — {d.size_kb ? `${(d.size_kb / 1024).toFixed(1)} MB` : ""} PDF,
+          The culmination of Task 2.1, {d.size_kb ? `${(d.size_kb / 1024).toFixed(1)} MB` : ""} PDF,
           published {d.date}. Four draft iterations fed into one release.
         </p>
       </div>

@@ -103,7 +103,7 @@ export function QuietExitIntent({ slug }: Props) {
         className="text-sm italic text-navy-700 leading-relaxed mb-4"
         style={{ fontFamily: "var(--font-serif), 'IBM Plex Serif', serif" }}
       >
-        Bookmark this — or take the studio with you. One quiet
+        Bookmark this, or take the studio with you. One quiet
         Dispatch when the next one is ready.
       </p>
       <div className="flex flex-wrap gap-2">
