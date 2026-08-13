@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-08-12T16:20:37.703941+00:00",
-  "refreshed_at": "2026-08-12T16:20:37.703941+00:00",
+  "generated_at": "2026-08-13T20:57:52.968905+00:00",
+  "refreshed_at": "2026-08-13T20:57:52.968905+00:00",
   "refresh_history": [
     {
       "at": "2026-08-12T15:01:19.979396+00:00",
@@ -11033,7 +11033,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Strong foundations plan, minor revision. Add the healthcare-critical evaluation pieces (calibration and AUPRC, external/temporal validation, data leakage), name a concrete flawed example, and add one worked mini-case so the 'evaluate' outcome has a student activity; line up the outcome tags.",
+      "review_note": "Material reviewed Aug 2026 (deck + teacher guide). Author (Gezsi, BME) delivered on all 7 changes committed in the 27 Jul answer: evaluation depth (AUPRC/calibration/thresholds/PPV-prevalence), validation types, leakage, concrete missingness/bias, worked confusion-matrix mini-case, exit check, revised outcomes. Numbers verified, 8 refs verified. One of the strongest Health LEs; ready to teach.",
       "materials": {
         "count": 3,
         "has": true,
@@ -18797,7 +18797,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": null,
+      "review_note": "SNA theory deck reviewed Aug 2026 — resolves the June plan-vs-material mismatch (author supplied the SNA theory deck matching the plan, with manual betweenness + Gephi). Strong, well-referenced; Pew BLM stats verified. Fixes: position the two decks (theory vs toxicity), correct the Facebook 3.5 = degrees-of-separation vs path-length slide, fix the Adamic-Glance venue (LinkKDD 2005), and a language pass.",
       "materials": {
         "count": 2,
         "has": true,
@@ -24691,7 +24691,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Strong foundations plan, minor revision. Add the healthcare-critical evaluation pieces (calibration and AUPRC, external/temporal validation, data leakage), name a concrete flawed example, and add one worked mini-case so the 'evaluate' outcome has a student activity; line up the outcome tags.",
+      "review_note": "Material reviewed Aug 2026 (deck + teacher guide). Author (Gezsi, BME) delivered on all 7 changes committed in the 27 Jul answer: evaluation depth (AUPRC/calibration/thresholds/PPV-prevalence), validation types, leakage, concrete missingness/bias, worked confusion-matrix mini-case, exit check, revised outcomes. Numbers verified, 8 refs verified. One of the strongest Health LEs; ready to teach.",
       "materials": {
         "count": 3,
         "has": true,
@@ -26137,7 +26137,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": null,
+      "review_note": "SNA theory deck reviewed Aug 2026 — resolves the June plan-vs-material mismatch (author supplied the SNA theory deck matching the plan, with manual betweenness + Gephi). Strong, well-referenced; Pew BLM stats verified. Fixes: position the two decks (theory vs toxicity), correct the Facebook 3.5 = degrees-of-separation vs path-length slide, fix the Adamic-Glance venue (LinkKDD 2005), and a language pass.",
       "materials": {
         "count": 2,
         "has": true,
