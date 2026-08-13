@@ -137,8 +137,7 @@ export function ChokepointChapterThree() {
         <P>
           Which is the purest expression of the whole machine: the European pension system, sitting on the
           deepest retirement savings in the world, allocates a vanishing fraction of it to the venture
-          capital that builds the future. The European figure is on the order of a <Sq>hundredth of a per
-          cent</Sq> of assets, against an American system that commits roughly <Lev>a hundred times</Lev>
+          capital that builds the future. The European figure is on the order of a <Sq>0.01%</Sq> of assets, against an American system that commits roughly <Lev>a hundred times</Lev>
           more. The savers&rsquo; own money, managed in the
           savers&rsquo; own name, declines to back the economy the savers will retire into, and
           flows instead to the firms that will sell that economy its software at a markup. The standing

@@ -42,9 +42,9 @@ function val(p) {
 
 /** Phrases whose arithmetic a generic rule would get wrong. Order matters. */
 const SPECIAL = [
-  [/\bhundredth of a per ?cent\b/gi, "0.01%"],
-  [/\bhalf a per ?cent\b/gi, "0.5%"],
-  [/\beight hundred and a thousand per ?cent\b/gi, "800% and 1,000%"],
+  [/\bhundredth of a per\\s*cent\b/gi, "0.01%"],
+  [/\bhalf a per\\s*cent\b/gi, "0.5%"],
+  [/\beight hundred and a thousand per\\s*cent\b/gi, "800% and 1,000%"],
 ]
 
 function convert(text, log) {
@@ -56,19 +56,19 @@ function convert(text, log) {
     })
   }
   // "fifteen to twenty per cent" -> "15-20%"  (a span, so one dash, unit once)
-  out = out.replace(new RegExp(`\\b(${PHRASE}) to (${PHRASE}) per ?cent\\b`, "gi"), (m, a, b) => {
+  out = out.replace(new RegExp(`\\b(${PHRASE}) to (${PHRASE}) per\\s*cent\\b`, "gi"), (m, a, b) => {
     const r = `${val(a)}-${val(b)}%`
     log(m, r)
     return r
   })
   // the general case: "eighty-eight per cent" -> "88%"
-  out = out.replace(new RegExp(`\\b(${PHRASE}) per ?cent\\b`, "gi"), (m, a) => {
+  out = out.replace(new RegExp(`\\b(${PHRASE}) per\\s*cent\\b`, "gi"), (m, a) => {
     const r = `${val(a)}%`
     log(m, r)
     return r
   })
   // already a numeral: "above 80 per cent" -> "above 80%"
-  out = out.replace(/\b(\d[\d.,]*) per ?cent\b/gi, (m, a) => {
+  out = out.replace(/\b(\d[\d.,]*) per\\s*cent\b/gi, (m, a) => {
     const r = `${a}%`
     log(m, r)
     return r
@@ -102,7 +102,7 @@ const touched = []
 for (const p of files.sort()) {
   if (SKIP.some((x) => p.endsWith(x))) continue
   const raw = fs.readFileSync(p, "utf8")
-  if (!/per ?cent(?!age|ile)/i.test(raw)) continue
+  if (!/per\\s*cent(?!age|ile)/i.test(raw)) continue
   const changes = []
   const log = (a, b) => changes.push([a, b])
   // Skip lines carrying the component identifier; it contains "Percent".
