@@ -269,8 +269,7 @@ export function ChokepointChapterOne() {
         <P>
           It would be dishonest to pretend the Netherlands never holds on to a winner, and the honest
           exceptions sharpen the rule rather than soften it. <Sq>Adyen</Sq>, the Amsterdam payments
-          processor, listed on Euronext in 2018, kept its headquarters at home, and now moves more than a
-          trillion euros a year: Europe&rsquo;s most valuable fintech, still European.{" "}
+          processor, listed on Euronext in 2018, kept its headquarters at home, and now moves more than €1 trillion a year: Europe&rsquo;s most valuable fintech, still European.{" "}
           <Sq>Booking.com</Sq>, Amsterdam-built, has kept its head office on the canal-ring for two decades
           even while listing in New York. These prove the outcome is not fated. But notice how the
           exceptions cluster in payments and travel, not in the frontier industries, AI and chips

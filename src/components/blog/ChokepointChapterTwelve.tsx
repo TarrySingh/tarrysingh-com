@@ -332,8 +332,7 @@ export function ChokepointChapterTwelve() {
           giants with decades of patient state financing to hold a fifth of global chip production.{" "}
           <Sq>Israel</Sq>, a country of nine million, turned a military signals-intelligence unit into a
           startup conveyor belt that has produced more than ninety unicorns and the highest venture
-          investment per head on Earth; one of them, Wiz, sold to Google in 2026 for thirty-two
-          billion dollars. None of these is bigger, richer or better-educated than Europe; every one simply{" "}
+          investment per head on Earth; one of them, Wiz, sold to Google in 2026 for $32 billion. None of these is bigger, richer or better-educated than Europe; every one simply{" "}
           <em>decided</em>, and then sustained the decision across governments and decades. The difference
           between them and Europe is not capacity. It is the willingness to choose a hard thing and refuse
           to let go of it.

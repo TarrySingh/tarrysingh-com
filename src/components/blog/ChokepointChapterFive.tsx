@@ -166,8 +166,7 @@ export function ChokepointChapterFive() {
           scientific triumph that briefly made it Europe&rsquo;s most valuable company. Then the American
           challenger, <Sq>Eli Lilly</Sq>, arrived with deeper pockets, a louder marketing machine and the
           full weight of the US health system behind it, and out-scaled Novo in its own invention. Through
-          2025 Novo&rsquo;s market value roughly <Sq>halved</Sq>; in 2026 Lilly&rsquo;s pushed toward a
-          trillion dollars. Europe discovered the molecule. America is keeping the market.
+          2025 Novo&rsquo;s market value roughly <Sq>halved</Sq>; in 2026 Lilly&rsquo;s pushed toward $1 trillion. Europe discovered the molecule. America is keeping the market.
         </P>
 
         <P>

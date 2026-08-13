@@ -145,8 +145,7 @@ export function ChokepointChapterSix() {
           a single year and now runs research and operations out of London, Dublin, Zurich, Paris and
           Munich: European talent, European cities, American payroll and American equity, the
           continent reduced to a staging ground for someone else&rsquo;s firm. Europe&rsquo;s answer, the{" "}
-          <Sq>&ldquo;Choose Europe for Science&rdquo;</Sq> programme launched in 2025, put about five
-          hundred million euros on the table to lure researchers home (a real gesture, and roughly
+          <Sq>&ldquo;Choose Europe for Science&rdquo;</Sq> programme launched in 2025, put about €500 million on the table to lure researchers home (a real gesture, and roughly
           a fortieth of what the bloc proposes to spend on the AI gigafactories those researchers would
           work in). We will fund the machines. We are still pricing the people as an afterthought.
         </P>

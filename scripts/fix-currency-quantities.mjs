@@ -34,7 +34,12 @@ const SCALE = { thousand: 1000, million: 1e6, billion: 1e9, trillion: 1e12 }
 const CUR = { euro: "€", euros: "€", dollar: "$", dollars: "$", pound: "£", pounds: "£" }
 
 const UW = Object.keys(UNIT).join("|")
-const NUM = `(?:a|an|${UW})(?:[-\\s](?:and[-\\s])?(?:${UW}|hundred))*`
+// `[-\s]+` and NOT `[-\s]`: the class matches exactly ONE character, and a JSX
+// wrap puts a newline plus ten spaces between words. "put about five\n
+// hundred million euros" therefore never matched, and the phrase shipped.
+// Fourth distinct line-wrap failure in this work; every one came from
+// assuming a single separator.
+const NUM = `(?:a|an|${UW})(?:[-\\s]+(?:and[-\\s]+)?(?:${UW}|hundred))*`
 const BIG = Object.keys(SCALE).join("|")
 const CW = Object.keys(CUR).join("|")
 
@@ -64,7 +69,7 @@ function convert(text, log) {
 
   // RANGE first: "forty to fifty billion dollars" -> "$40-50 billion"
   out = out.replace(
-    new RegExp(`\\b(${NUM})\\s+to\\s+(${NUM})[-\\s](${BIG})\\s+(${CW})\\b`, "gi"),
+    new RegExp(`\\b(${NUM})\\s+to\\s+(${NUM})[-\\s]+(${BIG})\\s+(${CW})\\b`, "gi"),
     (m, a, b, big, cw, off, full) => {
       if (FRACTION.test(full.slice(Math.max(0, off - 24), off))) return m
       const lo = parse(`${a} ${big}`), hi = parse(`${b} ${big}`)
@@ -77,7 +82,7 @@ function convert(text, log) {
 
   // SINGLE: "some three hundred billion euros" -> "some €300 billion"
   out = out.replace(
-    new RegExp(`\\b(${NUM})[-\\s](${BIG})\\s+(${CW})\\b`, "gi"),
+    new RegExp(`\\b(${NUM})[-\\s]+(${BIG})\\s+(${CW})\\b`, "gi"),
     (m, a, big, cw, off, full) => {
       if (FRACTION.test(full.slice(Math.max(0, off - 24), off))) return m
       const v = parse(`${a} ${big}`)
