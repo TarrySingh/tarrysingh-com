@@ -165,12 +165,63 @@ function statDumpParagraphs(text: string): number {
 }
 
 /**
- * A sentence that OPENS on a figure puts the percentage in the subject slot, so
- * the number acts and the people disappear. Spelling it out makes it worse, not
- * more conversational.
+ * NUMERIC NOTATION (Tarry, 2026-08-13: "when we speak of numbers, signs,
+ * currency, percentages, they should be written in their mathematical form,
+ * not prose"). Scanned against RAW text so the title and excerpt are in scope,
+ * which is where the worst offender lived: "Forty Per Cent Escalated to the
+ * Board" shipped as a headline.
+ *
+ * NOTE ON A RULE THAT WAS DELETED HERE. This file used to carry a hard
+ * `number-opens-sentence` check. It was wrong: it flagged "40% of the
+ * escalations reached the board", which is the form Tarry names as correct.
+ * Worse, the same ban in the writer prompt is what CAUSED the disease, since a
+ * model forbidden from opening on a numeral spells the numeral out to comply.
+ * Stacking is still caught, by `statistic-dump`, which is the real defect.
  */
-const NUMBER_OPENS_SENTENCE =
-  /(?:^|[.!?]["'’”)]?\s+)(?:\d[\d.,]*|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Twenty|Thirty|Forty|Fifty|Sixty|Seventy|Eighty|Ninety)[a-z-]*\s?(?:per cent|%)/gm
+const NUMWORD =
+  "one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|" +
+  "fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety"
+
+/** Vague quantifiers legitimately precede a scale word: "a few thousand engineers". */
+const VAGUE = "(?:a |an )?(?:few|couple of|couple|several|many|dozens? of|tens of|hundreds of|thousands of|millions of|billions of) $"
+
+const NUMERIC_RULES: { id: string; label: string; re: RegExp; guard?: RegExp }[] = [
+  {
+    id: "spelled-quantity",
+    label: "quantity spelled out with a scale word (house style is digits: 20,000 GPUs, $80 billion)",
+    re: new RegExp(`\\b(?:${NUMWORD})(?:[- ](?:and[- ])?(?:${NUMWORD}))*\\s+(?:hundred|thousand|million|billion|trillion)\\b`, "gi"),
+    guard: new RegExp(VAGUE, "i"),
+  },
+  {
+    id: "spelled-unit",
+    label: "numeral spelled out next to a measured unit (house style is digits: 42 megawatts, 40 percentage points)",
+    re: new RegExp(
+      `\\b(?:${NUMWORD})(?:[- ](?:and[- ])?(?:${NUMWORD}))*\\s+` +
+        `(?:percentage points?|gigawatts?|megawatts?|kilowatts?|terawatt-hours?|GW|MW|kW|TWh|` +
+        `gigabytes?|terabytes?|petabytes?|GB|TB|PB|kilometres?|kilometers?|metres?|meters?|miles?|` +
+        `kilograms?|tonnes?|seconds?|minutes?|hours?|milliseconds?|parameters?|tokens?|GPUs?)\\b`,
+      "gi",
+    ),
+    guard: new RegExp(VAGUE, "i"),
+  },
+  {
+    id: "currency-as-word",
+    label: "currency written as a word after the numeral (house style is the symbol: $2.7 billion)",
+    // `\d[\d.,]*` and not `[\d.,]+`: the looser class matches a bare comma, so
+    // "the contract, won by Samsung" was reported as a currency violation.
+    re: /\b\d[\d.,]*\s+(?:hundred|thousand|million|billion|trillion\s+)?\s*(?:dollars|euros|pounds|yen|won)\b/gi,
+  },
+  {
+    id: "spelled-multiplier",
+    label: "multiplier spelled out (house style is Nx: 2.5x, 15x)",
+    re: new RegExp(`\\b(?:${NUMWORD})(?:[- ](?:and[- ])?(?:${NUMWORD}))*\\s+times\\s+(?:more|less|faster|slower|higher|lower|bigger|larger|smaller|the\\b)`, "gi"),
+  },
+  {
+    id: "us-date-order",
+    label: "US date order (house style is 27 May 2026: day, month, year, no comma)",
+    re: /\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},\s*\d{4}\b/g,
+  },
+]
 
 /**
  * The EXCERPT is the most-read sentence on the site: it is the /blog card, the
@@ -190,7 +241,19 @@ const EXCERPT_OPENS_ON_STAT =
  * simply wrong, wherever they appear, including frontmatter.
  */
 function spelledOutPercent(text: string): number {
-  return (text.match(/\bper\s?cent\b/gi) ?? []).length
+  const scannable = text
+    // A Gartner URL slug reads ".../predicts-40-percent-of-enterprise-apps".
+    // Hyphens are word boundaries, so the naive pattern reported every cited
+    // source as a style violation. Link targets are not prose.
+    .replace(/https?:\/\/[^\s)\]]+/g, "")
+    .replace(/`[^`\n]*`/g, "")
+  // Only flag the word when a FIGURE is attached, which is the banned form.
+  // Bare "percent" and "percentage" are ordinary nouns with no numeral to
+  // convert: "a few percent", "what percentage of spend", "tens of percent".
+  // "percentage point" and "percentile" are different units and stay as words.
+  const attached =
+    /(?:\d[\d.,]*|\b(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)(?:[- ](?:and[- ])?(?:one|two|three|four|five|six|seven|eight|nine|ten))*)[\s-]*per\s?cent(?!age|ile)\b/gi
+  return (scannable.match(attached) ?? []).length
 }
 
 /**
@@ -217,16 +280,6 @@ export function scanDispatchSlop(text: string): SlopHit[] {
     }
   }
 
-  // Checked against the RAW text, because frontmatter is stripped from `prose`.
-  if (EXCERPT_OPENS_ON_STAT.test(text)) {
-    hits.push({
-      id: "excerpt-opens-on-statistic",
-      label: "excerpt opens on a survey statistic (this is the /blog card, meta description and social image)",
-      severity: "hard",
-      match: (text.match(EXCERPT_OPENS_ON_STAT) ?? [""])[0].slice(0, 70),
-    })
-  }
-
   const dumps = statDumpParagraphs(prose)
   if (dumps > 0) {
     hits.push({
@@ -236,13 +289,24 @@ export function scanDispatchSlop(text: string): SlopHit[] {
       match: `${dumps} paragraphs`,
     })
   }
-  for (const m of prose.match(NUMBER_OPENS_SENTENCE) ?? []) {
-    hits.push({
-      id: "number-opens-sentence",
-      label: "sentence opens on a figure, putting the number in the subject slot instead of a person",
-      severity: "hard",
-      match: m.replace(/\s+/g, " ").trim().slice(0, 60),
-    })
+  // Numeric notation, scanned against RAW text so the title and excerpt are in
+  // scope. Frontmatter is where the headline offender lived and where the body
+  // scan cannot reach.
+  for (const rule of NUMERIC_RULES) {
+    for (const m of text.match(rule.re) ?? []) {
+      // A vague quantifier ahead of the match makes it legitimate English:
+      // "a few thousand engineers" is not a spelled-out quantity.
+      if (rule.guard) {
+        const at = text.indexOf(m)
+        if (at > 0 && rule.guard.test(text.slice(Math.max(0, at - 24), at))) continue
+      }
+      hits.push({
+        id: rule.id,
+        label: rule.label,
+        severity: "hard",
+        match: m.replace(/\s+/g, " ").trim().slice(0, 70),
+      })
+    }
   }
 
   // Checked against the RAW text so the title and excerpt are in scope.
