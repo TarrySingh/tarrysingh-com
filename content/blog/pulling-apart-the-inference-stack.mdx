@@ -7,7 +7,7 @@ draft: false
 tags: ["llm-inference", "prefill-decode-disaggregation", "vllm", "kv-cache", "nvidia-dynamo"]
 ---
 
-For most of the last decade, an LLM inference server was one process holding one model on one GPU. You sent it a prompt, the server ate the prompt, the server spat out tokens, you closed the connection. The two halves of that loop, reading the prompt and generating the answer, got treated as a single workload because the alternative was complicated and the simple version was good enough.
+For most of the last decade, an LLM inference server was one process holding one model on 1 GPU. You sent it a prompt, the server ate the prompt, the server spat out tokens, you closed the connection. The two halves of that loop, reading the prompt and generating the answer, got treated as a single workload because the alternative was complicated and the simple version was good enough.
 
 ## the two halves part ways
 
@@ -15,7 +15,7 @@ By mid-2026, vLLM, SGLang, TensorRT-LLM and LMDeploy have all accepted that the 
 
 ## why one box was always the wrong answer
 
-The prefill phase ingests a prompt and produces the first token. It runs every position of the input through every transformer layer in parallel. That is a compute-bound matrix multiply storm, with GPU utilisation often pinned in the 90-95% range. The decode phase generates each subsequent token one at a time, sequential by construction, dominated by memory bandwidth as the model weights and KV cache get streamed through the attention units. Decode utilisation on the same GPU sits around [20-40%](https://www.spheron.network/blog/nvidia-dynamo-disaggregated-inference-guide/).
+The prefill phase ingests a prompt and produces the first token. It runs every position of the input through every transformer layer in parallel. That is a compute-bound matrix multiply storm, with GPU utilisation often pinned in the 90–95% range. The decode phase generates each subsequent token one at a time, sequential by construction, dominated by memory bandwidth as the model weights and KV cache get streamed through the attention units. Decode utilisation on the same GPU sits around [20–40%](https://www.spheron.network/blog/nvidia-dynamo-disaggregated-inference-guide/).
 
 Put both phases on the same box and you guarantee one of two outcomes. Either you size the GPU pool for prefill peaks, in which case decode wastes silicon all day. Or you size it for sustained decode, in which case prefill queues up behind running decodes and tail latency blows past your SLO at exactly the moments people are watching. There is no cleverness that resolves this. The phases have different bottlenecks on the same hardware.
 
@@ -52,11 +52,11 @@ The pattern forces three decisions that monolithic serving let you ignore.
 
 The first is your prefill-to-decode ratio, and whether it is static or dynamic. Most teams start static: set xPyD at deploy time, alarm when goodput drops, retune by hand. The honest path forward is runtime reconfiguration, which Dynamo supports through its discovery service and which llm-d is building toward with cache-aware LoRA routing in v0.5. If your traffic has a daytime/nighttime shift, your worker mix should too.
 
-The second is how you account for the KV cache tier. A cache hit collapses prefill cost to roughly zero for that portion of the prompt. Agent system prompts, RAG context and multi-turn conversation history are all long, repeated prefixes. If your business has them, the cache tier dominates your cost model. You need observability on hit rate by prefix shape, on top of GPU utilisation. The cost per million tokens for cached prefix is closer to the cost of network bandwidth than the cost of compute, and that delta widens every quarter.
+The second is how you account for the KV cache tier. A cache hit collapses prefill cost to roughly zero for that portion of the prompt. Agent system prompts, RAG context and multi-turn conversation history are all long, repeated prefixes. If your business has them, the cache tier dominates your cost model. You need observability on hit rate by prefix shape, on top of GPU utilisation. The cost per 1 million tokens for cached prefix is closer to the cost of network bandwidth than the cost of compute, and that delta widens every quarter.
 
 The third is procurement. Compute-heavy prefill pools want the dense, high-FLOPs GPUs. Decode pools want memory bandwidth and capacity, where Blackwell B200s and H200s shine in ways that do not show up on a marketing chart. Treat the two pools as separate procurement lines. If your finance team is still quoting "GPU hours" as a single SKU, you are losing money the cluster is happy to bill you for.
 
-The macro picture is that inference now eats [55-80% of enterprise AI GPU spend](https://www.spheron.network/blog/ai-inference-cost-economics-2026/) and per-million-token prices have collapsed from around $20 in 2023 to roughly $0.40 today. That collapse is the cumulative result of speculative decoding, MoE routing improvements, FP8 quantisation, continuous batching, and, increasingly, disaggregation. If you're paying $0.40 per million tokens in 2026 and not running disaggregated, your provider is keeping the disaggregation margin.
+The macro picture is that inference now eats [55–80% of enterprise AI GPU spend](https://www.spheron.network/blog/ai-inference-cost-economics-2026/) and per-million-token prices have collapsed from around $20 in 2023 to roughly $0.40 today. That collapse is the cumulative result of speculative decoding, MoE routing improvements, FP8 quantisation, continuous batching, and, increasingly, disaggregation. If you're paying $0.40 per 1 million tokens in 2026 and not running disaggregated, your provider is keeping the disaggregation margin.
 
 ## when disaggregation is worth the complexity
 

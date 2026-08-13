@@ -25,9 +25,9 @@ These are vendor and analyst numbers. I would apply some skepticism to all three
 
 ## What slop is actually costing
 
-The visible part of the bill is inference. The [FinOps Foundation's working group on AI](https://www.finops.org/wg/finops-for-ai-overview/) has documented that for most enterprises now in production, inference accounts for roughly 60-85% of total AI run cost. Training, data and engineering payroll are all smaller items. Agentic loops compound this fast: one autonomous workflow can hit a model fifteen or twenty times to complete a task the user perceives as a single click. RAG pipelines pile context tokens onto every call. Always-on monitoring agents consume compute when no human is in the loop.
+The visible part of the bill is inference. The [FinOps Foundation's working group on AI](https://www.finops.org/wg/finops-for-ai-overview/) has documented that for most enterprises now in production, inference accounts for roughly 60–85% of total AI run cost. Training, data and engineering payroll are all smaller items. Agentic loops compound this fast: one autonomous workflow can hit a model fifteen or twenty times to complete a task the user perceives as a single click. RAG pipelines pile context tokens onto every call. Always-on monitoring agents consume compute when no human is in the loop.
 
-An agent that costs three cents per task, called five hundred times an hour by an automation that runs across two thousand support tickets a day, becomes a thirty-thousand-dollar monthly line item on its own. And that is before anyone counts the redundant copy of the same agent built by a sister team that nobody knew about. Multiply that by the seven to twelve concurrent pilots running in any large enterprise right now and the slop layer is no longer a rounding error.
+An agent that costs three cents per task, called 500 times an hour by an automation that runs across 2,000 support tickets a day, becomes a $30,000 monthly line item on its own. And that is before anyone counts the redundant copy of the same agent built by a sister team that nobody knew about. Multiply that by the seven to twelve concurrent pilots running in any large enterprise right now and the slop layer is no longer a rounding error.
 
 The invisible part is the debt stack underneath.
 
@@ -50,7 +50,7 @@ That short-cycle depreciation does not stay on the hyperscaler balance sheet. It
 
 ## Why governance is the load-bearing wall
 
-If you skipped owning the slop layer, you also skipped owning who is allowed to spend on it. [Gartner's 26 May release](https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure) on uniform agent governance is worth reading carefully. Their argument is that one-size-fits-all controls will themselves cause failures, which is fair. But the data underneath says something blunter: independent research [from Kiteworks](https://www.kiteworks.com/cybersecurity-risk-management/ai-agent-data-governance-why-organizations-cant-stop-their-own-ai/) found that 51% of surveyed organisations have agents in production while only 37-40% have the containment controls (purpose binding, kill switches, network isolation) to govern them. That is not a regulatory problem yet. It is a budgetary one. You cannot decommission what you cannot identify.
+If you skipped owning the slop layer, you also skipped owning who is allowed to spend on it. [Gartner's 26 May release](https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure) on uniform agent governance is worth reading carefully. Their argument is that one-size-fits-all controls will themselves cause failures, which is fair. But the data underneath says something blunter: independent research [from Kiteworks](https://www.kiteworks.com/cybersecurity-risk-management/ai-agent-data-governance-why-organizations-cant-stop-their-own-ai/) found that 51% of surveyed organisations have agents in production while only 37–40% have the containment controls (purpose binding, kill switches, network isolation) to govern them. That is not a regulatory problem yet. It is a budgetary one. You cannot decommission what you cannot identify.
 
 ## A note from a previous cleanup
 
@@ -62,7 +62,7 @@ The current AI cycle has put us in the same position, faster. The inventory has 
 
 The FY26 AI line does not need more ROI charts. It needs three artefacts from the CIO and the CFO jointly, by the end of Q3.
 
-First, a **pilot register**: every active AI initiative, with monthly run-rate cost, owner, business sponsor, eval state, and a documented decommissioning trigger. Not a slide. A database. At Real AI we have run this exercise inside two Tier-1 European institutions in the last six months. The median finding was that 28-34% of active pilots had no measurable activity in the preceding 90 days but were still incurring monthly cost.
+First, a **pilot register**: every active AI initiative, with monthly run-rate cost, owner, business sponsor, eval state, and a documented decommissioning trigger. Not a slide. A database. At Real AI we have run this exercise inside two Tier-1 European institutions in the last six months. The median finding was that 28–34% of active pilots had no measurable activity in the preceding 90 days but were still incurring monthly cost.
 
 Second, a **per-workflow cost ceiling**, set per business unit, with automatic throttling at 80% of budget. The technology to do this exists. The political will usually does not.
 
