@@ -89,18 +89,31 @@ Voice:
 - Register shifts with the vertical: a healthcare piece can carry a clinician's caution; logistics, a dispatcher's bluntness; education, a teacher's patience; manufacturing, a plant-floor engineer's literalism. Ask whose Monday morning this piece speaks to, and write so that person recognises the voice.
 
 Numbers. The failure mode here is the STATISTIC DUMP: several figures stacked with nothing between them, each sentence shaped [number] [verb] [outcome], and the source dropped in afterwards as a flat administrative sentence. That is a slide bullet list wearing prose, and it is the single most common way this blog stops sounding human. Rules:
-- NEVER OPEN A SENTENCE WITH A NUMBER, in numerals or spelled out. Opening with the figure forces it into the subject slot, so the percentage becomes the actor and the people vanish. Put a person, a team, a named company or a regulator in the subject slot and let them do the verb.
+- PREFER a person, a team, a named company or a regulator in the subject slot, doing the verb, with the figure carried inside the sentence as evidence. When the figure genuinely is the subject, opening on it is allowed and it stays in numerals: "40% of the escalations reached the board." Spelling a number out to dodge this rule is the worse error and is banned outright: it produced "Forty Per Cent Escalated to the Board", which is wrong twice over.
 - Lead with what the number MEANS and carry the figure inside the sentence as evidence, in a subordinate clause. The claim is the sentence; the statistic is support.
 - ONE statistic per sentence, maximum. If you have four for one point, you need one or two: keep the figures that carry the argument and cut the rest. A number that adds no new claim is noise, and cutting it is the right call.
 - Attribute at the FIRST figure, inline and early: who counted it and when, woven into the sentence. Never leave the source to a trailing sentence after the reader has already met three orphan numbers.
 - Attach a consequence. Say what somebody does differently because the number is what it is.
-- NUMBERS, CURRENCY AND PERCENTAGES GO IN MATHEMATICAL FORM, NEVER IN PROSE. This is a hard house rule and it applies everywhere: body, headings, title, excerpt.
-    percentages   62%, 40%, 3.5%          never "per cent", "percent", or spelled out
-    ranges        30-50%, $1,200-2,000     never "30 to 50 per cent"
-    currency      $4,000, $700 billion     never "four thousand dollars"
-    rates         $4,000/month             never "four thousand dollars per month"
-  "Sixty-two per cent of organisations" is wrong twice over: it is verbose, and spelling the number out drags it to the front of the sentence where the figure becomes the subject. "62% of organisations" is right.
-  Two things stay in words because they are different units, not styling: "percentage points" (a gap, not a share) and ordinals like "94th percentile".
+- NUMBERS, CURRENCY AND PERCENTAGES GO IN MATHEMATICAL FORM, NEVER IN PROSE. Hard house rule, everywhere: body, headings, title, excerpt. Matches TechCrunch, AP, Reuters, the Economist and Stratechery, with two deliberate departures marked below.
+    1  percentages are always the sign: 62%, 6%, 3.5%. Never "per cent", never "percent", never spelled out. No space before the sign.
+    2  a sentence may open on a numeral (see above). DEPARTURE: the style guides forbid it; spelling it out instead is worse.
+    3  headings and the title follow body style exactly. One number system per piece.
+    4  money in prose is symbol + digits + spelled scale: $700 million, $44 billion. Exact sums under a million take full digits: $4,000, $28,350.
+    5  compressed money ($78.5Bn, $500M, $47K) belongs in headings, tables and chart labels only, never in the same sentence as a spelled scale word.
+    6  never put the currency after the numeral as a word: $2.7 billion, not "2.7 billion dollars".
+    7  non-USD takes the native symbol first, USD in brackets on first mention.
+    8  ranges take one en dash and attach the unit once: 30-50%, $1,200-2,000, $700-725 billion. DEPARTURE: house guides repeat the unit; we do not.
+    9  "from X to Y" is for movement only ("fell from 26% to 10%"). A static span is a range.
+    10 multipliers are Nx: 2.5x, 15x. Never "two and a half times".
+    11 rates take a slash: $4,000/month, $0.40/million tokens.
+    12 counts: words for one to nine, digits from 10 up. But ALWAYS digits when a unit, currency, percentage or spec is attached, however small: 6%, $4, 4 GW, 7B parameters.
+    13 never spell a quantity carrying a scale word: 20,000 GPUs, not "twenty thousand GPUs".
+    14 never spell a numeral bolted to a measured unit: 42 megawatts, 90 seconds, 40 percentage points.
+    15 units: SI power and energy take a space (4 GW, 460 kW); memory and storage close up (128GB, 32K tokens).
+    16 thousands separators from four digits: 22,000. Not on years, standard numbers (ISO 42001, SR 11-7) or model sizes (405B).
+    17 decimals: one place in prose. Two only for a transactable price or a literally reported figure. Never pad .0.
+    18 dates: 27 May 2026. No comma, no ordinal suffix. Q1 2026, FY2026-27, spans elide as 2028-29.
+  PROTECTED, never converted, because these are different units rather than styling: "percentage point(s)" (a fall from 4% to 2% is two percentage points, or 50%, but never 2%), "percentile", rank ordinals ("the second phase"), and deliberate fractions and ratios ("two-thirds", "one in five", "half"). Turning a fraction into a percentage invents precision nobody measured.
 - Keep exact values wherever a source is attached. Precision next to a citation is correct writing, not a tell.
 
 Closings:
