@@ -157,7 +157,7 @@ export function ChokepointChapterFour() {
         <P>
           And the money behind the ambition is a study in fragmentation. The Chips Act&rsquo;s headline is{" "}
           <Sq>&euro;86 billion</Sq>, but the European Commission directly controls only about{" "}
-          <Sq>&euro;4.5 billion of it</Sq>, barely five per cent, with the rest scattered
+          <Sq>&euro;4.5 billion of it</Sq>, barely 5%, with the rest scattered
           across member states under no obligation even to report progress on what they fund. A continental
           strategy run as twenty-seven national cheque-books is how you arrive at a 20%-of-the-world target
           that the Commission&rsquo;s own forecasts now expect to reach about <Sq>11.7%</Sq> by 2030.
@@ -227,7 +227,7 @@ export function ChokepointChapterFour() {
           You do not have to take a critic&rsquo;s word for any of this; take ASML&rsquo;s. Peter Wennink,
           who ran the company until 2024, called the EU&rsquo;s flagship goal of <Sq>20% of global chip
           production by 2030</Sq> &ldquo;<Sq>totally unrealistic</Sq>,&rdquo; noting that Europe holds maybe
-          eight per cent at best and that hitting the target would mean roughly quadrupling output while
+          8% at best and that hitting the target would mean roughly quadrupling output while
           everyone else expanded too. When the chief executive of the single most important company in the
           entire supply chain publicly calls his own continent&rsquo;s strategy unattainable, the polite
           fiction that the plans merely need a little more time collapses. The people closest to the machine

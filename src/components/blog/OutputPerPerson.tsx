@@ -233,7 +233,7 @@ export function OutputPerPerson() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full"
         role="img"
-        aria-label="The fork in the forecast. Global real GDP growth was roughly flat for a century, about 1.5 percent per year in 1900 rising to 3.1 percent in 2024. From 2026 three expert projections diverge sharply to 2030: ARK's bull case reaches past 7 percent, a 7-to-10 percent range, the IMF and consensus baseline stays near 3.1 percent, and Acemoglu's skeptic case rises only slightly to 3.2 percent. The wedge between the bull case and the baseline is shaded as the disagreement. Even credible experts differ by two to fourfold."
+        aria-label="The fork in the forecast. Global real GDP growth was roughly flat for a century, about 1.5% per year in 1900 rising to 3.1% in 2024. From 2026 three expert projections diverge sharply to 2030: ARK's bull case reaches past 7%, a 7-to-10% range, the IMF and consensus baseline stays near 3.1%, and Acemoglu's skeptic case rises only slightly to 3.2%. The wedge between the bull case and the baseline is shaded as the disagreement. Even credible experts differ by two to fourfold."
       >
         <defs>
           <linearGradient id="opp-wedge" x1="0" y1="0" x2="0" y2="1">

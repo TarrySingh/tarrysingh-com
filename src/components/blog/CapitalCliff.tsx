@@ -219,7 +219,7 @@ export function CapitalCliff() {
         role="img"
         aria-label={`European-led share of funding rounds by stage. At ${d.label}, Europe leads ${d.euLabel} of rounds; the remaining ${Math.round(
           usShare * 100,
-        )} percent is foreign-led. ${inUS ? "The company has relocated to the United States." : "The company is still funded in Europe."}`}
+        )}% is foreign-led. ${inUS ? "The company has relocated to the United States." : "The company is still funded in Europe."}`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
@@ -355,7 +355,7 @@ export function CapitalCliff() {
           className="text-[15px]"
           style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}
         >
-          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> —{" "}
+          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> ·{" "}
           {verdict.line}.
         </p>
 

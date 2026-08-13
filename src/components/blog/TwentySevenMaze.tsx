@@ -189,7 +189,7 @@ export function TwentySevenMaze() {
       caption={
         <>
           The single market that isn&rsquo;t. A US founder faces{" "}
-          <span style={{ color: p.leverage }}>one market</span> and a clean lane —{" "}
+          <span style={{ color: p.leverage }}>one market</span> and a clean lane:{" "}
           <span style={{ color: p.leverage }}>~5,500 rules</span>. A European founder runs a maze up to{" "}
           <span style={{ color: p.squeeze }}>27 times</span>, one per member state, through{" "}
           <span style={{ color: p.squeeze }}>~13,000+ EU rules</span> (2019–24) policed by{" "}
@@ -444,7 +444,7 @@ export function TwentySevenMaze() {
           className="mt-3 text-[15px]"
           style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}
         >
-          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> —{" "}
+          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> ·{" "}
           {verdict.line}.
         </p>
 

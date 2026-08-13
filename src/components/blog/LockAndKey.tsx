@@ -206,7 +206,7 @@ export function LockAndKey() {
           <span style={{ color: p.leverage }}>holds</span>, <span style={{ color: p.leverage }}>ASML&rsquo;s
           100% EUV monopoly</span> (€677bn; <em>zero</em> substitutes, no sub-5nm AI chip on Earth without it),{" "}
           €33.5tn household savings, a 450-million single market, 22% of the world&rsquo;s papers, €2.5tn of
-          industry. The lock&rsquo;s pins are what Washington owns —{" "}
+          industry. The lock&rsquo;s pins are what Washington owns:{" "}
           <span style={{ color: p.squeeze }}>platforms, frontier models, capital markets, the cloud</span>.{" "}
           Hover a tooth to name the asset; <strong>press and hold</strong> (or hold Space) to turn the key. It{" "}
           <span style={{ color: p.leverage }}>resists</span>, then turns{" "}

@@ -124,9 +124,8 @@ function RotScene({ ctx }: { ctx: SceneCtx }) {
       >
         <title>Task completion under four context strategies</title>
         <desc>
-          Four measured context configurations on the same benchmark: no context 8
-          percent, full history 71 percent, last five tool pairs 79 percent, last five
-          plus summarisation 91.6 percent. A second panel shows retrieval accuracy
+          Four measured context configurations on the same benchmark: no context 8%, full history 71%, last five tool pairs 79%, last five
+          plus summarisation 91.6%. A second panel shows retrieval accuracy
           falling from 99.3 to 69.7 at 32 thousand tokens.
         </desc>
 

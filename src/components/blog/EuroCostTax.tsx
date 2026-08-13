@@ -338,7 +338,7 @@ export function EuroCostTax() {
       <div className="mt-2 px-1">
         <p className="text-[15px]" style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}>
           Being European is not a market position; it is{" "}
-          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> —{" "}
+          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> ·{" "}
           {verdict.line}.
         </p>
 

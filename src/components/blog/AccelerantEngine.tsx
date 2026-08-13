@@ -210,7 +210,7 @@ export function AccelerantEngine() {
         role="img"
         aria-label={`The accelerant engine. With the AI throttle at ${Math.round(
           throttle * 100,
-        )} percent, the essay's five gaps, capital, talent, energy, scale and frontier compute, are amplified by an aggregate of ${liveAgg.toFixed(
+        )}%, the essay's five gaps, capital, talent, energy, scale and frontier compute, are amplified by an aggregate of ${liveAgg.toFixed(
           1,
         )} times. The frontier-compute gap multiplies the most, by thirteen times. Every chapter you read was the "before"; this is the multiplier, bolted to the side already winning.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
@@ -368,7 +368,7 @@ export function AccelerantEngine() {
           className="mt-3 text-[15px]"
           style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}
         >
-          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> —{" "}
+          <span style={{ color: verdict.color, fontStyle: "normal", fontWeight: 700 }}>{verdict.word}</span> ·{" "}
           {verdict.line}.
         </p>
 
@@ -409,7 +409,7 @@ export function AccelerantEngine() {
             aria-valuetext={
               throttle < 0.04
                 ? "At rest: every gap as the essay left it"
-                : `Throttle ${Math.round(throttle * 100)} percent: aggregate amplification ${liveAgg.toFixed(1)} times`
+                : `Throttle ${Math.round(throttle * 100)}%: aggregate amplification ${liveAgg.toFixed(1)} times`
             }
             className="h-1 flex-1 cursor-pointer appearance-none rounded-full"
             style={{ accentColor: engaged ? p.squeeze : p.leverage, background: p.hair }}

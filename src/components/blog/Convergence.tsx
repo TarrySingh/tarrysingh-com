@@ -150,7 +150,7 @@ export function Convergence() {
       caption={
         activeCurve ? (
           <>
-            <strong style={{ color: p.ink, fontStyle: "normal" }}>{activeCurve.label}</strong> —{" "}
+            <strong style={{ color: p.ink, fontStyle: "normal" }}>{activeCurve.label}</strong> ·{" "}
             {activeCurve.note}
           </>
         ) : (
@@ -167,7 +167,7 @@ export function Convergence() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full"
         role="img"
-        aria-label="A logarithmic chart from 2010 to 2040. Five cost curves, intelligence, computation, genome reading, solar, and mobility, each normalised to 100 percent at its baseline, all descend toward a shared near-zero-marginal-cost floor, intelligence the steepest and mobility the shallowest. A sixth line, total spend, rises far above the 100 percent baseline: Jevons' paradox, where cheaper units drive more total consumption."
+        aria-label="A logarithmic chart from 2010 to 2040. Five cost curves, intelligence, computation, genome reading, solar, and mobility, each normalised to 100% at its baseline, all descend toward a shared near-zero-marginal-cost floor, intelligence the steepest and mobility the shallowest. A sixth line, total spend, rises far above the 100% baseline: Jevons' paradox, where cheaper units drive more total consumption."
         onMouseLeave={() => setActive(null)}
       >
         {/* decade gridlines + multiplier labels */}

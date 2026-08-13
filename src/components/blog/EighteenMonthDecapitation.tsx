@@ -165,7 +165,7 @@ export function EighteenMonthDecapitation() {
         role="img"
         aria-label={`Twin market-cap lines, mid-2024 to mid-2026. Novo Nordisk falls from about $604bn to about $197bn, a ${Math.round(
           novoFall,
-        )} percent fall, while Eli Lilly climbs to about $1.01 trillion, roughly five times Novo, after becoming the first $1-trillion healthcare company on 24 November 2025. At ${cur.label}: Novo ${fmtCap(
+        )}% fall, while Eli Lilly climbs to about $1.01 trillion, roughly five times Novo, after becoming the first $1-trillion healthcare company on 24 November 2025. At ${cur.label}: Novo ${fmtCap(
           novoNow,
         )}, Lilly ${fmtCap(lillyNow)}, a multiple of ${mult.toFixed(1)} times.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}

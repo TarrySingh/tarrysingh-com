@@ -216,8 +216,8 @@ export function ChokepointChapterTwelve() {
           It helps to be honest about the size of what would be required, because it is the part the
           green-shoot stories tend to skate over. Draghi&rsquo;s own figure for the investment Europe needs
           is around <Sq>&euro;800 billion a year</Sq>, close to <Sq>5% of the continent&rsquo;s
-          GDP</Sq>, sustained for years. To feel the scale: the Marshall Plan ran at roughly one per cent of
-          American output; the Apollo programme peaked near half a per cent; what Draghi asks for is several
+          GDP</Sq>, sustained for years. To feel the scale: the Marshall Plan ran at roughly 1% of
+          American output; the Apollo programme peaked near 0.5%; what Draghi asks for is several
           times the intensity of either, not for a few years but indefinitely. That sounds impossible until
           you remember that Europe has already done the once-unthinkable thing the plan requires: in 2020 it
           agreed to <Sq>borrow jointly</Sq>, some &euro;750 billion through NextGenerationEU, breaking a
@@ -327,9 +327,9 @@ export function ChokepointChapterTwelve() {
         <P>
           And Europe need not even invent the playbook, because three other latecomers wrote it in living
           memory. <Sq>Taiwan</Sq> went from licensing an obsolete American chip process in 1973 to spinning
-          out <Sq>TSMC</Sq> (today the maker of ninety per cent of the world&rsquo;s most advanced
+          out <Sq>TSMC</Sq> (today the maker of 90% of the world&rsquo;s most advanced
           chips) in fourteen years, by way of a single determined state research institute.{" "}
-          <Sq>South Korea</Sq> spends over five per cent of its GDP on research and pairs its industrial
+          <Sq>South Korea</Sq> spends over 5% of its GDP on research and pairs its industrial
           giants with decades of patient state financing to hold a fifth of global chip production.{" "}
           <Sq>Israel</Sq>, a country of nine million, turned a military signals-intelligence unit into a
           startup conveyor belt that has produced more than ninety unicorns and the highest venture

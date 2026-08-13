@@ -253,7 +253,7 @@ export function ChokepointChapterSeven() {
           stagnation in 2026 with the grim furniture of decline piling up: <Sq>Volkswagen</Sq> shut a German
           factory for the first time in eighty-eight years; <Sq>Bosch</Sq> announced twenty-two thousand job
           cuts; <Sq>Thyssenkrupp</Sq>, the storied steelmaker, agreed to shed some eleven thousand jobs
-          (forty per cent of its steel workforce) and lined up a sale to an Indian group.
+          (40% of its steel workforce) and lined up a sale to an Indian group.
           German unemployment crossed <Sq>three million</Sq> for the first time in over a decade, and
           corporate insolvencies hit their highest level in years. The proximate causes are the ones this
           chapter has catalogued (energy at well over twice American prices), compounded by a

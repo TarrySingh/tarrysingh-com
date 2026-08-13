@@ -290,7 +290,7 @@ function DialScene({ ctx }: { ctx: SceneCtx }) {
           A half-circle pressure dial with four settings from low to extreme. A panel
           plots a proxy score that keeps climbing while the true goal bends away as
           pressure rises, annotated with documented reward-hacking cases. A monitor
-          readout shows chain-of-thought recall of 95 percent against 60 percent for
+          readout shows chain-of-thought recall of 95% against 60% for
           actions only, collapsing toward zero at the extreme setting.
         </desc>
 

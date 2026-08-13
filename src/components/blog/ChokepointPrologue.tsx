@@ -53,7 +53,7 @@ export function ChokepointPrologue() {
           of them. Around <Lev>94% of every lithography system</Lev> sold at any node traces back to this
           one Dutch firm, and something close to <Lev>85% of advanced chip manufacturing</Lev> depends on
           its tools to exist at all. In 2025 it booked <Won>&euro;32.7 billion</Won> in revenue doing it,
-          at a gross margin north of fifty per cent. If you wanted to name the one place where Europe is
+          at a gross margin north of 50%. If you wanted to name the one place where Europe is
           not a follower, not a worthy fast-second, but the irreplaceable, sole, planet-wide monopolist
           of the thing the entire digital economy is built on, it is this town you cannot find on
           a map.
@@ -196,7 +196,7 @@ export function ChokepointPrologue() {
           And lest this seem like a story only about the AI age, recall that Europe has run this exact play
           before, at the top of the last technology wave, and lost. In May 2000 <Sq>Nokia</Sq> was worth
           some three hundred billion euros and Europe owned the mobile phone; Sweden&rsquo;s{" "}
-          <Sq>Ericsson</Sq> held perhaps forty per cent of the world&rsquo;s handset market; the continent
+          <Sq>Ericsson</Sq> held perhaps 40% of the world&rsquo;s handset market; the continent
           had written the global GSM standard. Within a decade it was gone. Nokia lost <Sq>98% of its
           value</Sq> and was sold for parts to Microsoft; Ericsson retreated to network gear; Siemens dumped
           its phone division on a Taiwanese firm that promptly went bankrupt. Europe did not lose mobile

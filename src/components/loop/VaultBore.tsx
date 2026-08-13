@@ -208,8 +208,8 @@ function BoreScene({ ctx }: { ctx: SceneCtx }) {
           and telemetry are high volume and low value; deep strata such as deal memos
           and lab notebooks are low volume and high value. A toggle drops every stratum
           to near zero to show how little a public model saw. Measured framing: the
-          enterprise holds over 80 percent of installed bytes, a frontier run trains on
-          about 44 terabytes, and over 99.9999 percent of the corpus is unseen.
+          enterprise holds over 80% of installed bytes, a frontier run trains on
+          about 44 terabytes, and over 99.9999% of the corpus is unseen.
         </desc>
 
         {/* ===== derrick head ===== */}

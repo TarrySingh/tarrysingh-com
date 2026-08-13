@@ -212,7 +212,7 @@ export function ChokepointChapterFive() {
           rival product, &ldquo;OpenSearch,&rdquo; and captured much of the market the Dutch company had
           created. And <Sq>Adyen</Sq>, the rare European champion that stayed home (Euronext-listed,
           Amsterdam-headquartered, with the fattest margins in global payments), still processes only
-          around <Sq>three per cent of global payment volume</Sq>, hemmed permanently beneath Visa and
+          around <Sq>3% of global payment volume</Sq>, hemmed permanently beneath Visa and
           Mastercard. List in New York and the platforms eat you; stay in Amsterdam and you hit a structural
           ceiling. The genius is real on both paths. The ownership of the future is on neither.
         </P>
@@ -220,7 +220,7 @@ export function ChokepointChapterFive() {
         <P>
           Consider the Italian software consolidator <Sq>Bending Spoons</Sq>, which built itself from a
           forty-thousand-dollar seed into the owner of Evernote, Vimeo, AOL and Eventbrite, partly by
-          rewriting its products with AI; by early 2026 more than ninety per cent of its code was
+          rewriting its products with AI; by early 2026 more than 90% of its code was
           machine-authored. For years it stayed defiantly private, its founder arguing that European firms
           could not command American valuations on public markets. Then, in June 2026, it filed to go public
           anyway: on <Sq>Nasdaq</Sq>, at some nineteen billion dollars, not in Milan or on any

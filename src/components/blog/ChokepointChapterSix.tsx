@@ -217,7 +217,7 @@ export function ChokepointChapterSix() {
           run it. The American labs now wage their talent wars <em>inside</em> Europe, trading European
           researchers among themselves on European soil, with European institutions merely the venue. And
           the tax code holds the door open: a stock-option grant that a US engineer eventually pays
-          capital-gains rates on, around fifteen to twenty per cent, a German engineer pays ordinary income
+          capital-gains rates on, around 15-20%, a German engineer pays ordinary income
           tax on at exercise, north of forty. So even the equity meant to bind talent to a European
           startup is taxed as though it were a salary. Europe penalises the one instrument that might let it
           compete.

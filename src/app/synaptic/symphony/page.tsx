@@ -158,7 +158,7 @@ export default function SymphonyPage() {
           <figure className="hidden print:block">
             <Image
               src={statisticalCeiling}
-              alt="Plate V, Statistical ceiling chart: published SWE-bench Verified scores compared with independently re-evaluated resolution rates after solution-leakage filtering. Headline scores above 80 per cent collapse to single digits."
+              alt="Plate V, Statistical ceiling chart: published SWE-bench Verified scores compared with independently re-evaluated resolution rates after solution-leakage filtering. Headline scores above 80% collapse to single digits."
               sizes="(min-width: 1024px) 50vw, 100vw"
               placeholder="blur"
               className="block h-auto w-full rounded-[var(--radius-tight)]"

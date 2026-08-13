@@ -303,7 +303,7 @@ export function ReArmamentLeak() {
               key={`ribbon-${l.key}`}
               role="button"
               tabIndex={0}
-              aria-label={`${l.label}: about ${Math.round(l.share)} percent of the surge, roughly €${Math.round(
+              aria-label={`${l.label}: about ${Math.round(l.share)}% of the surge, roughly €${Math.round(
                 (l.share / 100) * SOURCE_BN,
               )} billion`}
               onMouseEnter={() => setActive(l.key)}
@@ -410,7 +410,7 @@ export function ReArmamentLeak() {
           role="switch"
           aria-checked={buyEuro}
           onClick={() => setBuyEuro((v) => !v)}
-          aria-label="Toggle the EU buy-European 2030 target (45 percent extra-EU cap, 40 percent joint procurement by 2027)"
+          aria-label="Toggle the EU buy-European 2030 target (45% extra-EU cap, 40% joint procurement by 2027)"
           className="flex items-center gap-2.5"
           style={{
             fontFamily: "var(--font-mono), monospace",

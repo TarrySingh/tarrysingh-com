@@ -321,7 +321,7 @@ function ReactorScene({ ctx }: { ctx: SceneCtx }) {
           evals, deploy and flywheel, are joined by ducts into one closed circuit with
           flow chevrons. Selecting a chamber shows its ledger figures: for example the
           Llama 3.1 405B pretraining run took 466 interruptions, 419 of them
-          unexpected, across 16,384 GPUs in 54 days and still held above 90 percent
+          unexpected, across 16,384 GPUs in 54 days and still held above 90%
           goodput on automated checkpoint and restart.
         </desc>
 

@@ -203,7 +203,7 @@ export function ChokepointChapterEleven() {
           training a competitive model for a reported few million dollars and releasing it open-weight,
           proof that the frontier is not <em>only</em> about brute spend. But the broader trend runs the
           other way: training compute is scaling more than fivefold a year, and the three leading American
-          labs alone command something like <Sq>sixty per cent of the world&rsquo;s frontier compute</Sq>.
+          labs alone command something like <Sq>60% of the world&rsquo;s frontier compute</Sq>.
           The accelerant&rsquo;s fuel is electricity and silicon, and Europe rationed its access to both.
         </P>
 
@@ -222,10 +222,10 @@ export function ChokepointChapterEleven() {
 
         <P>
           Reduce the whole contest to one ratio and it is brutal. On the most consequential input of all,
-          high-end AI compute, Europe holds <Sq>under five per cent</Sq> of the world&rsquo;s,
+          high-end AI compute, Europe holds <Sq>under 5%</Sq> of the world&rsquo;s,
           some seventeen times less than the United States, and even the optimistic projections have that
           share peaking near
-          eight per cent later this decade before sliding back. Europe is responding at the only scale it can
+          8% later this decade before sliding back. Europe is responding at the only scale it can
           muster collectively: EuroHPC has announced something like <Sq>thirty-five new AI
           supercomputers</Sq> across twenty-three nations. It is a real and serious effort, and it is still
           being lapped, because the American build-out is private, profit-funded and relentless while the

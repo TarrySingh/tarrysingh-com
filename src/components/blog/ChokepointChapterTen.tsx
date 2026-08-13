@@ -231,9 +231,9 @@ export function ChokepointChapterTen() {
         <P>
           And in 2026 the bottom of that squeeze stopped being abstract. <Sq>BYD</Sq>&rsquo;s electric-car
           registrations in Europe rose around <Sq>180% year on year</Sq> in early 2026, vaulting it into the
-          continent&rsquo;s top three despite a combined EU duty above forty per cent; <Sq>CATL</Sq>, already
+          continent&rsquo;s top three despite a combined EU duty above 40%; <Sq>CATL</Sq>, already
           the supplier of more than half of Europe&rsquo;s batteries, is building gigafactories on European
-          soil while holding a global battery share north of forty per cent. Roughly <Sq>95% of Europe&rsquo;s
+          soil while holding a global battery share north of 40%. Roughly <Sq>95% of Europe&rsquo;s
           solar panels</Sq> come from China, and when Beijing trimmed an export rebate in 2026 the price of
           European solar simply rose. Where Washington reaches for export controls, Beijing reaches for the
           mirror image: when the EU put tariffs on Chinese electric cars, China answered with duties of up to{" "}

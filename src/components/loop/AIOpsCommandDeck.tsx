@@ -362,7 +362,7 @@ function DeckScene({ ctx }: { ctx: SceneCtx }) {
           A scenario selector drives every panel and lights the single panel a fleet
           operator should act on. In the healthy state all panels sit inside their
           bands; a drift event leaves memory stale at 128 minutes; a verifier
-          regression drops the pass-rate to 58 percent, below the 71 percent floor.
+          regression drops the pass-rate to 58%, below the 71% floor.
         </desc>
 
         {/* ===== deck header ===== */}

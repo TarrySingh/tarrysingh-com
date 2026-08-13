@@ -229,10 +229,8 @@ function IcebergScene({ ctx }: { ctx: SceneCtx }) {
           A small ice tip above a waterline is the frontier training set: 44 terabytes
           of curated text, 15 trillion tokens, distilled from 96 Common Crawl snapshots.
           The vast gold mass below the line is the world&rsquo;s stored data, of which the
-          retained enterprise share dominates: a 175 zettabyte global datasphere, over 80
-          percent of installed bytes held by enterprises. By raw volume the training text
-          to stored data ratio is roughly one to one billion, and more than 99.9999
-          percent of that data was never seen by any public model.
+          retained enterprise share dominates: a 175 zettabyte global datasphere, over 80% of installed bytes held by enterprises. By raw volume the training text
+          to stored data ratio is roughly one to one billion, and more than 99.9999% of that data was never seen by any public model.
         </desc>
 
         <defs>

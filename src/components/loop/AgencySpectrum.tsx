@@ -172,9 +172,9 @@ function SpectrumScene({ ctx }: { ctx: SceneCtx }) {
         <desc>
           A five-level scale from H1, AI handling a task on its own, to H5, a human
           essential. Workers vote for H3 equal partnership as the most-desired level in
-          45.2 percent of occupations, while 47.5 percent of tasks sit in a lower
+          45.2% of occupations, while 47.5% of tasks sit in a lower
           triangle where workers want more human agency than experts deem necessary, and
-          41.0 percent of Y Combinator task mappings target tasks workers do not want
+          41.0% of Y Combinator task mappings target tasks workers do not want
           automated.
         </desc>
 

@@ -429,7 +429,7 @@ export function FourStrokeEngine() {
               ? (STROKES[liveIdx].rev.label)
               : (STROKES[liveIdx].fwd.label)}
           </span>{" "}
-          —{" "}
+          ·{" "}
           {reverse
             ? "the loop runs backwards: the savings come home and stay invested."
             : "each revolution the ring widens, the transfer compounds, wider than the last."}

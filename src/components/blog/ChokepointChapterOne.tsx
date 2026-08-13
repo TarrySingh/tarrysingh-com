@@ -284,7 +284,7 @@ export function ChokepointChapterOne() {
           some &euro;12.5 billion, in 2023) yet slips toward the high teens on innovation
           <em>outputs</em>: the patents, the scale-ups, the commercial franchises that turn research into
           rent. The Brainport cluster around Eindhoven is a genuine marvel of roughly eleven hundred
-          companies and a hundred thousand jobs, but some seventy per cent of them sit in
+          companies and a hundred thousand jobs, but some 70% of them sit in
           manufacturing and hardware and barely <Sq>8% in software</Sq>, against a third or more in
           Silicon Valley. It is a hardware powerhouse in a software century: world-class at building the
           tools, strangely unable to own the platforms those tools enable. The inputs are Dutch. The
@@ -343,7 +343,7 @@ export function ChokepointChapterOne() {
           giant UiPath, its intellectual property consolidated into a New-York-listed group. And when the
           government finally answered the competitiveness alarm with a headline{" "}
           <Sq>&euro;2.8-billion</Sq> technology-and-talent fund, the first-year allocation arrived at around{" "}
-          <Sq>&euro;340 million</Sq>: an eighty-eight per cent gap between the announcement and the
+          <Sq>&euro;340 million</Sq>: an 88% gap between the announcement and the
           cheque, the four-year political clock starving a forty-year bet before it began. The ambition is
           real and recurring. So is the under-execution. That, in one country, is the whole machine.
         </P>

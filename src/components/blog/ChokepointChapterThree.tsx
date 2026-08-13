@@ -176,7 +176,7 @@ export function ChokepointChapterThree() {
 
         <P>
           The deepest irony sits in the pension statements. European pension funds allocate a vanishingly
-          small slice (barely a <Sq>hundredth of a per cent</Sq> of their assets) to domestic
+          small slice (barely a <Sq>0.01%</Sq> of their assets) to domestic
           venture capital, a fraction of even the modest American rate, leaving a quarter-trillion euros a
           year of European retirement savings <em>not</em> backing European companies. Where does it go?
           Norway&rsquo;s sovereign wealth fund, the largest single pool of European capital on Earth, holds
@@ -191,7 +191,7 @@ export function ChokepointChapterThree() {
         <P>
           The household end of the same pipe is just as telling. Only about <Sq>17%</Sq> of European
           household financial assets sit in securities, against roughly <Sq>43%</Sq> in the United States
-          (nearer nine per cent in Germany, five in France), so the European who does invest
+          (nearer 9% in Germany, five in France), so the European who does invest
           typically reaches for a global index fund, and the global index is itself a wealth-transfer
           machine. The most popular such product on European retail platforms tracks an all-world benchmark
           that is around two-thirds American and tilted hardest toward US technology, which means a German

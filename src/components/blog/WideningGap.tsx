@@ -326,7 +326,7 @@ export function WideningGap() {
           className="mt-3 text-[15px]"
           style={{ fontFamily: "var(--font-serif), serif", color: p.muted, fontStyle: "italic" }}
         >
-          <span style={{ color: p.squeeze, fontStyle: "normal", fontWeight: 700 }}>{d.factorLabel}</span> —{" "}
+          <span style={{ color: p.squeeze, fontStyle: "normal", fontWeight: 700 }}>{d.factorLabel}</span> ·{" "}
           {d.gloss}
         </p>
       </div>

@@ -175,7 +175,7 @@ function FanoutScene({ ctx }: { ctx: SceneCtx }) {
           workers, each returning a condensed one to two thousand token summary. Two
           charts show the chat-token cost rising with worker count, anchored at four
           times for a single agent and fifteen times for a multi-agent system, while
-          quality rises to plus 90.2 percent in the documented three to five subagent
+          quality rises to plus 90.2% in the documented three to five subagent
           zone and is schematic beyond it.
         </desc>
 

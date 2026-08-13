@@ -224,7 +224,7 @@ export function ChokepointChapterTwo() {
           European providers calling itself <Sq>Euclidia</Sq> emerged to
           argue, pointedly, that &ldquo;sovereign&rdquo; should mean European-owned and European-controlled,
           not merely American technology in a local building. These are the right arguments, made by the
-          right people. But they are made from a market position of around fifteen per cent and slipping,
+          right people. But they are made from a market position of around 15% and slipping,
           against rivals who spend more on data centres in a quarter than the European challengers are worth.
           The will is finally there in places. The scale is not. And in cloud, as in chips, scale is
           the whole game.
@@ -245,7 +245,7 @@ export function ChokepointChapterTwo() {
           The price of lock-in became impossible to ignore the moment a vendor decided to test it. When
           Broadcom acquired VMware, the virtualisation software a great share of European data centres run
           on, it raised prices on some European cloud providers by figures variously reported between{" "}
-          <Sq>eight hundred and a thousand per cent</Sq>, an increase you can only impose on
+          <Sq>800% and 1,000%</Sq>, an increase you can only impose on
           customers who have nowhere else to go. The shock did, at least, concentrate minds: France moved its
           national <Sq>Health Data Hub</Sq> off Microsoft Azure to the homegrown provider Scaleway, and the
           German retail group Schwarz poured billions into its own sovereign cloud. The lesson European
@@ -299,8 +299,7 @@ export function ChokepointChapterTwo() {
           analysis <Sq>around 90%</Sq>) turns out to come from one place: the technology sector. Europe
           is not broadly less productive than America across the board; in many traditional industries it
           holds its own. It is being out-run almost entirely in the digital, software and AI economy that now
-          drives growth everywhere, the gap showing up as labour-productivity growth of well under one
-          per cent a year in the euro area against several times that in the United States over the same span.
+          drives growth everywhere, the gap showing up as labour-productivity growth of well under 1% a year in the euro area against several times that in the United States over the same span.
           The continent did not fall behind at <em>everything</em>. It fell behind at the <em>one thing</em>
           that compounds into everything else, and then mistook a tech problem for a general malaise it could
           manage rather than a specific failure it had to fix.

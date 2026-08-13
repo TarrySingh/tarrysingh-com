@@ -213,7 +213,7 @@ function LoopScene({ ctx }: { ctx: SceneCtx }) {
         <title>The agent loop: plan, act, verify, persist</title>
         <desc>
           A running loop with four stages. Switching off the verifier makes claimed
-          progress reach one hundred percent while true quality decays; switching off
+          progress reach 100% while true quality decays; switching off
           the state file makes the loop repeat the same step forever.
         </desc>
 

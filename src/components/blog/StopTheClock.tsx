@@ -251,7 +251,7 @@ export function StopTheClock() {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label={`A clock of the EU AI Act high-risk enforcement deadline. At ${cur.date} (${cur.title}), the high-risk Annex III deadline points to ${cur.deadlineLabel}. ${dragged ? "The Digital Omnibus has dragged the deadline backwards from 2 August 2026 to 2 December 2027, a 16-month slip; the product-embedded Annex I tier is pushed to 2 August 2028." : "The deadline still stands at its original 2 August 2026."} By April 2026 about 78 percent of organisations had taken no compliance steps; penalties reach 35 million euros or 7 percent of global turnover.`}
+        aria-label={`A clock of the EU AI Act high-risk enforcement deadline. At ${cur.date} (${cur.title}), the high-risk Annex III deadline points to ${cur.deadlineLabel}. ${dragged ? "The Digital Omnibus has dragged the deadline backwards from 2 August 2026 to 2 December 2027, a 16-month slip; the product-embedded Annex I tier is pushed to 2 August 2028." : "The deadline still stands at its original 2 August 2026."} By April 2026 about 78% of organisations had taken no compliance steps; penalties reach 35 million euros or 7% of global turnover.`}
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
         <defs>
