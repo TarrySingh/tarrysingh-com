@@ -78,7 +78,7 @@ export default function SymphonyProposalPage() {
             SYMPHONY
           </h1>
           <ItalicCaption className="mx-auto mt-5 max-w-3xl">
-            Bridging neuroscience, control theory and software engineering — a
+            Bridging neuroscience, control theory and software engineering, a
             multi-scale neuromodulated substrate for task-adaptive code
             understanding.
           </ItalicCaption>
@@ -104,7 +104,7 @@ export default function SymphonyProposalPage() {
           are encoded as nodes in a multi-scale network whose activation
           patterns are reconfigured, on demand, by task-specific
           neuromodulatory signals. A code representation that behaves less
-          like a document and more like a nervous system — foregrounding
+          like a document and more like a nervous system, foregrounding
           what the engineer&rsquo;s current task needs.
         </p>
         <p style={proseStyle}>
@@ -147,7 +147,7 @@ export default function SymphonyProposalPage() {
               collapse on SWE-agent 1.0 with Claude 3.5 (57.6&nbsp;% →
               31.8&nbsp;%). Production LLM context windows remain in the
               low hundreds of thousands of tokens while industrial
-              codebases span millions — retrieval augmentation supplies
+              codebases span millions, retrieval augmentation supplies
               local relevance, not system-level coherence.
             </p>
           </Cartouche>
@@ -155,7 +155,7 @@ export default function SymphonyProposalPage() {
             <p style={{ color: "var(--ink)", lineHeight: 1.55, fontSize: "0.95rem" }}>
               SonarQube, PMD, IntelliJ inspections, architecture recovery
               and architecture knowledge graphs capture what is explicitly
-              encoded — call graphs, dependency edges, type hierarchies,
+              encoded, call graphs, dependency edges, type hierarchies,
               declared interfaces. They do not capture the design rationale
               or the contextual activation of architectural knowledge.
               Avgeriou et al. (2007) identified that tier as the hardest
@@ -222,7 +222,7 @@ export default function SymphonyProposalPage() {
               Low-bandwidth control
             </h3>
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.6, fontSize: "0.95rem" }}>
-              Borrowed from Siciliano-school haptic shared control — a
+              Borrowed from Siciliano-school haptic shared control, a
               narrow scalar control surface, not a prompt window.
               Composable, auditable, bounded. This is the property that
               makes the substrate amenable to industrial governance.
@@ -241,7 +241,7 @@ export default function SymphonyProposalPage() {
         </div>
         <p style={proseStyle}>
           The category SYMPHONY seeds is the <em>auditable code-comprehension
-          substrate</em> — a class of artefact that does not exist today
+          substrate</em>, a class of artefact that does not exist today
           and is structurally distinct from both the dominant LLM-agent
           platforms (GitHub Copilot, Cursor, Claude Code, Replit Agent)
           and the legacy static-analysis toolchains. Its novelty sits at
@@ -269,7 +269,7 @@ export default function SymphonyProposalPage() {
             <p className="mt-3" style={proseInkStyle}>
               Mei, Muller &amp; Ramaswamy (<em>Trends in Neurosciences</em>,
               2022) formalised a four-scale framework for integrating
-              neuromodulation into deep networks — hyperparameter,
+              neuromodulation into deep networks, hyperparameter,
               plasticity, neuronal and dendritic. SYMPHONY transposes that
               framework from its native perceptual and motor domains into
               a symbolic and structural domain (source code) where signals
@@ -299,7 +299,7 @@ export default function SymphonyProposalPage() {
               across a decade of RA-L / ICRA / T-RO papers (2018–2025)
               that a low-bandwidth supervisory signal reshapes a
               high-degree-of-freedom autonomous controller into
-              qualitatively distinct task behaviours — without rewriting
+              qualitatively distinct task behaviours, without rewriting
               the controller. SYMPHONY adopts that architectural primitive
               as the task-baton interface: a small set of scalar modulatory
               signals, intentionally narrow, so behaviour is composable,
@@ -325,14 +325,14 @@ export default function SymphonyProposalPage() {
             </h3>
             <p className="mt-3" style={proseInkStyle}>
               Real AI&rsquo;s Hominis programme builds foundation models
-              for the real world — situated, auditable and compute-aware,
+              for the real world, situated, auditable and compute-aware,
               trained at Leonardo / CINECA on EuroHPC allocation time.
               SYMPHONY uses that engineering base to assemble the
               substrate at industrial scale, but inverts the usual
               foundation-model deployment shape: instead of a fixed model
               serving prompts, the substrate is a slow, persistent
               representation whose <em>activation</em> is steered by the
-              engineer&rsquo;s task — a different system primitive.
+              engineer&rsquo;s task, a different system primitive.
             </p>
           </div>
         </div>
@@ -367,7 +367,7 @@ export default function SymphonyProposalPage() {
               <span style={{ color: "var(--ink)" }}>Simulation.</span>{" "}
               Mei, Muller &amp; Ramaswamy (2022) demonstrated, in
               simulation, that neuromodulatory units at the four scales
-              produce the three behaviours SYMPHONY requires — faster
+              produce the three behaviours SYMPHONY requires, faster
               adaptation, higher cumulative reward across task sequences,
               and resistance to catastrophic forgetting.
             </p>
@@ -387,7 +387,7 @@ export default function SymphonyProposalPage() {
               Autonomous Robots 2019) showed in physical hardware that
               low-bandwidth supervisory signals produce qualitatively
               distinct, context-appropriate behaviours from a single
-              underlying autonomous controller — the architectural property
+              underlying autonomous controller, the architectural property
               SYMPHONY transposes.
             </p>
           </li>
@@ -424,7 +424,7 @@ export default function SymphonyProposalPage() {
           milestone, and a documented alternative path if the threshold
           is missed. RP1 closes at M12; RP2 closes at M36. The full
           objective table (with thresholds, milestones and partner leads)
-          sits on the parent /synaptic/symphony page — section V.
+          sits on the parent /synaptic/symphony page, section V.
         </p>
         <ItalicCaption className="max-w-3xl">
           O1 multi-layer extraction (M12) · O2 neuromodulatory reconfig
@@ -445,13 +445,13 @@ export default function SymphonyProposalPage() {
           <span style={{ color: "var(--ink)" }}>Real AI (NL)</span>{" "}
           coordinates and leads O1, O4. Founded by Tarry Singh; builds
           Hominis on EuroHPC allocation time at Leonardo / CINECA.{" "}
-          <span style={{ color: "var(--ink)" }}>Newcastle (UK)</span> —
+          <span style={{ color: "var(--ink)" }}>Newcastle (UK)</span>,
           Sri Ramaswamy, chair in computational neuroscience, third author
           of Mei-Muller-Ramaswamy 2022; Blue Brain alumnus. Leads O2 and
           co-leads ethics for O5. <span style={{ color: "var(--ink)" }}>CREATE-PRISMA / UNINA
-          (IT)</span> — Bruno Siciliano, director of PRISMA Lab, ERC
+          (IT)</span>, Bruno Siciliano, director of PRISMA Lab, ERC
           Advanced Grant holder, Engelberger laureate; leads O3.{" "}
-          <span style={{ color: "var(--ink)" }}>UP Robotics (HR)</span> —
+          <span style={{ color: "var(--ink)" }}>UP Robotics (HR)</span>,
           industrial-automation demonstrator codebase, supplies half the
           held-out task instances for O4 evaluation.
         </p>
@@ -490,7 +490,7 @@ export default function SymphonyProposalPage() {
             {
               tag: "Scientific software",
               title: "Research-software sustainability",
-              body: "Two decades of EU-funded computational artefacts — CERN analysis pipelines, ESA flight-software toolchains, EBI bioinformatics platforms — whose long-tail maintenance falls disproportionately on early-career researchers. A substrate that surfaces design rationale and historical context is precisely the sustainability tool the EU&rsquo;s open-science programmes have been asking for.",
+              body: "Two decades of EU-funded computational artefacts, CERN analysis pipelines, ESA flight-software toolchains, EBI bioinformatics platforms, whose long-tail maintenance falls disproportionately on early-career researchers. A substrate that surfaces design rationale and historical context is precisely the sustainability tool the EU&rsquo;s open-science programmes have been asking for.",
             },
           ].map((item) => (
             <div
@@ -549,8 +549,8 @@ export default function SymphonyProposalPage() {
           SYMPHONY substrate. Terms are set out in the Consortium Agreement
           at grant preparation and refined into a binding term sheet by
           M40. Newcastle and CREATE retain academic ownership of their
-          respective contributions — the neuromodulation framework and the
-          haptic shared-control formalism — and grant the JV a
+          respective contributions, the neuromodulation framework and the
+          haptic shared-control formalism, and grant the JV a
           non-exclusive, royalty-bearing licence for industrial use.
         </p>
         <Cartouche title="IP strategy" meta="four categories">
@@ -558,25 +558,25 @@ export default function SymphonyProposalPage() {
             <p>
               <span style={{ color: "var(--ink)" }}>(i) The four-layer
               graph schema and the substrate&rsquo;s neuromodulated
-              activation mechanism</span> — open under Apache-2.0 and
+              activation mechanism</span>, open under Apache-2.0 and
               CC-BY 4.0, with a single defensive patent application
               planned by Real AI to prevent enclosure by third parties.
             </p>
             <p>
               <span style={{ color: "var(--ink)" }}>(ii) The task-baton
-              control formalism</span> — Newcastle and CREATE retain
+              control formalism</span>, Newcastle and CREATE retain
               academic IP; JV gets a non-exclusive, royalty-bearing
               licence for industrial deployment.
             </p>
             <p>
               <span style={{ color: "var(--ink)" }}>(iii) Industrial
-              integration code and SCADA-specific adapters</span> —
+              integration code and SCADA-specific adapters</span>,
               proprietary to the JV, sold or licensed to industrial
               customers under standard commercial terms.
             </p>
             <p>
               <span style={{ color: "var(--ink)" }}>(iv) Benchmark
-              datasets and the O5 user-study protocol</span> — open
+              datasets and the O5 user-study protocol</span>, open
               under CC-BY 4.0 to support replication and meta-research.
             </p>
           </div>
@@ -627,7 +627,7 @@ export default function SymphonyProposalPage() {
             {
               n: "II",
               h: "Why this consortium",
-              b: "The mathematical primary source for the mechanism (Ramaswamy, Newcastle) and the architectural primary source for the control surface (Siciliano, CREATE-PRISMA) are co-investigators. The industrial coalface is supplied by UP Robotics. Real AI integrates and coordinates. The pedigree depth is the moat — it cannot be assembled by a competing team in less than five years.",
+              b: "The mathematical primary source for the mechanism (Ramaswamy, Newcastle) and the architectural primary source for the control surface (Siciliano, CREATE-PRISMA) are co-investigators. The industrial coalface is supplied by UP Robotics. Real AI integrates and coordinates. The pedigree depth is the moat, it cannot be assembled by a competing team in less than five years.",
             },
             {
               n: "III",
@@ -704,9 +704,9 @@ export default function SymphonyProposalPage() {
         </div>
         <Cartouche title="The critical uncertainty" meta="§1.2">
           <p style={proseInkStyle}>
-            Whether multi-scale neuromodulation — demonstrated in
+            Whether multi-scale neuromodulation, demonstrated in
             continuous perceptual and motor domains characterised by
-            embodied feedback — transfers to a symbolic and structural
+            embodied feedback, transfers to a symbolic and structural
             domain (source code) where the signals are discrete,
             hierarchical, and linguistic. This is not a question of
             engineering polish; it is a question of whether the biological

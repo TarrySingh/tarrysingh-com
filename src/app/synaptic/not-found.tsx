@@ -10,12 +10,12 @@ const doors: Array<{ href: string; label: string; hint: string }> = [
   {
     href: "/synaptic/symphony",
     label: "SYMPHONY",
-    hint: "Plate II — the planisphere",
+    hint: "Plate II, the planisphere",
   },
   {
     href: "/synaptic/memphis",
     label: "MEMPHIS",
-    hint: "Plate I — the chip",
+    hint: "Plate I, the chip",
   },
   {
     href: "/",
@@ -25,7 +25,7 @@ const doors: Array<{ href: string; label: string; hint: string }> = [
 ]
 
 export const metadata = {
-  title: "Plate not on the wall — Synaptic Cartography",
+  title: "Plate not on the wall · Synaptic Cartography",
   description:
     "This plate is not currently hanging in the Synaptic Cartography series. Step back to the reading room.",
   robots: { index: false, follow: false },
@@ -102,7 +102,7 @@ export default function SynapticNotFound() {
             color: "rgba(246,234,208,0.78)",
           }}
         >
-          The series lives at <em>/synaptic</em> — MEMPHIS, SYMPHONY, and the
+          The series lives at <em>/synaptic</em>, MEMPHIS, SYMPHONY, and the
           plates that will follow them. The address you tried isn&apos;t a
           plate in the current rotation. Step back to the reading room and
           choose another piece, or return to the main site.

@@ -7,7 +7,7 @@ import { reopenPublished, isPublished } from "@/lib/studio/reopen"
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Edit Dispatch — Studio",
+  title: "Edit Dispatch · Studio",
   robots: { index: false, follow: false },
 }
 

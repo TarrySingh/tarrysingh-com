@@ -7,7 +7,7 @@
 export const STAT_CEILING_DISPLAY_NAME = "Statistical Ceiling · Symphony"
 
 export const STAT_CEILING_ARIA_LABEL =
-  "The statistical ceiling — SWE-bench Verified headline scores against independent re-evaluation."
+  "The statistical ceiling, SWE-bench Verified headline scores against independent re-evaluation."
 
 export const STAT_CEILING_PLATE_MARKER = "PLATE V · MMXXVI · FIG. 1.2.b"
 export const STAT_CEILING_BANNER = "SWE-BENCH VERIFIED · HEADLINE vs FILTERED"
@@ -21,7 +21,7 @@ export const STAT_CEILING_SERIES_FILTERED = "After filtering"
 export const STAT_CEILING_EMPTY_STATE =
   "Three SWE-bench Verified configurations, three headlines, three independent re-evaluations. Hover or click any bar to inspect the measurement and its citation."
 export const STAT_CEILING_FOOTER =
-  "The headline number is a ceiling, not a result. SYMPHONY is not a scaling bet — it is an architectural bet built on the failure mode this chart names."
+  "The headline number is a ceiling, not a result. SYMPHONY is not a scaling bet, it is an architectural bet built on the failure mode this chart names."
 
 export type StatCeilingRow = {
   /** Code-owned. */
@@ -55,7 +55,7 @@ export const STAT_CEILING_ROWS: ReadonlyArray<StatCeilingRow> = [
     filtered: 31.8,
     date: "Mar 2026",
     source:
-      "SWE-Bench+ at ICLR 2026 — filters solution leakage and weak test cases.",
+      "SWE-Bench+ at ICLR 2026, filters solution leakage and weak test cases.",
   },
   {
     id: "sweagentlead",

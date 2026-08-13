@@ -43,7 +43,7 @@ export function Section01_Cover() {
               DATA CUTOFF · 14 APR 2026
             </div>
             <div style={{ marginTop: 28, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 15, color: "rgba(11,13,16,0.75)", borderLeft: "2px solid var(--signal-dim)", paddingLeft: 14 }}>
-              &ldquo;The model of 2022 is the smartphone app of 2026 — assumed, unremarkable, everywhere.&rdquo;
+              &ldquo;The model of 2022 is the smartphone app of 2026, assumed, unremarkable, everywhere.&rdquo;
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ export function Section02_TOC({ onJump }: { onJump: (id: string) => void }) {
       <div className="grid g-2" style={{ gap: 32 }}>
         <div>
           <div className="dek">
-            This dashboard is read top-to-bottom or jumped-to directly. Starred sections are <em>critical intelligence</em> — recommended for executive read-through in under 12 minutes.
+            This dashboard is read top-to-bottom or jumped-to directly. Starred sections are <em>critical intelligence</em>, recommended for executive read-through in under 12 minutes.
           </div>
           <div style={{ marginTop: 20, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6 }}>
             {toc.slice(0, 10).map((t) => (
@@ -154,16 +154,16 @@ export function Section03_ExecSummary() {
             Nine months past the Q3 2025 watershed, every vector of AI progress has steepened rather than flattened. Frontier capability now routinely exceeds <em>expert human</em> performance on quantitative benchmarks. Inference has cheapened another order of magnitude. Agentic deployment has crossed from pilot to payroll. Sovereign programs in six capitals are racing not for parity but for <em>strategic independence</em>.
           </p>
           <div className="grid g-2">
-            <Panel title="Signal — Capability">
+            <Panel title="Signal · Capability">
               <div className="body">AI now matches or exceeds expert humans across 11 of the 14 benchmarks tracked by Epoch AI, up from 4 of 14 a year ago. <b style={{ color: "var(--fg)" }}>AIME 2025 at 94.2%</b> (human contestant median: 27%).</div>
             </Panel>
-            <Panel title="Signal — Economics">
+            <Panel title="Signal · Economics">
               <div className="body">Inference cost for a GPT-3.5-class answer is <b style={{ color: "var(--signal)" }}>1,818× cheaper</b> than Nov 2022. A single enterprise agent now costs less per resolved ticket than the electricity to run its monitor.</div>
             </Panel>
-            <Panel title="Signal — Adoption">
-              <div className="body"><b style={{ color: "var(--fg)" }}>91% of organizations</b> now run AI in at least one function. GenAI alone is at 84%, from 33% two years ago — the fastest enterprise adoption curve on record.</div>
+            <Panel title="Signal · Adoption">
+              <div className="body"><b style={{ color: "var(--fg)" }}>91% of organizations</b> now run AI in at least one function. GenAI alone is at 84%, from 33% two years ago, the fastest enterprise adoption curve on record.</div>
             </Panel>
-            <Panel title="Signal — Geopolitics">
+            <Panel title="Signal · Geopolitics">
               <div className="body">Six national sovereignty programs now exceed <b style={{ color: "var(--fg)" }}>$50B committed</b> each. Compute, not talent, is the new binding constraint. Export controls reshape every capex plan.</div>
             </Panel>
           </div>
@@ -220,7 +220,7 @@ export function Section05_ChapterAccel() {
     <section className="section chapter" id="s-05">
       <div className="chapter-num">§ 02 · Chapter opens</div>
       <h1>The unprecedented <em>acceleration</em>.</h1>
-      <div className="chapter-dek">Every prior technological revolution — steam, electricity, the PC, the internet, mobile — eventually hit a diffusion S-curve. AI, nine months after Q3 2025, has not. The five sections that follow dissect why — and what it does to cost, user base, benchmark, and capital flow.</div>
+      <div className="chapter-dek">Every prior technological revolution, steam, electricity, the PC, the internet, mobile, eventually hit a diffusion S-curve. AI, nine months after Q3 2025, has not. The five sections that follow dissect why, and what it does to cost, user base, benchmark, and capital flow.</div>
       <div className="chapter-meta">
         <div><span className="label">Capability</span><span className="v">+612 pp avg</span></div>
         <div><span className="label">Cost</span><span className="v">−1,818×</span></div>
@@ -271,7 +271,7 @@ export function Section06_ModelEfficiency() {
               <li><b style={{ color: "var(--fg)" }}>Distillation + RLAIF</b> now routine at &lt;10% of teacher compute</li>
               <li><b style={{ color: "var(--fg)" }}>Sparse MoE</b> active-param ratios down to 6%</li>
               <li><b style={{ color: "var(--fg)" }}>Test-time compute</b> replaces train-time capability</li>
-              <li><b style={{ color: "var(--fg)" }}>Edge deploys</b> — 68% of new inference on-device by EoY &apos;25</li>
+              <li><b style={{ color: "var(--fg)" }}>Edge deploys</b>, 68% of new inference on-device by EoY &apos;25</li>
             </ul>
           </Panel>
         </div>
@@ -286,7 +286,7 @@ export function Section07_CostPerf() {
   return (
     <section className="section" id="s-07">
       <Plate num="03" sup="§ 03 · Cost & Performance" page="007" title="Inference costs collapse by <em>three orders of magnitude</em>" />
-      <p className="dek">For GPT-3.5-class capability on MMLU, $/M tokens has fallen from <em>$20.00</em> in Nov 2022 to <em>$0.011</em> in Mar 2026. Nothing in the history of computing compares — not Dennard scaling, not photovoltaics, not bandwidth.</p>
+      <p className="dek">For GPT-3.5-class capability on MMLU, $/M tokens has fallen from <em>$20.00</em> in Nov 2022 to <em>$0.011</em> in Mar 2026. Nothing in the history of computing compares, not Dennard scaling, not photovoltaics, not bandwidth.</p>
       <div className="grid g-12">
         <div className="col-8">
           <Panel title="Cost per million tokens · log scale" aux="NOV 2022 → APR 2026">

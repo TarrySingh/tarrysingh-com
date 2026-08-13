@@ -19,7 +19,7 @@ function ok(name: string, cond: boolean, extra?: string) {
     console.log(`  ✓ ${name}`)
   } else {
     failed += 1
-    console.error(`  ✗ ${name}${extra ? ` — ${extra}` : ""}`)
+    console.error(`  ✗ ${name}${extra ? `, ${extra}` : ""}`)
   }
 }
 

@@ -46,7 +46,7 @@ export async function generateMetadata({
   // layout's metadataBase so social scrapers accept it.
   const ogImage = post.cover || `/blog/covers/${slug}.png`
   return {
-    title: `${post.title} — Tarry Singh`,
+    title: `${post.title} · Tarry Singh`,
     description: post.excerpt,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {

@@ -71,7 +71,7 @@ const About = () => {
           <div className="md:col-span-8">
             <div className="space-y-6 text-gray-600 leading-relaxed text-base">
               <p>
-                Since the mid-1990s, I've been at the intersection of technology and business —
+                Since the mid-1990s, I've been at the intersection of technology and business,
                 from the early days of the commercial internet through the mobile revolution,
                 cloud computing, and now the transformative era of artificial intelligence.
               </p>
@@ -81,7 +81,7 @@ const About = () => {
                 data-driven decision making and building technology that creates genuine impact.
               </p>
               <p>
-                Today, my focus is on AI strategy — helping organizations understand and leverage
+                Today, my focus is on AI strategy, helping organizations understand and leverage
                 the disruptive potential of generative AI, large language models, and autonomous systems.
               </p>
             </div>

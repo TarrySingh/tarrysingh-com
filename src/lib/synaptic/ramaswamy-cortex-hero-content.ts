@@ -7,7 +7,7 @@
 export const RAMASWAMY_CORTEX_DISPLAY_NAME = "Ramaswamy Cortex Hero · Symphony"
 
 export const RAMASWAMY_CORTEX_ARIA_LABEL =
-  "Ramaswamy cortex hero — a cortical column reconstructed in cross-section across six layers, with four neuromodulator beams (acetylcholine, dopamine, noradrenaline, serotonin) sweeping horizontally through it. The mathematical primary source for SYMPHONY's mechanism."
+  "Ramaswamy cortex hero, a cortical column reconstructed in cross-section across six layers, with four neuromodulator beams (acetylcholine, dopamine, noradrenaline, serotonin) sweeping horizontally through it. The mathematical primary source for SYMPHONY's mechanism."
 
 export const RAMASWAMY_CORTEX_KICKER = "PLATE VII · MMXXVI · NEWCASTLE / RAMASWAMY"
 export const RAMASWAMY_CORTEX_TITLE = "A column, four modulators, twenty years"
@@ -31,7 +31,7 @@ export const RAMASWAMY_CORTEX_MODULATORS: ReadonlyArray<Modulator> = [
     id: "ach",
     name: "Ach",
     full: "Acetylcholine",
-    body: "Attention and uncertainty. Modulates the gain of cortical processing under attentional demand — the model's primary substrate for surfacing salient sub-networks.",
+    body: "Attention and uncertainty. Modulates the gain of cortical processing under attentional demand, the model's primary substrate for surfacing salient sub-networks.",
     color: "#f4c482",
     y: 200,
   },
@@ -39,7 +39,7 @@ export const RAMASWAMY_CORTEX_MODULATORS: ReadonlyArray<Modulator> = [
     id: "da",
     name: "DA",
     full: "Dopamine",
-    body: "Reward and plasticity. Reshapes synaptic weights based on prediction-error signals — the substrate's mechanism for learning-without-retraining.",
+    body: "Reward and plasticity. Reshapes synaptic weights based on prediction-error signals, the substrate's mechanism for learning-without-retraining.",
     color: "#e5a896",
     y: 320,
   },
@@ -47,7 +47,7 @@ export const RAMASWAMY_CORTEX_MODULATORS: ReadonlyArray<Modulator> = [
     id: "ne",
     name: "NE",
     full: "Noradrenaline",
-    body: "Arousal and neural gain. Sets the network's overall responsiveness — Symphony's hyperparameter-scale modulator.",
+    body: "Arousal and neural gain. Sets the network's overall responsiveness, Symphony's hyperparameter-scale modulator.",
     color: "#6cb4c2",
     y: 440,
   },
@@ -55,7 +55,7 @@ export const RAMASWAMY_CORTEX_MODULATORS: ReadonlyArray<Modulator> = [
     id: "ht",
     name: "5-HT",
     full: "Serotonin",
-    body: "Temporal discounting and tonic state. Tunes how strongly far-temporal signals weigh into the present activation — for code: how much history matters under this task.",
+    body: "Temporal discounting and tonic state. Tunes how strongly far-temporal signals weigh into the present activation, for code: how much history matters under this task.",
     color: "#a698d4",
     y: 560,
   },

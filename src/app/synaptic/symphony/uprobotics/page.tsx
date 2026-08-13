@@ -103,8 +103,8 @@ export default function UpRoboticsPartnerPage() {
           {[
             { t: "PLC code", b: "Ladder diagrams, structured text and function block diagrams from the programmable-logic controllers that run the line. Real-time-predictable, rarely commented, decades of authorship." },
             { t: "Robot programs", b: "Vendor-specific motion routines, path libraries, calibration files for the manipulators and end-effectors. Often touched by many engineers over a single system's life." },
-            { t: "SCADA configs", b: "Supervisory-control configurations, HMI screens, alarm databases, historian tags. The layer operators see — the one that survives engineer turnover." },
-            { t: "Maintenance logs", b: "Years of maintenance-engineer log entries — fault descriptions, repair notes, replacement-part references. The closest thing the system has to a rationale layer." },
+            { t: "SCADA configs", b: "Supervisory-control configurations, HMI screens, alarm databases, historian tags. The layer operators see, the one that survives engineer turnover." },
+            { t: "Maintenance logs", b: "Years of maintenance-engineer log entries, fault descriptions, repair notes, replacement-part references. The closest thing the system has to a rationale layer." },
           ].map((c, i) => (
             <Cartouche key={i} title={["I", "II", "III", "IV"][i]} meta="stream">
               <h3
@@ -146,7 +146,7 @@ export default function UpRoboticsPartnerPage() {
             issue trackers, half from UP Robotics&rsquo; maintenance logs.
             Threshold: ≥ 20 % relative F1 improvement on task-relevant-
             subgraph recovery and ≥ 15 % expert-rated actionability,
-            averaged across task classes — against three named baselines
+            averaged across task classes, against three named baselines
             (frontier LLM agent, EAKG static-analysis pipeline, LLM + RAG).
           </p>
         </Cartouche>
@@ -163,7 +163,7 @@ export default function UpRoboticsPartnerPage() {
         <div className="space-y-3">
           <SmallCaps>IV · The exploitation vehicle</SmallCaps>
           <h2 className="syn-display" style={sectionHeading}>
-            Real AI × UP Robotics — the joint venture
+            Real AI × UP Robotics, the joint venture
           </h2>
         </div>
         <p style={proseStyle}>

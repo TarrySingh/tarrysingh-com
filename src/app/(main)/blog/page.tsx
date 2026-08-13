@@ -8,14 +8,14 @@ import { PlateCover } from "@/components/blog/PlateCover"
 import { FrontControls } from "@/components/blog/FrontControls"
 
 export const metadata: Metadata = {
-  title: "Dispatches — Tarry Singh",
+  title: "Dispatches · Tarry Singh",
   description:
-    "Field notes and essays from the studio — AI strategy, deep-tech architecture, and the economics underneath. Infrequent, opinionated, quietly written.",
+    "Field notes and essays from the studio, AI strategy, deep-tech architecture, and the economics underneath. Infrequent, opinionated, quietly written.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Dispatches — Tarry Singh",
+    title: "Dispatches · Tarry Singh",
     description:
-      "Field notes and essays from the studio — AI strategy, deep-tech architecture, and the economics underneath.",
+      "Field notes and essays from the studio, AI strategy, deep-tech architecture, and the economics underneath.",
     type: "website",
   },
 }
@@ -83,9 +83,9 @@ export default async function BlogIndex() {
   const blogLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Dispatches — Tarry Singh",
+    name: "Dispatches · Tarry Singh",
     description:
-      "Field notes and essays from the studio — AI strategy, deep-tech architecture, and the economics underneath.",
+      "Field notes and essays from the studio, AI strategy, deep-tech architecture, and the economics underneath.",
     url: "https://tarrysingh.com/blog",
     author: {
       "@type": "Person",
@@ -124,7 +124,7 @@ export default async function BlogIndex() {
           style={{ ...serif, color: "rgba(246,234,208,0.66)" }}
         >
           Essays on AI strategy, the architecture of agent systems, and the
-          economics underneath — drawn as working plates. No cadence, no
+          economics underneath, drawn as working plates. No cadence, no
           content calendar. Posts when they are ready.
         </p>
         <div className="mt-8">

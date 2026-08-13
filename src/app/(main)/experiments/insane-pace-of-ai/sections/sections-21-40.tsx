@@ -11,7 +11,7 @@ export function Section21_ChapterRegional() {
       <div className="chapter-num">§ 18 · Chapter opens</div>
       <h1>Seven <em>regional systems</em>,<br />seven theories of victory.</h1>
       <div className="chapter-dek">
-        No AI strategy is regionally neutral. Each bloc has picked its lane — frontier capital, state direction, regulation-as-export, sovereign compute, or DPI scale — and doubled down. The next seven sections look, in detail, at what each is actually building.
+        No AI strategy is regionally neutral. Each bloc has picked its lane, frontier capital, state direction, regulation-as-export, sovereign compute, or DPI scale, and doubled down. The next seven sections look, in detail, at what each is actually building.
       </div>
       <div className="chapter-meta">
         <div><span className="label">Deep Dives</span><span className="v">7 regions</span></div>
@@ -132,9 +132,9 @@ export function Section29_RegionalCompare() {
           </Panel>
         </div>
         <div className="col-4 stack-md">
-          <Metric signal big label="US — PRIVATE CAPITAL" value="$184.7" unit="B" sub="11.7× larger than China's private AI VC in 2025" />
-          <Metric label="CHINA — PATENTS" value="36" unit="%" sub="Of global AI patent filings; now leads by 14pp" />
-          <Metric label="GROWTH — ME & INDIA" value="118" unit="%" sub="Startup formation in UAE+KSA; India +92% YoY" />
+          <Metric signal big label="US, PRIVATE CAPITAL" value="$184.7" unit="B" sub="11.7× larger than China's private AI VC in 2025" />
+          <Metric label="CHINA, PATENTS" value="36" unit="%" sub="Of global AI patent filings; now leads by 14pp" />
+          <Metric label="GROWTH, ME & INDIA" value="118" unit="%" sub="Startup formation in UAE+KSA; India +92% YoY" />
         </div>
       </div>
     </section>
@@ -146,7 +146,7 @@ export function Section30_HOMINIS() {
   return (
     <section className="section" id="s-30">
       <Plate num="27" sup="§ 27 · Case Study · EU" page="030" title={`<em>${h.name}</em>`} />
-      <p className="dek">Europe&apos;s sovereign LLM, live since Nov 2025. A concrete proof-point that a values-first, regulator-compatible frontier model is technically and economically viable — if politically funded.</p>
+      <p className="dek">Europe&apos;s sovereign LLM, live since Nov 2025. A concrete proof-point that a values-first, regulator-compatible frontier model is technically and economically viable, if politically funded.</p>
       <div className="grid g-12">
         <div className="col-7">
           <Panel title="Design principles" aux={h.tag}>
@@ -178,7 +178,7 @@ export function Section31_RealBusiness() {
   return (
     <section className="section" id="s-31">
       <Plate num="28" sup="§ 28 · Case Study · Enterprise" page="031" title={`<em>${r.name}</em>`} />
-      <p className="dek">An agentic AI platform operating at scale across 312 enterprises. The playbook behind the 4.1× 12-month ROI — and how the perceive-plan-execute-learn loop actually closes in practice.</p>
+      <p className="dek">An agentic AI platform operating at scale across 312 enterprises. The playbook behind the 4.1× 12-month ROI, and how the perceive-plan-execute-learn loop actually closes in practice.</p>
       <div className="grid g-12">
         <div className="col-5">
           <Panel title="The operating loop" aux="continuous, bidirectional">
@@ -360,7 +360,7 @@ export function Section35_SectorBreak() {
           </Panel>
           <Panel title="The shift">
             <div style={{ fontFamily: "var(--serif)", fontSize: 18, lineHeight: 1.3, color: "var(--fg)" }}>
-              Defense and energy-grid AI surged fastest in 2025 — a signal that <em style={{ color: "var(--signal)" }}>critical infrastructure</em> is now the frontier.
+              Defense and energy-grid AI surged fastest in 2025, a signal that <em style={{ color: "var(--signal)" }}>critical infrastructure</em> is now the frontier.
             </div>
           </Panel>
         </div>
@@ -373,7 +373,7 @@ export function Section36_BusinessFunc() {
   return (
     <section className="section" id="s-36">
       <Plate num="33" sup="§ 33 · Business Function Adoption" page="036" title="Where enterprises <em>actually deploy</em>" />
-      <p className="dek">The gap between experiment and deployment has closed. <em>89%</em> of surveyed enterprises now run AI in customer service — up from 62% a year ago. Legal remains the final frontier, but is moving.</p>
+      <p className="dek">The gap between experiment and deployment has closed. <em>89%</em> of surveyed enterprises now run AI in customer service, up from 62% a year ago. Legal remains the final frontier, but is moving.</p>
       <Panel title="% of surveyed enterprises deploying GenAI" aux="N=2,100 · McK & BCG joint · Apr 2026">
         <HBars data={D2.businessFunc} valueKey="p" labelKey="f" />
         <div className="footnote">
@@ -407,7 +407,7 @@ export function Section38_Hardware() {
   return (
     <section className="section" id="s-38">
       <Plate num="35" sup="§ 35 · AI Hardware Landscape" page="038" title="Accelerators · the <em>market share</em>" />
-      <p className="dek">NVIDIA still owns ~62% of the frontier training market, but concentration is slowly easing. Google&apos;s in-house Ironwood-2 TPU and Huawei&apos;s Ascend 920 are the two credible challengers — for different customers.</p>
+      <p className="dek">NVIDIA still owns ~62% of the frontier training market, but concentration is slowly easing. Google&apos;s in-house Ironwood-2 TPU and Huawei&apos;s Ascend 920 are the two credible challengers, for different customers.</p>
       <Panel title="Training accelerator market · share of installed flops-year · Q1 2026" aux="est. · private + public clouds">
         <MarketShare data={D2.hardware} />
       </Panel>
@@ -470,12 +470,12 @@ export function Section40_Quantum() {
     { n: "Neutral atom", lead: "QuEra · Atom Computing", qubit: "1,180", note: "Highest logical qubit density" },
     { n: "Trapped ion", lead: "IonQ Tempo · Quantinuum", qubit: "~256", note: "Longest coherence · best fidelity" },
     { n: "Photonic", lead: "PsiQuantum · Xanadu", qubit: "Utility scale target '27", note: "Room-temp, networkable" },
-    { n: "Neuromorphic", lead: "Intel Loihi 3 · IBM NorthPole", qubit: "—", note: "100× energy efficiency for inference" },
+    { n: "Neuromorphic", lead: "Intel Loihi 3 · IBM NorthPole", qubit: ", ", note: "100× energy efficiency for inference" },
   ]
   return (
     <section className="section" id="s-40">
       <Plate num="37" sup="§ 37 · Quantum & Next-Gen Compute" page="040" title="<em>Beyond</em> the GPU" />
-      <p className="dek">Quantum advantage for ML remains 3–5 years out. But neuromorphic silicon is already delivering 100× energy efficiency for specific inference workloads — in production at Intel, IBM, and several defense primes.</p>
+      <p className="dek">Quantum advantage for ML remains 3–5 years out. But neuromorphic silicon is already delivering 100× energy efficiency for specific inference workloads, in production at Intel, IBM, and several defense primes.</p>
       <Panel title="The non-GPU accelerator stack · Q1 2026">
         <table className="tbl">
           <thead><tr><th>Approach</th><th>Leading programs</th><th>Scale</th><th>Note</th></tr></thead>
@@ -494,7 +494,7 @@ export function Section40_Quantum() {
       <div className="grid g-3" style={{ marginTop: 18 }}>
         <Metric signal label="QUANTUM VOL LEADER" value="1,180" unit="qb" sub="QuEra neutral atom, Feb 2026" />
         <Metric label="NEUROMORPHIC EFF." value="100" unit="×" sub="Energy efficiency vs GPU, target workloads" />
-        <Metric label="QUANTUM-FOR-ML" value="2028" unit="est" sub="First commercial advantage — optimization, chemistry" />
+        <Metric label="QUANTUM-FOR-ML" value="2028" unit="est" sub="First commercial advantage, optimization, chemistry" />
       </div>
     </section>
   )

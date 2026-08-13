@@ -171,7 +171,7 @@ export default function BFSIHub() {
               <span style={{ fontSize: 10, letterSpacing: "0.12em", color: t.green, fontWeight: 700 }}>{"●"} AGENTIC AI ASSESSMENT FRAMEWORK</span>
             </div>
             <h1 style={{ fontSize: 36, fontWeight: 800, color: t.text, margin: 0, lineHeight: 1.2, letterSpacing: "-0.02em" }}>
-              BFSI — Banking, Financial Services & Insurance
+              BFSI, Banking, Financial Services & Insurance
             </h1>
             <p style={{ fontSize: 15, color: t.textSecondary, marginTop: 8, maxWidth: 700, lineHeight: 1.6 }}>
               Explore AI automation readiness across <strong style={{ color: t.text }}>{ROLES.length} job roles</strong> spanning
@@ -320,7 +320,7 @@ export default function BFSIHub() {
       {/* Footer */}
       <div style={{ borderTop: `1px solid ${t.border}`, padding: "24px 0", textAlign: "center" }}>
         <p style={{ fontSize: 12, color: t.textMuted, margin: 0 }}>
-          Agentic AI Assessment Framework by Tarry Singh — {ROLES.length} roles across {SECTIONS.length} domains
+          Agentic AI Assessment Framework by Tarry Singh, {ROLES.length} roles across {SECTIONS.length} domains
         </p>
       </div>
     </div>

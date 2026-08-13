@@ -47,7 +47,7 @@ export default function SymphonyPage() {
       <figure className="relative hidden w-full print:block">
         <Image
           src={coverPlate}
-          alt="SYMPHONY cover plate — a planisphere of the neuromimetic code substrate, with a violet task-baton sweeping twelve sectors of code knowledge."
+          alt="SYMPHONY cover plate, a planisphere of the neuromimetic code substrate, with a violet task-baton sweeping twelve sectors of code knowledge."
           sizes="100vw"
           placeholder="blur"
           className="block h-auto w-full"
@@ -70,13 +70,13 @@ export default function SymphonyPage() {
         >
           SYMPHONY will establish the first neuromimetic knowledge substrate
           for software systems: a computational representation of code in which
-          the elements of a software system — modules, functions, data flows,
-          contracts, tests, commit history, design decisions — are encoded as
+          the elements of a software system, modules, functions, data flows,
+          contracts, tests, commit history, design decisions, are encoded as
           nodes in a multi-scale network whose activation patterns are
           reconfigured, on demand, by task-specific neuromodulatory signals.
         </p>
         <ItalicCaption className="max-w-3xl">
-          In plain terms — a code representation that behaves less like a
+          In plain terms, a code representation that behaves less like a
           document to be re-read and more like a nervous system that
           foregrounds the structures relevant to the engineer&rsquo;s current
           task.
@@ -92,7 +92,7 @@ export default function SymphonyPage() {
       <figure className="hidden print:block lg:mx-auto lg:max-w-[90vw]">
         <Image
           src={visionBanner}
-          alt="SYMPHONY vision banner — a panoramic plate setting out the long-term programme: a multi-scale neuromimetic substrate spanning modules, functions, tests, commits and design rationale."
+          alt="SYMPHONY vision banner, a panoramic plate setting out the long-term programme: a multi-scale neuromimetic substrate spanning modules, functions, tests, commits and design rationale."
           sizes="(min-width: 1280px) 90vw, 100vw"
           placeholder="blur"
           className="block h-auto w-full"
@@ -111,10 +111,10 @@ export default function SymphonyPage() {
         >
           Current approaches to machine code understanding divide into two
           families, each with a structural ceiling we expect to hit within
-          this decade. The first is statistical — large-language-model
+          this decade. The first is statistical, large-language-model
           agents whose headline benchmark performance does not survive
-          independent re-evaluation. The second is structural — call graphs,
-          dependency edges, architecture knowledge graphs — which capture
+          independent re-evaluation. The second is structural, call graphs,
+          dependency edges, architecture knowledge graphs, which capture
           what is explicitly declared but not the design rationale that
           governs software change.
         </p>
@@ -158,7 +158,7 @@ export default function SymphonyPage() {
           <figure className="hidden print:block">
             <Image
               src={statisticalCeiling}
-              alt="Plate V — Statistical ceiling chart: published SWE-bench Verified scores compared with independently re-evaluated resolution rates after solution-leakage filtering. Headline scores above 80 per cent collapse to single digits."
+              alt="Plate V, Statistical ceiling chart: published SWE-bench Verified scores compared with independently re-evaluated resolution rates after solution-leakage filtering. Headline scores above 80 per cent collapse to single digits."
               sizes="(min-width: 1024px) 50vw, 100vw"
               placeholder="blur"
               className="block h-auto w-full rounded-[var(--radius-tight)]"
@@ -178,7 +178,7 @@ export default function SymphonyPage() {
               >
                 Software-system complexity against individual human
                 comprehension capacity, 1970–2030. The widening gap is the
-                problem the substrate is built to address — through
+                problem the substrate is built to address, through
                 task-adaptive activation, not exhaustive re-reading.
               </p>
             </div>
@@ -186,7 +186,7 @@ export default function SymphonyPage() {
           <figure className="hidden print:block">
             <Image
               src={comprehensionGap}
-              alt="Plate IV — Comprehension gap chart: software-system complexity grows exponentially from 1970 to 2030 while individual human comprehension capacity is flat. The widening gap is the addressable problem for SYMPHONY."
+              alt="Plate IV, Comprehension gap chart: software-system complexity grows exponentially from 1970 to 2030 while individual human comprehension capacity is flat. The widening gap is the addressable problem for SYMPHONY."
               sizes="(min-width: 1024px) 50vw, 100vw"
               placeholder="blur"
               className="block h-auto w-full rounded-[var(--radius-tight)]"
@@ -203,7 +203,7 @@ export default function SymphonyPage() {
         <figure className="hidden print:block">
           <Image
             src={substrateScales}
-            alt="Plate II — Substrate × scales: SYMPHONY's representation in code-system space (structural, behavioural, historical, rationale) crossed with the four neuromodulatory scales of Mei, Muller and Ramaswamy (2022) — hyperparameter, plasticity-driven connectivity, neuronal gain, and dendritic computation."
+            alt="Plate II, Substrate × scales: SYMPHONY's representation in code-system space (structural, behavioural, historical, rationale) crossed with the four neuromodulatory scales of Mei, Muller and Ramaswamy (2022), hyperparameter, plasticity-driven connectivity, neuronal gain, and dendritic computation."
             sizes="100vw"
             placeholder="blur"
             className="block h-auto w-full rounded-[var(--radius-tight)]"
@@ -271,8 +271,8 @@ export default function SymphonyPage() {
             </h3>
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
               Borrowing from Siciliano&rsquo;s haptic shared-control
-              architecture, the task interface is intentionally narrow — a
-              small set of scalar modulatory signals, not a prompt window —
+              architecture, the task interface is intentionally narrow, a
+              small set of scalar modulatory signals, not a prompt window,
               so that behaviour under different engineering tasks is
               composable, auditable, and bounded.
             </p>
@@ -298,7 +298,7 @@ export default function SymphonyPage() {
           <Cartouche title="Simulation" meta="2022">
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.5, fontSize: "0.95rem" }}>
               Mei, Muller &amp; Ramaswamy (<em>Trends in Neurosciences</em>,
-              2022) — neuromodulatory units at four scales yield faster
+              2022), neuromodulatory units at four scales yield faster
               adaptation, higher cumulative reward and resistance to
               catastrophic forgetting in deep networks.
             </p>
@@ -306,7 +306,7 @@ export default function SymphonyPage() {
           <Cartouche title="Hardware" meta="2018–2025">
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.5, fontSize: "0.95rem" }}>
               Selvaggio, Pacchierotti, Giordano &amp; Siciliano (RA-L 2018;
-              ICRA 2019; T-RO 2022; RAS 2025) — low-bandwidth supervisory
+              ICRA 2019; T-RO 2022; RAS 2025), low-bandwidth supervisory
               signals reshape high-DOF autonomous controllers into
               qualitatively distinct task behaviours.
             </p>
@@ -314,7 +314,7 @@ export default function SymphonyPage() {
           <Cartouche title="Failure" meta="ICSE 2025 · ICLR 2026">
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.5, fontSize: "0.95rem" }}>
               SWE-bench re-evaluations show 80 %+ headline scores collapse
-              to single digits or 30 % once leakage is removed —
+              to single digits or 30 % once leakage is removed,
               incremental scaling does not close the comprehension gap.
             </p>
           </Cartouche>
@@ -421,7 +421,7 @@ export default function SymphonyPage() {
         <figure className="hidden print:block">
           <Image
             src={consortiumPlate}
-            alt="Plate III — Consortium plate naming the four SYMPHONY partners: Real AI · Newcastle (Ramaswamy) · CREATE / PRISMA (Siciliano) · UP Robotics, with their roles and the project's three reporting decision points."
+            alt="Plate III, Consortium plate naming the four SYMPHONY partners: Real AI · Newcastle (Ramaswamy) · CREATE / PRISMA (Siciliano) · UP Robotics, with their roles and the project's three reporting decision points."
             sizes="(min-width: 1024px) 80vw, 100vw"
             placeholder="blur"
             className="mx-auto block h-auto w-full max-w-4xl rounded-[var(--radius-tight)]"
@@ -440,7 +440,7 @@ export default function SymphonyPage() {
           <figure className="hidden print:block">
             <Image
               src={ramaswamyPlate}
-              alt="Plate VII — Newcastle / Sri Ramaswamy / Blue Brain heritage plate: cortical-column anatomy with neuromodulator beams and a pedigree timeline from 2005 to 2026."
+              alt="Plate VII, Newcastle / Sri Ramaswamy / Blue Brain heritage plate: cortical-column anatomy with neuromodulator beams and a pedigree timeline from 2005 to 2026."
               sizes="(min-width: 1024px) 45vw, 100vw"
               placeholder="blur"
               className="block h-auto w-full rounded-[var(--radius-tight)]"
@@ -462,7 +462,7 @@ export default function SymphonyPage() {
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
               Chair of computational neuroscience at Newcastle&rsquo;s School
               of Computing. Third author of Mei, Muller &amp; Ramaswamy
-              (<em>Trends in Neurosciences</em>, 2022) — the four-scale
+              (<em>Trends in Neurosciences</em>, 2022), the four-scale
               neuromodulatory framework that SYMPHONY transposes from
               continuous perceptual signals into the discrete symbolic
               domain of source code. A Blue Brain Project alumnus whose
@@ -470,7 +470,7 @@ export default function SymphonyPage() {
               to today.
             </p>
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
-              Newcastle leads <strong style={{ color: "var(--ink)" }}>O2</strong> — the implementation of the four-scale neuromodulatory mechanism on the substrate produced by O1 — and co-leads the ethics layer of <strong style={{ color: "var(--ink)" }}>O5</strong>.
+              Newcastle leads <strong style={{ color: "var(--ink)" }}>O2</strong>, the implementation of the four-scale neuromodulatory mechanism on the substrate produced by O1, and co-leads the ethics layer of <strong style={{ color: "var(--ink)" }}>O5</strong>.
             </p>
             <Link
               href="/synaptic/symphony/ramaswamy"
@@ -504,18 +504,18 @@ export default function SymphonyPage() {
               Bruno Siciliano
             </h3>
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
-              Director of the PRISMA Lab — Projects of Industrial and
-              Service Manipulation Robotics — at CREATE / UNINA in Naples.
+              Director of the PRISMA Lab, Projects of Industrial and
+              Service Manipulation Robotics, at CREATE / UNINA in Naples.
               ERC Advanced Grant holder and Engelberger Award laureate.
               The Siciliano-school programme on haptic shared control
               demonstrated, in hardware, that a low-bandwidth descending
               signal can reshape a high-DOF autonomous controller&rsquo;s
-              operating regime without rewriting it — the architectural
+              operating regime without rewriting it, the architectural
               property SYMPHONY transposes from physical manipulation into
               the symbolic control of a code substrate.
             </p>
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
-              CREATE-PRISMA leads <strong style={{ color: "var(--ink)" }}>O3</strong> — the derivation of a narrow scalar control interface by which task tokens reshape the substrate&rsquo;s activation regime without modifying its stored structure.
+              CREATE-PRISMA leads <strong style={{ color: "var(--ink)" }}>O3</strong>, the derivation of a narrow scalar control interface by which task tokens reshape the substrate&rsquo;s activation regime without modifying its stored structure.
             </p>
             <ItalicCaption className="pt-2">
               Keep the gradient.
@@ -542,7 +542,7 @@ export default function SymphonyPage() {
           <figure className="hidden print:block">
             <Image
               src={sicilianoPlate}
-              alt="Plate VIII — CREATE / Bruno Siciliano / PRISMA Lab plate: a seven-sector PRISMA rose with the ERC and Engelberger awards, ERC grants and the lab's motto Keep the gradient."
+              alt="Plate VIII, CREATE / Bruno Siciliano / PRISMA Lab plate: a seven-sector PRISMA rose with the ERC and Engelberger awards, ERC grants and the lab's motto Keep the gradient."
               sizes="(min-width: 1024px) 45vw, 100vw"
               placeholder="blur"
               className="block h-auto w-full rounded-[var(--radius-tight)]"
@@ -562,7 +562,7 @@ export default function SymphonyPage() {
           <figure className="hidden print:block">
             <Image
               src={hominisPlate}
-              alt="Plate VI — Hominis cathedral plate: Real AI's foundation-model programme depicted as a three-pillar cathedral standing on the Leonardo / CINECA HPC foundation."
+              alt="Plate VI, Hominis cathedral plate: Real AI's foundation-model programme depicted as a three-pillar cathedral standing on the Leonardo / CINECA HPC foundation."
               sizes="(min-width: 1024px) 45vw, 100vw"
               placeholder="blur"
               className="block h-auto w-full rounded-[var(--radius-tight)]"
@@ -586,11 +586,11 @@ export default function SymphonyPage() {
               at industrial scale, with a current focus on foundation models
               for the real world: <em>Hominis</em>, a family of situated,
               auditable, compute-aware foundation models trained on
-              allocation time at Leonardo — the EuroHPC supercomputer at
+              allocation time at Leonardo, the EuroHPC supercomputer at
               CINECA, Bologna.
             </p>
             <p style={{ color: "var(--ink-cool)", lineHeight: 1.6 }}>
-              Real AI coordinates SYMPHONY end-to-end and leads <strong style={{ color: "var(--ink)" }}>O1</strong> — the four-layer extraction pipeline — and <strong style={{ color: "var(--ink)" }}>O4</strong>, the pre-registered benchmark against frontier LLM and knowledge-graph baselines.
+              Real AI coordinates SYMPHONY end-to-end and leads <strong style={{ color: "var(--ink)" }}>O1</strong>, the four-layer extraction pipeline, and <strong style={{ color: "var(--ink)" }}>O4</strong>, the pre-registered benchmark against frontier LLM and knowledge-graph baselines.
             </p>
             <Link
               href="/synaptic/symphony/tarry"
@@ -626,7 +626,7 @@ export default function SymphonyPage() {
             UP Robotics contributes the industrial-automation demonstrator
             codebase. The O1 pipeline that builds the substrate and the
             O4 benchmark that validates it must both survive contact with
-            this code — a production system whose maintenance logs supply
+            this code, a production system whose maintenance logs supply
             half of the held-out task instances. Without a real industrial
             system in the loop, SYMPHONY is a paper claim.
           </p>
@@ -659,8 +659,8 @@ export default function SymphonyPage() {
               lineHeight: 1.6,
             }}
           >
-            Whether multi-scale neuromodulation — demonstrated in continuous
-            perceptual and motor domains characterised by embodied feedback —
+            Whether multi-scale neuromodulation, demonstrated in continuous
+            perceptual and motor domains characterised by embodied feedback,
             transfers to a symbolic and structural domain (source code) where
             the signals are discrete, hierarchical, and linguistic. This is
             not a question of engineering polish; it is a question of
@@ -676,7 +676,7 @@ export default function SymphonyPage() {
           >
             The five objectives above are constructed so that their decision
             milestones surface a clear answer within the project&rsquo;s
-            36 months — not by retreat to a less ambitious aim, but by
+            36 months, not by retreat to a less ambitious aim, but by
             forcing the question into a measurable outcome.
           </p>
         </Cartouche>

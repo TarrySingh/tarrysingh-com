@@ -97,7 +97,7 @@ function rolesForEmail(email: string): Set<string> {
 
 function renderEmail(name: string, items: Item[]): { subject: string; html: string } {
   const n = items.length
-  const subject = `PANORAIMA WP4 — ${n} new learning-material drop${n === 1 ? "" : "s"} for you`
+  const subject = `PANORAIMA WP4, ${n} new learning-material drop${n === 1 ? "" : "s"} for you`
   const rows = items.map((it) => `
     <tr>
       <td style="padding:8px 12px;border-bottom:1px solid #eee;font-family:ui-monospace,monospace;font-weight:700">${esc(it.code)}</td>
@@ -109,7 +109,7 @@ function renderEmail(name: string, items: Item[]): { subject: string; html: stri
   // rule; authors get the upload reminder (no reviewer-only instructions).
   const anyReviewer = items.some((it) => /review/.test(it.role))
   const footer = anyReviewer
-    ? `Reviewers: post your review in the Learning Event's <strong>wiki Discussion section</strong> — with a minor or major revision suggestion, signed with your name — never by email, so it's documented in the right place. The slides are the primary review target; the lesson plan is re-evaluated together with them.`
+    ? `Reviewers: post your review in the Learning Event's <strong>wiki Discussion section</strong>, with a minor or major revision suggestion, signed with your name, never by email, so it's documented in the right place. The slides are the primary review target; the lesson plan is re-evaluated together with them.`
     : `As author/co-author: drop your slides &amp; notebooks in the Utrecht SharePoint WP4 folder and keep the lesson plan on the wiki current. Reviewers post their feedback in the LE's wiki Discussion section.`
   const html = `
   <div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:640px;margin:0 auto;color:#16181D">
@@ -179,7 +179,7 @@ export async function GET(req: NextRequest) {
       await sb.from("wp4_alert_state").upsert(
         [...allKeys].map((k) => ({ file_key: k, le_code: k.split("::")[0] })), { onConflict: "file_key" })
     }
-    return NextResponse.json({ seeded: allKeys.size, sent: 0, note: "first run baseline — no emails" })
+    return NextResponse.json({ seeded: allKeys.size, sent: 0, note: "first run baseline, no emails" })
   }
 
   // compute new per recipient

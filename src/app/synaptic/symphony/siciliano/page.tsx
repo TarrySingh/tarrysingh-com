@@ -57,8 +57,8 @@ export default function SicilianoPartnerPage() {
           Bruno Siciliano
         </h1>
         <ItalicCaption className="mx-auto max-w-3xl">
-          Director of PRISMA Lab — Projects of Industrial and Service
-          Manipulation Robotics — at CREATE / UNINA. ERC Advanced Grant
+          Director of PRISMA Lab, Projects of Industrial and Service
+          Manipulation Robotics, at CREATE / UNINA. ERC Advanced Grant
           holder, Engelberger Award laureate. Lead of Objective O3.
         </ItalicCaption>
         <p
@@ -81,7 +81,7 @@ export default function SicilianoPartnerPage() {
           </h2>
         </div>
         <p style={proseStyle}>
-          Bruno Siciliano directs PRISMA Lab at CREATE — Centro di Ricerca
+          Bruno Siciliano directs PRISMA Lab at CREATE, Centro di Ricerca
           per l&rsquo;Ingegneria Elettronica e Telecomunicazioni
           dell&rsquo;Università di Napoli Federico II. PRISMA &mdash;
           Projects of Industrial and Service Manipulation Robotics
@@ -98,7 +98,7 @@ export default function SicilianoPartnerPage() {
           in <em>physical hardware</em> that a low-bandwidth supervisory
           signal can reshape a high-degree-of-freedom autonomous
           controller into qualitatively different task behaviours
-          — without rewriting the controller. The hero above is what
+, without rewriting the controller. The hero above is what
           that looks like in cartoon form.
         </p>
       </section>
@@ -107,13 +107,13 @@ export default function SicilianoPartnerPage() {
         <div className="space-y-3">
           <SmallCaps>II · The seven domains of PRISMA</SmallCaps>
           <h2 className="syn-display" style={sectionHeading}>
-            The rose — and the architectural primitive in its centre
+            The rose, and the architectural primitive in its centre
           </h2>
         </div>
         <SicilianoRose />
         <ItalicCaption className="max-w-3xl">
           Seven domains of PRISMA. The haptic shared-control sector is the
-          one SYMPHONY transposes — but the rest of the rose is the depth
+          one SYMPHONY transposes, but the rest of the rose is the depth
           of evidence the lab brings to bear on the transposition.
         </ItalicCaption>
       </section>
@@ -127,9 +127,9 @@ export default function SicilianoPartnerPage() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            { t: "ERC Advanced Grant", b: "European Research Council's senior funding tier — granted to investigators whose work has redefined a research field. Siciliano has held an ERC Advanced Grant in robotics." },
-            { t: "Engelberger Award", b: "The IRC's lifetime-achievement award in robotics — named for Joseph Engelberger, considered the father of industrial robotics. Siciliano is a laureate." },
-            { t: "Editor, Springer Handbook of Robotics", b: "The standard reference work for the field. Two editions co-edited with Oussama Khatib — the textbook every robotics engineer trains on." },
+            { t: "ERC Advanced Grant", b: "European Research Council's senior funding tier, granted to investigators whose work has redefined a research field. Siciliano has held an ERC Advanced Grant in robotics." },
+            { t: "Engelberger Award", b: "The IRC's lifetime-achievement award in robotics, named for Joseph Engelberger, considered the father of industrial robotics. Siciliano is a laureate." },
+            { t: "Editor, Springer Handbook of Robotics", b: "The standard reference work for the field. Two editions co-edited with Oussama Khatib, the textbook every robotics engineer trains on." },
           ].map((c, i) => (
             <Cartouche key={i} title={["I", "II", "III"][i]} meta="award">
               <h3
@@ -169,7 +169,7 @@ export default function SicilianoPartnerPage() {
           </p>
         </Cartouche>
         <p style={proseStyle}>
-          CREATE-PRISMA leads O3 with Newcastle as a deputy partner —
+          CREATE-PRISMA leads O3 with Newcastle as a deputy partner,
           mapping the haptic shared-control formalism (active constraints,
           virtual fixtures, admittance-based teleoperation) onto a discrete
           symbolic substrate. The result is the task baton: a small set

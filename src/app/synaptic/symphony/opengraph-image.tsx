@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
 export const alt =
-  "SYMPHONY — A Neuromimetic Knowledge Substrate for Software Systems"
+  "SYMPHONY, A Neuromimetic Knowledge Substrate for Software Systems"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 

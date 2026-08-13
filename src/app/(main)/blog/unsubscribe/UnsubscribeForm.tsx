@@ -72,7 +72,7 @@ export function UnsubscribeForm({ email, token }: Props) {
 
       <p className="text-navy-700 leading-relaxed mb-3">
         We&apos;ll remove the following address from the Dispatches list. It
-        takes effect immediately — no further emails will be sent.
+        takes effect immediately, no further emails will be sent.
       </p>
 
       <p

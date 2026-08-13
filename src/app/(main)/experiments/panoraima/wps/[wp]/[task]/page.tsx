@@ -36,21 +36,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: "Task 2.1 · Market & Needs Analysis · PANORAIMA",
       description:
-        "Deep-dive into WP2 Task 2.1 — 100+ stakeholders across 10 European countries, four working groups, Deliverable 2.1's six headline findings.",
+        "Deep-dive into WP2 Task 2.1, 100+ stakeholders across 10 European countries, four working groups, Deliverable 2.1's six headline findings.",
     }
   }
   if (wp === "wp2" && task === "t22") {
     return {
       title: "Task 2.2 · Pedagogic & Organisational Needs · PANORAIMA",
       description:
-        "Deep-dive into WP2 Task 2.2 — the UNIWA-led academic focus group with 17 participants across 8 PANORAIMA partner universities.",
+        "Deep-dive into WP2 Task 2.2, the UNIWA-led academic focus group with 17 participants across 8 PANORAIMA partner universities.",
     }
   }
   if (wp === "wp2" && task === "t23") {
     return {
       title: "Task 2.3 · Internal Accreditation · PANORAIMA",
       description:
-        "Deep-dive into WP2 Task 2.3 — HAW-led coordination of the 8 partner universities' accreditation pathways for the PANORAIMA Masters' programme.",
+        "Deep-dive into WP2 Task 2.3, HAW-led coordination of the 8 partner universities' accreditation pathways for the PANORAIMA Masters' programme.",
     }
   }
   return { title: `${wp.toUpperCase()} ${task.toUpperCase()} · PANORAIMA` }

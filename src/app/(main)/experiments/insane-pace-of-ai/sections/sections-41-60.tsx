@@ -9,7 +9,7 @@ export function Section41_Energy() {
   return (
     <section className="section" id="s-41">
       <Plate num="38" sup="§ 38 · Energy · Sustainability" page="041" title="AI's <em>electricity appetite</em>, unmodeled" />
-      <p className="dek">AI data centers will consume <em>940 TWh in 2026</em> — roughly the electricity use of Germany. By 2028, projections put the sector at <em>~2,000 TWh</em>, or the entire electricity consumption of India today. No credible decarbonization path has been published.</p>
+      <p className="dek">AI data centers will consume <em>940 TWh in 2026</em>, roughly the electricity use of Germany. By 2028, projections put the sector at <em>~2,000 TWh</em>, or the entire electricity consumption of India today. No credible decarbonization path has been published.</p>
       <div className="grid g-12">
         <div className="col-8">
           <Panel title="AI electricity demand path · TWh/yr" aux="IEA · Berkeley Lab · April 2026 update">
@@ -97,7 +97,7 @@ export function Section42_Renewables() {
             </div>
           </Panel>
           <div className="footnote" style={{ marginTop: 0 }}>
-            Most of 2026&apos;s capex is <em style={{ color: "var(--signal)", fontStyle: "italic" }}>shovel-ready</em> — but interconnect queues are the binding constraint, not capital.
+            Most of 2026&apos;s capex is <em style={{ color: "var(--signal)", fontStyle: "italic" }}>shovel-ready</em>, but interconnect queues are the binding constraint, not capital.
           </div>
         </div>
       </div>
@@ -134,7 +134,7 @@ export function Section44_Edge() {
   return (
     <section className="section" id="s-44">
       <Plate num="41" sup="§ 41 · Edge AI" page="044" title="<em>8.7B devices</em> running AI on-device" />
-      <p className="dek">Edge inference has quietly become the dominant form of AI compute by query count. Every new iPhone, Pixel, Galaxy, and Quest ships with frontier-lite models running locally — private by default, latency-free, offline-capable.</p>
+      <p className="dek">Edge inference has quietly become the dominant form of AI compute by query count. Every new iPhone, Pixel, Galaxy, and Quest ships with frontier-lite models running locally, private by default, latency-free, offline-capable.</p>
       <div className="grid g-12">
         <div className="col-8">
           <Panel title="Edge deployment penetration · Q1 2026">
@@ -157,7 +157,7 @@ export function Section45_ChapterIP() {
       <div className="chapter-num">§ 42 · Chapter opens</div>
       <h1>The <em>IP reckoning</em>.</h1>
       <div className="chapter-dek">
-        The courts, not the legislatures, are writing the rules for how AI training and AI output interact with copyright. By April 2026 we have actual precedent — NYT settled with OpenAI, Authors Guild reached a partial settlement with Anthropic and Meta, Getty&apos;s trial on Stability concluded. Here&apos;s what they tell us.
+        The courts, not the legislatures, are writing the rules for how AI training and AI output interact with copyright. By April 2026 we have actual precedent, NYT settled with OpenAI, Authors Guild reached a partial settlement with Anthropic and Meta, Getty&apos;s trial on Stability concluded. Here&apos;s what they tell us.
       </div>
       <div className="chapter-meta">
         <div><span className="label">Active Litigation</span><span className="v">38 cases</span></div>
@@ -201,7 +201,7 @@ export function Section46_IPCases() {
           </tbody>
         </table>
         <div className="footnote">
-          The NYT v. OpenAI/Microsoft settlement — <span style={{ color: "var(--signal)" }}>$480M plus a licensing framework</span> — is widely read as the template for the next decade of training-data economics.
+          The NYT v. OpenAI/Microsoft settlement, <span style={{ color: "var(--signal)" }}>$480M plus a licensing framework</span>, is widely read as the template for the next decade of training-data economics.
         </div>
       </Panel>
     </section>
@@ -287,7 +287,7 @@ export function Section50_Risks() {
   return (
     <section className="section" id="s-50">
       <Plate num="47" sup="§ 47 · Risk Landscape" page="050" title="What's actually <em>going wrong</em>" />
-      <p className="dek">The dominant 2024 risks — hallucination, prompt injection — remain. But 2025 added agent autonomy misalignment and CBRN uplift as frontier-class concerns. Mitigation coverage varies wildly.</p>
+      <p className="dek">The dominant 2024 risks, hallucination, prompt injection, remain. But 2025 added agent autonomy misalignment and CBRN uplift as frontier-class concerns. Mitigation coverage varies wildly.</p>
       <Panel title="Safety risks · severity × mitigation coverage · Q1 2026" aux="Stanford HAI + MITRE ATLAS">
         <RiskMatrix risks={DD2.safetyRisks} />
       </Panel>
@@ -353,7 +353,7 @@ export function Section52_Principles() {
   return (
     <section className="section" id="s-52">
       <Plate num="49" sup="§ 49 · Ethical Principles" page="052" title="The <em>five pillars</em> that survived" />
-      <p className="dek">Every AI ethics framework converges on roughly the same five principles. The test is whether they&apos;re operationalized — reported, audited, budgeted — or merely aspirational. Most orgs still fail this test.</p>
+      <p className="dek">Every AI ethics framework converges on roughly the same five principles. The test is whether they&apos;re operationalized, reported, audited, budgeted, or merely aspirational. Most orgs still fail this test.</p>
       <div className="grid g-12" style={{ gap: 12 }}>
         {DD2.principles.map((p, i) => (
           <div
@@ -416,7 +416,7 @@ export function Section54_ChapterReg() {
       <div className="chapter-num">§ 51 · Chapter opens</div>
       <h1>Regulation has <em>caught up</em>.<br />Enforcement is catching up next.</h1>
       <div className="chapter-dek">
-        The EU AI Act is fully enforced. The US has no federal AI Act but 14 states are closing in. UK and China have distinct but increasingly assertive regimes. The patchwork is here to stay — which means regulatory strategy is now a competitive variable.
+        The EU AI Act is fully enforced. The US has no federal AI Act but 14 states are closing in. UK and China have distinct but increasingly assertive regimes. The patchwork is here to stay, which means regulatory strategy is now a competitive variable.
       </div>
       <div className="chapter-meta">
         <div><span className="label">AI Acts · binding</span><span className="v">14</span></div>
@@ -432,7 +432,7 @@ export function Section55_RegTimeline() {
   return (
     <section className="section" id="s-55">
       <Plate num="52" sup="§ 52 · Regulatory Timeline" page="055" title="18 months of <em>compliance debt</em>" />
-      <Panel title="Key regulatory milestones · Q1 2025 → Q3 2026" aux="selected — binding events only">
+      <Panel title="Key regulatory milestones · Q1 2025 → Q3 2026" aux="selected · binding events only">
         <Timeline data={DD2.regulatoryTL} />
       </Panel>
     </section>
@@ -443,7 +443,7 @@ export function Section56_RegStance() {
   return (
     <section className="section" id="s-56">
       <Plate num="53" sup="§ 53 · Regulatory Postures" page="056" title="Four <em>dials</em>, seven regimes" />
-      <p className="dek">Every AI regulator is tuning the same four dials — risk-aversion, innovation, sovereignty, and ethics. Where they land defines compliance, market access, and strategic freedom.</p>
+      <p className="dek">Every AI regulator is tuning the same four dials, risk-aversion, innovation, sovereignty, and ethics. Where they land defines compliance, market access, and strategic freedom.</p>
       <Panel title="Regulatory posture matrix · Q1 2026">
         <RegulatoryQuad stances={DD2.regulatoryStance} />
       </Panel>

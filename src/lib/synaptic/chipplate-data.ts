@@ -12,7 +12,7 @@ export type ChipAnnotation = {
  * `/studio/synaptic` alongside the six annotations below.
  */
 export const CHIP_ARIA_LABEL =
-  "MEMPHIS chip plate — a ceramic-substrate hippocampal-memristive die. A 22×22 memristor crossbar with a CA3↔CA1 module at its centre; amber on the warm flank, rose on the cool flank; six annotation anchors naming the architectural elements."
+  "MEMPHIS chip plate, a ceramic-substrate hippocampal-memristive die. A 22×22 memristor crossbar with a CA3↔CA1 module at its centre; amber on the warm flank, rose on the cool flank; six annotation anchors naming the architectural elements."
 
 export const CHIP_HINT =
   "Click any numbered anchor to inspect its role"
@@ -24,7 +24,7 @@ export const CHIP_ANNOTATIONS: ReadonlyArray<ChipAnnotation> = [
     id: "01",
     title: "CA3 recurrent collaterals",
     subtitle: "associative pattern completion",
-    body: "A dense mesh of recurrent memristive connections implementing the CA3 auto-associative network. Partial cues reinstate full stored patterns — the hardware substrate of associative recall.",
+    body: "A dense mesh of recurrent memristive connections implementing the CA3 auto-associative network. Partial cues reinstate full stored patterns, the hardware substrate of associative recall.",
     anchor: { x: 330, y: 240 },
     color: "#e8b87a",
   },
@@ -32,7 +32,7 @@ export const CHIP_ANNOTATIONS: ReadonlyArray<ChipAnnotation> = [
     id: "02",
     title: "CA1 pyramidal layer",
     subtitle: "read-out and novelty detection",
-    body: "The output layer that compares CA3-reconstructed predictions against current input — signalling novelty, mismatch, and drive for replay. Rose-tinted plasticity zones on the die's right flank.",
+    body: "The output layer that compares CA3-reconstructed predictions against current input, signalling novelty, mismatch, and drive for replay. Rose-tinted plasticity zones on the die's right flank.",
     anchor: { x: 670, y: 240 },
     color: "#e5a896",
   },
@@ -40,7 +40,7 @@ export const CHIP_ANNOTATIONS: ReadonlyArray<ChipAnnotation> = [
     id: "03",
     title: "Memristive crossbar",
     subtitle: "co-localised memory and compute",
-    body: "A self-organising memristor array where each intersection stores a synaptic weight and performs analogue multiply-accumulate in place. Energy is spent only when events flow — not on shuffling activations.",
+    body: "A self-organising memristor array where each intersection stores a synaptic weight and performs analogue multiply-accumulate in place. Energy is spent only when events flow, not on shuffling activations.",
     anchor: { x: 860, y: 500 },
     color: "#5aa9b8",
   },
@@ -48,7 +48,7 @@ export const CHIP_ANNOTATIONS: ReadonlyArray<ChipAnnotation> = [
     id: "04",
     title: "Event-driven input",
     subtitle: "camera · head-direction",
-    body: "Asynchronous spikes from vision and proprioceptive streams enter the chip's left edge, time-stamped in the picosecond domain. No clock, no frames — only salience.",
+    body: "Asynchronous spikes from vision and proprioceptive streams enter the chip's left edge, time-stamped in the picosecond domain. No clock, no frames, only salience.",
     anchor: { x: 140, y: 500 },
     color: "#c98e4f",
   },
@@ -64,7 +64,7 @@ export const CHIP_ANNOTATIONS: ReadonlyArray<ChipAnnotation> = [
     id: "06",
     title: "Neuromodulatory bus",
     subtitle: "prioritisation and gating",
-    body: "A slow, broadcast-style channel modulating global plasticity gain — the hardware analogue of dopamine and acetylcholine. Enables the system to decide what to remember and what to let go.",
+    body: "A slow, broadcast-style channel modulating global plasticity gain, the hardware analogue of dopamine and acetylcholine. Enables the system to decide what to remember and what to let go.",
     anchor: { x: 670, y: 760 },
     color: "#e5a896",
   },

@@ -9,7 +9,7 @@ const experiments = [
     title: "The Humanoid Ascendancy",
     tagline: "Interactive Field Guide · Embodied AI · June 2026.",
     description:
-      "A McKinsey-grade field guide to the humanoid-robotics industry — a live market model, a clickable value chain, a US·China·Korea supply-chain war map, ROI labs, and a hands-on workshop. The whole story of embodied AI in one explorable, dark-canvas microsite.",
+      "A McKinsey-grade field guide to the humanoid-robotics industry, a live market model, a clickable value chain, a US·China·Korea supply-chain war map, ROI labs, and a hands-on workshop. The whole story of embodied AI in one explorable, dark-canvas microsite.",
     to: "/humanoid",
     tag: "Field Guide · Embodied AI",
     tech: "Next.js, React, inline SVG, Space Grotesk / Geist",
@@ -51,7 +51,7 @@ const experiments = [
     title: "The Insane Pace of AI",
     tagline: "Q1 2026 Executive Dashboard · 75 sections.",
     description:
-      "An editorial research terminal on the state of AI, April 2026. Capability, cost, capital, geopolitics, compute, energy, IP, safety, regulation, strategy — across twenty dimensions of acceleration. Scroll-synced sidebar, hand-rolled SVG charts, live chrome.",
+      "An editorial research terminal on the state of AI, April 2026. Capability, cost, capital, geopolitics, compute, energy, IP, safety, regulation, strategy, across twenty dimensions of acceleration. Scroll-synced sidebar, hand-rolled SVG charts, live chrome.",
     to: "/experiments/insane-pace-of-ai",
     tag: "Executive Research",
     tech: "Next.js, TypeScript, next/font, inline SVG",
@@ -65,7 +65,7 @@ const experiments = [
     title: "PANORAIMA Consortium",
     tagline: "15 labs. 8 countries. One year of AI education.",
     description:
-      "Live dashboard tracking an EU Horizon Europe consortium. 21 events, 143 progress reports, 7 work packages — visualized on an interactive timeline, Europe map, submission heatmap, and WP activity lens. Password-protected for the consortium.",
+      "Live dashboard tracking an EU Horizon Europe consortium. 21 events, 143 progress reports, 7 work packages, visualized on an interactive timeline, Europe map, submission heatmap, and WP activity lens. Password-protected for the consortium.",
     to: "/experiments/panoraima",
     tag: "EU Horizon · Live data",
     tech: "Next.js, Python, Claude, SVG, Edge middleware",
@@ -80,7 +80,7 @@ const experiments = [
     title: "mklaar.ai",
     tagline: "Jouw AI-makelaar. Altijd klaar.",
     description:
-      "AI-powered Dutch real estate platform for Northern Netherlands. Natural language property search, 1000+ real listings, energy labels, neighbourhood scores, and an AI buyer guide — all in one place.",
+      "AI-powered Dutch real estate platform for Northern Netherlands. Natural language property search, 1000+ real listings, energy labels, neighbourhood scores, and an AI buyer guide, all in one place.",
     to: "/mklaar",
     tag: "PropTech",
     tech: "Next.js, Supabase, Claude AI, Mapbox, PDOK/BAG",
@@ -128,7 +128,7 @@ const experiments = [
   {
     title: "AI Strategy Risk-Return Space",
     description:
-      "Map generative AI ventures — OpenAI, Anthropic, DeepSeek — across risk and return dimensions. Drag, resize, and add bubbles to explore technology push vs. market pull strategies.",
+      "Map generative AI ventures, OpenAI, Anthropic, DeepSeek, across risk and return dimensions. Drag, resize, and add bubbles to explore technology push vs. market pull strategies.",
     to: "/experiments/risk-return",
     tag: "Strategy",
     icon: TrendingUp,

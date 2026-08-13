@@ -123,19 +123,19 @@ export default function AboutPage() {
             </p>
             <ul className={`list-disc pl-5 ${bodyText} space-y-1 mt-2`}>
               <li>
-                <strong>EU AI Act</strong> — Regulations that may limit AI
+                <strong>EU AI Act</strong>, Regulations that may limit AI
                 deployment in high-risk domains (healthcare, education, employment)
               </li>
               <li>
-                <strong>Worker protections</strong> — Strong unions and labour
+                <strong>Worker protections</strong>, Strong unions and labour
                 laws may slow automation adoption compared to the US
               </li>
               <li>
-                <strong>Digital maturity</strong> — Varies significantly across
+                <strong>Digital maturity</strong>, Varies significantly across
                 EU member states (Nordic vs. Southern vs. Eastern Europe)
               </li>
               <li>
-                <strong>Public sector</strong> — Larger public sector employment
+                <strong>Public sector</strong>, Larger public sector employment
                 in many EU countries creates different automation dynamics
               </li>
             </ul>

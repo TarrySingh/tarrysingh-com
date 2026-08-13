@@ -34,7 +34,7 @@ export async function generateMetadata({
   const { tag } = await params
   const decoded = decodeURIComponent(tag)
   return {
-    title: `Dispatches · ${decoded} — Tarry Singh`,
+    title: `Dispatches · ${decoded} · Tarry Singh`,
     description: `All Dispatches tagged "${decoded}".`,
     robots: { index: true, follow: true },
   }

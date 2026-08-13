@@ -17,7 +17,7 @@ export const RAMASWAMY_BEATS: ReadonlyArray<RamaswamyBeat> = [
     year: 2005,
     label: "Blue Brain begins",
     detail:
-      "EPFL launches the Blue Brain Project — the first attempt to reconstruct a cortical column at biological fidelity.",
+      "EPFL launches the Blue Brain Project, the first attempt to reconstruct a cortical column at biological fidelity.",
   },
   {
     year: 2008,
@@ -30,7 +30,7 @@ export const RAMASWAMY_BEATS: ReadonlyArray<RamaswamyBeat> = [
     year: 2015,
     label: "Cortical-column reconstruction",
     detail:
-      "Co-author on the first complete cortical-microcircuit reconstruction at biological scale — Cell, 2015.",
+      "Co-author on the first complete cortical-microcircuit reconstruction at biological scale, Cell, 2015.",
     weight: "primary",
   },
   {
@@ -44,7 +44,7 @@ export const RAMASWAMY_BEATS: ReadonlyArray<RamaswamyBeat> = [
     year: 2022,
     label: "Mei · Muller · Ramaswamy",
     detail:
-      "Trends in Neurosciences (2022) — the four-scale neuromodulatory framework that SYMPHONY transposes from continuous perceptual signals to discrete symbolic activations.",
+      "Trends in Neurosciences (2022), the four-scale neuromodulatory framework that SYMPHONY transposes from continuous perceptual signals to discrete symbolic activations.",
     weight: "primary",
   },
   {
@@ -58,13 +58,13 @@ export const RAMASWAMY_BEATS: ReadonlyArray<RamaswamyBeat> = [
     year: 2026,
     label: "SYMPHONY · O2 lead",
     detail:
-      "Leads Objective O2 — the implementation of the four-scale neuromodulatory mechanism on the substrate produced by O1. M18 decision milestone.",
+      "Leads Objective O2, the implementation of the four-scale neuromodulatory mechanism on the substrate produced by O1. M18 decision milestone.",
     weight: "primary",
   },
 ]
 
 export const RAMASWAMY_PEDIGREE_ARIA_LABEL =
-  "Ramaswamy / Blue Brain pedigree — a timeline from 2005 to 2026 marking the Blue Brain Project, the 2015 cortical-microcircuit reconstruction, the 2022 Mei, Muller and Ramaswamy four-scale neuromodulation paper, and the 2026 SYMPHONY O2 lead."
+  "Ramaswamy / Blue Brain pedigree, a timeline from 2005 to 2026 marking the Blue Brain Project, the 2015 cortical-microcircuit reconstruction, the 2022 Mei, Muller and Ramaswamy four-scale neuromodulation paper, and the 2026 SYMPHONY O2 lead."
 
 export const RAMASWAMY_COLUMN_TOP_LABEL = "L1"
 export const RAMASWAMY_COLUMN_BOTTOM_LABEL = "L6"
@@ -74,4 +74,4 @@ export const RAMASWAMY_NEUROMOD_BEAM_LABELS = ["Ach", "DA", "NE", "5-HT"] as con
 export const RAMASWAMY_NEUROMOD_KICKER = "NEUROMODULATOR BEAMS"
 
 export const RAMASWAMY_PEDIGREE_DEFAULT_HINT =
-  "Two decades of biologically-grounded neuroscience, ending in SYMPHONY's O2. Hover any beat for the source and the role it plays in the proposal. Primary beats — Cell 2015, TINS 2022 — are the load-bearing citations."
+  "Two decades of biologically-grounded neuroscience, ending in SYMPHONY's O2. Hover any beat for the source and the role it plays in the proposal. Primary beats, Cell 2015, TINS 2022, are the load-bearing citations."

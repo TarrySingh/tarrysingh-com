@@ -48,7 +48,7 @@ const breakthroughs = [
   {
     n: "I",
     name: "Co-implementation of consolidation mechanisms",
-    body: "STDP, replay-driven consolidation, two-phase processing and neuromodulation are interdependent components of a single biological memory mechanism — yet every existing approach implemented each in isolation. MEMPHIS is the first system where all four emerge from the intrinsic dynamics of a single physical substrate.",
+    body: "STDP, replay-driven consolidation, two-phase processing and neuromodulation are interdependent components of a single biological memory mechanism, yet every existing approach implemented each in isolation. MEMPHIS is the first system where all four emerge from the intrinsic dynamics of a single physical substrate.",
   },
   {
     n: "II",
@@ -58,7 +58,7 @@ const breakthroughs = [
   {
     n: "III",
     name: "Physical convergence of substrate and computational principles",
-    body: "Three classical barriers — STDP voltage-time integration vs. spike timing, CA3 attractor connectivity statistics, and memristive switching scales — are addressed not by waveform engineering but by physically co-designing devices and circuit motifs so that the hippocampal computational primitives are intrinsic to the material.",
+    body: "Three classical barriers, STDP voltage-time integration vs. spike timing, CA3 attractor connectivity statistics, and memristive switching scales, are addressed not by waveform engineering but by physically co-designing devices and circuit motifs so that the hippocampal computational primitives are intrinsic to the material.",
   },
 ]
 
@@ -73,7 +73,7 @@ const objectives = [
     n: "O2",
     name: "Self-organising memristive substrate",
     threshold: "Switching energy < 10 fJ per synaptic event · stable, reproducible switching · verified learning curves · power-law noise dynamics",
-    body: "Memristive devices with synaptic properties physically compatible with the CA3 ↔ CA1 model — STDP timescales matching biology, physically differentiated excitatory and inhibitory analogues, stochastic network topology.",
+    body: "Memristive devices with synaptic properties physically compatible with the CA3 ↔ CA1 model, STDP timescales matching biology, physically differentiated excitatory and inhibitory analogues, stochastic network topology.",
   },
   {
     n: "O3",
@@ -133,8 +133,8 @@ export default function MemphisProposalPage() {
         <SmallCaps>0 · Abstract</SmallCaps>
         <p style={proseInkStyle}>
           MEMPHIS will establish proof-of-principle that hippocampal
-          consolidation mechanisms — STDP, replay-driven memory
-          consolidation, two-phase processing, and neuromodulation — can
+          consolidation mechanisms, STDP, replay-driven memory
+          consolidation, two-phase processing, and neuromodulation, can
           emerge from the intrinsic dynamics of a self-organising
           memristive substrate. A neuromorphic chip in which adaptation
           is a <em>material property</em>, not an algorithmic feature
@@ -142,7 +142,7 @@ export default function MemphisProposalPage() {
         </p>
         <p style={proseStyle}>
           The decisive experiment is a CA3 ↔ CA1 module that improves
-          task performance after an offline phase — without further
+          task performance after an offline phase, without further
           training data, with energy per synaptic operation at least
           two orders of magnitude below GPU baselines and below the
           ~10 pJ/event of Loihi and TrueNorth. The work targets TRL 4 in
@@ -158,7 +158,7 @@ export default function MemphisProposalPage() {
           >
             SYMPHONY
           </Link>
-          {" "}within the Synaptic Cartography series — both bet that the
+          {" "}within the Synaptic Cartography series, both bet that the
           next computing era is biological, structured and auditable, not
           larger and more centralised.
         </ItalicCaption>
@@ -176,7 +176,7 @@ export default function MemphisProposalPage() {
           The long-term vision is a new class of artificial intelligence:
           spiking, adaptive, and physically embodied computation inspired
           by selected functional principles of the mammalian hippocampus.
-          Not biological intelligence in full — a more specific and
+          Not biological intelligence in full, a more specific and
           credible objective. Demonstrate that biologically grounded
           mechanisms can be realised as material properties of a
           neuromorphic substrate.
@@ -184,7 +184,7 @@ export default function MemphisProposalPage() {
         <div className="grid gap-6 md:grid-cols-3">
           {[
             { t: "A new computational primitive", b: "Adaptation as material property, not algorithmic feature. STDP, replay and two-phase consolidation emerge from the substrate's physical dynamics. Inherently compatible with multimodal sensory input and continuous operation." },
-            { t: "Energy-efficient by construction", b: "Consolidation and energy efficiency arise from the same dynamics rather than from separate optimisations — a single architectural property, inseparable in principle." },
+            { t: "Energy-efficient by construction", b: "Consolidation and energy efficiency arise from the same dynamics rather than from separate optimisations, a single architectural property, inseparable in principle." },
             { t: "Agents that accumulate knowledge", b: "Systems that gain task-relevant knowledge over their operational lifetime without recharging or retraining. Not achievable by combining existing efficient hardware with existing adaptive algorithms; the two properties have to be architecturally fused." },
           ].map((c, i) => (
             <div key={i} className="space-y-2">
@@ -217,7 +217,7 @@ export default function MemphisProposalPage() {
           digital hardware that preserved the von-Neumann separation of
           memory and computation. Memristive devices reached synaptic
           plasticity characteristics in the lab, but were used in
-          isolation — without the network-level mechanisms (replay,
+          isolation, without the network-level mechanisms (replay,
           neuromodulation, two-phase processing) that make biological
           learning work.
         </p>
@@ -357,7 +357,7 @@ export default function MemphisProposalPage() {
         <div className="space-y-3">
           <SmallCaps>5 · The decisive experiment</SmallCaps>
           <h2 className="syn-display" style={sectionHeading}>
-            CA3 ↔ CA1 module — recall, replay, consolidation
+            CA3 ↔ CA1 module, recall, replay, consolidation
           </h2>
         </div>
         <Cartouche title="Validation protocol" meta="proof of principle">
@@ -365,7 +365,7 @@ export default function MemphisProposalPage() {
             A small-scale memristive spiking network (the CA3 ↔ CA1
             module visible at the centre of the chip plate) performs
             associative recall on a held-out test set. The system then
-            enters an offline phase — no external input, only intrinsic
+            enters an offline phase, no external input, only intrinsic
             dynamics replaying the stored traces. Memristive thresholds
             shift, redundant weights fade, salient patterns are
             reinforced. After the offline phase, the same test set is
@@ -376,8 +376,8 @@ export default function MemphisProposalPage() {
           </p>
         </Cartouche>
         <p style={proseStyle}>
-          This is the proof of principle. It demonstrates — in physical
-          hardware, not in simulation — that adaptive learning and
+          This is the proof of principle. It demonstrates, in physical
+          hardware, not in simulation, that adaptive learning and
           memory optimisation can emerge from intrinsic system dynamics.
           If the experiment lands, the architectural principle
           generalises; if it does not, the failure mode is informative
@@ -394,8 +394,8 @@ export default function MemphisProposalPage() {
           </h2>
         </div>
         <p style={proseStyle}>
-          The target switching energy — below 10 fJ per 100×100 nm
-          device — sits three orders of magnitude below existing
+          The target switching energy, below 10 fJ per 100×100 nm
+          device, sits three orders of magnitude below existing
           neuromorphic platforms (Intel Loihi, IBM TrueNorth), six
           orders below GPU-based AI, and approaches the biological
           benchmark of ~100 fJ per synaptic event. The corollary is
@@ -407,22 +407,22 @@ export default function MemphisProposalPage() {
             {
               tag: "Edge AI",
               title: "Inference under µW budgets",
-              body: "Battery-powered or energy-harvesting devices that need on-device adaptation — environmental sensors, agricultural monitoring, condition-based maintenance. Today's silicon either does inference (small, dumb) or learning (large, plugged-in). MEMPHIS does both inside the energy envelope of a coin cell.",
+              body: "Battery-powered or energy-harvesting devices that need on-device adaptation, environmental sensors, agricultural monitoring, condition-based maintenance. Today's silicon either does inference (small, dumb) or learning (large, plugged-in). MEMPHIS does both inside the energy envelope of a coin cell.",
             },
             {
               tag: "Autonomous robotics",
               title: "Continuous learning, no cloud",
-              body: "Mobile platforms — drones, agricultural robots, logistics, flexible manufacturing — that cannot afford cloud retraining and cannot afford catastrophic forgetting. The hippocampal-replay primitive maps onto exactly this constraint. WP2 includes a robotic-navigation validation task.",
+              body: "Mobile platforms, drones, agricultural robots, logistics, flexible manufacturing, that cannot afford cloud retraining and cannot afford catastrophic forgetting. The hippocampal-replay primitive maps onto exactly this constraint. WP2 includes a robotic-navigation validation task.",
             },
             {
               tag: "Implantable neurotech",
               title: "Multi-year operation under thermal limits",
-              body: "Closed-loop neurotechnology — sense, interpret, act, learn — running for years on a milliwatt budget without cloud retraining or replacement surgery. Privacy-preserving by construction. MEMPHIS targets the architectural precursor; full clinical pathway is downstream.",
+              body: "Closed-loop neurotechnology, sense, interpret, act, learn, running for years on a milliwatt budget without cloud retraining or replacement surgery. Privacy-preserving by construction. MEMPHIS targets the architectural precursor; full clinical pathway is downstream.",
             },
             {
               tag: "European leadership",
               title: "Sovereign neuromorphic stack",
-              body: "Validated memristive design primitives establish a European foundation for next-generation neuromorphic hardware — reducing dependence on imported and energy-intensive solutions. High-value EU jobs in hardware design, AI engineering, and advanced robotics.",
+              body: "Validated memristive design primitives establish a European foundation for next-generation neuromorphic hardware, reducing dependence on imported and energy-intensive solutions. High-value EU jobs in hardware design, AI engineering, and advanced robotics.",
             },
           ].map((item) => (
             <div
@@ -478,8 +478,8 @@ export default function MemphisProposalPage() {
             today&rsquo;s memristive arrays routinely deliver. The
             engineering question is whether self-organisation can close
             that gap inside the operating regime, not whether it must.
-            MEMPHIS&rsquo;s second breakthrough — treating stochasticity
-            as substrate rather than noise — is the bet that it can.
+            MEMPHIS&rsquo;s second breakthrough, treating stochasticity
+            as substrate rather than noise, is the bet that it can.
             Proof of principle for the CA3 ↔ CA1 module is what tests
             the bet.
           </p>
@@ -504,7 +504,7 @@ export default function MemphisProposalPage() {
             {
               n: "II",
               h: "Architectural moat",
-              b: "MEMPHIS does not need a new memristive material to win — it needs the architectural property that bio-replay imposes on the device array. The device roadmap is being pushed independently by half a dozen industrial labs. MEMPHIS rides that wave with a 3–5 year lead in the system-level integration.",
+              b: "MEMPHIS does not need a new memristive material to win, it needs the architectural property that bio-replay imposes on the device array. The device roadmap is being pushed independently by half a dozen industrial labs. MEMPHIS rides that wave with a 3–5 year lead in the system-level integration.",
             },
             {
               n: "III",

@@ -20,7 +20,7 @@ export function BriefForm({ forDate, token, initial }: Props) {
     const trimmed = text.trim()
     if (trimmed.length < 4) {
       setStatus("error")
-      setMessage("A line or two is enough — but it can't be empty.")
+      setMessage("A line or two is enough, but it can't be empty.")
       return
     }
     setStatus("saving")
@@ -83,7 +83,7 @@ export function BriefForm({ forDate, token, initial }: Props) {
           fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
         }}
       >
-        Drop links, paragraphs, half-sentences — whatever you'd want tomorrow
+        Drop links, paragraphs, half-sentences, whatever you'd want tomorrow
         morning to take seriously. The article gets written for{" "}
         <code className="font-mono text-[12.5px]">{forDate}</code>.
       </p>
@@ -129,7 +129,7 @@ export function BriefForm({ forDate, token, initial }: Props) {
             fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
           }}
         >
-          Skip — use the default
+          Skip, use the default
         </button>
       </div>
       <div

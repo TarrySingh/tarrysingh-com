@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
 export const alt =
-  "MEMPHIS — A Hippocampal · Memristive · Neuromorphic Architecture"
+  "MEMPHIS, A Hippocampal · Memristive · Neuromorphic Architecture"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 

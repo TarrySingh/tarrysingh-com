@@ -10,7 +10,7 @@ import type { PlateContent } from "@/lib/synaptic/types"
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Edit plate — Studio",
+  title: "Edit plate · Studio",
   robots: { index: false, follow: false },
 }
 

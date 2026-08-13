@@ -20,7 +20,7 @@ const highlights = [
     icon: TrendingUp,
     title: "Strategic Vision",
     description:
-      "Three decades navigating market disruptions — from the commercial internet boom to the AI revolution. Turning complexity into competitive advantage.",
+      "Three decades navigating market disruptions, from the commercial internet boom to the AI revolution. Turning complexity into competitive advantage.",
   },
   {
     icon: Cpu,
@@ -41,7 +41,7 @@ const experiments = [
   {
     title: "The Insane Pace of AI",
     tagline: "Q1 2026 Executive Dashboard · 75 sections.",
-    description: "Editorial research terminal on the state of AI, April 2026 — capability, cost, capital, geopolitics, compute, energy, IP, safety, regulation, strategy.",
+    description: "Editorial research terminal on the state of AI, April 2026, capability, cost, capital, geopolitics, compute, energy, IP, safety, regulation, strategy.",
     to: "/experiments/insane-pace-of-ai",
     tag: "Executive Research",
     icon: Gauge,
@@ -52,7 +52,7 @@ const experiments = [
   {
     title: "PANORAIMA Consortium",
     tagline: "15 labs. 8 countries. One year of AI education.",
-    description: "Live dashboard tracking an EU Horizon Europe consortium — 21 events, 143 progress reports, 7 work packages across Europe.",
+    description: "Live dashboard tracking an EU Horizon Europe consortium, 21 events, 143 progress reports, 7 work packages across Europe.",
     to: "/experiments/panoraima",
     tag: "EU Horizon · Live Data",
     icon: Network,
@@ -146,7 +146,7 @@ const Landing = () => {
             {/* Subhead */}
             <p className="animate-fade-up delay-200 mt-6 md:mt-8 text-base md:text-lg text-white/50 leading-relaxed max-w-xl">
               For over 30 years, I've been at the forefront of technological
-              disruption — from the early internet era to today's AI revolution. I
+              disruption, from the early internet era to today's AI revolution. I
               help organizations navigate complexity and seize transformative
               opportunities.
             </p>
@@ -463,7 +463,7 @@ const Landing = () => {
                   }}
                 >
                   ~45,000 words · ~40 interactive instruments · the machine
-                  that ships a continent&rsquo;s wealth, talent and IP west —
+                  that ships a continent&rsquo;s wealth, talent and IP west,
                   and the narrow door still open.
                 </p>
               </div>
@@ -550,7 +550,7 @@ const Landing = () => {
               >
                 <Image
                   src={coverPlanisphere}
-                  alt="SYMPHONY · the planisphere — cover plate of the Synaptic Cartography series."
+                  alt="SYMPHONY · the planisphere, cover plate of the Synaptic Cartography series."
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   placeholder="blur"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
@@ -785,7 +785,7 @@ const Landing = () => {
               Interested in working together?
             </h2>
             <p className="text-white/50 text-sm md:text-base leading-relaxed mb-8">
-              Whether it's AI strategy, technology advisory, or exploring new ventures —
+              Whether it's AI strategy, technology advisory, or exploring new ventures,
               I'm always open to meaningful conversations.
             </p>
             <a

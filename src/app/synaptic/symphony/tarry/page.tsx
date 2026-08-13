@@ -58,7 +58,7 @@ export default function TarryPartnerPage() {
         <ItalicCaption className="mx-auto max-w-3xl">
           Founder of Real AI. Three decades across data and AI delivery at
           industrial scale, with a current focus on{" "}
-          <em>foundation models for the real world</em>: Hominis — a family
+          <em>foundation models for the real world</em>: Hominis, a family
           of situated, auditable, compute-aware foundation models trained
           on allocation time at Leonardo, the EuroHPC supercomputer at
           CINECA, Bologna.
@@ -78,7 +78,7 @@ export default function TarryPartnerPage() {
         </div>
         <p style={proseStyle}>
           Tarry Singh founded Real AI to build the European stack for
-          foundation models that hold up under real-world deployment —
+          foundation models that hold up under real-world deployment,
           situated, auditable, and compute-aware. Before Real AI, three
           decades of data-and-AI delivery at industrial scale across
           banking, energy, manufacturing and pharma. The pattern across
@@ -102,11 +102,11 @@ export default function TarryPartnerPage() {
         </div>
         <p style={proseStyle}>
           Hominis is a family of foundation models calibrated to three
-          properties — the three pillars of the cathedral above:
+          properties, the three pillars of the cathedral above:
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            { t: "Situated", b: "Trained on the context the model will be deployed into — industrial-automation logs, EU regulatory text, multi-lingual scientific corpora — not just the open web." },
+            { t: "Situated", b: "Trained on the context the model will be deployed into, industrial-automation logs, EU regulatory text, multi-lingual scientific corpora, not just the open web." },
             { t: "Auditable", b: "Every output traceable to a substrate region; every adaptation to a task token. Compositional control surfaces, bounded behaviour, external evaluation built in." },
             { t: "Compute-aware", b: "Trained on EuroHPC allocation at Leonardo / CINECA. Per-paper tCO₂e reporting; absolute compute-budget caps declared in the DMP." },
           ].map((c, i) => (
@@ -174,7 +174,7 @@ export default function TarryPartnerPage() {
             Demonstrate, on a pre-registered evaluation protocol, that the
             SYMPHONY substrate outperforms three named baselines: (a) a
             frontier LLM agent, (b) a best-in-class static-analysis +
-            knowledge-graph pipeline, and (c) an LLM + RAG baseline — on a
+            knowledge-graph pipeline, and (c) an LLM + RAG baseline, on a
             held-out benchmark of 200 engineering-task instances.{" "}
             <strong style={{ color: "var(--symphony-amber-hi)" }}>Threshold</strong>:
             ≥ 20 % relative F1 improvement on task-relevant-subgraph recovery

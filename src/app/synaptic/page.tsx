@@ -15,9 +15,9 @@ import { PlateCarousel } from "@/components/synaptic/PlateCarousel"
 
 export const metadata = {
   title:
-    "Synaptic Cartography — The Engine Room · The Chokepoint Paradox · SYMPHONY · tarrysingh.com",
+    "Synaptic Cartography, The Engine Room · The Chokepoint Paradox · SYMPHONY · tarrysingh.com",
   description:
-    "A studio of deep-tech proposals and long-form field guides presented as museum-grade interactive plates: THE ENGINE ROOM — a 30,000-word field manual on loop and harness engineering with fifteen instruments — and THE CHOKEPOINT PARADOX — a ~45,000-word field guide to Europe's tech-sovereignty failure with ~40 instruments — alongside SYMPHONY and MEMPHIS, two EIC Pathfinder 2026 submissions, and the SOFTWARE 3.0 gallery.",
+    "A studio of deep-tech proposals and long-form field guides presented as museum-grade interactive plates: THE ENGINE ROOM, a 30,000-word field manual on loop and harness engineering with fifteen instruments, and THE CHOKEPOINT PARADOX, a ~45,000-word field guide to Europe's tech-sovereignty failure with ~40 instruments, alongside SYMPHONY and MEMPHIS, two EIC Pathfinder 2026 submissions, and the SOFTWARE 3.0 gallery.",
 }
 
 const proseStyle = {
@@ -80,7 +80,7 @@ export default function SynapticPage() {
           </h1>
           <ItalicCaption className="mx-auto mt-6 max-w-3xl">
             A planisphere and an anatomy of ideas that should not yet
-            exist — rendered as museum-grade interactive plates and bound
+            exist, rendered as museum-grade interactive plates and bound
             into a coherent body of work.
           </ItalicCaption>
           <p
@@ -99,7 +99,7 @@ export default function SynapticPage() {
       <figure className="mx-auto hidden print:block lg:max-w-[90vw]">
         <Image
           src={visionBanner}
-          alt="Synaptic Cartography vision banner — the panoramic Plate I that anchors the series."
+          alt="Synaptic Cartography vision banner, the panoramic Plate I that anchors the series."
           sizes="(min-width: 1280px) 90vw, 100vw"
           placeholder="blur"
           priority
@@ -123,13 +123,13 @@ export default function SynapticPage() {
           Synaptic Cartography is an aesthetic of quiet, museum-grade
           scientific illustration applied to the technical content of
           frontier deep-tech proposals. Each plate is built like a
-          nineteenth-century anatomical folio — except every line, every
+          nineteenth-century anatomical folio, except every line, every
           colour, every data point is interactive. Hover. Click. Scrub the
           curve. The image is the argument.
         </p>
         <p className="mx-auto" style={proseStyle}>
           Two proposals live here. Both target post-von-Neumann
-          computing from opposite ends — one on the software side
+          computing from opposite ends, one on the software side
           (SYMPHONY · a neuromimetic substrate for code), one on the
           hardware side (MEMPHIS · a hippocampal-memristive chip). Both
           are EIC Pathfinder 2026 submissions. Future plates in the
@@ -315,7 +315,7 @@ export default function SynapticPage() {
               >
                 <Image
                   src={coverPlanisphere}
-                  alt="Plate II — SYMPHONY cover planisphere."
+                  alt="Plate II, SYMPHONY cover planisphere."
                   fill
                   placeholder="blur"
                   sizes="(min-width: 1024px) 500px, 100vw"
@@ -369,7 +369,7 @@ export default function SynapticPage() {
               >
                 <Image
                   src={chipPlate}
-                  alt="Plate I (MEMPHIS) — the hippocampal-memristive chip plate."
+                  alt="Plate I (MEMPHIS), the hippocampal-memristive chip plate."
                   fill
                   placeholder="blur"
                   sizes="(min-width: 1024px) 500px, 100vw"
@@ -551,7 +551,7 @@ export default function SynapticPage() {
           <p style={{ color: "var(--ink)", lineHeight: 1.6, fontSize: "0.98rem" }}>
             More plates in the Synaptic Cartography series are in
             preparation. Each will earn its place the same way SYMPHONY
-            and MEMPHIS did — a defensible scientific claim, a published
+            and MEMPHIS did, a defensible scientific claim, a published
             primary source for the mechanism, a real partner who has
             survived contact with the field, and visuals built like the
             inside of a Wellcome Collection folio.

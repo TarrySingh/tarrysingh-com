@@ -7,7 +7,7 @@ import { DraftListItem } from "@/components/studio/DraftListItem"
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Studio — Dispatches",
+  title: "Studio · Dispatches",
   description: "The writing surface for tarrysingh.com Dispatches.",
   robots: { index: false, follow: false },
 }

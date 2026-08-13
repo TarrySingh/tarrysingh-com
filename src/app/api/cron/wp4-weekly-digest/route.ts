@@ -62,7 +62,7 @@ function renderEmail(): { subject: string; html: string } {
   const wikiGap = reviewing.filter((le) => le.realai_wiki_gap)        // M&F 'RAI' reviews the wiki omits
   const awaiting = reviewing.filter((le) => !le.completeness?.ready_to_review && !le.realai_wiki_gap)
 
-  const subject = `PANORAIMA WP4 — weekly RealAI digest (${authoring.length} authoring · ${reviewing.length} reviewing)`
+  const subject = `PANORAIMA WP4, weekly RealAI digest (${authoring.length} authoring · ${reviewing.length} reviewing)`
 
   const stat = (n: number, label: string) => `
     <td style="padding:0 14px 0 0">
@@ -74,7 +74,7 @@ function renderEmail(): { subject: string; html: string } {
   <div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:660px;margin:0 auto;color:#16181D">
     <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:${RUST};font-weight:700;font-family:ui-monospace,monospace">PANORAIMA · WP4 weekly digest</p>
     <h2 style="margin:4px 0 2px;font-weight:700">RealAI's plate this week</h2>
-    <p style="color:#4F535B;line-height:1.55;font-size:14px">A low-noise overview of everything RealAI authors or reviews. New material <strong>drops</strong> are emailed separately as they land — this weekly note keeps the whole board in view.</p>
+    <p style="color:#4F535B;line-height:1.55;font-size:14px">A low-noise overview of everything RealAI authors or reviews. New material <strong>drops</strong> are emailed separately as they land, this weekly note keeps the whole board in view.</p>
 
     <table style="border-collapse:collapse;margin:16px 0 4px"><tr>
       ${stat(authoring.length, "Authoring")}
@@ -84,13 +84,13 @@ function renderEmail(): { subject: string; html: string } {
       ${stat(wikiGap.length, "Wiki omits us")}
     </tr></table>
 
-    ${section("Authoring — content still owed", RUST, authorNeeds, (le) =>
+    ${section("Authoring, content still owed", RUST, authorNeeds, (le) =>
       (le.completeness?.author_needs || []).slice(0, 3).join(" · ") || "draft outstanding")}
 
-    ${section("Reviewing — ready for you now", "#2E6A4B", readyToReview, () => "author content is in — review it")}
+    ${section("Reviewing, ready for you now", "#2E6A4B", readyToReview, () => "author content is in, review it")}
 
-    ${section("Reviewing — M&F (wiki hasn't credited us yet)", RUST, wikiGap, (le) =>
-      le.off_wiki ? "SharePoint registry only" : "we're 'RAI' in SharePoint — review via the lesson plan")}
+    ${section("Reviewing, M&F (wiki hasn't credited us yet)", RUST, wikiGap, (le) =>
+      le.off_wiki ? "SharePoint registry only" : "we're 'RAI' in SharePoint, review via the lesson plan")}
 
     ${awaiting.length ? `<p style="margin:18px 0 0;font-size:13px;color:#6B7280">+ <strong>${awaiting.length}</strong> more reviewing assignments still awaiting author content (nothing to do yet).</p>` : ""}
 
@@ -98,7 +98,7 @@ function renderEmail(): { subject: string; html: string } {
 
     <div style="margin-top:22px;padding:14px 16px;border:1px solid #E7E7EA;border-radius:8px;background:#FAFAF9">
       <div style="font-family:ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:${RUST};margin-bottom:8px">How &amp; where to file your review</div>
-      <p style="margin:0 0 8px;font-size:13px;color:#4F535B;line-height:1.55"><strong>What:</strong> review only the RealAI-mandated Learning Events — the ones listed above as <em>your</em> reviewing assignments. Nothing outside that list.</p>
+      <p style="margin:0 0 8px;font-size:13px;color:#4F535B;line-height:1.55"><strong>What:</strong> review only the RealAI-mandated Learning Events, the ones listed above as <em>your</em> reviewing assignments. Nothing outside that list.</p>
       <p style="margin:0 0 8px;font-size:13px;color:#4F535B;line-height:1.55"><strong>Where:</strong> on the LE's wiki page, open the <strong>&ldquo;Discussion&rdquo;</strong> tab &rarr; <strong>Edit source</strong> &rarr; paste your review &rarr; <strong>Save page</strong>. Not by email, not in SharePoint comments &mdash; the Discussion tab is the record, and it's what turns the LE green on the dashboard.</p>
       <p style="margin:0 0 8px;font-size:13px;color:#4F535B;line-height:1.55"><strong>How:</strong> open with an overall <strong>minor / major revision</strong> verdict; then go criterion by criterion (credible practice &middot; current relevance &middot; track &amp; job-roles &middot; professional judgement &middot; when/why/how of the tools &middot; risks &amp; trade-offs); be specific (cite slide numbers); name what works as well as what's missing; sign with your name + email.</p>
       <p style="margin:0;font-size:13px;color:#4F535B;line-height:1.55"><strong>Two worked examples to copy the format:</strong> <a href="https://hcaim.bme.hu/wiki/Talk:MC-001_Scientific_Landscape:_Bibliometric_Analysis_and_Visualization_in_Media_and_Culture_Research" style="color:${RUST}">MC-001</a> and <a href="https://hcaim.bme.hu/wiki/Talk:MC-003_Social_Network_Analysis:_Theoretical_Foundations" style="color:${RUST}">MC-003</a> Discussion pages.</p>

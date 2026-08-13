@@ -90,7 +90,7 @@ export default function RamaswamyPartnerPage() {
         </p>
         <p style={proseStyle}>
           The pedigree is the moat. Mei, Muller &amp; Ramaswamy (2022) is
-          not a paper SYMPHONY references politely from a distance — it is
+          not a paper SYMPHONY references politely from a distance, it is
           the mathematical scaffolding on which O2 is built, with the
           third author as the consortium&rsquo;s objective lead.
         </p>
@@ -101,12 +101,12 @@ export default function RamaswamyPartnerPage() {
         <div className="space-y-3">
           <SmallCaps>II · The 2022 paper</SmallCaps>
           <h2 className="syn-display" style={sectionHeading}>
-            Mei · Muller · Ramaswamy — four scales, one substrate
+            Mei · Muller · Ramaswamy, four scales, one substrate
           </h2>
         </div>
         <p style={proseStyle}>
           The 2022 paper formalised a four-scale framework for integrating
-          neuromodulation into deep networks — hyperparameter scale
+          neuromodulation into deep networks, hyperparameter scale
           (global gain), plasticity scale (connectivity reshape),
           neuronal scale (per-node gating), and dendritic scale
           (branch-local computation). The simulation evidence showed three
@@ -117,7 +117,7 @@ export default function RamaswamyPartnerPage() {
           {[
             { n: "i", t: "Faster adaptation", b: "New tasks reach competence in fewer training steps than a non-modulated baseline." },
             { n: "ii", t: "Higher cumulative reward", b: "Across task sequences the modulated network accumulates more reward than the static one." },
-            { n: "iii", t: "Resistance to catastrophic forgetting", b: "The same network retains old skills as new ones land — the prerequisite for a substrate that survives an engineer's day." },
+            { n: "iii", t: "Resistance to catastrophic forgetting", b: "The same network retains old skills as new ones land, the prerequisite for a substrate that survives an engineer's day." },
           ].map((c) => (
             <Cartouche key={c.n} title={`Property ${c.n}`} meta="Mei et al. 2022">
               <h3
@@ -177,8 +177,8 @@ export default function RamaswamyPartnerPage() {
           </p>
         </Cartouche>
         <p style={proseStyle}>
-          Newcastle co-leads the ethics layer of O5 — the equitable-access
-          user study — bringing the school&rsquo;s established protocol for
+          Newcastle co-leads the ethics layer of O5, the equitable-access
+          user study, bringing the school&rsquo;s established protocol for
           stratified pre-registered behavioural studies in computing
           education.
         </p>

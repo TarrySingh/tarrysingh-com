@@ -28,7 +28,7 @@ const advances = [
   {
     numeral: "I",
     dimension: "Computational paradigm",
-    body: "Distributed, event-driven computation inspired by biological circuits — not sequential and energy-intensive.",
+    body: "Distributed, event-driven computation inspired by biological circuits, not sequential and energy-intensive.",
   },
   {
     numeral: "II",
@@ -38,7 +38,7 @@ const advances = [
   {
     numeral: "III",
     dimension: "Memory optimisation",
-    body: "Hardware-embedded sleep-like processes — replay and synaptic scaling — for long-term memory formation and restructuring.",
+    body: "Hardware-embedded sleep-like processes, replay and synaptic scaling, for long-term memory formation and restructuring.",
   },
   {
     numeral: "IV",
@@ -111,7 +111,7 @@ export default function MemphisPage() {
       <figure className="relative hidden w-full print:block">
         <Image
           src={chipPlate}
-          alt="MEMPHIS Plate I — a hippocampal-memristive chip plate: amber and rose memristor cells over a ceramic substrate with a silicon die, set in the MEMPHIS warm-midnight palette."
+          alt="MEMPHIS Plate I, a hippocampal-memristive chip plate: amber and rose memristor cells over a ceramic substrate with a silicon die, set in the MEMPHIS warm-midnight palette."
           sizes="100vw"
           placeholder="blur"
           className="block h-auto w-full"
@@ -148,9 +148,9 @@ export default function MemphisPage() {
         >
           This is a fundamental departure from conventional architectures,
           in which processing and memory sit on opposite sides of a bus.
-          MEMPHIS implements a two-phase computational paradigm — online
+          MEMPHIS implements a two-phase computational paradigm, online
           event-driven processing for real-time interaction; offline
-          replay-driven consolidation for memory optimisation — inside
+          replay-driven consolidation for memory optimisation, inside
           the same physical system.
         </p>
         <ItalicCaption className="max-w-3xl">
@@ -196,7 +196,7 @@ export default function MemphisPage() {
           <SmallCaps>IV · Two phases, one substrate</SmallCaps>
           <p style={{ color: "var(--ink-cool)", lineHeight: 1.6, maxWidth: "62ch" }}>
             Online events drive sparse, salient computation. Offline intrinsic
-            dynamics replay and consolidate — without external input.
+            dynamics replay and consolidate, without external input.
             One physical substrate, two regimes.
           </p>
         </div>
@@ -210,7 +210,7 @@ export default function MemphisPage() {
           <p style={{ color: "var(--ink-cool)", lineHeight: 1.6, maxWidth: "62ch" }}>
             Per-synaptic-event energy on a log axis. GPU AI sits six orders
             of magnitude above mammalian cortex. MEMPHIS targets the
-            biological benchmark — three orders below today&rsquo;s best
+            biological benchmark, three orders below today&rsquo;s best
             neuromorphic silicon.
           </p>
         </div>
@@ -254,7 +254,7 @@ export default function MemphisPage() {
         >
           A hippocampal-inspired neuromorphic system with integrated
           learning and memory consolidation is a concrete step toward
-          post–von-Neumann computing — paradigms in which intelligence
+          post–von-Neumann computing, paradigms in which intelligence
           emerges from the interaction between computation, memory and
           physical substrate, not from their separation.
         </p>
@@ -273,7 +273,7 @@ export default function MemphisPage() {
           brain-inspired architectures in AI and robotics.
         </p>
         <ItalicCaption className="max-w-3xl">
-          The project focuses on a constrained hippocampal module — but
+          The project focuses on a constrained hippocampal module, but
           the principles developed here are directly extendable to more
           complex cognitive systems, embedded inside the dynamics of the
           physical hardware itself.

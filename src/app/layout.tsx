@@ -11,7 +11,7 @@ import { Providers } from "@/components/providers"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tarrysingh.com"),
-  title: "Tarry Singh — Entrepreneur & AI Strategist",
+  title: "Tarry Singh · Entrepreneur & AI Strategist",
   description:
     "Entrepreneur and technologist with over 30 years of experience building and scaling technology ventures across multiple industries and geographies.",
   icons: {

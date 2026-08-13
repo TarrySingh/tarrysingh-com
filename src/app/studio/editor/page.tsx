@@ -5,7 +5,7 @@ import { DEFAULT_FRONTMATTER } from "@/lib/studio/types"
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "New Dispatch — Studio",
+  title: "New Dispatch · Studio",
   robots: { index: false, follow: false },
 }
 

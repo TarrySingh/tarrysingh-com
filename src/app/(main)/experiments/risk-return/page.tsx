@@ -362,14 +362,14 @@ const RiskReturn = () => {
                 <div>
                   <h5 className="font-semibold text-gray-800 mb-2">Technology Push:</h5>
                   <p className="text-gray-600">
-                    OpenAI, Anthropic, DeepSeek, and similar generative AI companies are primarily operating from a technology-push perspective. They are building breakthrough models—like GPT, Anthropic's Claude, or DeepSeek's unique approaches—based on state-of-the-art research in deep learning and natural language processing. Their innovations are often not directly a response to a well-defined market need but are driven by the promise of a new technology paradigm. This places them toward the high-risk, high-return end of the spectrum: if their technologies achieve widespread adoption, they can create entirely new markets and set industry standards, but the inherent risk is high given the unproven nature of such transformative ideas.
+                    OpenAI, Anthropic, DeepSeek, and similar generative AI companies are primarily operating from a technology-push perspective. They are building breakthrough models, like GPT, Anthropic's Claude, or DeepSeek's unique approaches, based on state-of-the-art research in deep learning and natural language processing. Their innovations are often not directly a response to a well-defined market need but are driven by the promise of a new technology paradigm. This places them toward the high-risk, high-return end of the spectrum: if their technologies achieve widespread adoption, they can create entirely new markets and set industry standards, but the inherent risk is high given the unproven nature of such transformative ideas.
                   </p>
                 </div>
 
                 <div>
                   <h5 className="font-semibold text-gray-800 mb-2">Market Pull Elements:</h5>
                   <p className="text-gray-600">
-                    Even though the initial push is technological, these companies are quickly aligning with market pull signals. They work with developers, enterprise clients, and even consumer-facing applications to fine-tune their models to real-world needs—be it content generation, coding assistance, or creative applications. This hybrid approach helps mitigate some risk by ensuring there's a feedback loop with actual users, thereby steering their innovation toward market fit without losing the potential for breakthrough returns.
+                    Even though the initial push is technological, these companies are quickly aligning with market pull signals. They work with developers, enterprise clients, and even consumer-facing applications to fine-tune their models to real-world needs, be it content generation, coding assistance, or creative applications. This hybrid approach helps mitigate some risk by ensuring there's a feedback loop with actual users, thereby steering their innovation toward market fit without losing the potential for breakthrough returns.
                   </p>
                 </div>
               </div>
@@ -380,7 +380,7 @@ const RiskReturn = () => {
                 <div>
                   <h5 className="font-semibold text-gray-800 mb-2">OpenAI:</h5>
                   <p className="text-gray-600">
-                    OpenAI has embraced a strategy that is both aggressive in technological innovation and adaptive in terms of market engagement. By offering API services and licensing deals, OpenAI leverages its breakthrough technology to capture a wide range of applications—spanning from enterprise solutions to creative tools. This dual strategy—pioneering new capabilities while ensuring market pull through partnerships—places it in the high-return quadrant, albeit with significant technological and regulatory risks.
+                    OpenAI has embraced a strategy that is both aggressive in technological innovation and adaptive in terms of market engagement. By offering API services and licensing deals, OpenAI leverages its breakthrough technology to capture a wide range of applications, spanning from enterprise solutions to creative tools. This dual strategy, pioneering new capabilities while ensuring market pull through partnerships, places it in the high-return quadrant, albeit with significant technological and regulatory risks.
                   </p>
                 </div>
 

@@ -7,7 +7,7 @@
 export const CONSORTIUM_DISPLAY_NAME = "Consortium Graph · Symphony"
 
 export const CONSORTIUM_ARIA_LABEL =
-  "SYMPHONY consortium across Europe — Real AI in the Netherlands (coordinator), Newcastle / Ramaswamy in the UK, CREATE / PRISMA in Naples Italy, UP Robotics in Croatia. Six edges between every pair of partners showing the work-package couplings."
+  "SYMPHONY consortium across Europe, Real AI in the Netherlands (coordinator), Newcastle / Ramaswamy in the UK, CREATE / PRISMA in Naples Italy, UP Robotics in Croatia. Six edges between every pair of partners showing the work-package couplings."
 
 export const CONSORTIUM_KICKER = "PLATE III · MMXXVI · CONSORTIUM"
 export const CONSORTIUM_TITLE = "Four partners, three EU member states"
@@ -58,7 +58,7 @@ export const CONSORTIUM_PARTNERS: ReadonlyArray<Partner> = [
     city: "Newcastle upon Tyne",
     role: "O2 lead · ethics co-lead",
     objective: "O2",
-    body: "Sri Ramaswamy, chair of computational neuroscience. Third author of Mei, Muller & Ramaswamy (2022) — the mathematical primary source for SYMPHONY's mechanism. Blue Brain alumnus. Leads O2 (M18) and co-leads ethics for O5 (M33).",
+    body: "Sri Ramaswamy, chair of computational neuroscience. Third author of Mei, Muller & Ramaswamy (2022), the mathematical primary source for SYMPHONY's mechanism. Blue Brain alumnus. Leads O2 (M18) and co-leads ethics for O5 (M33).",
     pos: { x: 620, y: 180 },
     color: "#e5a896",
   },
@@ -71,7 +71,7 @@ export const CONSORTIUM_PARTNERS: ReadonlyArray<Partner> = [
     city: "Naples",
     role: "O3 lead",
     objective: "O3",
-    body: "Bruno Siciliano directs PRISMA Lab. ERC Advanced Grant holder, Engelberger laureate. The architectural primary source for SYMPHONY's task-baton — haptic shared control transposed to software. Leads O3 (M24).",
+    body: "Bruno Siciliano directs PRISMA Lab. ERC Advanced Grant holder, Engelberger laureate. The architectural primary source for SYMPHONY's task-baton, haptic shared control transposed to software. Leads O3 (M24).",
     pos: { x: 800, y: 540 },
     color: "#6cb4c2",
   },

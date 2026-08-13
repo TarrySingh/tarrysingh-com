@@ -7,7 +7,7 @@
 export const CA3CA1_DISPLAY_NAME = "CA3–CA1 Circuit · Memphis"
 
 export const CA3CA1_ARIA_LABEL =
-  "CA3 ↔ CA1 hippocampal circuit — entorhinal cortex input, dentate gyrus pattern separation, CA3 recurrent collaterals, Schaffer collaterals, CA1 pyramidal layer, and neuromodulatory bus."
+  "CA3 ↔ CA1 hippocampal circuit, entorhinal cortex input, dentate gyrus pattern separation, CA3 recurrent collaterals, Schaffer collaterals, CA1 pyramidal layer, and neuromodulatory bus."
 
 export const CA3CA1_KICKER = "PLATE M-III · MMXXVI · FIG. 1.2.c"
 export const CA3CA1_CIRCUIT_LABEL = "CA3 ↔ CA1 HIPPOCAMPAL CIRCUIT"
@@ -21,7 +21,7 @@ export const CA3CA1_LEGEND_MODULATORY = "NEUROMODULATORY"
 export const CA3CA1_PANEL_LABEL = "CIRCUIT NODE"
 
 export const CA3CA1_FOOTER =
-  "Six circuit motifs — six device-co-design constraints. The substrate succeeds when it reproduces all six in silicon."
+  "Six circuit motifs, six device-co-design constraints. The substrate succeeds when it reproduces all six in silicon."
 
 export type Spot = {
   /** Code-owned. */
@@ -60,7 +60,7 @@ export const CA3CA1_SPOTS: ReadonlyArray<Spot> = [
     id: "ca3",
     label: "CA3 · recurrent collaterals",
     subtitle: "associative pattern completion",
-    body: "Dense recurrent connectivity implementing an auto-associative attractor network. Partial cues retrieve full stored patterns. The 'sea horse' of the hippocampus — the place where Hebb's primitive lives in the loop.",
+    body: "Dense recurrent connectivity implementing an auto-associative attractor network. Partial cues retrieve full stored patterns. The 'sea horse' of the hippocampus, the place where Hebb's primitive lives in the loop.",
     x: 560,
     y: 360,
     color: "#e8b87a",
@@ -69,7 +69,7 @@ export const CA3CA1_SPOTS: ReadonlyArray<Spot> = [
     id: "schaffer",
     label: "Schaffer collaterals",
     subtitle: "CA3 → CA1 read-out path",
-    body: "The axon bundle that carries CA3's reconstructed pattern to CA1. STDP at these synapses is the most-studied learning rule in mammalian biology — the canonical primitive MEMPHIS demands from the memristive devices.",
+    body: "The axon bundle that carries CA3's reconstructed pattern to CA1. STDP at these synapses is the most-studied learning rule in mammalian biology, the canonical primitive MEMPHIS demands from the memristive devices.",
     x: 760,
     y: 360,
     color: "#ffd596",
@@ -78,7 +78,7 @@ export const CA3CA1_SPOTS: ReadonlyArray<Spot> = [
     id: "ca1",
     label: "CA1 · pyramidal layer",
     subtitle: "novelty detection · read-out",
-    body: "Compares CA3's reconstructed prediction against current entorhinal input. Mismatch drives novelty and replay. The system's natural error signal — without an external loss function.",
+    body: "Compares CA3's reconstructed prediction against current entorhinal input. Mismatch drives novelty and replay. The system's natural error signal, without an external loss function.",
     x: 920,
     y: 280,
     color: "#e5a896",
@@ -87,7 +87,7 @@ export const CA3CA1_SPOTS: ReadonlyArray<Spot> = [
     id: "modulator",
     label: "Neuromodulatory bus",
     subtitle: "prioritisation · gain · gating",
-    body: "Slow, broadcast signals — analogues of dopamine, acetylcholine, noradrenaline — modulate plasticity gain globally. Set what the system pays attention to and what it commits to long-term memory.",
+    body: "Slow, broadcast signals, analogues of dopamine, acetylcholine, noradrenaline, modulate plasticity gain globally. Set what the system pays attention to and what it commits to long-term memory.",
     x: 600,
     y: 540,
     color: "#a698d4",

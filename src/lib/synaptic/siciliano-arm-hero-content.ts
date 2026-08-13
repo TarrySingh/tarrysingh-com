@@ -28,7 +28,7 @@ export const SICILIANO_POSES: ReadonlyArray<SicilianoPose> = [
     id: "dual",
     label: "Dual-arm manipulation",
     task: "Industrial · coordinated grasp",
-    body: "Two high-DOF arms slaved to a single descending signal — the supervisor names the coordination frame, not the individual joint targets.",
+    body: "Two high-DOF arms slaved to a single descending signal, the supervisor names the coordination frame, not the individual joint targets.",
     angles: [10, -20, 80, 40],
     color: "#e5a896",
   },
@@ -36,7 +36,7 @@ export const SICILIANO_POSES: ReadonlyArray<SicilianoPose> = [
     id: "cut",
     label: "Teleoperated cut",
     task: "Surgical · gated motion",
-    body: "Cutting motion gated by a haptic operator — autonomous trajectory blends with a real-time corrective input, producing safe progress through tissue.",
+    body: "Cutting motion gated by a haptic operator, autonomous trajectory blends with a real-time corrective input, producing safe progress through tissue.",
     angles: [-20, 50, -30, 20],
     color: "#6cb4c2",
   },
@@ -44,14 +44,14 @@ export const SICILIANO_POSES: ReadonlyArray<SicilianoPose> = [
     id: "uav",
     label: "Aerial manipulation",
     task: "UAV · load-bearing flight",
-    body: "Tethered cooperative aerial manipulation — a flight controller adapts to a payload it cannot fully measure under a low-bandwidth admittance signal.",
+    body: "Tethered cooperative aerial manipulation, a flight controller adapts to a payload it cannot fully measure under a low-bandwidth admittance signal.",
     angles: [-30, -40, -50, -10],
     color: "#a698d4",
   },
 ]
 
 export const SICILIANO_ARM_ARIA_LABEL =
-  "Siciliano arm hero — a four-link manipulator at the centre, with a low-bandwidth supervisory signal descending from above. Four task poses (needle grasp, dual-arm, teleoperated cut, aerial) show how a single controller adopts qualitatively distinct behaviours under a narrow scalar input. The architectural primitive SYMPHONY transposes."
+  "Siciliano arm hero, a four-link manipulator at the centre, with a low-bandwidth supervisory signal descending from above. Four task poses (needle grasp, dual-arm, teleoperated cut, aerial) show how a single controller adopts qualitatively distinct behaviours under a narrow scalar input. The architectural primitive SYMPHONY transposes."
 
 export const SICILIANO_ARM_KICKER = "PLATE VIII · MMXXVI · CREATE / PRISMA · SICILIANO"
 export const SICILIANO_ARM_TITLE = "One controller, four task behaviours"

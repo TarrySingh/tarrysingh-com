@@ -24,7 +24,7 @@ export function Section62_Principles() {
   return (
     <section className="section" id="s-62">
       <Plate num="28" sup="§ 28 · Responsible Deployment" page="062" title="Five principles, <em>non-negotiable</em>" />
-      <p className="dek">The gap between 8% (high maturity) and the rest is not a tooling gap — it is a discipline gap. Every high-ROI deployment we studied hews to these five principles.</p>
+      <p className="dek">The gap between 8% (high maturity) and the rest is not a tooling gap, it is a discipline gap. Every high-ROI deployment we studied hews to these five principles.</p>
       <div className="grid g-5">
         {D2.principles.map((p, i) => (
           <div
@@ -98,7 +98,7 @@ export function Section63_CXOPlaybook() {
 export function Section64_PolicyPlaybook() {
   return (
     <section className="section" id="s-64">
-      <Plate num="30" sup="§ 30 · Policy Playbook" page="064" title="For governments — <em>ten priorities</em>" />
+      <Plate num="30" sup="§ 30 · Policy Playbook" page="064" title="For governments · <em>ten priorities</em>" />
       <div className="grid g-2">
         {D2.policyActions.map((a, i) => (
           <div key={i} className="panel" style={{ padding: "16px 20px" }}>
@@ -122,7 +122,7 @@ export function Section65_SocietalGood() {
   return (
     <section className="section" id="s-65">
       <Plate num="31" sup="§ 31 · AI for Good" page="065" title="The <em>dividend</em>" />
-      <p className="dek">For all the disruption, 2025–26 produced the largest annual leap in AI-for-good deployment ever measured. The dividend — if captured — could compound faster than the risk.</p>
+      <p className="dek">For all the disruption, 2025–26 produced the largest annual leap in AI-for-good deployment ever measured. The dividend, if captured, could compound faster than the risk.</p>
       <div className="grid g-4">
         {D2.societalGood.map((g, i) => (
           <Panel key={i} title={g.d} aux="Q1 '26">
@@ -244,7 +244,7 @@ export function Section67_Scenarios() {
   const s = scenarios[pick]
   return (
     <section className="section" id="s-67">
-      <Plate num="33" sup="§ 33 · 2028 Scenarios" page="067" title="Four futures — <em>weighted</em>" />
+      <Plate num="33" sup="§ 33 · 2028 Scenarios" page="067" title="Four futures · <em>weighted</em>" />
       <div className="spread" style={{ marginBottom: 18 }}>
         <div className="label">Select scenario</div>
         <Seg
@@ -327,7 +327,7 @@ export function Section68_Conclusion() {
           <div className="panel inset">
             <div className="label accent">FOR THE ENTERPRISE</div>
             <p className="body" style={{ marginTop: 10, fontSize: 14.5 }}>
-              The winning playbook is no longer about adopting AI — it is about <b style={{ color: "var(--fg)" }}>rebuilding the business around it</b>. Small data, proprietary workflows, compounding feedback loops.
+              The winning playbook is no longer about adopting AI, it is about <b style={{ color: "var(--fg)" }}>rebuilding the business around it</b>. Small data, proprietary workflows, compounding feedback loops.
             </p>
           </div>
           <div className="panel inset">
@@ -505,17 +505,17 @@ export function Section73_Glossary() {
     { t: "Agentic AI", d: "AI systems that perceive, plan, and execute multi-step workflows with limited human oversight." },
     { t: "Compute", d: "Training + inference hardware capacity, measured in GPU-years or FLOPs." },
     { t: "Constitutional AI", d: "Alignment technique using a written set of principles to train model behavior." },
-    { t: "DPO", d: "Direct Preference Optimization — efficient alternative to PPO-based RLHF." },
-    { t: "GPAI", d: "General-Purpose AI — EU AI Act designation for models above a FLOP threshold." },
-    { t: "HBM", d: "High-Bandwidth Memory — critical bottleneck for frontier training." },
-    { t: "MoE", d: "Mixture-of-Experts — sparse activation yielding large parameter / small compute ratios." },
-    { t: "MCP", d: "Model Context Protocol — open standard for LLM ↔ tool/data connections (Anthropic, 2024)." },
-    { t: "RAG", d: "Retrieval-Augmented Generation — grounding outputs in external knowledge." },
-    { t: "RE-Bench", d: "Autonomous research evaluation — 7-day expert-bench for agents." },
-    { t: "RLHF / RLAIF", d: "Reinforcement Learning from Human / AI Feedback — alignment stage." },
+    { t: "DPO", d: "Direct Preference Optimization, efficient alternative to PPO-based RLHF." },
+    { t: "GPAI", d: "General-Purpose AI, EU AI Act designation for models above a FLOP threshold." },
+    { t: "HBM", d: "High-Bandwidth Memory, critical bottleneck for frontier training." },
+    { t: "MoE", d: "Mixture-of-Experts, sparse activation yielding large parameter / small compute ratios." },
+    { t: "MCP", d: "Model Context Protocol, open standard for LLM ↔ tool/data connections (Anthropic, 2024)." },
+    { t: "RAG", d: "Retrieval-Augmented Generation, grounding outputs in external knowledge." },
+    { t: "RE-Bench", d: "Autonomous research evaluation, 7-day expert-bench for agents." },
+    { t: "RLHF / RLAIF", d: "Reinforcement Learning from Human / AI Feedback, alignment stage." },
     { t: "Red-teaming", d: "Adversarial probing for safety / security failures, pre-deployment." },
-    { t: "SLM", d: "Small Language Model — typically <10B params, on-device capable." },
-    { t: "Sovereign AI", d: "National capability stack — compute, data, models, governance." },
+    { t: "SLM", d: "Small Language Model, typically <10B params, on-device capable." },
+    { t: "Sovereign AI", d: "National capability stack, compute, data, models, governance." },
     { t: "SWE-Bench", d: "Software engineering benchmark using real GitHub issues." },
     { t: "Watermarking", d: "Embedding statistical signatures in AI outputs (e.g. SynthID, C2PA)." },
   ]

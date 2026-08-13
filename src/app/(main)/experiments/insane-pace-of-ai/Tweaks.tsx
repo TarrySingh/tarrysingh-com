@@ -79,13 +79,13 @@ export default function Tweaks({
           <option value="" disabled>Pick a section…</option>
           {NAV.flatMap((g) => g.items as readonly { id: string; n: string; name: string; pg: string }[]).map((it) => (
             <option key={it.id} value={it.id}>
-              § {it.n} — {it.name}
+              § {it.n}, {it.name}
             </option>
           ))}
         </select>
       </div>
       <div className="footnote" style={{ marginTop: 8 }}>
-        Accent color is the single brand hue — it reflows through every chart, number, and rule.
+        Accent color is the single brand hue, it reflows through every chart, number, and rule.
       </div>
     </div>
   )

@@ -42,7 +42,7 @@ import {
 
 const PPTX_MAILTO =
   "mailto:tarry.singh@gmail.com" +
-  "?subject=" + encodeURIComponent("Insane Pace of AI — PPTX version request") +
+  "?subject=" + encodeURIComponent("Insane Pace of AI, PPTX version request") +
   "&body=" + encodeURIComponent(
     "Hi Tarry,\n\nI'd like the PPTX version of the Q1 2026 Insane Pace of AI executive dashboard. Please share the paid option / invoice details.\n\nThanks,\n"
   )
@@ -94,8 +94,8 @@ export default function Dashboard() {
     window.print()
   }
 
-  const timeStr = now ? now.toISOString().slice(11, 19) + " UTC" : "—"
-  const dateStr = now ? fmtToday(now) : "—"
+  const timeStr = now ? now.toISOString().slice(11, 19) + " UTC" : ", "
+  const dateStr = now ? fmtToday(now) : ", "
 
   return (
     <div className="ipoai-root" ref={rootRef}>
@@ -136,7 +136,7 @@ export default function Dashboard() {
               <a
                 href={PPTX_MAILTO}
                 className="ipoai-chrome-btn ipoai-chrome-btn--paid"
-                title="PPTX version available as a paid option — request by email"
+                title="PPTX version available as a paid option · request by email"
               >
                 <Download size={12} />
                 PPTX

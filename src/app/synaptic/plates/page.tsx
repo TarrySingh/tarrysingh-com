@@ -12,7 +12,7 @@ import { ExpandablePlate } from "@/components/synaptic/ExpandablePlate"
 export const metadata = {
   title: "The Plate Room · Synaptic Cartography · tarrysingh.com",
   description:
-    "Every Synaptic Cartography plate, up close — The Engine Room, The Chokepoint Paradox, Software 3.0, Symphony and Memphis. Click any plate to expand it full-screen, or enter to read.",
+    "Every Synaptic Cartography plate, up close, The Engine Room, The Chokepoint Paradox, Software 3.0, Symphony and Memphis. Click any plate to expand it full-screen, or enter to read.",
 }
 
 const svgCover = "absolute inset-0 h-full w-full"
@@ -59,7 +59,7 @@ const PLATES = [
     cover: (
       <Image
         src={coverPlanisphere}
-        alt="SYMPHONY — the cover planisphere."
+        alt="SYMPHONY, the cover planisphere."
         fill
         placeholder="blur"
         sizes="(min-width: 1024px) 560px, 100vw"
@@ -78,7 +78,7 @@ const PLATES = [
     cover: (
       <Image
         src={chipPlate}
-        alt="MEMPHIS — the hippocampal-memristive chip plate."
+        alt="MEMPHIS, the hippocampal-memristive chip plate."
         fill
         placeholder="blur"
         sizes="(min-width: 1024px) 560px, 100vw"

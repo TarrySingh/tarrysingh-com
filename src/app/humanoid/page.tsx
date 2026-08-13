@@ -28,7 +28,7 @@ export default function HumanoidPage() {
         <div className="hero-inner">
           <div className="kick"><span className="tk" />Interactive Field Guide · Embodied AI · June 2026</div>
           <h1>The Humanoid<br />Ascendancy</h1>
-          <p className="lede">The whole story — the narrative, the data, and the workshop — in one canvas. <span className="accent">Built to be explored, not just read.</span></p>
+          <p className="lede">The whole story, the narrative, the data, and the workshop, in one canvas. <span className="accent">Built to be explored, not just read.</span></p>
           <div className="scrollcue"><span className="dot" />Scroll to begin · 16 chapters · 15 interactive tools</div>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">The contents</div>
             <h2 className="sec-h">Sixteen chapters, fifteen live tools, one argument: own the muscles, own the decade.</h2>
-            <p className="sec-sub">A McKinsey-grade analysis of the humanoid robotics industry, paired with a hands-on technical workshop. Every chapter below jumps to a live, interactive section on this page — not a static slide.</p>
+            <p className="sec-sub">A McKinsey-grade analysis of the humanoid robotics industry, paired with a hands-on technical workshop. Every chapter below jumps to a live, interactive section on this page, not a static slide.</p>
           </Reveal>
           <Reveal><SectionMap /></Reveal>
         </div>
@@ -49,7 +49,7 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">02 · Market Sizing · Interactive</div>
             <h2 className="sec-h">The forecasts disagree by 6×. Model it yourself.</h2>
-            <p className="sec-sub">Drag the 2025 base and growth rate, or load an analyst scenario, and watch the 2035 projection move. The spread isn&apos;t disagreement about the destination — it&apos;s uncertainty about timing.</p>
+            <p className="sec-sub">Drag the 2025 base and growth rate, or load an analyst scenario, and watch the 2035 projection move. The spread isn&apos;t disagreement about the destination, it&apos;s uncertainty about timing.</p>
           </Reveal>
           <Reveal><MarketModel /></Reveal>
         </div>
@@ -60,7 +60,7 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">01 · Growth Drivers · Interactive</div>
             <h2 className="sec-h">Two forces pulling the market: empty jobs and falling costs.</h2>
-            <p className="sec-sub">Toggle demand-side catalysts against supply-side enablers. The demand is acute and the technology is ready — what&apos;s left is execution.</p>
+            <p className="sec-sub">Toggle demand-side catalysts against supply-side enablers. The demand is acute and the technology is ready, what&apos;s left is execution.</p>
           </Reveal>
           <Reveal><GrowthDrivers /></Reveal>
         </div>
@@ -71,13 +71,13 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">03 · Technology Value Chain</div>
             <h2 className="sec-h">A humanoid is a brain, a body, and an integrator.</h2>
-            <p className="sec-sub">Value concentrates unevenly — and half of it sits in the body. Open the full explorer to click through every subsystem&apos;s cost, suppliers, and bottleneck.</p>
+            <p className="sec-sub">Value concentrates unevenly, and half of it sits in the body. Open the full explorer to click through every subsystem&apos;s cost, suppliers, and bottleneck.</p>
           </Reveal>
           <Reveal>
             <div className="chain">
               <div className="chain-node"><span className="cshare">~20%</span><div className="cl">The Brain</div><div className="cv">Software &amp; chips</div><div className="cs">Foundation models, AI accelerators. High margin, few winners.</div></div>
-              <div className="chain-node hot"><span className="cshare">~50%</span><div className="cl">The Body — the muscles</div><div className="cv">Actuators &amp; sensors</div><div className="cs">The mechanical bottleneck. Half the cost, the contested ground.</div></div>
-              <div className="chain-node"><span className="cshare">assembly</span><div className="cl">The Integrator</div><div className="cv">The robot maker</div><div className="cs">Brand and data — but thin without the chain it depends on.</div></div>
+              <div className="chain-node hot"><span className="cshare">~50%</span><div className="cl">The Body, the muscles</div><div className="cv">Actuators &amp; sensors</div><div className="cs">The mechanical bottleneck. Half the cost, the contested ground.</div></div>
+              <div className="chain-node"><span className="cshare">assembly</span><div className="cl">The Integrator</div><div className="cv">The robot maker</div><div className="cs">Brand and data, but thin without the chain it depends on.</div></div>
             </div>
           </Reveal>
           <Reveal>
@@ -99,7 +99,7 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">Strategic Ecosystem · Interactive</div>
             <h2 className="sec-h">The whole field is one connected network.</h2>
-            <p className="sec-sub">Integrators, brains, suppliers, investors, and states — drag any node, hover to trace its partnerships. The web reveals who depends on whom.</p>
+            <p className="sec-sub">Integrators, brains, suppliers, investors, and states, drag any node, hover to trace its partnerships. The web reveals who depends on whom.</p>
           </Reveal>
           <Reveal><EcosystemGraph /></Reveal>
         </div>
@@ -132,7 +132,7 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">04 · Market Concentration · Interactive</div>
             <h2 className="sec-h">An early oligopoly: three players hold 56% of the market.</h2>
-            <p className="sec-sub">Hover the ring or the table to trace each player&apos;s revenue share and growth rate. The fastest risers are vertically integrated — and the component suppliers capture value without building a robot.</p>
+            <p className="sec-sub">Hover the ring or the table to trace each player&apos;s revenue share and growth rate. The fastest risers are vertically integrated, and the component suppliers capture value without building a robot.</p>
           </Reveal>
           <Reveal><MarketConcentration /></Reveal>
         </div>
@@ -153,7 +153,7 @@ export default function HumanoidPage() {
         <div className="wrap">
           <Reveal>
             <div className="eyebrow">08 · Strategic Recommendations · Interactive</div>
-            <h2 className="sec-h">Start small, prove ROI, then scale — so what&apos;s the payback?</h2>
+            <h2 className="sec-h">Start small, prove ROI, then scale, so what&apos;s the payback?</h2>
             <p className="sec-sub">Size a pilot fleet and watch the business case resolve. The hard part is rarely the robot; it&apos;s the numbers. Model yours.</p>
           </Reveal>
           <Reveal><ROICalculator /></Reveal>
@@ -209,21 +209,21 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">09 · The Workshop · Hands-on<span className="premium-badge">Premium</span></div>
             <h2 className="sec-h">From boardroom to shop floor: a working session for technical teams.</h2>
-            <p className="sec-sub">The workshop track turns the analysis into practice — three technical modules and live simulations. Preview the tools, or request access for your team.</p>
+            <p className="sec-sub">The workshop track turns the analysis into practice, three technical modules and live simulations. Preview the tools, or request access for your team.</p>
           </Reveal>
           <Reveal>
             <div className="mods">
-              <div className="mod"><div className="mn">Module 1</div><h4>Actuator Selection &amp; Integration</h4><p>Hands-on comparison of roller screws vs. ball screws, harmonic vs. cycloidal drives — with benchmarking.</p></div>
+              <div className="mod"><div className="mn">Module 1</div><h4>Actuator Selection &amp; Integration</h4><p>Hands-on comparison of roller screws vs. ball screws, harmonic vs. cycloidal drives, with benchmarking.</p></div>
               <div className="mod"><div className="mn">Module 2</div><h4>AI Integration Architecture</h4><p>Implementing foundation models (GR00T vs. Gemini vs. custom) with real-time control systems.</p></div>
               <div className="mod"><div className="mn">Module 3</div><h4>Deployment Workflows</h4><p>End-to-end framework from pilot design to scaled rollout, with ROI measurement tools.</p></div>
             </div>
           </Reveal>
           <Reveal>
-            <Gate sku="workshop" peekable cta="Get the workshop" title="The hands-on workshop is premium" desc="The live Actuator Selection Lab and the incident-response simulator. Take a sneak peek — three tries — then license a cohort for your team." note="Workshop + certification · licensed per cohort · tarrysingh.com">
+            <Gate sku="workshop" peekable cta="Get the workshop" title="The hands-on workshop is premium" desc="The live Actuator Selection Lab and the incident-response simulator. Take a sneak peek · three tries · then license a cohort for your team." note="Workshop + certification · licensed per cohort · tarrysingh.com">
               <div style={{ marginTop: 8 }}>
                 <div className="eyebrow" style={{ marginBottom: 20 }}>Module 1 · Live bench</div>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: 34, fontWeight: 600, letterSpacing: "-0.02em", margin: "0 0 10px" }}>Actuator Selection Lab</h3>
-                <p className="sec-sub">Set your requirement priorities — or load a joint preset — and the bench ranks every actuator type for the job. This is the actuator bottleneck made tangible.</p>
+                <p className="sec-sub">Set your requirement priorities, or load a joint preset, and the bench ranks every actuator type for the job. This is the actuator bottleneck made tangible.</p>
                 <ActuatorLab />
                 <div style={{ marginTop: 56 }}><DecisionTree /></div>
               </div>
@@ -237,10 +237,10 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">10 · Certification Path · Hands-on<span className="premium-badge">Premium</span></div>
             <h2 className="sec-h">From literacy to certified practitioner in five stages.</h2>
-            <p className="sec-sub">Step through the workshop curriculum — foundations, technical core, deployment, safety, and the capstone certification. Preview it, or license a cohort.</p>
+            <p className="sec-sub">Step through the workshop curriculum, foundations, technical core, deployment, safety, and the capstone certification. Preview it, or license a cohort.</p>
           </Reveal>
           <Reveal>
-            <Gate sku="certification" peekable cta="Get certification" kind="Premium certification" title="The certification track is premium" desc="The full five-stage curriculum, the capstone deliverables, and the dual-track credential. Take a sneak peek — three tries — then license certification for your team." note="Certification · valid 3 years · dual-track (Technical / Executive) · tarrysingh.com">
+            <Gate sku="certification" peekable cta="Get certification" kind="Premium certification" title="The certification track is premium" desc="The full five-stage curriculum, the capstone deliverables, and the dual-track credential. Take a sneak peek · three tries · then license certification for your team." note="Certification · valid 3 years · dual-track (Technical / Executive) · tarrysingh.com">
               <CertStepper />
             </Gate>
           </Reveal>
@@ -258,14 +258,14 @@ export default function HumanoidPage() {
               <div className="about-bio">
                 <div className="about-name">Tarry Singh</div>
                 <div className="about-role">AI Researcher · Advisor · Founder</div>
-                <p>I build and teach at the frontier of applied AI — translating fast-moving technology into strategy executives can act on. This Field Guide is one of a series of deep, interactive reports pairing original analysis with hands-on tooling.</p>
-                <p>My work centers on helping large enterprises — including across the Gulf and Saudi Arabia — understand where value concentrates in emerging technology, and how to deploy it without betting the company.</p>
+                <p>I build and teach at the frontier of applied AI, translating fast-moving technology into strategy executives can act on. This Field Guide is one of a series of deep, interactive reports pairing original analysis with hands-on tooling.</p>
+                <p>My work centers on helping large enterprises, including across the Gulf and Saudi Arabia, understand where value concentrates in emerging technology, and how to deploy it without betting the company.</p>
                 <p>More work and writing at <a href="https://tarrysingh.com" target="_blank" rel="noopener">tarrysingh.com</a>.</p>
               </div>
               <div className="about-offer">
                 <div className="ao-k">Premium · In-company workshop</div>
                 <h3>Bring this to your leadership team.</h3>
-                <p>A hands-on, executive-grade workshop built on this analysis — run on-site for technical and strategy teams at enterprises (1,000+ employees).</p>
+                <p>A hands-on, executive-grade workshop built on this analysis, run on-site for technical and strategy teams at enterprises (1,000+ employees).</p>
                 <ul>
                   <li>Five-stage curriculum to a dual-track certification</li>
                   <li>Live tooling: value-chain, ROI, actuator &amp; supply-chain labs</li>
@@ -286,7 +286,7 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">The package · Get it &amp; take it with you</div>
             <h2 className="sec-h">The executive deck is free. The full curriculum is the package.</h2>
-            <p className="sec-sub">Start with the 60-slide narrative at no cost — and browse the complete report as <a href="/humanoid/deck" style={{ color: "var(--c-amber)", textDecoration: "underline", textUnderlineOffset: 4 }}>native, living pages</a>. The hands-on labs, the certification track, and the 60 workshop pages unlock together with the full package.</p>
+            <p className="sec-sub">Start with the 60-slide narrative at no cost, and browse the complete report as <a href="/humanoid/deck" style={{ color: "var(--c-amber)", textDecoration: "underline", textUnderlineOffset: 4 }}>native, living pages</a>. The hands-on labs, the certification track, and the 60 workshop pages unlock together with the full package.</p>
           </Reveal>
           <Reveal>
             <div className="pkg">
@@ -315,7 +315,7 @@ export default function HumanoidPage() {
                   <li>The complete <b>375-slide</b> workshop deck</li>
                   <li>Hands-on Actuator Lab &amp; incident-response sim</li>
                   <li>Five-stage certification, dual-track credential</li>
-                  <li>Full download access — deck + workbook</li>
+                  <li>Full download access, deck + workbook</li>
                 </ul>
                 <PremiumDownloads />
               </div>
@@ -329,7 +329,7 @@ export default function HumanoidPage() {
           <Reveal>
             <div className="eyebrow">The toolkit</div>
             <h2 className="sec-h">The whole deck, in one surface.</h2>
-            <p className="sec-sub">The full 60-slide narrative is embedded below — or open any interactive tool on its own. Everything links back here.</p>
+            <p className="sec-sub">The full 60-slide narrative is embedded below, or open any interactive tool on its own. Everything links back here.</p>
           </Reveal>
           <Reveal>
             <div className="embed deck" style={chap("var(--accent)")}>
@@ -339,9 +339,9 @@ export default function HumanoidPage() {
           </Reveal>
           <Reveal>
             <div className="tools">
-              <a className="tool" href={DECK60} target="_blank" rel="noopener"><span className="tk">Presentation</span><div><h3>The 60-slide deck</h3><p>The full board-ready narrative, current to June 2026 — also exportable to PowerPoint and PDF.</p></div><span className="go">Open the deck →</span></a>
+              <a className="tool" href={DECK60} target="_blank" rel="noopener"><span className="tk">Presentation</span><div><h3>The 60-slide deck</h3><p>The full board-ready narrative, current to June 2026, also exportable to PowerPoint and PDF.</p></div><span className="go">Open the deck →</span></a>
               <a className="tool" href={EXPLORER} target="_blank" rel="noopener"><span className="tk">Interactive</span><div><h3>Value-Chain Explorer</h3><p>Click the humanoid anatomy to inspect cost, suppliers, and supply-chain risk by subsystem.</p></div><span className="go">Explore the machine →</span></a>
-              <a className="tool" href="#market"><span className="tk">Interactive</span><div><h3>Market Forecast Model</h3><p>A live scenario sandbox for the 2025–2035 market — sliders, analyst presets, instant projection.</p></div><span className="go">Model the market →</span></a>
+              <a className="tool" href="#market"><span className="tk">Interactive</span><div><h3>Market Forecast Model</h3><p>A live scenario sandbox for the 2025–2035 market, sliders, analyst presets, instant projection.</p></div><span className="go">Model the market →</span></a>
               <a className="tool" href="#compete"><span className="tk">Interactive</span><div><h3>Spec Comparator</h3><p>Toggle robots and metrics to re-rank the field on payload, runtime, and price.</p></div><span className="go">Compare the robots →</span></a>
               <a className="tool" href="#roi"><span className="tk">Interactive</span><div><h3>ROI / Payback Lab</h3><p>Size a fleet, pick RaaS or purchase, and see the payback period and 5-year net.</p></div><span className="go">Run the numbers →</span></a>
               <a className="tool" href="#geo"><span className="tk">Interactive</span><div><h3>Supply-Chain War Map</h3><p>Select a value-chain layer and watch control split across the US, China, and Korea.</p></div><span className="go">Map the battlefield →</span></a>
@@ -354,7 +354,7 @@ export default function HumanoidPage() {
         <div className="wrap foot-in">
           <h2>Own the muscles,<br />own the decade.</h2>
           <div className="meta">
-            Tarry Singh — Embodied AI<br />
+            Tarry Singh, Embodied AI<br />
             <a href="https://tarrysingh.com">tarrysingh.com</a><br />
             Sources: Morgan Stanley · Counterpoint · Goldman Sachs · company filings · June 2026
           </div>

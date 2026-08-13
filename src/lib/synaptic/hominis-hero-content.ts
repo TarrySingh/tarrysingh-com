@@ -7,7 +7,7 @@
 export const HOMINIS_HERO_DISPLAY_NAME = "Hominis Hero · Symphony"
 
 export const HOMINIS_HERO_ARIA_LABEL =
-  "Hominis cathedral — three pillars (situated · auditable · compute-aware) standing on the Leonardo / CINECA EuroHPC foundation, beneath a pediment carrying the HOMINIS wordmark."
+  "Hominis cathedral, three pillars (situated · auditable · compute-aware) standing on the Leonardo / CINECA EuroHPC foundation, beneath a pediment carrying the HOMINIS wordmark."
 
 export const HOMINIS_HERO_STUDIO_HEADER = "PLATE VI · MMXXVI · REAL AI / TARRY · COORDINATOR"
 export const HOMINIS_HERO_TITLE = "Hominis cathedral"
@@ -32,7 +32,7 @@ export const HOMINIS_HERO_PILLARS: ReadonlyArray<HominisPillar> = [
     id: "situated",
     capital: "I",
     shaft: "Situated",
-    body: "Foundation models that read the world they are deployed into — industrial-automation logs, EU regulatory text, multi-lingual scientific corpora — not just the open web. Trained on the context that matches the substrate they will be embedded in. The model knows where it is.",
+    body: "Foundation models that read the world they are deployed into, industrial-automation logs, EU regulatory text, multi-lingual scientific corpora, not just the open web. Trained on the context that matches the substrate they will be embedded in. The model knows where it is.",
     color: "#f4c482",
   },
   {
@@ -46,7 +46,7 @@ export const HOMINIS_HERO_PILLARS: ReadonlyArray<HominisPillar> = [
     id: "compute",
     capital: "III",
     shaft: "Compute-aware",
-    body: "Built on EuroHPC allocation time at Leonardo (CINECA, Bologna). Designed to run within the energy and the time budget of European public infrastructure — not against it. Per-paper tCO₂e reporting; absolute compute-budget caps declared in the DMP.",
+    body: "Built on EuroHPC allocation time at Leonardo (CINECA, Bologna). Designed to run within the energy and the time budget of European public infrastructure, not against it. Per-paper tCO₂e reporting; absolute compute-budget caps declared in the DMP.",
     color: "#6cb4c2",
   },
 ]

@@ -3,7 +3,7 @@ import type { ReactNode } from "react"
 
 export const metadata: Metadata = {
   title:
-    "SYMPHONY — A Neuromimetic Knowledge Substrate for Software Systems · Synaptic Cartography",
+    "SYMPHONY, A Neuromimetic Knowledge Substrate for Software Systems · Synaptic Cartography",
   description:
     "Multi-scale neuromodulation and low-bandwidth shared control for task-adaptive code comprehension. An EIC Pathfinder 2026 proposal.",
 }

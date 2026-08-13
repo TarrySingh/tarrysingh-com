@@ -10,9 +10,9 @@ export const DATA = {
     modelSizeReduction: { v: 412, unit: "×", label: "Model Size Reduction", sub: "540B PaLM (2022) → 1.3B Helix-nano (Apr 2026) at equivalent MMLU" },
     inferenceCost:     { v: 1800, unit: "×", label: "Inference Cost Drop", sub: "$20.00 → $0.011 per M tokens for GPT-3.5-class perf (Nov '22 → Mar '26)" },
     corpAdoption:      { v: 91, unit: "%", label: "Corporate AI Adoption", sub: "Organizations running AI in ≥1 function, up from 78% Q2 2025" },
-    globalUsers:       { v: 612, unit: "M+", label: "Global AI Users", sub: "+234M net new users during 2025 — steepest adoption curve of any tech" },
+    globalUsers:       { v: 612, unit: "M+", label: "Global AI Users", sub: "+234M net new users during 2025, steepest adoption curve of any tech" },
     agenticSpend:      { v: 47.3, unit: "B$", label: "Agentic AI Spend", sub: "Enterprise budget on autonomous agents in FY2025, 6.2× FY2024" },
-    aiElectricity:     { v: 4.1, unit: "%", label: "of Global Electricity", sub: "AI data centers — up from 1.4% in 2024" },
+    aiElectricity:     { v: 4.1, unit: "%", label: "of Global Electricity", sub: "AI data centers, up from 1.4% in 2024" },
     capexGlobal:       { v: 512, unit: "B$", label: "Hyperscaler CapEx '26", sub: "Announced AI infra capex by top 6 hyperscalers, FY2026" },
     patentShare:       { v: 36, unit: "%", label: "China AI Patent Share", sub: "Up from 32% (2024); US at 22%" },
   },
@@ -124,7 +124,7 @@ export const DATA2 = {
       pill: "11.7× China's private AI capital",
       priv: 184.7, pub: 5.2, moment: "EO 14179 + AI Bill of Rights 2.0",
       pillars: [
-        { k: "Frontier model leadership", d: "Claude 4 Opus, GPT-5.5, Gemini 3 Ultra — all US-domiciled. 82% of foundation-model training compute." },
+        { k: "Frontier model leadership", d: "Claude 4 Opus, GPT-5.5, Gemini 3 Ultra, all US-domiciled. 82% of foundation-model training compute." },
         { k: "Private capital engine", d: "$184.7B in 2025 (+42% YoY). 74% of global AI venture deal volume." },
         { k: "Pro-competition regulation", d: "Executive Order 14179 refined; sector-specific (FTC/SEC/FDA). No federal AI Act." },
         { k: "Compute & talent depth", d: "68% of frontier researchers, 71% of trained GPUs by flops-year capacity." },
@@ -145,7 +145,7 @@ export const DATA2 = {
       priv: 34.2, pub: 162, moment: "14th Five-Year AI Plan · Phase 3",
       pillars: [
         { k: "Semiconductor independence", d: "SMIC N5 volume production · Huawei Ascend 920 closes perf gap to H200 at ~74%." },
-        { k: "Open-weight dominance", d: "DeepSeek-R3, Qwen-3, Kimi-K3 — top 3 open-weight models globally by download volume." },
+        { k: "Open-weight dominance", d: "DeepSeek-R3, Qwen-3, Kimi-K3, top 3 open-weight models globally by download volume." },
         { k: "Research output", d: "43% of AI papers (2025) · 36% of patents · 104K+ patent applications since 2022." },
         { k: "Application depth", d: "AI-native surveillance, smart-manufacturing, and municipal-services deployments at national scale." },
       ],
@@ -165,7 +165,7 @@ export const DATA2 = {
       priv: 22.1, pub: 94, moment: "AI Act fully enforced (Aug 2026)",
       pillars: [
         { k: "AI Act enforcement", d: "Risk-tiered regime fully in force. €2.8B in fines Q4 2025 (GPAI disclosure failures)." },
-        { k: "Sovereign compute", d: "AI Factories 2.0 (€94B) — 17 exascale-class nodes including Leonardo-3, Jupiter, MareNostrum-5." },
+        { k: "Sovereign compute", d: "AI Factories 2.0 (€94B), 17 exascale-class nodes including Leonardo-3, Jupiter, MareNostrum-5." },
         { k: "Human-centric models", d: "HOMINIS-2 covers all 24 official languages, open-weights, 58% lower carbon than GPT-5 eq." },
         { k: "Trustworthy AI brand", d: "EU-certified AI becomes a market differentiator in healthcare, finance, public sector globally." },
       ],
@@ -224,7 +224,7 @@ export const DATA2 = {
       pill: "IndiaAI Mission 2.0 · ₹22,400 Cr · 22 langs",
       priv: 8.6, pub: 2.7, moment: "Sarvam-2 launched · UPI-AI rollout",
       pillars: [
-        { k: "Digital public infrastructure", d: "1.4B Aadhaar identities, UPI (13B monthly transactions), DigiLocker — native AI substrate." },
+        { k: "Digital public infrastructure", d: "1.4B Aadhaar identities, UPI (13B monthly transactions), DigiLocker, native AI substrate." },
         { k: "Indigenous LLMs", d: "Sarvam-2, AI4Bharat, Bhashini cover all 22 official languages + 38 dialects." },
         { k: "Talent scale", d: "6.8M tech graduates/yr · 1.24M AI-specialized workforce · partnership with 340+ universities." },
         { k: "DPI export", d: "UPI+AI stack licensed by 11 nations (Singapore, UAE, France, Brazil, Nigeria, Indonesia, etc.)." },
@@ -244,10 +244,10 @@ export const DATA2 = {
       pill: "Canada, Japan, Korea, LATAM, Africa",
       priv: 14.9, pub: 22, moment: "AU: Safe-AI Act · JP: Society 5.1 · BR: AI Strategy 2.0",
       pillars: [
-        { k: "Canada — ethical AI research", d: "CIFAR, Mila, Vector Institute. $2.4B Pan-Canadian Strategy. Bengio → leading AI Safety Institute." },
-        { k: "Japan — robotics + AI fusion", d: "Society 5.1 plan. Honda ASIMO-3, Toyota T-HR4, SoftBank Pepper-AI. 14% of global AI-robotics patents." },
-        { k: "South Korea — semiconductor AI", d: "Samsung HBM4 ramping, SK Hynix leading HBM3e. K-LLM (ExaOne-3) + AI chip R&D intensity highest in OECD." },
-        { k: "LATAM + Africa — application AI", d: "Brazil fintech AI (Nubank), Kenya agri-AI, Nigeria health-AI; focus on DPI-adjacent deployments." },
+        { k: "Canada, ethical AI research", d: "CIFAR, Mila, Vector Institute. $2.4B Pan-Canadian Strategy. Bengio → leading AI Safety Institute." },
+        { k: "Japan, robotics + AI fusion", d: "Society 5.1 plan. Honda ASIMO-3, Toyota T-HR4, SoftBank Pepper-AI. 14% of global AI-robotics patents." },
+        { k: "South Korea, semiconductor AI", d: "Samsung HBM4 ramping, SK Hynix leading HBM3e. K-LLM (ExaOne-3) + AI chip R&D intensity highest in OECD." },
+        { k: "LATAM + Africa, application AI", d: "Brazil fintech AI (Nubank), Kenya agri-AI, Nigeria health-AI; focus on DPI-adjacent deployments." },
       ],
       weaknesses: ["Fragmented", "Dependent on foreign frontier models", "Limited sovereign compute"],
       stat: [
@@ -322,7 +322,7 @@ export const DATA2 = {
     { n: "AWS Trainium 3", y: "Q2 '25", p: "Cloud-native training", share: 4 },
     { n: "Cerebras WSE-4", y: "Q1 '26", p: "Specialized scientific", share: 2 },
     { n: "Groq LPU", y: "ramp", p: "Low-latency inference", share: 2 },
-    { n: "Other", y: "—", p: "Long tail", share: 1 },
+    { n: "Other", y: ", ", p: "Long tail", share: 1 },
   ],
 
   datacenters: [
@@ -432,11 +432,11 @@ export const DATA2 = {
 
   cxoActions: [
     "Appoint Chief AI Officer with P&L ownership",
-    "Build proprietary data moats — small data wins",
+    "Build proprietary data moats, small data wins",
     "Redesign workflows, don't just automate existing ones",
     "Enterprise-wide AI literacy, tiered by role",
     "Risk-tiered governance framework (NIST AI RMF 2.0 aligned)",
-    "Modular AI architecture — portable across providers",
+    "Modular AI architecture, portable across providers",
     "Value metrics beyond cost savings",
     "Strategic AI partnerships (labs + startups + academia)",
     "Responsible AI KPIs reported to the board",
@@ -451,9 +451,9 @@ export const DATA2 = {
     "Algorithmic accountability: impact assessments, audits",
     "Sustainable AI: efficiency standards, green compute incentives",
     "International harmonization (OECD, G7, UN AI Advisory Body)",
-    "SME + startup support — sandboxes, procurement preferences",
+    "SME + startup support, sandboxes, procurement preferences",
     "Critical infrastructure resilience against AI-enhanced attacks",
-    "AI for public good — health, climate, education, equity",
+    "AI for public good, health, climate, education, equity",
   ],
 
   societalGood: [

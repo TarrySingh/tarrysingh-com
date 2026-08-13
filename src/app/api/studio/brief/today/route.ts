@@ -60,7 +60,7 @@ export async function GET(req: NextRequest) {
       forDate,
       decision: "no",
       brief: "",
-      note: "no_row_for_date — treat as no brief",
+      note: "no_row_for_date, treat as no brief",
     })
   }
   return NextResponse.json({

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
 export const alt =
-  "The Chokepoint Paradox — Europe Holds the Key, Washington Owns the Lock"
+  "The Chokepoint Paradox, Europe Holds the Key, Washington Owns the Lock"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 

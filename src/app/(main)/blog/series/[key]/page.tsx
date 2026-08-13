@@ -42,7 +42,7 @@ export async function generateMetadata({
     ? lead.cover || `/blog/covers/${lead.slug}.png`
     : undefined
   return {
-    title: `${meta.name} — Dispatches — Tarry Singh`,
+    title: `${meta.name} · Dispatches · Tarry Singh`,
     description: meta.tagline,
     alternates: { canonical: `/blog/series/${key}` },
     openGraph: {

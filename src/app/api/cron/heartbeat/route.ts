@@ -197,10 +197,10 @@ async function sendHeartbeatAlert(args: {
 <p>Neither a fresh draft nor a publish commit was detected since UTC midnight. The watcher may have died, Cowork may not have written today, or something deeper is broken.</p>
 <p><strong>What to check, in order:</strong></p>
 <ul>
-  <li>Drive folder <code>tarry-daily-blogs</code> — did Cowork write a file today?</li>
-  <li><code>tail ~/Library/Logs/studio-blog-watch.log</code> on the Mac — is the LaunchAgent ticking?</li>
-  <li><code>launchctl list | grep blog-watch</code> — is the agent loaded at all?</li>
-  <li>Vercel function logs for <code>/api/studio/ingest</code> — any 5xx from the cloud side?</li>
+  <li>Drive folder <code>tarry-daily-blogs</code>, did Cowork write a file today?</li>
+  <li><code>tail ~/Library/Logs/studio-blog-watch.log</code> on the Mac, is the LaunchAgent ticking?</li>
+  <li><code>launchctl list | grep blog-watch</code>, is the agent loaded at all?</li>
+  <li>Vercel function logs for <code>/api/studio/ingest</code>, any 5xx from the cloud side?</li>
 </ul>
 ${args.draftError ? `<p><strong>Supabase note:</strong> <code>${esc(args.draftError)}</code></p>` : ""}
 ${args.commitError ? `<p><strong>GitHub note:</strong> <code>${esc(args.commitError)}</code></p>` : ""}
@@ -209,7 +209,7 @@ ${args.commitError ? `<p><strong>GitHub note:</strong> <code>${esc(args.commitEr
 
   const text = [
     "Studio · daily heartbeat",
-    "—",
+    ", ",
     "",
     "No Dispatch landed today.",
     "Neither a fresh draft nor a publish commit was detected since UTC",
@@ -277,7 +277,7 @@ function deterministicFallbackFrontmatter(
       continue
     }
     if (line.startsWith("#")) continue
-    if (/^(by |—|\*|>|!\[|\[)/i.test(line)) continue
+    if (/^(by |, |\*|>|!\[|\[)/i.test(line)) continue
     buf.push(line)
     if (buf.join(" ").length > 400) break
   }
@@ -291,7 +291,7 @@ function deterministicFallbackFrontmatter(
   const words = text.split(" ")
   let excerpt = words.slice(0, 55).join(" ")
   if (words.length > 55) excerpt = excerpt.replace(/[,;:]?\s*\S*$/, "") + " …"
-  if (excerpt.length < 20) excerpt = `A new Dispatch — ${title || slug}.`
+  if (excerpt.length < 20) excerpt = `A new Dispatch, ${title || slug}.`
   const stop = new Set([
     "the", "a", "an", "and", "or", "of", "to", "in", "on", "for", "with",
     "is", "are", "be", "by", "at", "from", "as", "that", "this", "it", "its",

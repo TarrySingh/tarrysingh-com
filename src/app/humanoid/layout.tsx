@@ -15,13 +15,13 @@ const haMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "The Humanoid Ascendancy — Interactive Field Guide",
+  title: "The Humanoid Ascendancy · Interactive Field Guide",
   description:
-    "An interactive field guide to the humanoid robotics industry — market models, a clickable value chain, a supply-chain war map, ROI labs, and a hands-on workshop. By Tarry Singh.",
+    "An interactive field guide to the humanoid robotics industry, market models, a clickable value chain, a supply-chain war map, ROI labs, and a hands-on workshop. By Tarry Singh.",
   openGraph: {
-    title: "The Humanoid Ascendancy — Interactive Field Guide",
+    title: "The Humanoid Ascendancy · Interactive Field Guide",
     description:
-      "The whole story of embodied AI — narrative, live data tools, and a workshop — in one explorable canvas. By Tarry Singh.",
+      "The whole story of embodied AI, narrative, live data tools, and a workshop, in one explorable canvas. By Tarry Singh.",
     type: "website",
   },
 }

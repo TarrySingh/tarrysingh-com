@@ -20,7 +20,7 @@ export const HOMINIS_PILLARS: ReadonlyArray<HominisPillar> = [
     id: "situated",
     capital: "I",
     shaft: "Situated",
-    body: "Foundation models that read the world they are deployed into — industrial-automation logs, EU regulatory text, multi-lingual scientific corpora — not just the open web. Trained on context that matches the substrate they will be embedded in.",
+    body: "Foundation models that read the world they are deployed into, industrial-automation logs, EU regulatory text, multi-lingual scientific corpora, not just the open web. Trained on context that matches the substrate they will be embedded in.",
     color: "#f4c482",
   },
   {
@@ -34,13 +34,13 @@ export const HOMINIS_PILLARS: ReadonlyArray<HominisPillar> = [
     id: "compute",
     capital: "III",
     shaft: "Compute-aware",
-    body: "Built on EuroHPC allocation time at Leonardo (CINECA, Bologna). Designed to run within the energy and the time budget of European public infrastructure — not against it.",
+    body: "Built on EuroHPC allocation time at Leonardo (CINECA, Bologna). Designed to run within the energy and the time budget of European public infrastructure, not against it.",
     color: "#6cb4c2",
   },
 ]
 
 export const HOMINIS_CATHEDRAL_ARIA_LABEL =
-  "Hominis cathedral — three pillars (situated · auditable · compute-aware) standing on the Leonardo / CINECA EuroHPC foundation, with a Hominis pediment above."
+  "Hominis cathedral, three pillars (situated · auditable · compute-aware) standing on the Leonardo / CINECA EuroHPC foundation, with a Hominis pediment above."
 
 export const HOMINIS_PEDIMENT_TITLE = "HOMINIS"
 export const HOMINIS_PEDIMENT_TAGLINE = "FOUNDATION MODELS FOR THE REAL WORLD"

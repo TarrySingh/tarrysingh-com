@@ -27,11 +27,11 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "The Insane Pace of AI — Q1 2026 Executive Dashboard",
+  title: "The Insane Pace of AI · Q1 2026 Executive Dashboard",
   description:
-    "A 75-section executive research dashboard on the state of AI in April 2026. Capability, cost, capital, geopolitics, compute, energy, IP, safety, regulation, strategy — across twenty dimensions of acceleration.",
+    "A 75-section executive research dashboard on the state of AI in April 2026. Capability, cost, capital, geopolitics, compute, energy, IP, safety, regulation, strategy, across twenty dimensions of acceleration.",
   openGraph: {
-    title: "The Insane Pace of AI — Q1 2026",
+    title: "The Insane Pace of AI · Q1 2026",
     description: "Executive research dashboard · 75 sections · Real AI Inc.",
     type: "article",
   },

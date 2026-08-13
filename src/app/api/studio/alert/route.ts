@@ -139,7 +139,7 @@ export async function POST(req: NextRequest) {
 <div class="kicker">Studio · ingest alert</div>
 <hr class="rule"/>
 <h1>The watcher has stopped ingesting <code>${esc(filename)}</code>.</h1>
-<p><strong>${attempts}</strong> consecutive failures. Last response: <code>${status || "—"}</code> · <code>${esc(errorCode)}</code>.</p>
+<p><strong>${attempts}</strong> consecutive failures. Last response: <code>${status || ", "}</code> · <code>${esc(errorCode)}</code>.</p>
 ${lastBody ? `<p><strong>Body snippet:</strong></p><pre>${esc(lastBody)}</pre>` : ""}
 <p>The watcher has backed off this file to 15-min retries so it won't keep hammering the endpoint. Fix the ingestion path (parser, env var, Resend, etc.) and the next tick will pick it up.</p>
 <p class="footer">Automated. From the LaunchAgent on Tarry's Mac. One alert per file per failure-streak.</p>
@@ -147,11 +147,11 @@ ${lastBody ? `<p><strong>Body snippet:</strong></p><pre>${esc(lastBody)}</pre>` 
 
   const text = [
     "Studio · ingest alert",
-    "—",
+    ", ",
     "",
     `Filename:        ${filename}`,
     `Consecutive #:   ${attempts}`,
-    `Last status:     ${status || "—"}`,
+    `Last status:     ${status || ", "}`,
     `Error code:      ${errorCode}`,
     "",
     lastBody ? `Body snippet:\n${lastBody}\n` : "",

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
-export const alt = "Software 3.0 — Age of Hyper-Automation · an instrument gallery"
+export const alt = "Software 3.0, Age of Hyper-Automation · an instrument gallery"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -55,7 +55,7 @@ export default async function Image() {
               lineHeight: 1.3,
             }}
           >
-            The age of hyper-automation — a map to 2040, in fifteen interactive
+            The age of hyper-automation, a map to 2040, in fifteen interactive
             instruments.
           </div>
         </div>

@@ -36,7 +36,7 @@ export async function GET(req: NextRequest) {
     <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#C0492B;font-weight:700;font-family:ui-monospace,monospace">PANORAIMA · WP4 weekly</p>
     <h2 style="margin:4px 0 8px;font-weight:700">Time for the weekly wiki pull</h2>
     <p style="color:#4F535B;line-height:1.6">
-      The Learning Event Master List on <strong>hcaim.bme.hu</strong> may have changed —
+      The Learning Event Master List on <strong>hcaim.bme.hu</strong> may have changed,
       new LEs assigned to RealAI, or role changes (author ↔ reviewer). Because the wiki
       is BME-network-gated, this is a quick assisted pull:
     </p>
@@ -46,12 +46,12 @@ export async function GET(req: NextRequest) {
       <li>Takes ~2 minutes; the WP4 tool then reflects any new RealAI commitments.</li>
     </ol>
     <p><a href="${DASHBOARD}" style="display:inline-block;background:#16181D;color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600">Open the WP4 tool →</a></p>
-    <p style="color:#9CA3AF;font-size:12px;margin-top:16px">If nothing has changed on the wiki, the pull is a no-op — safe to run anytime.</p>
+    <p style="color:#9CA3AF;font-size:12px;margin-top:16px">If nothing has changed on the wiki, the pull is a no-op, safe to run anytime.</p>
   </div>`
 
   const r = await resend.emails.send({
     from: FROM, to: [TO],
-    subject: "PANORAIMA WP4 — weekly wiki pull reminder",
+    subject: "PANORAIMA WP4, weekly wiki pull reminder",
     html,
   })
   return NextResponse.json({ sent: r.error ? `error:${r.error.message}` : "sent", to: TO })

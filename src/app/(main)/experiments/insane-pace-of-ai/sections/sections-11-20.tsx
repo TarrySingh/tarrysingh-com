@@ -9,7 +9,7 @@ export function Section11_Loops() {
   return (
     <section className="section" id="s-11">
       <Plate num="06" sup="§ 06 · Self-Reinforcing Loops" page="011" title="The flywheel has <em>teeth</em>" />
-      <p className="dek">Four compounding forces drive the pace. Each one feeds the next. Together they produce an annual capability multiplier of <em>~4.3×</em> — and rising.</p>
+      <p className="dek">Four compounding forces drive the pace. Each one feeds the next. Together they produce an annual capability multiplier of <em>~4.3×</em>, and rising.</p>
       <div className="grid g-12">
         <div className="col-5">
           <Panel title="Contribution to annual capability gain" aux="APR 2026">
@@ -194,7 +194,7 @@ export function Section13_Multimodal() {
           <Metric label="CTX WINDOW" value="8" unit="hr" sub="Gemini 3 Ultra long-video, equivalent ≈10M tokens" />
           <Panel title="Cross-modal killer app">
             <div style={{ fontFamily: "var(--serif)", fontSize: 18, color: "var(--fg)", lineHeight: 1.3 }}>
-              &ldquo;Watch this 6-hour legal deposition. <em style={{ color: "var(--signal)" }}>Show me every contradiction, tagged by timestamp, with a confidence score.</em>&rdquo; — now an API call.
+              &ldquo;Watch this 6-hour legal deposition. <em style={{ color: "var(--signal)" }}>Show me every contradiction, tagged by timestamp, with a confidence score.</em>&rdquo;, now an API call.
             </div>
           </Panel>
         </div>
@@ -240,7 +240,7 @@ export function Section15_Convergence() {
   return (
     <section className="section" id="s-15">
       <Plate num="10" sup="§ 10 · Convergence" page="015" title="Generative <em>×</em> Agentic" />
-      <p className="dek">The fusion of generative creation with agentic execution is the engine of 2026 enterprise value. Systems no longer just draft — they plan, act, monitor, and correct.</p>
+      <p className="dek">The fusion of generative creation with agentic execution is the engine of 2026 enterprise value. Systems no longer just draft, they plan, act, monitor, and correct.</p>
       <div className="grid g-12">
         <div className="col-7">
           <Panel title="RealAI.EU · flagship case" aux="N=10+ enterprises">
@@ -253,7 +253,7 @@ export function Section15_Convergence() {
             <div className="h4" style={{ marginBottom: 8 }}>Capability stack</div>
             <ul style={{ margin: 0, paddingLeft: 18, color: "var(--fg-2)", fontSize: 13, lineHeight: 1.7 }}>
               <li>Autonomous execution of 72-hour workflows without human checkpoint</li>
-              <li>Predictive insights driving proactive decisions — P99 latency &lt; 900ms</li>
+              <li>Predictive insights driving proactive decisions, P99 latency &lt; 900ms</li>
               <li>Continuous RLHF from enterprise feedback closes the loop weekly</li>
             </ul>
           </Panel>
@@ -282,7 +282,7 @@ export function Section16_Maturity() {
   return (
     <section className="section" id="s-16">
       <Plate num="11" sup="§ 11 · Corporate Maturity" page="016" title="From pilots to <em>embedded intelligence</em>" />
-      <p className="dek">Still only <em>8%</em> of organizations have embedded AI deeply enough to reach 4×+ ROI. The &ldquo;pilot purgatory&rdquo; cohort has shrunk — but the middle bulge, not the top, has grown most.</p>
+      <p className="dek">Still only <em>8%</em> of organizations have embedded AI deeply enough to reach 4×+ ROI. The &ldquo;pilot purgatory&rdquo; cohort has shrunk, but the middle bulge, not the top, has grown most.</p>
       <div className="grid g-12">
         <div className="col-8">
           <div className="stack-sm">
@@ -333,7 +333,7 @@ export function Section17_ChapterGeo() {
     <section className="section chapter" id="s-17">
       <div className="chapter-num">§ 12 · Chapter opens</div>
       <h1>Global <em>geopolitics</em> & sovereign AI.</h1>
-      <div className="chapter-dek">The race is no longer about who has the best model — it&apos;s about who controls the compute, the data, the supply chain, and the rules. Six national programs now exceed $50B committed each.</div>
+      <div className="chapter-dek">The race is no longer about who has the best model, it&apos;s about who controls the compute, the data, the supply chain, and the rules. Six national programs now exceed $50B committed each.</div>
       <div className="chapter-meta">
         <div><span className="label">Sovereign Programs</span><span className="v">24 nations</span></div>
         <div><span className="label">Committed Capital</span><span className="v">$800B+</span></div>
@@ -529,7 +529,7 @@ export function Section20_RestAndBridge() {
               <tr><td>Talent pipeline</td><td className="num">6.8M grads / yr</td></tr>
             </tbody>
           </table>
-          <div className="footnote">India&apos;s UPI+AI stack is now being licensed by <span style={{ color: "var(--signal)" }}>11 nations</span> — a fourth pole emerges.</div>
+          <div className="footnote">India&apos;s UPI+AI stack is now being licensed by <span style={{ color: "var(--signal)" }}>11 nations</span>, a fourth pole emerges.</div>
         </Panel>
       </div>
 

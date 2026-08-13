@@ -237,7 +237,7 @@ IMPORTANT: Return ONLY the raw JSON object. No markdown, no code blocks, no expl
     }
 
     const results = {
-      evidence: `Live analysis via Anthropic Claude with web search — ${response.usage?.input_tokens || "?"} input tokens used.`,
+      evidence: `Live analysis via Anthropic Claude with web search, ${response.usage?.input_tokens || "?"} input tokens used.`,
       scoring,
       fromCache: false,
       cachedAt: new Date().toISOString(),
@@ -265,7 +265,7 @@ IMPORTANT: Return ONLY the raw JSON object. No markdown, no code blocks, no expl
 
     const fallback = getDemoResults()
     fallback.evidence =
-      "Live API encountered an error — showing baseline assessment. " +
+      "Live API encountered an error, showing baseline assessment. " +
       fallback.evidence
 
     return NextResponse.json(fallback)

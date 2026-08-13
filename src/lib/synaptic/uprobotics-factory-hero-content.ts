@@ -7,7 +7,7 @@
 export const UPROBOTICS_DISPLAY_NAME = "UP Robotics Factory Hero · Symphony"
 
 export const UPROBOTICS_ARIA_LABEL =
-  "UP Robotics factory hero — an industrial-automation cell on the left, with four data streams (PLC code, robot programs, SCADA configs, maintenance logs) flowing into the SYMPHONY substrate on the right. The codebase that the O1 pipeline and the O4 benchmark have to survive contact with."
+  "UP Robotics factory hero, an industrial-automation cell on the left, with four data streams (PLC code, robot programs, SCADA configs, maintenance logs) flowing into the SYMPHONY substrate on the right. The codebase that the O1 pipeline and the O4 benchmark have to survive contact with."
 
 export const UPROBOTICS_KICKER = "UP ROBOTICS · ZAGREB · INDUSTRIAL DEMONSTRATOR"
 export const UPROBOTICS_TITLE = "The codebase that survives contact"
@@ -42,7 +42,7 @@ export const UPROBOTICS_STREAMS: ReadonlyArray<UpRoboticsStream> = [
     id: "robot",
     label: "Robot programs",
     detail: "manipulator · cell · gripper",
-    body: "Robot-program files for the manipulators and end-effectors — motion routines, path libraries, calibration files. Often vendor-specific dialects (KRL · KAREL · RAPID · URScript), often touched by many engineers over a system's life.",
+    body: "Robot-program files for the manipulators and end-effectors, motion routines, path libraries, calibration files. Often vendor-specific dialects (KRL · KAREL · RAPID · URScript), often touched by many engineers over a system's life.",
     color: "#e5a896",
     y: 380,
   },
@@ -50,7 +50,7 @@ export const UPROBOTICS_STREAMS: ReadonlyArray<UpRoboticsStream> = [
     id: "scada",
     label: "SCADA configs",
     detail: "supervisory · HMI · alarms",
-    body: "Supervisory-control configurations, HMI screens, alarm databases, historian tags. The layer that operators see — the one that survives engineer turnover but rarely gets documentation.",
+    body: "Supervisory-control configurations, HMI screens, alarm databases, historian tags. The layer that operators see, the one that survives engineer turnover but rarely gets documentation.",
     color: "#6cb4c2",
     y: 480,
   },
@@ -58,7 +58,7 @@ export const UPROBOTICS_STREAMS: ReadonlyArray<UpRoboticsStream> = [
     id: "logs",
     label: "Maintenance logs",
     detail: "events · faults · repairs",
-    body: "Years of maintenance-engineer log entries — fault descriptions, repair notes, replacement-part references. The closest thing the system has to its own rationale layer; supplies half of the O4 held-out task instances.",
+    body: "Years of maintenance-engineer log entries, fault descriptions, repair notes, replacement-part references. The closest thing the system has to its own rationale layer; supplies half of the O4 held-out task instances.",
     color: "#a698d4",
     y: 580,
   },

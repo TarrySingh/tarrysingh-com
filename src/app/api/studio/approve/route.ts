@@ -124,7 +124,7 @@ export async function GET(req: NextRequest) {
           : "Approval token malformed"
     const body =
       verify.error === "expired"
-        ? `<p>Approval links live for 72 hours. The draft is still in your Studio editor — visit it directly and click Publish from there:</p><p><a href="/studio">/studio</a></p>`
+        ? `<p>Approval links live for 72 hours. The draft is still in your Studio editor, visit it directly and click Publish from there:</p><p><a href="/studio">/studio</a></p>`
         : `<p>The token in the URL didn't pass verification. If you copied it manually, paste the full original link from the email.</p><p><a href="/studio">/studio</a></p>`
     const status = verify.error === "expired" ? 410 : 401
     console.warn(
@@ -171,7 +171,7 @@ export async function GET(req: NextRequest) {
       result.error === "slug_already_exists"
         ? `<p>A post already exists at <code>content/blog/${slug}.mdx</code> on <code>main</code>. The draft was likely approved earlier; you can safely delete it from <a href="/studio">/studio</a>.</p><p><a href="https://www.tarrysingh.com/blog/${slug}">View on /blog/${slug}</a></p>`
         : result.error === "invalid_mdx"
-          ? `<p>The post body did not compile as MDX, so it was <strong>not</strong> published — this gate stops a broken post from freezing the whole site's build. Open it in the editor, fix the formatting, and publish again:</p><p><a href="/studio/editor/${slug}">/studio/editor/${slug}</a></p>`
+          ? `<p>The post body did not compile as MDX, so it was <strong>not</strong> published, this gate stops a broken post from freezing the whole site's build. Open it in the editor, fix the formatting, and publish again:</p><p><a href="/studio/editor/${slug}">/studio/editor/${slug}</a></p>`
           : `<p>The publish step returned <code>${result.error}</code>. The draft is still in Supabase, so you can re-attempt manually via the editor:</p><p><a href="/studio/editor/${slug}">/studio/editor/${slug}</a></p>`
     const status = result.error === "slug_already_exists" ? 409 : 502
     return htmlResponse(renderHtmlPage({ status: "error", heading, body: bodyText }), status)

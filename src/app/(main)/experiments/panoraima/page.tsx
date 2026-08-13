@@ -7,7 +7,7 @@ import type { TimelineEvent } from "@/lib/panoraima/types"
 export const metadata: Metadata = {
   title: "PANORAIMA Consortium Dashboard",
   description:
-    "Interactive visualization of the PANORAIMA EU Horizon project — 15 consortium partners across 8 countries, tracked across monthly PMC meetings, worksprints, and local coordinator progress reports.",
+    "Interactive visualization of the PANORAIMA EU Horizon project, 15 consortium partners across 8 countries, tracked across monthly PMC meetings, worksprints, and local coordinator progress reports.",
 }
 
 function loadEvents(): TimelineEvent[] {

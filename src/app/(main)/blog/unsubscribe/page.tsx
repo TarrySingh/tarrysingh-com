@@ -3,7 +3,7 @@ import Link from "next/link"
 import { UnsubscribeForm } from "./UnsubscribeForm"
 
 export const metadata: Metadata = {
-  title: "Unsubscribe from Dispatches — Tarry Singh",
+  title: "Unsubscribe from Dispatches · Tarry Singh",
   description:
     "Step out of the Dispatches list. One click, no friction, no follow-up.",
   robots: { index: false, follow: false },
@@ -78,7 +78,7 @@ export default async function UnsubscribePage({
           >
             <p className="text-navy-700 leading-relaxed">
               This page is normally reached from the unsubscribe link at the
-              bottom of a Dispatches email — the link carries the parameters
+              bottom of a Dispatches email, the link carries the parameters
               that confirm it&apos;s your address. If you arrived here directly
               and want to unsubscribe, reply to any Dispatches email with the
               word <em>stop</em> and we&apos;ll handle it by hand.

@@ -17,7 +17,7 @@ export const TWO_PHASE_TITLE = "Two-phase dynamics"
 
 /** Lead caption beneath the title — sets up the plate's argument. */
 export const TWO_PHASE_LEAD =
-  "One physical substrate runs in two regimes. Online events drive sparse, salient computation. Offline intrinsic dynamics replay and consolidate — without external input."
+  "One physical substrate runs in two regimes. Online events drive sparse, salient computation. Offline intrinsic dynamics replay and consolidate, without external input."
 
 /** Label preceding the phase toggle. */
 export const TWO_PHASE_PHASE_LABEL = "Phase"
@@ -45,10 +45,10 @@ export const TWO_PHASE_AXIS_SLEEP_Y = "ENERGY ≈ CONSTANT · LOW"
 
 /** Accessibility captions on each waveform SVG. */
 export const TWO_PHASE_ARIA_AWAKE =
-  "Awake-phase waveform — sparse, sharp event-driven spikes."
+  "Awake-phase waveform, sparse, sharp event-driven spikes."
 export const TWO_PHASE_ARIA_SLEEP =
-  "Sleep-phase waveform — smooth slow oscillations interspersed with fast sharp-wave ripples."
+  "Sleep-phase waveform, smooth slow oscillations interspersed with fast sharp-wave ripples."
 
 /** Footer italic close. */
 export const TWO_PHASE_FOOTER =
-  "One substrate, two regimes. The chip never stops learning — but it stops paying for it during sleep."
+  "One substrate, two regimes. The chip never stops learning, but it stops paying for it during sleep."

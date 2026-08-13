@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
       {
         ok: false,
         error: "missing_context",
-        hint: "Provide a title (and optionally an excerpt and category) so Claude can synthesise a hero prompt — or pass customPrompt directly.",
+        hint: "Provide a title (and optionally an excerpt and category) so Claude can synthesise a hero prompt, or pass customPrompt directly.",
       },
       { status: 422 },
     )

@@ -10,14 +10,14 @@ export const metadata: Metadata = {
   // Shipped 2026-07-05 — the flagship is public and search-indexable.
   robots: { index: true, follow: true },
   openGraph: {
-    title: "The Engine Room — Loop & Harness Engineering",
+    title: "The Engine Room · Loop & Harness Engineering",
     description: DESCRIPTION,
     type: "article",
     url: "https://tarrysingh.com/synaptic/loop-harness",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Engine Room — Loop & Harness Engineering",
+    title: "The Engine Room · Loop & Harness Engineering",
     description: DESCRIPTION,
   },
 }

@@ -7,7 +7,7 @@
 export const COMPREHENSION_DISPLAY_NAME = "Comprehension Gap · Symphony"
 
 export const COMPREHENSION_ARIA_LABEL =
-  "The comprehension gap — software-system complexity grows roughly exponentially from 1970 to 2030 while individual human comprehension capacity stays nearly flat."
+  "The comprehension gap, software-system complexity grows roughly exponentially from 1970 to 2030 while individual human comprehension capacity stays nearly flat."
 
 export const COMPREHENSION_PLATE_MARKER = "PLATE IV · MMXXVI · FIG. 1.2.a"
 export const COMPREHENSION_HEADER_EYEBROW = "COMPLEXITY × COMPREHENSION · 1970 → 2030"
@@ -100,7 +100,7 @@ export const COMPREHENSION_ERAS: ReadonlyArray<Era> = [
     comprehension: 1.31,
     era: "SYMPHONY enters",
     detail:
-      "EIC Pathfinder 2026. Neuromimetic knowledge substrate begins — not a scaling bet but an architectural one.",
+      "EIC Pathfinder 2026. Neuromimetic knowledge substrate begins, not a scaling bet but an architectural one.",
   },
   {
     year: 2030,

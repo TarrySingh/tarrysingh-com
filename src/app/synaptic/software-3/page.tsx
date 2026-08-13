@@ -135,11 +135,11 @@ export default function Software3Page() {
               maxWidth: "30ch",
             }}
           >
-            The age of hyper-automation — a map to 2040.
+            The age of hyper-automation, a map to 2040.
           </p>
           <ItalicCaption className="mx-auto mt-6 max-w-2xl">
             Thirteen instruments from the essay, at full size and fully alive.
-            Drag the year-hand below from 2025 to 2040 — each ring is a frontier,
+            Drag the year-hand below from 2025 to 2040, each ring is a frontier,
             each node a forecast on the record, lighting as it comes due.
           </ItalicCaption>
         </div>
@@ -180,7 +180,7 @@ export default function Software3Page() {
             The whole essay in one gesture. A single stated intent at the apex,
             its signal descending and branching through six frontiers, reaching
             one shell further every year. This is the thread the rings are strung
-            on — the silver lining of the title.
+            on, the silver lining of the title.
           </p>
         </div>
         <div className="mt-10">
@@ -203,7 +203,7 @@ export default function Software3Page() {
             Andrej Karpathy&rsquo;s lineage, in one gesture. Software 1.0 is
             written by hand; 2.0 is <em>trained</em> from data; 3.0 is{" "}
             <em>instructed</em> in plain intent. Tap through the three and watch
-            the same particles re-form — code lattice, neural mesh, and a single
+            the same particles re-form, code lattice, neural mesh, and a single
             spark of intent radiating to a fleet of agents.
           </>
         }
@@ -218,7 +218,7 @@ export default function Software3Page() {
         kicker="II · The long arc"
         intro={
           <>
-            Seventy years on a logarithmic spiral — from Rosenblatt&rsquo;s
+            Seventy years on a logarithmic spiral, from Rosenblatt&rsquo;s
             perceptron in 1958, through two AI winters drawn as cold valleys, to
             the agentic turn of the present. A field declared dead twice, and
             back faster each time. Hover a milestone to read it.
@@ -238,7 +238,7 @@ export default function Software3Page() {
             The whole argument rides on two exponentials: the price of raw
             computation, falling for a century across five paradigms, and the
             cost of a unit of <em>intelligence</em>, which collapsed a
-            thousandfold in three years. Cheap, then nearly free — and then the
+            thousandfold in three years. Cheap, then nearly free, and then the
             bill the abundance runs up.
           </>
         }
@@ -279,7 +279,7 @@ export default function Software3Page() {
           <>
             The expensive part was always the mind, and the mind is now on a
             cost curve. As cheap intelligence acquires hands, the deflation that
-            was confined to bits begins, for the first time, to reach atoms —
+            was confined to bits begins, for the first time, to reach atoms,
             output per person, the humanoid&rsquo;s arrival, the price of a mile.
           </>
         }
@@ -300,7 +300,7 @@ export default function Software3Page() {
         kicker="VI · Biology becomes engineering"
         intro={
           <>
-            The cost of reading a genome fell faster than Moore&rsquo;s Law — a
+            The cost of reading a genome fell faster than Moore&rsquo;s Law, a
             ten-million-fold collapse, and still falling. When biology turns into
             a read-write medium, medicine stops reacting to symptoms and starts
             reading the substrate.
@@ -318,7 +318,7 @@ export default function Software3Page() {
         intro={
           <>
             Drag the altitude-hand upward. The realistic off-world stack of 2040
-            is three things and no more — orbital compute at pilot scale, the
+            is three things and no more, orbital compute at pilot scale, the
             first genuine lunar footholds, and Mars at the very edge of
             plausibility. The higher you climb, the fainter the marks: that
             fading is the honesty.
@@ -363,7 +363,7 @@ export default function Software3Page() {
             maxWidth: "62ch",
           }}
         >
-          Fifteen instruments, one wall. Every plate in the gallery — tap a card
+          Fifteen instruments, one wall. Every plate in the gallery, tap a card
           to jump straight to it.
         </p>
         <div className="mt-10">
@@ -385,7 +385,7 @@ export default function Software3Page() {
               Age of Hyper Automation →
             </p>
             <p className="mt-2" style={{ color: "var(--ink-cool)", fontSize: "0.95rem" }}>
-              Fifteen thousand words on the path to 2040 — every instrument here,
+              Fifteen thousand words on the path to 2040, every instrument here,
               in its argument.
             </p>
           </Link>
@@ -399,7 +399,7 @@ export default function Software3Page() {
               Back to Synaptic →
             </p>
             <p className="mt-2" style={{ color: "var(--ink-cool)", fontSize: "0.95rem" }}>
-              The other cartographies — SYMPHONY, MEMPHIS, and the substrate they
+              The other cartographies, SYMPHONY, MEMPHIS, and the substrate they
               share.
             </p>
           </Link>

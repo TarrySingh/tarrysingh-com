@@ -7,7 +7,7 @@ import { listPlateDrafts } from "@/lib/synaptic/content-store"
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Studio — Synaptic plates",
+  title: "Studio · Synaptic plates",
   description: "Edit the copy in the Synaptic plate library.",
   robots: { index: false, follow: false },
 }
@@ -104,7 +104,7 @@ export default async function SynapticStudioHome() {
             style={{ fontFamily: SERIF }}
           >
             <p className="text-sm text-amber-800">
-              Draft service unavailable — you can still open a plate, but
+              Draft service unavailable, you can still open a plate, but
               autosave won&rsquo;t persist. Set <code>SUPABASE_URL</code> +{" "}
               <code>SUPABASE_SERVICE_ROLE_KEY</code> and run the migration at{" "}
               <code>docs/migrations/2026-05-17-synaptic-plate-drafts.sql</code>.

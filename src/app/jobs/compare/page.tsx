@@ -171,7 +171,7 @@ export default function ComparePage() {
                     <ExposureHistogram
                       tiers={tiers}
                       mode="jobs"
-                      title={`${c.name} — Exposure by Employment`}
+                      title={`${c.name} · Exposure by Employment`}
                       dark={isDark}
                     />
                   </div>

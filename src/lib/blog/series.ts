@@ -47,7 +47,7 @@ export const SERIES: Record<SeriesKey, SeriesMeta> = {
     key: "enterprise",
     name: "AI in the Enterprise",
     tagline:
-      "Vertical industries putting AI into production — finance, health, energy, manufacturing, education, mobility, and the emerging frontier.",
+      "Vertical industries putting AI into production, finance, health, energy, manufacturing, education, mobility, and the emerging frontier.",
   },
   build: {
     key: "build",
@@ -77,7 +77,7 @@ export const SERIES: Record<SeriesKey, SeriesMeta> = {
     key: "real-map-europe",
     name: "The Real Map of Europe",
     tagline:
-      "Two readings of Europe's economy — the global scoreboard everyone argues about, and the divergence inside the continent that the single average hides.",
+      "Two readings of Europe's economy, the global scoreboard everyone argues about, and the divergence inside the continent that the single average hides.",
   },
   "loop-harness": {
     key: "loop-harness",

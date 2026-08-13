@@ -15,12 +15,12 @@ const doors: Array<{
   {
     href: "/synaptic",
     label: "Synaptic Cartography",
-    hint: "the plate library — MEMPHIS, SYMPHONY, and the rest of the series",
+    hint: "the plate library, MEMPHIS, SYMPHONY, and the rest of the series",
   },
   {
     href: "/experiments",
     label: "Experiments",
-    hint: "the live laboratory — interactive dashboards and analytical microsites",
+    hint: "the live laboratory, interactive dashboards and analytical microsites",
   },
   {
     href: "/blog",
@@ -30,7 +30,7 @@ const doors: Array<{
 ]
 
 export const metadata = {
-  title: "Plate not found — Tarry Singh",
+  title: "Plate not found · Tarry Singh",
   description:
     "This plate has wandered off the wall. Step back into the studio and pick another door.",
   robots: { index: false, follow: false },
@@ -129,7 +129,7 @@ export default function NotFound() {
         >
           The page you tried to reach is not on the wall. Most likely it was
           moved during a recent re-hang, or the link you followed was drawn
-          slightly off. Nothing has been lost — the studio is a small enough
+          slightly off. Nothing has been lost, the studio is a small enough
           room that you can step back in and find the right door in seconds.
         </p>
 
@@ -195,7 +195,7 @@ export default function NotFound() {
             lineHeight: "1.7",
           }}
         >
-          A misplaced plate is rarely a lost one. Try the front door —
+          A misplaced plate is rarely a lost one. Try the front door,
           everything important hangs within two clicks of the cover.
         </p>
 

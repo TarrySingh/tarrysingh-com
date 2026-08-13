@@ -1,7 +1,7 @@
 import { getAllPosts } from "@/lib/blog/posts"
 
 const SITE = "https://tarrysingh.com"
-const TITLE = "Dispatches — Tarry Singh"
+const TITLE = "Dispatches, Tarry Singh"
 const DESCRIPTION =
   "Notes and essays from Tarry Singh's studio: AI strategy, deep-tech architectures, and the craft of drawing speculative work."
 
