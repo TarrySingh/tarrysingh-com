@@ -45,7 +45,7 @@ const GAUGES: Gauge[] = [
     chapter: "Ch.1 · Productivity",
     value: "~50%",
     fill: 0.5,
-    caption: "EU GDP per capita versus the US — and the gap is widening.",
+    caption: "EU GDP per capita versus the US, and the gap is widening.",
     accent: "wonder",
   },
   {
@@ -69,7 +69,7 @@ const GAUGES: Gauge[] = [
     chapter: "Ch.6 · Dry powder",
     value: "0.009%",
     fill: 0.32,
-    caption: "Of European pension assets in venture — a third of the US share.",
+    caption: "Of European pension assets in venture, a third of the US share.",
     accent: "leverage",
   },
   {
@@ -186,7 +186,7 @@ export function OvertureDashboard({ onJump }: { onJump?: (anchor: string) => voi
       kicker="V46 · The Overture"
       caption={
         <>
-          The whole indictment at a glance — six dials, six chapters. In{" "}
+          The whole indictment at a glance: six dials, six chapters. In{" "}
           <span style={{ color: p.wonder }}>gold</span>, the capability gulf; in{" "}
           <span style={{ color: p.squeeze }}>rose</span>, the annual wealth transfer; in{" "}
           <span style={{ color: p.leverage }}>cyan</span>, the structural failures to close it. Each dial
@@ -209,7 +209,7 @@ export function OvertureDashboard({ onJump }: { onJump?: (anchor: string) => voi
                 borderColor: p.border,
                 background: rgba(p.inkRGB, mode === "dark" ? 0.04 : 0.02),
               }}
-              aria-label={`${g.value} — ${g.caption} Jump to ${g.chapter}.`}
+              aria-label={`${g.value}, ${g.caption} Jump to ${g.chapter}.`}
             >
               {/* radial gauge */}
               <svg

@@ -62,7 +62,7 @@ const STROKES: Stroke[] = [
   {
     deg: 180,
     fwd: { label: "POACH", figure: "3x–5x", note: "pay takes Europe's researchers" },
-    rev: { label: "KEEP TALENT", figure: "+30%", note: "more AI talent per capita — retained" },
+    rev: { label: "KEEP TALENT", figure: "+30%", note: "more AI talent per capita, retained" },
   },
   {
     deg: 270,
@@ -180,7 +180,7 @@ export function FourStrokeEngine() {
           The wealth-transfer loop as a working machine. Forward, the engine wires{" "}
           <span style={{ color: p.leverage }}>€300bn/yr</span> of savings out, funds the labs that
           poach Europe&apos;s researchers, then sells the cloud back at{" "}
-          <span style={{ color: p.squeeze }}>€264bn/yr</span> — and the ring widens, the transfer
+          <span style={{ color: p.squeeze }}>€264bn/yr</span>, and the ring widens, the transfer
           compounding each turn. Cancel the standing order and the engine{" "}
           <span style={{ color: p.wonder }}>reverses</span>: the savings come home, the middle gets
           funded, the founders keep the equity. Sources: ~€300bn/yr net capital export; ~€264bn/yr

@@ -145,7 +145,7 @@ export function TarryPeekABoo({
     <div
       ref={wrapperRef}
       role="region"
-      aria-label="Subscribe to Dispatches — Tarry peeks in"
+      aria-label="Subscribe to Dispatches, Tarry peeks in"
       className={`fixed top-1/2 z-50 print:hidden ${isRight ? "right-0" : "left-0"}`}
       style={{
         transform: `translateY(-50%)`,

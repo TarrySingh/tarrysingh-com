@@ -35,7 +35,7 @@ interface Props {
 export function SynapticSubscribe({
   kicker = "Dispatches · Synaptic Cartography",
   title = "More plates are coming.",
-  blurb = "Each one takes its time. Leave an address and you'll be first through the door when the next plate opens — what I'm building, what I'm reading. Quiet, infrequent, never a funnel.",
+  blurb = "Each one takes its time. Leave an address and you'll be first through the door when the next plate opens, what I'm building, what I'm reading. Quiet, infrequent, never a funnel.",
   folio = "№ ∞",
   accent = "var(--project-accent, #e8b54a)",
   accentHi = "var(--project-accent-hi, #f6d38a)",
@@ -70,7 +70,7 @@ export function SynapticSubscribe({
       setEmail("")
     } catch {
       setStatus("error")
-      setMessage("Something snagged — try again in a moment?")
+      setMessage("Something snagged, try again in a moment?")
     }
   }
 

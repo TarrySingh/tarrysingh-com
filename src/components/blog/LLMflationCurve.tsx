@@ -191,7 +191,7 @@ export function LLMflationCurve() {
 
   const verdict =
     i === 0
-      ? { word: "DEAR", color: p.wonder, line: "intelligence still costs real money — the deflation has barely begun" }
+      ? { word: "DEAR", color: p.wonder, line: "intelligence still costs real money; the deflation has barely begun" }
       : !pastCross
         ? { word: "DEFLATING", color: p.wonderHi, line: "price falls ~10× a year while demand climbs to meet it" }
         : { word: "CONCENTRATED", color: p.squeeze, line: "the cheaper it gets, the more it concentrates on whoever owns the frontier and the compute" }
@@ -212,14 +212,14 @@ export function LLMflationCurve() {
       }
       caption={
         <>
-          The price of intelligence is collapsing — and the returns flow to whoever owns the frontier and the
-          compute. Scrub the date — range, ▶ or ←/→ — and watch the{" "}
+          The price of intelligence is collapsing, and the returns flow to whoever owns the frontier and the
+          compute. Scrub the date (range, ▶ or ←/→) and watch the{" "}
           <span style={{ color: p.wonder }}>good-enough tier</span> fall ~10× a year (~{BUDGET_DROP}× over three
           years) on the log axis, while the{" "}
           <span style={{ color: p.leverage }}>frontier-equivalent</span> falls a gentler ~{FRONTIER_DROP}×. As
           price drops, a <span style={{ color: p.squeeze }}>rising red demand curve</span> (~{DEMAND_MULT}× tokens
           by 2030; budgets +{BUDGET_GROW}× even as prices fell ~{PRICE_FALL_PCT}%) crosses it. Cheaper
-          intelligence concentrates power — it does not democratise it. Europe owns neither the frontier model nor
+          intelligence concentrates power; it does not democratise it. Europe owns neither the frontier model nor
           the compute. Sources: a16z (LLMflation); Epoch AI (price trends); Goldman Sachs (token demand).
         </>
       }
@@ -229,9 +229,9 @@ export function LLMflationCurve() {
         role="img"
         aria-label={`Log-scale curve of the cost of AI capability, 2023 to 2026. At ${d.label}, the good-enough tier costs about ${fmtUSD(
           d.budget,
-        )} per million tokens — roughly ${Math.round(
+        )} per million tokens, roughly ${Math.round(
           budgetFold,
-        )} times cheaper than 2023 — while the frontier-equivalent costs about ${fmtUSD(
+        )} times cheaper than 2023, while the frontier-equivalent costs about ${fmtUSD(
           d.frontier,
         )}. As price falls, token demand rises to about ${d.demand.toFixed(
           1,

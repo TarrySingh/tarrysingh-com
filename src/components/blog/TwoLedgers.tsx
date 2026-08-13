@@ -82,8 +82,8 @@ const LEDGERS: Record<LedgerKey, Ledger> = {
       { entry: "Chemical capacity retired", amount: "−37 Mt", gloss: "~9% of EU total, 2022–25", weight: 1.0 },
       { entry: "Jobs gone or at risk", amount: "−109,000", gloss: "Cefic, across the sector", weight: 0.86 },
       { entry: "Output below pre-crisis", amount: "−11–15%", gloss: "and not recovering", weight: 0.62 },
-      { entry: "BASF Verbund — built in China", amount: "€8.7bn", gloss: "Zhanjiang, inaugurated Mar 2026", weight: 0.78 },
-      { entry: "Ludwigshafen — plants shut", amount: "−∅", gloss: "the home site wound down", weight: 0.5 },
+      { entry: "BASF Verbund, built in China", amount: "€8.7bn", gloss: "Zhanjiang, inaugurated Mar 2026", weight: 0.78 },
+      { entry: "Ludwigshafen, plants shut", amount: "−∅", gloss: "the home site wound down", weight: 0.5 },
     ],
     total: "−37 Mt / −109k",
     totalGloss: "the old economy debited at the meter",
@@ -181,7 +181,7 @@ export function TwoLedgers() {
       caption={
         <>
           One energy failure, two costumes. European industrial{" "}
-          <span style={{ color: p.wonderHi }}>power runs ~2.5× the US</span> and gas ~3–5× — and that
+          <span style={{ color: p.wonderHi }}>power runs ~2.5× the US</span> and gas ~3–5×, and that
           single bill is charged to two accounts. Toggle{" "}
           <span style={{ color: p.squeeze }}>MOLECULES OFF</span> (the old economy switched off) ⟷{" "}
           <span style={{ color: p.squeeze }}>BITS ELSEWHERE</span> (the new economy never built), or
@@ -197,8 +197,8 @@ export function TwoLedgers() {
         role="img"
         aria-label={
           isMolecules
-            ? `Ledger one, Molecules Off: the old economy switched off. EU chemical capacity down ~37 megatonnes (~9%), ~109,000 jobs gone or at risk, output ~11–15% below pre-crisis, BASF's €8.7bn Verbund built in Zhanjiang, China while Ludwigshafen plants shut — all charged to European power at ~2.5x the US price.`
-            : `Ledger two, Bits Elsewhere: the new economy never built. Data-centre power 2–3x the US, an EU–US AI-capex gap of ~55–60x, the hyperscale build-out sited elsewhere — all charged to the same European power cost.`
+            ? `Ledger one, Molecules Off: the old economy switched off. EU chemical capacity down ~37 megatonnes (~9%), ~109,000 jobs gone or at risk, output ~11–15% below pre-crisis, BASF's €8.7bn Verbund built in Zhanjiang, China while Ludwigshafen plants shut, all charged to European power at ~2.5x the US price.`
+            : `Ledger two, Bits Elsewhere: the new economy never built. Data-centre power 2–3x the US, an EU–US AI-capex gap of ~55–60x, the hyperscale build-out sited elsewhere, all charged to the same European power cost.`
         }
         style={{ width: "100%", height: "auto", display: "block", fontFamily: "var(--font-mono), monospace" }}
       >
