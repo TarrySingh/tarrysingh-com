@@ -8,11 +8,11 @@ tags: ["inference economics", "caching", "finops", "llmops", "agents"]
 series: { key: "build", part: 5 }
 ---
 
-A few weeks ago I was reviewing the production architecture for a customer-dispute agent one of our engineers had inherited from a partner team. Latency was bad. The token bill was worse. I scrolled through the routing code for forty seconds and asked the question I have asked too many times this year: where is the cache.
+A few weeks ago I was reviewing the production architecture for a customer-dispute agent one of our engineers had inherited from a partner team. Latency was bad. The token bill was worse. I scrolled through the routing code for 40 seconds and asked the question I have asked too many times this year: where is the cache.
 
 The answer was: there isn't one.
 
-Every call sent a 4,200-token system prompt to Claude Sonnet fresh, every time, several thousand times an hour. The prompt held policy text, formatting rules, the regulatory framework and three pages of example reasoning. Multiply that by the per-token input price on the premium tier and the inference bill was running roughly 55-65% larger than the same workload should cost. The team had spent a quarter tuning the prompt and zero time on the layer that decides whether the prompt gets paid for once or fifty thousand times.
+Every call sent a 4,200-token system prompt to Claude Sonnet fresh, every time, several thousand times an hour. The prompt held policy text, formatting rules, the regulatory framework and three pages of example reasoning. Multiply that by the per-token input price on the premium tier and the inference bill was running roughly 55–65% larger than the same workload should cost. The team had spent a quarter tuning the prompt and zero time on the layer that decides whether the prompt gets paid for once or 50,000 times.
 
 This is the most common production mistake I am seeing in 2026. Not architectural. Not algorithmic. The simple, repeatable, embarrassing failure to cache. It is also the most expensive single line item in the category I keep calling AI slop debt.
 
@@ -29,7 +29,7 @@ The layers are:
 3.  **The gateway layer.** Semantic caching at the application edge: GPTCache, Redis vector cache, a hand-rolled embedding lookup, or one of the AI gateways. Decides whether the request reaches the model at all.
     
 
-The pattern is that they nest. A request hits the gateway first. If the gateway finds a semantically similar prior question with a known-good answer, it returns the cached response and the request never reaches the model. If the gateway misses, the request goes to the API, which checks whether the prefix of your prompt matches a cached prefix from the last five minutes (Anthropic default) or one hour (extended cache, at higher write cost). If the API hits, you pay roughly 10% of the input rate on Anthropic, 50% on OpenAI. If the API misses and you are running your own engine, the engine's KV cache may still spare you the prefill compute. Three falls; only the last one is full-price.
+The pattern is that they nest. A request hits the gateway first. If the gateway finds a semantically similar prior question with a known-good answer, it returns the cached response and the request never reaches the model. If the gateway misses, the request goes to the API, which checks whether the prefix of your prompt matches a cached prefix from the last 5 minutes (Anthropic default) or 1 hour (extended cache, at higher write cost). If the API hits, you pay roughly 10% of the input rate on Anthropic, 50% on OpenAI. If the API misses and you are running your own engine, the engine's KV cache may still spare you the prefill compute. Three falls; only the last one is full-price.
 
 ```mermaid
 %% caption: A request descends through three caches; only on the third miss does it pay the full price.
@@ -55,7 +55,7 @@ If you serve your own models and are not running one of these two engines with p
 
 ## the API · prompt caching with deliberate breakpoints
 
-If you use a hosted model, the work is at the API layer, and Anthropic exposes the most explicit interface: up to four `cache_control` breakpoints you place at the end of segments of your prompt you expect to repeat. Cache writes cost 1.25x the input rate; cache reads cost 10%. Default lifetime is five minutes; the optional one-hour TTL costs 2x to write but pays for itself on slow-decaying workloads ([Claude prompt-caching deep dive, mager.co, Apr 2026](https://www.mager.co/blog/2026-04-29-claude-prompt-caching/)).
+If you use a hosted model, the work is at the API layer, and Anthropic exposes the most explicit interface: up to four `cache_control` breakpoints you place at the end of segments of your prompt you expect to repeat. Cache writes cost 1.25x the input rate; cache reads cost 10%. Default lifetime is 5 minutes; the optional one-hour TTL costs 2x to write but pays for itself on slow-decaying workloads ([Claude prompt-caching deep dive, mager.co, Apr 2026](https://www.mager.co/blog/2026-04-29-claude-prompt-caching/)).
 
 The two-segment trick puts one breakpoint at the end of the static system context and a second at the end of a per-tenant block that updates less often than the chat history. The Culprit team document it, and report cutting their root-cause-analysis workflow cost by roughly 90% on Haiku 4.5 using cached system context ([Culprit blog, May 2026](https://theculprit.ai/blog/anthropic-prompt-caching-90-percent)). ProjectDiscovery's writeup is the more honest version of the same arc. Their initial cache hit rate sat at 7%, and climbed to 84% only after they relocated breakpoints and pinned tool definitions inside the cached prefix. That work ultimately delivered a 59% cost reduction across their security-agent workload ([ProjectDiscovery, Apr 2026](https://projectdiscovery.io/blog/how-we-cut-llm-cost-with-prompt-caching)).
 
@@ -71,9 +71,9 @@ The mistake everyone makes here is treating semantic caching as set-and-forget. 
 
 ## the math everyone gets wrong
 
-Per-token inference cost has dropped roughly 10x per year since 2021, a curve a16z calls LLMflation ([Andreessen Horowitz, refreshed 2026](https://a16z.com/llmflation-llm-inference-cost/)). What cost $60 per million tokens in 2021 costs about $0.06 today for equivalent-class models. That curve sounds like the problem is solving itself. It isn't.
+Per-token inference cost has dropped roughly 10x per year since 2021, a curve a16z calls LLMflation ([Andreessen Horowitz, refreshed 2026](https://a16z.com/llmflation-llm-inference-cost/)). What cost $60 per 1 million tokens in 2021 costs about $0.06 today for equivalent-class models. That curve sounds like the problem is solving itself. It isn't.
 
-The FinOps Foundation's [2026 State of FinOps report](https://data.finops.org/) found that 73% of respondents said AI costs exceeded original budget projections, and AI is now the fastest-growing new spend category. Agentic workloads consume 5–30x more tokens per completed task than single-turn chat, and the average enterprise AI budget has grown from about $1.2M in 2024 to roughly $7M in 2026 ([AnalyticsWeek inference-economics breakdown](https://analyticsweek.com/inference-economics-finops-ai-roi-2026/)). The unit cost is falling. The unit count is rising faster. The bill goes up.
+The FinOps Foundation's [2026 State of FinOps report](https://data.finops.org/) found that 73% of respondents said AI costs exceeded original budget projections, and AI is now the fastest-growing new spend category. Agentic workloads consume 5–30x more tokens per completed task than single-turn chat, and the average enterprise AI budget has grown from about $1.2 million in 2024 to roughly $7 million in 2026 ([AnalyticsWeek inference-economics breakdown](https://analyticsweek.com/inference-economics-finops-ai-roi-2026/)). The unit cost is falling. The unit count is rising faster. The bill goes up.
 
 Caching is the only architecture choice that bends both curves at once. Prefix caching at the engine layer cuts the compute. Prompt caching at the API layer cuts the price. Semantic caching at the gateway layer cuts the volume. None of the three is sufficient alone. Together, in production workloads I have personally measured, they routinely deliver 50–70% cost reductions. Those are real production numbers, measured outside vendor-benchmark conditions, with hit rates you can pull from a dashboard.
 
