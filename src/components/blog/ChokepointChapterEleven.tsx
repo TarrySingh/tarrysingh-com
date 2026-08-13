@@ -145,7 +145,7 @@ export function ChokepointChapterEleven() {
 
         <P>
           Put the capital gap in named-company terms and it stops being an abstraction. In a single year{" "}
-          <Sq>Microsoft</Sq> alone is spending something like eighty to a hundred-and-twenty billion dollars
+          <Sq>Microsoft</Sq> alone is spending something like $80-120 billion
           on AI and cloud infrastructure; <Sq>Amazon</Sq> on the order of two hundred; <Sq>Google</Sq> and{" "}
           <Sq>Meta</Sq> tens of billions each; and the <Sq>Stargate</Sq> venture alone proposes to spend up
           to half a trillion dollars on data centres over a few years. Any one of those line items dwarfs
@@ -301,7 +301,7 @@ export function ChokepointChapterEleven() {
           One pair of numbers captures the whole asymmetry. In 2025 American private investment in AI reached
           some <Sq>$286 billion</Sq>; the entire European venture-capital industry (not its AI
           spending, its <em>whole</em> annual venture pool, across every sector) deploys roughly{" "}
-          <Sq>sixty to eighty billion dollars a year</Sq>. America invests more in artificial intelligence in a single
+          <Sq>$60-80 billion a year</Sq>. America invests more in artificial intelligence in a single
           year than Europe&rsquo;s venture industry deploys, across every sector, anywhere, full stop. You cannot compete for the
           defining technology of the century out of a venture industry a fraction the size of your
           rival&rsquo;s spending on that one technology alone. It is not that European investors are timid,

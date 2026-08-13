@@ -171,7 +171,7 @@ export function ChokepointChapterTwo() {
           European providers&rsquo; combined share of their own cloud market has slid from about{" "}
           <Sq>29% in 2017 to roughly 15%</Sq>, and stuck there, treading water in a market growing
           some 24% a year, which means losing ground in everything but the press release.{" "}
-          <Sq>OVHcloud</Sq>, the French flag-carrier, only crossed a billion euros of revenue in 2025; the
+          <Sq>OVHcloud</Sq>, the French flag-carrier, only crossed €1 billion of revenue in 2025; the
           three American hyperscalers spend more than that on data centres in a good fortnight.
         </P>
 
@@ -255,10 +255,9 @@ export function ChokepointChapterTwo() {
 
         <P>
           The race is now being run in concrete, and the scoreboard is instructive. On the European side,
-          beyond Deutsche Telekom&rsquo;s Munich build the retail group Schwarz is pouring some eleven billion
-          euros into <Sq>STACKIT</Sq>, complete with a planned cluster of a hundred thousand AI chips:
+          beyond Deutsche Telekom&rsquo;s Munich build the retail group Schwarz is pouring some €11 billion into <Sq>STACKIT</Sq>, complete with a planned cluster of a hundred thousand AI chips:
           serious, sovereign, German-owned bets. On the other side, Amazon
-          alone committed nearly ten billion euros to a single expanded region around Frankfurt and launched
+          alone committed nearly €10 billion to a single expanded region around Frankfurt and launched
           a separate &ldquo;<Sq>European Sovereign Cloud</Sq>&rdquo; staffed by Europeans (a clever
           move that answers the sovereignty objection in marketing while keeping the technology, and the
           ultimate legal control, American). Both sides are building furiously. Only one of them can also,
@@ -312,7 +311,7 @@ export function ChokepointChapterTwo() {
           turned away non-emergency patients, airports ground to a halt, banks and broadcasters went dark:
           not because of an attack, but because of a botched software patch pushed from abroad to
           machines the continent does not control. The episode put a number on the dependence: something on
-          the order of <Sq>ten billion dollars</Sq> in global losses from one bad file. A continent whose
+          the order of <Sq>$10 billion</Sq> in global losses from one bad file. A continent whose
           hospitals, airports and banks can be felled by an American vendor&rsquo;s routine Tuesday update
           has outsourced not just its convenience but its resilience. And resilience, unlike
           convenience, is the thing you only discover you have surrendered on the morning it fails.

@@ -128,7 +128,7 @@ export function ChokepointChapterFive() {
           Run the roll-call and the pattern is total. <Sq>Spotify</Sq>, Sweden&rsquo;s streaming champion,
           is incorporated in Luxembourg, listed in New York, and counts China&rsquo;s Tencent among its
           shareholders. <Sq>Supercell</Sq>, the Finnish studio behind Clash of Clans, was bought by Tencent
-          for some ten billion dollars. <Sq>Mojang</Sq>, the Swedish maker of Minecraft, went to Microsoft
+          for some $10 billion. <Sq>Mojang</Sq>, the Swedish maker of Minecraft, went to Microsoft
           for $2.5 billion; <Sq>Skype</Sq>, the Estonian miracle that taught the world to make free calls,
           was bought by Microsoft for $8.5 billion and then, in December 2025, simply switched off and
           folded into Teams (a European household name discontinued by an American product manager,
@@ -223,7 +223,7 @@ export function ChokepointChapterFive() {
           rewriting its products with AI; by early 2026 more than 90% of its code was
           machine-authored. For years it stayed defiantly private, its founder arguing that European firms
           could not command American valuations on public markets. Then, in June 2026, it filed to go public
-          anyway: on <Sq>Nasdaq</Sq>, at some nineteen billion dollars, not in Milan or on any
+          anyway: on <Sq>Nasdaq</Sq>, at some $19 billion, not in Milan or on any
           European exchange. Even the rare Italian champion that built something genuinely large concluded,
           when the moment came to cash the achievement in, that the only serious place to do it was New
           York. The gravity is not subtle, and it does not spare even the ones who tried hardest to resist
@@ -274,7 +274,7 @@ export function ChokepointChapterFive() {
 
         <P>
           Even the consolidation plays tell the story. <Sq>Zalando</Sq>, Europe&rsquo;s biggest
-          fashion-e-commerce company, spent over a billion euros buying its rival About You in 2025 to build
+          fashion-e-commerce company, spent over €1 billion buying its rival About You in 2025 to build
           the scale to resist Amazon, and still leads only the narrow niche of cross-border fashion
           while Amazon leads the broad market in all five of Europe&rsquo;s largest economies.{" "}
           <Sq>Prosus</Sq>, the Dutch giant that owns much of the European delivery and classifieds landscape,

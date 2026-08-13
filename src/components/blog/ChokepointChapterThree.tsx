@@ -163,7 +163,7 @@ export function ChokepointChapterThree() {
         <P>
           Follow the cheques and the pattern is unmistakable. <Sq>Klarna</Sq> raised round after round from
           Sequoia and other American funds before listing in New York in 2025; <Sq>Revolut</Sq>, valued
-          around thirty-three billion dollars, leaned on SoftBank&rsquo;s Vision Fund and General Catalyst
+          around $33 billion, leaned on SoftBank&rsquo;s Vision Fund and General Catalyst
           and stayed private into 2026 on American late-stage money; <Sq>Graphcore</Sq>, once Britain&rsquo;s
           great hope to build an alternative to Nvidia&rsquo;s AI chips, ran short of European growth
           capital and was sold to Japan&rsquo;s SoftBank in 2024. The shortfall is structural, not
@@ -179,8 +179,7 @@ export function ChokepointChapterThree() {
           venture capital, a fraction of even the modest American rate, leaving a quarter-trillion euros a
           year of European retirement savings <em>not</em> backing European companies. Where does it go?
           Norway&rsquo;s sovereign wealth fund, the largest single pool of European capital on Earth, holds
-          its biggest single positions in <Sq>Apple and Microsoft</Sq> (on the order of forty to
-          fifty billion dollars each) and ranks among the larger holders of Nvidia besides. Which
+          its biggest single positions in <Sq>Apple and Microsoft</Sq> (on the order of $40-50 billion each) and ranks among the larger holders of Nvidia besides. Which
           means a Dutch machine&rsquo;s biggest customers are funded, in part, by the pensions of Norwegian
           oil workers, whose returns then ride on American technology giants that depend on a Dutch
           monopoly the fund holds no special stake in. The savings are European. The equity is American.
@@ -225,7 +224,7 @@ export function ChokepointChapterThree() {
           The failure has a precise location on the funding ladder, and European founders have a name for
           it: the <Sq>Series B cliff</Sq>. A European startup can raise a seed round and an A round at home
           well enough; the angels and early funds exist. It is the next cheque (the{" "}
-          <Sq>twenty-five to a hundred million euros</Sq> that turns a promising company into a category
+          <Sq>€25-100 million</Sq> that turns a promising company into a category
           leader) that goes missing, because Europe has too few funds large enough to write it. So at
           exactly the moment a company is proving it can scale, the only investors in the room with the
           chequebook to fund that scaling are American. They invest, and reasonably ask for what capital
@@ -250,10 +249,9 @@ export function ChokepointChapterThree() {
         <P>
           The aggregate scale of the shortfall is its own kind of indictment. Atomico&rsquo;s annual survey
           of European technology reckons the continent <Sq>underfunded its tech sector by some
-          $375 billion</Sq> over the past decade relative to the United States, and would need a trillion
-          dollars more in the next one merely to stop the gap widening. And the exits keep voting with their
+          $375 billion</Sq> over the past decade relative to the United States, and would need $1 trillion more in the next one merely to stop the gap widening. And the exits keep voting with their
           feet: <Sq>Klarna</Sq> finally went public on the New York Stock Exchange in September 2025 at about
-          fifteen billion dollars (<em>down two-thirds</em> from its 2021 private peak, yet still
+          $15 billion (<em>down two-thirds</em> from its 2021 private peak, yet still
           chosen over any European venue) while <Sq>Wise</Sq> moved its primary listing to Nasdaq in
           2026, keeping London only as a secondary afterthought. Each is a small, rational decision by a
           single company; together they are a continent quietly conceding that the place where ambition gets
@@ -263,7 +261,7 @@ export function ChokepointChapterThree() {
         <P>
           The single starkest number in the whole capital story is the pension allocation, and it deserves
           to be stated baldly. European pension funds put on the order of <Sq>0.018% of their assets</Sq>
-          into venture capital; American ones put closer to <Sq>1.9%</Sq> (a hundredfold difference, rooted in a 1979 American rule change that freed pensions to take the risk, which Europe never matched). The Netherlands&rsquo; ABP and APG between them steward over a trillion euros, much of it
+          into venture capital; American ones put closer to <Sq>1.9%</Sq> (a hundredfold difference, rooted in a 1979 American rule change that freed pensions to take the risk, which Europe never matched). The Netherlands&rsquo; ABP and APG between them steward over €1 trillion, much of it
           working in American markets. The good news is that the diagnosis has finally started producing
           instruments: France&rsquo;s <Sq>Tibi</Sq> programme has corralled tens of billions toward deep
           tech, and a European <Sq>Tech Champions Initiative</Sq> is assembling a fund-of-funds to write the

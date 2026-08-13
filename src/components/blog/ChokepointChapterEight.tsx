@@ -125,7 +125,7 @@ export function ChokepointChapterEight() {
           2025, carries a rule with real teeth: at least <Sq>65% of a funded weapon&rsquo;s
           value</Sq> must come from European or allied suppliers, an explicit attempt to keep the
           re-armament money on the continent. <Sq>Rheinmetall</Sq>, the German munitions maker, expects to
-          roughly quintuple sales toward fifty billion euros by 2030; <Sq>Helsing</Sq>, a Munich
+          roughly quintuple sales toward €50 billion by 2030; <Sq>Helsing</Sq>, a Munich
           defence-AI company backed by Spotify&rsquo;s Daniel Ek, is raising at around eighteen billion.
           These are real green shoots in the one field where fear has concentrated minds. But the
           counter-example is just as instructive: the Franco-German <Sq>FCAS</Sq> next-generation fighter,
@@ -147,7 +147,7 @@ export function ChokepointChapterEight() {
 
         <P>
           And the spending is real and historic: NATO&rsquo;s European members pushed collective defence
-          investment past <Sq>a hundred and thirty billion euros</Sq> in 2025, a record, with the pledge to
+          investment past <Sq>€130 billion</Sq> in 2025, a record, with the pledge to
           reach 5% of GDP by 2035 still ahead of them. The question the chapter keeps pressing is simply
           <em>where it lands</em>. Some, encouragingly, lands at home: Rheinmetall&rsquo;s order
           book, Helsing&rsquo;s valuation, the SAFE content rules. But the marquee capabilities (the
@@ -193,7 +193,7 @@ export function ChokepointChapterEight() {
         <P>
           And here, more than anywhere in the essay, a genuine European industry is being born in real time.
           A wave of defence-technology start-ups has erupted out of Germany in particular: <Sq>Helsing</Sq>
-          raising at around eighteen billion dollars, <Sq>Quantum Systems</Sq> and the drone-maker{" "}
+          raising at around $18 billion, <Sq>Quantum Systems</Sq> and the drone-maker{" "}
           <Sq>Stark</Sq> and the autonomous-vehicle firm <Sq>ARX</Sq> all scaling fast, many of them
           explicitly engineering their supply chains to be free of American components so they qualify under
           the &ldquo;buy European&rdquo; rules. The procurement decisions are starting to follow: Denmark
@@ -208,7 +208,7 @@ export function ChokepointChapterEight() {
         <P>
           The procurement map is starting, in places, to redraw itself. The Franco-German land-systems
           champion <Sq>KNDS</Sq>, maker of the Leopard tank and the Caesar howitzer, lined up a
-          listing reportedly valuing it around twenty billion euros, and Germany ordered its first
+          listing reportedly valuing it around €20 billion, and Germany ordered its first
           domestically-built tanks and artillery in a generation. France&rsquo;s <Sq>Rafale</Sq> fighter
           carries an order backlog of more than two hundred aircraft, much of it export, as buyers seek an
           alternative to the American jet and its strings; and even American primes are adapting, building{" "}

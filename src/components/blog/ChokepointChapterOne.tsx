@@ -304,7 +304,7 @@ export function ChokepointChapterOne() {
         <P>
           When a Dutch champion does try to conquer America head-on, the result is often a cautionary tale.{" "}
           <Sq>Just Eat Takeaway</Sq>, born of the Dutch food-delivery pioneer Takeaway.com, bought the
-          American firm <Sq>Grubhub</Sq> in 2021 for around seven billion dollars at the pandemic peak,
+          American firm <Sq>Grubhub</Sq> in 2021 for around $7 billion at the pandemic peak,
           and offloaded it a few years later for a fraction of that, a multi-billion-dollar
           write-down that stands among the costliest European attempts to scale into the US market on
           American terms. The lesson Dutch boardrooms drew was not &ldquo;try harder&rdquo; but

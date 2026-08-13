@@ -195,7 +195,7 @@ export function ChokepointPrologue() {
         <P>
           And lest this seem like a story only about the AI age, recall that Europe has run this exact play
           before, at the top of the last technology wave, and lost. In May 2000 <Sq>Nokia</Sq> was worth
-          some three hundred billion euros and Europe owned the mobile phone; Sweden&rsquo;s{" "}
+          some €300 billion and Europe owned the mobile phone; Sweden&rsquo;s{" "}
           <Sq>Ericsson</Sq> held perhaps 40% of the world&rsquo;s handset market; the continent
           had written the global GSM standard. Within a decade it was gone. Nokia lost <Sq>98% of its
           value</Sq> and was sold for parts to Microsoft; Ericsson retreated to network gear; Siemens dumped

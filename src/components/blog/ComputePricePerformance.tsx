@@ -183,7 +183,7 @@ export function ComputePricePerformance() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none select-none"
         role="img"
-        aria-label="Computing power per constant $1,000 plotted on a logarithmic scale from 1900 to 2045, rising from about ten-to-the-minus-five calculations per second to ten-to-the-sixteenth around 2020, roughly one human brain for a thousand dollars, and projected, dashed and contested, to ten-to-the-twenty-sixth by 2045, the scale of all human brains combined, marked as the singularity. The straight diagonal of the log plot is Kurzweil's Law of Accelerating Returns. Order-of-magnitude, illustrative."
+        aria-label="Computing power per constant $1,000 plotted on a logarithmic scale from 1900 to 2045, rising from about ten-to-the-minus-five calculations per second to ten-to-the-sixteenth around 2020, roughly one human brain for $1,000, and projected, dashed and contested, to ten-to-the-twenty-sixth by 2045, the scale of all human brains combined, marked as the singularity. The straight diagonal of the log plot is Kurzweil's Law of Accelerating Returns. Order-of-magnitude, illustrative."
         onPointerMove={onMove}
       >
         <defs>

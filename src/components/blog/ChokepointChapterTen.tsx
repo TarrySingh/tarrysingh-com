@@ -257,9 +257,9 @@ export function ChokepointChapterTen() {
           Widen the lens beyond cloud and the tribute only grows. Europe runs a services trade deficit with
           the United States of around <Sq>&euro;178 billion a year</Sq>, much of it digital; global
           cross-border payments for the use of intellectual property (the licensing of patents,
-          brands and software) passed a trillion dollars, with the United States the largest single
+          brands and software) passed $1 trillion, with the United States the largest single
           collector. Even the regulator&rsquo;s biggest swings barely dent it: the Commission fined{" "}
-          <Sq>Google three billion euros</Sq> in 2025 over its ad-tech dominance, lifting its cumulative EU
+          <Sq>Google €3 billion</Sq> in 2025 over its ad-tech dominance, lifting its cumulative EU
           antitrust fines past eight billion (sums that are at once the largest in the history of
           competition law and a rounding error against the revenue the same firm pulls out of Europe every
           year). The tribute is paid in a hundred currencies (cloud fees, ad revenue, IP royalties,
@@ -284,7 +284,7 @@ export function ChokepointChapterTen() {
 
         <P>
           The extraction runs through the screen as well as the wallet. <Sq>Meta</Sq> alone pulls something
-          like <Sq>forty to forty-four billion euros</Sq> a year in advertising revenue out of Europe; Google
+          like <Sq>€40-44 billion</Sq> a year in advertising revenue out of Europe; Google
           takes more; the app stores levy their tithe on every download and subscription. And one layer
           deeper, the financial system itself is denominated in someone else&rsquo;s currency: the US dollar
           appears in roughly <Sq>half of all international payment messages</Sq> and the overwhelming majority

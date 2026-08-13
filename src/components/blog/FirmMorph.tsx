@@ -299,7 +299,7 @@ export function FirmMorph() {
         viewBox={`0 0 ${VW} ${VH}`}
         className="block h-auto w-full touch-none select-none"
         role="img"
-        aria-label={`The firm reinvented, an interactive morph. At low AI leverage, one industrial firm holds about ${N_HUMANS} people in a single hierarchy at roughly two hundred thousand dollars of revenue per employee. As leverage rises toward the year 2030, the firm fractures into ${N_FIRMS} micro-companies, each a few people orbited by many AI agents, with revenue per employee rising into the millions, including a one-person billion-dollar company. Currently at ${leveragePct}% leverage, around the year ${yearLabel}.`}
+        aria-label={`The firm reinvented, an interactive morph. At low AI leverage, one industrial firm holds about ${N_HUMANS} people in a single hierarchy at roughly $200,000 of revenue per employee. As leverage rises toward the year 2030, the firm fractures into ${N_FIRMS} micro-companies, each a few people orbited by many AI agents, with revenue per employee rising into the millions, including a one-person billion-dollar company. Currently at ${leveragePct}% leverage, around the year ${yearLabel}.`}
       >
         <defs>
           <radialGradient id="fm-bloom" cx="50%" cy="46%" r="62%">

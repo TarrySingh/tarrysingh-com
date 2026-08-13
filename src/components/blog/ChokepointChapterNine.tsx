@@ -235,8 +235,7 @@ export function ChokepointChapterNine() {
         <P>
           And the burden falls most heavily where it is least affordable. The headline GDPR fines land on
           Google and Meta, but the quieter enforcement increasingly targets ordinary small and mid-sized
-          firms: a German property company, <Sq>Deutsche Wohnen</Sq>, was fined some fourteen million
-          euros over data-retention practices, the kind of penalty that is survivable for a hyperscaler and
+          firms: a German property company, <Sq>Deutsche Wohnen</Sq>, was fined some €14 million over data-retention practices, the kind of penalty that is survivable for a hyperscaler and
           lethal for a mid-cap. For a small European company the compliance arithmetic is brutal:
           cookie-consent tooling, a data-protection officer, breach-notification processes and the standing
           risk of a fine measured as a percentage of <em>global</em> turnover can run to tens of thousands of

@@ -64,7 +64,7 @@ export function ChokepointChapterSeven() {
           2026, even as it closed plants at its historic home in Ludwigshafen, which has been posting
           billion-euro operating losses. A company does not move its century-old centre of gravity to the
           other side of the planet on a whim. It does so because the arithmetic at home stopped working,
-          and the most German company there is voted with ten billion euros of capital. When BASF leaves,
+          and the most German company there is voted with €10 billion of capital. When BASF leaves,
           it is not a data point. It is a tolling bell.
         </P>
 
@@ -240,7 +240,7 @@ export function ChokepointChapterSeven() {
           speed. Finland&rsquo;s <Sq>Olkiluoto 3</Sq> and France&rsquo;s long-delayed <Sq>Flamanville</Sq>
           reactor both finally came online this decade and now pour cheap, clean, firm power into their grids:
           proof that the technology works. But Britain&rsquo;s <Sq>Hinkley Point C</Sq> has slipped
-          toward 2030 at a cost ballooning past <Sq>forty-five billion pounds</Sq>, a monument to how
+          toward 2030 at a cost ballooning past <Sq>£45 billion</Sq>, a monument to how
           thoroughly the West has lost the muscle memory of building big things on time. Europe&rsquo;s
           energy problem, in the end, is its capital and talent problems wearing a third costume: not an
           absence of the answer, but an inability to commit to it at scale, on schedule, against the
@@ -292,7 +292,7 @@ export function ChokepointChapterSeven() {
         <P>
           The closures have not slowed; if anything they have become routine enough to stop making headlines.{" "}
           <Sq>BASF</Sq> is shutting eleven plants at Ludwigshafen alone, including ammonia and TDI lines, as
-          part of more than a billion euros of annual cost cuts; <Sq>INEOS</Sq> is closing chemical units in
+          part of more than €1 billion of annual cost cuts; <Sq>INEOS</Sq> is closing chemical units in
           Germany; the cumulative European chemical capacity lost since 2022 has passed <Sq>37 million
           tonnes</Sq>, nearly a tenth of the total. And the energy dependence that drove it has, if anything,
           deepened: having replaced Russian pipeline gas, Europe now imports the majority of its liquefied

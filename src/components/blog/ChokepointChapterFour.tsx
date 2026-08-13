@@ -214,7 +214,7 @@ export function ChokepointChapterFour() {
         <P>
           The demand for the Dutch machines, meanwhile, has never been more naked. In 2026 the Korean
           memory-maker <Sq>SK hynix</Sq> placed what was reported as the largest EUV order in history
-          (on the order of <Sq>eight billion dollars</Sq> for some thirty machines), a single
+          (on the order of <Sq>$8 billion</Sq> for some thirty machines), a single
           foreign customer committing more to ASML&rsquo;s tools than the European Commission directly
           controls in its entire chip strategy. Brussels, for its part, answered the Chips Act&rsquo;s
           shortfall by drafting a <Sq>&ldquo;Chips Act 2.0&rdquo;</Sq> with another twenty-billion-euro
@@ -266,7 +266,7 @@ export function ChokepointChapterFour() {
           state-and-conglomerate semiconductor partnership for half a century; both treated chips as a
           multi-decade national project and never wavered. Europe passed a Chips Act in 2023 and watched its
           flagship, the Intel fab in Magdeburg, be <Sq>abandoned within two years</Sq>: the German and
-          Polish subsidies, some twelve billion euros, left undrawn. The difference is not money or talent; it
+          Polish subsidies, some €12 billion, left undrawn. The difference is not money or talent; it
           is time-horizon and constancy. Asia&rsquo;s chip champions were built by states that decided what
           they wanted and held the course across electoral cycles and downturns alike. Europe keeps deciding,
           then re-deciding, then quietly letting the decision lapse, which is precisely how a continent

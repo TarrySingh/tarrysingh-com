@@ -95,7 +95,7 @@ export function ChokepointChapterTwelve() {
           last eighteen months that fifteen years of competitiveness reports never managed. The continent
           has started, haltingly and unevenly, to move. Germany <Won>rejected Palantir</Won> over
           sovereignty. A sovereign software suite, Euro-Office, launched; Denmark, Austria and France began
-          migrating their public sectors off Microsoft. Mistral raised three billion euros at a twenty-
+          migrating their public sectors off Microsoft. Mistral raised €3 billion at a twenty-
           billion valuation and crossed four hundred million in revenue. Europe pledged to spend like it
           means it on defence. Letta&rsquo;s roadmap got signed. None of these is sufficient. All of them
           are real. Walk the field below and watch when it came alive.
@@ -246,7 +246,7 @@ export function ChokepointChapterTwelve() {
       <Prose>
         <P>
           France is the test case for whether ambition is enough, and the early returns are sobering. No
-          government has tried harder: the <Sq>Tibi</Sq> programme has corralled some thirteen billion euros
+          government has tried harder: the <Sq>Tibi</Sq> programme has corralled some €13 billion
           of institutional money toward European tech; <Sq>Mistral</Sq> is building a sovereign AI cloud
           outside Paris; <Sq>Hugging Face</Sq>, the Paris-founded &ldquo;GitHub of machine learning,&rdquo;
           hosts millions of open models as a genuine counterweight to the American labs; the country runs on
@@ -263,8 +263,7 @@ export function ChokepointChapterTwelve() {
       <Prose>
         <P>
           The most encouraging sign is also the most recent. In June 2026 the European Commission unveiled a
-          sweeping <Sq>tech-sovereignty package</Sq> (on the order of a hundred and twenty billion
-          euros for semiconductors, two hundred billion for data centres, a hundred billion for cloud and AI,
+          sweeping <Sq>tech-sovereignty package</Sq> (on the order of €120 billion for semiconductors, two hundred billion for data centres, a hundred billion for cloud and AI,
           and a smaller but pointed open-source pillar: a tacit admission that owning the <em>code</em> may matter as much as
           owning the metal) alongside a &ldquo;Scale-Up Europe&rdquo; fund aimed squarely at stopping
           high-potential startups from leaving. The figures, for once, are within sight of the scale of the problem rather
