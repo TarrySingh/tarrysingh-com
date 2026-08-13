@@ -15,7 +15,7 @@ function Figure({ children, max = 1100 }: { children: ReactNode; max?: number })
 }
 
 /**
- * PROLOGUE — One Node. ~1,800 words. The single machine and its American
+ * PROLOGUE: One Node. ~1,800 words. The single machine and its American
  * leash; the paradox stated; the four-stroke loop teased; the question (nerve,
  * not capability); the Netherlands set up as the canary. Every load-bearing
  * figure is in the Source Ledger at the foot, verified to July 2026.
@@ -31,15 +31,15 @@ export function ChokepointPrologue() {
           map, where the modern world is quietly manufactured. Veldhoven. Twenty minutes from the
           Belgian border, ringed by the kind of low brick and managed grass that announces nothing.
           Inside, in rooms cleaner than an operating theatre and stiller than a vault, a company called
-          ASML builds the single most complicated machine the human species has ever made &mdash; and
+          ASML builds the single most complicated machine the human species has ever made, and
           the only one of its kind on Earth.
         </Lead>
 
         <P>
           The machine is an extreme-ultraviolet lithography scanner. It is the size of a city bus, costs
           more than a wide-body jet, and there is a waiting list. To make the chips that run everything
-          you will touch today &mdash; the phone, the car, the data centre answering your search, the
-          insulin pump &mdash; you must, at the leading edge, print circuitry finer than a virus onto
+          you will touch today (the phone, the car, the data centre answering your search, the
+          insulin pump), you must, at the leading edge, print circuitry finer than a virus onto
           silicon. To do that you need light at thirteen-and-a-half nanometres, which no lamp emits, so
           ASML&rsquo;s machine makes it on purpose: it fires a laser at a falling droplet of molten tin
           fifty thousand times a second, twice per droplet, flashing it into a plasma that glows in a
@@ -55,7 +55,7 @@ export function ChokepointPrologue() {
           its tools to exist at all. In 2025 it booked <Won>&euro;32.7 billion</Won> in revenue doing it,
           at a gross margin north of fifty per cent. If you wanted to name the one place where Europe is
           not a follower, not a worthy fast-second, but the irreplaceable, sole, planet-wide monopolist
-          of the thing the entire digital economy is built on &mdash; it is this town you cannot find on
+          of the thing the entire digital economy is built on, it is this town you cannot find on
           a map.
         </P>
 
@@ -65,7 +65,7 @@ export function ChokepointPrologue() {
           supply chain stitched across the continent solved a problem the United States looked at, with
           all its money, and decided was too hard. The machine in Veldhoven is one of the high-water
           marks of the civilisation. <em>Look at it.</em> Drag the slider below and watch the leverage
-          radiate out from the node &mdash; every ray a thing the world cannot do without the Dutch.
+          radiate out from the node: every ray a thing the world cannot do without the Dutch.
         </P>
       </Prose>
 
@@ -79,13 +79,13 @@ export function ChokepointPrologue() {
         <P>
           Because here is the part nobody in Brussels likes to say aloud. The most important machine on
           Earth does not, in any sense that matters, belong to the people who built it. The light source
-          at its heart &mdash; the laser-and-droplet engine that makes the impossible colour &mdash;
+          at its heart (the laser-and-droplet engine that makes the impossible colour)
           comes from a company called Cymer, in San Diego, California, and it is{" "}
           <Sq>100% American</Sq>. The optics come from Zeiss, a single German supplier with no
           redundancy. Pull either one and the machine is a sculpture. And sitting above all of it is a
           quieter dependency that appears on no bill of materials: American law. Because enough of the
-          machine&rsquo;s content originates in the United States, Washington asserts the right &mdash;
-          under what trade lawyers call the <Sq>Foreign Direct Product Rule</Sq> &mdash; to decide who
+          machine&rsquo;s content originates in the United States, Washington asserts the right
+          (under what trade lawyers call the <Sq>Foreign Direct Product Rule</Sq>) to decide who
           ASML may sell to, and what it may service, anywhere on the planet.
         </P>
 
@@ -93,20 +93,20 @@ export function ChokepointPrologue() {
           That reach is not theoretical, and in the last eighteen months it has hardened into
           architecture. The Netherlands began licensing ASML&rsquo;s exports to China in January 2025 and
           widened the net in June 2026 to cover the servicing and spare parts that keep installed
-          machines alive &mdash; controls written in The Hague but unmistakably authored in Washington.
+          machines alive: controls written in The Hague but unmistakably authored in Washington.
           Around them the United States assembled a multilateral export-control bloc the diplomats took
           to calling <Sq>&ldquo;Pax Silica&rdquo;</Sq>, launched in December 2025 and joined by the
           European Union itself in June 2026. Europe&rsquo;s crown jewel now runs under a coordinated
-          foreign licence &mdash; and it negotiated its way into the cartel that holds the key.
+          foreign licence, and it negotiated its way into the cartel that holds the key.
         </P>
 
         <P>
           You can watch the cost in a single line on ASML&rsquo;s own income statement. For most of the
-          decade China was its largest market &mdash; about <Sq>49% of sales</Sq> at the 2024 peak. Then
+          decade China was its largest market: about <Sq>49% of sales</Sq> at the 2024 peak. Then
           the controls tightened, and the number fell off a cliff: 49% in 2024, about 36% by late 2025, then{" "}
-          <Sq>19% by the first quarter of 2026</Sq> &mdash; an entire market not lost to a competitor or
+          <Sq>19% by the first quarter of 2026</Sq> (an entire market not lost to a competitor or
           a better product, but deleted by a foreign-policy decision Europe did not make and could not
-          veto. The record-revenue year and the structural amputation are the same year. They are the
+          veto). The record-revenue year and the structural amputation are the same year. They are the
           same chart. Raise the machine&rsquo;s American content past the rule&rsquo;s threshold below,
           and watch the leash from San Diego snap taut.
         </P>
@@ -122,9 +122,9 @@ export function ChokepointPrologue() {
           everything follows from it: <Won>the strength and the exposure are the same node.</Won> The
           thing that makes Europe indispensable is the thing that makes it controllable. There is no
           version of the ASML story where Europe holds enormous leverage <em>and</em> sits safely outside
-          someone else&rsquo;s grip &mdash; the leverage <em>is</em> the grip, seen from the other end.
-          Europe holds the key. Washington owns the lock. And &mdash; this is the part that should keep a
-          European minister awake &mdash; Europe appears to have decided that this is fine.
+          someone else&rsquo;s grip: the leverage <em>is</em> the grip, seen from the other end.
+          Europe holds the key. Washington owns the lock. And (this is the part that should keep a
+          European minister awake) Europe appears to have decided that this is fine.
         </P>
 
         <P>
@@ -134,7 +134,7 @@ export function ChokepointPrologue() {
           Europe is not stupid and it is not poor. It is the richest pool of savings on the face of the
           Earth. It has the engineers, disproportionately so. It writes the papers. It built the machine
           in Veldhoven. The thesis here is not that Europe <em>cannot</em>. It is the far more
-          uncomfortable claim that Europe <em>does not</em> &mdash; that with every structural advantage a
+          uncomfortable claim that Europe <em>does not</em>: that with every structural advantage a
           continent could ask for, it has arranged its affairs so the value created here is
           systematically captured somewhere else, and that this is not bad luck or American cunning but a
           series of specific, nameable, repeated choices.
@@ -145,8 +145,8 @@ export function ChokepointPrologue() {
           World Wide Web was written at <Sq>CERN</Sq>, in Geneva, and given to the world for nothing; the
           MP3 was compressed into being at Germany&rsquo;s <Sq>Fraunhofer</Sq> institute; Skype was built
           by Estonian engineers for Scandinavian founders; the most important AI laboratory of the 2010s,{" "}
-          <Sq>DeepMind</Sq>, was founded in London. Every one of them became someone else&rsquo;s franchise
-          &mdash; an American platform, an American acquisition, an American market capitalisation. Europe
+          <Sq>DeepMind</Sq>, was founded in London. Every one of them became someone else&rsquo;s franchise:
+          an American platform, an American acquisition, an American market capitalisation. Europe
           has invented an astonishing share of the modern world and captured the returns on almost none of
           it, and the <em>regularity</em> with which this happens is the tell. Once is misfortune. A
           century of it is a machine.
@@ -163,7 +163,7 @@ export function ChokepointPrologue() {
           American technology economy is built on, let them go, and now rents the industry they made
           possible. The divergence that followed is brutal in the aggregate: European output per person has
           slipped from roughly three-quarters of the American level around 2008 toward something nearer half
-          today &mdash; the compounding result of one economy that scaled its inventions and one that
+          today, the compounding result of one economy that scaled its inventions and one that
           exported them.
         </P>
 
@@ -171,9 +171,9 @@ export function ChokepointPrologue() {
           And the drift is not only of listings but of companies bodily. A steady trickle of European
           champions simply <em>moves</em>: the French data-science firm <Sq>Dataiku</Sq>, the search company{" "}
           <Sq>Algolia</Sq>, the treasury-software maker <Sq>Kyriba</Sq>, the telephony startup{" "}
-          <Sq>Aircall</Sq> &mdash; all founded in France, all relocating their centre of gravity to the
+          <Sq>Aircall</Sq> (all founded in France, all relocating their centre of gravity to the
           United States, most citing the same plain reason: it is simply easier to be an ambitious company
-          there. The founders stay European, the first risk was European, and the headquarters, the cap
+          there). The founders stay European, the first risk was European, and the headquarters, the cap
           table and the eventual windfall end up American. When the most ambitious version of a European
           company turns out to be an American one, the continent is not failing to <em>start</em> companies.
           It is failing to keep the ones it starts.
@@ -185,7 +185,7 @@ export function ChokepointPrologue() {
           Google, no European Amazon, no European Apple, and the continent&rsquo;s most valuable company is a
           maker of the machines that <em>other people</em> use to build the future. Europe spends about{" "}
           <Sq>2.2% of its output on research and development</Sq> against America&rsquo;s 3.45%, and has for
-          years &mdash; a gap that looks small in any single year and compounds into a chasm over a
+          years: a gap that looks small in any single year and compounds into a chasm over a
           generation. None of this is destiny. It is the cumulative read-out of a thousand smaller choices,
           each individually defensible, which is exactly why the pattern is so hard to see and so hard to
           break: there is no single villain to point at, only a machine, running smoothly, in the wrong
@@ -201,8 +201,8 @@ export function ChokepointPrologue() {
           value</Sq> and was sold for parts to Microsoft; Ericsson retreated to network gear; Siemens dumped
           its phone division on a Taiwanese firm that promptly went bankrupt. Europe did not lose mobile
           because its engineers were beaten on the hardware. It lost because, when the value migrated from
-          the device to the software platform &mdash; the app store, the operating system, the ecosystem
-          &mdash; the Americans built the platform and the Europeans kept polishing the handset. The
+          the device to the software platform (the app store, the operating system, the ecosystem),
+          the Americans built the platform and the Europeans kept polishing the handset. The
           chokepoint paradox is not a new affliction. It is a recurrence, and the AI age is merely its
           largest instance yet.
         </P>
@@ -210,7 +210,7 @@ export function ChokepointPrologue() {
         <P>
           The people running Europe&rsquo;s biggest companies see it clearly, and say so. Pascal Soriot,
           who runs AstraZeneca, one of the few European firms that can stand unembarrassed on a global
-          stage, described the continent bluntly as <Sq>&ldquo;losing ground&rdquo;</Sq> &mdash; too focused,
+          stage, described the continent bluntly as <Sq>&ldquo;losing ground&rdquo;</Sq>: too focused,
           he said, on managing costs and distributing benefits, behaving &ldquo;like one company in
           decline.&rdquo; It is a striking thing for a European chief executive to say out loud, and a
           useful corrective to any suspicion that this essay is an outsider&rsquo;s sneer. The diagnosis
@@ -222,14 +222,14 @@ export function ChokepointPrologue() {
         <P>
           And the abstraction has a price that lands in ordinary lives. The average American household now
           has a real income something like <Sq>a third higher</Sq> than the average European one, a gap that
-          has widened steadily as the productivity lines diverged &mdash; which is to say that the chokepoint
+          has widened steadily as the productivity lines diverged, which is to say that the chokepoint
           paradox is not only a story about companies and cap tables but about the slow erosion of what a
           European salary can buy relative to an American one. For now it is masked by Europe&rsquo;s genuine
           advantages: the healthcare, the cities, the security, the holidays, the sense that life is for more
           than work. Those are real, and worth defending. But a continent cannot indefinitely fund a superior
           quality of life on the proceeds of an economy it is steadily ceding, and the bill for choosing
-          comfort over dynamism, decade after decade, does not disappear. It is merely deferred &mdash; and
-          handed, with the rest of the ledger, to the next generation.
+          comfort over dynamism, decade after decade, does not disappear. It is merely deferred (and
+          handed, with the rest of the ledger, to the next generation).
         </P>
 
         <P>
@@ -238,17 +238,17 @@ export function ChokepointPrologue() {
           when Sweden&rsquo;s <Sq>Klarna</Sq> finally went public in 2025 it chose the New York Stock
           Exchange, not Stockholm, and <Sq>Wise</Sq>, the British payments champion, began shifting its own
           primary listing across the Atlantic. The founders are European, the engineering is European, the
-          first risk was European &mdash; and the equity, the liquidity and the compounding all come to
+          first risk was European; and the equity, the liquidity and the compounding all come to
           rest on an American exchange. Europe builds the company; America banks it. That is the whole
           essay compressed into a single transaction, repeated until it is a structure.
         </P>
 
         <P>
           Those choices form a machine of their own, and this essay takes it apart stroke by stroke. It
-          runs in four. Europe <strong>saves</strong> more than anyone &mdash; and routes the savings
-          abroad. It <strong>funds</strong> the companies that will compete with it &mdash; through other
-          people&rsquo;s venture funds, because its own will not. It <strong>trains</strong> the talent
-          &mdash; and exports it to be paid three to five times as much elsewhere. And then it{" "}
+          runs in four. Europe <strong>saves</strong> more than anyone, and routes the savings
+          abroad. It <strong>funds</strong> the companies that will compete with it, through other
+          people&rsquo;s venture funds, because its own will not. It <strong>trains</strong> the talent,
+          and exports it to be paid three to five times as much elsewhere. And then it{" "}
           <strong>buys back</strong>, at retail, wearing an American logo, the very capabilities it
           invented and sold at wholesale. Save, fund, train, buy back: four strokes to a turn, and the
           wheel turns a little wider each cycle, because every rotation hands a rival the capital and the
@@ -259,8 +259,8 @@ export function ChokepointPrologue() {
 
         <PullQuote>
           If a continent owns the one irreplaceable machine, banks the deepest savings, and trains the
-          best minds &mdash; and still ends each decade poorer, relative to its rivals, than it began
-          &mdash; then the problem is not capability. It is nerve.
+          best minds (and still ends each decade poorer, relative to its rivals, than it began),
+          then the problem is not capability. It is nerve.
         </PullQuote>
 
         <P>
@@ -273,7 +273,7 @@ export function ChokepointPrologue() {
 
         <P>
           We start small, and close to home, because the whole pattern shows up in miniature in one
-          country before it shows up across the continent &mdash; and it happens to be the country that
+          country before it shows up across the continent, and it happens to be the country that
           builds the machine. The Netherlands is the canary. It is Europe in high resolution: the same
           wealth, the same brilliance, the same quiet, polite, catastrophic refusal to back itself. If
           you want to know how a rich, clever, well-meaning continent talks itself into tenancy, watch a

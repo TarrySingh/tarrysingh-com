@@ -14,8 +14,8 @@ function Figure({ children, max = 1100 }: { children: ReactNode; max?: number })
 }
 
 /**
- * CHAPTER 9 — The Moat With the Drawbridge Down: Regulation.
- * Europe's one reflex — the rulebook — and how it taxes its own challengers,
+ * CHAPTER 9. The Moat With the Drawbridge Down: Regulation.
+ * Europe's one reflex (the rulebook) and how it taxes its own challengers,
  * fragments its own market, and then retreats from its own law. Figures
  * verified to July 2026 (NBER WP 33909; Draghi; DIGITALEUROPE; Digital
  * Omnibus). V30/V31/V32 embedded.
@@ -28,13 +28,12 @@ export function ChokepointChapterNine() {
       <Prose>
         <Lead>
           When Europe cannot spend and will not build, it does the one thing it is still unmatched at: it
-          writes a rule. For a decade this was sold as a superpower &mdash; the &ldquo;Brussels
+          writes a rule. For a decade this was sold as a superpower: the &ldquo;Brussels
           Effect,&rdquo; the idea that the EU&rsquo;s vast single market lets it set the standards the
           whole world must follow, from privacy to AI. There is something to it. But the effect has
           curdled, and this chapter is about the curdling: a regulatory moat dug so deep, and policed by so
           many hands, that it no longer keeps the rivals out so much as it seals Europe&rsquo;s own
-          challengers in &mdash; a fortress with the drawbridge stuck down, the garrison taxed for the
-          privilege of defending it.
+          challengers in: a fortress with the drawbridge stuck down, the garrison taxed for the privilege of defending it.
         </Lead>
 
         <P>
@@ -46,7 +45,7 @@ export function ChokepointChapterNine() {
           also, quietly, made it harder for the next European challenger to Big Tech to get funded. And the
           pattern generalises through the compliance cost itself, because compliance is a <em>regressive
           tax</em>: the roughly <Sq>&euro;200,000 to &euro;600,000</Sq> a high-risk AI-Act provider must
-          spend &mdash; on top of a quality-management system and per-model assessments &mdash; is a
+          spend (on top of a quality-management system and per-model assessments) is a
           rounding error for a hyperscaler and an extinction event for a seed-stage startup. The total bill
           runs to an estimated <Sq>&euro;3.3 billion a year</Sq> across the EU. Scrub firm size below and
           watch the burden invert: heaviest where Europe can least afford it.
@@ -61,8 +60,8 @@ export function ChokepointChapterNine() {
         <P>
           The burden is multiplied by the thing that should have been Europe&rsquo;s greatest asset and is
           instead its greatest tax: the market is not single. The Draghi report counted more than{" "}
-          <Sq>13,000 EU legal acts</Sq> passed between 2019 and 2024 &mdash; against roughly 5,500 in the
-          United States over a comparable span &mdash; and over <Sq>270 digital regulators</Sq> spread
+          <Sq>13,000 EU legal acts</Sq> passed between 2019 and 2024 (against roughly 5,500 in the
+          United States over a comparable span) and over <Sq>270 digital regulators</Sq> spread
           across the member states (and the true volume of implementing acts is almost certainly higher).
           A US startup writes its software once and sells it into one market of 340 million people. A
           European startup writes its compliance 27 times, threads 27 national interpretations, and
@@ -84,7 +83,7 @@ export function ChokepointChapterNine() {
           <Sq>some 78% of organisations</Sq> reporting they had taken no compliance steps at all, Brussels
           reached for a lever it had never publicly admitted owning: it stopped its own clock. Through the
           &ldquo;Digital Omnibus&rdquo; agreed in May 2026, the high-risk deadline was pushed back to{" "}
-          <Sq>2 December 2027</Sq> &mdash; a sixteen-month reprieve from a rulebook the EU had written
+          <Sq>2 December 2027</Sq>, a sixteen-month reprieve from a rulebook the EU had written
           itself. It is hard to think of a more eloquent admission that the regime had outrun the economy
           it governs. Advance the clock below and watch Europe drag its own deadline backwards.
         </P>
@@ -99,7 +98,7 @@ export function ChokepointChapterNine() {
           None of this means the targets of the rules are sympathetic, or that the rules do nothing. When
           the EU fined Apple <Won>&euro;500 million</Won> in 2025 for blocking developers from steering
           users to cheaper deals, and forced its App Store commissions down from the old 15&ndash;30% toward
-          7&ndash;10%, that was a real win for a real abuse &mdash; the Brussels Effect doing exactly what
+          7&ndash;10%, that was a real win for a real abuse: the Brussels Effect doing exactly what
           it says. But notice the asymmetry even in victory: Apple appealed, kept collecting on the vast
           majority of the App Store economy, grew its services revenue anyway, and absorbed the fine as a
           cost of doing business. The giant pays the toll and walks on. It is the challenger, the one the
@@ -112,7 +111,7 @@ export function ChokepointChapterNine() {
           Markets Act uncertainty; <Sq>Meta</Sq> delayed its AI assistant in the bloc for the same reason;{" "}
           <Sq>Google</Sq> geofenced its Gemini model out of several EU countries after a French-regulator
           challenge; and when the Chinese lab <Sq>DeepSeek</Sq> arrived, European data authorities moved to
-          block it from training on EU data. Set aside whether each call was right &mdash; the cumulative
+          block it from training on EU data. Set aside whether each call was right; the cumulative
           signal to any company deciding where to launch is unmistakable: Europe is the market where the
           newest things show up last, wrapped in the most legal doubt. A continent that cannot reliably
           even <em>receive</em> the frontier, let alone build it, has quietly priced itself out of being a
@@ -121,24 +120,24 @@ export function ChokepointChapterNine() {
 
         <P>
           The machinery behind all this is genuinely vast. Under the Digital Markets Act the Commission
-          formally designated <Sq>six gatekeepers</Sq> &mdash; Apple, Alphabet, Amazon, Meta, Microsoft and
-          ByteDance &mdash; controlling some <Sq>two dozen &ldquo;core platform services&rdquo;</Sq>, each
+          formally designated <Sq>six gatekeepers</Sq> (Apple, Alphabet, Amazon, Meta, Microsoft and
+          ByteDance) controlling some <Sq>two dozen &ldquo;core platform services&rdquo;</Sq>, each
           triggering its own compliance regime, audits and interoperability duties. It is, in the abstract,
           a serious and in places admirable attempt to discipline genuine market power. But step back and
           the shape is unmistakable: five of the six firms being regulated are American, one is Chinese,
-          and <em>none</em> is European &mdash; because Europe has no platform large enough to need
+          and <em>none</em> is European, because Europe has no platform large enough to need
           disciplining. The continent has built the world&rsquo;s most sophisticated apparatus for
           governing digital giants and has not produced a single one of its own to govern.
         </P>
 
         <P>
           The privacy regime has its own landmark, and it cuts the same way. In 2023 the Irish regulator
-          fined <Sq>Meta &euro;1.2 billion</Sq> &mdash; the largest GDPR penalty ever &mdash; for shipping
+          fined <Sq>Meta &euro;1.2 billion</Sq> (the largest GDPR penalty ever) for shipping
           European users&rsquo; data to American servers, the climax of a decade-long saga driven by a
           single Austrian activist, Max Schrems, who twice toppled the legal frameworks governing
           EU&ndash;US data flows. It was, again, real enforcement of a real principle. And again the deeper
           picture is the trap: the data was crossing to American servers in the first place because the
-          services Europeans use are American, hosted on American clouds &mdash; and the most a European
+          services Europeans use are American, hosted on American clouds; and the most a European
           regulator can ultimately do is fine the foreign company for the terms of a dependence it has no
           power to end. You cannot regulate your way out of not owning the infrastructure.
         </P>
@@ -146,13 +145,13 @@ export function ChokepointChapterNine() {
         <P>
           And there is a final twist that complicates the whole picture, because the retreat from the
           rulebook is being authored partly by the very giants it was meant to constrain. The{" "}
-          <Sq>Digital Omnibus</Sq> simplification of 2026 &mdash; the package that stopped the AI
-          Act&rsquo;s clock and trimmed reporting duties &mdash; arrived after sustained lobbying from
+          <Sq>Digital Omnibus</Sq> simplification of 2026, the package that stopped the AI
+          Act&rsquo;s clock and trimmed reporting duties, arrived after sustained lobbying from
           American big tech and its allies, who found Brussels suddenly receptive to the argument that its
           own rules were throttling competitiveness. So Europe spent a decade building the most ambitious
           digital rulebook in the world, then began dismantling parts of it under pressure from the firms it
           was written to discipline. Whether that is wise course-correction or regulatory capture depends on
-          where you stand &mdash; but either way it is not the posture of a power that sets the terms. It is
+          where you stand, but either way it is not the posture of a power that sets the terms. It is
           the posture of one that keeps revising them under pressure from somebody else.
         </P>
 
@@ -171,10 +170,10 @@ export function ChokepointChapterNine() {
         <P>
           The newest rules sharpen the irony to a point. The AI Act&rsquo;s toughest tier, its obligations
           for &ldquo;systemic-risk&rdquo; models, is triggered by a training-compute threshold so high that
-          essentially <Sq>only American models</Sq> &mdash; GPT-class, Gemini, Claude &mdash; cross it;
+          essentially <Sq>only American models</Sq> (GPT-class, Gemini, Claude) cross it;
           Europe is, in effect, writing the operating manual for machines it does not build. Meanwhile the
           compliance bill lands hardest on the small: cookie-consent and data rules can cost a European
-          SME tens of thousands of euros a year, and enforcement keeps escalating &mdash; Google alone was
+          SME tens of thousands of euros a year, and enforcement keeps escalating. Google alone was
           fined another <Sq>&euro;325 million</Sq> in 2025 over its ad and cookie practices. The giants pay
           it as a toll and continue; the startup pays it as a tax it can barely afford, on its way to losing
           anyway. The rulebook is, with grim consistency, regressive at every level.
@@ -184,11 +183,11 @@ export function ChokepointChapterNine() {
           Enrico Letta, asked to diagnose the same disease, put his finger on the deeper cost:{" "}
           <Sq>&ldquo;Fragmentation directly weakens Europe&rsquo;s innovative capacity and strategic
           autonomy.&rdquo;</Sq> The regulatory machine and the fragmented market are the same problem seen
-          twice &mdash; a continent that produces rules faster than it produces companies, then wonders why
+          twice: a continent that produces rules faster than it produces companies, then wonders why
           the rules have no domestic champions to protect. The cure Letta and Draghi both prescribe is not
           less ambition but more <em>coordination</em>: one market, one rulebook, one set of forms. It is
           telling that the two most senior establishment figures Europe could commission to study itself
-          both came back with the same answer &mdash; integrate or decline &mdash; and that the answer has,
+          both came back with the same answer (integrate or decline) and that the answer has,
           so far, mostly been filed under noted.
         </P>
 
@@ -199,8 +198,8 @@ export function ChokepointChapterNine() {
           assistant, the upgraded Siri, from the European Union indefinitely rather than reshape it to the
           Digital Markets Act, so that European iPhone owners simply <em>do not get</em> features their
           American counterparts take for granted. Set against that, the cookie banner that greets every
-          European on every website &mdash; some two-thirds of major sites show one, and by one study only a
-          sixth are actually compliant &mdash; is almost a comic emblem: a continent that experiences the
+          European on every website (some two-thirds of major sites show one, and by one study only a
+          sixth are actually compliant) is almost a comic emblem: a continent that experiences the
           internet as a daily obstacle course of consent pop-ups, having successfully regulated the user
           experience while regulating none of the platforms beneath it. The rules are felt everywhere. The
           power they were meant to check sits, untouched, in California.
@@ -212,12 +211,12 @@ export function ChokepointChapterNine() {
           charger</Sq> for all phones and laptops, it cut waste and saved consumers real money, and the rest
           of the world quietly followed; its <Sq>right-to-repair</Sq> rules and repairability labels are
           nudging an entire industry toward durability; the GDPR, for all its costs, genuinely raised the
-          global floor on privacy. This is the Brussels Effect working as advertised &mdash; Europe setting
+          global floor on privacy. This is the Brussels Effect working as advertised: Europe setting
           standards the world adopts. The trouble is the asymmetry of what it has chosen to be good at.
           Europe has become the world&rsquo;s indispensable regulator of products and a negligible producer
           of them; it writes the rules of the digital economy with one hand and rents the digital economy
           with the other. Being the referee is an honourable job. It is simply not the same as being a
-          player &mdash; and a continent cannot regulate its way back onto the field.
+          player, and a continent cannot regulate its way back onto the field.
         </P>
 
         <P>
@@ -236,15 +235,14 @@ export function ChokepointChapterNine() {
         <P>
           And the burden falls most heavily where it is least affordable. The headline GDPR fines land on
           Google and Meta, but the quieter enforcement increasingly targets ordinary small and mid-sized
-          firms &mdash; a German property company, <Sq>Deutsche Wohnen</Sq>, was fined some fourteen million
+          firms: a German property company, <Sq>Deutsche Wohnen</Sq>, was fined some fourteen million
           euros over data-retention practices, the kind of penalty that is survivable for a hyperscaler and
           lethal for a mid-cap. For a small European company the compliance arithmetic is brutal:
           cookie-consent tooling, a data-protection officer, breach-notification processes and the standing
           risk of a fine measured as a percentage of <em>global</em> turnover can run to tens of thousands of
           euros a year before a single product ships. The giant treats all of it as a line item; the startup
           treats it as one more reason to incorporate in Delaware. Regulation meant to constrain the powerful
-          keeps, with grim reliability, landing hardest on the small &mdash; which is to say, on precisely the
-          firms Europe needs most.
+          keeps, with grim reliability, landing hardest on the small (which is to say, on precisely the firms Europe needs most).
         </P>
 
         <P>
@@ -252,8 +250,7 @@ export function ChokepointChapterNine() {
           almost comic. <Sq>Apple</Sq>, fined &euro;500 million; <Sq>Meta</Sq>, &euro;200 million under the
           DMA and &euro;390 million before that; <Sq>TikTok</Sq>, &euro;530 million for shipping European
           data to China; <Sq>X</Sq>, &euro;120 million; <Sq>Temu</Sq>, &euro;200 million for unsafe goods;{" "}
-          <Sq>Clearview AI</Sq>, &euro;30 million for scraping faces &mdash; a roll-call of billions in
-          penalties, and not one of the firms on it European. The point is not that the fines are wrong; most
+          <Sq>Clearview AI</Sq>, &euro;30 million for scraping faces. A roll-call of billions in penalties, and not one of the firms on it European. The point is not that the fines are wrong; most
           punish genuine abuses. The point is what the list <em>is</em>: an inventory of the digital
           economy&rsquo;s most powerful companies, compiled by the one body on the continent still able to
           make them flinch, on which Europe appears nowhere as a defendant because it appears nowhere as a
@@ -266,7 +263,7 @@ export function ChokepointChapterNine() {
           multimodal <Sq>Llama</Sq> models from the European Union, citing regulatory unpredictability; Apple
           has kept its upgraded Siri off European iPhones; the Commission has opened formal proceedings
           against <Sq>X</Sq> over the risks of its Grok chatbot. The cumulative effect is a continent that
-          increasingly receives the frontier of AI late, in cut-down form, or not at all &mdash; not because
+          increasingly receives the frontier of AI late, in cut-down form, or not at all: not because
           its engineers cannot handle it, but because its rules make it the most legally fraught market in
           the rich world to ship into. Europe set out to govern the technology and has ended up, in a growing
           number of cases, simply not being offered it. That is the chokepoint paradox in its newest and most
@@ -282,11 +279,11 @@ export function ChokepointChapterNine() {
         <P>
           The deepest problem with the regulatory reflex is not any single rule; it is what the reflex
           reveals. Regulation is the tool of a power that has decided its job is to <em>govern</em> an
-          economy someone else will build &mdash; to be the referee, the standard-setter, the conscience
-          &mdash; rather than to build the economy itself. It is the posture of a landlord, not an owner;
+          economy someone else will build (to be the referee, the standard-setter, the conscience)
+          rather than to build the economy itself. It is the posture of a landlord, not an owner;
           a regulator of other people&rsquo;s platforms, not a builder of its own. And a continent that
           regulates what it does not own ends up, by a slow and dignified route, owning nothing but the
-          rulebook. Which brings us, at last, to the bill &mdash; the one chapter that totals the whole
+          rulebook. Which brings us, at last, to the bill: the one chapter that totals the whole
           machine, in euros, and asks where a quarter of a trillion of them go every single year.
         </P>
       </Prose>

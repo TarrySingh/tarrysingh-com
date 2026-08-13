@@ -69,7 +69,7 @@ export default function ChokepointParadoxPage() {
         >
           Europe is the richest savings bloc on Earth and Wall Street&rsquo;s biggest charity case. It
           trains the engineers, writes the papers, owns the one irreplaceable machine in the chip supply
-          chain &mdash; and ships the equity, the talent and a quarter-trillion euros a year west to the
+          chain, and ships the equity, the talent and a quarter-trillion euros a year west to the
           firms that out-compete it. This is not a failure of genius. It is a failure of nerve, and it has
           names.
         </p>

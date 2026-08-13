@@ -148,8 +148,8 @@ export function IrishMirage() {
       caption={
         <>
           Europe&rsquo;s one apparent tech surplus is an accounting hallucination. Toggle{" "}
-          <span style={{ color: p.wonderHi }}>the mirage</span> &mdash; Ireland&rsquo;s headline GDP of{" "}
-          <span style={{ color: p.wonderHi }}>{eurFmt(GDP)}</span> &mdash; to{" "}
+          <span style={{ color: p.wonderHi }}>the mirage</span>, Ireland&rsquo;s headline GDP of{" "}
+          <span style={{ color: p.wonderHi }}>{eurFmt(GDP)}</span>, to{" "}
           <span style={{ color: p.squeeze }}>the real ledger</span>: GNI* is only{" "}
           <span style={{ color: p.leverage }}>{eurFmt(GNI)}</span>, GDP runs ~{GAP_PCT}% above real income (a
           ~{GAP_POINTS}-point gap), and the genuine EU&ndash;US digital balance is a deficit of{" "}

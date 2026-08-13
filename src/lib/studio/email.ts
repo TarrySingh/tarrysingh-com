@@ -271,7 +271,7 @@ function renderBriefPromptHtml(input: SendBriefPromptInput): string {
       <h1>Anything you want me to fold into ${escapeHtml(pretty)}'s piece?</h1>
       <p class="meta">For ${escapeHtml(input.forDate)} · written ~09:00 Amsterdam</p>
       <p class="body">
-        News, links, a paper, a memo from the day &mdash; anything you'd like
+        News, links, a paper, a memo from the day, anything you'd like
         the morning's article to take seriously. Click <strong>Yes</strong>
         and you'll get a small form. Click <strong>No</strong> and the
         rotation runs untouched.

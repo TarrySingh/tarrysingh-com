@@ -83,9 +83,9 @@ export default function SicilianoPartnerPage() {
         <p style={proseStyle}>
           Bruno Siciliano directs PRISMA Lab at CREATE, Centro di Ricerca
           per l&rsquo;Ingegneria Elettronica e Telecomunicazioni
-          dell&rsquo;Università di Napoli Federico II. PRISMA &mdash;
-          Projects of Industrial and Service Manipulation Robotics
-          &mdash; spans seven domains of modern robotics: industrial
+          dell&rsquo;Università di Napoli Federico II. PRISMA,
+          Projects of Industrial and Service Manipulation Robotics,
+          spans seven domains of modern robotics: industrial
           manipulation, service robotics, aerial robotics, surgical
           robotics, haptic shared control, human-robot interaction, and
           motion planning.
@@ -97,8 +97,8 @@ export default function SicilianoPartnerPage() {
           Selvaggio-Pacchierotti-Giordano-Siciliano programme demonstrated
           in <em>physical hardware</em> that a low-bandwidth supervisory
           signal can reshape a high-degree-of-freedom autonomous
-          controller into qualitatively different task behaviours
-, without rewriting the controller. The hero above is what
+          controller into qualitatively different task behaviours,
+          without rewriting the controller. The hero above is what
           that looks like in cartoon form.
         </p>
       </section>

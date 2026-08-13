@@ -61,7 +61,7 @@ export default async function Image() {
           >
             Whether a model ever does useful work is decided by two other things:
             the loop it runs in, and the standing structure that loop runs inside.
-            A 30,000-word field manual &mdash; fifteen interactive instruments.
+            A 30,000-word field manual, fifteen interactive instruments.
           </div>
         </div>
 

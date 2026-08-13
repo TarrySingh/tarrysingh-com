@@ -240,7 +240,7 @@ export default function SynapticPage() {
                 </p>
                 <p style={{ color: "var(--ink-cool)", marginTop: "0.9rem", lineHeight: 1.65 }}>
                   The flagship field guide to Europe&rsquo;s tech-sovereignty
-                  failure &mdash; the machine that ships a continent&rsquo;s
+                  failure, the machine that ships a continent&rsquo;s
                   wealth, talent and IP west, and the narrow door still open.
                   Twelve chapters, a coda, and roughly forty bespoke instruments.
                 </p>
@@ -284,10 +284,10 @@ export default function SynapticPage() {
                   <span style={{ color: "var(--sw3-accent)" }}>→</span>
                 </h3>
                 <p className="syn-italic-caption mt-3" style={{ color: "var(--sw3-accent-hi)" }}>
-                  The age of hyper-automation &mdash; a map to 2040
+                  The age of hyper-automation, a map to 2040
                 </p>
                 <p style={{ color: "var(--ink-cool)", marginTop: "0.9rem", lineHeight: 1.65 }}>
-                  Fifteen interactive instruments at full size &mdash; the 2040
+                  Fifteen interactive instruments at full size, the 2040
                   planisphere, the silver thread, the convergence. The living
                   companion to the flagship essay.
                 </p>

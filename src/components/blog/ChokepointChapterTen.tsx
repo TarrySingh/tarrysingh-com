@@ -15,7 +15,7 @@ function Figure({ children, max = 1100 }: { children: ReactNode; max?: number })
 }
 
 /**
- * CHAPTER 10 — The Quarter-Trillion Tribute: The Wealth-Transfer Ledger.
+ * CHAPTER 10. The Quarter-Trillion Tribute: The Wealth-Transfer Ledger.
  * The spine payoff: the whole machine totalled in euros. Figures verified to
  * July 2026 (Asterès/Cigref; companiesmarketcap; Ireland CSO; CASSIS;
  * Compass Lexecon). V33 + V34 (treemap) + V35 + V36.
@@ -27,12 +27,12 @@ export function ChokepointChapterTen() {
 
       <Prose>
         <Lead>
-          Now the bill. Every chapter so far has traced one stream of the outflow &mdash; the savings, the
+          Now the bill. Every chapter so far has traced one stream of the outflow: the savings, the
           companies, the talent, the electrons, the defence euros, the value the rulebook fails to keep.
           This chapter totals them, in the one currency that ends arguments: euros, on a ledger, paid
           annually. The headline number is the cloud, and it is the cleanest single measure of the whole
           machine. Europe pays the United States something like <Won>&euro;264 billion a year</Won> for
-          digital infrastructure and software &mdash; a quarter of a trillion euros, every year, for the
+          digital infrastructure and software: a quarter of a trillion euros, every year, for the
           right to run its economy on someone else&rsquo;s computers. It is not a debt, which would at
           least end. It is a tribute, which renews by default.
         </Lead>
@@ -40,11 +40,11 @@ export function ChokepointChapterTen() {
         <P>
           Watch where the money actually goes, because the shape of it is the whole argument. Of
           Europe&rsquo;s professional cloud spending, roughly <Sq>80 to 83% flows to US providers</Sq>,
-          with about <Sq>70% captured by the three American hyperscalers</Sq> &mdash; Amazon, Microsoft,
+          with about <Sq>70% captured by the three American hyperscalers</Sq>: Amazon, Microsoft,
           Google. What Europe keeps is the thin end: the reseller margins, the wages of the local sales
           teams, the concrete and steel of the data centres it builds on its own soil to host American
-          software. The value that compounds &mdash; the equity, the intellectual property, the
-          platform &mdash; books elsewhere. Europe is, quite literally, paying to construct the buildings
+          software. The value that compounds (the equity, the intellectual property, the
+          platform) books elsewhere. Europe is, quite literally, paying to construct the buildings
           in which its digital dependence is housed. Step down the waterfall below and watch the basis
           points leave.
         </P>
@@ -58,12 +58,12 @@ export function ChokepointChapterTen() {
         <P>
           The accumulated result of paying that tribute for a decade is a gap in raw corporate scale that
           has stopped being a gap and become a different order of being. The seven largest American
-          technology companies are now worth, together, more than <Lev>$20 trillion</Lev> &mdash; on the
+          technology companies are now worth, together, more than <Lev>$20 trillion</Lev>: on the
           order of <Won>the entire GDP of the European Union</Won>, and well over the combined value of every
           company listed on every European exchange. Drill into a single one and the point turns surreal:{" "}
           <Sq>Nvidia alone, at about $4.8 trillion, is worth roughly as much as the entire German
-          economy</Sq> &mdash; one American chip company, on the scale of Europe&rsquo;s industrial
-          heartland. Pan across the landscape below; the American mass on one side and the European on the
+          economy</Sq> (one American chip company, on the scale of Europe&rsquo;s industrial
+          heartland). Pan across the landscape below; the American mass on one side and the European on the
           other are not two teams in the same league. They are two different sports.
         </P>
       </Prose>
@@ -74,11 +74,11 @@ export function ChokepointChapterTen() {
 
       <Prose>
         <P>
-          A defender of Europe has, at this point, one number left to reach for &mdash; the trade
+          A defender of Europe has, at this point, one number left to reach for: the trade
           statistics, which appear to show Europe running a healthy surplus with the world in services,
           anchored by Ireland&rsquo;s spectacular export figures. It is the last bright number on the
           board, and it is a mirage. Ireland&rsquo;s headline GDP, around <Sq>&euro;563 billion</Sq>, sits
-          about <Sq>75% above its real national income</Sq> (GNI*, near &euro;321 billion) &mdash; the gap
+          about <Sq>75% above its real national income</Sq> (GNI*, near &euro;321 billion); the gap
           is almost entirely the accounting shadow of US multinationals booking global profits through
           Dublin for tax reasons. Strip that distortion out, and the genuine transatlantic digital balance
           is not a surplus at all but a deficit on the order of <Sq>&minus;$350 billion</Sq>. The number
@@ -100,8 +100,8 @@ export function ChokepointChapterTen() {
           years this was an abstraction lawyers worried about. In 2025 it stopped being abstract: after the
           US administration sanctioned the International Criminal Court&rsquo;s chief prosecutor,{" "}
           <Sq>Karim Khan</Sq>, his Microsoft email went dark, and he decamped to a Swiss provider. Microsoft
-          insists the Court chose to disconnect him rather than the company cutting him off &mdash; the
-          attribution is genuinely disputed &mdash; but the lesson landed regardless: the email of the
+          insists the Court chose to disconnect him rather than the company cutting him off (the
+          attribution is genuinely disputed), but the lesson landed regardless: the email of the
           world&rsquo;s leading war-crimes prosecutor became inaccessible the moment Washington was
           displeased, on a platform that runs Europe&rsquo;s ministries too. Throw the switch below.
         </P>
@@ -124,7 +124,7 @@ export function ChokepointChapterTen() {
           European software suite, launched in June 2026; Denmark, Austria and France have begun migrating
           their public sectors off Microsoft; the Karim Khan affair did more to concentrate European minds
           on data sovereignty than a decade of position papers. The tribute is enormous and it is real.
-          It is also, like every other line on this ledger, a standing order &mdash; and the one thing we
+          It is also, like every other line on this ledger, a standing order; and the one thing we
           know about standing orders, from the first chapter to this one, is that they can be cancelled by
           anyone with the nerve to sign the form.
         </P>
@@ -132,11 +132,11 @@ export function ChokepointChapterTen() {
         <P>
           The exposure is not a worst-case hypothetical; it is the default legal architecture. The US{" "}
           <Sq>CLOUD Act</Sq> of 2018 lets American authorities compel data held by American companies
-          anywhere on Earth, with no requirement for the host country&rsquo;s consent &mdash; and since
+          anywhere on Earth, with no requirement for the host country&rsquo;s consent; and since
           something like <Sq>80% of EU public-sector data</Sq> sits on American platforms, the Karim Khan
           episode was less an aberration than a live demonstration of a standing reality. The same
           concentration shows up on the tax ledger: Ireland now draws roughly <Sq>46% of its corporation
-          tax</Sq> from just three US firms &mdash; splendid until the day Washington changes its own rules
+          tax</Sq> from just three US firms, splendid until the day Washington changes its own rules
           and a third of a small country&rsquo;s revenue turns out to hinge on decisions made in a foreign
           capital. Dependence, it turns out, is not only something you pay for in cloud invoices. It is
           something you quietly bank your public finances on.
@@ -147,8 +147,8 @@ export function ChokepointChapterTen() {
           After the Khan affair, <Sq>Denmark</Sq> began moving its public administration off Microsoft
           email and productivity software; <Sq>Austria</Sq>&rsquo;s federal computing centre started
           shifting departments to open-source <Sq>LibreOffice</Sq> and <Sq>Nextcloud</Sq>; France pressed
-          ahead with its sovereign-suite plans. These are early, partial and technically painful &mdash; a
-          ministry does not leave Outlook in an afternoon &mdash; and they will not, by themselves, move the
+          ahead with its sovereign-suite plans. These are early, partial and technically painful (a
+          ministry does not leave Outlook in an afternoon), and they will not, by themselves, move the
           &euro;264-billion figure much. But they matter as proof of concept: the tribute is not a law of
           physics. It is a contract, and contracts can be cancelled by a customer with the will to absorb
           the switching cost. The whole essay keeps asking whether Europe has that will at scale, or only in
@@ -157,12 +157,12 @@ export function ChokepointChapterTen() {
 
         <P>
           And the dependence is deepest exactly where it matters most. European firms run a meaningful slice
-          of ordinary computing on local providers &mdash; but for the <em>strategic</em> workloads, the AI
+          of ordinary computing on local providers; but for the <em>strategic</em> workloads, the AI
           training and inference that will define the next decade, the hyperscalers&rsquo; share runs toward{" "}
           <Sq>nearly 100%</Sq>, because only they have the scale of accelerated compute to do it. So the
           tribute is not a flat tax across the whole economy; it is concentrated, and rising, precisely on
           the frontier. Europe can keep renting yesterday&rsquo;s computing from itself. Tomorrow&rsquo;s it
-          rents, almost entirely, from three American firms &mdash; which makes the quarter-trillion figure
+          rents, almost entirely, from three American firms, which makes the quarter-trillion figure
           not a ceiling but a floor, set to climb as the workloads it cannot yet host at home become the
           whole game.
         </P>
@@ -170,11 +170,11 @@ export function ChokepointChapterTen() {
         <P>
           To feel the asymmetry, set the scoreboards side by side. The seven largest American technology
           companies are together worth more than every listed company in Europe combined, by something like
-          half again &mdash; and there is no European company within an order of magnitude of the largest of
+          half again; and there is no European company within an order of magnitude of the largest of
           them, the chip-maker whose single name now stands against the scale of a major European economy.
           This is not a
           gap that closes with a good quarter or a clever policy; it is the accumulated interest on twenty
-          years of the standing order, compounded &mdash; and still compounding.
+          years of the standing order, compounded, and still compounding.
         </P>
 
         <P>
@@ -184,9 +184,9 @@ export function ChokepointChapterTen() {
           Europe, turned out on inspection to carry documented carve-outs letting engineers outside the EU
           reach support data. And the dependence has a price as well as a politics: when Broadcom bought
           VMware, the virtualisation software a great deal of European enterprise runs on, and sharply raised
-          its prices, a coalition of European cloud firms filed a formal antitrust complaint &mdash; because
+          its prices, a coalition of European cloud firms filed a formal antitrust complaint, because
           they had nothing else to switch to. &ldquo;Sovereign,&rdquo; in practice, keeps collapsing back
-          into &ldquo;American, with a European label and a reassuring clause&rdquo; &mdash; and the clause
+          into &ldquo;American, with a European label and a reassuring clause&rdquo;, and the clause
           is only as good as the day Washington decides otherwise.
         </P>
 
@@ -194,7 +194,7 @@ export function ChokepointChapterTen() {
           If you want the dependence stated in a single sentence, a Microsoft executive supplied it under
           oath. In June 2025 the company&rsquo;s French legal director, questioned by the French Senate,{" "}
           <Sq>conceded that Microsoft could not guarantee</Sq> that European customers&rsquo; data would be
-          shielded from American authorities under the CLOUD Act &mdash; could not, in other words, promise
+          shielded from American authorities under the CLOUD Act: could not, in other words, promise
           the one thing &ldquo;sovereign cloud&rdquo; is sold to deliver. It was an honest answer, and a
           damning one. Around it the extraction continues in quieter forms: when European governments levied
           digital-services taxes on the platforms, the platforms simply passed the cost back to European
@@ -206,24 +206,24 @@ export function ChokepointChapterTen() {
           The money does flow back in trickles, where governments fight for it. France collects several
           hundred million euros a year from its <Sq>digital-services tax</Sq>; Italy widened its own by
           scrapping the revenue threshold so that any sales into the country are caught. But these are
-          rear-guard skirmishes over a sliver of the outflow, and they invite retaliation &mdash; Washington
+          rear-guard skirmishes over a sliver of the outflow, and they invite retaliation: Washington
           has repeatedly threatened tariffs against countries that tax its champions. The more telling
           movement is on the procurement side, where the <Sq>German military</Sq> joined the civilian
           agencies in refusing Palantir over sovereignty concerns. It is the same lesson arriving from every
           direction at once: you cannot tax your way back to sovereignty, and you cannot litigate your way
-          there either. You can only build or buy your way there &mdash; and Europe has spent two decades
+          there either. You can only build or buy your way there, and Europe has spent two decades
           doing neither.
         </P>
 
         <P>
           And the squeeze comes from two directions at once, which is the part that makes it feel
-          inescapable. If the United States owns the top of the technology stack &mdash; the platforms, the
-          frontier models, the cloud &mdash; China increasingly owns the bottom: it refines something like{" "}
+          inescapable. If the United States owns the top of the technology stack (the platforms, the
+          frontier models, the cloud), China increasingly owns the bottom: it refines something like{" "}
           <Sq>92% of the world&rsquo;s rare earths</Sq> and produces the overwhelming majority of the
           gallium and germanium that chips, sensors and weapons require, and it has already shown it will
           throttle those exports as leverage. Europe sits in the middle, dependent on America for the
-          software that runs its economy and on China for the materials &mdash; and increasingly the
-          manufactured goods, the electric cars, the solar panels, the batteries &mdash; that fill it. To be
+          software that runs its economy and on China for the materials (and increasingly the
+          manufactured goods, the electric cars, the solar panels, the batteries) that fill it. To be
           a chokepoint empire is to be feared. To be caught between two of them, holding decisive leverage
           over neither, is to be the place where the squeeze is felt.
         </P>
@@ -237,46 +237,46 @@ export function ChokepointChapterTen() {
           solar panels</Sq> come from China, and when Beijing trimmed an export rebate in 2026 the price of
           European solar simply rose. Where Washington reaches for export controls, Beijing reaches for the
           mirror image: when the EU put tariffs on Chinese electric cars, China answered with duties of up to{" "}
-          <Sq>42.7%</Sq> on European dairy, plus probes into its pork and brandy &mdash; aimed, with
-          precision, at the farm vote &mdash; even as it began forcing Huawei out of European 5G cores. The
+          <Sq>42.7%</Sq> on European dairy, plus probes into its pork and brandy (aimed, with
+          precision, at the farm vote), even as it began forcing Huawei out of European 5G cores. The
           continent&rsquo;s 2025 goods deficit with China widened to some <Sq>&euro;360 billion</Sq>.
         </P>
 
         <P>
-          The same two-front logic now reaches the frontier itself. China&rsquo;s open-weight models &mdash;{" "}
-          <Sq>DeepSeek</Sq> and its successors &mdash; deliver capability close to the American frontier at a
+          The same two-front logic now reaches the frontier itself. China&rsquo;s open-weight models{" "}
+          (<Sq>DeepSeek</Sq> and its successors) deliver capability close to the American frontier at a
           fraction of the cost, and they slip past US export controls entirely, because anyone can simply
           download them. For a continent that cannot match American capital intensity, the cheaper Chinese
-          tier is genuinely tempting &mdash; and reaching for it would only swap one dependence for another.
-          That is the trap in its final form: Europe can rent the top of the stack from America or the bottom
-          of it from China, but the one option fifteen years of strategy has not produced is the third &mdash;
+          tier is genuinely tempting, and reaching for it would only swap one dependence for another.
+          That is the trap in its final form. Europe can rent the top of the stack from America or the bottom
+          of it from China, but the one option fifteen years of strategy has not produced is the third:
           owning enough of either to set its own terms.
         </P>
 
         <P>
           Widen the lens beyond cloud and the tribute only grows. Europe runs a services trade deficit with
           the United States of around <Sq>&euro;178 billion a year</Sq>, much of it digital; global
-          cross-border payments for the use of intellectual property &mdash; the licensing of patents,
-          brands and software &mdash; passed a trillion dollars, with the United States the largest single
+          cross-border payments for the use of intellectual property (the licensing of patents,
+          brands and software) passed a trillion dollars, with the United States the largest single
           collector. Even the regulator&rsquo;s biggest swings barely dent it: the Commission fined{" "}
           <Sq>Google three billion euros</Sq> in 2025 over its ad-tech dominance, lifting its cumulative EU
-          antitrust fines past eight billion &mdash; sums that are at once the largest in the history of
+          antitrust fines past eight billion (sums that are at once the largest in the history of
           competition law and a rounding error against the revenue the same firm pulls out of Europe every
-          year. The tribute is paid in a hundred currencies &mdash; cloud fees, ad revenue, IP royalties,
-          app-store commissions &mdash; and totalled, it is the quiet transfer of a great power&rsquo;s
+          year). The tribute is paid in a hundred currencies (cloud fees, ad revenue, IP royalties,
+          app-store commissions), and totalled, it is the quiet transfer of a great power&rsquo;s
           economic surplus to another.
         </P>
 
         <P>
           Even the most basic plumbing of the economy runs on foreign rails. Every time a European taps a
-          card, the transaction almost certainly flows through <Sq>Visa or Mastercard</Sq> &mdash; two
+          card, the transaction almost certainly flows through <Sq>Visa or Mastercard</Sq>: two
           American networks that together handle well over half of the continent&rsquo;s cashless payments
           and clear some twenty-odd trillion euros a year, taking a sliver of each and seeing the data trail
           of a continent&rsquo;s spending. Europe has tried for two decades to build its own: the
           &ldquo;Monnet Project&rdquo; collapsed when national banks would not cooperate, and only now, with{" "}
-          <Sq>Wero</Sq> &mdash; a pan-European wallet that moved billions in its first year and, in 2026,
+          <Sq>Wero</Sq> (a pan-European wallet that moved billions in its first year and, in 2026,
           linked arms with Italy&rsquo;s, Spain&rsquo;s, Portugal&rsquo;s and the Nordics&rsquo; national
-          systems &mdash; is a genuine alternative finally taking shape. It is the whole essay in miniature:
+          systems), is a genuine alternative finally taking shape. It is the whole essay in miniature:
           a sovereignty so basic most Europeans never think about it, surrendered for decades to American
           firms, and reclaimable only once the continent finally decides to stop competing as twenty-seven
           and start acting as one.
@@ -291,17 +291,17 @@ export function ChokepointChapterTen() {
           of foreign-exchange trades, which lets Washington turn the plumbing of global finance into an
           instrument of foreign policy at will. Europe has its own currency and one of the world&rsquo;s
           great trading blocs, and still its companies advertise, transact and settle on rails it does not
-          own. The tribute, fully tallied, is not one bill but a stack of them &mdash; and almost every one
+          own. The tribute, fully tallied, is not one bill but a stack of them, and almost every one
           is addressed across the Atlantic.
         </P>
 
         <P>
           And the rawest resource of all, Europe gives away for free. Every search, post, purchase and
-          location ping a European generates is data, and data is the feedstock of the AI economy &mdash; and
+          location ping a European generates is data, and data is the feedstock of the AI economy; and
           the overwhelming majority of it is harvested, refined and monetised by American platforms, then
           sold back to Europe in the form of the very services that collected it. Europe&rsquo;s answer, a{" "}
-          <Sq>Data Act</Sq> meant to treat data as shared European infrastructure, took effect in 2025
-          &mdash; and pointedly <em>excluded</em> the largest gatekeepers from its core data-sharing duties,
+          <Sq>Data Act</Sq> meant to treat data as shared European infrastructure, took effect in 2025,
+          and pointedly <em>excluded</em> the largest gatekeepers from its core data-sharing duties,
           the loophole quietly swallowing the rule. A continent that frets about importing oil has spent two
           decades exporting something more valuable, in unlimited quantity, for nothing: the recorded
           behaviour of four hundred and fifty million people, the single richest training set on Earth,
@@ -310,12 +310,12 @@ export function ChokepointChapterTen() {
 
         <P>
           The Karim Khan affair had a sequel that is the most hopeful thing in the chapter. In October 2025
-          the International Criminal Court &mdash; having watched its prosecutor&rsquo;s Microsoft account go
-          dark under US sanctions &mdash; formally <Sq>migrated off Microsoft entirely</Sq>, moving to{" "}
+          the International Criminal Court, having watched its prosecutor&rsquo;s Microsoft account go
+          dark under US sanctions, formally <Sq>migrated off Microsoft entirely</Sq>, moving to{" "}
           <Sq>openDesk</Sq>, an open-source suite built by Germany&rsquo;s public Centre for Digital
           Sovereignty. It is a small institution and a small migration, technically painful and far from
           complete. But it is the proof of concept the whole essay has been circling: that when the threat
-          becomes concrete enough, the supposedly immovable dependence <em>can</em> be moved &mdash; that
+          becomes concrete enough, the supposedly immovable dependence <em>can</em> be moved; that
           &ldquo;sovereign,&rdquo; open, European infrastructure is not a fantasy but a working alternative,
           waiting only for the will, and the fright, to adopt it. The tribute is enormous. It is also, as the
           ICC has just demonstrated, cancellable.
@@ -323,7 +323,7 @@ export function ChokepointChapterTen() {
 
         <P>
           The dependence reaches even the information Europeans use to govern themselves. The continent has
-          no search engine, no social network, no app store of any scale &mdash; so the news its citizens
+          no search engine, no social network, no app store of any scale; so the news its citizens
           read, the debates they have and increasingly the facts they believe are mediated by American
           platforms whose incentives are not European. When Google&rsquo;s AI-generated answers began keeping
           users from clicking through, European publishers watched their traffic fall by roughly a third and
@@ -336,14 +336,14 @@ export function ChokepointChapterTen() {
 
         <P>
           Tally the everyday digital life of a European and the absence is total. The streaming they watch is
-          American &mdash; Netflix, Disney, YouTube and the rest take some <Sq>80% of online video
+          American: Netflix, Disney, YouTube and the rest take some <Sq>80% of online video
           minutes</Sq> across the major European markets; the online shopping runs largely through Amazon,
           which leads all five of the continent&rsquo;s biggest e-commerce markets; the search is Google,
           which holds close to <Sq>90% of the European market</Sq> against low-single-digit shares for
           home-grown alternatives like Ecosia; the browsers are overwhelmingly Chrome; the phones
           run iOS or Android; the social feeds are American or Chinese; the cloud behind all of it is one of
           three US firms. There is no European Google, no European Amazon, no European Netflix, no
-          European iPhone &mdash; not because Europeans would refuse to use them, but because Europe never
+          European iPhone: not because Europeans would refuse to use them, but because Europe never
           built them, and, having not built them, now lives its entire digital existence as a paying guest in
           structures it does not own. A continent can be wealthy and cultured and free and still, in the
           medium that increasingly mediates everything else, be a tenant from morning to night.
@@ -365,7 +365,7 @@ export function ChokepointChapterTen() {
 
         <P>
           There is one accelerant left to account for, and it is the reason the whole ledger is about to
-          get worse, fast. Every gap in this essay &mdash; capital, talent, energy, scale &mdash; is being
+          get worse, fast. Every gap in this essay (capital, talent, energy, scale) is being
           multiplied in real time by a technology that rewards the leader and strip-mines the laggard with
           unprecedented speed. The final chapter of the diagnosis is about that accelerant: software that
           now costs almost nothing to make, deflates by an order of magnitude a year, and pours its

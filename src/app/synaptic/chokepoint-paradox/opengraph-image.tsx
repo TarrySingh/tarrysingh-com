@@ -67,7 +67,7 @@ export default async function Image() {
             }}
           >
             Europe holds the key; Washington owns the lock. The machine that ships
-            a continent&rsquo;s wealth, talent and IP west &mdash; in ~40
+            a continent&rsquo;s wealth, talent and IP west, in ~40
             interactive instruments.
           </div>
         </div>

@@ -153,14 +153,37 @@ const RULES: Rule[] = [
  * stops sounding human. Two document-level signals, because it is a property of
  * a paragraph rather than of any single phrase.
  */
+const PCT =
+  /\d[\d.,]*\s?(?:per cent|%)|(?:one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)[a-z-]*\s(?:per cent|%)/gi
+
+/**
+ * Any HARD FIGURE: a percentage, a currency amount, a multiplier, or a number
+ * carrying a scale word, a unit, or a thousands separator.
+ *
+ * This rule used to count PERCENTAGES ONLY, and so it was measuring the wrong
+ * thing. Tarry pointed at /blog/kilometre-between-certificate-payroll on
+ * 2026-08-13 as an example of the disease; the gate had never flagged it,
+ * because its worst paragraph stacks eleven figures of which exactly one is a
+ * percentage (1.87 million registrations, 774 local government areas, 135,000
+ * fellows, 99.6%, 9,000 trained, a target of 7,000, 86,000 engagements,
+ * NGN 150,000/month, 3,000 fellows, 3,000 more placements).
+ *
+ * Bare small integers are deliberately NOT counted. "three cohorts" and "six
+ * colleges" are ordinary English, not statistics, and counting them would make
+ * the gate noisy enough to be ignored.
+ */
+const HARD_FIGURE =
+  /\d[\d.,]*\s?%|[$€£₩¥₦]\s?\d[\d.,]*(?:\s?(?:million|billion|trillion|thousand))?|\d[\d.,]*\s?x\b|\d[\d.,]*\s?(?:million|billion|trillion|thousand)\b|\b\d{1,3}(?:,\d{3})+\b|\d[\d.,]*\s?(?:GW|MW|kW|TWh|GB|TB|PB|percentage points?|megawatts?|gigawatts?|kilowatts?|tokens?|parameters?|hours?|minutes?|seconds?)\b/gi
+
 function statDumpParagraphs(text: string): number {
-  const PCT = /\d[\d.,]*\s?(?:per cent|%)|(?:one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)[a-z-]*\s(?:per cent|%)/gi
   return text
     .split(/\n\s*\n/)
     .filter((p) => {
       const t = p.trim()
-      if (t.length < 80 || /^[#>|\-*]/.test(t)) return false
-      return (t.match(PCT) ?? []).length >= 3
+      if (t.length < 120 || /^[#>|\-*!]/.test(t)) return false
+      // Either signal counts: four hard figures of any kind, or three
+      // percentages (which reads as a dump even in a shorter paragraph).
+      return (t.match(HARD_FIGURE) ?? []).length >= 4 || (t.match(PCT) ?? []).length >= 3
     }).length
 }
 
@@ -284,7 +307,7 @@ export function scanDispatchSlop(text: string): SlopHit[] {
   if (dumps > 0) {
     hits.push({
       id: "statistic-dump",
-      label: `${dumps} paragraph(s) stack 3+ statistics — lead with the meaning, one figure per sentence`,
+      label: `${dumps} paragraph(s) stack 4+ hard figures, lead with the meaning, one figure per sentence`,
       severity: "hard",
       match: `${dumps} paragraphs`,
     })

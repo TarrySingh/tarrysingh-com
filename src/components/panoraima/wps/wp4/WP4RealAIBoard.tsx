@@ -614,7 +614,7 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
             </div>
             <div className="p-5">
               <p className="text-[13px] text-[#444A55] mb-3">
-                A plain-text status for the {track ? trackLabel : "relevant"} track lead &mdash; copy it into an email, download it, or open it in your mail client.
+                A plain-text status for the {track ? trackLabel : "relevant"} track lead, copy it into an email, download it, or open it in your mail client.
               </p>
               <textarea
                 readOnly
