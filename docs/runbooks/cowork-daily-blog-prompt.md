@@ -245,6 +245,31 @@ delve, navigate, landscape, ever-evolving, in the realm of, robust, leverage (as
 
 **Required cadence**:
 - Mix sentence lengths aggressively. Short. Long sentences that earn their length by carrying genuine analytical content rather than throat-clearing. Then short again.
+**NUMERIC HOUSE STYLE (hard).** Numbers, signs, currency and percentages go in their MATHEMATICAL form, never in prose. This section did not exist until 2026-08-13, which is why Cowork-written posts kept shipping "per cent" long after the rule was set: the backup-writer had it and this runbook did not. Derived from what TechCrunch, AP (which moved to "%" in 2019), the Economist, Reuters and Stratechery actually do, with two deliberate departures noted below.
+
+1. **Percentages are always `%`.** `62%`, `6%`. Never "per cent", never "percent", never spelled out. No space before the sign.
+2. **A sentence MAY open on a numeral.** `40% of a town's water went to servers.` Every major style guide forbids this; we overrule them, because spelling it out drags the figure into the subject slot and produces exactly the headline we banned.
+3. **Headlines follow body style.** `40% Escalated to the Board`, never "Forty Per Cent Escalated". One number system per page.
+4. **Money in prose: symbol + digits + spelled scale.** `$700 million`, `$44 billion`. Exact sums under a million take full digits: `$4,000`, `$28,350`.
+5. **Compressed money (`$78.5Bn`, `$500M`, `$47K`) is for headings, tables and chart labels only**, and never in the same sentence as a spelled scale word. Form is `Bn` / `M` / `K`.
+6. **Never write the currency as a word after a numeral.** `$2.7 billion`, not "2.7 billion dollars".
+7. **Non-USD: native symbol first, USD in brackets on first mention.** `₩110 billion (about $73 million)`.
+8. **Ranges take one en dash and attach the unit once.** `30–50%`, `$1,200–2,000`, `$700–725 billion`.
+9. **"from X to Y" is for movement, not spans.** `fell from 26% to 10%` stays; a span becomes `20–40%`.
+10. **Multipliers are `Nx`.** `2.5x`, `15x`. Never "two and a half times".
+11. **Rates take a slash.** `$4,000/month`, `$0.40/million tokens`.
+12. **Counts: words for one to nine, digits from 10 up.** But ALWAYS digits with a unit, a currency, a percentage or a spec, however small: `6%`, `$4`, `4 GW`, `7B parameters`.
+13. **Never spell a quantity carrying a scale word.** `20,000 GPUs`, not "twenty thousand GPUs". `$80 billion`, not "Eighty billion".
+14. **Never spell a numeral attached to a measured unit.** `42 megawatts`, `90 seconds`, `40 percentage points`.
+15. **Units:** SI power and energy take a space (`4 GW`, `460 kW`); memory and storage close up (`128GB`, `32K tokens`).
+16. **Thousands separators on four digits and up:** `22,000`. Not on years, standard numbers (`ISO 42001`, `SR 11-7`) or model sizes (`405B`).
+17. **Decimals: one place in prose** (`15.4%`). Two only for a transactable price or a literally reported figure. Never pad `.0`.
+18. **Dates: `27 May 2026`.** No comma, no ordinal suffix. `Q1 2026`, `FY2026-27`, spans elide as `2028-29`.
+19. **Every hard figure carries inline attribution and a comparison base.** A number with no source and no direction is a table cell, not prose.
+20. **Hedge before the number:** `about 60%`, `roughly $700 billion`.
+
+**PROTECTED — these are correct as words and must never be converted:** "percentage point(s)" (a different unit: a fall from 4% to 2% is two percentage points, or 50%, but not 2%), "percentile", rank ordinals ("the second phase"), and deliberate fractions and ratios ("two-thirds", "a third", "one in five", "half"). Converting a fraction to a percentage invents precision nobody measured.
+
 - **Em-dashes: ZERO. No exceptions.** Not one em-dash in the piece, and no `--` standing in for one. This supersedes the old 1-per-150-words budget (which the corpus was running at double anyway) and matches the binding anti-slop contract, where the em-dash is the #1 tell. Rewrite into two sentences, or use a comma, a colon (sparingly), or parentheses (sparingly). Do not swap the character and move on: restructure the sentence so it no longer wants a dash.
 - **Client experiences and personal anecdotes are capped at 2 days per week maximum.** To decide whether today is an anecdote day: compute `(day_of_year * 7) mod 5`. If the result is **0 or 3**, this is an anecdote day — include up to two specific anecdotes or recollections (boardrooms, client conversations, a system you helped build in 2003, a deployment that failed in 2019, a thing your father said about engineers). **On all other days, do NOT include client stories or personal recollections.** Instead, keep the writing concrete through data, specific technical details, named sources, and direct analysis. Concrete > abstract, always — but concreteness comes from numbers and specifics on non-anecdote days, not from client war stories.
 - One **clear stake**: a position you would defend, stated plainly. Vary its *form* day to day and do NOT default to the betting-desk or board-advisor register. It can be a flat judgement, a prediction with its reason, something you would refuse to sign off on, a disagreement with a named source, or a price you think is wrong. The wager and counterfactual-seat forms are capped by §5a and may not carry the stake more often than those caps allow. The stake does not have to live in the closing; put it where the argument needs it.
