@@ -125,7 +125,13 @@ Hard caps feel punitive. They are also the only proven pattern that prevents run
 
 **They route intelligently.**
 
-The reason right-sizing works is that the price difference between tiers is enormous and the capability difference for most tasks is small. As of June 2026, Anthropic's Haiku 4.5 runs $1 input and $5 output per 1 million tokens; Sonnet 4.6 is $3/$15; Opus 4.8 is $5/$25.
+The reason right-sizing works is that the price difference between tiers is enormous and the capability difference for most tasks is small. As of June 2026, Anthropic's prices per 1 million tokens:
+
+| Model | Input | Output |
+| --- | --- | --- |
+| Haiku 4.5 | $1 | $5 |
+| Sonnet 4.6 | $3 | $15 |
+| Opus 4.8 | $5 | $25 |
 
 Peer-reviewed research (RouteLLM, ICLR 2025) showed more than 85% cost reduction on a benchmark while preserving 95% of flagship quality. Production teams report bill reductions of 40–85% from intelligent model routing with no visible quality loss.
 

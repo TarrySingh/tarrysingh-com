@@ -44,7 +44,18 @@ The third is **the exit condition**. The loop must terminate. I have seen evalua
 
 Because the 2026 production data is in and the news is bad in a useful way.
 
-LangChain's [State of AI Agents report](https://www.langchain.com/state-of-agent-engineering) put hard numbers on what most of us were seeing in client work. 57% of organizations have agents in production. 32% cite quality as the top barrier to deployment, the single largest blocker, ahead of latency at 20% and cost. Among enterprises with more than 2,000 employees, security overtakes latency as the second worry at 24.9%. The interesting line in the report is the one nobody is quoting in their LinkedIn posts: 89% of respondents have implemented observability, but only 52% have implemented evals. That gap, observability without evaluation, is precisely the gap the evaluator-optimizer pattern is supposed to close at runtime, and where most teams are still relying on dashboards that tell them an agent did something without telling them whether what it did was correct.
+LangChain's [State of AI Agents report](https://www.langchain.com/state-of-agent-engineering) put hard numbers on what most of us were seeing in client work.
+
+| Finding | Share |
+| --- | --- |
+| Organizations with agents in production | 57% |
+| Quality as the top barrier to deployment, the single largest blocker, ahead of latency and cost | 32% |
+| Latency | 20% |
+| Security, overtaking latency as the second worry among enterprises with more than 2,000 employees | 24.9% |
+| Respondents who have implemented observability | 89% |
+| Respondents who have implemented evals | only 52% |
+
+The interesting line in the report is the one nobody is quoting in their LinkedIn posts: observability against evals. That gap, observability without evaluation, is precisely the gap the evaluator-optimizer pattern is supposed to close at runtime, and where most teams are still relying on dashboards that tell them an agent did something without telling them whether what it did was correct.
 
 This is where I would push back on the vendor narrative, gently. Every observability vendor in this market (and there are now more LLM-ops tools than there are useful agents) will tell you they have evals. What many of them actually have is an LLM-as-judge running asynchronously over sampled traces, useful for drift detection, useless for stopping a destructive action in flight. The evaluator-optimizer pattern is something different. It is inline. It runs before the side-effect. It is the difference between a doorbell camera that records the break-in and a deadbolt that prevents it.
 

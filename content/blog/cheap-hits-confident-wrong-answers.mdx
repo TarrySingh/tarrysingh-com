@@ -19,7 +19,15 @@ One answer is caching. Two distinct caching layers, to be precise, with two very
 
 Two layers, top to bottom.
 
-The first is **prefix caching at the inference engine**: vLLM, SGLang's RadixAttention, TensorRT-LLM. The KV cache from the prefill stage of one request gets reused by the next request that shares its leading tokens. It is lossless. It is deterministic. It changes nothing about the model's output. On RAG and multi-turn chat, where every request starts with the same system prompt and retrieved context, SGLang's published numbers show cache hit rates from 50% to nearly 99%. The same benchmarks give it about a 29% throughput edge over vLLM on prefix-heavy workloads ([SGLang RadixAttention docs](https://sgl-project-sglang-93.mintlify.app/concepts/radix-attention), [Spheron benchmark notes](https://www.spheron.network/blog/vllm-vs-tensorrt-llm-vs-sglang-benchmarks/)). The frontier model providers expose the same idea as a billing primitive. Anthropic charges cache reads at 10% of input rate, a 90% discount. OpenAI does it automatically at roughly 50% for any stable prefix above 1,024 tokens, and Google's Gemini 2.5 family discounts cached content 90% ([Artificial Analysis caching tracker](https://artificialanalysis.ai/models/caching), [DigitalOcean on prompt caching](https://www.digitalocean.com/blog/prompt-caching-with-digital-ocean)). Engineering teams that have invested in prompt cache hit-rate work report blended cost cuts of 60–85% on long-context agent loops ([AgentMarketCap, April 2026](https://agentmarketcap.ai/blog/2026/04/11/prompt-cache-hit-rate-engineering-2026)).
+The first is **prefix caching at the inference engine**: vLLM, SGLang's RadixAttention, TensorRT-LLM. The KV cache from the prefill stage of one request gets reused by the next request that shares its leading tokens. It is lossless. It is deterministic. It changes nothing about the model's output. On RAG and multi-turn chat, where every request starts with the same system prompt and retrieved context, SGLang's published numbers show cache hit rates from 50% to nearly 99%. The same benchmarks give it about a 29% throughput edge over vLLM on prefix-heavy workloads ([SGLang RadixAttention docs](https://sgl-project-sglang-93.mintlify.app/concepts/radix-attention), [Spheron benchmark notes](https://www.spheron.network/blog/vllm-vs-tensorrt-llm-vs-sglang-benchmarks/)). The frontier model providers expose the same idea as a billing primitive ([Artificial Analysis caching tracker](https://artificialanalysis.ai/models/caching), [DigitalOcean on prompt caching](https://www.digitalocean.com/blog/prompt-caching-with-digital-ocean)).
+
+| Provider | Cached-input pricing |
+| --- | --- |
+| Anthropic | Charges cache reads at 10% of input rate, a 90% discount |
+| OpenAI | Automatically at roughly 50% for any stable prefix above 1,024 tokens |
+| Google's Gemini 2.5 family | Discounts cached content 90% |
+
+Engineering teams that have invested in prompt cache hit-rate work report blended cost cuts of 60–85% on long-context agent loops ([AgentMarketCap, April 2026](https://agentmarketcap.ai/blog/2026/04/11/prompt-cache-hit-rate-engineering-2026)).
 
 The second is **semantic caching at the gateway**: GPTCache, Redis LangCache (public preview as of late 2025, still pre-GA in 2026), Portkey, Bifrost, the gateway-layer libraries. This one intercepts a request before it reaches the model, embeds the query, looks up nearby vectors, and returns a previously generated answer if cosine similarity clears some threshold ([Redis on LangCache](https://redis.io/blog/langcache-public-preview/)). It is probabilistic. It can be wrong. And that distinction is where most production trouble starts.
 
@@ -43,7 +51,15 @@ Prefix caching belongs in the engine because the engine owns the KV state. Seman
 
 ## the numbers, with vendor caveats
 
-Vendor case studies on semantic caching cluster around dramatic claims. One widely-cited deployment dropped a $47,000 monthly LLM bill to $12,700, a 73% cut. The team got there by pushing cache hit rates from 18% to 67% ([summary at Maxim](https://www.getmaxim.ai/articles/semantic-caching-for-llms-cut-ai-costs-and-latency-with-an-enterprise-ai-gateway/)). AWS published research on 63,796 chatbot queries showing 86% cost reduction at the optimal threshold ([AWS results via Maxim](https://www.getmaxim.ai/articles/top-semantic-caching-solutions-for-ai-applications-in-2026/)). Redis claims up to 70% token savings on LangCache. Take each of these with the same posture you would take to any hyperscaler benchmark: the curve is real, the magnitude is workload-specific, the upper end is the marketing number.
+Vendor case studies on semantic caching cluster around dramatic claims.
+
+| Source | Claim |
+| --- | --- |
+| One widely-cited deployment ([summary at Maxim](https://www.getmaxim.ai/articles/semantic-caching-for-llms-cut-ai-costs-and-latency-with-an-enterprise-ai-gateway/)) | Dropped a $47,000 monthly LLM bill to $12,700, a 73% cut, by pushing cache hit rates from 18% to 67% |
+| AWS published research on 63,796 chatbot queries ([AWS results via Maxim](https://www.getmaxim.ai/articles/top-semantic-caching-solutions-for-ai-applications-in-2026/)) | 86% cost reduction at the optimal threshold |
+| Redis | Claims up to 70% token savings on LangCache |
+
+Take each of these with the same posture you would take to any hyperscaler benchmark: the curve is real, the magnitude is workload-specific, the upper end is the marketing number.
 
 Independent production reporting lands lower. Real agent workflows and FAQ traffic typically hit cache 30–70% of the time once you have tightened thresholds enough to avoid serving nonsense ([Redis LLM optimization, 2026](https://redis.io/blog/llm-token-optimization-speed-up-apps/)). Add prefix caching underneath that and a well-tuned stack can cut blended inference cost 40–60% on agent-heavy traffic. That is the upside.
 
