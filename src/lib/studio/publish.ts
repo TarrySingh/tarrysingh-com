@@ -2,6 +2,7 @@ import { Octokit } from "@octokit/rest"
 import type { DispatchFrontmatter } from "./types"
 import { buildMdx } from "./serialize"
 import { assertMdxCompiles } from "./validate-mdx"
+import { scanDispatchSlop, summariseSlop } from "./dispatch-slop"
 
 /**
  * Publishes a Dispatch by committing `content/blog/<slug>.mdx`
@@ -138,6 +139,36 @@ export async function publishDispatch(
       }),
     )
     return { ok: false, error: "invalid_mdx" }
+  }
+
+  // House-style scan on the PUBLISH path, not just inside the backup writer.
+  // The scan used to run only on the writer's own output, so anything arriving
+  // through the email-approve link or the Studio editor, which is everything
+  // Cowork writes, was never checked. Four consecutive Dispatches shipped an
+  // em-dash in the excerpt and nothing recorded it.
+  //
+  // NON-BLOCKING, matching the backup writer's own reasoning: shipping a piece
+  // with one tell beats shipping nothing, and the daily Dispatch matters more
+  // than a perfect one. This exists so a regression is VISIBLE in the Vercel
+  // logs the morning it happens, instead of surfacing weeks later when someone
+  // reads the live page. The scan runs on the FULL mdx so the frontmatter,
+  // where the excerpt lives, is in scope.
+  try {
+    const hits = scanDispatchSlop(fullMdx)
+    if (hits.length) {
+      console.warn(
+        JSON.stringify({
+          tag: "studio.publish.slop_scan",
+          slug: input.slug,
+          hits: hits.length,
+          hard: hits.filter((h) => h.severity === "hard").length,
+          summary: summariseSlop(hits),
+          worst: hits.filter((h) => h.severity === "hard").slice(0, 4).map((h) => `${h.id}: ${h.match}`),
+        }),
+      )
+    }
+  } catch {
+    /* a style scan must never break the publish path */
   }
 
   const contentBase64 = Buffer.from(fullMdx, "utf8").toString("base64")
