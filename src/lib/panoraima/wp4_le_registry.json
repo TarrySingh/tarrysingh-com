@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-08-13T20:57:52.968905+00:00",
-  "refreshed_at": "2026-08-13T20:57:52.968905+00:00",
+  "generated_at": "2026-08-14T10:41:34.341596+00:00",
+  "refreshed_at": "2026-08-14T10:41:34.341596+00:00",
   "refresh_history": [
     {
       "at": "2026-08-12T15:01:19.979396+00:00",
@@ -18626,7 +18626,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": null,
+      "review_note": "Homework slide revised Aug 2026 — addresses our June note: names the Scopus/WoS coverage-bias cause (indexing coverage, journal lists, disciplinary scope) and adds a reflective 'why do the maps differ' question. Only that one slide changed; the proxy-for-influence caveat (slides 6/19) and the live Scopus/WoS access barrier from June still stand. Stays green.",
       "materials": {
         "count": 2,
         "has": true,
@@ -26025,7 +26025,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": null,
+      "review_note": "Homework slide revised Aug 2026 — addresses our June note: names the Scopus/WoS coverage-bias cause (indexing coverage, journal lists, disciplinary scope) and adds a reflective 'why do the maps differ' question. Only that one slide changed; the proxy-for-influence caveat (slides 6/19) and the live Scopus/WoS access barrier from June still stand. Stays green.",
       "materials": {
         "count": 2,
         "has": true,
