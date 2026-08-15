@@ -144,6 +144,75 @@ const RULES: Rule[] = [
     severity: "hard",
     re: /contentReference|oai_citation|oaicite|turn\d+search\d+|grok_render|attributableIndex|【|】/g,
   },
+  // ── Tier 3: the 2026-08-15 source sweep ───────────────────────────────
+  // Added after a deep pull across Wikipedia "Signs of AI writing", tropes.fyi,
+  // Doherty's field guide, Peter Yang's /no-ai-slop, Momentic's 34-types, The
+  // Conversation's linguistics of stylistic negation, and the HN/X discourse.
+  // Each of these is a rhetorical MOVE rather than a vocabulary item, which is
+  // why none of the word lists were catching them.
+  {
+    // tropes.fyi "Not X. Not Y. Just Z." — the dramatic countdown. A sibling of
+    // negation-substitution that our existing rule cannot see because it
+    // negates twice before landing.
+    id: "dramatic-countdown",
+    label: "'Not X. Not Y. Just Z.' countdown",
+    severity: "hard",
+    re: /\bNot\s+[^.?!]{2,40}\.\s+Not\s+[^.?!]{2,40}\.\s+(?:Just|Only|Simply)\b/g,
+  },
+  {
+    // tropes.fyi "The X? A Y." — a question the writer asks themselves purely
+    // to answer it. "The result? Devastating."
+    id: "rhetorical-qa",
+    label: "self-posed question answered immediately",
+    severity: "hard",
+    re: /(?:^|[.!?]\s)(?:The|Their|Its|His|Her|My|Our|Your)\s+\w+(?:\s+\w+){0,2}\?\s+[A-Z][^.?!]{2,50}\./gm,
+  },
+  {
+    // Peter Yang's "colon reveal" — a short setup, a colon, a payoff. Reads as
+    // a slide bullet rather than a sentence.
+    id: "colon-reveal",
+    label: "short colon reveal used as a punchline",
+    severity: "soft",
+    allow: 0,
+    // Tight on BOTH halves, and the payoff may not contain a comma. A colon
+    // introducing a real explanation ("That figure matches neither measure: the
+    // US is about 26% nominal and ~15% PPP") is correct punctuation, not a
+    // punchline, and an earlier looser pattern reported it.
+    re: /(?:^|[.!?]\s)[A-Z][^.?!:,\n]{4,28}:\s+[a-z][^.?!,\n]{2,30}\./gm,
+  },
+  {
+    // tropes.fyi "False Exclusivity" + Yang's "faux-insight setup". Claims a
+    // secret in order to manufacture value, and adds nothing.
+    id: "faux-insight",
+    label: "claiming nobody says this, to manufacture value",
+    severity: "hard",
+    re: /\b(?:what )?(?:nobody|no one|few people|almost nobody) (?:talks about|is talking about|tells you|will tell you|mentions|wants to (?:say|admit))\b|\bthe part (?:everyone|nobody) (?:misses|gets wrong|talks about)\b|\bwhat they don'?t tell you\b/gi,
+  },
+  {
+    // tropes.fyi "The Truth Is Simple" — asserting obviousness instead of
+    // demonstrating it.
+    id: "asserted-obviousness",
+    label: "asserting the point is simple instead of proving it",
+    severity: "hard",
+    re: /\bthe (?:truth|reality|answer|maths?|math) (?:is|here is) (?:simple|simpler|straightforward|obvious)\b|\bit'?s (?:that|really that) simple\b/gi,
+  },
+  {
+    // Wikipedia "outline-like conclusions" — the formula that raises problems
+    // only to wave them away.
+    id: "despite-challenges",
+    label: "'despite these challenges' dismissal formula",
+    severity: "hard",
+    re: /\bdespite (?:these|its|the|those|such) (?:challenges|obstacles|limitations|concerns|headwinds|setbacks)\b/gi,
+  },
+  {
+    // Momentic "manufactured vulnerability" — performed candour as a
+    // credibility move.
+    id: "performed-candour",
+    label: "performed candour ('I'll be honest')",
+    severity: "soft",
+    allow: 0,
+    re: /\b(?:I'?ll be honest|let me be honest|let'?s be honest|full disclosure|I'?ll admit it|if I'?m being honest)\b/gi,
+  },
 ]
 
 /**
@@ -279,6 +348,214 @@ function spelledOutPercent(text: string): number {
   return (scannable.match(attached) ?? []).length
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+ * THE SMELL CATCHER — cadence and structure, not vocabulary.
+ *
+ * WHY THIS EXISTS (Tarry, 2026-08-15: "we really really want our writing to
+ * look human"). Every rule above this line matches a STRING. That is a losing
+ * game on its own: the field has moved, and the 2026 detection research is
+ * unanimous that structure beats vocabulary. StoryScope (UMD + DeepMind)
+ * classifies AI prose at 93.2% accuracy using NO word analysis at all, and the
+ * commercial detectors score "burstiness" — the standard deviation of sentence
+ * length — as a primary feature. A draft can pass every word list we own and
+ * still read as a machine wrote it, because the tell is the rhythm.
+ *
+ * The specimen that prompted this, from the live site
+ * (/blog/the-agents-you-cannot-name):
+ *
+ *     "You approved a pilot. You are financing a liability."
+ *
+ * Two short sentences, same opening word, the second reframing the first as
+ * worse. Note what it is NOT: it is not "it's not X, it's Y". Our
+ * `negation-substitution` rule cannot see it, because nothing is negated. It is
+ * the AFFIRMATIVE sibling of that construction, and it is currently the more
+ * fashionable of the two precisely because writers have been trained to strip
+ * the negated form. Catching only the negated half was leaving the front door
+ * open.
+ *
+ * Thresholds below are calibrated against the 119-post corpus, not guessed.
+ * Per the contract's §5b discipline: a noisy gate is a bypassed gate, so
+ * anything that could not be driven to high precision ships `soft` (reports,
+ * never blocks) or stays in the contract for human reading only.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/** Sentence-final abbreviations that must not end a sentence. */
+const ABBREV =
+  /\b(?:Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|Inc|Ltd|Co|Corp|vs|etc|e\.g|i\.e|approx|Fig|No|Vol|Ch|Sec|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|U\.S|U\.K|E\.U)\.$/i
+
+/**
+ * Reduce MDX to plain prose paragraphs. Headings, lists, tables, blockquotes,
+ * images and code are deliberately dropped: they have their own cadence and
+ * would poison a sentence-length distribution. What remains is what a reader
+ * experiences as running text.
+ */
+function proseParagraphs(text: string): string[] {
+  const body = text
+    .replace(/^---\n[\s\S]*?\n---\n/, "") // frontmatter
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/`[^`\n]*`/g, "")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1") // keep link text, drop target
+    .replace(/<[^>]+>/g, "")
+    .replace(/^\s*[#>|].*$/gm, "") // headings, quotes, tables
+    .replace(/^\s*(?:[-*+]|\d+\.)\s+.*$/gm, "") // list items
+    .replace(/\*\*|__|\*|_/g, "")
+
+  return body
+    .split(/\n\s*\n/)
+    .map((p) => p.replace(/\s+/g, " ").trim())
+    .filter((p) => p.length > 0)
+}
+
+/** Split a paragraph into sentences, respecting abbreviations. */
+function sentences(paragraph: string): string[] {
+  const parts = paragraph.split(/(?<=[.!?])\s+(?=["'(]?[A-Z0-9])/)
+  const out: string[] = []
+  for (const part of parts) {
+    if (out.length > 0 && ABBREV.test(out[out.length - 1])) out[out.length - 1] += " " + part
+    else out.push(part)
+  }
+  return out.map((s) => s.trim()).filter(Boolean)
+}
+
+const words = (s: string): number => (s.match(/[A-Za-z0-9$%][A-Za-z0-9'’.,$%-]*/g) ?? []).length
+const firstWord = (s: string): string =>
+  (s.match(/[A-Za-z']+/)?.[0] ?? "").toLowerCase()
+
+/**
+ * Openers that carry a subject. An anaphoric couplet is only a rhetorical move
+ * when both sentences point at the same actor; two consecutive sentences that
+ * merely both begin "The" are ordinary English and flagging them would bury the
+ * real hits.
+ */
+const SUBJECT_OPENERS = new Set([
+  "you", "we", "it", "that", "this", "they", "he", "she", "i", "your", "our", "their",
+])
+
+interface CadenceFinding {
+  id: string
+  label: string
+  severity: "hard" | "soft"
+  match: string
+}
+
+function cadenceFindings(text: string): CadenceFinding[] {
+  const out: CadenceFinding[] = []
+  const paras = proseParagraphs(text)
+  const allSentences: string[] = []
+  const lengths: number[] = []
+
+  for (const p of paras) {
+    const ss = sentences(p)
+    for (const s of ss) {
+      allSentences.push(s)
+      lengths.push(words(s))
+    }
+
+    // ── Fragment as a standalone paragraph ─────────────────────────────────
+    // "That's it. That's the whole thing." shipped as its own line. A one-line
+    // paragraph under six words is a drum-roll, not a sentence.
+    if (ss.length === 1 && words(ss[0]) > 0 && words(ss[0]) <= 5) {
+      out.push({
+        id: "fragment-paragraph",
+        label: "one-line paragraph under 6 words used as a drum-roll",
+        severity: "soft",
+        match: ss[0].slice(0, 90),
+      })
+    }
+  }
+
+  // ── The anaphoric couplet (Tarry's specimen) ─────────────────────────────
+  // Two ADJACENT short sentences sharing a subject opener. The second reframes
+  // the first. Both must be short: the move only lands as a rhetorical snap
+  // when neither sentence has room to carry an argument.
+  for (let i = 0; i + 1 < allSentences.length; i++) {
+    const a = allSentences[i]
+    const b = allSentences[i + 1]
+    const fa = firstWord(a)
+    if (fa !== firstWord(b) || !SUBJECT_OPENERS.has(fa)) continue
+    if (words(a) > 12 || words(b) > 12 || words(a) < 3 || words(b) < 3) continue
+    out.push({
+      id: "anaphoric-couplet",
+      label:
+        "two short sentences, same subject opener, second reframes the first (the affirmative 'it is not X, it is Y')",
+      severity: "hard",
+      match: `${a} ${b}`.slice(0, 130),
+    })
+  }
+
+  // ── Anaphora run ─────────────────────────────────────────────────────────
+  // Three or more consecutive sentences opening on the same SUBJECT word.
+  // Restricted to the subject set for the same reason as the couplet: an
+  // unrestricted version reported 233 runs across 93 of 119 files, almost all
+  // of them three consecutive sentences beginning "The", which is ordinary
+  // English and not a rhetorical move. A gate that fires on 78% of the corpus
+  // teaches the writer to ignore it.
+  let runStart = 0
+  for (let i = 1; i <= allSentences.length; i++) {
+    const same =
+      i < allSentences.length &&
+      firstWord(allSentences[i]) === firstWord(allSentences[runStart]) &&
+      SUBJECT_OPENERS.has(firstWord(allSentences[i]))
+    if (!same) {
+      const len = i - runStart
+      if (len >= 3) {
+        out.push({
+          id: "anaphora-run",
+          label: `${len} consecutive sentences open on "${firstWord(allSentences[runStart])}"`,
+          severity: "soft",
+          match: allSentences.slice(runStart, i).join(" ").slice(0, 130),
+        })
+      }
+      runStart = i
+    }
+  }
+
+  // ── Staccato stack ───────────────────────────────────────────────────────
+  // Doherty's "Staccato Stack": a run of punchy sentences stacked for rhythm.
+  // Four consecutive sentences of eight words or fewer is not prose breathing,
+  // it is a machine doing an impression of emphasis.
+  let stac = 0
+  for (let i = 0; i <= lengths.length; i++) {
+    const short = i < lengths.length && lengths[i] <= 8 && lengths[i] > 0
+    if (short) {
+      stac++
+    } else {
+      if (stac >= 4) {
+        out.push({
+          id: "staccato-stack",
+          label: `${stac} consecutive sentences of 8 words or fewer`,
+          severity: "soft",
+          match: allSentences.slice(i - stac, i).join(" ").slice(0, 130),
+        })
+      }
+      stac = 0
+    }
+  }
+
+  // ── Burstiness ───────────────────────────────────────────────────────────
+  // The detectors' primary structural feature: the standard deviation of
+  // sentence length in words. Human multi-paragraph prose sits well above 4;
+  // below 4 is the uniform-cadence signature. Needs a real sample, so it only
+  // runs on posts with 15+ sentences.
+  if (lengths.length >= 15) {
+    const mean = lengths.reduce((a, b) => a + b, 0) / lengths.length
+    const sd = Math.sqrt(
+      lengths.reduce((a, b) => a + (b - mean) ** 2, 0) / lengths.length,
+    )
+    if (sd < 4) {
+      out.push({
+        id: "uniform-cadence",
+        label: `sentence-length spread is flat (sd ${sd.toFixed(1)} words, mean ${mean.toFixed(1)}) — vary the rhythm`,
+        severity: "soft",
+        match: `sd=${sd.toFixed(2)} over ${lengths.length} sentences`,
+      })
+    }
+  }
+
+  return out
+}
+
 /**
  * Scan a finished Dispatch body. Returns every violation found.
  * Pure and side-effect free — callers decide whether to warn, repair, or block.
@@ -377,6 +654,12 @@ export function scanDispatchSlop(text: string): SlopHit[] {
       severity: "hard",
       match: `${dashes} em-dashes${fauxDashes ? ` + ${fauxDashes} double-hyphen` : ""}${entityDashes ? ` + ${entityDashes} HTML-entity` : ""}`,
     })
+  }
+
+  // The Smell Catcher runs against RAW text so it can strip frontmatter itself
+  // and measure the body exactly as a reader meets it.
+  for (const c of cadenceFindings(text)) {
+    hits.push({ id: c.id, label: c.label, severity: c.severity, match: c.match })
   }
 
   return hits
