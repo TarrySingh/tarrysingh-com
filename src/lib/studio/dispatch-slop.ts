@@ -89,7 +89,16 @@ const RULES: Rule[] = [
     label: "'it is not X. It is Y' rhythm (was 181 instances / 68 files)",
     severity: "soft",
     allow: 1,
-    re: /\b(?:is|was|are|were|isn'?t|aren'?t)\s+not\s+[^.?!]{3,70}[.?!]\s+(?:It|They|That|This)\s+(?:is|are|was|were)\b/g,
+    // {0,70} not {3,70}: the original required three characters between "not"
+    // and the full stop, so the tightest form of the move, "It is not. It is
+    // Y", slipped through. The second sentence also accepts a contracted
+    // subject ("It's Y"), invisible to the uncontracted-verb list.
+    // The two sentences must sit in the SAME paragraph. \s+ let the match run
+    // across a blank line, which turned quote attribution into a false
+    // positive: '"That link is not there yet," he said.' + a new paragraph
+    // opening "This is a man whose engineers..." is ordinary prose, not the
+    // construction. At most one newline is allowed, so a paragraph break fails.
+    re: /\b(?:is|was|are|were|isn'?t|aren'?t)\s+not\b[^.?!]{0,70}[.?!][^\S\n]*\n?[^\S\n]*(?:It|They|That|This)(?:\s+(?:is|are|was|were)|['’](?:s|re))\b/g,
   },
   {
     id: "announced-triad",
