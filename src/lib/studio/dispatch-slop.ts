@@ -428,8 +428,17 @@ function sentences(paragraph: string): string[] {
 }
 
 const words = (s: string): number => (s.match(/[A-Za-z0-9$%][A-Za-z0-9'’.,$%-]*/g) ?? []).length
+/**
+ * First word of a sentence, with any contraction suffix stripped so that
+ * "It's" and "It" count as the same opener. Without the strip, firstWord
+ * returned "it's", which is absent from SUBJECT_OPENERS, so every couplet and
+ * every run built on a contracted subject was invisible. That is how
+ * "It's a good chart. It's also wrong." survived the first corpus sweep.
+ */
 const firstWord = (s: string): string =>
-  (s.match(/[A-Za-z']+/)?.[0] ?? "").toLowerCase()
+  (s.match(/[A-Za-z]+(?:['’][A-Za-z]+)?/)?.[0] ?? "")
+    .toLowerCase()
+    .replace(/['’](?:s|re|m|ve|ll|d)$/, "")
 
 /**
  * Openers that carry a subject. An anaphoric couplet is only a rhetorical move
