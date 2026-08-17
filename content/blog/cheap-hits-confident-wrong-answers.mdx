@@ -29,7 +29,7 @@ The first is **prefix caching at the inference engine**: vLLM, SGLang's RadixAtt
 
 Engineering teams that have invested in prompt cache hit-rate work report blended cost cuts of 60–85% on long-context agent loops ([AgentMarketCap, April 2026](https://agentmarketcap.ai/blog/2026/04/11/prompt-cache-hit-rate-engineering-2026)).
 
-The second is **semantic caching at the gateway**: GPTCache, Redis LangCache (public preview as of late 2025, still pre-GA in 2026), Portkey, Bifrost, the gateway-layer libraries. This one intercepts a request before it reaches the model, embeds the query, looks up nearby vectors, and returns a previously generated answer if cosine similarity clears some threshold ([Redis on LangCache](https://redis.io/blog/langcache-public-preview/)). It is probabilistic. It can be wrong. And that distinction is where most production trouble starts.
+The second is **semantic caching at the gateway**: GPTCache, Redis LangCache (public preview as of late 2025, still pre-GA in 2026), Portkey, Bifrost, the gateway-layer libraries. This one intercepts a request before it reaches the model, embeds the query, looks up nearby vectors, and returns a previously generated answer if cosine similarity clears some threshold ([Redis on LangCache](https://redis.io/blog/langcache-public-preview/)). It runs on probability, so it can be wrong. And that distinction is where most production trouble starts.
 
 ## the pattern
 
@@ -73,7 +73,7 @@ The data on this is bad. One developer ran 28 query pairs through several common
 
 The failure modes I would put on every architecture review for a team about to ship one of these.
 
-Hallucination amplification. If the underlying model hallucinated once, every semantically-similar request that follows gets served that hallucination from cache. The error does not decay. It compounds. Sampling-based ground-truth checks are the only way to detect it.
+Hallucination amplification. If the underlying model hallucinated once, every semantically-similar request that follows gets served that hallucination from cache. With every repeat, the error compounds. Sampling-based ground-truth checks are the only way to detect it.
 
 Embedding drift. A model swap from one OpenAI embedding family to another silently moved cosine similarities to near-random, and a cache started serving the wrong answer before anyone noticed ([TianPan, April 2026](https://tianpan.co/blog/2026-04-09-semantic-caching-llm-production)). Treat the embedding model as part of the cache key version. Migrate with a shadow cache.
 
