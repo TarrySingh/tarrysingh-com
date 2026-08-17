@@ -1,0 +1,64 @@
+---
+title: "The Jakarta Claims Desk After the Copayment Rule"
+date: "2026-08-17"
+category: "Essays"
+excerpt: "Indonesia's mandatory 10% copayment rule, in force since March 2026, has shifted the distribution of submitted health claims faster than any fraud-detection model calibrated on the old baseline can follow. The real discipline at a Jakarta claims desk is not the AI stack — it is who overrides it, whether those overrides are logged, and whether a coverage-adverse audit exists before the regulator requests one."
+draft: false
+tags: ["health-insurance", "ai-governance", "claims-processing", "indonesia", "fraud-detection", "model-risk"]
+---
+
+The interesting change inside an Indonesian insurance company this year is not the model. It is who sits next to the model, what that person is allowed to override, and how quickly the invoice for each override lands on someone's desk.
+
+That is a very unglamorous sentence. It is also the sentence I have been trying to write since the middle of July, when a friend who runs claims at a mid-tier life insurer in Jakarta sent me a screenshot of her new triage dashboard and asked what I thought. The dashboard was fine. Her question was harder.
+
+## The desk, briefly described
+
+Since 22 March 2026, health-insurance products sold in Indonesia have carried a mandatory copayment of at least 10% of each claim, with caps at IDR 300,000 for outpatient and IDR 3 million for inpatient care, per the operative wording of [POJK No. 36 of 2025](https://global.lockton.com/us/en/news-insights/indonesia-to-reform-health-insurance-products-for-enhanced-risk-management). Insurers have until December 2026 to migrate existing books. Product repricing is capped at once a year with 30 days' written notice. A medical advisory board is now a compliance object rather than a courtesy. The Financial Services Authority moved because [claims ratios in parts of the market had crossed 90% and stayed there](https://ligaasuransi.com/en/loss-ratio-asuransi-umum-indonesia-2025-meningkat-apa-dampaknya-bagi-bisnis-anda/), and because [Indonesia's medical inflation hit 13.6% in 2025, the highest in Asia](https://www.insurancebusinessmag.com/reinsurance/news/breaking-news/indonesias-medical-inflation-hits-13-6-highest-in-asia-584333.aspx). Five general insurers had already stopped selling health cover altogether, per the AAUI chairman Budi Herawan in February 2026. OJK wanted the escalator turned off.
+
+The copayment does two things a claims reviewer feels immediately. It puts a small pain point in front of every policyholder visit, which shifts the mix of what gets submitted. And it changes the economics of catching a suspicious claim: the event is smaller per submission, the volume roughly stable or higher, the dollar value of any given "catch" has moved. The old fraud-detection heuristics were calibrated on the old distribution. This quarter, they are calibrated on nothing anyone can point to yet.
+
+## What Prudential is claiming
+
+Into that changed distribution, [PT Prudential Life Assurance Indonesia announced on 29 May 2026](https://www.prudential.co.id/id/about-us/berita/siaran-pers/prudential-indonesia-dukung-ai-perlindungan-kesehatan-komprehensif/) that it was extending an AI stack across operations and risk management, with medical-claims fraud and abuse detection as the flagship use case. Chief Digital and Technology Officer Pradeep Grewal, in an [August 2026 readout to Kontan](https://keuangan.kontan.co.id/news/prudential-indonesia-sebut-penerapan-ai-dapat-membantu-pengelolaan-klaim-kesehatan), was careful about the framing. AI helps analyse large volumes of documents, identify patterns that need a second look, and make review "more efficient, accurate and consistent." He named fraud and abuse detection as the one place where the results have been legible. He did not say the model is deciding claims. He said the model is helping the humans decide faster.
+
+That difference in framing is the whole game.
+
+The industry article doing the rounds this month, [Bisnis on 3 July 2026](https://finansial.bisnis.com/read/20260703/215/1985614/asuransi-mulai-manfaatkan-agent-ai-percepat-proses-klaim), quotes a range of Indonesian insurers moving from AI-as-analytic to "agentic AI" that "executes tasks autonomously" inside claims. The word agentic is doing a lot of load-bearing there. On a real desk, an agent that opens the file, runs the check, and issues a preliminary judgement is a different animal from an agent that closes a claim without a person. The first is a scheduling improvement. The second is a delegation of authority. Nothing on the current OJK docket delegates authority.
+
+## What the coach on the desk cannot see
+
+There is a specific pattern in Indonesian medical claims that a global fraud model, dropped in without recalibration, will get wrong.
+
+It has to do with the ecology of a tiered public system. A patient with the state BPJS Kesehatan cover who also carries a private policy will often route the pharmacy leg one way and the hospital leg another, because the two systems reimburse on different tariffs and the family accountant knows exactly which line to bill against which. A model trained on Malaysian or Singaporean claim shapes reads that pattern as suspect. The reviewer knows better. It is a domestic optimisation she has seen a thousand times, and she is right to clear it every time.
+
+I ran into an early version of this in a 2019 engagement with a life carrier in Kuala Lumpur that had bought a fraud engine off a US vendor. The engine kept flagging ancillary-visit chains that GP referrals produce inside the Malaysian panel-hospital system, because in the training data those chains looked like a US-style upcoding sequence. False positives on the referrals path ran above 40% for the first six months. The reviewers eventually built a manual suppression layer. The vendor's dashboard still showed excellent "detection." The unit economics of the reviewer's queue got worse before anyone with authority noticed.
+
+That is a small story with a very ordinary shape. It generalises. The industry claim that AI-powered fraud detection reduces false positives by 50 to 75 percent versus legacy rule engines, which [Deloitte has documented](https://www.insurancejournal.com/magazines/mag-features/2025/06/16/827428.htm) and which most insurers will happily quote, is broadly true in the training distribution. It is much less true in the deployment distribution when the deployment sits inside a health system the training corpus never properly met. In Jakarta this year, the deployment distribution is changing under the model's feet.
+
+## The disagreement, named
+
+Stanford's Institute for Human-Centered AI put out a [policy brief on responsible AI in health insurance](https://hai.stanford.edu/assets/files/hai-policy-brief-toward-responsible-ai-in-health-insurance.pdf) that makes a claim the SE Asian market has to answer on its own terms. HAI's authors argue that AI in health-insurance operations, deployed largely on the payer side, largely opaque to the policyholder, and largely upstream of any contest, reproduces and accelerates existing coverage disparities faster than governance can catch up. Their example set is US-heavy. The underlying pattern travels wherever payer-side incentives and thin policyholder audit rights coincide, which is most places.
+
+The strongest counter-argument to what Prudential is doing is a structural one. A model doing fraud triage on a payer's desk, with no equivalent tool on the policyholder's side, tilts the arithmetic of contested claims in one direction. That argument is correct often enough to warrant a design response. A claims operation that has not written that response is a claims operation running on borrowed time in front of a regulator that has already shown, this year, that it will move.
+
+## Hanoi, in comparison
+
+[Manulife Vietnam paid roughly VND 9.1 trillion in insurance claims across 2025 and reports an average turnaround of about three days across nearly 420,000 processed claims](https://vietnamnews.vn/economy/1778997/manulife-vietnam-pays-over-vnd9-trillion-in-insurance-claims-to-customers-in-2025.html). Three days is fast. Three days on a life-claim book is faster than any rebuilt Indonesian health-claim workflow can plausibly promise this year. The Vietnamese and Indonesian problems are not the same shape. Vietnam's life market is still working through its 2023 mis-selling reset, per [Milliman's 8 June 2026 e-alert](https://media.milliman.com/v1/media/edge/images/millimaninc5660-milliman6442-prod27d5-0001/media/Milliman/PDFs/2026-Articles/6-8-26_Asia-e-alert_Vietnams_life_insurance_landscape_after_the_mis-selling_crisis.pdf). The useful cross-read for Jakarta is simpler: fast claims processing without an auditable reviewer trail is not a story any regulator in the region will leave alone for long.
+
+The [MAS consultation paper on AI risk management for financial institutions](https://www.mas.gov.sg/publications/consultations/2025/consultation-paper-on-guidelines-on-artificial-intelligence-risk-management), published November 2025 with a 12-month transition once finalised, is what the non-leaving-alone looks like in Singapore. Indonesia's version will read differently. It will still arrive.
+
+## What I would push for
+
+If I were sitting with the head of claims at a mid-sized Indonesian health carrier this week, I would push for three things, in this order.
+
+Recalibrate the fraud model against the post-copayment distribution before the end of Q3, using held-out data from March through August. The model's precision on the new mix is unknown, and probably lower than the vendor slide says. Assume three months of good performance data on the previous distribution, and no reliable curve on the new one until you fit it yourself.
+
+Instrument the disagreement rate. Every claim the model flags and a reviewer clears, or the model clears and a reviewer flags, is a data point about where the model does not fit the local system. Log the reason, not just the verdict. Read the reasons monthly. If they cluster around a specific hospital chain or a specific referral pattern, you have your suppression list assembled before it becomes an OJK letter.
+
+Publish the coverage-adverse audit before the regulator asks. Take the payer-side asymmetry the Stanford HAI brief describes seriously, on your own book. Which claim types get flagged more often for lower-income policyholders? Which get cleared faster for higher-income ones? Whatever the answer, produce it, redress the gap where one opens, and put the finding in front of your compliance committee before the copayment cycle finishes its first full year. The insurers that have this document ready when the regulator moves next will earn the benefit of the doubt. The ones that do not will earn the audit letter.
+
+None of those three are technically difficult. All three are organisationally uncomfortable, which is why the vendor pitch decks never lead with them. The Jakarta claims desk this quarter is a small, specific place with a small, specific problem, and the shape of the solution is the discipline around the model. That discipline is worth more, right now, than any of the AI stacks the vendors are trying to close before the copayment rule fully bites.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
