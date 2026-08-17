@@ -32,7 +32,7 @@ Formalise it. A regime carries a **schema category** $\mathcal{S}_b$: its object
 
 For each type $A$, the set $I_t(A)$ holds the actual artifacts of that type the system currently has; for each operation $f : A \to B$, the function $I_t(f) : I_t(A) \to I_t(B)$ records how applying it turns an $A$-artifact into a $B$-artifact. The functor cleanly separates the *regime* (the schema, which can stay fixed) from its *contents* (the population, which grows).
 
-Now take the **category of elements** of that functor, written $\int_{\mathcal{S}_b} I_t$. Its objects are pairs $(A,x)$, a type and an actual artifact of it, and a morphism $(A,x)\to(B,y)$ exists exactly when some operation $f$ satisfies $I_t(f)(x)=y$. There's a provenance edge from $x$ to $y$ precisely when a legal operation actually produced $y$ from $x$. The category of elements does not *depict* a provenance graph. It **is** the typed provenance DAG: every accepted artifact, its parents, and the operation that made it. Vendors gloss this. Everyone ships a "lineage view." Almost no one has lineage as the *substrate the reasoning actually runs on*.
+Now take the **category of elements** of that functor, written $\int_{\mathcal{S}_b} I_t$. Its objects are pairs $(A,x)$, a type and an actual artifact of it, and a morphism $(A,x)\to(B,y)$ exists exactly when some operation $f$ satisfies $I_t(f)(x)=y$. There's a provenance edge from $x$ to $y$ precisely when a legal operation actually produced $y$ from $x$. Nothing here *depicts* a provenance graph. The category of elements **is** the typed provenance DAG: every accepted artifact, its parents, and the operation that made it. Vendors gloss this. Everyone ships a "lineage view." Almost no one has lineage as the *substrate the reasoning actually runs on*.
 
 <Callout label="Yoneda, read operationally">
 
@@ -90,7 +90,7 @@ The mechanical reading is clean: *experimental flexibility is best compressed as
 
 Modes were in the schema from the start, so the discovery is not "the system used a normal mode." What changed is that the regime came to admit a new multi-input morphism: $$\texttt{LogNormCompliance} \times \texttt{ReLUModeAmpl} \longrightarrow \texttt{ModeConditionedCompliance}.$$
 
-Run a Kan-transport audit over each accepted transition and every new type sorts into three buckets: **generator-reachable** (an old type hands it an immediate unary morphism), **composite-reachable** (it only appears once a new multi-input composition is admitted), or **isolated** (even composites can't reach it). The two ingredient features are generator-reachable. But `ModeConditionedCompliance` is composite-reachable *only*: it cannot exist until the regime admits the product that multiplies the two. **That product is the scientific commitment. That is the discovery, located exactly.**
+Run a Kan-transport audit over each accepted transition and every new type sorts into three buckets: **generator-reachable** (an old type hands it an immediate unary morphism), **composite-reachable** (it only appears once a new multi-input composition is admitted), or **isolated** (even composites can't reach it). The two ingredient features are generator-reachable. But `ModeConditionedCompliance` is composite-reachable *only*: it cannot exist until the regime admits the product that multiplies the two. **That product is the scientific commitment, the discovery located exactly.**
 
 | Transition | Break type | New type (composite) | Model code | MDL gain |
 | --- | --- | --- | --- | --- |
