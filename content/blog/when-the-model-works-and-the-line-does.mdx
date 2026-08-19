@@ -1,0 +1,80 @@
+---
+title: "When the Model Works and the Line Does Not"
+date: "2026-08-19"
+category: "Essays"
+excerpt: "Seventy-seven per cent of AI vision pilots in manufacturing never reach full deployment — not because the detection accuracy is wrong, but because the factory floor is. This essay traces six failure modes: environments the training set never saw, integrations that ran eight times over budget, thresholds nobody will own in writing, and models that drift when procurement switches supplier. The automation thesis survives the pilot. The line does not."
+draft: false
+tags: ["ai-in-manufacturing", "computer-vision", "industrial-ai", "model-deployment", "quality-inspection", "pilot-to-production"]
+---
+
+A peer-reviewed survey of more than fifty studies, published in the journal Sensors in January 2026, found that 77% of AI vision pilots in automotive manufacturing never reach full deployment. The figure has shown up in vendor presentations, research reports, and board decks for six months now. Nobody disputes it. What almost nobody says is who cleans up when a pilot that passed every controlled test quietly gets switched off at 4 a.m. because the night shift stopped trusting it three weeks earlier.
+
+That person is usually a production supervisor with a phone that will not stop ringing and a quality hold nobody budgeted time to resolve. The model flagged 40 defects in two hours. Sixteen were dust on the lens. Eleven were normal surface variation the day shift had already cleared in March. Four were lighting artefacts from a bulb the maintenance schedule says does not need replacing until September. The remaining nine were split between two genuine scratches, three parts the model cannot explain, and four the supervisor sent to rework because it was faster than arguing with the system at 3:17 a.m. on a Wednesday.
+
+The pilot worked. AI vision inspection systems now achieve 95-99% detection accuracy, inspect 10,000+ parts per hour at sub-100ms inference speed, and maintain identical quality standards 24/7. The production deployment did not, and the difference between those two sentences is where $1.8 million in capital and eight months of implementation time ended up as a line item someone will bury in the next quarterly operational review.
+
+## 1. The controlled environment was not the factory
+
+Models trained in controlled lab environments frequently fail on the production floor, where dust, variable lighting, vibration, reflective surfaces, temperature swings, and varying part orientation all degrade accuracy, with a model that hits 99.5% in testing potentially dropping to 92% when the afternoon sun hits the inspection camera through a skylight.
+
+The vendor demonstration ran on 2,000 hand-labelled images collected over three weeks in May, under halogen lighting that the plant electrician describes as "the good setup we used to use before the LED retrofit in 2019". The production line runs under LED arrays that shift colour temperature by 140 Kelvin between morning and evening because nobody specified the colour rendering index when procurement ordered them, and the model was never trained on images where the same defect-free surface appears in seven different shades depending on whether second shift started at 1400 or 1530.
+
+A stamping plant outside Stuttgart installed a vision system in March. At a body shop in Pune running 850 painted panels per shift, downstream audit found 187 panels per shift were slipping past human inspection with orange peel, dirt nibs, and micro-scratches under half a millimetre. The AI system was supposed to catch what the inspectors missed. In the first production week it flagged 680 panels. Each late catch cost roughly $3,200 in disassembly, repaint, and reassembly. Quality engineering spent four days reviewing footage and found that 390 of the 680 flags were reflections from the inspection tunnel's stainless steel frame, which had been repainted two weeks before go-live and nobody thought to update the training set.
+
+The model still works, in the sense that if you feed it the images it was trained on, it returns the results it returned in the pilot. The line does not care.
+
+## 2. Integration is not a weekend task
+
+Connecting a vision system to existing PLCs, MES, and ERP systems requires expertise in industrial protocols like OPC-UA and PROFINET, expertise most AI startups and most manufacturers do not have, with the result being a beautiful demo that cannot talk to the production line.
+
+The integration estimate in the original SOW was 40 hours. The actual number, logged in the system integrator's time-tracking software and disclosed to nobody outside the project team, was 314 hours, spread across five people over two months, because the OPC-UA server the AI vendor assumed was running turned out to be a retired Windows Server 2012 box in a rack nobody had opened since 2018, and the MES upgrade that would have made the integration trivial had been delayed twice and was now scheduled for Q3 2027.
+
+A Tier-1 automotive supplier in Slovakia spent six months installing computer vision for weld inspection. The model worked. The inference ran at 60 frames per second. The integration failed because the PLC controlling the welding robot communicated in PROFINET, the vision system output JSON over REST, and the MES that was supposed to receive the defect log only accepted CSV files dropped into a specific SMB share that IT had locked down in 2021 after a ransomware incident the board still will not discuss in writing. The workaround involved a Python script running on a Raspberry Pi 4 in an electrical cabinet, maintained by one person who left the company in May 2026.
+
+That system is still running. The person who answers the phone when it stops is a shift lead who was told during onboarding that "the PI in cabinet 7 handles the vision log, do not touch it, we do not have the password".
+
+## 3. The threshold nobody wants to own
+
+Initial false alarm rates run 15-30%, improving to 5-10% with tuning. Tuning means someone has to decide what the threshold is, and that decision is a career-limiting move if it is wrong.
+
+Set the sensitivity high and the line stops fourteen times per shift for defects that quality says are not defects. Set it low and the defect that becomes a recall passes through on a Tuesday afternoon because the model scored it 78% and the threshold is 80%, and the difference between those two numbers is the difference between a performance bonus and a legal deposition.
+
+Nobody wants to own that threshold in writing. The vendor will not put it in the contract. The quality manager will not put it in a policy. Engineering will not put it in a drawing. So it lives in a configuration file on an edge server, set by a commissioning engineer in February who is no longer with the vendor, and the only documentation is a screenshot in a Slack thread that three people have access to and nobody has looked at since March.
+
+If the sensor does not know the operational state via integration with the PLC or SCADA, false alarms occur every time the pump ramps up or down. A predictive maintenance system at a chemicals plant in Ludwigshafen flagged bearing degradation on a circulation pump sixteen times in May. Engineering investigated twice, found nothing, and stopped responding. The seventeenth alert, in June, was the actual failure. The pump seized at 0320, the batch was lost, and the alert log shows that the system had been correct once in seventeen tries, which is a detection rate no human would tolerate and no contract defines as acceptable.
+
+## 4. Who retrains the model when it drifts
+
+Around 77% of AI vision implementations in manufacturing never advance beyond the pilot phase, not primarily as a technology problem. The problem is that models drift and nobody has been hired to manage that drift.
+
+A food packaging plant in the Netherlands installed AI vision for label inspection in October 2025. The model was trained on labels printed by supplier A. In April 2026, procurement switched to supplier B because supplier A raised prices by 11%, and the new labels have a gloss finish that photographs differently under the line's LED array. The model's accuracy dropped from 96% to 81% over six weeks, and the only person who noticed was the rework supervisor, who mentioned it in a standup meeting in June that QA did not attend.
+
+Retraining the model requires new images, labelled data, access to the training pipeline, and somebody who knows how to do that work without degrading performance on the original label set. The vendor quoted $18,000 and eight weeks. The plant manager allocated four days and asked the summer intern. The intern installed a Python library, retrained the model on 140 images, deployed it on a Friday afternoon, and went back to university on Monday. The model now flags every label as defective because the normalization step was wrong and nobody checked the outputs before the deployment script ran.
+
+That line is currently running on manual inspection. The AI system is still online because nobody knows how to roll it back to the previous version without the intern's laptop.
+
+## 5. The operator does not trust what they cannot interpret
+
+Operators who have done visual inspection for twenty years do not trust an AI that rejects parts they think are fine, and without investment in training and transparency showing why the AI flagged something, adoption stalls regardless of accuracy numbers.
+
+A machining plant in northern Italy installed a vision system to inspect turned parts. The model flags defects the operator cannot see without a microscope, and the quality lab confirms the AI is correct. The operator still overrides 60% of the flags because thirty years of experience says those parts are fine, and thirty years of getting paid says the line does not stop unless you are certain.
+
+The system has an explainability feature. It highlights the region of the image where the defect was detected. The highlighting is a red bounding box with a confidence score. The operator was given a 45-minute training session in March, delivered by someone who had never worked a day on a shop floor, and the session covered how to log in to the dashboard but not what to do when the bounding box covers half the part and the confidence score is 84%.
+
+Trust is a second-order outcome of reliability, and reliability on a factory floor is measured over months, across shifts, through maintenance cycles, and during the week when the HVAC failed and the ambient temperature in the inspection cell hit 34°C. The pilot ran for six weeks in controlled conditions. The production deployment has been running for nine months under conditions that include a night shift staffed by contractors, a maintenance window that gets skipped when orders are late, and a quality manager who has been told to reduce scrap by 8% while simultaneously increasing throughput by 12%, which is not a set of constraints any model was trained to navigate.
+
+## 6. The false positive is more expensive than the miss
+
+A final assembly line for commercial appliances in the Midlands runs AI vision to inspect control panel alignment. A defect caught at the inspection station costs $1, the same defect caught by the customer costs $100-$1,000, and the same defect recalled from the field costs $10,000+.
+
+The system has a false positive rate of 6%, which the vendor says is industry-leading. Six per cent of 1,400 units per day is 84 units flagged for manual review. Each review takes four minutes. That is 336 minutes, or 5.6 hours, of inspector time per day spent confirming that the AI was wrong. The inspector costs £28/hour. The annual cost of false positives, in labour alone, is £57,000.
+
+The line runs that cost because the alternative is a miss, and one miss that reaches a customer is a call to the quality director, a stop-ship on the batch, and an 8D report that three people will spend a week writing. But nobody budgeted the £57,000, it does not appear on any dashboard, and the business case that justified the AI installation assumed the false positive rate would be 2%, which was the number from the pilot and not the number from production.
+
+The person who answers the phone when a defect escapes is not the data scientist who built the model. It is the quality engineer who signed off on the inspection plan, and that engineer now treats every AI alert as a hypothesis rather than a result, which is the correct engineering posture but also the death of the automation thesis the CFO was sold in the business case.
+
+The model works. The line has learned not to believe it. Those are not the same thing, and the gap between them is the organisation's tolerance for a system that is correct 94% of the time but cannot explain the 6% in terms that would survive a customer audit. That tolerance, on most lines, is lower than the vendors assumed and higher than the operators will admit, and it is calibrated every morning at shift handover when the supervisor asks how many flags came through overnight and whether any of them were real.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
