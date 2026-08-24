@@ -30,6 +30,23 @@ const serif = {
   fontFamily: "var(--font-serif), 'IBM Plex Serif', serif",
 } as const
 
+/**
+ * Lower-cased haystack a card is searched against: title, summary, tags,
+ * category and series name. Built on the SERVER so the client island only has
+ * to do substring tests, and so the text ships in the HTML either way.
+ */
+function searchKey(post: BlogPostMeta): string {
+  return [
+    post.title,
+    post.excerpt,
+    post.category,
+    post.series?.key ?? "",
+    ...(post.tags ?? []),
+  ]
+    .join(" ")
+    .toLowerCase()
+}
+
 const categoryAccent: Record<BlogPostMeta["category"], string> = {
   Essays: "#c98e4f",
   Notes: "#849cc8",
@@ -128,7 +145,7 @@ export default async function BlogIndex() {
           content calendar. Posts when they are ready.
         </p>
         <div className="mt-8">
-          <FrontControls activeSeries={activeSeries} />
+          <FrontControls activeSeries={activeSeries} gridTotal={gridPosts.length} />
         </div>
       </section>
 
@@ -186,9 +203,10 @@ export default async function BlogIndex() {
               {gridPosts.map((post) => (
                 <article
                   key={post.slug}
-                  data-card
+                  data-card="grid"
                   data-category={post.category}
                   data-series={post.series?.key ?? ""}
+                  data-search={searchKey(post)}
                 >
                   <Link href={`/blog/${post.slug}`} className="group block">
                     <div
@@ -226,6 +244,9 @@ export default async function BlogIndex() {
                 </article>
               ))}
             </div>
+            {/* Portal target: FrontControls renders Load-more here so the
+                button sits under the grid while its state stays in the island. */}
+            <div id="blog-loadmore" className="flex justify-center" />
           </div>
 
           {/* Notes stream */}
@@ -241,9 +262,10 @@ export default async function BlogIndex() {
                 {notes.map((post) => (
                   <li
                     key={post.slug}
-                    data-card
+                    data-card="note"
                     data-category={post.category}
                     data-series={post.series?.key ?? ""}
+                    data-search={searchKey(post)}
                   >
                     <Link href={`/blog/${post.slug}`} className="group block">
                       <time
