@@ -2,9 +2,16 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-08-14T10:41:34.341596+00:00",
-  "refreshed_at": "2026-08-14T10:41:34.341596+00:00",
+  "generated_at": "2026-08-24T16:23:41.647961+00:00",
+  "refreshed_at": "2026-08-24T16:23:41.647961+00:00",
   "refresh_history": [
+    {
+      "at": "2026-08-24T16:15:39.147047+00:00",
+      "wiki_captured": "2026-08-24T16:12:02.223Z",
+      "sharepoint_generated": "2026-08-24T18:15:38.933304Z",
+      "realai_total": 56,
+      "reviewed": 39
+    },
     {
       "at": "2026-08-12T15:01:19.979396+00:00",
       "wiki_captured": "2026-08-12T15:00:26.330Z",
@@ -58,14 +65,14 @@
   "data_sources": {
     "wiki": {
       "status": "live",
-      "captured_at": "2026-08-12T15:00:26.330Z",
+      "captured_at": "2026-08-24T16:12:02.223Z",
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-08-12T17:01:19.800869Z",
+      "generated_at": "2026-08-24T18:15:38.933304Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 137,
+        "with_materials": 144,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -82,18 +89,18 @@
       "Media": 89
     },
     "by_status": {
-      "In development": 190,
-      "Status not set": 71,
-      "In review": 162,
-      "Materials in progress": 12,
+      "In development": 191,
+      "Status not set": 67,
+      "In review": 150,
+      "Materials in progress": 27,
       "Not started": 1
     },
-    "with_materials": 137,
-    "materials_pending": 299,
+    "with_materials": 144,
+    "materials_pending": 292,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 137,
-      "awaiting_material": 299,
+      "with_sharepoint_material": 144,
+      "awaiting_material": 292,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -108,9 +115,9 @@
         "In review": 40,
         "Not started": 1
       },
-      "needs_action": 25,
+      "needs_action": 26,
       "author_todo": 4,
-      "ready_to_review": 21
+      "ready_to_review": 22
     }
   },
   "guides": {
@@ -7035,12 +7042,12 @@
       "lesson_type": "Interactive",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Krisztina Ecsediné Dr. Szabó",
       "coauthor": "Hédi Virág Csordás · Mary Hendrick",
-      "reviewer": "",
+      "reviewer": "Maksym Yenin",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -7086,12 +7093,12 @@
       "lesson_type": "Practice",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME",
       "coauthor": "Hédi Virág Csordás",
-      "reviewer": "",
+      "reviewer": "Maksym Yenin",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -7137,12 +7144,12 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Hédi Virág Csordás, Krisztina Ecsediné Dr. Szabó",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "Maksym Yenin",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -7188,12 +7195,12 @@
       "lesson_type": "Interactive",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Hédi Virág Csordás",
       "coauthor": "",
-      "reviewer": "",
+      "reviewer": "Maksym Yenin",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -7247,12 +7254,12 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Hédi Virág Csordás",
       "coauthor": "TUD · Mary Hendrick",
-      "reviewer": "",
+      "reviewer": "Maksym Yenin",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -7298,12 +7305,12 @@
       "lesson_type": "Interactive",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Hédi Virág Csordás, Krisztina Ecsediné Dr. Szabó",
       "coauthor": "TUD · Mary Hendrick",
-      "reviewer": "",
+      "reviewer": "Maksym Yenin",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -7782,14 +7789,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-07-10",
+        "newest": "2026-08-20",
         "files": [
           {
             "name": "HC-019 Introduction Machine Learning Types and Tasks.pptx",
             "ext": "pptx",
-            "kb": 7625,
-            "date": "2026-07-10",
-            "sha": "d15769133bff1deb",
+            "kb": 7614,
+            "date": "2026-08-20",
+            "sha": "e372b7681b50d47e",
             "rel": "4.1 Horizontal/HC-019/HC-019 Introduction Machine Learning Types and Tasks.pptx"
           }
         ],
@@ -9315,12 +9322,12 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Hédi Csordás",
       "coauthor": "TUD",
-      "reviewer": "KPI",
+      "reviewer": "KPI · Maksym Yenin",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -9366,12 +9373,12 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Hédi Csordás",
       "coauthor": "TUD",
-      "reviewer": "KPI",
+      "reviewer": "KPI · Maksym Yenin",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -9743,8 +9750,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Maria Nisheva",
       "coauthor": "BME · András Gézsi",
@@ -9754,10 +9761,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-12",
+        "files": [
+          {
+            "name": "Presentation HC-156.pdf",
+            "ext": "pdf",
+            "kb": 440,
+            "date": "2026-08-12",
+            "sha": "60881d342186babd",
+            "rel": "4.1 Horizontal/HC-156/Presentation HC-156.pdf"
+          }
+        ],
         "folder": "HC-156"
       },
       "lesson_plan": {
@@ -9901,10 +9917,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-23",
+        "files": [
+          {
+            "name": "HC-164 Intro to agentic AI.pdf",
+            "ext": "pdf",
+            "kb": 408,
+            "date": "2026-08-23",
+            "sha": "619f9244e53f1dd6",
+            "rel": "4.1 Horizontal/HC-164/HC-164 Intro to agentic AI.pdf"
+          }
+        ],
         "folder": "HC-164"
       },
       "lesson_plan": {
@@ -9944,10 +9969,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-23",
+        "files": [
+          {
+            "name": "HC-166 Intro to agentic AI.pdf",
+            "ext": "pdf",
+            "kb": 394,
+            "date": "2026-08-23",
+            "sha": "251e6ff068fd8607",
+            "rel": "4.1 Horizontal/HC-166/HC-166 Intro to agentic AI.pdf"
+          }
+        ],
         "folder": "HC-166"
       },
       "lesson_plan": {
@@ -9987,10 +10021,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-23",
+        "files": [
+          {
+            "name": "HC-168 Limitations & Risks1.pdf",
+            "ext": "pdf",
+            "kb": 374,
+            "date": "2026-08-23",
+            "sha": "c4ac28e846d8f30a",
+            "rel": "4.1 Horizontal/HC-168/HC-168 Limitations & Risks1.pdf"
+          }
+        ],
         "folder": "HC-168"
       },
       "lesson_plan": {
@@ -10030,10 +10073,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-23",
+        "files": [
+          {
+            "name": "HC-170 Limitations & Risks2.pdf",
+            "ext": "pdf",
+            "kb": 330,
+            "date": "2026-08-23",
+            "sha": "9f1b258f2e70f792",
+            "rel": "4.1 Horizontal/HC-170/HC-170 Limitations & Risks2.pdf"
+          }
+        ],
         "folder": "HC-170"
       },
       "lesson_plan": {
@@ -10620,8 +10672,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "HU · Tina van der Linden",
       "coauthor": "UNINA? (tbc)",
@@ -10772,8 +10824,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "BME · Edit Tomasovszky",
       "coauthor": "HAW · Michael Gille",
@@ -10814,8 +10866,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "BME · Edit Tomasovszky",
       "coauthor": "HAW · Michael Gille",
@@ -10982,8 +11034,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "BME · Edit Tomasovszky",
       "coauthor": "HAW · Michael Gille",
@@ -11337,7 +11389,7 @@
       "code": "HL-005",
       "track": "Health",
       "title": "HL-005 Standards of Biomedical Data: Storage & Interoperability",
-      "lesson_type": "Lecture",
+      "lesson_type": "Tutorial",
       "duration": "120",
       "job_role": "All three roles",
       "status": "In review",
@@ -11353,8 +11405,304 @@
       "materials": {
         "count": 39,
         "has": true,
-        "newest": "2026-07-27",
+        "newest": "2026-08-18",
         "files": [
+          {
+            "name": "2_assignments_teacherInstructions.html",
+            "ext": "html",
+            "kb": 22,
+            "date": "2026-08-18",
+            "sha": "671bdaf118205735",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions.html"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-08-17",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-nav/quarto-nav.js"
+          },
+          {
+            "name": "headroom.min.js",
+            "ext": "js",
+            "kb": 4,
+            "date": "2026-08-17",
+            "sha": "5b80cc4165a661a3",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-nav/headroom.min.js"
+          },
+          {
+            "name": "fuse.min.js",
+            "ext": "js",
+            "kb": 22,
+            "date": "2026-08-17",
+            "sha": "c57339c3fa16b1d6",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/fuse.min.js"
+          },
+          {
+            "name": "quarto-search.js",
+            "ext": "js",
+            "kb": 42,
+            "date": "2026-08-17",
+            "sha": "1a23221f499b3993",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/quarto-search.js"
+          },
+          {
+            "name": "autocomplete.umd.js",
+            "ext": "js",
+            "kb": 94,
+            "date": "2026-08-17",
+            "sha": "cd9db3b7d812139a",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/autocomplete.umd.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-08-17",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "bootstrap-icons.css",
+            "ext": "css",
+            "kb": 97,
+            "date": "2026-08-17",
+            "sha": "01253947f506e030",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap-icons.css"
+          },
+          {
+            "name": "bootstrap.min.js",
+            "ext": "js",
+            "kb": 78,
+            "date": "2026-08-17",
+            "sha": "d2ea6c1e0cabca20",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap.min.js"
+          },
+          {
+            "name": "bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css",
+            "ext": "css",
+            "kb": 486,
+            "date": "2026-08-17",
+            "sha": "44a2ad8beb09b080",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css"
+          },
+          {
+            "name": "bootstrap-icons.woff",
+            "ext": "woff",
+            "kb": 176,
+            "date": "2026-08-17",
+            "sha": "f55513b7b591cb84",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-08-17",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-08-17",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-08-17",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-08-17",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-08-17",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-08-17",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-08-17",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "assignment2.html",
+            "ext": "html",
+            "kb": 26,
+            "date": "2026-08-17",
+            "sha": "4a0f7746fd7bf3bf",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/assignment2.html"
+          },
+          {
+            "name": "index.html",
+            "ext": "html",
+            "kb": 24,
+            "date": "2026-08-17",
+            "sha": "431bf2a2544fab81",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/index.html"
+          },
+          {
+            "name": "search.json",
+            "ext": "json",
+            "kb": 29,
+            "date": "2026-08-17",
+            "sha": "0810ae14868a3d87",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/search.json"
+          },
+          {
+            "name": "assignment1.html",
+            "ext": "html",
+            "kb": 41,
+            "date": "2026-08-17",
+            "sha": "6778630fdab17e20",
+            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/assignment1.html"
+          },
+          {
+            "name": "bootstrap-icons.css",
+            "ext": "css",
+            "kb": 97,
+            "date": "2026-08-17",
+            "sha": "01253947f506e030",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-icons.css"
+          },
+          {
+            "name": "bootstrap.min.js",
+            "ext": "js",
+            "kb": 78,
+            "date": "2026-08-17",
+            "sha": "d2ea6c1e0cabca20",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap.min.js"
+          },
+          {
+            "name": "bootstrap-138a6193a3bd40baf1e627da441a4734.min.css",
+            "ext": "css",
+            "kb": 420,
+            "date": "2026-08-17",
+            "sha": "a20d3d44875fd0fb",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
+          },
+          {
+            "name": "bootstrap-icons.woff",
+            "ext": "woff",
+            "kb": 176,
+            "date": "2026-08-17",
+            "sha": "f55513b7b591cb84",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-08-17",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-08-17",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-08-17",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-08-17",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-08-17",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-08-17",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-08-17",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-08-17",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "1_standards_of_biomedicaldata_intro.pptx",
+            "ext": "pptx",
+            "kb": 584,
+            "date": "2026-08-17",
+            "sha": "56c238bcfe27832f",
+            "rel": "4.2 Health & Lifescience/HL-005/1_standards_of_biomedicaldata_intro.pptx"
+          },
+          {
+            "name": "lessonplan.docx",
+            "ext": "docx",
+            "kb": 24,
+            "date": "2026-08-17",
+            "sha": "a807d4ff13c34a6b",
+            "rel": "4.2 Health & Lifescience/HL-005/lessonplan.docx"
+          },
+          {
+            "name": "2_assignments_teacherInstructions.md",
+            "ext": "md",
+            "kb": 3,
+            "date": "2026-08-17",
+            "sha": "446569300dbf59eb",
+            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions.md"
+          },
           {
             "name": "Reviewer-Checklist-HL005-ENEA-21-Jul-2026.docx",
             "ext": "docx",
@@ -11370,302 +11718,6 @@
             "date": "2026-07-27",
             "sha": "a996c4a3db9c1b20",
             "rel": "4.2 Health & Lifescience/HL-005/Learning-Outcomes-Reviewer-Checklist-HL005-ENEA-21-Jul-2026.docx"
-          },
-          {
-            "name": "quarto-search.js",
-            "ext": "js",
-            "kb": 42,
-            "date": "2026-07-10",
-            "sha": "1a23221f499b3993",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/quarto-search.js"
-          },
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-07-10",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
-            "name": "tippy.css",
-            "ext": "css",
-            "kb": 1,
-            "date": "2026-07-10",
-            "sha": "5969f497d9158d76",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tippy.css"
-          },
-          {
-            "name": "quarto-nav.js",
-            "ext": "js",
-            "kb": 9,
-            "date": "2026-07-10",
-            "sha": "a3e9c8c52dd54d78",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-nav/quarto-nav.js"
-          },
-          {
-            "name": "headroom.min.js",
-            "ext": "js",
-            "kb": 4,
-            "date": "2026-07-10",
-            "sha": "5b80cc4165a661a3",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-nav/headroom.min.js"
-          },
-          {
-            "name": "fuse.min.js",
-            "ext": "js",
-            "kb": 22,
-            "date": "2026-07-10",
-            "sha": "c57339c3fa16b1d6",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/fuse.min.js"
-          },
-          {
-            "name": "autocomplete.umd.js",
-            "ext": "js",
-            "kb": 94,
-            "date": "2026-07-10",
-            "sha": "cd9db3b7d812139a",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-search/autocomplete.umd.js"
-          },
-          {
-            "name": "bootstrap-icons.woff",
-            "ext": "woff",
-            "kb": 176,
-            "date": "2026-07-10",
-            "sha": "f55513b7b591cb84",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap-icons.woff"
-          },
-          {
-            "name": "quarto.js",
-            "ext": "js",
-            "kb": 26,
-            "date": "2026-07-10",
-            "sha": "4ecb60f215d96b2a",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/quarto.js"
-          },
-          {
-            "name": "tippy.umd.min.js",
-            "ext": "js",
-            "kb": 23,
-            "date": "2026-07-10",
-            "sha": "41181eeec6d7ba64",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/tippy.umd.min.js"
-          },
-          {
-            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
-            "ext": "css",
-            "kb": 3,
-            "date": "2026-07-10",
-            "sha": "34a771139d2d6c07",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
-          },
-          {
-            "name": "anchor.min.js",
-            "ext": "js",
-            "kb": 5,
-            "date": "2026-07-10",
-            "sha": "69098e105d990f83",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/anchor.min.js"
-          },
-          {
-            "name": "popper.min.js",
-            "ext": "js",
-            "kb": 19,
-            "date": "2026-07-10",
-            "sha": "4d50586b184724d3",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/quarto-html/popper.min.js"
-          },
-          {
-            "name": "clipboard.min.js",
-            "ext": "js",
-            "kb": 8,
-            "date": "2026-07-10",
-            "sha": "e17a1d816e13c082",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/clipboard/clipboard.min.js"
-          },
-          {
-            "name": "bootstrap-icons.css",
-            "ext": "css",
-            "kb": 97,
-            "date": "2026-07-10",
-            "sha": "01253947f506e030",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap-icons.css"
-          },
-          {
-            "name": "bootstrap.min.js",
-            "ext": "js",
-            "kb": 78,
-            "date": "2026-07-10",
-            "sha": "d2ea6c1e0cabca20",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap.min.js"
-          },
-          {
-            "name": "bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css",
-            "ext": "css",
-            "kb": 486,
-            "date": "2026-07-10",
-            "sha": "44a2ad8beb09b080",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/site_libs/bootstrap/bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css"
-          },
-          {
-            "name": "index.html",
-            "ext": "html",
-            "kb": 24,
-            "date": "2026-07-10",
-            "sha": "a48b9e972aee6e50",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/index.html"
-          },
-          {
-            "name": "search.json",
-            "ext": "json",
-            "kb": 29,
-            "date": "2026-07-10",
-            "sha": "03d80efb98dcc29c",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/search.json"
-          },
-          {
-            "name": "assignment1.html",
-            "ext": "html",
-            "kb": 41,
-            "date": "2026-07-10",
-            "sha": "18d7fcad31eb126a",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/assignment1.html"
-          },
-          {
-            "name": "assignment2.html",
-            "ext": "html",
-            "kb": 26,
-            "date": "2026-07-10",
-            "sha": "c7203f132bc34d5e",
-            "rel": "4.2 Health & Lifescience/HL-005/2_reader_and_assignments/assignment2.html"
-          },
-          {
-            "name": "bootstrap-icons.woff",
-            "ext": "woff",
-            "kb": 176,
-            "date": "2026-07-10",
-            "sha": "f55513b7b591cb84",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-icons.woff"
-          },
-          {
-            "name": "clipboard.min.js",
-            "ext": "js",
-            "kb": 8,
-            "date": "2026-07-10",
-            "sha": "e17a1d816e13c082",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/clipboard/clipboard.min.js"
-          },
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-07-10",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
-            "name": "bootstrap-icons.css",
-            "ext": "css",
-            "kb": 97,
-            "date": "2026-07-10",
-            "sha": "01253947f506e030",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-icons.css"
-          },
-          {
-            "name": "bootstrap.min.js",
-            "ext": "js",
-            "kb": 78,
-            "date": "2026-07-10",
-            "sha": "d2ea6c1e0cabca20",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap.min.js"
-          },
-          {
-            "name": "bootstrap-138a6193a3bd40baf1e627da441a4734.min.css",
-            "ext": "css",
-            "kb": 420,
-            "date": "2026-07-10",
-            "sha": "a20d3d44875fd0fb",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
-          },
-          {
-            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
-            "ext": "css",
-            "kb": 3,
-            "date": "2026-07-10",
-            "sha": "34a771139d2d6c07",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
-          },
-          {
-            "name": "anchor.min.js",
-            "ext": "js",
-            "kb": 5,
-            "date": "2026-07-10",
-            "sha": "69098e105d990f83",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/anchor.min.js"
-          },
-          {
-            "name": "popper.min.js",
-            "ext": "js",
-            "kb": 19,
-            "date": "2026-07-10",
-            "sha": "4d50586b184724d3",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/popper.min.js"
-          },
-          {
-            "name": "quarto.js",
-            "ext": "js",
-            "kb": 26,
-            "date": "2026-07-10",
-            "sha": "4ecb60f215d96b2a",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/quarto.js"
-          },
-          {
-            "name": "tippy.css",
-            "ext": "css",
-            "kb": 1,
-            "date": "2026-07-10",
-            "sha": "5969f497d9158d76",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tippy.css"
-          },
-          {
-            "name": "tippy.umd.min.js",
-            "ext": "js",
-            "kb": 23,
-            "date": "2026-07-10",
-            "sha": "41181eeec6d7ba64",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions_files/libs/quarto-html/tippy.umd.min.js"
-          },
-          {
-            "name": "lessonplan.docx",
-            "ext": "docx",
-            "kb": 24,
-            "date": "2026-07-10",
-            "sha": "7ac18c25569575f0",
-            "rel": "4.2 Health & Lifescience/HL-005/lessonplan.docx"
-          },
-          {
-            "name": "1_standards_of_biomedicaldata_intro.pptx",
-            "ext": "pptx",
-            "kb": 801,
-            "date": "2026-07-10",
-            "sha": "ac760aaa55094319",
-            "rel": "4.2 Health & Lifescience/HL-005/1_standards_of_biomedicaldata_intro.pptx"
-          },
-          {
-            "name": "2_assignments_teacherInstructions.md",
-            "ext": "md",
-            "kb": 3,
-            "date": "2026-07-10",
-            "sha": "45765bab3e256e1b",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions.md"
-          },
-          {
-            "name": "2_assignments_teacherInstructions.html",
-            "ext": "html",
-            "kb": 22,
-            "date": "2026-07-10",
-            "sha": "37dcaf8c07439ac4",
-            "rel": "4.2 Health & Lifescience/HL-005/2_assignments_teacherInstructions.html"
           }
         ],
         "folder": "HL-005"
@@ -14298,8 +14350,8 @@
       "lesson_type": "Hands-on lab",
       "duration": "120",
       "job_role": "All three roles",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "Sofia University · Kalinka Kaloyanova",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
@@ -14309,10 +14361,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-19",
+        "files": [
+          {
+            "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
+            "ext": "docx",
+            "kb": 207,
+            "date": "2026-08-19",
+            "sha": "a64fc6d03f857319",
+            "rel": "4.2 Health & Lifescience/HL-025/Reviewer-Checklist-template-V3.0-July-2026.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist.docx",
+            "ext": "docx",
+            "kb": 210,
+            "date": "2026-08-19",
+            "sha": "c5c30bfa0133892d",
+            "rel": "4.2 Health & Lifescience/HL-025/Learning-Outcomes-Reviewer-Checklist.docx"
+          },
+          {
+            "name": "HL 025 V1.pdf",
+            "ext": "pdf",
+            "kb": 4068,
+            "date": "2026-08-14",
+            "sha": "1f63bc4c3c8ef589",
+            "rel": "4.2 Health & Lifescience/HL-025/HL 025 V1.pdf"
+          }
+        ],
         "folder": "HL-025"
       },
       "lesson_plan": {
@@ -14340,8 +14417,8 @@
       "lesson_type": "Lecture + case-based discussion",
       "duration": "150",
       "job_role": "All three roles",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "SU · Kalinka Kaloyanova",
       "coauthor": "BME",
@@ -14461,10 +14538,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-20",
+        "files": [
+          {
+            "name": "Slides.potx",
+            "ext": "potx",
+            "kb": 391,
+            "date": "2026-08-20",
+            "sha": "9191ed1440ee4df0",
+            "rel": "4.2 Health & Lifescience/HL-029/Slides.potx"
+          }
+        ],
         "folder": "HL-029"
       },
       "lesson_plan": {
@@ -14545,10 +14631,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 3,
+        "count": 4,
         "has": true,
-        "newest": "2026-08-07",
+        "newest": "2026-08-22",
         "files": [
+          {
+            "name": "HL-031 Beneficience-revised10a.pptx",
+            "ext": "pptx",
+            "kb": 407,
+            "date": "2026-08-22",
+            "sha": "b038b7cbbb76123b",
+            "rel": "4.2 Health & Lifescience/HL-031/HL-031 Beneficience-revised10a.pptx"
+          },
           {
             "name": "Link to editable source.docx",
             "ext": "docx",
@@ -14612,10 +14706,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-08-07",
+        "newest": "2026-08-24",
         "files": [
+          {
+            "name": "HL-032 Nonmaleficience-revised10a.pptx",
+            "ext": "pptx",
+            "kb": 426,
+            "date": "2026-08-24",
+            "sha": "17944cb444c74763",
+            "rel": "4.2 Health & Lifescience/HL-032/HL-032 Nonmaleficience-revised10a.pptx"
+          },
           {
             "name": "Link to editable source.docx",
             "ext": "docx",
@@ -14660,8 +14762,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Practitioner and Governance",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "HU · Tina van der Linden",
@@ -14671,17 +14773,33 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 3,
+        "count": 5,
         "has": true,
-        "newest": "2026-08-07",
+        "newest": "2026-08-20",
         "files": [
+          {
+            "name": "HL-033 Autonomy-revised10a.pptx",
+            "ext": "pptx",
+            "kb": 422,
+            "date": "2026-08-20",
+            "sha": "3bc7b7ebea28f138",
+            "rel": "4.2 Health & Lifescience/HL-033/HL-033 Autonomy-revised10a.pptx"
+          },
           {
             "name": "Link to editable source.docx",
             "ext": "docx",
             "kb": 20,
-            "date": "2026-08-07",
-            "sha": "eec9819a21207932",
+            "date": "2026-08-20",
+            "sha": "775fbf796b3e23d3",
             "rel": "4.2 Health & Lifescience/HL-033/Link to editable source.docx"
+          },
+          {
+            "name": "HL-033 Autonomy-revised10a.pdf",
+            "ext": "pdf",
+            "kb": 265,
+            "date": "2026-08-20",
+            "sha": "14b7f98d01cc9a03",
+            "rel": "4.2 Health & Lifescience/HL-033/HL-033 Autonomy-revised10a.pdf"
           },
           {
             "name": "Document.docx",
@@ -14727,8 +14845,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "All three roles",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "BME · Mihály Héder",
       "coauthor": "HU · Tina van der Linden",
@@ -14738,10 +14856,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-08-08",
+        "newest": "2026-08-21",
         "files": [
+          {
+            "name": "HL-034 Justice-revised10a.pptx",
+            "ext": "pptx",
+            "kb": 1072,
+            "date": "2026-08-21",
+            "sha": "06a71df3ea8b1cf0",
+            "rel": "4.2 Health & Lifescience/HL-034/HL-034 Justice-revised10a.pptx"
+          },
           {
             "name": "Link to editable source.docx",
             "ext": "docx",
@@ -14959,14 +15085,14 @@
       "materials": {
         "count": 4,
         "has": true,
-        "newest": "2026-08-11",
+        "newest": "2026-08-24",
         "files": [
           {
             "name": "Ethical_Frameworks_RAISE-U_template_fixed.pptx",
             "ext": "pptx",
-            "kb": 366,
-            "date": "2026-08-11",
-            "sha": "8e25f5f52267947d",
+            "kb": 383,
+            "date": "2026-08-24",
+            "sha": "518513a520fde76d",
             "rel": "4.2 Health & Lifescience/HL-039/Ethical_Frameworks_RAISE-U_template_fixed.pptx"
           },
           {
@@ -15018,24 +15144,40 @@
       "code": "HL-040",
       "track": "Health",
       "title": "HL-040 Care standards and frameworks in different European countries",
-      "lesson_type": "Lecture",
+      "lesson_type": "Interactive",
       "duration": "120",
       "job_role": "All three roles",
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "West Attica (proposed)",
-      "coauthor": "Sofia University",
+      "author": "West Attica · Anna Mavromanoli",
+      "coauthor": "",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 3,
+        "count": 4,
         "has": true,
-        "newest": "2026-07-27",
+        "newest": "2026-08-24",
         "files": [
+          {
+            "name": "LE HL040.pdf",
+            "ext": "pdf",
+            "kb": 94,
+            "date": "2026-08-24",
+            "sha": "85d4f904b5cc6013",
+            "rel": "4.2 Health & Lifescience/HL-040/LE HL040.pdf"
+          },
+          {
+            "name": "LE HL040.pptx",
+            "ext": "pptx",
+            "kb": 366,
+            "date": "2026-08-24",
+            "sha": "e1266b81a9aecd5f",
+            "rel": "4.2 Health & Lifescience/HL-040/LE HL040.pptx"
+          },
           {
             "name": "Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx",
             "ext": "docx",
@@ -15051,14 +15193,6 @@
             "date": "2026-07-27",
             "sha": "d3d99c56df5b2360",
             "rel": "4.2 Health & Lifescience/HL-040/Learning-Outcomes-Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx"
-          },
-          {
-            "name": "LE HL040.pdf",
-            "ext": "pdf",
-            "kb": 91,
-            "date": "2026-06-30",
-            "sha": "c13ef571724d8f61",
-            "rel": "4.2 Health & Lifescience/HL-040/LE HL040.pdf"
           }
         ],
         "folder": "HL-040"
@@ -15510,24 +15644,40 @@
       "code": "HL-049",
       "track": "Health",
       "title": "HL-049 Clinical decision-making with AI",
-      "lesson_type": "Lecture",
+      "lesson_type": "Case study",
       "duration": "120",
       "job_role": "All three roles",
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "West Attica",
-      "coauthor": "BME · Ahmad Khalidi",
+      "author": "West Attica · Anna Mavromanoli",
+      "coauthor": "",
       "reviewer": "QTICS · Katalin Tauberne Jakab",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 3,
+        "count": 4,
         "has": true,
-        "newest": "2026-07-15",
+        "newest": "2026-08-24",
         "files": [
+          {
+            "name": "LE HL049.pptx",
+            "ext": "pptx",
+            "kb": 360,
+            "date": "2026-08-24",
+            "sha": "84fa9b44c3521957",
+            "rel": "4.2 Health & Lifescience/HL-049/LE HL049.pptx"
+          },
+          {
+            "name": "LE HL049.pdf",
+            "ext": "pdf",
+            "kb": 76,
+            "date": "2026-08-24",
+            "sha": "97ac12cf3f57a249",
+            "rel": "4.2 Health & Lifescience/HL-049/LE HL049.pdf"
+          },
           {
             "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
             "ext": "docx",
@@ -15543,14 +15693,6 @@
             "date": "2026-07-15",
             "sha": "cec75921a0a3aef7",
             "rel": "4.2 Health & Lifescience/HL-049/Learning-Outcomes-Reviewer-Checklist.docx"
-          },
-          {
-            "name": "LE HL049.pdf",
-            "ext": "pdf",
-            "kb": 75,
-            "date": "2026-07-09",
-            "sha": "9d58111b7f80b923",
-            "rel": "4.2 Health & Lifescience/HL-049/LE HL049.pdf"
           }
         ],
         "folder": "HL-049"
@@ -16093,24 +16235,40 @@
       "code": "HL-060",
       "track": "Health",
       "title": "HL-060 Implement governance frameworks and post-market monitoring processes 1",
-      "lesson_type": "Lecture",
+      "lesson_type": "Practical",
       "duration": "120",
       "job_role": "Researcher and Governance",
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "West Attica",
-      "coauthor": "Sofia University",
+      "author": "West Attica · Anna Mavromanoli",
+      "coauthor": "",
       "reviewer": "QTICS · Ákos Molnár",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 3,
+        "count": 4,
         "has": true,
-        "newest": "2026-07-22",
+        "newest": "2026-08-24",
         "files": [
+          {
+            "name": "LE HL060.pptx",
+            "ext": "pptx",
+            "kb": 356,
+            "date": "2026-08-24",
+            "sha": "0a516ddde5993500",
+            "rel": "4.2 Health & Lifescience/HL-060/LE HL060.pptx"
+          },
+          {
+            "name": "LE HL060.pdf",
+            "ext": "pdf",
+            "kb": 73,
+            "date": "2026-08-24",
+            "sha": "cf435d3c43130ad2",
+            "rel": "4.2 Health & Lifescience/HL-060/LE HL060.pdf"
+          },
           {
             "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
             "ext": "docx",
@@ -16126,14 +16284,6 @@
             "date": "2026-07-21",
             "sha": "f7b8b68e9755d18f",
             "rel": "4.2 Health & Lifescience/HL-060/Learning-Outcomes-Reviewer-Checklist.docx"
-          },
-          {
-            "name": "LE HL060.pdf",
-            "ext": "pdf",
-            "kb": 72,
-            "date": "2026-07-09",
-            "sha": "17997d831566c8de",
-            "rel": "4.2 Health & Lifescience/HL-060/LE HL060.pdf"
           }
         ],
         "folder": "HL-060"
@@ -16341,31 +16491,39 @@
       "code": "HL-064",
       "track": "Health",
       "title": "HL-064 Clinical communication skills",
-      "lesson_type": "MISSING",
+      "lesson_type": "Tutorial",
       "duration": "120 minutes",
       "job_role": "Practitioner",
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "West Attica",
-      "coauthor": "TUD",
+      "author": "West Attica · Anna Mavromanoli",
+      "coauthor": "",
       "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Lesson-material deep pass. Strong dermatology role-play, but the wiki lesson plan is empty (plan lives only in the PDF). Fixes: ground the comms half in SPIKES/Calgary-Cambridge/SDM, use natural frequencies for risk, add the derm-AI skin-tone equity point, and resolve the transparency-vs-paternalism tension. Author must put the plan on the wiki.",
+      "review_note": "Final pass 24 Aug 2026: Anna incorporated our review. Wiki plan now filled (Tutorial, author, outcomes, timed instructions); revised 20-slide deck adds SPIKES, the three-talk SDM model, natural frequencies (Gigerenzer), the equity blind spot, a resolved synthesis (human oversight in/on-the-loop), and references. Ready to teach. Optional: deepen the equity evidence (Adamson & Smith 2018; Daneshjou 2022) + 2 typos.",
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-08-07",
+        "newest": "2026-08-24",
         "files": [
           {
             "name": "LE HL064.pdf",
             "ext": "pdf",
-            "kb": 94,
-            "date": "2026-08-07",
-            "sha": "48ee6064d19ab282",
+            "kb": 101,
+            "date": "2026-08-24",
+            "sha": "a2eadc95550a04c0",
             "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pdf"
+          },
+          {
+            "name": "LE HL064.pptx",
+            "ext": "pptx",
+            "kb": 367,
+            "date": "2026-08-24",
+            "sha": "06ab4ef8064c8450",
+            "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pptx"
           }
         ],
         "folder": "HL-064"
@@ -16380,15 +16538,15 @@
       "wiki_sections": [
         {
           "name": "Administrative information",
-          "len": 153,
+          "len": 161,
           "empty": false,
-          "text": "Title\n\nClinical communication skills\n\n\nCODE\n\nHL-064\n\n\nDuration\n\n120 minutes\n\n\nTrack\n\nHealth\n\n\nLesson Type\n\n\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nPractitioner"
+          "text": "Title\n\nClinical communication skills\n\n\nCODE\n\nHL-064\n\n\nDuration\n\n120 minutes\n\n\nTrack\n\nHealth\n\n\nLesson Type\n\nTutorial\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nPractitioner"
         },
         {
           "name": "Management information",
-          "len": 301,
+          "len": 781,
           "empty": false,
-          "text": "Author Organisation 1\n\nWest Attica\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nWest Attica\n\n\nAuthor Person 1\n\nAnna Mavromanoli\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\nExplain principles of effective clinical communication in healthcare contexts\n-\nApply communication strategies to explain AI-generated results and uncertainties to patients and other healthcare professionals\n-\nAnalyze challenges related to trust, transparency and risk communication in AI-assisted care\n-\nDemonstrate appropriate communication techniques in simulated clinical scenarios involving AI recommendations\nLearning Events to be completed before:\nNone.\nKeywords:\ncommunication, interaction, explanation, trust, transparency,"
         },
         {
           "name": "Expected preparation",
@@ -16410,9 +16568,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 0,
-          "empty": true,
-          "text": ""
+          "len": 343,
+          "empty": false,
+          "text": "-\n0-30 min: Introduce principles of clinical communication and challenges related to AI integration\n-\n30-70 min: Discuss communication of uncertainty and risk in AI-supported decisions\n-\n70-105 min: Conduct role-play exercises involving clinician-patient interactions with AI recommendations\n-\n105-120 min: Feedback on communication strategies"
         }
       ],
       "realai": {
@@ -16429,14 +16587,12 @@
       },
       "completeness": {
         "is_author": false,
-        "instructions_written": false,
+        "instructions_written": true,
         "outcomes_present": true,
         "materials_uploaded": true,
-        "wiki_missing": [
-          "Instructions for teachers (detailed)"
-        ],
+        "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -20696,8 +20852,8 @@
       "lesson_type": "Theory",
       "duration": "45",
       "job_role": "Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "BME · Dorottya Egres",
       "coauthor": "",
@@ -20755,8 +20911,8 @@
       "lesson_type": "Practice",
       "duration": "45",
       "job_role": "Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "BME · Dorottya Egres",
       "coauthor": "",
@@ -20815,7 +20971,7 @@
       "duration": "90",
       "job_role": "Conflict",
       "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "BME · Dorottya Egres",
       "coauthor": "",
@@ -20865,8 +21021,8 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "BME · Dorottya Egres",
       "coauthor": "",
@@ -20878,14 +21034,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-27",
+        "newest": "2026-08-19",
         "files": [
           {
             "name": "MC-052.pptx",
             "ext": "pptx",
-            "kb": 3667,
-            "date": "2026-06-27",
-            "sha": "2f67ad24b4a84e60",
+            "kb": 3666,
+            "date": "2026-08-19",
+            "sha": "90b5f04919606d9b",
             "rel": "4.3 Media & Culture/MC-052/MC-052.pptx"
           }
         ],
@@ -20916,8 +21072,8 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "BME · Dorottya Egres",
       "coauthor": "",
@@ -25620,31 +25776,39 @@
       "code": "HL-064",
       "track": "Health",
       "title": "HL-064 Clinical communication skills",
-      "lesson_type": "MISSING",
+      "lesson_type": "Tutorial",
       "duration": "120 minutes",
       "job_role": "Practitioner",
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "West Attica",
-      "coauthor": "TUD",
+      "author": "West Attica · Anna Mavromanoli",
+      "coauthor": "",
       "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Lesson-material deep pass. Strong dermatology role-play, but the wiki lesson plan is empty (plan lives only in the PDF). Fixes: ground the comms half in SPIKES/Calgary-Cambridge/SDM, use natural frequencies for risk, add the derm-AI skin-tone equity point, and resolve the transparency-vs-paternalism tension. Author must put the plan on the wiki.",
+      "review_note": "Final pass 24 Aug 2026: Anna incorporated our review. Wiki plan now filled (Tutorial, author, outcomes, timed instructions); revised 20-slide deck adds SPIKES, the three-talk SDM model, natural frequencies (Gigerenzer), the equity blind spot, a resolved synthesis (human oversight in/on-the-loop), and references. Ready to teach. Optional: deepen the equity evidence (Adamson & Smith 2018; Daneshjou 2022) + 2 typos.",
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-08-07",
+        "newest": "2026-08-24",
         "files": [
           {
             "name": "LE HL064.pdf",
             "ext": "pdf",
-            "kb": 94,
-            "date": "2026-08-07",
-            "sha": "48ee6064d19ab282",
+            "kb": 101,
+            "date": "2026-08-24",
+            "sha": "a2eadc95550a04c0",
             "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pdf"
+          },
+          {
+            "name": "LE HL064.pptx",
+            "ext": "pptx",
+            "kb": 367,
+            "date": "2026-08-24",
+            "sha": "06ab4ef8064c8450",
+            "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pptx"
           }
         ],
         "folder": "HL-064"
@@ -25659,15 +25823,15 @@
       "wiki_sections": [
         {
           "name": "Administrative information",
-          "len": 153,
+          "len": 161,
           "empty": false,
-          "text": "Title\n\nClinical communication skills\n\n\nCODE\n\nHL-064\n\n\nDuration\n\n120 minutes\n\n\nTrack\n\nHealth\n\n\nLesson Type\n\n\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nPractitioner"
+          "text": "Title\n\nClinical communication skills\n\n\nCODE\n\nHL-064\n\n\nDuration\n\n120 minutes\n\n\nTrack\n\nHealth\n\n\nLesson Type\n\nTutorial\n\n\nSelf-standing\n\nYes\n\n\nJob role\n\nPractitioner"
         },
         {
           "name": "Management information",
-          "len": 301,
+          "len": 781,
           "empty": false,
-          "text": "Author Organisation 1\n\nWest Attica\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nTUD\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nNone.\nLearning Events to be completed before:\nNone.\nKeywords:\nNone."
+          "text": "Author Organisation 1\n\nWest Attica\n\n\nAuthor Person 1\n\nAnna Mavromanoli\n\n\nAuthor Organisation 2\n\n\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\nExplain principles of effective clinical communication in healthcare contexts\n-\nApply communication strategies to explain AI-generated results and uncertainties to patients and other healthcare professionals\n-\nAnalyze challenges related to trust, transparency and risk communication in AI-assisted care\n-\nDemonstrate appropriate communication techniques in simulated clinical scenarios involving AI recommendations\nLearning Events to be completed before:\nNone.\nKeywords:\ncommunication, interaction, explanation, trust, transparency,"
         },
         {
           "name": "Expected preparation",
@@ -25689,9 +25853,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 0,
-          "empty": true,
-          "text": ""
+          "len": 343,
+          "empty": false,
+          "text": "-\n0-30 min: Introduce principles of clinical communication and challenges related to AI integration\n-\n30-70 min: Discuss communication of uncertainty and risk in AI-supported decisions\n-\n70-105 min: Conduct role-play exercises involving clinician-patient interactions with AI recommendations\n-\n105-120 min: Feedback on communication strategies"
         }
       ],
       "realai": {
@@ -25708,14 +25872,12 @@
       },
       "completeness": {
         "is_author": false,
-        "instructions_written": false,
+        "instructions_written": true,
         "outcomes_present": true,
         "materials_uploaded": true,
-        "wiki_missing": [
-          "Instructions for teachers (detailed)"
-        ],
+        "wiki_missing": [],
         "author_needs": [],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
