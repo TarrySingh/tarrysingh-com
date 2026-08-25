@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-08-25T08:58:46.143341+00:00",
-  "refreshed_at": "2026-08-25T08:58:46.143341+00:00",
+  "generated_at": "2026-08-25T10:23:05.824689+00:00",
+  "refreshed_at": "2026-08-25T10:23:05.824689+00:00",
   "refresh_history": [
     {
       "at": "2026-08-24T16:15:39.147047+00:00",
@@ -109,7 +109,7 @@
       "total": 56,
       "author": 4,
       "reviewer": 52,
-      "reviewed": 39,
+      "reviewed": 41,
       "by_status": {
         "In development": 15,
         "In review": 40,
@@ -17532,8 +17532,8 @@
       "reviewer": "REAL AI",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Plan-stage review 25 Aug 2026. Shape is right (mini-lecture/exercise/discussion, laddered outcomes, HC-204 prerequisite good). Main fix: outcome 5 uses \"limited/minimal risk\", which are not terms of the Regulation (verified: zero occurrences in the consolidated text) - classify against Art 5 / Art 6+Annexes / Art 50 / Ch V instead. GPAI (Ch V, in force since 2 Aug 2025) missing while deferred high-risk is covered. Name the Act's own mechanism: Art 17 QMS with post-market monitoring nested at Art 17(1)(h)->Art 72. Also: no timings, one-line group exercise, no preparation, no assessment, keywords comma-separated not $. Track overlap with LC-034/LC-015/LC-019.",
       "materials": {
         "count": 0,
         "has": false,
@@ -18214,8 +18214,8 @@
       "reviewer": "REAL AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Plan review 25 Aug 2026. Strong plan (4 case studies with scenario/tasks/expected outcome, precise legal verbs, real reading list). Main fix is currency: Art 6 was amended 27 Jul 2026 by Reg (EU) 2026/1744 inserting 6(1a)/(1b)/(1c), which hit Case 4 (Annex I medical-device route); Cases 1-3 (Annex III) unaffected. Also: make the two routes explicit (Art 6(1)/Annex I vs 6(2)/Annex III) with their split dates (2 Aug 2028 vs 2 Dec 2027); anchor Case 2 in Art 6(4); the cited Commission Art 6(5) classification guidelines are overdue since 2 Feb 2026 and still unpublished. Timing tight (4 cases/40 min).",
       "materials": {
         "count": 0,
         "has": false,
@@ -26695,8 +26695,8 @@
       "reviewer": "REAL AI",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Plan-stage review 25 Aug 2026. Shape is right (mini-lecture/exercise/discussion, laddered outcomes, HC-204 prerequisite good). Main fix: outcome 5 uses \"limited/minimal risk\", which are not terms of the Regulation (verified: zero occurrences in the consolidated text) - classify against Art 5 / Art 6+Annexes / Art 50 / Ch V instead. GPAI (Ch V, in force since 2 Aug 2025) missing while deferred high-risk is covered. Name the Act's own mechanism: Art 17 QMS with post-market monitoring nested at Art 17(1)(h)->Art 72. Also: no timings, one-line group exercise, no preparation, no assessment, keywords comma-separated not $. Track overlap with LC-034/LC-015/LC-019.",
       "materials": {
         "count": 0,
         "has": false,
@@ -26981,8 +26981,8 @@
       "reviewer": "REAL AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
+      "review_done": true,
+      "review_note": "Plan review 25 Aug 2026. Strong plan (4 case studies with scenario/tasks/expected outcome, precise legal verbs, real reading list). Main fix is currency: Art 6 was amended 27 Jul 2026 by Reg (EU) 2026/1744 inserting 6(1a)/(1b)/(1c), which hit Case 4 (Annex I medical-device route); Cases 1-3 (Annex III) unaffected. Also: make the two routes explicit (Art 6(1)/Annex I vs 6(2)/Annex III) with their split dates (2 Aug 2028 vs 2 Dec 2027); anchor Case 2 in Art 6(4); the cited Commission Art 6(5) classification guidelines are overdue since 2 Feb 2026 and still unpublished. Timing tight (4 cases/40 min).",
       "materials": {
         "count": 0,
         "has": false,
