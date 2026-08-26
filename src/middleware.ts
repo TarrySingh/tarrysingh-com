@@ -1,9 +1,19 @@
 import { NextRequest, NextResponse } from "next/server"
+import {
+  PANORAIMA_COOKIE,
+  PANORAIMA_LOGIN_PATH,
+  verifySessionToken,
+} from "@/lib/panoraima/auth"
 
 /**
  * Middleware responsibilities:
- *   1. Basic Auth gate for /experiments/panoraima/* (consortium-only view).
- *      Credentials are PANORAIMA_USER / PANORAIMA_PASS env vars.
+ *   1. Auth gate for /experiments/panoraima/* (consortium-only view).
+ *      Visitors without a session are redirected to a real login form at
+ *      /experiments/panoraima/login rather than being shown the browser's
+ *      bare "Authentication required." text. A signed session cookie is the
+ *      normal path; Basic Auth is still accepted so existing bookmarks,
+ *      curl calls and scripts keep working. Credentials for both are the
+ *      PANORAIMA_USER / PANORAIMA_PASS env vars.
  *      Also stamps X-Robots-Tag: noindex so accidental indexing is prevented.
  *   2. Basic Auth gate for /studio/* and /api/studio/* (Tarry's writing
  *      surface). Credentials are STUDIO_USER / STUDIO_PASS env vars.
@@ -69,14 +79,36 @@ function checkBasicAuth(
   }
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // --- 1) PANORAIMA Basic Auth ------------------------------------------
+  // --- 1) PANORAIMA gate: session cookie, or Basic Auth as a fallback ----
   if (pathname.startsWith(PANORAIMA_PREFIX)) {
-    if (!checkBasicAuth(request, "PANORAIMA_USER", "PANORAIMA_PASS")) {
-      return unauthorizedResponse("PANORAIMA Dashboard")
+    // The login form itself must stay reachable, or the redirect below loops.
+    if (pathname === PANORAIMA_LOGIN_PATH) {
+      const res = NextResponse.next()
+      res.headers.set("X-Robots-Tag", "noindex, nofollow")
+      return res
     }
+
+    const hasSession = await verifySessionToken(
+      request.cookies.get(PANORAIMA_COOKIE)?.value,
+    )
+    // Basic Auth remains valid so bookmarks and scripts are not broken.
+    const hasBasicAuth =
+      hasSession || checkBasicAuth(request, "PANORAIMA_USER", "PANORAIMA_PASS")
+
+    if (!hasSession && !hasBasicAuth) {
+      const loginUrl = request.nextUrl.clone()
+      loginUrl.pathname = PANORAIMA_LOGIN_PATH
+      loginUrl.search = ""
+      loginUrl.searchParams.set("next", pathname + request.nextUrl.search)
+      const res = NextResponse.redirect(loginUrl)
+      res.headers.set("X-Robots-Tag", "noindex, nofollow")
+      res.headers.set("Cache-Control", "no-store")
+      return res
+    }
+
     const res = NextResponse.next()
     res.headers.set("X-Robots-Tag", "noindex, nofollow")
     return res
