@@ -2,9 +2,16 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-08-25T10:23:05.824689+00:00",
-  "refreshed_at": "2026-08-25T10:23:05.824689+00:00",
+  "generated_at": "2026-08-26T17:20:46.139105+00:00",
+  "refreshed_at": "2026-08-26T17:20:46.139105+00:00",
   "refresh_history": [
+    {
+      "at": "2026-08-26T17:20:46.139105+00:00",
+      "wiki_captured": "2026-08-26T17:18:36.976Z",
+      "sharepoint_generated": "2026-08-26T19:20:45.951419Z",
+      "realai_total": 56,
+      "reviewed": 41
+    },
     {
       "at": "2026-08-24T16:15:39.147047+00:00",
       "wiki_captured": "2026-08-24T16:12:02.223Z",
@@ -53,26 +60,19 @@
       "sharepoint_generated": "2026-06-30T14:07:00.320241Z",
       "realai_total": 55,
       "reviewed": 12
-    },
-    {
-      "at": "2026-06-30T14:07:00.511354+02:00",
-      "wiki_captured": "2026-06-30T11:44:26.449Z",
-      "sharepoint_generated": "2026-06-30T14:07:00.320241Z",
-      "realai_total": 55,
-      "reviewed": 12
     }
   ],
   "data_sources": {
     "wiki": {
       "status": "live",
-      "captured_at": "2026-08-24T16:12:02.223Z",
+      "captured_at": "2026-08-26T17:18:36.976Z",
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-08-24T18:15:38.933304Z",
+      "generated_at": "2026-08-26T19:20:45.951419Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 144,
+        "with_materials": 146,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -89,18 +89,18 @@
       "Media": 89
     },
     "by_status": {
-      "In development": 191,
-      "Status not set": 67,
-      "In review": 150,
-      "Materials in progress": 27,
-      "Not started": 1
+      "In development": 189,
+      "Status not set": 65,
+      "In review": 138,
+      "Materials in progress": 40,
+      "Not started": 4
     },
-    "with_materials": 144,
-    "materials_pending": 292,
+    "with_materials": 146,
+    "materials_pending": 290,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 144,
-      "awaiting_material": 292,
+      "with_sharepoint_material": 146,
+      "awaiting_material": 290,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -112,7 +112,8 @@
       "reviewed": 41,
       "by_status": {
         "In development": 15,
-        "In review": 40,
+        "In review": 38,
+        "Materials in progress": 2,
         "Not started": 1
       },
       "needs_action": 26,
@@ -5441,10 +5442,10 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
-      "author": "SU",
+      "author": "SU · Kristina Arnaoudova",
       "coauthor": "BME",
       "reviewer": "",
       "off_wiki": false,
@@ -11361,10 +11362,331 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 154,
+        "has": true,
+        "newest": "2026-08-26",
+        "files": [
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "panoraima.png",
+            "ext": "png",
+            "kb": 62,
+            "date": "2026-08-26",
+            "sha": "490f6b31c9980972",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/assets/panoraima.png"
+          },
+          {
+            "name": "omics_batch_effects_dataset.csv",
+            "ext": "csv",
+            "kb": 104,
+            "date": "2026-08-26",
+            "sha": "2426760cb36dfb0e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
+          },
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-26",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "omics_batch_effects_dataset.csv",
+            "ext": "csv",
+            "kb": 104,
+            "date": "2026-08-26",
+            "sha": "2426760cb36dfb0e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/omics_batch_effects_dataset.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-26",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-26",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "omics_batch_effects_dataset.csv",
+            "ext": "csv",
+            "kb": 104,
+            "date": "2026-08-26",
+            "sha": "2426760cb36dfb0e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
+          },
+          {
+            "name": "02_common_issues_template.qmd",
+            "ext": "qmd",
+            "kb": 3,
+            "date": "2026-08-26",
+            "sha": "5ab962d7ba336c84",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/02_common_issues_template.qmd"
+          },
+          {
+            "name": "01_data_types_schema_template.qmd",
+            "ext": "qmd",
+            "kb": 2,
+            "date": "2026-08-26",
+            "sha": "6d549a5b0cc25abf",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/01_data_types_schema_template.qmd"
+          },
+          {
+            "name": "02_common_issues_template.qmd",
+            "ext": "qmd",
+            "kb": 3,
+            "date": "2026-08-26",
+            "sha": "5ab962d7ba336c84",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/02_common_issues_template.qmd"
+          },
+          {
+            "name": "03_dataset_readiness_template.qmd",
+            "ext": "qmd",
+            "kb": 4,
+            "date": "2026-08-26",
+            "sha": "5111a579aa70389e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/03_dataset_readiness_template.qmd"
+          },
+          {
+            "name": "03_dataset_readiness_template.qmd",
+            "ext": "qmd",
+            "kb": 5,
+            "date": "2026-08-26",
+            "sha": "fe3bbfc11fb341f2",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/03_dataset_readiness_template.qmd"
+          },
+          {
+            "name": "01_data_types_schema_template.qmd",
+            "ext": "qmd",
+            "kb": 2,
+            "date": "2026-08-26",
+            "sha": "6d549a5b0cc25abf",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/01_data_types_schema_template.qmd"
+          },
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "omics_batch_effects_dataset.csv",
+            "ext": "csv",
+            "kb": 104,
+            "date": "2026-08-26",
+            "sha": "2426760cb36dfb0e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/omics_batch_effects_dataset.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-26",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "panoraima.png",
+            "ext": "png",
+            "kb": 62,
+            "date": "2026-08-26",
+            "sha": "490f6b31c9980972",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/assets/panoraima.png"
+          },
+          {
+            "name": "omics_batch_effects_dataset.csv",
+            "ext": "csv",
+            "kb": 104,
+            "date": "2026-08-26",
+            "sha": "2426760cb36dfb0e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
+          },
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-26",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-26",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "omics_batch_effects_dataset.csv",
+            "ext": "csv",
+            "kb": 104,
+            "date": "2026-08-26",
+            "sha": "2426760cb36dfb0e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/omics_batch_effects_dataset.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-26",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "omics_batch_effects_dataset.csv",
+            "ext": "csv",
+            "kb": 104,
+            "date": "2026-08-26",
+            "sha": "2426760cb36dfb0e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
+          },
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "02_common_issues_template.qmd",
+            "ext": "qmd",
+            "kb": 3,
+            "date": "2026-08-26",
+            "sha": "5ab962d7ba336c84",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/02_common_issues_template.qmd"
+          },
+          {
+            "name": "01_data_types_schema_template.qmd",
+            "ext": "qmd",
+            "kb": 3,
+            "date": "2026-08-26",
+            "sha": "a35f9ca9a260b6fe",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/01_data_types_schema_template.qmd"
+          },
+          {
+            "name": "panoraima.png",
+            "ext": "png",
+            "kb": 62,
+            "date": "2026-08-26",
+            "sha": "490f6b31c9980972",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/assets/panoraima.png"
+          },
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "03_dataset_readiness_template.qmd",
+            "ext": "qmd",
+            "kb": 5,
+            "date": "2026-08-26",
+            "sha": "fe3bbfc11fb341f2",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/03_dataset_readiness_template.qmd"
+          },
+          {
+            "name": "omics_batch_effects_dataset.csv",
+            "ext": "csv",
+            "kb": 104,
+            "date": "2026-08-26",
+            "sha": "2426760cb36dfb0e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/omics_batch_effects_dataset.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-26",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-26",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "omics_batch_effects_dataset.csv",
+            "ext": "csv",
+            "kb": 104,
+            "date": "2026-08-26",
+            "sha": "2426760cb36dfb0e",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
+          },
+          {
+            "name": "measurement_data_10000.csv",
+            "ext": "csv",
+            "kb": 1482,
+            "date": "2026-08-26",
+            "sha": "5056f3deb30cac70",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
+          }
+        ],
         "folder": "HL-004"
       },
       "lesson_plan": {
@@ -14428,10 +14750,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-08-07",
+        "newest": "2026-08-25",
         "files": [
+          {
+            "name": "HL 026 - v2.pdf",
+            "ext": "pdf",
+            "kb": 389,
+            "date": "2026-08-25",
+            "sha": "2324ebbb2de89ec1",
+            "rel": "4.2 Health & Lifescience/HL-026/HL 026 - v2.pdf"
+          },
           {
             "name": "HL 026 - v1.pdf",
             "ext": "pdf",
@@ -14479,10 +14809,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-07-30",
+        "newest": "2026-08-25",
         "files": [
+          {
+            "name": "HL 028 - 30 July-2026.pdf",
+            "ext": "pdf",
+            "kb": 993,
+            "date": "2026-08-25",
+            "sha": "213a30e647010105",
+            "rel": "4.2 Health & Lifescience/HL-028/HL 028 - 30 July-2026.pdf"
+          },
           {
             "name": "HL 30  July-2026.pdf",
             "ext": "pdf",
@@ -15536,7 +15874,7 @@
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "TUD · Na Li / Ahmad",
+      "author": "TUD · Na Li",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "RealAI · Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
@@ -15583,9 +15921,9 @@
         },
         {
           "name": "Management information",
-          "len": 764,
+          "len": 756,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li / Ahmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
         },
         {
           "name": "Expected preparation",
@@ -15660,8 +15998,24 @@
       "materials": {
         "count": 4,
         "has": true,
-        "newest": "2026-08-24",
+        "newest": "2026-08-26",
         "files": [
+          {
+            "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
+            "ext": "docx",
+            "kb": 202,
+            "date": "2026-08-26",
+            "sha": "58fb697386de22dd",
+            "rel": "4.2 Health & Lifescience/HL-049/Reviewer-Checklist-template-V3.0-July-2026.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist.docx",
+            "ext": "docx",
+            "kb": 207,
+            "date": "2026-08-26",
+            "sha": "92de0a035cbfa91b",
+            "rel": "4.2 Health & Lifescience/HL-049/Learning-Outcomes-Reviewer-Checklist.docx"
+          },
           {
             "name": "LE HL049.pptx",
             "ext": "pptx",
@@ -15677,22 +16031,6 @@
             "date": "2026-08-24",
             "sha": "97ac12cf3f57a249",
             "rel": "4.2 Health & Lifescience/HL-049/LE HL049.pdf"
-          },
-          {
-            "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
-            "ext": "docx",
-            "kb": 206,
-            "date": "2026-07-15",
-            "sha": "d1200681da2a5dfd",
-            "rel": "4.2 Health & Lifescience/HL-049/Reviewer-Checklist-template-V3.0-July-2026.docx"
-          },
-          {
-            "name": "Learning-Outcomes-Reviewer-Checklist.docx",
-            "ext": "docx",
-            "kb": 199,
-            "date": "2026-07-15",
-            "sha": "cec75921a0a3aef7",
-            "rel": "4.2 Health & Lifescience/HL-049/Learning-Outcomes-Reviewer-Checklist.docx"
           }
         ],
         "folder": "HL-049"
@@ -16249,10 +16587,26 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 4,
+        "count": 6,
         "has": true,
-        "newest": "2026-08-24",
+        "newest": "2026-08-25",
         "files": [
+          {
+            "name": "Reviewer-Checklist-HL060.docx",
+            "ext": "docx",
+            "kb": 208,
+            "date": "2026-08-25",
+            "sha": "55f6d2f3dc29573a",
+            "rel": "4.2 Health & Lifescience/HL-060/Reviewer-Checklist-HL060.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL060.docx",
+            "ext": "docx",
+            "kb": 208,
+            "date": "2026-08-25",
+            "sha": "c99f022ce21114d3",
+            "rel": "4.2 Health & Lifescience/HL-060/Learning-Outcomes-Reviewer-Checklist-HL060.docx"
+          },
           {
             "name": "LE HL060.pptx",
             "ext": "pptx",
@@ -16607,7 +16961,7 @@
       "duration": "120",
       "job_role": "All three roles",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "TUD · Mary Hendrick",
       "coauthor": "West Attica",
@@ -16617,10 +16971,35 @@
       "review_done": true,
       "review_note": "Minor revision. Right topic (adoption, not validation, is where healthcare AI stalls) but reads as generic change management; make it AI-specific by swapping in trust, explainability, accountability, workflow fit, the validation-to-adoption gap, and model drift/monitoring + equity-as-resistance (120 min is already full, so trade out generic depth); fix the three weak outcomes (LO3/LO6 'explore', LO5 run-on); give the 'apply' outcome a real exercise; add a formative check; reconsider 'all three roles'.",
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-25",
+        "files": [
+          {
+            "name": "HL-065_DRAFT.pptx",
+            "ext": "pptx",
+            "kb": 3594,
+            "date": "2026-08-25",
+            "sha": "9a0143ea6b1a3585",
+            "rel": "4.2 Health & Lifescience/HL-065/HL-065_DRAFT.pptx"
+          },
+          {
+            "name": "lessonplanHL065_ChangeLeadershipinHealthcare.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-08-25",
+            "sha": "7cae1aaeb9f4c742",
+            "rel": "4.2 Health & Lifescience/HL-065/lessonplanHL065_ChangeLeadershipinHealthcare.docx"
+          },
+          {
+            "name": "ForcefieldAnalysis(1).docx",
+            "ext": "docx",
+            "kb": 16,
+            "date": "2026-08-25",
+            "sha": "f60eae44b52f6404",
+            "rel": "4.2 Health & Lifescience/HL-065/ForcefieldAnalysis(1).docx"
+          }
+        ],
         "folder": "HL-065"
       },
       "lesson_plan": {
@@ -16639,9 +17018,9 @@
         },
         {
           "name": "Management information",
-          "len": 1081,
+          "len": 1088,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh, Tannistha Maiti, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\tThe students can describe the multi-dimensional functional domains of Healthcare change leadership\n-\tThe students can assess change leadership frameworks to anchor health organisational change culture. \n-\tThe students explore psychological safety and its impact on stakeholder AI Adoption.\n-\tThe students can apply methods to reduce stakeholder resistance to change e.g. Forcefield Analysis.\n-\tThe students can evaluate AI application used to gather results and assess performance management improvements with a focus on patient outcomes etc.,\n-\tThe students explore examples of ethical, human-centric integration of technology into daily clinical workflows.\nLearning Events to be completed before:\nNone.\nKeywords:\nhow to drive adoption, handle resistance, gather feedback, and iterate workflows with stakeholders,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh, Tannistha Maiti, Monira Majhabeen\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\n-\tThe students can describe the multi-dimensional functional domains of Healthcare change leadership\n-\tThe students can assess change leadership frameworks to anchor health organisational change culture. \n-\tThe students explore psychological safety and its impact on stakeholder AI Adoption.\n-\tThe students can apply methods to reduce stakeholder resistance to change e.g. Forcefield Analysis.\n-\tThe students can evaluate AI application used to gather results and assess performance management improvements with a focus on patient outcomes etc.,\n-\tThe students explore examples of ethical, human-centric integration of technology into daily clinical workflows.\nLearning Events to be completed before:\nNone.\nKeywords:\nhow to drive adoption, handle resistance, gather feedback, and iterate workflows with stakeholders,"
         },
         {
           "name": "Expected preparation",
@@ -16684,7 +17063,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -18159,7 +18538,7 @@
       "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "HAW · Michael Gille",
-      "coauthor": "UNIWA",
+      "coauthor": "KPI · Oksana Karpenko",
       "reviewer": "KPI · Oksana Karpenko",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -18233,9 +18612,9 @@
       "wiki_sections": [
         {
           "name": "Administrative information",
-          "len": 157,
+          "len": 261,
           "empty": false,
-          "text": "Title\n\nHigh-Risk Classification Workshop\n\n\nCODE\n\nLC-034\n\n\nDuration\n\n60\n\n\nTrack\n\nLaw & Compliance\n\n\nLesson Type\n\nInteractive\n\n\nSelf-standing\n\n\n\n\nJob role\n\nany"
+          "text": "Title\n\nHigh-Risk Classification Workshop (will be developed once EU High-risk Classification Guidelines have been adopted: expected end of 2026)\n\n\nCODE\n\nLC-034\n\n\nDuration\n\n60\n\n\nTrack\n\nLaw & Compliance\n\n\nLesson Type\n\nInteractive\n\n\nSelf-standing\n\n\n\n\nJob role\n\nany"
         },
         {
           "name": "Management information",
@@ -18263,9 +18642,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 2521,
+          "len": 2546,
           "empty": false,
-          "text": "5 minutes: Introduction to workshop format\nBriefly recap high-risk classification logic (assumed prior knowledge).\nCase-based legal reasoning and structured qualification.\nExplain workflow: short input → case analysis → plenary discussion.\n10 minutes: Key Concepts Refresher (Targeted)\nAnnex III catalogue: sector-specific high-risk use cases (e.g. employment, law enforcement, education).\nFilter conditions: exclusion where system does not pose significant risk of harm to health, safety, or fundamental rights.\nIntended purpose (as defined by provider).\nReasonably foreseeable misuse (objective standard).\nNLF logic: harmonised conformity assessment and CE-marking framework.\n40 minutes (or more): Case Work – examples:\nCase Study 1 – Annex III Qualification\n* Scenario: AI system used for CV screening in recruitment.\n * Tasks for students:\n* Identify relevant Annex III category (employment).\n   * Determine whether system qualifies as high-risk per se.\n   * Discuss borderline issues (decision-support vs. decision-making).\n * Expected outcome: classification as high-risk AI system.\nCase Study 2 – Application of Filter Conditions\n* Scenario: AI system ranking job applicants based on non-decisive recommendations.\n * Tasks:\n* Apply filter conditions:\n* Does the system materially influence decisions?\n     * Is there a significant risk to fundamental rights?\n   * Evaluate whether exclusion from high-risk category is justified.\n * Focus: Burden of proof and documentation requirements.\nCase Study 3 – Intended Purpose and Misuse\n* Scenario: AI tool marketed for educational support, later used for student performance evaluation.\n * Tasks:\n* Identify divergence between intended purpose and actual use.\n   * Assess reasonably foreseeable misuse.\n   * Determine classification consequences.\n * Key insight: classification depends on objective functional use, not only declared purpose.\nCase Study 4 – NLF and Conformity Assessment\n* Scenario: High-risk AI system integrated into a medical device.\n * Tasks:\n* Identify applicable conformity assessment pathway.\n   * Discuss role of notified bodies and harmonised standards.\n * AI Act builds on existing product safety architecture (NLF).\n5 minutes: Plenary Discussion and Synthesis\nCompare classification outcomes across groups.\nHighlight common errors:\n* Over-reliance on provider statements\n * Misapplication of filter conditions\nReinforce structured approach:\n* Annex III applicability\n * Filter conditions\n * Contextual use and misuse\n * Compliance implications"
+          "text": "5 minutes: Introduction to workshop format\n•\tBriefly recap high-risk classification logic (assumed prior knowledge).\n•\tCase-based legal reasoning and structured qualification.\n•\tExplain workflow: short input → case analysis → plenary discussion.\n10 minutes: Key Concepts Refresher (Targeted)\n•\tAnnex III catalogue: sector-specific high-risk use cases (e.g. employment, law enforcement, education).\n•\tFilter conditions: exclusion where system does not pose significant risk of harm to health, safety, or fundamental rights.\n•\tIntended purpose (as defined by provider).\n•\tReasonably foreseeable misuse (objective standard).\n•\tNLF logic: harmonised conformity assessment and CE-marking framework.\n40 minutes (or more): Case Work – examples:\n•\tCase Study 1 – Annex III Qualification\n* Scenario: AI system used for CV screening in recruitment.\n* Tasks for students:\n  * Identify relevant Annex III category (employment).\n  * Determine whether system qualifies as high-risk per se.\n  * Discuss borderline issues (decision-support vs. decision-making).\n* Expected outcome: classification as high-risk AI system.\n•\tCase Study 2 – Application of Filter Conditions\n•\n* Scenario: AI system ranking job applicants based on non-decisive recommendations.\n* Tasks:\n  * Apply filter conditions:\n    * Does the system materially influence decisions?\n    * Is there a significant risk to fundamental rights?\n  * Evaluate whether exclusion from high-risk category is justified.\n* Focus: Burden of proof and documentation requirements.\n•\tCase Study 3 – Intended Purpose and Misuse\n* Scenario: AI tool marketed for educational support, later used for student performance evaluation.\n* Tasks:\n  * Identify divergence between intended purpose and actual use.\n  * Assess reasonably foreseeable misuse.\n  * Determine classification consequences.\n* Key insight: classification depends on objective functional use, not only declared purpose.\n•\tCase Study 4 – NLF and Conformity Assessment\n* Scenario: High-risk AI system integrated into a medical device.\n* Tasks:\n  * Identify applicable conformity assessment pathway.\n  * Discuss role of notified bodies and harmonised standards.\n* AI Act builds on existing product safety architecture (NLF).\n5 minutes: Plenary Discussion and Synthesis\n•\tCompare classification outcomes across groups.\n•\tHighlight common errors:\n* Over-reliance on provider statements\n* Misapplication of filter conditions\n•\tReinforce structured approach:\n* Annex III applicability\n* Filter conditions\n* Contextual use and misuse\n* Compliance implications"
         }
       ],
       "realai": {
@@ -18773,8 +19152,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Liubov Panchenko",
       "coauthor": "BME · Dorottya Egres",
@@ -18823,9 +19202,9 @@
         },
         {
           "name": "Management information",
-          "len": 764,
+          "len": 753,
           "empty": false,
-          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nStudents will be able to construct advanced search queries in Scopus or Web of Science for their specific research topics and accurately export bibliographic metadata for further analysis. By utilizing scientific visualization tools, students will learn to generate co-authorship and keyword maps to visually identify key research clusters and structural relationships within their chosen field.\nLearning Events to be completed before:\nNone.\nKeywords:\nBibliometric analysis, visualization, clusters, Scopus, VOSviewer,"
+          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nReady for pilot\nLearning Outcomes:\nStudents will be able to construct advanced search queries in Scopus or Web of Science for their specific research topics and accurately export bibliographic metadata for further analysis. By utilizing scientific visualization tools, students will learn to generate co-authorship and keyword maps to visually identify key research clusters and structural relationships within their chosen field.\nLearning Events to be completed before:\nNone.\nKeywords:\nBibliometric analysis, visualization, clusters, Scopus, VOSviewer,"
         },
         {
           "name": "Expected preparation",
@@ -18885,8 +19264,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Liubov Panchenko",
       "coauthor": "",
@@ -18944,8 +19323,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Liubov Panchenko",
       "coauthor": "BME · Dorottya Egres",
@@ -18994,9 +19373,9 @@
         },
         {
           "name": "Management information",
-          "len": 818,
+          "len": 807,
           "empty": false,
-          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nStudents will master the relational paradigm, understanding how the configuration of ties between actors defines the structure of the media space. Students will learn to differentiate between centrality metrics (degree, betweenness, closeness) and general network properties to assess the influence of individual nodes. Students will be able to theoretically interpret network topologies, identifying clusters, structural holes, and opinion leaders.\nLearning Events to be completed before:\nNone.\nKeywords:\nnetworks, nodes, actors, edges, centrality metrics, visualization,"
+          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nReady for pilot\nLearning Outcomes:\nStudents will master the relational paradigm, understanding how the configuration of ties between actors defines the structure of the media space. Students will learn to differentiate between centrality metrics (degree, betweenness, closeness) and general network properties to assess the influence of individual nodes. Students will be able to theoretically interpret network topologies, identifying clusters, structural holes, and opinion leaders.\nLearning Events to be completed before:\nNone.\nKeywords:\nnetworks, nodes, actors, edges, centrality metrics, visualization,"
         },
         {
           "name": "Expected preparation",
@@ -19056,8 +19435,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -19107,8 +19486,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -19158,8 +19537,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -19217,8 +19596,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Liubov Panchenko",
       "coauthor": "",
@@ -19276,8 +19655,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Liubov Panchenko",
       "coauthor": "",
@@ -19385,8 +19764,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Not started",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Hennadii Korzhov",
       "coauthor": "",
@@ -19427,8 +19806,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Not started",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Hennadii Korzhov",
       "coauthor": "",
@@ -19511,8 +19890,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Not started",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Hennadii Korzhov",
       "coauthor": "",
@@ -19553,8 +19932,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -19612,8 +19991,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Maksym Yenin",
       "coauthor": "",
@@ -19663,8 +20042,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Maksym Yenin",
       "coauthor": "",
@@ -19714,8 +20093,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Maksym Yenin",
       "coauthor": "",
@@ -19765,8 +20144,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Igor Pygolenko",
       "coauthor": "",
@@ -21341,11 +21720,11 @@
       "title": "MC-062 AI And The Future Of News: Who Is The Author? Human Vs. AI Narratives",
       "lesson_type": "Interactive",
       "duration": "90",
-      "job_role": "Comm$Conflict",
+      "job_role": "",
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "TUD",
+      "author": "TUD · Na Li",
       "coauthor": "",
       "reviewer": "HAW",
       "off_wiki": false,
@@ -23456,8 +23835,8 @@
       "wiki_status": "Learning materials: development",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
-      "coauthor": "TUD",
-      "reviewer": "ESI: done",
+      "coauthor": "TUD · Dariusz",
+      "reviewer": "ESI · Ivo",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25474,7 +25853,7 @@
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "TUD · Na Li / Ahmad",
+      "author": "TUD · Na Li",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "RealAI · Monira Majhabeen, Tannistha Maiti",
       "off_wiki": false,
@@ -25521,9 +25900,9 @@
         },
         {
           "name": "Management information",
-          "len": 764,
+          "len": 756,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li / Ahmad\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
         },
         {
           "name": "Expected preparation",
@@ -25892,7 +26271,7 @@
       "duration": "120",
       "job_role": "All three roles",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "TUD · Mary Hendrick",
       "coauthor": "West Attica",
@@ -25902,10 +26281,35 @@
       "review_done": true,
       "review_note": "Minor revision. Right topic (adoption, not validation, is where healthcare AI stalls) but reads as generic change management; make it AI-specific by swapping in trust, explainability, accountability, workflow fit, the validation-to-adoption gap, and model drift/monitoring + equity-as-resistance (120 min is already full, so trade out generic depth); fix the three weak outcomes (LO3/LO6 'explore', LO5 run-on); give the 'apply' outcome a real exercise; add a formative check; reconsider 'all three roles'.",
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-25",
+        "files": [
+          {
+            "name": "HL-065_DRAFT.pptx",
+            "ext": "pptx",
+            "kb": 3594,
+            "date": "2026-08-25",
+            "sha": "9a0143ea6b1a3585",
+            "rel": "4.2 Health & Lifescience/HL-065/HL-065_DRAFT.pptx"
+          },
+          {
+            "name": "lessonplanHL065_ChangeLeadershipinHealthcare.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-08-25",
+            "sha": "7cae1aaeb9f4c742",
+            "rel": "4.2 Health & Lifescience/HL-065/lessonplanHL065_ChangeLeadershipinHealthcare.docx"
+          },
+          {
+            "name": "ForcefieldAnalysis(1).docx",
+            "ext": "docx",
+            "kb": 16,
+            "date": "2026-08-25",
+            "sha": "f60eae44b52f6404",
+            "rel": "4.2 Health & Lifescience/HL-065/ForcefieldAnalysis(1).docx"
+          }
+        ],
         "folder": "HL-065"
       },
       "lesson_plan": {
@@ -25924,9 +26328,9 @@
         },
         {
           "name": "Management information",
-          "len": 1081,
+          "len": 1088,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh, Tannistha Maiti, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\tThe students can describe the multi-dimensional functional domains of Healthcare change leadership\n-\tThe students can assess change leadership frameworks to anchor health organisational change culture. \n-\tThe students explore psychological safety and its impact on stakeholder AI Adoption.\n-\tThe students can apply methods to reduce stakeholder resistance to change e.g. Forcefield Analysis.\n-\tThe students can evaluate AI application used to gather results and assess performance management improvements with a focus on patient outcomes etc.,\n-\tThe students explore examples of ethical, human-centric integration of technology into daily clinical workflows.\nLearning Events to be completed before:\nNone.\nKeywords:\nhow to drive adoption, handle resistance, gather feedback, and iterate workflows with stakeholders,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nWest Attica\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh, Tannistha Maiti, Monira Majhabeen\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\n-\tThe students can describe the multi-dimensional functional domains of Healthcare change leadership\n-\tThe students can assess change leadership frameworks to anchor health organisational change culture. \n-\tThe students explore psychological safety and its impact on stakeholder AI Adoption.\n-\tThe students can apply methods to reduce stakeholder resistance to change e.g. Forcefield Analysis.\n-\tThe students can evaluate AI application used to gather results and assess performance management improvements with a focus on patient outcomes etc.,\n-\tThe students explore examples of ethical, human-centric integration of technology into daily clinical workflows.\nLearning Events to be completed before:\nNone.\nKeywords:\nhow to drive adoption, handle resistance, gather feedback, and iterate workflows with stakeholders,"
         },
         {
           "name": "Expected preparation",
@@ -25969,7 +26373,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -26162,230 +26566,6 @@
         "instructions_written": true,
         "outcomes_present": true,
         "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": true
-      },
-      "sources": [
-        "wiki",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-001",
-      "track": "Media",
-      "title": "MC-001 Scientific Landscape: Bibliometric Analysis and Visualization in Media and Culture Research",
-      "lesson_type": "Practice",
-      "duration": "90",
-      "job_role": "Comm",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
-      "due_date": "",
-      "author": "KPI · Liubov Panchenko",
-      "coauthor": "BME · Dorottya Egres",
-      "reviewer": "Real AI · Tarry Singh",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": true,
-      "review_note": "Homework slide revised Aug 2026 — addresses our June note: names the Scopus/WoS coverage-bias cause (indexing coverage, journal lists, disciplinary scope) and adds a reflective 'why do the maps differ' question. Only that one slide changed; the proxy-for-influence caveat (slides 6/19) and the live Scopus/WoS access barrier from June still stand. Stays green.",
-      "materials": {
-        "count": 2,
-        "has": true,
-        "newest": "2026-08-07",
-        "files": [
-          {
-            "name": "MC_001_Scientific_Landscape_Bibliometric_Analysis_and_Visualization.pptx",
-            "ext": "pptx",
-            "kb": 6069,
-            "date": "2026-08-07",
-            "sha": "0bef514079dbde9e",
-            "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Bibliometric_Analysis_and_Visualization.pptx"
-          },
-          {
-            "name": "MC_001_Scientific_Landscape_Practice.pptx",
-            "ext": "pptx",
-            "kb": 6069,
-            "date": "2026-06-10",
-            "sha": "c1f609b75b290592",
-            "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Practice.pptx"
-          }
-        ],
-        "folder": "MC-001"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-001_Scientific_Landscape:_Bibliometric_Analysis_and_Visualization_in_Media_and_Culture_Research",
-      "wiki_sections": [
-        {
-          "name": "Administrative information",
-          "len": 202,
-          "empty": false,
-          "text": "Title\n\nScientific Landscape: Bibliometric Analysis and Visualization in Media and Culture Research\n\n\nCODE\n\nMC-001\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nPractice\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm"
-        },
-        {
-          "name": "Management information",
-          "len": 764,
-          "empty": false,
-          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nStudents will be able to construct advanced search queries in Scopus or Web of Science for their specific research topics and accurately export bibliographic metadata for further analysis. By utilizing scientific visualization tools, students will learn to generate co-authorship and keyword maps to visually identify key research clusters and structural relationships within their chosen field.\nLearning Events to be completed before:\nNone.\nKeywords:\nBibliometric analysis, visualization, clusters, Scopus, VOSviewer,"
-        },
-        {
-          "name": "Expected preparation",
-          "len": 201,
-          "empty": false,
-          "text": "Obligatory for students:\nText Analytics and NLP for Discourse, Topic, and Positioning Analysis\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "MC-001\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 2550,
-          "empty": false,
-          "text": "Tool: Scopus/Web of Science database, VOSviewer (latest version). \nNote: This is a computer practice session. Students must have active Scopus/WoS institutional access and have VOSviewer pre-installed on their workstations.\nInstructions for teachers:\n1.\tIntroduction (5 min): The instructor displays a high-resolution VOSviewer map from a recent study in sociology or media. Prompt for students: What patterns do you observe? Discuss the semantics of the visualization: node size (frequency/impact), edge thickness (link strength), and color-coded clusters (thematic or social proximity). \n2.\tConceptual Briefing (10 min): Define bibliometrics and its role in systematic literature reviews and state-of-the-art mapping. Distinguish between descriptive bibliometrics (productivity metrics, citation counts) and science mapping (structural relationships and intellectual evolution). Introduce the specific networks to be built: Co-authorship (social structure) and Keyword Co-occurrence (intellectual structure). Define VOSviewer parameters: nodes, edges, total link strength, clusters, and the minimum occurrence threshold. \n3.\tTechnical Demo (5 min): Demonstrate advanced data harvesting: building a query using Boolean operators (AND, OR, LIMIT-TO) and exporting metadata in CSV or RIS formats with full bibliographical information. \n4.\tData Collection (15 min): Students work individually or in pairs to define a research niche. They select a topic within media/culture (e.g., algorithmic bias, digital disinformation, platform labor, or AI in journalism). Students refine their queries to achieve a manageable corpus (300–800 records) to ensure visual clarity. \n5.\tDescriptive Analysis (10 min): Using the database’s built-in \"Analyze Results\" tool, students report on the distribution of publications by year, top journals, and leading geographic regions.\n6.\tScience Mapping Practice (25 min): Students import their data into VOSviewer. They must generate two distinct maps: a co-authorship network and a keyword co-occurrence map. \n7.\tInterpretation & Reporting (15 min): Students draft a brief report summarizing the primary research clusters and identifying the most influential nodes (authors or concepts) based on link strength. \n8.\tReflection and Sharing (15 min): Selected pairs present their maps.\n9.\t Wrap-up (5 min): Summarize the key concepts and allow time for final questions. Homework: run the same query in both Scopus and Web of Science. Compare the resulting VOSviewer maps: are the thematic clusters consistent across databases?"
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": true,
-        "outcomes_present": true,
-        "materials_uploaded": true,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": true
-      },
-      "sources": [
-        "wiki",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-003",
-      "track": "Media",
-      "title": "MC-003 Social Network Analysis: Theoretical Foundations",
-      "lesson_type": "Lecture",
-      "duration": "90",
-      "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
-      "due_date": "",
-      "author": "KPI · Liubov Panchenko",
-      "coauthor": "BME · Dorottya Egres",
-      "reviewer": "Real AI · Tarry Singh",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": true,
-      "review_note": "SNA theory deck reviewed Aug 2026 — resolves the June plan-vs-material mismatch (author supplied the SNA theory deck matching the plan, with manual betweenness + Gephi). Strong, well-referenced; Pew BLM stats verified. Fixes: position the two decks (theory vs toxicity), correct the Facebook 3.5 = degrees-of-separation vs path-length slide, fix the Adamic-Glance venue (LinkKDD 2005), and a language pass.",
-      "materials": {
-        "count": 2,
-        "has": true,
-        "newest": "2026-08-07",
-        "files": [
-          {
-            "name": "MC_003_Social_Network_Analysis_Theoretical_Foundations.pptx",
-            "ext": "pptx",
-            "kb": 7460,
-            "date": "2026-08-07",
-            "sha": "1a8b9ced99c3876a",
-            "rel": "4.3 Media & Culture/MC-003/MC_003_Social_Network_Analysis_Theoretical_Foundations.pptx"
-          },
-          {
-            "name": "MC_003_Toxicity_Polarization_Monitoring_Practice.pptx",
-            "ext": "pptx",
-            "kb": 5818,
-            "date": "2026-06-10",
-            "sha": "92666968352c34b9",
-            "rel": "4.3 Media & Culture/MC-003/MC_003_Toxicity_Polarization_Monitoring_Practice.pptx"
-          }
-        ],
-        "folder": "MC-003"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-003_Social_Network_Analysis:_Theoretical_Foundations",
-      "wiki_sections": [
-        {
-          "name": "Administrative information",
-          "len": 167,
-          "empty": false,
-          "text": "Title\n\nSocial Network Analysis: Theoretical Foundations\n\n\nCODE\n\nMC-003\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm$Conflict"
-        },
-        {
-          "name": "Management information",
-          "len": 818,
-          "empty": false,
-          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nStudents will master the relational paradigm, understanding how the configuration of ties between actors defines the structure of the media space. Students will learn to differentiate between centrality metrics (degree, betweenness, closeness) and general network properties to assess the influence of individual nodes. Students will be able to theoretically interpret network topologies, identifying clusters, structural holes, and opinion leaders.\nLearning Events to be completed before:\nNone.\nKeywords:\nnetworks, nodes, actors, edges, centrality metrics, visualization,"
-        },
-        {
-          "name": "Expected preparation",
-          "len": 137,
-          "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "MC-003\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 2710,
-          "empty": false,
-          "text": "Tools: NodeXL. Gephi\nNote: Students can have Gephi/NodeXL pre-installed on their notebooks.\nInstructions for teachers:\n1.\tIntroduction (5 min): The \"Network Turn\" in Social Sciences. Why connectivity often matters more than individual content in the digital age\n2.\tConceptualizing the network (15 min): actors (nodes), relations (edges/ties), and attributes. Taxonomies of ties: directed vs. undirected, binary vs. weighted.\n3.\tFoundational Concepts (15 min): Introduce basic graph terminology. Discuss seminal studies: Jacob Moreno’s Sociometry, Mark Granovetter’s \"Strength of Weak Ties\" (information diffusion), and Manuel Castells’ \"Network Society\" as it pertains to contemporary media structures.\n4.\tMicro-discussion (10 min): Collaborative Mapping. In pairs, students select a specific media ecosystem (e.g., a newsroom hierarchy, a Twitter/X discourse community, or a podcast network) and sketch a graph with 5–7 nodes. Presentation of maps: Address the ontological question - what constitutes an \"actor\" in a media network? (Users, hashtags, bots, or media outlets).\n5.\tCore Metrics (15 min): Quantitative Interpretation of nodes. Degree centrality: popularity and immediate reach. Betweenness centrality: control over information flow and brokerage. Closeness centrality: efficiency and speed of access to the whole network.\n6.\tNetwork-Level Properties: Explain density, diameter, average path length (small world phenomenon), and clustering coefficient as the macro-context for interpretation.\n7.\tApplied Exercise (15 min): Manual calculation. Students compute degree and betweenness for a provided 7-node graph (on whiteboard or handout). Compare manual results with software output (Gephi/NodeXL) to demystify algorithmic calculations.\n8.\tAdvanced Topology (10 min): Social Structures in Media. Clusters & Modularity: Identifying echo chambers, filter bubbles, and polarized discourse. Structural Holes (Ronald Burt): The role of the \"broker\" as a bridge between disconnected audiences. Opinion leaders vs. Bridge-builders in the digital landscape.\n9.\tCase-Study Analysis (15 min): Analyzing a real-world media campaign graph (pre-processed in Gephi, based on a familiar socio-political context). Task: Identify at least two distinct clusters; locate a node occupying a structural hole (broker); identify the top two opinion leaders. Justify each finding with the appropriate metric. Small group work followed by a brief plenary session.\n10.\tConclusion & Reflection (5 min): One-sentence synthesis: \"The most significant insight I gained today regarding media space through the lens of SNA is...\"Synthesize student responses into the three core learning outcomes to reinforce the day's curriculum."
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": true,
-        "outcomes_present": true,
-        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -27000,9 +27180,9 @@
       "wiki_sections": [
         {
           "name": "Administrative information",
-          "len": 157,
+          "len": 261,
           "empty": false,
-          "text": "Title\n\nHigh-Risk Classification Workshop\n\n\nCODE\n\nLC-034\n\n\nDuration\n\n60\n\n\nTrack\n\nLaw & Compliance\n\n\nLesson Type\n\nInteractive\n\n\nSelf-standing\n\n\n\n\nJob role\n\nany"
+          "text": "Title\n\nHigh-Risk Classification Workshop (will be developed once EU High-risk Classification Guidelines have been adopted: expected end of 2026)\n\n\nCODE\n\nLC-034\n\n\nDuration\n\n60\n\n\nTrack\n\nLaw & Compliance\n\n\nLesson Type\n\nInteractive\n\n\nSelf-standing\n\n\n\n\nJob role\n\nany"
         },
         {
           "name": "Management information",
@@ -27030,9 +27210,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 2521,
+          "len": 2546,
           "empty": false,
-          "text": "5 minutes: Introduction to workshop format\nBriefly recap high-risk classification logic (assumed prior knowledge).\nCase-based legal reasoning and structured qualification.\nExplain workflow: short input → case analysis → plenary discussion.\n10 minutes: Key Concepts Refresher (Targeted)\nAnnex III catalogue: sector-specific high-risk use cases (e.g. employment, law enforcement, education).\nFilter conditions: exclusion where system does not pose significant risk of harm to health, safety, or fundamental rights.\nIntended purpose (as defined by provider).\nReasonably foreseeable misuse (objective standard).\nNLF logic: harmonised conformity assessment and CE-marking framework.\n40 minutes (or more): Case Work – examples:\nCase Study 1 – Annex III Qualification\n* Scenario: AI system used for CV screening in recruitment.\n * Tasks for students:\n* Identify relevant Annex III category (employment).\n   * Determine whether system qualifies as high-risk per se.\n   * Discuss borderline issues (decision-support vs. decision-making).\n * Expected outcome: classification as high-risk AI system.\nCase Study 2 – Application of Filter Conditions\n* Scenario: AI system ranking job applicants based on non-decisive recommendations.\n * Tasks:\n* Apply filter conditions:\n* Does the system materially influence decisions?\n     * Is there a significant risk to fundamental rights?\n   * Evaluate whether exclusion from high-risk category is justified.\n * Focus: Burden of proof and documentation requirements.\nCase Study 3 – Intended Purpose and Misuse\n* Scenario: AI tool marketed for educational support, later used for student performance evaluation.\n * Tasks:\n* Identify divergence between intended purpose and actual use.\n   * Assess reasonably foreseeable misuse.\n   * Determine classification consequences.\n * Key insight: classification depends on objective functional use, not only declared purpose.\nCase Study 4 – NLF and Conformity Assessment\n* Scenario: High-risk AI system integrated into a medical device.\n * Tasks:\n* Identify applicable conformity assessment pathway.\n   * Discuss role of notified bodies and harmonised standards.\n * AI Act builds on existing product safety architecture (NLF).\n5 minutes: Plenary Discussion and Synthesis\nCompare classification outcomes across groups.\nHighlight common errors:\n* Over-reliance on provider statements\n * Misapplication of filter conditions\nReinforce structured approach:\n* Annex III applicability\n * Filter conditions\n * Contextual use and misuse\n * Compliance implications"
+          "text": "5 minutes: Introduction to workshop format\n•\tBriefly recap high-risk classification logic (assumed prior knowledge).\n•\tCase-based legal reasoning and structured qualification.\n•\tExplain workflow: short input → case analysis → plenary discussion.\n10 minutes: Key Concepts Refresher (Targeted)\n•\tAnnex III catalogue: sector-specific high-risk use cases (e.g. employment, law enforcement, education).\n•\tFilter conditions: exclusion where system does not pose significant risk of harm to health, safety, or fundamental rights.\n•\tIntended purpose (as defined by provider).\n•\tReasonably foreseeable misuse (objective standard).\n•\tNLF logic: harmonised conformity assessment and CE-marking framework.\n40 minutes (or more): Case Work – examples:\n•\tCase Study 1 – Annex III Qualification\n* Scenario: AI system used for CV screening in recruitment.\n* Tasks for students:\n  * Identify relevant Annex III category (employment).\n  * Determine whether system qualifies as high-risk per se.\n  * Discuss borderline issues (decision-support vs. decision-making).\n* Expected outcome: classification as high-risk AI system.\n•\tCase Study 2 – Application of Filter Conditions\n•\n* Scenario: AI system ranking job applicants based on non-decisive recommendations.\n* Tasks:\n  * Apply filter conditions:\n    * Does the system materially influence decisions?\n    * Is there a significant risk to fundamental rights?\n  * Evaluate whether exclusion from high-risk category is justified.\n* Focus: Burden of proof and documentation requirements.\n•\tCase Study 3 – Intended Purpose and Misuse\n* Scenario: AI tool marketed for educational support, later used for student performance evaluation.\n* Tasks:\n  * Identify divergence between intended purpose and actual use.\n  * Assess reasonably foreseeable misuse.\n  * Determine classification consequences.\n* Key insight: classification depends on objective functional use, not only declared purpose.\n•\tCase Study 4 – NLF and Conformity Assessment\n* Scenario: High-risk AI system integrated into a medical device.\n* Tasks:\n  * Identify applicable conformity assessment pathway.\n  * Discuss role of notified bodies and harmonised standards.\n* AI Act builds on existing product safety architecture (NLF).\n5 minutes: Plenary Discussion and Synthesis\n•\tCompare classification outcomes across groups.\n•\tHighlight common errors:\n* Over-reliance on provider statements\n* Misapplication of filter conditions\n•\tReinforce structured approach:\n* Annex III applicability\n* Filter conditions\n* Contextual use and misuse\n* Compliance implications"
         }
       ],
       "realai": {
@@ -29822,6 +30002,230 @@
       "sources": [
         "wiki",
         "registry",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-001",
+      "track": "Media",
+      "title": "MC-001 Scientific Landscape: Bibliometric Analysis and Visualization in Media and Culture Research",
+      "lesson_type": "Practice",
+      "duration": "90",
+      "job_role": "Comm",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
+      "due_date": "",
+      "author": "KPI · Liubov Panchenko",
+      "coauthor": "BME · Dorottya Egres",
+      "reviewer": "Real AI · Tarry Singh",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": true,
+      "review_note": "Homework slide revised Aug 2026 — addresses our June note: names the Scopus/WoS coverage-bias cause (indexing coverage, journal lists, disciplinary scope) and adds a reflective 'why do the maps differ' question. Only that one slide changed; the proxy-for-influence caveat (slides 6/19) and the live Scopus/WoS access barrier from June still stand. Stays green.",
+      "materials": {
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "MC_001_Scientific_Landscape_Bibliometric_Analysis_and_Visualization.pptx",
+            "ext": "pptx",
+            "kb": 6069,
+            "date": "2026-08-07",
+            "sha": "0bef514079dbde9e",
+            "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Bibliometric_Analysis_and_Visualization.pptx"
+          },
+          {
+            "name": "MC_001_Scientific_Landscape_Practice.pptx",
+            "ext": "pptx",
+            "kb": 6069,
+            "date": "2026-06-10",
+            "sha": "c1f609b75b290592",
+            "rel": "4.3 Media & Culture/MC-001/MC_001_Scientific_Landscape_Practice.pptx"
+          }
+        ],
+        "folder": "MC-001"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-001_Scientific_Landscape:_Bibliometric_Analysis_and_Visualization_in_Media_and_Culture_Research",
+      "wiki_sections": [
+        {
+          "name": "Administrative information",
+          "len": 202,
+          "empty": false,
+          "text": "Title\n\nScientific Landscape: Bibliometric Analysis and Visualization in Media and Culture Research\n\n\nCODE\n\nMC-001\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nPractice\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm"
+        },
+        {
+          "name": "Management information",
+          "len": 753,
+          "empty": false,
+          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nReady for pilot\nLearning Outcomes:\nStudents will be able to construct advanced search queries in Scopus or Web of Science for their specific research topics and accurately export bibliographic metadata for further analysis. By utilizing scientific visualization tools, students will learn to generate co-authorship and keyword maps to visually identify key research clusters and structural relationships within their chosen field.\nLearning Events to be completed before:\nNone.\nKeywords:\nBibliometric analysis, visualization, clusters, Scopus, VOSviewer,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 201,
+          "empty": false,
+          "text": "Obligatory for students:\nText Analytics and NLP for Discourse, Topic, and Positioning Analysis\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 80,
+          "empty": false,
+          "text": "MC-001\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 2550,
+          "empty": false,
+          "text": "Tool: Scopus/Web of Science database, VOSviewer (latest version). \nNote: This is a computer practice session. Students must have active Scopus/WoS institutional access and have VOSviewer pre-installed on their workstations.\nInstructions for teachers:\n1.\tIntroduction (5 min): The instructor displays a high-resolution VOSviewer map from a recent study in sociology or media. Prompt for students: What patterns do you observe? Discuss the semantics of the visualization: node size (frequency/impact), edge thickness (link strength), and color-coded clusters (thematic or social proximity). \n2.\tConceptual Briefing (10 min): Define bibliometrics and its role in systematic literature reviews and state-of-the-art mapping. Distinguish between descriptive bibliometrics (productivity metrics, citation counts) and science mapping (structural relationships and intellectual evolution). Introduce the specific networks to be built: Co-authorship (social structure) and Keyword Co-occurrence (intellectual structure). Define VOSviewer parameters: nodes, edges, total link strength, clusters, and the minimum occurrence threshold. \n3.\tTechnical Demo (5 min): Demonstrate advanced data harvesting: building a query using Boolean operators (AND, OR, LIMIT-TO) and exporting metadata in CSV or RIS formats with full bibliographical information. \n4.\tData Collection (15 min): Students work individually or in pairs to define a research niche. They select a topic within media/culture (e.g., algorithmic bias, digital disinformation, platform labor, or AI in journalism). Students refine their queries to achieve a manageable corpus (300–800 records) to ensure visual clarity. \n5.\tDescriptive Analysis (10 min): Using the database’s built-in \"Analyze Results\" tool, students report on the distribution of publications by year, top journals, and leading geographic regions.\n6.\tScience Mapping Practice (25 min): Students import their data into VOSviewer. They must generate two distinct maps: a co-authorship network and a keyword co-occurrence map. \n7.\tInterpretation & Reporting (15 min): Students draft a brief report summarizing the primary research clusters and identifying the most influential nodes (authors or concepts) based on link strength. \n8.\tReflection and Sharing (15 min): Selected pairs present their maps.\n9.\t Wrap-up (5 min): Summarize the key concepts and allow time for final questions. Homework: run the same query in both Scopus and Web of Science. Compare the resulting VOSviewer maps: are the thematic clusters consistent across databases?"
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": true,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": true
+      },
+      "sources": [
+        "wiki",
+        "materials"
+      ]
+    },
+    {
+      "code": "MC-003",
+      "track": "Media",
+      "title": "MC-003 Social Network Analysis: Theoretical Foundations",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "Comm$Conflict",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
+      "due_date": "",
+      "author": "KPI · Liubov Panchenko",
+      "coauthor": "BME · Dorottya Egres",
+      "reviewer": "Real AI · Tarry Singh",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": true,
+      "review_note": "SNA theory deck reviewed Aug 2026 — resolves the June plan-vs-material mismatch (author supplied the SNA theory deck matching the plan, with manual betweenness + Gephi). Strong, well-referenced; Pew BLM stats verified. Fixes: position the two decks (theory vs toxicity), correct the Facebook 3.5 = degrees-of-separation vs path-length slide, fix the Adamic-Glance venue (LinkKDD 2005), and a language pass.",
+      "materials": {
+        "count": 2,
+        "has": true,
+        "newest": "2026-08-07",
+        "files": [
+          {
+            "name": "MC_003_Social_Network_Analysis_Theoretical_Foundations.pptx",
+            "ext": "pptx",
+            "kb": 7460,
+            "date": "2026-08-07",
+            "sha": "1a8b9ced99c3876a",
+            "rel": "4.3 Media & Culture/MC-003/MC_003_Social_Network_Analysis_Theoretical_Foundations.pptx"
+          },
+          {
+            "name": "MC_003_Toxicity_Polarization_Monitoring_Practice.pptx",
+            "ext": "pptx",
+            "kb": 5818,
+            "date": "2026-06-10",
+            "sha": "92666968352c34b9",
+            "rel": "4.3 Media & Culture/MC-003/MC_003_Toxicity_Polarization_Monitoring_Practice.pptx"
+          }
+        ],
+        "folder": "MC-003"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-003_Social_Network_Analysis:_Theoretical_Foundations",
+      "wiki_sections": [
+        {
+          "name": "Administrative information",
+          "len": 167,
+          "empty": false,
+          "text": "Title\n\nSocial Network Analysis: Theoretical Foundations\n\n\nCODE\n\nMC-003\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nComm$Conflict"
+        },
+        {
+          "name": "Management information",
+          "len": 807,
+          "empty": false,
+          "text": "Author Organisation 1\n\nKPI\n\n\nAuthor Person 1\n\nLiubov Panchenko\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nReal AI\n\n\nReviewer Person\n\nTarry Singh\n\n\nStatus\n\nReady for pilot\nLearning Outcomes:\nStudents will master the relational paradigm, understanding how the configuration of ties between actors defines the structure of the media space. Students will learn to differentiate between centrality metrics (degree, betweenness, closeness) and general network properties to assess the influence of individual nodes. Students will be able to theoretically interpret network topologies, identifying clusters, structural holes, and opinion leaders.\nLearning Events to be completed before:\nNone.\nKeywords:\nnetworks, nodes, actors, edges, centrality metrics, visualization,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 137,
+          "empty": false,
+          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 80,
+          "empty": false,
+          "text": "MC-003\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 2710,
+          "empty": false,
+          "text": "Tools: NodeXL. Gephi\nNote: Students can have Gephi/NodeXL pre-installed on their notebooks.\nInstructions for teachers:\n1.\tIntroduction (5 min): The \"Network Turn\" in Social Sciences. Why connectivity often matters more than individual content in the digital age\n2.\tConceptualizing the network (15 min): actors (nodes), relations (edges/ties), and attributes. Taxonomies of ties: directed vs. undirected, binary vs. weighted.\n3.\tFoundational Concepts (15 min): Introduce basic graph terminology. Discuss seminal studies: Jacob Moreno’s Sociometry, Mark Granovetter’s \"Strength of Weak Ties\" (information diffusion), and Manuel Castells’ \"Network Society\" as it pertains to contemporary media structures.\n4.\tMicro-discussion (10 min): Collaborative Mapping. In pairs, students select a specific media ecosystem (e.g., a newsroom hierarchy, a Twitter/X discourse community, or a podcast network) and sketch a graph with 5–7 nodes. Presentation of maps: Address the ontological question - what constitutes an \"actor\" in a media network? (Users, hashtags, bots, or media outlets).\n5.\tCore Metrics (15 min): Quantitative Interpretation of nodes. Degree centrality: popularity and immediate reach. Betweenness centrality: control over information flow and brokerage. Closeness centrality: efficiency and speed of access to the whole network.\n6.\tNetwork-Level Properties: Explain density, diameter, average path length (small world phenomenon), and clustering coefficient as the macro-context for interpretation.\n7.\tApplied Exercise (15 min): Manual calculation. Students compute degree and betweenness for a provided 7-node graph (on whiteboard or handout). Compare manual results with software output (Gephi/NodeXL) to demystify algorithmic calculations.\n8.\tAdvanced Topology (10 min): Social Structures in Media. Clusters & Modularity: Identifying echo chambers, filter bubbles, and polarized discourse. Structural Holes (Ronald Burt): The role of the \"broker\" as a bridge between disconnected audiences. Opinion leaders vs. Bridge-builders in the digital landscape.\n9.\tCase-Study Analysis (15 min): Analyzing a real-world media campaign graph (pre-processed in Gephi, based on a familiar socio-political context). Task: Identify at least two distinct clusters; locate a node occupying a structural hole (broker); identify the top two opinion leaders. Justify each finding with the appropriate metric. Small group work followed by a brief plenary session.\n10.\tConclusion & Reflection (5 min): One-sentence synthesis: \"The most significant insight I gained today regarding media space through the lens of SNA is...\"Synthesize student responses into the three core learning outcomes to reinforce the day's curriculum."
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": true,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": true
+      },
+      "sources": [
+        "wiki",
         "materials"
       ]
     },
