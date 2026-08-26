@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useCallback } from "react"
-import { UserPlus, ShieldCheck, Eye, Ban, Trash2, LoaderCircle, AlertCircle, Send, CheckCircle2 } from "lucide-react"
+import { UserPlus, ShieldCheck, Eye, Ban, Trash2, LoaderCircle, AlertCircle, Send, CheckCircle2, ScrollText } from "lucide-react"
 
 const RUST = "#B23E22"
 
@@ -16,6 +16,36 @@ type Member = {
   last_login_at: string | null
   invited_at: string | null
   has_password?: boolean
+}
+
+type AuditRow = {
+  id: string
+  email: string | null
+  event: string
+  actor: string | null
+  detail: string | null
+  ip_prefix: string | null
+  created_at: string
+}
+
+const EVENT_LABEL: Record<string, string> = {
+  sign_in_link: "signed in by link",
+  sign_in_password: "signed in with a password",
+  sign_in_shared: "signed in with the shared credential",
+  sign_in_failed: "failed sign-in",
+  sign_out: "signed out",
+  invite_sent: "invite sent",
+  member_added: "added",
+  member_removed: "removed",
+  role_changed: "role changed",
+  member_disabled: "suspended",
+  member_enabled: "re-enabled",
+}
+
+function fmtTime(d: string): string {
+  return new Date(d).toLocaleString("en-GB", {
+    day: "numeric", month: "short", hour: "2-digit", minute: "2-digit",
+  })
 }
 
 function fmt(d: string | null): string {
@@ -35,6 +65,8 @@ export default function PanoraimaAdmin({ me }: { me: string }) {
   const [busy, setBusy] = useState(false)
   const [inviting, setInviting] = useState<string | null>(null)
   const [note, setNote] = useState<string | null>(null)
+  const [audit, setAudit] = useState<AuditRow[]>([])
+  const [showAudit, setShowAudit] = useState(false)
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -50,7 +82,16 @@ export default function PanoraimaAdmin({ me }: { me: string }) {
     }
   }, [])
 
+  const loadAudit = useCallback(async () => {
+    try {
+      const res = await fetch("/api/panoraima/audit")
+      const data = await res.json()
+      if (data.ok) setAudit(data.events)
+    } catch { /* the log is informational; never block the page */ }
+  }, [])
+
   useEffect(() => { load() }, [load])
+  useEffect(() => { if (showAudit) loadAudit() }, [showAudit, loadAudit])
 
   async function add(e: React.FormEvent) {
     e.preventDefault()
@@ -266,6 +307,53 @@ export default function PanoraimaAdmin({ me }: { me: string }) {
               </li>
             ))}
           </ul>
+        )}
+      </div>
+
+      <div className="mt-8">
+        <button
+          type="button"
+          onClick={() => setShowAudit((v) => !v)}
+          className="inline-flex items-center gap-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#5B616B] hover:text-[#16181D]"
+        >
+          <ScrollText className="h-3 w-3" />
+          {showAudit ? "Hide activity" : "Show recent activity"}
+        </button>
+
+        {showAudit && (
+          <div className="mt-3 overflow-hidden rounded-xl border border-[#DCDDE1] bg-white">
+            {audit.length === 0 ? (
+              <p className="p-4 text-center text-[13px] text-[#5B616B]">
+                Nothing recorded yet.
+              </p>
+            ) : (
+              <ul className="divide-y divide-[#EDEDEF]">
+                {audit.map((a) => (
+                  <li key={a.id} className="flex flex-wrap items-baseline gap-x-2 px-4 py-2">
+                    <span className="font-mono text-[11px] tabular-nums text-[#9CA3AF]">
+                      {fmtTime(a.created_at)}
+                    </span>
+                    <span className="text-[13px] text-[#16181D]">
+                      <span className="font-semibold">
+                        {a.email || "shared login"}
+                      </span>{" "}
+                      {EVENT_LABEL[a.event] || a.event}
+                      {a.detail ? ` (${a.detail})` : ""}
+                      {a.actor && a.actor !== a.email ? ` · by ${a.actor}` : ""}
+                    </span>
+                    {a.ip_prefix && (
+                      <span className="font-mono text-[10px] text-[#B6BAC2]">
+                        {a.ip_prefix}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p className="border-t border-[#EDEDEF] px-4 py-2 text-[11px] text-[#767C87]">
+              Last 60 events. IP addresses are stored truncated to a /24 network.
+            </p>
+          </div>
         )}
       </div>
     </main>

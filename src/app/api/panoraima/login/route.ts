@@ -9,6 +9,7 @@ import {
   findMemberByEmail,
   normaliseEmail,
   resolveRole,
+  logAccess,
   touchLastLogin,
   verifyPassword,
 } from "@/lib/panoraima/members"
@@ -30,6 +31,14 @@ export const runtime = "nodejs"
 
 function pause(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+function clientIp(request: NextRequest): string | null {
+  return (
+    request.headers.get("x-forwarded-for") ||
+    request.headers.get("x-real-ip") ||
+    null
+  )
 }
 
 function fail() {
@@ -88,6 +97,12 @@ export async function POST(request: NextRequest) {
 
   if (!identity) {
     await pause(600)
+    await logAccess({
+      event: "sign_in_failed",
+      email: username.includes("@") ? username : null,
+      detail: username.includes("@") ? "password" : "shared credential",
+      ip: clientIp(request),
+    })
     return fail()
   }
 
@@ -101,6 +116,17 @@ export async function POST(request: NextRequest) {
 
   if (identity.email !== SHARED_CREDENTIAL_IDENTITY) {
     await touchLastLogin(identity.email)
+    await logAccess({
+      event: "sign_in_password",
+      email: identity.email,
+      ip: clientIp(request),
+    })
+  } else {
+    await logAccess({
+      event: "sign_in_shared",
+      detail: "shared consortium credential",
+      ip: clientIp(request),
+    })
   }
 
   const response = NextResponse.json({ ok: true, role: identity.role })

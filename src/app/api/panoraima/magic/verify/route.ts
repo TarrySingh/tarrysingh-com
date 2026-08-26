@@ -8,6 +8,7 @@ import {
 import {
   consumeLoginToken,
   findMemberByEmail,
+  logAccess,
   resolveRole,
   touchLastLogin,
 } from "@/lib/panoraima/members"
@@ -49,6 +50,13 @@ export async function GET(request: NextRequest) {
   if (!session) return backToLogin(request, "failed")
 
   await touchLastLogin(member.email)
+  await logAccess({
+    event: "sign_in_link",
+    email: member.email,
+    ip:
+      request.headers.get("x-forwarded-for") ||
+      request.headers.get("x-real-ip"),
+  })
 
   const res = NextResponse.redirect(new URL(DASHBOARD, request.nextUrl.origin))
   res.cookies.set(PANORAIMA_COOKIE, session, SESSION_COOKIE_OPTIONS)

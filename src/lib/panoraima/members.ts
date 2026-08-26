@@ -19,6 +19,7 @@ const scrypt = promisify(scryptCb) as (
 
 export const MEMBERS_TABLE = "panoraima_members"
 export const LOGIN_TOKENS_TABLE = "panoraima_login_tokens"
+export const ACCESS_LOG_TABLE = "panoraima_access_log"
 
 export type PanoraimaRole = "admin" | "member"
 
@@ -33,6 +34,86 @@ export type PanoraimaMember = {
   last_login_at: string | null
   invited_at: string | null
   has_password?: boolean
+}
+
+/* ------------------------------------------------------------------ *
+ * Audit trail
+ * ------------------------------------------------------------------ */
+
+export type AccessEvent =
+  | "sign_in_link"
+  | "sign_in_password"
+  | "sign_in_shared"
+  | "sign_in_failed"
+  | "sign_out"
+  | "invite_sent"
+  | "member_added"
+  | "member_removed"
+  | "role_changed"
+  | "member_disabled"
+  | "member_enabled"
+
+export type AccessLogRow = {
+  id: string
+  email: string | null
+  event: AccessEvent
+  actor: string | null
+  detail: string | null
+  ip_prefix: string | null
+  created_at: string
+}
+
+/**
+ * Truncate to a /24 (or the first three IPv6 groups). Enough to notice an
+ * anomaly, without keeping a full identifier for every partner who signs in.
+ */
+export function ipPrefix(raw: string | null | undefined): string | null {
+  if (!raw) return null
+  const ip = raw.split(",")[0].trim()
+  if (!ip) return null
+  if (ip.includes(":")) {
+    const parts = ip.split(":").filter(Boolean)
+    return parts.length ? parts.slice(0, 3).join(":") + "::/48" : null
+  }
+  const octets = ip.split(".")
+  if (octets.length !== 4) return null
+  return `${octets[0]}.${octets[1]}.${octets[2]}.0/24`
+}
+
+/** Never throws: an audit write must not be able to fail a sign-in. */
+export async function logAccess(entry: {
+  event: AccessEvent
+  email?: string | null
+  actor?: string | null
+  detail?: string | null
+  ip?: string | null
+}): Promise<void> {
+  try {
+    const supabase = createServiceClient()
+    await supabase.from(ACCESS_LOG_TABLE).insert({
+      event: entry.event,
+      email: entry.email ? normaliseEmail(entry.email) : null,
+      actor: entry.actor ?? null,
+      detail: entry.detail ?? null,
+      ip_prefix: ipPrefix(entry.ip),
+    })
+  } catch (err) {
+    console.error("[panoraima/audit] log failed:", err)
+  }
+}
+
+export async function listAccessLog(limit = 60): Promise<AccessLogRow[]> {
+  const supabase = createServiceClient()
+  const { data, error } = await supabase
+    .from(ACCESS_LOG_TABLE)
+    .select("id,email,event,actor,detail,ip_prefix,created_at")
+    .order("created_at", { ascending: false })
+    .limit(limit)
+  if (error) {
+    console.error("[panoraima/audit] list failed:", error.message)
+    return []
+  }
+  return (data ?? []) as AccessLogRow[]
 }
 
 /* ------------------------------------------------------------------ *

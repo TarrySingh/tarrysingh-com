@@ -6,6 +6,7 @@ import {
   can,
   createLoginToken,
   findMemberById,
+  logAccess,
   markInvited,
   resolveRole,
 } from "@/lib/panoraima/members"
@@ -124,5 +125,13 @@ export async function POST(request: NextRequest) {
   }
 
   await markInvited(member.email)
+  await logAccess({
+    event: "invite_sent",
+    email: member.email,
+    actor: session.email,
+    ip:
+      request.headers.get("x-forwarded-for") ||
+      request.headers.get("x-real-ip"),
+  })
   return NextResponse.json({ ok: true, email: member.email })
 }

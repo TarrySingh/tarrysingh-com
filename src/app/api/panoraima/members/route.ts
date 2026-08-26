@@ -3,7 +3,9 @@ import { PANORAIMA_COOKIE, readSessionToken } from "@/lib/panoraima/auth"
 import {
   addMember,
   can,
+  findMemberById,
   listMembers,
+  logAccess,
   removeMember,
   resolveRole,
   setMemberDisabled,
@@ -67,6 +69,12 @@ export async function POST(request: NextRequest) {
   if (!result.ok) {
     return NextResponse.json({ ok: false, error: result.error }, { status: 400 })
   }
+  await logAccess({
+    event: "member_added",
+    email: result.member.email,
+    actor: session.email,
+    detail: `role ${result.member.role}`,
+  })
   return NextResponse.json({ ok: true, member: result.member })
 }
 
@@ -81,7 +89,16 @@ export async function PATCH(request: NextRequest) {
   }
 
   if (body.role === "admin" || body.role === "member") {
+    const target = await findMemberById(id)
     const ok = await setMemberRole(id, body.role)
+    if (ok) {
+      await logAccess({
+        event: "role_changed",
+        email: target?.email ?? null,
+        actor: session.email,
+        detail: `to ${body.role}`,
+      })
+    }
     if (!ok) {
       return NextResponse.json(
         { ok: false, error: "Could not change that role." },
@@ -91,7 +108,15 @@ export async function PATCH(request: NextRequest) {
   }
 
   if (typeof body.disabled === "boolean") {
+    const target = await findMemberById(id)
     const ok = await setMemberDisabled(id, body.disabled)
+    if (ok) {
+      await logAccess({
+        event: body.disabled ? "member_disabled" : "member_enabled",
+        email: target?.email ?? null,
+        actor: session.email,
+      })
+    }
     if (!ok) {
       return NextResponse.json(
         { ok: false, error: "Could not change that account." },
@@ -111,7 +136,15 @@ export async function DELETE(request: NextRequest) {
   if (!id) {
     return NextResponse.json({ ok: false, error: "Missing id." }, { status: 400 })
   }
+  const target = await findMemberById(id)
   const ok = await removeMember(id)
+  if (ok) {
+    await logAccess({
+      event: "member_removed",
+      email: target?.email ?? null,
+      actor: session.email,
+    })
+  }
   if (!ok) {
     return NextResponse.json(
       { ok: false, error: "Could not remove that member." },
