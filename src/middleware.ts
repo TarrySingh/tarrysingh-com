@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import {
   PANORAIMA_COOKIE,
   PANORAIMA_LOGIN_PATH,
-  verifySessionToken,
+  readSessionToken,
 } from "@/lib/panoraima/auth"
 
 /**
@@ -22,6 +22,7 @@ import {
  */
 
 const PANORAIMA_PREFIX = "/experiments/panoraima"
+const PANORAIMA_ADMIN_PREFIX = "/experiments/panoraima/admin"
 const STUDIO_PREFIX = "/studio"
 const STUDIO_API_PREFIX = "/api/studio"
 
@@ -91,14 +92,16 @@ export async function middleware(request: NextRequest) {
       return res
     }
 
-    const hasSession = await verifySessionToken(
+    const session = await readSessionToken(
       request.cookies.get(PANORAIMA_COOKIE)?.value,
     )
-    // Basic Auth remains valid so bookmarks and scripts are not broken.
-    const hasBasicAuth =
-      hasSession || checkBasicAuth(request, "PANORAIMA_USER", "PANORAIMA_PASS")
 
-    if (!hasSession && !hasBasicAuth) {
+    // The shared credential is already circulating among partners, so Basic
+    // Auth grants the view-only member role and never admin.
+    const hasBasicAuth =
+      !session && checkBasicAuth(request, "PANORAIMA_USER", "PANORAIMA_PASS")
+
+    if (!session && !hasBasicAuth) {
       const loginUrl = request.nextUrl.clone()
       loginUrl.pathname = PANORAIMA_LOGIN_PATH
       loginUrl.search = ""
@@ -109,7 +112,29 @@ export async function middleware(request: NextRequest) {
       return res
     }
 
-    const res = NextResponse.next()
+    const role = session?.role ?? "member"
+
+    // Member management is admin-only. Anyone else is sent back to the
+    // dashboard rather than shown a page they cannot use.
+    if (pathname.startsWith(PANORAIMA_ADMIN_PREFIX) && role !== "admin") {
+      const res = NextResponse.redirect(
+        new URL(PANORAIMA_PREFIX, request.nextUrl.origin),
+      )
+      res.headers.set("Cache-Control", "no-store")
+      return res
+    }
+
+    // Downstream server components read these to decide what to render.
+    const res = NextResponse.next({
+      request: {
+        headers: (() => {
+          const h = new Headers(request.headers)
+          h.set("x-panoraima-role", role)
+          h.set("x-panoraima-email", session?.email ?? "shared")
+          return h
+        })(),
+      },
+    })
     res.headers.set("X-Robots-Tag", "noindex, nofollow")
     return res
   }

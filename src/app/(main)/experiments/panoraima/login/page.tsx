@@ -22,8 +22,8 @@ function safeNext(raw: string | undefined): string {
 export default async function PanoraimaLoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ next?: string }>
+  searchParams: Promise<{ next?: string; error?: string }>
 }) {
-  const { next } = await searchParams
-  return <PanoraimaLoginForm next={safeNext(next)} />
+  const { next, error } = await searchParams
+  return <PanoraimaLoginForm next={safeNext(next)} initialError={error} />
 }

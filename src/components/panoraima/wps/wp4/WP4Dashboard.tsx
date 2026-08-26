@@ -14,6 +14,8 @@ import WP4Explorer from "./WP4Explorer"
 
 interface Props {
   registry: Wp4Registry
+  /** Admins only: the outbound update-report tool. */
+  canGenerateReport?: boolean
 }
 
 function Counter({ target, duration = 1100 }: { target: number; duration?: number }) {
@@ -33,16 +35,19 @@ function Counter({ target, duration = 1100 }: { target: number; duration?: numbe
 }
 
 function fmt(iso?: string | null, withTime = true): string {
-  if (!iso) return ", "
+  if (!iso) return "—"
   const d = new Date(iso)
-  if (isNaN(d.getTime())) return ", "
+  if (isNaN(d.getTime())) return "—"
   return d.toLocaleString("en-GB", {
     day: "2-digit", month: "short", year: "numeric",
     ...(withTime ? { hour: "2-digit", minute: "2-digit" } : {}),
   })
 }
 
-export default function WP4Dashboard({ registry }: Props) {
+export default function WP4Dashboard({
+  registry,
+  canGenerateReport = false,
+}: Props) {
   const s = registry.summary
   const trackCount = TRACK_ORDER.filter(t => (s.by_track[t] ?? 0) > 0).length
   const refreshedAt = registry.refreshed_at || registry.generated_at
@@ -131,7 +136,7 @@ export default function WP4Dashboard({ registry }: Props) {
       <main className="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20">
         <div className="space-y-16 md:space-y-24">
           <WP4Overview registry={registry} />
-          <WP4RealAIBoard registry={registry} />
+          <WP4RealAIBoard registry={registry} canGenerateReport={canGenerateReport} />
           <WP4Pipeline registry={registry} />
           <WP4Guides registry={registry} />
           <WP4StatusViews registry={registry} />
@@ -166,8 +171,8 @@ export default function WP4Dashboard({ registry }: Props) {
                       <td className="px-3 py-2 font-mono font-bold text-[#16181D] tabular-nums whitespace-nowrap">{fmt(h.at)}</td>
                       <td className="px-3 py-2 text-[#444A55] tabular-nums whitespace-nowrap">{fmt(h.wiki_captured, false)}</td>
                       <td className="px-3 py-2 text-[#444A55] tabular-nums whitespace-nowrap">{fmt(h.sharepoint_generated, false)}</td>
-                      <td className="px-3 py-2 text-right font-bold tabular-nums text-[#16181D]">{h.realai_total ?? ", "}</td>
-                      <td className="px-3 py-2 text-right font-bold tabular-nums text-[#1F6B41]">{h.reviewed ?? ", "}</td>
+                      <td className="px-3 py-2 text-right font-bold tabular-nums text-[#16181D]">{h.realai_total ?? "—"}</td>
+                      <td className="px-3 py-2 text-right font-bold tabular-nums text-[#1F6B41]">{h.reviewed ?? "—"}</td>
                     </tr>
                   ))}
                 </tbody>

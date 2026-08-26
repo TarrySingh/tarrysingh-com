@@ -183,8 +183,8 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
           <span
             className="inline-flex items-center gap-1 rounded border border-[#E6BFB4] bg-[#FBEAE5] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#9A3318]"
             title={le.off_wiki
-              ? "This code isn't on the wiki master yet, it exists only in the SharePoint registry."
-              : "This LE is on the wiki, but the wiki doesn't list RealAI as reviewer yet, the assignment is only in the SharePoint M&F registry (marked 'RAI')."}
+              ? "This code isn't on the wiki master yet — it exists only in the SharePoint registry."
+              : "This LE is on the wiki, but the wiki doesn't list RealAI as reviewer yet — the assignment is only in the SharePoint M&F registry (marked 'RAI')."}
           >
             <FileWarning className="w-3 h-3" />
             {le.off_wiki ? "not on wiki" : "RealAI not on wiki yet"}
@@ -312,13 +312,13 @@ function authorAction(le: Wp4LE): string {
   if (!planDone) {
     return "Complete the lesson plan on the wiki (the detailed teacher instructions are still missing), then create the lesson material and upload it to the SharePoint LE folder."
   }
-  return "The lesson plan is in place, create the lesson material (slides / notebook) and upload it to the SharePoint LE folder."
+  return "The lesson plan is in place — create the lesson material (slides / notebook) and upload it to the SharePoint LE folder."
 }
 
 // LE title with the leading code stripped, for report lines.
 function cleanTitle(le: Wp4LE): string {
   let t = le.title?.trim() || ""
-  if (t.startsWith(le.code)) t = t.slice(le.code.length).replace(/^[\s, :-]+/, "").trim()
+  if (t.startsWith(le.code)) t = t.slice(le.code.length).replace(/^[\s—:-]+/, "").trim()
   return t
 }
 
@@ -344,7 +344,7 @@ function buildReport(
   const byCode = (a: Wp4LE, b: Wp4LE) => a.code.localeCompare(b.code)
 
   const L: string[] = []
-  L.push("RealAI, WP4 status update")
+  L.push("RealAI — WP4 status update")
   L.push(`Track: ${trackName}   ·   Date: ${date}`)
   L.push("Prepared by RealAI · reviewing: Tannistha Maiti & Monira Majhabeen · authoring: Tarry Singh")
   L.push("")
@@ -355,7 +355,7 @@ function buildReport(
   L.push("(slides / notebook) into the SharePoint LE folder; RealAI reviews that material.")
   L.push("We have automated our side: this dashboard, and an automatic alert the moment new")
   L.push("material is dropped into a SharePoint LE folder. But a wiki-only edit does NOT signal")
-  L.push("us. So the next move is yours, once you have updated the plan or uploaded the")
+  L.push("us. So the next move is yours — once you have updated the plan or uploaded the")
   L.push(`material, please email ${REVIEW_INBOX} so we can pick it up and review.`)
   L.push("")
 
@@ -369,10 +369,10 @@ function buildReport(
   L.push("")
 
   if (completed.length) {
-    L.push(`COMPLETED, REVIEWED BY REALAI (${completed.length})`)
+    L.push(`COMPLETED — REVIEWED BY REALAI (${completed.length})`)
     for (const le of [...completed].sort(byCode)) {
       L.push("")
-      L.push(`${le.code}, ${cleanTitle(le)}`)
+      L.push(`${le.code} — ${cleanTitle(le)}`)
       if (le.review_note) L.push(`    What we found: ${le.review_note}`)
       if (le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
     }
@@ -381,9 +381,9 @@ function buildReport(
 
   if (waitingUs.length) {
     L.push(`WAITING ON REALAI TO REVIEW (${waitingUs.length})`)
-    L.push("The material is in SharePoint. This is on us, we will review it and post to the wiki.")
+    L.push("The material is in SharePoint. This is on us — we will review it and post to the wiki.")
     for (const le of [...waitingUs].sort(byCode)) {
-      L.push(`  ${le.code}, ${cleanTitle(le)}${le.author ? `   (author: ${le.author})` : ""}`)
+      L.push(`  ${le.code} — ${cleanTitle(le)}${le.author ? `   (author: ${le.author})` : ""}`)
     }
     L.push("")
   }
@@ -392,7 +392,7 @@ function buildReport(
     L.push(`ACTION NEEDED FROM THE AUTHOR (${waitingAuthor.length})`)
     for (const le of [...waitingAuthor].sort(byCode)) {
       L.push("")
-      L.push(`${le.code}, ${cleanTitle(le)}`)
+      L.push(`${le.code} — ${cleanTitle(le)}`)
       if (le.author) L.push(`    Author: ${le.author}${le.coauthor ? ` · ${le.coauthor}` : ""}`)
       L.push(`    Needed: ${authorAction(le)}`)
       L.push(`    Then: email ${REVIEW_INBOX} so RealAI can review.`)
@@ -401,18 +401,18 @@ function buildReport(
   }
 
   if (authored.length) {
-    L.push(`REALAI-AUTHORED, OUR NEXT STEP (${authored.length})`)
+    L.push(`REALAI-AUTHORED — OUR NEXT STEP (${authored.length})`)
     for (const le of [...authored].sort(byCode)) {
       const need = le.completeness?.author_needs?.length
         ? le.completeness.author_needs.join("; ")
         : "In progress"
-      L.push(`  ${le.code}, ${cleanTitle(le)}   →   ${need}`)
+      L.push(`  ${le.code} — ${cleanTitle(le)}   →   ${need}`)
     }
     L.push("")
   }
 
   L.push("Every completed review is on the LE's wiki Discussion (Talk) tab.")
-  L.push(`Reminder: we move when you tell us the material is ready, please mail ${REVIEW_INBOX} when it is. Happy to walk through any of these.`)
+  L.push(`Reminder: we move when you tell us the material is ready — please mail ${REVIEW_INBOX} when it is. Happy to walk through any of these.`)
   return L.join("\n")
 }
 
@@ -445,7 +445,13 @@ function FilterChip({
   )
 }
 
-export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) {
+export default function WP4RealAIBoard({
+  registry,
+  canGenerateReport = false,
+}: {
+  registry: Wp4Registry
+  canGenerateReport?: boolean
+}) {
   const board = registry.realai_board
   const [track, setTrack] = useState<string | null>(null)   // null = all tracks
 
@@ -490,7 +496,7 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
     setTimeout(() => { URL.revokeObjectURL(a.href); a.remove() }, 200)
   }
   const mailtoHref =
-    `mailto:?subject=${encodeURIComponent(`RealAI, WP4 review status update: ${trackLabel}`)}` +
+    `mailto:?subject=${encodeURIComponent(`RealAI — WP4 review status update: ${trackLabel}`)}` +
     `&body=${encodeURIComponent(reportText)}`
 
   return (
@@ -528,15 +534,17 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
               onClick={() => setTrack(track === t ? null : t)}
             />
           ))}
-          <button
-            type="button"
-            onClick={() => setShowReport(true)}
-            className="sm:ml-auto inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-white px-3 py-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-[#16181D] hover:border-[#16181D]/50 hover:bg-[#FAFAF9] transition-all"
-            title={`Generate an emailable status report for ${trackLabel}`}
-          >
-            <FileText className="w-3.5 h-3.5" style={{ color: RUST }} />
-            Create update report
-          </button>
+          {canGenerateReport && (
+            <button
+              type="button"
+              onClick={() => setShowReport(true)}
+              className="sm:ml-auto inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-white px-3 py-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-[#16181D] hover:border-[#16181D]/50 hover:bg-[#FAFAF9] transition-all"
+              title={`Generate an emailable status report for ${trackLabel}`}
+            >
+              <FileText className="w-3.5 h-3.5" style={{ color: RUST }} />
+              Create update report
+            </button>
+          )}
         </div>
 
         {/* Summary strip — reflects the active track filter */}
@@ -574,19 +582,19 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
           icon={PenLine}
           items={authoring}
           kind="authoring"
-          hint="LEs RealAI writes, drafting & materials"
+          hint="LEs RealAI writes — drafting & materials"
         />
         <BoardColumn
           title="Reviewing"
           icon={Eye}
           items={reviewing}
           kind="reviewing"
-          hint="LEs RealAI reviews, quality gate"
+          hint="LEs RealAI reviews — quality gate"
         />
       </div>
 
       {/* Update report modal — emailable status for the track lead */}
-      {showReport && (
+      {showReport && canGenerateReport && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
           onClick={() => setShowReport(false)}
@@ -614,7 +622,7 @@ export default function WP4RealAIBoard({ registry }: { registry: Wp4Registry }) 
             </div>
             <div className="p-5">
               <p className="text-[13px] text-[#444A55] mb-3">
-                A plain-text status for the {track ? trackLabel : "relevant"} track lead, copy it into an email, download it, or open it in your mail client.
+                A plain-text status for the {track ? trackLabel : "relevant"} track lead &mdash; copy it into an email, download it, or open it in your mail client.
               </p>
               <textarea
                 readOnly

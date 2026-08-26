@@ -10,10 +10,28 @@ const RUST = "#B23E22"
  * which sets the signed session cookie, then sends the visitor on to
  * wherever they were originally headed.
  */
-export default function PanoraimaLoginForm({ next }: { next: string }) {
+const ERROR_TEXT: Record<string, string> = {
+  expired: "That sign-in link has expired or was already used. Request a new one.",
+  revoked: "That account is no longer active. Contact the project coordinator.",
+  missing: "That sign-in link was incomplete. Request a new one.",
+  failed: "Could not start a session. Please try again.",
+}
+
+export default function PanoraimaLoginForm({
+  next,
+  initialError,
+}: {
+  next: string
+  initialError?: string
+}) {
+  const [mode, setMode] = useState<"password" | "link">("password")
+  const [linkEmail, setLinkEmail] = useState("")
+  const [linkSent, setLinkSent] = useState<string | null>(null)
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(
+    initialError ? ERROR_TEXT[initialError] || null : null,
+  )
   const [busy, setBusy] = useState(false)
 
   async function onSubmit(e: React.FormEvent) {
@@ -34,6 +52,29 @@ export default function PanoraimaLoginForm({ next }: { next: string }) {
       }
       setError(data.error || "That username and password did not match.")
       setPassword("")
+    } catch {
+      setError("Could not reach the server. Please try again.")
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  async function requestLink(e: React.FormEvent) {
+    e.preventDefault()
+    if (busy || !linkEmail.trim()) return
+    setBusy(true)
+    setError(null)
+    try {
+      const res = await fetch("/api/panoraima/magic/request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: linkEmail }),
+      })
+      const data = await res.json().catch(() => ({}))
+      setLinkSent(
+        data.message ||
+          "If that address is on the member list, a sign-in link is on its way.",
+      )
     } catch {
       setError("Could not reach the server. Please try again.")
     } finally {
@@ -68,6 +109,7 @@ export default function PanoraimaLoginForm({ next }: { next: string }) {
             with the credentials you were given.
           </p>
 
+          {mode === "password" && (
           <form onSubmit={onSubmit} className="mt-5 space-y-3.5" noValidate>
             <div>
               <label
@@ -128,6 +170,60 @@ export default function PanoraimaLoginForm({ next }: { next: string }) {
               {busy ? "Signing in" : "Sign in"}
             </button>
           </form>
+          )}
+
+          {mode === "link" && (
+            <form onSubmit={requestLink} className="mt-5 space-y-3.5" noValidate>
+              <div>
+                <label
+                  htmlFor="panoraima-email"
+                  className="mb-1.5 block font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#5B616B]"
+                >
+                  Email address
+                </label>
+                <input
+                  id="panoraima-email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  value={linkEmail}
+                  onChange={(e) => setLinkEmail(e.target.value)}
+                  className="w-full rounded-lg border border-[#DCDDE1] bg-white px-3 py-2.5 text-[14px] text-[#16181D] outline-none transition-colors focus:border-[#16181D]/45"
+                />
+              </div>
+
+              {linkSent ? (
+                <p className="rounded-lg border border-[#CFE3D4] bg-[#EDF6EF] px-3 py-2.5 text-[13px] leading-snug text-[#1F6B41]">
+                  {linkSent}
+                </p>
+              ) : (
+                <button
+                  type="submit"
+                  disabled={busy}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-[14px] font-bold text-white transition-opacity disabled:opacity-60"
+                  style={{ background: RUST }}
+                >
+                  {busy && <LoaderCircle className="h-4 w-4 animate-spin" />}
+                  {busy ? "Sending" : "Email me a sign-in link"}
+                </button>
+              )}
+            </form>
+          )}
+
+          <button
+            type="button"
+            onClick={() => {
+              setMode(mode === "password" ? "link" : "password")
+              setError(null)
+              setLinkSent(null)
+            }}
+            className="mt-4 w-full text-center text-[12.5px] font-semibold text-[#5B616B] underline underline-offset-2 hover:text-[#16181D]"
+          >
+            {mode === "password"
+              ? "Or email me a sign-in link instead"
+              : "Sign in with a username and password instead"}
+          </button>
         </div>
 
         <p className="mt-4 text-center text-[12px] leading-relaxed text-[#767C87]">

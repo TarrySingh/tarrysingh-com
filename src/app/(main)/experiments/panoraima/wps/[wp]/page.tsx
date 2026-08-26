@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { headers } from "next/headers"
 import { readFileSync, existsSync } from "node:fs"
 import path from "node:path"
 import Link from "next/link"
@@ -46,7 +47,13 @@ export default async function Page({ params }: Props) {
   // WP4 has a bespoke learning-materials tool (registry-driven), not the generic view.
   if (wp === "wp4") {
     const registry = loadWp4Registry()
-    if (registry) return <WP4Dashboard registry={registry} />
+    if (registry) {
+      // Members are view-only; only admins get the outbound report tool.
+      const role = (await headers()).get("x-panoraima-role")
+      return (
+        <WP4Dashboard registry={registry} canGenerateReport={role === "admin"} />
+      )
+    }
   }
 
   const detail = loadDetail(wp)

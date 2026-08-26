@@ -2,22 +2,41 @@ import { NextRequest, NextResponse } from "next/server"
 import {
   PANORAIMA_COOKIE,
   SESSION_COOKIE_OPTIONS,
+  SHARED_CREDENTIAL_IDENTITY,
   createSessionToken,
 } from "@/lib/panoraima/auth"
+import {
+  findMemberByEmail,
+  normaliseEmail,
+  resolveRole,
+  touchLastLogin,
+  verifyPassword,
+} from "@/lib/panoraima/members"
 
 /**
  * POST /api/panoraima/login
  *
- * Validates the shared consortium credentials and, on success, sets the
- * signed session cookie that middleware checks. Deliberately outside the
- * middleware matcher so it stays reachable while logged out.
+ * Two ways in:
+ *   1. A named member signing in with their own email and password.
+ *   2. The legacy shared consortium credential (PANORAIMA_USER /
+ *      PANORAIMA_PASS). That credential is already circulating among
+ *      partners, so it grants the view-only member role, never admin.
+ *
+ * Deliberately outside the middleware matcher so it stays reachable while
+ * logged out.
  */
 
 export const runtime = "nodejs"
 
-// Small fixed delay on failure so the endpoint is not a fast credential oracle.
 function pause(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+function fail() {
+  return NextResponse.json(
+    { ok: false, error: "That username and password did not match." },
+    { status: 401 },
+  )
 }
 
 export async function POST(request: NextRequest) {
@@ -35,26 +54,44 @@ export async function POST(request: NextRequest) {
     password = String(form?.get("password") ?? "")
   }
 
-  const expectedUser = process.env.PANORAIMA_USER || ""
-  const expectedPass = process.env.PANORAIMA_PASS || ""
+  if (!username || !password) return fail()
 
-  if (!expectedUser || !expectedPass) {
-    console.error("[panoraima/login] PANORAIMA_USER or PANORAIMA_PASS is not set")
+  const sharedUser = process.env.PANORAIMA_USER || ""
+  const sharedPass = process.env.PANORAIMA_PASS || ""
+
+  if (!sharedPass) {
+    console.error("[panoraima/login] PANORAIMA_PASS is not set")
     return NextResponse.json(
       { ok: false, error: "Login is not configured. Contact the site owner." },
       { status: 500 },
     )
   }
 
-  if (username !== expectedUser || password !== expectedPass) {
-    await pause(600)
-    return NextResponse.json(
-      { ok: false, error: "That username and password did not match." },
-      { status: 401 },
-    )
+  let identity: { email: string; role: "admin" | "member" } | null = null
+
+  // 1) Shared consortium credential -> view-only member.
+  if (sharedUser && username === sharedUser && password === sharedPass) {
+    identity = { email: SHARED_CREDENTIAL_IDENTITY, role: "member" }
   }
 
-  const token = await createSessionToken()
+  // 2) Named member signing in with their own password.
+  if (!identity && username.includes("@")) {
+    const email = normaliseEmail(username)
+    const member = await findMemberByEmail(email)
+    if (member && !member.disabled) {
+      const ok = await verifyPassword(password, member.password_hash)
+      if (ok) {
+        identity = { email: member.email, role: resolveRole(member.email, member.role) }
+      }
+    }
+  }
+
+  if (!identity) {
+    await pause(600)
+    return fail()
+  }
+
+  const token = await createSessionToken(identity)
   if (!token) {
     return NextResponse.json(
       { ok: false, error: "Could not start a session." },
@@ -62,7 +99,11 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  const response = NextResponse.json({ ok: true })
+  if (identity.email !== SHARED_CREDENTIAL_IDENTITY) {
+    await touchLastLogin(identity.email)
+  }
+
+  const response = NextResponse.json({ ok: true, role: identity.role })
   response.cookies.set(PANORAIMA_COOKIE, token, SESSION_COOKIE_OPTIONS)
   response.headers.set("Cache-Control", "no-store")
   return response
