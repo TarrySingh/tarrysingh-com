@@ -1,7 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { LogOut, Users } from "lucide-react"
+import { LogOut, Users, KeyRound } from "lucide-react"
 import {
   PANORAIMA_LOGIN_PATH,
   PANORAIMA_LOGOUT_PATH,
@@ -31,6 +31,17 @@ export default function PanoraimaSessionBar({
           <span className="ml-1.5 text-[#9CA3AF]">· view only</span>
         )}
       </span>
+
+      {email && email !== "shared" && (
+        <a
+          href="/experiments/panoraima/account"
+          className="pointer-events-auto inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-white/95 px-2.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#5B616B] shadow-sm backdrop-blur transition-colors hover:border-[#16181D]/40 hover:text-[#16181D]"
+          title="Set or change your password"
+        >
+          <KeyRound className="h-3 w-3" />
+          Account
+        </a>
+      )}
 
       {role === "admin" && (
         <a

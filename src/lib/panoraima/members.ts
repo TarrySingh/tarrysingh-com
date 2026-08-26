@@ -52,6 +52,8 @@ export type AccessEvent =
   | "role_changed"
   | "member_disabled"
   | "member_enabled"
+  | "password_set"
+  | "password_changed"
 
 export type AccessLogRow = {
   id: string
@@ -312,6 +314,11 @@ export async function touchLastLogin(email: string): Promise<void> {
     .from(MEMBERS_TABLE)
     .update({ last_login_at: new Date().toISOString() })
     .eq("email", normaliseEmail(email))
+}
+
+export async function memberHasPassword(email: string): Promise<boolean> {
+  const m = await findMemberByEmail(email)
+  return Boolean(m?.password_hash)
 }
 
 export async function setMemberPassword(
