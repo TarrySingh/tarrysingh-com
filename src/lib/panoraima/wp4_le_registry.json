@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-08-26T17:20:46.139105+00:00",
-  "refreshed_at": "2026-08-26T17:20:46.139105+00:00",
+  "generated_at": "2026-08-26T17:40:37.273306+00:00",
+  "refreshed_at": "2026-08-26T17:40:37.273306+00:00",
   "refresh_history": [
     {
       "at": "2026-08-26T17:20:46.139105+00:00",
@@ -16969,7 +16969,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Minor revision. Right topic (adoption, not validation, is where healthcare AI stalls) but reads as generic change management; make it AI-specific by swapping in trust, explainability, accountability, workflow fit, the validation-to-adoption gap, and model drift/monitoring + equity-as-resistance (120 min is already full, so trade out generic depth); fix the three weak outcomes (LO3/LO6 'explore', LO5 run-on); give the 'apply' outcome a real exercise; add a formative check; reconsider 'all three roles'.",
+      "review_note": "Material reviewed 26 Aug 2026 (deck + plan doc + Forcefield handout). June ask answered: the lesson is now genuinely AI-specific, and the fear taxonomy (slide 28) and the patient-facing chatbot liability point (slide 46) are the best AI-specific content in the Health track; the apply outcome now has a real exercise. Fix before teaching: psychological safety is attributed to Carl Rogers 1954, but the team construct is Schein & Bennis 1965 -> Kahn 1990 -> Edmondson 1999 (Edmondson does not cite Rogers); the NBER figure is 18% rising to an expected 22%, and at that rate it argues against the urgency framing it is used for; the 83% Agile stat is Wolpers/Age-of-Product, not Scrum.org, and 55% spend 10% or less. Citation fixes: Talebi not Taheli; Three Dimensions belongs to Interaction Associates not Keogh Weed; AI for Care is Dept of Health + HSE. Still open from June: model drift/monitoring, validation-to-adoption gap, explainability. Housekeeping: three different sets of outcomes, placeholders in the plan doc, ~9 blank slides.",
       "materials": {
         "count": 3,
         "has": true,
@@ -26279,7 +26279,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Minor revision. Right topic (adoption, not validation, is where healthcare AI stalls) but reads as generic change management; make it AI-specific by swapping in trust, explainability, accountability, workflow fit, the validation-to-adoption gap, and model drift/monitoring + equity-as-resistance (120 min is already full, so trade out generic depth); fix the three weak outcomes (LO3/LO6 'explore', LO5 run-on); give the 'apply' outcome a real exercise; add a formative check; reconsider 'all three roles'.",
+      "review_note": "Material reviewed 26 Aug 2026 (deck + plan doc + Forcefield handout). June ask answered: the lesson is now genuinely AI-specific, and the fear taxonomy (slide 28) and the patient-facing chatbot liability point (slide 46) are the best AI-specific content in the Health track; the apply outcome now has a real exercise. Fix before teaching: psychological safety is attributed to Carl Rogers 1954, but the team construct is Schein & Bennis 1965 -> Kahn 1990 -> Edmondson 1999 (Edmondson does not cite Rogers); the NBER figure is 18% rising to an expected 22%, and at that rate it argues against the urgency framing it is used for; the 83% Agile stat is Wolpers/Age-of-Product, not Scrum.org, and 55% spend 10% or less. Citation fixes: Talebi not Taheli; Three Dimensions belongs to Interaction Associates not Keogh Weed; AI for Care is Dept of Health + HSE. Still open from June: model drift/monitoring, validation-to-adoption gap, explainability. Housekeeping: three different sets of outcomes, placeholders in the plan doc, ~9 blank slides.",
       "materials": {
         "count": 3,
         "has": true,
