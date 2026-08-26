@@ -31,6 +31,7 @@ export type PanoraimaMember = {
   invited_by: string | null
   created_at: string
   last_login_at: string | null
+  invited_at: string | null
   has_password?: boolean
 }
 
@@ -128,7 +129,7 @@ export async function listMembers(): Promise<PanoraimaMember[]> {
   const supabase = createServiceClient()
   const { data, error } = await supabase
     .from(MEMBERS_TABLE)
-    .select("id,email,display_name,role,disabled,invited_by,created_at,last_login_at,password_hash")
+    .select("id,email,display_name,role,disabled,invited_by,created_at,last_login_at,invited_at,password_hash")
     .order("created_at", { ascending: true })
   if (error) {
     console.error("[panoraima/members] list failed:", error.message)
@@ -161,7 +162,7 @@ export async function addMember(opts: {
       display_name: opts.displayName ?? null,
       invited_by: opts.invitedBy ?? null,
     })
-    .select("id,email,display_name,role,disabled,invited_by,created_at,last_login_at")
+    .select("id,email,display_name,role,disabled,invited_by,created_at,last_login_at,invited_at")
     .single()
   if (error) {
     if (error.code === "23505") {
@@ -200,6 +201,30 @@ export async function removeMember(id: string): Promise<boolean> {
   return !error
 }
 
+export async function markInvited(email: string): Promise<void> {
+  const supabase = createServiceClient()
+  await supabase
+    .from(MEMBERS_TABLE)
+    .update({ invited_at: new Date().toISOString() })
+    .eq("email", normaliseEmail(email))
+}
+
+export async function findMemberById(
+  id: string,
+): Promise<PanoraimaMember | null> {
+  const supabase = createServiceClient()
+  const { data, error } = await supabase
+    .from(MEMBERS_TABLE)
+    .select("id,email,display_name,role,disabled,invited_by,created_at,last_login_at,invited_at")
+    .eq("id", id)
+    .maybeSingle()
+  if (error) {
+    console.error("[panoraima/members] lookup by id failed:", error.message)
+    return null
+  }
+  return (data as PanoraimaMember) ?? null
+}
+
 export async function touchLastLogin(email: string): Promise<void> {
   const supabase = createServiceClient()
   await supabase
@@ -226,16 +251,21 @@ export async function setMemberPassword(
  * Magic-link tokens — single use, short lived, stored only as a hash
  * ------------------------------------------------------------------ */
 
-const TOKEN_TTL_MINUTES = 30
+/** Sign-in links are short lived; invite links must survive an inbox. */
+export const SIGNIN_TTL_MINUTES = 30
+export const INVITE_TTL_MINUTES = 7 * 24 * 60
 
 function sha256(value: string): string {
   return createHash("sha256").update(value).digest("hex")
 }
 
-export async function createLoginToken(email: string): Promise<string | null> {
+export async function createLoginToken(
+  email: string,
+  ttlMinutes: number = SIGNIN_TTL_MINUTES,
+): Promise<string | null> {
   const supabase = createServiceClient()
   const token = randomBytes(32).toString("base64url")
-  const expires = new Date(Date.now() + TOKEN_TTL_MINUTES * 60 * 1000)
+  const expires = new Date(Date.now() + ttlMinutes * 60 * 1000)
   const { error } = await supabase.from(LOGIN_TOKENS_TABLE).insert({
     email: normaliseEmail(email),
     token_hash: sha256(token),

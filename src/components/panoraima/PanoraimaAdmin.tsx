@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useCallback } from "react"
-import { UserPlus, ShieldCheck, Eye, Ban, Trash2, LoaderCircle, AlertCircle } from "lucide-react"
+import { UserPlus, ShieldCheck, Eye, Ban, Trash2, LoaderCircle, AlertCircle, Send, CheckCircle2 } from "lucide-react"
 
 const RUST = "#B23E22"
 
@@ -14,6 +14,7 @@ type Member = {
   invited_by: string | null
   created_at: string
   last_login_at: string | null
+  invited_at: string | null
   has_password?: boolean
 }
 
@@ -32,6 +33,8 @@ export default function PanoraimaAdmin({ me }: { me: string }) {
   const [name, setName] = useState("")
   const [role, setRole] = useState<"member" | "admin">("member")
   const [busy, setBusy] = useState(false)
+  const [inviting, setInviting] = useState<string | null>(null)
+  const [note, setNote] = useState<string | null>(null)
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -63,6 +66,24 @@ export default function PanoraimaAdmin({ me }: { me: string }) {
       if (!data.ok) setError(data.error || "Could not add that member.")
       else { setEmail(""); setName(""); setRole("member"); await load() }
     } finally { setBusy(false) }
+  }
+
+  async function invite(id: string, addr: string) {
+    setInviting(id); setError(null); setNote(null)
+    try {
+      const res = await fetch("/api/panoraima/members/invite", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      })
+      const data = await res.json()
+      if (!data.ok) setError(data.error || "Could not send that invite.")
+      else { setNote(`Invite sent to ${addr}.`); await load() }
+    } catch {
+      setError("Could not send that invite.")
+    } finally {
+      setInviting(null)
+    }
   }
 
   async function patch(id: string, body: Record<string, unknown>) {
@@ -138,8 +159,8 @@ export default function PanoraimaAdmin({ me }: { me: string }) {
           </div>
         </div>
         <p className="mt-2.5 text-[12px] text-[#767C87]">
-          They sign in with a one-time link sent to this address, and can set a
-          password afterwards.
+          Adding someone does not email them. They appear below, and you send
+          the invite when you are ready.
         </p>
       </form>
 
@@ -147,6 +168,13 @@ export default function PanoraimaAdmin({ me }: { me: string }) {
         <div role="alert" className="mb-4 flex items-start gap-2 rounded-lg border border-[#F0CFC6] bg-[#FBEAE5] px-3 py-2.5 text-[13px] text-[#7A2A16]">
           <AlertCircle className="mt-[1px] h-3.5 w-3.5 flex-shrink-0" />
           <span>{error}</span>
+        </div>
+      )}
+
+      {note && (
+        <div className="mb-4 flex items-start gap-2 rounded-lg border border-[#CFE3D4] bg-[#EDF6EF] px-3 py-2.5 text-[13px] text-[#1F6B41]">
+          <CheckCircle2 className="mt-[1px] h-3.5 w-3.5 flex-shrink-0" />
+          <span>{note}</span>
         </div>
       )}
 
@@ -179,11 +207,40 @@ export default function PanoraimaAdmin({ me }: { me: string }) {
                     </span>
                   </div>
                   <p className="mt-0.5 truncate font-mono text-[11px] text-[#767C87]">
-                    {m.display_name ? m.email + " · " : ""}last seen {fmt(m.last_login_at)}
+                    {m.display_name ? m.email + " · " : ""}
+                    {m.last_login_at
+                      ? `signed in ${fmt(m.last_login_at)}`
+                      : m.invited_at
+                        ? `invited ${fmt(m.invited_at)}, not signed in yet`
+                        : "not invited yet"}
                     {m.has_password ? " · password set" : ""}
                   </p>
                 </div>
                 <div className="flex flex-shrink-0 gap-1.5">
+                  <button
+                    onClick={() => invite(m.id, m.email)}
+                    disabled={inviting === m.id || m.disabled}
+                    className="inline-flex items-center gap-1 rounded-md border px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.08em] disabled:opacity-50"
+                    style={
+                      m.invited_at
+                        ? { borderColor: "#DCDDE1", color: "#5B616B" }
+                        : { borderColor: RUST, color: RUST, background: "#FBEAE5" }
+                    }
+                    title={
+                      m.disabled
+                        ? "Re-enable the account before inviting"
+                        : m.invited_at
+                          ? "Send another sign-in link"
+                          : "Email this person a sign-in link"
+                    }
+                  >
+                    {inviting === m.id ? (
+                      <LoaderCircle className="h-2.5 w-2.5 animate-spin" />
+                    ) : (
+                      <Send className="h-2.5 w-2.5" />
+                    )}
+                    {m.invited_at ? "Resend" : "Send invite"}
+                  </button>
                   <button
                     onClick={() => patch(m.id, { role: m.role === "admin" ? "member" : "admin" })}
                     className="rounded-md border border-[#DCDDE1] px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-[#5B616B] hover:border-[#16181D]/40 hover:text-[#16181D]"
