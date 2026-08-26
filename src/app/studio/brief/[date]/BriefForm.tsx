@@ -34,6 +34,7 @@ export function BriefForm({ forDate, token, initial }: Props) {
       const j = (await res.json().catch(() => ({}))) as {
         ok?: boolean
         error?: string
+        driveMirror?: "ok" | "failed"
       }
       if (!res.ok || !j.ok) {
         setStatus("error")
@@ -41,7 +42,16 @@ export function BriefForm({ forDate, token, initial }: Props) {
         return
       }
       setStatus("saved")
-      setMessage("Filed. Tomorrow's article will fold this in.")
+      // The brief is in Supabase either way, but Cowork reads it from the
+      // Drive mirror. When that write fails the piece can still be missed, so
+      // say so rather than reporting a clean save. Reporting "Filed" on a
+      // half-save is how the 2026-08-25 SDLC brief was lost without anyone
+      // noticing for two days.
+      setMessage(
+        j.driveMirror === "failed"
+          ? "Filed to the studio, but the Drive copy failed. The backup writer will still pick it up; if an article is written before it does, the brief rolls to the next day."
+          : "Filed. Tomorrow's article will fold this in.",
+      )
     } catch (err) {
       setStatus("error")
       setMessage(err instanceof Error ? err.message : "network_error")

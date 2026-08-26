@@ -223,6 +223,11 @@ export async function listMarkdownFilesInFolder(options?: {
     pageSize: String(options?.pageSize ?? 50),
     orderBy: "modifiedTime asc",
     fields: "files(id,name,mimeType,modifiedTime,md5Checksum,size)",
+    // Shared-drive support. Without these two, the API only ever sees My
+    // Drive items, so a folder later moved onto a Shared Drive would go
+    // silently empty rather than erroring.
+    supportsAllDrives: "true",
+    includeItemsFromAllDrives: "true",
     spaces: "drive",
   })
 
@@ -370,6 +375,8 @@ async function upsertTextFileInFolderOnce(args: {
   const lookupParams = new URLSearchParams({
     q: `'${cfg.folderId}' in parents and name = '${args.name.replace(/'/g, "\\'")}' and trashed = false`,
     fields: "files(id,name)",
+    supportsAllDrives: "true",
+    includeItemsFromAllDrives: "true",
     pageSize: "5",
   })
   let lookupRes: Response
@@ -412,8 +419,13 @@ async function upsertTextFileInFolderOnce(args: {
     `--${boundary}--`
 
   const url = existing
-    ? `${DRIVE_UPLOAD_API}/files/${encodeURIComponent(existing.id)}?uploadType=multipart`
-    : `${DRIVE_UPLOAD_API}/files?uploadType=multipart`
+    // `supportsAllDrives` is REQUIRED for a create whose parent lives on a
+    // Shared Drive. Without it the API refuses with 403 "Service Accounts do
+    // not have storage quota", because it tries to make the file
+    // service-account-owned in My Drive, and a service account has none.
+    // That 403 is what silently dropped the 2026-08-25 brief.
+    ? `${DRIVE_UPLOAD_API}/files/${encodeURIComponent(existing.id)}?uploadType=multipart&supportsAllDrives=true`
+    : `${DRIVE_UPLOAD_API}/files?uploadType=multipart&supportsAllDrives=true`
   const method = existing ? "PATCH" : "POST"
 
   let upRes: Response
@@ -473,6 +485,8 @@ export async function deleteFilesBySlugInFolder(
   const lookupParams = new URLSearchParams({
     q: `'${cfg.folderId}' in parents and name contains '_${safeSlug}.md' and trashed = false`,
     fields: "files(id,name)",
+    supportsAllDrives: "true",
+    includeItemsFromAllDrives: "true",
     pageSize: "10",
   })
   let lookupRes: Response
@@ -548,6 +562,8 @@ export async function deleteFileByNameInFolder(
   const lookupParams = new URLSearchParams({
     q: `'${cfg.folderId}' in parents and name = '${name.replace(/'/g, "\\'")}' and trashed = false`,
     fields: "files(id)",
+    supportsAllDrives: "true",
+    includeItemsFromAllDrives: "true",
     pageSize: "10",
   })
   let lookupRes: Response
