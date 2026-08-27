@@ -23,12 +23,36 @@ These override deadline, convenience, and "close enough." If you cannot satisfy 
 8. **One clear stake, register-matched.** Take a position you would defend — but vary its form, and match the voice to the vertical. The hedge-fund-PM / board-advisor register is one colour for finance/macro days, NOT the default. (§1, §6)
 9. **Run the §10 self-check + novelty gate against the last 7 posts before saving.** If any check fails, revise. Never ship on a failed gate.
 
-## 0. Pre-write step — read Tarry's overnight brief from Drive
+## 0. Pre-write step — read Tarry's overnight brief
 
 **Before any research, web search, file listing for §5, or writing**:
 
-Use the Google Drive MCP tool to list files in the `tarry-daily-blogs`
-folder and look for a file named EXACTLY:
+### 0a. THE STUDIO API IS THE SOURCE OF TRUTH. Check it FIRST.
+
+    https://www.tarrysingh.com/api/studio/brief/today?token=<STUDIO_BRIEF_READ_TOKEN>
+
+Fetch that URL. It returns today's brief straight from the studio
+database:
+
+    { ok: true, forDate: "YYYY-MM-DD", decision: "pending"|"yes"|"no"|"done", brief: "..." }
+
+If `decision === "yes"` and `brief` is non-empty, **that is today's brief**.
+Use it and skip 0b entirely.
+
+Why this comes first, and why it is not optional. The Drive copy in 0b is
+written by a Google **service account**, and a service account cannot create
+a file in a My-Drive folder shared with it — it has no storage quota. So the
+Drive mirror fails with a 403 every time and the file simply never appears.
+On 2026-08-24 Tarry filed a brief asking for an SDLC piece; the Drive write
+403'd, this runbook only told you to look in Drive, so you wrote a rotation
+piece instead and the request went unwritten for three days. The endpoint
+below has existed since 2026-05-19 and was built for exactly this; it was
+never wired into this document. It is now.
+
+### 0b. Fallback only — the Drive file
+
+If, and only if, 0a is unreachable or returns `ok: false`, list files in the
+`tarry-daily-blogs` folder and look for a file named EXACTLY:
 
   _brief-<today-amsterdam-date>.md
 

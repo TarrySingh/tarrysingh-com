@@ -51,7 +51,13 @@ export default async function BriefPage({ params, searchParams }: Props) {
   if (row && row.decision !== "pending") {
     return (
       <BriefShell
-        title={row.decision === "yes" ? "Already filed." : "Already declined."}
+        title={
+          row.decision === "no"
+            ? "Already declined."
+            : row.decision === "done"
+              ? "Already filed, and written."
+              : "Already filed."
+        }
         body={
           row.decision === "yes"
             ? "You already submitted a brief for this date. To replace it, just hit the link again and resubmit."

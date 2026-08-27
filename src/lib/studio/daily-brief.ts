@@ -10,7 +10,7 @@ import { createServiceClient } from "@/lib/supabase/server"
 
 const TABLE = "studio_daily_briefs"
 
-export type BriefDecision = "pending" | "yes" | "no"
+export type BriefDecision = "pending" | "yes" | "no" | "done"
 
 export interface DailyBriefRow {
   for_date: string
