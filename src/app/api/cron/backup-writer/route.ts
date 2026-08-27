@@ -155,67 +155,43 @@ async function handleTick(req: NextRequest) {
       }
     }
 
-    if (!isStale) {
-      // An article exists, so we must not write a second one. But if Tarry
-      // filed a brief for today and it is still sitting unconsumed, that
-      // brief has just been silently dropped, and until 2026-08-26 nothing
-      // said so.
-      //
-      // That is exactly how the SDLC brief for 2026-08-25 was lost: its
-      // Drive mirror failed with a 403 (service accounts have no storage
-      // quota), Cowork reads the brief from Drive only, so Cowork never saw
-      // it and wrote a rotation piece instead. This route CAN read the brief
-      // from Supabase, but the skip above returned before it ever looked.
-      //
-      // We still do not auto-write, because a second article for the same
-      // day is worse than a late one. Instead the brief is rolled forward to
-      // tomorrow so the idea survives, and the miss is logged loudly.
-      let orphanedBrief: string | null = null
-      try {
-        const row = await getBrief(today)
-        if (row && row.decision === "yes" && row.brief.trim()) {
-          orphanedBrief = row.brief.trim()
-          const tomorrow = amsterdamDateTomorrow()
-          const existingTomorrow = await getBrief(tomorrow)
-          if (!existingTomorrow || !existingTomorrow.brief?.trim()) {
-            await setBriefDecision(tomorrow, "yes", orphanedBrief)
-            console.warn(
-              JSON.stringify({
-                tag: "studio.backup_writer.brief_rolled_forward",
-                from: today,
-                to: tomorrow,
-                reason: "article_already_written_without_using_the_brief",
-                briefHead: orphanedBrief.slice(0, 120),
-              }),
-            )
-          } else {
-            console.warn(
-              JSON.stringify({
-                tag: "studio.backup_writer.brief_orphaned",
-                today,
-                reason: "article_already_exists_and_tomorrow_already_has_a_brief",
-                briefHead: orphanedBrief.slice(0, 120),
-              }),
-            )
-          }
-        }
-      } catch (err) {
-        console.error(
-          JSON.stringify({
-            tag: "studio.backup_writer.brief_rollforward_failed",
-            today,
-            error: err instanceof Error ? err.message : String(err),
-          }),
-        )
-      }
+    // An unconsumed brief OUTRANKS an existing article.
+    //
+    // Until 2026-08-27 this skipped whenever Cowork had already filed
+    // something, and Cowork always files first. Cowork reads the brief from
+    // a Drive file that a service account cannot create (no storage quota,
+    // see the note further down), so Cowork never sees a brief at all. The
+    // net effect was that a brief Tarry filed could never be written: it was
+    // first silently dropped, then, after the 2026-08-26 fix, rolled forward
+    // one day at a time forever, which looked healthy in the logs and was
+    // arguably worse.
+    //
+    // This route CAN read the brief from Supabase. So when a brief is still
+    // unconsumed, we write it, even though a rotation piece already exists.
+    // Two Dispatches in a day is a far smaller problem than never honouring
+    // an explicit request. The brief is marked "done" after a successful
+    // write so it cannot fire twice.
+    let pendingBrief = ""
+    try {
+      const row = await getBrief(today)
+      if (row && row.decision === "yes" && row.brief.trim()) pendingBrief = row.brief.trim()
+    } catch (err) {
+      console.error(
+        JSON.stringify({
+          tag: "studio.backup_writer.brief_lookup_failed",
+          today,
+          error: err instanceof Error ? err.message : String(err),
+        }),
+      )
+    }
 
+    if (!isStale && !pendingBrief) {
       console.log(
         JSON.stringify({
           tag: "studio.backup_writer.skipped",
           reason: "article_already_exists",
           existing: existingToday.name,
           today,
-          orphanedBrief: Boolean(orphanedBrief),
         }),
       )
       return NextResponse.json({
@@ -223,8 +199,18 @@ async function handleTick(req: NextRequest) {
         skipped: true,
         reason: "article_already_exists",
         existingFile: existingToday.name,
-        orphanedBrief: Boolean(orphanedBrief),
       })
+    }
+
+    if (pendingBrief) {
+      console.warn(
+        JSON.stringify({
+          tag: "studio.backup_writer.writing_brief_despite_existing_article",
+          today,
+          existing: existingToday.name,
+          briefHead: pendingBrief.slice(0, 120),
+        }),
+      )
     }
 
     console.log(
@@ -357,6 +343,10 @@ async function handleTick(req: NextRequest) {
     filename,
     content: result.body,
     origin,
+    // A brief-driven article must clear the same-day dedup; otherwise the
+    // rotation piece Cowork already filed would block it, which is the exact
+    // failure this whole change exists to remove.
+    allowSameDay: briefSource !== "none",
   })
 
   if (!processed.ok) {
@@ -390,6 +380,24 @@ async function handleTick(req: NextRequest) {
     // commit exist AND there is nothing left to self-heal. So this stage
     // returns a soft 200 (queued), no alarm.
     if (processed.stage === "awaiting_frontmatter") {
+  // Mark the brief consumed. Without a terminal state it stays
+  // decision="yes" and the writer picks it up again tomorrow, which is the
+  // roll-forward loop this change replaces.
+  if (briefSource !== "none") {
+    try {
+      await setBriefDecision(today, "done", brief)
+      console.log(JSON.stringify({ tag: "studio.backup_writer.brief_consumed", today, briefSource }))
+    } catch (err) {
+      console.error(
+        JSON.stringify({
+          tag: "studio.backup_writer.brief_mark_failed",
+          today,
+          error: err instanceof Error ? err.message : String(err),
+        }),
+      )
+    }
+  }
+
       console.log(
         JSON.stringify({
           tag: "studio.backup_writer.queued_awaiting_frontmatter",

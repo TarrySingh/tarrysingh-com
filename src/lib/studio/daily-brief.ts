@@ -87,7 +87,12 @@ export async function upsertPendingBrief(forDate: string): Promise<void> {
 
 export async function setBriefDecision(
   forDate: string,
-  decision: "yes" | "no",
+  /**
+   * "done" marks a brief as CONSUMED. Without a terminal state a brief that
+   * has been written stays decision="yes" forever and the writer would pick
+   * it up again the next morning.
+   */
+  decision: "yes" | "no" | "done",
   brief: string = "",
 ): Promise<void> {
   const sb = createServiceClient()
@@ -97,7 +102,7 @@ export async function setBriefDecision(
       {
         for_date: forDate,
         decision,
-        brief: decision === "yes" ? brief : "",
+        brief: decision === "no" ? "" : brief,
         decided_at: new Date().toISOString(),
         // Preserve prompt_sent_at on the existing row (Supabase
         // ignores keys not in our payload on upsert+onConflict).

@@ -41,6 +41,14 @@ export interface ProcessArticleInput {
   content: string
   /** Origin for absolute URLs in the email (e.g. https://www.tarrysingh.com). */
   origin: string
+  /**
+   * Set when the article was written FROM A BRIEF Tarry filed. The same-day
+   * dedup below exists to stop two racing writers producing two rotation
+   * pieces. A brief is not a race: it is an explicit request, and it has
+   * already lost to the rotation once (see backup-writer, 2026-08-27). So it
+   * is allowed past the guard.
+   */
+  allowSameDay?: boolean
 }
 
 export type ProcessArticleResult =
@@ -117,7 +125,7 @@ export async function processArticle(
       .select("slug, frontmatter")
       .filter("frontmatter->>date", "eq", articleDate)
       .limit(1)
-    if (!dedupErr && existing && existing.length > 0) {
+    if (!dedupErr && existing && existing.length > 0 && !input.allowSameDay) {
       const existingSlug = (existing[0] as { slug: string }).slug
       if (existingSlug !== slug) {
         console.log(
