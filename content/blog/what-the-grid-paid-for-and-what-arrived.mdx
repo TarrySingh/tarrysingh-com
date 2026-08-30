@@ -1,0 +1,78 @@
+---
+title: "What the Grid Paid For, and What Arrived"
+date: "2026-08-30"
+category: "Essays"
+excerpt: "On 18 July 2026, WitnessAI published a survey of 300 business executives showing that 68% say at least some AI initiatives ran over budget in the past year, with 33% reporting that overruns occurred mostly or always. The energy sector was not exempt. 94% of power and utility CIOs plan to increase AI investments …"
+draft: false
+tags: ["what", "grid", "paid", "arrived"]
+---
+
+On 18 July 2026, WitnessAI published a survey of 300 business executives showing that 68% say at least some AI initiatives ran over budget in the past year, with 33% reporting that overruns occurred mostly or always. The energy sector was not exempt. 94% of power and utility CIOs plan to increase AI investments in 2025, with an average spending increase of 38.3%, but the gap between commitment and control is wider than most boards will admit. I write this from the seat nobody wants at the table: the finance owner who signed off on a grid forecasting pilot and is now defending a bill five times the original estimate, with procurement asking why the vendor contract had no usage ceiling and operations insisting the model cannot be turned off because dispatch depends on it.
+
+The energy sector has spent two years hearing that AI will optimise dispatch, reduce curtailment, predict failures and save millions. Some of that is true. Utilities deploying AI grid management systems report reductions in grid losses of 3-8%, reductions in curtailed renewable energy of 15-25%, and significant improvements in system reliability. But the ROI case presented in the business case is not the same number that lands on the finance owner's desk twelve months later, because the cost structure of AI in production is not the cost structure of AI in pilot, and almost nobody modelled the difference.
+
+This is not a story about bad vendors or naive buyers. It is about a category of technology whose economics do not behave like the capital expenditure model energy companies know how to govern, deployed into an operational environment where turning it off after go-live creates more risk than leaving it on. The result is a finance problem disguised as a technology success, and it is hitting utilities across Europe and North America in the second half of 2026.
+
+## 1. The original business case was built for a different cost model
+
+Energy utilities are fluent in capital projects. You build a substation, you amortise it over 25 years, you know the maintenance cost as a percentage of CAPEX, and the regulator signs off on cost recovery in the rate base. AI deployments do not work that way, but most of the early business cases were written as if they did.
+
+A typical 2024-2025 business case for a renewable forecasting system would line-item a software licence (annual or three-year term), integration costs, some internal data engineering time, and maybe a third-party managed service fee. For a mid-size industrial site, budget $100,000-400,000 a year for the platform, plus 30-50% of that again for integration with SCADA, historians and maintenance systems. Savings were projected as a function of reduced balancing costs or imbalance penalties, and ROI was calculated over three to five years. That looked and felt like a software project, and it passed through capital governance as such.
+
+What the business case did not model, because the vendor could not or would not specify it up front, was the variable cost of inference at scale. Token consumption, API calls, retraining cycles, cloud compute for edge cases, and model drift correction all generate usage-based charges that do not appear in the licence fee. When the model goes live and dispatch starts calling it every fifteen minutes across a fleet of assets, the inference bill is not $30,000 a year. It is $30,000 a month, or more if volatility spikes and the model runs more frequent updates.
+
+79% of enterprises had AI cost overruns in the past 12 months according to a DoiT survey in February 2026, and overruns get worse with FinOps maturity. That last point is counterintuitive until you realise that mature teams are not worse at cost control. They are better at measuring, so they see the overrun that immature teams are running blind. Energy utilities, with their high-reliability operating culture and strict change-control processes, often fall into the mature-but-late category: they have the governance, but the governance was designed for predictable CAPEX and OPEX, not for usage-based consumption that compounds with system load.
+
+## 2. The vendor contract assumed control the buyer does not have
+
+Most AI vendor contracts in energy are structured as licences with usage tiers or as managed services with monthly fees and out-of-scope clauses for retraining. What they rarely include is a binding ceiling on total cost, because the vendor's own cost is a function of how much the buyer uses the system, and usage is driven by operational decisions the vendor does not control.
+
+A wind forecasting model running in a UK utility might be scoped for 500 MW of capacity. The contract specifies inference frequency, retraining cadence, and data ingress limits. But when a summer heatwave stresses the grid and the control room asks the model to run updates every five minutes instead of every thirty, or when a new offshore wind farm comes online six months early and the asset list grows by 40%, the usage tier shifts and the bill follows. On 4 August 2026, EDF cut output from 12% of France's nuclear fleet due to heat-related constraints, and Italian spot power prices and German front-month power contracts both hit their highest levels in 3.5 years on the same day. When volatility spikes, so does model usage.
+
+The finance owner is stuck. The contract is usage-based, the usage is driven by operational necessity, and the operational necessity is driven by grid conditions nobody controls. Turning the model off or throttling it back means dispatch loses visibility, which increases the risk of an outage or a balancing penalty that costs more than the AI bill. The vendor is not overcharging; the contract is working as written. But the business case did not budget for the usage profile the grid actually demanded, because the grid in 2026 is more volatile than the grid in 2024, and the model adapts to that volatility faster than finance can reforecast.
+
+## 3. Production usage is not pilot usage, and the multiplier is not linear
+
+Energy companies spend 65% of their AI project budgets on data engineering, nearly triple the cross-industry average of 23%, according to Wood Mackenzie's 2025 analysis. That is the pilot cost, before inference at scale.
+
+A pilot runs on a subset of assets, with curated data, over a fixed test window. It proves the model works. It does not prove what the model costs when it is called ten thousand times a day, across a national grid, with live SCADA feeds, under stress conditions. The scaling factor from pilot to production is not 10x. For inference-heavy applications like real-time dispatch optimisation or fault prediction, it can be 50x to 100x, because the pilot was not designed to replicate production load and production latency requirements.
+
+For a typical 100 MW solar park, a 13% improvement in forecast accuracy translates into around $90,000 per year in avoided imbalance costs, and Meteomatics' AI-enhanced forecasting achieves up to 50% error reduction in ERCOT. That is the ROI case. The cost case is what happens when you scale that model to 5,000 MW of solar across six grid zones, with 15-minute settlement intervals, real-time weather ingests, and continuous retraining. The accuracy improvement is real, and the savings are real. But the bill is also real, and it is not in the original budget, because the original budget was for the pilot.
+
+## 4. The regulatory compact does not yet recognise AI operating cost as a pass-through
+
+Utilities operate under regulatory frameworks that allow cost recovery for prudent investments. Cost recovery requires regulatory approval from state public utility commissions in the US, Ofgem in the UK, BNetzA in Germany, and prudency reviews can look back years. That works for capital expenditure and for predictable operations and maintenance. It does not yet work for usage-based AI costs that vary month to month based on grid conditions.
+
+If a utility deploys a $2 million substation, the regulator will review the need, the cost, and the useful life, and then allow the utility to recover that cost plus a return through rates. If the same utility deploys a forecasting AI that costs $200,000 in year one and $1.2 million in year two because inference volume tripled, the regulator will ask why the cost grew 6x and whether the spending was prudent. The utility's answer, "the model worked as designed and usage reflected operational need," is accurate but does not map cleanly onto the prudency standard most regulators apply.
+
+The utility sector requires a $240 billion investment to meet new demands, and Fitch has downgraded the sector's outlook due to financial challenges. AI spend is a rounding error in that total, but it is a rounding error with a different cost profile, and that difference creates friction with the regulatory process. Finance owners are left defending a line item that looks like an overrun because the budget was based on pilot usage, but the overrun was driven by operational reality, and the operational reality delivered the savings the business case promised.
+
+## 5. The bill that arrived is defensible, but it was not forecast
+
+Only 9% of survey respondents said that more than three-quarters of their AI initiatives delivered a measurable financial return. That number hides two populations: projects that failed, and projects that succeeded but cost more than budgeted. Energy AI deployments in 2026 are overwhelmingly in the second group.
+
+The wind farm operator who budgeted $150,000 a year for predictive maintenance and is now running $480,000 annually can point to the turbines that did not fail, the generation that was not lost, and the ROI that is still positive. But the CFO's question is not whether it worked; it is why the cost was triple the forecast, whether that cost will stabilise, and what control exists to prevent it from tripling again. The answer to the first question is that production usage exceeded pilot assumptions. The answer to the second is maybe, depending on whether the asset base and grid volatility stabilise. The answer to the third is limited, because throttling the model reduces the operational benefit that justified the deployment.
+
+This is not a failure of technology. It is a failure of financial translation. The vendor sold a capability. The business case modelled that capability as a capital project with predictable OpEx. The finance owner approved the project on that basis. Operations deployed the system, it worked, usage scaled with operational need, and the bill reflected actual usage under a contract that was clear about the pricing model. Everyone did their job. The gap is not in execution; it is in the original estimate, which was built on pilot assumptions that did not survive contact with production load.
+
+## 6. Fixing this requires contracts, not dashboards
+
+66% of organisations maintain AI cost monitoring dashboards, but only 36% have direct token or usage controls. Dashboards show you the problem. Controls let you act on it. In energy, where operational continuity is non-negotiable, the control is not "turn it off." The control is a contract structure that caps total cost or ties pricing to value delivered, not to inference volume.
+
+Three contract structures are emerging in 2026 that transfer some cost risk back to the vendor. The first is an annual spend ceiling with a service-level agreement: the vendor commits to deliver the forecasting or optimisation service for a fixed annual fee, and absorbs the inference cost variation internally. The second is outcome-based pricing: the vendor is paid a percentage of documented savings, not a usage fee. The third is a hybrid with a fixed base fee and a variable component that is capped as a percentage of the base.
+
+All three require the vendor to carry more risk, which means they will price that risk into the deal. But they also create alignment: the vendor has an incentive to optimise model efficiency, and the buyer has cost certainty. The European Commission estimates possible savings from demand-side flexibility at more than €71 billion per year for consumers and at up to €94 billion annually by 2035 from AI-based operation and maintenance optimisation. If those savings are real, vendors should be willing to bet on them.
+
+The finance owner's job is not to block AI. It is to ensure that the cost structure is governable within the frameworks the organisation uses to allocate capital and defend spending to regulators. Right now, most energy AI contracts do not meet that bar, because they were written during the pilot era when nobody had production usage data and vendors were reluctant to cap pricing on an unproven application. That era is over. Utilities now have twelve to eighteen months of production cost data. The next RFP cycle should reflect it.
+
+## What sits in front of the board
+
+Gartner forecasts global data center electricity consumption to reach 565 TWh in 2026, and worldwide data center power demand is expected to rise 27% in 2026 and reach 132 GW. The grid is tightening, volatility is rising, and AI is one of the few tools that can optimise dispatch and asset performance on a timeline that matters. None of that changes. What also does not change is that the organisation paying for it needs to know what it will cost before it scales the deployment, and the vendor needs to price in a way that survives regulatory scrutiny.
+
+The problem is not that AI in energy costs too much. The problem is that the cost arrived as a surprise, and the surprise was structural. Pilots are not production, usage-based pricing is not CAPEX, and inference load scales with grid stress in ways that were not modelled in 2024 business cases. The vendors who solve this will be the ones utilities can defend to their boards and their regulators. The vendors who do not will win pilots and lose the production contracts that follow.
+
+I do not know which vendors move first. I know the CFOs who are defending this year's overrun will not approve next year's expansion without a different contract. The question is whether the market builds that contract in 2026, or whether utilities build it for them by walking away.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
