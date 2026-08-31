@@ -1,0 +1,58 @@
+---
+title: "When the Inspector Asks Why"
+date: "2026-08-31"
+category: "Essays"
+excerpt: "The FDA's new medical device inspection protocol went live on 2 February 2026. The Quality Management System Regulation (QMSR) replaced the decades-old Quality System Regulation and incorporated ISO 13485:2016. The agency promised new guidance. It arrived on 30 January 2026, just three days before the QMSR became effective."
+draft: false
+tags: ["when", "inspector", "asks", "why"]
+---
+
+The FDA's new medical device inspection protocol went live on 2 February 2026. The Quality Management System Regulation (QMSR) replaced the decades-old Quality System Regulation and incorporated ISO 13485:2016. The agency promised new guidance. It arrived on 30 January 2026, just three days before the QMSR became effective.
+
+By April, the first post-QMSR inspection cycle was complete. FDA investigators were increasingly finding that complaint-handling deficiencies, CAPA weaknesses, risk management gaps, and design-change control issues surface together. They stopped treating them as separate problems. A gap discovered in one process area was now far more likely to trigger an audit of related processes that were once reviewed independently.
+
+That shift landed on the desk of every quality manager running AI on a regulated production line. I spoke with one in July, six months into the new regime. She walked me through what she was preparing for the next inspection. Her plant makes Class II orthopaedic components. They deployed a computer vision defect-detection system eighteen months ago. The model flags surface anomalies on titanium implants at 30 frames per second. It has cut scrap by 22% and manual inspection load by half. It also created an audit exposure she did not expect.
+
+## The question the system cannot answer
+
+The FDA's new compliance programme manual makes one thing clear: FDA is now prepared to request copies of management reviews, internal quality audit reports, and supplier audit reports during inspections. In an ISO 13485 world, those documents are no longer protected. The quality manager's problem is that half her reject decisions now trace to a model inference, and when the inspector asks why lot 4427 was flagged on 14 March, the document trail ends at a probability score.
+
+Medical device manufacturers, aerospace, automotive, and pharmaceutical companies need to prove why an AI made a specific accept/reject decision, and explainability dashboards with full audit trails are a compliance requirement. Her vision vendor provided confidence intervals and a heatmap overlay. Neither answers the inspector's question: what in the training data, the model architecture, or the threshold calibration caused this specific part to fail? She has a reject log, a camera timestamp, and an image file. The decision itself is a 47 KB inference artefact with no retrievable reasoning.
+
+The EU frameworks say the same thing in clearer language. The EU AI Act adds transparency and auditability requirements for AI in safety-critical manufacturing. The medical device sector got a reprieve in July: high-risk AI embedded in already-regulated products is deferred to 2 August 2028, but the transparency obligation is already being written into supplier contracts, and an AI that acts as a secondary verification tool where a human-in-the-loop makes the final decision avoids the Annex I high-risk label. Her system is not labelled that way. The contract called it "autonomous defect classification". That word sits badly now.
+
+## The thread the regulator will pull
+
+Pre-QMSR, an inspector finding a CAPA closure without follow-up testing might note the gap and move to the next section. Post-QMSR, the same pattern-recognition capability that helps the FDA spot industry-wide trends can flag company-specific risks far faster than in previous inspection cycles. If the CAPA was initiated because the vision system mis-classified ten parts in one shift, and the corrective action log shows the vendor pushed a model update three weeks later, the inspector will ask for the validation documentation on that update. If that documentation does not exist, or if it amounts to "vendor confirmed issue resolved", the thread unravels across three subsystems: complaint handling (the operator flagged the error), CAPA (the corrective action), and design change control (the model was modified).
+
+Where digital twins inform process controls and quality thresholds, manufacturers should verify the reliability of the data inputs and models. The quality manager's plant also runs a thermal digital twin for one autoclave line. It predicts cycle deviations six minutes ahead and recommends parameter adjustments. Those recommendations go into the batch record. Decisions based on flawed data can result in manufacturing defects, recalls, or regulatory findings. The twin's accuracy is 91%, measured against post-cycle inspection. The 9% error rate has never caused a batch failure, but she cannot explain which of the twin's 140 input features drove any given recommendation. The model is a vendor black box. The batch record shows the adjustment was made. It does not show why.
+
+She is not alone. 78% of organizations cannot validate data before it enters AI training pipelines, 77% cannot trace training data provenance, and 33% lack audit logs entirely. Industrial data pipelines must be robust enough to handle the scale of production environments while maintaining the data lineage and auditability that regulatory and quality management requirements demand.
+
+## The contract that assumed control the buyer does not have
+
+Her vendor agreement included a service-level commitment: model accuracy above 95%, measured quarterly, with retraining triggered by drift beyond 2 percentage points. Nowhere does it specify who holds the training dataset, who approves retraining, or what constitutes an acceptable validation test. When drift was detected in May, the vendor retrained the model using production data collected since deployment. The manufacturer received a model update, a performance report, and a Docker container. No record of which images were added to the training set. No diff on the architecture. No separate test holdout.
+
+If AI systems make decisions that affect worker safety, product quality, or environmental impact, regulators will expect documentation showing how those decisions were made and validated. She has none. The vendor's position is that the model is proprietary, and retraining procedures are trade secrets. That posture worked in 2024. It will not survive an FDA inspection in 2026.
+
+Manufacturers should clearly document the allocation of responsibility between themselves, contract manufacturers, and upstream suppliers to avoid disputes over liability, and ensure that how digital twin outputs are used operationally aligns with how compliance obligations are documented. Her next contract will include data retention, model versioning, and validation protocols as mandatory annexes. The current contract expires in October. She will not renew it.
+
+## The predictive maintenance log that predicts nothing the regulator cares about
+
+The plant's third AI deployment is predictive maintenance on six CNC milling centres. Facilities fully using AI-driven maintenance report 30-50% reduction in unplanned downtime and 20-40% extension of equipment useful life. Hers delivered. Spindle bearing replacement intervals stretched from nine months to fourteen. Unscheduled stops dropped by 40%. The maintenance log now includes AI-generated work orders, each tagged with a failure probability and a recommended service window.
+
+The compliance exposure is subtle. The log shows "AI recommendation: replace spindle bearing, failure probability 68%, service window 12-18 days". The technician replaced it on day 16. Two weeks later, an implant from that machine failed dimensional tolerance and was scrapped post-inspection. The CAPA investigator asked whether the delayed bearing replacement contributed. The AI model does not record which sensor readings drove the 68% figure, or whether dimensional drift was in its failure taxonomy. The maintenance system and the quality system do not talk to each other. The investigation concluded "no contributing factor identified", but the data to actually answer the question does not exist.
+
+Transparent AI models and audit trails are crucial for compliance, especially in regulated industries. Enterprise-grade explainability requires five capabilities most platforms lack: training data attribution, influence scoring, complete audit trails, contestability, and model certification. She has influence scoring on one system, audit trails on another, and nothing that spans them. An inspector tracing a quality deviation across maintenance records, batch logs, and reject reports will find three separate data lakes and no lineage.
+
+## What sits on the table in November
+
+Her next FDA inspection is scheduled for November. She has five months. The vision system will be re-contracted with data custody clauses, validation test protocols, and a requirement that every model update includes a change summary she can defend. The thermal digital twin will either be replaced or supplemented with a feature importance log that exports with every recommendation. The predictive maintenance vendor has agreed to add a failure-mode taxonomy and link predictions to quality event reporting.
+
+Gartner predicts that by 2026, 75% of organizations implementing digital twins will demonstrate measurable compliance improvements. That figure measures organizations who built compliance in from the start. Her plant is in the other 25%, retrofitting auditability onto systems purchased when "AI-powered" was a feature, not a liability. The work is expensive, not because the technology is hard, but because the vendor contracts never contemplated a regulator asking for model internals. Fines can reach €35 million or 7% of global turnover, but the greatest risk is the forced shutdown of non-compliant systems, which can paralyze entire production lines.
+
+She is not preparing for a hypothetical standard. She is preparing for an inspection technique that already changed. The opaque, black-box nature of many AI models remains a major barrier to industrial trust, acceptance, and regulatory compliance. The FDA's April data shows inspectors are trained to pull threads, not check boxes. Her job is to make sure every thread has a document at the end of it. In November, when the inspector asks why lot 4427 was rejected, she will have an answer longer than a probability score.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
