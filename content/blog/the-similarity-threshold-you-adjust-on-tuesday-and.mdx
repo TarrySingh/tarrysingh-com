@@ -1,0 +1,66 @@
+---
+title: "The Similarity Threshold You Adjust on Tuesday and Regret by Friday"
+date: "2026-09-03"
+category: "Essays"
+excerpt: "Semantic caching cuts LLM inference costs by 30–60% in benchmarks and causes a tenant data leak on Monday when the namespace is global and the threshold was tuned on last week's traffic. A single cosine similarity knob controls false-positive rate, hit rate, and customer-quality risk simultaneously — a coupling the vendor guides reduce to footnotes. The production stack requires cross-encoder reranking, per-tenant isolation, and threshold recalibration tied to upstream data changes."
+draft: false
+tags: ["semantic-caching", "rag", "llm-infrastructure", "vector-search", "production-ai", "cost-engineering"]
+---
+
+A B2B SaaS platform team turned on a semantic cache last Tuesday, watched the OpenAI bill drop 38% over the weekend, and woke up to a Slack thread on Monday because the cache had returned one Tier-1 customer's cancellation summary to a different Tier-3 customer's session. The threshold was 0.88, the namespace was global, and the hit-rate dashboard lagged twelve hours. By Friday the same team had reverted to exact caching only and the bill had climbed back.
+
+That story surfaces in May 2026 vendor documentation, written as a cautionary footnote. It should have been the opening paragraph. Production deployments hit 20-45% of traffic without touching the model, per benchmarks from Technion (2026). A 60% hit rate on a 1M-requests/day workload translates to roughly $846/month saved at H100 on-demand pricing, without changing the model or degrading response quality. The vendor materials highlight the savings. Engineers want RAG services to feel faster and cost less to run, but without letting cached answers become stale, overconfident, or just subtly wrong. That is the awkward part of caching in a RAG system.
+
+Semantic caching for LLMs is a caching technique that stores LLM responses against vector embeddings of the input prompt, and serves a cached response when a new prompt is semantically similar to a stored one above a configured similarity threshold. You embed the incoming query, search a vector store for the nearest neighbour, and if cosine similarity exceeds your threshold, you return the cached answer in milliseconds instead of waiting seconds for a fresh LLM call. When a new request is semantically similar to a past one (above a configurable cosine similarity threshold), the cache returns the stored response in 3-8ms instead of 500-2000ms. The architecture is straightforward. The failure mode is not.
+
+## The knob that controls three risks at once
+
+The cosine similarity threshold is the most consequential semantic-cache configuration. It controls false-positive rate, hit rate, and customer-quality risk in one knob. The 2026 production range is 0.92 to 0.97. Below 0.90, false positives degrade quality. Above 0.98, the cache rarely hits and you pay the embedding lookup with no offsetting savings.
+
+The number moves in the wrong direction as you watch it. A tight threshold gives you precision and empty cache slots. A loose threshold fills the cache and hands the wrong answer to a customer whose query embedding happened to land close to someone else's. A single cosine similarity from a bi-encoder (e.g., BGE-base) gives you about 85% precision-at-1 for cache-hit decisions. That sounds acceptable until you measure the 15% false-positive rate in production. The evidence from BEIR and MS MARCO is unambiguous: adding a cross-encoder reranker on the top‑5 ANN candidates lifts precision-at-1 to 96-98%.
+
+The reranker solves the precision problem and introduces a latency problem. A cross-encoder running on every cache lookup erases most of the speed advantage that made the cache worth deploying. A production-grade semantic cache requires at least four non-negotiable layers: exact-match fallback, cross-encoder reranking, confidence-band calibration, and cache-pollution defense, plus a decision framework for when to use each. That list describes what you end up building after the first production incident, not what the integration guide recommended.
+
+## The Monday-morning namespace failure
+
+Every user question can trigger retrieval, ranking, prompt construction, and a call to a generative model. That is exactly what you want when the question is new, nuanced, or dependent on freshly changed content. It is less satisfying when the service has already answered the same question, or a close rephrasing of it, many times before. The case for a cache is clear. The case for a global cache is not.
+
+A global namespace pools every query and every cached response into one store. The hit rate climbs because every user benefits from every other user's history. The risk climbs because the cache no longer knows whose session the stored answer came from. A B2B SaaS product that handles customer data under contract cannot serve Customer A's cached response to Customer B, regardless of how semantically similar the queries are. The threshold did not cause that leak. The missing tenant-isolation layer did.
+
+The fix is a namespaced cache keyed by tenant ID, session ID, or some combination of both, with TTL policies and explicit invalidation hooks tied to the events that make a cached answer stale. If the managed provider silently swaps the model behind the same endpoint, every cached entry is now in a different vector space and the hit rate quietly collapses. Pin the model name, pin the version, alert on unexplained hit-rate drops. A cache that works on Tuesday and silently stops working on Wednesday because an upstream dependency changed is worse than no cache at all.
+
+## The cost calculation nobody ran beforehand
+
+Remote vector search requires 15-20% hit rates to offset 30ms lookup costs, while in-memory systems achieve profitability at 3-5% hit rates. For a typical enterprise deployment, embedding generation costs around $0.0001 per query, vector search costs around $0.00001 per lookup, LLM inference costs $0.01-0.10 per query, and storage costs around $0.001 per cached response monthly. The cost structure heavily favors caching, with LLM inference representing 100-1000x the cost of cache operations.
+
+That math holds when the hit rate stays above the break-even threshold and the embedding model runs where you expect it to run. The key to getting there is the right stack: embedding model fast enough to stay off the critical path, similarity threshold tuned to your workload, and TTL policies matched to how often your underlying facts change. Co-locating the embedding model, vector store, and LLM on the same GPU node is the simplest architecture that satisfies all three requirements.
+
+The vendor case studies skip the part where the embedding service is a managed API with its own per-request latency, rate limit, and line on the invoice. A lookup that takes 3-8ms at the vector store takes 40-120ms when the embedding call crosses a network boundary. A cache hit takes a total of 27ms made up of 23ms embedding, 2ms for Valkeysearch and 1ms for the fetch of the stored response. A 250x speed-up! That figure compares a 27ms cache hit to a 7-second LLM call. It does not compare a 27ms cache hit to a 500ms LLM call with prompt caching already active, which is the comparison most production teams face in 2026.
+
+## The threshold you tune with a sample that is not representative
+
+If you serve 1,000 queries and 300 come from cache, your hit rate is 30%. Hit rate maps almost directly onto cost savings: at 0%, you save nothing; at 70%, your LLM bill can fall dramatically. A reckless cache can post an 80% hit rate by accepting weak matches, and half of those hits might be wrong.
+
+The threshold gets tuned on a sample of logged queries, often sampled from a single week, sometimes from a single high-traffic day. The sample over-represents FAQ-style questions and under-represents the long tail of nuanced, context-dependent queries that make up the majority of support volume in the second quarter after launch. A threshold of 0.93 tested on last Tuesday's traffic produces a 68% hit rate and 4% false-positive rate in the lab. The same threshold applied to this Thursday's traffic, which includes three new product features and a regulatory change that went live overnight, produces a 51% hit rate and 19% false-positive rate because the cache is now handing out answers that reference a product surface that no longer exists.
+
+False positives, cache pollution, timing side channels, and multi-turn embedding failures are what the demos conveniently skip. The gap between the literature and a production deployment is where the interesting engineering lives.
+
+## What you end up monitoring
+
+If you don't monitor your hit rates, the cache effectiveness is unknown and any finetuning is guesswork. So log every cache hit/miss, track metrics and set alerts. The metrics list grows faster than the vendor templates suggest. You monitor hit rate, false-positive rate measured from sampled human review, and per-check latency at p50 and p95. You monitor cache age in seconds, cost saved per hit, and namespace coverage to confirm that every tenant is actually hitting the cache. You alert on hit-rate drops, on threshold drift, and on any query that returns a cached answer older than your configured TTL but somehow bypassed the eviction policy.
+
+Latency cost per check at p50 and p95 matters because guardrails sit on the critical path of every request. Verdict drift (rising block rates on one topic or tenant) flags either an attack campaign or a policy misfit. Coverage (the fraction of model calls that passed through each rail) matters because gaps are where incidents happen. Semantic caches introduce the same observability requirements that guardrails do. Every cache decision is a decision to trust a stored answer instead of generating a fresh one, and that decision has to be auditable.
+
+## The architecture you inherit versus the one you need
+
+GPTCache is an open-source semantic cache that stores LLM responses to address cost and latency. When integrating an AI application with GPTCache, user queries are first sent to GPTCache for a response before being sent to LLMs like ChatGPT. If GPTCache has the answer to a query, it quickly returns the answer to the user without having to query the LLM. This approach saves costs on API recalls and makes response times much faster.
+
+The library does what it says on the package. It does not account for multi-turn conversation state, for tenant isolation, for synchronized cache invalidation when the knowledge base updates, or for confidence scoring on borderline matches. GPTCache stores complete LLM responses and retrieves them based on query embedding similarity. While effective for general query-response caching, it suffers from three critical limitations: static similarity thresholds requiring manual tuning per domain, lack of support for partial cache updates when documents change, and significant memory overhead from storing complete responses.
+
+Production systems layer exact-match caching, semantic caching, provider-level prompt caching, and KV caching at the inference engine. A chat application with stable system prompts, consistent document retrieval, and repetitive user questions might cache 70%+ of input tokens through prefix caching while semantic caching handles 30% of queries outright. The layers compound. They also interact. A gateway-level semantic cache that returns a hit bypasses the downstream prompt cache, so the cost model has to account for the forgone savings, not just the embedding lookup overhead.
+
+The vendor pitch is cost reduction and speed. The production reality is a multi-layer caching stack with per-layer telemetry, invalidation policies tied to upstream data dependencies, cross-encoder rerankers to fix the precision gap, namespace isolation to prevent cross-tenant leakage, and a threshold-tuning discipline that treats the cache as a statistical model requiring ongoing calibration. That is not a weekend integration. That is infrastructure.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
