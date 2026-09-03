@@ -2,9 +2,16 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-08-26T17:40:37.273306+00:00",
-  "refreshed_at": "2026-08-26T17:40:37.273306+00:00",
+  "generated_at": "2026-09-03T15:40:05.545921+00:00",
+  "refreshed_at": "2026-09-03T15:40:05.545921+00:00",
   "refresh_history": [
+    {
+      "at": "2026-09-03T15:40:05.545921+00:00",
+      "wiki_captured": "2026-08-26T17:18:36.976Z",
+      "sharepoint_generated": "2026-09-03T17:40:05.296466Z",
+      "realai_total": 56,
+      "reviewed": 41
+    },
     {
       "at": "2026-08-26T17:20:46.139105+00:00",
       "wiki_captured": "2026-08-26T17:18:36.976Z",
@@ -53,13 +60,6 @@
       "sharepoint_generated": "2026-07-14T12:26:26.323140Z",
       "realai_total": 56,
       "reviewed": 38
-    },
-    {
-      "at": "2026-07-01T22:08:06.851274+02:00",
-      "wiki_captured": "2026-07-01T19:30:00.287Z",
-      "sharepoint_generated": "2026-06-30T14:07:00.320241Z",
-      "realai_total": 55,
-      "reviewed": 12
     }
   ],
   "data_sources": {
@@ -69,10 +69,10 @@
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-08-26T19:20:45.951419Z",
+      "generated_at": "2026-09-03T17:40:05.296466Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 146,
+        "with_materials": 157,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -92,15 +92,14 @@
       "In development": 189,
       "Status not set": 65,
       "In review": 138,
-      "Materials in progress": 40,
-      "Not started": 4
+      "Materials in progress": 44
     },
-    "with_materials": 146,
-    "materials_pending": 290,
+    "with_materials": 157,
+    "materials_pending": 279,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 146,
-      "awaiting_material": 290,
+      "with_sharepoint_material": 157,
+      "awaiting_material": 279,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -6844,10 +6843,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-30",
+        "files": [
+          {
+            "name": "H_222_final.pdf",
+            "ext": "pdf",
+            "kb": 379,
+            "date": "2026-08-30",
+            "sha": "54f8d0b3e4260f24",
+            "rel": "4.1 Horizontal/H-222/H_222_final.pdf"
+          }
+        ],
         "folder": "H-222"
       },
       "lesson_plan": {
@@ -10232,14 +10240,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-31",
         "files": [
           {
             "name": "HC 176 Data-1 v1.pdf",
             "ext": "pdf",
-            "kb": 517,
-            "date": "2026-06-10",
-            "sha": "0be93872a22471ba",
+            "kb": 382,
+            "date": "2026-08-31",
+            "sha": "9be6a5ce6440479f",
             "rel": "4.1 Horizontal/HC-176/HC 176 Data-1 v1.pdf"
           }
         ],
@@ -10735,10 +10743,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-30",
+        "files": [
+          {
+            "name": "HC-201_Vulnerable groups and AI safety.pptx",
+            "ext": "pptx",
+            "kb": 530,
+            "date": "2026-08-30",
+            "sha": "fd37b40efd9135db",
+            "rel": "4.1 Horizontal/HC-201/HC-201_Vulnerable groups and AI safety.pptx"
+          }
+        ],
         "folder": "HC-201"
       },
       "lesson_plan": {
@@ -10920,10 +10937,27 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-09-01",
+        "files": [
+          {
+            "name": "GDPR Appendix I.docx",
+            "ext": "docx",
+            "kb": 24,
+            "date": "2026-09-01",
+            "sha": "d9b1cb025fdbc1d2",
+            "rel": "4.1 Horizontal/HC-207/GDPR Appendix I.docx"
+          },
+          {
+            "name": "GDPR Fundamentals.pptx",
+            "ext": "pptx",
+            "kb": 425,
+            "date": "2026-09-01",
+            "sha": "6bc60538d795920d",
+            "rel": "4.1 Horizontal/HC-207/GDPR Fundamentals.pptx"
+          }
+        ],
         "folder": "HC-207"
       },
       "lesson_plan": {
@@ -11362,329 +11396,329 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 154,
+        "count": 175,
         "has": true,
-        "newest": "2026-08-26",
+        "newest": "2026-08-31",
         "files": [
           {
-            "name": "measurement_data_10000.csv",
-            "ext": "csv",
-            "kb": 1482,
-            "date": "2026-08-26",
-            "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL004-ENEA-31-Aug-2026.docx",
+            "ext": "docx",
+            "kb": 198,
+            "date": "2026-08-31",
+            "sha": "0b45ddc41180d984",
+            "rel": "4.2 Health & Lifescience/HL-004/Learning-Outcomes-Reviewer-Checklist-HL004-ENEA-31-Aug-2026.docx"
           },
           {
-            "name": "measurement_data_10000.csv",
-            "ext": "csv",
-            "kb": 1482,
-            "date": "2026-08-26",
-            "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
+            "name": "Reviewer-Checklist-HL004-ENEA-31-Aug-2026.docx",
+            "ext": "docx",
+            "kb": 200,
+            "date": "2026-08-31",
+            "sha": "b09f03900e70edfd",
+            "rel": "4.2 Health & Lifescience/HL-004/Reviewer-Checklist-HL004-ENEA-31-Aug-2026.docx"
           },
           {
-            "name": "panoraima.png",
-            "ext": "png",
-            "kb": 62,
-            "date": "2026-08-26",
-            "sha": "490f6b31c9980972",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/assets/panoraima.png"
-          },
-          {
-            "name": "omics_batch_effects_dataset.csv",
-            "ext": "csv",
-            "kb": 104,
-            "date": "2026-08-26",
-            "sha": "2426760cb36dfb0e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
-          },
-          {
-            "name": "measurement_data_10000.csv",
-            "ext": "csv",
-            "kb": 1482,
-            "date": "2026-08-26",
-            "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
-          },
-          {
-            "name": "clinical_mnar_dataset.csv",
-            "ext": "csv",
-            "kb": 311,
-            "date": "2026-08-26",
-            "sha": "4c239ff6c8d59145",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
-          },
-          {
-            "name": "omics_batch_effects_dataset.csv",
-            "ext": "csv",
-            "kb": 104,
-            "date": "2026-08-26",
-            "sha": "2426760cb36dfb0e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/omics_batch_effects_dataset.csv"
-          },
-          {
-            "name": "clinical_mnar_dataset.csv",
-            "ext": "csv",
-            "kb": 311,
-            "date": "2026-08-26",
-            "sha": "4c239ff6c8d59145",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/clinical_mnar_dataset.csv"
-          },
-          {
-            "name": "clinical_mnar_dataset.csv",
-            "ext": "csv",
-            "kb": 311,
-            "date": "2026-08-26",
-            "sha": "4c239ff6c8d59145",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
-          },
-          {
-            "name": "omics_batch_effects_dataset.csv",
-            "ext": "csv",
-            "kb": 104,
-            "date": "2026-08-26",
-            "sha": "2426760cb36dfb0e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
-          },
-          {
-            "name": "02_common_issues_template.qmd",
-            "ext": "qmd",
-            "kb": 3,
-            "date": "2026-08-26",
-            "sha": "5ab962d7ba336c84",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/02_common_issues_template.qmd"
-          },
-          {
-            "name": "01_data_types_schema_template.qmd",
-            "ext": "qmd",
+            "name": "tabsets.js",
+            "ext": "js",
             "kb": 2,
-            "date": "2026-08-26",
-            "sha": "6d549a5b0cc25abf",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/01_data_types_schema_template.qmd"
+            "date": "2026-08-31",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/quarto-html/tabsets/tabsets.js"
           },
           {
-            "name": "02_common_issues_template.qmd",
-            "ext": "qmd",
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-08-31",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-08-31",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-08-31",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "bootstrap-icons.woff",
+            "ext": "woff",
+            "kb": 176,
+            "date": "2026-08-31",
+            "sha": "f55513b7b591cb84",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-08-31",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-08-31",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
             "kb": 3,
-            "date": "2026-08-26",
-            "sha": "5ab962d7ba336c84",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/02_common_issues_template.qmd"
+            "date": "2026-08-31",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
           },
           {
-            "name": "03_dataset_readiness_template.qmd",
-            "ext": "qmd",
-            "kb": 4,
-            "date": "2026-08-26",
-            "sha": "5111a579aa70389e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/03_dataset_readiness_template.qmd"
-          },
-          {
-            "name": "03_dataset_readiness_template.qmd",
-            "ext": "qmd",
+            "name": "anchor.min.js",
+            "ext": "js",
             "kb": 5,
-            "date": "2026-08-26",
-            "sha": "fe3bbfc11fb341f2",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/03_dataset_readiness_template.qmd"
+            "date": "2026-08-31",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/quarto-html/anchor.min.js"
           },
           {
-            "name": "01_data_types_schema_template.qmd",
-            "ext": "qmd",
-            "kb": 2,
-            "date": "2026-08-26",
-            "sha": "6d549a5b0cc25abf",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/01_data_types_schema_template.qmd"
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-08-31",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/quarto-html/popper.min.js"
           },
           {
-            "name": "measurement_data_10000.csv",
-            "ext": "csv",
-            "kb": 1482,
-            "date": "2026-08-26",
-            "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
-          },
-          {
-            "name": "measurement_data_10000.csv",
-            "ext": "csv",
-            "kb": 1482,
-            "date": "2026-08-26",
-            "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
-          },
-          {
-            "name": "omics_batch_effects_dataset.csv",
-            "ext": "csv",
-            "kb": 104,
-            "date": "2026-08-26",
-            "sha": "2426760cb36dfb0e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/omics_batch_effects_dataset.csv"
-          },
-          {
-            "name": "clinical_mnar_dataset.csv",
-            "ext": "csv",
-            "kb": 311,
-            "date": "2026-08-26",
-            "sha": "4c239ff6c8d59145",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/clinical_mnar_dataset.csv"
-          },
-          {
-            "name": "measurement_data_10000.csv",
-            "ext": "csv",
-            "kb": 1482,
-            "date": "2026-08-26",
-            "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
-          },
-          {
-            "name": "panoraima.png",
-            "ext": "png",
-            "kb": 62,
-            "date": "2026-08-26",
-            "sha": "490f6b31c9980972",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/assets/panoraima.png"
-          },
-          {
-            "name": "omics_batch_effects_dataset.csv",
-            "ext": "csv",
-            "kb": 104,
-            "date": "2026-08-26",
-            "sha": "2426760cb36dfb0e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
-          },
-          {
-            "name": "measurement_data_10000.csv",
-            "ext": "csv",
-            "kb": 1482,
-            "date": "2026-08-26",
-            "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
-          },
-          {
-            "name": "clinical_mnar_dataset.csv",
-            "ext": "csv",
-            "kb": 311,
-            "date": "2026-08-26",
-            "sha": "4c239ff6c8d59145",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
-          },
-          {
-            "name": "clinical_mnar_dataset.csv",
-            "ext": "csv",
-            "kb": 311,
-            "date": "2026-08-26",
-            "sha": "4c239ff6c8d59145",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/clinical_mnar_dataset.csv"
-          },
-          {
-            "name": "omics_batch_effects_dataset.csv",
-            "ext": "csv",
-            "kb": 104,
-            "date": "2026-08-26",
-            "sha": "2426760cb36dfb0e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/omics_batch_effects_dataset.csv"
-          },
-          {
-            "name": "clinical_mnar_dataset.csv",
-            "ext": "csv",
-            "kb": 311,
-            "date": "2026-08-26",
-            "sha": "4c239ff6c8d59145",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
-          },
-          {
-            "name": "omics_batch_effects_dataset.csv",
-            "ext": "csv",
-            "kb": 104,
-            "date": "2026-08-26",
-            "sha": "2426760cb36dfb0e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
-          },
-          {
-            "name": "measurement_data_10000.csv",
-            "ext": "csv",
-            "kb": 1482,
-            "date": "2026-08-26",
-            "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/measurement_data_10000.csv"
-          },
-          {
-            "name": "02_common_issues_template.qmd",
-            "ext": "qmd",
-            "kb": 3,
-            "date": "2026-08-26",
-            "sha": "5ab962d7ba336c84",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/02_common_issues_template.qmd"
+            "name": "fuse.min.js",
+            "ext": "js",
+            "kb": 22,
+            "date": "2026-08-31",
+            "sha": "c57339c3fa16b1d6",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-search/fuse.min.js"
           },
           {
             "name": "01_data_types_schema_template.qmd",
             "ext": "qmd",
             "kb": 3,
-            "date": "2026-08-26",
+            "date": "2026-08-31",
             "sha": "a35f9ca9a260b6fe",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/01_data_types_schema_template.qmd"
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/student_materials/student_package/templates/01_data_types_schema_template.qmd"
           },
           {
-            "name": "panoraima.png",
-            "ext": "png",
-            "kb": 62,
-            "date": "2026-08-26",
-            "sha": "490f6b31c9980972",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/assets/panoraima.png"
+            "name": "bootstrap-icons.css",
+            "ext": "css",
+            "kb": 97,
+            "date": "2026-08-31",
+            "sha": "01253947f506e030",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/bootstrap/bootstrap-icons.css"
           },
           {
-            "name": "measurement_data_10000.csv",
-            "ext": "csv",
-            "kb": 1482,
-            "date": "2026-08-26",
-            "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
+            "name": "bootstrap.min.js",
+            "ext": "js",
+            "kb": 78,
+            "date": "2026-08-31",
+            "sha": "d2ea6c1e0cabca20",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/bootstrap/bootstrap.min.js"
+          },
+          {
+            "name": "bootstrap-138a6193a3bd40baf1e627da441a4734.min.css",
+            "ext": "css",
+            "kb": 420,
+            "date": "2026-08-31",
+            "sha": "a20d3d44875fd0fb",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/teacher_manual/coding_templates_teacher_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-08-31",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-nav/quarto-nav.js"
+          },
+          {
+            "name": "headroom.min.js",
+            "ext": "js",
+            "kb": 4,
+            "date": "2026-08-31",
+            "sha": "5b80cc4165a661a3",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-nav/headroom.min.js"
+          },
+          {
+            "name": "quarto-search.js",
+            "ext": "js",
+            "kb": 42,
+            "date": "2026-08-31",
+            "sha": "1a23221f499b3993",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-search/quarto-search.js"
+          },
+          {
+            "name": "autocomplete.umd.js",
+            "ext": "js",
+            "kb": 94,
+            "date": "2026-08-31",
+            "sha": "cd9db3b7d812139a",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-search/autocomplete.umd.js"
           },
           {
             "name": "03_dataset_readiness_template.qmd",
             "ext": "qmd",
             "kb": 5,
-            "date": "2026-08-26",
+            "date": "2026-08-31",
             "sha": "fe3bbfc11fb341f2",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/student_templates/03_dataset_readiness_template.qmd"
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/student_materials/student_package/templates/03_dataset_readiness_template.qmd"
           },
           {
-            "name": "omics_batch_effects_dataset.csv",
-            "ext": "csv",
-            "kb": 104,
-            "date": "2026-08-26",
-            "sha": "2426760cb36dfb0e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/omics_batch_effects_dataset.csv"
+            "name": "02_common_issues_template.qmd",
+            "ext": "qmd",
+            "kb": 3,
+            "date": "2026-08-31",
+            "sha": "5ab962d7ba336c84",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/student_materials/student_package/templates/02_common_issues_template.qmd"
+          },
+          {
+            "name": "bootstrap-icons.woff",
+            "ext": "woff",
+            "kb": 176,
+            "date": "2026-08-31",
+            "sha": "f55513b7b591cb84",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/bootstrap/bootstrap-icons.woff"
+          },
+          {
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-08-31",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-08-31",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-08-31",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-08-31",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-08-31",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-08-31",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/clipboard/clipboard.min.js"
           },
           {
             "name": "clinical_mnar_dataset.csv",
             "ext": "csv",
             "kb": 311,
-            "date": "2026-08-26",
+            "date": "2026-08-31",
             "sha": "4c239ff6c8d59145",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/clinical_mnar_dataset.csv"
-          },
-          {
-            "name": "clinical_mnar_dataset.csv",
-            "ext": "csv",
-            "kb": 311,
-            "date": "2026-08-26",
-            "sha": "4c239ff6c8d59145",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/clinical_mnar_dataset.csv"
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/student_materials/student_package/course_data/clinical_mnar_dataset.csv"
           },
           {
             "name": "omics_batch_effects_dataset.csv",
             "ext": "csv",
             "kb": 104,
-            "date": "2026-08-26",
+            "date": "2026-08-31",
             "sha": "2426760cb36dfb0e",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_delivery/reader_html/course_data/omics_batch_effects_dataset.csv"
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/student_materials/student_package/course_data/omics_batch_effects_dataset.csv"
           },
           {
             "name": "measurement_data_10000.csv",
             "ext": "csv",
             "kb": 1482,
-            "date": "2026-08-26",
+            "date": "2026-08-31",
             "sha": "5056f3deb30cac70",
-            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_delivery/reader_html/course_delivery/student_materials/student_package/course_data/measurement_data_10000.csv"
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/student_materials/student_package/course_data/measurement_data_10000.csv"
+          },
+          {
+            "name": "clinical_mnar_dataset.csv",
+            "ext": "csv",
+            "kb": 311,
+            "date": "2026-08-31",
+            "sha": "4c239ff6c8d59145",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/course_data/clinical_mnar_dataset.csv"
+          },
+          {
+            "name": "bootstrap-icons.css",
+            "ext": "css",
+            "kb": 97,
+            "date": "2026-08-31",
+            "sha": "01253947f506e030",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/bootstrap/bootstrap-icons.css"
+          },
+          {
+            "name": "bootstrap.min.js",
+            "ext": "js",
+            "kb": 78,
+            "date": "2026-08-31",
+            "sha": "d2ea6c1e0cabca20",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/bootstrap/bootstrap.min.js"
+          },
+          {
+            "name": "bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css",
+            "ext": "css",
+            "kb": 486,
+            "date": "2026-08-31",
+            "sha": "44a2ad8beb09b080",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/bootstrap/bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-08-31",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/reader_html/site_libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "requirements.txt",
+            "ext": "txt",
+            "kb": 0,
+            "date": "2026-08-31",
+            "sha": "0bacd46aaa797b3f",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/student_materials/student_package/requirements.txt"
+          },
+          {
+            "name": "README.md",
+            "ext": "md",
+            "kb": 0,
+            "date": "2026-08-31",
+            "sha": "ec53b553dcd1ae9b",
+            "rel": "4.2 Health & Lifescience/HL-004/3_course_files/student_materials/student_package/README.md"
           }
         ],
         "folder": "HL-004"
@@ -14431,10 +14465,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-31",
+        "files": [
+          {
+            "name": "Review-HL020-Aug-2026-CeADAR.docx",
+            "ext": "docx",
+            "kb": 205,
+            "date": "2026-08-31",
+            "sha": "5a322da35bc04742",
+            "rel": "4.2 Health & Lifescience/HL-020/Review-HL020-Aug-2026-CeADAR.docx"
+          },
+          {
+            "name": "Interpretable AI.odp",
+            "ext": "odp",
+            "kb": 1145,
+            "date": "2026-08-27",
+            "sha": "df9a5900d071f8fa",
+            "rel": "4.2 Health & Lifescience/HL-020/Interpretable AI.odp"
+          },
+          {
+            "name": "InterpretableAI_ipynb.ipynb",
+            "ext": "ipynb",
+            "kb": 27,
+            "date": "2026-08-27",
+            "sha": "deb7814e6fbdee58",
+            "rel": "4.2 Health & Lifescience/HL-020/InterpretableAI_ipynb.ipynb"
+          }
+        ],
         "folder": "HL-020"
       },
       "lesson_plan": {
@@ -14750,10 +14809,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-08-25",
+        "newest": "2026-08-27",
         "files": [
+          {
+            "name": "HL 026 - v3.pdf",
+            "ext": "pdf",
+            "kb": 397,
+            "date": "2026-08-27",
+            "sha": "d9371c1e9bc6f5a7",
+            "rel": "4.2 Health & Lifescience/HL-026/HL 026 - v3.pdf"
+          },
           {
             "name": "HL 026 - v2.pdf",
             "ext": "pdf",
@@ -14809,10 +14876,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 3,
+        "count": 4,
         "has": true,
-        "newest": "2026-08-25",
+        "newest": "2026-08-28",
         "files": [
+          {
+            "name": "HL028 - v4.pdf",
+            "ext": "pdf",
+            "kb": 949,
+            "date": "2026-08-28",
+            "sha": "308e9f5df673738c",
+            "rel": "4.2 Health & Lifescience/HL-028/HL028 - v4.pdf"
+          },
           {
             "name": "HL 028 - 30 July-2026.pdf",
             "ext": "pdf",
@@ -14969,10 +15044,26 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 4,
+        "count": 6,
         "has": true,
-        "newest": "2026-08-22",
+        "newest": "2026-08-27",
         "files": [
+          {
+            "name": "Reviewer-Checklis-HL031.docx",
+            "ext": "docx",
+            "kb": 207,
+            "date": "2026-08-27",
+            "sha": "008a635161ec65a2",
+            "rel": "4.2 Health & Lifescience/HL-031/Reviewer-Checklis-HL031.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL031.docx",
+            "ext": "docx",
+            "kb": 210,
+            "date": "2026-08-27",
+            "sha": "0ff29ea5ccece56d",
+            "rel": "4.2 Health & Lifescience/HL-031/Learning-Outcomes-Reviewer-Checklist-HL031.docx"
+          },
           {
             "name": "HL-031 Beneficience-revised10a.pptx",
             "ext": "pptx",
@@ -15044,10 +15135,26 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 3,
+        "count": 5,
         "has": true,
-        "newest": "2026-08-24",
+        "newest": "2026-08-27",
         "files": [
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL032.docx",
+            "ext": "docx",
+            "kb": 210,
+            "date": "2026-08-27",
+            "sha": "849ec70733e438e2",
+            "rel": "4.2 Health & Lifescience/HL-032/Learning-Outcomes-Reviewer-Checklist-HL032.docx"
+          },
+          {
+            "name": "Reviewer-Checklis-HL032.docx",
+            "ext": "docx",
+            "kb": 208,
+            "date": "2026-08-27",
+            "sha": "665259258583ae13",
+            "rel": "4.2 Health & Lifescience/HL-032/Reviewer-Checklis-HL032.docx"
+          },
           {
             "name": "HL-032 Nonmaleficience-revised10a.pptx",
             "ext": "pptx",
@@ -15379,10 +15486,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-31",
+        "files": [
+          {
+            "name": "Reviewer-Checklis-HL038.docx",
+            "ext": "docx",
+            "kb": 208,
+            "date": "2026-08-31",
+            "sha": "d9dc91e08d1b2fe2",
+            "rel": "4.2 Health & Lifescience/HL-038/Reviewer-Checklis-HL038.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL038.docx",
+            "ext": "docx",
+            "kb": 210,
+            "date": "2026-08-31",
+            "sha": "6215b08b565112fb",
+            "rel": "4.2 Health & Lifescience/HL-038/Learning-Outcomes-Reviewer-Checklist-HL038.docx"
+          },
+          {
+            "name": "Slides.pptx",
+            "ext": "pptx",
+            "kb": 2044,
+            "date": "2026-08-31",
+            "sha": "dd42dccb2654476a",
+            "rel": "4.2 Health & Lifescience/HL-038/Slides.pptx"
+          }
+        ],
         "folder": "HL-038"
       },
       "lesson_plan": {
@@ -15423,8 +15555,16 @@
       "materials": {
         "count": 4,
         "has": true,
-        "newest": "2026-08-24",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
+            "ext": "docx",
+            "kb": 238,
+            "date": "2026-08-31",
+            "sha": "26914742bf03fd29",
+            "rel": "4.2 Health & Lifescience/HL-039/Reviewer-Checklist-template-V3.0-July-2026.docx"
+          },
           {
             "name": "Ethical_Frameworks_RAISE-U_template_fixed.pptx",
             "ext": "pptx",
@@ -15432,14 +15572,6 @@
             "date": "2026-08-24",
             "sha": "518513a520fde76d",
             "rel": "4.2 Health & Lifescience/HL-039/Ethical_Frameworks_RAISE-U_template_fixed.pptx"
-          },
-          {
-            "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
-            "ext": "docx",
-            "kb": 238,
-            "date": "2026-08-05",
-            "sha": "17e757258a13e6db",
-            "rel": "4.2 Health & Lifescience/HL-039/Reviewer-Checklist-template-V3.0-July-2026.docx"
           },
           {
             "name": "Learning-Outcomes-Reviewer-Checklist.docx",
@@ -15996,10 +16128,42 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 4,
+        "count": 6,
         "has": true,
-        "newest": "2026-08-26",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "Reviewer-Checklist-template-V3.0-July-2026_2nd.docx",
+            "ext": "docx",
+            "kb": 202,
+            "date": "2026-08-31",
+            "sha": "016e44b85af50dcf",
+            "rel": "4.2 Health & Lifescience/HL-049/Reviewer-Checklist-template-V3.0-July-2026_2nd.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist_2nd.docx",
+            "ext": "docx",
+            "kb": 210,
+            "date": "2026-08-31",
+            "sha": "eb6a4ae519847493",
+            "rel": "4.2 Health & Lifescience/HL-049/Learning-Outcomes-Reviewer-Checklist_2nd.docx"
+          },
+          {
+            "name": "LE HL049.pptx",
+            "ext": "pptx",
+            "kb": 363,
+            "date": "2026-08-28",
+            "sha": "ff2bd2a6ed267f40",
+            "rel": "4.2 Health & Lifescience/HL-049/LE HL049.pptx"
+          },
+          {
+            "name": "LE HL049.pdf",
+            "ext": "pdf",
+            "kb": 77,
+            "date": "2026-08-28",
+            "sha": "93694e18fc3768b1",
+            "rel": "4.2 Health & Lifescience/HL-049/LE HL049.pdf"
+          },
           {
             "name": "Reviewer-Checklist-template-V3.0-July-2026.docx",
             "ext": "docx",
@@ -16015,22 +16179,6 @@
             "date": "2026-08-26",
             "sha": "92de0a035cbfa91b",
             "rel": "4.2 Health & Lifescience/HL-049/Learning-Outcomes-Reviewer-Checklist.docx"
-          },
-          {
-            "name": "LE HL049.pptx",
-            "ext": "pptx",
-            "kb": 360,
-            "date": "2026-08-24",
-            "sha": "84fa9b44c3521957",
-            "rel": "4.2 Health & Lifescience/HL-049/LE HL049.pptx"
-          },
-          {
-            "name": "LE HL049.pdf",
-            "ext": "pdf",
-            "kb": 76,
-            "date": "2026-08-24",
-            "sha": "97ac12cf3f57a249",
-            "rel": "4.2 Health & Lifescience/HL-049/LE HL049.pdf"
           }
         ],
         "folder": "HL-049"
@@ -16861,23 +17009,23 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-08-24",
+        "newest": "2026-08-28",
         "files": [
-          {
-            "name": "LE HL064.pdf",
-            "ext": "pdf",
-            "kb": 101,
-            "date": "2026-08-24",
-            "sha": "a2eadc95550a04c0",
-            "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pdf"
-          },
           {
             "name": "LE HL064.pptx",
             "ext": "pptx",
             "kb": 367,
-            "date": "2026-08-24",
-            "sha": "06ab4ef8064c8450",
+            "date": "2026-08-28",
+            "sha": "01e17857964ecece",
             "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pptx"
+          },
+          {
+            "name": "LE HL064.pdf",
+            "ext": "pdf",
+            "kb": 100,
+            "date": "2026-08-28",
+            "sha": "1b4472aa9b630d9c",
+            "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pdf"
           }
         ],
         "folder": "HL-064"
@@ -16971,10 +17119,26 @@
       "review_done": true,
       "review_note": "Material reviewed 26 Aug 2026 (deck + plan doc + Forcefield handout). June ask answered: the lesson is now genuinely AI-specific, and the fear taxonomy (slide 28) and the patient-facing chatbot liability point (slide 46) are the best AI-specific content in the Health track; the apply outcome now has a real exercise. Fix before teaching: psychological safety is attributed to Carl Rogers 1954, but the team construct is Schein & Bennis 1965 -> Kahn 1990 -> Edmondson 1999 (Edmondson does not cite Rogers); the NBER figure is 18% rising to an expected 22%, and at that rate it argues against the urgency framing it is used for; the 83% Agile stat is Wolpers/Age-of-Product, not Scrum.org, and 55% spend 10% or less. Citation fixes: Talebi not Taheli; Three Dimensions belongs to Interaction Associates not Keogh Weed; AI for Care is Dept of Health + HSE. Still open from June: model drift/monitoring, validation-to-adoption gap, explainability. Housekeeping: three different sets of outcomes, placeholders in the plan doc, ~9 blank slides.",
       "materials": {
-        "count": 3,
+        "count": 5,
         "has": true,
-        "newest": "2026-08-25",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "lessonplanHL065_ChangeLeadershipinHealthcareV2.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-08-31",
+            "sha": "5fc43c21abf66e7f",
+            "rel": "4.2 Health & Lifescience/HL-065/lessonplanHL065_ChangeLeadershipinHealthcareV2.docx"
+          },
+          {
+            "name": "HL-065_V2.pptx",
+            "ext": "pptx",
+            "kb": 4344,
+            "date": "2026-08-31",
+            "sha": "e0223417fb5693d3",
+            "rel": "4.2 Health & Lifescience/HL-065/HL-065_V2.pptx"
+          },
           {
             "name": "HL-065_DRAFT.pptx",
             "ext": "pptx",
@@ -17231,10 +17395,35 @@
       "review_done": true,
       "review_note": "Incomplete across most sections, needs a development pass before it is classroom-ready: no student prep, no materials yet, a thin six-term keyword list, no timing or rubric. Plus design fixes: the Lecture type clashes with the demonstrate/simulate/deploy outcomes; outcomes 3 (integration) and 5 (limitations) have no content behind them; the example tools (Heidi/Freed/Nabla/Ada) skew point-of-care. Direction is right, but this is a fuller draft, not fine-tuning.",
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-28",
+        "files": [
+          {
+            "name": "Microsoft-Responsible-AI-Impact-Assessment-Template.pdf",
+            "ext": "pdf",
+            "kb": 503,
+            "date": "2026-08-28",
+            "sha": "cc9561df2fe88b90",
+            "rel": "4.2 Health & Lifescience/HL-068/Microsoft-Responsible-AI-Impact-Assessment-Template.pdf"
+          },
+          {
+            "name": "lessonplan_FromClinictoCommunity.docx",
+            "ext": "docx",
+            "kb": 30,
+            "date": "2026-08-28",
+            "sha": "5bf82bbd60c471cb",
+            "rel": "4.2 Health & Lifescience/HL-068/lessonplan_FromClinictoCommunity.docx"
+          },
+          {
+            "name": "HL-068_DRAFT.pptx",
+            "ext": "pptx",
+            "kb": 4066,
+            "date": "2026-08-28",
+            "sha": "dfab8c8f213e1227",
+            "rel": "4.2 Health & Lifescience/HL-068/HL-068_DRAFT.pptx"
+          }
+        ],
         "folder": "HL-068"
       },
       "lesson_plan": {
@@ -17298,7 +17487,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -19722,7 +19911,7 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Not started",
+      "status": "Materials in progress",
       "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Hennadii Korzhov",
@@ -19733,10 +19922,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-30",
+        "files": [
+          {
+            "name": "MC_009_Hypothesis testing_Lecture_reviewed.pptx",
+            "ext": "pptx",
+            "kb": 7065,
+            "date": "2026-08-30",
+            "sha": "e1fe370961cd7980",
+            "rel": "4.3 Media & Culture/MC-009/MC_009_Hypothesis testing_Lecture_reviewed.pptx"
+          }
+        ],
         "folder": "MC-009"
       },
       "lesson_plan": {
@@ -19764,7 +19962,7 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Not started",
+      "status": "Materials in progress",
       "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Hennadii Korzhov",
@@ -19775,10 +19973,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-30",
+        "files": [
+          {
+            "name": "MC_010_Bivariate_Analysis_Lecture_reviewed.pptx",
+            "ext": "pptx",
+            "kb": 6515,
+            "date": "2026-08-30",
+            "sha": "e3a37b7f05f2c0e6",
+            "rel": "4.3 Media & Culture/MC-010/MC_010_Bivariate_Analysis_Lecture_reviewed.pptx"
+          }
+        ],
         "folder": "MC-010"
       },
       "lesson_plan": {
@@ -19806,7 +20013,7 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm",
-      "status": "Not started",
+      "status": "Materials in progress",
       "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Hennadii Korzhov",
@@ -19817,10 +20024,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-30",
+        "files": [
+          {
+            "name": "MC_011_Bivariate_Analysis_Practice_reviewed.pptx",
+            "ext": "pptx",
+            "kb": 4833,
+            "date": "2026-08-30",
+            "sha": "00b413c8aa357592",
+            "rel": "4.3 Media & Culture/MC-011/MC_011_Bivariate_Analysis_Practice_reviewed.pptx"
+          }
+        ],
         "folder": "MC-011"
       },
       "lesson_plan": {
@@ -19859,10 +20075,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-30",
+        "files": [
+          {
+            "name": "MC_012_Regression_Analysis_Lecture_reviewed.pptx",
+            "ext": "pptx",
+            "kb": 6381,
+            "date": "2026-08-30",
+            "sha": "4b773616aec2041b",
+            "rel": "4.3 Media & Culture/MC-012/MC_012_Regression_Analysis_Lecture_reviewed.pptx"
+          }
+        ],
         "folder": "MC-012"
       },
       "lesson_plan": {
@@ -19890,7 +20115,7 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Not started",
+      "status": "Materials in progress",
       "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "KPI · Hennadii Korzhov",
@@ -19901,10 +20126,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-08-30",
+        "files": [
+          {
+            "name": "MC_013_Regression_Analysis_Practice_reviewed.pptx",
+            "ext": "pptx",
+            "kb": 4834,
+            "date": "2026-08-30",
+            "sha": "07dd01b3213f7eb0",
+            "rel": "4.3 Media & Culture/MC-013/MC_013_Regression_Analysis_Practice_reviewed.pptx"
+          }
+        ],
         "folder": "MC-013"
       },
       "lesson_plan": {
@@ -23842,10 +24076,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "MF-01_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 215,
+            "date": "2026-08-31",
+            "sha": "fb21dc81b46a8909",
+            "rel": "4.5 Management & Finance/MF-01/MF-01_Second_Author_Review.docx"
+          },
           {
             "name": "MF-01 Basic concepts & Creating Effective Prompts.pdf",
             "ext": "pdf",
@@ -23894,10 +24136,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "MF-02_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 214,
+            "date": "2026-08-31",
+            "sha": "786ed44a5c793a6e",
+            "rel": "4.5 Management & Finance/MF-02/MF-02_Second_Author_Review.docx"
+          },
           {
             "name": "MF-02 Language Model Settings.pdf",
             "ext": "pdf",
@@ -23946,10 +24196,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "MF-03_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 215,
+            "date": "2026-08-31",
+            "sha": "d62357a6024528e4",
+            "rel": "4.5 Management & Finance/MF-03/MF-03_Second_Author_Review.docx"
+          },
           {
             "name": "MF-03 Model customization.pdf",
             "ext": "pdf",
@@ -23998,10 +24256,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "MF-04_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 216,
+            "date": "2026-08-31",
+            "sha": "8165d16367f8cf7a",
+            "rel": "4.5 Management & Finance/MF-04/MF-04_Second_Author_Review.docx"
+          },
           {
             "name": "MF-04 Prompting Principles for Analysts.pdf",
             "ext": "pdf",
@@ -24050,10 +24316,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "MF-05_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 216,
+            "date": "2026-08-31",
+            "sha": "8fc3109e94e74d1d",
+            "rel": "4.5 Management & Finance/MF-05/MF-05_Second_Author_Review.docx"
+          },
           {
             "name": "MF-05 Prompt Applications.pdf",
             "ext": "pdf",
@@ -24102,10 +24376,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "MF-06_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 216,
+            "date": "2026-08-31",
+            "sha": "f5f87336e466b03d",
+            "rel": "4.5 Management & Finance/MF-06/MF-06_Second_Author_Review.docx"
+          },
           {
             "name": "MF-06 Ethical Prompting.pdf",
             "ext": "pdf",
@@ -24240,10 +24522,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "MF-09_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 216,
+            "date": "2026-08-31",
+            "sha": "a1159f1ae709bfbe",
+            "rel": "4.5 Management & Finance/MF-09/MF-09_Second_Author_Review.docx"
+          },
           {
             "name": "MF-09 Data Flows.pdf",
             "ext": "pdf",
@@ -24292,10 +24582,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-09-01",
         "files": [
+          {
+            "name": "MF-10_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 216,
+            "date": "2026-09-01",
+            "sha": "afd2b5f9cd81e76b",
+            "rel": "4.5 Management & Finance/MF-10/MF-10_Second_Author_Review.docx"
+          },
           {
             "name": "MF-10 data connections & bias.pdf",
             "ext": "pdf",
@@ -24344,10 +24642,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-09-01",
         "files": [
+          {
+            "name": "MF-11_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 216,
+            "date": "2026-09-01",
+            "sha": "0e21d8d7d1ad7b73",
+            "rel": "4.5 Management & Finance/MF-11/MF-11_Second_Author_Review.docx"
+          },
           {
             "name": "MF-11 Data Integration.pdf",
             "ext": "pdf",
@@ -24396,10 +24702,18 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-09-01",
         "files": [
+          {
+            "name": "MF-12_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 216,
+            "date": "2026-09-01",
+            "sha": "894ef3a2e9a60837",
+            "rel": "4.5 Management & Finance/MF-12/MF-12_Second_Author_Review.docx"
+          },
           {
             "name": "MF-12 Data Readiness.pdf",
             "ext": "pdf",
@@ -24450,14 +24764,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-06-10",
+        "newest": "2026-08-31",
         "files": [
           {
             "name": "MF-13 - s.pdf",
             "ext": "pdf",
-            "kb": 658,
-            "date": "2026-06-10",
-            "sha": "9eb2b256048ed955",
+            "kb": 773,
+            "date": "2026-08-31",
+            "sha": "cd81e0586644c7da",
             "rel": "4.5 Management & Finance/MF-13/MF-13 - s.pdf"
           }
         ],
@@ -26171,23 +26485,23 @@
       "materials": {
         "count": 2,
         "has": true,
-        "newest": "2026-08-24",
+        "newest": "2026-08-28",
         "files": [
-          {
-            "name": "LE HL064.pdf",
-            "ext": "pdf",
-            "kb": 101,
-            "date": "2026-08-24",
-            "sha": "a2eadc95550a04c0",
-            "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pdf"
-          },
           {
             "name": "LE HL064.pptx",
             "ext": "pptx",
             "kb": 367,
-            "date": "2026-08-24",
-            "sha": "06ab4ef8064c8450",
+            "date": "2026-08-28",
+            "sha": "01e17857964ecece",
             "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pptx"
+          },
+          {
+            "name": "LE HL064.pdf",
+            "ext": "pdf",
+            "kb": 100,
+            "date": "2026-08-28",
+            "sha": "1b4472aa9b630d9c",
+            "rel": "4.2 Health & Lifescience/HL-064/LE HL064.pdf"
           }
         ],
         "folder": "HL-064"
@@ -26281,10 +26595,26 @@
       "review_done": true,
       "review_note": "Material reviewed 26 Aug 2026 (deck + plan doc + Forcefield handout). June ask answered: the lesson is now genuinely AI-specific, and the fear taxonomy (slide 28) and the patient-facing chatbot liability point (slide 46) are the best AI-specific content in the Health track; the apply outcome now has a real exercise. Fix before teaching: psychological safety is attributed to Carl Rogers 1954, but the team construct is Schein & Bennis 1965 -> Kahn 1990 -> Edmondson 1999 (Edmondson does not cite Rogers); the NBER figure is 18% rising to an expected 22%, and at that rate it argues against the urgency framing it is used for; the 83% Agile stat is Wolpers/Age-of-Product, not Scrum.org, and 55% spend 10% or less. Citation fixes: Talebi not Taheli; Three Dimensions belongs to Interaction Associates not Keogh Weed; AI for Care is Dept of Health + HSE. Still open from June: model drift/monitoring, validation-to-adoption gap, explainability. Housekeeping: three different sets of outcomes, placeholders in the plan doc, ~9 blank slides.",
       "materials": {
-        "count": 3,
+        "count": 5,
         "has": true,
-        "newest": "2026-08-25",
+        "newest": "2026-08-31",
         "files": [
+          {
+            "name": "lessonplanHL065_ChangeLeadershipinHealthcareV2.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-08-31",
+            "sha": "5fc43c21abf66e7f",
+            "rel": "4.2 Health & Lifescience/HL-065/lessonplanHL065_ChangeLeadershipinHealthcareV2.docx"
+          },
+          {
+            "name": "HL-065_V2.pptx",
+            "ext": "pptx",
+            "kb": 4344,
+            "date": "2026-08-31",
+            "sha": "e0223417fb5693d3",
+            "rel": "4.2 Health & Lifescience/HL-065/HL-065_V2.pptx"
+          },
           {
             "name": "HL-065_DRAFT.pptx",
             "ext": "pptx",
@@ -26498,10 +26828,35 @@
       "review_done": true,
       "review_note": "Incomplete across most sections, needs a development pass before it is classroom-ready: no student prep, no materials yet, a thin six-term keyword list, no timing or rubric. Plus design fixes: the Lecture type clashes with the demonstrate/simulate/deploy outcomes; outcomes 3 (integration) and 5 (limitations) have no content behind them; the example tools (Heidi/Freed/Nabla/Ada) skew point-of-care. Direction is right, but this is a fuller draft, not fine-tuning.",
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-08-28",
+        "files": [
+          {
+            "name": "Microsoft-Responsible-AI-Impact-Assessment-Template.pdf",
+            "ext": "pdf",
+            "kb": 503,
+            "date": "2026-08-28",
+            "sha": "cc9561df2fe88b90",
+            "rel": "4.2 Health & Lifescience/HL-068/Microsoft-Responsible-AI-Impact-Assessment-Template.pdf"
+          },
+          {
+            "name": "lessonplan_FromClinictoCommunity.docx",
+            "ext": "docx",
+            "kb": 30,
+            "date": "2026-08-28",
+            "sha": "5bf82bbd60c471cb",
+            "rel": "4.2 Health & Lifescience/HL-068/lessonplan_FromClinictoCommunity.docx"
+          },
+          {
+            "name": "HL-068_DRAFT.pptx",
+            "ext": "pptx",
+            "kb": 4066,
+            "date": "2026-08-28",
+            "sha": "dfab8c8f213e1227",
+            "rel": "4.2 Health & Lifescience/HL-068/HL-068_DRAFT.pptx"
+          }
+        ],
         "folder": "HL-068"
       },
       "lesson_plan": {
@@ -26565,7 +26920,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
