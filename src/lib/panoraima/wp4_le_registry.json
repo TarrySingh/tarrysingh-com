@@ -2,9 +2,16 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-03T15:40:05.545921+00:00",
-  "refreshed_at": "2026-09-03T15:40:05.545921+00:00",
+  "generated_at": "2026-09-04T13:02:27.839926+00:00",
+  "refreshed_at": "2026-09-04T13:02:27.839926+00:00",
   "refresh_history": [
+    {
+      "at": "2026-09-04T13:02:27.839926+00:00",
+      "wiki_captured": "2026-09-04T13:01:17.171Z",
+      "sharepoint_generated": "2026-09-04T15:02:27.659896Z",
+      "realai_total": 56,
+      "reviewed": 41
+    },
     {
       "at": "2026-09-03T15:40:05.545921+00:00",
       "wiki_captured": "2026-08-26T17:18:36.976Z",
@@ -53,23 +60,16 @@
       "sharepoint_generated": "2026-07-18T16:52:42.847282Z",
       "realai_total": 56,
       "reviewed": 38
-    },
-    {
-      "at": "2026-07-14T10:26:26.387000+00:00",
-      "wiki_captured": "2026-07-14T10:23:47.406Z",
-      "sharepoint_generated": "2026-07-14T12:26:26.323140Z",
-      "realai_total": 56,
-      "reviewed": 38
     }
   ],
   "data_sources": {
     "wiki": {
       "status": "live",
-      "captured_at": "2026-08-26T17:18:36.976Z",
+      "captured_at": "2026-09-04T13:01:17.171Z",
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-09-03T17:40:05.296466Z",
+      "generated_at": "2026-09-04T15:02:27.659896Z",
       "counts": {
         "codes_total": 497,
         "with_materials": 157,
@@ -89,10 +89,10 @@
       "Media": 89
     },
     "by_status": {
-      "In development": 189,
-      "Status not set": 65,
-      "In review": 138,
-      "Materials in progress": 44
+      "In development": 183,
+      "Status not set": 63,
+      "In review": 135,
+      "Materials in progress": 55
     },
     "with_materials": 157,
     "materials_pending": 279,
@@ -111,8 +111,8 @@
       "reviewed": 41,
       "by_status": {
         "In development": 15,
-        "In review": 38,
-        "Materials in progress": 2,
+        "In review": 37,
+        "Materials in progress": 3,
         "Not started": 1
       },
       "needs_action": 26,
@@ -925,7 +925,7 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "2027-01-01",
-      "author": "TUD",
+      "author": "TUD · Na Li",
       "coauthor": "SU · Ioannis Patias",
       "reviewer": "",
       "off_wiki": false,
@@ -5609,8 +5609,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU",
       "coauthor": "BME · Béla Pataki",
@@ -6784,7 +6784,7 @@
       "status": "In development",
       "wiki_status": "Learning materials: development",
       "due_date": "",
-      "author": "KPI, Kukhta Myroslava",
+      "author": "KPI · Kukhta Myroslava",
       "coauthor": "- · -",
       "reviewer": "",
       "off_wiki": false,
@@ -6829,13 +6829,13 @@
       "code": "H-222",
       "track": "Horizontal",
       "title": "H-222 GDPR & Data Minimization in Ops",
-      "lesson_type": "MISSING",
-      "duration": "",
+      "lesson_type": "Lecture",
+      "duration": "60 mins",
       "job_role": "Any",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
-      "author": "SU",
+      "author": "SU · Albena Antonova",
       "coauthor": "L&C?",
       "reviewer": "",
       "off_wiki": false,
@@ -7879,7 +7879,7 @@
       "duration": "60",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Béla Pataki",
       "coauthor": "UNINA · Stefano Marrone",
@@ -9915,8 +9915,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Ioannis Patias",
       "coauthor": "BME · András Gézsi",
@@ -9967,8 +9967,8 @@
       "lesson_type": "Tutorial",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Ioannis Patias",
       "coauthor": "BME · András Gézsi",
@@ -10019,8 +10019,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Ioannis Patias",
       "coauthor": "BME · András Gézsi",
@@ -10071,8 +10071,8 @@
       "lesson_type": "Tutorial",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Ioannis Patias",
       "coauthor": "BME · András Gézsi",
@@ -10730,7 +10730,7 @@
       "track": "Horizontal",
       "title": "HC-201 Vulnerable groups and AI safety",
       "lesson_type": "Lecture",
-      "duration": "45",
+      "duration": "90",
       "job_role": "Any",
       "status": "In review",
       "wiki_status": "Lesson plan: review",
@@ -10842,8 +10842,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Edit Tomasovszky",
       "coauthor": "HAW · Michael Gille",
@@ -10937,10 +10937,26 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-09-01",
+        "newest": "2026-09-04",
         "files": [
+          {
+            "name": "Review of HC-207.docx",
+            "ext": "docx",
+            "kb": 26,
+            "date": "2026-09-04",
+            "sha": "32636ec604b2e926",
+            "rel": "4.1 Horizontal/HC-207/Review of HC-207.docx"
+          },
+          {
+            "name": "GDPR Fundamentals.pptx",
+            "ext": "pptx",
+            "kb": 419,
+            "date": "2026-09-04",
+            "sha": "688db50f2f1ec03e",
+            "rel": "4.1 Horizontal/HC-207/GDPR Fundamentals.pptx"
+          },
           {
             "name": "GDPR Appendix I.docx",
             "ext": "docx",
@@ -10948,14 +10964,6 @@
             "date": "2026-09-01",
             "sha": "d9b1cb025fdbc1d2",
             "rel": "4.1 Horizontal/HC-207/GDPR Appendix I.docx"
-          },
-          {
-            "name": "GDPR Fundamentals.pptx",
-            "ext": "pptx",
-            "kb": 425,
-            "date": "2026-09-01",
-            "sha": "6bc60538d795920d",
-            "rel": "4.1 Horizontal/HC-207/GDPR Fundamentals.pptx"
           }
         ],
         "folder": "HC-207"
@@ -14454,8 +14462,8 @@
       "lesson_type": "Case study",
       "duration": "180",
       "job_role": "All three roles",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "TUD · Musfira Jilani",
       "coauthor": "HAW · Ahmad Khalidi",
@@ -14734,7 +14742,7 @@
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "Sofia University · Kalinka Kaloyanova",
+      "author": "SU · Kalinka Kaloyanova",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "QTICS · Ákos Molnár",
       "off_wiki": false,
@@ -15475,10 +15483,10 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Governance and Researcher",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
-      "author": "HAW",
+      "author": "HAW · Ahmad Khalidi",
       "coauthor": "All Partners",
       "reviewer": "QTICS · Ákos Molnár",
       "off_wiki": false,
@@ -15620,7 +15628,7 @@
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "West Attica · Anna Mavromanoli",
+      "author": "UNIWA · Anna Mavromanoli",
       "coauthor": "",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
@@ -16003,8 +16011,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Practitioner",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "author": "TUD · Na Li",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
@@ -16014,10 +16022,18 @@
       "review_done": true,
       "review_note": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-07-23",
+        "newest": "2026-09-03",
         "files": [
+          {
+            "name": "HL-048_final.pptx",
+            "ext": "pptx",
+            "kb": 5159,
+            "date": "2026-09-03",
+            "sha": "db75f8d03e35d273",
+            "rel": "4.2 Health & Lifescience/HL-048/HL-048_final.pptx"
+          },
           {
             "name": "HL-048_firstdraft_updating.pptx",
             "ext": "pptx",
@@ -16053,9 +16069,9 @@
         },
         {
           "name": "Management information",
-          "len": 756,
+          "len": 745,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nReady for pilot\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
         },
         {
           "name": "Expected preparation",
@@ -16518,7 +16534,7 @@
       "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME",
-      "coauthor": "West Attica",
+      "coauthor": "UNIWA",
       "reviewer": "QTICS · Katalin Jakab Tauberne",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -17385,7 +17401,7 @@
       "duration": "120",
       "job_role": "All three roles",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "TUD · Mary Hendrick",
       "coauthor": "UNINA",
@@ -17442,9 +17458,9 @@
         },
         {
           "name": "Management information",
-          "len": 962,
+          "len": 969,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\tThe students can explain the concept of AI Powered healthcare platforms connecting multiple stakeholder.\n-\tThe students can describe key AI healthcare applications from clinic to community \n-\tThe student can describe the Integration of clinical AI workflow automation with existing healthcare information systems\n-\tThe students can demonstrate an example of clinical workflow integration.\n-\tThe students can evaluate benefits and limitations of an AI solution for healthcare example in a community setting simulation.\nLearning Events to be completed before:\nNone.\nKeywords:\nAI Healthcare Platform, AI Healthcare Applications, Stakeholders, Co-ordinated Care Delivery,  Clinical Workflow  AI Integration, Care Outcomes.,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\n-\tThe students can explain the concept of AI Powered healthcare platforms connecting multiple stakeholder.\n-\tThe students can describe key AI healthcare applications from clinic to community \n-\tThe student can describe the Integration of clinical AI workflow automation with existing healthcare information systems\n-\tThe students can demonstrate an example of clinical workflow integration.\n-\tThe students can evaluate benefits and limitations of an AI solution for healthcare example in a community setting simulation.\nLearning Events to be completed before:\nNone.\nKeywords:\nAI Healthcare Platform, AI Healthcare Applications, Stakeholders, Co-ordinated Care Delivery,  Clinical Workflow  AI Integration, Care Outcomes.,"
         },
         {
           "name": "Expected preparation",
@@ -17684,7 +17700,7 @@
       "duration": "45",
       "job_role": "Any",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "HAW · Michael Gille",
       "coauthor": "KPI",
@@ -17913,11 +17929,11 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "EU AI Compliance Specialist, AI Privacy Officer",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "author": "BME · Edit Tomasovszky",
-      "coauthor": "T.B.D",
+      "coauthor": "KPI",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -18131,9 +18147,9 @@
         },
         {
           "name": "Expected preparation",
-          "len": 137,
+          "len": 191,
           "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+          "text": "Obligatory for students:\nAI Act articles 6, 17, 50 and 72\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nAI Act articles 6, 17, 50 and 72"
         },
         {
           "name": "Acknowledgements, thanks",
@@ -18149,9 +18165,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 548,
+          "len": 586,
           "empty": false,
-          "text": "This event should combine a mini-lecture, a small group exercise and a discussion.\nStructure the learning event in three parts:\nPart 1.: mini-lecture\nOverview of policies, processes, and controls used to manage AI risks\nOverview of lifecycle stages\nRisk classification and risk mitigation\nGovernance mechanisms across the lifecycle\nRegulatory compliance\nTrust and accountability\nPart 2.: group exercise\nMap governance responsibilities to lifecycle stages\nPart 3.: discussion\nReview of key concepts\nImportance of continuous compliance and monitoring"
+          "text": "This event should combine a mini-lecture, a small group exercise and a discussion.\nStructure the learning event in three parts:\nPart 1.: mini-lecture - 60 minutes\nOverview of policies, processes, and controls used to manage AI risks\nOverview of lifecycle stages\nRisk classification and risk mitigation\nGovernance mechanisms across the lifecycle\nRegulatory compliance\nTrust and accountability\nPart 2.: group exercise - 20 minutes\nMap governance responsibilities to lifecycle stages\nPart 3.: discussion -10 minutes\nReview of key concepts\nImportance of continuous compliance and monitoring"
         }
       ],
       "realai": {
@@ -21461,7 +21477,7 @@
     {
       "code": "MC-047",
       "track": "Media",
-      "title": "MC-047 Controversy Mapping with AI: Actors, Positions, Arguments",
+      "title": "MC-047 Controversy Mapping: Actors, Positions, Arguments",
       "lesson_type": "Theory",
       "duration": "45",
       "job_role": "Conflict",
@@ -21505,7 +21521,7 @@
         "has_meta_block": false,
         "date": ""
       },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-047_Controversy_Mapping_with_AI:_Actors,_Positions,_Arguments",
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-047_Controversy_Mapping:_Actors,_Positions,_Arguments",
       "wiki_sections": null,
       "realai": {
         "involved": false,
@@ -24065,8 +24081,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
       "coauthor": "TUD · Dariusz",
@@ -24125,8 +24141,8 @@
       "lesson_type": "Practical",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
       "coauthor": "TUD",
@@ -24185,8 +24201,8 @@
       "lesson_type": "Practical",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
       "coauthor": "TUD",
@@ -24245,8 +24261,8 @@
       "lesson_type": "Practical",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
       "coauthor": "TUD",
@@ -24305,8 +24321,8 @@
       "lesson_type": "Practical",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
       "coauthor": "TUD",
@@ -24365,8 +24381,8 @@
       "lesson_type": "Practical",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
       "coauthor": "TUD",
@@ -24511,8 +24527,8 @@
       "lesson_type": "Tutorial",
       "duration": "120",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
       "coauthor": "TUD",
@@ -24571,8 +24587,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
       "coauthor": "TUD",
@@ -24631,8 +24647,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "2026-09-01",
       "author": "SU · Ioannis Patias",
       "coauthor": "TUD",
@@ -26158,120 +26174,6 @@
       ]
     },
     {
-      "code": "HL-048",
-      "track": "Health",
-      "title": "HL-048 Communication of AI output to patients and peers",
-      "lesson_type": "Lecture",
-      "duration": "90",
-      "job_role": "Practitioner",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
-      "due_date": "",
-      "author": "TUD · Na Li",
-      "coauthor": "HU · Bas van Gestel / René van der Ploeg",
-      "reviewer": "RealAI · Monira Majhabeen, Tannistha Maiti",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": true,
-      "review_note": null,
-      "materials": {
-        "count": 2,
-        "has": true,
-        "newest": "2026-07-23",
-        "files": [
-          {
-            "name": "HL-048_firstdraft_updating.pptx",
-            "ext": "pptx",
-            "kb": 5159,
-            "date": "2026-07-23",
-            "sha": "45739a2d032f491a",
-            "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
-          },
-          {
-            "name": "lessonplan_HL-048-TUD.docx",
-            "ext": "docx",
-            "kb": 41,
-            "date": "2026-07-11",
-            "sha": "04d64d1a6245ce88",
-            "rel": "4.2 Health & Lifescience/HL-048/lessonplan_HL-048-TUD.docx"
-          }
-        ],
-        "folder": "HL-048"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/HL-048_Communication_of_AI_output_to_patients_and_peers",
-      "wiki_sections": [
-        {
-          "name": "Administrative information",
-          "len": 167,
-          "empty": false,
-          "text": "Title\n\nCommunication of AI output to patients and peers\n\n\nCODE\n\nHL-048\n\n\nDuration\n\n90\n\n\nTrack\n\nHealth\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nPractitioner"
-        },
-        {
-          "name": "Management information",
-          "len": 756,
-          "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
-        },
-        {
-          "name": "Expected preparation",
-          "len": 137,
-          "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "HL-048\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 0,
-          "empty": true,
-          "text": ""
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": false,
-        "outcomes_present": true,
-        "materials_uploaded": true,
-        "wiki_missing": [
-          "Instructions for teachers (detailed)"
-        ],
-        "author_needs": [],
-        "ready_to_review": false
-      },
-      "sources": [
-        "wiki",
-        "materials"
-      ]
-    },
-    {
       "code": "HL-051",
       "track": "Health",
       "title": "HL-051 Hands-On with AI-Enhanced Clinical Tools",
@@ -26818,7 +26720,7 @@
       "duration": "120",
       "job_role": "All three roles",
       "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "TUD · Mary Hendrick",
       "coauthor": "UNINA",
@@ -26875,9 +26777,9 @@
         },
         {
           "name": "Management information",
-          "len": 962,
+          "len": 969,
           "empty": false,
-          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\n-\tThe students can explain the concept of AI Powered healthcare platforms connecting multiple stakeholder.\n-\tThe students can describe key AI healthcare applications from clinic to community \n-\tThe student can describe the Integration of clinical AI workflow automation with existing healthcare information systems\n-\tThe students can demonstrate an example of clinical workflow integration.\n-\tThe students can evaluate benefits and limitations of an AI solution for healthcare example in a community setting simulation.\nLearning Events to be completed before:\nNone.\nKeywords:\nAI Healthcare Platform, AI Healthcare Applications, Stakeholders, Co-ordinated Care Delivery,  Clinical Workflow  AI Integration, Care Outcomes.,"
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nMary Hendrick\n\n\nAuthor Organisation 2\n\nUNINA\n\n\nAuthor Person 2\n\n\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\n\nStatus\n\nLearning materials: review\nLearning Outcomes:\n-\tThe students can explain the concept of AI Powered healthcare platforms connecting multiple stakeholder.\n-\tThe students can describe key AI healthcare applications from clinic to community \n-\tThe student can describe the Integration of clinical AI workflow automation with existing healthcare information systems\n-\tThe students can demonstrate an example of clinical workflow integration.\n-\tThe students can evaluate benefits and limitations of an AI solution for healthcare example in a community setting simulation.\nLearning Events to be completed before:\nNone.\nKeywords:\nAI Healthcare Platform, AI Healthcare Applications, Stakeholders, Co-ordinated Care Delivery,  Clinical Workflow  AI Integration, Care Outcomes.,"
         },
         {
           "name": "Expected preparation",
@@ -27261,9 +27163,9 @@
         },
         {
           "name": "Expected preparation",
-          "len": 137,
+          "len": 191,
           "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+          "text": "Obligatory for students:\nAI Act articles 6, 17, 50 and 72\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nAI Act articles 6, 17, 50 and 72"
         },
         {
           "name": "Acknowledgements, thanks",
@@ -27279,9 +27181,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 548,
+          "len": 586,
           "empty": false,
-          "text": "This event should combine a mini-lecture, a small group exercise and a discussion.\nStructure the learning event in three parts:\nPart 1.: mini-lecture\nOverview of policies, processes, and controls used to manage AI risks\nOverview of lifecycle stages\nRisk classification and risk mitigation\nGovernance mechanisms across the lifecycle\nRegulatory compliance\nTrust and accountability\nPart 2.: group exercise\nMap governance responsibilities to lifecycle stages\nPart 3.: discussion\nReview of key concepts\nImportance of continuous compliance and monitoring"
+          "text": "This event should combine a mini-lecture, a small group exercise and a discussion.\nStructure the learning event in three parts:\nPart 1.: mini-lecture - 60 minutes\nOverview of policies, processes, and controls used to manage AI risks\nOverview of lifecycle stages\nRisk classification and risk mitigation\nGovernance mechanisms across the lifecycle\nRegulatory compliance\nTrust and accountability\nPart 2.: group exercise - 20 minutes\nMap governance responsibilities to lifecycle stages\nPart 3.: discussion -10 minutes\nReview of key concepts\nImportance of continuous compliance and monitoring"
         }
       ],
       "realai": {
@@ -30357,6 +30259,128 @@
       "sources": [
         "wiki",
         "registry",
+        "materials"
+      ]
+    },
+    {
+      "code": "HL-048",
+      "track": "Health",
+      "title": "HL-048 Communication of AI output to patients and peers",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "Practitioner",
+      "status": "Materials in progress",
+      "wiki_status": "Ready for pilot",
+      "due_date": "",
+      "author": "TUD · Na Li",
+      "coauthor": "HU · Bas van Gestel / René van der Ploeg",
+      "reviewer": "RealAI · Monira Majhabeen, Tannistha Maiti",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": true,
+      "review_note": null,
+      "materials": {
+        "count": 3,
+        "has": true,
+        "newest": "2026-09-03",
+        "files": [
+          {
+            "name": "HL-048_final.pptx",
+            "ext": "pptx",
+            "kb": 5159,
+            "date": "2026-09-03",
+            "sha": "db75f8d03e35d273",
+            "rel": "4.2 Health & Lifescience/HL-048/HL-048_final.pptx"
+          },
+          {
+            "name": "HL-048_firstdraft_updating.pptx",
+            "ext": "pptx",
+            "kb": 5159,
+            "date": "2026-07-23",
+            "sha": "45739a2d032f491a",
+            "rel": "4.2 Health & Lifescience/HL-048/HL-048_firstdraft_updating.pptx"
+          },
+          {
+            "name": "lessonplan_HL-048-TUD.docx",
+            "ext": "docx",
+            "kb": 41,
+            "date": "2026-07-11",
+            "sha": "04d64d1a6245ce88",
+            "rel": "4.2 Health & Lifescience/HL-048/lessonplan_HL-048-TUD.docx"
+          }
+        ],
+        "folder": "HL-048"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/HL-048_Communication_of_AI_output_to_patients_and_peers",
+      "wiki_sections": [
+        {
+          "name": "Administrative information",
+          "len": 167,
+          "empty": false,
+          "text": "Title\n\nCommunication of AI output to patients and peers\n\n\nCODE\n\nHL-048\n\n\nDuration\n\n90\n\n\nTrack\n\nHealth\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nPractitioner"
+        },
+        {
+          "name": "Management information",
+          "len": 745,
+          "empty": false,
+          "text": "Author Organisation 1\n\nTUD\n\n\nAuthor Person 1\n\nNa Li\n\n\nAuthor Organisation 2\n\nHU\n\n\nAuthor Person 2\n\nBas van Gestel / René van der Ploeg\n\n\nReviewer Organisation\n\nRealAI\n\n\nReviewer Person\n\nMonira Majhabeen, Tannistha Maiti\n\n\nStatus\n\nReady for pilot\nLearning Outcomes:\nTranslate AI-generated outputs into plain, accessible language for patients and non-specialist peers.Evaluate AI outputs before communicating them in clinical or research settings.Apply ethical and professional responsibilities when disclosing AI involvement in clinical or research decisions\nLearning Events to be completed before:\nFeature ImportanceXAI on Images\nKeywords:\nconfidence/uncertainty communication, Faithfulness, local explanations, counterfactual explanations, HCI,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 137,
+          "empty": false,
+          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 80,
+          "empty": false,
+          "text": "HL-048\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 0,
+          "empty": true,
+          "text": ""
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": false,
+        "outcomes_present": true,
+        "materials_uploaded": true,
+        "wiki_missing": [
+          "Instructions for teachers (detailed)"
+        ],
+        "author_needs": [],
+        "ready_to_review": false
+      },
+      "sources": [
+        "wiki",
         "materials"
       ]
     },
