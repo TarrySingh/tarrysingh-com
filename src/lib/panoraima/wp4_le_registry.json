@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-04T13:02:27.839926+00:00",
-  "refreshed_at": "2026-09-04T13:02:27.839926+00:00",
+  "generated_at": "2026-09-04T13:33:31.368455+00:00",
+  "refreshed_at": "2026-09-04T13:33:31.368455+00:00",
   "refresh_history": [
     {
       "at": "2026-09-04T13:02:27.839926+00:00",
@@ -17133,7 +17133,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Material reviewed 26 Aug 2026 (deck + plan doc + Forcefield handout). June ask answered: the lesson is now genuinely AI-specific, and the fear taxonomy (slide 28) and the patient-facing chatbot liability point (slide 46) are the best AI-specific content in the Health track; the apply outcome now has a real exercise. Fix before teaching: psychological safety is attributed to Carl Rogers 1954, but the team construct is Schein & Bennis 1965 -> Kahn 1990 -> Edmondson 1999 (Edmondson does not cite Rogers); the NBER figure is 18% rising to an expected 22%, and at that rate it argues against the urgency framing it is used for; the 83% Agile stat is Wolpers/Age-of-Product, not Scrum.org, and 55% spend 10% or less. Citation fixes: Talebi not Taheli; Three Dimensions belongs to Interaction Associates not Keogh Weed; AI for Care is Dept of Health + HSE. Still open from June: model drift/monitoring, validation-to-adoption gap, explainability. Housekeeping: three different sets of outcomes, placeholders in the plan doc, ~9 blank slides.",
+      "review_note": "V2 reviewed 4 Sep 2026. Mary Hendrick acknowledged our 26 Aug review on 28 Aug and shipped V2 on 31 Aug. Nearly everything fixed: Carl Rogers attribution removed, the NBER 22% stat dropped entirely (it argued against its own urgency framing), the Agile stat correctly re-attributed to Wolpers/Age-of-Product with 289 respondents and the 55% figure, and Talebi/Interaction Associates/Dept of Health citations corrected. Two June asks also delivered and delivered well: model drift now has its own section framed through staff impact (gaslighting effect, alert fatigue, liability fear), and explainability appears as XAI on the trust slide. Plan doc placeholders fixed and its outcomes now match the deck. STILL OPEN: the wiki page is now the stale copy (old outcomes with two \"explore\" verbs, run-on keywords, job role still \"All three roles\") and should be updated from the V2 doc; the two overclaims on the psychological safety slide (\"single most critical factor\", \"100% secure\"); the doc timing table still has content against only 3 of 10 slots; validation-to-adoption gap still absent; \"Integation\" typo.",
       "materials": {
         "count": 5,
         "has": true,
@@ -26495,7 +26495,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Material reviewed 26 Aug 2026 (deck + plan doc + Forcefield handout). June ask answered: the lesson is now genuinely AI-specific, and the fear taxonomy (slide 28) and the patient-facing chatbot liability point (slide 46) are the best AI-specific content in the Health track; the apply outcome now has a real exercise. Fix before teaching: psychological safety is attributed to Carl Rogers 1954, but the team construct is Schein & Bennis 1965 -> Kahn 1990 -> Edmondson 1999 (Edmondson does not cite Rogers); the NBER figure is 18% rising to an expected 22%, and at that rate it argues against the urgency framing it is used for; the 83% Agile stat is Wolpers/Age-of-Product, not Scrum.org, and 55% spend 10% or less. Citation fixes: Talebi not Taheli; Three Dimensions belongs to Interaction Associates not Keogh Weed; AI for Care is Dept of Health + HSE. Still open from June: model drift/monitoring, validation-to-adoption gap, explainability. Housekeeping: three different sets of outcomes, placeholders in the plan doc, ~9 blank slides.",
+      "review_note": "V2 reviewed 4 Sep 2026. Mary Hendrick acknowledged our 26 Aug review on 28 Aug and shipped V2 on 31 Aug. Nearly everything fixed: Carl Rogers attribution removed, the NBER 22% stat dropped entirely (it argued against its own urgency framing), the Agile stat correctly re-attributed to Wolpers/Age-of-Product with 289 respondents and the 55% figure, and Talebi/Interaction Associates/Dept of Health citations corrected. Two June asks also delivered and delivered well: model drift now has its own section framed through staff impact (gaslighting effect, alert fatigue, liability fear), and explainability appears as XAI on the trust slide. Plan doc placeholders fixed and its outcomes now match the deck. STILL OPEN: the wiki page is now the stale copy (old outcomes with two \"explore\" verbs, run-on keywords, job role still \"All three roles\") and should be updated from the V2 doc; the two overclaims on the psychological safety slide (\"single most critical factor\", \"100% secure\"); the doc timing table still has content against only 3 of 10 slots; validation-to-adoption gap still absent; \"Integation\" typo.",
       "materials": {
         "count": 5,
         "has": true,
