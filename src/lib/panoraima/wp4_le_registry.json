@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-04T13:33:31.368455+00:00",
-  "refreshed_at": "2026-09-04T13:33:31.368455+00:00",
+  "generated_at": "2026-09-04T13:54:56.465529+00:00",
+  "refreshed_at": "2026-09-04T13:54:56.465529+00:00",
   "refresh_history": [
     {
       "at": "2026-09-04T13:02:27.839926+00:00",
@@ -17409,7 +17409,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Incomplete across most sections, needs a development pass before it is classroom-ready: no student prep, no materials yet, a thin six-term keyword list, no timing or rubric. Plus design fixes: the Lecture type clashes with the demonstrate/simulate/deploy outcomes; outcomes 3 (integration) and 5 (limitations) have no content behind them; the example tools (Heidi/Freed/Nabla/Ada) skew point-of-care. Direction is right, but this is a fuller draft, not fine-tuning.",
+      "review_note": "Material reviewed 4 Sep 2026 (deck 63 slides + plan doc + MS Responsible AI template). NOT signed off; needs a revision pass. Big improvement on the July plan review: the two empty outcomes (integration, limitations) now have real content and the point-of-care tool skew is gone. Strongest element is the diabetes/CGM case study run twice through five stakeholder lenses (benefits and weaknesses), with an honest weaknesses pass and a properly specified costed activity on slide 49. EU sourcing verified good (EHDS Reg (EU) 2025/327, both EC studies, TEF-Health, FHIR/DICOM all check out). MUST FIX: slide 46 AI Act claim is wrong - \"effective 2024-2026\" is not when high-risk applies, a medical-device CDSS is high-risk via Art 6(1)/Annex I (MDR item 11, Rule 11) not Annex III, the date is 2 Aug 2028, and Art 43(3) folds AI Act requirements into the existing MDR notified-body assessment; two slides (5, 42) carry speaker notes copy-pasted from HL-065; NAM citation should be Matheny/Thadaney Israni/Ahmed/Whicher (editors) 2022 \"Artificial Intelligence in Health Care\"; 12 of 63 slides have no body text and six are wholly empty; reference list has titles in URL fields, a duplicated entry and vendor blogs doing primary-source work; US framing (Epic/Cerner/HIPAA/FDA) dominates an EU curriculum. Still open from July: student prep still \"None.\", no rubric for either activity, Lecture type vs a demonstrate outcome plus two team activities. Plan doc needs the same clean-up HL-065 had.",
       "materials": {
         "count": 3,
         "has": true,
@@ -26728,7 +26728,7 @@
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": true,
-      "review_note": "Incomplete across most sections, needs a development pass before it is classroom-ready: no student prep, no materials yet, a thin six-term keyword list, no timing or rubric. Plus design fixes: the Lecture type clashes with the demonstrate/simulate/deploy outcomes; outcomes 3 (integration) and 5 (limitations) have no content behind them; the example tools (Heidi/Freed/Nabla/Ada) skew point-of-care. Direction is right, but this is a fuller draft, not fine-tuning.",
+      "review_note": "Material reviewed 4 Sep 2026 (deck 63 slides + plan doc + MS Responsible AI template). NOT signed off; needs a revision pass. Big improvement on the July plan review: the two empty outcomes (integration, limitations) now have real content and the point-of-care tool skew is gone. Strongest element is the diabetes/CGM case study run twice through five stakeholder lenses (benefits and weaknesses), with an honest weaknesses pass and a properly specified costed activity on slide 49. EU sourcing verified good (EHDS Reg (EU) 2025/327, both EC studies, TEF-Health, FHIR/DICOM all check out). MUST FIX: slide 46 AI Act claim is wrong - \"effective 2024-2026\" is not when high-risk applies, a medical-device CDSS is high-risk via Art 6(1)/Annex I (MDR item 11, Rule 11) not Annex III, the date is 2 Aug 2028, and Art 43(3) folds AI Act requirements into the existing MDR notified-body assessment; two slides (5, 42) carry speaker notes copy-pasted from HL-065; NAM citation should be Matheny/Thadaney Israni/Ahmed/Whicher (editors) 2022 \"Artificial Intelligence in Health Care\"; 12 of 63 slides have no body text and six are wholly empty; reference list has titles in URL fields, a duplicated entry and vendor blogs doing primary-source work; US framing (Epic/Cerner/HIPAA/FDA) dominates an EU curriculum. Still open from July: student prep still \"None.\", no rubric for either activity, Lecture type vs a demonstrate outcome plus two team activities. Plan doc needs the same clean-up HL-065 had.",
       "materials": {
         "count": 3,
         "has": true,
