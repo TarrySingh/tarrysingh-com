@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-05T11:26:29.247859+00:00",
-  "refreshed_at": "2026-09-05T11:26:29.247859+00:00",
+  "generated_at": "2026-09-05T11:27:46.963410+00:00",
+  "refreshed_at": "2026-09-05T11:27:46.963410+00:00",
   "refresh_history": [
     {
       "at": "2026-09-05T11:26:29.247859+00:00",
@@ -89,9 +89,9 @@
       "Media": 89
     },
     "by_status": {
-      "In development": 181,
+      "In development": 180,
       "Status not set": 63,
-      "In review": 137,
+      "In review": 138,
       "Materials in progress": 55
     },
     "with_materials": 157,
@@ -110,8 +110,8 @@
       "reviewer": 86,
       "reviewed": 41,
       "by_status": {
-        "In development": 30,
-        "In review": 53,
+        "In development": 29,
+        "In review": 54,
         "Status not set": 2,
         "Materials in progress": 4,
         "Not started": 1
@@ -25785,10 +25785,10 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Conflict",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "Real AI",
+      "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "BME · Dorottya Egres",
       "reviewer": "TUD",
       "off_wiki": false,
@@ -25818,15 +25818,15 @@
         },
         {
           "name": "Management information",
-          "len": 566,
+          "len": 1245,
           "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nTUD\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nStudents will be able to explain and analyze argument mining approaches by identifying claims, premises, and basic reasoning structures in large-scale textual datasets, in order to map argumentative patterns and conflict landscapes in data-driven contexts.\nLearning Events to be completed before:\nNone.\nKeywords:\nArgument Mining,NLP,Logic,Reasoning,"
+          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nTUD\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nBy the end of this learning event, the student will be able to:Explain what argument mining is and how it differs from sentiment analysis and opinion mining.Identify claims, premises and argumentative discourse units in a passage of text, and describe the support and attack relations between them.Compare the main structural models of argument, including the Toulmin model, and explain why they have to be modified before they survive contact with real text.Interpret reported argument mining results critically, distinguishing span identification from technique classification and in-domain from cross-domain performance.Assess the limits of automated argument analysis for mapping conflict and disinformation at scale, including annotator disagreement and the difference between rhetorical structure and truth.\nLearning Events to be completed before:\nNone.\nKeywords:\nArgument Mining,NLP,Logic,Reasoning,Claims and Premises,Toulmin Model,Propaganda Technique Detection,Discourse Analysis,Disinformation,"
         },
         {
           "name": "Expected preparation",
-          "len": 137,
+          "len": 1860,
           "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
+          "text": "Obligatory for students:\nRead the opening two sections of Lawrence, J. and Reed, C. (2019), \"Argument Mining: A Survey\", Computational Linguistics 45(4), 765 to 818, up to the end of the discussion of argument structure. Students should arrive able to state in one sentence what the field claims to do.\nOptional for students:\nBring one short piece of contested public text, for example a newspaper opinion column, a party manifesto paragraph or a public consultation response, that the student is willing to have analysed in class.\nReferences and background for students:\nToulmin, S. (1958), The Uses of Argument, Cambridge University Press.Peldszus, A. and Stede, M. (2013), \"From Argument Diagrams to Argumentation Mining in Texts: A Survey\", International Journal of Cognitive Informatics and Natural Intelligence 7(1).Stab, C. and Gurevych, I. (2017), \"Parsing Argumentation Structures in Persuasive Essays\", Computational Linguistics 43(3), 619 to 659.Habernal, I. and Gurevych, I. (2017), \"Argumentation Mining in User-Generated Web Discourse\", Computational Linguistics 43(1), 125 to 179.Da San Martino, G. et al. (2020), \"SemEval-2020 Task 11: Detection of Propaganda Techniques in News Articles\", Proceedings of SemEval-2020, 1377 to 1414.\nRecommended for teachers:\nTwo things are worth checking before delivery, because both move. First, the performance figures quoted in part 4 are from named shared tasks and papers; check whether a more recent shared task has superseded them. Second, the Digital Services Act material in part 6 is live regulation: the Article 40 delegated act and the DSA Data Access Portal are recent, and enforcement decisions are still arriving. Teachers should also prepare one worked example of their own, ideally a short argumentative passage in the local language, because the corpora discussed are overwhelmingly English."
         },
         {
           "name": "Acknowledgements, thanks",
@@ -25836,15 +25836,15 @@
         },
         {
           "name": "Lesson materials",
-          "len": 80,
+          "len": 279,
           "empty": false,
-          "text": "MC-102\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+          "text": "Slides, one annotated worked example of a short argumentative text, and the per-class results table from SemEval-2020 Task 11 for the closing discussion. Materials are made available under CC BY-NC-SA 4.0.\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
         },
         {
           "name": "Instructions for teachers",
-          "len": 0,
-          "empty": true,
-          "text": ""
+          "len": 5970,
+          "empty": false,
+          "text": "This is a lecture, but it is built around one honest through-line rather than a tour of methods: argument mining promises to tell us why people hold positions and not merely what they think, and the measured state of the field is that it can do this reliably only in narrow, well-behaved settings. Teach both halves. Students in a conflict or media analysis role will be sold tools built on this technology, and the useful skill is reading the claims critically.\n0 to 10 minutes. What the field claims. Open with the definition from Lawrence and Reed (2019): argument mining is the automatic identification and extraction of the structure of inference and reasoning expressed as arguments presented in natural language. Contrast it with sentiment and opinion mining, which tell you what opinions are expressed but not why they are held. That gap is the whole motivation. Ask the class where knowing why would change a decision they might actually make.\n10 to 25 minutes. The anatomy of an argument. Introduce the argumentative discourse unit as the minimal unit of analysis (Peldszus and Stede, 2013), and note that it is not necessarily the same as a clause or a sentence. Cover claim and premise, then the relation types: convergent, where premises support a conclusion independently; linked, where they only work together; divergent; and serial. Introduce the distinction between rebutting an argument, which attacks its conclusion, and undercutting it, which attacks the inference from premise to conclusion without denying the premise. Work one short passage on the board.\n25 to 40 minutes. Toulmin, and what happens to him in practice. Present the six components of the Toulmin (1958) model: claim, data or grounds, warrant, backing, qualifier and rebuttal. Then give students the finding that makes this lecture worth attending: when Habernal and Gurevych (2017) applied the model to real web discourse, they had to delete the qualifier because authors do not state the degree of cogency, and delete the warrant because it is almost never made explicit, a point Toulmin himself conceded when he wrote that data are appealed to explicitly and warrants implicitly. They then had to add a component, refutation, for authors attacking their own anticipated objections. The teaching point is general: an elegant theory of argument is not automatically a usable annotation scheme.\n40 to 55 minutes. The pipeline, and why there is not one. Sketch the conventional sequence of segmentation, component classification, relation identification and completion of implicit units. Then explain why the ordering is contested: whether a sentence is argumentative depends on its context, so Carstens and Toni proposed classifying relations first and treating units as argumentative only if a relation connects them. Saint-Dizier found that roughly three quarters of cases needed contextual knowledge to identify arguments correctly. This is why joint models that learn several subtasks at once have largely replaced strict pipelines.\n55 to 70 minutes. What the machines actually achieve. This section should use real numbers rather than adjectives. On propaganda technique detection, the best system at SemEval-2020 Task 11 reached an F1 of about 51.6 on identifying which spans of text carry a technique, and about 62.1 on classifying which of fourteen techniques a given span uses. Show the per-class breakdown: loaded language and name calling are recognised well, above 75, while whataboutism, straw man, red herring and bandwagon sit near 28. Then give the multilingual result: at SemEval-2023 Task 3 the best English system reached a macro F1 of about 0.13 across the fine-grained persuasion techniques, which is close to failure on the long tail. Ask what a dashboard built on a 28 percent detector would do to an analyst's judgement.\n70 to 80 minutes. The large language model question. Fine-tuned open-weight models now match or beat older systems on some subtasks, but read the fine print with the cl"
         }
       ],
       "realai": {
@@ -25860,17 +25860,14 @@
       },
       "completeness": {
         "is_author": true,
-        "instructions_written": false,
+        "instructions_written": true,
         "outcomes_present": true,
         "materials_uploaded": false,
-        "wiki_missing": [
-          "Instructions for teachers (detailed)"
-        ],
+        "wiki_missing": [],
         "author_needs": [
-          "Instructions for teachers (detailed)",
           "Upload materials (SharePoint)"
         ],
-        "ready_to_review": false
+        "ready_to_review": true
       },
       "sources": [
         "wiki",
@@ -30333,6 +30330,102 @@
       ]
     },
     {
+      "code": "MC-102",
+      "track": "Media",
+      "title": "MC-102 Argument Mining: Extracting Logic From Big Data",
+      "lesson_type": "Lecture",
+      "duration": "90",
+      "job_role": "Conflict",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
+      "due_date": "",
+      "author": "Real AI · Tarry Singh, Tannistha Maiti",
+      "coauthor": "BME · Dorottya Egres",
+      "reviewer": "TUD",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": false,
+      "review_note": null,
+      "materials": {
+        "count": 0,
+        "has": false,
+        "newest": "",
+        "files": [],
+        "folder": "MC-102"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/MC-102_Argument_Mining:_Extracting_Logic_From_Big_Data",
+      "wiki_sections": [
+        {
+          "name": "Administrative information",
+          "len": 161,
+          "empty": false,
+          "text": "Title\n\nArgument Mining: Extracting Logic From Big Data\n\n\nCODE\n\nMC-102\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nConflict"
+        },
+        {
+          "name": "Management information",
+          "len": 1245,
+          "empty": false,
+          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nTUD\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: review\nLearning Outcomes:\nBy the end of this learning event, the student will be able to:Explain what argument mining is and how it differs from sentiment analysis and opinion mining.Identify claims, premises and argumentative discourse units in a passage of text, and describe the support and attack relations between them.Compare the main structural models of argument, including the Toulmin model, and explain why they have to be modified before they survive contact with real text.Interpret reported argument mining results critically, distinguishing span identification from technique classification and in-domain from cross-domain performance.Assess the limits of automated argument analysis for mapping conflict and disinformation at scale, including annotator disagreement and the difference between rhetorical structure and truth.\nLearning Events to be completed before:\nNone.\nKeywords:\nArgument Mining,NLP,Logic,Reasoning,Claims and Premises,Toulmin Model,Propaganda Technique Detection,Discourse Analysis,Disinformation,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 1860,
+          "empty": false,
+          "text": "Obligatory for students:\nRead the opening two sections of Lawrence, J. and Reed, C. (2019), \"Argument Mining: A Survey\", Computational Linguistics 45(4), 765 to 818, up to the end of the discussion of argument structure. Students should arrive able to state in one sentence what the field claims to do.\nOptional for students:\nBring one short piece of contested public text, for example a newspaper opinion column, a party manifesto paragraph or a public consultation response, that the student is willing to have analysed in class.\nReferences and background for students:\nToulmin, S. (1958), The Uses of Argument, Cambridge University Press.Peldszus, A. and Stede, M. (2013), \"From Argument Diagrams to Argumentation Mining in Texts: A Survey\", International Journal of Cognitive Informatics and Natural Intelligence 7(1).Stab, C. and Gurevych, I. (2017), \"Parsing Argumentation Structures in Persuasive Essays\", Computational Linguistics 43(3), 619 to 659.Habernal, I. and Gurevych, I. (2017), \"Argumentation Mining in User-Generated Web Discourse\", Computational Linguistics 43(1), 125 to 179.Da San Martino, G. et al. (2020), \"SemEval-2020 Task 11: Detection of Propaganda Techniques in News Articles\", Proceedings of SemEval-2020, 1377 to 1414.\nRecommended for teachers:\nTwo things are worth checking before delivery, because both move. First, the performance figures quoted in part 4 are from named shared tasks and papers; check whether a more recent shared task has superseded them. Second, the Digital Services Act material in part 6 is live regulation: the Article 40 delegated act and the DSA Data Access Portal are recent, and enforcement decisions are still arriving. Teachers should also prepare one worked example of their own, ideally a short argumentative passage in the local language, because the corpora discussed are overwhelmingly English."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 279,
+          "empty": false,
+          "text": "Slides, one annotated worked example of a short argumentative text, and the per-class results table from SemEval-2020 Task 11 for the closing discussion. Materials are made available under CC BY-NC-SA 4.0.\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 5970,
+          "empty": false,
+          "text": "This is a lecture, but it is built around one honest through-line rather than a tour of methods: argument mining promises to tell us why people hold positions and not merely what they think, and the measured state of the field is that it can do this reliably only in narrow, well-behaved settings. Teach both halves. Students in a conflict or media analysis role will be sold tools built on this technology, and the useful skill is reading the claims critically.\n0 to 10 minutes. What the field claims. Open with the definition from Lawrence and Reed (2019): argument mining is the automatic identification and extraction of the structure of inference and reasoning expressed as arguments presented in natural language. Contrast it with sentiment and opinion mining, which tell you what opinions are expressed but not why they are held. That gap is the whole motivation. Ask the class where knowing why would change a decision they might actually make.\n10 to 25 minutes. The anatomy of an argument. Introduce the argumentative discourse unit as the minimal unit of analysis (Peldszus and Stede, 2013), and note that it is not necessarily the same as a clause or a sentence. Cover claim and premise, then the relation types: convergent, where premises support a conclusion independently; linked, where they only work together; divergent; and serial. Introduce the distinction between rebutting an argument, which attacks its conclusion, and undercutting it, which attacks the inference from premise to conclusion without denying the premise. Work one short passage on the board.\n25 to 40 minutes. Toulmin, and what happens to him in practice. Present the six components of the Toulmin (1958) model: claim, data or grounds, warrant, backing, qualifier and rebuttal. Then give students the finding that makes this lecture worth attending: when Habernal and Gurevych (2017) applied the model to real web discourse, they had to delete the qualifier because authors do not state the degree of cogency, and delete the warrant because it is almost never made explicit, a point Toulmin himself conceded when he wrote that data are appealed to explicitly and warrants implicitly. They then had to add a component, refutation, for authors attacking their own anticipated objections. The teaching point is general: an elegant theory of argument is not automatically a usable annotation scheme.\n40 to 55 minutes. The pipeline, and why there is not one. Sketch the conventional sequence of segmentation, component classification, relation identification and completion of implicit units. Then explain why the ordering is contested: whether a sentence is argumentative depends on its context, so Carstens and Toni proposed classifying relations first and treating units as argumentative only if a relation connects them. Saint-Dizier found that roughly three quarters of cases needed contextual knowledge to identify arguments correctly. This is why joint models that learn several subtasks at once have largely replaced strict pipelines.\n55 to 70 minutes. What the machines actually achieve. This section should use real numbers rather than adjectives. On propaganda technique detection, the best system at SemEval-2020 Task 11 reached an F1 of about 51.6 on identifying which spans of text carry a technique, and about 62.1 on classifying which of fourteen techniques a given span uses. Show the per-class breakdown: loaded language and name calling are recognised well, above 75, while whataboutism, straw man, red herring and bandwagon sit near 28. Then give the multilingual result: at SemEval-2023 Task 3 the best English system reached a macro F1 of about 0.13 across the fine-grained persuasion techniques, which is close to failure on the long tail. Ask what a dashboard built on a 28 percent detector would do to an analyst's judgement.\n70 to 80 minutes. The large language model question. Fine-tuned open-weight models now match or beat older systems on some subtasks, but read the fine print with the cl"
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "author",
+            "recipients": [
+              "tarry.singh@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": true,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": false,
+        "wiki_missing": [],
+        "author_needs": [
+          "Upload materials (SharePoint)"
+        ],
+        "ready_to_review": true
+      },
+      "sources": [
+        "wiki",
+        "materials"
+      ]
+    },
+    {
       "code": "LC-002",
       "track": "Law & Compliance",
       "title": "LC-002 Managing Third-Party Vendor Risk",
@@ -34699,105 +34792,6 @@
       "sources": [
         "wiki",
         "lesson_plan",
-        "materials"
-      ]
-    },
-    {
-      "code": "MC-102",
-      "track": "Media",
-      "title": "MC-102 Argument Mining: Extracting Logic From Big Data",
-      "lesson_type": "Lecture",
-      "duration": "90",
-      "job_role": "Conflict",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
-      "due_date": "",
-      "author": "Real AI",
-      "coauthor": "BME · Dorottya Egres",
-      "reviewer": "TUD",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": false,
-      "review_note": null,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "MC-102"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/MC-102_Argument_Mining:_Extracting_Logic_From_Big_Data",
-      "wiki_sections": [
-        {
-          "name": "Administrative information",
-          "len": 161,
-          "empty": false,
-          "text": "Title\n\nArgument Mining: Extracting Logic From Big Data\n\n\nCODE\n\nMC-102\n\n\nDuration\n\n90\n\n\nTrack\n\nMedia\n\n\nLesson Type\n\nLecture\n\n\nSelf-standing\n\n\n\n\nJob role\n\nConflict"
-        },
-        {
-          "name": "Management information",
-          "len": 566,
-          "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\n\nAuthor Person 1\n\n\n\n\nAuthor Organisation 2\n\nBME\n\n\nAuthor Person 2\n\nDorottya Egres\n\n\nReviewer Organisation\n\nTUD\n\n\nReviewer Person\n\n\n\n\nStatus\n\nLesson plan: development\nLearning Outcomes:\nStudents will be able to explain and analyze argument mining approaches by identifying claims, premises, and basic reasoning structures in large-scale textual datasets, in order to map argumentative patterns and conflict landscapes in data-driven contexts.\nLearning Events to be completed before:\nNone.\nKeywords:\nArgument Mining,NLP,Logic,Reasoning,"
-        },
-        {
-          "name": "Expected preparation",
-          "len": 137,
-          "empty": false,
-          "text": "Obligatory for students:\nNone.\nOptional for students:\nNone.\nReferences and background for students:\nNone.\nRecommended for teachers:\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "MC-102\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 0,
-          "empty": true,
-          "text": ""
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "author",
-            "recipients": [
-              "tarry.singh@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": true,
-        "instructions_written": false,
-        "outcomes_present": true,
-        "materials_uploaded": false,
-        "wiki_missing": [
-          "Instructions for teachers (detailed)"
-        ],
-        "author_needs": [
-          "Instructions for teachers (detailed)",
-          "Upload materials (SharePoint)"
-        ],
-        "ready_to_review": false
-      },
-      "sources": [
-        "wiki",
         "materials"
       ]
     },
