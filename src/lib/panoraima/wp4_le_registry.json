@@ -2,9 +2,16 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-05T11:27:46.963410+00:00",
-  "refreshed_at": "2026-09-05T11:27:46.963410+00:00",
+  "generated_at": "2026-09-05T21:30:02.347913+00:00",
+  "refreshed_at": "2026-09-05T21:30:02.347913+00:00",
   "refresh_history": [
+    {
+      "at": "2026-09-05T21:30:02.347913+00:00",
+      "wiki_captured": "2026-09-04T21:51:19.465Z",
+      "sharepoint_generated": "2026-09-05T23:30:01.885091Z",
+      "realai_total": 90,
+      "reviewed": 41
+    },
     {
       "at": "2026-09-05T11:26:29.247859+00:00",
       "wiki_captured": "2026-09-04T21:51:19.465Z",
@@ -53,13 +60,6 @@
       "sharepoint_generated": "2026-07-21T14:15:47.681664Z",
       "realai_total": 56,
       "reviewed": 38
-    },
-    {
-      "at": "2026-07-21T12:14:31.662492+00:00",
-      "wiki_captured": "2026-07-21T12:14:10.880Z",
-      "sharepoint_generated": "2026-07-21T14:14:31.607124Z",
-      "realai_total": 36,
-      "reviewed": 20
     }
   ],
   "data_sources": {
@@ -69,10 +69,10 @@
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-09-05T13:26:29.071090Z",
+      "generated_at": "2026-09-05T23:30:01.885091Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 157,
+        "with_materials": 160,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -94,12 +94,12 @@
       "In review": 138,
       "Materials in progress": 55
     },
-    "with_materials": 157,
-    "materials_pending": 279,
+    "with_materials": 160,
+    "materials_pending": 276,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 157,
-      "awaiting_material": 279,
+      "with_sharepoint_material": 160,
+      "awaiting_material": 276,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -117,7 +117,7 @@
         "Not started": 1
       },
       "needs_action": 60,
-      "author_todo": 4,
+      "author_todo": 1,
       "ready_to_review": 56
     }
   },
@@ -25604,10 +25604,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-05",
+        "files": [
+          {
+            "name": "MC-100.pptx",
+            "ext": "pptx",
+            "kb": 351,
+            "date": "2026-09-05",
+            "sha": "4d6243f6ade35f4a",
+            "rel": "4.3 Media & Culture/MC-100/MC-100.pptx"
+          }
+        ],
         "folder": "MC-100"
       },
       "lesson_plan": {
@@ -25670,11 +25679,9 @@
         "is_author": true,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
-        "author_needs": [
-          "Upload materials (SharePoint)"
-        ],
+        "author_needs": [],
         "ready_to_review": true
       },
       "sources": [
@@ -25700,10 +25707,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-05",
+        "files": [
+          {
+            "name": "MC-101.pptx",
+            "ext": "pptx",
+            "kb": 340,
+            "date": "2026-09-05",
+            "sha": "5bfe3e1b3112d38e",
+            "rel": "4.3 Media & Culture/MC-101/MC-101.pptx"
+          }
+        ],
         "folder": "MC-101"
       },
       "lesson_plan": {
@@ -25766,11 +25782,9 @@
         "is_author": true,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
-        "author_needs": [
-          "Upload materials (SharePoint)"
-        ],
+        "author_needs": [],
         "ready_to_review": true
       },
       "sources": [
@@ -25796,10 +25810,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-05",
+        "files": [
+          {
+            "name": "MC-102.pptx",
+            "ext": "pptx",
+            "kb": 369,
+            "date": "2026-09-05",
+            "sha": "75f493b799be2cb2",
+            "rel": "4.3 Media & Culture/MC-102/MC-102.pptx"
+          }
+        ],
         "folder": "MC-102"
       },
       "lesson_plan": {
@@ -25862,11 +25885,9 @@
         "is_author": true,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
-        "author_needs": [
-          "Upload materials (SharePoint)"
-        ],
+        "author_needs": [],
         "ready_to_review": true
       },
       "sources": [
@@ -30155,10 +30176,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-05",
+        "files": [
+          {
+            "name": "MC-100.pptx",
+            "ext": "pptx",
+            "kb": 351,
+            "date": "2026-09-05",
+            "sha": "4d6243f6ade35f4a",
+            "rel": "4.3 Media & Culture/MC-100/MC-100.pptx"
+          }
+        ],
         "folder": "MC-100"
       },
       "lesson_plan": {
@@ -30221,11 +30251,9 @@
         "is_author": true,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
-        "author_needs": [
-          "Upload materials (SharePoint)"
-        ],
+        "author_needs": [],
         "ready_to_review": true
       },
       "sources": [
@@ -30251,10 +30279,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-05",
+        "files": [
+          {
+            "name": "MC-101.pptx",
+            "ext": "pptx",
+            "kb": 340,
+            "date": "2026-09-05",
+            "sha": "5bfe3e1b3112d38e",
+            "rel": "4.3 Media & Culture/MC-101/MC-101.pptx"
+          }
+        ],
         "folder": "MC-101"
       },
       "lesson_plan": {
@@ -30317,11 +30354,9 @@
         "is_author": true,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
-        "author_needs": [
-          "Upload materials (SharePoint)"
-        ],
+        "author_needs": [],
         "ready_to_review": true
       },
       "sources": [
@@ -30347,10 +30382,19 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-05",
+        "files": [
+          {
+            "name": "MC-102.pptx",
+            "ext": "pptx",
+            "kb": 369,
+            "date": "2026-09-05",
+            "sha": "75f493b799be2cb2",
+            "rel": "4.3 Media & Culture/MC-102/MC-102.pptx"
+          }
+        ],
         "folder": "MC-102"
       },
       "lesson_plan": {
@@ -30413,11 +30457,9 @@
         "is_author": true,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
-        "author_needs": [
-          "Upload materials (SharePoint)"
-        ],
+        "author_needs": [],
         "ready_to_review": true
       },
       "sources": [
