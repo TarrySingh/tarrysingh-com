@@ -112,8 +112,9 @@ function CompletenessRow({
 }
 
 function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
-  const reviewed = !!le.review_done
-  const flagged = needsAction(le) && !reviewed
+  const revisionRequested = !!le.revision_requested
+  const reviewed = !!le.review_done && !revisionRequested
+  const flagged = (needsAction(le) && !reviewed && !revisionRequested) || revisionRequested
   const ss = statusStyle(le.status)
   const trackColor = TRACK_COLOR[le.track] ?? TRACK_COLOR["Unknown"]
   const role = columnRole(le, kind)
@@ -125,7 +126,7 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
       {(flagged || reviewed) && (
         <span
           className="absolute left-0 top-4 bottom-4 w-[2px] rounded-full"
-          style={{ background: reviewed ? "#2E6A4B" : RUST }}
+          style={{ background: reviewed ? "#2E6A4B" : revisionRequested ? "#B26A00" : RUST }}
           aria-hidden
         />
       )}
@@ -284,17 +285,18 @@ function BoardColumn({
 // Pill counts recomputed over an arbitrary slice of the board so they respond to
 // the track filter. Definitions mirror build_wp4_registry's summary.realai.
 function pillCounts(les: Wp4LE[]) {
-  let author = 0, reviewer = 0, needs = 0, authorTodo = 0, ready = 0, reviewed = 0
+  let author = 0, reviewer = 0, needs = 0, authorTodo = 0, ready = 0, reviewed = 0, revisionRequested = 0
   for (const le of les) {
     const c = le.completeness
     if (le.realai.roles.some(r => r.role === "reviewer")) reviewer++
     if (c?.is_author) author++
-    if (le.review_done) reviewed++
+    if (le.review_done && !le.revision_requested) reviewed++
+    if (le.revision_requested) revisionRequested++
     if (c && (c.author_needs.length > 0 || c.ready_to_review)) needs++
     if (c && c.author_needs.length > 0) authorTodo++
     if (c && !c.is_author && c.ready_to_review) ready++
   }
-  return { author, reviewer, needs, authorTodo, ready, reviewed }
+  return { author, reviewer, needs, authorTodo, ready, reviewed, revisionRequested }
 }
 
 // Reviewer inbox — the addresses an author must ping when material/plan is ready.
@@ -338,7 +340,9 @@ function buildReport(
   // Buckets, by who the ball is with.
   const authored = les.filter(le => le.completeness?.is_author)          // RealAI authors these
   const reviewer = les.filter(le => !le.completeness?.is_author)         // RealAI reviews these
-  const completed = reviewer.filter(le => le.review_done)
+  const completed = reviewer.filter(le => le.review_done && !le.revision_requested)
+  // Reviewed, but we asked for changes. The ball is with the author, not with us.
+  const revisionRequested = reviewer.filter(le => le.revision_requested)
   const waitingUs = reviewer.filter(le => !le.review_done && hasMaterial(le))
   const waitingAuthor = reviewer.filter(le => !le.review_done && !hasMaterial(le))
   const byCode = (a: Wp4LE, b: Wp4LE) => a.code.localeCompare(b.code)
@@ -362,6 +366,7 @@ function buildReport(
   L.push("SUMMARY")
   L.push(`RealAI is on ${les.length} Learning Event${les.length === 1 ? "" : "s"} in ${trackName}: ${counts.author} as author, ${counts.reviewer} as reviewer.`)
   L.push(`  Completed reviews (posted to the wiki): ${completed.length}`)
+  if (revisionRequested.length) L.push(`  Reviewed, revision requested (back with the author): ${revisionRequested.length}`)
   L.push(`  Waiting on RealAI to review (material is in): ${waitingUs.length}`)
   L.push(`  Waiting on the author (plan or material outstanding): ${waitingAuthor.length}`)
   if (authored.length) L.push(`  RealAI-authored (our own next step): ${authored.length}`)
@@ -375,6 +380,21 @@ function buildReport(
       L.push(`${le.code} — ${cleanTitle(le)}`)
       if (le.review_note) L.push(`    What we found: ${le.review_note}`)
       if (le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
+    }
+    L.push("")
+  }
+
+  if (revisionRequested.length) {
+    L.push(`REVIEWED — REVISION REQUESTED (${revisionRequested.length})`)
+    L.push("We have reviewed these and asked for changes. They are not closed, and the next")
+    L.push("move is the author's. Please make the changes and tell us when to re-review.")
+    for (const le of [...revisionRequested].sort(byCode)) {
+      L.push("")
+      L.push(`${le.code} — ${cleanTitle(le)}`)
+      if (le.author) L.push(`    Author: ${le.author}${le.coauthor ? ` · ${le.coauthor}` : ""}`)
+      if (le.review_note) L.push(`    What we asked for: ${le.review_note}`)
+      if (le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
+      L.push(`    Then: email ${REVIEW_INBOX} so RealAI can re-review.`)
     }
     L.push("")
   }
