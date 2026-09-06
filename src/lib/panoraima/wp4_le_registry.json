@@ -2,9 +2,17 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-06T07:50:24.206254+00:00",
-  "refreshed_at": "2026-09-06T07:50:24.206254+00:00",
+  "generated_at": "2026-09-06T08:14:11.125777+00:00",
+  "refreshed_at": "2026-09-06T08:14:11.125777+00:00",
   "refresh_history": [
+    {
+      "at": "2026-09-06T08:14:11.125777+00:00",
+      "wiki_captured": "2026-09-04T21:51:19.465Z",
+      "sharepoint_generated": "2026-09-06T10:14:10.950741Z",
+      "realai_total": 90,
+      "reviewed": 41,
+      "revision_requested": 1
+    },
     {
       "at": "2026-09-06T06:39:24.737151+00:00",
       "wiki_captured": "2026-09-04T21:51:19.465Z",
@@ -53,13 +61,6 @@
       "sharepoint_generated": "2026-08-24T18:15:38.933304Z",
       "realai_total": 56,
       "reviewed": 39
-    },
-    {
-      "at": "2026-08-12T15:01:19.979396+00:00",
-      "wiki_captured": "2026-08-12T15:00:26.330Z",
-      "sharepoint_generated": "2026-08-12T17:01:19.800869Z",
-      "realai_total": 56,
-      "reviewed": 38
     }
   ],
   "data_sources": {
@@ -69,7 +70,7 @@
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-09-06T08:39:24.257643Z",
+      "generated_at": "2026-09-06T10:14:10.950741Z",
       "counts": {
         "codes_total": 497,
         "with_materials": 161,
@@ -20419,25 +20420,25 @@
           {
             "name": "LC-019.pptx",
             "ext": "pptx",
-            "kb": 398,
+            "kb": 95,
             "date": "2026-09-06",
-            "sha": "ed53bf4033abc7ec",
+            "sha": "39289633df8c7306",
             "rel": "4.4 Law & Compliance/LC-019/LC-019.pptx"
           },
           {
             "name": "LC-019_Register_Template.xlsx",
             "ext": "xlsx",
-            "kb": 11,
+            "kb": 20,
             "date": "2026-09-06",
-            "sha": "9eacef3227a2bda2",
+            "sha": "f1696eb7e3d9792a",
             "rel": "4.4 Law & Compliance/LC-019/LC-019_Register_Template.xlsx"
           },
           {
             "name": "LC-019_Team_Scenarios.docx",
             "ext": "docx",
-            "kb": 38,
+            "kb": 48,
             "date": "2026-09-06",
-            "sha": "5e1e40293729d354",
+            "sha": "6b369983c4a107e8",
             "rel": "4.4 Law & Compliance/LC-019/LC-019_Team_Scenarios.docx"
           }
         ],
@@ -26042,9 +26043,9 @@
           {
             "name": "MC-100.pptx",
             "ext": "pptx",
-            "kb": 351,
+            "kb": 92,
             "date": "2026-09-06",
-            "sha": "538e689212b4bd4c",
+            "sha": "c2c9cef9577d5fd1",
             "rel": "4.3 Media & Culture/MC-100/MC-100.pptx"
           }
         ],
@@ -26146,9 +26147,9 @@
           {
             "name": "MC-101.pptx",
             "ext": "pptx",
-            "kb": 329,
+            "kb": 84,
             "date": "2026-09-06",
-            "sha": "cb61c02361f00bbc",
+            "sha": "09f0eccaabcbedbc",
             "rel": "4.3 Media & Culture/MC-101/MC-101.pptx"
           }
         ],
@@ -26243,16 +26244,40 @@
       "revision_requested": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 4,
         "has": true,
         "newest": "2026-09-06",
         "files": [
           {
+            "name": "MC-102_Annotation_Pack.xlsx",
+            "ext": "xlsx",
+            "kb": 28,
+            "date": "2026-09-06",
+            "sha": "e6a6b5bfec8c93fb",
+            "rel": "4.3 Media & Culture/MC-102/MC-102_Annotation_Pack.xlsx"
+          },
+          {
+            "name": "MC-102_Annotation_Brief.docx",
+            "ext": "docx",
+            "kb": 48,
+            "date": "2026-09-06",
+            "sha": "85573611fb9a2673",
+            "rel": "4.3 Media & Culture/MC-102/MC-102_Annotation_Brief.docx"
+          },
+          {
+            "name": "Argument mining corpus.docx",
+            "ext": "docx",
+            "kb": 66,
+            "date": "2026-09-06",
+            "sha": "ba1803d492654a37",
+            "rel": "4.3 Media & Culture/MC-102/Argument mining corpus.docx"
+          },
+          {
             "name": "MC-102.pptx",
             "ext": "pptx",
-            "kb": 369,
+            "kb": 380,
             "date": "2026-09-06",
-            "sha": "fc97e8be9de5da96",
+            "sha": "0d7506a76d32ddff",
             "rel": "4.3 Media & Culture/MC-102/MC-102.pptx"
           }
         ],
@@ -30667,9 +30692,9 @@
           {
             "name": "MC-100.pptx",
             "ext": "pptx",
-            "kb": 351,
+            "kb": 92,
             "date": "2026-09-06",
-            "sha": "538e689212b4bd4c",
+            "sha": "c2c9cef9577d5fd1",
             "rel": "4.3 Media & Culture/MC-100/MC-100.pptx"
           }
         ],
@@ -30771,9 +30796,9 @@
           {
             "name": "MC-101.pptx",
             "ext": "pptx",
-            "kb": 329,
+            "kb": 84,
             "date": "2026-09-06",
-            "sha": "cb61c02361f00bbc",
+            "sha": "09f0eccaabcbedbc",
             "rel": "4.3 Media & Culture/MC-101/MC-101.pptx"
           }
         ],
@@ -30868,16 +30893,40 @@
       "revision_requested": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 4,
         "has": true,
         "newest": "2026-09-06",
         "files": [
           {
+            "name": "MC-102_Annotation_Pack.xlsx",
+            "ext": "xlsx",
+            "kb": 28,
+            "date": "2026-09-06",
+            "sha": "e6a6b5bfec8c93fb",
+            "rel": "4.3 Media & Culture/MC-102/MC-102_Annotation_Pack.xlsx"
+          },
+          {
+            "name": "MC-102_Annotation_Brief.docx",
+            "ext": "docx",
+            "kb": 48,
+            "date": "2026-09-06",
+            "sha": "85573611fb9a2673",
+            "rel": "4.3 Media & Culture/MC-102/MC-102_Annotation_Brief.docx"
+          },
+          {
+            "name": "Argument mining corpus.docx",
+            "ext": "docx",
+            "kb": 66,
+            "date": "2026-09-06",
+            "sha": "ba1803d492654a37",
+            "rel": "4.3 Media & Culture/MC-102/Argument mining corpus.docx"
+          },
+          {
             "name": "MC-102.pptx",
             "ext": "pptx",
-            "kb": 369,
+            "kb": 380,
             "date": "2026-09-06",
-            "sha": "fc97e8be9de5da96",
+            "sha": "0d7506a76d32ddff",
             "rel": "4.3 Media & Culture/MC-102/MC-102.pptx"
           }
         ],
@@ -31363,25 +31412,25 @@
           {
             "name": "LC-019.pptx",
             "ext": "pptx",
-            "kb": 398,
+            "kb": 95,
             "date": "2026-09-06",
-            "sha": "ed53bf4033abc7ec",
+            "sha": "39289633df8c7306",
             "rel": "4.4 Law & Compliance/LC-019/LC-019.pptx"
           },
           {
             "name": "LC-019_Register_Template.xlsx",
             "ext": "xlsx",
-            "kb": 11,
+            "kb": 20,
             "date": "2026-09-06",
-            "sha": "9eacef3227a2bda2",
+            "sha": "f1696eb7e3d9792a",
             "rel": "4.4 Law & Compliance/LC-019/LC-019_Register_Template.xlsx"
           },
           {
             "name": "LC-019_Team_Scenarios.docx",
             "ext": "docx",
-            "kb": 38,
+            "kb": 48,
             "date": "2026-09-06",
-            "sha": "5e1e40293729d354",
+            "sha": "6b369983c4a107e8",
             "rel": "4.4 Law & Compliance/LC-019/LC-019_Team_Scenarios.docx"
           }
         ],
