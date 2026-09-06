@@ -14,14 +14,10 @@
     "blog:audit": "node scripts/blog/audit.mjs",
     "blog:promote": "node scripts/blog/promote.mjs",
     "blog:bake-nudge": "node scripts/blog/bake-nudge-card.mjs",
-    "blog:verify": "node scripts/verify-blog-mdx.mjs",
-    "blog:slop": "tsx scripts/scan-dispatch-slop.ts",
     "covers": "tsx scripts/plates/render-covers.ts",
     "reports:status:docx": "node scripts/reports/build-status-docx.mjs",
     "reports:uat-plan:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-plan.md",
-    "reports:uat-results:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-results.md",
-    "blog:sweep": "node scripts/live-slop-sweep.mjs",
-    "blog:today": "tsx scripts/check-latest-dispatch.ts"
+    "reports:uat-results:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-results.md"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.79.0",
@@ -63,6 +59,7 @@
     "@tiptap/extension-typography": "^3.23.4",
     "@tiptap/react": "^3.23.4",
     "@tiptap/starter-kit": "^3.23.4",
+    "@types/three": "^0.185.4",
     "@types/turndown": "^5.0.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -98,6 +95,7 @@
     "stripe": "^20.4.1",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.185.1",
     "turndown": "^7.2.4",
     "vaul": "^1.0.0",
     "zod": "^3.23.8"

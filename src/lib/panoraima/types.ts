@@ -993,3 +993,20 @@ export interface MC102Data {
   conditions: MC102Condition[]
   articles: MC102Article[]
 }
+
+export interface MC102Node {
+  uid: string; x: number; y: number; z: number
+  label: string; community: string; theme: string; themeIdx: number
+  t: number; article: number; headline: string; date: string; text: string
+}
+export interface MC102Edge { a: number; b: number; kind: string; scope: string; theme?: string }
+export interface MC102Graph {
+  meta: {
+    source: string; note: string
+    n_nodes: number; n_edges: number; n_local: number; n_cross: number
+    t0: number; t1: number; themes: string[]; communities: string[]
+  }
+  themeStats: { theme: string; gov: number; ngo: number; cross: number }[]
+  nodes: MC102Node[]
+  edges: MC102Edge[]
+}
