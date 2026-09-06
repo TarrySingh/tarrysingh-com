@@ -2,9 +2,16 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-05T21:30:02.347913+00:00",
-  "refreshed_at": "2026-09-05T21:30:02.347913+00:00",
+  "generated_at": "2026-09-06T06:39:24.737151+00:00",
+  "refreshed_at": "2026-09-06T06:39:24.737151+00:00",
   "refresh_history": [
+    {
+      "at": "2026-09-06T06:39:24.737151+00:00",
+      "wiki_captured": "2026-09-04T21:51:19.465Z",
+      "sharepoint_generated": "2026-09-06T08:39:24.257643Z",
+      "realai_total": 90,
+      "reviewed": 41
+    },
     {
       "at": "2026-09-05T21:30:02.347913+00:00",
       "wiki_captured": "2026-09-04T21:51:19.465Z",
@@ -53,13 +60,6 @@
       "sharepoint_generated": "2026-08-12T17:01:19.800869Z",
       "realai_total": 56,
       "reviewed": 38
-    },
-    {
-      "at": "2026-07-21T12:15:47.828982+00:00",
-      "wiki_captured": "2026-07-21T12:14:10.880Z",
-      "sharepoint_generated": "2026-07-21T14:15:47.681664Z",
-      "realai_total": 56,
-      "reviewed": 38
     }
   ],
   "data_sources": {
@@ -69,10 +69,10 @@
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-09-05T23:30:01.885091Z",
+      "generated_at": "2026-09-06T08:39:24.257643Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 160,
+        "with_materials": 161,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -94,12 +94,12 @@
       "In review": 138,
       "Materials in progress": 55
     },
-    "with_materials": 160,
-    "materials_pending": 276,
+    "with_materials": 161,
+    "materials_pending": 275,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 160,
-      "awaiting_material": 276,
+      "with_sharepoint_material": 161,
+      "awaiting_material": 275,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -117,7 +117,7 @@
         "Not started": 1
       },
       "needs_action": 60,
-      "author_todo": 1,
+      "author_todo": 0,
       "ready_to_review": 56
     }
   },
@@ -20110,10 +20110,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-09-06",
+        "files": [
+          {
+            "name": "LC-019.pptx",
+            "ext": "pptx",
+            "kb": 398,
+            "date": "2026-09-06",
+            "sha": "ed53bf4033abc7ec",
+            "rel": "4.4 Law & Compliance/LC-019/LC-019.pptx"
+          },
+          {
+            "name": "LC-019_Register_Template.xlsx",
+            "ext": "xlsx",
+            "kb": 11,
+            "date": "2026-09-06",
+            "sha": "9eacef3227a2bda2",
+            "rel": "4.4 Law & Compliance/LC-019/LC-019_Register_Template.xlsx"
+          },
+          {
+            "name": "LC-019_Team_Scenarios.docx",
+            "ext": "docx",
+            "kb": 38,
+            "date": "2026-09-06",
+            "sha": "5e1e40293729d354",
+            "rel": "4.4 Law & Compliance/LC-019/LC-019_Team_Scenarios.docx"
+          }
+        ],
         "folder": "LC-019"
       },
       "lesson_plan": {
@@ -20176,11 +20201,9 @@
         "is_author": true,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
-        "author_needs": [
-          "Upload materials (SharePoint)"
-        ],
+        "author_needs": [],
         "ready_to_review": true
       },
       "sources": [
@@ -25606,14 +25629,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-09-05",
+        "newest": "2026-09-06",
         "files": [
           {
             "name": "MC-100.pptx",
             "ext": "pptx",
             "kb": 351,
-            "date": "2026-09-05",
-            "sha": "4d6243f6ade35f4a",
+            "date": "2026-09-06",
+            "sha": "538e689212b4bd4c",
             "rel": "4.3 Media & Culture/MC-100/MC-100.pptx"
           }
         ],
@@ -25709,14 +25732,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-09-05",
+        "newest": "2026-09-06",
         "files": [
           {
             "name": "MC-101.pptx",
             "ext": "pptx",
-            "kb": 340,
-            "date": "2026-09-05",
-            "sha": "5bfe3e1b3112d38e",
+            "kb": 329,
+            "date": "2026-09-06",
+            "sha": "cb61c02361f00bbc",
             "rel": "4.3 Media & Culture/MC-101/MC-101.pptx"
           }
         ],
@@ -25812,14 +25835,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-09-05",
+        "newest": "2026-09-06",
         "files": [
           {
             "name": "MC-102.pptx",
             "ext": "pptx",
             "kb": 369,
-            "date": "2026-09-05",
-            "sha": "75f493b799be2cb2",
+            "date": "2026-09-06",
+            "sha": "fc97e8be9de5da96",
             "rel": "4.3 Media & Culture/MC-102/MC-102.pptx"
           }
         ],
@@ -30178,14 +30201,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-09-05",
+        "newest": "2026-09-06",
         "files": [
           {
             "name": "MC-100.pptx",
             "ext": "pptx",
             "kb": 351,
-            "date": "2026-09-05",
-            "sha": "4d6243f6ade35f4a",
+            "date": "2026-09-06",
+            "sha": "538e689212b4bd4c",
             "rel": "4.3 Media & Culture/MC-100/MC-100.pptx"
           }
         ],
@@ -30281,14 +30304,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-09-05",
+        "newest": "2026-09-06",
         "files": [
           {
             "name": "MC-101.pptx",
             "ext": "pptx",
-            "kb": 340,
-            "date": "2026-09-05",
-            "sha": "5bfe3e1b3112d38e",
+            "kb": 329,
+            "date": "2026-09-06",
+            "sha": "cb61c02361f00bbc",
             "rel": "4.3 Media & Culture/MC-101/MC-101.pptx"
           }
         ],
@@ -30384,14 +30407,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-09-05",
+        "newest": "2026-09-06",
         "files": [
           {
             "name": "MC-102.pptx",
             "ext": "pptx",
             "kb": 369,
-            "date": "2026-09-05",
-            "sha": "75f493b799be2cb2",
+            "date": "2026-09-06",
+            "sha": "fc97e8be9de5da96",
             "rel": "4.3 Media & Culture/MC-102/MC-102.pptx"
           }
         ],
@@ -30865,10 +30888,35 @@
       "review_done": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-09-06",
+        "files": [
+          {
+            "name": "LC-019.pptx",
+            "ext": "pptx",
+            "kb": 398,
+            "date": "2026-09-06",
+            "sha": "ed53bf4033abc7ec",
+            "rel": "4.4 Law & Compliance/LC-019/LC-019.pptx"
+          },
+          {
+            "name": "LC-019_Register_Template.xlsx",
+            "ext": "xlsx",
+            "kb": 11,
+            "date": "2026-09-06",
+            "sha": "9eacef3227a2bda2",
+            "rel": "4.4 Law & Compliance/LC-019/LC-019_Register_Template.xlsx"
+          },
+          {
+            "name": "LC-019_Team_Scenarios.docx",
+            "ext": "docx",
+            "kb": 38,
+            "date": "2026-09-06",
+            "sha": "5e1e40293729d354",
+            "rel": "4.4 Law & Compliance/LC-019/LC-019_Team_Scenarios.docx"
+          }
+        ],
         "folder": "LC-019"
       },
       "lesson_plan": {
@@ -30931,11 +30979,9 @@
         "is_author": true,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
-        "author_needs": [
-          "Upload materials (SharePoint)"
-        ],
+        "author_needs": [],
         "ready_to_review": true
       },
       "sources": [
