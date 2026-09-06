@@ -1,31 +1,31 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { Check, Lock, RotateCcw, AlertTriangle } from "lucide-react"
 import type { MC102Article, MC102Sentence } from "@/lib/panoraima/types"
+import s from "./mc102.module.css"
 
 const LABELS = ["CLAIM", "PREMISE", "NON-ARG", "UNCLEAR"] as const
 type Label = (typeof LABELS)[number]
 
-const LABEL_HELP: Record<Label, string> = {
+const HELP: Record<Label, string> = {
   CLAIM: "A position advanced as needing acceptance.",
   PREMISE: "Offered as a reason for a claim.",
   "NON-ARG": "Reporting, procedure or background. No argumentative force.",
-  UNCLEAR: "Undecidable from the text given. A real answer, not a cop-out.",
+  UNCLEAR: "Undecidable from the text given.",
 }
-const LABEL_COLOR: Record<string, string> = {
-  CLAIM: "#B23E22", PREMISE: "#1C7293", "NON-ARG": "#5B616B", UNCLEAR: "#8A6D1F",
+const COLOUR: Record<string, string> = {
+  CLAIM: "#8a4b12", PREMISE: "#0f5c66", "NON-ARG": "#5a656e", UNCLEAR: "#6b5a1f",
 }
 
 /**
- * Choose before you look. You label the sentence, then the panel opens and shows
- * what the model said under each condition. Where a value does not exist yet it
- * says so; nothing here is interpolated to fill a gap.
+ * Choose before you look. The label is committed first and only then does the
+ * panel open, because a reader who has already found the call difficult reads
+ * the model's answer differently from one who has not.
  */
 export default function MC102Console({ articles }: { articles: MC102Article[] }) {
   const pool = useMemo(() => {
     const out: { s: MC102Sentence; a: MC102Article }[] = []
-    for (const a of articles) for (const s of a.sentences) if (s.in_sample) out.push({ s, a })
+    for (const a of articles) for (const x of a.sentences) if (x.in_sample) out.push({ s: x, a })
     return out
   }, [articles])
 
@@ -34,167 +34,103 @@ export default function MC102Console({ articles }: { articles: MC102Article[] })
   const cur = pool[i]
   const mine = cur ? choices[cur.s.uid] : undefined
   const committed = !!mine
-
-  if (!cur) {
-    return <p className="text-[14px] text-[#5B616B]">No sampled sentences in this corpus.</p>
-  }
-
   const decided = Object.keys(choices).length
-  const agreeWithModel =
-    committed && cur.s.pred_gold ? mine === cur.s.pred_gold : null
+
+  if (!cur) return <p className={s.small}>No sampled sentences in this corpus.</p>
+
+  const agrees = committed && cur.s.pred_gold ? mine === cur.s.pred_gold : null
 
   return (
-    <div className="grid gap-5 lg:grid-cols-[260px_1fr]">
-      {/* rail */}
-      <nav aria-label="Sampled sentences" className="lg:max-h-[560px] lg:overflow-y-auto rounded-xl border border-[#DCDDE1] bg-white p-2">
-        <div className="px-2 py-2 flex items-center justify-between">
-          <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-[#5B616B]">
-            {decided} of {pool.length} labelled
-          </span>
-          {decided > 0 && (
-            <button
-              type="button"
-              onClick={() => setChoices({})}
-              className="inline-flex items-center gap-1 font-mono text-[10px] text-[#767C87] hover:text-[#16181D]"
-            >
-              <RotateCcw className="h-3 w-3" /> reset
-            </button>
-          )}
-        </div>
-        <ul className="space-y-0.5">
+    <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "minmax(0,1fr)" }}>
+      <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "260px minmax(0,1fr)" }}
+           className={s.consoleGrid}>
+        <nav className={s.rail} aria-label="Sampled sentences">
+          <div className={s.railHead}>
+            <span>{decided} of {pool.length} labelled</span>
+            {decided > 0 && (
+              <button type="button" className={s.chip} onClick={() => setChoices({})}
+                      style={{ padding: "0.1rem 0.35rem" }}>
+                reset
+              </button>
+            )}
+          </div>
           {pool.map((p, k) => {
             const done = choices[p.s.uid]
             return (
-              <li key={p.s.uid}>
-                <button
-                  type="button"
-                  onClick={() => setI(k)}
-                  aria-current={k === i ? "true" : undefined}
-                  aria-label={`Sentence ${k + 1}${done ? `, you labelled it ${done}` : ", not yet labelled"}${p.s.iaa ? ", in the double-coded subset" : ""}`}
-                  className={`w-full text-left rounded-lg px-2.5 py-1.5 text-[12px] flex items-center gap-2 transition-colors ${
-                    k === i ? "bg-[#16181D] text-white" : "hover:bg-[#F2F3F5] text-[#3F434C]"
-                  }`}
-                >
-                  <span className="font-mono text-[10px] opacity-70 w-8 flex-shrink-0">
-                    {String(k + 1).padStart(3, "0")}
-                  </span>
-                  <span className="truncate flex-1">{p.s.text.slice(0, 34)}</span>
-                  {done && (
-                    <span
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ background: LABEL_COLOR[done] }}
-                      aria-hidden
-                    />
-                  )}
-                </button>
-              </li>
+              <button
+                key={p.s.uid} type="button" className={s.railBtn}
+                aria-current={k === i ? "true" : undefined}
+                onClick={() => setI(k)}
+                aria-label={`Sentence ${k + 1}${done ? `, you labelled it ${done}` : ", not yet labelled"}${p.s.iaa ? ", in the double-coded subset" : ""}`}
+              >
+                <span className={s.railNum}>{String(k + 1).padStart(3, "0")}</span>
+                <span className={s.railTxt}>{p.s.text.slice(0, 40)}</span>
+                {done && <span className={s.dot} style={{ background: COLOUR[done] }} aria-hidden />}
+              </button>
             )
           })}
-        </ul>
-      </nav>
+        </nav>
 
-      {/* console */}
-      <div className="min-w-0">
-        <div className="rounded-xl border border-[#DCDDE1] bg-white overflow-hidden">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-[#EDEDEF] bg-[#FAFAFB] px-5 py-3">
-            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-[#5B616B]">
-              {cur.a.community}
-            </span>
-            <span className="text-[11px] text-[#767C87]">{cur.a.date}</span>
-            {cur.s.iaa && (
-              <span className="ml-auto rounded px-1.5 py-0.5 font-mono text-[9.5px] font-bold uppercase tracking-[0.1em] bg-[#EAF1F4] text-[#1C7293]">
-                double-coded
-              </span>
-            )}
+        <div className={s.instrument}>
+          <div className={s.instrumentHead}>
+            <h3 className={s.instrumentTitle}>{cur.a.community}</h3>
+            <span className={s.small}>{cur.a.date}</span>
+            {cur.s.iaa && <span className={s.instrumentNote}>double-coded</span>}
           </div>
 
-          <div className="px-5 py-5">
-            <p className="mb-1 text-[11px] text-[#767C87] truncate">{cur.a.headline}</p>
-            <p className="text-[17px] leading-relaxed text-[#16181D]">{cur.s.text}</p>
+          <div style={{ padding: "0.9rem" }}>
+            <p className={s.small} style={{ margin: 0 }}>{cur.a.headline}</p>
+            <p className={s.unit}>{cur.s.text}</p>
           </div>
 
-          {/* levers */}
-          <div className="border-t border-[#EDEDEF] px-5 py-4">
-            <p className="mb-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-[#5B616B]">
+          <div style={{ padding: "0.9rem", borderTop: "1px solid var(--rule)" }}>
+            <p className={s.controlLabel} style={{ marginBottom: "0.45rem" }}>
               {committed ? "You labelled it" : "Label it before you look"}
             </p>
-            <div className="flex flex-wrap gap-2">
-              {LABELS.map(l => {
-                const on = mine === l
-                return (
-                  <button
-                    key={l}
-                    type="button"
-                    disabled={committed}
-                    title={LABEL_HELP[l]}
-                    onClick={() => setChoices(c => ({ ...c, [cur.s.uid]: l }))}
-                    className={`rounded-lg border px-3 py-2 font-mono text-[11.5px] font-bold uppercase tracking-[0.08em] transition-all disabled:cursor-default ${
-                      on ? "text-white" : "text-[#3F434C] hover:border-[#16181D]/45"
-                    } ${committed && !on ? "opacity-35" : ""}`}
-                    style={on ? { background: LABEL_COLOR[l], borderColor: LABEL_COLOR[l] } : { borderColor: "#DCDDE1" }}
-                  >
-                    {l}
-                  </button>
-                )
-              })}
+            <div className={s.actionSet}>
+              {LABELS.map(l => (
+                <button
+                  key={l} type="button" className={s.action}
+                  aria-pressed={mine === l} disabled={committed} title={HELP[l]}
+                  onClick={() => setChoices(c => ({ ...c, [cur.s.uid]: l }))}
+                >
+                  {l}
+                </button>
+              ))}
             </div>
             {!committed && (
-              <p className="mt-2.5 text-[12px] text-[#767C87]">
-                {LABEL_HELP.UNCLEAR} Use it freely: a forced label is worse than an honest abstention.
+              <p className={s.controlNote} style={{ marginTop: "0.5rem" }}>
+                {HELP.UNCLEAR} Use it freely: a forced label is worse than an honest abstention.
               </p>
             )}
           </div>
 
-          {/* reveal */}
           {committed && (
-            <div className="border-t border-[#EDEDEF] bg-[#FAFAFB] px-5 py-4">
-              <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-[#5B616B]">
-                What the others said
-              </p>
-              <div className="grid gap-2.5 sm:grid-cols-3">
-                <Arm
-                  name="Model, units given"
-                  value={cur.s.pred_gold}
-                  note={cur.s.pred_gold ? "Sentence supplied pre-segmented." : undefined}
-                  missing="Not yet run over this sentence."
-                />
-                <Arm
-                  name="Model, self-segmented"
-                  value={null}
-                  missing="Condition built, not yet run. This is the one expected to fall."
-                />
-                <Arm
-                  name="Annotator (gold)"
-                  value={cur.s.gold}
-                  missing="Awaiting Dorottya Egres. Without it nothing here can be scored."
-                />
+            <div style={{ padding: "0.9rem", borderTop: "1px solid var(--rule)", background: "var(--ground)" }}>
+              <p className={s.controlLabel} style={{ marginBottom: "0.5rem" }}>What the others said</p>
+              <div className={s.armGrid}>
+                <Arm name="Model, units given" value={cur.s.pred_gold}
+                     missing="Not yet run over this sentence." />
+                <Arm name="Model, self-segmented" value={null}
+                     missing="The model finds 1.44x more units than our sentence split. Per-unit comparison needs the annotator's own boundaries." />
+                <Arm name="Annotator (gold)" value={cur.s.gold}
+                     missing="Awaiting Dorottya Egres. Without it nothing here can be scored." />
               </div>
-
-              {agreeWithModel !== null && (
-                <p className={`mt-3 inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12.5px] ${
-                  agreeWithModel ? "bg-[#EDF6EF] text-[#1F6B41]" : "bg-[#FBEAE5] text-[#7A2A16]"
-                }`}>
-                  {agreeWithModel ? <Check className="h-3.5 w-3.5" /> : <AlertTriangle className="h-3.5 w-3.5" />}
-                  {agreeWithModel
+              {agrees !== null && (
+                <p className={`${s.verdict} ${agrees ? s.verdictAgree : s.verdictDiffer}`}>
+                  {agrees
                     ? "You and the model agree. That is not evidence either of you is right."
                     : "You and the model disagree. Which of you is correct is exactly what the gold standard settles."}
                 </p>
               )}
-
-              <div className="mt-4 flex gap-2">
-                <button
-                  type="button"
-                  onClick={() => setI(Math.min(i + 1, pool.length - 1))}
-                  disabled={i >= pool.length - 1}
-                  className="rounded-lg bg-[#16181D] px-3.5 py-2 text-[13px] font-bold text-white disabled:opacity-40"
-                >
+              <div className={s.actionSet} style={{ marginTop: "0.8rem" }}>
+                <button type="button" className={s.action} aria-pressed
+                        disabled={i >= pool.length - 1}
+                        onClick={() => setI(Math.min(i + 1, pool.length - 1))}>
                   Next sentence
                 </button>
-                <button
-                  type="button"
-                  onClick={() => setChoices(c => { const n = { ...c }; delete n[cur.s.uid]; return n })}
-                  className="rounded-lg border border-[#DCDDE1] px-3.5 py-2 text-[13px] font-semibold text-[#3F434C] hover:border-[#16181D]/40"
-                >
+                <button type="button" className={s.action}
+                        onClick={() => setChoices(c => { const n = { ...c }; delete n[cur.s.uid]; return n })}>
                   Change my label
                 </button>
               </div>
@@ -206,23 +142,13 @@ export default function MC102Console({ articles }: { articles: MC102Article[] })
   )
 }
 
-function Arm({ name, value, note, missing }: { name: string; value: string | null; note?: string; missing: string }) {
+function Arm({ name, value, missing }: { name: string; value: string | null; missing: string }) {
   return (
-    <div className="rounded-lg border border-[#DCDDE1] bg-white p-3">
-      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-[#767C87]">{name}</p>
-      {value ? (
-        <>
-          <p className="mt-1.5 font-mono text-[15px] font-bold" style={{ color: LABEL_COLOR[value] ?? "#16181D" }}>
-            {value}
-          </p>
-          {note && <p className="mt-1 text-[11px] text-[#767C87]">{note}</p>}
-        </>
-      ) : (
-        <p className="mt-1.5 inline-flex items-start gap-1.5 text-[11.5px] leading-snug text-[#8A8F98]">
-          <Lock className="mt-[2px] h-3 w-3 flex-shrink-0" />
-          {missing}
-        </p>
-      )}
+    <div className={s.armCard}>
+      <p className={s.armName}>{name}</p>
+      {value
+        ? <p className={s.armValue} style={{ color: COLOUR[value] ?? "var(--ink)" }}>{value}</p>
+        : <p className={s.armMissing}>{missing}</p>}
     </div>
   )
 }

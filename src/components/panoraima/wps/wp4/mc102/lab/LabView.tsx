@@ -6,7 +6,7 @@ import Link from "next/link"
 import type { MC102Graph } from "@/lib/panoraima/types"
 import type { HoverInfo } from "./ConflictMap3D"
 import ConflictMap2D from "./ConflictMap2D"
-import s from "./lab.module.css"
+import s from "../mc102.module.css"
 
 const ConflictMap3D = dynamic(() => import("./ConflictMap3D"), { ssr: false })
 

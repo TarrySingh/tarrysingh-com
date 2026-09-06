@@ -1,14 +1,23 @@
 "use client"
 
 import { useState } from "react"
-import { Lock, ArrowRight, FlaskConical, Users, BookOpen, Network } from "lucide-react"
-import type { MC102Data, MC102Article } from "@/lib/panoraima/types"
+import Link from "next/link"
+import type { MC102Data, MC102Article, MC102Graph } from "@/lib/panoraima/types"
+import s from "./mc102.module.css"
 
 const COMMUNITY_COLOR: Record<string, string> = {
-  "government / MTI": "#B23E22",
-  "NGO / opposition": "#1F6F5C",
-  "transparency / FOI": "#1C7293",
-  unclassified: "#8A8F98",
+  "government / MTI": "#8a4b12",
+  "NGO / opposition": "#2f5d33",
+  "transparency / FOI": "#4a5a8a",
+  unclassified: "#8a8f98",
+}
+
+export type MC102GraphSummary = {
+  themeStats: MC102Graph["themeStats"]
+  n_nodes: number
+  n_edges: number
+  n_cross: number
+  note: string
 }
 
 /* ------------------------------------------------------------------ corpus */
@@ -20,57 +29,44 @@ export function CorpusPanel({ articles, meta }: { articles: MC102Article[]; meta
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap gap-2">
-        <Chip label={`All ${meta.n_articles}`} active={!filter} onClick={() => setFilter(null)} />
+      <div className={s.chips}>
+        <button type="button" className={s.chip} aria-pressed={!filter} onClick={() => setFilter(null)}>
+          All {meta.n_articles}
+        </button>
         {meta.communities.map(c => (
-          <Chip
-            key={c.name}
-            label={`${c.name} · ${c.articles}`}
-            color={COMMUNITY_COLOR[c.name]}
-            active={filter === c.name}
+          <button
+            key={c.name} type="button" className={s.chip}
+            aria-pressed={filter === c.name}
             onClick={() => setFilter(filter === c.name ? null : c.name)}
-          />
+          >
+            <span className={s.swatch} style={{ background: COMMUNITY_COLOR[c.name] ?? "#8a8f98" }} aria-hidden />
+            {c.name} · {c.articles}
+          </button>
         ))}
       </div>
 
-      <ul className="space-y-1.5">
+      <ul style={{ listStyle: "none", margin: "1rem 0 0", padding: 0 }}>
         {shown.map(a => (
-          <li key={a.id} className="rounded-xl border border-[#DCDDE1] bg-white overflow-hidden">
-            <button
-              type="button"
-              onClick={() => setOpen(open === a.id ? null : a.id)}
-              aria-expanded={open === a.id}
-              className="w-full text-left px-4 py-3 hover:bg-[#FAFAFB] transition-colors"
-            >
-              <div className="flex items-start gap-3">
-                <span
-                  className="mt-1.5 w-2 h-2 rounded-[2px] flex-shrink-0"
-                  style={{ background: COMMUNITY_COLOR[a.community] ?? "#8A8F98" }}
-                  aria-hidden
-                />
-                <div className="min-w-0 flex-1">
-                  <p className="text-[14px] font-semibold text-[#16181D] leading-snug">{a.headline}</p>
-                  <p className="mt-0.5 font-mono text-[11px] text-[#767C87]">
-                    {a.date} · {a.n_sentences} sentences
-                  </p>
-                </div>
-                <ArrowRight
-                  className={`h-4 w-4 flex-shrink-0 text-[#B6BAC2] transition-transform ${open === a.id ? "rotate-90" : ""}`}
-                />
-              </div>
+          <li key={a.id} className={s.artRow}>
+            <button type="button" className={s.artBtn} aria-expanded={open === a.id}
+                    onClick={() => setOpen(open === a.id ? null : a.id)}>
+              <span className={s.swatch} style={{ background: COMMUNITY_COLOR[a.community] ?? "#8a8f98", marginTop: "0.35rem" }} aria-hidden />
+              <span style={{ minWidth: 0 }}>
+                <span className={s.artHead}>{a.headline}</span>
+                <span className={s.artMeta}>{a.date} · {a.n_sentences} sentences</span>
+              </span>
+              <span className={s.tick} aria-hidden>{open === a.id ? "−" : "+"}</span>
             </button>
             {open === a.id && (
-              <ol className="border-t border-[#EDEDEF] bg-[#FAFAFB] px-4 py-3 space-y-2">
-                {a.sentences.map((s, k) => (
-                  <li key={s.uid} className="flex gap-2.5 text-[13px] leading-relaxed">
-                    <span className="font-mono text-[10px] text-[#B6BAC2] pt-1 w-6 flex-shrink-0">
-                      {String(k + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-[#3F434C]">
-                      {s.text}
-                      {s.in_sample && (
-                        <span className="ml-2 rounded px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-[0.08em] bg-white border border-[#DCDDE1] text-[#767C87]">
-                          sampled{s.iaa ? " · 2×" : ""}
+              <ol className={s.artBody}>
+                {a.sentences.map((x, k) => (
+                  <li key={x.uid}>
+                    <span className={s.railNum}>{String(k + 1).padStart(2, "0")}</span>
+                    <span>
+                      {x.text}
+                      {x.in_sample && (
+                        <span className={s.pendingTag} style={{ marginLeft: "0.4rem" }}>
+                          sampled{x.iaa ? " · 2×" : ""}
                         </span>
                       )}
                     </span>
@@ -90,26 +86,20 @@ export function CorpusPanel({ articles, meta }: { articles: MC102Article[]; meta
 export function ConditionsPanel({ data }: { data: MC102Data }) {
   return (
     <div>
-      <p className="mb-5 max-w-3xl text-[14px] leading-relaxed text-[#444B5A]">
+      <p className={s.lede} style={{ fontSize: "0.95rem", marginBottom: "1.2rem" }}>
         Five conditions, each probing a documented failure mode. They are built and
         runnable. None can be <em>scored</em> until the gold standard exists, because a
         score is a comparison and there is currently nothing to compare against.
       </p>
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className={s.grid2}>
         {data.conditions.map((c, i) => (
-          <article key={c.key} className="rounded-xl border border-[#DCDDE1] bg-white p-4">
-            <div className="flex items-center gap-2">
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-[#F2F3F5] font-mono text-[11px] font-bold text-[#5B616B]">
-                {i + 1}
-              </span>
-              <h3 className="text-[15px] font-bold text-[#16181D]">{c.name}</h3>
-            </div>
-            <p className="mt-2.5 text-[13px] leading-relaxed text-[#3F434C]">{c.tests}</p>
-            <p className="mt-2 text-[12.5px] leading-relaxed text-[#767C87] italic">{c.expect}</p>
-            <p className="mt-3 inline-flex items-center gap-1.5 rounded-md bg-[#FAFAFB] px-2 py-1 font-mono text-[10.5px] text-[#8A8F98] border border-[#EDEDEF]">
-              <FlaskConical className="h-3 w-3" />
-              {c.state}
+          <article key={c.key} className={s.armCard}>
+            <p className={s.armName}>
+              {String(i + 1).padStart(2, "0")} · {c.name}
             </p>
+            <p style={{ margin: "0.5rem 0 0", fontSize: "0.88rem", color: "var(--ink-2)" }}>{c.tests}</p>
+            <p style={{ margin: "0.5rem 0 0", fontSize: "0.84rem", color: "var(--ink-3)", fontStyle: "italic" }}>{c.expect}</p>
+            <p className={s.pendingTag} style={{ marginTop: "0.7rem" }}>{c.state}</p>
           </article>
         ))}
       </div>
@@ -121,58 +111,110 @@ export function ConditionsPanel({ data }: { data: MC102Data }) {
 
 export function AgreementPanel({ data }: { data: MC102Data }) {
   return (
-    <div className="max-w-3xl">
-      <Pending
-        icon={<Users className="h-4 w-4" />}
-        title="Inter-annotator agreement"
-        body={
-          <>
-            <p>
-              {data.meta.iaa_subset} of the {data.meta.sample_size} sampled sentences are
-              flagged for double coding. Once a second annotator has labelled them
-              independently, this panel reports Krippendorff&rsquo;s alpha, the confusion
-              matrix, and the per-label breakdown.
-            </p>
-            <p className="mt-3">
-              We are not showing a placeholder number. Published argument-mining corpora
-              report agreement between roughly 0.30 and 0.60, and one widely used corpus
-              reports 0.60 for comments and forum posts against 0.09 for articles and
-              blogs. This corpus is news articles, so that lower figure is the relevant
-              comparison. Whatever ours turns out to be sets the ceiling on what any model
-              can achieve here.
-            </p>
-          </>
-        }
-      />
+    <div style={{ maxWidth: "52rem" }}>
+      <div className={s.pending}>
+        <p className={s.pendingHead}>
+          Inter-annotator agreement
+          <span className={s.pendingTag}>awaiting data</span>
+        </p>
+        <p>
+          {data.meta.iaa_subset} of the {data.meta.sample_size} sampled sentences are
+          flagged for double coding. Once a second annotator has labelled them
+          independently, this panel reports Krippendorff&rsquo;s alpha, the confusion
+          matrix, and the per-label breakdown.
+        </p>
+        <p>
+          We are not showing a placeholder number. Published argument-mining corpora
+          report agreement between roughly 0.30 and 0.60, and one widely used corpus
+          reports 0.60 for comments and forum posts against 0.09 for articles and blogs.
+          This corpus is news articles, so that lower figure is the relevant comparison.
+          Whatever ours turns out to be sets the ceiling on what any model can achieve here.
+        </p>
+      </div>
     </div>
   )
 }
 
 /* ------------------------------------------------------------- conflict map */
 
-export function ConflictPanel({ data }: { data: MC102Data }) {
+export function ConflictPanel({ summary }: { summary?: MC102GraphSummary }) {
+  if (!summary) {
+    return (
+      <div style={{ maxWidth: "52rem" }}>
+        <div className={s.pending}>
+          <p className={s.pendingHead}>
+            Conflict landscape
+            <span className={s.pendingTag}>not built</span>
+          </p>
+          <p>The relation pass has not been run against this corpus yet.</p>
+        </div>
+      </div>
+    )
+  }
+
+  const stranded = summary.themeStats.filter(t => t.cross === 0)
+
   return (
-    <div className="max-w-3xl">
-      <Pending
-        icon={<Network className="h-4 w-4" />}
-        title="Conflict landscape"
-        body={
-          <>
-            <p>
-              The applied payoff: an argument graph across the three communities, showing
-              which claims attack which, and where the debate actually joins rather than
-              talks past itself.
-            </p>
-            <p className="mt-3">
-              It needs the relation pass, not just the labels. Support and attack links are
-              the optional second stage of the annotation, so this is the last panel to
-              fill and the one most likely to be thin. If the relation pass does not
-              happen, this stays empty rather than being reconstructed from co-occurrence,
-              which would look like an argument graph without being one.
-            </p>
-          </>
-        }
-      />
+    <div>
+      <p className={s.lede} style={{ fontSize: "0.95rem" }}>
+        The relation pass ran over the corpus and produced {summary.n_nodes} argumentative
+        units joined by {summary.n_edges} links, {summary.n_cross} of which cross between
+        the government and NGO camps. Every one of those was drawn by the model, so read
+        the table as a description of the model&rsquo;s output, not as a finding about the
+        debate.
+      </p>
+
+      <div className={s.instrument} style={{ marginTop: "1.2rem", maxWidth: "44rem" }}>
+        <div className={s.instrumentHead}>
+          <h3 className={s.instrumentTitle}>Engagement by theme</h3>
+          <span className={s.instrumentNote}>claims per camp, and links between them</span>
+        </div>
+        <table className={s.ledger}>
+          <thead>
+            <tr>
+              <th scope="col">Theme</th>
+              <th scope="col" className={s.num}>Gov</th>
+              <th scope="col" className={s.num}>NGO</th>
+              <th scope="col" className={s.num}>Cross-camp</th>
+            </tr>
+          </thead>
+          <tbody>
+            {summary.themeStats.map(t => (
+              <tr key={t.theme} className={t.cross === 0 ? s.rowMuted : undefined}>
+                <td>{t.theme}</td>
+                <td className={s.num}>{t.gov}</td>
+                <td className={s.num}>{t.ngo}</td>
+                <td className={s.num}>{t.cross === 0 ? <span className={s.flag}>none</span> : t.cross}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p style={{ maxWidth: "44rem", marginTop: "1rem", fontSize: "0.88rem", color: "var(--ink-2)" }}>
+        {stranded.length} of {summary.themeStats.length} themes have no cross-camp link at
+        all. Those rows are kept in the table rather than filtered out for being empty: a
+        theme one side raises and the other never answers is the shape the corpus actually
+        has, and hiding it would make the debate look more joined-up than it was.
+      </p>
+
+      <p style={{ marginTop: "1.2rem" }}>
+        <Link href="/experiments/panoraima/wps/wp4/mc-102/lab" className={s.action}>
+          Open the argument mining lab →
+        </Link>
+      </p>
+
+      <div className={s.pending} style={{ marginTop: "1.4rem", maxWidth: "52rem" }}>
+        <p className={s.pendingHead}>
+          The annotator&rsquo;s graph
+          <span className={s.pendingTag}>awaiting data</span>
+        </p>
+        <p>
+          Support and attack links are the optional second stage of the human annotation.
+          Until that comes back there is one graph here, not two, so nothing on this page
+          says whether the model&rsquo;s relations are right — only what they are.
+        </p>
+      </div>
     </div>
   )
 }
@@ -189,26 +231,26 @@ export function MethodPanel({ data }: { data: MC102Data }) {
     ["Gold segmentation", `${data.meta.segmentation_articles} complete articles, boundaries marked by the annotator`],
   ]
   return (
-    <div className="max-w-3xl space-y-5">
-      <div className="rounded-xl border border-[#DCDDE1] bg-white overflow-hidden">
-        <div className="border-b border-[#EDEDEF] bg-[#FAFAFB] px-4 py-2.5">
-          <span className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-[#5B616B]">
-            <BookOpen className="h-3 w-3" /> Datasheet
-          </span>
+    <div style={{ maxWidth: "52rem", display: "grid", gap: "1.4rem" }}>
+      <div className={s.instrument}>
+        <div className={s.instrumentHead}>
+          <h3 className={s.instrumentTitle}>Datasheet</h3>
         </div>
-        <dl className="divide-y divide-[#EDEDEF]">
-          {rows.map(([k, v]) => (
-            <div key={k} className="flex flex-col sm:flex-row gap-1 sm:gap-4 px-4 py-2.5">
-              <dt className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#767C87] sm:w-44 flex-shrink-0">{k}</dt>
-              <dd className="text-[13px] text-[#16181D]">{v}</dd>
-            </div>
-          ))}
-        </dl>
+        <table className={s.ledger}>
+          <tbody>
+            {rows.map(([k, v]) => (
+              <tr key={k}>
+                <th scope="row" style={{ width: "12rem" }}>{k}</th>
+                <td>{v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <div className="rounded-xl border border-[#F0CFC6] bg-[#FBEAE5] p-4">
-        <h3 className="text-[14px] font-bold text-[#7A2A16]">Known limitations</h3>
-        <ol className="mt-2.5 space-y-2 text-[13px] leading-relaxed text-[#7A2A16] list-decimal pl-4">
+      <div className={s.callout}>
+        <h2>Known limitations</h2>
+        <ol style={{ margin: "0.6rem 0 0", paddingLeft: "1.1rem", fontSize: "0.88rem", color: "var(--ink-2)", display: "grid", gap: "0.5rem" }}>
           <li>
             <strong>It is a translation.</strong> The corpus reached us as a ChatGPT
             translation from Hungarian. Any claim about lexical cues or discourse markers is
@@ -235,37 +277,5 @@ export function MethodPanel({ data }: { data: MC102Data }) {
         </ol>
       </div>
     </div>
-  )
-}
-
-/* ------------------------------------------------------------------ shared */
-
-function Pending({ icon, title, body }: { icon: React.ReactNode; title: string; body: React.ReactNode }) {
-  return (
-    <div className="rounded-xl border border-[#DCDDE1] bg-white p-5">
-      <div className="flex items-center gap-2 text-[#5B616B]">
-        {icon}
-        <h3 className="text-[15px] font-bold text-[#16181D]">{title}</h3>
-        <span className="ml-auto inline-flex items-center gap-1 rounded-md bg-[#F2F3F5] px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-[#767C87]">
-          <Lock className="h-3 w-3" /> awaiting data
-        </span>
-      </div>
-      <div className="mt-3 text-[13.5px] leading-relaxed text-[#3F434C]">{body}</div>
-    </div>
-  )
-}
-
-function Chip({ label, count, color, active, onClick }: { label: string; count?: number; color?: string; active: boolean; onClick: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.06em] transition-colors ${
-        active ? "bg-[#16181D] text-white border-[#16181D]" : "bg-white text-[#3F434C] border-[#DCDDE1] hover:border-[#16181D]/40"
-      }`}
-    >
-      {color && <span className="w-1.5 h-1.5 rounded-[2px]" style={{ background: color }} aria-hidden />}
-      {label}
-    </button>
   )
 }

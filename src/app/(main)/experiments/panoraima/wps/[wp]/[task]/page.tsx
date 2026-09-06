@@ -7,7 +7,8 @@ import T21Dashboard from "@/components/panoraima/wps/wp2/t21/T21Dashboard"
 import T22Dashboard from "@/components/panoraima/wps/wp2/t22/T22Dashboard"
 import T23Dashboard from "@/components/panoraima/wps/wp2/t23/T23Dashboard"
 import MC102Explorer from "@/components/panoraima/wps/wp4/mc102/MC102Explorer"
-import type { Task21Detail, Task22Detail, Task23Detail, MC102Data } from "@/lib/panoraima/types"
+import type { MC102GraphSummary } from "@/components/panoraima/wps/wp4/mc102/MC102Panels"
+import type { Task21Detail, Task22Detail, Task23Detail, MC102Data, MC102Graph } from "@/lib/panoraima/types"
 
 interface Props {
   params: Promise<{ wp: string; task: string }>
@@ -35,6 +36,20 @@ function loadMC102(): MC102Data | null {
   const fp = path.join(process.cwd(), "src/lib/panoraima/mc102_data.json")
   if (!existsSync(fp)) return null
   return JSON.parse(readFileSync(fp, "utf-8")) as MC102Data
+}
+
+/** Only the theme table is needed here; the 435 nodes stay on the lab route. */
+function loadMC102GraphSummary(): MC102GraphSummary | undefined {
+  const fp = path.join(process.cwd(), "src/lib/panoraima/mc102_graph.json")
+  if (!existsSync(fp)) return undefined
+  const g = JSON.parse(readFileSync(fp, "utf-8")) as MC102Graph
+  return {
+    themeStats: g.themeStats,
+    n_nodes: g.meta.n_nodes,
+    n_edges: g.meta.n_edges,
+    n_cross: g.meta.n_cross,
+    note: g.meta.note,
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -76,7 +91,7 @@ export default async function Page({ params }: Props) {
 
   if (wp === "wp4" && task === "mc-102") {
     const data = loadMC102()
-    if (data) return <MC102Explorer data={data} />
+    if (data) return <MC102Explorer data={data} graph={loadMC102GraphSummary()} />
   }
 
   if (wp === "wp2" && task === "t21") {

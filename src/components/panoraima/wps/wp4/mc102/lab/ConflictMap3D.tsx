@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import type { MC102Graph, MC102Node } from "@/lib/panoraima/types"
-import s from "./lab.module.css"
+import s from "../mc102.module.css"
 
 export interface HoverInfo { index: number; node: MC102Node }
 

@@ -1,7 +1,7 @@
 "use client"
 
 import type { MC102Graph } from "@/lib/panoraima/types"
-import s from "./lab.module.css"
+import s from "../mc102.module.css"
 
 /**
  * The fallback is not a consolation prize. Where the 3-D view shows the gap the
