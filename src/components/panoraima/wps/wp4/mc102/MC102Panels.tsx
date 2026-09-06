@@ -87,9 +87,11 @@ export function ConditionsPanel({ data }: { data: MC102Data }) {
   return (
     <div>
       <p className={s.lede} style={{ fontSize: "0.95rem", marginBottom: "1.2rem" }}>
-        Five conditions, each probing a documented failure mode. They are built and
-        runnable. None can be <em>scored</em> until the gold standard exists, because a
-        score is a comparison and there is currently nothing to compare against.
+        Five conditions, each probing a documented failure mode. All five have now run
+        over the full corpus. None of them yields an <em>accuracy</em>, because accuracy
+        is a comparison against the annotator&rsquo;s labels and those have not arrived.
+        What they do yield is how much the model&rsquo;s own answers move when the
+        conditions change, which needs no gold standard at all.
       </p>
       <div className={s.grid2}>
         {data.conditions.map((c, i) => (
@@ -100,6 +102,11 @@ export function ConditionsPanel({ data }: { data: MC102Data }) {
             <p style={{ margin: "0.5rem 0 0", fontSize: "0.88rem", color: "var(--ink-2)" }}>{c.tests}</p>
             <p style={{ margin: "0.5rem 0 0", fontSize: "0.84rem", color: "var(--ink-3)", fontStyle: "italic" }}>{c.expect}</p>
             <p className={s.pendingTag} style={{ marginTop: "0.7rem" }}>{c.state}</p>
+            {c.result && (
+              <p style={{ margin: "0.5rem 0 0", fontSize: "0.84rem", color: "var(--ink-2)" }}>
+                {c.result}
+              </p>
+            )}
           </article>
         ))}
       </div>

@@ -971,7 +971,10 @@ export interface MC102Condition {
   name: string
   tests: string
   expect: string
+  /** Short status tag, e.g. "685 units labelled". */
   state: string
+  /** What the run actually produced. Absent until the condition has been run. */
+  result?: string
 }
 
 export interface MC102Data {
