@@ -943,3 +943,53 @@ export interface LargeFilesManifest {
   by_wp: Record<string, LargeFile[]>
   note: string
 }
+
+
+/* ---------------------------------------------------------------- MC-102 */
+/* Argument mining explorer. Corpus supplied by Dorottya Egres (BME). */
+
+export interface MC102Sentence {
+  uid: string
+  text: string
+  in_sample: boolean
+  iaa: boolean
+  pred_gold: string | null
+  gold: string | null
+}
+
+export interface MC102Article {
+  id: number
+  headline: string
+  date: string
+  community: string
+  n_sentences: number
+  sentences: MC102Sentence[]
+}
+
+export interface MC102Condition {
+  key: string
+  name: string
+  tests: string
+  expect: string
+  state: string
+}
+
+export interface MC102Data {
+  meta: {
+    code: string
+    title: string
+    corpus_name: string
+    source: string
+    n_articles: number
+    n_sentences: number
+    year_min: number
+    year_max: number
+    communities: { name: string; articles: number; sentences: number }[]
+    sample_size: number
+    iaa_subset: number
+    segmentation_articles: number
+  }
+  status: Record<string, string>
+  conditions: MC102Condition[]
+  articles: MC102Article[]
+}
