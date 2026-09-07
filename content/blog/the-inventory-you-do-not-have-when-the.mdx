@@ -1,0 +1,66 @@
+---
+title: "The Inventory You Do Not Have When the Auditor Asks for It"
+date: "2026-09-07"
+category: "Essays"
+excerpt: "From 2 August 2026, the European Commission's AI Office, together with national authorities, began enforcing the Artificial Intelligence Act. Five days later, Henna Virkkunen confirmed the first formal enforcement step: \"our AI Office has formally sent requests for information to a number of providers of general-purpose AI models\", reportedly including OpenAI, Anthropic, and Google. …"
+draft: false
+tags: ["inventory", "you", "not", "have", "when"]
+---
+
+From 2 August 2026, the European Commission's AI Office, together with national authorities, began enforcing the Artificial Intelligence Act. Five days later, Henna Virkkunen confirmed the first formal enforcement step: "our AI Office has formally sent requests for information to a number of providers of general-purpose AI models", reportedly including OpenAI, Anthropic, and Google. Within days of the enforcement deadline, the European Commission confirmed three enforcement actions totaling €47 million.
+
+The regulator now has the authority to ask. The question is whether you can answer. 78% of organizations have not taken meaningful compliance steps, and over 50% lack a basic AI inventory. A review of 127 enterprise agentic AI implementations found that 73% went over budget, with some blowing through their original estimates by more than 2.4x, burning roughly $2.3 million on costs nobody anticipated. The debt is real. It simply is not visible until someone with enforcement powers requests the documentation.
+
+I have spent 30 years in enterprise technology. The pattern is consistent: technical debt becomes visible when compliance timelines arrive. AI debt is the same dynamic, and it compounds faster. The August enforcement date did not create the problem. It removed the buffer.
+
+## 1. The POC That Never Closed
+
+Every department spins up its own proof of concept, none of them share data foundations, governance, or evaluation criteria, and eighteen months later you have 40 pilots, 3 in production, and zero institutional learning. Each one consumed budget, API keys were provisioned, embeddings were generated, and prompts were written. Some are still running. Most are orphaned. None are in the compliance inventory.
+
+An auditor opens the request for information. You list three production systems. The auditor pulls your cloud billing data and finds 14 OpenAI accounts, 6 Anthropic subscriptions, 9 Azure OpenAI endpoints, and token spend across 22 cost centres. The gap is not theoretical. The AI Office can request technical documentation, evaluate models, require corrective measures and issue fines for non-compliance.
+
+The POCs you forgot about are the ones that will surface in the RFI response gap.
+
+## 2. The Prompt That Moved Twice and Then Stayed
+
+Prompt debt is the most visible form of AI debt: undocumented prompt tweaks, accumulated quick-fix prompts that lead to inconsistencies, neglected version control of prompts, and prompt stuffing all combine to make prompts a form of untyped, untested code without any version control, leading to increased brittleness and vulnerabilities. A customer service agent is deployed in March. By June, the prompt has been edited seven times by four different people. Two edits were documented. Five survive in production.
+
+Prompt debt develops when prompts become embedded across applications, making them difficult to maintain, version or improve. The regulator does not care about your versioning failure. The regulator cares whether you can demonstrate oversight. If the prompt influences a material decision, and you cannot produce an audit trail showing who changed it, when, and under what approval path, the answer to the RFI is incomplete.
+
+## 3. The Retrieval Layer Nobody Cleaned
+
+Retrieval debt is a consequence of repositories having messy data, duplicated documents, and outdated information, causing AI to return technically correct answers that are outdated and no longer relevant, causing downstream failures. A RAG system is built in Q4 2025. It indexes 180,000 documents. In Q2 2026, the legal team updates 40 policies. The embeddings are not regenerated. The model retrieves the old version.
+
+Unlike hallucinations, these are harder to detect because they were correct, perhaps even until recently, and hence look correct to any tester. The risk is real, the answer looks right, and the compliance documentation claims the system is current. The auditor asks for evidence of data provenance and refresh cadence. You have a deployment date. You do not have a data lineage log.
+
+## 4. The Agent With Permissions Set in the Demo
+
+Governance debt rises when AI features operate under permissions set generously during prototyping and never narrowed; an agent that can read, write, classify, summarize, and take action across systems may appear efficient, but without explicit permission scoping and human-review paths for consequential actions, it becomes an operational liability. An agent is scoped to summarize support tickets. In the POC, it is given read access to the ticketing system, the CRM, the knowledge base, and the internal Slack archive. The demo works. The agent ships. The permissions are not reviewed.
+
+The EU AI Act, which entered full applicability in August 2026, establishes regulatory requirements that directly address this dimension, and organizations that have accumulated governance gaps through loose agent permissions now face mandatory remediation timelines on a fixed schedule. The RFI asks for a list of systems with autonomous write access and the approval chain for permission grants. You have deployment logs. You do not have a permission audit.
+
+## 5. The Cost Line That Escalated and Nobody Named the Owner
+
+In the 2026 State of FinOps Report, a survey of 1,192 practitioners stewarding more than $83 billion in annual cloud spend, 98% now manage AI spend, and in the span of 24 months AI cost management has been absorbed wholesale into the FinOps function. Cast AI's 2026 Kubernetes optimization report, measured across 23,000 clusters, put average enterprise GPU utilization at roughly 5%, meaning 95% of paid GPU time does nothing.
+
+A GPU reservation is made in Q1 2026 for a training run. The run completes in six days. The reservation is annual. The cost is $140,000. The billing line is still live in September. Nobody turned it off because nobody owned it after the data science team moved to the next project. The CFO sees the line in August. The RFI asks for a list of AI-related expenditures and their business justification. You have the invoice. You do not have the owner.
+
+## 6. The Evaluation You Did Once and Called It Done
+
+Evaluation debt reflects the lack of standardization in testing and monitoring for AI models and applications; most enterprises lack consistent testing standards, ground truth datasets, and real-time monitoring of deployments, and there is no equivalent yet of continuous integration and continuous delivery for prompts. A credit-scoring model is validated in January 2026. The evaluation dataset is frozen. The model is deployed. Three months later, the customer mix shifts. The model's performance degrades by 12 percentage points. Nobody notices until a regional manager flags an anomaly in approval rates.
+
+The common thread across today's frameworks is a shift toward continuous, evidence-based compliance: regulators are no longer satisfied with point-in-time certifications and annual audits. The RFI asks for ongoing performance metrics and evidence of monitoring. You have the January test report. You do not have a monitoring dashboard, a drift log, or a remediation protocol.
+
+## What the Regulator Sees Next
+
+The AI Office now holds formal powers over providers of general-purpose AI models, covering documentation requests, technical evaluations of models, access to training data summaries, systemic risk assessments, and the ability to restrict or withdraw a model from the EU market, with penalties of up to €15 million or 3% of a company's worldwide annual turnover for GPAI violations, and up to €35 million or 7% of global turnover for prohibited AI practices.
+
+The RFI is not punitive by design. It is diagnostic. The regulator is trying to understand what is deployed, where it sits in the risk taxonomy, and whether you can demonstrate control. If the inventory is incomplete, the follow-up is predictable: a formal decision-based RFI with a tighter deadline, a site visit, or a corrective order. If they conclude it is high-risk, you receive a corrective order, typically to bring the system into compliance within a defined window, and the leverage is in your documented reasoning: a written classification rationale referencing the Act's risk criteria is the difference between a 60-day remediation window and an enforcement action.
+
+The firms that will answer the first RFI cleanly are not the ones that built perfect systems. They are the ones that built an inventory, assigned owners, logged changes, and tracked spend before the enforcement date. The firms that will struggle are the ones that treated AI as a line item, not a governed system. Every dollar spent on AI without fixing enterprise debt is a dollar working against itself, yet more than half of enterprises have no funded debt resolution plan in place.
+
+The August 2026 enforcement date changed the conversation. The inventory you do not have is now the first question in the regulatory file. The POCs you forgot about, the prompts nobody versioned, the retrieval layer nobody refreshed, the agent permissions nobody scoped, the GPU nobody turned off, and the evaluation you ran once are all debt. The regulator just acquired the legal authority to ask you to list it. If you cannot, the follow-up will be more expensive than the inventory would have been.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
