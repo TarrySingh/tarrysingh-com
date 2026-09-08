@@ -2,9 +2,17 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-06T08:14:11.125777+00:00",
-  "refreshed_at": "2026-09-06T08:14:11.125777+00:00",
+  "generated_at": "2026-09-08T15:53:50.923448+00:00",
+  "refreshed_at": "2026-09-08T15:53:50.923448+00:00",
   "refresh_history": [
+    {
+      "at": "2026-09-08T15:41:54.061678+00:00",
+      "wiki_captured": "2026-09-04T21:51:19.465Z",
+      "sharepoint_generated": "2026-09-08T17:41:21.876990Z",
+      "realai_total": 90,
+      "reviewed": 41,
+      "revision_requested": 1
+    },
     {
       "at": "2026-09-06T08:14:11.125777+00:00",
       "wiki_captured": "2026-09-04T21:51:19.465Z",
@@ -54,13 +62,6 @@
       "sharepoint_generated": "2026-08-26T19:20:45.951419Z",
       "realai_total": 56,
       "reviewed": 41
-    },
-    {
-      "at": "2026-08-24T16:15:39.147047+00:00",
-      "wiki_captured": "2026-08-24T16:12:02.223Z",
-      "sharepoint_generated": "2026-08-24T18:15:38.933304Z",
-      "realai_total": 56,
-      "reviewed": 39
     }
   ],
   "data_sources": {
@@ -70,10 +71,10 @@
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-09-06T10:14:10.950741Z",
+      "generated_at": "2026-09-08T17:41:21.876990Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 161,
+        "with_materials": 162,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -95,12 +96,12 @@
       "In review": 138,
       "Materials in progress": 55
     },
-    "with_materials": 161,
-    "materials_pending": 275,
+    "with_materials": 162,
+    "materials_pending": 274,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 161,
-      "awaiting_material": 275,
+      "with_sharepoint_material": 162,
+      "awaiting_material": 274,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -19222,12 +19223,28 @@
       "realai_wiki_gap": false,
       "review_done": true,
       "revision_requested": false,
-      "review_note": "V2 reviewed 4 Sep 2026. Mary Hendrick acknowledged our 26 Aug review on 28 Aug and shipped V2 on 31 Aug. Nearly everything fixed: Carl Rogers attribution removed, the NBER 22% stat dropped entirely (it argued against its own urgency framing), the Agile stat correctly re-attributed to Wolpers/Age-of-Product with 289 respondents and the 55% figure, and Talebi/Interaction Associates/Dept of Health citations corrected. Two June asks also delivered and delivered well: model drift now has its own section framed through staff impact (gaslighting effect, alert fatigue, liability fear), and explainability appears as XAI on the trust slide. Plan doc placeholders fixed and its outcomes now match the deck. STILL OPEN: the wiki page is now the stale copy (old outcomes with two \"explore\" verbs, run-on keywords, job role still \"All three roles\") and should be updated from the V2 doc; the two overclaims on the psychological safety slide (\"single most critical factor\", \"100% secure\"); the doc timing table still has content against only 3 of 10 slots; validation-to-adoption gap still absent; \"Integation\" typo.",
+      "review_note": "V3 reviewed 8 Sep 2026, 17:52 CEST. We closed this on 4 Sep saying the punch-list need not come back to us; Mary Hendrick did all five anyway and shipped V3 on 7 Sep. Wiki page updated by the author (outcomes now match the doc, keywords a real list, duplicated wrap-up line gone, both student activities added). Both psychological-safety overclaims removed and the replacements are accurate. Timing table now fills all ten slots and tiles 0-120 min exactly. Validation gap added as new slide 24 with two 2026 references, BOTH VERIFIED REAL: Chereches, Eur J Public Health 2026;36(4):ckag068 (PMID 42322228, PMCID PMC13282706) and Navarro-Ballester, Explor Med 2026;7:1001412 (DOI resolves). 'Integation' fixed; Edmondson (1999) added to the psych-safety slide. TWO ATTRIBUTION ITEMS WE MISSED IN AUG AND 4 SEP, present since the first draft: slide 18 reproduces nine of Kanter's ten reasons (HBR, 25 Sep 2012) in her order with her remedy wording and she is nowhere in the deck; slide 42's notes are lifted sentence-for-sentence from leaderfactor.com (Clark is named, the wording is not quoted or linked). Both raised because the deck ships CC BY-NC-SA. Smaller: the 20-30 min row now carries 14 slides after slide 24 was inserted without a timing change; slide 24 opens with a subjectless 'May reflect'; slide 43 lists PSC as a team psych-safety measure when it is an organisational antecedent. Sign-off unchanged, material ready to teach.",
       "materials": {
-        "count": 5,
+        "count": 7,
         "has": true,
-        "newest": "2026-08-31",
+        "newest": "2026-09-07",
         "files": [
+          {
+            "name": "lessonplanHL065_ChangeLeadershipinHealthcareV3.docx",
+            "ext": "docx",
+            "kb": 30,
+            "date": "2026-09-07",
+            "sha": "098b5f83b53a8269",
+            "rel": "4.2 Health & Lifescience/HL-065/lessonplanHL065_ChangeLeadershipinHealthcareV3.docx"
+          },
+          {
+            "name": "HL-065_V3.pptx",
+            "ext": "pptx",
+            "kb": 4481,
+            "date": "2026-09-07",
+            "sha": "3751aeec02b6df31",
+            "rel": "4.2 Health & Lifescience/HL-065/HL-065_V3.pptx"
+          },
           {
             "name": "lessonplanHL065_ChangeLeadershipinHealthcareV2.docx",
             "ext": "docx",
@@ -19763,10 +19780,19 @@
       "revision_requested": false,
       "review_note": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-07",
+        "files": [
+          {
+            "name": "LC-003 The AI Office & Enforcement.pptx",
+            "ext": "pptx",
+            "kb": 501,
+            "date": "2026-09-07",
+            "sha": "4fc001b673e0e2dd",
+            "rel": "4.4 Law & Compliance/LC-003/LC-003 The AI Office & Enforcement.pptx"
+          }
+        ],
         "folder": "LC-003"
       },
       "lesson_plan": {
@@ -26251,9 +26277,9 @@
           {
             "name": "MC-102_Annotation_Pack.xlsx",
             "ext": "xlsx",
-            "kb": 28,
+            "kb": 36,
             "date": "2026-09-06",
-            "sha": "e6a6b5bfec8c93fb",
+            "sha": "06253bb8e94e8706",
             "rel": "4.3 Media & Culture/MC-102/MC-102_Annotation_Pack.xlsx"
           },
           {
@@ -27070,10 +27096,18 @@
       "revision_requested": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-08-31",
+        "newest": "2026-09-07",
         "files": [
+          {
+            "name": "MF-13_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 216,
+            "date": "2026-09-07",
+            "sha": "2fb955eda538e047",
+            "rel": "4.5 Management & Finance/MF-13/MF-13_Second_Author_Review.docx"
+          },
           {
             "name": "MF-13 - s.pdf",
             "ext": "pdf",
@@ -27123,10 +27157,18 @@
       "revision_requested": false,
       "review_note": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-09-07",
         "files": [
+          {
+            "name": "MF-14_Second_Author_Review.docx",
+            "ext": "docx",
+            "kb": 215,
+            "date": "2026-09-07",
+            "sha": "829b2a85d8e86d21",
+            "rel": "4.5 Management & Finance/MF-14/MF-14_Second_Author_Review.docx"
+          },
           {
             "name": "MF-14 Data Lineage.pdf",
             "ext": "pdf",
@@ -30327,12 +30369,28 @@
       "realai_wiki_gap": false,
       "review_done": true,
       "revision_requested": false,
-      "review_note": "V2 reviewed 4 Sep 2026. Mary Hendrick acknowledged our 26 Aug review on 28 Aug and shipped V2 on 31 Aug. Nearly everything fixed: Carl Rogers attribution removed, the NBER 22% stat dropped entirely (it argued against its own urgency framing), the Agile stat correctly re-attributed to Wolpers/Age-of-Product with 289 respondents and the 55% figure, and Talebi/Interaction Associates/Dept of Health citations corrected. Two June asks also delivered and delivered well: model drift now has its own section framed through staff impact (gaslighting effect, alert fatigue, liability fear), and explainability appears as XAI on the trust slide. Plan doc placeholders fixed and its outcomes now match the deck. STILL OPEN: the wiki page is now the stale copy (old outcomes with two \"explore\" verbs, run-on keywords, job role still \"All three roles\") and should be updated from the V2 doc; the two overclaims on the psychological safety slide (\"single most critical factor\", \"100% secure\"); the doc timing table still has content against only 3 of 10 slots; validation-to-adoption gap still absent; \"Integation\" typo.",
+      "review_note": "V3 reviewed 8 Sep 2026, 17:52 CEST. We closed this on 4 Sep saying the punch-list need not come back to us; Mary Hendrick did all five anyway and shipped V3 on 7 Sep. Wiki page updated by the author (outcomes now match the doc, keywords a real list, duplicated wrap-up line gone, both student activities added). Both psychological-safety overclaims removed and the replacements are accurate. Timing table now fills all ten slots and tiles 0-120 min exactly. Validation gap added as new slide 24 with two 2026 references, BOTH VERIFIED REAL: Chereches, Eur J Public Health 2026;36(4):ckag068 (PMID 42322228, PMCID PMC13282706) and Navarro-Ballester, Explor Med 2026;7:1001412 (DOI resolves). 'Integation' fixed; Edmondson (1999) added to the psych-safety slide. TWO ATTRIBUTION ITEMS WE MISSED IN AUG AND 4 SEP, present since the first draft: slide 18 reproduces nine of Kanter's ten reasons (HBR, 25 Sep 2012) in her order with her remedy wording and she is nowhere in the deck; slide 42's notes are lifted sentence-for-sentence from leaderfactor.com (Clark is named, the wording is not quoted or linked). Both raised because the deck ships CC BY-NC-SA. Smaller: the 20-30 min row now carries 14 slides after slide 24 was inserted without a timing change; slide 24 opens with a subjectless 'May reflect'; slide 43 lists PSC as a team psych-safety measure when it is an organisational antecedent. Sign-off unchanged, material ready to teach.",
       "materials": {
-        "count": 5,
+        "count": 7,
         "has": true,
-        "newest": "2026-08-31",
+        "newest": "2026-09-07",
         "files": [
+          {
+            "name": "lessonplanHL065_ChangeLeadershipinHealthcareV3.docx",
+            "ext": "docx",
+            "kb": 30,
+            "date": "2026-09-07",
+            "sha": "098b5f83b53a8269",
+            "rel": "4.2 Health & Lifescience/HL-065/lessonplanHL065_ChangeLeadershipinHealthcareV3.docx"
+          },
+          {
+            "name": "HL-065_V3.pptx",
+            "ext": "pptx",
+            "kb": 4481,
+            "date": "2026-09-07",
+            "sha": "3751aeec02b6df31",
+            "rel": "4.2 Health & Lifescience/HL-065/HL-065_V3.pptx"
+          },
           {
             "name": "lessonplanHL065_ChangeLeadershipinHealthcareV2.docx",
             "ext": "docx",
@@ -30900,9 +30958,9 @@
           {
             "name": "MC-102_Annotation_Pack.xlsx",
             "ext": "xlsx",
-            "kb": 28,
+            "kb": 36,
             "date": "2026-09-06",
-            "sha": "e6a6b5bfec8c93fb",
+            "sha": "06253bb8e94e8706",
             "rel": "4.3 Media & Culture/MC-102/MC-102_Annotation_Pack.xlsx"
           },
           {
