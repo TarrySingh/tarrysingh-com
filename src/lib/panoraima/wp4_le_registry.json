@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-08T15:53:50.923448+00:00",
-  "refreshed_at": "2026-09-08T15:53:50.923448+00:00",
+  "generated_at": "2026-09-08T16:06:29.510772+00:00",
+  "refreshed_at": "2026-09-08T16:06:29.510772+00:00",
   "refresh_history": [
     {
       "at": "2026-09-08T15:41:54.061678+00:00",
@@ -18093,7 +18093,7 @@
       "realai_wiki_gap": false,
       "review_done": true,
       "revision_requested": false,
-      "review_note": null,
+      "review_note": "Checked 8 Sep 2026 during the sync, not a fresh review. Monira reviewed the updated deck 22 Jul 2026 and asked for four minor fixes before sign-off; TUD replied on the Talk page 23 Jul that they were done. The LE is now 'Ready for pilot' on the wiki. Two problems. (1) The wiki 'Instructions for teachers' section is EMPTY and 'Expected preparation' is 'None.' on all four lines, so the LE goes to pilot with outcomes and nothing on how to run 120 minutes. (2) HL-048_final.pptx (3 Sep) is the 23 Jul file renamed: all 50 slides, all speaker notes and all 30 media are byte-identical, only two customXml metadata parts differ. Content is therefore NOT stale (it is the revised July version), but nothing was done on 3 Sep beyond the rename. Worse, slide 43 ('What learn today?', itself a broken title) still carries Monira's review asks in its SPEAKER NOTES as an unfinished to-do: 'Provide the planned one-page takeaway card...' and 'Revisit the three communication tensions'. Her fourth ask was to remove internal feedback comments before release, and that is the one still open. Escalated to the WP4 lead (Meike) as the concrete instance of the wiki/SharePoint drift pattern.",
       "materials": {
         "count": 3,
         "has": true,
@@ -36363,7 +36363,7 @@
       "realai_wiki_gap": false,
       "review_done": true,
       "revision_requested": false,
-      "review_note": null,
+      "review_note": "Checked 8 Sep 2026 during the sync, not a fresh review. Monira reviewed the updated deck 22 Jul 2026 and asked for four minor fixes before sign-off; TUD replied on the Talk page 23 Jul that they were done. The LE is now 'Ready for pilot' on the wiki. Two problems. (1) The wiki 'Instructions for teachers' section is EMPTY and 'Expected preparation' is 'None.' on all four lines, so the LE goes to pilot with outcomes and nothing on how to run 120 minutes. (2) HL-048_final.pptx (3 Sep) is the 23 Jul file renamed: all 50 slides, all speaker notes and all 30 media are byte-identical, only two customXml metadata parts differ. Content is therefore NOT stale (it is the revised July version), but nothing was done on 3 Sep beyond the rename. Worse, slide 43 ('What learn today?', itself a broken title) still carries Monira's review asks in its SPEAKER NOTES as an unfinished to-do: 'Provide the planned one-page takeaway card...' and 'Revisit the three communication tensions'. Her fourth ask was to remove internal feedback comments before release, and that is the one still open. Escalated to the WP4 lead (Meike) as the concrete instance of the wiki/SharePoint drift pattern.",
       "materials": {
         "count": 3,
         "has": true,
