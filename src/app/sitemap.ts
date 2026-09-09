@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/experiments`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE}/synaptic`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: "https://www.tarrysingh.com/synaptic/intelligence-without-permission", lastModified: new Date("2026-09-09"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE}/synaptic/symphony`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/synaptic/memphis`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },

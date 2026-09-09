@@ -6,6 +6,7 @@ import { ArrowRight, TrendingUp, Globe, Cpu, BarChart3, Bot, Home, Network, Gaug
 import coverPlanisphere from "@proposals/SYMPHONY/plates/plate-II-cover-planisphere.png"
 import { NewsletterCard } from "@/components/blog/NewsletterCard"
 import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
+import { IntelligenceFeature } from "@/components/synaptic/IntelligenceFeature"
 import { EngineRoomPlate } from "@/components/synaptic/EngineRoomPlate"
 import { Software3Plate } from "@/components/synaptic/Software3Plate"
 
@@ -331,13 +332,13 @@ const Landing = () => {
                 lineHeight: 1.5,
               }}
             >
-              Four plates from a studio that takes its time · a 30,000-word
-              field manual, a ~45,000-word field guide, a frontier proposal,
-              and a map of the automated future.
+              Long-form field guides, open scientific laboratories and
+              frontier proposals — from a studio that takes its time.
             </p>
           </div>
 
           {/* feature cards */}
+          <div className="mt-14"><IntelligenceFeature /></div>
           <div className="mt-14 grid gap-8 lg:grid-cols-2">
             {/* newest flagship: the field manual */}
             <Link

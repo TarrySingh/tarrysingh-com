@@ -1,0 +1,53 @@
+Fermat’s Last Theorem is an unusually good test of whether an account of AI progress respects the difference between a celebrated name and a specific achievement. The theorem was not waiting for a language model to supply its first proof. Andrew Wiles’s work, completed with the crucial Taylor–Wiles contribution, was published in 1995. Any account that erases that history in order to make a contemporary announcement sound larger has already weakened its argument.<Source id="S23" />
+
+The theorem concerns the impossibility of finding positive whole numbers whose powers satisfy the familiar equation once the exponent exceeds two. Its statement is accessible; its proof draws on deep mathematical machinery. That distance between a simple claim and a complex justification has made it a symbol of mathematical perseverance. In the AI era, it becomes a symbol of something else as well: the possibility of converting a vast structure of reasoning into an artefact that a machine can check.
+
+Anthropic’s September announcement concerns formalisation. The company reports producing a Lean proof over eleven days, building on an extensive human mathematical and open-source foundation. The significance is the translation and completion of a large, interconnected body of argument within a formal system. Calling this the first proof would be false. Calling it mere clerical transcription would miss why the task is difficult and why its automation matters.<Source id="S03" />
+
+### Two achievements, two histories
+
+A human mathematical proof is written for readers who bring substantial knowledge to the page. It can omit routine steps, invoke a standard result and rely on shared conventions about notation and definitions. That is a strength of mathematical communication: it makes complicated ideas comprehensible without expanding every consequence to the foundations. It is also one reason translating a proof into a formal system can be much more demanding than retyping its sentences.
+
+A formal development must make the relevant dependencies available in a compatible form. A theorem from one library may use definitions that do not immediately match those in another. An argument described as standard may require considerable construction before the checker can accept it. The formaliser must decide how to represent objects and how to organise reusable results. These choices influence the difficulty of the work and the usefulness of the resulting library.
+
+<Figure id="V06" />
+
+There is no need to diminish one achievement to recognise the other. Discovery expands what is known. Formalisation can strengthen how a result is checked, maintained and reused. Exposition helps people understand why it works. These activities can overlap, and one can stimulate another. A culture that values only the first announcement of a theorem may underinvest in the infrastructure that makes the theorem dependable and usable by a wider community.
+
+That underinvestment has an institutional explanation. Academic rewards often attach more visibly to recognisable intellectual ownership than to maintenance or translation. A long formalisation project may be essential while offering uncertain credit to the people doing it. AI changes the economics of some of that work, but it does not remove the need to decide which infrastructure deserves support. If the newly affordable work becomes abundant, institutions should reconsider the allocation of human effort rather than assuming the old prestige order remains appropriate.
+
+### What the checker checks
+
+Lean’s central contribution is a small kernel that checks proof terms against the system’s rules. Elaborate search and automation can operate around that kernel, but their output must ultimately satisfy it. The separation matters: a creative or unreliable search process can still produce an acceptable proof object. Reliability need not depend on trusting every intermediate suggestion made during the search.<Source id="S24" />
+
+The exact statement remains indispensable. A theorem’s name is not its meaning. A file labelled with a famous result could prove a related statement, assume a key conclusion or use definitions that differ from what a reader expects. Proper validation therefore inspects assumptions and checks that the formal statement corresponds to the intended claim. Lean’s own guidance explicitly distinguishes whether a theorem has a valid proof from what the statement means.<Source id="S25" />
+
+The released Fermat repository makes this boundary unusually visible. Its final check prints the theorem’s axioms and derives Mathlib’s formulation. The repository describes additional verification through Comparator and an independent kernel implementation. Those are reported checks that readers can inspect; I have not rerun the full resource-intensive build for this essay. The artefact permits stronger scrutiny than a screenshot of a success indicator, while still requiring an honest account of who performed which verification.<Source id="S21" /><Source id="S26" />
+
+<Figure id="V07" />
+
+The dependency view is deliberately small. It follows a real portion of the released proof path instead of drawing thousands of arbitrary glowing nodes. Its purpose is to show how a conclusion rests on named intermediate statements and how those statements connect to the final contradiction. The complete development is much larger. A useful visual should make the reader more capable of asking a question about that development, not merely more impressed by its size.
+
+### A new form of intellectual portability
+
+A checked proof can travel differently from a claim supported mainly by reputation. The recipient does not need to know the author personally to inspect the statement and run a suitable checker. This does not eliminate expertise. Understanding the result, selecting useful extensions and interpreting definitions remain demanding. It changes which parts of trust need to be supplied socially and which can be supported by an executable artefact.
+
+That shift is central to the article’s institutional argument. A researcher outside a prestigious department may struggle to obtain attention for a complicated claim. If the work arrives with a well-specified statement and a reproducible checking path, affiliation becomes a less defensible reason to dismiss it. The institution can still reject work that is irrelevant, badly explained or uninteresting. It has less reason to use an author’s address as a substitute for evaluating correctness.
+
+There is a corresponding burden on the outsider. Formal validity does not guarantee significance. One can generate many true statements that nobody needs. One can prove a property of a model whose connection to the real problem is weak. The ability to obtain a checkmark creates a new temptation to mistake measurable completion for intellectual importance. Universities and research communities remain valuable when they help distinguish a technically valid contribution from a consequential one.
+
+For enterprise, the parallel is specification. A company can ask whether a piece of software satisfies a precise property, but first it must decide whether the property captures the behaviour customers require. Formal methods can provide strong guarantees within their scope. They cannot repair a commercial requirement that omits the condition under which a system will be used. The difficult organisational work often lies in translating messy expectations into a statement worth proving.
+
+AI assistance may lower the cost of that translation and of the proof itself. It may help explore edge cases, connect existing lemmas or propose a more tractable specification. The benefit is potentially substantial. It should be assessed through defects prevented, requirements clarified and changes checked, rather than through the number of generated proof lines. More formal text is not automatically a better assurance system, any more than more source code is automatically a better product.
+
+### Credit is part of the infrastructure
+
+The Fermat development rests on a long chain of mathematical contributions and software. The released attribution material acknowledges upstream projects, including the Imperial College London effort led by Kevin Buzzard, other formalisation work and Mathlib. That inheritance is not decorative background. It is part of the explanation for what the contemporary system could do. A narrative in which a company’s model appears alone at the end of history would misunderstand its own evidence.<Source id="S27" />
+
+The same point applies to the critique of academia. Universities have built much of the knowledge, trained many of the researchers and supported tools that now make broader participation possible. Their contribution does not grant them a permanent exclusive right to control access. It does mean that a serious argument for change should ask how those public goods will be maintained. A system that consumes a common foundation while starving its upkeep will eventually damage the conditions of its own success.
+
+Attribution also affects incentives. If a later automated project receives all the attention while the people who created the definitions, libraries and underlying ideas become invisible, the market for prestige will send a poor signal. We need ways to credit reusable foundations and careful verification alongside dramatic completion. Institutions can help build those practices. They can also fail to do so, leaving corporate announcements to define the history by default.
+
+The constructive opportunity is a research culture in which more work becomes inspectable, reusable and open to contribution. AI can assist with the labour of formalisation; institutions can supply durable stewardship, education and independent checking. Smaller groups can make contributions whose correctness is less dependent on the standing of their organisation. The resulting competition is demanding because it asks everyone to be more explicit about what they add.
+
+Fermat’s theorem was already proved. The newer story is that a formidable structure of reasoning can be turned into a portable, checkable object through a different organisation of work. That is enough to matter. It changes the economics of verification, the reach of mathematical infrastructure and the terms on which an outsider can ask to be taken seriously. A strong argument needs no historical theft to make that consequence visible.

@@ -1,0 +1,87 @@
+Take a small research company seriously for a moment. It has twelve people, a limited budget and a problem that an established enterprise considers too specialised to prioritise. Its founders understand the customer’s frustration. They do not have a campus, a famous laboratory or a recruitment department capable of assembling every discipline the problem might require. Under the old comparison, those absences settle the question before the investigation begins. The larger organisation has more intelligence on its payroll, so it is presumed to have more capacity to solve the problem.
+
+Now give the small company access to a large number of capable research agents. Some read technical literature. Some build models. Some inspect assumptions. Some write and run bounded tests. Some organise the record of failed approaches. The company still has twelve people. Its capacity to attempt intellectual work no longer scales directly with that number. This is the scenario that should disturb an incumbent whose confidence rests mainly on the size of its research staff.
+
+The million-agent version sharpens the question, but the number should not hypnotise us. A million agents are neither a million PhDs nor a million independent minds. They are a large computational organisation whose output depends on the models, tools, task design, information flows and evaluation process. The useful comparison is not between nominal headcounts. It is between the two organisations’ ability to obtain a valuable result at an acceptable cost and carry it into use.
+
+### Start with a result someone would pay for
+
+Suppose the small company wants to improve a component in an industrial cooling system. This is an illustrative commercial scenario. The team has access to a defined operating envelope and a customer willing to test a qualified design. It needs to understand the literature, model alternatives, evaluate trade-offs and decide which prototypes deserve fabrication. It does not need to discover a new branch of physics. It needs to produce a dependable improvement within the customer’s constraints.
+
+The first advantage of agents is breadth at the early stages. The team can investigate more candidate approaches before committing to one. It can compare modelling assumptions, search for relevant prior art and identify failure modes that a small human team might otherwise overlook. The value depends on the quality of the work, but the organisational change is clear: the team can obtain some of the benefits of a broader research group without permanently employing every specialist.
+
+The second advantage is continuity. An investigation need not stop because the person who understands one tool is occupied elsewhere. An agent can prepare a calculation, document a question or organise the next test while the human team focuses on decisions that need its attention. This does not mean that the system can be left unsupervised indefinitely. It means that scarce human time can be allocated differently, provided the work arrives in a form that is economical to inspect.
+
+The third advantage is the ability to make a better case before raising more resources. The team may be able to show a customer a coherent comparison, a reproducible model and a clear experimental proposal. That can reduce the distance between an idea and a serious commercial conversation. The funding required to begin useful work may fall even when the funding required to finish development remains substantial. Entry becomes possible at a different point in the process.
+
+<Figure id="V17" />
+
+The scenario instrument shows why the story cannot stop at more attempts. It assumes each agent produces one attempt in a day, then separates unique candidates from duplicates, checks from unchecked work and accepted candidates from rejected ones. Change the number of agents and the review queue can expand much faster than the useful output. Change the checking capacity and another part of the system becomes decisive. The assumptions are visible because the model is an aid to reasoning, not a forecast.
+
+### The research organisation has to be designed
+
+A badly organised swarm can be worse than a single competent assistant. It can distribute an ambiguous task, collect incompatible outputs and then spend most of its resources reconciling them. It can reward agents for sounding confident, causing uncertainty to disappear from the record. It can allow one mistaken result to become a shared premise that contaminates every downstream attempt. Scale makes these failures more expensive; it does not cure them.
+
+The architecture should follow the task. Independent searches are useful when different routes can be explored without constant communication. Sequential work requires careful hand-offs because a later step depends on the validity of an earlier one. A shared library can prevent duplication, but premature sharing can also make every agent follow the same attractive mistake. A reviewer should have enough context to check the work without being pressured by the prestige of the agent or the apparent consensus around it.
+
+Kim and colleagues’ study of agent systems supports this emphasis on task and organisation. Across its bounded evaluations, collaboration helped in some settings and substantially harmed performance in others. The study does not measure million-agent scientific research. Its relevant lesson is that scaling the number of agents is not a general law of improvement; coordination and task structure interact.<Source id="S18" />
+
+<Figure id="V18" />
+
+One source of failure is correlated error. If agents share a model, training background and prompt, their mistakes may not be independent. Asking several of them the same question can produce a reassuring agreement that contains little new information. A human organisation faces a related problem when all reviewers come from the same intellectual tradition. The remedy is not merely to assign different role names. It is to create different routes to evidence and preserve the possibility of a result being rejected.
+
+A second source is weak decomposition. A difficult question cannot always be divided into a thousand easy ones. The interfaces between subproblems may contain the difficulty. An agent can solve its assigned piece while making assumptions that conflict with the next piece. A coordinator then needs enough understanding to detect the mismatch. If that understanding remains the scarce resource, adding workers can simply create a larger integration burden around the same bottleneck.
+
+A third source is evaluation leakage. If the search can inspect and optimise every detail of the test used to judge it, it may find ways to satisfy the test without improving the intended result. The problem is familiar in software and machine learning, but agentic research makes it more general. A capable system can exploit a poorly chosen objective very effectively. The organisation needs independent checks, representative conditions and a willingness to revise its evaluator when the search reveals its weaknesses.
+
+The small laboratory’s most important employee may therefore be the person who knows what a convincing failure would look like. That person can define a test that stops attractive nonsense from consuming the budget. They can identify which uncertainty matters commercially and which calculation would resolve it. Agents can help with this work, but the organisation cannot outsource responsibility for the definition of success without knowing what it has delegated.
+
+### A million agents have a balance sheet
+
+Computational labour can be elastic without being free. Each attempt consumes model inference, tool execution, storage and sometimes specialist compute. The system also needs coordination, monitoring and recovery from failed runs. Accepted candidates may require human review or physical tests. A meaningful cost comparison includes those items and distinguishes them from the ongoing costs of the institution that hosts the work.
+
+It is misleading to compare a model’s token price with an enterprise’s total R&D budget. The latter may include facilities, equipment, materials, prototypes, field trials and activities that the model does not perform. It is equally misleading to use those physical costs to deny savings in the intellectual work that can change. The appropriate comparison follows the same output through both workflows and accounts for what each organisation actually has to buy or provide.
+
+The cost instrument uses deliberately hypothetical prices. It separates the cost of attempts, initial checking and physical tests. A reader can lower the price of generation and watch the total remain dominated by another stage. That is a useful result. It tells a founder where to invest next and tells an incumbent which asset may become more valuable as intelligence becomes cheaper. The point is not to produce a seductive dollar figure for a million-machine laboratory.
+
+<Figure id="V19" />
+
+There is also a difference between average cost and cash required before learning whether the programme works. A small company may face a promising expected return but lack the money to survive the sequence of experiments. Cheaper early investigation can help it make a stronger case for funding. It does not eliminate financing risk. The enterprise may retain an advantage through its ability to fund a long programme and absorb failures that would end a smaller company.
+
+Cloud access can reduce the need to own equipment while creating other dependencies. The team may rent compute in bursts, pay for specialised services and contract experiments. That changes fixed costs into variable costs, which can lower the barrier to entry. It can also expose the team to price changes, access restrictions and service interruptions. The future lab’s economics depend partly on whether it can switch providers and preserve its work when the underlying service changes.
+
+An agent count is particularly unhelpful without a time unit. A million brief tasks, a million continuously active processes and a million specialised workers with large computational budgets are different arrangements. They have different costs and different coordination problems. The article’s scenario treats the count as a way to explore the organisation of work. Any real claim should specify the duration, workload, model configuration and output being counted.
+
+### The scarce asset may be the right question
+
+The large research institution often sees more of the field. The smaller company may see more of a neglected problem. It can be close to a customer whose requirements are too unusual to command attention inside a broad product organisation. It can notice that a supposedly minor inconvenience creates a substantial cost. Wider access to research assistance allows that local knowledge to be combined with a larger body of technical work.
+
+This creates an important asymmetry. A challenger does not need a general superiority in intelligence. It needs a sufficiently good understanding of a valuable question and a way to obtain the work required to answer it. An incumbent may employ better scientists in aggregate and still fail to address the question promptly because its internal incentives point elsewhere. The vulnerability lies in allocation, not necessarily in the quality of the people on either side.
+
+The question must be chosen carefully. A small team that competes on a problem requiring years of exclusive data and expensive qualification may discover that its intellectual reach exceeds its ability to act. Another team may choose an interface where a useful result can be tested and purchased quickly. The difference is strategic. Abundant reasoning expands the menu of possible attempts; it does not tell a company which attempt fits its resources.
+
+This is why the best small laboratory may look less like a miniature university and more like a carefully chosen set of relationships. It has access to model providers, experimental partners, domain advisers and a customer who can evaluate the result. It owns the research record, the problem understanding and a route to commercial value. Its permanent staff may be small because much of the surrounding capacity can be obtained when needed.
+
+The organisation can also remain small for the wrong reasons. If it lacks enough human understanding to supervise the work, it may become dependent on whichever output seems most persuasive. If it outsources every experiment without learning how the measurements are produced, it may fail to recognise a systematic problem. If it treats every accepted computational candidate as a discovery, it may spend its credibility faster than its cash. The strength of a small lab comes from disciplined concentration, not from the absence of people.
+
+### What the incumbent should find uncomfortable
+
+The uncomfortable comparison is not twelve people against ten thousand. It is a narrow, well-organised programme against the fraction of a large institution’s attention that actually reaches the same question. The incumbent’s nominal resources may be enormous. Its usable resources for that problem may be constrained by budgets, internal ownership, incompatible systems or the need to justify work to several layers of management. A challenger can exploit that difference without matching the institution’s total capacity.
+
+An R&D leader should ask how long it takes a credible idea to obtain a fair test. Not a meeting, a presentation or a pilot announcement: a test that can change a decision. If the answer is dominated by internal procedure rather than scientific necessity, the organisation has created an opening. AI-assisted outsiders can make more attempts at that opening while the incumbent is still deciding which department is responsible for it.
+
+The defensive response is to emphasise everything the challenger lacks. Some of those observations will be correct. The challenger may lack production experience, access to field data or the ability to provide service at scale. A useful strategy turns those advantages into better collaboration and faster validation. A weak strategy merely recites them as reasons to ignore the challenger’s progress in the part of the process it can already perform.
+
+The enterprise can deploy the same tools. It can connect them to richer data and stronger experimental resources. It can give small internal teams authority to investigate bounded problems and partner with external groups whose work survives review. In that scenario, broad intelligence strengthens the incumbent’s ability to improve. The threat is not that incumbents are forbidden to adapt. It is that adaptation requires confronting the procedures and incentives that previously made their size feel like sufficient protection.
+
+### The laboratory’s product includes its evidence
+
+For the smaller team, a result becomes more valuable when a customer can inspect how it was obtained. The research record should identify the inputs, methods, failed alternatives, evaluation conditions and remaining uncertainties. This does not require disclosing every commercial secret. It requires enough evidence to support the claim being sold. A customer buying a component or analysis needs to know what has actually been demonstrated.
+
+AI can help prepare that record, but the record must not be a retrospective story assembled to make the final answer look inevitable. Failed attempts and changes of direction should remain visible where they affect interpretation. A later reviewer should be able to distinguish evidence available at the time of a decision from information added after the outcome. The quality of that distinction can determine whether the work is reusable or merely persuasive.
+
+An institution evaluating outside work should ask for the same standard it applies internally. If its own teams rely on undocumented judgement while it demands impossible documentation from newcomers, the standard is serving as a barrier. If it accepts polished external claims without adequate evidence because the provider is fashionable, it has abandoned the standard. The opportunity is to make the quality of the work more decisive on both sides.
+
+A million agents do not eliminate scarcity. They rearrange it. The ability to frame a consequential question, obtain independent evidence, manage a coherent programme and carry a result into the world remains uneven. The small lab becomes powerful when it combines broader intellectual access with a focused command of those remaining tasks. The incumbent remains powerful when it uses its assets to shorten that same path.
+
+That is the future worth taking seriously: many more organisations able to make credible attempts, competing and collaborating through evidence that travels beyond their walls. Some will employ only a handful of people. Some will be the great research enterprises we already know, rebuilt around different assumptions. The institutions most exposed are those that cannot explain why their scale improves the result once scale is no longer the only practical way to obtain the thinking.

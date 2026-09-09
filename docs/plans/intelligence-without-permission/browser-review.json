@@ -1,0 +1,167 @@
+{
+  "reviewedAt": "2026-09-09T15:12:41.080537+00:00",
+  "status": "passed",
+  "environment": "Headless Chrome on macOS; software WebGL; 1512×1100 desktop and 390×844 mobile viewport; device scale 1; reduced motion.",
+  "instruments": [
+    {
+      "kind": "atlas",
+      "controls": 3,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    },
+    {
+      "kind": "vortex",
+      "controls": 5,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    },
+    {
+      "kind": "zeta",
+      "controls": 4,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    },
+    {
+      "kind": "protein",
+      "controls": 5,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    },
+    {
+      "kind": "binding",
+      "controls": 5,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    },
+    {
+      "kind": "crystal",
+      "controls": 5,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    },
+    {
+      "kind": "agents",
+      "controls": 4,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    },
+    {
+      "kind": "metrology",
+      "controls": 5,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    },
+    {
+      "kind": "motor",
+      "controls": 5,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    },
+    {
+      "kind": "reservoir",
+      "controls": 6,
+      "presets": 3,
+      "rendererPreserved": true,
+      "zoom": "buttons, 50–200% slider and camera reset verified"
+    }
+  ],
+  "scientificControls": 47,
+  "guidedStates": 30,
+  "pageErrors": [],
+  "consoleErrors": [],
+  "checks": [
+    "Ordinary wheel preserves reading; Ctrl + wheel magnifies the scene",
+    "Share link copies complete instrument settings",
+    "JSON settings export includes scientific method and readouts",
+    "PNG image export contains rendered content",
+    "Five representative instruments fit a 390px mobile viewport with full-height linked plots",
+    "Two-finger pinch magnifies the 3D view",
+    "All 38 figures have unique rendered placements; 28 2D figures captured for visual review",
+    "All ten 3D instruments expose their static explanation for printing",
+    "Shared state restores and opens the intended instrument",
+    "Homepage Studio feature links to article",
+    "Responsive camera keeps mobile zoom limits and default view",
+    "Printed figure header has verified dark text on white; ten static views open",
+    "All 38 illustration-index links resolve; 18 chapters and unique IDs",
+    "Without JavaScript, 18 chapters and 38 figures render and native static-view disclosure opens"
+  ],
+  "manualVisualReview": {
+    "figures": 38,
+    "spatialInstruments": 10,
+    "standalone2DFigures": 28,
+    "homepageStudioCard": "Desktop and mobile inspected",
+    "articleHero": "Inspected",
+    "instrumentDirectory": "Fresh previews inspected",
+    "corrections": "Readable mobile plot axes, responsive 3D framing, print contrast, figure evidence labels, algebraic identity chart label spacing and cached preview revisions."
+  },
+  "testAdjustment": "The initial wheel assertion used a fixed 150 ms delay and ran before asynchronous scrolling completed. Waiting for actual scroll position change passed; no change to the wheel handler was required.",
+  "limitations": [
+    "No physical-device or cross-browser certification.",
+    "No Core Web Vitals or hardware frame-rate measurements.",
+    "Print checks cover static alternatives and representative contrast, not a full paginated book proof.",
+    "The article remains an unpublished local review edition."
+  ],
+  "mouseWheelAmendment": {
+    "status": "passed",
+    "checkedAt": "2026-09-09T15:23:12.567Z",
+    "url": "http://127.0.0.1:3027",
+    "instruments": [
+      {
+        "kind": "atlas",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      },
+      {
+        "kind": "vortex",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      },
+      {
+        "kind": "zeta",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      },
+      {
+        "kind": "protein",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      },
+      {
+        "kind": "binding",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      },
+      {
+        "kind": "crystal",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      },
+      {
+        "kind": "agents",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      },
+      {
+        "kind": "metrology",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      },
+      {
+        "kind": "motor",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      },
+      {
+        "kind": "reservoir",
+        "wheel": "Plain wheel zooms both directions without modifiers; 50–200% limits and reset pass; article stays still over canvas"
+      }
+    ],
+    "checks": [
+      "Ordinary wheel outside the canvas scrolls the article without changing magnification",
+      "All ten 3D canvases accept plain-wheel zoom with no modifier key"
+    ],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "supersedes": "The initial review required Ctrl/Command for wheel zoom. The author subsequently requested ordinary wheel zoom over active canvases; this amendment verifies that behavior on all ten instruments."
+  }
+}

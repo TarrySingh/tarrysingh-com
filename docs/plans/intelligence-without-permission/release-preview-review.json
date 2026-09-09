@@ -1,0 +1,40 @@
+{
+  "base": "http://127.0.0.1:3039",
+  "checkedAt": "2026-09-09T15:33:42.671Z",
+  "routes": [
+    {
+      "route": "/synaptic/intelligence-without-permission/intelligence-without-permission.md",
+      "status": 200
+    },
+    {
+      "route": "/synaptic/intelligence-without-permission/editorial-cover.webp",
+      "status": 200
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 200
+    },
+    {
+      "route": "/robots.txt",
+      "status": 200
+    },
+    {
+      "route": "/synaptic/loop-harness",
+      "status": 200
+    },
+    {
+      "route": "/synaptic/chokepoint-paradox",
+      "status": 200
+    },
+    {
+      "route": "/synaptic/software-3",
+      "status": 200
+    }
+  ],
+  "checks": [
+    "Article HTTP 200; 18 chapters, 38 figures; correct canonical, social URL and indexable robots",
+    "Reading copy, cover, datasets, sitemap, robots and three existing Studio destinations respond successfully",
+    "Both cards link correctly and fit desktop/mobile; existing Studio links retained; no page errors"
+  ],
+  "errors": []
+}

@@ -1,0 +1,64 @@
+{
+  "generated": "2026-09-09",
+  "asset": "editorial-cover.webp",
+  "purpose": "Conceptual editorial cover, used in the article hero, homepage Studio feature and Synaptic index. Not a scientific figure.",
+  "generator": "Image generation tool; one generated asset selected and inspected.",
+  "brief_summary": "A museum-like scientific sculpture: an opened translucent research chamber expanding into luminous paths, mathematical surfaces and a molecular ribbon. Main composition on the right, quiet left for typeset headline. Midnight navy, gold, cyan and restrained violet. No generated lettering, logos, people or robots; conceptual rather than a faithful molecular structure.",
+  "transform": "Converted to WebP at original 1672 \u00d7 941 dimensions. Headlines and labels are HTML, not baked into the asset.",
+  "sha256": "7c42a542b11abae6867bb40b871e5ab26f8f6ff780d8f60ea3e594223ddb2d68",
+  "original_png_sha256": "68e5d9defbda30bf50403fb81ccf7c8978f0395df3eb8840cba9d9dc81c67755",
+  "bytes": 269006,
+  "scientific_figures": "Three.js/SVG/HTML derived from stated equations, deposited coordinates and explicit scenarios; no generated scientific measurements or molecular imagery.",
+  "scene_previews": {
+    "agents.webp": {
+      "sha256": "68703216a0f73d744a0968871a435c68203ba8aa9794334bbe608bbd4b6ac63d",
+      "bytes": 41158,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    },
+    "atlas.webp": {
+      "sha256": "b07fc2b7444f62578680e0a4c3d32419f8e528a3abfdd6b4cd401fbb1ec719cc",
+      "bytes": 37386,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    },
+    "binding.webp": {
+      "sha256": "f2cd3dffe11f6fa063e35195b079a70f50b4f6f6ef8d614e420c0cb965e3ab5f",
+      "bytes": 40378,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    },
+    "crystal.webp": {
+      "sha256": "4aade4dd8b72cdc7d51fcde2f1345ca9c1ee876033226f6286cf1b493a3d55c0",
+      "bytes": 46362,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    },
+    "metrology.webp": {
+      "sha256": "07d4d25951739c2aa45fdb741f98c3467ff57acb60d7a74c919bbcd542b87ecc",
+      "bytes": 28556,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    },
+    "motor.webp": {
+      "sha256": "6c696bf2036aa461f25cdee9b94bacad30801d6d1cf78a22a44193c52aca176c",
+      "bytes": 23564,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    },
+    "protein.webp": {
+      "sha256": "8b692208988c74445014108f45248ef7db93e578c94f981b74927c4ddc742eb5",
+      "bytes": 27924,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    },
+    "reservoir.webp": {
+      "sha256": "0e79909728966f8c5a2489e52217eec84d268c7a53192e066c632ba53f66d52c",
+      "bytes": 29390,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    },
+    "vortex.webp": {
+      "sha256": "105f020fb227843c25c90840b7bc3e888b7e56f91ecd87e50009e02399c6b74a",
+      "bytes": 34662,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    },
+    "zeta.webp": {
+      "sha256": "f4a8c6e8b646c25ba8c27a48597ee550751a6295ba85fb5ecfaae877f6653bab",
+      "bytes": 31918,
+      "method": "Rendered from the documented Three.js scene at default controls; camera toolbar and LIVE VIEW badge excluded."
+    }
+  }
+}

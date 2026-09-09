@@ -9,15 +9,16 @@ import { ItalicCaption } from "@/components/editorial/ItalicCaption"
 import { SmallCaps } from "@/components/editorial/SmallCaps"
 import { VisionHorizon } from "@/components/synaptic/VisionHorizon"
 import { ChokepointPlate } from "@/components/synaptic/ChokepointPlate"
+import { IntelligenceFeature } from "@/components/synaptic/IntelligenceFeature"
 import { EngineRoomPlate } from "@/components/synaptic/EngineRoomPlate"
 import { Software3Plate } from "@/components/synaptic/Software3Plate"
 import { PlateCarousel } from "@/components/synaptic/PlateCarousel"
 
 export const metadata = {
   title:
-    "Synaptic Cartography, The Engine Room · The Chokepoint Paradox · SYMPHONY · tarrysingh.com",
+    "Synaptic Cartography — Intelligence Without Permission · Tarry Singh",
   description:
-    "A studio of deep-tech proposals and long-form field guides presented as museum-grade interactive plates: THE ENGINE ROOM, a 30,000-word field manual on loop and harness engineering with fifteen instruments, and THE CHOKEPOINT PARADOX, a ~45,000-word field guide to Europe's tech-sovereignty failure with ~40 instruments, alongside SYMPHONY and MEMPHIS, two EIC Pathfinder 2026 submissions, and the SOFTWARE 3.0 gallery.",
+    "Long-form essays, scientific instruments and deep-tech proposals. Intelligence Without Permission explores widely available research capability in 40,376 words and 38 visual studies, alongside The Engine Room, The Chokepoint Paradox, Software 3.0, SYMPHONY and MEMPHIS.",
 }
 
 const proseStyle = {
@@ -87,7 +88,7 @@ export default function SynapticPage() {
             className="syn-small-caps mt-3"
             style={{ color: "var(--ink-dim)", letterSpacing: "0.3em" }}
           >
-            · five cartographies · the studio grows ·
+            · six cartographies · the studio grows ·
           </p>
         </div>
       </header>
@@ -147,11 +148,13 @@ export default function SynapticPage() {
       {/* the plates — an auto-advancing showcase, every plate at full size */}
       <section className="syn-column pt-20">
         <div className="space-y-3 pb-14 text-center">
-          <SmallCaps>Five cartographies</SmallCaps>
+          <SmallCaps>Six cartographies</SmallCaps>
           <h2 className="syn-display mx-auto" style={sectionHeading}>
             The plates
           </h2>
         </div>
+
+        <div className="mb-14"><IntelligenceFeature /></div>
 
         <PlateCarousel>
           {/* Plate V — The Engine Room */}

@@ -1,0 +1,69 @@
+The famous problems are useful entrances, but they are poor boundaries for the story. Most economically important research does not end with a theorem whose name appears in a school textbook. It ends with a material that behaves better, an algorithm that wastes less compute, an experiment that distinguishes two explanations or a process that fails less often. If we look only for a machine’s next encounter with a centuries-old conjecture, we may miss the changes that reach ordinary organisations first.
+
+These quieter advances often share a practical feature: someone can specify what a better answer would look like and construct a test that gives useful feedback. The test need not be perfect. It must be informative enough to distinguish progress from fluent improvisation. When candidate generation and evaluation can be connected, research becomes a repeated process of proposing, measuring and selecting. AI can change the scale of that process without making every stage equally fast.
+
+### A catalogue is not a factory
+
+Materials discovery offers a striking example. GNoME’s published work reported a very large expansion in predicted crystal structures and a substantial set predicted to be stable relative to its final reference. The paper also discussed hundreds of structures that had been independently realised experimentally. These are different categories of evidence. Millions of predicted structures do not mean millions of new materials have been manufactured, characterised and turned into useful products.<Source id="S12" />
+
+A candidate structure can matter before it becomes a product. It may suggest a region of chemical space worth exploring, expose a pattern or help prioritise experiments. But a material’s practical value depends on more than a predicted stability criterion. It must be possible to make it in an appropriate form, understand its properties under relevant conditions and incorporate it into something useful. The distance between those tasks is where industrial research earns much of its value.
+
+The crystal figure uses an established diamond structure from the Crystallography Open Database. This is not a newly predicted GNoME material. It lets us inspect the basic idea of a repeating unit cell using documented coordinates and symmetry. A repeated pattern of atoms can be described compactly while producing a macroscopic solid. The picture explains one kind of structural information; it does not imply a manufacturing route or a commercial opportunity.<Source id="S43" />
+
+<Figure id="V14" />
+
+The distinction matters because prediction abundance can change the organisation of materials research. A laboratory may have more plausible candidates than it can synthesise. It then needs a principled way to select experiments, including experiments that reveal why predictions fail. The most valuable next sample may be the one that tests an uncertain assumption rather than the one with the highest predicted score. A system designed only to celebrate promising candidates can neglect that learning objective.
+
+For a manufacturer, the relevant question might be narrower still. It may need a coating that survives a particular environment, a component that can be produced with existing equipment or a substitute that reduces dependence on a difficult input. The best answer could be an unglamorous improvement within a known family of materials. AI’s value lies in helping explore the actual design problem, including constraints the public research benchmark may not contain.
+
+A small laboratory can enter through this gap. It does not need to own a complete manufacturing chain to provide a useful screening method, a validated measurement or a specialised material insight. The incumbent can become its customer, partner or competitor. The disruptive unit is often a valuable piece of a process rather than an entire company. We will return to that point because it is the most common error in arguments about whether research giants can be challenged.
+
+### An algorithm can meet its evaluator immediately
+
+Computational problems sometimes offer a faster route from proposal to evidence. A candidate program can be run against a defined test. Its correctness and resource use can be assessed under stated conditions. AlphaEvolve combines generated code with automated evaluation and an evolutionary process that retains promising candidates. The system’s architecture directs attention to the evaluator as much as to the language model.<Source id="S42" />
+
+One reported result concerns multiplying two four-by-four matrices with complex entries using forty-eight scalar multiplications, improving on the forty-nine obtained by applying Strassen’s construction in this setting. For this essay, I inspected the released coefficient data and independently checked all 4,096 entries of the associated tensor identity. That verifies the published bilinear construction as represented by those coefficients. It does not establish superior wall-clock speed, numerical conditioning or performance on every hardware platform.<Source id="S44" />
+
+<Figure id="V15" />
+
+The difference of one multiplication can look small until we ask what is being measured. In a mathematical complexity result, reducing the count can establish a new construction. In a practical implementation, additions, memory movement, precision and hardware behaviour also matter. The same algorithm can therefore be mathematically significant without being the best routine for an engineer’s immediate workload. A good comparison keeps the metric attached to the claim.
+
+Google’s account also describes deployment-oriented improvements, including a scheduling heuristic and optimisations within its computing infrastructure. Those cases illustrate another path to value: a modest improvement repeated across a large operating base. The article should treat the reported gains as company claims tied to particular systems, rather than a universal promise about what any agent will achieve. The mechanism is nevertheless clear enough to analyse.<Source id="S10" />
+
+If a piece of code runs billions of times, a small improvement can justify substantial research effort. A large company has an advantage because it owns the workload, the measurements and the route to deployment. A smaller team may have an advantage because it can concentrate on one neglected optimisation. Wider access to research assistance can intensify both effects. The technology does not automatically choose between centralisation and competition; the ownership of the evaluator and the deployment path helps determine the outcome.
+
+This suggests a practical question for every technical enterprise: which expensive routines have a trustworthy test but receive little sustained attention? The answer may be hidden in scheduling, configuration, data processing or numerical code. These problems often lack the prestige of a new product, yet they impose recurring costs. A research system that explores them systematically can create value without producing a headline that mentions a major conjecture.
+
+### Rediscovery can be a useful test, if it is called rediscovery
+
+Google’s AI co-scientist work offers a different kind of evidence. In one reported evaluation, researchers gave the system a question whose answer their group had already established experimentally but had not yet made public. The system proposed the relevant explanation independently of that unreleased result. The experiment tested its ability to arrive at a useful hypothesis from the available background. It did not show that the machine had replaced the original experimental programme with a short conversation.<Source id="S13" />
+
+That distinction matters more than the dramatic comparison of elapsed times. The human research created the evidence against which the machine’s hypothesis could be recognised as correct. Without that evidence, the output would have remained a candidate explanation. Rediscovery can be a strong evaluation because it gives the test a known answer while limiting direct access to it. It should not be narrated as though the evaluation’s reference work had never been needed.
+
+The same method can be useful inside an enterprise. A company can take a completed investigation, preserve the information available at an earlier stage and test whether an assistant would have proposed an informative next step. It can compare the system’s suggestions with what later proved useful. Such retrospective tests are imperfect: they can leak information or select unusually convenient cases. Designed carefully, they are more informative than asking employees whether a polished answer seems impressive.
+
+A prospective test is stronger for some purposes. The organisation records the question, available information and evaluation criteria before the outcome is known. It then compares what the assistant changes about the real work. Does it reduce wasted experiments? Does it identify a failure earlier? Does it help a less experienced researcher obtain a result that survives review? Those questions connect the promise of research intelligence to the institution’s actual performance.
+
+<Figure id="V16" />
+
+The feedback comparison makes no claim that all scientific fields can be placed on a single speed scale. Checking a formal object, running a software test and observing a biological outcome are different activities. Even within one field, a test may be cheap or prohibitively expensive. The useful distinction is whether the evaluator can keep pace with the proposed work, and whether it measures the property the researcher actually needs.
+
+### A correction to my own earlier framing
+
+Readers of my June essay, “Your AI Doesn’t Discover Anything. Here’s the Math That Proves It,” will recognise a tension. That article discussed Wang and Buehler’s framework for distinguishing search within a fixed representation from a verified change in the representation itself. The distinction remains valuable. The headline was too categorical if read as a universal claim that AI systems cannot contribute new scientific knowledge. A formal definition of one kind of discovery does not establish that broader prohibition.<Source id="S41" />
+
+The framework asks us to track what the system can represent, which operations are available and how a new commitment is supported by evidence. It is useful precisely because it demands more than an impressive answer. It does not require us to deny the value of a new theorem obtained from existing concepts, an experimentally confirmed design or an algorithm with a checked property. Those achievements may occupy different categories without becoming economically or scientifically trivial.
+
+The distinction I want to preserve is between changing the language of a problem and producing new work within that language. Both can matter. A system that cannot revise its representation may encounter a serious limit on some questions. It may still explore an existing representation more effectively than a particular organisation can. For an enterprise competing on the cost and speed of that exploration, the limit is not a refuge from competition.
+
+There is a temptation in technology criticism to choose a definition that keeps the preferred conclusion safe. If a machine produces a valuable result, redefine the achievement as something short of real intelligence. If it fails, treat the failure as a verdict on every future system. The opposite temptation is to describe every successful result as proof that no meaningful limits remain. Both approaches make it difficult to learn from evidence because they decide the interpretation before the work is examined.
+
+Institutions should resist that habit, including when it appears in their own defence. The relevant question is not whether the new tool deserves a title associated with human prestige. It is whether the tool changes who can perform a consequential task, how much that task costs and how its result can be checked. An institution can lose an exclusive capability before a machine satisfies its preferred philosophical definition of a scientist.
+
+### The evaluator becomes a strategic asset
+
+Across these examples, a pattern emerges. The ability to propose is spreading, while the ability to evaluate remains unevenly distributed. In mathematics, evaluation may rely on formal infrastructure and expert interpretation. In computing, it may rely on a representative workload and reliable measurements. In materials research, it may rely on synthesis and characterisation. In biology, it may require experiments that take time and resources. Each setting creates a different opportunity for entrants and incumbents.
+
+A company that owns a good evaluator can use increasingly capable proposal systems to improve its work. It can also become vulnerable if the evaluator is portable and competitors can obtain it. A public institution can expand participation by making evaluation more accessible, provided it retains the standards that make the result meaningful. A small lab can build its advantage around a neglected test rather than attempting to outspend a large company on general intelligence.
+
+This is a more concrete account of disruption than the claim that machines will become clever and everything will change. It identifies the activities, the evidence and the points at which ownership matters. It also gives organisations something useful to do now: find the important questions that can be evaluated, improve the quality of those evaluations and open a path for more capable attempts to reach them. The next breakthrough may carry a famous name. The next competitive threat may arrive as a better answer to a problem the organisation considered too ordinary to prioritise.
