@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-08T22:47:21.057242+00:00",
-  "refreshed_at": "2026-09-08T22:47:21.057242+00:00",
+  "generated_at": "2026-09-09T09:23:38.918037+00:00",
+  "refreshed_at": "2026-09-09T09:23:38.918037+00:00",
   "refresh_history": [
     {
       "at": "2026-09-08T15:41:54.061678+00:00",
@@ -112,6 +112,7 @@
       "reviewer": 86,
       "reviewed": 50,
       "revision_requested": 6,
+      "early_feedback": 12,
       "by_status": {
         "In development": 29,
         "In review": 54,
@@ -253,6 +254,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -306,6 +308,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -350,6 +353,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -394,6 +398,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -438,6 +443,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -482,6 +488,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -526,6 +533,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -570,6 +578,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -614,6 +623,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -711,6 +721,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -808,6 +819,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -905,6 +917,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -949,6 +962,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -1002,6 +1016,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1046,6 +1061,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1090,6 +1106,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1134,6 +1151,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1178,6 +1196,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1222,6 +1241,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1266,6 +1286,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1310,6 +1331,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1354,6 +1376,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1398,6 +1421,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1442,6 +1466,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1486,6 +1511,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1530,6 +1556,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1574,6 +1601,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1618,6 +1646,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1662,6 +1691,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1705,6 +1735,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1749,6 +1780,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1793,6 +1825,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1837,6 +1870,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1881,6 +1915,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1923,6 +1958,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -1965,6 +2001,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2007,6 +2044,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2049,6 +2087,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2091,6 +2130,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2133,6 +2173,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2175,6 +2216,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2217,6 +2259,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2259,6 +2302,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2301,6 +2345,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2343,6 +2388,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2385,6 +2431,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2427,6 +2474,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2469,6 +2517,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2511,6 +2560,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2553,6 +2603,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2595,6 +2646,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2637,6 +2689,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2679,6 +2732,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2721,6 +2775,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2763,6 +2818,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2805,6 +2861,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2847,6 +2904,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2889,6 +2947,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Solid R2R base plan; make reconciliation and segregation explicit as controls, not just steps. Split the run-on LO; add timing/rubric/prep. Reviewer fields blank; 'Analist' typo.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -2949,6 +3008,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good threshold-as-governance framing. Bug: Keywords field is a paste of the learning outcome. Add confidence-score calibration, duplicate/redirection fraud, three-way match. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3009,6 +3069,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong cash-application plan; match at customer+invoice level not just totals; aged-unmatched/misapplied as the queue's health metric. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3069,6 +3130,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Right traceability lens; it's a grounding problem, a disclosure must trace to a source and 'the model wrote it' is not evidence. LO missing full stop. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3129,6 +3191,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "One of the strongest. Add automation bias by name (ties to the ISA 500 revision). Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3189,6 +3252,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Right message but too generic for a Regulatory LE; name ICFR/SOX 404/COSO, ISA 500/315, ISA 240 (2025), and that there is no AI-specific audit standard yet. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3249,6 +3313,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong base FP&A; keep explanation vs attribution separate; add a naive-baseline forecast-quality measure. Pre-AI by design. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3309,6 +3374,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good abstraction-gap base; name driver-model failure modes + assumption governance; scope note (not high-risk unless it feeds credit). CEF grant placeholder unfilled. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3369,6 +3435,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong ML-vs-expert topic; name target/look-ahead leakage and the interpretability traps (SHAP is association, not causation); add walk-forward eval + baselines. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3429,6 +3496,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Well-scoped, minor-to-moderate. Split the single run-on outcome; make the case expose one fluent-but-wrong AI variance commentary (verify the causal claim, not the prose) and one over-eager anomaly flag (false positives and alert fatigue); state who owns the narrative that reaches the board; add rubric, timing, prep. 'Analist' typo.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3526,6 +3594,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Well-conceived failure modes; give each a method (PSI/ADWIN drift, calibrated intervals, oversight design); map to the three-lines model. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3586,6 +3655,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "SR 11-7 in title/keywords/instructions was rescinded (17 Apr 2026); teach the durable principles + EU AI Act instead, classify the use case, use a model card. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3646,6 +3716,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3706,6 +3777,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "One of the strongest plans, minor and additive. Add the 2026-current regulatory reality: EU AI Act high-risk for credit (Annex III, obligations from Aug 2026), ECOA adverse-action reasons, the 21 Jul 2026 CFPB change ending ECOA disparate impact (now disparate treatment via proxies + Fair Housing Act), and model risk management after SR 11-7's April 2026 rescission. Temper the accuracy gain (modest but consistent) and name SHAP's limits.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3803,6 +3875,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good three-audience explainability; separate local vs global; SHAP/LIME limits; adverse-action duty (ECOA/Reg B, FCRA); 2026 ECOA change + EU AI Act (deferred to Dec 2027). Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3863,6 +3936,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good treasury-risk arc; name Basel metrics (HHI, LCR, NSFR, IRRBB, 2023 HTM losses); the monitor is a model; anomaly base-rate/drift. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3923,6 +3997,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong failure-modes; give non-stationarity a vocabulary; AUC-misses-prior-shift mechanics; proxy encoding + selective labels; 2026 fair-lending + EU AI Act currency. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -3983,6 +4058,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Built on the rescinded SR 11-7 (Apr 2026); the 2026 replacement excludes generative AI, so the 'extend the framework to AI' thesis is backwards. Reframe. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4043,6 +4119,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good lineage topic; anchor to BCBS 239 + concrete failure modes and controls; add AI provenance (model version, data snapshot, prompt). Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4103,6 +4180,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Important oversight/competence theme; anchor in EU AI Act Art 14; quantify review load; adverse-action legal basis; use 2026 MRM guidance, not SR 11-7. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4163,6 +4241,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Right capstone; pin to the 2026 MRM baseline (not SR 11-7); require an EU AI Act high-risk analysis (deferred to Dec 2027); explainability as a legal control; quantitative escalation triggers. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4223,6 +4302,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -4275,6 +4355,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4318,6 +4399,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4361,6 +4443,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4404,6 +4487,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4447,6 +4531,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4490,6 +4575,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4533,6 +4619,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4576,6 +4663,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4672,6 +4760,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4715,6 +4804,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4758,6 +4848,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4801,6 +4892,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4844,6 +4936,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4887,6 +4980,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4930,6 +5024,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -4973,6 +5068,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5016,6 +5112,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5059,6 +5156,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5102,6 +5200,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5145,6 +5244,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5188,6 +5288,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5231,6 +5332,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5274,6 +5376,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5317,6 +5420,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5360,6 +5464,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5403,6 +5508,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5446,6 +5552,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5489,6 +5596,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5585,6 +5693,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5681,6 +5790,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5724,6 +5834,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5820,6 +5931,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5863,6 +5975,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5906,6 +6019,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -5949,6 +6063,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6045,6 +6160,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6088,6 +6204,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6131,6 +6248,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed 9 Sep 2026 (signed off with minor fixes). A well-built, accurate 90-minute lecture on uncertainty and calibration with a fully verified bibliography and a strong running case; three small edits are needed before teaching (one confidence interval that contradicts the deck's own standard error, on-slide credit for the Van Calster calibration hierarchy, and a definition of AUROC), after which we would close the review without a second round. 3 must-fix item(s); 20 citations/statistics/frameworks verified against source. Posted to Talk page rev 8543.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6236,6 +6354,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed 9 Sep 2026 (signed off with minor fixes). Technically accurate, current, and unusually well structured for a 90-minute statistics lecture, with a fully verifiable bibliography and clearly labelled fictional case data; it needs per-slide source lines for the leakage and validation-hierarchy frameworks, four quiz slides that stop printing their own answers, one metric misfiled, and one human-facing subgroup example the lesson plan asks for  5 must-fix item(s); 20 citations/statistics/frameworks verified against source. Posted to Talk page rev 8544.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6341,6 +6460,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed 9 Sep 2026 (signed off with minor fixes). Technically the most solid practical we have reviewed in this batch: I re-executed all 21 code cells on a much newer Python stack and every stored number, including every figure hard-coded inside the collapsed model answers, reproduced exactly, so the three fixes needed are additive and small (a licence and attribution cell, one missing per-site threshold cell, and a programme-level answer on whet 3 must-fix item(s); 8 citations/statistics/frameworks verified against source. Posted to Talk page rev 8545.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6446,6 +6566,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). The content is well written and the email-triage running case is carried through properly, but the deck credits the wrong author and the wrong EU funding programme, sets a 90 percent accuracy deploy gate on a problem it has just described as imbalanced, and contains none of the seven group activities the wiki lesson plan schedules, so it needs one revision pass before it is taught. 8 must-fix item(s); 11 citations/statistics/frameworks verified against source. Posted to Talk page rev 8547.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -6559,6 +6680,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6602,6 +6724,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -6662,6 +6785,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6705,6 +6829,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6748,6 +6873,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6791,6 +6917,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). A well-built, accurate introductory lecture that gets the practitioner's order of operations right (define the decision, then the model), but it ships with the wrong author on the title slide, no references anywhere, and the last two blocks of its own lesson plan (decision costs, stress testing, post-deployment monitoring) only half delivered; the fixes are short. 5 must-fix item(s); 12 citations/statistics/frameworks verified against source. Posted to Talk page rev 8548.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6896,6 +7023,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -6993,6 +7121,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7036,6 +7165,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7079,6 +7209,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7122,6 +7253,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7165,6 +7297,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7208,6 +7341,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -7260,6 +7394,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7303,6 +7438,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7346,6 +7482,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7389,6 +7526,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7432,6 +7570,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7475,6 +7614,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7518,6 +7658,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -7570,6 +7711,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -7622,6 +7764,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7665,6 +7808,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7708,6 +7852,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7751,6 +7896,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -7794,6 +7940,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -7846,6 +7993,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -7898,6 +8046,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -7950,6 +8099,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -8010,6 +8160,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8062,6 +8213,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 4,
         "has": true,
@@ -8138,6 +8290,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8181,6 +8334,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8224,6 +8378,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8267,6 +8422,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8310,6 +8466,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8353,6 +8510,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 7,
         "has": true,
@@ -8507,6 +8665,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8604,6 +8763,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8701,6 +8861,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -8806,6 +8967,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -8902,6 +9064,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). The clustering half of this deck is genuinely good teaching, but the deck delivers only one of the four unsupervised task types the lesson plan and learning outcomes promise, runs roughly 15 minutes short of its 60 minute slot, and carries five statements (slides 8, 18, 42, 43) that need correcting before it is taught. 5 must-fix item(s); 10 citations/statistics/frameworks verified against source. Posted to Talk page rev 8549.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -9007,6 +9170,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). The content is accurate and unusually well designed for an intro lecture, but the teacher guide points at the wrong slide numbers, the wiki timeline runs in a different order from the deck, and the best exercise in the deck (slide 20) has no answer key, so a lecturer other than the author cannot teach this as delivered. 7 must-fix item(s); 11 citations/statistics/frameworks verified against source. Posted to Talk page rev 8550.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9120,6 +9284,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed 9 Sep 2026 (signed off with minor fixes). A genuinely good 60-minute breadth lecture on NLP that matches its lesson plan block for block and is teachable by someone who did not write it; three one-line corrections are needed first, the most important being an author credit that disagrees with the wiki and an EU funding instrument that is named wrongly on the acknowledgement slide. 3 must-fix item(s); 11 citations/statistics/frameworks verified against source. Posted to Talk page rev 8546.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -9225,6 +9390,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9285,6 +9451,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9345,6 +9512,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9405,6 +9573,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9465,6 +9634,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -9533,6 +9703,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9593,6 +9764,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9653,6 +9825,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9713,6 +9886,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9773,6 +9947,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -9826,6 +10001,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -9894,6 +10070,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -9947,6 +10124,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). Pedagogically strong deck built around one well-chosen running example, but it names SHAP, LIME and counterfactuals with zero citations and discusses the \"right to explanation\" without naming a single law, which for a Learning Event with \"Right to Explanation\" in its title has to be fixed before it is taught. 6 must-fix item(s); 14 citations/statistics/frameworks verified against source. Posted to Talk page rev 8551.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -10052,6 +10230,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -10112,6 +10291,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10155,6 +10335,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10198,6 +10379,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -10241,6 +10423,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -10301,6 +10484,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -10353,6 +10537,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -10413,6 +10598,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -10473,6 +10659,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -10533,6 +10720,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -10593,6 +10781,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -10645,6 +10834,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -10697,6 +10887,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -10749,6 +10940,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -10801,6 +10993,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8552,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 5,
+        "summary": "Well-structured and genuinely broad introduction to AI definitions, but the EU AI Act slide quotes the withdrawn 2021 draft definition under a regulation number that belongs to a different EU act entirely, and the deck credits none of its sources, so it cannot be taught or redistributed as it stands.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -10907,6 +11108,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8553,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 8,
+        "summary": "HC-150 teaches the right material in the right order and maps cleanly onto its lesson plan, but large parts of it are taken from Brachman and Levesque's textbook slides and from Kejriwal's knowledge graph work with no attribution anywhere in the deck, which has to be fixed before a CC BY-NC-SA deck goes out.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -11013,6 +11223,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8554,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 9,
+        "summary": "The lecture half is sound and written by a genuine subject expert, but the 60-minute Protege half is delegated wholesale to two third-party PDFs with no scoped exercise, and four technical statements plus the whole OWL version story need correcting before anyone teaches this.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 3,
         "has": true,
@@ -11135,6 +11354,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8555,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 12,
+        "summary": "HC-154 has the right structure and a sound outline, but it carries no citations at all, three technical statements are wrong, diffusion models are absent from a 2026 generative AI introduction, and the 40-minute transformer block has no diagram and no formula, so it cannot deliver the two transformer learning outcomes as it stands.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -11241,6 +11469,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8556,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 8,
+        "summary": "Clear structure and an unusually honest limitations section, but the legal slide omits the EU AI Act entirely, image, video and music generation is taught as GANs and VAEs with no mention of diffusion, and not one statistic in the deck is sourced, so we cannot close this today.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -11347,6 +11584,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8557,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 9,
+        "summary": "Strong classical-AI content with an unusually good treatment of each subfield's limitations, but it reproduces Russell and Norvig's agent taxonomy and learning-agent figure without attribution, carries no sources at all, and its section order and time budget do not match the lesson plan, so a lecturer cannot run it to the plan as it stands.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -11453,6 +11699,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8558,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 9,
+        "summary": "HC-161 has a good backbone, especially the responsible AI principles and the eight-instrument regulatory survey, but the EU AI Act penalty figure is the never-enacted 2021 proposal number, the OECD principle list drops Accountability, Canada's AIDA is presented as live legislation when it died in January 2025, and the Causal AI comparison is a near-verbatim uncredited lift from a vendor blog, so i",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -11559,6 +11814,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -11612,6 +11868,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -11665,6 +11922,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -11718,6 +11976,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -11771,6 +12030,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8559,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 9,
+        "summary": "HC-172 follows its lesson plan block for block and most of the statistics is correct, but two arithmetic errors are printed on screen, two concepts are given the wrong name, three figures appear to be lifted from a textbook and one from a watermarked website, and the deck carries no references at all, so it cannot go out under CC BY-NC-SA as it stands.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -11877,6 +12145,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8560,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 7,
+        "summary": "A well organised and factually accurate lecture on classical study design, but the section titled \"Definition of study design\" never defines one, the deck carries no references at all, and nothing in it connects study design to AI or ML practice, which is what a PANORAIMA horizontal lecture should be doing.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -11983,6 +12260,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -12089,6 +12367,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -12195,6 +12474,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8561,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 8,
+        "summary": "Sound, well-organised coverage of data quality and preprocessing, but the deck reproduces two published sources without crediting them, carries no reference list at all, has no link to AI data governance, and is roughly an hour short of its 180 minutes with the planned 45-minute visualisation block resting on a single text slide.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -12301,6 +12589,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8562,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 7,
+        "summary": "The lecture content is accurate and the tool choices are sound for 2026, but the learning event ships two third-party PDFs whose licences conflict with the CC BY-NC-SA 4.0 notice on the wiki, misattributes one of them and links students to an unauthorised copy, and reduces the 60-minute hands-on block that carries the third learning outcome to a single instruction sentence on slide 32.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 3,
         "has": true,
@@ -12423,6 +12720,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8563,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 7,
+        "summary": "HC-186 follows its lesson plan closely and closes with a genuinely good section on what goes wrong with synthetic data, but it reproduces two published CC BY papers without credit, presents a list of real benchmark datasets as examples of synthetic datasets, tells students that subsampling real records protects privacy, and carries no citations, no tools, no metrics and no interactive elements, so",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -12529,6 +12835,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12572,6 +12879,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12615,6 +12923,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12658,6 +12967,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -12711,6 +13021,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -12763,6 +13074,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -12815,6 +13127,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -12875,6 +13188,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12918,6 +13232,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -12961,6 +13276,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -13029,6 +13345,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13072,6 +13389,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13115,6 +13433,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13158,6 +13477,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed Aug 2026 (deck + teacher guide). Author (Gezsi, BME) delivered on all 7 changes committed in the 27 Jul answer: evaluation depth (AUPRC/calibration/thresholds/PPV-prevalence), validation types, leakage, concrete missingness/bias, worked confusion-matrix mini-case, exit check, revised outcomes. Numbers verified, 8 refs verified. One of the strongest Health LEs; ready to teach.",
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -13279,6 +13599,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -13339,6 +13660,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Minor revision. The teaching is good, but the six learning outcomes are written so they cannot be assessed and need a real rewrite (to about four); the data-analysis and fairness outcomes are not actually taught; right-size the 65-minute block with one worksheet (question scaffold, protocol checklist, short rubric, role briefs).",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -13435,6 +13757,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 175,
         "has": true,
@@ -13799,6 +14122,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 39,
         "has": true,
@@ -14155,6 +14479,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 47,
         "has": true,
@@ -14519,6 +14844,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 91,
         "has": true,
@@ -14883,6 +15209,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 4,
         "has": true,
@@ -14959,6 +15286,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Major revision. Part 2 is built on library-size confounding but never teaches the fix (CPM or size-factor normalisation), and Part 1's text mislabels log2(count+1) as 'normalization'; the definitions slide is in Dutch; the lesson plan is not on the wiki yet.",
+      "early_feedback": null,
       "materials": {
         "count": 142,
         "has": true,
@@ -15376,6 +15704,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15419,6 +15748,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15517,6 +15847,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15560,6 +15891,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 50,
         "has": true,
@@ -15924,6 +16256,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -15967,6 +16300,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16010,6 +16344,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16053,6 +16388,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 70,
         "has": true,
@@ -16417,6 +16753,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16460,6 +16797,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -16520,6 +16858,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -16588,6 +16927,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16631,6 +16971,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -16699,6 +17040,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -16759,6 +17101,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -16802,6 +17145,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -16870,6 +17214,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -16938,6 +17283,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 4,
         "has": true,
@@ -17014,6 +17360,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -17066,6 +17413,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17109,6 +17457,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 6,
         "has": true,
@@ -17201,6 +17550,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 5,
         "has": true,
@@ -17285,6 +17635,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 5,
         "has": true,
@@ -17369,6 +17720,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -17437,6 +17789,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -17497,6 +17850,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -17557,6 +17911,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -17625,6 +17980,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 4,
         "has": true,
@@ -17701,6 +18057,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 4,
         "has": true,
@@ -17777,6 +18134,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -17845,6 +18203,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17888,6 +18247,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17931,6 +18291,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -17974,6 +18335,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18017,6 +18379,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 4,
         "has": true,
@@ -18094,6 +18457,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Checked 8 Sep 2026 during the sync, not a fresh review. Monira reviewed the updated deck 22 Jul 2026 and asked for four minor fixes before sign-off; TUD replied on the Talk page 23 Jul that they were done. The LE is now 'Ready for pilot' on the wiki. Two problems. (1) The wiki 'Instructions for teachers' section is EMPTY and 'Expected preparation' is 'None.' on all four lines, so the LE goes to pilot with outcomes and nothing on how to run 120 minutes. (2) HL-048_final.pptx (3 Sep) is the 23 Jul file renamed: all 50 slides, all speaker notes and all 30 media are byte-identical, only two customXml metadata parts differ. Content is therefore NOT stale (it is the revised July version), but nothing was done on 3 Sep beyond the rename. Worse, slide 43 ('What learn today?', itself a broken title) still carries Monira's review asks in its SPEAKER NOTES as an unfinished to-do: 'Provide the planned one-page takeaway card...' and 'Revisit the three communication tensions'. Her fourth ask was to remove internal feedback comments before release, and that is the one still open. Escalated to the WP4 lead (Meike) as the concrete instance of the wiki/SharePoint drift pattern.",
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -18217,6 +18581,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 6,
         "has": true,
@@ -18309,6 +18674,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 5,
         "has": true,
@@ -18393,6 +18759,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18491,6 +18858,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18534,6 +18902,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18577,6 +18946,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18620,6 +18990,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18663,6 +19034,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18706,6 +19078,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18749,6 +19122,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18792,6 +19166,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18835,6 +19210,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 6,
         "has": true,
@@ -18927,6 +19303,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -18970,6 +19347,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19013,6 +19391,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19111,6 +19490,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Final pass 24 Aug 2026: Anna incorporated our review. Wiki plan now filled (Tutorial, author, outcomes, timed instructions); revised 20-slide deck adds SPIKES, the three-talk SDM model, natural frequencies (Gigerenzer), the equity blind spot, a resolved synthesis (human oversight in/on-the-loop), and references. Ready to teach. Optional: deepen the equity evidence (Adamson & Smith 2018; Daneshjou 2022) + 2 typos.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -19224,6 +19604,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "V3 reviewed 8 Sep 2026, 17:52 CEST. We closed this on 4 Sep saying the punch-list need not come back to us; Mary Hendrick did all five anyway and shipped V3 on 7 Sep. Wiki page updated by the author (outcomes now match the doc, keywords a real list, duplicated wrap-up line gone, both student activities added). Both psychological-safety overclaims removed and the replacements are accurate. Timing table now fills all ten slots and tiles 0-120 min exactly. Validation gap added as new slide 24 with two 2026 references, BOTH VERIFIED REAL: Chereches, Eur J Public Health 2026;36(4):ckag068 (PMID 42322228, PMCID PMC13282706) and Navarro-Ballester, Explor Med 2026;7:1001412 (DOI resolves). 'Integation' fixed; Edmondson (1999) added to the psych-safety slide. TWO ATTRIBUTION ITEMS WE MISSED IN AUG AND 4 SEP, present since the first draft: slide 18 reproduces nine of Kanter's ten reasons (HBR, 25 Sep 2012) in her order with her remedy wording and she is nowhere in the deck; slide 42's notes are lifted sentence-for-sentence from leaderfactor.com (Clark is named, the wording is not quoted or linked). Both raised because the deck ships CC BY-NC-SA. Smaller: the 20-30 min row now carries 14 slides after slide 24 was inserted without a timing change; slide 24 opens with a subjectless 'May reflect'; slide 43 lists PSC as a team psych-safety measure when it is an organisational antecedent. Sign-off unchanged, material ready to teach.",
+      "early_feedback": null,
       "materials": {
         "count": 7,
         "has": true,
@@ -19377,6 +19758,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19475,6 +19857,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19519,6 +19902,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 4 Sep 2026 (deck 63 slides + plan doc + MS Responsible AI template). NOT signed off; needs a revision pass. Big improvement on the July plan review: the two empty outcomes (integration, limitations) now have real content and the point-of-care tool skew is gone. Strongest element is the diabetes/CGM case study run twice through five stakeholder lenses (benefits and weaknesses), with an honest weaknesses pass and a properly specified costed activity on slide 49. EU sourcing verified good (EHDS Reg (EU) 2025/327, both EC studies, TEF-Health, FHIR/DICOM all check out). MUST FIX: slide 46 AI Act claim is wrong - \"effective 2024-2026\" is not when high-risk applies, a medical-device CDSS is high-risk via Art 6(1)/Annex I (MDR item 11, Rule 11) not Annex III, the date is 2 Aug 2028, and Art 43(3) folds AI Act requirements into the existing MDR notified-body assessment; two slides (5, 42) carry speaker notes copy-pasted from HL-065; NAM citation should be Matheny/Thadaney Israni/Ahmed/Whicher (editors) 2022 \"Artificial Intelligence in Health Care\"; 12 of 63 slides have no body text and six are wholly empty; reference list has titles in URL fields, a duplicated entry and vendor blogs doing primary-source work; US framing (Epic/Cerner/HIPAA/FDA) dominates an EU curriculum. Still open from July: student prep still \"None.\", no rubric for either activity, Lecture type vs a demonstrate outcome plus two team activities. Plan doc needs the same clean-up HL-065 had.",
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -19640,6 +20024,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19683,6 +20068,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19779,6 +20165,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -19831,6 +20218,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -19883,6 +20271,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19926,6 +20315,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -19969,6 +20359,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20065,6 +20456,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20108,6 +20500,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20151,6 +20544,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20247,6 +20641,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Plan-stage review 25 Aug 2026. Shape is right (mini-lecture/exercise/discussion, laddered outcomes, HC-204 prerequisite good). Main fix: outcome 5 uses \"limited/minimal risk\", which are not terms of the Regulation (verified: zero occurrences in the consolidated text) - classify against Art 5 / Art 6+Annexes / Art 50 / Ch V instead. GPAI (Ch V, in force since 2 Aug 2025) missing while deferred high-risk is covered. Name the Act's own mechanism: Art 17 QMS with post-market monitoring nested at Art 17(1)(h)->Art 72. Also: no timings, one-line group exercise, no preparation, no assessment, keywords comma-separated not $. Track overlap with LC-034/LC-015/LC-019.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20343,6 +20738,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -20395,6 +20791,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20438,6 +20835,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -20558,6 +20956,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20601,6 +21000,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20644,6 +21044,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20687,6 +21088,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20730,6 +21132,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20826,6 +21229,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20869,6 +21273,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -20912,6 +21317,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -20964,6 +21370,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Plan review 25 Aug 2026. Strong plan (4 case studies with scenario/tasks/expected outcome, precise legal verbs, real reading list). Main fix is currency: Art 6 was amended 27 Jul 2026 by Reg (EU) 2026/1744 inserting 6(1a)/(1b)/(1c), which hit Case 4 (Annex I medical-device route); Cases 1-3 (Annex III) unaffected. Also: make the two routes explicit (Art 6(1)/Annex I vs 6(2)/Annex III) with their split dates (2 Aug 2028 vs 2 Dec 2027); anchor Case 2 in Art 6(4); the cited Commission Art 6(5) classification guidelines are overdue since 2 Feb 2026 and still unpublished. Timing tight (4 cases/40 min).",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21060,6 +21467,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21156,6 +21564,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21199,6 +21608,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21242,6 +21652,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21285,6 +21696,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21328,6 +21740,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21371,6 +21784,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21414,6 +21828,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21457,6 +21872,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21500,6 +21916,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -21542,6 +21959,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Homework slide revised Aug 2026 — addresses our June note: names the Scopus/WoS coverage-bias cause (indexing coverage, journal lists, disciplinary scope) and adds a reflective 'why do the maps differ' question. Only that one slide changed; the proxy-for-influence caveat (slides 6/19) and the live Scopus/WoS access barrier from June still stand. Stays green.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -21655,6 +22073,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -21715,6 +22134,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "SNA theory deck reviewed Aug 2026 — resolves the June plan-vs-material mismatch (author supplied the SNA theory deck matching the plan, with manual betweenness + Gephi). Strong, well-referenced; Pew BLM stats verified. Fixes: position the two decks (theory vs toxicity), correct the Facebook 3.5 = degrees-of-separation vs path-length slide, fix the Adamic-Glance venue (LinkKDD 2005), and a language pass.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -21828,6 +22248,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -21880,6 +22301,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -21932,6 +22354,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -21992,6 +22415,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -22052,6 +22476,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -22120,6 +22545,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22172,6 +22598,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22224,6 +22651,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22276,6 +22704,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22328,6 +22757,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22380,6 +22810,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -22440,6 +22871,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22492,6 +22924,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22544,6 +22977,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22596,6 +23030,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22648,6 +23083,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22691,6 +23127,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22734,6 +23171,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22777,6 +23215,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22820,6 +23259,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22863,6 +23303,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -22906,6 +23347,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -22958,6 +23400,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -23018,6 +23461,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -23070,6 +23514,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -23130,6 +23575,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -23182,6 +23628,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -23250,6 +23697,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -23302,6 +23750,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -23362,6 +23811,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23405,6 +23855,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23448,6 +23899,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23491,6 +23943,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23534,6 +23987,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23577,6 +24031,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23620,6 +24075,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23663,6 +24119,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -23706,6 +24163,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -23766,6 +24224,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -23826,6 +24285,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -23878,6 +24338,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -23930,6 +24391,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -23982,6 +24444,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24025,6 +24488,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24068,6 +24532,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24111,6 +24576,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24154,6 +24620,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -24206,6 +24673,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -24258,6 +24726,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -24310,6 +24779,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -24362,6 +24832,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong social-psych plan; name the theory stack (Tajfel & Turner 1979, minimal group paradigm, Sherif, self-categorisation); teach algorithm-to-polarization as contested (2023 Facebook/Instagram Science studies), honest intervention effect sizes; add readings, a gradable activity, DSA/Code-of-Conduct overlay. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24461,6 +24932,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong monitoring/evaluation arc; anchor to NIST AI RMF + EU HLEG seven requirements/ALTAI + a real bias taxonomy; name which regime bites (DSA Art 34/35, AI Act Art 50). Split the run-on outcomes; job role 'Comm$Conflict' is an unrendered separator; add rubric/refs. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24560,6 +25032,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good participatory-design plan (multiple outcomes); name VSD/Scandinavian PD, stakeholder salience, human-in/on/-command vocabulary + AI Act Art 14; oversight is not auto-effective (automation bias); fairness impossibility. Instructions section empty; 'Comm$Conflict' glitch. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24659,6 +25132,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Multi-level DSS plan; ground situation awareness (Endsley), remap 'revocable AI' to meaningful human control + AI Act Art 14, add conflict-resolution theory (Fisher & Ury etc.); caution: explainability is not automatically a benefit (over-reliance/automation bias). Watch 4-Bloom load; add materials/rubric. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24758,6 +25232,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Well-structured cycle; name the CRISP-DM lineage + VSD; fairness is not one metric (impossibility result, Kleinberg/Chouldechova); ground transparency in model cards/datasheets; misinformation-polarization link is contested. Keywords field reads 'None' (bug); add rubric/prep. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24857,6 +25332,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24900,6 +25376,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24943,6 +25420,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -24986,6 +25464,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25029,6 +25508,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25072,6 +25552,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25115,6 +25596,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25158,6 +25640,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25201,6 +25684,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25244,6 +25728,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25287,6 +25772,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25330,6 +25816,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25373,6 +25860,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25416,6 +25904,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25459,6 +25948,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25502,6 +25992,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25545,6 +26036,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25588,6 +26080,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25631,6 +26124,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25674,6 +26168,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25717,6 +26212,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25760,6 +26256,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25803,6 +26300,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25846,6 +26344,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25889,6 +26388,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25932,6 +26432,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -25975,6 +26476,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -26018,6 +26520,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -26061,6 +26564,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -26165,6 +26669,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -26269,6 +26774,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 4,
         "has": true,
@@ -26397,6 +26903,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -26458,6 +26965,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -26519,6 +27027,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -26580,6 +27089,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -26641,6 +27151,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -26702,6 +27213,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -26763,6 +27275,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -26807,6 +27320,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -26851,6 +27365,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -26912,6 +27427,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -26973,6 +27489,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -27034,6 +27551,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -27095,6 +27613,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -27156,6 +27675,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -27217,6 +27737,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27314,6 +27835,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27358,6 +27880,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27402,6 +27925,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27446,6 +27970,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27490,6 +28015,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27534,6 +28060,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27578,6 +28105,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -27631,6 +28159,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27675,6 +28204,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27772,6 +28302,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27816,6 +28347,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27860,6 +28392,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -27906,6 +28439,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -28002,6 +28536,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed 9 Sep 2026 (signed off with minor fixes). A well-built, accurate 90-minute lecture on uncertainty and calibration with a fully verified bibliography and a strong running case; three small edits are needed before teaching (one confidence interval that contradicts the deck's own standard error, on-slide credit for the Van Calster calibration hierarchy, and a definition of AUROC), after which we would close the review without a second round. 3 must-fix item(s); 20 citations/statistics/frameworks verified against source. Posted to Talk page rev 8543.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -28107,6 +28642,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed 9 Sep 2026 (signed off with minor fixes). Technically accurate, current, and unusually well structured for a 90-minute statistics lecture, with a fully verifiable bibliography and clearly labelled fictional case data; it needs per-slide source lines for the leakage and validation-hierarchy frameworks, four quiz slides that stop printing their own answers, one metric misfiled, and one human-facing subgroup example the lesson plan asks for  5 must-fix item(s); 20 citations/statistics/frameworks verified against source. Posted to Talk page rev 8544.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -28212,6 +28748,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed 9 Sep 2026 (signed off with minor fixes). Technically the most solid practical we have reviewed in this batch: I re-executed all 21 code cells on a much newer Python stack and every stored number, including every figure hard-coded inside the collapsed model answers, reproduced exactly, so the three fixes needed are additive and small (a licence and attribution cell, one missing per-site threshold cell, and a programme-level answer on whet 3 must-fix item(s); 8 citations/statistics/frameworks verified against source. Posted to Talk page rev 8545.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -28317,6 +28854,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). The content is well written and the email-triage running case is carried through properly, but the deck credits the wrong author and the wrong EU funding programme, sets a 90 percent accuracy deploy gate on a problem it has just described as imbalanced, and contains none of the seven group activities the wiki lesson plan schedules, so it needs one revision pass before it is taught. 8 must-fix item(s); 11 citations/statistics/frameworks verified against source. Posted to Talk page rev 8547.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -28430,6 +28968,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). A well-built, accurate introductory lecture that gets the practitioner's order of operations right (define the decision, then the model), but it ships with the wrong author on the title slide, no references anywhere, and the last two blocks of its own lesson plan (decision costs, stress testing, post-deployment monitoring) only half delivered; the fixes are short. 5 must-fix item(s); 12 citations/statistics/frameworks verified against source. Posted to Talk page rev 8548.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -28535,6 +29074,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 7,
         "has": true,
@@ -28689,6 +29229,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -28785,6 +29326,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). The clustering half of this deck is genuinely good teaching, but the deck delivers only one of the four unsupervised task types the lesson plan and learning outcomes promise, runs roughly 15 minutes short of its 60 minute slot, and carries five statements (slides 8, 18, 42, 43) that need correcting before it is taught. 5 must-fix item(s); 10 citations/statistics/frameworks verified against source. Posted to Talk page rev 8549.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -28890,6 +29432,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). The content is accurate and unusually well designed for an intro lecture, but the teacher guide points at the wrong slide numbers, the wiki timeline runs in a different order from the deck, and the best exercise in the deck (slide 20) has no answer key, so a lecturer other than the author cannot teach this as delivered. 7 must-fix item(s); 11 citations/statistics/frameworks verified against source. Posted to Talk page rev 8550.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -29003,6 +29546,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed 9 Sep 2026 (signed off with minor fixes). A genuinely good 60-minute breadth lecture on NLP that matches its lesson plan block for block and is teachable by someone who did not write it; three one-line corrections are needed first, the most important being an author credit that disagrees with the wiki and an EU funding instrument that is named wrongly on the acknowledgement slide. 3 must-fix item(s); 11 citations/statistics/frameworks verified against source. Posted to Talk page rev 8546.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -29108,6 +29652,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 9 Sep 2026 (REVISION REQUESTED). Pedagogically strong deck built around one well-chosen running example, but it names SHAP, LIME and counterfactuals with zero citations and discusses the \"right to explanation\" without naming a single law, which for a Learning Event with \"Right to Explanation\" in its title has to be fixed before it is taught. 6 must-fix item(s); 14 citations/statistics/frameworks verified against source. Posted to Talk page rev 8551.",
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -29213,6 +29758,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -29319,6 +29865,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -29425,6 +29972,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Material reviewed Aug 2026 (deck + teacher guide). Author (Gezsi, BME) delivered on all 7 changes committed in the 27 Jul answer: evaluation depth (AUPRC/calibration/thresholds/PPV-prevalence), validation types, leakage, concrete missingness/bias, worked confusion-matrix mini-case, exit check, revised outcomes. Numbers verified, 8 refs verified. One of the strongest Health LEs; ready to teach.",
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -29546,6 +30094,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Major revision. Part 2 is built on library-size confounding but never teaches the fix (CPM or size-factor normalisation), and Part 1's text mislabels log2(count+1) as 'normalization'; the definitions slide is in Dutch; the lesson plan is not on the wiki yet.",
+      "early_feedback": null,
       "materials": {
         "count": 142,
         "has": true,
@@ -29963,6 +30512,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -30061,6 +30611,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -30159,6 +30710,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -30257,6 +30809,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Final pass 24 Aug 2026: Anna incorporated our review. Wiki plan now filled (Tutorial, author, outcomes, timed instructions); revised 20-slide deck adds SPIKES, the three-talk SDM model, natural frequencies (Gigerenzer), the equity blind spot, a resolved synthesis (human oversight in/on-the-loop), and references. Ready to teach. Optional: deepen the equity evidence (Adamson & Smith 2018; Daneshjou 2022) + 2 typos.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -30370,6 +30923,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "V3 reviewed 8 Sep 2026, 17:52 CEST. We closed this on 4 Sep saying the punch-list need not come back to us; Mary Hendrick did all five anyway and shipped V3 on 7 Sep. Wiki page updated by the author (outcomes now match the doc, keywords a real list, duplicated wrap-up line gone, both student activities added). Both psychological-safety overclaims removed and the replacements are accurate. Timing table now fills all ten slots and tiles 0-120 min exactly. Validation gap added as new slide 24 with two 2026 references, BOTH VERIFIED REAL: Chereches, Eur J Public Health 2026;36(4):ckag068 (PMID 42322228, PMCID PMC13282706) and Navarro-Ballester, Explor Med 2026;7:1001412 (DOI resolves). 'Integation' fixed; Edmondson (1999) added to the psych-safety slide. TWO ATTRIBUTION ITEMS WE MISSED IN AUG AND 4 SEP, present since the first draft: slide 18 reproduces nine of Kanter's ten reasons (HBR, 25 Sep 2012) in her order with her remedy wording and she is nowhere in the deck; slide 42's notes are lifted sentence-for-sentence from leaderfactor.com (Clark is named, the wording is not quoted or linked). Both raised because the deck ships CC BY-NC-SA. Smaller: the 20-30 min row now carries 14 slides after slide 24 was inserted without a timing change; slide 24 opens with a subjectless 'May reflect'; slide 43 lists PSC as a team psych-safety measure when it is an organisational antecedent. Sign-off unchanged, material ready to teach.",
+      "early_feedback": null,
       "materials": {
         "count": 7,
         "has": true,
@@ -30523,6 +31077,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -30621,6 +31176,7 @@
       "review_done": true,
       "revision_requested": true,
       "review_note": "Material reviewed 4 Sep 2026 (deck 63 slides + plan doc + MS Responsible AI template). NOT signed off; needs a revision pass. Big improvement on the July plan review: the two empty outcomes (integration, limitations) now have real content and the point-of-care tool skew is gone. Strongest element is the diabetes/CGM case study run twice through five stakeholder lenses (benefits and weaknesses), with an honest weaknesses pass and a properly specified costed activity on slide 49. EU sourcing verified good (EHDS Reg (EU) 2025/327, both EC studies, TEF-Health, FHIR/DICOM all check out). MUST FIX: slide 46 AI Act claim is wrong - \"effective 2024-2026\" is not when high-risk applies, a medical-device CDSS is high-risk via Art 6(1)/Annex I (MDR item 11, Rule 11) not Annex III, the date is 2 Aug 2028, and Art 43(3) folds AI Act requirements into the existing MDR notified-body assessment; two slides (5, 42) carry speaker notes copy-pasted from HL-065; NAM citation should be Matheny/Thadaney Israni/Ahmed/Whicher (editors) 2022 \"Artificial Intelligence in Health Care\"; 12 of 63 slides have no body text and six are wholly empty; reference list has titles in URL fields, a duplicated entry and vendor blogs doing primary-source work; US framing (Epic/Cerner/HIPAA/FDA) dominates an EU curriculum. Still open from July: student prep still \"None.\", no rubric for either activity, Lecture type vs a demonstrate outcome plus two team activities. Plan doc needs the same clean-up HL-065 had.",
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -30742,6 +31298,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -30846,6 +31403,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -30950,6 +31508,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 4,
         "has": true,
@@ -31078,6 +31637,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -31174,6 +31734,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -31270,6 +31831,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -31366,6 +31928,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Plan-stage review 25 Aug 2026. Shape is right (mini-lecture/exercise/discussion, laddered outcomes, HC-204 prerequisite good). Main fix: outcome 5 uses \"limited/minimal risk\", which are not terms of the Regulation (verified: zero occurrences in the consolidated text) - classify against Art 5 / Art 6+Annexes / Art 50 / Ch V instead. GPAI (Ch V, in force since 2 Aug 2025) missing while deferred high-risk is covered. Name the Act's own mechanism: Art 17 QMS with post-market monitoring nested at Art 17(1)(h)->Art 72. Also: no timings, one-line group exercise, no preparation, no assessment, keywords comma-separated not $. Track overlap with LC-034/LC-015/LC-019.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -31462,6 +32025,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -31582,6 +32146,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -31678,6 +32243,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Plan review 25 Aug 2026. Strong plan (4 case studies with scenario/tasks/expected outcome, precise legal verbs, real reading list). Main fix is currency: Art 6 was amended 27 Jul 2026 by Reg (EU) 2026/1744 inserting 6(1a)/(1b)/(1c), which hit Case 4 (Annex I medical-device route); Cases 1-3 (Annex III) unaffected. Also: make the two routes explicit (Art 6(1)/Annex I vs 6(2)/Annex III) with their split dates (2 Aug 2028 vs 2 Dec 2027); anchor Case 2 in Art 6(4); the cited Commission Art 6(5) classification guidelines are overdue since 2 Feb 2026 and still unpublished. Timing tight (4 cases/40 min).",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -31774,6 +32340,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -31870,6 +32437,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Solid R2R base plan; make reconciliation and segregation explicit as controls, not just steps. Split the run-on LO; add timing/rubric/prep. Reviewer fields blank; 'Analist' typo.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -31930,6 +32498,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good threshold-as-governance framing. Bug: Keywords field is a paste of the learning outcome. Add confidence-score calibration, duplicate/redirection fraud, three-way match. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -31990,6 +32559,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong cash-application plan; match at customer+invoice level not just totals; aged-unmatched/misapplied as the queue's health metric. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32050,6 +32620,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Right traceability lens; it's a grounding problem, a disclosure must trace to a source and 'the model wrote it' is not evidence. LO missing full stop. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32110,6 +32681,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "One of the strongest. Add automation bias by name (ties to the ISA 500 revision). Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32170,6 +32742,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Right message but too generic for a Regulatory LE; name ICFR/SOX 404/COSO, ISA 500/315, ISA 240 (2025), and that there is no AI-specific audit standard yet. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32230,6 +32803,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong base FP&A; keep explanation vs attribution separate; add a naive-baseline forecast-quality measure. Pre-AI by design. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32290,6 +32864,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good abstraction-gap base; name driver-model failure modes + assumption governance; scope note (not high-risk unless it feeds credit). CEF grant placeholder unfilled. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32350,6 +32925,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong ML-vs-expert topic; name target/look-ahead leakage and the interpretability traps (SHAP is association, not causation); add walk-forward eval + baselines. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32410,6 +32986,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Well-scoped, minor-to-moderate. Split the single run-on outcome; make the case expose one fluent-but-wrong AI variance commentary (verify the causal claim, not the prose) and one over-eager anomaly flag (false positives and alert fatigue); state who owns the narrative that reaches the board; add rubric, timing, prep. 'Analist' typo.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32507,6 +33084,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Well-conceived failure modes; give each a method (PSI/ADWIN drift, calibrated intervals, oversight design); map to the three-lines model. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32567,6 +33145,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "SR 11-7 in title/keywords/instructions was rescinded (17 Apr 2026); teach the durable principles + EU AI Act instead, classify the use case, use a model card. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32627,6 +33206,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "One of the strongest plans, minor and additive. Add the 2026-current regulatory reality: EU AI Act high-risk for credit (Annex III, obligations from Aug 2026), ECOA adverse-action reasons, the 21 Jul 2026 CFPB change ending ECOA disparate impact (now disparate treatment via proxies + Fair Housing Act), and model risk management after SR 11-7's April 2026 rescission. Temper the accuracy gain (modest but consistent) and name SHAP's limits.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32724,6 +33304,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good three-audience explainability; separate local vs global; SHAP/LIME limits; adverse-action duty (ECOA/Reg B, FCRA); 2026 ECOA change + EU AI Act (deferred to Dec 2027). Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32784,6 +33365,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good treasury-risk arc; name Basel metrics (HHI, LCR, NSFR, IRRBB, 2023 HTM losses); the monitor is a model; anomaly base-rate/drift. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32844,6 +33426,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong failure-modes; give non-stationarity a vocabulary; AUC-misses-prior-shift mechanics; proxy encoding + selective labels; 2026 fair-lending + EU AI Act currency. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32904,6 +33487,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Built on the rescinded SR 11-7 (Apr 2026); the 2026 replacement excludes generative AI, so the 'extend the framework to AI' thesis is backwards. Reframe. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -32964,6 +33548,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good lineage topic; anchor to BCBS 239 + concrete failure modes and controls; add AI provenance (model version, data snapshot, prompt). Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -33024,6 +33609,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Important oversight/competence theme; anchor in EU AI Act Art 14; quantify review load; adverse-action legal basis; use 2026 MRM guidance, not SR 11-7. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -33084,6 +33670,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Right capstone; pin to the 2026 MRM baseline (not SR 11-7); require an EU AI Act high-risk analysis (deferred to Dec 2027); explainability as a legal control; quantitative escalation triggers. Structural fixes.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -33144,6 +33731,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -33240,6 +33828,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -33336,6 +33925,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -33433,6 +34023,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -33530,6 +34121,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -33627,6 +34219,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8552,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 5,
+        "summary": "Well-structured and genuinely broad introduction to AI definitions, but the EU AI Act slide quotes the withdrawn 2021 draft definition under a regulation number that belongs to a different EU act entirely, and the deck credits none of its sources, so it cannot be taught or redistributed as it stands.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -33733,6 +34334,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8553,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 8,
+        "summary": "HC-150 teaches the right material in the right order and maps cleanly onto its lesson plan, but large parts of it are taken from Brachman and Levesque's textbook slides and from Kejriwal's knowledge graph work with no attribution anywhere in the deck, which has to be fixed before a CC BY-NC-SA deck goes out.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -33839,6 +34449,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8554,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 9,
+        "summary": "The lecture half is sound and written by a genuine subject expert, but the 60-minute Protege half is delegated wholesale to two third-party PDFs with no scoped exercise, and four technical statements plus the whole OWL version story need correcting before anyone teaches this.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 3,
         "has": true,
@@ -33961,6 +34580,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8555,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 12,
+        "summary": "HC-154 has the right structure and a sound outline, but it carries no citations at all, three technical statements are wrong, diffusion models are absent from a 2026 generative AI introduction, and the 40-minute transformer block has no diagram and no formula, so it cannot deliver the two transformer learning outcomes as it stands.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -34067,6 +34695,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8556,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 8,
+        "summary": "Clear structure and an unusually honest limitations section, but the legal slide omits the EU AI Act entirely, image, video and music generation is taught as GANs and VAEs with no mention of diffusion, and not one statistic in the deck is sourced, so we cannot close this today.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -34173,6 +34810,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8557,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 9,
+        "summary": "Strong classical-AI content with an unusually good treatment of each subfield's limitations, but it reproduces Russell and Norvig's agent taxonomy and learning-agent figure without attribution, carries no sources at all, and its section order and time budget do not match the lesson plan, so a lecturer cannot run it to the plan as it stands.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -34279,6 +34925,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8558,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 9,
+        "summary": "HC-161 has a good backbone, especially the responsible AI principles and the eight-instrument regulatory survey, but the EU AI Act penalty figure is the never-enacted 2021 proposal number, the OECD principle list drops Accountability, Canada's AIDA is presented as live legislation when it died in January 2025, and the Causal AI comparison is a near-verbatim uncredited lift from a vendor blog, so i",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -34385,6 +35040,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8559,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 9,
+        "summary": "HC-172 follows its lesson plan block for block and most of the statistics is correct, but two arithmetic errors are printed on screen, two concepts are given the wrong name, three figures appear to be lifted from a textbook and one from a watermarked website, and the deck carries no references at all, so it cannot go out under CC BY-NC-SA as it stands.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -34491,6 +35155,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8560,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 7,
+        "summary": "A well organised and factually accurate lecture on classical study design, but the section titled \"Definition of study design\" never defines one, the deck carries no references at all, and nothing in it connects study design to AI or ML practice, which is what a PANORAIMA horizontal lecture should be doing.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -34597,6 +35270,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8561,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 8,
+        "summary": "Sound, well-organised coverage of data quality and preprocessing, but the deck reproduces two published sources without crediting them, carries no reference list at all, has no link to AI data governance, and is roughly an hour short of its 180 minutes with the planned 45-minute visualisation block resting on a single text slide.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -34703,6 +35385,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8562,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 7,
+        "summary": "The lecture content is accurate and the tool choices are sound for 2026, but the learning event ships two third-party PDFs whose licences conflict with the CC BY-NC-SA 4.0 notice on the wiki, misattributes one of them and links students to an unauthorised copy, and reduces the 60-minute hands-on block that carries the third learning outcome to a single instruction sentence on slide 32.",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 3,
         "has": true,
@@ -34825,6 +35516,15 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": {
+        "date": "2026-09-09",
+        "talk_rev": 8563,
+        "status_at_time": "Learning materials: development",
+        "author": "SU - Maria Nisheva",
+        "must_fix_count": 7,
+        "summary": "HC-186 follows its lesson plan closely and closes with a genuinely good section on what goes wrong with synthetic data, but it reproduces two published CC BY papers without credit, presents a list of real benchmark datasets as examples of synthetic datasets, tells students that subsampling real records protects privacy, and carries no citations, no tools, no metrics and no interactive elements, so",
+        "note": "Early feedback only, NOT a formal review. Material was still in development status so it had not been submitted to us. No revision requested. Formal review is due when the author moves the status to 'Learning materials: review'."
+      },
       "materials": {
         "count": 1,
         "has": true,
@@ -34931,6 +35631,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Minor revision. The teaching is good, but the six learning outcomes are written so they cannot be assessed and need a real rewrite (to about four); the data-analysis and fairness outcomes are not actually taught; right-size the 65-minute block with one worksheet (question scaffold, protocol checklist, short rubric, role briefs).",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35027,6 +35728,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong social-psych plan; name the theory stack (Tajfel & Turner 1979, minimal group paradigm, Sherif, self-categorisation); teach algorithm-to-polarization as contested (2023 Facebook/Instagram Science studies), honest intervention effect sizes; add readings, a gradable activity, DSA/Code-of-Conduct overlay. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35126,6 +35828,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Strong monitoring/evaluation arc; anchor to NIST AI RMF + EU HLEG seven requirements/ALTAI + a real bias taxonomy; name which regime bites (DSA Art 34/35, AI Act Art 50). Split the run-on outcomes; job role 'Comm$Conflict' is an unrendered separator; add rubric/refs. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35225,6 +35928,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Good participatory-design plan (multiple outcomes); name VSD/Scandinavian PD, stakeholder salience, human-in/on/-command vocabulary + AI Act Art 14; oversight is not auto-effective (automation bias); fairness impossibility. Instructions section empty; 'Comm$Conflict' glitch. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35324,6 +36028,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Multi-level DSS plan; ground situation awareness (Endsley), remap 'revocable AI' to meaningful human control + AI Act Art 14, add conflict-resolution theory (Fisher & Ury etc.); caution: explainability is not automatically a benefit (over-reliance/automation bias). Watch 4-Bloom load; add materials/rubric. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35423,6 +36128,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Well-structured cycle; name the CRISP-DM lineage + VSD; fairness is not one metric (impossibility result, Kleinberg/Chouldechova); ground transparency in model cards/datasheets; misinformation-polarization link is contested. Keywords field reads 'None' (bug); add rubric/prep. Draft-stage.",
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35522,6 +36228,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35619,6 +36326,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35716,6 +36424,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35813,6 +36522,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35873,6 +36583,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -35970,6 +36681,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -36067,6 +36779,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -36163,6 +36876,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,
@@ -36259,6 +36973,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -36364,6 +37079,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Checked 8 Sep 2026 during the sync, not a fresh review. Monira reviewed the updated deck 22 Jul 2026 and asked for four minor fixes before sign-off; TUD replied on the Talk page 23 Jul that they were done. The LE is now 'Ready for pilot' on the wiki. Two problems. (1) The wiki 'Instructions for teachers' section is EMPTY and 'Expected preparation' is 'None.' on all four lines, so the LE goes to pilot with outcomes and nothing on how to run 120 minutes. (2) HL-048_final.pptx (3 Sep) is the 23 Jul file renamed: all 50 slides, all speaker notes and all 30 media are byte-identical, only two customXml metadata parts differ. Content is therefore NOT stale (it is the revised July version), but nothing was done on 3 Sep beyond the rename. Worse, slide 43 ('What learn today?', itself a broken title) still carries Monira's review asks in its SPEAKER NOTES as an unfinished to-do: 'Provide the planned one-page takeaway card...' and 'Revisit the three communication tensions'. Her fourth ask was to remove internal feedback comments before release, and that is the one still open. Escalated to the WP4 lead (Meike) as the concrete instance of the wiki/SharePoint drift pattern.",
+      "early_feedback": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -36487,6 +37203,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "Homework slide revised Aug 2026 — addresses our June note: names the Scopus/WoS coverage-bias cause (indexing coverage, journal lists, disciplinary scope) and adds a reflective 'why do the maps differ' question. Only that one slide changed; the proxy-for-influence caveat (slides 6/19) and the live Scopus/WoS access barrier from June still stand. Stays green.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -36600,6 +37317,7 @@
       "review_done": true,
       "revision_requested": false,
       "review_note": "SNA theory deck reviewed Aug 2026 — resolves the June plan-vs-material mismatch (author supplied the SNA theory deck matching the plan, with manual betweenness + Gephi). Strong, well-referenced; Pew BLM stats verified. Fixes: position the two decks (theory vs toxicity), correct the Facebook 3.5 = degrees-of-separation vs path-length slide, fix the Adamic-Glance venue (LinkKDD 2005), and a language pass.",
+      "early_feedback": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -36713,6 +37431,7 @@
       "review_done": false,
       "revision_requested": false,
       "review_note": null,
+      "early_feedback": null,
       "materials": {
         "count": 0,
         "has": false,

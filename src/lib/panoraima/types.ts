@@ -810,6 +810,17 @@ export interface Wp4LE {
   review_done?: boolean       // a RealAI review is posted on this LE's wiki Discussion page (or added manually)
   revision_requested?: boolean // reviewed, but we asked for changes: the ball is back with the author
   review_note?: string        // short headline of what RealAI found (drives the track update report)
+  /** Notes we left on material still in "development" status, i.e. never submitted to us.
+   *  This is NOT a review and must not count towards the reviewed total. */
+  early_feedback?: {
+    date: string
+    talk_rev: number
+    status_at_time: string
+    author: string
+    must_fix_count: number
+    summary: string
+    note: string
+  }
   materials: {
     count: number
     has: boolean

@@ -114,6 +114,7 @@ function CompletenessRow({
 function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
   const revisionRequested = !!le.revision_requested
   const reviewed = !!le.review_done && !revisionRequested
+  const earlyFeedback = le.early_feedback
   const flagged = (needsAction(le) && !reviewed && !revisionRequested) || revisionRequested
   const ss = statusStyle(le.status)
   const trackColor = TRACK_COLOR[le.track] ?? TRACK_COLOR["Unknown"]
@@ -123,10 +124,18 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
 
   return (
     <div className="relative rounded-xl border border-[#DCDDE1] bg-white p-5 md:p-6 shadow-[0_1px_3px_rgba(20,22,27,0.06)] transition-all duration-150 hover:shadow-[0_4px_14px_rgba(20,22,27,0.08)] hover:border-[#16181D]/25">
-      {(flagged || reviewed) && (
+      {(flagged || reviewed || earlyFeedback) && (
         <span
           className="absolute left-0 top-4 bottom-4 w-[2px] rounded-full"
-          style={{ background: reviewed ? "#2E6A4B" : revisionRequested ? "#B26A00" : RUST }}
+          style={{
+            background: reviewed
+              ? "#2E6A4B"
+              : revisionRequested
+                ? "#B26A00"
+                : flagged
+                  ? RUST
+                  : "#1C7293", // early feedback only: informational, not an action state
+          }}
           aria-hidden
         />
       )}
@@ -180,6 +189,14 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
         <span className="inline-flex items-center rounded border border-[#D7D9DE] bg-[#F1F2F4] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#3A3E46]">
           {TRACK_SHORT[le.track] ?? le.track}
         </span>
+        {earlyFeedback && (
+          <span
+            className="inline-flex items-center gap-1 rounded border border-[#BBD4DE] bg-[#EAF2F6] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#1C5A73]"
+            title={`${earlyFeedback.note} Left ${earlyFeedback.date}, ${earlyFeedback.must_fix_count} point(s) raised.`}
+          >
+            early feedback
+          </span>
+        )}
         {(le.realai_wiki_gap || le.off_wiki) && (
           <span
             className="inline-flex items-center gap-1 rounded border border-[#E6BFB4] bg-[#FBEAE5] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#9A3318]"
@@ -367,6 +384,8 @@ function buildReport(
   L.push(`RealAI is on ${les.length} Learning Event${les.length === 1 ? "" : "s"} in ${trackName}: ${counts.author} as author, ${counts.reviewer} as reviewer.`)
   L.push(`  Completed reviews (posted to the wiki): ${completed.length}`)
   if (revisionRequested.length) L.push(`  Reviewed, revision requested (back with the author): ${revisionRequested.length}`)
+  const earlyFeedback = reviewer.filter(le => le.early_feedback)
+  if (earlyFeedback.length) L.push(`  Early feedback left on material still in development: ${earlyFeedback.length}`)
   L.push(`  Waiting on RealAI to review (material is in): ${waitingUs.length}`)
   L.push(`  Waiting on the author (plan or material outstanding): ${waitingAuthor.length}`)
   if (authored.length) L.push(`  RealAI-authored (our own next step): ${authored.length}`)
@@ -397,6 +416,18 @@ function buildReport(
       L.push(`    Then: email ${REVIEW_INBOX} so RealAI can re-review.`)
     }
     L.push("")
+  }
+
+  if (earlyFeedback.length) {
+    L.push("")
+    L.push(`EARLY FEEDBACK, NOT A REVIEW (${earlyFeedback.length})`)
+    L.push("  We read this material even though it is still in development status and was never")
+    L.push("  submitted to us. Nothing is being asked of the author. The formal review happens when")
+    L.push("  the status moves to 'Learning materials: review'.")
+    for (const le of [...earlyFeedback].sort(byCode)) {
+      L.push(`  ${le.code} — ${cleanTitle(le)}`)
+      if (le.early_feedback) L.push(`    ${le.early_feedback.must_fix_count} point(s) raised on the Talk page, ${le.early_feedback.date}`)
+    }
   }
 
   if (waitingUs.length) {
