@@ -2,9 +2,18 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-09T13:54:40.443654+00:00",
-  "refreshed_at": "2026-09-09T13:54:40.443654+00:00",
+  "generated_at": "2026-09-09T14:36:03.581226+00:00",
+  "refreshed_at": "2026-09-09T14:36:03.581226+00:00",
   "refresh_history": [
+    {
+      "at": "2026-09-09T14:36:03.581226+00:00",
+      "wiki_captured": "2026-09-04T21:51:19.465Z",
+      "sharepoint_generated": "2026-09-09T16:30:25.522876Z",
+      "realai_total": 90,
+      "reviewed": 50,
+      "revision_requested": 6,
+      "early_feedback": 12
+    },
     {
       "at": "2026-09-08T15:41:54.061678+00:00",
       "wiki_captured": "2026-09-04T21:51:19.465Z",
@@ -55,13 +64,6 @@
       "sharepoint_generated": "2026-09-03T17:40:05.296466Z",
       "realai_total": 56,
       "reviewed": 41
-    },
-    {
-      "at": "2026-08-26T17:20:46.139105+00:00",
-      "wiki_captured": "2026-08-26T17:18:36.976Z",
-      "sharepoint_generated": "2026-08-26T19:20:45.951419Z",
-      "realai_total": 56,
-      "reviewed": 41
     }
   ],
   "data_sources": {
@@ -71,10 +73,10 @@
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-09-08T17:41:21.876990Z",
+      "generated_at": "2026-09-09T16:30:25.522876Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 162,
+        "with_materials": 164,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -96,12 +98,12 @@
       "In review": 138,
       "Materials in progress": 55
     },
-    "with_materials": 162,
-    "materials_pending": 274,
+    "with_materials": 164,
+    "materials_pending": 272,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 162,
-      "awaiting_material": 274,
+      "with_sharepoint_material": 164,
+      "awaiting_material": 272,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -13190,10 +13192,19 @@
       "review_note": null,
       "early_feedback": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-08",
+        "files": [
+          {
+            "name": "HC-204 EU AI Act Scope and Definitions.pptx",
+            "ext": "pptx",
+            "kb": 977,
+            "date": "2026-09-08",
+            "sha": "d9345a5e7a08b9aa",
+            "rel": "4.1 Horizontal/HC-204/HC-204 EU AI Act Scope and Definitions.pptx"
+          }
+        ],
         "folder": "HC-204"
       },
       "lesson_plan": {
@@ -13234,10 +13245,19 @@
       "review_note": null,
       "early_feedback": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-08",
+        "files": [
+          {
+            "name": "HC-205 EU AI Act Basics.pptx",
+            "ext": "pptx",
+            "kb": 1856,
+            "date": "2026-09-08",
+            "sha": "cb5963a879c8bc7c",
+            "rel": "4.1 Horizontal/HC-205/HC-205 EU AI Act Basics.pptx"
+          }
+        ],
         "folder": "HC-205"
       },
       "lesson_plan": {
@@ -19606,10 +19626,26 @@
       "review_note": "V3 reviewed 8 Sep 2026, 17:52 CEST. We closed this on 4 Sep saying the punch-list need not come back to us; Mary Hendrick did all five anyway and shipped V3 on 7 Sep. Wiki page updated by the author (outcomes now match the doc, keywords a real list, duplicated wrap-up line gone, both student activities added). Both psychological-safety overclaims removed and the replacements are accurate. Timing table now fills all ten slots and tiles 0-120 min exactly. Validation gap added as new slide 24 with two 2026 references, BOTH VERIFIED REAL: Chereches, Eur J Public Health 2026;36(4):ckag068 (PMID 42322228, PMCID PMC13282706) and Navarro-Ballester, Explor Med 2026;7:1001412 (DOI resolves). 'Integation' fixed; Edmondson (1999) added to the psych-safety slide. TWO ATTRIBUTION ITEMS WE MISSED IN AUG AND 4 SEP, present since the first draft: slide 18 reproduces nine of Kanter's ten reasons (HBR, 25 Sep 2012) in her order with her remedy wording and she is nowhere in the deck; slide 42's notes are lifted sentence-for-sentence from leaderfactor.com (Clark is named, the wording is not quoted or linked). Both raised because the deck ships CC BY-NC-SA. Smaller: the 20-30 min row now carries 14 slides after slide 24 was inserted without a timing change; slide 24 opens with a subjectless 'May reflect'; slide 43 lists PSC as a team psych-safety measure when it is an organisational antecedent. Sign-off unchanged, material ready to teach.",
       "early_feedback": null,
       "materials": {
-        "count": 7,
+        "count": 9,
         "has": true,
-        "newest": "2026-09-07",
+        "newest": "2026-09-08",
         "files": [
+          {
+            "name": "lessonplanHL065_ChangeLeadershipinHealthcareV4.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-09-08",
+            "sha": "b11ef575fc48ba21",
+            "rel": "4.2 Health & Lifescience/HL-065/lessonplanHL065_ChangeLeadershipinHealthcareV4.docx"
+          },
+          {
+            "name": "HL-065_V4.pptx",
+            "ext": "pptx",
+            "kb": 4482,
+            "date": "2026-09-08",
+            "sha": "fcea5df39d772b3d",
+            "rel": "4.2 Health & Lifescience/HL-065/HL-065_V4.pptx"
+          },
           {
             "name": "lessonplanHL065_ChangeLeadershipinHealthcareV3.docx",
             "ext": "docx",
@@ -27730,7 +27766,7 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "KPI · Olena Butnyk",
-      "coauthor": "",
+      "coauthor": "HU",
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -27828,7 +27864,7 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "KPI · Olena Butnyk",
-      "coauthor": "",
+      "coauthor": "HU",
       "reviewer": "NAT",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -27918,7 +27954,7 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "KPI · Olena Butnyk",
-      "coauthor": "",
+      "coauthor": "HU",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -27963,7 +27999,7 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "KPI · Olena Butnyk",
-      "coauthor": "",
+      "coauthor": "HU",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -28008,7 +28044,7 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "KPI · Olena Butnyk",
-      "coauthor": "",
+      "coauthor": "HU",
       "reviewer": "NAT",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -28053,7 +28089,7 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "KPI · Olena Butnyk",
-      "coauthor": "",
+      "coauthor": "HU",
       "reviewer": "NAT",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -30925,10 +30961,26 @@
       "review_note": "V3 reviewed 8 Sep 2026, 17:52 CEST. We closed this on 4 Sep saying the punch-list need not come back to us; Mary Hendrick did all five anyway and shipped V3 on 7 Sep. Wiki page updated by the author (outcomes now match the doc, keywords a real list, duplicated wrap-up line gone, both student activities added). Both psychological-safety overclaims removed and the replacements are accurate. Timing table now fills all ten slots and tiles 0-120 min exactly. Validation gap added as new slide 24 with two 2026 references, BOTH VERIFIED REAL: Chereches, Eur J Public Health 2026;36(4):ckag068 (PMID 42322228, PMCID PMC13282706) and Navarro-Ballester, Explor Med 2026;7:1001412 (DOI resolves). 'Integation' fixed; Edmondson (1999) added to the psych-safety slide. TWO ATTRIBUTION ITEMS WE MISSED IN AUG AND 4 SEP, present since the first draft: slide 18 reproduces nine of Kanter's ten reasons (HBR, 25 Sep 2012) in her order with her remedy wording and she is nowhere in the deck; slide 42's notes are lifted sentence-for-sentence from leaderfactor.com (Clark is named, the wording is not quoted or linked). Both raised because the deck ships CC BY-NC-SA. Smaller: the 20-30 min row now carries 14 slides after slide 24 was inserted without a timing change; slide 24 opens with a subjectless 'May reflect'; slide 43 lists PSC as a team psych-safety measure when it is an organisational antecedent. Sign-off unchanged, material ready to teach.",
       "early_feedback": null,
       "materials": {
-        "count": 7,
+        "count": 9,
         "has": true,
-        "newest": "2026-09-07",
+        "newest": "2026-09-08",
         "files": [
+          {
+            "name": "lessonplanHL065_ChangeLeadershipinHealthcareV4.docx",
+            "ext": "docx",
+            "kb": 31,
+            "date": "2026-09-08",
+            "sha": "b11ef575fc48ba21",
+            "rel": "4.2 Health & Lifescience/HL-065/lessonplanHL065_ChangeLeadershipinHealthcareV4.docx"
+          },
+          {
+            "name": "HL-065_V4.pptx",
+            "ext": "pptx",
+            "kb": 4482,
+            "date": "2026-09-08",
+            "sha": "fcea5df39d772b3d",
+            "rel": "4.2 Health & Lifescience/HL-065/HL-065_V4.pptx"
+          },
           {
             "name": "lessonplanHL065_ChangeLeadershipinHealthcareV3.docx",
             "ext": "docx",
@@ -36576,7 +36628,7 @@
       "wiki_status": "Lesson plan: development",
       "due_date": "",
       "author": "KPI · Olena Butnyk",
-      "coauthor": "",
+      "coauthor": "HU",
       "reviewer": "Real AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
