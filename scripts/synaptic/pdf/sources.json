@@ -1,0 +1,307 @@
+{
+  "S59": {
+    "title": "EuroHPC JU · Playground access to AI Factories",
+    "url": "https://www.eurohpc-ju.europa.eu/playground-access-ai-factories_en",
+    "note": "Access route for eligible European SMEs and startups, with technical assessment and capacity limits. Not universal or unconditional access."
+  },
+  "S60": {
+    "title": "US NSF · National Artificial Intelligence Research Resource",
+    "url": "https://www.nsf.gov/focus-areas/ai/nairr",
+    "note": "Shared computing, data, models, software and support for the US research and education community. Inspected September 2026."
+  },
+  "S61": {
+    "title": "IEA · Energy demand from AI",
+    "url": "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai",
+    "note": "2025 analysis estimates 2024 data-centre electricity at 415 TWh. This covers data centres, not AI alone; future values are scenarios."
+  },
+  "S55": {
+    "title": "UNEP · AI-supported methane detection and mitigation",
+    "url": "https://www.unep.org/news-and-stories/press-release/ai-helping-un-detect-methane-emissions-and-spark-real-reductions",
+    "note": "15 July 2026. MARS combines satellite observations, AI, analyst verification and notifications. Detection and subsequent mitigation are distinct stages."
+  },
+  "S56": {
+    "title": "US Department of Energy · Smart transmission tools",
+    "url": "https://www.energy.gov/cmei/systems/articles/smart-transmission-tools-modernize-americas-power-grid",
+    "note": "13 November 2025. Dynamic line rating connects weather and operational data with transmission limits. It is not itself evidence of an autonomous PhD-level agent."
+  },
+  "S57": {
+    "title": "METR · Early-2025 AI and experienced developer productivity",
+    "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+    "note": "Randomised study of 16 developers and 246 tasks: 19% longer task times in this setting. Dated evidence, not an estimate for every tool or present-day workflow."
+  },
+  "S58": {
+    "title": "METR · Changing the developer productivity experiment",
+    "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+    "note": "24 February 2026. Follow-up estimates affected by participant/task selection and time-measurement problems; authors consider the signal unreliable for the current effect size."
+  },
+  "S52": {
+    "title": "ASML · Computational lithography",
+    "url": "https://www.asml.com/en/products/computational-lithography",
+    "note": "Models calibrated with machine and wafer data connect computation with manufacturing. Inspected September 2026."
+  },
+  "S53": {
+    "title": "ASML · Measuring accuracy",
+    "url": "https://www.asml.com/en/technology/lithography-principles/measuring-accuracy",
+    "note": "Public explanation of metrology, alignment and measurement feedback. The essay’s geometry is educational, not an ASML system model."
+  },
+  "S54": {
+    "title": "Dyson · Motors and Power Systems",
+    "url": "https://careers.dyson.com/en-gb/what-you-can-do/engineer/motors-and-power-systems/",
+    "note": "Company description of electromagnetic, control, thermal, mechanical, data and manufacturing work. Not an independent performance evaluation."
+  },
+  "S49": {
+    "title": "MIT OpenCourseWare · Get started",
+    "url": "https://ocw.mit.edu/pages/get-started/",
+    "note": "Free course materials without enrolment; using OCW does not confer MIT credit or a certificate."
+  },
+  "S50": {
+    "title": "UK government · Independent review of research bureaucracy",
+    "url": "https://www.gov.uk/government/publications/review-of-research-bureaucracy",
+    "note": "Final report July 2022; government response February 2024. Addresses unnecessary burdens across the research system."
+  },
+  "S51": {
+    "title": "CERN Open Data Portal",
+    "url": "https://opendata.cern.ch/",
+    "note": "Datasets, software, environments and documentation for education and research; an example of institutional public infrastructure."
+  },
+  "S45": {
+    "title": "ITU · Facts and Figures 2025",
+    "url": "https://www.itu.int/en/mediacentre/Pages/PR-2025-11-17-Facts-and-Figures.aspx",
+    "note": "Estimated six billion people online and 2.2 billion offline in 2025; connectivity is not equivalent to effective AI access."
+  },
+  "S46": {
+    "title": "UNESCO · Recommendation on Open Science",
+    "url": "https://www.unesco.org/en/legal-affairs/recommendation-open-science",
+    "note": "2021 framework addressing knowledge, infrastructure, participation and sustained investment."
+  },
+  "S47": {
+    "title": "OpenAI · API supported countries and territories",
+    "url": "https://help.openai.com/en/articles/5347006-openai-api-supported-countries-and-territories",
+    "note": "Inspected 9 September 2026. Country listing does not establish access to internal research systems or equal affordability."
+  },
+  "S48": {
+    "title": "Anthropic · Supported countries and regions",
+    "url": "https://www.anthropic.com/supported-countries",
+    "note": "Inspected 9 September 2026; API and Claude.ai lists are distinct. Additional eligibility conditions can apply."
+  },
+  "S41": {
+    "title": "Wang & Buehler · Self-Revising Discovery Systems for Science",
+    "url": "https://arxiv.org/abs/2606.01444",
+    "note": "Preprint, revised August 2026. A framework for representational change, not a universal impossibility theorem about AI contributions."
+  },
+  "S42": {
+    "title": "Novikov et al. · AlphaEvolve: a coding agent for scientific and algorithmic discovery",
+    "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/AlphaEvolve.pdf",
+    "note": "2025 technical paper. Algorithmic identities and operational performance are different claims."
+  },
+  "S43": {
+    "title": "Crystallography Open Database · Diamond, 9008564",
+    "url": "https://www.crystallography.net/cod/9008564.html",
+    "note": "Wyckoff, Crystal Structures (1963), via AMCSD. Revision 291735; public-domain coordinates used for the unit-cell illustration."
+  },
+  "S44": {
+    "title": "Google DeepMind · AlphaEvolve mathematical results",
+    "url": "https://github.com/google-deepmind/alphaevolve_results/blob/master/mathematical_results.ipynb",
+    "note": "Rank-48 complex matrix-multiplication coefficients inspected and all 4,096 tensor entries independently checked for this essay. No wall-clock benchmark claimed."
+  },
+  "S28": {
+    "title": "NIST DLMF · Zeros of the Riemann zeta function",
+    "url": "https://dlmf.nist.gov/25.10",
+    "note": "Definitions of the critical strip, critical line and hypothesis; finite numerical evidence is distinct from proof."
+  },
+  "S29": {
+    "title": "Anthropic · Expert note on the zero-proportion result",
+    "url": "https://www-cdn.anthropic.com/23455459f8832d06bb175cc0f88d019aed962ef8.pdf",
+    "note": "Precise asymptotic statement and counting conventions; the constant is approximately 67.25 percent."
+  },
+  "S30": {
+    "title": "Aryan · On an extension of the Landau–Gonek formula",
+    "url": "https://arxiv.org/abs/1902.05473",
+    "note": "Prior mathematical work cited by the 2026 result."
+  },
+  "S31": {
+    "title": "Baluyot et al. · An unconditional Montgomery theorem",
+    "url": "https://arxiv.org/abs/2306.04799",
+    "note": "Prior work on pair correlation without assuming the Riemann hypothesis."
+  },
+  "S32": {
+    "title": "Baluyot et al. · Proportions of simple zeros and critical zeros",
+    "url": "https://arxiv.org/abs/2501.14545",
+    "note": "2025 contribution to the line of research used in the later result."
+  },
+  "S33": {
+    "title": "Claude · Paper on the critical-zero proportion",
+    "url": "https://www-cdn.anthropic.com/95c246936988e43127bc6b2ceb7077c1dad2d68e.pdf",
+    "note": "Released research manuscript. The essay does not independently certify this proof."
+  },
+  "S34": {
+    "title": "FDA · Clinical research in drug development",
+    "url": "https://www.fda.gov/patients/drug-development-process/step-3-clinical-research",
+    "note": "Clinical testing addresses effects in people; computational design is an earlier, distinct step."
+  },
+  "S35": {
+    "title": "AlphaFold Protein Structure Database",
+    "url": "https://alphafold.ebi.ac.uk",
+    "note": "Public structure predictions, including the lysozyme example used here. Database access is not a clinical validation."
+  },
+  "S36": {
+    "title": "Jumper et al. · Highly accurate protein structure prediction with AlphaFold",
+    "url": "https://www.nature.com/articles/s41586-021-03819-2",
+    "note": "Nature, 2021. Structure prediction evaluated against experimental structures."
+  },
+  "S37": {
+    "title": "Anthropic · Autonomous de novo protein binder design",
+    "url": "https://www-cdn.anthropic.com/30bf50e22a01388bb29bf077ee3f244531594b7a.pdf",
+    "note": "Technical report with experimental arms and denominators. Binding does not establish therapeutic benefit."
+  },
+  "S38": {
+    "title": "Anthropic · Automated processing of NMR and LC-MS data",
+    "url": "https://www-cdn.anthropic.com/9f08da5189ac269b3242ca760de9823805c3f5f6.pdf/",
+    "note": "A bounded analytical chemistry case. Reported agreement is not broad validation across instruments or compounds."
+  },
+  "S39": {
+    "title": "RCSB PDB · Hen egg-white lysozyme, 1LYZ",
+    "url": "https://www.rcsb.org/structure/1LYZ",
+    "note": "Experimental coordinates used in the illustration. The corresponding AlphaFold prediction is P00698, mature residues 19–147."
+  },
+  "S40": {
+    "title": "RCSB PDB · Streptavidin–biotin, 1STP",
+    "url": "https://www.rcsb.org/structure/1STP",
+    "note": "Experimental educational example of a binding interface. It is not a product of the AI campaign."
+  },
+  "S22": {
+    "title": "Charles Fefferman · Existence and smoothness of the Navier–Stokes equation",
+    "url": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf",
+    "note": "Official Clay problem formulation. Its four alternatives have different assumptions about forcing."
+  },
+  "S23": {
+    "title": "Andrew Wiles · Modular elliptic curves and Fermat’s Last Theorem",
+    "url": "https://annals.math.princeton.edu/1995/141-3/p01",
+    "note": "Annals of Mathematics, 1995. The original proof predates the AI formalisation by three decades."
+  },
+  "S24": {
+    "title": "Lean · Language reference",
+    "url": "https://lean-lang.org/doc/reference/latest/",
+    "note": "The kernel checks proof terms; automation and the trusted core are different components."
+  },
+  "S25": {
+    "title": "Lean · Validating a proof",
+    "url": "https://lean-lang.org/doc/reference/latest/ValidatingProofs/",
+    "note": "Explains statement validation, axioms, independent checking and remaining trust assumptions."
+  },
+  "S26": {
+    "title": "Fermat formalisation · FinalCheck.lean",
+    "url": "https://github.com/anthropics/fermats-last-theorem/blob/main/FinalCheck.lean",
+    "note": "The final theorem and explicit axiom checks. Read, not independently rebuilt for this essay."
+  },
+  "S27": {
+    "title": "Fermat formalisation · Attribution",
+    "url": "https://github.com/anthropics/fermats-last-theorem/blob/main/ATTRIBUTION.md",
+    "note": "Identifies reused material from Imperial College London’s FLT project, flt-regular and Mathlib."
+  },
+  "S01": {
+    "title": "OpenAI · A solution to the Navier–Stokes problem",
+    "url": "https://openai.com/index/navier-stokes-solution/",
+    "note": "8 September 2026. Company announcement; read alongside the paper and formal artefact. Independent acceptance is a separate question."
+  },
+  "S02": {
+    "title": "Clay Mathematics Institute · Millennium Prize rules",
+    "url": "https://www.claymath.org/millennium-problems/rules/",
+    "note": "The prize process requires qualifying publication, elapsed time and general acceptance. Announcement does not constitute an award."
+  },
+  "S03": {
+    "title": "Anthropic · Formalizing Fermat’s Last Theorem",
+    "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+    "note": "4 September 2026. Formalisation of a theorem proved by Wiles in the 1990s, not its first proof."
+  },
+  "S04": {
+    "title": "Anthropic · Progress on the Riemann zeta function",
+    "url": "https://www.anthropic.com/research/riemann-zeta",
+    "note": "10 August 2026; updated 13 August. Reported improvement to a lower bound, not a proof of the Riemann hypothesis."
+  },
+  "S05": {
+    "title": "Abramson et al. · Accurate structure prediction of biomolecular interactions with AlphaFold 3",
+    "url": "https://www.nature.com/articles/s41586-024-07487-w",
+    "note": "Nature, 2024. Predictions and benchmark performance are not clinical efficacy."
+  },
+  "S06": {
+    "title": "Nobel Prize · Chemistry 2024",
+    "url": "https://www.nobelprize.org/prizes/chemistry/2024/press-release/",
+    "note": "Recognition of computational protein design and protein structure prediction."
+  },
+  "S07": {
+    "title": "Watson et al. · De novo design of protein structure and function with RFdiffusion",
+    "url": "https://www.nature.com/articles/s41586-023-06415-8",
+    "note": "Nature, 2023. Generative design with experimental validation under stated conditions."
+  },
+  "S08": {
+    "title": "Anthropic · Claude accelerates protein design",
+    "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+    "note": "18 August 2026. Reported design and wet-lab results; retain denominators and unsuccessful targets."
+  },
+  "S09": {
+    "title": "Anthropic · Expanding support for scientists",
+    "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
+    "note": "27 August 2026. Access programmes do not establish universal availability of internal research systems."
+  },
+  "S10": {
+    "title": "Google DeepMind · Introducing AlphaEvolve",
+    "url": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/",
+    "note": "14 May 2025. Company-reported algorithmic results and evaluation methods."
+  },
+  "S11": {
+    "title": "Google DeepMind · AlphaEvolve’s impact",
+    "url": "https://deepmind.google/blog/alphaevolve-impact/",
+    "note": "7 May 2026. Deployment claims require attention to baseline and operating context."
+  },
+  "S12": {
+    "title": "Merchant et al. · Scaling deep learning for materials discovery",
+    "url": "https://www.nature.com/articles/s41586-023-06735-9",
+    "note": "Nature, 2023. Predicted stability, experimental synthesis and useful products are distinct achievements."
+  },
+  "S13": {
+    "title": "Google Research · An AI co-scientist",
+    "url": "https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/",
+    "note": "19 February 2025. Includes hypothesis generation and experimentally assessed examples."
+  },
+  "S14": {
+    "title": "International Energy Agency · AI for energy optimisation and innovation",
+    "url": "https://www.iea.org/reports/energy-and-ai/ai-for-energy-optimisation-and-innovation",
+    "note": "2025. Oil and gas is already using AI; the industry is not an untouched technology enclave."
+  },
+  "S15": {
+    "title": "ASML · Annual report 2025",
+    "url": "https://www.asml.com/en/investors/annual-report/2025/financials",
+    "note": "Company financial and operational disclosures. Existing investment and adoption matter to the competitive argument."
+  },
+  "S16": {
+    "title": "IBM Research · Foundation models for materials",
+    "url": "https://research.ibm.com/blog/foundation-models-for-materials",
+    "note": "20 December 2024. An example of incumbent participation in scientific AI."
+  },
+  "S17": {
+    "title": "Dyson · Research engineering",
+    "url": "https://careers.dyson.com/en-gb/what-you-can-do/engineer/research/",
+    "note": "Company description of research functions. Not an independent measure of competitive performance."
+  },
+  "S18": {
+    "title": "Kim et al. · Towards a science of scaling agent systems",
+    "url": "https://arxiv.org/abs/2512.08296",
+    "note": "Research on bounded agent systems; does not measure a million-agent scientific organisation."
+  },
+  "S19": {
+    "title": "OpenAI · Navier–Stokes manuscript",
+    "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+    "note": "166-page mathematical manuscript. The stated forcing, initial conditions and regularity assumptions define the claim."
+  },
+  "S20": {
+    "title": "OpenAI · NavierStokesAndEuler",
+    "url": "https://github.com/openai/NavierStokesAndEuler",
+    "note": "Released formal artefact. This essay does not represent an independent full rebuild of its certificates."
+  },
+  "S21": {
+    "title": "Anthropic · Fermat formalisation repository",
+    "url": "https://github.com/anthropics/fermats-last-theorem",
+    "note": "Released proof code; the distinction between theorem statements, dependencies and kernel checking remains essential."
+  }
+}

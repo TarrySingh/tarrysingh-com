@@ -6,6 +6,7 @@ import { sources } from "@/lib/synaptic/intelligence-without-permission/sources"
 import { Reader } from "@/components/synaptic/intelligence-without-permission/Reader"
 import { Figure } from "@/components/synaptic/intelligence-without-permission/Figure"
 import { InstrumentDirectory } from "@/components/synaptic/intelligence-without-permission/InstrumentDirectory"
+import whitepaper from "@/lib/synaptic/intelligence-without-permission/whitepaper.json"
 import "./article.css"
 
 export const metadata: Metadata = {
@@ -34,7 +35,10 @@ export default function IntelligenceWithoutPermission() {
       <h1>Intelligence<br />Without<br /><em>Permission.</em></h1>
       <div className="iwp-hero-bottom"><p>When anyone can attempt work once reserved for the world’s great research institutions, who gets to decide what happens next?</p><div className="iwp-byline"><span>An essay by</span><strong>Tarry Singh</strong><span>{manuscript.words.toLocaleString("en-US")} words · {manuscript.figureCount} figures</span></div></div>
       <p className="iwp-draft">Research edition · 18 sections · 38 figures, including 10 interactive 3D laboratories. Narrative word count excludes captions and references. Evidence cut-off: 9 September 2026.</p>
-      <a className="iwp-download" href="/synaptic/intelligence-without-permission/intelligence-without-permission.md" download>Download the reading copy (.md) ↓</a>
+      <div className="iwp-downloads">
+        <a className="iwp-download-paper" href={whitepaper.path} download><span><strong>Download the white paper</strong><small>PDF · {whitepaper.pages} pages · {whitepaper.sizeLabel}</small></span><span aria-hidden="true">↓</span></a>
+        <a className="iwp-download iwp-download-source" href="/synaptic/intelligence-without-permission/intelligence-without-permission.md" download>Markdown reading copy</a>
+      </div>
       <a className="iwp-enter" href="#chapter-prologue">Enter the essay <span aria-hidden="true">↓</span></a>
       <span className="iwp-art-credit">Cover: AI-generated conceptual artwork. Scientific figures use the methods identified alongside them.</span>
     </header>
@@ -48,6 +52,6 @@ export default function IntelligenceWithoutPermission() {
       </section>)}
     </article>
     <section className="iwp-bibliography" id="iwp-sources"><p className="iwp-eyebrow">The evidence is part of the argument</p><h2>Sources &amp; reading notes</h2><p>Research cut-off: 9 September 2026. Company announcements, original papers, formal artefacts and the author’s scenarios carry different kinds of evidence. A link records provenance; it is not a claim of independent replication. The bibliography includes sources for both narrative and figures.</p><ol>{Object.entries(sources).sort(([a],[b])=>Number(a.slice(1))-Number(b.slice(1))).map(([id, source]) => <li id={`source-${id}`} key={id}><span>{id.slice(1).padStart(2, "0")}</span><div><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a><p>{source.note}</p></div></li>)}</ol></section>
-    <footer className="iwp-footer"><span>Tarry Singh / Synaptic</span><a href="#iwp-top">Back to the beginning ↑</a></footer>
+    <footer className="iwp-footer"><span>Tarry Singh / Synaptic</span><a href={whitepaper.path} download>Download the complete white paper (PDF) ↓</a><a href="#iwp-top">Back to the beginning ↑</a></footer>
   </main>
 }
