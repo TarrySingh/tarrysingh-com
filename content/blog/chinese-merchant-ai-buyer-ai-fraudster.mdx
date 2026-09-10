@@ -1,0 +1,64 @@
+---
+title: "A Chinese Merchant, an AI Buyer, an AI Fraudster"
+date: "2026-09-10"
+category: "Essays"
+excerpt: "China's largest e-commerce platforms have placed AI agents on both sides of the checkout in the same fiscal quarter — one places the order, one adjudicates the dispute, both owned by the platform. Alibaba's own CommerceAgentBench found the strongest frontier model completes 61.7 per cent of end-to-end commercial tasks, while a parallel HCI study mapped an active underground economy of AI-fabricated defect claims. The merchant carries the cost of both error rates."
+draft: false
+tags: ["agentic-commerce", "chinese-platforms", "ai-fraud", "merchant-risk", "payments", "e-commerce"]
+---
+
+The largest Chinese e-commerce platforms have decided, quietly and in the same fiscal quarter, that the AI they want their platforms to be judged on is the agent that will place the order and the agent that will file the return. Both belong to the platform. The merchant sits between them.
+
+This piece is about what happens to a small shop on Taobao when both sides of the checkout speak in tokens.
+
+## 1. What the platforms have started shipping
+
+The most visible piece went live on August 18, 2026 in Hangzhou. [Alipay launched what it called China's first full-stack agentic commerce platform](https://technode.global/2026/08/18/alipay-launches-agentic-commerce-platform-in-china-to-bring-ai-tools-to-merchants/): a merchant toolkit for turning product pages and service workflows into agent-callable skills, wired through Ant Group's AHA protocol to Ah Bao, the consumer agent Alipay launched in June. Ah Bao already reaches more than 10,000 everyday services and, according to the release, has been integrated with five smartphone brands that together account for over 70 percent of the domestic handset market, and with sixteen automakers. Cyril Han, Ant Group's chief executive, told the partner conference that agentic commerce would grow substantially over the next six to twelve months.
+
+On the payments layer, Ant had already published the operating scale. [In February 2026, during the week of Chinese New Year, Alipay AI Pay processed more than 120 million transactions](https://www.businesswire.com/news/home/20260223266559/en/Ant-Groups-Alipay-AI-Pay-and-AI-Health-App-AQ-Each-Surpass-100-Million-Users-During-CNY-as-AI-Adoption-Accelerates-in-China), the first AI-native payment product past the hundred-million-user mark. The consumer-facing agent, in other words, does not need to be built. It is running.
+
+Alibaba's June-quarter results, reported on August 20, 2026, sit on the same trajectory. [Alibaba Cloud external revenue grew 45 percent year over year, and AI-related product revenue posted its twelfth consecutive quarter of triple-digit growth, at RMB 12.376 billion for the quarter](https://www.alibabagroup.com/en-US/document-2026456290057781248). GAAP net income fell 75 percent, largely from infrastructure spend on that same agentic surface.
+
+JD.com is doing something similar in a plainer register. [Its Q2 2026 release on August 13 disclosed R&D spending up 53 percent year on year and a strategy of embedding AI across more than 2,000 business scenarios](https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results). Its Joy Inside shopping agent has been integrated by close to 200 brands. JDI, JD's industrial arm, put more than 70 agents into the value chain in the first half of 2026 alone.
+
+## 2. The 61.7 percent Alibaba's own president admitted
+
+The most useful data point in the whole cycle came from Kuo Zhang, president of Alibaba.com. [In a Fortune commentary published on September 9, 2026, he reported the results of a benchmark his own Accio team built, called CommerceAgentBench: 107 end-to-end commercial tasks drawn from 10 million active small-business users, 1.6 million real conversations, and 200,000 execution traces, graded on whether the listing actually went live and the freight actually moved](https://fortune.com/2026/09/09/alibaba-president-kuo-zhang-ai-agents-can-talk-but-not-work/). The strongest frontier model completed 61.7 percent of the tasks.
+
+Zhang framed the finding straight. The failures cluster in exactly the places a payments-risk team would predict: spotting a payment anomaly hiding inside a long supplier email thread, calculating landed cost across several moving variables, reconciling after-sales documents that disagree with each other, multi-leg shipping routes. Each of those happens thousands of times a day in real commerce. And the risk changes, in his own words, when adoption scales, because individual mistakes become correlated ones, ripping through catalogues and dispute queues at the same time.
+
+Read that number in the register of a payments-risk officer. A substrate that fails one commercial task in three cannot run authorised checkout end-to-end. It is a very good copilot, if the human oversight is real. The 120 million weekly transactions Ant has already booked through AI Pay run on a stack whose president just told the industry that the frontier model under it clears 62 percent, not 99. That gap is being papered over with pre-authorised low-value transactions and a lot of specific rails that hide the model behind rules. That is the honest engineering. It is also fragile.
+
+## 3. The other end of the checkout
+
+Now the other side of the same transaction. Take the June 2026 preprint from a group of HCI researchers who spent months on the ground with seventeen Chinese merchants and thirteen platform-side dispute workers. [The paper, "Generative AI-Enabled Refund Fraud in Chinese E-Commerce," documents a working underground economy in which buyers use widely available image and video models to fabricate hyper-realistic evidence of product defects, from mould on food to cracks on screens to rust on toothbrush heads, and submit it through the refund flow](https://arxiv.org/abs/2606.03215). The paper builds a taxonomy of four GenAI-enabled threat vectors across the transaction, dispute, logistics and communication phases. It is the first serious empirical mapping of the pattern.
+
+The single number that stops you: about half of the merchant appeals in the study concerned refunds the merchant believed had been granted inappropriately. In the merchant's world, this is a slow bleed on a margin that already runs at single digits. It is also a bleed the platform's own trust-and-safety spend has to keep pace with.
+
+The regulator has been at least half-awake. [In January 2026, Taobao and Tmall launched an AI fake-image recognition model as part of a package of after-sales measures aimed at exactly this pattern of AI-fabricated defect claims](https://oecd.ai/en/incidents/2026-01-21-2ae9); the OECD's incident monitor filed it as a live case. The tool is the counter-tool to the fraud tool. Both are AI. The merchant sits below both, hoping the counter-tool wins on her specific transaction.
+
+## 4. Where the capex goes
+
+Read the capex against the fraud, and the shape of the problem becomes clear. The AI-related revenue Alibaba booked in the June quarter, RMB 12.376 billion, is being spent, in large part, on the infrastructure that will let Taobao and Alipay run the buy-side agent at scale. The counter-fraud model on the merchant-side dispute flow is a rounding-error line item inside a much larger investment cycle.
+
+That asymmetry is not accidental. The buy-side agent is a growth story. Cyril Han can point to Ah Bao's expansion and to Alipay's 120 million weekly AI transactions in a keynote to a room of partners with journalists in the back. The merchant-side counter-fraud model shows up as a slower-declining refund-loss line in a category the platform does not typically break out. Growth stories get the capex. Defensive infrastructure gets what is left.
+
+## 5. The disconfirming voice, engaged
+
+The strongest published pushback on the whole race comes from Forrester's mid-2026 assessment. [Their view is that agentic commerce is technically real but that most enterprises are unprepared to operationalise it, with the gap being orchestration, control, and trust rather than raw model capability, and that a meaningful share of retail marketplace projects will be abandoned inside the current cycle](https://www.forrester.com/blogs/the-state-of-agentic-commerce-in-mid-2026/). Jeff Pollard, Forrester's principal security analyst, argues that the scary failure mode is not one agent making one bad decision, it is cascading errors propagating through the system.
+
+Read on the merits, that is the right frame. It should not push you to bet against the Chinese platforms wholesale. The vulnerable pieces are the parts where the orchestration layer has been shipped ahead of the verification layer. Look at the two ends of the same platform in the same fiscal quarter. On the front, Ah Bao is being wired into carmakers and handset makers. On the back, Taobao's fake-image recognition system had to be introduced in January because the merchant-side fraud was already there. Verification is arriving after the surface is already talking. That is a sequencing problem, and the sequence has costs.
+
+## 6. What a small merchant on Taobao already carries
+
+Take the seat of a small merchant on Taobao who ships something perishable, dried fruit or sesame paste or jarred sauces. She sees three things at once. A growing share of her orders arrives through an intermediating agent she cannot see. Her refund queue is growing, and a nontrivial fraction of the claims arrive with a photograph that would have persuaded her personally two years ago and now might have been generated in ninety seconds. The platform's dispute worker adjudicating her case is under a target on turnaround time, and the fake-image detector helps only if the platform routes her case through it.
+
+Each of those forces belongs to a different roadmap inside the platform. The buy-side agent is a growth product. The dispute flow is an operational cost centre. The fake-image detector is a safety line item. None of them owns the merchant P&L.
+
+A payments-risk officer sitting at Ant would tell you the answer is a per-transaction risk score that treats the agent-initiated buy and the AI-augmented dispute as members of the same population, scored together. The technical substrate exists. The missing piece is the incentive to make the merchant P&L a first-class metric on the same dashboard as Ah Bao integrations.
+
+Which is the question I have not been able to shake since I started reading around the August releases. If the buy-side and the dispute-side of the same transaction now both run through models the same platform owns, whose margin absorbs the false positives, and whose margin absorbs the false negatives? Ah Bao and the dispute worker have not yet been asked that question in a room where they can hear each other. Somewhere in a district in Chengdu, a merchant packing sesame paste for next-day dispatch is waiting to see.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io), an Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
