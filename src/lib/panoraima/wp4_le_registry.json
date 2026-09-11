@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-11T20:47:01.351607+00:00",
-  "refreshed_at": "2026-09-11T20:47:01.351607+00:00",
+  "generated_at": "2026-09-11T21:28:22.818564+00:00",
+  "refreshed_at": "2026-09-11T21:28:22.818564+00:00",
   "refresh_history": [
     {
       "at": "2026-09-11T20:47:01.351607+00:00",
@@ -114,7 +114,7 @@
       "total": 90,
       "author": 4,
       "reviewer": 86,
-      "reviewed": 50,
+      "reviewed": 51,
       "revision_requested": 6,
       "early_feedback": 12,
       "by_status": {
@@ -8511,9 +8511,9 @@
       "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
+      "review_done": true,
       "revision_requested": false,
-      "review_note": null,
+      "review_note": "Material reviewed 11 Sep 2026 at the author's request (Ahmad Khalidi, HAW, asked for feedback because he was unsure the material design suits the other two Prompt Engineering LEs). Posted to Talk page rev 8582. VERDICT: strongest LE material we have read in this project. Three design pieces are genuinely good and worth naming as reusable rules: the Prompt Log whose columns ARE the taxonomy being taught, observe-then-name teaching order, and an ethics question closing each experiment rather than an ethics block at the end. ANSWER TO HIS QUESTION: the flipped two-sitting shape does NOT carry, and his own plans already diverge - HC-016 is 30min + homework + 30min, while HC-017 (10+20+5+20+5) and HC-018 (10+30+10+10) are single in-class sessions with no homework, so the mirrored Reflect-and-Discuss device has nothing to mirror. 5 must-fix: the flipped-vs-single decision; documentation and ethics threads missing from HC-017/018 outcomes; HC-016 installs gemma-4-e4b whose thinking mode undercuts HC-017's chain-of-thought experiment (fix: use the toggle as the experiment); HC-017/018 outcomes lack level tags and assessable verbs; the 15-min in-class LM Studio setup cannot deliver a 5.9GB model to a room of laptops. Plus 10 should-fix (8192 context stated as a model property when it is LM Studio's loaded length; Prompt Log has no temperature column though the assignment turns on temperature; System Prompt block missing its Reflect and Discuss slide, breaking the one-to-one mirror; between-session work has no size, due point or collection stance) and 4 small. HC-018's prerequisite line reads 'HC-017 Introduction to Prompt Engineering 03' and points at an LE that does not exist. 113 raw findings, 72 dropped on adversarial verification, 41 kept.",
       "early_feedback": null,
       "materials": {
         "count": 7,
@@ -29109,9 +29109,9 @@
       "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
+      "review_done": true,
       "revision_requested": false,
-      "review_note": null,
+      "review_note": "Material reviewed 11 Sep 2026 at the author's request (Ahmad Khalidi, HAW, asked for feedback because he was unsure the material design suits the other two Prompt Engineering LEs). Posted to Talk page rev 8582. VERDICT: strongest LE material we have read in this project. Three design pieces are genuinely good and worth naming as reusable rules: the Prompt Log whose columns ARE the taxonomy being taught, observe-then-name teaching order, and an ethics question closing each experiment rather than an ethics block at the end. ANSWER TO HIS QUESTION: the flipped two-sitting shape does NOT carry, and his own plans already diverge - HC-016 is 30min + homework + 30min, while HC-017 (10+20+5+20+5) and HC-018 (10+30+10+10) are single in-class sessions with no homework, so the mirrored Reflect-and-Discuss device has nothing to mirror. 5 must-fix: the flipped-vs-single decision; documentation and ethics threads missing from HC-017/018 outcomes; HC-016 installs gemma-4-e4b whose thinking mode undercuts HC-017's chain-of-thought experiment (fix: use the toggle as the experiment); HC-017/018 outcomes lack level tags and assessable verbs; the 15-min in-class LM Studio setup cannot deliver a 5.9GB model to a room of laptops. Plus 10 should-fix (8192 context stated as a model property when it is LM Studio's loaded length; Prompt Log has no temperature column though the assignment turns on temperature; System Prompt block missing its Reflect and Discuss slide, breaking the one-to-one mirror; between-session work has no size, due point or collection stance) and 4 small. HC-018's prerequisite line reads 'HC-017 Introduction to Prompt Engineering 03' and points at an LE that does not exist. 113 raw findings, 72 dropped on adversarial verification, 41 kept.",
       "early_feedback": null,
       "materials": {
         "count": 7,
