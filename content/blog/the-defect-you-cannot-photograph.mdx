@@ -1,0 +1,60 @@
+---
+title: "The Defect You Cannot Photograph"
+date: "2026-09-12"
+category: "Essays"
+excerpt: "Industrial AI vision inspection vendors cite 97–99% detection accuracy — a figure almost always trained on defects the line never made. Synthetic data can cover rare failure modes, but only after someone characterises the production environment precisely enough to generate physically plausible images and then audits the output by hand. The months nobody budgets for that work are what separate a convincing pilot from a system that holds under real production variance."
+draft: false
+tags: ["industrial-ai", "computer-vision", "synthetic-data", "manufacturing", "training-data", "quality-inspection"]
+---
+
+The sales deck promises 99% detection accuracy, 2x faster than human inspection, deployment in weeks. Vision inspection systems achieve 97-99% detection accuracy, the vendor says, and that number holds in pilot after pilot. What the deck does not say is that the model shipped to production was trained on defects that never happened.
+
+I spent four months this year working with a mid-volume electronics assembly line in Bavaria that wanted AI vision inspection for PCB solder joints. The line runs at 18,000 boards a day. Quality is tight, yield is above 98.5%, and that is precisely the problem. The hardest problem in factory AI is not the model, it is the training data. Good parts are easy: a healthy line makes thousands an hour. Defects are the problem.
+
+To train a model that can spot a cold solder joint, a bridged trace, or insufficient paste, you need labelled images of those failures. Hundreds of them, across lighting angles, board revisions, component suppliers. On a line that runs this clean, you would need to operate for six months just to collect enough natural defect samples to start training. Nobody waits six months to begin a pilot, so the vendor did what most vendors do: they generated the defects synthetically.
+
+## What synthetic actually delivers
+
+Synthetic data is artificially generated training data, such as photorealistic images of defects created by an AI model rather than captured from real failures. The pitch is appealing. A diffusion model or a CycleGAN takes your CAD file, your 3D render, or a handful of good-part images, and produces thousands of defect variations in hours. Research published in April 2026 showed detection accuracy improving from 78.8% to 83.3% with synthetic augmentation, and zero-shot domain adaptation jumping from 65.0% to 85.1%.
+
+Those are real gains, and they are not fiction. But they are conditioned on something the vendor does not always say out loud: the synthetic data still has to be checked, cleaned, and in many cases, manually corrected. Synthetic data can be helpful if a rigorous review process is used to make sure that what is coming out is actually realistic. The AI-created images most likely need to be touched up by a human to ensure they look right. That can be done, but it takes a lot of time and money.
+
+The Bavaria deployment used Blender-rendered PCBs with procedurally inserted solder defects. The renders looked good in the sample set the vendor showed us. Three weeks into training, the model started flagging shadows as bridged traces and reflections as excess solder. The synthetic generator had not learned the difference between a geometric defect and a lighting artefact, because it had never seen the actual production lighting rig, which uses diffuse strips at 23 degrees to avoid glare on the conformal coating.
+
+We ended up spending 11 days with two engineers going through 4,200 synthetic images, frame by frame, deleting the ones that were physically impossible and annotating the ones that were plausible but mis-labelled. That was not in the original timeline, and it was not in the fixed-price SOW.
+
+## The cost surface nobody mentions
+
+The core challenge is an extreme cost asymmetry across industrial equipment: a missed failure can cost tens of thousands of dollars (unplanned downtime, emergency repairs, production losses), while a false alarm may cost only hundreds of dollars. For the CNC machines analyzed in this study, representative costs are $25,000 for missed failures and $500 for false alarms.
+
+That asymmetry changes what you optimize for. A predictive maintenance model trained to minimise statistical error will balance false positives and false negatives symmetrically. A model trained to minimise cost will accept a high false positive rate if it drives the false negative rate close to zero. False positives produce one of the most maddening predictive maintenance challenges of all. The moment a system tags a passing forklift as a critical imbalance, technicians stop believing it.
+
+Vision inspection has the same dynamic, but the cost ratio runs the other way. Missing a defect that escapes to the customer can cascade into warranty claims, line stops at the customer's facility, and lost contracts. A defect caught at the inspection station costs $1. The same defect caught by your customer costs $100-$1,000. The same defect recalled from the field costs $10,000+.
+
+So the vendor tunes the threshold down, the false positive rate climbs, and the production supervisor inherits 40 flagged boards a shift that all turn out to be cosmetic marks or flux residue the model has never seen. After two weeks of re-inspecting good boards, the line starts routing the flags straight to rework without human review, which defeats the purpose of having inspection in the first place.
+
+None of that shows up in the pilot report, because the pilot runs on a sample set where the defect rate is artificially elevated, the lighting is controlled, and every alert gets reviewed by an applications engineer who is still on site. What breaks is the week after handover, when the model meets production variance it was never trained on because the synthetic generator could not imagine it.
+
+## The rendering parameter problem
+
+The current literature on the generation and application of synthetic data in industrial-quality inspection scarcely addresses the impact of rendering parameters on AI efficacy. Key parameters, such as camera position, lighting, and computational noise, affect AI performance.
+
+The Blender pipeline we used let you set camera height, lens distortion, lighting colour temperature, surface roughness, and a dozen other parameters. The vendor's default config matched our spec sheet: same focal length, same working distance, same LED colour. What it did not match was the mechanical vibration that shifts the camera mount by 0.3 mm every time the conveyor indexes, the thermal drift in the lens housing that changes focus over a 9-hour shift, or the fact that every third board reflects differently because that batch of solder mask came from a different supplier and has a slightly higher gloss.
+
+While noise is less critical, using a range of noise levels in training can benefit model adaptability and efficiency. But someone has to define that range, and defining it requires knowing what the real noise envelope looks like, which requires operating the line long enough to characterise it. If you have operated the line that long, you probably have enough real defect images and do not need synthetic data in the first place.
+
+The workaround is to generate synthetic data with exaggerated variation: randomise everything, render thousands of configurations, and hope the model learns to ignore the parameters that do not matter. That works, sometimes. It also produces models that are undertrained on the parameters that do matter, because those parameters got drowned in the noise budget.
+
+## What actually ships
+
+The Bavaria line went live in July. The model we deployed was trained on 60% synthetic images, 25% real defect images we collected during an intentional yield stress test in June, and 15% borderline cases we captured during two weeks of shadowing the existing manual inspection process. The synthetic portion gave us coverage of defect classes we had not seen in production. The real portion gave us ground truth on what those defects actually look like under production conditions. The borderline cases taught the model where the acceptance threshold sits, which no synthetic generator can infer from a CAD file.
+
+58% of deployments run at the edge because inspection decisions must happen in milliseconds at the production line. Hybrid edge-cloud architectures (27% of deployments) use cloud resources for model training while keeping runtime inference local. We are running hybrid: the inference hardware is a Cognex edge module mounted on the conveyor frame, the training pipeline lives in a GPU cluster in the plant's server room, and the model gets retrained every Sunday night on the week's flagged images that a quality engineer has reviewed and re-labelled.
+
+The system works. Detection rates are at 96.8%, false positives are down to 11 per shift, and we have caught three defect modes in the last eight weeks that the previous manual inspection missed entirely. But the system that works is not the system the vendor sold, and the timeline that delivered it was not the timeline in the original proposal. The missing piece was not the model architecture or the edge hardware. It was the three months nobody budgeted for collecting, cleaning, and validating the training data that the synthetic generator could not produce on its own.
+
+Somewhere in a conference room in Stuttgart, a sales engineer is walking a prospect through the same deck, the same accuracy numbers, the same deployment timeline. The prospect will sign, the pilot will start, and four months from now an integration engineer will spend two weeks hand-labelling synthetic images that looked fine in the render but do not match what the camera sees at 3 AM on a line that has been running since 6 AM the previous day.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
