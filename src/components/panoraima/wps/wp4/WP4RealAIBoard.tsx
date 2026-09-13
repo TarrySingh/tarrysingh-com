@@ -360,7 +360,17 @@ function buildReport(
   const completed = reviewer.filter(le => le.review_done && !le.revision_requested)
   // Reviewed, but we asked for changes. The ball is with the author, not with us.
   const revisionRequested = reviewer.filter(le => le.revision_requested)
-  const waitingUs = reviewer.filter(le => !le.review_done && hasMaterial(le))
+  // Material exists but the ball is NOT with us: either the author never submitted it
+  // (still "development", so we left early feedback instead), or they are actively
+  // revising it. Counting these as our queue overstates what RealAI owes.
+  const blockedElsewhere = reviewer.filter(
+    le => !le.review_done && hasMaterial(le)
+      && (!!le.early_feedback || /under revision/i.test(le.wiki_status ?? "")),
+  )
+  const blockedCodes = new Set(blockedElsewhere.map(le => le.code))
+  const waitingUs = reviewer.filter(
+    le => !le.review_done && hasMaterial(le) && !blockedCodes.has(le.code),
+  )
   const waitingAuthor = reviewer.filter(le => !le.review_done && !hasMaterial(le))
   const byCode = (a: Wp4LE, b: Wp4LE) => a.code.localeCompare(b.code)
 
@@ -386,7 +396,8 @@ function buildReport(
   if (revisionRequested.length) L.push(`  Reviewed, revision requested (back with the author): ${revisionRequested.length}`)
   const earlyFeedback = reviewer.filter(le => le.early_feedback)
   if (earlyFeedback.length) L.push(`  Early feedback left on material still in development: ${earlyFeedback.length}`)
-  L.push(`  Waiting on RealAI to review (material is in): ${waitingUs.length}`)
+  L.push(`  Waiting on RealAI to review (material is in, and it is our move): ${waitingUs.length}`)
+  if (blockedElsewhere.length) L.push(`  Material exists but the move is not ours (see below): ${blockedElsewhere.length}`)
   L.push(`  Waiting on the author (plan or material outstanding): ${waitingAuthor.length}`)
   if (authored.length) L.push(`  RealAI-authored (our own next step): ${authored.length}`)
   if (gap) L.push(`  Not yet listed with RealAI as reviewer on the wiki master: ${gap} (assignment is in the SharePoint M&F registry)`)
@@ -432,9 +443,30 @@ function buildReport(
 
   if (waitingUs.length) {
     L.push(`WAITING ON REALAI TO REVIEW (${waitingUs.length})`)
-    L.push("The material is in SharePoint. This is on us — we will review it and post to the wiki.")
+    L.push("The material is in SharePoint. This is on us. We will review it and post to the wiki.")
     for (const le of [...waitingUs].sort(byCode)) {
       L.push(`  ${le.code} — ${cleanTitle(le)}${le.author ? `   (author: ${le.author})` : ""}`)
+    }
+    L.push("")
+  } else {
+    // Say it out loud. An absent section reads as an oversight; this reads as a status.
+    L.push("NOTHING IS WAITING ON REALAI")
+    L.push(`Our review queue for ${trackName} is empty. Every Learning Event here is either`)
+    L.push("reviewed and closed, back with its author after a review, or has no material for us")
+    L.push("to read yet. If you believe something is with us, it has not reached us: please email")
+    L.push(`${REVIEW_INBOX} and we will pick it up the same week.`)
+    L.push("")
+  }
+
+  if (blockedElsewhere.length) {
+    L.push(`MATERIAL EXISTS, BUT THE MOVE IS NOT OURS (${blockedElsewhere.length})`)
+    L.push("These have material in SharePoint, so they can look like our backlog. They are not.")
+    for (const le of [...blockedElsewhere].sort(byCode)) {
+      const why = le.early_feedback
+        ? `still marked "${le.wiki_status}" on the wiki, so it has not been submitted to us. We have read it and left early feedback on the Talk page. Move the status to "Learning materials: review" and we will review it formally.`
+        : `marked "${le.wiki_status}" on the wiki, so the author is working on it. We will review once it comes back.`
+      L.push(`  ${le.code} — ${cleanTitle(le)}`)
+      L.push(`    ${why}`)
     }
     L.push("")
   }
@@ -458,6 +490,11 @@ function buildReport(
         ? le.completeness.author_needs.join("; ")
         : "In progress"
       L.push(`  ${le.code} — ${cleanTitle(le)}   →   ${need}`)
+      // An empty Reviewer field stops the LE dead, and it is invisible unless named.
+      if (hasMaterial(le) && !le.reviewer?.trim()) {
+        L.push("       BLOCKED: no reviewer is assigned to this LE on the wiki. The material is")
+        L.push("       uploaded and nothing can progress until WP4 names one.")
+      }
     }
     L.push("")
   }
