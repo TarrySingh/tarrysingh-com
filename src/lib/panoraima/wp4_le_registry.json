@@ -2,13 +2,13 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-17T11:44:53.450836+00:00",
-  "refreshed_at": "2026-09-17T11:44:53.450836+00:00",
+  "generated_at": "2026-09-17T11:45:23.781700+00:00",
+  "refreshed_at": "2026-09-17T11:45:23.781700+00:00",
   "refresh_history": [
     {
-      "at": "2026-09-17T11:44:53.450836+00:00",
+      "at": "2026-09-17T11:45:23.781700+00:00",
       "wiki_captured": "2026-09-17T11:43:17.284Z",
-      "sharepoint_generated": "2026-09-17T13:43:36.126298Z",
+      "sharepoint_generated": "2026-09-17T11:45:23.601920Z",
       "realai_total": 90,
       "reviewed": 59,
       "revision_requested": 14,
@@ -79,7 +79,7 @@
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-09-17T13:43:36.126298Z",
+      "generated_at": "2026-09-17T11:45:23.601920Z",
       "counts": {
         "codes_total": 497,
         "with_materials": 166,
