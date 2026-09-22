@@ -1,0 +1,56 @@
+---
+title: "The Actuary AIDA Never Meets"
+date: "2026-09-22"
+category: "Essays"
+excerpt: "Halodoc's AIDA is a competent clinical assistant—the problem is structural. Every claim it touches flows to a national payer running a 108 per cent claims ratio, headed for payment default by July 2027, with no independent model-risk regime sitting between the model's output and the system's solvency exposure. Clinical AI in ASEAN scales in months; the actuarial and governance infrastructure that would hold it to account scales in years."
+draft: false
+tags: ["clinical-ai", "model-risk", "indonesia-healthcare", "health-insurance", "ai-governance", "bpjs-kesehatan"]
+---
+
+AIDA is the most consequential AI model deploying inside Indonesian healthcare this year, and it is not the AI I would worry about.
+
+The tool is a clinical assistant Halodoc launched from Jakarta thirteen months ago and has kept running under supervision since. On the technical merits it is a competent piece of engineering. What worries me is the seat that, in any bank running a model of comparable weight, would sit directly behind the deployment: the model risk officer, the independent validator, the actuary. In the ecosystem AIDA has arrived into, that seat is either empty or occupied by someone reading a different file. The reason for both is the same. Indonesia's payer of last resort is running out of cash faster than the country's AI governance is being written.
+
+## What AIDA is, and what it runs against
+
+Halodoc [introduced AIDA on 21 August 2025](https://www.halodoc.com/artikel/halodoc-perkenalkan-aida-ai-doctor-assistant-untuk-memberdayakan-layanan-kesehatan-dan-dokter-indonesia) as an AI Doctor Assistant designed to summarise patient interactions, retrieve medical records, and lift a routine administrative load off working doctors. The company reports a 93 percent accuracy figure from its initial testing phase, oversight by an in-house Board of Medical Excellence, and that more than 80 percent of doctor partners describe the tool as useful for repetitive work. Treat those numbers with the caution any vendor benchmark deserves. The accuracy denominator, the counterfactual clinician baseline, and the review protocol are Halodoc's to define. [Antara News's coverage of the launch](https://www.antaranews.com/berita/5056201/halodoc-hadirkan-aida-untuk-dukung-peningkatan-layanan-kesehatan) restates the same figures without independent verification.
+
+The direction of the deployment is not in doubt. AIDA is a language-model-based clinical assistant running against a live patient population inside a network that connects several thousand practitioners with tens of thousands of daily consultations. Every case AIDA touches produces a downstream claim, a treatment record, and a data trace whose validation regime is Halodoc's alone to set.
+
+## Where the payer file sits
+
+Indonesia's national payer, BPJS Kesehatan, is not in a position to set anything. Premium revenue in February 2026 came in at Rp 29.26 trillion against Rp 32.73 trillion in claims, a two-month shortfall of Rp 3.47 trillion, [as summarised in Prakarsa's assessment of the payment-failure risk](https://theprakarsa.org/en/bpjs-kesehatan-terancam-gagal-bayar-masalah-lama-yang-perlu-terobosan-baru/). The claims ratio is 108.72 percent. The estimated cumulative deficit for the year is Rp 20 trillion, and the central government has [set aside Rp 20 trillion in a supplementary allocation to clear the premium backlog to hospitals](https://jakartaglobe.id/news/government-sets-aside-rp-20-trillion-to-clear-bpjs-premium-backlog). Absent structural policy intervention, the risk of payment default lands in July 2027.
+
+That figure is the frame every serious conversation about clinical AI in Indonesia has to sit inside. AIDA does not cause the deficit. The assumption its deployment quietly relies on, that the payer of last resort will absorb whatever cost pattern the clinical layer produces, is a policy fiction with a date on it.
+
+## OJK 36/2025 did one thing well
+
+The Financial Services Authority (OJK) issued [Regulation POJK No. 36 of 2025](https://global.lockton.com/us/en/news-insights/indonesia-to-reform-health-insurance-products-for-enhanced-risk-management), which came into force on 22 March 2026. It reshaped the private health-insurance product side. At least one policy without copayment must now be offered. Where copayment applies, the policyholder's share is capped at 5 percent per claim, at IDR 3 million per inpatient episode and IDR 300,000 per outpatient consultation. [Milliman's e-alert on the regulation](https://www.milliman.com/en/insight/indonesia-health-regulations-ealert-key-updates) reads it as a moderated version of the earlier mandatory-copayment proposal and a reasonable balance between adverse selection and consumer protection.
+
+That reading is fair. What POJK 36 does not touch is model risk in either direction. Not on the private insurer's underwriting stack, where Prudential's regional AI Underwriter, [launched with Alibaba Cloud in Hong Kong on 9 September 2026](https://reinasia.com/prudential-hong-kong-launches-ai-underwriting-tool/), will migrate patterns downstream into ASEAN carriers well inside a year. And not on the clinical assistant that shapes what the claim looks like when it reaches the payer's door. POJK 36 is a product regulation. It was not written to be, and does not attempt to be, an AI governance regulation.
+
+## The seat the Presidential Regulation will not fill
+
+Indonesia's Presidential Regulation on AI Ethics and Safety is expected before the end of 2026. [Komdigi will register AI models and set transparency standards](https://eastasiaforum.org/2026/09/04/indonesias-ai-regulations-leave-state-repression-unchecked/), with sector-specific rules for healthcare to follow. That is the correct policy architecture. It is also not, on its own, what a model risk regime looks like.
+
+The reference point for what one looks like is the US Federal Reserve's [SR 11-7 on model risk management](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm), issued jointly with the OCC in April 2011 and still the operational standard US banks are examined against fifteen years later. Its architecture is boring by design. Model definition, independent validation, ongoing monitoring, named governance, documented limitations, and the accountability chain that carries a bad model from a desk to a board. For insurance specifically, EIOPA's [Opinion on AI Governance and Risk Management, published on 6 August 2025](https://www.eiopa.europa.eu/document/download/88342342-a17f-4f88-842f-bf62c93012d6_en?filename=Opinion+on+Artificial+Intelligence+governance+and+risk+management.pdf), extends the same architecture into Solvency II and IDD terms for European carriers.
+
+Neither framework is available today to a Jakarta health-tech company deploying against a Jakarta payer in solvency stress. In a Real AI engagement with a regional bank in 2024, we spent four months on model documentation the audit function could reproduce in a fire drill. AIDA at 93 percent accuracy is, on its headline technical result, a stronger showing than most audit-grade banking models get. The gap is not the model. It is the register the model is documented in, and the question of who is on the hook when the failure mode presents.
+
+The skilled workforce that gap requires is measured, in the region, in low thousands. The Actuaries Institute reports [fewer than 5,000 credentialed actuaries across Indonesia, Malaysia, and the Philippines combined](https://www.actuaries.asn.au/research-analysis/the-asia-actuarial-job-market-in-2026-what-recruiters-are-seeing), against a life-and-health book that already runs at ASEAN scale. The clinical AI is scaling faster than the actuarial function that would be paid to validate its downstream cost implications.
+
+## The disconfirming case, taken seriously
+
+The strongest counter-argument I can find is that AI is itself the tool that will close the actuarial gap. A [2026 study in the Journal of Preventive Medicine and Public Health](https://www.jpmph.org/journal/view.php?doi=10.3961%2Fjpmph.25.350) develops machine-learning models for predicting health-insurance claim costs among older Indonesians, and reports gains over the older regression baselines that national systems currently use. The paper is careful, its authors are competent, and its policy conclusion is that predictive tools can help stabilise a strained scheme.
+
+That case is real. It does not answer the pace question. Every clinical AI in production at Halodoc, at Alodokter, at the hospital-embedded assistants coming out of Singapore's [Synapxe agentic-AI programme for public healthcare professionals](https://www.synapxe.sg/news/artificial-intelligence/ai-agents-healthcare-professionals) and heading into the ASEAN neighbourhood, scales in months. Every actuarial validation function, whether human-only or AI-assisted, scales in years and needs a professional body of practice ASEAN has not yet built at the size the pipeline implies. The scaling argument works at a ten-year horizon. The exposure lives at eighteen months. The gap between those two clocks is the policy problem.
+
+## In Purwakarta, on a Wednesday afternoon
+
+A general practitioner in a Purwakarta puskesmas signs off on the claim summary AIDA drafted for her, adjusts a line, moves to the next patient. She has forty seconds between consultations. Her patient's coverage is BPJS. Across the courtyard the pharmacy clerk has three claims returned from the payer sitting on his counter, no one to call about them, and a queue that has run out of chairs. On the whiteboard above his register a note from Monday reads, in Bahasa: ask about the new price.
+
+The doctor closes the record and clicks through to a next-line summary the assistant has already begun to draft. She does not know who audits the assistant. Nobody has told her, in any language. Outside, the tomatoes ripen in the shade of the roadside stall, and the light off the tin roof of the clinic goes flat by half past four.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
