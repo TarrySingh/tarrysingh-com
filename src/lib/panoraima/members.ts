@@ -366,6 +366,30 @@ export async function createLoginToken(
   return token
 }
 
+/**
+ * Look at a token without burning it.
+ *
+ * Mail security scanners (Microsoft Defender Safe Links and friends) fetch
+ * every link in an email, so a GET must never consume a single-use token:
+ * the scanner would spend the sign-in and the member would be told the link
+ * was already used. The verify route peeks first and burns only on the POST
+ * the member makes by clicking the confirm button.
+ */
+export async function peekLoginToken(
+  token: string,
+): Promise<{ ok: true; email: string } | { ok: false; reason: "expired" | "used" | "missing" }> {
+  const supabase = createServiceClient()
+  const { data, error } = await supabase
+    .from(LOGIN_TOKENS_TABLE)
+    .select("id,email,expires_at,used_at")
+    .eq("token_hash", sha256(token))
+    .maybeSingle()
+  if (error || !data) return { ok: false, reason: "missing" }
+  if (data.used_at) return { ok: false, reason: "used" }
+  if (new Date(data.expires_at).getTime() < Date.now()) return { ok: false, reason: "expired" }
+  return { ok: true, email: data.email as string }
+}
+
 /** Returns the email the token belongs to, and burns it. */
 export async function consumeLoginToken(token: string): Promise<string | null> {
   const supabase = createServiceClient()
