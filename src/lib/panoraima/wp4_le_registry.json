@@ -2,9 +2,18 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-09-17T11:45:23.781700+00:00",
-  "refreshed_at": "2026-09-17T11:45:23.781700+00:00",
+  "generated_at": "2026-09-23T10:06:50.363415+00:00",
+  "refreshed_at": "2026-09-23T10:06:50.363415+00:00",
   "refresh_history": [
+    {
+      "at": "2026-09-23T10:06:50.363415+00:00",
+      "wiki_captured": "2026-09-17T11:43:17.284Z",
+      "sharepoint_generated": "2026-09-23T09:45:55.876572Z",
+      "realai_total": 90,
+      "reviewed": 59,
+      "revision_requested": 14,
+      "early_feedback": 16
+    },
     {
       "at": "2026-09-17T11:45:23.781700+00:00",
       "wiki_captured": "2026-09-17T11:43:17.284Z",
@@ -63,13 +72,6 @@
       "sharepoint_generated": "2026-09-06T08:39:24.257643Z",
       "realai_total": 90,
       "reviewed": 41
-    },
-    {
-      "at": "2026-09-05T21:30:02.347913+00:00",
-      "wiki_captured": "2026-09-04T21:51:19.465Z",
-      "sharepoint_generated": "2026-09-05T23:30:01.885091Z",
-      "realai_total": 90,
-      "reviewed": 41
     }
   ],
   "data_sources": {
@@ -79,10 +81,10 @@
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-09-17T11:45:23.601920Z",
+      "generated_at": "2026-09-23T09:45:55.876572Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 166,
+        "with_materials": 167,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -105,12 +107,12 @@
       "Not started": 9,
       "Materials in progress": 63
     },
-    "with_materials": 166,
-    "materials_pending": 270,
+    "with_materials": 167,
+    "materials_pending": 269,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 166,
-      "awaiting_material": 270,
+      "with_sharepoint_material": 167,
+      "awaiting_material": 269,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -8537,10 +8539,19 @@
       "review_note": null,
       "early_feedback": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-09-17",
+        "files": [
+          {
+            "name": "H_272-Disinformation_Schade_2026-09-18_FIN.pptx",
+            "ext": "pptx",
+            "kb": 31169,
+            "date": "2026-09-17",
+            "sha": "82727f43d8115575",
+            "rel": "4.1 Horizontal/H-272/H_272-Disinformation_Schade_2026-09-18_FIN.pptx"
+          }
+        ],
         "folder": "H-272"
       },
       "lesson_plan": {
@@ -20041,10 +20052,18 @@
       "review_note": "V4 acknowledged 9 Sep 2026 (Talk section 8). Mary Hendrick shipped V4 on 8 Sep at 19:40, about two hours after our V3 review, and closed every point in it: Kanter credited on slide 18 and in the notes; slide 42 notes rewritten in her own words naming Clark (2020) and LeaderFactor; slide 24 given a subject ('Many AI tools that pass validation are never used in routine care'); 'safe enough to admit/flag/override' made grammatical; the Psychosocial Safety Climate survey removed from the assessment-tools slide; and the timing table split with a new 30-40 min block for the validation gap, black box and drift material, which fixes the pacing problem at source. Earlier fixes all held (no 'single most critical', no '100% secure', no 'Integation'). Three typing artefacts noted and not chased: the Kanter credit pasted into slide 18's title string with a stray bracket and quote mark; a trailing quote mark on slide 24; and a broken join in the slide 42 notes ('...Dr. Amy Edmondson.then safe to learn...') where the tail of the old sentence survived the rewrite. Material review remains CLOSED. Full trail on the Talk page: Jun plan review, 26 Aug material, 4 Sep V2, 4 Sep closed, 8 Sep V3, 9 Sep V4.",
       "early_feedback": null,
       "materials": {
-        "count": 9,
+        "count": 10,
         "has": true,
-        "newest": "2026-09-08",
+        "newest": "2026-09-19",
         "files": [
+          {
+            "name": "force_field_analysis.xlsx",
+            "ext": "xlsx",
+            "kb": 116,
+            "date": "2026-09-19",
+            "sha": "e4dc384de97e4c0f",
+            "rel": "4.2 Health & Lifescience/HL-065/force_field_analysis.xlsx"
+          },
           {
             "name": "lessonplanHL065_ChangeLeadershipinHealthcareV4.docx",
             "ext": "docx",
@@ -31738,10 +31757,18 @@
       "review_note": "V4 acknowledged 9 Sep 2026 (Talk section 8). Mary Hendrick shipped V4 on 8 Sep at 19:40, about two hours after our V3 review, and closed every point in it: Kanter credited on slide 18 and in the notes; slide 42 notes rewritten in her own words naming Clark (2020) and LeaderFactor; slide 24 given a subject ('Many AI tools that pass validation are never used in routine care'); 'safe enough to admit/flag/override' made grammatical; the Psychosocial Safety Climate survey removed from the assessment-tools slide; and the timing table split with a new 30-40 min block for the validation gap, black box and drift material, which fixes the pacing problem at source. Earlier fixes all held (no 'single most critical', no '100% secure', no 'Integation'). Three typing artefacts noted and not chased: the Kanter credit pasted into slide 18's title string with a stray bracket and quote mark; a trailing quote mark on slide 24; and a broken join in the slide 42 notes ('...Dr. Amy Edmondson.then safe to learn...') where the tail of the old sentence survived the rewrite. Material review remains CLOSED. Full trail on the Talk page: Jun plan review, 26 Aug material, 4 Sep V2, 4 Sep closed, 8 Sep V3, 9 Sep V4.",
       "early_feedback": null,
       "materials": {
-        "count": 9,
+        "count": 10,
         "has": true,
-        "newest": "2026-09-08",
+        "newest": "2026-09-19",
         "files": [
+          {
+            "name": "force_field_analysis.xlsx",
+            "ext": "xlsx",
+            "kb": 116,
+            "date": "2026-09-19",
+            "sha": "e4dc384de97e4c0f",
+            "rel": "4.2 Health & Lifescience/HL-065/force_field_analysis.xlsx"
+          },
           {
             "name": "lessonplanHL065_ChangeLeadershipinHealthcareV4.docx",
             "ext": "docx",
