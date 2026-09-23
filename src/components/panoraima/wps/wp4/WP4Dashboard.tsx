@@ -6,6 +6,7 @@ import { ArrowLeft, ExternalLink, ArrowUpRight, RefreshCw, History } from "lucid
 import type { Wp4Registry } from "@/lib/panoraima/types"
 import { TRACK_ORDER, TRACK_COLOR, RUST } from "./wp4constants"
 import WP4Overview from "./WP4Overview"
+import { WP4Note, WP4ScopeBanner } from "./WP4Note"
 import WP4RealAIBoard from "./WP4RealAIBoard"
 import WP4Pipeline from "./WP4Pipeline"
 import WP4Guides from "./WP4Guides"
@@ -135,12 +136,61 @@ export default function WP4Dashboard({
       {/* ── Body ─────────────────────────────────────────────────── */}
       <main className="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20">
         <div className="space-y-16 md:space-y-24">
-          <WP4Overview registry={registry} />
-          <WP4RealAIBoard registry={registry} canGenerateReport={canGenerateReport} />
-          <WP4Pipeline registry={registry} />
-          <WP4Guides registry={registry} />
-          <WP4StatusViews registry={registry} />
-          <WP4Explorer registry={registry} />
+          <WP4ScopeBanner />
+
+          <div>
+            <WP4Overview registry={registry} />
+            <WP4Note
+              shows="Every Learning Event on the wiki Master List, counted per track, with the share of each track that already has at least one file in its WP4 SharePoint folder."
+              notShows="Quality, review outcome or teaching readiness. A file counts the moment it lands in the folder, reviewed or not, and a track with a long bar simply has many Learning Events planned."
+              source="Wiki Master List for the counts, WP4 SharePoint folders for the material, both as of the last refresh."
+            />
+          </div>
+
+          <div>
+            <WP4RealAIBoard registry={registry} canGenerateReport={canGenerateReport} />
+            <WP4Note
+              shows="The Learning Events where RealAI is named as author or reviewer, what we have reviewed, what we returned for revision and what is waiting on us."
+              notShows="Reviews by other partners. Another partner's review sits on the same wiki Discussion page but is not counted here, so a Learning Event shown as unreviewed by us may well have been reviewed by someone else."
+              source="Wiki reviewer and author fields, plus our own review register of posted Discussion-page reviews with their dates and wiki revision numbers."
+            />
+          </div>
+
+          <div>
+            <WP4Pipeline registry={registry} />
+            <WP4Note
+              shows="Each of our Learning Events across four stages: lesson plan on the wiki, material in SharePoint, our QA review, and production hand-off towards the pilots."
+              notShows="An official project milestone tracker. The production stage is our reading of where a Learning Event stands, not a WP5 sign-off, and pilot dates are set by the consortium rather than here."
+              source="Wiki plan content, SharePoint file presence and our review register."
+            />
+          </div>
+
+          <div>
+            <WP4Guides registry={registry} />
+            <WP4Note
+              shows="The consortium's own authoring template and reviewer checklist, pulled from the wiki, next to the review process the track leads set out."
+              notShows="RealAI house rules. These are the consortium's requirements as published; where we add our own expectation, it is marked as ours."
+              source="Wiki author template and reviewer guideline pages, refreshed with each wiki pull."
+            />
+          </div>
+
+          <div>
+            <WP4StatusViews registry={registry} />
+            <WP4Note
+              shows="Learning Events grouped by the status field on their wiki page, so you can see where the catalogue says it stands."
+              notShows="What is actually finished. The status is typed by hand by each author and often lags the files: finished decks sit under 'development', and plans marked 'review' sometimes have no material at all."
+              source="Status field on each wiki Learning Event page."
+            />
+          </div>
+
+          <div>
+            <WP4Explorer registry={registry} />
+            <WP4Note
+              shows="Search across the merged record for any Learning Event: its wiki plan, the files in its SharePoint folder, its assignments and any review we have posted."
+              notShows="Live data. Everything here is from the last refresh, so a file uploaded or a status changed since then will not appear until the next sync."
+              source="The merged wiki and SharePoint record behind this dashboard."
+            />
+          </div>
         </div>
 
         {/* Refresh history — the data-freshness trail */}
