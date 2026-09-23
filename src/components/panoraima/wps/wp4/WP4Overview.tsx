@@ -25,14 +25,25 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
     { label: "Needs action",       value: summary.realai.needs_action, icon: AlertTriangle, accent: true },
   ]
 
-  // By-track bars — only tracks present in the summary, in canonical order.
+  // By-track bars. The bar counts Learning Events on the wiki master, and is
+  // split into the ones that already have material in SharePoint and the ones
+  // still waiting for it — the WP4 track leads read this as material coverage,
+  // so the split has to be on the chart rather than implied by it.
   const trackRows = useMemo(() => {
+    const withMaterial: Record<string, number> = {}
+    for (const le of registry.les) {
+      if (le.materials?.has) withMaterial[le.track] = (withMaterial[le.track] ?? 0) + 1
+    }
     const rows = TRACK_ORDER
       .filter((t) => t in summary.by_track)
-      .map((t) => ({ track: t as string, count: summary.by_track[t] }))
+      .map((t) => ({
+        track: t as string,
+        count: summary.by_track[t],
+        withMaterial: withMaterial[t] ?? 0,
+      }))
     const maxCount = Math.max(1, ...rows.map((r) => r.count))
     return { rows, maxCount }
-  }, [summary.by_track])
+  }, [summary.by_track, registry.les])
 
   // By-status chips — ordered by count desc.
   const statusRows = useMemo(() => {
@@ -51,7 +62,7 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
         </h2>
         <p className="mt-2 text-[15px] leading-relaxed text-[#444A55] max-w-2xl">
           A live read on the {summary.total_les} Learning Events spread across the four
-          curriculum tracks, what has materials, what is pending, and where our
+          curriculum tracks — what has materials, what is pending, and where our
           RealAI authoring &amp; review commitments sit.
         </p>
       </div>
@@ -124,7 +135,7 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
           </div>
           {registry.summary.coverage.off_wiki > 0 && (
             <div className="mt-5 pt-4 border-t border-[#E7E7EA] text-[13.5px] leading-relaxed text-[#444A55]">
-              <span className="font-mono font-bold tabular-nums text-[#16181D]">{registry.summary.coverage.off_wiki}</span> draft/planned codes exist in SharePoint registries but aren&apos;t on the wiki master yet, a reconciliation gap to close (ideally the two lists match exactly).
+              <span className="font-mono font-bold tabular-nums text-[#16181D]">{registry.summary.coverage.off_wiki}</span> draft/planned codes exist in SharePoint registries but aren&apos;t on the wiki master yet — a reconciliation gap to close (ideally the two lists match exactly).
             </div>
           )}
         </div>
@@ -135,16 +146,37 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
         <div className="lg:col-span-2 rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 shadow-[0_1px_3px_rgba(20,22,27,0.06)] transition-all hover:shadow-[0_4px_14px_rgba(20,22,27,0.08)] hover:border-[#16181D]/25">
           <div className="flex items-baseline justify-between gap-3 mb-5">
             <h3 className="font-mono text-[13px] font-semibold uppercase tracking-[0.14em] text-[#16181D]">
-              By track
+              Learning Events per track, and how many have material
             </h3>
             <span className="font-mono text-[12px] uppercase tracking-[0.12em] tabular-nums text-[#444A55]">
               {trackRows.rows.length} tracks
             </span>
           </div>
+
+          {/* What the bar is, and what it is not. Track leads asked. */}
+          <div className="mb-5 rounded-lg bg-[#F7F8FA] border border-[#E7E7EA] px-3.5 py-3">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[12.5px] text-[#444A55]">
+              <span className="inline-flex items-center gap-1.5">
+                <span className="w-3.5 h-2 rounded-[2px]" style={{ background: "#444A55" }} />
+                has material uploaded in SharePoint
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="w-3.5 h-2 rounded-[2px] border border-[#DCDDE1]" style={{ background: "#EDEDEB" }} />
+                no material in SharePoint yet
+              </span>
+            </div>
+            <p className="mt-2 text-[12.5px] leading-relaxed text-[#5B616B]">
+              Full bar width = all Learning Events that track has on the wiki Master List.
+              It is <strong className="font-semibold text-[#444A55]">not</strong> a measure of quality,
+              review status or how far the material has progressed: a file counts here the moment it
+              lands in the track&apos;s SharePoint folder, reviewed or not.
+            </p>
+          </div>
           <ul className="space-y-3.5">
-            {trackRows.rows.map(({ track, count }) => {
+            {trackRows.rows.map(({ track, count, withMaterial }) => {
               const color = TRACK_COLOR[track] ?? TRACK_COLOR["Unknown"]
-              const widthPct = (count / trackRows.maxCount) * 100
+              const barPct = (count / trackRows.maxCount) * 100
+              const donePct = count ? (withMaterial / count) * 100 : 0
               return (
                 <li key={track} className="flex items-center gap-3">
                   <span className="inline-flex items-center gap-1.5 w-24 md:w-32 flex-shrink-0 justify-end">
@@ -153,14 +185,22 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
                       {TRACK_SHORT[track] ?? track}
                     </span>
                   </span>
-                  <div className="flex-1 relative h-2 rounded-[2px] bg-[#F1F1F0] overflow-hidden">
+                  <div className="flex-1 relative h-3 rounded-[2px] bg-[#F1F1F0] overflow-hidden">
+                    {/* whole track = every LE on the wiki; the pale block is what has no material yet */}
+                    <div
+                      className="absolute inset-y-0 left-0 rounded-[2px] border border-[#DCDDE1] transition-all duration-700 ease-out"
+                      style={{ width: `${barPct}%`, background: "#EDEDEB" }}
+                      title={`${count} Learning Events on the wiki`}
+                    />
                     <div
                       className="absolute inset-y-0 left-0 rounded-[2px] transition-all duration-700 ease-out"
-                      style={{ width: `${widthPct}%`, background: color }}
+                      style={{ width: `${(barPct * donePct) / 100}%`, background: color }}
+                      title={`${withMaterial} of ${count} have material in SharePoint`}
                     />
                   </div>
-                  <span className="w-9 text-right font-mono text-[13.5px] font-bold tabular-nums text-[#16181D] flex-shrink-0">
-                    {count}
+                  <span className="w-[5.5rem] text-right font-mono text-[13px] tabular-nums flex-shrink-0">
+                    <span className="font-bold text-[#16181D]">{withMaterial}</span>
+                    <span className="text-[#646B78]"> / {count}</span>
                   </span>
                 </li>
               )
@@ -170,9 +210,13 @@ export default function WP4Overview({ registry }: { registry: Wp4Registry }) {
 
         {/* ── By status ──────────────────────────────────────────── */}
         <div className="rounded-xl border border-[#E7E7EA] bg-white p-5 md:p-6 shadow-[0_1px_3px_rgba(20,22,27,0.06)] transition-all hover:shadow-[0_4px_14px_rgba(20,22,27,0.08)] hover:border-[#16181D]/25">
-          <h3 className="font-mono text-[13px] font-semibold uppercase tracking-[0.14em] text-[#16181D] mb-5">
-            By status
+          <h3 className="font-mono text-[13px] font-semibold uppercase tracking-[0.14em] text-[#16181D]">
+            By status on the wiki
           </h3>
+          <p className="mt-2 mb-5 text-[12.5px] leading-relaxed text-[#5B616B]">
+            The status field each author set on the Learning Event page. It is written by hand, so
+            it can lag what is actually in SharePoint.
+          </p>
           <ul className="space-y-2.5">
             {statusRows.map(([status, count]) => {
               const s = statusStyle(status)
