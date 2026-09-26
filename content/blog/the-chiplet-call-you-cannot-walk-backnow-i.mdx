@@ -1,0 +1,74 @@
+---
+title: "The Chiplet Call You Cannot Walk BackNow I have all the information I need. Let me write the article."
+date: "2026-09-26"
+category: "Essays"
+excerpt: "On 7 April 2026, the UALink Consortium ratified its 2.0 specification, and the press release led with in-network compute and manageability. Buried in the third feature block sits a chiplet definition aligned to UCIe 3.0. Nobody filed a follow-up. The hyperscalers on the consortium board understand what that line means. The engineer designing a …"
+draft: false
+tags: ["chiplet", "call", "you", "cannot", "walk"]
+---
+
+# The Chiplet Call You Cannot Walk Back
+
+On 7 April 2026, the UALink Consortium ratified its 2.0 specification, and the press release led with in-network compute and manageability. Buried in the third feature block sits a chiplet definition aligned to UCIe 3.0. Nobody filed a follow-up. The hyperscalers on the consortium board understand what that line means. The engineer designing a switch ASIC for a 2027 tape-out understands it better.
+
+You are eight months into a 24-month design cycle. UALink 1.0 promised 200 Gbps per lane and connectivity for up to 1,024 accelerators, and your ASIC is already committed to that link budget and that SerDes count. UCIe 3.0, released in August 2025, doubled the link speed to 48 and 64 GT/s and extended the sideband channel to 100 millimetres. Your chiplet is a switch tile meant to sit next to a GPU die on the same interposer. The UCIe bump pitch you chose six months ago determines whether that tile can physically talk to the host, and whether you can recalibrate the link at runtime without dropping the fabric. If you picked the wrong one, the interposer you committed to last quarter will not carry the signal, and there is no plan B that does not push first silicon into 2028.
+
+The chiplet spec is the decision tree UALink just closed.
+
+## Why the consortium needed a chiplet answer now
+
+UALink 1.0 shipped at 200 Gbps per lane, linking up to 1,024 accelerators within a pod. That is an accelerator-to-switch story. The physical layer was always going to be a discrete switch chip sitting at the top of the rack, cables running down to OAM sockets, OSFP connectors at both ends. The white paper positioned UALink as multi-vendor, open-switch, and topology-agnostic, which works when the thing you are connecting is a finished product on a carrier board with standard mechanical reach.
+
+CoWoS demand hit 1.0 million wafers in 2026, up from 670,000 in 2025, and TSMC is ramping monthly capacity from 75-80,000 wafers toward a 120-130,000 target by year-end, with NVIDIA holding roughly 60% of that capacity. The expansion is driven by B200/GB200 and MI300X/MI400, all of which are multi-die packages with HBM stacks and logic tiles on a silicon interposer. HBM4 doubles the memory interface to 2,048-bit and integrates a logic base die to reach 3.3 TB/s per stack, and the entire 2026 supply is sold out to hyperscalers. If you are taping out an AI accelerator in 2026, you are designing a chiplet system, not a monolithic die, because the memory you need only ships as a stack and the only way to feed it is with multiple compute tiles on the same substrate.
+
+The switch followed the same path. NVIDIA's Kyber rack uses 72 NVLink 7.0 switch chips, each running 28.8 Tbit/s of aggregate bandwidth, to connect 144 GPUs. A switch that can handle 72 links at 200 Gbps bidirectional is not a single piece of silicon you can fit in a conventional package. It is three or four tiles stitched together, and UCIe 3.0's 64 GT/s links deliver the bandwidth density at lower power to feed AI workloads without sacrificing interoperability.
+
+If UALink 2.0 did not specify which version of UCIe the chiplet interface must follow, every vendor would pick the UCIe generation their IP team had already taped out, and the consortium's interoperability claim would dissolve the first time an AMD switch tile tried to sit next to a Synopsys bridge die.
+
+The consortium picked UCIe 3.0, which pins the physical layer, the protocol stack, the bump map, the sideband width, and the DFx architecture to a standard released nine months ago. UCIe 2.0 introduced manageability features and a DFx architecture for testing, telemetry and debug, and added support for 3D packaging with higher bandwidth density and improved power efficiency. UCIe 3.0 adds runtime recalibration so links can retune on the fly by reusing initialisation states, which matters when your switch has been running a training job for 40 hours and the temperature in the rack has climbed six degrees.
+
+## The interposer you committed to last quarter
+
+TSMC outsources 240,000 to 270,000 CoWoS wafers annually to Amkor and SPIL, with NVIDIA's 2025 CoWoS needs around 400,000 wafers shifting to CoWoS-L for B200/B300, and demand surging to 700,000 wafers in 2026 with 70-80% outsourced. CoWoS-L is RDL plus local silicon bridges. It offers cost savings versus full silicon in CoWoS-S, but higher complexity and 3-4x the value per unit. You do not design for CoWoS-L and then change your mind; lead times run 52 to 78 weeks, and TSMC's allocation is booked.
+
+UCIe 3.0 supports 48 and 64 GT/s data rates for both UCIe-S and UCIe-A packaging, runtime recalibration, extended 100 millimetre sideband reach, and advanced manageability. The UCIe-S variant is for standard 2.5D packages; UCIe-A is for advanced packaging, which includes CoWoS-L and anything with a through-silicon via. If your switch chiplet is going onto a CoWoS-L interposer next to an accelerator die, you are using UCIe-A, and the bump pitch, the TSV density, and the power delivery all follow from that choice.
+
+The interposer you committed to in Q4 2025 was designed around UCIe 2.0 at 32 GT/s. If UALink 2.0 had let you ship that, you would tape out in Q2 2027 and see first silicon in Q4. UCIe 3.0 was released on 5 August 2025 and supports 48 and 64 GT/s, doubling the bandwidth of UCIe 2.0. Doubling the data rate does not double the lane count, but it does change the SerDes design, the power budget per lane, the signal integrity margins, and the test plan. CoWoS-L introduces manufacturing challenges including managing warpage during heat cycles and ensuring signal integrity across massive interposers, and early 2026 production runs suggest TSMC has largely overcome yield hurdles, though precision remains so high that advanced packaging is now as difficult and capital-intensive as wafer fabrication.
+
+You do not get to redesign the interposer. If the bump map you specified six months ago cannot carry 64 GT/s with the signal-to-noise ratio the UCIe 3.0 spec mandates, your chiplet will initialise but fail compliance, and the AMD accelerator it was supposed to sit next to will not enumerate it.
+
+## The switch die that ships, and the one that does not
+
+AMD disclosed in January 2026 that the MI455X delivers 3.6 TB/s scale-up bandwidth per accelerator in a 72-GPU Helios rack, with 260 TB/s at rack level, exceeding NVLink 5.0's 1.8 TB/s per GPU, though independently validated throughput data on shipping MI400 hardware is not yet available as of mid-2026. The MI325X, generally available since Q4 2024, upgrades to 256 GB of HBM3E memory with 6 TB/s bandwidth while maintaining the same CDNA 3 architecture. MI325X's 256 GB HBM3E and 6,000 GB/s bandwidth outperform MI300X's 192 GB HBM3 and 5,300 GB/s.
+
+If you are designing a UALink switch intended to sit between eight MI325X accelerators in a UBB 2.0 baseboard, your chiplet must enumerate on AMD's Infinity Fabric, talk to whatever bridge die AMD specifies, survive the thermal environment of a 750 watt OAM module, and do all of that without AMD having to write a line of chiplet-specific firmware. The UCIe DFx architecture includes a management fabric within each chiplet for testing, telemetry and debug functions to enable vendor-agnostic chiplet interoperability. The DFx fabric is how AMD's platform firmware discovers your switch tile, reads its capabilities, and decides whether to light it up.
+
+You committed to a die size in your last planning review. That die size was modelled around a UCIe 2.0 PHY delivering 32 GT/s. UCIe 3.0 offers double the performance compared to UCIe 2.0, along with improved system-level control and support for new use cases. Doubling the SerDes rate does not halve the PHY area, and the runtime recalibration feature that lets links retune by reusing initialisation states adds state machines, trim registers, and calibration ROM that were not in the 2.0 floorplan.
+
+Your die grows by 8%. The CoWoS-L interposer you already booked at TSMC was sized for the old floorplan. An 8% larger die does not fit, and re-spinning the interposer pushes your slot at AP7 into 2028.
+
+Or you ship the UCIe 2.0 version, and your switch works with nothing except the one accelerator your own company makes, because every other vendor on the UALink board committed to 3.0 and your tile will not enumerate.
+
+## What the specification does not say
+
+The UALink 2.0 specification, ratified on 7 April 2026, encompasses in-network compute, chiplet definition and manageability. The press release does not publish the chiplet bump map, the power delivery spec, or the DFx register file. Those are in the member-access documents, and the only people who have read them are the engineers at the 12 board companies and the 65 members who joined after incorporation.
+
+The consortium grew to more than 65 total members since incorporating at the end of October 2024, spanning cloud, silicon and IP providers, software companies and system OEMs. If you are not a member and you want to build a UALink-ready switch, you can download the 1.0 electrical spec and the white paper. The chiplet definition is not in either document. You can join the consortium, pay the membership fee, and wait for the technical working group to grant access. By the time you see the register map, the vendors who were in the room in April have already taped out.
+
+The UALink 200G 1.0 specification was published in April 2025, targeting 200 GT/s per lane and 800 Gbps per four-lane port, and UALink-based hardware is expected in the 2026-2027 timeframe. First silicon from the board members will appear in qualification labs by the end of 2026. Independently validated all-reduce throughput data on shipping MI400 hardware is not yet available as of mid-2026, which means the only numbers anyone outside the hyperscaler data centres has seen are the vendor-published figures, and vendor benchmarks are not a bring-up guide.
+
+The engineer who committed to UCIe 2.0 in November 2025 and found out in April 2026 that the consortium had moved to 3.0 does not get a grace period. The first interoperability plugfest will use the 3.0 spec, and anything that fails enumeration does not get debugged; it gets pulled from the test rack.
+
+## Where this leaves the second wave
+
+By mid-2026, InfiniBand NDR is mature, broadly deployed and reasonably priced, serving as the default training fabric in NVIDIA DGX SuperPOD reference architectures from 2023 onward and the dominant choice in NVIDIA-partner neoclouds. For H100/H200 clusters, NDR 400G is the current default, and for frontier training at 1,000+ GPUs, XDR 800G is the better fit. InfiniBand works because the switch vendors, the NIC vendors, and NVIDIA all ship to the same IBTA spec, and compliance is tested in public plugfests with published results.
+
+UALink has a spec, a consortium, and a compliance programme that nobody outside the membership has seen. The consortium enforces consistent implementations through multi-tier protocol-compliance testing, interoperability testing, and performance characterisation, but the first plugfest has not happened yet, and the member list does not include Arista, Broadcom, or Juniper.
+
+The hyperscalers on the UALink board are also the hyperscalers with CoWoS allocations at TSMC, HBM4 allocations at SK Hynix, and design slots at the OSATs. They committed to chiplet floorplans in 2025, before UCIe 3.0 shipped, and had time to re-spin. A vendor joining the consortium in May 2026 does not have a CoWoS slot for a 2027 tape-out; TSMC is ramping from 75-80,000 wafers per month toward a 120-130,000 target by end-2026, yet lines stay booked.
+
+The chiplet call is not a technical choice. It is a supply-chain checkpoint. If you do not have the packaging slot, the HBM allocation, and the interposer design locked before the consortium ratifies the spec, you are not building a UALink switch in 2027. You are qualifying for 2028, and by then the board members will be shipping volume.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
