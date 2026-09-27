@@ -1,0 +1,78 @@
+---
+title: "Semantic Caching Promised 73%, Finance Got a Second Bill"
+date: "2026-09-27"
+category: "Essays"
+excerpt: "In January 2026, VentureBeat ran a headline about semantic caching cutting LLM bills by 73%, and by April the pitch had settled into a tighter band. Vendor materials and open-source library documentation claimed 30-70% cost reductions, latency improvements measured in multiples, and deployment described as a few hours of engineering work. The promise was …"
+draft: false
+tags: ["semantic", "caching", "promised", "finance", "got"]
+---
+
+In January 2026, VentureBeat ran a headline about semantic caching cutting LLM bills by 73%, and by April the pitch had settled into a tighter band. Vendor materials and open-source library documentation claimed 30-70% cost reductions, latency improvements measured in multiples, and deployment described as a few hours of engineering work. The promise was simple: store LLM responses and retrieve them for semantically similar future queries without requiring exact string matches, eliminating API calls before they happen.
+
+Production deployments report cache hit rates of 30-50% on high-volume enterprise workloads, which maps directly to the advertised savings if you believe the arithmetic. A customer support system handling 10,000 queries per day at frontier model pricing might spend $5,000 to $16,000 per year on a single application. Cut half the calls and the return on investment arrives in days, maybe weeks.
+
+The finance owner who signed the purchase order on the strength of that claim now has a different number to defend. The LLM API bill did fall. The infrastructure bill rose. The evaluation platform subscription appeared. The engineering backlog filled with cache invalidation work, threshold tuning, and a postmortem after the cache served one customer's data to another. The net reduction was real, but it was 18%, not 73%, and the ROI case built for the CFO no longer closes.
+
+This is a pattern piece. Semantic caching is an architectural pattern, and like every optimisation at this layer of the stack, the savings are real but the costs are structural. The finance owner does not get a line-item labelled "semantic cache", because the pattern spans four invoices, two capital requests, and a staffing ask that moved from contracted to permanent.
+
+## 1. The embedding bill you did not model
+
+Semantic caching matches incoming requests against cached responses using vector similarity rather than exact string comparison, which means every query hitting your application now triggers two operations where it previously triggered one. The cache lookup is not free. You generate an embedding of the incoming query, perform a vector similarity search against a database of cached embeddings, compare the cosine similarity score against a threshold, and then either return the cached response or forward the request to the LLM.
+
+For a typical enterprise deployment, embedding generation costs around $0.0001 per query, vector search around $0.00001 per lookup, and storage around $0.001 per cached response monthly. LLM inference sits at $0.01 to $0.10 per query, so the cost structure does favour caching. But that is the unit economics. The aggregate depends on the hit rate, and production deployments land at 20-45% of traffic, not the 95% vendor materials sometimes suggest.
+
+Remote vector search requires 15-20% hit rates to offset 30ms lookup costs, while in-memory systems achieve profitability at 3-5% hit rates. Most teams pick a managed vector database for the first deployment because standing up an in-memory cluster requires infrastructure the organisation does not have. That choice pushes the break-even hit rate up, and it adds a monthly SaaS subscription. Redis, Pinecone, Weaviate, Qdrant: the pricing tiers start low and scale with request volume, which means the bill tracks your growth and the CFO sees it as variable cost with no ceiling.
+
+The embedding model itself is another decision. Sentence transformers run locally and carry no per-call cost, but they need compute. A production deployment serving cache lookups at scale will dedicate CPU or a small GPU to the task. OpenAI and Cohere offer managed embedding APIs that remove the infrastructure ask but reintroduce per-token charges. The total outlay for embeddings in a production semantic cache is rarely more than 5-10% of the LLM bill you are trying to reduce, but it was not in the original forecast and it scales with traffic, not with cache hits.
+
+## 2. The evaluation spend that never stops
+
+One B2B SaaS platform turned on a semantic cache, watched the OpenAI bill drop 38%, and woke up to a Slack thread because the cache had returned one customer's cancellation summary to a different customer's session. The threshold was 0.88, the namespace was global, and the hit-rate dashboard lagged twelve hours. By the end of the week the team had reverted to exact caching only and the bill had climbed back.
+
+That failure mode is not rare. Wrong-hit rate is the hardest to measure automatically, and the best proxy is downstream: if semantic cache hit rate goes up but user satisfaction or task completion drops, wrong hits are happening. The architecturally correct answer is continuous evaluation. Sample a fraction of cache hits, score them with an LLM judge, track precision and recall per template, and set alerts when the wrong-hit rate crosses a threshold you define in advance.
+
+Agent evaluation benchmarks now cost $40,000 for 21,730 rollouts, with Claude Opus 4.1 charging $15 per million input tokens and $75 per million output. Semantic cache evaluation is narrower in scope but it runs continuously. Production monitoring samples 5-10% of real traffic, scores it with an automated evaluator, and watches for drift. That scoring is an LLM call, often to the same frontier model you are trying to avoid calling in the user path.
+
+The monthly bill for eval at 10% sample rate on a moderate-volume workload can run into thousands of dollars. It sits on a different line in the invoice than the LLM API spend, and it often appears under an observability platform subscription rather than a usage-based charge, but it is load you added when you turned on the cache. Integration between an evaluation platform and existing MLOps infrastructure typically requires 80-200 hours of development, which at $150-250 per hour for ML engineering talent is $12,000-50,000 per integration. That number is capital, not operating expense, but finance still writes the cheque.
+
+## 3. Cache hit rate as a production metric nobody watches
+
+The first time a team enables prompt caching, token cost drops 40-60% and latency shrinks. Three months later, costs have quietly crept back up, and the cache hit rate that started at 72% is now 18%. This is the most common arc in production LLM deployments: caching is enabled once, never monitored, and silently degrades as the codebase evolves.
+
+One security testing platform moved dynamic content out of the cacheable prefix and took the cache rate from 7% to 74% in a single deployment. That fix was architectural: the team had unknowingly placed variable user input inside the cached portion of the prompt, so every request was unique and the cache never hit. The opposite mistake is just as common. A developer refactors a system prompt, adds a timestamp for debugging, and the cache stops working. Nobody notices for a month because a 10% drop in cache hit rate does not page anyone, but it can double token costs within days.
+
+The most reliable way to prevent cache degradation is to make cache hit rate a gate in the deployment pipeline, not a post-deployment dashboard. That requires instrumentation, a CI check, and a baseline you measure empirically. The instrumentation is usually a few lines of middleware, but the baseline is a research project. You need to run a representative sample of production traffic through the cache, measure the hit rate per prompt template, and encode the threshold into a test that fails the build if performance regresses.
+
+The testing infrastructure to enforce that gate is not free. You need a dataset, compute to run the eval, and someone to interpret the results when a regression is ambiguous. This cost is not paid once. It is paid on every release cycle, and it grows with the number of templates in your system.
+
+## 4. The similarity threshold nobody can agree on
+
+If the similarity score exceeds a configurable threshold, typically 0.85 to 0.95, the cached response is returned instantly. That twenty-point range hides the entire argument. Production systems use a cosine similarity threshold above 0.8-0.85, but the right number depends on the query distribution, the tolerance for wrong hits, and the cost of a cache miss relative to the cost of serving stale content.
+
+A threshold above 0.98 means the cache rarely hits and you pay the embedding lookup on every miss with no offsetting savings. A threshold at 0.85 increases hit rate but also increases the probability that semantically different queries are treated as equivalent. The decision is a trade-off between precision and cost, and it varies by template. A customer support FAQ can tolerate a lower threshold because the answer space is narrow. A code generation assistant cannot, because queries are superficially similar but the actual code differs, and at 0.99 threshold you would need to include the full code in the cache key, at which point you are back to exact-match.
+
+Production teams use per-template thresholds, and the cache needs the same eval loop as the LLM call it replaces because thresholds drift and embedding models silently change behaviour. That means a configuration surface that grows with the number of templates, and a tuning process that requires domain expertise. The person who sets the threshold needs to understand the query distribution, the consequence of a wrong hit, and the business value of the latency improvement. That person is not a junior engineer, and their time is not free.
+
+## 5. The latency you bought back, sometimes
+
+Cache hits return in sub-millisecond to 50ms versus 3-10 seconds for a live GPT-4 call. One production deployment measured 27ms total for a cache hit: 23ms embedding, 2ms vector search, 1ms fetch, a 250x speedup against the 7-second API call it replaced. That number is real, and it is the reason semantic caching is worth deploying despite the costs enumerated above.
+
+But the latency improvement is not uniform. Production hit rates on agent workflows and FAQ traffic typically land between 30-70%, which means 30-70% of requests see the speedup and the remainder see the baseline plus the embedding lookup overhead. If your vector database is a managed service in a different region from your application, the lookup adds 20-50ms to the cold path. That is noise if the LLM call takes 8 seconds, but it is visible if you have already optimised the rest of the stack and the uncached call returns in 600ms.
+
+The P99 latency on cache misses is the number the on-call engineer cares about, because that is what shows up in the alerting dashboard when the cache goes cold or the vector database has a bad minute. Running a semantic cache without observability is the fastest way to start serving wrong answers at scale without noticing, and the observability tooling that prevents that outcome is another subscription, another integration, and another monthly line in the budget.
+
+## 6. What the finance owner can actually defend
+
+The ROI model built for semantic caching in April assumed three things: a 50% cache hit rate, zero infrastructure cost, and zero ongoing evaluation spend. The May actuals came in at 34% hit rate, $1,800 per month in vector database and observability tooling, and $4,200 in evaluation API calls. The LLM bill fell from $22,000 to $16,500. The net reduction was $5,500, but the new monthly outlay was $6,000, and the capital spend for integration work was $38,000.
+
+The payback period moved from six weeks to nine months, and the CFO asked why the forecast was wrong. The answer is that the forecast modelled the pattern as a feature toggle, not as a subsystem. Semantic caching is infrastructure. It has capital cost, operating cost, and maintenance cost. It delivers real savings, but those savings are partially offset by costs that live in different budget lines and are owned by different people.
+
+One production pipeline reported annual savings of $21,696 from semantic caching, with cache infrastructure costing under $1,200 per year and payback measured in days. That result is achievable, but it requires architectural discipline. The team that hit those numbers used in-memory caching, tuned thresholds per template, invalidated the cache on every prompt change, and monitored hit rate in CI. The teams that treat semantic caching as a vendor-managed SaaS feature see lower savings and higher bills.
+
+The finance owner's job is to reconcile what was promised with what was delivered, and to explain the delta in a way that does not sound like incompetence. The explanation here is structural. The challenge is not just managing API token costs, it is the hidden infrastructure layer beneath them, and finance teams struggle to reconcile invoices with actual consumption. Semantic caching moves cost from one vendor to three vendors, from usage-based billing to a mix of subscription and usage, and from a single engineering owner to a cross-functional dependency.
+
+The reduction is real. The 73% number was not a lie, it was the best case under controlled conditions. Production is not controlled. The hit rate depends on query distribution. The cost depends on architecture. The ROI depends on whether evaluation, monitoring, and invalidation were forecast or discovered after go-live. The finance owner who approved the project based on vendor benchmarks now owns a bill that is lower than it was, higher than it should be, and impossible to explain in a single slide.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
