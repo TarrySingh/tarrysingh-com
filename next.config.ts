@@ -100,6 +100,13 @@ const nextConfig: NextConfig = {
         destination: "/synaptic/memphis/:path*",
         permanent: true,
       },
+      // Executive profile: a short alias that is easy to say on the phone.
+      // `permanent: true` makes Next.js answer with a 308.
+      {
+        source: "/cv",
+        destination: "/curriculumvitae",
+        permanent: true,
+      },
     ];
   },
 };

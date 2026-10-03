@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "tsx scripts/cv/check-public.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -15,6 +16,8 @@
     "blog:promote": "node scripts/blog/promote.mjs",
     "blog:bake-nudge": "node scripts/blog/bake-nudge-card.mjs",
     "covers": "tsx scripts/plates/render-covers.ts",
+    "cv:sync": "tsx scripts/cv/sync.ts",
+    "cv:check": "tsx scripts/cv/check-public.ts",
     "reports:status:docx": "node scripts/reports/build-status-docx.mjs",
     "reports:uat-plan:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-plan.md",
     "reports:uat-results:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-results.md"

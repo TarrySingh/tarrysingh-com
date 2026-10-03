@@ -8,7 +8,14 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/experiments/panoraima", "/api"],
+        disallow: [
+          "/experiments/panoraima",
+          "/api",
+          // Executive profile: the gated layer and its API (Phase 3). The
+          // public teaser stays crawlable so its noindex meta can be read.
+          "/curriculumvitae/dossier",
+          "/api/cv",
+        ],
       },
     ],
     sitemap: `${SITE}/sitemap.xml`,

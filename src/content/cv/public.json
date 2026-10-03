@@ -1,0 +1,301 @@
+{
+  "audience": "public",
+  "schemaVersion": 1,
+  "sourceHash": "sha256:207bb494ea8e757108ba9a437f6283f37396b140ad19931b455162a2583ea13d",
+  "generatedAt": "2026-10-03T15:41:04.590Z",
+  "profile": {
+    "visibility": "public",
+    "name": "Tarry Singh",
+    "honorific": null,
+    "postNominals": null,
+    "positioning": "[PLACEHOLDER: positioning statement · one sentence for CEO and Chief AI Officer / CTO mandates: seat, scale, sectors, distinctive edge]",
+    "base": "[PLACEHOLDER: base city, country]",
+    "summary": null,
+    "portrait": null,
+    "contact": {
+      "visibility": "public",
+      "email": "[PLACEHOLDER: role contact address · a dedicated alias, never a personal address]",
+      "label": null
+    },
+    "referencesPolicy": {
+      "visibility": "public",
+      "text": "[PLACEHOLDER: references policy wording · INTAKE.md Q10]"
+    },
+    "closingLine": {
+      "visibility": "public",
+      "text": "[PLACEHOLDER: closing italic line]"
+    },
+    "notes": []
+  },
+  "openness": null,
+  "proofFigures": [
+    {
+      "id": "figure-01",
+      "visibility": "public",
+      "value": "[PLACEHOLDER: figure]",
+      "label": "[PLACEHOLDER: what it counts]",
+      "note": null,
+      "evidence": null
+    },
+    {
+      "id": "figure-02",
+      "visibility": "public",
+      "value": "[PLACEHOLDER: figure]",
+      "label": "[PLACEHOLDER: what it counts]",
+      "note": null,
+      "evidence": null
+    },
+    {
+      "id": "figure-03",
+      "visibility": "public",
+      "value": "[PLACEHOLDER: figure]",
+      "label": "[PLACEHOLDER: what it counts]",
+      "note": null,
+      "evidence": null
+    },
+    {
+      "id": "figure-04",
+      "visibility": "public",
+      "value": "[PLACEHOLDER: figure]",
+      "label": "[PLACEHOLDER: what it counts]",
+      "note": null,
+      "evidence": null
+    }
+  ],
+  "eras": [
+    {
+      "id": "era-01",
+      "visibility": "public",
+      "title": "[PLACEHOLDER: era title]",
+      "start": "[PLACEHOLDER: YYYY]",
+      "end": "[PLACEHOLDER: YYYY]",
+      "thesis": "[PLACEHOLDER: one-sentence thesis]",
+      "wave": "[PLACEHOLDER: technology wave]",
+      "notes": []
+    },
+    {
+      "id": "era-02",
+      "visibility": "public",
+      "title": "[PLACEHOLDER: era title]",
+      "start": "[PLACEHOLDER: YYYY]",
+      "end": "[PLACEHOLDER: YYYY]",
+      "thesis": "[PLACEHOLDER: one-sentence thesis]",
+      "wave": "[PLACEHOLDER: technology wave]",
+      "notes": []
+    },
+    {
+      "id": "era-03",
+      "visibility": "public",
+      "title": "[PLACEHOLDER: era title]",
+      "start": "[PLACEHOLDER: YYYY]",
+      "end": "[PLACEHOLDER: YYYY]",
+      "thesis": "[PLACEHOLDER: one-sentence thesis]",
+      "wave": "[PLACEHOLDER: technology wave]",
+      "notes": []
+    },
+    {
+      "id": "era-04",
+      "visibility": "public",
+      "title": "[PLACEHOLDER: era title]",
+      "start": "[PLACEHOLDER: YYYY]",
+      "end": "[PLACEHOLDER: YYYY or present]",
+      "thesis": "[PLACEHOLDER: one-sentence thesis]",
+      "wave": "[PLACEHOLDER: technology wave]",
+      "notes": []
+    }
+  ],
+  "roles": [],
+  "programmes": [
+    {
+      "id": "programme-01",
+      "visibility": "public",
+      "slug": "programme-01",
+      "title": "[PLACEHOLDER: programme title · never the client's name]",
+      "summary": "[PLACEHOLDER: one-line summary · never the client's name]",
+      "client": {
+        "visibility": "public",
+        "clientNamed": false,
+        "descriptor": "[PLACEHOLDER: anonymised client descriptor, e.g. Top-10 European insurer]",
+        "name": null
+      },
+      "sector": "[PLACEHOLDER: sector]",
+      "geographies": [
+        "[PLACEHOLDER: geography]"
+      ],
+      "start": "[PLACEHOLDER: YYYY-MM]",
+      "end": "[PLACEHOLDER: YYYY-MM or present]",
+      "role": "[PLACEHOLDER: his role, e.g. AI and data transformation lead]",
+      "sponsor": "[PLACEHOLDER: sponsor's role only, e.g. CEO or CDO]",
+      "reportingLine": "[PLACEHOLDER: reported to (a role, not a name)]",
+      "budget": null,
+      "teamSize": null,
+      "themes": [
+        "[PLACEHOLDER: AI | Data | Strategy | Digital transformation]"
+      ],
+      "narrative": null,
+      "outcomes": [],
+      "evidence": [],
+      "technologies": [
+        "[PLACEHOLDER: technology or platform]"
+      ],
+      "featured": false,
+      "roleId": null,
+      "notes": []
+    }
+  ],
+  "caseStudies": [],
+  "themes": [],
+  "sectors": [
+    {
+      "id": "sector-01",
+      "visibility": "public",
+      "label": "[PLACEHOLDER: sector]",
+      "years": "[PLACEHOLDER: years]",
+      "note": null
+    },
+    {
+      "id": "sector-02",
+      "visibility": "public",
+      "label": "[PLACEHOLDER: sector]",
+      "years": "[PLACEHOLDER: years]",
+      "note": null
+    },
+    {
+      "id": "sector-03",
+      "visibility": "public",
+      "label": "[PLACEHOLDER: sector]",
+      "years": "[PLACEHOLDER: years]",
+      "note": null
+    }
+  ],
+  "geographies": [
+    {
+      "id": "geography-01",
+      "visibility": "public",
+      "label": "[PLACEHOLDER: country or region]",
+      "years": "[PLACEHOLDER: years]",
+      "note": null
+    },
+    {
+      "id": "geography-02",
+      "visibility": "public",
+      "label": "[PLACEHOLDER: country or region]",
+      "years": "[PLACEHOLDER: years]",
+      "note": null
+    },
+    {
+      "id": "geography-03",
+      "visibility": "public",
+      "label": "[PLACEHOLDER: country or region]",
+      "years": "[PLACEHOLDER: years]",
+      "note": null
+    }
+  ],
+  "boardRoles": [
+    {
+      "id": "board-01",
+      "visibility": "public",
+      "kind": "[PLACEHOLDER: board | supervisory-board | advisory-board | committee | trustee | other]",
+      "title": "[PLACEHOLDER: board role]",
+      "organisation": {
+        "name": "[PLACEHOLDER: organisation]",
+        "legalEntity": null,
+        "hqCountry": "[PLACEHOLDER: country]",
+        "url": null
+      },
+      "committees": [
+        "[PLACEHOLDER: committee]"
+      ],
+      "start": "[PLACEHOLDER: YYYY-MM]",
+      "end": "[PLACEHOLDER: YYYY-MM or present]",
+      "remit": "[PLACEHOLDER: remit in one line]",
+      "sectorIds": [
+        "sector-02"
+      ],
+      "notes": []
+    }
+  ],
+  "publications": [
+    {
+      "id": "publication-01",
+      "visibility": "public",
+      "kind": "channel",
+      "title": "[PLACEHOLDER: channel name · candidate: Dispatches]",
+      "venue": "[PLACEHOLDER: one-line description]",
+      "year": null,
+      "url": "/blog",
+      "doi": null,
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-02",
+      "visibility": "public",
+      "kind": "channel",
+      "title": "[PLACEHOLDER: channel name · candidate: Synaptic Cartography]",
+      "venue": "[PLACEHOLDER: one-line description]",
+      "year": null,
+      "url": "/synaptic",
+      "doi": null,
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-03",
+      "visibility": "public",
+      "kind": "repository",
+      "title": "[PLACEHOLDER: repository name · candidate: the AI tutorials repository]",
+      "venue": "[PLACEHOLDER: host and one-line description]",
+      "year": null,
+      "url": null,
+      "doi": null,
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-04",
+      "visibility": "public",
+      "kind": "[PLACEHOLDER: paper | book | chapter | report | article | patent | media]",
+      "title": "[PLACEHOLDER: publication title]",
+      "venue": "[PLACEHOLDER: publisher or venue]",
+      "year": "[PLACEHOLDER: YYYY]",
+      "url": null,
+      "doi": null,
+      "description": null,
+      "notes": []
+    }
+  ],
+  "talks": [
+    {
+      "id": "talk-01",
+      "visibility": "public",
+      "kind": "[PLACEHOLDER: keynote | talk | panel | lecture | podcast | interview | other]",
+      "title": "[PLACEHOLDER: talk title]",
+      "event": "[PLACEHOLDER: event]",
+      "location": "[PLACEHOLDER: city]",
+      "year": "[PLACEHOLDER: YYYY]",
+      "url": null,
+      "notes": []
+    }
+  ],
+  "education": [],
+  "credentials": [],
+  "languages": [
+    {
+      "id": "language-01",
+      "visibility": "public",
+      "language": "[PLACEHOLDER: language]",
+      "level": "[PLACEHOLDER: CEFR level · A1 to C2, or native]",
+      "note": null
+    },
+    {
+      "id": "language-02",
+      "visibility": "public",
+      "language": "[PLACEHOLDER: language]",
+      "level": "[PLACEHOLDER: CEFR level · A1 to C2, or native]",
+      "note": null
+    }
+  ],
+  "artefacts": [],
+  "notes": []
+}
