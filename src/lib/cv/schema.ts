@@ -617,9 +617,36 @@ export const Artefact = strictObject({
   notes: Notes,
 })
 
+/* ── Leadership matrix ──────────────────────────────────────────────────── */
+
+/**
+ * The seat × pillar competency grid (People / Process / Technology for CEO,
+ * Chief AI Officer and CTO). Each cell names one competency search firms
+ * screen for and the programmes that evidence it. Ratings are strict: only
+ * "strong" or "partial" are recorded; a competency without evidence is left
+ * out rather than shown as a gap.
+ */
+export const MATRIX_SEATS = ["CEO", "CAIO", "CTO"] as const
+export const MATRIX_PILLARS = ["People", "Process", "Technology"] as const
+export const MATRIX_RATINGS = ["strong", "partial"] as const
+
+export const MatrixCell = strictObject({
+  id: Id,
+  visibility: Visibility,
+  seat: z.enum(MATRIX_SEATS),
+  pillar: z.enum(MATRIX_PILLARS),
+  competency: Text,
+  rating: z.enum(MATRIX_RATINGS),
+  programmeIds: z.array(Id).default([]),
+  /** One line of proof; never names a client unless that name is cleared. */
+  proof: OptionalText,
+  notes: Notes,
+})
+
 /* ── Documents ──────────────────────────────────────────────────────────── */
 
 const collectionShape = {
+  matrix: z.array(MatrixCell).default([]),
   proofFigures: z.array(ProofFigure).default([]),
   eras: z.array(Era).default([]),
   roles: z.array(Role).default([]),
@@ -700,6 +727,7 @@ export type CredentialT = z.infer<typeof Credential>
 export type LanguageT = z.infer<typeof Language>
 export type OpennessT = z.infer<typeof Openness>
 export type ArtefactT = z.infer<typeof Artefact>
+export type MatrixCellT = z.infer<typeof MatrixCell>
 export type EvidenceT = z.infer<typeof Evidence>
 
 /* ── Cross-references ───────────────────────────────────────────────────── */
