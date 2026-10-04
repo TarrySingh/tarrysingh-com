@@ -3,13 +3,15 @@
 
    A folio in the Synaptic Cartography series, on two surfaces:
      · a midnight plate (studio tokens from design/tokens.css) for the name,
-       the figures and the career eras
+       the figures and the Career Meridian
      · a paper reading surface: the EXISTING print palette (#f5edd6 paper,
        #1a1d24 ink, and the .syn-root print overrides in globals.css).
        The --cv-* properties below alias those values; no new colours.
    Gloock for display, IBM Plex Serif for prose, IBM Plex Mono for labels.
    Motion: one --dur-standard opacity fade on load. Nothing loops, nothing
    moves at all under prefers-reduced-motion. No starfield or grain.
+   Shared components (meridian, ledger, matrix, dossier) are styled in
+   src/components/cv/cv.module.css.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .root {
@@ -37,10 +39,11 @@
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
-/* The last surface (paper footer or paper main) fills a short viewport, so
-   no strip of midnight shows beneath the paper. */
+/* The last surface fills a short viewport, so no strip of midnight shows
+   beneath the paper. */
 .root > :last-child {
   flex: 1 0 auto;
 }
@@ -52,7 +55,8 @@
 }
 
 .paper :focus-visible,
-.footer :focus-visible {
+.footer :focus-visible,
+.root [data-cv-prepared] :focus-visible {
   outline-color: var(--cv-paper-accent);
 }
 
@@ -60,13 +64,39 @@
   outline-color: var(--memphis-amber-hi);
 }
 
-/* ── Back pill (mirrors SynapticSiteNav, but scrolls away with the plate) ── */
+/* ── Skip link and back pill ─────────────────────────────────────────────── */
+
+.skip {
+  position: absolute;
+  top: var(--space-2);
+  left: 50%;
+  z-index: 10;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--memphis-amber-hi);
+  color: var(--bg-deep);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translate(-50%, -200%);
+}
+
+.skip:focus {
+  transform: translate(-50%, 0);
+}
 
 .backNav {
   position: absolute;
   top: var(--space-4);
   left: var(--space-4);
   z-index: 3;
+}
+
+/* The dossier opens with its prepared-for bar; the back pill steps aside. */
+.root:has([data-cv-prepared]) .backNav {
+  display: none;
 }
 
 .backLink {
@@ -102,15 +132,15 @@
   position: relative;
   padding-top: var(--space-24);
   background-color: var(--bg-deep);
-  background-image: radial-gradient(
-    ellipse at 78% 0%,
-    var(--bg-mid) 0%,
-    var(--bg-deep) 64%
-  );
+  background-image: radial-gradient(ellipse at 78% 0%, var(--bg-mid) 0%, var(--bg-deep) 64%);
 }
 
 .masthead {
   padding-bottom: var(--space-8);
+}
+
+[data-cv-prepared] + .masthead {
+  padding-top: var(--space-16);
 }
 
 .pageHeader {
@@ -199,6 +229,12 @@
   text-underline-offset: 0.3em;
 }
 
+.mastGrid {
+  display: grid;
+  gap: var(--space-8);
+  align-items: end;
+}
+
 .name {
   margin: var(--space-12) 0 0;
   font-family: var(--font-display), Georgia, serif;
@@ -210,13 +246,52 @@
   overflow-wrap: anywhere;
 }
 
+.postNominals {
+  display: block;
+  margin-top: var(--space-3);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--text-small-caps);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-soft);
+}
+
 .positioning {
-  max-width: 42rem;
+  max-width: 44rem;
   margin: var(--space-6) 0 0;
   font-style: italic;
   font-size: var(--text-italic-caption);
   line-height: 1.45;
   color: var(--ink-soft);
+}
+
+.portrait {
+  margin: 0;
+  width: min(10rem, 40vw);
+}
+
+.portraitFrame {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--copper);
+  box-shadow:
+    0 0 0 4px var(--bg-deep),
+    0 0 0 5px rgba(201, 142, 79, 0.45);
+}
+
+.portraitImg {
+  object-fit: cover;
+  object-position: 50% 30%;
+  filter: grayscale(0.15) contrast(1.02);
+}
+
+.portraitCredit {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-dim);
 }
 
 .colophon {
@@ -229,13 +304,9 @@
 
 .colophon dt,
 .label,
-.figureLabel,
-.eraWave,
-.blockLabel,
-.sectionLabel,
-.entryKind,
-.statLabel,
-.footerLabel {
+.footerLabel,
+.formKicker,
+.versionLine {
   font-family: var(--font-mono), monospace;
   font-size: var(--text-small-caps);
   letter-spacing: var(--track-mono);
@@ -251,6 +322,7 @@
   color: var(--ink);
 }
 
+.seatList,
 .inlineList {
   display: flex;
   flex-wrap: wrap;
@@ -260,159 +332,17 @@
   list-style: none;
 }
 
+.seatList li:not(:last-child)::after {
+  content: "·";
+  margin-left: var(--space-4);
+  color: var(--copper);
+}
+
 .level {
-  color: var(--ink-soft);
-}
-
-/* ── Blocks on the plate: at a glance, career eras ───────────────────────── */
-
-.block {
-  padding-top: var(--space-12);
-}
-
-.blockHead {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--space-2) var(--space-4);
-  margin-bottom: var(--space-6);
-}
-
-.blockLabel {
-  color: var(--memphis-amber);
-}
-
-.blockTitle {
-  margin: 0;
-  font-family: var(--font-display), Georgia, serif;
-  font-weight: 400;
-  font-size: var(--text-h2);
-  line-height: 1.1;
-  letter-spacing: 0.06em;
-  color: var(--ink);
-}
-
-.figures {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
-  gap: var(--space-8) var(--space-6);
-  margin: 0;
-}
-
-.figure {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-/* a short copper tick above each figure */
-.figure::before {
-  content: "";
-  display: block;
-  order: -2;
-  width: var(--space-6);
-  height: 1px;
-  margin-bottom: var(--space-2);
-  background: var(--copper);
-}
-
-.figureValue {
-  order: -1;
-  margin: 0;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(2.25rem, 6vw, 3.5rem);
-  line-height: 1;
-  letter-spacing: 0.06em;
-  color: var(--memphis-amber);
-}
-
-.figureLabel {
-  color: var(--ink-soft);
-}
-
-.figureNote {
-  margin: 0;
-  font-size: 0.875rem;
-  color: var(--ink-dim);
-}
-
-/* Career eras: a vertical meridian on phones, a horizontal one from 1024px. */
-.eraList {
-  position: relative;
-  display: grid;
-  gap: var(--space-8);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.eraList::before {
-  content: "";
-  position: absolute;
-  top: var(--space-2);
-  bottom: var(--space-2);
-  left: 7px;
-  width: 1px;
-  background: var(--hairline);
-}
-
-.era {
-  position: relative;
-  padding-left: var(--space-8);
-}
-
-.eraMarker {
-  position: absolute;
-  top: 0.3rem;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  border: 1px solid var(--copper);
-  border-radius: 50%;
-  background: var(--bg-deep);
-}
-
-.eraMarker::after {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  background: var(--copper);
-}
-
-.eraYears {
-  margin: 0;
   font-family: var(--font-mono), monospace;
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
-  color: var(--memphis-amber);
-}
-
-.eraNumeral {
-  margin-right: var(--space-2);
-  font-family: var(--font-display), Georgia, serif;
+  font-size: 0.75rem;
   letter-spacing: 0.06em;
-}
-
-.eraTitle {
-  margin: var(--space-2) 0 0;
-  font-family: var(--font-display), Georgia, serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-}
-
-.eraThesis {
-  margin: var(--space-2) 0 0;
-  font-style: italic;
   color: var(--ink-soft);
-}
-
-.eraWave {
-  margin: var(--space-3) 0 0;
-  color: var(--ink-dim);
 }
 
 /* ── Paper reading surface ───────────────────────────────────────────────── */
@@ -421,279 +351,6 @@
   padding-block: var(--space-16);
   background-color: var(--cv-paper);
   color: var(--cv-paper-ink);
-}
-
-.section {
-  display: grid;
-  gap: var(--space-4);
-  padding-block: var(--space-12);
-  border-top: 1px solid var(--cv-paper-rule);
-}
-
-.section:first-child {
-  padding-top: 0;
-  border-top: 0;
-}
-
-.sectionLabel {
-  margin: 0;
-  color: var(--cv-paper-ink-dim);
-}
-
-.sectionNumeral {
-  display: block;
-  margin-bottom: var(--space-1);
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 2rem;
-  line-height: 1;
-  letter-spacing: 0.06em;
-  text-transform: none;
-  color: var(--cv-paper-ink);
-}
-
-.sectionNumeral::before {
-  content: "";
-  display: block;
-  width: var(--space-6);
-  height: 1px;
-  margin-bottom: var(--space-3);
-  background: var(--copper);
-}
-
-.sectionTitle {
-  margin: 0 0 var(--space-6);
-  font-family: var(--font-display), Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-  line-height: 1.15;
-  letter-spacing: 0.04em;
-  color: var(--cv-paper-ink);
-}
-
-.subTitle {
-  margin: var(--space-8) 0 var(--space-3);
-  font-family: var(--font-mono), monospace;
-  font-size: var(--text-small-caps);
-  font-weight: 400;
-  letter-spacing: var(--track-mono);
-  text-transform: uppercase;
-  color: var(--cv-paper-ink-dim);
-}
-
-.subTitle:first-child {
-  margin-top: 0;
-}
-
-.lede {
-  max-width: 42rem;
-  margin: 0 0 var(--space-6);
-  color: var(--cv-paper-ink-soft);
-}
-
-/* Programmes ---------------------------------------------------------------- */
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
-  gap: var(--space-6);
-  margin: 0;
-  padding: var(--space-4) 0 var(--space-6);
-  border-block: 1px solid var(--cv-paper-rule);
-}
-
-.statLabel {
-  color: var(--cv-paper-ink-dim);
-}
-
-.stats dd {
-  margin: var(--space-2) 0 0;
-}
-
-.statFigure {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 2rem;
-  line-height: 1;
-  letter-spacing: 0.06em;
-}
-
-.tallies {
-  display: grid;
-  gap: var(--space-1);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0.9375rem;
-}
-
-.tallyCount {
-  margin-left: var(--space-2);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.8125rem;
-  color: var(--cv-paper-ink-dim);
-}
-
-.statNote {
-  max-width: 42rem;
-  margin: var(--space-3) 0 var(--space-8);
-  font-size: 0.875rem;
-  font-style: italic;
-  color: var(--cv-paper-ink-dim);
-}
-
-.programmeGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
-  gap: var(--space-6);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.programmeCard {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  padding: var(--space-6);
-  border: 1px solid var(--cv-paper-rule);
-  border-top: 1px solid var(--copper);
-  border-radius: var(--radius-tight);
-  background: var(--cv-paper-panel);
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.chip {
-  padding: 2px var(--space-2);
-  border: 1px solid var(--cv-paper-rule-strong);
-  border-radius: var(--radius-pill);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--cv-paper-ink-soft);
-}
-
-.programmeTitle {
-  margin: 0;
-  font-family: var(--font-display), Georgia, serif;
-  font-weight: 400;
-  font-size: 1.375rem;
-  line-height: 1.25;
-  letter-spacing: 0.03em;
-}
-
-.programmeSummary {
-  margin: 0;
-  color: var(--cv-paper-ink-soft);
-}
-
-.meta {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  gap: var(--space-1) var(--space-4);
-  margin: var(--space-2) 0 0;
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--cv-paper-rule);
-  font-size: 0.9375rem;
-}
-
-.meta dt {
-  padding-top: 0.2em;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--cv-paper-ink-dim);
-}
-
-.meta dd {
-  margin: 0;
-}
-
-/* Reach: dotted-leader ledgers ---------------------------------------------- */
-
-.reachGrid {
-  display: grid;
-  gap: var(--space-8);
-}
-
-.leaders {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.leader {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-2);
-  padding-block: var(--space-2);
-}
-
-.leaderLabel {
-  flex: 0 1 auto;
-}
-
-.leaderDots {
-  flex: 1 1 var(--space-4);
-  min-width: var(--space-4);
-  border-bottom: 1px dotted var(--cv-paper-ink-dim);
-  transform: translateY(-0.3em);
-}
-
-.leaderValue {
-  flex: 0 0 auto;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.8125rem;
-  color: var(--cv-paper-ink-dim);
-}
-
-/* Entries: board roles, writing, talks --------------------------------------- */
-
-.entries {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.entry {
-  display: grid;
-  gap: var(--space-1);
-  padding-block: var(--space-4);
-  border-bottom: 1px solid var(--cv-paper-rule);
-}
-
-.entry:first-child {
-  border-top: 1px solid var(--cv-paper-rule);
-}
-
-.entryKind {
-  margin: 0;
-  color: var(--cv-paper-ink-dim);
-}
-
-.entryBody {
-  display: grid;
-  gap: var(--space-1);
-}
-
-.entryTitle {
-  margin: 0;
-  font-weight: 600;
-  color: var(--cv-paper-ink);
-}
-
-.entryMeta {
-  margin: 0;
-  font-size: 0.9375rem;
-  color: var(--cv-paper-ink-soft);
 }
 
 .link {
@@ -709,7 +366,7 @@
   text-decoration-thickness: 2px;
 }
 
-/* ── Access panel: a midnight card on the paper ──────────────────────────── */
+/* ── Access panel: a midnight cartouche on the paper ─────────────────────── */
 
 .accessPanel {
   display: grid;
@@ -719,12 +376,9 @@
   border: 1px solid var(--copper);
   border-radius: var(--radius-card);
   background-color: var(--bg-deep);
-  background-image: radial-gradient(
-    ellipse at 100% 0%,
-    var(--bg-mid) 0%,
-    var(--bg-deep) 70%
-  );
+  background-image: radial-gradient(ellipse at 100% 0%, var(--bg-mid) 0%, var(--bg-deep) 70%);
   color: var(--ink);
+  scroll-margin-top: var(--space-16);
 }
 
 .seal {
@@ -756,44 +410,102 @@
   margin: var(--space-2) 0 0;
   font-family: var(--font-display), Georgia, serif;
   font-weight: 400;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
   line-height: 1.2;
   letter-spacing: 0.04em;
   color: var(--ink);
 }
 
 .accessText {
-  max-width: 38rem;
+  max-width: 40rem;
   margin: var(--space-3) 0 0;
   color: var(--ink-soft);
 }
 
 .accessRefs {
-  margin: var(--space-3) 0 0;
+  margin: var(--space-6) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(230, 214, 180, 0.22);
   font-style: italic;
-  color: var(--ink-dim);
+  color: var(--ink-soft);
 }
 
-.accessCta {
-  display: inline-flex;
-  align-items: center;
+.panelForm {
+  display: grid;
   gap: var(--space-2);
-  min-height: 44px;
+  max-width: 34rem;
   margin-top: var(--space-6);
+}
+
+.panelLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: var(--text-small-caps);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.panelRow {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.panelInput {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-pill);
+  background: rgba(246, 234, 208, 0.06);
+  color: var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.panelInput::placeholder {
+  color: var(--ink-dim);
+  opacity: 1;
+}
+
+.panelInput:focus-visible {
+  border-color: var(--memphis-amber);
+  outline-offset: 2px;
+}
+
+.panelButton {
+  min-height: 48px;
   padding: 0 var(--space-6);
   border: 1px solid var(--memphis-amber);
   border-radius: var(--radius-pill);
+  background: var(--memphis-amber);
+  color: var(--bg-deep);
   font-family: var(--font-mono), monospace;
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  text-decoration: none;
-  color: var(--memphis-amber-hi);
+  cursor: pointer;
   transition: background-color var(--dur-micro) var(--ease-paper);
 }
 
-.accessCta:hover {
-  background-color: rgba(232, 184, 122, 0.12);
+.panelButton:hover {
+  background: var(--memphis-amber-hi);
+}
+
+.panelHint {
+  margin: var(--space-1) 0 0;
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+}
+
+.panelLink {
+  display: inline-block;
+  padding-block: 0.6rem;
+  color: var(--memphis-amber-hi);
+  text-decoration-line: underline;
+  text-decoration-color: var(--copper);
+  text-underline-offset: 0.25em;
 }
 
 /* ── Footer (paper) ──────────────────────────────────────────────────────── */
@@ -820,6 +532,15 @@
   margin: var(--space-1) 0 0;
 }
 
+.footerNote {
+  margin: var(--space-6) 0 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cv-paper-ink-dim);
+}
+
 .closing {
   max-width: 42rem;
   margin: var(--space-12) 0 0;
@@ -829,23 +550,7 @@
   color: var(--cv-paper-ink-soft);
 }
 
-/* ── Placeholders: obvious on both surfaces, never mistaken for copy ────── */
-
-.placeholder {
-  font-family: var(--font-mono), monospace;
-  font-style: normal;
-  font-weight: 400;
-  font-size: min(0.8125em, 1rem);
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  text-decoration-line: underline;
-  text-decoration-style: dashed;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.25em;
-}
-
-/* ── Access page ─────────────────────────────────────────────────────────── */
+/* ── Sub-page headers ────────────────────────────────────────────────────── */
 
 .pageTitle {
   margin: var(--space-12) 0 0;
@@ -877,17 +582,12 @@
   color: var(--cv-paper-ink);
 }
 
-.notice strong {
-  font-weight: 600;
+.versionLine {
+  margin: 0 0 var(--space-6);
+  color: var(--cv-paper-ink-dim);
 }
 
-.notice p {
-  margin: 0;
-}
-
-.notice p + p {
-  margin-top: var(--space-2);
-}
+/* ── Access forms ────────────────────────────────────────────────────────── */
 
 .forms {
   display: grid;
@@ -898,8 +598,15 @@
 .formCard {
   padding: var(--space-8) var(--space-6);
   border: 1px solid var(--cv-paper-rule);
+  border-top: 2px solid var(--cv-paper-ink);
   border-radius: var(--radius-tight);
   background: var(--cv-paper-panel);
+  scroll-margin-top: var(--space-8);
+}
+
+.formKicker {
+  margin: 0 0 var(--space-2);
+  color: var(--cv-paper-ink-dim);
 }
 
 .formTitle {
@@ -920,6 +627,12 @@
   display: grid;
   gap: var(--space-2);
   margin-top: var(--space-6);
+  align-content: start;
+}
+
+.fieldPair {
+  display: grid;
+  column-gap: var(--space-4);
 }
 
 .label {
@@ -962,6 +675,11 @@
   outline-offset: 2px;
 }
 
+.input[aria-invalid="true"] {
+  border-width: 2px;
+  border-color: var(--cv-paper-ink);
+}
+
 .codeInput {
   font-family: var(--font-mono), monospace;
   letter-spacing: 0.12em;
@@ -990,9 +708,9 @@
 
 .checkbox {
   flex: none;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-top: 0.2rem;
+  width: 1.375rem;
+  height: 1.375rem;
+  margin-top: 0.15rem;
   accent-color: var(--cv-paper-ink);
 }
 
@@ -1020,12 +738,41 @@
   background: var(--cv-paper-ink-soft);
 }
 
-.status {
-  margin: var(--space-4) 0 0;
-  padding-left: var(--space-3);
-  border-left: 2px solid var(--copper);
+/* Errors: ink on paper with a copper bar; no new colour is introduced. */
+.error {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--copper);
+  background: var(--cv-paper);
   font-size: 0.9375rem;
+  font-weight: 500;
   color: var(--cv-paper-ink);
+}
+
+.success {
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  border-left: 3px solid var(--cv-paper-accent);
+  background: var(--cv-paper);
+}
+
+.success p {
+  margin: 0;
+}
+
+.successTitle {
+  margin-bottom: var(--space-2) !important;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 /* ── Privacy notice ──────────────────────────────────────────────────────── */
@@ -1103,10 +850,6 @@
   animation-delay: 120ms;
 }
 
-.fadeLater {
-  animation-delay: 240ms;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .fade {
     animation: none;
@@ -1114,17 +857,17 @@
 
   .backLink,
   .link,
-  .accessCta,
   .input,
   .textarea,
-  .button {
+  .button,
+  .panelButton {
     transition: none;
   }
 }
 
 /* ── Wider screens ───────────────────────────────────────────────────────── */
 
-@media (min-width: 640px) {
+@media (min-width: 40rem) {
   .backNav {
     top: var(--space-6);
     left: var(--space-6);
@@ -1148,21 +891,9 @@
   }
 
   .colophon {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .reachGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-12);
-  }
-
-  .entry {
-    grid-template-columns: 9rem minmax(0, 1fr);
-    column-gap: var(--space-6);
-  }
-
-  .entryKind {
-    padding-top: 0.2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6) var(--space-16);
   }
 
   .footerGrid {
@@ -1172,36 +903,24 @@
   .accessPanel {
     padding: var(--space-12);
   }
+
+  .panelRow {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .fieldPair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-@media (min-width: 1024px) {
-  .eraList {
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(0, 1fr);
-    gap: var(--space-6);
-  }
-
-  .eraList::before {
-    top: 7px;
-    right: 0;
-    bottom: auto;
-    left: 0;
-    width: auto;
-    height: 1px;
-  }
-
-  .era {
-    padding-top: var(--space-8);
-    padding-left: 0;
-  }
-
-  .eraMarker {
-    top: 0;
-  }
-
-  .section {
-    grid-template-columns: 12rem minmax(0, 1fr);
+@media (min-width: 64rem) {
+  .mastGrid {
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: var(--space-12);
+  }
+
+  .portrait {
+    width: 13rem;
   }
 
   .legalSection {
@@ -1228,12 +947,14 @@
     --bg-mid: #f5edd6;
     --ink: #1a1d24;
     --ink-soft: #2a2a2a;
+    --ink-cool: #2a2a2a;
     --ink-dim: #555;
     --hairline: rgba(0, 0, 0, 0.3);
     --memphis-amber: #1a1d24;
     --memphis-amber-hi: #1a1d24;
     background: #f5edd6 !important;
     color: #1a1d24 !important;
+    font-size: 10.5pt;
   }
 
   .masthead,
@@ -1245,27 +966,31 @@
 
   .masthead,
   .pageHeader {
-    padding-top: var(--space-8);
+    padding-top: var(--space-6);
+  }
+
+  .name {
+    font-size: 40pt;
+    margin-top: var(--space-6);
   }
 
   .masthead::before,
   .pageHeader::before,
   .pageHeader::after,
-  .plate::after {
+  .plate::after,
+  .panelForm,
+  .skip {
     display: none;
   }
 
-  .paper {
-    padding-block: var(--space-8);
+  .paper,
+  .plate {
+    padding-block: var(--space-6);
   }
 
-  .section,
-  .programmeCard,
-  .entry,
-  .era,
-  .figure,
   .accessPanel,
-  .legalSection {
+  .legalSection,
+  .formCard {
     break-inside: avoid;
   }
 
