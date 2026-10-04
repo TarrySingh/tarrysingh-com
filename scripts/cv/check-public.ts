@@ -14,9 +14,19 @@
      · anything that does not match the public schema
    and when the folder holding it contains anything but public.json
    (gated.json or profile.yaml must never be copied into the repo).
+
+   Confidential-name gate (local only): when the private folder holds
+   confidential-names.txt (one NDA client name per line, # comments),
+   exit 1 if any of them appears, case-insensitively on word
+   boundaries, in public.json or any source file under
+   src/app/curriculumvitae, src/components/cv or src/lib/cv. The list
+   itself never enters this repo; on Vercel it is absent and the gate
+   is skipped. Private folder: $CV_SOURCE_DIR, else
+   ~/Documents/GitHub/tarrysingh-cv-private.
    ============================================================ */
 
-import { existsSync, readdirSync, readFileSync } from "node:fs"
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs"
+import { homedir } from "node:os"
 import { basename, dirname, join, relative, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import {
@@ -136,6 +146,63 @@ function scanKeysAndValues(json: unknown): string[] {
   return problems
 }
 
+const PRIVATE_DIR =
+  process.env.CV_SOURCE_DIR || join(homedir(), "Documents", "GitHub", "tarrysingh-cv-private")
+const NAMES_FILE = join(PRIVATE_DIR, "confidential-names.txt")
+const NAME_SCAN_DIRS = ["src/app/curriculumvitae", "src/components/cv", "src/lib/cv"]
+const NAME_SCAN_EXT = /\.(tsx?|jsx?|mjs|cjs|css|json|md|mdx|txt|svg|html)$/i
+
+function loadConfidentialNames(): string[] | null {
+  if (!existsSync(NAMES_FILE)) return null
+  return readFileSync(NAMES_FILE, "utf8")
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => l && !l.startsWith("#"))
+}
+
+function escapeRe(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+
+/** Unicode-aware word boundary: no letter or digit on either side. */
+function nameMatcher(names: string[]): RegExp | null {
+  if (names.length === 0) return null
+  const alt = names
+    .map((n) => n.normalize("NFC"))
+    .sort((a, b) => b.length - a.length)
+    .map(escapeRe)
+    .join("|")
+  return new RegExp(`(?<![\\p{L}\\p{N}])(?:${alt})(?![\\p{L}\\p{N}])`, "giu")
+}
+
+function walk(dir: string, out: string[]): void {
+  if (!existsSync(dir)) return
+  for (const name of readdirSync(dir)) {
+    const full = join(dir, name)
+    if (statSync(full).isDirectory()) walk(full, out)
+    else if (NAME_SCAN_EXT.test(name)) out.push(full)
+  }
+}
+
+/** Never prints the matched name itself, only where it was found. */
+function scanConfidentialNames(publicFile: string): { problems: string[]; skipped: boolean } {
+  const names = loadConfidentialNames()
+  if (names === null) return { problems: [], skipped: true }
+  const re = nameMatcher(names)
+  if (!re) return { problems: [], skipped: false }
+  const files = [publicFile]
+  for (const d of NAME_SCAN_DIRS) walk(join(REPO_ROOT, d), files)
+  const problems: string[] = []
+  for (const f of files) {
+    const lines = readFileSync(f, "utf8").normalize("NFC").split(/\n/)
+    lines.forEach((line, i) => {
+      re.lastIndex = 0
+      if (re.test(line)) problems.push(`${display(f)}:${i + 1}: names a confidential client (see confidential-names.txt)`)
+    })
+  }
+  return { problems, skipped: false }
+}
+
 function parseArgs(argv: string[]): string {
   let file = DEFAULT_FILE
   for (let i = 0; i < argv.length; i++) {
@@ -191,6 +258,10 @@ function main(): void {
       problems.push(`schema · ${issue.path.join(".") || "(root)"}: ${issue.message}`)
     }
   }
+
+  const names = scanConfidentialNames(file)
+  problems.push(...names.problems)
+  if (names.skipped) console.log("cv:check · confidential-name gate skipped (no private names list here)")
 
   const dir = dirname(file)
   for (const name of readdirSync(dir)) {

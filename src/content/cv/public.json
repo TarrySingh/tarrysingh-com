@@ -1,64 +1,385 @@
 {
   "audience": "public",
   "schemaVersion": 1,
-  "sourceHash": "sha256:207bb494ea8e757108ba9a437f6283f37396b140ad19931b455162a2583ea13d",
-  "generatedAt": "2026-10-03T15:41:04.590Z",
+  "sourceHash": "sha256:e3d46de96548ae93d7265ba4cde33b3f3f75789dac307854a121d7685e7cf192",
+  "generatedAt": "2026-10-04T22:37:54.788Z",
   "profile": {
     "visibility": "public",
     "name": "Tarry Singh",
     "honorific": null,
     "postNominals": null,
-    "positioning": "[PLACEHOLDER: positioning statement · one sentence for CEO and Chief AI Officer / CTO mandates: seat, scale, sectors, distinctive edge]",
-    "base": "[PLACEHOLDER: base city, country]",
+    "positioning": "Founder-CEO and hands-on AI leader for CEO and Chief AI Officer / CTO mandates: 30 years turning data and AI into operating capability for energy, telecoms, financial-services and public-sector organisations across Europe, the Gulf and the United States, with a builder's edge in peer-reviewed AI research, a European foundation-model programme and industrial AI delivered in the field.",
+    "base": "The Netherlands",
     "summary": null,
     "portrait": null,
-    "contact": {
-      "visibility": "public",
-      "email": "[PLACEHOLDER: role contact address · a dedicated alias, never a personal address]",
-      "label": null
-    },
+    "contact": null,
     "referencesPolicy": {
       "visibility": "public",
-      "text": "[PLACEHOLDER: references policy wording · INTAKE.md Q10]"
+      "text": "References from clients, partners and colleagues are available at the appropriate stage, each with the referee's consent."
     },
     "closingLine": {
       "visibility": "public",
-      "text": "[PLACEHOLDER: closing italic line]"
+      "text": "Data first, models second, and the client keeps the keys."
     },
     "notes": []
   },
   "openness": null,
+  "matrix": [
+    {
+      "id": "matrix-ceo-pe5",
+      "visibility": "public",
+      "seat": "CEO",
+      "pillar": "People",
+      "competency": "Managed governments, public bodies and public stakeholders",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-02",
+        "programme-04",
+        "programme-01"
+      ],
+      "proof": "Partner in two EU-funded AI education consortia and winner of a competitive national supercomputing award.",
+      "notes": []
+    },
+    {
+      "id": "matrix-ceo-pe6",
+      "visibility": "public",
+      "seat": "CEO",
+      "pillar": "People",
+      "competency": "Led a workforce transition to AI without hollowing out talent pipelines",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-03",
+        "programme-01"
+      ],
+      "proof": "Designed and led hands-on programmes that took engineers from Python foundations to computer vision and sequence models.",
+      "notes": []
+    },
+    {
+      "id": "matrix-ceo-pe7",
+      "visibility": "public",
+      "seat": "CEO",
+      "pillar": "People",
+      "competency": "Learning agility across sectors, geographies and technology cycles",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01",
+        "programme-02",
+        "programme-03"
+      ],
+      "proof": "Programmes in energy, telecoms, financial services, public institutions and AI research across Europe, the Gulf and the United States, with current hands-on AI practice.",
+      "notes": []
+    },
+    {
+      "id": "matrix-ceo-pr4",
+      "visibility": "public",
+      "seat": "CEO",
+      "pillar": "Process",
+      "competency": "Ran an operating rhythm that delivered a plan",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01"
+      ],
+      "proof": "Ran a phase-gated, KPI-tracked industrial AI programme from dataset build to formal close-out and handover.",
+      "notes": []
+    },
+    {
+      "id": "matrix-ceo-pr5",
+      "visibility": "public",
+      "seat": "CEO",
+      "pillar": "Process",
+      "competency": "Executed partnerships",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-02",
+        "programme-04"
+      ],
+      "proof": "Assembled a university–industry programme with NVIDIA's technical collaboration and won national supercomputing for it.",
+      "notes": []
+    },
+    {
+      "id": "matrix-ceo-pr1",
+      "visibility": "public",
+      "seat": "CEO",
+      "pillar": "Process",
+      "competency": "Set an AI-centric strategy tied to the operating plan",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-02"
+      ],
+      "proof": "Anchored Real AI's product stack on its own foundation model.",
+      "notes": []
+    },
+    {
+      "id": "matrix-ceo-te1",
+      "visibility": "public",
+      "seat": "CEO",
+      "pillar": "Technology",
+      "competency": "Holds AI decision rights personally and uses AI hands-on",
+      "rating": "strong",
+      "programmeIds": [
+        "programme-01",
+        "programme-02",
+        "programme-03"
+      ],
+      "proof": "Co-author of peer-reviewed AI research with measured results, lead author of an industrial programme's technical reports, and lead instructor of deep-learning masterclasses.",
+      "notes": []
+    },
+    {
+      "id": "matrix-ceo-te3",
+      "visibility": "public",
+      "seat": "CEO",
+      "pillar": "Technology",
+      "competency": "Redesigned workflows around AI and data",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01"
+      ],
+      "proof": "Moved fracture interpretation from manual picking towards automated, self-improving detection with expert review.",
+      "notes": []
+    },
+    {
+      "id": "matrix-caio-pe4",
+      "visibility": "public",
+      "seat": "CAIO",
+      "pillar": "People",
+      "competency": "Ran role-based AI literacy and reskilling",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-03",
+        "programme-04",
+        "programme-01"
+      ],
+      "proof": "Designed and led a staged, hands-on deep-learning curriculum for engineers; co-developed two EU-funded AI master's programmes, including tracks for professionals outside ICT.",
+      "notes": []
+    },
+    {
+      "id": "matrix-caio-pe3",
+      "visibility": "public",
+      "seat": "CAIO",
+      "pillar": "People",
+      "competency": "Built a blended AI team",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-02",
+        "programme-01"
+      ],
+      "proof": "Built research and delivery teams that combine university researchers, company engineers and NVIDIA collaboration.",
+      "notes": []
+    },
+    {
+      "id": "matrix-caio-pr1",
+      "visibility": "public",
+      "seat": "CAIO",
+      "pillar": "Process",
+      "competency": "Managed an AI portfolio from idea to scale, including stop decisions",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01",
+        "programme-03"
+      ],
+      "proof": "Stage-gated an industrial AI programme and stopped unstable methods early; ran use-case workshops that ranked AI opportunities by feasibility.",
+      "notes": []
+    },
+    {
+      "id": "matrix-caio-pr6",
+      "visibility": "public",
+      "seat": "CAIO",
+      "pillar": "Process",
+      "competency": "Governed vendors, third-party risk and sovereignty",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01",
+        "programme-02"
+      ],
+      "proof": "Kept confidential subsurface data and compute on-premise under GDPR, and pursued an open European foundation model as a sovereignty answer.",
+      "notes": []
+    },
+    {
+      "id": "matrix-caio-pr4",
+      "visibility": "public",
+      "seat": "CAIO",
+      "pillar": "Process",
+      "competency": "Built regulatory readiness into AI design",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-02",
+        "programme-04"
+      ],
+      "proof": "Built the EU AI Act into the design brief of a European foundation model and into human-centred AI master's programmes.",
+      "notes": []
+    },
+    {
+      "id": "matrix-caio-te2",
+      "visibility": "public",
+      "seat": "CAIO",
+      "pillar": "Technology",
+      "competency": "Built data foundations so AI could scale",
+      "rating": "strong",
+      "programmeIds": [
+        "programme-01"
+      ],
+      "proof": "Turned fragmented borehole-image data into a Gulf operator's first ML-ready subsurface datasets, with measured results in peer-reviewed conference papers.",
+      "notes": []
+    },
+    {
+      "id": "matrix-caio-te3",
+      "visibility": "public",
+      "seat": "CAIO",
+      "pillar": "Technology",
+      "competency": "Set a build-buy-partner model strategy",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-02"
+      ],
+      "proof": "Took the build-our-own-model decision and secured national supercomputing and NVIDIA collaboration to execute it.",
+      "notes": []
+    },
+    {
+      "id": "matrix-caio-te5",
+      "visibility": "public",
+      "seat": "CAIO",
+      "pillar": "Technology",
+      "competency": "Ran model monitoring and lifecycle management",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01"
+      ],
+      "proof": "Model versioning, roll-back and retraining on expert feedback inside an MLOps regime.",
+      "notes": []
+    },
+    {
+      "id": "matrix-cto-pe3",
+      "visibility": "public",
+      "seat": "CTO",
+      "pillar": "People",
+      "competency": "Led engineering culture change and adoption of AI tools",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-03"
+      ],
+      "proof": "Ran every module hands-on on a dedicated GPU environment, so engineers left with working code.",
+      "notes": []
+    },
+    {
+      "id": "matrix-cto-pe6",
+      "visibility": "public",
+      "seat": "CTO",
+      "pillar": "People",
+      "competency": "Made business-model calls on technology",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-02"
+      ],
+      "proof": "Made the company's own foundation model the base layer of its product stack.",
+      "notes": []
+    },
+    {
+      "id": "matrix-cto-pr7",
+      "visibility": "public",
+      "seat": "CTO",
+      "pillar": "Process",
+      "competency": "Made build-buy-partner and sovereignty decisions",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01",
+        "programme-02"
+      ],
+      "proof": "An on-premise GPU stack for confidential energy data, and a sovereign European model on public supercomputing.",
+      "notes": []
+    },
+    {
+      "id": "matrix-cto-pr4",
+      "visibility": "public",
+      "seat": "CTO",
+      "pillar": "Process",
+      "competency": "Managed AI unit economics",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01",
+        "programme-02"
+      ],
+      "proof": "Ran a GPU-hour ledger and compute tiers, and designed models for energy and memory efficiency.",
+      "notes": []
+    },
+    {
+      "id": "matrix-cto-pr1",
+      "visibility": "public",
+      "seat": "CTO",
+      "pillar": "Process",
+      "competency": "Ran value and ROI discipline on AI",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01"
+      ],
+      "proof": "Phase-gated payments with a decision gate before industrialisation, and documented stop decisions on methods that did not scale.",
+      "notes": []
+    },
+    {
+      "id": "matrix-cto-te3",
+      "visibility": "public",
+      "seat": "CTO",
+      "pillar": "Technology",
+      "competency": "Shipped ML with MLOps and controls",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01"
+      ],
+      "proof": "An MLOps regime with model cards, experiment tracking and versioned, measured models, handed over to the client.",
+      "notes": []
+    },
+    {
+      "id": "matrix-cto-te2",
+      "visibility": "public",
+      "seat": "CTO",
+      "pillar": "Technology",
+      "competency": "Delivered data foundations and governance",
+      "rating": "partial",
+      "programmeIds": [
+        "programme-01"
+      ],
+      "proof": "A data-management system, dashboards and dataset versioning behind a client's first ML-ready subsurface datasets.",
+      "notes": []
+    }
+  ],
   "proofFigures": [
     {
       "id": "figure-01",
       "visibility": "public",
-      "value": "[PLACEHOLDER: figure]",
-      "label": "[PLACEHOLDER: what it counts]",
-      "note": null,
+      "value": "30+",
+      "label": "years in enterprise data, infrastructure and AI",
+      "note": "Career from 1994; founder-CEO in AI since 2017",
       "evidence": null
     },
     {
       "id": "figure-02",
       "visibility": "public",
-      "value": "[PLACEHOLDER: figure]",
-      "label": "[PLACEHOLDER: what it counts]",
-      "note": null,
+      "value": "10",
+      "label": "peer-reviewed AI publications since 2018",
+      "note": "In IEEE, ACM, Springer, Elsevier, MDPI and CEUR venues; DOIs in the publication list",
       "evidence": null
     },
     {
       "id": "figure-03",
       "visibility": "public",
-      "value": "[PLACEHOLDER: figure]",
-      "label": "[PLACEHOLDER: what it counts]",
+      "value": "3",
+      "label": "companies co-founded: an IT advisory firm in 2010, then Real AI and EarthScan in 2017",
       "note": null,
       "evidence": null
     },
     {
       "id": "figure-04",
       "visibility": "public",
-      "value": "[PLACEHOLDER: figure]",
-      "label": "[PLACEHOLDER: what it counts]",
-      "note": null,
+      "value": "2",
+      "label": "EU-funded AI master's programmes co-developed: HCAIM and PANORAIMA",
+      "note": "HCAIM under the Connecting Europe Facility; PANORAIMA under Digital Europe, 2025 to 2029",
+      "evidence": null
+    },
+    {
+      "id": "figure-05",
+      "visibility": "public",
+      "value": "~85%",
+      "label": "fracture-detection recall at 8 cm depth tolerance, in peer-reviewed conference results (2024)",
+      "note": "From the Gulf energy subsurface-AI programme he led",
       "evidence": null
     }
   ],
@@ -66,41 +387,51 @@
     {
       "id": "era-01",
       "visibility": "public",
-      "title": "[PLACEHOLDER: era title]",
-      "start": "[PLACEHOLDER: YYYY]",
-      "end": "[PLACEHOLDER: YYYY]",
-      "thesis": "[PLACEHOLDER: one-sentence thesis]",
-      "wave": "[PLACEHOLDER: technology wave]",
+      "title": "Earlier career: from operations to enterprise data",
+      "start": 1994,
+      "end": 2007,
+      "thesis": "Moved from operational management in oil and transportation (1994 to 1999) into data leadership: head of data and programme manager at the Royal Wagenborg group (2000 to 2003), then lecturer and head of data and middleware in Groningen (2003 to 2007).",
+      "wave": "Enterprise data, middleware and integration",
       "notes": []
     },
     {
       "id": "era-02",
       "visibility": "public",
-      "title": "[PLACEHOLDER: era title]",
-      "start": "[PLACEHOLDER: YYYY]",
-      "end": "[PLACEHOLDER: YYYY]",
-      "thesis": "[PLACEHOLDER: one-sentence thesis]",
-      "wave": "[PLACEHOLDER: technology wave]",
+      "title": "Data and infrastructure at scale",
+      "start": 2007,
+      "end": 2014,
+      "thesis": "Built and ran a pan-EMEA data, virtualisation and cloud practice at Atos, then co-founded an advisory firm that delivered data-driven IT transformation, governance and sourcing for large enterprises.",
+      "wave": "Virtualisation, cloud and data governance",
       "notes": []
     },
     {
       "id": "era-03",
       "visibility": "public",
-      "title": "[PLACEHOLDER: era title]",
-      "start": "[PLACEHOLDER: YYYY]",
-      "end": "[PLACEHOLDER: YYYY]",
-      "thesis": "[PLACEHOLDER: one-sentence thesis]",
-      "wave": "[PLACEHOLDER: technology wave]",
+      "title": "Analytics and digital transformation",
+      "start": 2014,
+      "end": 2017,
+      "thesis": "As a director in PA Consulting's data analytics and digital practice, led data, digital and sourcing engagements for private and public-sector clients across Europe, and built the practice's data-science bench.",
+      "wave": "Big data, analytics and digital platforms",
       "notes": []
     },
     {
       "id": "era-04",
       "visibility": "public",
-      "title": "[PLACEHOLDER: era title]",
-      "start": "[PLACEHOLDER: YYYY]",
-      "end": "[PLACEHOLDER: YYYY or present]",
-      "thesis": "[PLACEHOLDER: one-sentence thesis]",
-      "wave": "[PLACEHOLDER: technology wave]",
+      "title": "Founder-CEO: deep learning in the field",
+      "start": 2017,
+      "end": 2022,
+      "thesis": "Founded an AI group, DK AI Holding with Real AI and EarthScan, and took deep learning into telecoms, healthcare and energy, from hands-on engineering programmes to industrial computer vision.",
+      "wave": "Deep learning and computer vision",
+      "notes": []
+    },
+    {
+      "id": "era-05",
+      "visibility": "public",
+      "title": "Foundation models, sovereignty and AI education",
+      "start": 2022,
+      "end": "present",
+      "thesis": "Leads the industrial side of a European foundation-model programme, co-develops EU-funded AI master's programmes and turns the research into a product stack and open, hands-on AI courses.",
+      "wave": "Generative and agentic AI under the EU AI Act",
       "notes": []
     }
   ],
@@ -110,34 +441,264 @@
       "id": "programme-01",
       "visibility": "public",
       "slug": "programme-01",
-      "title": "[PLACEHOLDER: programme title · never the client's name]",
-      "summary": "[PLACEHOLDER: one-line summary · never the client's name]",
+      "title": "AI-ready subsurface data and fracture detection for a Gulf energy operator",
+      "summary": "Turned fragmented borehole-image data into the operator's first ML-ready subsurface dataset and a peer-reviewed, transformer-based fracture-detection workflow.",
       "client": {
         "visibility": "public",
         "clientNamed": false,
-        "descriptor": "[PLACEHOLDER: anonymised client descriptor, e.g. Top-10 European insurer]",
+        "descriptor": "National-scale oil and gas operator in the Gulf",
         "name": null
       },
-      "sector": "[PLACEHOLDER: sector]",
+      "sector": "Energy (upstream oil and gas)",
       "geographies": [
-        "[PLACEHOLDER: geography]"
+        "Gulf (GCC)",
+        "Netherlands (delivery)"
       ],
-      "start": "[PLACEHOLDER: YYYY-MM]",
-      "end": "[PLACEHOLDER: YYYY-MM or present]",
-      "role": "[PLACEHOLDER: his role, e.g. AI and data transformation lead]",
-      "sponsor": "[PLACEHOLDER: sponsor's role only, e.g. CEO or CDO]",
-      "reportingLine": "[PLACEHOLDER: reported to (a role, not a name)]",
+      "start": "2021-12",
+      "end": "2024-12",
+      "role": "Programme lead and executive owner, as CEO of the delivering AI firm",
+      "sponsor": null,
+      "reportingLine": null,
       "budget": null,
       "teamSize": null,
       "themes": [
-        "[PLACEHOLDER: AI | Data | Strategy | Digital transformation]"
+        "AI",
+        "Data",
+        "Strategy"
+      ],
+      "narrative": null,
+      "outcomes": [
+        {
+          "id": "programme-01-outcome-01",
+          "visibility": "public",
+          "metric": "Fracture-detection recall at 8 cm depth tolerance",
+          "value": 85,
+          "unit": "%",
+          "timeframe": "2024",
+          "source": "Peer-reviewed conference results, 2024",
+          "statement": "About 85% recall at 8 cm, in peer-reviewed conference results."
+        }
+      ],
+      "evidence": [],
+      "technologies": [
+        "Detection transformers (DETR)",
+        "Classical computer vision",
+        "MLOps (RADIX, Weights & Biases)",
+        "On-premise NVIDIA DGX",
+        "Private and public cloud",
+        "Streamlit"
+      ],
+      "featured": true,
+      "roleId": null,
+      "notes": []
+    },
+    {
+      "id": "programme-02",
+      "visibility": "public",
+      "slug": "programme-02",
+      "title": "Hominis: a European human-centric foundation model",
+      "summary": "Led the industrial side of a university–industry programme, with NVIDIA's technical collaboration and a competitive national supercomputing award, to build an open, human-centric European large language model.",
+      "client": {
+        "visibility": "public",
+        "clientNamed": true,
+        "descriptor": "His own AI company, with a European research university and NVIDIA",
+        "name": {
+          "visibility": "public",
+          "text": "Real AI, with the University of Naples Federico II (PICUS Lab)"
+        }
+      },
+      "sector": "AI research and foundation models",
+      "geographies": [
+        "Italy",
+        "Europe"
+      ],
+      "start": "2023-09",
+      "end": "2025-10",
+      "role": "Industrial lead for Real AI, the partner that won the compute award",
+      "sponsor": "Principal investigator, university research lab",
+      "reportingLine": null,
+      "budget": null,
+      "teamSize": null,
+      "themes": [
+        "AI",
+        "Data",
+        "Strategy"
+      ],
+      "narrative": null,
+      "outcomes": [
+        {
+          "id": "programme-02-outcome-01",
+          "visibility": "public",
+          "metric": "Competitive national supercomputing award (ISCRA) on Leonardo at CINECA",
+          "value": 1,
+          "unit": "award",
+          "timeframe": "2023",
+          "source": "Real AI announcement, 2023",
+          "statement": "Real AI won the allocation as the programme's industrial partner."
+        },
+        {
+          "id": "programme-02-outcome-02",
+          "visibility": "public",
+          "metric": "Peer-reviewed design paper",
+          "value": 1,
+          "unit": "paper",
+          "timeframe": "2023",
+          "source": "CEUR-WS Vol-3502 (HCAI4U 2023, Turin)",
+          "statement": "'Designing Human-Centric Foundation Models', co-authored with the university."
+        },
+        {
+          "id": "programme-02-outcome-03",
+          "visibility": "public",
+          "metric": "Architecture paper on procedurally competent agents",
+          "value": 1,
+          "unit": "paper",
+          "timeframe": "2025",
+          "source": "SSRN, DOI 10.2139/ssrn.5647591",
+          "statement": "'From Knowing to Doing', which the lab calls the Hominis architecture paper."
+        }
+      ],
+      "evidence": [
+        {
+          "visibility": "public",
+          "kind": "press",
+          "url": "https://cdomagazine.tech/others/real-ai-to-create-europes-premier-open-source-human-centric-llm",
+          "ref": null,
+          "note": "Programme announcement naming the ISCRA award on Leonardo, NVIDIA and the University of Naples Federico II, 2023"
+        },
+        {
+          "visibility": "public",
+          "kind": "publication",
+          "url": "https://ceur-ws.org/Vol-3502/paper4.pdf",
+          "ref": null,
+          "note": "Peer-reviewed design paper, HCAI4U 2023"
+        },
+        {
+          "visibility": "public",
+          "kind": "other",
+          "url": "https://phd-itee.dieti.unina.it/images/Seminari/Seminar-Announcement-ITEE_-_HOMINIS_1.pdf",
+          "ref": null,
+          "note": "The university's Hominis seminar day, 2024"
+        }
+      ],
+      "technologies": [
+        "Transformer pretraining",
+        "NVIDIA A100 supercomputing",
+        "CINECA Leonardo (ISCRA allocation)",
+        "Flash Attention",
+        "Mixed-precision training"
+      ],
+      "featured": true,
+      "roleId": null,
+      "notes": []
+    },
+    {
+      "id": "programme-03",
+      "visibility": "public",
+      "slug": "programme-03",
+      "title": "Hands-on AI capability programme for a global telecoms-equipment company",
+      "summary": "Designed and personally led a multi-stage deep-learning programme for engineers, from Python foundations to computer vision and sequence models, with on-site masterclasses on a dedicated GPU environment and use-case workshops that ranked AI opportunities by feasibility.",
+      "client": {
+        "visibility": "public",
+        "clientNamed": false,
+        "descriptor": "Global telecoms-equipment company",
+        "name": null
+      },
+      "sector": "Telecommunications equipment",
+      "geographies": [
+        "Europe"
+      ],
+      "start": "2017-10",
+      "end": "2018-05",
+      "role": "AI programme lead and lead instructor, deepkapha.ai",
+      "sponsor": null,
+      "reportingLine": null,
+      "budget": null,
+      "teamSize": null,
+      "themes": [
+        "AI",
+        "Digital transformation"
       ],
       "narrative": null,
       "outcomes": [],
       "evidence": [],
       "technologies": [
-        "[PLACEHOLDER: technology or platform]"
+        "Python, NumPy, pandas, scikit-learn",
+        "TensorFlow and Keras",
+        "CNNs and transfer learning",
+        "RNN, LSTM and word embeddings",
+        "Jupyter on GPU servers"
       ],
+      "featured": true,
+      "roleId": null,
+      "notes": []
+    },
+    {
+      "id": "programme-04",
+      "visibility": "public",
+      "slug": "programme-04",
+      "title": "PANORAIMA: human-centred AI master's programme for professionals beyond ICT",
+      "summary": "Co-developer and visiting professor in a 16-partner, EUR 3.7M Digital Europe programme that extends the HCAIM master's to professionals in healthcare and life sciences, media and culture, law and compliance, and management and finance.",
+      "client": {
+        "visibility": "public",
+        "clientNamed": true,
+        "descriptor": "EU-funded consortium of universities, research centres and companies",
+        "name": {
+          "visibility": "public",
+          "text": "PANORAIMA consortium, coordinated by HU University of Applied Sciences Utrecht"
+        }
+      },
+      "sector": "Higher education and AI skills",
+      "geographies": [
+        "Europe"
+      ],
+      "start": "2025-01",
+      "end": "2029-01",
+      "role": "Co-developer and visiting professor; Real AI is a consortium partner",
+      "sponsor": null,
+      "reportingLine": null,
+      "budget": null,
+      "teamSize": null,
+      "themes": [
+        "AI",
+        "Strategy"
+      ],
+      "narrative": null,
+      "outcomes": [
+        {
+          "id": "programme-04-outcome-01",
+          "visibility": "public",
+          "metric": "Predecessor master's delivered: HCAIM, funded by the Connecting Europe Facility",
+          "value": 60,
+          "unit": "ECTS",
+          "timeframe": "Delivered by 2024",
+          "source": "EU Digital Skills and Jobs Platform",
+          "statement": "HCAIM was built by 10 partners in 5 EU member states, Real AI among them, with open-access materials, most of them in 27 EU languages."
+        }
+      ],
+      "evidence": [
+        {
+          "visibility": "public",
+          "kind": "other",
+          "url": "https://progettiue.enea.it/proWEB.php?id=4203",
+          "ref": null,
+          "note": "Public EU project record for PANORAIMA: programme, dates, budget and partners"
+        },
+        {
+          "visibility": "public",
+          "kind": "other",
+          "url": "https://digital-skills-jobs.europa.eu/en/human-centred-artificial-intelligence-master-hcaim",
+          "ref": null,
+          "note": "HCAIM on the EU Digital Skills and Jobs Platform"
+        },
+        {
+          "visibility": "public",
+          "kind": "publication",
+          "url": "https://doi.org/10.1145/3502717.3532120",
+          "ref": null,
+          "note": "'Developing a Human Centred AI Masters: the Good, the Bad and the Ugly', ACM ITiCSE 2022, co-authored"
+        }
+      ],
+      "technologies": [],
       "featured": false,
       "roleId": null,
       "notes": []
@@ -149,22 +710,57 @@
     {
       "id": "sector-01",
       "visibility": "public",
-      "label": "[PLACEHOLDER: sector]",
-      "years": "[PLACEHOLDER: years]",
+      "label": "Energy (oil and gas)",
+      "years": "2020–2024",
       "note": null
     },
     {
       "id": "sector-02",
       "visibility": "public",
-      "label": "[PLACEHOLDER: sector]",
-      "years": "[PLACEHOLDER: years]",
+      "label": "Telecommunications",
+      "years": "2017–2018",
       "note": null
     },
     {
       "id": "sector-03",
       "visibility": "public",
-      "label": "[PLACEHOLDER: sector]",
-      "years": "[PLACEHOLDER: years]",
+      "label": "Financial services",
+      "years": "2015–2016",
+      "note": null
+    },
+    {
+      "id": "sector-04",
+      "visibility": "public",
+      "label": "Public institutions",
+      "years": "2015–present",
+      "note": "Including EU-funded programmes"
+    },
+    {
+      "id": "sector-05",
+      "visibility": "public",
+      "label": "Healthcare",
+      "years": "2019–2020",
+      "note": null
+    },
+    {
+      "id": "sector-07",
+      "visibility": "public",
+      "label": "Higher education and AI research",
+      "years": "2003–2007, 2020–present",
+      "note": null
+    },
+    {
+      "id": "sector-08",
+      "visibility": "public",
+      "label": "Maritime, oil and transportation",
+      "years": "1994–2003",
+      "note": null
+    },
+    {
+      "id": "sector-09",
+      "visibility": "public",
+      "label": "IT services and management consulting",
+      "years": "2007–2017",
       "note": null
     }
   ],
@@ -172,22 +768,29 @@
     {
       "id": "geography-01",
       "visibility": "public",
-      "label": "[PLACEHOLDER: country or region]",
-      "years": "[PLACEHOLDER: years]",
-      "note": null
+      "label": "Netherlands",
+      "years": "2000–present",
+      "note": "Base"
     },
     {
       "id": "geography-02",
       "visibility": "public",
-      "label": "[PLACEHOLDER: country or region]",
-      "years": "[PLACEHOLDER: years]",
+      "label": "Europe (multi-country and EU-wide programmes)",
+      "years": "2007–present",
       "note": null
     },
     {
       "id": "geography-03",
       "visibility": "public",
-      "label": "[PLACEHOLDER: country or region]",
-      "years": "[PLACEHOLDER: years]",
+      "label": "Gulf (GCC)",
+      "years": "2021–2024",
+      "note": null
+    },
+    {
+      "id": "geography-04",
+      "visibility": "public",
+      "label": "United States",
+      "years": "2020–2021",
       "note": null
     }
   ],
@@ -195,22 +798,20 @@
     {
       "id": "board-01",
       "visibility": "public",
-      "kind": "[PLACEHOLDER: board | supervisory-board | advisory-board | committee | trustee | other]",
-      "title": "[PLACEHOLDER: board role]",
+      "kind": "board",
+      "title": "Board Director",
       "organisation": {
-        "name": "[PLACEHOLDER: organisation]",
+        "name": "DK AI Holding",
         "legalEntity": null,
-        "hqCountry": "[PLACEHOLDER: country]",
+        "hqCountry": "Netherlands",
         "url": null
       },
-      "committees": [
-        "[PLACEHOLDER: committee]"
-      ],
-      "start": "[PLACEHOLDER: YYYY-MM]",
-      "end": "[PLACEHOLDER: YYYY-MM or present]",
-      "remit": "[PLACEHOLDER: remit in one line]",
+      "committees": [],
+      "start": "2017-10",
+      "end": "present",
+      "remit": "Holding company for his AI ventures.",
       "sectorIds": [
-        "sector-02"
+        "sector-07"
       ],
       "notes": []
     }
@@ -220,47 +821,167 @@
       "id": "publication-01",
       "visibility": "public",
       "kind": "channel",
-      "title": "[PLACEHOLDER: channel name · candidate: Dispatches]",
-      "venue": "[PLACEHOLDER: one-line description]",
+      "title": "Dispatches",
+      "venue": "tarrysingh.com",
       "year": null,
       "url": "/blog",
       "doi": null,
-      "description": null,
+      "description": "Field notes and essays on AI strategy, deep-tech architecture and the economics underneath.",
       "notes": []
     },
     {
       "id": "publication-02",
       "visibility": "public",
-      "kind": "channel",
-      "title": "[PLACEHOLDER: channel name · candidate: Synaptic Cartography]",
-      "venue": "[PLACEHOLDER: one-line description]",
+      "kind": "essay-series",
+      "title": "Synaptic Cartography",
+      "venue": "tarrysingh.com",
       "year": null,
       "url": "/synaptic",
       "doi": null,
-      "description": null,
+      "description": "Long-form essays, scientific instruments and deep-tech proposals, from Intelligence Without Permission to The Chokepoint Paradox.",
       "notes": []
     },
     {
       "id": "publication-03",
       "visibility": "public",
-      "kind": "repository",
-      "title": "[PLACEHOLDER: repository name · candidate: the AI tutorials repository]",
-      "venue": "[PLACEHOLDER: host and one-line description]",
-      "year": null,
-      "url": null,
+      "kind": "course",
+      "title": "Synapsa Commons",
+      "venue": "GitHub",
+      "year": 2017,
+      "url": "https://github.com/TarrySingh/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
       "doi": null,
-      "description": null,
+      "description": "Free, hands-on AI courses that run in Colab, Kaggle, Binder, Codespaces or Jupyter, published by Real AI. The repository began in 2017 as his open AI and deep-learning tutorials collection.",
       "notes": []
     },
     {
       "id": "publication-04",
       "visibility": "public",
-      "kind": "[PLACEHOLDER: paper | book | chapter | report | article | patent | media]",
-      "title": "[PLACEHOLDER: publication title]",
-      "venue": "[PLACEHOLDER: publisher or venue]",
-      "year": "[PLACEHOLDER: YYYY]",
-      "url": null,
+      "kind": "paper",
+      "title": "Data Preprocessing Methods for Automating MLOps Pipelines: A Comparative Study",
+      "venue": "HCAIep '26, ACM",
+      "year": 2026,
+      "url": "https://doi.org/10.1145/3777490.3777501",
+      "doi": "10.1145/3777490.3777501",
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-05",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "From Knowing to Doing: A Principled Architecture for Procedurally Competent Agents",
+      "venue": "SSRN preprint",
+      "year": 2025,
+      "url": "https://doi.org/10.2139/ssrn.5647591",
+      "doi": "10.2139/ssrn.5647591",
+      "description": "The Hominis architecture paper.",
+      "notes": []
+    },
+    {
+      "id": "publication-06",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "Digitizer: A Synthetic Dataset for Well-Log Analysis",
+      "venue": "ICIAP 2023 Workshops, Lecture Notes in Computer Science, Springer",
+      "year": 2024,
+      "url": "https://doi.org/10.1007/978-3-031-51023-6_9",
+      "doi": "10.1007/978-3-031-51023-6_9",
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-07",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "The European AI Tango: Balancing Regulation, Innovation and Competitiveness",
+      "venue": "HCAIep '23, ACM, Dublin",
+      "year": 2023,
+      "url": "https://doi.org/10.1145/3633083.3633161",
+      "doi": "10.1145/3633083.3633161",
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-08",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "Designing Human-Centric Foundation Models",
+      "venue": "HCAI4U 2023, CEUR Workshop Proceedings Vol-3502",
+      "year": 2023,
+      "url": "https://ceur-ws.org/Vol-3502/paper4.pdf",
       "doi": null,
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-09",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "VeerNet: Using Deep Neural Networks for Curve Classification and Digitization of Raster Well-Log Images",
+      "venue": "Journal of Imaging (MDPI) 9(7):136",
+      "year": 2023,
+      "url": "https://doi.org/10.3390/jimaging9070136",
+      "doi": "10.3390/jimaging9070136",
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-10",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "Responsible and Reliable AI at PICUS Lab",
+      "venue": "Ital-IA 2023, CEUR Workshop Proceedings Vol-3486",
+      "year": 2023,
+      "url": "https://ceur-ws.org/Vol-3486/",
+      "doi": null,
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-11",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "Developing a Human Centred AI Masters: the Good, the Bad and the Ugly",
+      "venue": "ITiCSE 2022, ACM",
+      "year": 2022,
+      "url": "https://doi.org/10.1145/3502717.3532120",
+      "doi": "10.1145/3502717.3532120",
+      "description": "On building the HCAIM master's programme.",
+      "notes": []
+    },
+    {
+      "id": "publication-12",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "Seismic Facies Analysis: A Deep Domain Adaptation Approach",
+      "venue": "IEEE Transactions on Geoscience and Remote Sensing 60",
+      "year": 2022,
+      "url": "https://doi.org/10.1109/TGRS.2022.3151883",
+      "doi": "10.1109/TGRS.2022.3151883",
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-13",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "Artificial intelligence in dental research: Checklist for authors, reviewers, readers",
+      "venue": "Journal of Dentistry 107:103610 (Elsevier)",
+      "year": 2021,
+      "url": "https://doi.org/10.1016/j.jdent.2021.103610",
+      "doi": "10.1016/j.jdent.2021.103610",
+      "description": null,
+      "notes": []
+    },
+    {
+      "id": "publication-14",
+      "visibility": "public",
+      "kind": "paper",
+      "title": "Intra-Thalamic and Thalamocortical Connectivity: Potential Implication for Deep Learning",
+      "venue": "SE4COG '18 at ICSE 2018, IEEE/ACM",
+      "year": 2018,
+      "url": "https://doi.org/10.1145/3195555.3195556",
+      "doi": "10.1145/3195555.3195556",
       "description": null,
       "notes": []
     }
@@ -269,33 +990,18 @@
     {
       "id": "talk-01",
       "visibility": "public",
-      "kind": "[PLACEHOLDER: keynote | talk | panel | lecture | podcast | interview | other]",
-      "title": "[PLACEHOLDER: talk title]",
-      "event": "[PLACEHOLDER: event]",
-      "location": "[PLACEHOLDER: city]",
-      "year": "[PLACEHOLDER: YYYY]",
-      "url": null,
+      "kind": "talk",
+      "title": "Large Language Models in Europe",
+      "event": "Hominis seminar day, ITEE doctoral programme, University of Naples Federico II",
+      "location": "Naples",
+      "year": 2024,
+      "url": "https://phd-itee.dieti.unina.it/images/Seminari/Seminar-Announcement-ITEE_-_HOMINIS_1.pdf",
       "notes": []
     }
   ],
   "education": [],
   "credentials": [],
-  "languages": [
-    {
-      "id": "language-01",
-      "visibility": "public",
-      "language": "[PLACEHOLDER: language]",
-      "level": "[PLACEHOLDER: CEFR level · A1 to C2, or native]",
-      "note": null
-    },
-    {
-      "id": "language-02",
-      "visibility": "public",
-      "language": "[PLACEHOLDER: language]",
-      "level": "[PLACEHOLDER: CEFR level · A1 to C2, or native]",
-      "note": null
-    }
-  ],
+  "languages": [],
   "artefacts": [],
   "notes": []
 }
