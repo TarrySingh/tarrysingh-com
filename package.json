@@ -18,6 +18,10 @@
     "covers": "tsx scripts/plates/render-covers.ts",
     "cv:sync": "tsx scripts/cv/sync.ts",
     "cv:check": "tsx scripts/cv/check-public.ts",
+    "cv:grant": "tsx scripts/cv/grant.ts",
+    "cv:upload": "tsx scripts/cv/upload.ts",
+    "cv:test": "tsx --test src/lib/cv/access/*.test.ts",
+    "cv:pdf": "tsx scripts/cv/pdf.tsx",
     "reports:status:docx": "node scripts/reports/build-status-docx.mjs",
     "reports:uat-plan:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-plan.md",
     "reports:uat-results:docx": "node scripts/reports/build-status-docx.mjs docs/reports/sprint-3-uat-results.md"
