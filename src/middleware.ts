@@ -4,6 +4,13 @@ import {
   PANORAIMA_LOGIN_PATH,
   readSessionToken,
 } from "@/lib/panoraima/auth"
+import {
+  ACCESS_PATH,
+  isDevPreview,
+  readSessionSecret,
+  sessionCookieName,
+} from "@/lib/cv/access/env"
+import { verifySession } from "@/lib/cv/access/session"
 
 /**
  * Middleware responsibilities:
@@ -19,9 +26,18 @@ import {
  *      surface). Credentials are STUDIO_USER / STUDIO_PASS env vars.
  *      Also stamps X-Robots-Tag: noindex.
  *   3. Anonymous sim_user_id cookie for token-based routes.
+ *   4. Executive profile dossier gate (/curriculumvitae/dossier and
+ *      /api/cv/download): a signed per-grant session cookie. This is the
+ *      FIRST gate only; the pages and the download route re-check the grant
+ *      against the database on every request (see lib/cv/access/server.ts).
+ *      Fails closed when CV_ACCESS_ENABLED is not "true" or the session
+ *      secret is missing. Returns before the sim_user_id logic, so the
+ *      gated area sets no other cookie.
  */
 
 const PANORAIMA_PREFIX = "/experiments/panoraima"
+const DOSSIER_PREFIX = "/curriculumvitae/dossier"
+const CV_DOWNLOAD_PREFIX = "/api/cv/download"
 const PANORAIMA_ADMIN_PREFIX = "/experiments/panoraima/admin"
 const STUDIO_PREFIX = "/studio"
 const STUDIO_API_PREFIX = "/api/studio"
@@ -158,6 +174,42 @@ export async function middleware(request: NextRequest) {
     return res
   }
 
+  // --- 2b) Executive profile dossier gate (signed session cookie) -------
+  if (
+    pathname === DOSSIER_PREFIX ||
+    pathname.startsWith(DOSSIER_PREFIX + "/") ||
+    pathname === CV_DOWNLOAD_PREFIX ||
+    pathname.startsWith(CV_DOWNLOAD_PREFIX + "/")
+  ) {
+    const gated = (res: NextResponse) => {
+      res.headers.set("X-Robots-Tag", "noindex, nofollow, noarchive")
+      res.headers.set("Cache-Control", "private, no-store")
+      return res
+    }
+    const toAccess = (closed: boolean) => {
+      const url = request.nextUrl.clone()
+      url.pathname = ACCESS_PATH
+      url.search = ""
+      if (closed) url.searchParams.set("e", "closed")
+      return gated(NextResponse.redirect(url, 303))
+    }
+
+    // Local preview only; impossible in a production build (NODE_ENV is
+    // inlined as "production") and on Vercel (VERCEL is set).
+    if (isDevPreview(process.env)) return gated(NextResponse.next())
+
+    const secret = readSessionSecret(process.env)
+    // Kill switch off, or the secret is missing or weak: closed.
+    if (!secret) return toAccess(true)
+
+    const session = await verifySession(
+      request.cookies.get(sessionCookieName(process.env))?.value,
+      secret,
+    )
+    if (!session) return toAccess(false)
+    return gated(NextResponse.next())
+  }
+
   // --- 3) Anonymous sim_user_id cookie (existing behavior, untouched) ---
   const existing = request.cookies.get("sim_user_id")?.value
   if (existing) return NextResponse.next()
@@ -176,6 +228,8 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    "/api/cv/download/:path*",
+    "/curriculumvitae/dossier/:path*",
     "/api/tokens/:path*",
     "/api/simulation/:path*",
     "/api/stripe/:path*",

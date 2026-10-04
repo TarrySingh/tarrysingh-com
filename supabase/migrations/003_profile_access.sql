@@ -1,9 +1,8 @@
 -- =============================================================================
--- DRAFT - not applied; Phase 3
+-- Executive profile: access grants, access log, access requests, private bucket
 -- =============================================================================
--- Executive profile: access grants, access log and access requests for the
--- gated layer at /curriculumvitae/dossier. Do NOT apply before the Phase 3
--- review. (Numbered 003 because 002 is panoraima_members.)
+-- Backs the gated layer at /curriculumvitae/dossier. (Numbered 003 because 002
+-- is panoraima_members.) Idempotent: safe to run more than once.
 --
 -- Design (plan section 3):
 --   * Access codes are issued per person by a local CLI, shown once, and
@@ -13,8 +12,10 @@
 --     can read or write nothing; table and view grants are revoked too.
 --   * IP addresses are stored only as HMAC(ip, CV_IP_SALT); user agents are
 --     truncated; location is country-level only.
+--   * Master PDFs and the gated profile live in the PRIVATE Storage bucket
+--     'cv-private' (created at the end of this file), never in /public.
 --   * Retention: events and declined or stale requests are purged after 12
---     months (scheduled job, Phase 3; see the end of this file).
+--     months (scheduled job; see the end of this file).
 -- =============================================================================
 
 -- Requests from search firms (the front door to issuing a grant)
@@ -128,10 +129,36 @@ REVOKE ALL ON profile_activity_v FROM anon, authenticated;
 
 -- Service role bypasses RLS automatically.
 -- No policies for anon or authenticated: all access goes through
--- service-role API routes and the local cv-grant CLI.
+-- service-role API routes and the local scripts/cv/grant.ts CLI.
 
 -- =============================================================================
--- Retention (Phase 3, not part of this migration): a scheduled job, e.g.
+-- Private Storage bucket for gated.json and the master PDFs (service role only)
+-- =============================================================================
+-- public = false and no storage.objects policies: only the service role (the
+-- API routes and scripts/cv/upload.ts) can read or write it. Guarded so the
+-- migration still runs on a database without the Supabase storage schema.
+
+DO $$
+BEGIN
+  IF to_regclass('storage.buckets') IS NOT NULL THEN
+    INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+    VALUES (
+      'cv-private',
+      'cv-private',
+      false,
+      26214400,
+      ARRAY['application/pdf', 'application/json']
+    )
+    ON CONFLICT (id) DO UPDATE
+      SET public = false,
+          file_size_limit = EXCLUDED.file_size_limit,
+          allowed_mime_types = EXCLUDED.allowed_mime_types;
+  END IF;
+END
+$$;
+
+-- =============================================================================
+-- Retention (not part of this migration): a scheduled job, e.g.
 --   DELETE FROM profile_events WHERE created_at < NOW() - INTERVAL '12 months';
 --   DELETE FROM profile_access_requests
 --     WHERE status IN ('new', 'declined') AND created_at < NOW() - INTERVAL '12 months';
