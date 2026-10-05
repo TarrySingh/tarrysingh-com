@@ -59,7 +59,7 @@ export function AccessForms({
             />
             <p id="cv-code-hint" className={styles.hint}>
               Letters and numbers in groups, for example{" "}
-              <span className={styles.codeSample}>TS-XXXX-XXXX-XX</span>.
+              <span className={styles.codeSample}>TS-XXXX-XXXX-XXXX</span>.
             </p>
             {status.codeError ? (
               <p id="cv-code-error" className={styles.error} role="alert">

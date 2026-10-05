@@ -38,7 +38,7 @@ export function AccessPanel({ referencesPolicy }: { referencesPolicy: string | n
               autoComplete="off"
               autoCapitalize="characters"
               spellCheck={false}
-              placeholder="TS-XXXX-XXXX-XX"
+              placeholder="TS-XXXX-XXXX-XXXX"
               required
               aria-describedby="cv-panel-hint"
             />
