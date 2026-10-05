@@ -1,14 +1,14 @@
 {
   "audience": "public",
   "schemaVersion": 1,
-  "sourceHash": "sha256:c43a9f60f814e72fe94db4030c8d640a7c6a8a03a9ba729532787545679287be",
-  "generatedAt": "2026-10-05T11:33:43.338Z",
+  "sourceHash": "sha256:2d90e418f56bc78953f5bdbdd76029da9b0fbab75f583e9f18e9aa4534d24d04",
+  "generatedAt": "2026-10-05T11:53:04.025Z",
   "profile": {
     "visibility": "public",
     "name": "Tarry Singh",
     "honorific": null,
     "postNominals": null,
-    "positioning": "Founder-CEO and hands-on AI leader for CEO and Chief AI Officer / CTO mandates: 30 years turning data and AI into operating capability for energy, telecoms, financial-services and public-sector organisations across Europe, the Gulf and the United States, with a builder's edge in peer-reviewed AI research, a European foundation-model programme and industrial AI delivered in the field.",
+    "positioning": "CEO and AI transformation leader for CEO and Chief AI Officer / CTO mandates: 30 years leading data, digital and AI change for energy, telecoms, financial-services and public-sector organisations across Europe, the Gulf and the United States. Founder-CEO of an AI group since 2017, taking AI from board-level strategy to production, with the operating model, workforce reskilling and governance to make it stick.",
     "base": "The Netherlands",
     "summary": null,
     "portrait": null,
@@ -37,7 +37,7 @@
         "programme-04",
         "programme-01"
       ],
-      "proof": "Partner in two EU-funded AI education consortia and winner of a competitive national supercomputing award.",
+      "proof": "Industry partner in two EU-funded AI workforce consortia and winner of a competitive national supercomputing award.",
       "notes": []
     },
     {
@@ -121,7 +121,7 @@
         "programme-02",
         "programme-03"
       ],
-      "proof": "Co-author of peer-reviewed AI research with measured results, lead author of an industrial programme's technical reports, and lead instructor of deep-learning masterclasses.",
+      "proof": "Co-author of peer-reviewed AI research with measured results, lead author of an industrial programme's technical reports, and executive sponsor of enterprise deep-learning reskilling.",
       "notes": []
     },
     {
@@ -142,14 +142,14 @@
       "visibility": "public",
       "seat": "CAIO",
       "pillar": "People",
-      "competency": "Ran role-based AI literacy and reskilling",
+      "competency": "Leads workforce upskilling and reskilling for AI adoption",
       "rating": "partial",
       "programmeIds": [
         "programme-03",
         "programme-04",
         "programme-01"
       ],
-      "proof": "Designed and led a staged, hands-on deep-learning curriculum for engineers; co-developed two EU-funded AI master's programmes, including tracks for professionals outside ICT.",
+      "proof": "Led staged reskilling of engineering teams at a global telecoms-equipment company into a 25-use-case AI portfolio; industry lead in two EU workforce-reskilling consortia, including professionals outside ICT.",
       "notes": []
     },
     {
@@ -205,7 +205,7 @@
         "programme-02",
         "programme-04"
       ],
-      "proof": "Built the EU AI Act into the design brief of a European foundation model and into human-centred AI master's programmes.",
+      "proof": "Built the EU AI Act into the design brief of a European foundation model and into two EU workforce-reskilling programmes.",
       "notes": []
     },
     {
@@ -346,32 +346,32 @@
       "id": "figure-01",
       "visibility": "public",
       "value": "30+",
-      "label": "years in enterprise data, infrastructure and AI",
-      "note": "Career from 1994; founder-CEO in AI since 2017",
+      "label": "years leading data, digital and AI change in large organisations",
+      "note": "Career from 1994; CEO since 2017",
       "evidence": null
     },
     {
-      "id": "figure-02",
+      "id": "figure-06",
       "visibility": "public",
-      "value": "10",
-      "label": "peer-reviewed AI publications since 2018",
-      "note": "In IEEE, ACM, Springer, Elsevier, MDPI and CEUR venues; DOIs in the publication list",
+      "value": "9",
+      "label": "years as CEO of an AI group: DK AI Holding, Real AI and EarthScan.io",
+      "note": "October 2017 to today",
+      "evidence": null
+    },
+    {
+      "id": "figure-07",
+      "visibility": "public",
+      "value": "3",
+      "label": "regions where he has led AI and data programmes: Europe, the Gulf and the United States",
+      "note": "Energy, telecoms, financial services and the public sector",
       "evidence": null
     },
     {
       "id": "figure-03",
       "visibility": "public",
       "value": "3",
-      "label": "companies co-founded: an IT advisory firm in 2010, then Real AI and EarthScan in 2017",
+      "label": "companies founded and led: an IT advisory firm in 2010, then Real AI and EarthScan.io in 2017",
       "note": null,
-      "evidence": null
-    },
-    {
-      "id": "figure-04",
-      "visibility": "public",
-      "value": "2",
-      "label": "EU-funded AI master's programmes co-developed: HCAIM and PANORAIMA",
-      "note": "HCAIM under the Connecting Europe Facility; PANORAIMA under Digital Europe, 2025 to 2029",
       "evidence": null
     },
     {
@@ -423,33 +423,33 @@
       "title": "Founder-CEO: AI from the lab to the field",
       "start": 2017,
       "end": "present",
-      "thesis": "CEO of DK AI Holding, Real AI and EarthScan.io: industrial AI for energy, telecoms and healthcare, a European foundation model, and human-centred AI education for Europe.",
+      "thesis": "CEO of DK AI Holding, Real AI and EarthScan.io: board-level AI strategy taken to production in energy, telecoms and healthcare, a European foundation model, and workforce reskilling at European scale.",
       "wave": "Deep learning, foundation models and agentic AI",
       "milestones": [
         {
           "visibility": "public",
           "year": 2017,
-          "label": "Founds DK AI Holding, Real AI and EarthScan.io; deep-learning programmes for industry"
+          "label": "Founds DK AI Holding, Real AI and EarthScan.io and leads them as CEO; AI workforce reskilling for a global telecoms-equipment company"
         },
         {
           "visibility": "public",
           "year": 2020,
-          "label": "HCAIM: Europe's first human-centred AI master's, EU-funded consortium"
+          "label": "HCAIM: industry partner in a ten-partner EU consortium building Europe's human-centred AI workforce"
         },
         {
           "visibility": "public",
           "year": 2021,
-          "label": "Industrial AI for a national Gulf energy operator, with peer-reviewed results in 2024"
+          "label": "Executive owner of a four-party industrial AI programme for a national Gulf energy operator"
         },
         {
           "visibility": "public",
           "year": 2023,
-          "label": "Hominis: a European foundation model with the University of Naples Federico II, on the Leonardo supercomputer"
+          "label": "Hominis: leads the industry side of a European foundation model with the University of Naples Federico II, on the Leonardo supercomputer"
         },
         {
           "visibility": "public",
           "year": 2025,
-          "label": "PANORAIMA: AI education for non-IT professions across eight countries"
+          "label": "PANORAIMA: industry partner lead for AI reskilling across non-IT sectors in eight countries"
         }
       ],
       "notes": []
@@ -762,8 +762,8 @@
       "id": "programme-03",
       "visibility": "public",
       "slug": "programme-03",
-      "title": "Hands-on AI capability programme for a global telecoms-equipment company",
-      "summary": "Designed and personally led a multi-stage deep-learning programme for engineers, from Python foundations to computer vision and sequence models, with on-site masterclasses on a dedicated GPU environment and use-case workshops that ranked AI opportunities by feasibility.",
+      "title": "AI workforce reskilling and use-case portfolio for a global telecoms-equipment company",
+      "summary": "Led a staged workforce upskilling and reskilling programme that built deep-learning capability in engineering teams and converted it into a portfolio of some 25 AI use cases across network operations, radio, cloud, devices, finance and HR, mapped by feasibility.",
       "client": {
         "visibility": "public",
         "clientNamed": false,
@@ -776,7 +776,7 @@
       ],
       "start": "2017-10",
       "end": "2018-05",
-      "role": "AI programme lead and lead instructor, deepkapha.ai",
+      "role": "Programme lead and executive sponsor, as CEO of the delivering AI firm (deepkapha.ai)",
       "sponsor": null,
       "reportingLine": null,
       "budget": null,
@@ -803,8 +803,8 @@
       "id": "programme-04",
       "visibility": "public",
       "slug": "programme-04",
-      "title": "PANORAIMA: human-centred AI master's programme for professionals beyond ICT",
-      "summary": "Co-developer and visiting professor in a 16-partner, EUR 3.7M Digital Europe programme that extends the HCAIM master's to professionals in healthcare and life sciences, media and culture, law and compliance, and management and finance.",
+      "title": "PANORAIMA: AI workforce reskilling across non-IT sectors in Europe",
+      "summary": "Industry partner lead in a 16-partner, EUR 3.7M Digital Europe programme (2025 to 2029) that reskills professionals in healthcare and life sciences, media and culture, law and compliance, and management and finance for AI adoption.",
       "client": {
         "visibility": "public",
         "clientNamed": true,
@@ -814,13 +814,13 @@
           "text": "PANORAIMA consortium, coordinated by HU University of Applied Sciences Utrecht"
         }
       },
-      "sector": "Higher education and AI skills",
+      "sector": "Workforce AI reskilling (EU programme)",
       "geographies": [
         "Europe"
       ],
       "start": "2025-01",
       "end": "2029-01",
-      "role": "Co-developer and visiting professor; Real AI is a consortium partner",
+      "role": "Industry partner lead for Real AI in the consortium",
       "sponsor": null,
       "reportingLine": null,
       "budget": null,
@@ -834,7 +834,7 @@
         {
           "id": "programme-04-outcome-01",
           "visibility": "public",
-          "metric": "Predecessor master's delivered: HCAIM, funded by the Connecting Europe Facility",
+          "metric": "Predecessor EU reskilling programme delivered: HCAIM, funded by the Connecting Europe Facility",
           "value": 60,
           "unit": "ECTS",
           "timeframe": "Delivered by 2024",
@@ -912,7 +912,7 @@
     {
       "id": "sector-07",
       "visibility": "public",
-      "label": "Higher education and AI research",
+      "label": "AI research and workforce reskilling",
       "years": "2003–2007, 2020–present",
       "note": null
     },
