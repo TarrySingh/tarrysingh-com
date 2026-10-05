@@ -231,6 +231,16 @@ export const Era = strictObject({
   thesis: Text,
   /** The technology wave of the era. */
   wave: Text,
+  /** Chapters inside a long era, e.g. a foundation-model programme. */
+  milestones: z
+    .array(
+      strictObject({
+        visibility: Visibility,
+        year: z.number().int().min(1900).max(2100),
+        label: Text,
+      }),
+    )
+    .default([]),
   notes: Notes,
 })
 

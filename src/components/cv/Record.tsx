@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import type { CSSProperties, ReactNode } from "react"
 import { formatSpan, kindLabel, toRoman, txt, txts } from "@/lib/cv/format"
 import type {
   BoardRoleT,
@@ -43,35 +43,49 @@ export function EraIndex({
   const shown = eras.filter((e) => txt(e.title))
   if (shown.length === 0) return null
   return (
-    <ol id={id} className={styles.eraIndex}>
+    <ol
+      id={id}
+      className={styles.eraIndex}
+      style={{ "--era-count": shown.length } as CSSProperties}
+    >
       {shown.map((era) => {
         const inEra = roles.filter((r) => r.eraId === era.id && txt(r.title))
         const span = formatSpan(era.start, era.end)
+        const milestones = (era.milestones ?? []).filter((m) => txt(m.label))
+        const current = era.end === "present"
         return (
-          <li key={era.id} className={styles.eraItem}>
+          <li key={era.id} className={`${styles.eraItem} ${current ? styles.eraCurrent : ""}`}>
             <p className={styles.eraYears}>
               <span className={styles.eraNumeral}>{toRoman(eras.indexOf(era) + 1)}</span>
               {span ?? ""}
             </p>
             <h3 className={styles.eraTitle}>{txt(era.title)}</h3>
+            {txt(era.wave) ? <p className={styles.eraWave}>{txt(era.wave)}</p> : null}
             {txt(era.thesis) ? <p className={styles.eraThesis}>{txt(era.thesis)}</p> : null}
-            {txt(era.wave) ? (
-              <p className={styles.eraWave}>
-                <span className={styles.eraWaveKey}>Wave</span> {txt(era.wave)}
-              </p>
-            ) : null}
             {inEra.length > 0 ? (
               <ul className={styles.eraRoles}>
                 {inEra.map((r) => (
-                  <li key={r.id}>
-                    {txt(r.title)}
-                    {txt(r.organisation.name) ? `, ${txt(r.organisation.name)}` : ""}
+                  <li key={r.id} className={styles.eraRole}>
+                    <span className={styles.eraRoleTitle}>{txt(r.title)}</span>
+                    {txt(r.organisation.name) ? (
+                      <span className={styles.eraRoleOrg}>{txt(r.organisation.name)}</span>
+                    ) : null}
                     {formatSpan(r.start, r.end) ? (
-                      <span className={styles.eraRoleSpan}> {formatSpan(r.start, r.end)}</span>
+                      <span className={styles.eraRoleSpan}>{formatSpan(r.start, r.end)}</span>
                     ) : null}
                   </li>
                 ))}
               </ul>
+            ) : null}
+            {milestones.length > 0 ? (
+              <ol className={styles.eraMilestones} aria-label={`Chapters, ${span ?? ""}`}>
+                {milestones.map((m) => (
+                  <li key={`${m.year}-${m.label}`} className={styles.eraMilestone}>
+                    <span className={styles.eraMilestoneYear}>{m.year}</span>
+                    <span>{txt(m.label)}</span>
+                  </li>
+                ))}
+              </ol>
             ) : null}
           </li>
         )

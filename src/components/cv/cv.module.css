@@ -625,38 +625,106 @@
 }
 
 .eraThesis {
-  margin: var(--space-2) 0 0;
-  font-style: italic;
-  line-height: 1.5;
+  margin: var(--space-3) 0 0;
+  max-width: 34ch;
+  font-size: 0.9375rem;
+  line-height: 1.55;
   color: var(--ink-soft);
 }
 
-.eraWave {
-  margin: var(--space-3) 0 0;
-  font-size: 0.9375rem;
-  color: var(--ink-cool);
+.eraCurrent .eraThesis {
+  max-width: 52ch;
 }
 
-.eraWaveKey {
-  margin-right: var(--space-2);
-  color: var(--ink-dim);
+/* The technology wave, set as a quiet small-caps line under the title. */
+.eraWave {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--memphis-teal);
 }
 
 .eraRoles {
   display: grid;
-  gap: var(--space-1);
-  margin: var(--space-3) 0 0;
-  padding: var(--space-3) 0 0;
+  gap: var(--space-4);
+  margin: var(--space-6) 0 0;
+  padding: var(--space-4) 0 0;
   border-top: 1px solid rgba(230, 214, 180, 0.18);
   list-style: none;
+}
+
+.eraRole {
+  display: grid;
+  gap: 2px;
+}
+
+.eraRoleTitle {
   font-size: 0.9375rem;
+  line-height: 1.35;
   color: var(--ink);
+}
+
+.eraRoleOrg {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-cool);
 }
 
 .eraRoleSpan {
   font-family: var(--font-mono), monospace;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: var(--ink-dim);
+}
+
+/* Chapters inside the current era: a short amber track. */
+.eraMilestones {
+  position: relative;
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-6) 0 0;
+  padding: 0 0 0 var(--space-6);
+  list-style: none;
+}
+
+.eraMilestones::before {
+  content: "";
+  position: absolute;
+  top: 0.45rem;
+  bottom: 0.45rem;
+  left: 3px;
+  width: 1px;
+  background: rgba(232, 184, 122, 0.45);
+}
+
+.eraMilestone {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.eraMilestone::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  left: calc(-1 * var(--space-6));
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--memphis-amber);
+}
+
+.eraMilestoneYear {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--memphis-amber);
 }
 
 /* ── Programme ledger ────────────────────────────────────────────────────── */
@@ -2032,6 +2100,11 @@
 
   .eraItem::before {
     top: 0;
+  }
+
+  /* The current era carries most of the story: give it twice the width. */
+  .eraCurrent {
+    grid-column: span 2;
   }
 }
 

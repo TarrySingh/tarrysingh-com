@@ -1,8 +1,8 @@
 {
   "audience": "public",
   "schemaVersion": 1,
-  "sourceHash": "sha256:024632dbb824c8af235771b9e477224025a4e5a6f00a61f5627ecc2a15799e38",
-  "generatedAt": "2026-10-05T11:23:56.031Z",
+  "sourceHash": "sha256:c43a9f60f814e72fe94db4030c8d640a7c6a8a03a9ba729532787545679287be",
+  "generatedAt": "2026-10-05T11:33:43.338Z",
   "profile": {
     "visibility": "public",
     "name": "Tarry Singh",
@@ -390,8 +390,9 @@
       "title": "Earlier career: from operations to enterprise data",
       "start": 1994,
       "end": 2007,
-      "thesis": "Moved from operational management in oil and transportation (1994 to 1999) into data leadership: head of data and programme manager at the Royal Wagenborg group (2000 to 2003), then lecturer and head of data and middleware in Groningen (2003 to 2007).",
-      "wave": "Enterprise data, middleware and integration",
+      "thesis": "From operations in oil and transport to data leadership at the Royal Wagenborg group and in Groningen.",
+      "wave": "Enterprise data and integration",
+      "milestones": [],
       "notes": []
     },
     {
@@ -400,8 +401,9 @@
       "title": "Data and infrastructure at scale",
       "start": 2007,
       "end": 2014,
-      "thesis": "Built and ran a pan-EMEA data, virtualisation and cloud practice at Atos, then co-founded an advisory firm that delivered data-driven IT transformation, governance and sourcing for large enterprises.",
+      "thesis": "Ran a pan-EMEA data and infrastructure practice at Atos Consulting / KPMG, then co-founded an advisory firm for data-driven IT transformation.",
       "wave": "Virtualisation, cloud and data governance",
+      "milestones": [],
       "notes": []
     },
     {
@@ -410,28 +412,46 @@
       "title": "Analytics and digital transformation",
       "start": 2014,
       "end": 2017,
-      "thesis": "As a director in PA Consulting's data analytics and digital practice, led data, digital and sourcing engagements for private and public-sector clients across Europe, and built the practice's data-science bench.",
+      "thesis": "Director in PA Consulting's data analytics and digital practice, leading data and digital programmes across Europe.",
       "wave": "Big data, analytics and digital platforms",
+      "milestones": [],
       "notes": []
     },
     {
       "id": "era-04",
       "visibility": "public",
-      "title": "Founder-CEO: deep learning in the field",
+      "title": "Founder-CEO: AI from the lab to the field",
       "start": 2017,
-      "end": 2022,
-      "thesis": "Founded an AI group, DK AI Holding with Real AI and EarthScan, and took deep learning into telecoms, healthcare and energy, from hands-on engineering programmes to industrial computer vision.",
-      "wave": "Deep learning and computer vision",
-      "notes": []
-    },
-    {
-      "id": "era-05",
-      "visibility": "public",
-      "title": "Foundation models, sovereignty and AI education",
-      "start": 2022,
       "end": "present",
-      "thesis": "Leads the industrial side of a European foundation-model programme, co-develops EU-funded AI master's programmes and turns the research into a product stack and open, hands-on AI courses.",
-      "wave": "Generative and agentic AI under the EU AI Act",
+      "thesis": "CEO of DK AI Holding, Real AI and EarthScan.io: industrial AI for energy, telecoms and healthcare, a European foundation model, and human-centred AI education for Europe.",
+      "wave": "Deep learning, foundation models and agentic AI",
+      "milestones": [
+        {
+          "visibility": "public",
+          "year": 2017,
+          "label": "Founds DK AI Holding, Real AI and EarthScan.io; deep-learning programmes for industry"
+        },
+        {
+          "visibility": "public",
+          "year": 2020,
+          "label": "HCAIM: Europe's first human-centred AI master's, EU-funded consortium"
+        },
+        {
+          "visibility": "public",
+          "year": 2021,
+          "label": "Industrial AI for a national Gulf energy operator, with peer-reviewed results in 2024"
+        },
+        {
+          "visibility": "public",
+          "year": 2023,
+          "label": "Hominis: a European foundation model with the University of Naples Federico II, on the Leonardo supercomputer"
+        },
+        {
+          "visibility": "public",
+          "year": 2025,
+          "label": "PANORAIMA: AI education for non-IT professions across eight countries"
+        }
+      ],
       "notes": []
     }
   ],
@@ -447,7 +467,7 @@
         "hqCountry": "Netherlands",
         "url": null
       },
-      "title": "Board Director & CEO",
+      "title": "Founder, Board Director & CEO",
       "start": "2017-10",
       "end": "present",
       "reportingLine": "Board of DK AI Holding",
@@ -473,12 +493,12 @@
       "eraId": "era-04",
       "lane": "founder-ceo",
       "organisation": {
-        "name": "Real AI B.V. & EarthScan.io B.V.",
-        "legalEntity": null,
+        "name": "Real AI and EarthScan.io",
+        "legalEntity": "Real AI B.V. · EarthScan.io B.V.",
         "hqCountry": "Netherlands",
         "url": null
       },
-      "title": "Co-founder & AI Researcher",
+      "title": "Co-founder & CEO",
       "start": "2017-10",
       "end": "present",
       "reportingLine": null,
@@ -495,6 +515,35 @@
         "geography-01",
         "geography-02",
         "geography-04"
+      ],
+      "notes": []
+    },
+    {
+      "id": "role-03",
+      "visibility": "public",
+      "eraId": "era-03",
+      "lane": "executive",
+      "organisation": {
+        "name": "PA Consulting Group",
+        "legalEntity": null,
+        "hqCountry": "United Kingdom",
+        "url": null
+      },
+      "title": "Director, Data Analytics & Digital",
+      "start": "2014-08",
+      "end": "2017-01",
+      "reportingLine": null,
+      "scope": null,
+      "mandate": null,
+      "outcomes": [],
+      "evidence": [],
+      "sectorIds": [
+        "sector-09",
+        "sector-03",
+        "sector-04"
+      ],
+      "geographyIds": [
+        "geography-02"
       ],
       "notes": []
     },
@@ -522,6 +571,33 @@
       ],
       "geographyIds": [
         "geography-01",
+        "geography-02"
+      ],
+      "notes": []
+    },
+    {
+      "id": "role-05",
+      "visibility": "public",
+      "eraId": "era-02",
+      "lane": "executive",
+      "organisation": {
+        "name": "Atos Consulting / KPMG",
+        "legalEntity": null,
+        "hqCountry": "France",
+        "url": null
+      },
+      "title": "EMEA Head of Data / Infrastructure",
+      "start": "2007-12",
+      "end": "2010-08",
+      "reportingLine": null,
+      "scope": null,
+      "mandate": null,
+      "outcomes": [],
+      "evidence": [],
+      "sectorIds": [
+        "sector-09"
+      ],
+      "geographyIds": [
         "geography-02"
       ],
       "notes": []
