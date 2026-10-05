@@ -1,8 +1,8 @@
 {
   "audience": "public",
   "schemaVersion": 1,
-  "sourceHash": "sha256:e3d46de96548ae93d7265ba4cde33b3f3f75789dac307854a121d7685e7cf192",
-  "generatedAt": "2026-10-04T22:37:54.788Z",
+  "sourceHash": "sha256:024632dbb824c8af235771b9e477224025a4e5a6f00a61f5627ecc2a15799e38",
+  "generatedAt": "2026-10-05T11:23:56.031Z",
   "profile": {
     "visibility": "public",
     "name": "Tarry Singh",
@@ -435,7 +435,98 @@
       "notes": []
     }
   ],
-  "roles": [],
+  "roles": [
+    {
+      "id": "role-01",
+      "visibility": "public",
+      "eraId": "era-04",
+      "lane": "founder-ceo",
+      "organisation": {
+        "name": "DK AI Holding",
+        "legalEntity": null,
+        "hqCountry": "Netherlands",
+        "url": null
+      },
+      "title": "Board Director & CEO",
+      "start": "2017-10",
+      "end": "present",
+      "reportingLine": "Board of DK AI Holding",
+      "scope": null,
+      "mandate": null,
+      "outcomes": [],
+      "evidence": [],
+      "sectorIds": [
+        "sector-01",
+        "sector-02",
+        "sector-05"
+      ],
+      "geographyIds": [
+        "geography-01",
+        "geography-02",
+        "geography-03"
+      ],
+      "notes": []
+    },
+    {
+      "id": "role-02",
+      "visibility": "public",
+      "eraId": "era-04",
+      "lane": "founder-ceo",
+      "organisation": {
+        "name": "Real AI B.V. & EarthScan.io B.V.",
+        "legalEntity": null,
+        "hqCountry": "Netherlands",
+        "url": null
+      },
+      "title": "Co-founder & AI Researcher",
+      "start": "2017-10",
+      "end": "present",
+      "reportingLine": null,
+      "scope": null,
+      "mandate": null,
+      "outcomes": [],
+      "evidence": [],
+      "sectorIds": [
+        "sector-07",
+        "sector-05",
+        "sector-01"
+      ],
+      "geographyIds": [
+        "geography-01",
+        "geography-02",
+        "geography-04"
+      ],
+      "notes": []
+    },
+    {
+      "id": "role-04",
+      "visibility": "public",
+      "eraId": "era-02",
+      "lane": "founder-ceo",
+      "organisation": {
+        "name": "Quantum Step Advisory Group (QSAG)",
+        "legalEntity": null,
+        "hqCountry": "Netherlands",
+        "url": null
+      },
+      "title": "VP & Co-founder",
+      "start": "2010-08",
+      "end": "2014-08",
+      "reportingLine": null,
+      "scope": null,
+      "mandate": null,
+      "outcomes": [],
+      "evidence": [],
+      "sectorIds": [
+        "sector-09"
+      ],
+      "geographyIds": [
+        "geography-01",
+        "geography-02"
+      ],
+      "notes": []
+    }
+  ],
   "programmes": [
     {
       "id": "programme-01",
@@ -489,7 +580,7 @@
         "Streamlit"
       ],
       "featured": true,
-      "roleId": null,
+      "roleId": "role-01",
       "notes": []
     },
     {
@@ -588,7 +679,7 @@
         "Mixed-precision training"
       ],
       "featured": true,
-      "roleId": null,
+      "roleId": "role-02",
       "notes": []
     },
     {
@@ -629,7 +720,7 @@
         "Jupyter on GPU servers"
       ],
       "featured": true,
-      "roleId": null,
+      "roleId": "role-01",
       "notes": []
     },
     {
@@ -700,7 +791,7 @@
       ],
       "technologies": [],
       "featured": false,
-      "roleId": null,
+      "roleId": "role-02",
       "notes": []
     }
   ],
