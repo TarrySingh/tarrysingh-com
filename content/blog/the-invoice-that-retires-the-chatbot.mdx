@@ -1,0 +1,54 @@
+---
+title: "The Invoice That Retires the Chatbot"
+date: "2026-10-13"
+category: "Essays"
+excerpt: "Enterprises are absorbing two simultaneous shocks in 2026: consumption billing that exhausts annual AI budgets months before year-end, and vendor deprecation cycles that retire the very tools those budgets funded. The result is a three-part governance vacuum — an invoice no one can explain, a model no one chose, a shutdown no one knows how to execute — and a single person in the room who approved none of it."
+draft: false
+tags: ["enterprise-ai", "ai-finops", "model-deprecation", "agentic-ai", "ai-governance"]
+---
+
+Uber exhausted its entire 2026 AI budget by April after rolling out Claude Code to 5,000 engineers in December 2025, and the number that stopped the planning was not a line of bad code. Individual engineer costs ranged from $500 to $2,000 per month. The budget was built on annual headcount assumptions and the invoice arrived on consumption billing. By February usage had nearly doubled, by March 84% of developers were classified as agentic coding users, and by April the company had burned through its entire 2026 AI budget. 
+
+On 13 February 2026, OpenAI officially retired GPT-4o and several other older generative AI models from the ChatGPT user interface. ChatGPT Pulse, OpenAI's proactive daily feed, was announced for retirement on 17 June 2026 about nine months after launch, and ChatGPT Atlas launched on 21 October 2025 and stopped working on 9 August 2026, under ten months. Custom GPTs are being retired on 11 December 2026. The institutions shipping these tools tell the story as product consolidation. The customer on the receiving end sees something different: the AI project you built a workflow around in March is a deprecation notice by July.
+
+This is the first FinOps reckoning where the line item that breaks the budget and the tool getting shut down are the same category, happening to the same teams, in the same fiscal year.
+
+## Three things land at once
+
+79% of enterprises experienced AI cost overruns in the past 12 months, according to a February 2026 survey of 500 finance leaders by DoiT and Sapio Research. Organizations estimate that roughly a quarter of all AI spend is wasted, according to a May to June 2026 survey of 700 engineering leaders by Harness. Worldwide AI spending is forecast at $2.59 trillion in 2026, a 47% year-over-year increase, according to Gartner, and full, real-time visibility into what that AI costs to operate sits at 26%, according to KPMG's AI Pulse Q2 2026 survey.
+
+The visibility gap means finance cannot see the spend until the invoice closes, and by then the budget argument is over. A healthcare company running three AI agents saw monthly inference costs jump from $12,000 to $68,000 in six weeks after a retrieval fault in one agent started pulling documents eight times larger than the task required. An invoice processing agent forecast at £3,600 a month landed at £11,400 because attachments were larger than the sample used for costing, that text stayed in context for every subsequent step, and ambiguous invoices triggered a clarification loop with no iteration limit. Nothing was broken. The agent did what its permissions allowed.
+
+67% of executives believe their company has already suffered a data leak or breach due to unapproved AI tools, and 35% admit they could not immediately pull the plug on a rogue agent, according to a 2026 survey by Writer. 65% of organizations experienced at least one cybersecurity incident tied to an AI agent in the past year, and among those, 61% involved data exposure, according to research cited by Kiteworks. The tool that cannot be switched off and the tool whose cost cannot be explained are frequently the same tool, deployed by the same team, under the same governance vacuum.
+
+Then the vendor retires it. OpenAI reported that only about 0.1% of users still selected GPT-4o daily before retirement, but 0.1% of a user base in the hundreds of millions is not a rounding error to the enterprise that built a customer-service escalation path on top of it. GPT-4o, a model OpenAI pulled from the ChatGPT consumer app back in February, was still inside 37.6% of AI-adopting cloud environments as of June 2026, according to cloud security firm Orca. The model was deprecated. The production system calling it was not.
+
+## The ledger nobody kept
+
+Prompt sprawl creates real operational risk, and prompts hardcoded in application code cannot be tested independently, audited for compliance, or rolled back without a full deployment cycle. Prompt sprawl is what happens when you treat prompts like append-only configuration: every bug gets a new instruction, every edge case gets a new rule, every stakeholder gets a new paragraph, and the prompt grows while nobody removes anything because nobody knows what is load-bearing.
+
+Shadow AI adds $670,000 to the average data breach cost, and Gartner expects more than 40% of agentic AI projects to be cancelled by 2027 due to cost, value, or risk-control gaps. Prompts show up as reusable prompts, system instructions and prompt templates, with sensitive logic and business rules spread with no audit trail, such as support teams copying prompts containing internal escalation workflows into public LLMs. When teams conducted a discovery pass across studio environments, shared drives, personal accounts and browser-based tools, the rough count climbed into the thousands before they were confident they had found them all.
+
+Only 25% of organisations have moved 40% or more of their AI experiments into production, though 54% expect to within three to six months, according to Deloitte's State of AI in the Enterprise survey. An IDC survey of 900 organizations across Asia-Pacific found less than 10% of total POCs were actually deemed successful, having met predefined business goals. The POCs that did not ship still left a trail: API keys nobody revoked, agents nobody archived, prompts embedded in code nobody refactored, and a monthly token bill for workloads that stopped delivering value four sprints ago.
+
+By 2028, 70% of enterprises will abandon agentic AI systems built by vendor forward-deployed engineering teams, trapped by rising maintenance costs and the inability to evolve those systems independently; Gartner emphasized the failure is organizational and engineering-driven, and the models themselves are not the problem. You cannot maintain what you did not document, and you cannot shut down what you cannot find.
+
+## What the Tokenomics survey measured
+
+The State of Tokenomics 2026 report, released 23 September 2026 by the Tokenomics Foundation, surveyed 472 organizations across 11 industries representing $4.6 trillion in combined revenue. Three in four enterprises cannot confidently prove AI business outcomes to the CFO. 96% of companies use frontier AI models, but only 25% can prove ROI to their CFO.
+
+Almost every company uses a frontier model from a mainstream provider like Anthropic, OpenAI or Gemini, 87% also use a cloud token provider like AWS Bedrock or Azure Foundry, 64% use AI embedded inside tools they already pay for like Cursor or Databricks, and roughly a third run models on edge devices, rented GPUs or their own hardware. Half of these companies are active across at least four of those six channels at once. Each channel is billed differently. Each model within a channel is priced on a token curve the prior year's budget template does not have a line for.
+
+Enterprises want transparency, not discounts: 23% asked providers for more granular data, while only 4% asked for cheaper prices. The ask is not for the vendor to charge less. The ask is for an invoice the CFO can map to a decision she can defend. That invoice does not exist yet, and the tools it would describe are retiring faster than the governance to manage them.
+
+## The person left holding it
+
+You did not approve the pilot. You did not sit in the working group that chose the vendor. You were not consulted when the team embedded the agent into the support queue, and you were not told when the agent started writing to the CRM. You learned the tool existed when the disclosure notice landed, or when the bill did, or when the vendor sent the retirement timeline and your manager forwarded it with a question nobody in the room can answer: what breaks if we turn it off?
+
+70% of enterprise AI initiatives fail, and 54% of C-suite executives say adopting AI is not just not working but actively disrupting their organization. The failure is not distributed equally. The CTO who signed the contract has moved on. The consultant who ran the POC is off the statement of work. The vendor's account team is now assigned to a different vertical. You are the person looking at the production system, the monthly bill, the deprecation notice, and the queue of customers who never chose any of it either.
+
+Gartner's 2026 AI Hype Cycle report forecasts 40% of AI agent projects will be cancelled by 2027 due to cost overruns alone, not technical failure, not market fit, just economics. The agent you inherit in October 2026 has a better than even chance of being shut down by the person who replaces you, for a reason that has already happened but has not yet been measured. The debt is not technical. The debt is that nobody wrote down what it does, why it costs what it costs, or how to make it stop.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
