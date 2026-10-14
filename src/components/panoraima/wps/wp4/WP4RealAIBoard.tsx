@@ -197,6 +197,26 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
             early feedback
           </span>
         )}
+        {le.action_summary && (
+          <span
+            className="inline-flex items-center gap-1 rounded border border-[#BFE2CC] bg-[#E7F4EC] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#1F6B41]"
+            title={`Compact action summary posted on the Discussion page, ${le.action_summary.posted} (wiki revision ${le.action_summary.talk_rev}). The long-form review stays on file in the admin archive.`}
+          >
+            summary posted {le.action_summary.posted.replace(/ 2026, /, " · ").replace(" CEST", "")}
+          </span>
+        )}
+        {le.author_activity && (
+          <span
+            className="inline-flex items-center gap-1 rounded border border-[#E8D3A8] bg-[#FBF1DC] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#8A5A00]"
+            title={[
+              le.author_activity.wiki_page && `Wiki page edited ${le.author_activity.wiki_page.ts.slice(0, 10)} by ${le.author_activity.wiki_page.user}`,
+              le.author_activity.talk && `Discussion page edited ${le.author_activity.talk.ts.slice(0, 10)} by ${le.author_activity.talk.user}`,
+              le.author_activity.files && `${le.author_activity.files.length} new or changed file(s), newest ${le.author_activity.files.map(f => f.date).sort().pop()}`,
+            ].filter(Boolean).join(" · ") + " (after our last review)"}
+          >
+            changed since our review
+          </span>
+        )}
         {(le.realai_wiki_gap || le.off_wiki) && (
           <span
             className="inline-flex items-center gap-1 rounded border border-[#E6BFB4] bg-[#FBEAE5] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#9A3318]"
@@ -623,10 +643,20 @@ export default function WP4RealAIBoard({
             />
           ))}
           {canGenerateReport && (
+            <a
+              href="/experiments/panoraima/admin/reviews"
+              className="sm:ml-auto inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-white px-3 py-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-[#16181D] hover:border-[#16181D]/50 hover:bg-[#FAFAF9] transition-all"
+              title="Long-form Horizontal reviews and the compact summaries posted on the wiki (admin only)"
+            >
+              <FileText className="w-3.5 h-3.5" style={{ color: RUST }} />
+              Review archive
+            </a>
+          )}
+          {canGenerateReport && (
             <button
               type="button"
               onClick={() => setShowReport(true)}
-              className="sm:ml-auto inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-white px-3 py-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-[#16181D] hover:border-[#16181D]/50 hover:bg-[#FAFAF9] transition-all"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-[#DCDDE1] bg-white px-3 py-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-[#16181D] hover:border-[#16181D]/50 hover:bg-[#FAFAF9] transition-all"
               title={`Generate an emailable status report for ${trackLabel}`}
             >
               <FileText className="w-3.5 h-3.5" style={{ color: RUST }} />

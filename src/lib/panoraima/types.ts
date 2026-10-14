@@ -810,6 +810,14 @@ export interface Wp4LE {
   review_done?: boolean       // a RealAI review is posted on this LE's wiki Discussion page (or added manually)
   revision_requested?: boolean // reviewed, but we asked for changes: the ball is back with the author
   review_note?: string        // short headline of what RealAI found (drives the track update report)
+  /** The compact "Action summary" we posted on the LE's wiki Discussion page (the long-form review stays on file in the admin archive). */
+  action_summary?: { posted: string; iso: string; talk_rev: number }
+  /** Edits by others (not RealAI) after our last review: wiki page, Discussion page, new or changed SharePoint files. */
+  author_activity?: {
+    wiki_page?: { ts: string; user: string }
+    talk?: { ts: string; user: string }
+    files?: { name: string; date: string }[]
+  }
   /** Notes we left on material still in "development" status, i.e. never submitted to us.
    *  This is NOT a review and must not count towards the reviewed total. */
   early_feedback?: {
@@ -889,6 +897,9 @@ export interface Wp4RefreshEvent {
   sharepoint_generated?: string | null
   realai_total?: number
   reviewed?: number
+  /** Present only on refreshes taken after these counters were added. */
+  revision_requested?: number
+  early_feedback?: number
 }
 
 export interface Wp4Registry {
