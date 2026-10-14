@@ -44,6 +44,8 @@ export const TRACK_SHORT: Record<string, string> = {
 export interface StatusStyle { label: string; color: string; bg: string; text: string }
 
 export const STATUS_STYLE: Record<string, StatusStyle> = {
+  "Finalized":             { label: "Finalized",         color: "#1F6B41", bg: "bg-[#DDF0E4] border-[#A9D8BC]", text: "text-[#17502F]" },
+  "Ready for pilot":       { label: "Ready for pilot",   color: "#2E7D55", bg: "bg-[#E7F4EC] border-[#BFE2CC]", text: "text-[#1F6B41]" },
   "In review":             { label: "In review",        color: RUST,      bg: "bg-[#FBEAE5] border-[#E6BFB4]", text: "text-[#9A3318]" },
   "In development":        { label: "In development",    color: "#3F6FB0", bg: "bg-[#EAF1FA] border-[#C7DAF0]", text: "text-[#2A5594]" },
   "Materials in progress": { label: "Materials started", color: "#2E7D55", bg: "bg-[#E7F4EC] border-[#BFE2CC]", text: "text-[#1F6B41]" },
@@ -53,7 +55,7 @@ export const STATUS_STYLE: Record<string, StatusStyle> = {
 }
 
 export function statusStyle(status: string): StatusStyle {
-  return STATUS_STYLE[status] || { label: status || ", ", color: MUTE, bg: "bg-[#F1F2F4] border-[#D7D9DE]", text: "text-[#444A55]" }
+  return STATUS_STYLE[status] || { label: status || "—", color: MUTE, bg: "bg-[#F1F2F4] border-[#D7D9DE]", text: "text-[#444A55]" }
 }
 
 export const ROLE_LABEL: Record<string, string> = {

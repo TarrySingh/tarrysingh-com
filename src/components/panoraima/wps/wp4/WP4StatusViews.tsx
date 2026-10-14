@@ -14,6 +14,8 @@ import {
 // Status order for the stacked bars — most "done" first, so the warm tones
 // (review/development) sit at the leading edge of each track row.
 const STATUS_ORDER = [
+  "Finalized",
+  "Ready for pilot",
   "In review",
   "In development",
   "Materials in progress",
@@ -227,7 +229,7 @@ export default function WP4StatusViews({ registry }: { registry: Wp4Registry }) 
                 </div>
                 <p className="mt-2 text-[13.5px] text-[#444A55] leading-relaxed">
                   {missingStatus === 0
-                    ? "Every lesson event has a status set, the register is clean."
+                    ? "Every lesson event has a status set — the register is clean."
                     : "lesson events have no status set. Setting these unlocks accurate progress tracking across the tracks."}
                 </p>
               </div>
