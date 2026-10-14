@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft, ExternalLink } from "lucide-react"
-import { readDataJson } from "@/lib/panoraima/loadData"
+import { readFileSync, existsSync } from "node:fs"
+import path from "node:path"
 
 export const metadata: Metadata = {
   title: "Review archive · PANORAIMA",
@@ -34,8 +35,14 @@ const VERDICT_STYLE: Record<string, string> = {
   "early feedback": "border-[#BBD4DE] bg-[#EAF2F6] text-[#1C5A73]",
 }
 
+function loadArchive(): Archive | null {
+  const file = path.join(process.cwd(), "src/lib/panoraima/wp4_review_archive.json")
+  if (!existsSync(file)) return null
+  return JSON.parse(readFileSync(file, "utf-8")) as Archive
+}
+
 export default function ReviewArchivePage() {
-  const data = readDataJson<Archive>("wp4_review_archive.json")
+  const data = loadArchive()
 
   if (!data) {
     return (
