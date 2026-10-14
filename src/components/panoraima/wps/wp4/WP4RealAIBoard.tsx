@@ -361,6 +361,16 @@ function cleanTitle(le: Wp4LE): string {
   return t
 }
 
+// Cap the register headline so the report stays readable; the full review is linked underneath.
+function brief(note: string | undefined | null, max = 360): string {
+  if (!note) return ""
+  const t = note.replace(/,?\s*posted (to )?talk (page )?rev \d+\.?/i, ".").replace(/\.\s*\./g, ".").replace(/\s+/g, " ").trim()
+  if (t.length <= max) return t
+  const cut = t.slice(0, max)
+  const stop = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("; "))
+  return (stop > 120 ? cut.slice(0, stop + 1) : cut.replace(/\s+\S*$/, "") + " ...") + " (more on the Discussion page)"
+}
+
 // "wiki page edited 11 October; 2 new or changed files (...)" for LEs where someone else
 // touched the LE after our last review.
 function activityLine(le: Wp4LE): string {
@@ -458,7 +468,7 @@ function buildReport(
     for (const le of [...completed].sort(byCode)) {
       L.push("")
       L.push(`${le.code} — ${cleanTitle(le)}`)
-      if (le.review_note) L.push(`    What we found: ${le.review_note}`)
+      if (le.review_note) L.push(`    What we found: ${brief(le.review_note)}`)
       if (le.action_summary) L.push(`    Short version: Action summary posted ${le.action_summary.posted}`)
       if (le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
     }
@@ -473,7 +483,7 @@ function buildReport(
       L.push("")
       L.push(`${le.code} — ${cleanTitle(le)}`)
       if (le.author) L.push(`    Author: ${le.author}${le.coauthor ? ` · ${le.coauthor}` : ""}`)
-      if (le.review_note) L.push(`    What we asked for: ${le.review_note}`)
+      if (le.review_note) L.push(`    What we asked for: ${brief(le.review_note)}`)
       if (le.action_summary) L.push(`    Short version: see the Action summary posted ${le.action_summary.posted}, with the numbered list of what to do next.`)
       if (le.author_activity) L.push(`    Changes we can see since: ${activityLine(le)}.`)
       if (le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
@@ -499,7 +509,7 @@ function buildReport(
     L.push("")
   }
 
-  const changedOnly = changedSince.filter(le => !le.revision_requested && !prematureCodes.has(le.code))
+  const changedOnly = changedSince.filter(le => !le.revision_requested && !le.early_feedback && !prematureCodes.has(le.code))
   if (changedOnly.length) {
     L.push(`CHANGED SINCE OUR REVIEW, REALAI IS RE-READING (${changedOnly.length})`)
     L.push("We can see edits or new files after our last note. We check them against the open points and")
@@ -525,6 +535,7 @@ function buildReport(
       if (le.action_summary) L.push(`    Short version: Action summary posted ${le.action_summary.posted}`)
       if (le.author_activity) L.push(`    Changes we can see since: ${activityLine(le)}.`)
     }
+    L.push("")
   }
 
   if (waitingUs.length) {
@@ -536,11 +547,18 @@ function buildReport(
     L.push("")
   } else {
     // Say it out loud. An absent section reads as an oversight; this reads as a status.
-    L.push("NOTHING IS WAITING ON REALAI")
-    L.push(`Our review queue for ${trackName} is empty. Every Learning Event here is either`)
-    L.push("reviewed and closed, back with its author after a review, or has no material for us")
-    L.push("to read yet. If you believe something is with us, it has not reached us: please email")
-    L.push(`${REVIEW_INBOX} and we will pick it up the same week.`)
+    if (changedSince.length) {
+      L.push("NO FIRST REVIEWS ARE WAITING ON REALAI")
+      L.push(`Every Learning Event in ${trackName} has had its first read from us. ${changedSince.length} have changed since,`)
+      L.push("and we are re-reading those (listed above). If you believe something else is with us, it has")
+      L.push(`not reached us: please email ${REVIEW_INBOX} and we will pick it up the same week.`)
+    } else {
+      L.push("NOTHING IS WAITING ON REALAI")
+      L.push(`Our review queue for ${trackName} is empty. Every Learning Event here is either`)
+      L.push("reviewed and closed, back with its author after a review, or has no material for us")
+      L.push("to read yet. If you believe something is with us, it has not reached us: please email")
+      L.push(`${REVIEW_INBOX} and we will pick it up the same week.`)
+    }
     L.push("")
   }
 
@@ -563,7 +581,9 @@ function buildReport(
       L.push("")
       L.push(`${le.code} — ${cleanTitle(le)}`)
       if (le.author) L.push(`    Author: ${le.author}${le.coauthor ? ` · ${le.coauthor}` : ""}`)
-      L.push(`    Needed: ${authorAction(le)}`)
+      L.push(`    Needed: ${le.early_feedback
+        ? "Revise the lesson plan using the numbered list in our Action summary on the Discussion page, complete the wiki fields it names, then create the lesson material and upload it to the SharePoint LE folder."
+        : authorAction(le)}`)
       L.push(`    Then: email ${REVIEW_INBOX} so RealAI can review.`)
     }
     L.push("")
