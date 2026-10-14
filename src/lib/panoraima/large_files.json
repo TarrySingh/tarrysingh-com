@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-19T11:53:48.709469Z",
+  "generated_at": "2026-10-14T16:44:05.269702Z",
   "threshold_mb": 100,
-  "total": 14,
-  "total_gb": 4.95,
+  "total": 16,
+  "total_gb": 5.48,
   "by_wp": {
     "WP1": [
       {
@@ -120,6 +120,24 @@
         "mb": 105.5,
         "modified": "2026-05-18",
         "local": true
+      }
+    ],
+    "WP4": [
+      {
+        "name": "H_270_Transformation_Public_Spere_Schade_2026-10-09_FIN.pptx",
+        "rel": "Learning_Materials/4.1 Horizontal/H-270/H_270_Transformation_Public_Spere_Schade_2026-10-09_FIN.pptx",
+        "ext": "pptx",
+        "mb": 274.9,
+        "modified": "2026-10-09",
+        "local": false
+      },
+      {
+        "name": "H_270_Transformation_Public_Spere_Schade_2026-09-17_FIN.pptx",
+        "rel": "Learning_Materials/4.1 Horizontal/H-270/H_270_Transformation_Public_Spere_Schade_2026-09-17_FIN.pptx",
+        "ext": "pptx",
+        "mb": 271.4,
+        "modified": "2026-09-17",
+        "local": false
       }
     ]
   },

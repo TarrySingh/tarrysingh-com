@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T19:27:53Z",
+  "generated_at": "2026-10-14T14:43:59Z",
   "wps": [
     {
       "wp": "WP2",
@@ -10,26 +10,29 @@
       "description": "Understand the AI workforce gap across academia, industry, SMEs and regulated sectors in Greece, Germany, Ireland and the Netherlands.",
       "status": "active",
       "stats": {
-        "total_files": 217,
-        "size_mb": 1655,
+        "total_files": 364,
+        "size_mb": 1778,
         "by_ext": {
-          ".pdf": 90,
-          ".xlsx": 26,
+          ".pdf": 144,
+          ".xlsx": 61,
           ".rtf": 2,
-          ".docx": 69,
+          ".docx": 99,
           ".mp4": 7,
           ".pptx": 10,
           ".odt": 3,
-          ".vtt": 3,
-          ".txt": 1,
+          ".csv": 14,
+          ".html": 9,
+          ".vtt": 5,
+          ".txt": 2,
+          ".png": 2,
           ".mp3": 6
         },
         "by_type": {
           "other": 16,
           "meeting": 8,
           "research": 81,
-          "deliverable": 5,
-          "focus_group": 97,
+          "deliverable": 144,
+          "focus_group": 105,
           "presentation": 6,
           "admin": 4
         },
@@ -37,7 +40,7 @@
           "Germany": 8,
           "Ireland": 24,
           "Greece": 8,
-          "Netherlands": 20
+          "Netherlands": 28
         }
       },
       "task_count": 3,
@@ -52,19 +55,19 @@
       "description": "Define the learning events and competence profiles that anchor the PANORAIMA curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 50,
-        "size_mb": 1086,
+        "total_files": 54,
+        "size_mb": 1089,
         "by_ext": {
-          ".xlsx": 28,
-          ".docx": 6,
+          ".xlsx": 30,
+          ".docx": 7,
           ".pptx": 3,
+          ".pdf": 3,
           ".ods": 1,
           ".mp4": 9,
-          ".pdf": 2,
           ".potx": 1
         },
         "by_type": {
-          "other": 49,
+          "other": 53,
           "presentation": 1
         },
         "by_region": {}
@@ -81,34 +84,39 @@
       "description": "Design lesson plans and run the cross-university pilots that validate the curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 401,
-        "size_mb": 308,
+        "total_files": 1389,
+        "size_mb": 826,
         "by_ext": {
-          ".xlsx": 8,
-          ".docx": 101,
-          ".pdf": 35,
-          ".pptx": 61,
-          ".odp": 1,
-          ".potx": 4,
-          ".html": 17,
-          ".md": 9,
-          ".css": 24,
-          ".woff": 5,
-          ".js": 49,
-          ".json": 2,
-          ".zip": 6,
-          ".png": 58,
-          ".fastq": 2,
-          ".csv": 10,
-          ".py": 4,
-          ".txt": 2,
-          ".ipynb": 3
+          ".docx": 224,
+          ".xlsx": 25,
+          ".pdf": 119,
+          ".pptx": 165,
+          ".odp": 2,
+          ".potx": 11,
+          ".md": 55,
+          ".html": 91,
+          ".json": 11,
+          ".css": 90,
+          ".qmd": 57,
+          ".csv": 153,
+          ".woff": 18,
+          ".js": 184,
+          ".png": 104,
+          ".txt": 25,
+          ".zip": 15,
+          ".yml": 1,
+          ".sh": 1,
+          ".r": 2,
+          ".py": 23,
+          ".pyc": 1,
+          ".ipynb": 10,
+          ".fastq": 2
         },
         "by_type": {
-          "other": 386,
-          "template": 10,
-          "presentation": 3,
-          "research": 2
+          "other": 1287,
+          "template": 76,
+          "presentation": 21,
+          "research": 5
         },
         "by_region": {}
       },
@@ -166,35 +174,37 @@
       "description": "Amplify PANORAIMA's reach through clusters for social media, student recruitment, knowledge exchange and brand.",
       "status": "active",
       "stats": {
-        "total_files": 393,
-        "size_mb": 943,
+        "total_files": 620,
+        "size_mb": 1190,
         "by_ext": {
-          ".docx": 85,
-          ".pptx": 34,
-          ".dotx": 9,
-          ".pdf": 51,
-          ".xlsx": 21,
+          ".docx": 150,
+          ".pptx": 37,
+          ".dotx": 11,
+          ".pdf": 139,
+          ".xlsx": 55,
           ".odt": 2,
           ".webloc": 1,
+          ".txt": 3,
+          ".md": 14,
+          ".json": 2,
+          ".xlsm": 6,
           ".heic": 9,
-          ".jpg": 51,
+          ".jpg": 66,
           ".potx": 4,
-          ".xlsm": 3,
           ".png": 69,
           ".psd": 13,
           ".ai": 4,
           ".ttf": 19,
-          ".txt": 2,
           ".jpeg": 7,
           ".svg": 8,
           ".ase": 1
         },
         "by_type": {
-          "other": 332,
-          "template": 28,
-          "presentation": 23,
-          "research": 9,
-          "deliverable": 1
+          "other": 421,
+          "template": 32,
+          "presentation": 25,
+          "research": 140,
+          "deliverable": 2
         },
         "by_region": {
           "Germany": 1

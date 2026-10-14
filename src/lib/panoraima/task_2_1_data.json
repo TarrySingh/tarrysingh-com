@@ -5,8 +5,8 @@
   "lead": "CeADAR",
   "description": "The first and largest task under WP2. Maps the AI workforce gap across academia, industry, SMEs and public sector in Greece, Germany, Ireland and the Netherlands through surveys, desktop research, focus groups and 1-1 CEO interviews.",
   "stats": {
-    "total_files": 152,
-    "size_mb": 1313,
+    "total_files": 299,
+    "size_mb": 1436,
     "countries": [
       "Greece",
       "Germany",
@@ -158,7 +158,13 @@
         "label": "v1.1",
         "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.1.1.docx",
         "is_final": false,
-        "size_kb": 1562
+        "size_kb": 1580
+      },
+      {
+        "label": "?",
+        "file": "Resubmission of Deliverable D2.1.docx",
+        "is_final": false,
+        "size_kb": 181
       },
       {
         "label": "archive",
@@ -2111,6 +2117,20 @@
       "kind": "transcript"
     },
     {
+      "file": "SRC-000045.vtt",
+      "session": "sources",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000045.vtt",
+      "size_mb": 0.1,
+      "kind": "transcript"
+    },
+    {
+      "file": "SRC-000051.vtt",
+      "session": "sources",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000051.vtt",
+      "size_mb": 0.1,
+      "kind": "transcript"
+    },
+    {
       "file": "Interview meeting online for Project PANORAIMA - Market analysis-20250513_153446-Meeting Recording.mp4",
       "session": "AndrewVDHaar FiberCarrierAssociation",
       "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/AndrewVDHaar-FiberCarrierAssociation/Interview meeting online for Project PANORAIMA - Market analysis-20250513_153446-Meeting Recording.mp4",
@@ -2215,7 +2235,14 @@
       "rel_path": "Deliverable 2.1/PANORAIMA_W2- MS3 Market and Needs Report_v.1.1.docx",
       "top": "Deliverable 2.1",
       "ext": ".docx",
-      "size_kb": 1562
+      "size_kb": 1580
+    },
+    {
+      "file": "Resubmission of Deliverable D2.1.docx",
+      "rel_path": "Deliverable 2.1/Resubmission of Deliverable D2.1.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 181
     },
     {
       "file": "PANORAIMA_W2- MS3 Market and Needs Report_v.04.docx",
@@ -2605,6 +2632,62 @@
     {
       "file": "Market Analysis Interview for ..., our EU funded AI MSc project.docx",
       "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews/JelleHouben-CEO-Binqy/Market Analysis Interview for PANORAIMA, our EU funded AI MSc project_otter_ai/Market Analysis Interview for ..., our EU funded AI MSc project.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 17919
+    },
+    {
+      "file": "Interview meeting online for P...ct PANORAIMA - Market analysis.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews Copy/Robin-CTO-Fraudio-Interview meeting online for Project PANORAIMA - Market analysis/Interview meeting online for P...ct PANORAIMA - Market analysis.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 6020
+    },
+    {
+      "file": "interview Petra namens Cordial.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews Copy/PetraRuiter-CordialBV/interview Petra namens Cordial_otter_ai/interview Petra namens Cordial.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 42606
+    },
+    {
+      "file": "PetraRuiter-CordialBV-Dutch.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews Copy/PetraRuiter-CordialBV/interview Petra namens Cordial_otter_ai/PetraRuiter-CordialBV-Dutch.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 35
+    },
+    {
+      "file": "interview Petra namens Cordial.mp3.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews Copy/PetraRuiter-CordialBV/interview Petra namens Cordial_otter_ai/interview Petra namens Cordial.mp3.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 26
+    },
+    {
+      "file": "Market analysis interview PANORAIMA.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews Copy/LexNicolai-CEO-BlueFiber/Market analysis interview PANORAIMA_otter_ai/Market analysis interview PANORAIMA.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 7515
+    },
+    {
+      "file": "Interview meeting online for P...ct PANORAIMA - Market analysis.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews Copy/AndrewVDHaar-FiberCarrierAssociation/Interview meeting online for Project PANORAIMA - Market analysis_otter_ai/Interview meeting online for P...ct PANORAIMA - Market analysis.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 2283
+    },
+    {
+      "file": "AI Skills Gap Feedback.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews Copy/Remco-CEO-Verzimpel/AI Skills Gap Feedback_otter_ai/AI Skills Gap Feedback.docx",
+      "top": "05_Focus Groups and Relevant Work",
+      "ext": ".docx",
+      "size_kb": 50
+    },
+    {
+      "file": "Market Analysis Interview for ..., our EU funded AI MSc project.docx",
+      "rel_path": "05_Focus Groups and Relevant Work/NL Working Group/Interviews Copy/JelleHouben-CEO-Binqy/Market Analysis Interview for PANORAIMA, our EU funded AI MSc project_otter_ai/Market Analysis Interview for ..., our EU funded AI MSc project.docx",
       "top": "05_Focus Groups and Relevant Work",
       "ext": ".docx",
       "size_kb": 17919
@@ -3184,6 +3267,972 @@
       "size_kb": 934
     },
     {
+      "file": "PANORAIMA - Deliverable D2.1 Quality Review & Submission Approval Form.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/PANORAIMA - Deliverable D2.1 Quality Review & Submission Approval Form.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 573
+    },
+    {
+      "file": "PANORAIMA - Deliverable Quality Review & Submission Approval Form.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/PANORAIMA - Deliverable Quality Review & Submission Approval Form.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 161
+    },
+    {
+      "file": "PANORAIMA_D2.1_Market_and_Needs_Report_v1.6.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/PANORAIMA_D2.1_Market_and_Needs_Report_v1.6.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 3881
+    },
+    {
+      "file": "PANORAIMA_D2.1_PANORAIMA_Market&Needs_Report_v1.6_FINAL.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/PANORAIMA_D2.1_PANORAIMA_Market&Needs_Report_v1.6_FINAL.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 2984
+    },
+    {
+      "file": "Response letter to Ares(2026)8447422 - Resubmission of Deliverable D2.1.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Response letter to Ares(2026)8447422 - Resubmission of Deliverable D2.1.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 148
+    },
+    {
+      "file": "Source_index.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/Source_index.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 6
+    },
+    {
+      "file": "index.html",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/index.html",
+      "top": "Deliverable 2.1",
+      "ext": ".html",
+      "size_kb": 6
+    },
+    {
+      "file": "Original_sources.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/Original_sources.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 2
+    },
+    {
+      "file": "Question_dictionary.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/Question_dictionary.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 23
+    },
+    {
+      "file": "Methods.html",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/Methods.html",
+      "top": "Deliverable 2.1",
+      "ext": ".html",
+      "size_kb": 53
+    },
+    {
+      "file": "References.html",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/References.html",
+      "top": "Deliverable 2.1",
+      "ext": ".html",
+      "size_kb": 16
+    },
+    {
+      "file": "Instrument_index.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/Instrument_index.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 0
+    },
+    {
+      "file": "Stakeholder_map.html",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Stakeholder_map.html",
+      "top": "Deliverable 2.1",
+      "ext": ".html",
+      "size_kb": 3
+    },
+    {
+      "file": "Source_index.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Source_index.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 6
+    },
+    {
+      "file": "Survey_questionnaire.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Survey_questionnaire.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 112
+    },
+    {
+      "file": "PANORAIMA_2025d_SME_survey_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_2025d_SME_survey_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 51
+    },
+    {
+      "file": "00_README_PANORAIMA_D2.1_Public_Package.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/00_README_PANORAIMA_D2.1_Public_Package.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 277
+    },
+    {
+      "file": "index.html",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/index.html",
+      "top": "Deliverable 2.1",
+      "ext": ".html",
+      "size_kb": 7
+    },
+    {
+      "file": "PANORAIMA_nd-a_enterprise_interview_report_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-a_enterprise_interview_report_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 170
+    },
+    {
+      "file": "PANORAIMA_2025a_consolidated_analysis_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_2025a_consolidated_analysis_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 59
+    },
+    {
+      "file": "PANORAIMA_2025c_academic_survey_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_2025c_academic_survey_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 52
+    },
+    {
+      "file": "PANORAIMA_nd-b_ecosystem_interview_report_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-b_ecosystem_interview_report_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 140
+    },
+    {
+      "file": "PANORAIMA_nd-g_qualitative_interview_report_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-g_qualitative_interview_report_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 321
+    },
+    {
+      "file": "PANORAIMA_nd-c_ecosystem_focus_group_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-c_ecosystem_focus_group_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 145
+    },
+    {
+      "file": "PANORAIMA_EU_funding_marking.png",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_EU_funding_marking.png",
+      "top": "Deliverable 2.1",
+      "ext": ".png",
+      "size_kb": 29
+    },
+    {
+      "file": "PANORAIMA_Project_Description_v0.2.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_Project_Description_v0.2.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 84
+    },
+    {
+      "file": "Question_dictionary.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Question_dictionary.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 23
+    },
+    {
+      "file": "Interview_focus_group_guides_participants.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Interview_focus_group_guides_participants.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 299
+    },
+    {
+      "file": "PANORAIMA_2025b_enterprise_survey_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_2025b_enterprise_survey_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 54
+    },
+    {
+      "file": "LICENCE.txt",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/LICENCE.txt",
+      "top": "Deliverable 2.1",
+      "ext": ".txt",
+      "size_kb": 1
+    },
+    {
+      "file": "PANORAIMA_nd-j_academic_interviews_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-j_academic_interviews_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 56
+    },
+    {
+      "file": "Public_evidence_guide.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Public_evidence_guide.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 31
+    },
+    {
+      "file": "PANORAIMA_nd-i_SME_interviews_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-i_SME_interviews_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 69
+    },
+    {
+      "file": "PANORAIMA_D21_chart_calculations_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_D21_chart_calculations_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 112
+    },
+    {
+      "file": "PANORAIMA_pedagogical_consultation_and_contribution.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_pedagogical_consultation_and_contribution.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 173
+    },
+    {
+      "file": "PANORAIMA_nd-e_enterprise_transcript_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-e_enterprise_transcript_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 359
+    },
+    {
+      "file": "PANORAIMA_nd-d_SME_focus_group_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-d_SME_focus_group_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 123
+    },
+    {
+      "file": "Research_scope_and_interpretation.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Research_scope_and_interpretation.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 173
+    },
+    {
+      "file": "PANORAIMA_nd-h_SME_transcript_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-h_SME_transcript_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 381
+    },
+    {
+      "file": "PANORAIMA_theme_development_and_evidence.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_theme_development_and_evidence.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 273
+    },
+    {
+      "file": "File_manifest.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/File_manifest.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 8
+    },
+    {
+      "file": "PANORAIMA_2025e_student_questionnaire_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_2025e_student_questionnaire_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 47
+    },
+    {
+      "file": "PANORAIMA_nd-f_enterprise_interviews_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_nd-f_enterprise_interviews_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 54
+    },
+    {
+      "file": "Chart_report_correspondence.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Chart_report_correspondence.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 0
+    },
+    {
+      "file": "References.html",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/References.html",
+      "top": "Deliverable 2.1",
+      "ext": ".html",
+      "size_kb": 16
+    },
+    {
+      "file": "Stakeholder_map_annex.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Stakeholder_map_annex.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 61
+    },
+    {
+      "file": "Stakeholder_map_tables.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Stakeholder_map_tables.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 1
+    },
+    {
+      "file": "Evidence_tables.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Evidence_tables.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 191
+    },
+    {
+      "file": "PANORAIMA_Project_Description_v0.2.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/PANORAIMA_Project_Description_v0.2.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 262
+    },
+    {
+      "file": "Instrument_index.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/Instrument_index.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 0
+    },
+    {
+      "file": "README_file_template_DCC-PO_Engels.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/README_file_template_DCC-PO_Engels.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 64
+    },
+    {
+      "file": "PANORAIMA_W2- MS3 Market and Needs Report_2026_7.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/PANORAIMA_W2- MS3 Market and Needs Report_2026_7.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 2898
+    },
+    {
+      "file": "PANORAIMA_D2.1_PANORAIMA_Market&Needs_Report_v1.5_FINAL.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/PANORAIMA_D2.1_PANORAIMA_Market&Needs_Report_v1.5_FINAL.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 2991
+    },
+    {
+      "file": "PANORAIMA_W2- MS3 Market and Needs Report_2026_6.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/PANORAIMA_W2- MS3 Market and Needs Report_2026_6.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 2665
+    },
+    {
+      "file": "PANORAIMA - Deliverable Quality Review & Submission Approval Form.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/PANORAIMA - Deliverable Quality Review & Submission Approval Form.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 150
+    },
+    {
+      "file": "PANORAIMA - Deliverable Quality Review & Submission Approval Form (RealAI verification comments).docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/PANORAIMA - Deliverable Quality Review & Submission Approval Form (RealAI verification comments).docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 165
+    },
+    {
+      "file": "PANORAIMA_D2.1_Audit_Findings.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/PANORAIMA_D2.1_Audit_Findings.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 28
+    },
+    {
+      "file": "PANORAIMA_W2- MS3 Market and Needs Report_2026_5.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/PANORAIMA_W2- MS3 Market and Needs Report_2026_5.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 2656
+    },
+    {
+      "file": "PANORAIMA_D2.1_Audit_After_Corrections.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/PANORAIMA_D2.1_Audit_After_Corrections.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 66
+    },
+    {
+      "file": "Stakeholder_map.html",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Stakeholder_map.html",
+      "top": "Deliverable 2.1",
+      "ext": ".html",
+      "size_kb": 3
+    },
+    {
+      "file": "PANORAIMA_nd-e_enterprise_transcript_public 2.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-e_enterprise_transcript_public 2.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 359
+    },
+    {
+      "file": "Stakeholder_map_annex 2.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Stakeholder_map_annex 2.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 61
+    },
+    {
+      "file": "index.html",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/index.html",
+      "top": "Deliverable 2.1",
+      "ext": ".html",
+      "size_kb": 8
+    },
+    {
+      "file": "PANORAIMA_nd-a_enterprise_interview_report_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-a_enterprise_interview_report_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 170
+    },
+    {
+      "file": "PANORAIMA_2025c_academic_survey_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_2025c_academic_survey_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 54
+    },
+    {
+      "file": "PANORAIMA_nd-b_ecosystem_interview_report_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-b_ecosystem_interview_report_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 140
+    },
+    {
+      "file": "PANORAIMA_nd-g_qualitative_interview_report_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-g_qualitative_interview_report_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 321
+    },
+    {
+      "file": "PANORAIMA_nd-c_ecosystem_focus_group_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-c_ecosystem_focus_group_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 145
+    },
+    {
+      "file": "PANORAIMA_EU_funding_marking.png",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_EU_funding_marking.png",
+      "top": "Deliverable 2.1",
+      "ext": ".png",
+      "size_kb": 29
+    },
+    {
+      "file": "Stakeholder_map_tables 2.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Stakeholder_map_tables 2.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 1
+    },
+    {
+      "file": "PANORAIMA_2025e_student_questionnaire_public 2.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_2025e_student_questionnaire_public 2.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 50
+    },
+    {
+      "file": "Question_dictionary.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Question_dictionary.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 23
+    },
+    {
+      "file": "Interview_focus_group_guides_participants.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Interview_focus_group_guides_participants.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 299
+    },
+    {
+      "file": "PANORAIMA_2025d_SME_survey_public 2.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_2025d_SME_survey_public 2.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 54
+    },
+    {
+      "file": "PANORAIMA_2025b_enterprise_survey_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_2025b_enterprise_survey_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 57
+    },
+    {
+      "file": "PANORAIMA_nd-j_academic_interviews_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-j_academic_interviews_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 58
+    },
+    {
+      "file": "Evidence_tables 2.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Evidence_tables 2.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 191
+    },
+    {
+      "file": "Public_evidence_guide.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Public_evidence_guide.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 100
+    },
+    {
+      "file": "PANORAIMA_nd-i_SME_interviews_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-i_SME_interviews_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 72
+    },
+    {
+      "file": "PANORAIMA_2025a_consolidated_analysis_public 2.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_2025a_consolidated_analysis_public 2.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 61
+    },
+    {
+      "file": "PANORAIMA_D21_chart_calculations_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_D21_chart_calculations_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 115
+    },
+    {
+      "file": "PANORAIMA_nd-d_SME_focus_group_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-d_SME_focus_group_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 123
+    },
+    {
+      "file": "Research_scope_and_interpretation.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Research_scope_and_interpretation.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 173
+    },
+    {
+      "file": "PANORAIMA_nd-h_SME_transcript_public.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-h_SME_transcript_public.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 381
+    },
+    {
+      "file": "PANORAIMA_theme_development_and_evidence 2.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_theme_development_and_evidence 2.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 273
+    },
+    {
+      "file": "PANORAIMA_nd-f_enterprise_interviews_public.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_nd-f_enterprise_interviews_public.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 57
+    },
+    {
+      "file": "References 2.html",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/References 2.html",
+      "top": "Deliverable 2.1",
+      "ext": ".html",
+      "size_kb": 16
+    },
+    {
+      "file": "Source_index 2.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Source_index 2.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 6
+    },
+    {
+      "file": "PANORAIMA_pedagogical_consultation_and_contribution 2.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/PANORAIMA_pedagogical_consultation_and_contribution 2.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 173
+    },
+    {
+      "file": "Survey_questionnaire 2.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Survey_questionnaire 2.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 112
+    },
+    {
+      "file": "Instrument_index.csv",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/Instrument_index.csv",
+      "top": "Deliverable 2.1",
+      "ext": ".csv",
+      "size_kb": 0
+    },
+    {
+      "file": "FORM-019.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/forms/FORM-019.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 561
+    },
+    {
+      "file": "FORM-018.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/forms/FORM-018.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 495
+    },
+    {
+      "file": "FORM-024.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/forms/FORM-024.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 429
+    },
+    {
+      "file": "FORM-023.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/forms/FORM-023.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 412
+    },
+    {
+      "file": "FORM-022.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/forms/FORM-022.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 512
+    },
+    {
+      "file": "FORM-020.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/forms/FORM-020.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 512
+    },
+    {
+      "file": "FORM-021.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/_Archive/Public_Evidence_Package_Arch/forms/FORM-021.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 257
+    },
+    {
+      "file": "FORM-019.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/forms/FORM-019.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 561
+    },
+    {
+      "file": "FORM-018.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/forms/FORM-018.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 495
+    },
+    {
+      "file": "FORM-024.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/forms/FORM-024.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 429
+    },
+    {
+      "file": "FORM-023.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/forms/FORM-023.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 412
+    },
+    {
+      "file": "FORM-022.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/forms/FORM-022.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 512
+    },
+    {
+      "file": "FORM-020.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/forms/FORM-020.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 512
+    },
+    {
+      "file": "FORM-021.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Public_Evidence_Package/forms/FORM-021.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 257
+    },
+    {
+      "file": "Interview_guides_participants.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/tables/Interview_guides_participants.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 109
+    },
+    {
+      "file": "Survey_questionnaire_full_tables.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/tables/Survey_questionnaire_full_tables.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 110
+    },
+    {
+      "file": "Stakeholder_register.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/tables/Stakeholder_register.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 30
+    },
+    {
+      "file": "FORM-019.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/forms/FORM-019.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 561
+    },
+    {
+      "file": "FORM-018.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/forms/FORM-018.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 495
+    },
+    {
+      "file": "FORM-024.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/forms/FORM-024.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 429
+    },
+    {
+      "file": "FORM-023.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/forms/FORM-023.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 412
+    },
+    {
+      "file": "FORM-022.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/forms/FORM-022.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 512
+    },
+    {
+      "file": "FORM-020.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/forms/FORM-020.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 512
+    },
+    {
+      "file": "FORM-021.pdf",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/forms/FORM-021.pdf",
+      "top": "Deliverable 2.1",
+      "ext": ".pdf",
+      "size_kb": 257
+    },
+    {
+      "file": "SRC-000106.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000106.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 70
+    },
+    {
+      "file": "SRC-000020.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000020.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 49
+    },
+    {
+      "file": "SRC-000049.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000049.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 94
+    },
+    {
+      "file": "SRC-000017.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000017.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 32
+    },
+    {
+      "file": "SRC-000048.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000048.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 44
+    },
+    {
+      "file": "SRC-000099.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000099.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 34
+    },
+    {
+      "file": "SRC-000021.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000021.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 22
+    },
+    {
+      "file": "SRC-000018.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000018.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 29
+    },
+    {
+      "file": "SRC-000102.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000102.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 2302
+    },
+    {
+      "file": "SRC-000047.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000047.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 43
+    },
+    {
+      "file": "SRC-000022.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000022.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 29
+    },
+    {
+      "file": "SRC-000096.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000096.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 22
+    },
+    {
+      "file": "SRC-000023.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000023.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 28
+    },
+    {
+      "file": "SRC-000050.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000050.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 6107
+    },
+    {
+      "file": "SRC-000103.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000103.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 499
+    },
+    {
+      "file": "SRC-000046.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000046.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 35
+    },
+    {
+      "file": "SRC-000019.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000019.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 31
+    },
+    {
+      "file": "SRC-000104.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000104.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 2306
+    },
+    {
+      "file": "SRC-000045.vtt",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000045.vtt",
+      "top": "Deliverable 2.1",
+      "ext": ".vtt",
+      "size_kb": 104
+    },
+    {
+      "file": "SRC-000051.vtt",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000051.vtt",
+      "top": "Deliverable 2.1",
+      "ext": ".vtt",
+      "size_kb": 88
+    },
+    {
+      "file": "SRC-000024.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000024.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 27
+    },
+    {
+      "file": "SRC-000095.docx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000095.docx",
+      "top": "Deliverable 2.1",
+      "ext": ".docx",
+      "size_kb": 65
+    },
+    {
+      "file": "SRC-000101.xlsx",
+      "rel_path": "Deliverable 2.1/D2.1 2026/Restricted_Evidence_Package/sources/SRC-000101.xlsx",
+      "top": "Deliverable 2.1",
+      "ext": ".xlsx",
+      "size_kb": 19
+    },
+    {
       "file": "Ebook-AI-Mastering-Legal-Compliance-2023.pdf",
       "rel_path": "Data Collection_Other Findings/law, compliance, public services/Ebook-AI-Mastering-Legal-Compliance-2023.pdf",
       "top": "Data Collection_Other Findings",
@@ -3219,5 +4268,5 @@
       "size_kb": 1516
     }
   ],
-  "generated_at": "2026-06-19T09:53:47Z"
+  "generated_at": "2026-10-14T14:44:03Z"
 }
