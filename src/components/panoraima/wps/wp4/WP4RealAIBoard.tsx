@@ -361,6 +361,27 @@ function cleanTitle(le: Wp4LE): string {
   return t
 }
 
+// "wiki page edited 11 October; 2 new or changed files (...)" for LEs where someone else
+// touched the LE after our last review.
+function activityLine(le: Wp4LE): string {
+  const a = le.author_activity
+  if (!a) return ""
+  const d = (ts: string) => new Date(ts).toLocaleDateString("en-GB", { day: "numeric", month: "long" })
+  const bits: string[] = []
+  if (a.wiki_page) bits.push(`wiki page edited ${d(a.wiki_page.ts)}`)
+  if (a.talk) bits.push(`Discussion page edited ${d(a.talk.ts)}`)
+  if (a.files?.length) {
+    const names = a.files.slice(0, 2).map(f => f.name).join(", ")
+    bits.push(`${a.files.length} new or changed file${a.files.length === 1 ? "" : "s"} (${names}${a.files.length > 2 ? ", ..." : ""})`)
+  }
+  return bits.join("; ")
+}
+
+// The wiki now carries "Ready for pilot" and "finalized" as statuses.
+function marksReady(le: Wp4LE): boolean {
+  return /ready for pilot|finalized|finalised/i.test(le.wiki_status ?? "")
+}
+
 // Build a plain-text status report for the track lead AND the concerned authors —
 // deterministic (registry-derived), track-scoped, ready to paste into an email.
 function buildReport(
@@ -378,18 +399,24 @@ function buildReport(
   const authored = les.filter(le => le.completeness?.is_author)          // RealAI authors these
   const reviewer = les.filter(le => !le.completeness?.is_author)         // RealAI reviews these
   const completed = reviewer.filter(le => le.review_done && !le.revision_requested)
+  // The author (or WP lead) has set the wiki status to Ready for pilot, but our review is not closed.
+  const premature = reviewer.filter(le => marksReady(le) && !(le.review_done && !le.revision_requested))
+  const prematureCodes = new Set(premature.map(le => le.code))
   // Reviewed, but we asked for changes. The ball is with the author, not with us.
-  const revisionRequested = reviewer.filter(le => le.revision_requested)
+  const revisionRequested = reviewer.filter(le => le.revision_requested && !prematureCodes.has(le.code))
+  // Someone changed the LE after our last review: we owe a re-read.
+  const changedSince = reviewer.filter(le => !!le.author_activity)
+  const summariesPosted = reviewer.filter(le => !!le.action_summary).length
   // Material exists but the ball is NOT with us: either the author never submitted it
   // (still "development", so we left early feedback instead), or they are actively
   // revising it. Counting these as our queue overstates what RealAI owes.
   const blockedElsewhere = reviewer.filter(
-    le => !le.review_done && hasMaterial(le)
+    le => !le.review_done && hasMaterial(le) && !prematureCodes.has(le.code)
       && (!!le.early_feedback || /under revision/i.test(le.wiki_status ?? "")),
   )
   const blockedCodes = new Set(blockedElsewhere.map(le => le.code))
   const waitingUs = reviewer.filter(
-    le => !le.review_done && hasMaterial(le) && !blockedCodes.has(le.code),
+    le => !le.review_done && hasMaterial(le) && !blockedCodes.has(le.code) && !prematureCodes.has(le.code),
   )
   const waitingAuthor = reviewer.filter(le => !le.review_done && !hasMaterial(le))
   const byCode = (a: Wp4LE, b: Wp4LE) => a.code.localeCompare(b.code)
@@ -414,7 +441,10 @@ function buildReport(
   L.push(`RealAI is on ${les.length} Learning Event${les.length === 1 ? "" : "s"} in ${trackName}: ${counts.author} as author, ${counts.reviewer} as reviewer.`)
   L.push(`  Completed reviews (posted to the wiki): ${completed.length}`)
   if (revisionRequested.length) L.push(`  Reviewed, revision requested (back with the author): ${revisionRequested.length}`)
-  const earlyFeedback = reviewer.filter(le => le.early_feedback)
+  if (summariesPosted) L.push(`  Short action summaries posted on the Discussion pages: ${summariesPosted} (the longer review stays on the page and on file with RealAI)`)
+  if (changedSince.length) L.push(`  Changed by others since our last review (RealAI is re-reading): ${changedSince.length}`)
+  if (premature.length) L.push(`  Marked "Ready for pilot" on the wiki without a closed RealAI review: ${premature.length}`)
+  const earlyFeedback = reviewer.filter(le => le.early_feedback && !prematureCodes.has(le.code))
   if (earlyFeedback.length) L.push(`  Early feedback left on material still in development: ${earlyFeedback.length}`)
   L.push(`  Waiting on RealAI to review (material is in, and it is our move): ${waitingUs.length}`)
   if (blockedElsewhere.length) L.push(`  Material exists but the move is not ours (see below): ${blockedElsewhere.length}`)
@@ -429,6 +459,7 @@ function buildReport(
       L.push("")
       L.push(`${le.code} — ${cleanTitle(le)}`)
       if (le.review_note) L.push(`    What we found: ${le.review_note}`)
+      if (le.action_summary) L.push(`    Short version: Action summary posted ${le.action_summary.posted}`)
       if (le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
     }
     L.push("")
@@ -443,8 +474,40 @@ function buildReport(
       L.push(`${le.code} — ${cleanTitle(le)}`)
       if (le.author) L.push(`    Author: ${le.author}${le.coauthor ? ` · ${le.coauthor}` : ""}`)
       if (le.review_note) L.push(`    What we asked for: ${le.review_note}`)
+      if (le.action_summary) L.push(`    Short version: see the Action summary posted ${le.action_summary.posted}, with the numbered list of what to do next.`)
+      if (le.author_activity) L.push(`    Changes we can see since: ${activityLine(le)}.`)
       if (le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
       L.push(`    Then: email ${REVIEW_INBOX} so RealAI can re-review.`)
+    }
+    L.push("")
+  }
+
+  if (premature.length) {
+    L.push(`MARKED "READY FOR PILOT", NOT SIGNED OFF BY REALAI (${premature.length})`)
+    L.push("The wiki status says these are ready for the pilot, but our review is not closed. Please do")
+    L.push("not treat them as pilot-ready until the open points on the Discussion page are done and we")
+    L.push("have re-read the material. The numbered list in each Action summary is the shortest route.")
+    for (const le of [...premature].sort(byCode)) {
+      L.push("")
+      L.push(`${le.code} — ${cleanTitle(le)}`)
+      if (le.author) L.push(`    Author: ${le.author}${le.coauthor ? ` · ${le.coauthor}` : ""}`)
+      L.push(`    Our position: ${le.revision_requested ? "revision requested" : le.early_feedback ? `early feedback only, ${le.early_feedback.must_fix_count} point(s) raised, no formal review yet` : "no formal review yet"}.`)
+      if (le.action_summary) L.push(`    Short version: Action summary posted ${le.action_summary.posted}.`)
+      if (le.author_activity) L.push(`    Changes we can see since: ${activityLine(le)}.`)
+      L.push(`    Then: email ${REVIEW_INBOX} so RealAI can do the formal review.`)
+    }
+    L.push("")
+  }
+
+  const changedOnly = changedSince.filter(le => !le.revision_requested && !prematureCodes.has(le.code))
+  if (changedOnly.length) {
+    L.push(`CHANGED SINCE OUR REVIEW, REALAI IS RE-READING (${changedOnly.length})`)
+    L.push("We can see edits or new files after our last note. We check them against the open points and")
+    L.push("will say on the Discussion page what is done. If you have finished a round of changes, email")
+    L.push(`${REVIEW_INBOX} so we know to look straight away.`)
+    for (const le of [...changedOnly].sort(byCode)) {
+      L.push(`  ${le.code} — ${cleanTitle(le)}`)
+      L.push(`    ${activityLine(le)}.`)
     }
     L.push("")
   }
@@ -453,11 +516,14 @@ function buildReport(
     L.push("")
     L.push(`EARLY FEEDBACK, NOT A REVIEW (${earlyFeedback.length})`)
     L.push("  We read this material even though it is still in development status and was never")
-    L.push("  submitted to us. Nothing is being asked of the author. The formal review happens when")
-    L.push("  the status moves to 'Learning materials: review'.")
+    L.push("  submitted to us. Each one has a short Action summary on its Discussion page listing what to")
+    L.push("  do next; the longer note stays on the page. The formal review happens when the status moves")
+    L.push("  to 'Learning materials: review'.")
     for (const le of [...earlyFeedback].sort(byCode)) {
       L.push(`  ${le.code} — ${cleanTitle(le)}`)
       if (le.early_feedback) L.push(`    ${le.early_feedback.must_fix_count} point(s) raised on the Talk page, ${le.early_feedback.date}`)
+      if (le.action_summary) L.push(`    Short version: Action summary posted ${le.action_summary.posted}`)
+      if (le.author_activity) L.push(`    Changes we can see since: ${activityLine(le)}.`)
     }
   }
 
@@ -519,7 +585,9 @@ function buildReport(
     L.push("")
   }
 
-  L.push("Every completed review is on the LE's wiki Discussion (Talk) tab.")
+  L.push("Every review is on the LE's wiki Discussion (Talk) tab. Where we have posted a short \"Action summary\", it")
+  L.push("lists what to do next in priority order; RealAI keeps the longer, more instructional review on file.")
+  L.push("A short summary is not a lower bar: complete wiki pages and the best teaching material remain our conditions for sign-off.")
   L.push(`Reminder: we move when you tell us the material is ready — please mail ${REVIEW_INBOX} when it is. Happy to walk through any of these.`)
   return L.join("\n")
 }
