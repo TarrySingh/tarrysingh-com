@@ -178,7 +178,10 @@ export function TurnstileWidget({
           // Already gone.
         }
       }
-      // A token already issued stays valid; nothing left to wait for.
+      // A removed widget can no longer refresh or expire its token, so
+      // drop it: a submit after a remount (TarryPeekABoo's bubble) then
+      // waits for the new widget's token instead of sending a stale one.
+      handlers.current.onToken("")
       handlers.current.onStatus("off")
     }
   }, [siteKey, theme, size])
