@@ -339,8 +339,7 @@ export function TarryPeekABoo({
                     : "Subscribe"}
               </button>
             </form>
-            {/* compact: the bubble is narrower than 300px on phones */}
-            <TurnstileWidget {...bot.turnstile} theme="light" size="compact" />
+            <TurnstileWidget {...bot.turnstile} theme="light" />
 
             <div
               className="mt-2 min-h-[1rem] text-[10px]"

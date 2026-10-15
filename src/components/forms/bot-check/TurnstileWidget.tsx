@@ -27,6 +27,9 @@ import type { TurnstileBinding } from "./useBotCheck"
 const SCRIPT_SRC =
   "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
 
+/** Width of the "normal" widget; narrower hosts get "compact" (150px). */
+const NORMAL_WIDTH = 300
+
 interface TurnstileRenderOptions {
   sitekey: string
   callback: (token: string) => void
@@ -88,8 +91,12 @@ function loadTurnstile(cb: OnLoaded): void {
 export interface TurnstileWidgetProps extends TurnstileBinding {
   /** Match the surface: light cards, dark Synaptic plates. */
   theme?: "auto" | "light" | "dark"
-  /** "compact" (150px wide) for containers narrower than 300px. */
-  size?: "normal" | "flexible" | "compact"
+  /**
+   * "auto" (default) picks "normal" (300px) when the container is at
+   * least that wide and "compact" (150px) otherwise, so a challenge never
+   * spills out of a phone-width card.
+   */
+  size?: "auto" | "normal" | "flexible" | "compact"
   className?: string
 }
 
@@ -98,7 +105,7 @@ export function TurnstileWidget({
   onStatus,
   resetKey,
   theme = "auto",
-  size = "normal",
+  size = "auto",
   className,
 }: TurnstileWidgetProps) {
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
@@ -130,7 +137,12 @@ export function TurnstileWidget({
             sitekey: siteKey,
             appearance: "interaction-only",
             theme,
-            size,
+            size:
+              size === "auto"
+                ? host.clientWidth >= NORMAL_WIDTH
+                  ? "normal"
+                  : "compact"
+                : size,
             "response-field": false,
             callback: (token) => handlers.current.onToken(token),
             "expired-callback": () => {
