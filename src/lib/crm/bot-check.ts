@@ -10,8 +10,12 @@ import type { LeadBotCheck } from "./types"
  * megabyte string through to the CRM.
  *
  * Rules (mirroring the earthscan reference defaults):
- *   - not a plain object (absent, null, array, string)  -> undefined,
- *     and the lead goes out with no botCheck at all
+ *   - not a plain object (absent, null, array, string)  -> the empty
+ *     envelope { '', '', 0 }. Every form on this site sends one, so a
+ *     request without it is hand-built (or a tab opened before the bot
+ *     check shipped). Forwarding nothing would let it skip the CRM's
+ *     honeypot and timing layers and its "no envelope yet" exemption;
+ *     the empty envelope gets the same checks as a malformed one
  *   - turnstileToken / hp: a string is kept, cut to its cap; any other
  *     type becomes ''. Cutting a filled honeypot keeps it non-empty,
  *     so the bot signal survives
@@ -35,12 +39,12 @@ function cappedString(v: unknown, max: number): string {
   return typeof v === "string" ? v.slice(0, max) : ""
 }
 
-export function readBotCheck(raw: unknown): LeadBotCheck | undefined {
-  if (!isPlainObject(raw)) return undefined
-  const elapsed = raw.elapsedMs
+export function readBotCheck(raw: unknown): LeadBotCheck {
+  const src = isPlainObject(raw) ? raw : {}
+  const elapsed = src.elapsedMs
   return {
-    turnstileToken: cappedString(raw.turnstileToken, TURNSTILE_TOKEN_MAX),
-    hp: cappedString(raw.hp, HONEYPOT_MAX),
+    turnstileToken: cappedString(src.turnstileToken, TURNSTILE_TOKEN_MAX),
+    hp: cappedString(src.hp, HONEYPOT_MAX),
     elapsedMs:
       typeof elapsed === "number" && Number.isFinite(elapsed) && elapsed >= 0
         ? elapsed

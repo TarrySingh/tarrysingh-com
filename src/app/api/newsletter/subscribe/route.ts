@@ -86,7 +86,8 @@ export async function POST(req: NextRequest) {
   // Anti-bot signals: type-checked and size-capped, never judged here.
   // The CRM receiver verifies them and decides (soft mode until
   // TARRYSINGH_BOT_CHECK_ENFORCE=true), so the visitor's response
-  // below is the same whatever they contain.
+  // below is the same whatever they contain. Always sent: a request
+  // with no envelope goes out with the empty one, so the CRM checks it.
   const botCheck = readBotCheck(body.botCheck)
 
   const result = await postLeadToCrm({
@@ -100,7 +101,7 @@ export async function POST(req: NextRequest) {
       page: source,
       ip,
       userAgent: ua,
-      ...(botCheck ? { botCheck } : {}),
+      botCheck,
     },
   })
 

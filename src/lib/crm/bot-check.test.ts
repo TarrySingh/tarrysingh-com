@@ -89,26 +89,28 @@ test("readBotCheck keeps a well-formed envelope exactly as sent", () => {
   assert.deepEqual(readBotCheck(input), input)
 })
 
-test("readBotCheck drops anything that is not a plain object", () => {
+const EMPTY = { turnstileToken: "", hp: "", elapsedMs: 0 }
+
+test("readBotCheck turns a missing or non-object envelope into the empty one", () => {
   for (const v of [undefined, null, "token", 42, true, [], ["a", "b"]]) {
-    assert.equal(readBotCheck(v), undefined, JSON.stringify(v))
+    assert.deepEqual(readBotCheck(v), EMPTY, JSON.stringify(v))
   }
 })
 
 test("readBotCheck turns wrong-typed fields into the empty signal", () => {
   assert.deepEqual(
     readBotCheck({ turnstileToken: 123, hp: { a: 1 }, elapsedMs: "5000" }),
-    { turnstileToken: "", hp: "", elapsedMs: 0 },
+    EMPTY,
   )
-  assert.deepEqual(readBotCheck({}), { turnstileToken: "", hp: "", elapsedMs: 0 })
+  assert.deepEqual(readBotCheck({}), EMPTY)
 })
 
 test("readBotCheck accepts only a finite, non-negative elapsedMs", () => {
   for (const bad of [-1, Number.NaN, Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY, null]) {
-    assert.equal(readBotCheck({ elapsedMs: bad })?.elapsedMs, 0, String(bad))
+    assert.equal(readBotCheck({ elapsedMs: bad }).elapsedMs, 0, String(bad))
   }
-  assert.equal(readBotCheck({ elapsedMs: 0 })?.elapsedMs, 0)
-  assert.equal(readBotCheck({ elapsedMs: 1999.5 })?.elapsedMs, 1999.5)
+  assert.equal(readBotCheck({ elapsedMs: 0 }).elapsedMs, 0)
+  assert.equal(readBotCheck({ elapsedMs: 1999.5 }).elapsedMs, 1999.5)
 })
 
 test("readBotCheck caps string lengths and keeps a filled honeypot non-empty", () => {
@@ -117,13 +119,13 @@ test("readBotCheck caps string lengths and keeps a filled honeypot non-empty", (
     hp: "x".repeat(HONEYPOT_MAX * 10),
     elapsedMs: 3000,
   })
-  assert.equal(out?.turnstileToken.length, TURNSTILE_TOKEN_MAX)
-  assert.equal(out?.hp.length, HONEYPOT_MAX)
+  assert.equal(out.turnstileToken.length, TURNSTILE_TOKEN_MAX)
+  assert.equal(out.hp.length, HONEYPOT_MAX)
 })
 
 test("readBotCheck never forwards unknown keys", () => {
   const out = readBotCheck({ turnstileToken: "", hp: "", elapsedMs: 3000, extra: "nope" })
-  assert.deepEqual(Object.keys(out ?? {}).sort(), ["elapsedMs", "hp", "turnstileToken"])
+  assert.deepEqual(Object.keys(out).sort(), ["elapsedMs", "hp", "turnstileToken"])
 })
 
 // ---- subscribe route ----------------------------------------------------
@@ -155,23 +157,22 @@ test("subscribe sanitises bad botCheck types instead of rejecting", async () => 
     botCheck: { turnstileToken: ["x"], hp: 7, elapsedMs: "fast" },
   }))
   assert.equal(res.status, 200)
-  assert.deepEqual(onlySent().payload.context?.botCheck, {
-    turnstileToken: "",
-    hp: "",
-    elapsedMs: 0,
-  })
+  assert.deepEqual(onlySent().payload.context?.botCheck, EMPTY)
 })
 
-test("subscribe sends no botCheck when the browser sent none or a non-object", async () => {
+test("subscribe forwards the empty envelope when the browser sent none or a non-object", async () => {
+  // Every form sends one, so a missing envelope is a hand-built request:
+  // the CRM must still run its checks on it (elapsedMs 0 reads as
+  // too_fast) rather than skip them, and the visitor still gets a 200.
   for (const botCheck of [undefined, null, "token", [1, 2]]) {
     sent = []
     const res = await subscribe(post("/api/newsletter/subscribe", {
       email: "reader@example.com",
       ...(botCheck === undefined ? {} : { botCheck }),
     }))
-    assert.equal(res.status, 200)
-    const ctx = onlySent().payload.context ?? {}
-    assert.equal("botCheck" in ctx, false, JSON.stringify(botCheck))
+    assert.equal(res.status, 200, JSON.stringify(botCheck))
+    assert.equal((await res.json()).ok, true)
+    assert.deepEqual(onlySent().payload.context?.botCheck, EMPTY, JSON.stringify(botCheck))
   }
 })
 
