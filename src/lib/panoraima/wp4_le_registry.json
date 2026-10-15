@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-10-14T18:58:17.104103+00:00",
-  "refreshed_at": "2026-10-14T18:58:17.104103+00:00",
+  "generated_at": "2026-10-15T18:40:56.761448+00:00",
+  "refreshed_at": "2026-10-15T18:40:56.761448+00:00",
   "refresh_history": [
     {
       "at": "2026-10-14T14:42:27.098551+00:00",
@@ -5881,7 +5881,12 @@
             "name": "Fundamentals of machine learning.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "changed_fields": [
+          "instructions",
+          "learningOutcomes"
+        ],
+        "content": true
       },
       "materials": {
         "count": 1,
@@ -6027,7 +6032,8 @@
             "name": "Data Types and Representations.pdf",
             "date": "2026-10-13"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 1,
@@ -6202,7 +6208,11 @@
             "name": "Machine Learning Models.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "changed_fields": [
+          "learningOutcomes"
+        ],
+        "content": true
       },
       "materials": {
         "count": 1,
@@ -7391,7 +7401,8 @@
         "wiki_page": {
           "ts": "2026-10-06T08:56:09Z",
           "user": "GrigorisNikolaou2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 1,
@@ -9114,7 +9125,13 @@
         "wiki_page": {
           "ts": "2026-10-13T16:37:47Z",
           "user": "AhmadKhalidi2"
-        }
+        },
+        "changed_fields": [
+          "duration",
+          "instructions",
+          "obligStPrep"
+        ],
+        "content": true
       },
       "materials": {
         "count": 7,
@@ -9551,7 +9568,12 @@
             "name": "HC-019 Introduction Machine Learning Types and Tasks v2.pptx",
             "date": "2026-10-13"
           }
-        ]
+        ],
+        "changed_fields": [
+          "instructions",
+          "learningOutcomes"
+        ],
+        "content": true
       },
       "materials": {
         "count": 2,
@@ -9791,7 +9813,8 @@
         "talk": {
           "ts": "2026-09-25T09:31:37Z",
           "user": "BelaPataki2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 1,
@@ -9914,7 +9937,8 @@
         "talk": {
           "ts": "2026-09-25T09:36:04Z",
           "user": "BelaPataki2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 2,
@@ -11848,7 +11872,8 @@
             "name": "Presentation HC-148_revision-1.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 3,
@@ -12006,7 +12031,8 @@
             "name": "Presentation HC-150_revision-1.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 3,
@@ -12164,7 +12190,8 @@
             "name": "Presentation HC-152_revision-1.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 5,
@@ -13306,7 +13333,8 @@
         "wiki_page": {
           "ts": "2026-10-02T08:05:24Z",
           "user": "SietskeTacoma"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 1,
@@ -13436,7 +13464,8 @@
             "name": "HC 178 Data-2 v1.pdf",
             "date": "2026-10-13"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 1,
@@ -13568,7 +13597,8 @@
         "wiki_page": {
           "ts": "2026-10-06T06:36:41Z",
           "user": "GrigorisNikolaou2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 1,
@@ -13700,7 +13730,8 @@
         "wiki_page": {
           "ts": "2026-10-06T06:37:46Z",
           "user": "GrigorisNikolaou2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 3,
@@ -31832,7 +31863,8 @@
         "wiki_page": {
           "ts": "2026-10-06T08:56:09Z",
           "user": "GrigorisNikolaou2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 1,
@@ -31965,7 +31997,12 @@
             "name": "HC-019 Introduction Machine Learning Types and Tasks v2.pptx",
             "date": "2026-10-13"
           }
-        ]
+        ],
+        "changed_fields": [
+          "instructions",
+          "learningOutcomes"
+        ],
+        "content": true
       },
       "materials": {
         "count": 2,
@@ -32205,7 +32242,8 @@
         "talk": {
           "ts": "2026-09-25T09:31:37Z",
           "user": "BelaPataki2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 1,
@@ -32328,7 +32366,8 @@
         "talk": {
           "ts": "2026-09-25T09:36:04Z",
           "user": "BelaPataki2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 2,
@@ -36782,7 +36821,12 @@
             "name": "Fundamentals of machine learning.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "changed_fields": [
+          "instructions",
+          "learningOutcomes"
+        ],
+        "content": true
       },
       "materials": {
         "count": 1,
@@ -36928,7 +36972,8 @@
             "name": "Data Types and Representations.pdf",
             "date": "2026-10-13"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 1,
@@ -37057,7 +37102,11 @@
             "name": "Machine Learning Models.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "changed_fields": [
+          "learningOutcomes"
+        ],
+        "content": true
       },
       "materials": {
         "count": 1,
@@ -38331,7 +38380,8 @@
         "wiki_page": {
           "ts": "2026-10-06T06:36:41Z",
           "user": "GrigorisNikolaou2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 1,
@@ -38463,7 +38513,8 @@
         "wiki_page": {
           "ts": "2026-10-06T06:37:46Z",
           "user": "GrigorisNikolaou2"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 3,
@@ -40510,7 +40561,13 @@
         "wiki_page": {
           "ts": "2026-10-13T16:37:47Z",
           "user": "AhmadKhalidi2"
-        }
+        },
+        "changed_fields": [
+          "duration",
+          "instructions",
+          "obligStPrep"
+        ],
+        "content": true
       },
       "materials": {
         "count": 7,
@@ -40700,7 +40757,8 @@
             "name": "Presentation HC-148_revision-1.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 3,
@@ -40858,7 +40916,8 @@
             "name": "Presentation HC-150_revision-1.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 3,
@@ -41016,7 +41075,8 @@
             "name": "Presentation HC-152_revision-1.pdf",
             "date": "2026-10-11"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 5,
@@ -41172,7 +41232,8 @@
         "wiki_page": {
           "ts": "2026-10-02T08:05:24Z",
           "user": "SietskeTacoma"
-        }
+        },
+        "content": false
       },
       "materials": {
         "count": 1,
@@ -41302,7 +41363,8 @@
             "name": "HC 178 Data-2 v1.pdf",
             "date": "2026-10-13"
           }
-        ]
+        ],
+        "content": true
       },
       "materials": {
         "count": 1,

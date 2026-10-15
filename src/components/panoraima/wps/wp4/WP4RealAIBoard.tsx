@@ -205,14 +205,13 @@ function LECard({ le, kind }: { le: Wp4LE; kind: "authoring" | "reviewing" }) {
             summary posted {le.action_summary.posted.replace(/ 2026, /, " · ").replace(" CEST", "")}
           </span>
         )}
-        {le.author_activity && (
+        {le.author_activity?.content && (
           <span
             className="inline-flex items-center gap-1 rounded border border-[#E8D3A8] bg-[#FBF1DC] px-2 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#8A5A00]"
-            title={[
-              le.author_activity.wiki_page && `Wiki page edited ${le.author_activity.wiki_page.ts.slice(0, 10)} by ${le.author_activity.wiki_page.user}`,
-              le.author_activity.talk && `Discussion page edited ${le.author_activity.talk.ts.slice(0, 10)} by ${le.author_activity.talk.user}`,
+            title={`Changed since our last review: ${[
+              le.author_activity.changed_fields?.length && `lesson text (${le.author_activity.changed_fields.join(", ")})`,
               le.author_activity.files && `${le.author_activity.files.length} new or changed file(s), newest ${le.author_activity.files.map(f => f.date).sort().pop()}`,
-            ].filter(Boolean).join(" · ") + " (after our last review)"}
+            ].filter(Boolean).join(" · ")}. Status, author, reviewer and Discussion-page edits do not count.`}
           >
             changed since our review
           </span>
@@ -375,11 +374,16 @@ function brief(note: string | undefined | null, max = 360): string {
 // touched the LE after our last review.
 function activityLine(le: Wp4LE): string {
   const a = le.author_activity
-  if (!a) return ""
-  const d = (ts: string) => new Date(ts).toLocaleDateString("en-GB", { day: "numeric", month: "long" })
+  if (!a || !a.content) return ""
+  const FIELD: Record<string, string> = {
+    learningOutcomes: "learning outcomes", instructions: "instructions for teachers", obligStPrep: "obligatory preparation",
+    optionStPrep: "optional preparation", backgrStPrep: "background reading", recommTePrep: "teacher preparation",
+    expectedLEs: "Learning Events before", keywords: "keywords", ackThx: "acknowledgements", origContrib: "original contributions",
+    lessonMaterials: "lesson materials", duration: "duration", lessonType: "lesson type", jobrole: "job role",
+    mandatory: "mandatory", further: "further information", surfLink: "SURF link", surfMaterials: "SURF materials", LEvTitle: "title",
+  }
   const bits: string[] = []
-  if (a.wiki_page) bits.push(`wiki page edited ${d(a.wiki_page.ts)}`)
-  if (a.talk) bits.push(`Discussion page edited ${d(a.talk.ts)}`)
+  if (a.changed_fields?.length) bits.push(`lesson text changed (${a.changed_fields.map(f => FIELD[f] ?? f).join(", ")})`)
   if (a.files?.length) {
     const names = a.files.slice(0, 2).map(f => f.name).join(", ")
     bits.push(`${a.files.length} new or changed file${a.files.length === 1 ? "" : "s"} (${names}${a.files.length > 2 ? ", ..." : ""})`)
@@ -415,7 +419,7 @@ function buildReport(
   // Reviewed, but we asked for changes. The ball is with the author, not with us.
   const revisionRequested = reviewer.filter(le => le.revision_requested && !prematureCodes.has(le.code))
   // Someone changed the LE after our last review: we owe a re-read.
-  const changedSince = reviewer.filter(le => !!le.author_activity)
+  const changedSince = reviewer.filter(le => !!le.author_activity?.content)
   const summariesPosted = reviewer.filter(le => !!le.action_summary).length
   // Material exists but the ball is NOT with us: either the author never submitted it
   // (still "development", so we left early feedback instead), or they are actively
@@ -485,7 +489,7 @@ function buildReport(
       if (le.author) L.push(`    Author: ${le.author}${le.coauthor ? ` · ${le.coauthor}` : ""}`)
       if (le.review_note) L.push(`    What we asked for: ${brief(le.review_note)}`)
       if (le.action_summary) L.push(`    Short version: see the Action summary posted ${le.action_summary.posted}, with the numbered list of what to do next.`)
-      if (le.author_activity) L.push(`    Changes we can see since: ${activityLine(le)}.`)
+      if (activityLine(le)) L.push(`    Changes we can see since: ${activityLine(le)}.`)
       if (le.wiki_page) L.push(`    Full review: ${le.wiki_page.replace("/wiki/", "/wiki/Talk:")}`)
       L.push(`    Then: email ${REVIEW_INBOX} so RealAI can re-review.`)
     }
@@ -503,7 +507,7 @@ function buildReport(
       if (le.author) L.push(`    Author: ${le.author}${le.coauthor ? ` · ${le.coauthor}` : ""}`)
       L.push(`    Our position: ${le.revision_requested ? "revision requested" : le.early_feedback ? `early feedback only, ${le.early_feedback.must_fix_count} point(s) raised, no formal review yet` : "no formal review yet"}.`)
       if (le.action_summary) L.push(`    Short version: Action summary posted ${le.action_summary.posted}.`)
-      if (le.author_activity) L.push(`    Changes we can see since: ${activityLine(le)}.`)
+      if (activityLine(le)) L.push(`    Changes we can see since: ${activityLine(le)}.`)
       L.push(`    Then: email ${REVIEW_INBOX} so RealAI can do the formal review.`)
     }
     L.push("")
@@ -533,7 +537,7 @@ function buildReport(
       L.push(`  ${le.code} — ${cleanTitle(le)}`)
       if (le.early_feedback) L.push(`    ${le.early_feedback.must_fix_count} point(s) raised on the Talk page, ${le.early_feedback.date}`)
       if (le.action_summary) L.push(`    Short version: Action summary posted ${le.action_summary.posted}`)
-      if (le.author_activity) L.push(`    Changes we can see since: ${activityLine(le)}.`)
+      if (activityLine(le)) L.push(`    Changes we can see since: ${activityLine(le)}.`)
     }
     L.push("")
   }

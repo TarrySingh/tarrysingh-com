@@ -817,6 +817,9 @@ export interface Wp4LE {
     wiki_page?: { ts: string; user: string }
     talk?: { ts: string; user: string }
     files?: { name: string; date: string }[]
+    /** true only when lesson fields on the wiki or SharePoint files changed (not status, author, reviewer or Discussion edits) */
+    content?: boolean
+    changed_fields?: string[]
   }
   /** Notes we left on material still in "development" status, i.e. never submitted to us.
    *  This is NOT a review and must not count towards the reviewed total. */
