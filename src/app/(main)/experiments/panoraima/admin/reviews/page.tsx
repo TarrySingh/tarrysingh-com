@@ -19,6 +19,14 @@ interface ArchiveEntry {
   review_note?: string | null
   long_form: { heading: string; text: string; chars: number }[]
   action_summary: { posted: string; iso: string; talk_rev: number; text: string }
+  follow_up?: { posted: string; talk_rev: number | null; text: string }
+  reread?: {
+    checked: string
+    what_changed: string
+    headline: string
+    points: { id: string; tier: string; status: string; point: string; evidence: string }[]
+    new_problems: string[]
+  }
   talk_url: string
 }
 
@@ -33,6 +41,13 @@ const VERDICT_STYLE: Record<string, string> = {
   "revision requested": "border-[#E8D3A8] bg-[#FBF1DC] text-[#8A5A00]",
   reviewed: "border-[#BFE2CC] bg-[#E7F4EC] text-[#1F6B41]",
   "early feedback": "border-[#BBD4DE] bg-[#EAF2F6] text-[#1C5A73]",
+}
+
+const POINT_STYLE: Record<string, string> = {
+  closed: "border-[#BFE2CC] bg-[#E7F4EC] text-[#1F6B41]",
+  partly: "border-[#E8D3A8] bg-[#FBF1DC] text-[#8A5A00]",
+  open: "border-[#E6BFB4] bg-[#FBEAE5] text-[#9A3318]",
+  cannot_verify: "border-[#D7D9DE] bg-[#F1F2F4] text-[#3A3E46]",
 }
 
 function loadArchive(): Archive | null {
@@ -120,6 +135,65 @@ export default function ReviewArchivePage() {
               <pre className="mt-2 whitespace-pre-wrap font-sans text-[14px] leading-relaxed text-[#2A2D34]">
                 {e.action_summary.text}
               </pre>
+
+              {e.follow_up && (
+                <div className="mt-5">
+                  <h3 className="font-mono text-[12px] font-bold uppercase tracking-[0.14em] text-[#2A5594]">
+                    Follow-up as posted: {e.follow_up.posted}
+                    {e.follow_up.talk_rev ? ` · rev ${e.follow_up.talk_rev}` : ""}
+                  </h3>
+                  <pre className="mt-2 whitespace-pre-wrap font-sans text-[14px] leading-relaxed text-[#2A2D34]">
+                    {e.follow_up.text}
+                  </pre>
+                </div>
+              )}
+
+              {e.reread && (
+                <details className="mt-5 rounded-lg border border-[#DCDDE1] bg-[#FAFAFB] p-4">
+                  <summary className="cursor-pointer text-[14px] font-bold">
+                    Point-by-point re-read, {e.reread.checked}{" "}
+                    <span className="font-mono text-[12px] font-normal text-[#5B616B]">
+                      (
+                      {["closed", "partly", "open"]
+                        .map((k) => `${e.reread!.points.filter((q) => q.status === k).length} ${k}`)
+                        .join(", ")}
+                      )
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-[13.5px] leading-relaxed text-[#3A3E46]">{e.reread.headline}</p>
+                  <p className="mt-2 text-[13px] leading-relaxed text-[#5B616B]">
+                    <span className="font-bold">What the author changed: </span>
+                    {e.reread.what_changed}
+                  </p>
+                  <ul className="mt-3 space-y-2">
+                    {e.reread.points.map((q) => (
+                      <li key={q.id} className="text-[13px] leading-relaxed">
+                        <span
+                          className={`mr-2 inline-block rounded border px-1.5 py-0.5 font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] ${
+                            POINT_STYLE[q.status] ?? POINT_STYLE.cannot_verify
+                          }`}
+                        >
+                          {q.status.replace("_", " ")}
+                        </span>
+                        <span className="font-mono text-[11.5px] text-[#5B616B]">{q.id}</span> {q.point}
+                        <div className="mt-0.5 pl-1 text-[12.5px] text-[#5B616B]">{q.evidence}</div>
+                      </li>
+                    ))}
+                  </ul>
+                  {e.reread.new_problems.length > 0 && (
+                    <div className="mt-3">
+                      <div className="font-mono text-[11.5px] font-bold uppercase tracking-[0.1em] text-[#9A3318]">
+                        New problems in the changes
+                      </div>
+                      <ul className="mt-1 list-disc pl-5 text-[13px] leading-relaxed text-[#3A3E46]">
+                        {e.reread.new_problems.map((t, i) => (
+                          <li key={i}>{t}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </details>
+              )}
 
               {e.review_note && (
                 <p className="mt-4 rounded bg-[#F1F2F4] px-3 py-2 text-[13px] leading-relaxed text-[#3A3E46]">
