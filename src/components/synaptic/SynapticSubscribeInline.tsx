@@ -1,6 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import {
+  HoneypotField,
+  TurnstileWidget,
+  useBotCheck,
+} from "@/components/forms/bot-check"
 
 type Status = "idle" | "loading" | "sent" | "error"
 
@@ -34,6 +39,7 @@ export function SynapticSubscribeInline({
   const [status, setStatus] = useState<Status>("idle")
   const [message, setMessage] = useState("")
   const busy = status === "loading" || status === "sent"
+  const bot = useBotCheck()
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -46,6 +52,7 @@ export function SynapticSubscribeInline({
     setStatus("loading")
     setMessage("")
     try {
+      const botCheck = await bot.getBotCheck()
       const res = await fetch("/api/newsletter/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -55,6 +62,7 @@ export function SynapticSubscribeInline({
             typeof window !== "undefined"
               ? `${window.location.pathname}#synaptic-inline`
               : "/synaptic#synaptic-inline",
+          botCheck,
         }),
       })
       if (!res.ok) throw new Error(`status ${res.status}`)
@@ -62,6 +70,7 @@ export function SynapticSubscribeInline({
       setMessage("Filed. Welcome to the dispatches list.")
       setEmail("")
     } catch {
+      bot.rearm()
       setStatus("error")
       setMessage("Something snagged, try again in a moment?")
     }
@@ -120,6 +129,7 @@ export function SynapticSubscribeInline({
           className="flex w-full max-w-sm flex-col gap-2 sm:flex-row sm:items-stretch"
           noValidate
         >
+          <HoneypotField value={bot.hp} onChange={bot.setHp} />
           <label htmlFor="synaptic-inline-email" className="sr-only">
             Email address
           </label>
@@ -165,6 +175,7 @@ export function SynapticSubscribeInline({
           </button>
         </form>
       </div>
+      <TurnstileWidget {...bot.turnstile} theme="dark" />
 
       <div className="min-h-[1.25rem]" aria-live="polite">
         {message ? (
