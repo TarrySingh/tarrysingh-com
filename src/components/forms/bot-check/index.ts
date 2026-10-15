@@ -4,11 +4,14 @@
  *
  *   const bot = useBotCheck()
  *   ...
- *   <form onSubmit={submit}>
+ *   <form {...bot.formProps} onSubmit={submit}>
  *     <HoneypotField value={bot.hp} onChange={bot.setHp} />
  *     ... real fields ...
  *   </form>
  *   <TurnstileWidget {...bot.turnstile} theme="light" />
+ *
+ * `formProps` marks the form engaged on the first focus or press inside
+ * it; the widget renders, and runs its challenge, only from then on.
  *
  * A form that is not on screen when its host mounts (a scroll-triggered
  * peek) passes `useBotCheck({ active: visible })` so the timer starts
@@ -23,6 +26,7 @@
 export { useBotCheck } from "./useBotCheck"
 export type {
   BotCheck,
+  BotCheckFormProps,
   TurnstileBinding,
   TurnstileStatus,
   UseBotCheck,

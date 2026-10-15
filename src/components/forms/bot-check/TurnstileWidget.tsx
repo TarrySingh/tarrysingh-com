@@ -16,9 +16,16 @@
  * through the useBotCheck binding (spread `bot.turnstile` onto this), not
  * through a hidden input.
  *
+ * Lazy: the widget renders, and Cloudflare runs a challenge, only once
+ * the visitor focuses or presses inside its form (`engaged`, from
+ * `bot.formProps`). An essay with five subscribe bands runs one
+ * challenge, for the band actually used, and the other four never show
+ * one or shift the layout. The API script is fetched once per page as
+ * soon as a widget mounts (fetching it renders nothing), so the token is
+ * quick once the visitor engages, and it is shared by every widget.
+ *
  * If the script is blocked or fails, the widget reports "failed" and the
- * form submits with turnstileToken '' and lets the CRM decide. The API
- * script is loaded once per page and shared by every widget on it.
+ * form submits with turnstileToken '' and lets the CRM decide.
  */
 
 import { useEffect, useRef, useState } from "react"
@@ -104,6 +111,7 @@ export function TurnstileWidget({
   onToken,
   onStatus,
   resetKey,
+  engaged,
   theme = "auto",
   size = "auto",
   className,
@@ -118,9 +126,14 @@ export function TurnstileWidget({
     handlers.current = { onToken, onStatus }
   }, [onToken, onStatus])
 
+  // Fetch the script ahead of engagement; it renders and challenges nothing.
+  useEffect(() => {
+    if (siteKey) loadTurnstile(() => {})
+  }, [siteKey])
+
   useEffect(() => {
     const host = hostRef.current
-    if (!siteKey || !host) return
+    if (!siteKey || !engaged || !host) return
     let cancelled = false
     handlers.current.onStatus("pending")
 
@@ -184,7 +197,7 @@ export function TurnstileWidget({
       handlers.current.onToken("")
       handlers.current.onStatus("off")
     }
-  }, [siteKey, theme, size])
+  }, [siteKey, engaged, theme, size])
 
   // rearm(): ask the live widget for a fresh single-use token.
   useEffect(() => {
@@ -199,8 +212,9 @@ export function TurnstileWidget({
     }
   }, [resetKey])
 
-  // No key provisioned: render nothing, load nothing.
-  if (!siteKey) return null
+  // No key provisioned: render nothing, load nothing. Not engaged yet:
+  // render nothing, so no challenge runs and the layout never moves.
+  if (!siteKey || !engaged) return null
   return (
     <div
       ref={hostRef}

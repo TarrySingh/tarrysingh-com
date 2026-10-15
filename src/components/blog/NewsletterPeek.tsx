@@ -221,7 +221,12 @@ export function NewsletterPeek() {
           I&apos;m reading. No funnels.
         </p>
 
-        <form onSubmit={onSubmit} className="flex flex-col gap-2" noValidate>
+        <form
+          {...bot.formProps}
+          onSubmit={onSubmit}
+          className="flex flex-col gap-2"
+          noValidate
+        >
           <HoneypotField value={bot.hp} onChange={bot.setHp} />
           <label htmlFor="dispatches-peek-email" className="sr-only">
             Email address

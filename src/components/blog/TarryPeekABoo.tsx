@@ -296,6 +296,7 @@ export function TarryPeekABoo({
             </p>
 
             <form
+              {...bot.formProps}
               onSubmit={onSubmit}
               noValidate
               className="flex flex-col gap-1.5"

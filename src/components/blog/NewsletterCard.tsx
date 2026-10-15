@@ -121,6 +121,7 @@ export function NewsletterCard({ variant = "wide" }: NewsletterCardProps) {
       </p>
 
       <form
+        {...bot.formProps}
         onSubmit={onSubmit}
         className="flex flex-col sm:flex-row gap-3 sm:items-stretch"
         noValidate

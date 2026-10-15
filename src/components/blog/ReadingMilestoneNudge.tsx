@@ -142,6 +142,7 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
                 no schedule, no marketing, leave an address.
               </p>
               <form
+                {...bot.formProps}
                 onSubmit={onSubmit}
                 className="flex flex-col sm:flex-row gap-2 sm:items-stretch"
                 noValidate

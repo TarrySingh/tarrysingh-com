@@ -125,6 +125,7 @@ export function SynapticSubscribeInline({
         </p>
 
         <form
+          {...bot.formProps}
           onSubmit={onSubmit}
           className="flex w-full max-w-sm flex-col gap-2 sm:flex-row sm:items-stretch"
           noValidate

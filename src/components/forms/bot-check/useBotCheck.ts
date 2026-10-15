@@ -15,6 +15,10 @@
  *                     time on the form, not time on the page.
  *   - turnstileToken  the Cloudflare Turnstile token (TurnstileWidget), or
  *                     '' when the widget is off, blocked or still working.
+ *                     The widget renders only once the visitor focuses or
+ *                     presses inside this form (spread `formProps` onto
+ *                     the <form>), so a page with several forms runs one
+ *                     challenge, for the form actually used.
  *
  * Submitting is never blocked. If the widget is still producing a token
  * at submit time, getBotCheck() waits up to TOKEN_WAIT_MS for it and then
@@ -41,12 +45,21 @@ export interface TurnstileBinding {
   onStatus: (status: TurnstileStatus) => void
   /** Bumped by rearm(); the widget resets itself when it changes. */
   resetKey: number
+  /** False until the visitor first engages with the form (formProps). */
+  engaged: boolean
+}
+
+/** Spread onto the <form>: the first focus or press inside it engages it. */
+export interface BotCheckFormProps {
+  onFocus: () => void
+  onPointerDown: () => void
 }
 
 export interface UseBotCheck {
   hp: string
   setHp: (value: string) => void
   turnstile: TurnstileBinding
+  formProps: BotCheckFormProps
   /** Snapshot the signals at submit time. Never rejects. */
   getBotCheck: () => Promise<BotCheck>
   /** After a failed submit: drop the used token and ask for a new one. */
@@ -70,6 +83,9 @@ export function useBotCheck({
   const status = useRef<TurnstileStatus>("off")
   const waiters = useRef(new Set<() => void>())
   const [resetKey, setResetKey] = useState(0)
+  // Sticky: once engaged, the widget stays wanted, including when
+  // TarryPeekABoo's bubble closes and reopens.
+  const [engaged, setEngaged] = useState(false)
 
   // The timer starts the first time the form is shown on the client and
   // is never restarted, so hiding and re-showing the form (TarryPeekABoo's
@@ -124,9 +140,14 @@ export function useBotCheck({
   }, [])
 
   const turnstile = useMemo(
-    () => ({ onToken, onStatus, resetKey }),
-    [onToken, onStatus, resetKey],
+    () => ({ onToken, onStatus, resetKey, engaged }),
+    [onToken, onStatus, resetKey, engaged],
   )
 
-  return { hp, setHp, turnstile, getBotCheck, rearm }
+  const formProps = useMemo(() => {
+    const engage = () => setEngaged(true)
+    return { onFocus: engage, onPointerDown: engage }
+  }, [])
+
+  return { hp, setHp, turnstile, formProps, getBotCheck, rearm }
 }

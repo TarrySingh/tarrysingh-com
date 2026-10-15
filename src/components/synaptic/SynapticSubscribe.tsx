@@ -198,7 +198,7 @@ export function SynapticSubscribe({
           </p>
 
           {/* form */}
-          <form data-rise="4" onSubmit={onSubmit} noValidate className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-stretch">
+          <form data-rise="4" {...bot.formProps} onSubmit={onSubmit} noValidate className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-stretch">
             <HoneypotField value={bot.hp} onChange={bot.setHp} />
             <label htmlFor="synsub-email" className="sr-only">Email address</label>
             <input
