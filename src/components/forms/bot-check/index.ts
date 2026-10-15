@@ -10,6 +10,10 @@
  *   </form>
  *   <TurnstileWidget {...bot.turnstile} theme="light" />
  *
+ * A form that is not on screen when its host mounts (a scroll-triggered
+ * peek) passes `useBotCheck({ active: visible })` so the timer starts
+ * when the form appears.
+ *
  * On submit send `botCheck: await bot.getBotCheck()` in the JSON body,
  * and call `bot.rearm()` when the submit fails so a retry gets a fresh
  * Turnstile token. The realai-crm receiver verifies the signals and
@@ -22,6 +26,7 @@ export type {
   TurnstileBinding,
   TurnstileStatus,
   UseBotCheck,
+  UseBotCheckOptions,
 } from "./useBotCheck"
 export { HoneypotField } from "./HoneypotField"
 export { TurnstileWidget } from "./TurnstileWidget"

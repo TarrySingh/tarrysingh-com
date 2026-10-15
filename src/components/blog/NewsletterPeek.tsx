@@ -36,7 +36,9 @@ export function NewsletterPeek() {
   const [status, setStatus] = useState<Status>("idle")
   const [message, setMessage] = useState("")
   const wrapperRef = useRef<HTMLDivElement | null>(null)
-  const bot = useBotCheck()
+  // This host lives in the layout and outlasts navigations; time the
+  // form from when the card slides in, not from the first page view.
+  const bot = useBotCheck({ active: visible })
   const pathname = usePathname()
   // Suppress on /blog/<slug> routes — those mount the TarryPeekABoo
   // mascot (right-edge sliding peek) instead. Two peeks fighting for

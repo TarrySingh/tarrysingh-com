@@ -37,7 +37,8 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
-  const bot = useBotCheck()
+  // Time the form from when the nudge surfaces, not from page load.
+  const bot = useBotCheck({ active: visible })
 
   // Only render on long posts. Avoids the nudge appearing on Notes-shaped
   // 500-word pieces where 60% reads in 90 seconds and the surfacing

@@ -56,8 +56,9 @@ export function TarryPeekABoo({
   const [message, setMessage] = useState("")
   const wrapperRef = useRef<HTMLDivElement | null>(null)
   // Owned here, not by the bubble, so hover in/out never resets the
-  // timer or the honeypot.
-  const bot = useBotCheck()
+  // timer or the honeypot. The timer starts when the bubble (and its
+  // form) first opens.
+  const bot = useBotCheck({ active: visible && expanded })
 
   // Mount-time eligibility + scroll listener.
   useEffect(() => {

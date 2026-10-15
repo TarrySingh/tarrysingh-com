@@ -43,7 +43,7 @@ export interface LeadContextUtm {
  *   turnstileToken  Cloudflare Turnstile response token; '' when the
  *                   widget is off or produced no token.
  *   hp              honeypot value; '' for a person, non-empty = bot.
- *   elapsedMs       ms between the form mounting and the submit.
+ *   elapsedMs       ms between the form first appearing and the submit.
  */
 export interface LeadBotCheck {
   turnstileToken: string

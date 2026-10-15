@@ -8,8 +8,11 @@
  * them; this hook only gathers them and hands back the `context.botCheck`
  * envelope that /api/newsletter/subscribe forwards:
  *   - hp              the honeypot value (HoneypotField). '' for a person.
- *   - elapsedMs       ms between the form mounting and the submit. People
- *                     take more than 2s; an instant POST is a bot.
+ *   - elapsedMs       ms between the form first appearing and the submit.
+ *                     People take more than 2s; an instant POST is a bot.
+ *                     A form that appears late (a scroll-triggered peek
+ *                     or nudge) passes `active` so the timer measures
+ *                     time on the form, not time on the page.
  *   - turnstileToken  the Cloudflare Turnstile token (TurnstileWidget), or
  *                     '' when the widget is off, blocked or still working.
  *
@@ -50,18 +53,30 @@ export interface UseBotCheck {
   rearm: () => void
 }
 
-export function useBotCheck(): UseBotCheck {
-  const mountedAt = useRef(0)
+export interface UseBotCheckOptions {
+  /**
+   * Whether the form is on screen. The timer starts the first time this
+   * is true. Defaults to true: the form shows when the host mounts.
+   */
+  active?: boolean
+}
+
+export function useBotCheck({
+  active = true,
+}: UseBotCheckOptions = {}): UseBotCheck {
+  const shownAt = useRef(0)
   const [hp, setHp] = useState("")
   const token = useRef("")
   const status = useRef<TurnstileStatus>("off")
   const waiters = useRef(new Set<() => void>())
   const [resetKey, setResetKey] = useState(0)
 
-  // The timer starts when the form is mounted on the client.
+  // The timer starts the first time the form is shown on the client and
+  // is never restarted, so hiding and re-showing the form (TarryPeekABoo's
+  // bubble on hover) keeps the original stamp.
   useEffect(() => {
-    mountedAt.current = Date.now()
-  }, [])
+    if (active && !shownAt.current) shownAt.current = Date.now()
+  }, [active])
 
   const wake = useCallback(() => {
     for (const done of Array.from(waiters.current)) done()
@@ -87,7 +102,7 @@ export function useBotCheck(): UseBotCheck {
   )
 
   const getBotCheck = useCallback(async (): Promise<BotCheck> => {
-    const elapsedMs = mountedAt.current ? Date.now() - mountedAt.current : 0
+    const elapsedMs = shownAt.current ? Date.now() - shownAt.current : 0
     if (!token.current && status.current === "pending") {
       await new Promise<void>((resolve) => {
         const done = () => {
