@@ -1,0 +1,68 @@
+---
+title: "The 73 AI Services Your Network Already Has"
+date: "2026-10-01"
+category: "Essays"
+excerpt: "Enterprise networks now carry a median of 73 AI services that nobody formally approved — each below procurement thresholds, each handling sensitive data, none linked to a measurable outcome. EU AI Act obligations make deployer liability real for organisations that cannot account for their shadow stack. The argument here is for governance by inventory: a structured three-column sheet that decides which tools stay, which are cut, and what success looks like for the rest."
+draft: false
+tags: ["ai-governance", "shadow-it", "enterprise-ai", "finops", "ai-risk", "eu-ai-act"]
+---
+
+On 13 September 2026, Unseen Security published telemetry from 90 days of network monitoring across enterprise deployments. The median organisation counted 73 distinct AI services in use within the first weeks of visibility. One in four organisations saw more than 120, with the highest count at 175.
+
+Nobody planned for 73. Finance modelled a Copilot rollout and two vendor pilots. IT approved a shortlist of three. The board presentation showed one lighthouse project. The 73 are what accumulated when you were not looking, and the people using them are not waiting for permission.
+
+This is not shadow IT with a coat of AI paint. The median organisation sees around 50 attempted data leaks to AI tools per day, personal data, credentials or financial records in a prompt, with a quarter of organisations seeing more than 600 a week. Around 7% of prompts to AI tools contain sensitive data. The finance controller is pasting the budget into Claude. The junior counsel is feeding a contract into an unapproved Perplexity thread. The sales engineer is using a prompt library hosted on a tool you have never evaluated. A 2026 survey by cybersecurity company Vanta found that 70% of companies report shadow IT activity, with AI tools specifically identified as a growing concern, and documented instances of employees reinstalling AI tools after IT departments had revoked access.
+
+This piece is for the person whose job it is to make sense of the 73 and attach a defensible number to what happens next.
+
+## What the inventory actually contains
+
+Less than 11% of AI applications in the workplace are visible to IT teams. When visibility arrives, the distribution is not what anyone prepared for. The sanctioned tools are present. So are 15 different prompt-chaining SaaS products, three unapproved code-completion extensions installed at the IDE level, two legal-document assistants that ingest entire case files, a handful of summarisation plugins bolted onto Slack and Teams, and a category the vendor calls "AI utilities", which is shorthand for anything that offers an API wrapper around a frontier model and a subscription tier under $30 per month.
+
+Some of these tools are good. Some are redundant. Some are identical in function but ship different privacy policies. Some signed data-processing addenda. Some did not. Some store prompts for 90 days. Some say they do not store prompts but train on them unless you pay for the enterprise plan. None of this was visible before the discovery scan, and the organisation has been running them in production for months.
+
+The person writing the FinOps report now owns a list with 73 rows, vendor names that mean nothing to procurement, monthly charges that add to four figures when summed but never triggered a centralised spend alert, and a question from the CFO about which ones actually deliver value. The answer is that nobody measured it. They were installed, used, and invoiced. You cannot cut what you cannot see, and you cannot govern what you have not inventoried.
+
+## The evaluation column you cannot fill
+
+A 2025 study surveying 306 practitioners and conducting 20 in-depth case studies across 26 domains found that 68% of production agents execute at most 10 steps before requiring human intervention, 70% rely on prompting off-the-shelf models instead of weight tuning, and 74% depend primarily on human evaluation. The reliance on human judgement is not a design choice. It is what happens when automated evaluation was not in place before the agent shipped.
+
+The 73 services in the inventory fall into the same gap. Nobody ran evals. Nobody logged outputs. Nobody tied usage to a success metric the business would recognise. A tool went live because an engineer liked it, a team lead approved the spend, and the subscription auto-renewed. When the FinOps owner asks for a cost-per-outcome figure or a quality gate, the answer is silence.
+
+A 2025 research study analysing LLM project repositories found prompt debt represents 6.61% of all detected technical debt, making it the most prevalent category, and once prompt debt appears, only 49.1% of it gets removed, the lowest removal rate of any debt type. The tools on your network inherit that debt. Prompts are unversioned. Outputs are unchecked. Failures are invisible unless someone escalates, and escalation requires knowing who owns the tool in the first place.
+
+You now have 73 unsupported production systems, each with its own risk profile, and no paper trail proving any of them were tested before they processed customer data. The EU AI Act entered force 1 August 2024, with high-risk obligations live from 2 August 2026. Shadow high-risk deployments create deployer liability under the Act, with fines up to 6% of global turnover. The question is not whether you have high-risk systems in the 73. The question is whether you can prove you do not.
+
+## What happens when you add them up
+
+The top requested tooling capability in the State of FinOps 2026 Report is granular monitoring of AI spend such as tokens, LLM requests and GPU utilisation, as one practitioner noted, teams are having to balance the complexity of managing AI spend over a more diverse range of projects with the directive to avoid limiting AI usage, which might slow down time to market.
+
+The 73 are already slowing it down, but the delay is invisible. Three teams are paying for tools that do the same job. Two more are building workarounds because they do not know a sanctioned equivalent exists. One agent chains four external APIs because the output of the first three is below threshold and the engineer never closed the loop. Token spend from that chain hits $400 per month, billed to a credit card tied to an individual contributor's expense account. Finance sees the total six months later during an unrelated audit.
+
+Deloitte's 2026 State of AI report found that enterprises with mature AI cost governance report 40-60% lower per-inference costs compared to unmanaged deployments, with the AI FinOps framework, as defined by Lingamgunta (SSRN, 2026), adapting cloud FinOps principles to the specific cost categories of AI operations: inference API spend, fine-tuning compute, vector storage, observability, and human-in-the-loop review costs. The 73-service organisation does not have an AI FinOps framework. It has 73 untagged line items, each below the threshold that triggers a procurement review, none of them mapped to a cost centre, and a growing suspicion that the aggregate number is larger than anyone wants to admit.
+
+When you add it up properly, you are not looking at $4,000 per month. You are looking at rework costs from duplicated effort, compliance exposure from unevaluated agents, and the full salary cost of the time finance and legal will now spend reconstructing what should have been logged from the first prompt.
+
+## Cleaning it without breaking it
+
+Only 38% of organisations have a comprehensive AI policy in place, with 30% having a limited AI policy and 25% having none, while only half of organisations have AI usage policies and employee training in place, and model inventory, bias testing and AI red teaming remain in the minority. Policy will not fix the 73. Policy is what you write after you decide which of the 73 stay.
+
+The clean path is a three-column sheet. Column one: the service, its function and its current user count. Column two: the sanctioned replacement, if one exists. Column three: the migration date or the kill date. For the tools that stay, you add a fourth column: evaluation criteria, measured weekly, with a named owner and a threshold that triggers escalation if quality drops.
+
+Mimecast's State of Human Risk 2026 report found that while 80% of organisations worry about data leaking through generative AI, 60% still have no specific strategy to address it, and only 40% feel fully prepared for AI-driven threats. The strategy is the sheet. You are not banning AI. You are deciding which AI tools you will defend in a board meeting and which ones you will not, and you are making that decision now, with visibility, instead of after the breach when the telemetry is subpoenaed.
+
+The person who owns the sheet is not the CISO and not the Chief AI Officer, if you have one. It is the person who can translate usage into cost, map cost to business outcomes, and say no to an engineer while offering a replacement that works better. That person is in FinOps, in IT operations, in procurement, or sitting somewhere between all three, and their Monday morning now starts with 73 rows and a deadline.
+
+## The new baseline for shipment
+
+Gartner finds that by the end of 2025, at least 50% of generative AI projects were abandoned after proof of concept due to poor data quality, inadequate risk controls, escalating costs or unclear business value. The 73 tools are the inverse: they shipped without a POC, without a risk assessment, and without a gate that would have caught the fact that nobody defined success.
+
+The shipment bar for the next agent cannot be "it ran in prod and nobody complained". The bar is now what the person holding the sheet will accept: an evaluation plan, a cost forecast, a data-handling statement, and a decision about who gets paged when it breaks. If you cannot write those four lines, the agent does not ship, and the tool does not get added to row 74.
+
+Some organisations will skip the sheet and centralise by force, mandating one vendor stack and blocking the rest at the firewall. That posture worked for SaaS in 2018. It will not hold for AI in 2026, because the frontier model an employee needs today will be outclassed by the one released next month, and your approved stack will lag by a quarter while your competitor's engineers install the new thing on day one. The organisations that win here are not the ones that lock it down first. They are the ones that can govern 120 services as cleanly as they govern three, and they are building that competence now.
+
+The 73 are already there. The question is whether you know what they cost, what they touch, and who you would call if one of them failed tomorrow in a way that made the news. If the answer is no, the work starts with the sheet. If the answer is still no in three months, the number will not be 73. It will be 95, and the finance conversation will be harder to defend.
+
+* * *
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
