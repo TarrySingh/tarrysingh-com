@@ -1,0 +1,72 @@
+---
+title: "The guidance that does not apply"
+date: "2026-08-29"
+category: "Essays"
+excerpt: "On 17 April 2026, federal regulators including the Federal Reserve, FDIC, and OCC overhauled existing guidance, replacing SR 11-7 with a framework that demands better model inventory, risk-based validation cadence, and continuous monitoring across the lifecycle. SR 26-2 excludes generative AI and agentic AI from the formal scope because these technologies are novel and …"
+draft: false
+tags: ["guidance", "does", "not", "apply"]
+---
+
+On 17 April 2026, federal regulators including the Federal Reserve, FDIC, and OCC overhauled existing guidance, replacing SR 11-7 with a framework that demands better model inventory, risk-based validation cadence, and continuous monitoring across the lifecycle. SR 26-2 excludes generative AI and agentic AI from the formal scope because these technologies are novel and rapidly evolving.
+
+Seventeen days later, FIS announced that it is working with Anthropic to bring agentic AI to banking, beginning with the Financial Crimes AI Agent. BMO and Amalgamated Bank will be among the first institutions to deploy the agent, with broader availability planned for H2 2026.
+
+I work on the compliance platform team inside a vendor that sells into banks. My job is to make sure what we ship can survive an audit, a regulatory exam, or a control failure that ends up in front of counsel. The guidance we just spent three months mapping our validation pipeline to does not apply to the thing my product team committed to ship in Q3.
+
+That gap is not theoretical. According to Wolters Kluwer, 44% of finance teams are using agentic AI in 2026, an increase of over 600% from 2025. In January 2025, fewer than 7% of finance teams had deployed any form of agentic AI. By Q1 2026, that number is 44%, representing a 600% year-over-year increase. Deployment is happening faster than the guidance can be written.
+
+The question inside the vendor is not whether we build the governance stack. It is what we are willing to cut so the agent ships on the date sales already sold.
+
+## What SR 26-2 would require, if it applied
+
+The new Model Risk Management framework demands that banks tier their model inventory by materiality, applying controls proportionally. This requires a unified lifecycle view, encompassing development, validation, deployment, monitoring, and retirement, with clear lineage across each stage. Effective challenge requires challenger models, outcomes analysis, benchmarking, and sensitivity testing must be versioned and reproducible, not a one-time memo.
+
+If the Financial Crimes AI Agent were in scope, we would need to produce, before deployment: a model development document tracing data lineage and design choices; a validation report from an independent team showing the agent was tested against known AML typologies and edge cases; a monitoring dashboard tracking drift in entity recognition, typology match rates, and false-positive trends; and a governance record showing who approved the deployment, under what materiality tier, and what threshold would trigger re-validation.
+
+GenAI and agentic systems are formally out of scope but inherit the principles. Supervisors and internal audit are already applying MRM expectations by analogy to LLM-based underwriting assistants, AML triage agents, and customer-facing copilots. So the expectation exists, even though the mandate does not.
+
+The agent will compress anti-money-laundering investigations from hours to minutes, automatically assembling evidence across a bank's core systems, evaluating activity against known typologies, and surfacing the highest-risk cases for investigator review. It reads transaction histories, pulls customer profiles, matches patterns against regulatory typologies, scores risk, and writes the first draft of a Suspicious Activity Report narrative. Every one of those steps would be a model under SR 11-7. Under SR 26-2, the whole workflow still is not.
+
+## What gets built instead
+
+FIS is building an agent-first governed environment where client data stays within FIS-controlled infrastructure and every agent decision is traceable and auditable. That sentence does not come from the compliance team. It comes from the launch deck. Traceable and auditable are the two adjectives every vendor uses when a regulator has not yet told them what traceable and auditable mean.
+
+I know what we are building, because I see the sprint backlog. We are building an audit log that captures every tool the agent called, every retrieval it made, every score it calculated, and every paragraph it generated. We are building role-based access so a reviewer can replay an agent session and see what it saw. We are building version tagging so we know which release of the agent ran which case. We are building latency and error dashboards so operations can see when the agent fails.
+
+We are not building a validation framework, because validation presupposes a stable artifact you can test. An LLM-based agent that makes retrieval calls, invokes external tools, and generates free text does not version the same way a logistic regression does. The model weights version. The prompt versions. The tooling API surface versions. The retrieval index versions. The typology library versions. What do you validate? Which combination?
+
+We are not building challenger models, because a challenger model presupposes you can run the same input through two models and compare outputs. An agentic system makes decisions about what to retrieve next based on what it already retrieved. The execution path is non-deterministic. Running it twice does not give you two comparable outputs; it gives you two different investigations.
+
+We are not building a materiality classification, because materiality under SR 26-2 ties to the model's role in a business decision and the financial exposure if the model is wrong. The Financial Crimes AI Agent will compress Anti-Money Laundering alert and case investigations from days to minutes, reduce false positives and enhance investigative and Suspicious Activity Reports narrative quality. It does not make the SAR filing decision. A human does. So is the agent material? If it hallucinates a name into a narrative and the investigator does not catch it, who is liable?
+
+We are building the things we know how to build and that we can finish in the time we have. The governance framework that would let a bank prove to an examiner that the agent is under control? That is a Q4 problem.
+
+## The regulator's version
+
+RBI released draft Guidance on Model Risk Management 2026 on 24 June 2026 vide Press Release 2026-2027/528, two months after the Fed's SR 26-2 and seven weeks after the FIS announcement. Board-approved MRMF, AI kill switches, third-party model accountability, 7 AI risk controls for all 11 RE categories.
+
+Kill switches. The draft applies to 11 categories of RBI-regulated entities including Commercial Banks, Small Finance Banks, Payments Banks, and NBFCs. It requires a Board-approved Model Risk Management Framework covering the full model lifecycle. The RBI version does not exclude agentic AI. It names it.
+
+The Reserve Bank of India has released a draft Guidance on Regulatory Principles for Model Risk Management, 2026, setting out a proposed governance framework for the development, validation, deployment and oversight of traditional and AI/ML models used by regulated entities. The Guidance applies across nearly the entire RBI-regulated financial sector and extends to both internally developed and third-party models.
+
+If you are building an agent for an Indian bank, you are in scope. If you are building it for a US bank, you are in a guidance gap the Federal Reserve has said it will address "in the near future" via a request for information. The OCC, Federal Reserve Board, and FDIC plan to issue in the near future a request for information that addresses model risk management generally and considers, in particular, banks' use of AI, including generative AI and agentic AI and AI-based models.
+
+A request for information is not guidance. It is a signal that guidance is coming and that the regulator does not yet know what it should say. In the meantime, BMO and Amalgamated Bank will be among the first institutions to deploy the agent, with broader availability planned for H2 2026.
+
+## What an engineer sees
+
+The pressure is not coming from the regulator. It is coming from the competitive calendar. Fiserv launched agentOS, an operating system for agentic AI in banking, with third-party partners supporting use cases in the same window. 2026 marks a turning point as agentic AI moves from experimentation to enterprise-wide deployment across financial services. If we do not ship, someone else will, and the bank will buy from them.
+
+I am not opposed to the agent. I think it will do what the deck says: compress investigations, reduce investigator toil, surface the cases that matter. I have read the typology library. I have seen the retrieval evals. I think it will work.
+
+What I do not think is that we have built the control environment that will survive the first time the agent writes a name into a SAR narrative that should not be there, or scores a high-risk case as low-risk because the transaction description contained a term the model had never seen in training. SR 26-2 would have required us to test for that, document the failure mode, and decide whether the residual risk is acceptable. We ran out of time, so we built the log and called it governance.
+
+According to Deloitte's 2026 Finance Trends survey, while 63% of organizations have fully deployed AI solutions, only 14% have fully integrated AI agents directly into the finance function, largely because governance and data controls have not kept pace with deployment ambition. The gap between "we deployed AI" and "our AI agents are operating under proper governance" is where most of the risk lives.
+
+Fourteen per cent have the governance. The rest have the agent and a log file. I know which side of that line we are on. I know what we would need to build to cross it. I know we are not going to build it before H2 2026, because the roadmap does not have room and the revenue target does not move.
+
+The guidance that would tell us how to build it does not apply. The guidance that will apply has not been written. So we ship what we have, and we wait to see what breaks.
+
+* * *
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
