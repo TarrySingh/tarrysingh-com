@@ -2,9 +2,18 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-10-15T18:40:56.761448+00:00",
-  "refreshed_at": "2026-10-15T18:40:56.761448+00:00",
+  "generated_at": "2026-10-20T11:45:24.505527+00:00",
+  "refreshed_at": "2026-10-20T11:45:24.505527+00:00",
   "refresh_history": [
+    {
+      "at": "2026-10-20T11:43:55.185573+00:00",
+      "wiki_captured": "2026-10-20T11:42:51.719Z",
+      "sharepoint_generated": "2026-10-20T11:43:54.597679Z",
+      "realai_total": 96,
+      "reviewed": 58,
+      "revision_requested": 14,
+      "early_feedback": 16
+    },
     {
       "at": "2026-10-14T14:42:27.098551+00:00",
       "wiki_captured": "2026-10-14T14:41:09.858Z",
@@ -67,28 +76,19 @@
       "reviewed": 50,
       "revision_requested": 6,
       "early_feedback": 12
-    },
-    {
-      "at": "2026-09-09T14:36:03.581226+00:00",
-      "wiki_captured": "2026-09-04T21:51:19.465Z",
-      "sharepoint_generated": "2026-09-09T16:30:25.522876Z",
-      "realai_total": 90,
-      "reviewed": 50,
-      "revision_requested": 6,
-      "early_feedback": 12
     }
   ],
   "data_sources": {
     "wiki": {
       "status": "live",
-      "captured_at": "2026-10-14T14:41:09.858Z",
+      "captured_at": "2026-10-20T11:42:51.719Z",
       "master_total": 436
     },
     "sharepoint": {
-      "generated_at": "2026-10-14T14:42:26.918268Z",
+      "generated_at": "2026-10-20T11:43:54.597679Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 181,
+        "with_materials": 185,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -107,18 +107,18 @@
     "by_status": {
       "In development": 167,
       "Status not set": 51,
-      "In review": 135,
+      "In review": 129,
       "Not started": 9,
-      "Materials in progress": 13,
+      "Materials in progress": 19,
       "Finalized": 3,
       "Ready for pilot": 58
     },
-    "with_materials": 181,
-    "materials_pending": 255,
+    "with_materials": 185,
+    "materials_pending": 251,
     "coverage": {
       "wiki_total": 436,
-      "with_sharepoint_material": 181,
-      "awaiting_material": 255,
+      "with_sharepoint_material": 185,
+      "awaiting_material": 251,
       "off_wiki": 86,
       "off_wiki_realai": 1,
       "realai_wiki_gap": 19
@@ -131,8 +131,8 @@
       "revision_requested": 14,
       "early_feedback": 16,
       "by_status": {
-        "In development": 32,
-        "In review": 53,
+        "In development": 33,
+        "In review": 52,
         "Materials in progress": 3,
         "Ready for pilot": 7,
         "Not started": 1
@@ -5871,23 +5871,7 @@
         "iso": "2026-10-14T18:22:00Z",
         "talk_rev": 8881
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-11T12:21:05Z",
-          "user": "KristinaArnaoudova2"
-        },
-        "files": [
-          {
-            "name": "Fundamentals of machine learning.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "changed_fields": [
-          "instructions",
-          "learningOutcomes"
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6022,19 +6006,7 @@
         "iso": "2026-10-14T18:51:00Z",
         "talk_rev": 8883
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-13T19:20:17Z",
-          "user": "KristinaArnaoudova2"
-        },
-        "files": [
-          {
-            "name": "Data Types and Representations.pdf",
-            "date": "2026-10-13"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -6452,8 +6424,8 @@
       "lesson_type": "Lecture",
       "duration": "120",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
       "due_date": "",
       "author": "SU · Kristina Arnaoudova",
       "coauthor": "BME · Béla Pataki",
@@ -6469,12 +6441,33 @@
         "iso": "2026-10-14T18:53:00Z",
         "talk_rev": 8885
       },
-      "author_activity": null,
+      "author_activity": {
+        "wiki_page": {
+          "ts": "2026-10-19T08:54:31Z",
+          "user": "KristinaArnaoudova2"
+        },
+        "files": [
+          {
+            "name": "Machine Learning Model Training_Evaluation_Generalization.pptx",
+            "date": "2026-10-19"
+          }
+        ],
+        "content": true
+      },
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-10-19",
+        "files": [
+          {
+            "name": "Machine Learning Model Training_Evaluation_Generalization.pptx",
+            "ext": "pptx",
+            "kb": 541,
+            "date": "2026-10-19",
+            "sha": "2653b4b8bb2dfd28",
+            "rel": "4.1 Horizontal/H-122/Machine Learning Model Training_Evaluation_Generalization.pptx"
+          }
+        ],
         "folder": "H-122"
       },
       "lesson_plan": {
@@ -6499,9 +6492,9 @@
         },
         {
           "name": "Management information",
-          "len": 822,
+          "len": 834,
           "empty": false,
-          "text": "Author Organisation 1\n\nSU\n\nAuthor Person 1\n\nKristina Arnaoudova\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nBéla Pataki\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nExplain the model training process.Explain how loss, derivatives, and gradient descent are used to update model parameters.Distinguish the roles of training, validation, and test data and recognize data leakage.Explain generalization, underfitting, and overfitting.Explain the bias–variance trade-off and common approaches for improving generalization.Select and interpret appropriate evaluation metrics for classification and regression.Explain the purpose of cross-validation in model evaluation.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nNone."
+          "text": "Author Organisation 1\n\nSU\n\nAuthor Person 1\n\nKristina Arnaoudova\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nBéla Pataki\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLearning materials: development\n\nLearning Outcomes:   \n\nExplain the model training process.Explain how loss, derivatives, and gradient descent are used to update model parameters.Distinguish the roles of training, validation, and test data and recognize data leakage.Explain generalization, underfitting, and overfitting.Explain the bias–variance trade-off and common approaches for improving generalization.Select and interpret appropriate evaluation metrics for classification and regression.Explain the purpose of cross-validation in model evaluation.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nNone."
         },
         {
           "name": "Expected preparation",
@@ -6544,7 +6537,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -8994,8 +8987,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "HAW · Frauke Schade",
       "coauthor": "",
@@ -9049,8 +9042,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm$Conflict",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "HAW · Frauke Schade",
       "coauthor": "",
@@ -9123,12 +9116,44 @@
       },
       "author_activity": {
         "wiki_page": {
-          "ts": "2026-10-13T16:37:47Z",
+          "ts": "2026-10-16T17:06:35Z",
           "user": "AhmadKhalidi2"
         },
+        "talk": {
+          "ts": "2026-10-16T16:29:31Z",
+          "user": "AhmadKhalidi2"
+        },
+        "files": [
+          {
+            "name": "IPE_1_Introduction.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Prompt Log Example Solutions.xlsx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Prompt Log.xlsx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Setup LM Studio.pptx",
+            "date": "2026-10-16"
+          },
+          {
+            "name": "IPE_1_Discussions.pptx",
+            "date": "2026-10-16"
+          }
+        ],
         "changed_fields": [
           "duration",
           "instructions",
+          "keywords",
+          "learningOutcomes",
           "obligStPrep"
         ],
         "content": true
@@ -9136,55 +9161,55 @@
       "materials": {
         "count": 7,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-10-19",
         "files": [
+          {
+            "name": "IPE_1_Introduction.pptx",
+            "ext": "pptx",
+            "kb": 404,
+            "date": "2026-10-19",
+            "sha": "b1dfbc708ada6a68",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Introduction.pptx"
+          },
           {
             "name": "Prompt Log Example Solutions.xlsx",
             "ext": "xlsx",
-            "kb": 23,
-            "date": "2026-07-24",
-            "sha": "290507d7a0fe79a1",
+            "kb": 18,
+            "date": "2026-10-19",
+            "sha": "93478e0829746dc7",
             "rel": "4.1 Horizontal/HC-016/Prompt Log Example Solutions.xlsx"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
+            "ext": "pptx",
+            "kb": 770,
+            "date": "2026-10-19",
+            "sha": "d4a5792e88cd494b",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Assignments.pptx"
           },
           {
             "name": "Prompt Log.xlsx",
             "ext": "xlsx",
             "kb": 14,
-            "date": "2026-07-24",
-            "sha": "fe3f73bc48f24814",
+            "date": "2026-10-19",
+            "sha": "f289f828d7d89576",
             "rel": "4.1 Horizontal/HC-016/Prompt Log.xlsx"
-          },
-          {
-            "name": "IPE_1_Discussions.pptx",
-            "ext": "pptx",
-            "kb": 464,
-            "date": "2026-07-24",
-            "sha": "f8af8da027d783a7",
-            "rel": "4.1 Horizontal/HC-016/IPE_1_Discussions.pptx"
-          },
-          {
-            "name": "IPE_1_Assignments.pptx",
-            "ext": "pptx",
-            "kb": 840,
-            "date": "2026-07-24",
-            "sha": "e2b1b3a0e9c99d5c",
-            "rel": "4.1 Horizontal/HC-016/IPE_1_Assignments.pptx"
-          },
-          {
-            "name": "IPE_1_Introduction.pptx",
-            "ext": "pptx",
-            "kb": 669,
-            "date": "2026-07-24",
-            "sha": "bdb4e8465ffef3c2",
-            "rel": "4.1 Horizontal/HC-016/IPE_1_Introduction.pptx"
           },
           {
             "name": "Setup LM Studio.pptx",
             "ext": "pptx",
-            "kb": 636,
-            "date": "2026-07-24",
-            "sha": "737abf839b98846e",
+            "kb": 506,
+            "date": "2026-10-16",
+            "sha": "8414ac6542b54333",
             "rel": "4.1 Horizontal/HC-016/Setup LM Studio.pptx"
+          },
+          {
+            "name": "IPE_1_Discussions.pptx",
+            "ext": "pptx",
+            "kb": 347,
+            "date": "2026-10-16",
+            "sha": "76f5b572d85398bf",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Discussions.pptx"
           },
           {
             "name": "Slides.pptx",
@@ -9219,9 +9244,9 @@
         },
         {
           "name": "Management information",
-          "len": 883,
+          "len": 769,
           "empty": false,
-          "text": "Author Organisation 1\n\nHAW\n\nAuthor Person 1\n\nAhmad Khalidi\n\nAuthor Organisation 2\n\nUNINA\n\nAuthor Person 2\n\nStefano Marrone\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLearning materials: under revision\n\nLearning Outcomes:   \n\nThe student navigates on chat-bot interfaces on an intermediate level.The student uses basic concepts of prompt engineering and controls the output of an LLM on a beginner level.The student documents prompts and chat histories to evaluate the model’s behaviour and improves it's performance on a beginner level.The student recognises and discusses ethical relevant behaviours of an LLM on an beginner level.The student designs simple experiments to evaluate a model’s behaviour on an intermediate level (optional).\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nbasics,context window,limitations,"
+          "text": "Author Organisation 1\n\nHAW\n\nAuthor Person 1\n\nAhmad Khalidi\n\nAuthor Organisation 2\n\nUNINA\n\nAuthor Person 2\n\nStefano Marrone\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLearning materials: under revision\n\nLearning Outcomes:   \n\nThe student navigates on chat-bot interfaces on an intermediate level.The student uses basic concepts of prompt engineering and steers the output of an LLM on a beginner level.The student documents and evaluates prompts and chat histories at a beginner level in order to steer the model's behavior and improve its performance over multiple iterations.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nbasics,context window,elements of a prompt,system prompt,temperature,documentation,"
         },
         {
           "name": "Expected preparation",
@@ -9243,9 +9268,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 1594,
+          "len": 1472,
           "empty": false,
-          "text": "This practice requires to Setup LLM access for all students. The teacher is required to either\na) provide a third party LLM chat interface/university access and  adjust the slides accordingly with the necessary information or\nb) require the students to install LM Studio on their own devices using the given slides Setup LM Studio.pptx. It is recommended that all students follow these instructions before class so there is no delay during class.\n\nThe class is designed in three parts. The first part uses the slides IPE_1_Introduction.pptx. \n\n(0-5 min) a quick introduction into what is prompt engineering for and what the agenda looks like.\n\n(5-15 min) let the students try their first prompt, have them explore the interface and discuss the elements mentioned in the slides.\n\n(15-20 min) Submit the assignment and give the students access to the slides IPE_1_assignments.pptx and the Excel Template Prompt Log.xlsx.\n\n(20 - 50 min) The students then work on the assignments in the second part.\n\nFor the third part and for discussing the assignments use the slides IPE_1_Discussion.pptxs. A possible Prompt Log after the assignment can be found in Prompt Log Example Solutions.xlsx.\n\n(50-55 min) A quick recap on the learning event and \"elements of a prompt\".\n\n(55-60 min) Discuss the \"Reflect and Discuss\" of \"Context\".\n\n(60-65 min) Discuss the \"Reflect and Discuss\" of \"Output Indicator\".\n\n(65-70 min) Discuss the \"Reflect and Discuss\" of \"System Prompt\".\n\n(70-75 min) Discuss the \"Reflect and Discuss\" of \"Temperature\".\n\n(75-80 min) Allow students to present their (optional) experiment(s)."
+          "text": "This practice requires to Setup LLM access for all students. The teacher is required to either\na) provide a third party LLM chat interface/university access and  adjust the slides accordingly with the necessary information or\nb) require the students to install LM Studio on their own devices using the given slides Setup LM Studio.pptx. It is recommended that all students follow these instructions before class so there is no delay during class.\n\nThe class is designed in three parts. The first part uses the slides IPE_1_Introduction.pptx. \n\n(0-2 min) a quick introduction into what is prompt engineering for and what the agenda looks like.\n\n(2-12 min) let the students try their first prompt, have them explore the interface and discuss the elements mentioned in the slides.\n\n(12-15 min) Submit the assignment and give the students access to the slides IPE_1_assignments.pptx and the Excel Template Prompt Log.xlsx.\n\n(15 - 45 min) The students then work on the assignments in the second part.\n\nFor the third part and for discussing the assignments use the slides IPE_1_Discussion.pptxs. A possible Prompt Log after the assignment can be found in Prompt Log Example Solutions.xlsx.\n\n(45-55 min) Discuss \"Instruction & Input Data: Reflect and Discuss​\".\n\n(55-65 min) Discuss \"Output Indicator: Reflect and Discuss​\".\n\n(65-75 min) Discuss \"System Prompt: Reflect and Discuss​\".\n\n(75-85 min) Discuss \"Temperature: Reflect and Discuss​\".\n\n(85-90 min) Discuss \"Key Takeaways\""
         }
       ],
       "realai": {
@@ -9317,12 +9342,89 @@
         "iso": "2026-10-14T18:22:00Z",
         "talk_rev": 8880
       },
-      "author_activity": null,
+      "author_activity": {
+        "files": [
+          {
+            "name": "Setup LM Studio.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "IPE_1_Introduction.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "IPE_1_Discussions.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Prompt Log Example Solutions.xlsx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Prompt Log.xlsx",
+            "date": "2026-10-19"
+          }
+        ],
+        "content": true
+      },
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 6,
+        "has": true,
+        "newest": "2026-10-19",
+        "files": [
+          {
+            "name": "Setup LM Studio.pptx",
+            "ext": "pptx",
+            "kb": 506,
+            "date": "2026-10-19",
+            "sha": "591aade17f2a1cb6",
+            "rel": "4.1 Horizontal/HC-017/Setup LM Studio.pptx"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
+            "ext": "pptx",
+            "kb": 771,
+            "date": "2026-10-19",
+            "sha": "e28df8b4f5c25e8b",
+            "rel": "4.1 Horizontal/HC-017/IPE_1_Assignments.pptx"
+          },
+          {
+            "name": "IPE_1_Introduction.pptx",
+            "ext": "pptx",
+            "kb": 404,
+            "date": "2026-10-19",
+            "sha": "b1dfbc708ada6a68",
+            "rel": "4.1 Horizontal/HC-017/IPE_1_Introduction.pptx"
+          },
+          {
+            "name": "IPE_1_Discussions.pptx",
+            "ext": "pptx",
+            "kb": 347,
+            "date": "2026-10-19",
+            "sha": "76f5b572d85398bf",
+            "rel": "4.1 Horizontal/HC-017/IPE_1_Discussions.pptx"
+          },
+          {
+            "name": "Prompt Log Example Solutions.xlsx",
+            "ext": "xlsx",
+            "kb": 18,
+            "date": "2026-10-19",
+            "sha": "93478e0829746dc7",
+            "rel": "4.1 Horizontal/HC-017/Prompt Log Example Solutions.xlsx"
+          },
+          {
+            "name": "Prompt Log.xlsx",
+            "ext": "xlsx",
+            "kb": 14,
+            "date": "2026-10-19",
+            "sha": "f289f828d7d89576",
+            "rel": "4.1 Horizontal/HC-017/Prompt Log.xlsx"
+          }
+        ],
         "folder": "HC-017"
       },
       "lesson_plan": {
@@ -9392,7 +9494,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -9554,27 +9656,7 @@
         "iso": "2026-10-14T18:22:00Z",
         "talk_rev": 8879
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-13T12:19:48Z",
-          "user": "SietskeTacoma"
-        },
-        "talk": {
-          "ts": "2026-10-13T12:15:40Z",
-          "user": "SietskeTacoma"
-        },
-        "files": [
-          {
-            "name": "HC-019 Introduction Machine Learning Types and Tasks v2.pptx",
-            "date": "2026-10-13"
-          }
-        ],
-        "changed_fields": [
-          "instructions",
-          "learningOutcomes"
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -9809,13 +9891,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8895
       },
-      "author_activity": {
-        "talk": {
-          "ts": "2026-09-25T09:31:37Z",
-          "user": "BelaPataki2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -9933,13 +10009,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8896
       },
-      "author_activity": {
-        "talk": {
-          "ts": "2026-09-25T09:36:04Z",
-          "user": "BelaPataki2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -11858,23 +11928,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8899
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-10T21:18:21Z",
-          "user": "MariaNisheva2"
-        },
-        "files": [
-          {
-            "name": "Presentation HC-148_revision-1.pptx",
-            "date": "2026-10-11"
-          },
-          {
-            "name": "Presentation HC-148_revision-1.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -12017,23 +12071,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8900
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-11T20:11:20Z",
-          "user": "MariaNisheva2"
-        },
-        "files": [
-          {
-            "name": "Presentation HC-150_revision-1.pptx",
-            "date": "2026-10-11"
-          },
-          {
-            "name": "Presentation HC-150_revision-1.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -12176,23 +12214,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8901
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-11T20:13:30Z",
-          "user": "MariaNisheva2"
-        },
-        "files": [
-          {
-            "name": "Presentation HC-152_revision-1.pptx",
-            "date": "2026-10-11"
-          },
-          {
-            "name": "Presentation HC-152_revision-1.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 5,
         "has": true,
@@ -14038,10 +14060,27 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-10-17",
+        "files": [
+          {
+            "name": "lessonplan_StakeholderManagement.docx",
+            "ext": "docx",
+            "kb": 30,
+            "date": "2026-10-17",
+            "sha": "5890f603826906ca",
+            "rel": "4.1 Horizontal/HC-189/lessonplan_StakeholderManagement.docx"
+          },
+          {
+            "name": "HC-189V2.pptx",
+            "ext": "pptx",
+            "kb": 3144,
+            "date": "2026-10-17",
+            "sha": "859126d553feece7",
+            "rel": "4.1 Horizontal/HC-189/HC-189V2.pptx"
+          }
+        ],
         "folder": "HC-189"
       },
       "lesson_plan": {
@@ -17016,7 +17055,7 @@
       "status": "In development",
       "wiki_status": "Learning materials: development",
       "due_date": "",
-      "author": "West Attica · Anna Mavromanoli",
+      "author": "UNIWA · Anna Mavromanoli",
       "coauthor": "BME",
       "reviewer": "RealAI",
       "off_wiki": false,
@@ -17056,9 +17095,9 @@
         },
         {
           "name": "Management information",
-          "len": 303,
+          "len": 297,
           "empty": false,
-          "text": "Author Organisation 1\n\nWest Attica\n\nAuthor Person 1\n\nAnna Mavromanoli\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nStatus\n\nLearning materials: development\n\nLearning Outcomes:   \n\nNone.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nNone."
+          "text": "Author Organisation 1\n\nUNIWA\n\nAuthor Person 1\n\nAnna Mavromanoli\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nStatus\n\nLearning materials: development\n\nLearning Outcomes:   \n\nNone.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nNone."
         },
         {
           "name": "Expected preparation",
@@ -19931,7 +19970,7 @@
       "status": "In review",
       "wiki_status": "Learning materials: review",
       "due_date": "",
-      "author": "West Attica · Anna Mavromanoli",
+      "author": "UNIWA · Anna Mavromanoli",
       "coauthor": "",
       "reviewer": "QTICS · Katalin Tauberne Jakab",
       "off_wiki": false,
@@ -20266,7 +20305,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "West Attica",
+      "author": "UNIWA",
       "coauthor": "HU · Bas van Gestel / René van der Ploeg",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
@@ -20312,7 +20351,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "West Attica",
+      "author": "UNIWA",
       "coauthor": "HAW · Ahmad Khalidi",
       "reviewer": "CNR",
       "off_wiki": false,
@@ -20404,7 +20443,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "West Attica",
+      "author": "UNIWA",
       "coauthor": "UNINA",
       "reviewer": "ENEA · Gabriele Piantadosi",
       "off_wiki": false,
@@ -20450,7 +20489,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "West Attica",
+      "author": "UNIWA",
       "coauthor": "BME",
       "reviewer": "QTICS · Katalin Jakab Tauberne",
       "off_wiki": false,
@@ -20863,7 +20902,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "West Attica",
+      "author": "UNIWA",
       "coauthor": "TUD",
       "reviewer": "Nathean · John Pugh",
       "off_wiki": false,
@@ -20909,7 +20948,7 @@
       "status": "In development",
       "wiki_status": "Lesson plan: development",
       "due_date": "",
-      "author": "West Attica · Anna Mavromanoli",
+      "author": "UNIWA · Anna Mavromanoli",
       "coauthor": "",
       "reviewer": "QTICS · Ákos Molnár",
       "off_wiki": false,
@@ -21203,7 +21242,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "West Attica · Anna Mavromanoli",
+      "author": "UNIWA · Anna Mavromanoli",
       "coauthor": "",
       "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
@@ -21260,9 +21299,9 @@
         },
         {
           "name": "Management information",
-          "len": 784,
+          "len": 778,
           "empty": false,
-          "text": "Author Organisation 1\n\nWest Attica\n\nAuthor Person 1\n\nAnna Mavromanoli\n\nAuthor Organisation 2\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\n-\nExplain principles of effective clinical communication in healthcare contexts\n-\nApply communication strategies to explain AI-generated results and uncertainties to patients and other healthcare professionals\n-\nAnalyze challenges related to trust, transparency and risk communication in AI-assisted care\n-\nDemonstrate appropriate communication techniques in simulated clinical scenarios involving AI recommendations\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\ncommunication, interaction, explanation, trust, transparency,"
+          "text": "Author Organisation 1\n\nUNIWA\n\nAuthor Person 1\n\nAnna Mavromanoli\n\nAuthor Organisation 2\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\n-\nExplain principles of effective clinical communication in healthcare contexts\n-\nApply communication strategies to explain AI-generated results and uncertainties to patients and other healthcare professionals\n-\nAnalyze challenges related to trust, transparency and risk communication in AI-assisted care\n-\nDemonstrate appropriate communication techniques in simulated clinical scenarios involving AI recommendations\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\ncommunication, interaction, explanation, trust, transparency,"
         },
         {
           "name": "Expected preparation",
@@ -21824,8 +21863,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "author": "BME · Tegza Badacsonyi",
       "coauthor": "HAW · Michael Gille",
@@ -21839,10 +21878,19 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-10-19",
+        "files": [
+          {
+            "name": "LC-001_AI Act and EU Digital Rulebook_Tegza.pptx",
+            "ext": "pptx",
+            "kb": 456,
+            "date": "2026-10-19",
+            "sha": "639a3cc7a9aa7d61",
+            "rel": "4.4 Law & Compliance/LC-001/LC-001_AI Act and EU Digital Rulebook_Tegza.pptx"
+          }
+        ],
         "folder": "LC-001"
       },
       "lesson_plan": {
@@ -23204,8 +23252,8 @@
       "lesson_type": "Lecture",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "HAW · Michael Gille",
       "coauthor": "KPI · Oksana Karpenko",
@@ -23221,14 +23269,14 @@
       "materials": {
         "count": 1,
         "has": true,
-        "newest": "2026-10-13",
+        "newest": "2026-10-14",
         "files": [
           {
             "name": "LC-033_Prohibited AI Practices (Art. 5).pptx",
             "ext": "pptx",
-            "kb": 524,
-            "date": "2026-10-13",
-            "sha": "5930bf40939c96c9",
+            "kb": 525,
+            "date": "2026-10-14",
+            "sha": "7b24fe4a9029d2e6",
             "rel": "4.4 Law & Compliance/LC-033/LC-033_Prohibited AI Practices (Art. 5).pptx"
           }
         ],
@@ -25059,7 +25107,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25105,7 +25153,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25151,7 +25199,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25197,7 +25245,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25907,7 +25955,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25953,7 +26001,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -25999,7 +26047,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -26045,7 +26093,7 @@
       "due_date": "",
       "author": "UNINA",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -26833,10 +26881,18 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-10-04",
+        "newest": "2026-10-19",
         "files": [
+          {
+            "name": "MC-064_LLM_ContentEvaluation_PANORAIMA_format.pptx",
+            "ext": "pptx",
+            "kb": 5838,
+            "date": "2026-10-19",
+            "sha": "172156a77f2a8f72",
+            "rel": "4.3 Media & Culture/MC-064/MC-064_LLM_ContentEvaluation_PANORAIMA_format.pptx"
+          },
           {
             "name": "lessonplan_MC-064-TUD.docx",
             "ext": "docx",
@@ -27486,7 +27542,7 @@
       "due_date": "",
       "author": "HAW · Frauke Schade",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -27532,7 +27588,7 @@
       "due_date": "",
       "author": "HAW · Frauke Schade",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -27578,7 +27634,7 @@
       "due_date": "",
       "author": "HAW · Frauke Schade",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -27624,7 +27680,7 @@
       "due_date": "",
       "author": "HAW · Frauke Schade",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -27665,8 +27721,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "HAW · Katharina Jeorgakopulos",
       "coauthor": "",
@@ -27720,8 +27776,8 @@
       "lesson_type": "Practice",
       "duration": "60",
       "job_role": "Comm",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "HAW · Katharina Jeorgakopulos",
       "coauthor": "",
@@ -27775,8 +27831,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Comm",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "author": "HAW · Katharina Jeorgakopulos",
       "coauthor": "",
@@ -28524,7 +28580,7 @@
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -28570,7 +28626,7 @@
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -28616,7 +28672,7 @@
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -28662,7 +28718,7 @@
       "due_date": "",
       "author": "QTICS · Adrienn Szirmai",
       "coauthor": "BME · Hédi Virág Csordás",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -29257,7 +29313,7 @@
       "due_date": "",
       "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -29312,9 +29368,9 @@
         },
         {
           "name": "Management information",
-          "len": 2664,
+          "len": 2671,
           "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\nAuthor Organisation 2\n\nAuthor Person 2\n\nReviewer Organisation\n\nTUD\n\nReviewer Person\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nDefine and classify synthetic media: students can distinguish deepfakes from cheapfakes and from other manipulations (generated video, cloned audio, synthetic images, synthetic text), and explain why, for an audience, the claim attached to a piece of content usually matters more than how it was produced.Explain the cognitive mechanisms behind belief in synthetic media: students can account for the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning, and explain why higher cognitive ability and heavy social-media use change a person's exposure to these effects rather than removing them.Analyse the effects on trust and reality perception that go beyond a single act of deception: students can explain epistemic destabilisation, the erosion of trust in news, in institutions, and in the depicted person, and show with evidence that a synthetic clip can lower trust and damage a reputation even when viewers rate it as not credible.Explain and evaluate the liar's dividend: students can define the liar's dividend (Chesney and Citron, 2019), summarise the experimental evidence that public figures gain support by dismissing authentic evidence as fabricated (Schiff, Schiff and Bueno, 2024), and explain how the effect reaches authentic video, which can be discredited by labelling it a deepfake (Hameleers and Marquart, 2023; Grohmann, Halle and Appel, 2026).Assess the limits of detection and warnings: students can explain why detection tools, deepfake warnings, and media-literacy messaging are necessary but not sufficient, including the continued-influence effect on synthetic video and the risk that broad warnings produce generalised distrust, or reality apathy, rather than calibrated skepticism.Design a provenance-first response for communication practice: students can build a verification and disclosure workflow for a newsroom or communications team that combines content provenance (C2PA content credentials), plausibility-aware checking, and the labelling duties of Article 50 of the EU AI Act, and can justify framing choices that build warranted trust in verified content.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nSynthetic media,Deepfakes,Cheapfakes,Liar's dividend,Epistemic destabilisation,Illusory truth effect,Motivated reasoning,Continued-influence effect,Reality apathy,Content provenance (C2PA),Media trust,Verification,EU AI Act Article 50,"
+          "text": "Author Organisation 1\n\nReal AI\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\nAuthor Organisation 2\n\nAuthor Person 2\n\nReviewer Organisation\n\nTUD\n\nReviewer Person\n\nNa Li\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nDefine and classify synthetic media: students can distinguish deepfakes from cheapfakes and from other manipulations (generated video, cloned audio, synthetic images, synthetic text), and explain why, for an audience, the claim attached to a piece of content usually matters more than how it was produced.Explain the cognitive mechanisms behind belief in synthetic media: students can account for the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning, and explain why higher cognitive ability and heavy social-media use change a person's exposure to these effects rather than removing them.Analyse the effects on trust and reality perception that go beyond a single act of deception: students can explain epistemic destabilisation, the erosion of trust in news, in institutions, and in the depicted person, and show with evidence that a synthetic clip can lower trust and damage a reputation even when viewers rate it as not credible.Explain and evaluate the liar's dividend: students can define the liar's dividend (Chesney and Citron, 2019), summarise the experimental evidence that public figures gain support by dismissing authentic evidence as fabricated (Schiff, Schiff and Bueno, 2024), and explain how the effect reaches authentic video, which can be discredited by labelling it a deepfake (Hameleers and Marquart, 2023; Grohmann, Halle and Appel, 2026).Assess the limits of detection and warnings: students can explain why detection tools, deepfake warnings, and media-literacy messaging are necessary but not sufficient, including the continued-influence effect on synthetic video and the risk that broad warnings produce generalised distrust, or reality apathy, rather than calibrated skepticism.Design a provenance-first response for communication practice: students can build a verification and disclosure workflow for a newsroom or communications team that combines content provenance (C2PA content credentials), plausibility-aware checking, and the labelling duties of Article 50 of the EU AI Act, and can justify framing choices that build warranted trust in verified content.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nSynthetic media,Deepfakes,Cheapfakes,Liar's dividend,Epistemic destabilisation,Illusory truth effect,Motivated reasoning,Continued-influence effect,Reality apathy,Content provenance (C2PA),Media trust,Verification,EU AI Act Article 50,"
         },
         {
           "name": "Expected preparation",
@@ -29378,7 +29434,7 @@
       "due_date": "",
       "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "BME · Dorottya Egres",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -29481,9 +29537,9 @@
         },
         {
           "name": "Management information",
-          "len": 1250,
+          "len": 1257,
           "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nDorottya Egres\n\nReviewer Organisation\n\nTUD\n\nReviewer Person\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nBy the end of this learning event, the student will be able to:Explain what argument mining is and how it differs from sentiment analysis and opinion mining.Identify claims, premises and argumentative discourse units in a passage of text, and describe the support and attack relations between them.Compare the main structural models of argument, including the Toulmin model, and explain why they have to be modified before they survive contact with real text.Interpret reported argument mining results critically, distinguishing span identification from technique classification and in-domain from cross-domain performance.Assess the limits of automated argument analysis for mapping conflict and disinformation at scale, including annotator disagreement and the difference between rhetorical structure and truth.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nArgument Mining,NLP,Logic,Reasoning,Claims and Premises,Toulmin Model,Propaganda Technique Detection,Discourse Analysis,Disinformation,"
+          "text": "Author Organisation 1\n\nReal AI\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nDorottya Egres\n\nReviewer Organisation\n\nTUD\n\nReviewer Person\n\nNa Li\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nBy the end of this learning event, the student will be able to:Explain what argument mining is and how it differs from sentiment analysis and opinion mining.Identify claims, premises and argumentative discourse units in a passage of text, and describe the support and attack relations between them.Compare the main structural models of argument, including the Toulmin model, and explain why they have to be modified before they survive contact with real text.Interpret reported argument mining results critically, distinguishing span identification from technique classification and in-domain from cross-domain performance.Assess the limits of automated argument analysis for mapping conflict and disinformation at scale, including annotator disagreement and the difference between rhetorical structure and truth.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nArgument Mining,NLP,Logic,Reasoning,Claims and Premises,Toulmin Model,Propaganda Technique Detection,Discourse Analysis,Disinformation,"
         },
         {
           "name": "Expected preparation",
@@ -31247,115 +31303,6 @@
       ]
     },
     {
-      "code": "H-122",
-      "track": "Horizontal",
-      "title": "H-122 Model Training, Evaluation and Generalization",
-      "lesson_type": "Lecture",
-      "duration": "120",
-      "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
-      "due_date": "",
-      "author": "SU · Kristina Arnaoudova",
-      "coauthor": "BME · Béla Pataki",
-      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": true,
-      "revision_requested": true,
-      "review_note": "Lesson plan reviewed 17 Sep 2026 13:41 CEST, posted Talk rev 8615. Status at review: 'Lesson plan: review'. REVISION REQUESTED (major). Review of the plan only, because the SharePoint folder is empty. The topics and their order are sound, but the teacher instructions are keyword lists. Evaluation gets 10 minutes with no thresholds, ROC or AUROC, and five of its eight items are already on slide 26 of the author's H-108 deck. There are no exercises and no break, and the preparation, keyword and acknowledgement fields are empty. 7 must-fix item(s).",
-      "early_feedback": null,
-      "action_summary": {
-        "posted": "14 October 2026, 20:53 CEST",
-        "iso": "2026-10-14T18:53:00Z",
-        "talk_rev": 8885
-      },
-      "author_activity": null,
-      "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
-        "folder": "H-122"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/H-122_Model_Training,_Evaluation_and_Generalization",
-      "wiki_sections": [
-        {
-          "name": "(lead)",
-          "len": 160,
-          "empty": false,
-          "text": "Contents\n\n1 Administrative information\n2 Management information\n3 Expected preparation\n4 Acknowledgements, thanks\n5 Lesson materials\n6 Instructions for teachers"
-        },
-        {
-          "name": "Administrative information",
-          "len": 151,
-          "empty": false,
-          "text": "Title\n\nModel Training, Evaluation and Generalization\n\nCODE\n\nH-122\n\nDuration\n\n120\n\nTrack\n\nHorizontal\n\nLesson Type\n\nLecture\n\nSelf-standing\n\nJob role\n\nany"
-        },
-        {
-          "name": "Management information",
-          "len": 822,
-          "empty": false,
-          "text": "Author Organisation 1\n\nSU\n\nAuthor Person 1\n\nKristina Arnaoudova\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nBéla Pataki\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nExplain the model training process.Explain how loss, derivatives, and gradient descent are used to update model parameters.Distinguish the roles of training, validation, and test data and recognize data leakage.Explain generalization, underfitting, and overfitting.Explain the bias–variance trade-off and common approaches for improving generalization.Select and interpret appropriate evaluation metrics for classification and regression.Explain the purpose of cross-validation in model evaluation.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nNone."
-        },
-        {
-          "name": "Expected preparation",
-          "len": 156,
-          "empty": false,
-          "text": "Obligatory for students:   \n\nNone.\n\nOptional for students:   \n\nNone.\n\nReferences and background for students:   \n\nNone.\n\nRecommended for teachers:   \n\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 80,
-          "empty": false,
-          "text": "H-122\n\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 954,
-          "empty": false,
-          "text": "0–15 minutes: model training, iterative training process, predictions, loss/error, parameters, hyperparameters.\n15–35 minutes: gradient descent, loss function, derivative, local slope, gradient direction, learning rate, parameter updates.\n35–60 minutes: data splitting, training set, validation set, test set, hyperparameter tuning, data leakage.\n60–80 minutes: generalization, unseen data, underfitting, overfitting, model complexity, learning curves.\n80–95 minutes: bias and variance, bias–variance intuition, hypothesis class, approximation gap, estimation gap, error decomposition.\n95–105 minutes: improving generalization, representative data, simpler models, regularization, early stopping, cross-validation.\n105–115 minutes: model evaluation, regression metrics, confusion matrix, accuracy, precision, recall, F1-score, class imbalance.\n115–120 minutes: cross-validation and recap, k-fold cross-validation, model development cycle, final test set."
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": true,
-        "outcomes_present": true,
-        "materials_uploaded": false,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": true
-      },
-      "sources": [
-        "wiki",
-        "materials"
-      ]
-    },
-    {
       "code": "H-128",
       "track": "Horizontal",
       "title": "H-128 Statistics: uncertainty & calibration",
@@ -31983,27 +31930,7 @@
         "iso": "2026-10-14T18:22:00Z",
         "talk_rev": 8879
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-13T12:19:48Z",
-          "user": "SietskeTacoma"
-        },
-        "talk": {
-          "ts": "2026-10-13T12:15:40Z",
-          "user": "SietskeTacoma"
-        },
-        "files": [
-          {
-            "name": "HC-019 Introduction Machine Learning Types and Tasks v2.pptx",
-            "date": "2026-10-13"
-          }
-        ],
-        "changed_fields": [
-          "instructions",
-          "learningOutcomes"
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -32238,13 +32165,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8895
       },
-      "author_activity": {
-        "talk": {
-          "ts": "2026-09-25T09:31:37Z",
-          "user": "BelaPataki2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -32362,13 +32283,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8896
       },
-      "author_activity": {
-        "talk": {
-          "ts": "2026-09-25T09:36:04Z",
-          "user": "BelaPataki2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 2,
         "has": true,
@@ -33356,7 +33271,7 @@
       "status": "In review",
       "wiki_status": "Lesson plan: review",
       "due_date": "",
-      "author": "West Attica · Anna Mavromanoli",
+      "author": "UNIWA · Anna Mavromanoli",
       "coauthor": "",
       "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
       "off_wiki": false,
@@ -33413,9 +33328,9 @@
         },
         {
           "name": "Management information",
-          "len": 784,
+          "len": 778,
           "empty": false,
-          "text": "Author Organisation 1\n\nWest Attica\n\nAuthor Person 1\n\nAnna Mavromanoli\n\nAuthor Organisation 2\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\n-\nExplain principles of effective clinical communication in healthcare contexts\n-\nApply communication strategies to explain AI-generated results and uncertainties to patients and other healthcare professionals\n-\nAnalyze challenges related to trust, transparency and risk communication in AI-assisted care\n-\nDemonstrate appropriate communication techniques in simulated clinical scenarios involving AI recommendations\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\ncommunication, interaction, explanation, trust, transparency,"
+          "text": "Author Organisation 1\n\nUNIWA\n\nAuthor Person 1\n\nAnna Mavromanoli\n\nAuthor Organisation 2\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\n-\nExplain principles of effective clinical communication in healthcare contexts\n-\nApply communication strategies to explain AI-generated results and uncertainties to patients and other healthcare professionals\n-\nAnalyze challenges related to trust, transparency and risk communication in AI-assisted care\n-\nDemonstrate appropriate communication techniques in simulated clinical scenarios involving AI recommendations\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\ncommunication, interaction, explanation, trust, transparency,"
         },
         {
           "name": "Expected preparation",
@@ -34395,7 +34310,7 @@
       "due_date": "",
       "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -34450,9 +34365,9 @@
         },
         {
           "name": "Management information",
-          "len": 2664,
+          "len": 2671,
           "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\nAuthor Organisation 2\n\nAuthor Person 2\n\nReviewer Organisation\n\nTUD\n\nReviewer Person\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nDefine and classify synthetic media: students can distinguish deepfakes from cheapfakes and from other manipulations (generated video, cloned audio, synthetic images, synthetic text), and explain why, for an audience, the claim attached to a piece of content usually matters more than how it was produced.Explain the cognitive mechanisms behind belief in synthetic media: students can account for the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning, and explain why higher cognitive ability and heavy social-media use change a person's exposure to these effects rather than removing them.Analyse the effects on trust and reality perception that go beyond a single act of deception: students can explain epistemic destabilisation, the erosion of trust in news, in institutions, and in the depicted person, and show with evidence that a synthetic clip can lower trust and damage a reputation even when viewers rate it as not credible.Explain and evaluate the liar's dividend: students can define the liar's dividend (Chesney and Citron, 2019), summarise the experimental evidence that public figures gain support by dismissing authentic evidence as fabricated (Schiff, Schiff and Bueno, 2024), and explain how the effect reaches authentic video, which can be discredited by labelling it a deepfake (Hameleers and Marquart, 2023; Grohmann, Halle and Appel, 2026).Assess the limits of detection and warnings: students can explain why detection tools, deepfake warnings, and media-literacy messaging are necessary but not sufficient, including the continued-influence effect on synthetic video and the risk that broad warnings produce generalised distrust, or reality apathy, rather than calibrated skepticism.Design a provenance-first response for communication practice: students can build a verification and disclosure workflow for a newsroom or communications team that combines content provenance (C2PA content credentials), plausibility-aware checking, and the labelling duties of Article 50 of the EU AI Act, and can justify framing choices that build warranted trust in verified content.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nSynthetic media,Deepfakes,Cheapfakes,Liar's dividend,Epistemic destabilisation,Illusory truth effect,Motivated reasoning,Continued-influence effect,Reality apathy,Content provenance (C2PA),Media trust,Verification,EU AI Act Article 50,"
+          "text": "Author Organisation 1\n\nReal AI\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\nAuthor Organisation 2\n\nAuthor Person 2\n\nReviewer Organisation\n\nTUD\n\nReviewer Person\n\nNa Li\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nDefine and classify synthetic media: students can distinguish deepfakes from cheapfakes and from other manipulations (generated video, cloned audio, synthetic images, synthetic text), and explain why, for an audience, the claim attached to a piece of content usually matters more than how it was produced.Explain the cognitive mechanisms behind belief in synthetic media: students can account for the truth-default, the illusory-truth (repetition) effect, source-monitoring failure, and motivated reasoning, and explain why higher cognitive ability and heavy social-media use change a person's exposure to these effects rather than removing them.Analyse the effects on trust and reality perception that go beyond a single act of deception: students can explain epistemic destabilisation, the erosion of trust in news, in institutions, and in the depicted person, and show with evidence that a synthetic clip can lower trust and damage a reputation even when viewers rate it as not credible.Explain and evaluate the liar's dividend: students can define the liar's dividend (Chesney and Citron, 2019), summarise the experimental evidence that public figures gain support by dismissing authentic evidence as fabricated (Schiff, Schiff and Bueno, 2024), and explain how the effect reaches authentic video, which can be discredited by labelling it a deepfake (Hameleers and Marquart, 2023; Grohmann, Halle and Appel, 2026).Assess the limits of detection and warnings: students can explain why detection tools, deepfake warnings, and media-literacy messaging are necessary but not sufficient, including the continued-influence effect on synthetic video and the risk that broad warnings produce generalised distrust, or reality apathy, rather than calibrated skepticism.Design a provenance-first response for communication practice: students can build a verification and disclosure workflow for a newsroom or communications team that combines content provenance (C2PA content credentials), plausibility-aware checking, and the labelling duties of Article 50 of the EU AI Act, and can justify framing choices that build warranted trust in verified content.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nSynthetic media,Deepfakes,Cheapfakes,Liar's dividend,Epistemic destabilisation,Illusory truth effect,Motivated reasoning,Continued-influence effect,Reality apathy,Content provenance (C2PA),Media trust,Verification,EU AI Act Article 50,"
         },
         {
           "name": "Expected preparation",
@@ -34516,7 +34431,7 @@
       "due_date": "",
       "author": "Real AI · Tarry Singh, Tannistha Maiti",
       "coauthor": "BME · Dorottya Egres",
-      "reviewer": "TUD",
+      "reviewer": "TUD · Na Li",
       "off_wiki": false,
       "realai_wiki_gap": false,
       "review_done": false,
@@ -34619,9 +34534,9 @@
         },
         {
           "name": "Management information",
-          "len": 1250,
+          "len": 1257,
           "empty": false,
-          "text": "Author Organisation 1\n\nReal AI\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nDorottya Egres\n\nReviewer Organisation\n\nTUD\n\nReviewer Person\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nBy the end of this learning event, the student will be able to:Explain what argument mining is and how it differs from sentiment analysis and opinion mining.Identify claims, premises and argumentative discourse units in a passage of text, and describe the support and attack relations between them.Compare the main structural models of argument, including the Toulmin model, and explain why they have to be modified before they survive contact with real text.Interpret reported argument mining results critically, distinguishing span identification from technique classification and in-domain from cross-domain performance.Assess the limits of automated argument analysis for mapping conflict and disinformation at scale, including annotator disagreement and the difference between rhetorical structure and truth.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nArgument Mining,NLP,Logic,Reasoning,Claims and Premises,Toulmin Model,Propaganda Technique Detection,Discourse Analysis,Disinformation,"
+          "text": "Author Organisation 1\n\nReal AI\n\nAuthor Person 1\n\nTarry Singh, Tannistha Maiti\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nDorottya Egres\n\nReviewer Organisation\n\nTUD\n\nReviewer Person\n\nNa Li\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nBy the end of this learning event, the student will be able to:Explain what argument mining is and how it differs from sentiment analysis and opinion mining.Identify claims, premises and argumentative discourse units in a passage of text, and describe the support and attack relations between them.Compare the main structural models of argument, including the Toulmin model, and explain why they have to be modified before they survive contact with real text.Interpret reported argument mining results critically, distinguishing span identification from technique classification and in-domain from cross-domain performance.Assess the limits of automated argument analysis for mapping conflict and disinformation at scale, including annotator disagreement and the difference between rhetorical structure and truth.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nArgument Mining,NLP,Logic,Reasoning,Claims and Premises,Toulmin Model,Propaganda Technique Detection,Discourse Analysis,Disinformation,"
         },
         {
           "name": "Expected preparation",
@@ -36811,23 +36726,7 @@
         "iso": "2026-10-14T18:22:00Z",
         "talk_rev": 8881
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-11T12:21:05Z",
-          "user": "KristinaArnaoudova2"
-        },
-        "files": [
-          {
-            "name": "Fundamentals of machine learning.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "changed_fields": [
-          "instructions",
-          "learningOutcomes"
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -36962,19 +36861,7 @@
         "iso": "2026-10-14T18:51:00Z",
         "talk_rev": 8883
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-13T19:20:17Z",
-          "user": "KristinaArnaoudova2"
-        },
-        "files": [
-          {
-            "name": "Data Types and Representations.pdf",
-            "date": "2026-10-13"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -37202,6 +37089,136 @@
       ]
     },
     {
+      "code": "H-122",
+      "track": "Horizontal",
+      "title": "H-122 Model Training, Evaluation and Generalization",
+      "lesson_type": "Lecture",
+      "duration": "120",
+      "job_role": "Any",
+      "status": "In development",
+      "wiki_status": "Learning materials: development",
+      "due_date": "",
+      "author": "SU · Kristina Arnaoudova",
+      "coauthor": "BME · Béla Pataki",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": true,
+      "revision_requested": true,
+      "review_note": "Lesson plan reviewed 17 Sep 2026 13:41 CEST, posted Talk rev 8615. Status at review: 'Lesson plan: review'. REVISION REQUESTED (major). Review of the plan only, because the SharePoint folder is empty. The topics and their order are sound, but the teacher instructions are keyword lists. Evaluation gets 10 minutes with no thresholds, ROC or AUROC, and five of its eight items are already on slide 26 of the author's H-108 deck. There are no exercises and no break, and the preparation, keyword and acknowledgement fields are empty. 7 must-fix item(s).",
+      "early_feedback": null,
+      "action_summary": {
+        "posted": "14 October 2026, 20:53 CEST",
+        "iso": "2026-10-14T18:53:00Z",
+        "talk_rev": 8885
+      },
+      "author_activity": {
+        "wiki_page": {
+          "ts": "2026-10-19T08:54:31Z",
+          "user": "KristinaArnaoudova2"
+        },
+        "files": [
+          {
+            "name": "Machine Learning Model Training_Evaluation_Generalization.pptx",
+            "date": "2026-10-19"
+          }
+        ],
+        "content": true
+      },
+      "materials": {
+        "count": 1,
+        "has": true,
+        "newest": "2026-10-19",
+        "files": [
+          {
+            "name": "Machine Learning Model Training_Evaluation_Generalization.pptx",
+            "ext": "pptx",
+            "kb": 541,
+            "date": "2026-10-19",
+            "sha": "2653b4b8bb2dfd28",
+            "rel": "4.1 Horizontal/H-122/Machine Learning Model Training_Evaluation_Generalization.pptx"
+          }
+        ],
+        "folder": "H-122"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/H-122_Model_Training,_Evaluation_and_Generalization",
+      "wiki_sections": [
+        {
+          "name": "(lead)",
+          "len": 160,
+          "empty": false,
+          "text": "Contents\n\n1 Administrative information\n2 Management information\n3 Expected preparation\n4 Acknowledgements, thanks\n5 Lesson materials\n6 Instructions for teachers"
+        },
+        {
+          "name": "Administrative information",
+          "len": 151,
+          "empty": false,
+          "text": "Title\n\nModel Training, Evaluation and Generalization\n\nCODE\n\nH-122\n\nDuration\n\n120\n\nTrack\n\nHorizontal\n\nLesson Type\n\nLecture\n\nSelf-standing\n\nJob role\n\nany"
+        },
+        {
+          "name": "Management information",
+          "len": 834,
+          "empty": false,
+          "text": "Author Organisation 1\n\nSU\n\nAuthor Person 1\n\nKristina Arnaoudova\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nBéla Pataki\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLearning materials: development\n\nLearning Outcomes:   \n\nExplain the model training process.Explain how loss, derivatives, and gradient descent are used to update model parameters.Distinguish the roles of training, validation, and test data and recognize data leakage.Explain generalization, underfitting, and overfitting.Explain the bias–variance trade-off and common approaches for improving generalization.Select and interpret appropriate evaluation metrics for classification and regression.Explain the purpose of cross-validation in model evaluation.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nNone."
+        },
+        {
+          "name": "Expected preparation",
+          "len": 156,
+          "empty": false,
+          "text": "Obligatory for students:   \n\nNone.\n\nOptional for students:   \n\nNone.\n\nReferences and background for students:   \n\nNone.\n\nRecommended for teachers:   \n\nNone."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 80,
+          "empty": false,
+          "text": "H-122\n\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 954,
+          "empty": false,
+          "text": "0–15 minutes: model training, iterative training process, predictions, loss/error, parameters, hyperparameters.\n15–35 minutes: gradient descent, loss function, derivative, local slope, gradient direction, learning rate, parameter updates.\n35–60 minutes: data splitting, training set, validation set, test set, hyperparameter tuning, data leakage.\n60–80 minutes: generalization, unseen data, underfitting, overfitting, model complexity, learning curves.\n80–95 minutes: bias and variance, bias–variance intuition, hypothesis class, approximation gap, estimation gap, error decomposition.\n95–105 minutes: improving generalization, representative data, simpler models, regularization, early stopping, cross-validation.\n105–115 minutes: model evaluation, regression metrics, confusion matrix, accuracy, precision, recall, F1-score, class imbalance.\n115–120 minutes: cross-validation and recap, k-fold cross-validation, model development cycle, final test set."
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": true,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": true
+      },
+      "sources": [
+        "wiki",
+        "materials"
+      ]
+    },
+    {
       "code": "H-191",
       "track": "Horizontal",
       "title": "H-191 Operating AI in Production: Monitoring, SLAs, Retraining and Governance Gates",
@@ -37369,12 +37386,89 @@
         "iso": "2026-10-14T18:22:00Z",
         "talk_rev": 8880
       },
-      "author_activity": null,
+      "author_activity": {
+        "files": [
+          {
+            "name": "Setup LM Studio.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "IPE_1_Introduction.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "IPE_1_Discussions.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Prompt Log Example Solutions.xlsx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Prompt Log.xlsx",
+            "date": "2026-10-19"
+          }
+        ],
+        "content": true
+      },
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 6,
+        "has": true,
+        "newest": "2026-10-19",
+        "files": [
+          {
+            "name": "Setup LM Studio.pptx",
+            "ext": "pptx",
+            "kb": 506,
+            "date": "2026-10-19",
+            "sha": "591aade17f2a1cb6",
+            "rel": "4.1 Horizontal/HC-017/Setup LM Studio.pptx"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
+            "ext": "pptx",
+            "kb": 771,
+            "date": "2026-10-19",
+            "sha": "e28df8b4f5c25e8b",
+            "rel": "4.1 Horizontal/HC-017/IPE_1_Assignments.pptx"
+          },
+          {
+            "name": "IPE_1_Introduction.pptx",
+            "ext": "pptx",
+            "kb": 404,
+            "date": "2026-10-19",
+            "sha": "b1dfbc708ada6a68",
+            "rel": "4.1 Horizontal/HC-017/IPE_1_Introduction.pptx"
+          },
+          {
+            "name": "IPE_1_Discussions.pptx",
+            "ext": "pptx",
+            "kb": 347,
+            "date": "2026-10-19",
+            "sha": "76f5b572d85398bf",
+            "rel": "4.1 Horizontal/HC-017/IPE_1_Discussions.pptx"
+          },
+          {
+            "name": "Prompt Log Example Solutions.xlsx",
+            "ext": "xlsx",
+            "kb": 18,
+            "date": "2026-10-19",
+            "sha": "93478e0829746dc7",
+            "rel": "4.1 Horizontal/HC-017/Prompt Log Example Solutions.xlsx"
+          },
+          {
+            "name": "Prompt Log.xlsx",
+            "ext": "xlsx",
+            "kb": 14,
+            "date": "2026-10-19",
+            "sha": "f289f828d7d89576",
+            "rel": "4.1 Horizontal/HC-017/Prompt Log.xlsx"
+          }
+        ],
         "folder": "HC-017"
       },
       "lesson_plan": {
@@ -37444,7 +37538,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -38868,7 +38962,7 @@
       "status": "In development",
       "wiki_status": "Learning materials: development",
       "due_date": "",
-      "author": "West Attica · Anna Mavromanoli",
+      "author": "UNIWA · Anna Mavromanoli",
       "coauthor": "BME",
       "reviewer": "RealAI",
       "off_wiki": false,
@@ -38908,9 +39002,9 @@
         },
         {
           "name": "Management information",
-          "len": 303,
+          "len": 297,
           "empty": false,
-          "text": "Author Organisation 1\n\nWest Attica\n\nAuthor Person 1\n\nAnna Mavromanoli\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nStatus\n\nLearning materials: development\n\nLearning Outcomes:   \n\nNone.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nNone."
+          "text": "Author Organisation 1\n\nUNIWA\n\nAuthor Person 1\n\nAnna Mavromanoli\n\nAuthor Organisation 2\n\nBME\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nStatus\n\nLearning materials: development\n\nLearning Outcomes:   \n\nNone.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nNone."
         },
         {
           "name": "Expected preparation",
@@ -40559,12 +40653,44 @@
       },
       "author_activity": {
         "wiki_page": {
-          "ts": "2026-10-13T16:37:47Z",
+          "ts": "2026-10-16T17:06:35Z",
           "user": "AhmadKhalidi2"
         },
+        "talk": {
+          "ts": "2026-10-16T16:29:31Z",
+          "user": "AhmadKhalidi2"
+        },
+        "files": [
+          {
+            "name": "IPE_1_Introduction.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Prompt Log Example Solutions.xlsx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Prompt Log.xlsx",
+            "date": "2026-10-19"
+          },
+          {
+            "name": "Setup LM Studio.pptx",
+            "date": "2026-10-16"
+          },
+          {
+            "name": "IPE_1_Discussions.pptx",
+            "date": "2026-10-16"
+          }
+        ],
         "changed_fields": [
           "duration",
           "instructions",
+          "keywords",
+          "learningOutcomes",
           "obligStPrep"
         ],
         "content": true
@@ -40572,55 +40698,55 @@
       "materials": {
         "count": 7,
         "has": true,
-        "newest": "2026-07-24",
+        "newest": "2026-10-19",
         "files": [
+          {
+            "name": "IPE_1_Introduction.pptx",
+            "ext": "pptx",
+            "kb": 404,
+            "date": "2026-10-19",
+            "sha": "b1dfbc708ada6a68",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Introduction.pptx"
+          },
           {
             "name": "Prompt Log Example Solutions.xlsx",
             "ext": "xlsx",
-            "kb": 23,
-            "date": "2026-07-24",
-            "sha": "290507d7a0fe79a1",
+            "kb": 18,
+            "date": "2026-10-19",
+            "sha": "93478e0829746dc7",
             "rel": "4.1 Horizontal/HC-016/Prompt Log Example Solutions.xlsx"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
+            "ext": "pptx",
+            "kb": 770,
+            "date": "2026-10-19",
+            "sha": "d4a5792e88cd494b",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Assignments.pptx"
           },
           {
             "name": "Prompt Log.xlsx",
             "ext": "xlsx",
             "kb": 14,
-            "date": "2026-07-24",
-            "sha": "fe3f73bc48f24814",
+            "date": "2026-10-19",
+            "sha": "f289f828d7d89576",
             "rel": "4.1 Horizontal/HC-016/Prompt Log.xlsx"
-          },
-          {
-            "name": "IPE_1_Discussions.pptx",
-            "ext": "pptx",
-            "kb": 464,
-            "date": "2026-07-24",
-            "sha": "f8af8da027d783a7",
-            "rel": "4.1 Horizontal/HC-016/IPE_1_Discussions.pptx"
-          },
-          {
-            "name": "IPE_1_Assignments.pptx",
-            "ext": "pptx",
-            "kb": 840,
-            "date": "2026-07-24",
-            "sha": "e2b1b3a0e9c99d5c",
-            "rel": "4.1 Horizontal/HC-016/IPE_1_Assignments.pptx"
-          },
-          {
-            "name": "IPE_1_Introduction.pptx",
-            "ext": "pptx",
-            "kb": 669,
-            "date": "2026-07-24",
-            "sha": "bdb4e8465ffef3c2",
-            "rel": "4.1 Horizontal/HC-016/IPE_1_Introduction.pptx"
           },
           {
             "name": "Setup LM Studio.pptx",
             "ext": "pptx",
-            "kb": 636,
-            "date": "2026-07-24",
-            "sha": "737abf839b98846e",
+            "kb": 506,
+            "date": "2026-10-16",
+            "sha": "8414ac6542b54333",
             "rel": "4.1 Horizontal/HC-016/Setup LM Studio.pptx"
+          },
+          {
+            "name": "IPE_1_Discussions.pptx",
+            "ext": "pptx",
+            "kb": 347,
+            "date": "2026-10-16",
+            "sha": "76f5b572d85398bf",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Discussions.pptx"
           },
           {
             "name": "Slides.pptx",
@@ -40655,9 +40781,9 @@
         },
         {
           "name": "Management information",
-          "len": 883,
+          "len": 769,
           "empty": false,
-          "text": "Author Organisation 1\n\nHAW\n\nAuthor Person 1\n\nAhmad Khalidi\n\nAuthor Organisation 2\n\nUNINA\n\nAuthor Person 2\n\nStefano Marrone\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLearning materials: under revision\n\nLearning Outcomes:   \n\nThe student navigates on chat-bot interfaces on an intermediate level.The student uses basic concepts of prompt engineering and controls the output of an LLM on a beginner level.The student documents prompts and chat histories to evaluate the model’s behaviour and improves it's performance on a beginner level.The student recognises and discusses ethical relevant behaviours of an LLM on an beginner level.The student designs simple experiments to evaluate a model’s behaviour on an intermediate level (optional).\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nbasics,context window,limitations,"
+          "text": "Author Organisation 1\n\nHAW\n\nAuthor Person 1\n\nAhmad Khalidi\n\nAuthor Organisation 2\n\nUNINA\n\nAuthor Person 2\n\nStefano Marrone\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen\n\nStatus\n\nLearning materials: under revision\n\nLearning Outcomes:   \n\nThe student navigates on chat-bot interfaces on an intermediate level.The student uses basic concepts of prompt engineering and steers the output of an LLM on a beginner level.The student documents and evaluates prompts and chat histories at a beginner level in order to steer the model's behavior and improve its performance over multiple iterations.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nbasics,context window,elements of a prompt,system prompt,temperature,documentation,"
         },
         {
           "name": "Expected preparation",
@@ -40679,9 +40805,9 @@
         },
         {
           "name": "Instructions for teachers",
-          "len": 1594,
+          "len": 1472,
           "empty": false,
-          "text": "This practice requires to Setup LLM access for all students. The teacher is required to either\na) provide a third party LLM chat interface/university access and  adjust the slides accordingly with the necessary information or\nb) require the students to install LM Studio on their own devices using the given slides Setup LM Studio.pptx. It is recommended that all students follow these instructions before class so there is no delay during class.\n\nThe class is designed in three parts. The first part uses the slides IPE_1_Introduction.pptx. \n\n(0-5 min) a quick introduction into what is prompt engineering for and what the agenda looks like.\n\n(5-15 min) let the students try their first prompt, have them explore the interface and discuss the elements mentioned in the slides.\n\n(15-20 min) Submit the assignment and give the students access to the slides IPE_1_assignments.pptx and the Excel Template Prompt Log.xlsx.\n\n(20 - 50 min) The students then work on the assignments in the second part.\n\nFor the third part and for discussing the assignments use the slides IPE_1_Discussion.pptxs. A possible Prompt Log after the assignment can be found in Prompt Log Example Solutions.xlsx.\n\n(50-55 min) A quick recap on the learning event and \"elements of a prompt\".\n\n(55-60 min) Discuss the \"Reflect and Discuss\" of \"Context\".\n\n(60-65 min) Discuss the \"Reflect and Discuss\" of \"Output Indicator\".\n\n(65-70 min) Discuss the \"Reflect and Discuss\" of \"System Prompt\".\n\n(70-75 min) Discuss the \"Reflect and Discuss\" of \"Temperature\".\n\n(75-80 min) Allow students to present their (optional) experiment(s)."
+          "text": "This practice requires to Setup LLM access for all students. The teacher is required to either\na) provide a third party LLM chat interface/university access and  adjust the slides accordingly with the necessary information or\nb) require the students to install LM Studio on their own devices using the given slides Setup LM Studio.pptx. It is recommended that all students follow these instructions before class so there is no delay during class.\n\nThe class is designed in three parts. The first part uses the slides IPE_1_Introduction.pptx. \n\n(0-2 min) a quick introduction into what is prompt engineering for and what the agenda looks like.\n\n(2-12 min) let the students try their first prompt, have them explore the interface and discuss the elements mentioned in the slides.\n\n(12-15 min) Submit the assignment and give the students access to the slides IPE_1_assignments.pptx and the Excel Template Prompt Log.xlsx.\n\n(15 - 45 min) The students then work on the assignments in the second part.\n\nFor the third part and for discussing the assignments use the slides IPE_1_Discussion.pptxs. A possible Prompt Log after the assignment can be found in Prompt Log Example Solutions.xlsx.\n\n(45-55 min) Discuss \"Instruction & Input Data: Reflect and Discuss​\".\n\n(55-65 min) Discuss \"Output Indicator: Reflect and Discuss​\".\n\n(65-75 min) Discuss \"System Prompt: Reflect and Discuss​\".\n\n(75-85 min) Discuss \"Temperature: Reflect and Discuss​\".\n\n(85-90 min) Discuss \"Key Takeaways\""
         }
       ],
       "realai": {
@@ -40743,23 +40869,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8899
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-10T21:18:21Z",
-          "user": "MariaNisheva2"
-        },
-        "files": [
-          {
-            "name": "Presentation HC-148_revision-1.pptx",
-            "date": "2026-10-11"
-          },
-          {
-            "name": "Presentation HC-148_revision-1.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -40902,23 +41012,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8900
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-11T20:11:20Z",
-          "user": "MariaNisheva2"
-        },
-        "files": [
-          {
-            "name": "Presentation HC-150_revision-1.pptx",
-            "date": "2026-10-11"
-          },
-          {
-            "name": "Presentation HC-150_revision-1.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -41061,23 +41155,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8901
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-11T20:13:30Z",
-          "user": "MariaNisheva2"
-        },
-        "files": [
-          {
-            "name": "Presentation HC-152_revision-1.pptx",
-            "date": "2026-10-11"
-          },
-          {
-            "name": "Presentation HC-152_revision-1.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 5,
         "has": true,
