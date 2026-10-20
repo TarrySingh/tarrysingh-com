@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-10-20T18:24:33.079241+00:00",
-  "refreshed_at": "2026-10-20T18:24:33.079241+00:00",
+  "generated_at": "2026-10-20T18:33:00.030478+00:00",
+  "refreshed_at": "2026-10-20T18:33:00.030478+00:00",
   "refresh_history": [
     {
       "at": "2026-10-20T11:43:55.185573+00:00",
@@ -6170,22 +6170,7 @@
         "iso": "2026-10-14T18:53:00Z",
         "talk_rev": 8884
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-11T17:58:50Z",
-          "user": "KristinaArnaoudova2"
-        },
-        "files": [
-          {
-            "name": "Machine Learning Models.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "changed_fields": [
-          "learningOutcomes"
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -7378,13 +7363,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8890
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-06T08:56:09Z",
-          "user": "GrigorisNikolaou2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -13296,13 +13275,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8908
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-02T08:05:24Z",
-          "user": "SietskeTacoma"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -13421,19 +13394,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8909
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-02T08:07:16Z",
-          "user": "SietskeTacoma"
-        },
-        "files": [
-          {
-            "name": "HC 178 Data-2 v1.pdf",
-            "date": "2026-10-13"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -13560,13 +13521,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8910
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-06T06:36:41Z",
-          "user": "GrigorisNikolaou2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -13693,13 +13648,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8911
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-06T06:37:46Z",
-          "user": "GrigorisNikolaou2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -31751,13 +31700,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8890
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-06T08:56:09Z",
-          "user": "GrigorisNikolaou2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -36924,22 +36867,7 @@
         "iso": "2026-10-14T18:53:00Z",
         "talk_rev": 8884
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-11T17:58:50Z",
-          "user": "KristinaArnaoudova2"
-        },
-        "files": [
-          {
-            "name": "Machine Learning Models.pdf",
-            "date": "2026-10-11"
-          }
-        ],
-        "changed_fields": [
-          "learningOutcomes"
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -38403,13 +38331,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8910
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-06T06:36:41Z",
-          "user": "GrigorisNikolaou2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -38536,13 +38458,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8911
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-06T06:37:46Z",
-          "user": "GrigorisNikolaou2"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 3,
         "has": true,
@@ -41196,13 +41112,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8908
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-02T08:05:24Z",
-          "user": "SietskeTacoma"
-        },
-        "content": false
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -41321,19 +41231,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8909
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-02T08:07:16Z",
-          "user": "SietskeTacoma"
-        },
-        "files": [
-          {
-            "name": "HC 178 Data-2 v1.pdf",
-            "date": "2026-10-13"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
