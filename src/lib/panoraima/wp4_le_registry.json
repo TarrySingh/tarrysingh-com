@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-10-20T11:45:24.505527+00:00",
-  "refreshed_at": "2026-10-20T11:45:24.505527+00:00",
+  "generated_at": "2026-10-20T15:41:27.090181+00:00",
+  "refreshed_at": "2026-10-20T15:41:27.090181+00:00",
   "refresh_history": [
     {
       "at": "2026-10-20T11:43:55.185573+00:00",
@@ -9114,50 +9114,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8892
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-16T17:06:35Z",
-          "user": "AhmadKhalidi2"
-        },
-        "talk": {
-          "ts": "2026-10-16T16:29:31Z",
-          "user": "AhmadKhalidi2"
-        },
-        "files": [
-          {
-            "name": "IPE_1_Introduction.pptx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "Prompt Log Example Solutions.xlsx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "IPE_1_Assignments.pptx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "Prompt Log.xlsx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "Setup LM Studio.pptx",
-            "date": "2026-10-16"
-          },
-          {
-            "name": "IPE_1_Discussions.pptx",
-            "date": "2026-10-16"
-          }
-        ],
-        "changed_fields": [
-          "duration",
-          "instructions",
-          "keywords",
-          "learningOutcomes",
-          "obligStPrep"
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 7,
         "has": true,
@@ -40651,50 +40608,7 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8892
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-16T17:06:35Z",
-          "user": "AhmadKhalidi2"
-        },
-        "talk": {
-          "ts": "2026-10-16T16:29:31Z",
-          "user": "AhmadKhalidi2"
-        },
-        "files": [
-          {
-            "name": "IPE_1_Introduction.pptx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "Prompt Log Example Solutions.xlsx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "IPE_1_Assignments.pptx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "Prompt Log.xlsx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "Setup LM Studio.pptx",
-            "date": "2026-10-16"
-          },
-          {
-            "name": "IPE_1_Discussions.pptx",
-            "date": "2026-10-16"
-          }
-        ],
-        "changed_fields": [
-          "duration",
-          "instructions",
-          "keywords",
-          "learningOutcomes",
-          "obligStPrep"
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 7,
         "has": true,
