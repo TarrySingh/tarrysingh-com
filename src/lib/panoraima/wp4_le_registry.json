@@ -2,8 +2,8 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-10-20T15:41:27.090181+00:00",
-  "refreshed_at": "2026-10-20T15:41:27.090181+00:00",
+  "generated_at": "2026-10-20T18:24:33.079241+00:00",
+  "refreshed_at": "2026-10-20T18:24:33.079241+00:00",
   "refresh_history": [
     {
       "at": "2026-10-20T11:43:55.185573+00:00",
@@ -6441,19 +6441,7 @@
         "iso": "2026-10-14T18:53:00Z",
         "talk_rev": 8885
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-19T08:54:31Z",
-          "user": "KristinaArnaoudova2"
-        },
-        "files": [
-          {
-            "name": "Machine Learning Model Training_Evaluation_Generalization.pptx",
-            "date": "2026-10-19"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
@@ -37069,19 +37057,7 @@
         "iso": "2026-10-14T18:53:00Z",
         "talk_rev": 8885
       },
-      "author_activity": {
-        "wiki_page": {
-          "ts": "2026-10-19T08:54:31Z",
-          "user": "KristinaArnaoudova2"
-        },
-        "files": [
-          {
-            "name": "Machine Learning Model Training_Evaluation_Generalization.pptx",
-            "date": "2026-10-19"
-          }
-        ],
-        "content": true
-      },
+      "author_activity": null,
       "materials": {
         "count": 1,
         "has": true,
