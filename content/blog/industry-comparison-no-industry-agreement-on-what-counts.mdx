@@ -1,0 +1,54 @@
+---
+title: "Industry Comparison, No Industry Agreement on What Counts"
+date: "2026-10-23"
+category: "Essays"
+excerpt: "GitHub shipped an industry comparison section to its Copilot impact dashboard on 22 October 2026, allowing enterprises to benchmark their agentic adoption and leverage against participating peers. The feature is opt-in and disabled by default, which means every director who turns it on has already decided the number matters. What nobody has decided is …"
+draft: false
+tags: ["industry", "comparison", "agreement", "what", "counts"]
+---
+
+GitHub shipped an industry comparison section to its Copilot impact dashboard on 22 October 2026, allowing enterprises to benchmark their agentic adoption and leverage against participating peers. The feature is opt-in and disabled by default, which means every director who turns it on has already decided the number matters. What nobody has decided is what the number means.
+
+You are the engineering director who signed the contract six months ago. You defended the deployment at the quarterly review. Copilot reached 50 million users in July 2026, so the purchase is no longer contrarian, but the board still wants the line that moves. The dashboard now shows the percentage of your users who are agent-first or multi-agent, ranks your organisation against the peer median for a 28-day window, and compares the pull request merge rate of agentic users with nonagentic users. The interface is clean. The benchmark exists. The question you cannot answer from the screen is whether higher agentic adoption is the win, or the bill.
+
+GitHub moved every Copilot plan to usage-based billing in mid-2026, with AI Credits pooled across the organisation and agentic workflows drawing from that pool at rates seat count does not predict. Enterprise credit allotments dropped 44% on 1 September 2026 when the June–August promotional period ended, and actual consumption met actual allotments as teams returned from summer and agentic usage climbed. The invoice that landed in early October is the first one that reflects what your organisation actually uses. The dashboard that landed three weeks later tells you how that use ranks.
+
+**1. The number the dashboard surfaces**
+
+Agentic adoption is defined as the percentage of users who are agent-first or multi-agent. Agent-first means a developer runs an autonomous task more often than they accept a code completion. Multi-agent means they use more than one agent surface in a reporting period. The metric treats both modes as adoption wins and rolls them into the benchmark. It does not separate the developer who runs five agent tasks a week from the developer who runs fifty, and it does not separate the task that ships from the task that returns broken code and gets reverted.
+
+The dashboard shows merge rate for agentic users compared with nonagentic users. Faros AI tracked over 10,000 developers across 1,255 teams and found that teams using AI coding tools merged 98% more pull requests, but PR review time increased 91%. The merge rate is real. The bottleneck moved.
+
+**2. The work the tool reshaped**
+
+Developers now spend 11.4 hours a week reviewing AI-generated code versus 9.8 hours writing new code, a reversal from 2024. Writing is faster. Review is longer. The total pipeline might be faster, but several teams reported lead time improving 60–70% after AI adoption, while the percentage of that lead time spent in code review grew from 20% to over 50%. The tool changed the job from authoring to verification, and the verification load is the part the agentic adoption score does not carry.
+
+Across a sample of 1,450+ engineering organisations, median batch size—lines changed per pull request—roughly doubled between Q1 2025 and Q1 2026, with the median growing 97.5% for organisations with at least 1,000 PRs in each period. Agents write more code per task, which sounds like leverage until the senior engineer who reviews it spends three hours reconstructing the intent behind 800 lines generated in twelve minutes. Teams with high AI adoption completed 21% more tasks and merged 98% more pull requests, but bug counts rose 9%, and organisational-level DORA metrics showed no measurable improvement despite the individual-level gains.
+
+**3. The measurement that stayed behind**
+
+The industry comparison dashboard ranks agentic adoption. It does not rank review latency, rework rate, or the share of PRs that pass review without requiring a human to rewrite the agent's output. New metrics added to the DORA framework in 2025 include Deployment Rework Rate and measures of AI Code Share, Code Durability, and Complexity-Adjusted Throughput, but GitHub's built-in dashboard does not surface those, and GitHub's Copilot metrics provide a 28-day window with per-seat usage and suggestion acceptance rates, but engineering leaders need trend lines over quarters, impact on PR flow, incident rates, and rework data.
+
+A study of experienced open-source developers working in their own repos found that AI coding assistants made those developers 19% slower, while the same developers believed the tools had sped them up by 20%—a 40-point perception gap. Perception and outcome diverged because the measurement captured task speed, not review overhead, merge reliability, or the cost of fixing what the agent shipped.
+
+**4. The cost that moved with the behaviour**
+
+You bought seats. The seat still costs the stated price. The seat now includes credits equal to the seat price in dollars, and anything beyond the pool bills on top. Since June 2026, GitHub Copilot has billed chat, agent, and code review use in metered credits on top of the seat. Agent tasks consume tokens at rates that vary by model, task length, and repository context size. A long-running refactor can cost more in tokens than a month of inline completions.
+
+A documented Express.js refactor on Claude Code came in at roughly ten times more expensive than a cloud-sandboxed equivalent, and the cost only makes sense when the output is measurably better. The agentic adoption number on the dashboard counts the user as adopted. It does not show token cost per accepted task, or the ratio of tasks that merged versus tasks that were abandoned after burning the budget.
+
+**5. The comparison you cannot refuse**
+
+The dashboard is opt-in, but once it is on, the comparison is automatic. Each score is ranked against the peer median for the 28-day reporting period and against the top decile as the peer group grows. If your organisation ranks below the median, the instinct is to move the number. Moving the number means encouraging agent adoption. Encouraging agent adoption moves token spend, review load, and batch size, but none of those appear on the same screen as the percentile rank.
+
+The developers who use agents most heavily are not always the developers whose work requires the least review or survives production longest. Jellyfish benchmark data shows companies in the lowest adoption tier merging roughly 1.57 PRs per engineer per week against 2.81 for the highest tier, a difference of about 79%, but throughput without durability is inventory, not delivery. Code Durability assesses how long code survives without major rework, and that metric does not feed the percentile you just enabled.
+
+**6. The question that survives the dashboard**
+
+You signed the contract because the tool promised leverage. Six months in, developers are generating more code, merging more often, and spending more time in review than they spent writing code the year before. The dashboard shows your agentic adoption sits at the 58th percentile. The board will ask whether that is good. The honest answer is that the dashboard cannot tell you, because it measures behaviour, not outcome, and it ranks the behaviour without pricing the work the behaviour created downstream.
+
+The measurement you need is the one the tool reshaped: review time segmented by AI-touched versus human-written code, durability at 30 and 90 days, rework rate, and cost per task that merged. The dashboard that exists shows adoption and merge rate. The dashboard that would answer the director's question does not ship with the seat.
+
+---
+
+Tarry Singh is the founder and CEO of Real AI (realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads Earthscan (earthscan.io) for Energy AI, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at tarrysingh.com.
