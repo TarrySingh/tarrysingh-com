@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react"
 import { logNudge } from "@/lib/nudge/log"
+import {
+  HoneypotField,
+  TurnstileWidget,
+  useBotCheck,
+} from "@/components/forms/bot-check"
 
 const SESSION_KEY_PREFIX = "tch:milestone:"
 const MILESTONE_FRACTION = 0.6 // 60% of scrollable depth
@@ -32,6 +37,8 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
+  // Time the form from when the nudge surfaces, not from page load.
+  const bot = useBotCheck({ active: visible })
 
   // Only render on long posts. Avoids the nudge appearing on Notes-shaped
   // 500-word pieces where 60% reads in 90 seconds and the surfacing
@@ -73,6 +80,7 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
     setStatus("loading")
     setErrorMessage("")
     try {
+      const botCheck = await bot.getBotCheck()
       const res = await fetch("/api/newsletter/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -80,10 +88,12 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
           email: email.trim(),
           source: "blog-reading-milestone",
           context: { slug, nudge: "reading-milestone" },
+          botCheck,
         }),
       })
       const j = await res.json().catch(() => ({}))
       if (!res.ok || (j && j.ok === false)) {
+        bot.rearm()
         setStatus("error")
         setErrorMessage(j?.error ?? `subscribe_failed_${res.status}`)
         return
@@ -91,6 +101,7 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
       setStatus("ok")
       logNudge("reading-milestone", "submit", slug)
     } catch (err) {
+      bot.rearm()
       setStatus("error")
       setErrorMessage(err instanceof Error ? err.message : "network_error")
     }
@@ -131,10 +142,12 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
                 no schedule, no marketing, leave an address.
               </p>
               <form
+                {...bot.formProps}
                 onSubmit={onSubmit}
                 className="flex flex-col sm:flex-row gap-2 sm:items-stretch"
                 noValidate
               >
+                <HoneypotField value={bot.hp} onChange={bot.setHp} />
                 <input
                   type="email"
                   inputMode="email"
@@ -167,6 +180,7 @@ export function ReadingMilestoneNudge({ slug, wordCount }: Props) {
                   Not today
                 </button>
               </form>
+              <TurnstileWidget {...bot.turnstile} theme="light" />
               {status === "error" ? (
                 <p
                   className="mt-2 text-xs text-rose-600"
