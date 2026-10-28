@@ -1,0 +1,61 @@
+---
+title: "Singapore Checks Who Pays for the Ad"
+date: "2026-10-28"
+category: "Essays"
+excerpt: "Singapore's ad-verification reforms—requiring platforms to check who is paying for an ad, not just who appears in it—represent the correct control point against scam advertising, but one that arrives late. The shift from face-recognition filters to advertiser identity checks matters because evasion of the latter costs something per account; evasion of the former costs nothing. The open question is whether scam spend will simply re-aim at jurisdictions where the buying desk still asks nothing."
+draft: false
+tags: ["singapore", "digital-advertising", "platform-regulation", "ad-verification", "financial-crime", "scam-prevention"]
+---
+
+The cheapest place to stop a financial scam is the moment someone pays a platform to show it. Singapore has learned this the slow way, by trying the expensive places first, and the ad-buying desk at Facebook, Instagram and TikTok is about to become the most important compliance counter in Southeast Asian finance.
+
+## 1. What the face check was built to catch
+
+Start with the tool everyone reached for. In October 2024, Meta [described a system](https://about.fb.com/news/2024/10/testing-combat-scams-restore-compromised-accounts/) that takes an ad already flagged as a likely scam, finds the public figure's face in it, and compares that face against the figure's Facebook and Instagram profile pictures. A match plus a scam verdict means the ad is blocked. By Meta's own later updates to the same page, nearly 500,000 public figures are enrolled, and user reports of "celeb-bait" ads, relative to total ad impressions, fell 22% globally from the first half of 2025. Those are vendor numbers about a vendor's product, against a denominator that also falls when users stop bothering to report. The direction is plausible; the magnitude is unaudited.
+
+Singapore leaned on the same mechanism by law. Under the Online Criminal Harms Act, the government issued Meta a first Implementation Directive in September 2025 covering impersonation of named office holders. [The Ministry of Home Affairs release of 29 January 2026](https://www.mha.gov.sg/media-room/newsroom/issuance-of-implementation-directive-to-meta-under-the-online-criminal-harms-act-jan-2026/) explains why a second one followed on 27 January: impersonation of the listed officials fell, and "scammers have since pivoted to impersonate people not covered under the first ID." The second directive widened the list to every other office holder by 31 January, to people the police assess as high-risk by 28 February, and to notable Facebook users in phases through 30 June 2026, with fines of up to S$1 million plus S$100,000 a day for a continuing breach.
+
+Take the ministry's sentence the way an engineer would. A face-match filter works against a gallery. Every expansion of the gallery is a confession that the previous gallery was the wrong size. The scammer's cost of moving to an unlisted face is close to zero; the regulator's cost of listing the next face is a new legal instrument.
+
+## 2. What it cannot see
+
+Then the faces drop out entirely. On 2 October 2026, [the Singapore Police Force reported](https://www.police.gov.sg/Media-Hub/News/2026/10/20261002_police_advisory_on_phishing_scams_involving_fraudulent_social_media_advertisements) at least 246 cases since July, with losses of at least S$1.4 million, from ads on Facebook, Instagram and TikTok offering cheap household products, food and fashion. Click the ad, land on a phishing page, type in card details or banking credentials, sometimes hand over an OTP. There is no minister in these creatives. There is a kettle at a good price.
+
+Across the causeway, the face is still there but it belongs to the wrong kind of person. [Bank Negara Malaysia's scam alert of 13 October 2026](https://www.bnm.gov.my/-/scamalert), issued jointly with the Securities Commission, warns of deepfake videos of senior officers of both regulators promoting investment products. The central bank's line is blunt: neither body promotes or recommends private investment schemes. A central-bank deputy governor is a public figure, but not the sort who runs an enrolled Instagram account a face-matcher can compare against, and the alert names no platform obligation to make the comparison at all.
+
+The scale sits underneath both. [Bitdefender Labs, publishing on 1 June 2026](https://www.bitdefender.com/en-us/blog/labs/inside-the-apac-malvertising-ecosystem), counted more than 12,000 scam campaigns and over 400,000 ad sightings on Meta platforms across 13 Asia-Pacific countries between January and April, with finance making up 18% of campaigns and health 19%. Bitdefender sells security software and its methodology note is thin; treat the counts as indicative. The useful finding is qualitative: the same advertiser accounts and redirect infrastructure recur across countries. The constant is the account. The face changes.
+
+| Control point | What it keys on | Where it fails | Evidence |
+|---|---|---|---|
+| Face match in the creative | A known face in a gallery | Unlisted faces, no faces, synthetic regulators | MHA's "pivoted" sentence; SPF household-goods ads; BNM deepfakes |
+| Post-hoc takedown on report | User complaints | Losses land before the report; reporting fatigue | SPF case counts accrue for months before advisories |
+| Advertiser identity at onboarding | Who is paying, checked against state records | Mule identities, rented accounts | Singapore's August 2026 code; Google's 2022 Singapore precedent |
+| Licence check on financial ads | Regulator's register | Non-financial lures (kettles) slip through | Singapore code ties finance ads to MAS licences |
+
+## 3. What Singapore wrote down in August
+
+[The police release of 18 August 2026](https://www.police.gov.sg/media-hub/news/2026/08/20260818_issuance_of_codes_of_practice_under_the_online_criminal_harms_act) on the new Codes of Practice moves the check upstream. Under the Social Media Services Code, Facebook, Instagram and TikTok must verify advertisers' identities against government-issued records before ads targeting Singapore users go live; must refuse ads for financial services or products unless the advertiser is licensed by the Monetary Authority of Singapore or another applicable authority; must block ads reasonably suspected of furthering a scam, including URL-cloaked ones; and must comply by 31 January 2027. The same release gives the reason in one figure: the three platforms accounted for about 30% of all scam cases in Singapore in 2025, Facebook alone about 18%.
+
+Parliament then put a price on it. [In the second-reading speech of 8 September 2026](https://www.mha.gov.sg/media-room/newsroom/second-reading-of-the-scams-countermeasures-and-other-matters-bill/), Senior Minister of State Goh Pei Ming set the administrative penalty at up to S$10 million per instance of non-compliance with a code or directive, "the highest fixed quantum financial penalty in Singapore's statute book." He also gave the base rate: reported cases in the first half of 2026 fell 14.4% to about 16,800 and losses fell 17.9% to about S$411 million, which still works out to roughly 90 cases and S$2 million in losses every day.
+
+This is the right control point, and I would say so to anyone running trust and safety for a platform selling into Singapore. A face filter asks "who is in this ad?" and has to be right about every frame of every creative. An onboarding check asks "who is paying for this ad?" once per account, against a record the state already maintains. A licence check on financial ads asks a question MAS already answers in a public register. All three are boring. Boring is what scales.
+
+## 4. Meta's objection, taken seriously
+
+The strongest counter-argument comes from Meta itself. In October 2025, Rafael Frankel, Meta's director of public policy, [was quoted pushing back on Malaysia's platform-licensing regime](https://igaming-times.com/news/regulatory/meta-challenges-malaysia-social-media-license-warns-rules-ineffective-against-illegal-gambling): "If governments impose narrow compliance rules, cybercrime will continue to evolve around them." He is partly right. Identity verification invites mule identities, rented business registrations and compromised advertiser accounts. Verification at onboarding does nothing about an account that was clean on Monday and hijacked on Thursday.
+
+Two replies, on the merits. First, the rule is old and it already works somewhere. Google has required [financial services verification for advertisers targeting Singapore](https://support.google.com/adspolicy/answer/12177904) since mid-2022, with applications opening on 27 June and unverified advertisers barred from showing financial ads after 30 August of that year. Advertisers must show authorisation from the relevant national regulator through a third-party verifier. Four years of running a register check counts as industry practice, adopted by one large ad seller and resisted by another.
+
+Second, the platform's own risk tolerance is the variable most worth regulating. [Reuters reported on 6 November 2025](https://www.reuters.com/investigations/meta-is-earning-fortune-deluge-fraudulent-ads-documents-show-2025-11-06/), from internal Meta documents, that the company projected about 10% of its 2024 revenue, roughly $16 billion, would come from scam ads and banned goods; that users were shown an estimated 15 billion "higher risk" scam ads a day; and that Meta banned an advertiser only when its systems were at least 95% certain of fraud, charging less-certain suspects higher ad rates instead. Meta's spokesman called the 10% estimate "rough and overly-inclusive" and said the true figure was lower, without giving one. The 95% threshold is a design choice, and it is a choice about who absorbs the error: below it, the platform keeps the revenue and the user keeps the risk. Verifying identity before the first impression moves that threshold out of the ad auction and into a registry check the platform does not get to tune.
+
+So my disagreement with Frankel is specific. Evasion of an identity check is real but costs the scammer something per account: a mule, a forged record, a bought registration, each of which leaves a trail the police in Singapore are now empowered to follow. Evasion of a face filter costs nothing. The test for any control is whether each attempt costs the attacker more than the last one did.
+
+## 5. The part that stays open
+
+The code bites on 31 January 2027. By then the household-goods ads from the 2 October advisory will have had another four months to run, and the deepfaked Malaysian regulators will have found the next unlisted face, unaffected by a Singapore rule that stops at Singapore users. Malaysia has a platform-licensing regime, yet the Bank Negara alert of 13 October tells its public to verify content for themselves, which is the posture a regulator takes when the control point is somewhere it cannot reach.
+
+One question I cannot answer, and the documents do not either. When the advertiser-verification clause goes live in Singapore and the scam spend that used to target Singapore users has to go somewhere, does the same infrastructure Bitdefender watched recurring across 13 countries simply re-aim its targeting at Johor Bahru, Batam and Manila, where the ad-buying desk still asks nothing about who is paying?
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
