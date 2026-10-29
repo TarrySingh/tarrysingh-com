@@ -1,0 +1,65 @@
+---
+title: "A Contract Test for Macaíba's Wind"
+date: "2026-10-29"
+category: "Essays"
+excerpt: "Brazil's new data-centre tax law, Redata, asks companies to cover their electricity demand with renewable contracts — measured annually, not hourly. In a Northeast grid that curtailed 20 per cent of its wind and solar potential in 2026, that test proves ownership of clean megawatt-hours, not absorption of stranded ones. The forthcoming decree can require hourly metering data without narrowing the statute's scope."
+draft: false
+tags: ["energy-policy", "data-centres", "renewable-energy", "brazil", "ai-infrastructure", "electricity-grids"]
+---
+
+Article 11-B, paragraph 1, item III of Brazil's new data-centre tax law asks a company seeking the benefit to "atender à totalidade da sua demanda de energia elétrica por meio de contratos de suprimento ou autoprodução", meeting all of its electricity demand through supply contracts or self-generation, from renewable or low-emission sources. The test reads a portfolio of signed paper against a year of metered consumption. It does not ask what hour the power was used, or where on the grid the electrons were stranded when the machine drew them.
+
+That sentence sits inside [Lei nº 15.504, signed on 15 September 2026](https://legis.senado.leg.br/norma/43892294/publicacao/43894328), which creates Redata, the special tax regime for data-centre services, and hands the habilitation of every applicant to the Secretaria Especial da Receita Federal. The same article sets a water ceiling of 0.05 litres per kilowatt-hour, requires at least 10 percent of processing capacity to be offered to the domestic market, demands R&D spending of 2 percent of the equipment value, and trims those last two commitments by 20 percent for sites in the North, Northeast and Centre-West. The energy clause gets no regional treatment at all. For a law sold on Northeastern wind and sun, that is the clause to read slowly.
+
+## 1. What the grid is throwing away
+
+The case for Redata in Brasília has always been made with curtailment figures, and the figures are real. Using operator data from the ONS, [Canal Solar's tally published on 31 August 2026](https://canalsolar.com.br/cortes-de-geracao-solar-aumentam/) puts wind and solar curtailment for January to August at an average of 4,122 MW, against 3,429 MW in the same months of 2025. That is 20.9 percent of everything the fleet could have generated. The Northeast carried 3,403 MW of it, roughly 83 percent of the national total. The composition moved too. Cuts for reliability and for external unavailability fell; cuts for "razão energética", the operator's term for a system with more generation than load, rose 66.3 percent to 2,837 MW.
+
+That last category is the one that matters for anyone selling a new load as the answer. In [its May 2025 diagnostic report on generation cuts (RT DGL-ONS 0189/2025)](https://www.ons.org.br/AcervoDigitalDocumentosEPublicacoes/RT%20DGL-ONS%200189-2025%20-%20GT%20Curtailment%20rev1.pdf), the ONS working group projected that energy-reason cuts would make up about 96 percent of all curtailment by 2029, and warned that "os cortes por razões energéticas podem se tornar cada vez mais frequentes." Transmission reinforcement and synchronous compensators in Rio Grande do Norte address the reliability cuts. They do little for a national surplus at noon.
+
+## 2. What the electricity sector is asking for
+
+The sector knows this, and it is lobbying accordingly. On 16 October 2026, FASE, the forum of 21 electricity-sector associations, [wrote to President Lula asking for the Redata decree before year-end](https://telesintese.com.br/setor-eletrico-cobra-regulamentacao-do-redata-ainda-em-2026/). The letter cites the ONS figure of roughly 20 percent of potential wind and solar output curtailed since 2025, and projects average data-centre consumption rising from about 0.3 GW in 2026 to 5.7 GW in 2030, close to a third of expected load growth on the national grid. Its argument is that new loads of this size can soak up part of the surplus, provided grid access and network capacity are considered. The PIS/Cofins and IPI suspensions lapse on 31 December 2026.
+
+The decree has not appeared. Writing in [ConJur on 27 October 2026](https://conjur.com.br/2026-out-27/redata-ate-onde-o-regulamento-pode-definir-os-limites-de-um-beneficio-fiscal/), the lawyer Leandro Pacifico argues that the Executive can regulate procedure but cannot narrow the scope of the benefit or add obligations the statute does not support, and he flags the open dispute over whether natural gas counts as "baixa emissão." That legal limit is real. It also leaves room. The statute already delegates to regulation the manner in which the energy commitment is proven. How proof is measured is procedure.
+
+## 3. Annual paper, hourly physics
+
+The gap fits in a table.
+
+| Redata condition | What the Receita can verify | Timescale | What it cannot see |
+|---|---|---|---|
+| Energy: 100% of demand via renewable or low-emission contracts | Contract volumes vs metered consumption | Annual | Whether consumption landed in curtailed hours or in the evening peak |
+| Water: WUE ≤ 0.05 L/kWh | Annual reported ratio | Annual | The extra electrical load that dry or closed-loop cooling adds on a hot afternoon |
+| 10% of capacity to domestic market | Commercial supply records | Annual | Nothing grid-related |
+| Regional 20% relief (N/NE/CO) | Site address | One-off | Whether the site sits behind a congested node or a surplus one |
+
+Take a hypothetical hall in Fortaleza running flat at 50 MW, covered on paper by an annual wind contract. It satisfies item III in full. In the hours when the Northeast is spilling wind, it absorbs 50 MW of what would have been cut. In the hours when the sun has set, the wind has dropped and the system is running thermal plants to hold the evening ramp, it draws 50 MW from whatever is marginal. The contract nets the two. The tax benefit is identical either way.
+
+The research literature has measured this difference elsewhere. [Iegor Riepin and Tom Brown of TU Berlin](https://arxiv.org/pdf/2403.07876), modelling corporate procurement in Ireland, found that 100 percent annual renewable matching cuts local emissions by about 0.2 MtCO2 a year by 2030, against up to 0.4 Mt for hourly matching, and that a 98 percent hourly target carries a 54 percent cost premium over annual matching. That premium is what the clock costs. Brazil's numbers will differ, because its hydro reservoirs act as a giant battery that Ireland lacks. The direction will not.
+
+The federal government's own showpiece machine, [announced on 20 August 2026](https://www.confea.org.br/supercomputador-em-macaiba-rn-ira-impulsionar-tecnologia-e-pesquisa) for the Augusto Severo science park in Macaíba, near Natal, is specified to draw between 10 and 15 MW "de forma contínua." Fifteen megawatts is about 0.44 percent of the Northeast's average curtailed output this year. As a sink for stranded wind it is a rounding error. As a precedent for how Brasília schedules its own compute, it is the most important load in the country.
+
+## 4. The machine the state already runs by the tariff
+
+The Macaíba system is the core of the public compute layer in the Brazilian AI Plan: [7,200 petaflops for just over R$1 billion from the FNDCT](https://agenciabrasil.ebc.com.br/en/economia/noticia/2026-08/brazil-get-its-own-ai-supercomputer), to be run by the National Laboratory for Scientific Computing and opened to universities, companies and government agencies. Minister Luciana Santos justified it with the claim that 60 percent of Brazil's AI processing is done abroad. That figure comes from the ministry and I have not seen the methodology behind it. Treat it as a political number.
+
+The laboratory that will operate it has scheduled by the electricity bill before. In June 2016, with its budget cut 15 percent, the LNCC's then director Augusto Gadelha [told reporters that researchers on the Santos Dumont supercomputer were being directed to run only in the cheapest tariff hours](https://istoedinheiro.com.br/no-rj-supercomputador-pode-ser-desligado-por-falta-de-recursos-para-energia), and that the machine needed at least 60 percent of the lab's budget. The motive was austerity. The result proved a Brazilian public research queue can be made price-aware without the science stopping. When the MCTI asked the LNCC to consult manufacturers on the new machine in October 2025, [energy consumption was one of the specification topics on the table](https://convergenciadigital.com.br/governo/lncc-inicia-consulta-aos-fabricantes-para-edital-do-supercomputador-de-inteligencia-artificial/). The scheduler is an engineering choice still open.
+
+A checkpointed training run on a research queue can slow, pause, or soak up extra nodes when the operator's surplus signal fires, at a cost measured in hours of wall-clock time. Inference for a ministry's citizen service cannot. Brazil is about to own 10 to 15 MW of exactly the flexible kind, on a federal budget line, in the state where the surplus is largest.
+
+## 5. The strongest objection
+
+The sharpest case against the whole premise comes from outside the industry. In [an investigation by The Intercept Brasil and Mongabay published on 1 October 2026](https://news.mongabay.com/short-article/2026/10/renewable-energy-companies-fuel-brazilian-data-center-boom-investigation-finds/), renewable generators turn out to have filed 65 percent of the 68 data-centre grid-connection requests registered by December 2025, and at least 29 municipalities with planned sites host Quilombola or Indigenous communities seeking land demarcation. The climate analyst Ketan Joshi asks why companies claiming to free up stranded renewables did not build the transmission lines or batteries that would have served the public and displaced fossil fuel.
+
+On motive, Joshi is right, and the 65 percent figure is the evidence: the generators most exposed to curtailment losses are the ones bringing the buyers. On remedy, the ONS report cuts against him. Transmission moves surplus between regions; it does not create demand in a system that is long nationally, and that is where the operator expects nearly all future cuts to sit. Batteries are part of the answer, and the law does nothing for them. Flexible load is the other part, and nothing in item III makes any applicant prove it is flexible.
+
+My stake is simple. I would not sign off on a habilitation procedure that accepts annual contract matching as proof of the energy commitment for sites in the Northeast. The decree can ask for hourly, submarket-level metering data to be filed with the Receita alongside the contracts, without adding an obligation the statute lacks. Disclosure first. A matching threshold can follow once there is a year of data to set it against.
+
+## 6. The open file
+
+The decree is still unwritten, with a 31 December expiry and 21 associations pressing on it. The Macaíba machine is due to switch on in 2027. Neither file has to mention the other. When the LNCC's engineers choose the scheduler that will sit over 7,200 petaflops in Rio Grande do Norte, which office in Brasília will be in a position to tell that queue what hour the wind is being cut?
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
