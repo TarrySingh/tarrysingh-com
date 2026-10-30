@@ -1,0 +1,71 @@
+---
+title: "What a Locomotive Alarm Needs on the Shelf"
+date: "2026-10-30"
+category: "Essays"
+excerpt: "\"I've been impressed that some of the parts actually started arriving earlier than expected.\" That was Solly Letsoalo, Transnet's group chief operating officer, speaking at the signing of a new support deal for two of South Africa's diesel locomotive fleets, as reported by Railway Gazette. In the same breath he asked for more of …"
+draft: false
+tags: ["what", "locomotive", "alarm", "needs", "shelf"]
+---
+
+"I've been impressed that some of the parts actually started arriving earlier than expected." That was Solly Letsoalo, Transnet's group chief operating officer, speaking at the signing of a new support deal for two of South Africa's diesel locomotive fleets, [as reported by Railway Gazette](https://www.railwaygazette.com/south-africa/2026/10/16/wabtec-signs-r6-6bn-agreement-to-help-enhance-south-african-freight-loco-performance/). In the same breath he asked for more of those components to be made locally, ideally in Transnet Engineering's own shops. A chief operating officer does not open on software when he is pleased about a contract. He opens on boxes arriving at a depot.
+
+The contract is a Material and Technical Support Agreement between Transnet Engineering and Wabtec, worth about R6.6 billion and [announced by the government news agency on 16 October 2026](https://www.sanews.gov.za/south-africa/transnet-signs-r66-billion-deal-strengthen-locomotive-fleet-performance). It covers the Class 43D and Class 44D diesel-electrics that haul export commodities, containers and general freight. Wabtec supplies components, technical expertise and predictive maintenance through its Expert-on-Alert condition-monitoring platform. Most of the coverage led with the predictive part. I think that has the order of importance backwards, and the record since 2021 says why.
+
+## What did R6.6 billion buy?
+
+Read the scope the way a depot foreman would. [TimesLIVE's account of the signing](https://www.timeslive.co.za/news/south-africa/2026-10-16-transnet-engineering-wabtec-seal-r66bn-locomotive-support-agreement/) lists three things: material availability, maintenance execution and lifecycle management. Material availability comes first because it is the thing Transnet has not had.
+
+The 44D is the GE ES40ACi. GE won 233 of them inside the 1,064-locomotive order, [with 55% local content](https://www.railjournal.com/news/transnet-south-africa-orders-1064-locomotives/) and assembly at Koedoespoort in Pretoria. GE's locomotive business is now Wabtec. So this is the original manufacturer coming back to support its own machines, built partly in Transnet's own workshops, under a fresh contract.
+
+Why did it need a fresh one? Because the old one was unwound.
+
+## Why were the parts missing in the first place?
+
+The 1,064 order became a state-capture case. At the Standing Committee on Public Accounts on 24 March 2026, [Transnet told members](https://pmg.org.za/committee-meeting/42678/) it had begun review proceedings with the Special Investigating Unit in March 2021 to set aside the supply agreements while keeping the delivered locomotives. Wabtec settled with a repayment of R70.3 million. Bombardier settled for R486.2 million. The CRRC settlement stalled. And the maintenance and parts supply agreements were terminated along with the purchase agreements. Group CEO Michelle Phillips told the committee that broken locomotives lacked support, with parts having to be sourced from non-operational units.
+
+That is cannibalisation, stated plainly by the chief executive. The Auditor-General's team gave the same committee the scale. [Business Report's account of the AG briefing](https://businessreport.co.za/companies/2026-03-05-maintenance-backlog-and-idle-locomotives-deepen-transnets-operational-crisis/) records 674 of the 1,064 locomotives delivered, more than 200 of them out of service, about 271 sitting idle at depots, and a maintenance backlog estimated above R30 billion after a decade of underspending. Maintenance spend rose by roughly 47% in the past year. The auditors said it was still not enough.
+
+The Chinese-built fleets are the worst of it. In July 2025, [201 locomotives were out of service](https://www.southafricanlawyer.co.za/article/2025/10/transnet-secures-access-to-critical-chinese-locomotive-parts/) because Transnet could not get spares, and it went to court to force CRRC to hand over parts it was holding. By the March 2026 parliamentary briefing, [216 of 481 CRRC locomotives were reported out of service](https://www.trucking.africa/news/transnet-expects-to-report-rail-volumes-of-168-mt-in-2025-26-with-reforms-key-to-meeting-250-mt-goal/), mainly for want of spares, and a step-in supplier contracted to repair 48 of them had delivered one. That figure comes via trade-press coverage of the briefing; I could not find the slide deck itself.
+
+So the 43D and 44D deal is the first of these fleets to get its manufacturer back on contract. That alone is worth the signing ceremony.
+
+## What can an alert do on a fleet that is short of spares?
+
+The monitoring layer works like this. [Wabtec describes Expert-on-Alert](https://www.wabteccorp.com/freight-services/asset-performance-management/expert-on-alert) as locomotives sending control-system and performance data to its Global Performance Optimization Center, where engineers and software algorithms find the root cause of a fault while the unit is still in transit. The output is a repair instruction. The instruction lands at a depot.
+
+Everything useful happens after that. The fitter needs the part named in the instruction. The depot needs a slot on the pit road. The operations desk needs to release the locomotive before the fault becomes a failure in section, with a loaded train stopped on a single line. An early warning on a machine whose replacement part is three months away buys you a better-documented breakdown.
+
+I put the record against the contract to see which line answers which failure mode:
+
+| Failure mode on the record | Where it shows up | Which contract line addresses it |
+|---|---|---|
+| Parts unobtainable after supply agreements were terminated | Phillips to SCOPA, March 2026 | Material availability |
+| Cannibalising idle units to keep others running | Phillips and the AG, March 2026 | Material availability |
+| Underspent maintenance, backlog above R30 billion | AG briefing, March 2026 | Maintenance execution, partly |
+| Faults caught late, units failing in section | Not quantified in any public Transnet document I found | Predictive monitoring |
+
+Three of the four rows sit in the parts and labour lines. The fourth is real but unmeasured in public. My prediction: if 43D and 44D availability climbs over the next year, most of the gain will trace to components arriving on time, and the annual report will credit the digital platform anyway, because the platform photographs better.
+
+## Is Wabtec right that monitoring moves availability?
+
+Wabtec's own case is stronger than my table makes it look, and it deserves a straight answer. In a [Railway Age survey of locomotive health monitoring](https://www.railwayage.com/news/health-monitoring-in-real-time/), Wabtec said its centres monitor 17,000 locomotives in 20 countries, address about 80% of the failures that can affect a locomotive, issue around 300 repair instructions a day within 15 minutes of an alert, and improve reliability and availability by "more than 20%".
+
+These are vendor figures, given without a named customer or a baseline, and I discount them the way I discount every vendor benchmark. But the mechanism is sound. A fault caught early is cheaper to fix than a traction motor that fails under load. Repeat failures fall when someone upstream sees the pattern across a fleet. On a network as stretched as Transnet's, a few dozen fewer in-section failures a year would show up in tonnage.
+
+Where I part company is the sequencing. Those 17,000 locomotives mostly sit on railways where the parts pipeline already works. The 20% is earned on top of a functioning stores system. Transnet is rebuilding its stores system from cannibalised units. On this fleet the alert multiplies whatever the depot can do with it, and right now the depot's capacity is what the parts line in the contract is restoring. Get that order wrong and you end up with a very good dashboard of locomotives you cannot fix.
+
+The commercial stakes are plain enough. Transnet moved [167.9 million tonnes by rail in 2025/26, up 4.9%](https://www.sanews.gov.za/south-africa/transnet-records-profit), and returned a R4.6 billion profit. That profit included a R12.5 billion gain on selling part of the Durban Gateway Terminal. Strip it out and the group is still in the red. The national plan wants Transnet Freight Rail to carry about 185 million tonnes and private operators about 65 million by 2030, [per the same March briefing](https://www.trucking.africa/news/transnet-expects-to-report-rail-volumes-of-168-mt-in-2025-26-with-reforms-key-to-meeting-250-mt-goal/). Locomotive availability is the binding constraint on the first number.
+
+## Who keeps the knowledge when the contract ends?
+
+The agreement includes technical collaboration, knowledge transfer and localisation. Letsoalo's request for locally made components points the same way. Wabtec signed a comparable package with La Compagnie du TransGuinéen for the Simandou iron-ore line a month earlier, a [services deal worth more than $700 million](https://finviz.com/news/394013/wabtec-and-la-compagnie-du-transguineen-sign-a-700-million-plus-rail-services-agreement) covering maintenance, overhauls, parts management, remote diagnostics and Guinean workforce training. The vendor is building the same structure on two African heavy-haul railways at once.
+
+The part of the Transnet deal I would most like to read is the clause that says where the diagnostic rules live. Expert-on-Alert runs in Wabtec's centres. The models that turn sensor traffic into a repair instruction are Wabtec's. Knowledge transfer can mean training Koedoespoort fitters to act on instructions, which is useful. It can also mean giving Transnet Engineering the failure history and the rule logic for its own fleet, which is a different asset. The public record does not say which. The difference decides whether South Africa ends the contract with a stronger engineering division or a deeper subscription.
+
+## What does a depot remember?
+
+Railways have been here before. Every generation of rolling stock arrives with a support agreement, a training programme and a promise of local capability, and every generation leaves behind a workshop that knows a little more than it did, or a little less, depending on whether the people with the knowledge stayed. The 1,064 order was supposed to be the localisation story of its decade, with assembly in Pretoria and Durban, and it ended in court with Transnet stripping parts from stranded units to keep others moving. The Koedoespoort shops that assembled most of the 44Ds are the shops this contract is meant to strengthen. They watched the last support arrangement disappear, and they will watch this one arrive. Whatever the condition-monitoring platform reports from its operations centre, the depot will remember whether the parts came.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
