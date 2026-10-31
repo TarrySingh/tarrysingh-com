@@ -1,0 +1,59 @@
+---
+title: "The Foundry Up the Coast From Africa's GPU Racks"
+date: "2026-10-31"
+category: "Essays"
+excerpt: "Africa's October GPU announcements — World Bank shared compute, Cassava's Nemotron inference, a 400-GPU South African private cloud — are built for enterprise and government buyers. Fifty kilometres away, a foundry has since 2017 turned RFID-tagged casting data into measurable scrap reductions on CPUs. The integration layer between plant-floor sensors and rack infrastructure is what manufacturing actually needs; nothing published this month sells it."
+draft: false
+tags: ["africa-ai-infrastructure", "industrial-machine-learning", "gpu-compute", "manufacturing", "south-africa", "foundry"]
+---
+
+Africa's new AI compute is being sized for the customers who talk loudest about AI, and the factories that have already made machine learning pay are not on the list. I think that is a planning error, and the paperwork published this month makes it easy to see.
+
+Start with the paperwork. On 20 October 2026 the World Bank Group launched its first digital strategy in Seoul and, alongside it, [an AI Infrastructure and Readiness Initiative](https://www.worldbank.org/en/news/press-release/2026/10/20/world-bank-group-launches-first-digital-strategy-to-expand-access-and-create-jobs) offering governments "shared, pay-as-you-go GPU infrastructure" as an alternative to standalone national data centres, with Cassava Technologies and NVIDIA as knowledge partners. The same release lists value-added manufacturing among the Bank's five priority sectors. A day later, [Cassava's own release](https://www.webdisclosure.com/press-release/cassava-artificial-intelligence-ai-deploys-nvidia-nemotron-to-accelerate-agentic-ai-adoption-across-its-markets-4mngqDI6O7D) put NVIDIA's Nemotron open models on its AI Factory as a managed inference service behind the CAIMEx API exchange, with a token optimiser and "flexible token offerings" for enterprises and service providers. Manufacturing does not appear in it. Neither does it appear in [Stratos Lab's 26 August release](https://stratoslab.co.za/news/stratos-lab-ecoblox-dpa-partnership/) for a South African cloud of 50-plus NVIDIA HGX B300 servers and 400-plus GPUs, pitched at enterprise, sovereign and research users for training, inference and agent services.
+
+## 1. The tenant list, and the foundry missing from it
+
+About fifty kilometres north of Cape Town, where Cassava's first AI factory went live this year, [Atlantis Foundries cast its two-millionth heavy-duty engine block in October 2024](https://castingssa.com/?p=10042). The blocks are grey cast iron, 430 to 450 kg each, for Daimler Truck's OM471 and OM472 engines. CEO Pieter du Plessis described the plant's approach plainly: robots carry instruments that collect process data, RFID ties that data to each individual casting, and "this process data is analysed using Artificial Intelligence to predict various aspects of the castings." A robotic core-assembly cell handles more than 700 assemblies a day. A 13.5 MWp ground-mounted solar array sits on the site.
+
+The machine-learning history is longer than most African AI-factory press decks. Du Plessis told the same trade journal [in April 2018](https://castingssa.com/atlantis-foundries-well-advanced-in-smart-foundry-ambitions/) that a model built with Cape Town's DataProphet predicted casting defects with a 70% success rate "based purely on the raw process data," that several gigabytes of data and images were analysed daily, that eight cameras fed an AI system for surface defects, and that the data reached the model about a week late. The stated target was live data. By early 2020, [DataProphet's CTO Michael Grant was telling Engineering News](https://www.engineeringnews.co.za/article/local-foundry-leads-to-ai-partnership-2020-02-21) that the prescriptive system halved Atlantis's scrap rate in its first month, against an external scrap rate held at 0.1%. That figure is a vendor speaking about its own reference customer, and it should be read with that discount. The direction is still the most credible industrial-AI result on the continent I know of, and it was earned on a metal floor, not in a rack hall.
+
+So Cassava's first AI factory and one of the continent's best-documented industrial ML deployments sit an hour's drive apart. Nothing in this month's releases connects them.
+
+## 2. What a foundry model asks of a GPU
+
+The workload shape explains the gap. A foundry's process model reads tabular data: melt temperatures, sand properties, pour times, core batch IDs, coating weights, keyed to a casting serial number. On that kind of data the best-known benchmark result runs against deep learning. [Grinsztajn, Oyallon and Varoquaux's 2022 study across 45 tabular datasets](https://arxiv.org/abs/2207.08815v1) found tree-based models such as XGBoost and random forests still beat deep networks on medium-sized data of around 10,000 samples. Gradient-boosted trees train on CPUs. They do not need HBM bandwidth, an NVLink domain, or a KV cache.
+
+An HGX B300 server is built for the opposite job. Eight GPUs share a high-bandwidth fabric so that a large model's weights and attention state can be split across them and served at token rates that justify the electricity. Nemotron behind an API, priced in tokens, is the right product for that machine. A set-point prescription for a mould line is a different product.
+
+| | Foundry process model (Atlantis pattern) | AI-factory LLM service (Cassava, Stratos pattern) |
+|---|---|---|
+| Input | Tabular process data tied to a serial number | Text, documents, tool calls |
+| Typical model | Trees or small networks; trains on CPU | Large transformer split across GPUs |
+| Unit of sale | Scrap avoided per casting | Tokens or GPU-hours |
+| Constraint documented in the record | Data arriving a week late (2018) | Power, GPUs, tenants |
+
+The last row carries the argument. Distance was never Atlantis's problem; fibre covers fifty kilometres in well under a millisecond. The binding constraint in the only public account of the foundry's early model was the pipeline: getting sensor, RFID and inspection data joined and in front of the model while the casting was still on site. That is integration work on the plant, and none of this month's offerings sells it.
+
+## 3. Two national numbers in different units
+
+A second mismatch sits in how the region describes its own compute. Stratos Lab claims 7.2 EFLOPS for its cluster without naming the precision. On 19 August, Minister Blade Nzimande [told Parliament](https://pmg.org.za/committee-question/39936/) that the CSIR's National Integrated Cyberinfrastructure System had taken delivery of a new 4-petaflop system for the Centre for High Performance Computing, with phase one due by the end of November 2026 and the full upgrade by the end of March 2027, on a ring-fenced 2026/27 allocation of R292,257,086.
+
+A reader comparing those figures directly would conclude the private cloud is nearly two thousand times larger. It is not a fair reading. Exaflop claims for Blackwell-class systems are usually quoted at low precision for AI arithmetic; national research systems are usually rated in double precision for simulation. The CHPC machine is the kind used for simulation work such as casting solidification or crash analysis; the Stratos number describes potential AI throughput. Both are real. Neither tells a plant engineer where her defect model should run.
+
+The CHPC reply carries a second lesson for any manufacturer weighing shared compute. [In a companion answer the same day](https://pmg.org.za/committee-question/39940/), the minister confirmed that the decade-old Lengau system had been breached and loaded with cryptocurrency-mining malware through vulnerabilities in legacy components. A foundry's process data is its yield recipe. Moving it onto a shared national or commercial estate is a security decision first and a compute decision second, and the parliamentary record has just shown a national system failing that test.
+
+## 4. The case for owning the racks
+
+The strongest argument against my position is a serious one. [An April 2026 essay on iAfrica.com credited to enterprise strategist Eugene Perumal](https://iafrica.com/africa-must-build-its-own-ai-factories-or-risk-permanent-dependency-enterprise-strategist-warns/) argues that countries which own AI factories "will hold compounding structural advantage over those that rent it from elsewhere," that locally trained models fitted to African languages and POPIA are where the value sits, and that energy is the binding constraint. On languages and data residency, he is right, and the World Bank's shared-GPU design is a sensible way to get governments there without each building a national data centre.
+
+Where I part company is the word compounding. For manufacturing, what compounds is the joined process record: years of castings keyed to their melt, sand and core data, plus the people who know which variables matter. Atlantis built that on its own floor. The racks in Cape Town or Centurion can rent the GPU time; they cannot rent the record. Perumal names energy as the binding constraint, and on that point the foundry is a counter-example. A 13.5 MWp peak solar rating is not comparable to the 20 MW of installation space [Cassava has quoted for a Johannesburg AI factory](https://www.itweb.co.za/article/cassava-plans-ai-factory-in-joburg-as-cape-town-goes-live/6GxRKMYQbWnMb3Wj), since one is peak generation and the other is facility capacity. The foundry has still built part of its own power answer on site, which is more than most AI-factory announcements can show for their industrial customers.
+
+My judgement, stated flatly: an African AI-factory plan that names manufacturing as a priority and then sells only tokens and GPU-hours has mispriced its industrial demand. The 12,000 to 13,000 GPUs Cassava South Africa's CEO Ziaad Suleman described as a continental aspiration [in the same ITWeb interview](https://www.itweb.co.za/article/cassava-plans-ai-factory-in-joburg-as-cape-town-goes-live/6GxRKMYQbWnMb3Wj) will find tenants among governments, developers and service providers. Plant-floor demand will stay on CPUs and edge boxes inside South African plants until someone sells the integration layer between those boxes and the racks.
+
+## 5. Where the month leaves the record
+
+Between 19 August and 31 October, the World Bank named value-added manufacturing as a priority and launched shared GPU access for governments; Cassava added token-priced Nemotron inference for enterprises and service providers; a South African private cloud of 400-plus B300 GPUs was announced for enterprise, sovereign and research use; and South Africa's national research computer was confirmed as breached, with a 4-petaflop replacement due in phases from November. In the same Western Cape, a foundry fifty kilometres from Cassava's first AI factory has, since at least 2017, been turning RFID-tagged process data into fewer scrapped engine blocks, on compute those announcements do not price and through a data pipeline none of them offers to build. The infrastructure being announced and the industrial workload already in production are both real, and this month they were described in two separate sets of documents.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
