@@ -1,0 +1,64 @@
+---
+title: "Iron Does Not Take Orders"
+date: "2026-11-02"
+category: "Essays"
+excerpt: "Executive Order 14421 draws a security perimeter at the substation fence but does not distinguish between a thousand-tonne transformer and the firmware-updatable controller bolted to its side. The threat model for laminated steel requires ownership checks and teardowns; for a device that receives commands, it requires authenticated updates and a hardware bill of materials. One rule covering both does not double the protection—it obscures the part that matters."
+draft: false
+tags: ["bulk-power-system", "grid-security", "executive-order", "energy-policy", "critical-infrastructure", "transformers"]
+---
+
+The big ones travel at walking pace. On the last miles into a substation yard in Loudoun County, a large power transformer rides a long multi-axle trailer with its oil drained, its tank filled with dry gas and an impact recorder bolted to its side, so that someone can prove later it was never dropped. Then a crew spends weeks dressing it: bushings, radiators, oil, and, within reach of a fitter, a tap-changer controller, a gas monitor and a small box that reports to the control room.
+
+For most of that object, asking who made it is a question about steel and copper. For the box, the question is who can talk to it. Washington is about to write one rule covering both, and I think treating them as one thing is the most consequential drafting error available to it this year.
+
+## an emergency with data centres in its first section
+
+[Executive Order 14421](https://www.federalregister.gov/documents/2026/08/31/2026-17843/declaring-a-national-emergency-to-secure-the-united-states-bulk-power-system), signed on 26 August 2026, declares a national emergency over foreign-produced grid equipment. Section 1 warns that such equipment "might have digital backdoors built into their systems," and names "the rapid growth of advanced manufacturing, data centers, artificial intelligence, and defense production" as the reason the stakes have risen. Section 2 prohibits acquiring, importing, transferring or installing covered equipment when a Covered Foreign Entity is involved and the Energy Secretary finds undue risk. The covered list runs from substation transformers to inverters, batteries and controls, and it reaches software, firmware and remote access.
+
+The American sovereign-compute argument has mostly been about chips. This order moves the border to the substation fence and, through batteries and backup power, some way inside the data hall. The Department of Energy must publish implementing rules [by 24 December](https://www.rystadenergy.com/news/us-executive-order-targets-chinese-grid-hardware-but-battery-storage-serving-ai-d). Its [FAQ, updated on 6 October](https://www.energy.gov/sites/default/files/2026-10/Bulk%20Power%20System%20EO%20and%20DOE%20RFI%20FAQs.pdf), calls the order "a targeted, risk-based framework rather than a blanket prohibition." What gets targeted is still unwritten.
+
+## what the queue looks like from Richmond
+
+No utility shows the stakes better than Dominion Energy, and I should be clear that nothing I found suggests Dominion has a Chinese equipment problem. Its importance here is arithmetic. On the [30 October earnings call](https://www.tradingkey.com/news/transcripts/262261526-), CFO Steven Ridge reported more than 54 GW of data-centre capacity in various stages of contracting, including more than 12 GW under signed electric service agreements. Dominion's [all-time peak is 25 GW](https://www.eenews.net/articles/dominion-touts-data-center-boom-as-nextera-merger-faces-growing-scrutiny/). The signed portion alone is close to half of the most power the system has ever served, and the whole pipeline is more than twice that peak. All of it has to arrive through equipment that does not yet exist.
+
+The company's [third-quarter release](https://news.dominionenergy.com/press-releases/press-releases/2026/Dominion-Energy-Announces-Third-Quarter-2026-Results/default.aspx) lists accelerated data-centre demand, concentrated "primarily in Loudoun County, Va.," among its risk factors. The transcript I read shows neither the order nor transformers coming up on the call; the nearest thing is CEO Bob Blue's reference to "strong counterparties where we have confidence in the supply chain." That confidence will be tested on Christmas Eve.
+
+## where china sits, by category
+
+[Rystad Energy's import analysis](https://www.rystadenergy.com/news/us-executive-order-targets-chinese-grid-hardware-but-battery-storage-serving-ai-d), covering the 12 months to June 2026, is the most useful single piece of work on this order:
+
+**China: 3% of US transformer imports. 50% of US battery-storage imports.**
+
+Breakers are under 1%. Korea, Mexico and Canada together supply 48% of transformer imports and 74% of breakers. Wood Mackenzie's [31 August release](https://www.woodmac.com/press-releases/us-executive-order-banning-chinese-bulk-power-equipment-set-to-worsen-critical-transformer-shortage/) quotes its principal analyst Ben Boucher: "Utilities have been largely avoiding Chinese suppliers since the first bulk power ban." The same release estimates a 15% power-transformer shortfall in 2026, puts potentially covered imports at more than $22 billion since 2025, and notes that data centres have used Chinese manufacturers to manage lead times.
+
+So the heavy iron left China years ago, on the utility side of the meter. What remains is concentrated in things with processors in them, and increasingly on the customer's side of the meter. The order expressly names uninterruptible power supplies supporting critical infrastructure, and Rystad reads that as reaching the behind-the-meter batteries data centres buy for resilience.
+
+The evidence for the fear also lives in that category. [Reuters reported in May 2025](https://www.insurancejournal.com/news/international/2025/05/16/824006.htm) that US experts had found undocumented communication devices in some Chinese inverters and batteries. The sourcing was two unnamed people, Reuters could not say how many units were examined, and the Energy Department said the functionality "may not have malicious intent." I treat that as a credible reason to look. It is a report about radios and firmware, and it says nothing about laminated steel.
+
+## a word with no definition
+
+The order applies to transactions "initiated" after 26 August. DOE's FAQ concedes that the order names no single trigger: contract signature, manufacture, shipment, delivery, title transfer and installation are all still candidates. Haelim Anderson of the Andersen Institute, [writing on 22 October](https://anderseninstitute.org/security-at-the-cost-of-speed-trumps-new-grid-executive-order/), calls this possibly the biggest question in the order. She is right, because transformers ordered in 2025 are being built now. If installation is the trigger, part of that pipeline falls inside the order after the money has been spent.
+
+NRECA, the electric co-ops' trade body, [told DOE on 9 October](https://www.electric.coop/electric-co-ops-ask-doe-to-move-carefully-on-order-to-guard-bulk-power-sector) that the order "could have significant impacts on billions of dollars of equipment," against at least $88 billion of planned capital spending by generation and transmission co-ops. Buyers have a reason for caution beyond cost. The first attempt at this policy, Executive Order 13920 of May 2020, produced a prohibition order that took effect on 16 January 2021, was suspended four days later, and was [revoked that April](https://www.govinfo.gov/content/pkg/FR-2021-04-22/html/2021-08483.htm) to "create a stable policy environment." Procurement cycles outlast this kind of policy. A planner buying a tank for 2029 has watched the rule change in less time than it takes to build one.
+
+The second loose thread sits in Section 5(e), which defines a Covered Foreign Entity to include anyone "owned by, controlled by, or subject to the jurisdiction or direction" of a listed government. Rystad's warning is that a broad reading could catch Korean or Mexican plants with Chinese-controlled components or capital. Those are the origins carrying American supply today. The domestic answer is real but slow: [Hitachi Energy's $457 million expansion at South Boston, Virginia](https://www.hitachienergy.com/content/news/en/press-releases/2026/06/hitachi-energy-breaks-ground-on-the-nation-s-largest-facility-for-the-production-of-large-power-transformers-in-south-boston-virginia), which the company bills as the nation's largest large-transformer facility, is [reported to come online in 2028](https://pv-magazine-usa.com/2026/05/11/u-s-transformer-market-faces-severe-supply-constraints-as-lead-times-extend-to-four-years/). "Largest" is the vendor's word. The date is the one that counts for the Loudoun queue.
+
+## the case that a transformer is a computer
+
+The sharpest objection to my distinction comes from Joe Weiss, a control-systems engineer who has argued for years that transformers themselves are the threat. [Writing in February 2021](https://www.controlglobal.com/home/blog/11293192/information-technology), he said hardware backdoors were found in a unit from a Chinese maker installed at a US utility, that DOE intercepted the next unit and sent it to Sandia National Laboratories, that no findings had been made public, and that more than 200 Chinese-made transformers in operation might carry the same risk. On that view, splitting iron from logic gives an adversary a place to hide.
+
+I take the claim seriously and I cannot verify it, because the Sandia result has not been published anywhere I could find. On the engineering, though, he helps my case. A related headline on that page points at load tap changers, the same accessory in my opening paragraph. A tap changer is mechanical, but what commands it is electronics. A rule built on function catches that controller wherever it is bolted, including on a tank with a Korean nameplate. A rule built on the origin of the tank clears a clean nameplate and waves the controller through. What the function test cannot rule out is an implant sealed inside the tank, which is why the ownership check has to stay for iron and why sample teardowns belong in the regime.
+
+DOE's own [request for information](https://public-inspection.federalregister.gov/2026-18370.pdf) has the pieces. Questions B-5 and B-6 ask about software, firmware and hardware bills of materials, secure updates, and remote-access controls; D-2 asks about isolating or monitoring existing equipment. As I read it, nowhere does it ask whether equipment with no processor and no update path should be handled differently from equipment that has both. That is the question the rule most needs answered.
+
+## what I would write
+
+A rule that sends a core and a controller through one gate is a mistake, and three clauses would fix it. Here is the draft I would put on the Secretary's desk.
+
+First, define "initiated" as a binding purchase order with a committed manufacturing slot, so the risk finding falls on new buying decisions and leaves money already spent alone. Second, split the covered list by function. Equipment with no processor, radio or update path gets an ownership check and sample teardowns. Anything that can receive a command gets a firmware and hardware bill of materials, authenticated updates, and remote access removed by default. Third, use the power Section 2(e) already gives the Secretary and publish a prequalified list with the rule, by component category, naming Korean and Mexican plants that pass. Dominion's planners in Richmond need that list more than they need another press statement.
+
+The impact recorder on that trailer can show the tank was never dropped. Nothing bolted beside it yet shows who can reach the controller once it is energised, and that is the part of the rule worth the Secretary's ink before 24 December.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
