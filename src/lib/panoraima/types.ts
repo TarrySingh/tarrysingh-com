@@ -905,6 +905,31 @@ export interface Wp4RefreshEvent {
   early_feedback?: number
 }
 
+export interface Wp4MfFinalRai {
+  code: string
+  title: string
+  wiki_status: string
+  review_done: boolean
+  revision_requested: boolean
+  wiki_reviewer_set: boolean
+  earliest_use: string | null
+  final_duration: number | string | null
+  wiki_duration: string
+  materials: number
+}
+
+// The M&F track leader's final list (22 Oct 2026): which M&F LEs count, and which are RealAI's.
+export interface Wp4MfFinal {
+  source?: string
+  as_of: string
+  target_total: number
+  on_wiki: number
+  missing_on_wiki: string[]
+  target_rai: number
+  rai: Wp4MfFinalRai[]
+  dropped: { count: number; items: { code: string; title: string; wiki_status: string; was_realai: boolean; had_realai_review: boolean }[] }
+}
+
 export interface Wp4Registry {
   wp: string
   title: string
@@ -919,6 +944,7 @@ export interface Wp4Registry {
   summary: {
     total_les: number
     by_track: Record<string, number>
+    targets?: Record<string, number>
     by_status: Record<string, number>
     with_materials: number
     materials_pending: number
@@ -945,6 +971,7 @@ export interface Wp4Registry {
   les: Wp4LE[]
   realai_board: Wp4LE[]
   off_wiki_codes?: string[]
+  mf_final?: Wp4MfFinal | null
   roster: { name: string; email: string }[]
 }
 

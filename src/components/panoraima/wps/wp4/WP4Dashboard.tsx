@@ -126,10 +126,22 @@ export default function WP4Dashboard({
                 <span className="w-2 h-2 rounded-[2px]" style={{ background: TRACK_COLOR[t] }} />
                 <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.12em] text-[#444A55]">{t}</span>
                 <span className="font-mono text-[13px] font-bold tabular-nums text-[#16181D]">{s.by_track[t]}</span>
+                {s.targets?.[t] != null && (
+                  <span className="font-mono text-[12px] font-semibold tabular-nums text-[#5B616B]"
+                        title="Final list agreed by the track leader, 22 Oct 2026">of {s.targets[t]} final</span>
+                )}
               </div>
             ))}
             <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.12em] text-[#5B616B]">· {trackCount} tracks</span>
           </div>
+          {registry.mf_final && (
+            <p className="mt-3 max-w-3xl text-[13.5px] leading-relaxed text-[#444A55]">
+              Management &amp; Finance now follows the track leader&apos;s final list of {registry.mf_final.target_total} Learning Events
+              ({registry.mf_final.on_wiki} on the wiki{registry.mf_final.missing_on_wiki.length ? `, ${registry.mf_final.missing_on_wiki.join(", ")} not yet` : ""}).
+              RealAI reviews {registry.mf_final.target_rai} of them, {registry.mf_final.rai.filter(r => r.review_done).length} reviewed.
+              {" "}{registry.mf_final.dropped.count} wiki entries outside the list are no longer counted.
+            </p>
+          )}
         </div>
       </header>
 

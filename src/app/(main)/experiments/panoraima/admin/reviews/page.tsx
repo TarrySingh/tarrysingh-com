@@ -19,7 +19,7 @@ interface ArchiveEntry {
   review_note?: string | null
   long_form: { heading: string; text: string; chars: number }[]
   action_summary: { posted: string; iso: string; talk_rev: number; text: string }
-  follow_up?: { posted: string; talk_rev: number | null; text: string }
+  follow_up?: { posted: string; talk_rev: number | null; text: string; earlier?: { posted: string; talk_rev: number | null; text: string }[] }
   reread?: {
     checked: string
     what_changed: string
@@ -145,6 +145,16 @@ export default function ReviewArchivePage() {
                   <pre className="mt-2 whitespace-pre-wrap font-sans text-[14px] leading-relaxed text-[#2A2D34]">
                     {e.follow_up.text}
                   </pre>
+                  {(e.follow_up.earlier ?? []).map(f => (
+                    <details key={f.posted} className="mt-3 rounded-lg border border-[#DCDDE1] bg-[#FAFAFB] p-4">
+                      <summary className="cursor-pointer font-mono text-[12px] font-bold uppercase tracking-[0.14em] text-[#2A5594]">
+                        Earlier follow-up: {f.posted}{f.talk_rev ? ` · rev ${f.talk_rev}` : ""}
+                      </summary>
+                      <pre className="mt-2 whitespace-pre-wrap font-sans text-[14px] leading-relaxed text-[#2A2D34]">
+                        {f.text}
+                      </pre>
+                    </details>
+                  ))}
                 </div>
               )}
 
