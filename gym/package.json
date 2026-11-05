@@ -4,7 +4,7 @@
   "description": "Standalone static workout journal for gym.tarrysingh.com. `index.html`, `app.js`, `style.css`, and `assets/` must be served together from the web root of the gym subdomain. This folder is independent of the repository's Next.js app and is not automatically exposed or deployed by merely committing it.",
   "main": "app.js",
   "scripts": {
-    "build": "esbuild auth-entry.js --bundle --format=iife --minify --outfile=supabase-bundle.js",
+    "build": "node build.mjs",
     "check": "node --check app.js && node --check auth.js"
   },
   "keywords": [],
