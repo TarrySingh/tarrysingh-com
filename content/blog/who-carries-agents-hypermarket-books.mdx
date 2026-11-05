@@ -1,0 +1,65 @@
+---
+title: "Who Carries the Agents on the Hypermarket's Books?"
+date: "2026-11-05"
+category: "Essays"
+excerpt: "Gulf retailers are accruing AI slop debt — unregistered agent fleets, orphaned fine-tunes and unevaluated eval harnesses — faster than they are retiring ERP obligations that run on mainstream maintenance until 2027. Drawing on Majid Al Futtaim and Lulu Retail, this piece argues that any operator reporting agent influence share to a forum or the market, without a corresponding register of owners, retirement dates and downstream consumers, is reporting a liability as a capability."
+draft: false
+tags: ["agentic-ai", "retail-tech", "technical-debt", "ai-governance", "gulf-retail", "model-risk"]
+---
+
+When an AI agent has spent six weeks nudging shoppers toward the wrong products in a Gulf hypermarket, and the replenishment system has spent those same six weeks learning from the result, whose books does the loss land on?
+
+I don't have an answer, and I went looking in the public record of two of the region's biggest grocers. What I found is a retail sector issuing a new kind of liability faster than it has retired the old one.
+
+## 1. A number with no denominator
+
+Ahmed Galal Ismail, chief executive of Majid Al Futtaim, gave the Sharjah Investment Forum its most quotable figure on 14 October. [Sharjah24's report of the session](https://sharjah24.ae/en/Articles/2026/10/14/mm04) says AI agents now play a role in 9% of the group's customer transactions, recommending products, influencing choices or directing purchases, up from virtually zero a few months ago. The same report puts online at 25% of the retail business, and gives a customer base of 600 million a year. Ismail also expects the group's AI agents to match its office-based workforce in number in the near future.
+
+Hold that 9% loosely. I can find no published definition of "play a role," and a product recommendation is a much weaker event than a purchase made by software. Ismail is reporting his own programme, so it deserves the discount any operator's headline gets. The direction, though, is hard to argue with, and [Mastercard's Agent Pay pilot with the group](https://www.zawya.com/press-release/companies-news/mastercard-brings-agentic-payments-to-life-with-majid-al-futtaim-in-the-uae-clgyxowu), which lets cardholders book VOX Cinemas tickets through an AI agent, shows where it runs next. The release has plenty on transparency, consent and security. It says nothing about who pays when an agent gets it wrong.
+
+The sentence I keep returning to is a different one. Ismail said data assets, algorithms and agents are intellectual capital that needs "the same level of care and prudence, just like we deal with financial and human capital." I agree with him, and I doubt the sector has taken him at his word. Financial capital has a balance sheet, an auditor, a depreciation schedule. A retailer that calls agents capital and tracks them as features is running an unbooked liability.
+
+My name for it is AI slop debt: the accumulating liability of half-finished POCs, unevaluated agent fleets, unmaintained eval harnesses, RAG systems with no clear owner, prompt sprawl across business units, and orphaned fine-tunes nobody can reproduce. A grocer can build it faster than almost anyone, because each category manager has a plausible reason to want a bot of her own.
+
+## 2. The ledger under the shelf
+
+Lulu Retail shows the older debt sitting under the newer one. [LuLu 2.0, announced on 2 February 2026](https://www.luluretail.com/media/news/lulu-group-unveils-its-next-phase-of-growth-evolution-lulu-20-driven-by-technology-ai-innovation-and-omnichannel-retail/), made Agentic Commerce with Mastercard its highlight and created a Digital and Omnichannel Transformation Office as the central hub.
+
+Then read the plumbing. In April 2025, [SNP announced it had carved two business units out of Lulu's main SAP ECC production system](https://www.snpgroup.com/en/about-snp/news/carveout-lulu-group-completes-complex-sap-data-transformation-project-with-snp-laying-foundation-for-successful-ipo/) ahead of the IPO, moving about 20% of a 6-terabyte database with under 48 hours of downtime. Good engineering, on the vendor's account. The same release says SNP was chosen for Lulu's upcoming S/4HANA move. I found no public statement that the move is finished. It may be. SAP, meanwhile, [restated on 7 October](https://news.sap.com/2026/10/beyond-2030-sap-business-suite-7-sap-netweaver-customers-third-party-databases-java/) that mainstream maintenance for Business Suite 7 runs through 31 December 2027, with optional extended maintenance through 31 December 2030.
+
+The money is thin. [Lulu's Q2 2026 release](https://www.luluretail.com/media/usgedyhq/adx-57_lulu-retail_q2-2026-earnings-release_vf_130826_en.pdf) reports revenue down 2.3% to $1,971 million, net income of $42 million and capex flat at 1.3% of sales. By my arithmetic that is about $26 million for the quarter, to cover stores as well as systems. Grocery margins don't leave room to pay for a core migration and an agent estate twice over. E-commerce reached 8.9% of retail sales, and the release spends its words there, on stores and on private label. It has no line on AI or SAP. An investor release has no duty to carry one, but an outsider cannot tell how the two bills are being sequenced.
+
+To Lulu's credit, the most sober words I found in the region came from its own global director. Dr Mohamed Althaf [told Gulf Times in January](https://www.gulf-times.com/article/719434/business/qatar-poised-to-leapfrog-into-agentic-retail-says-lulu-top-executive) that the priority would sit behind the customer, in receiving, logistics and B2B, and that "we will keep the human element, so that nothing gets done on its own." He also warned that agentic shopping could turn "ruthless," with bots always taking the cheapest option. That is a merchant's sentence, and it names a margin risk no model card will list.
+
+## 3. What the agent does to the forecast
+
+Technical debt in machine learning has a canonical text, and it predates all of this. [Sculley and colleagues at Google wrote in 2015](https://proceedings.neurips.cc/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf) that a mature system may be at most 5% machine-learning code and at least 95% glue, and gave the field two phrases that fit a hypermarket uncomfortably well. CACE: Changing Anything Changes Everything. And undeclared consumers, downstream systems quietly reading a model's output, "expensive at best and dangerous at worst."
+
+Here is my inference, and I have no Gulf retailer's data to prove it. Replenishment and pricing models learn from sales. Once agents shape some share of baskets, those sales carry the agent's preferences, its ranking bugs and its sponsored placements. Ismail's group has [digital advertising as its fastest-growing revenue stream](https://sharjah24.ae/en/Articles/2026/10/14/mm04) in the latest half. So a demand signal is now partly written by a system with a commercial motive, and read by a forecasting model that was never told. At 9%, a good demand planner might catch it. I would not want to depend on that at 30%.
+
+The cost line behaves the same way. Take the reported figures at face value and treat customers as transactions, which they aren't: 9% of 600 million is 54 million touches a year. Every US cent of all-in model, retrieval and logging cost per touch is $540,000. Let three teams run overlapping agents on the same basket and it is $1.62 million per cent. The formula is per-touch cost × volume × redundancy, and redundancy is the one term a central office can cut. It is also invisible from outside.
+
+| Layer | What is on the public record | What an outsider cannot see |
+|---|---|---|
+| Core ERP | ECC carve-out done; S/4HANA "upcoming" as of April 2025 | Whether the migration has finished, and at what cost |
+| Agent estate | 9% of transactions; agents to match office staff | Number, owners, retirement rules |
+| Demand signal | Advertising growing fastest | Whether forecasts separate agent-shaped sales |
+| Liability | Payments pilot built on "consent" | Who refunds a wrong agent purchase |
+
+Elsewhere the pattern has numbers attached. [IHL Group's June study of 400 North American retail brands](https://www.ihlservices.com/news/analyst-corner/2026/06/gartner-predicts-40-of-agentic-ai-projects-will-be-canceled-by-2027-heres-what-the-retail-store-level-shows/) has retailers giving an average of 15% of IT budgets to AI, with spend up 27% and 40% still prioritising connecting disparate systems. North America is a loose proxy, and IHL sells retail research, so read it as a tendency. Code carries the same weight. [Liu and colleagues' study of 302.6k AI-authored GitHub commits](https://arxiv.org/abs/2603.28592) logged 484,366 distinct issues, 89.3% of them code smells, and found 22.7% of tracked issues still alive at the latest repository version. Linter findings in public repositories are a long way from a merchandising stack, but the half-life of a shortcut does not shrink because a machine took it.
+
+## 4. The case that the agents pay for themselves
+
+The strongest argument against me is that this debt is the one kind AI can retire. [Google's January 2025 report on internal code migrations](https://arxiv.org/abs/2501.06972) describes an Int32-to-Int64 ID migration in which 80% of landed code changes were fully AI-authored, with total time cut by an estimated 50%. On that reading, a retailer should run its agents first and let the same tools eat the ERP backlog. UiPath's Sulaiman Yusuf, [speaking to Computer Weekly about UAE retail](https://www.computerweekly.com/news/366646185/AI-agents-move-from-experiment-to-operations-in-UAE-retail), makes a neighbouring case: retailers already have enormous data, and the job is connecting systems so that agents can see across them.
+
+I accept part of each. Look at the conditions. Google's estimate is self-reported by the engineers involved, the authors say the work is not a research study, and they write that "whether there is a long-term impact on quality remains to be seen." Human review was the bottleneck, and that was inside Google. Yusuf sells automation, though his own line on the subject is that value comes from governance "from the very beginning." Neither claim reaches the thing I care about. Migration tooling can move an ABAP customisation. It cannot tell you who owns the pricing agent a category team launched in March.
+
+So my position is flat. A Gulf retailer should not report an agent count or an influence share to a forum, a board or the market until it can produce the register behind it: owner, purpose, data read, downstream consumers, unit cost, retirement date. An unregistered agent is a liability, however well it sells.
+
+## 5. The one I can't close
+
+Ismail is right that agents belong on the list of capital, and Althaf is right that nothing should run on its own. Next Ramadan a hypermarket in Sharjah or Riyadh will stock its aisles on a forecast that agents helped write, possibly on an ERP in its last year of mainstream maintenance. If that forecast has been drifting since the autumn, who in the building would be first to notice, and would she have the authority to switch anything off?
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
