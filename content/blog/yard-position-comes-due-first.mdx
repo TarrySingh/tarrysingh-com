@@ -1,0 +1,61 @@
+---
+title: "The Yard Position Comes Due First"
+date: "2026-11-06"
+category: "Essays"
+excerpt: "Before any terminal deploys an AI yard planner, it must first audit how often its system knows where a box actually is — a number no port has yet published. The Felixstowe nGen disruption of 2018 shows what happens when that assumption goes untested: position errors propagate through every downstream layer at full speed. AI slop debt in port logistics compounds downward through a table of dependencies, and the bottom row must be settled first."
+draft: false
+tags: ["port-logistics", "ai-debt", "yard-management", "data-quality", "container-terminals", "ai-governance"]
+---
+
+Where is the box?
+
+It is the oldest question in a container yard, and it sounds too small for a post about artificial intelligence. A planner asks it when a stack has to be dug out for a vessel arriving early. A crane driver answers it with his eyes. Somewhere between those two people sits a database that claims to know, and every system bought for that yard in the next five years will take the database at its word. How often it is right is a number I have not seen published by any port in this piece.
+
+## Note on a Malaysian roadmap
+
+In January, MMC Ports chief executive Datuk Azman Shah Mohd Yusof [laid out what the group calls its five-year Digital Blueprint Roadmap](https://www.thestar.com.my/business/business-news/2026/01/21/mmc-ports-targets-digital-consolidation-and-operational-resilience-in-pivotal-2026). A collaboration agreement signed in December 2025 with NIZE Technology, the technology arm of Shanghai International Port Group, covers a group-level dashboard and digital twin across all operating companies. The stated aim is for "all terminals, both container and conventional" to "align on a common technological baseline." AI in yard planning and equipment deployment is what Azman says the group is working towards.
+
+The scale is real. The same report has the group past 20 million TEUs in 2025, with the Port of Tanjung Pelepas above 14 million, Northport at 3.80 million and Johor Port at 1.08 million. On 6 October, Transport Minister Anthony Loke [told the Dewan Rakyat](https://theedgemalaysia.com/node/820687) that Tanjung Pelepas capacity is expected to reach 48 million TEUs a year after expansion. More boxes, more blocks, more decisions per hour, all resting on the same record of where things are.
+
+Here is my position. I would refuse to sign off on an AI yard planner at any terminal until that terminal has audited how often its system knows where a box is and shown the result to the people who will have to trust it. Azman's sequence, common baseline first and AI after, is the correct one. Sequences like that tend to invert the moment a board wants a demonstration. The public record does not say which terminal operating systems the group runs or how accurate they are, so I am arguing from structure here. I know of no fault at any MMC terminal.
+
+## Note from Felixstowe, 2018
+
+The clearest case I know has no AI in it. In June 2018, Hutchison Ports [put its own nGen terminal operating system into Felixstowe](https://maritime-executive.com/article/after-software-disruption-felixstowe-works-to-restore-service), software the article says was already managing over half of Hutchison's global volume. This was a mature product from the port's own operator. By mid-July the port was reporting significant declines in terminal productivity, and the causes listed include "inaccurate data about the position of some containers in the yard," rail misses and unproductive moves. Maersk rerouted two services to Liverpool for 12 weeks. Late in July productivity was back to 80 percent of pre-nGen levels. In August the freight forwarders' association BIFA [was still reporting cancelled calls](https://maritime-executive.com/article/uk-forwarders-report-continued-disruption-at-felixstowe) and complaining that the port would not discuss compensation.
+
+Treat that as a debt event. Nothing about the software was exotic. The yard's picture of itself came loose from the yard, and every downstream step inherited the error at full speed: the wrong dig, the extra move, the missed train. A planning model trained on that record would have produced confident plans for boxes that were somewhere else. The newer the layer, the less it can tell a bad position from a good one, because it has never stood in the block.
+
+Singapore shows the other order of payment. Writing in 2024, PSA's regional IT head Ho Vee Leung [described Tuas](https://www.maritimeprofessional.com/news/world-largest-automated-terminal-tuas-392551) as running on an event-driven architecture, with a fleet of over 200 automated guided vehicles needing what he called an always-on communications design able to handle faults at various layers. AI, analytics and robotics appear in that account as plans. That is a first-party article, and Tuas is a greenfield site with no old stack to carry. Northport and Johor Port have no such luxury. They have to change the engine with the terminal running.
+
+## Ledger entry: what is owed, and in what order
+
+I define **AI slop debt** as the accumulating liability of half-finished POCs, unevaluated agent fleets, unmaintained eval harnesses, RAG systems with no clear owner, prompt sprawl across business units, and orphaned fine-tunes nobody can reproduce. Ports are early enough to avoid most of it and late enough to have started. Tanjung Pelepas [signed for Innovez One's AI-powered MarineM system](https://www.worldports.org/port-of-tanjung-pelepas-moves-to-ai-powered-management-system), to schedule pilots and tugs, with go-live expected by the third quarter of 2022. That is marine services, a separate problem from the yard, and I have no evidence it has gone stale. My point is narrower. "AI-powered" entered this estate at least four years ago, and a new twin arrives on top of it. Each layer needs an owner, an evaluation and a retirement date.
+
+| Layer | What it assumes | Interest if the assumption fails |
+|---|---|---|
+| Terminal record | Position, status and equipment data match the ground | Wrong digs, extra moves, missed rail and vessel windows |
+| Common baseline | Each terminal's data means the same thing | Group dashboard averages unlike quantities |
+| Digital twin | The baseline is current and complete | A precise simulation of a yard that does not exist |
+| AI yard planner | The twin can be believed | Confident plans, fewer humans positioned to catch them |
+
+Debt in this table compounds downward. Pay the bottom row first and you inherit every row above it unpaid. Anderson, Parker and Tan's [MIT Sloan Management Review paper of August 2025](https://ide.mit.edu/wp-content/uploads/2026/07/the-hidden-costs-of-coding-with-generative-ai.pdf) gives the software version. It cites GitClear's finding of an eightfold rise in duplicated code blocks across 2020 to 2024, and Google's DORA report tying a 25 percent rise in AI usage to a 7.2 percent fall in delivery stability. The paper's method is interviews plus trade press and modelling, so treat it as a strong argument and those figures as other people's. Its most useful example comes from transport: Southwest's crew-scheduling debt, which the authors say stranded over 16,900 flights in 2022 and cost over $750 million.
+
+## Ledger entry: the unit cost trap
+
+Inference economics will tempt logistics boards to skip all this, and Grab supplies the temptation. [Its Q3 2026 prepared remarks of 3 November](https://s205.q4cdn.com/179588156/files/content_files/Grab-Q3-2026-Earnings-Prepared-Remarks.pdf) say cost per AI interaction fell 42 percent quarter on quarter while AI interactions among partners and users grew 60 percent. Multiply those and the implied bill is about 7 percent lower on roughly 1.6 times the use. That is my arithmetic on the company's two figures, and it assumes the interaction count captures the bill. Fine work, if the figures hold; they are vendor-grade numbers from a company describing itself.
+
+The same remarks attribute the year-on-year rise in regional corporate costs mainly to investment in AI cloud and software, so a falling unit price still sits inside a rising line. And the FinOps formula has three terms: per-token cost times volume times redundancy. Grab reports on the first two. Redundancy, in a port group, is several terminals each paying for its own reconciliation between what the model thinks and what the block holds. Cheap inference does nothing for that term. Gartner's forecast that [more than 40 percent of agentic AI projects will be cancelled by the end of 2027](https://www.thestar.com.my/tech/tech-news/2025/06/25/over-40-of-agentic-ai-projects-will-be-scrapped-by-2027-gartner-says), as reported by Reuters, blames escalating costs and unclear value. An analyst's prediction proves nothing, though it does describe the board meeting at which a yard pilot with no measured baseline gets killed.
+
+## Objection on file: McKinsey
+
+The strongest case against me says the order can run the other way. [McKinsey's December 2024 article by Bawcom and Fitzpatrick](https://www.mckinsey.com/capabilities/quantumblack/our-insights/ai-for-it-modernization-faster-cheaper-and-better) claims gen AI can bring a 40 to 50 percent acceleration in modernization timelines and a 40 percent reduction in costs derived from technology debt. If that is true, why wait? Use the agents to pay down the legacy.
+
+I take the claim seriously for code. Mapping a mainframe's dependencies is the kind of drudgery these tools are good at, and the authors' bank example, an estimate cut by 40 percent on 20,000 lines, is plausible, though it is an estimate, comes without a stated method, and sits on the site of a firm selling that service. The objection stops at the fence line. An old COBOL estate is text, and a model can read all of it. A yard's position error sits in the gap between a record and a physical stack, and no quantity of code reading closes that gap. Somebody has to go and count. Agents can help reconcile the count afterwards, and I would use them for that. The audit itself costs hours, equipment and access in a working terminal, which is why it keeps sliding down the list.
+
+## Entry for the night planner
+
+If you plan the yard on a night shift at Pelepas, the new screen will one day show you a sequence for a vessel coming in early, and it will be cleaner than yours. Before you press accept, send someone to the block it digs first. Check the top box against the system. If the numbers match, press it. If they don't, write down the slot, the time and the box number, and pass it up. From the office that stack is a row of digits. Your note is the only audit the model gets tonight.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
