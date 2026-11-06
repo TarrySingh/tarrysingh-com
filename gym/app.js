@@ -48,6 +48,12 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_modern_alternating_biceps_hammer_curls_resistance_band':'band-alternating-hammer-curl-v2',
+  'db_modern_bodyweight_muscle_up':'bodyweight-muscle-up-v2',
+  'db_modern_dumbbell_kneeling_hold_to_stand_clean_grip':'dumbbell-kneeling-stand-v2',
+  'db_modern_dumbbell_w_press':'dumbbell-w-press-v2',
+  'db_modern_barbell_situp':'barbell-situp-v2',
+
   'db_modern_dumbbell_one_arm_floor_fly':'one-arm-floor-fly-v2',
   'db_modern_alternate_oblique_crunch':'alternate-oblique-crunch-v2',
   'db_modern_elevated_push_up':'elevated-pushup-v2',
