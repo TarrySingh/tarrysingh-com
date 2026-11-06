@@ -53,7 +53,7 @@ const muscleGroups={'Biceps':/biceps|brachialis|brachioradialis/i,'Triceps':/tri
 function muscleText(e){return [e[2],...(e.meta?.primaryMuscles||[]),...(e.meta?.secondaryMuscles||[])].join(' ')}
 // Editorial ranking: familiar foundational movements first, then alphabetical variants.
 const popularByMuscle={
- 'Biceps':['biceps curl','bicep curl','hammer curl','preacher curl','incline dumbbell curl'],
+ 'Biceps':['dumbbell bicep curl','barbell curl','hammer curl','preacher curl','incline dumbbell curl','biceps curl','bicep curl'],
  'Triceps':['triceps pushdown','triceps pushdowns','triceps extension','skullcrusher','dip'],
  'Chest':['bench press','chest press','incline dumbbell press','incline bench press','push-up','chest fly'],
  'Shoulders':['shoulder press','lateral raise','overhead press','rear delt','face pull'],
