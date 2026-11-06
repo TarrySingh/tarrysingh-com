@@ -2,9 +2,18 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-11-06T09:37:26.499084+00:00",
-  "refreshed_at": "2026-11-06T09:37:26.499084+00:00",
+  "generated_at": "2026-11-06T21:30:22.242991+00:00",
+  "refreshed_at": "2026-11-06T21:30:22.242991+00:00",
   "refresh_history": [
+    {
+      "at": "2026-11-06T21:30:22.242991+00:00",
+      "wiki_captured": "2026-11-04T15:01:57.688Z",
+      "sharepoint_generated": "2026-11-06T21:29:46.121089Z",
+      "realai_total": 84,
+      "reviewed": 49,
+      "revision_requested": 15,
+      "early_feedback": 16
+    },
     {
       "at": "2026-11-06T09:37:26.499084+00:00",
       "wiki_captured": "2026-11-04T15:01:57.688Z",
@@ -67,15 +76,6 @@
       "reviewed": 59,
       "revision_requested": 14,
       "early_feedback": 16
-    },
-    {
-      "at": "2026-09-23T10:06:50.363415+00:00",
-      "wiki_captured": "2026-09-17T11:43:17.284Z",
-      "sharepoint_generated": "2026-09-23T09:45:55.876572Z",
-      "realai_total": 90,
-      "reviewed": 59,
-      "revision_requested": 14,
-      "early_feedback": 16
     }
   ],
   "data_sources": {
@@ -85,7 +85,7 @@
       "master_total": 435
     },
     "sharepoint": {
-      "generated_at": "2026-11-06T09:37:00.613426Z",
+      "generated_at": "2026-11-06T21:29:46.121089Z",
       "counts": {
         "codes_total": 497,
         "with_materials": 191,
@@ -7806,7 +7806,7 @@
       "realai_wiki_gap": false,
       "review_done": true,
       "revision_requested": false,
-      "review_note": "Material reviewed 11 Sep 2026 at the author's request (Ahmad Khalidi, HAW, asked for feedback because he was unsure the material design suits the other two Prompt Engineering LEs). Posted to Talk page rev 8582. VERDICT: strongest LE material we have read in this project. Three design pieces are genuinely good and worth naming as reusable rules: the Prompt Log whose columns ARE the taxonomy being taught, observe-then-name teaching order, and an ethics question closing each experiment rather than an ethics block at the end. ANSWER TO HIS QUESTION: the flipped two-sitting shape does NOT carry, and his own plans already diverge - HC-016 is 30min + homework + 30min, while HC-017 (10+20+5+20+5) and HC-018 (10+30+10+10) are single in-class sessions with no homework, so the mirrored Reflect-and-Discuss device has nothing to mirror. 5 must-fix: the flipped-vs-single decision; documentation and ethics threads missing from HC-017/018 outcomes; HC-016 installs gemma-4-e4b whose thinking mode undercuts HC-017's chain-of-thought experiment (fix: use the toggle as the experiment); HC-017/018 outcomes lack level tags and assessable verbs; the 15-min in-class LM Studio setup cannot deliver a 5.9GB model to a room of laptops. Plus 10 should-fix (8192 context stated as a model property when it is LM Studio's loaded length; Prompt Log has no temperature column though the assignment turns on temperature; System Prompt block missing its Reflect and Discuss slide, breaking the one-to-one mirror; between-session work has no size, due point or collection stance) and 4 small. HC-018's prerequisite line reads 'HC-017 Introduction to Prompt Engineering 03' and points at an LE that does not exist. 113 raw findings, 72 dropped on adversarial verification, 41 kept.",
+      "review_note": "Material reviewed 11 Sep 2026 at the author's request (Ahmad Khalidi, HAW, asked for feedback because he was unsure the material design suits the other two Prompt Engineering LEs). Posted to Talk page rev 8582. VERDICT: strongest LE material we have read in this project. Three design pieces are genuinely good and worth naming as reusable rules: the Prompt Log whose columns ARE the taxonomy being taught, observe-then-name teaching order, and an ethics question closing each experiment rather than an ethics block at the end. ANSWER TO HIS QUESTION: the flipped two-sitting shape does NOT carry, and his own plans already diverge - HC-016 is 30min + homework + 30min, while HC-017 (10+20+5+20+5) and HC-018 (10+30+10+10) are single in-class sessions with no homework, so the mirrored Reflect-and-Discuss device has nothing to mirror. 5 must-fix: the flipped-vs-single decision; documentation and ethics threads missing from HC-017/018 outcomes; HC-016 installs gemma-4-e4b whose thinking mode undercuts HC-017's chain-of-thought experiment (fix: use the toggle as the experiment); HC-017/018 outcomes lack level tags and assessable verbs; the 15-min in-class LM Studio setup cannot deliver a 5.9GB model to a room of laptops. Plus 10 should-fix (8192 context stated as a model property when it is LM Studio's loaded length; Prompt Log has no temperature column though the assignment turns on temperature; System Prompt block missing its Reflect and Discuss slide, breaking the one-to-one mirror; between-session work has no size, due point or collection stance) and 4 small. HC-018's prerequisite line reads 'HC-017 Introduction to Prompt Engineering 03' and points at an LE that does not exist. 113 raw findings, 72 dropped on adversarial verification, 41 kept. CLOSED 6 Nov 2026 (Talk rev 9186): our request for criteria on ethics questions withdrawn after Ahmad showed our 4 Nov example repeated its own question; correction posted; review closed with one fix (Discussions slide 3) and the rest as suggestions. Ahmad sets the status.",
       "early_feedback": null,
       "action_summary": {
         "posted": "14 October 2026, 20:54 CEST",
@@ -7815,10 +7815,58 @@
       },
       "author_activity": null,
       "materials": {
-        "count": 15,
+        "count": 25,
         "has": true,
-        "newest": "2026-10-29",
+        "newest": "2026-11-06",
         "files": [
+          {
+            "name": "IPE_1_Assignments_v3(latest).pptx",
+            "ext": "pptx",
+            "kb": 759,
+            "date": "2026-11-06",
+            "sha": "3adc8eba4e92c9e1",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Assignments_v3(latest).pptx"
+          },
+          {
+            "name": "IPE_1_Discussions_v3(latest).pptx",
+            "ext": "pptx",
+            "kb": 354,
+            "date": "2026-11-06",
+            "sha": "41f230f1d99cd6d2",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Discussions_v3(latest).pptx"
+          },
+          {
+            "name": "Prompt Log Example Solutions_v2 (depricated).xlsx",
+            "ext": "xlsx",
+            "kb": 22,
+            "date": "2026-11-06",
+            "sha": "83b317ce2acbf31a",
+            "rel": "4.1 Horizontal/HC-016/Version-History/Prompt Log Example Solutions_v2 (depricated).xlsx"
+          },
+          {
+            "name": "Prompt Log Example Solutions_v3 (latest).xlsx",
+            "ext": "xlsx",
+            "kb": 21,
+            "date": "2026-11-06",
+            "sha": "be33bb10f211c0c9",
+            "rel": "4.1 Horizontal/HC-016/Prompt Log Example Solutions_v3 (latest).xlsx"
+          },
+          {
+            "name": "IPE_1_Discussions_v2(depricated).pptx",
+            "ext": "pptx",
+            "kb": 348,
+            "date": "2026-11-06",
+            "sha": "d84c40020afb3370",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Discussions_v2(depricated).pptx"
+          },
+          {
+            "name": "IPE_1_Assignments_v2(depricated).pptx",
+            "ext": "pptx",
+            "kb": 756,
+            "date": "2026-11-06",
+            "sha": "b105dbcb082f44fe",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Assignments_v2(depricated).pptx"
+          },
           {
             "name": "Setup LM Studio.pptx",
             "ext": "pptx",
@@ -7860,12 +7908,28 @@
             "rel": "4.1 Horizontal/HC-016/IPE_1_Introduction_v1(depricated).pptx"
           },
           {
+            "name": "IPE_1_Introduction_v1(depricated).pptx",
+            "ext": "pptx",
+            "kb": 405,
+            "date": "2026-10-29",
+            "sha": "f31da77f21eb675d",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Introduction_v1(depricated).pptx"
+          },
+          {
             "name": "Prompt Log Example Solutions_v1 (depricated).xlsx",
             "ext": "xlsx",
             "kb": 19,
             "date": "2026-10-29",
             "sha": "2aedc7b74d7df829",
             "rel": "4.1 Horizontal/HC-016/Prompt Log Example Solutions_v1 (depricated).xlsx"
+          },
+          {
+            "name": "Prompt Log Example Solutions_v1 (depricated).xlsx",
+            "ext": "xlsx",
+            "kb": 19,
+            "date": "2026-10-29",
+            "sha": "600a35a87b225309",
+            "rel": "4.1 Horizontal/HC-016/Version-History/Prompt Log Example Solutions_v1 (depricated).xlsx"
           },
           {
             "name": "IPE_1_Discussions_v2(latest).pptx",
@@ -7884,12 +7948,28 @@
             "rel": "4.1 Horizontal/HC-016/IPE_1_Discussions_v1(depricated).pptx"
           },
           {
+            "name": "IPE_1_Discussions_v1(depricated).pptx",
+            "ext": "pptx",
+            "kb": 351,
+            "date": "2026-10-29",
+            "sha": "8a419a54681d834c",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Discussions_v1(depricated).pptx"
+          },
+          {
             "name": "IPE_1_Assignments_v1(depricated).pptx",
             "ext": "pptx",
             "kb": 770,
             "date": "2026-10-29",
             "sha": "fcb981ba5e4f9475",
             "rel": "4.1 Horizontal/HC-016/IPE_1_Assignments_v1(depricated).pptx"
+          },
+          {
+            "name": "IPE_1_Assignments_v1(depricated).pptx",
+            "ext": "pptx",
+            "kb": 770,
+            "date": "2026-10-29",
+            "sha": "bb0d25c58e1668b0",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Assignments_v1(depricated).pptx"
           },
           {
             "name": "IPE_1_Introduction.pptx",
@@ -8066,16 +8146,16 @@
       "author_activity": {
         "files": [
           {
-            "name": "IPE_2_Discussions.pptx",
-            "date": "2026-11-05"
-          },
-          {
             "name": "IPE_2_Assignments.pptx",
-            "date": "2026-11-05"
+            "date": "2026-11-06"
           },
           {
             "name": "IPE_2_Introduction.pptx",
-            "date": "2026-11-05"
+            "date": "2026-11-06"
+          },
+          {
+            "name": "IPE_2_Discussions.pptx",
+            "date": "2026-11-06"
           },
           {
             "name": "Prompt Log Example Solutions.xlsx",
@@ -8095,31 +8175,31 @@
       "materials": {
         "count": 9,
         "has": true,
-        "newest": "2026-11-05",
+        "newest": "2026-11-06",
         "files": [
-          {
-            "name": "IPE_2_Discussions.pptx",
-            "ext": "pptx",
-            "kb": 354,
-            "date": "2026-11-05",
-            "sha": "8d3ea72166339134",
-            "rel": "4.1 Horizontal/HC-017/IPE_2_Discussions.pptx"
-          },
           {
             "name": "IPE_2_Assignments.pptx",
             "ext": "pptx",
-            "kb": 576,
-            "date": "2026-11-05",
-            "sha": "b17c4e0ae933f4ca",
+            "kb": 575,
+            "date": "2026-11-06",
+            "sha": "60a68d188957be51",
             "rel": "4.1 Horizontal/HC-017/IPE_2_Assignments.pptx"
           },
           {
             "name": "IPE_2_Introduction.pptx",
             "ext": "pptx",
             "kb": 1019,
-            "date": "2026-11-05",
-            "sha": "ddf7e366da55d2fd",
+            "date": "2026-11-06",
+            "sha": "64abbd33ea3bc4c4",
             "rel": "4.1 Horizontal/HC-017/IPE_2_Introduction.pptx"
+          },
+          {
+            "name": "IPE_2_Discussions.pptx",
+            "ext": "pptx",
+            "kb": 354,
+            "date": "2026-11-06",
+            "sha": "126278fc50e9f47b",
+            "rel": "4.1 Horizontal/HC-017/IPE_2_Discussions.pptx"
           },
           {
             "name": "Prompt Log Example Solutions.xlsx",
@@ -15422,10 +15502,26 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 4,
+        "count": 6,
         "has": true,
-        "newest": "2026-07-31",
+        "newest": "2026-11-06",
         "files": [
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL008-ENEA-04-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 199,
+            "date": "2026-11-06",
+            "sha": "c816760859fd50bb",
+            "rel": "4.2 Health & Lifescience/HL-008/Learning-Outcomes-Reviewer-Checklist-HL008-ENEA-04-Nov-2026.docx"
+          },
+          {
+            "name": "Reviewer-Checklist-HL008-ENEA-04-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 200,
+            "date": "2026-11-06",
+            "sha": "3b552dffe19e0208",
+            "rel": "4.2 Health & Lifescience/HL-008/Reviewer-Checklist-HL008-ENEA-04-Nov-2026.docx"
+          },
           {
             "name": "HL-008_UNINA_Tutorial_Image_Data_for_Trustworthy_AI.pptx",
             "ext": "pptx",
@@ -16546,10 +16642,26 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 78,
+        "count": 80,
         "has": true,
-        "newest": "2026-10-23",
+        "newest": "2026-11-06",
         "files": [
+          {
+            "name": "Reviewer-Checklist-HL015-ENEA-06-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 199,
+            "date": "2026-11-06",
+            "sha": "3279b5c0a6ead05c",
+            "rel": "4.2 Health & Lifescience/HL-015/Reviewer-Checklist-HL015-ENEA-06-Nov-2026.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL015-ENEA-06-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 198,
+            "date": "2026-11-06",
+            "sha": "0cf1b3f8157f972b",
+            "rel": "4.2 Health & Lifescience/HL-015/Learning-Outcomes-Reviewer-Checklist-HL015-ENEA-06-Nov-2026.docx"
+          },
           {
             "name": "1_genomic_analysis_intro_v2.pptx",
             "ext": "pptx",
@@ -16853,22 +16965,6 @@
             "date": "2026-10-23",
             "sha": "07e37dfa97b337cc",
             "rel": "4.2 Health & Lifescience/HL-015/3_course_files/reader_html/site_libs/quarto-diagram/mermaid.min.js"
-          },
-          {
-            "name": "headroom.min.js",
-            "ext": "js",
-            "kb": 4,
-            "date": "2026-10-23",
-            "sha": "5b80cc4165a661a3",
-            "rel": "4.2 Health & Lifescience/HL-015/3_course_files/reader_html/site_libs/quarto-nav/headroom.min.js"
-          },
-          {
-            "name": "quarto-nav.js",
-            "ext": "js",
-            "kb": 9,
-            "date": "2026-10-23",
-            "sha": "a3e9c8c52dd54d78",
-            "rel": "4.2 Health & Lifescience/HL-015/3_course_files/reader_html/site_libs/quarto-nav/quarto-nav.js"
           }
         ],
         "folder": "HL-015"
@@ -18351,14 +18447,14 @@
       "materials": {
         "count": 3,
         "has": true,
-        "newest": "2026-08-21",
+        "newest": "2026-11-06",
         "files": [
           {
             "name": "HL-034 Justice-revised10a.pptx",
             "ext": "pptx",
-            "kb": 1072,
-            "date": "2026-08-21",
-            "sha": "06a71df3ea8b1cf0",
+            "kb": 1067,
+            "date": "2026-11-06",
+            "sha": "397e92f30ab81c32",
             "rel": "4.2 Health & Lifescience/HL-034/HL-034 Justice-revised10a.pptx"
           },
           {
@@ -18717,10 +18813,26 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 4,
+        "count": 8,
         "has": true,
-        "newest": "2026-08-24",
+        "newest": "2026-11-06",
         "files": [
+          {
+            "name": "Reviewer-Checklist-HL040-ENEA-06-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 199,
+            "date": "2026-11-06",
+            "sha": "0f6c370c2e966ce8",
+            "rel": "4.2 Health & Lifescience/HL-040/Reviewer-Checklist-HL040-ENEA-06-Nov-2026.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL040-ENEA-06-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 198,
+            "date": "2026-11-06",
+            "sha": "06444970c4c67f5b",
+            "rel": "4.2 Health & Lifescience/HL-040/Learning-Outcomes-Reviewer-Checklist-HL040-ENEA-06-Nov-2026.docx"
+          },
           {
             "name": "LE HL040.pdf",
             "ext": "pdf",
@@ -18752,6 +18864,22 @@
             "date": "2026-07-27",
             "sha": "d3d99c56df5b2360",
             "rel": "4.2 Health & Lifescience/HL-040/Learning-Outcomes-Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx"
+          },
+          {
+            "name": "Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx",
+            "ext": "docx",
+            "kb": 200,
+            "date": "2026-07-27",
+            "sha": "42a6b0368c985788",
+            "rel": "4.2 Health & Lifescience/HL-040/old/Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx",
+            "ext": "docx",
+            "kb": 200,
+            "date": "2026-07-27",
+            "sha": "01f06eb71eb76d37",
+            "rel": "4.2 Health & Lifescience/HL-040/old/Learning-Outcomes-Reviewer-Checklist-HL040-ENEA-27-Jul-2026.docx"
           }
         ],
         "folder": "HL-040"
@@ -19845,10 +19973,26 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 246,
+        "count": 248,
         "has": true,
-        "newest": "2026-09-16",
+        "newest": "2026-11-06",
         "files": [
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL058-ENEA-06-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 198,
+            "date": "2026-11-06",
+            "sha": "29d6d9ed3894f981",
+            "rel": "4.2 Health & Lifescience/HL-058/Learning-Outcomes-Reviewer-Checklist-HL058-ENEA-06-Nov-2026.docx"
+          },
+          {
+            "name": "Reviewer-Checklist-HL058-ENEA-06-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 200,
+            "date": "2026-11-06",
+            "sha": "1ccd554c9c068fcd",
+            "rel": "4.2 Health & Lifescience/HL-058/Reviewer-Checklist-HL058-ENEA-06-Nov-2026.docx"
+          },
           {
             "name": "anchor.min.js",
             "ext": "js",
@@ -20152,22 +20296,6 @@
             "date": "2026-09-16",
             "sha": "a3e9c8c52dd54d78",
             "rel": "4.2 Health & Lifescience/HL-058/4_reader_files/course_delivery/reader_html/site_libs/quarto-nav/quarto-nav.js"
-          },
-          {
-            "name": "headroom.min.js",
-            "ext": "js",
-            "kb": 4,
-            "date": "2026-09-16",
-            "sha": "5b80cc4165a661a3",
-            "rel": "4.2 Health & Lifescience/HL-058/4_reader_files/course_delivery/reader_html/site_libs/quarto-nav/headroom.min.js"
-          },
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-09-16",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-058/4_reader_files/_book/site_libs/quarto-html/tabsets/tabsets.js"
           }
         ],
         "folder": "HL-058"
@@ -35805,16 +35933,16 @@
       "author_activity": {
         "files": [
           {
-            "name": "IPE_2_Discussions.pptx",
-            "date": "2026-11-05"
-          },
-          {
             "name": "IPE_2_Assignments.pptx",
-            "date": "2026-11-05"
+            "date": "2026-11-06"
           },
           {
             "name": "IPE_2_Introduction.pptx",
-            "date": "2026-11-05"
+            "date": "2026-11-06"
+          },
+          {
+            "name": "IPE_2_Discussions.pptx",
+            "date": "2026-11-06"
           },
           {
             "name": "Prompt Log Example Solutions.xlsx",
@@ -35834,31 +35962,31 @@
       "materials": {
         "count": 9,
         "has": true,
-        "newest": "2026-11-05",
+        "newest": "2026-11-06",
         "files": [
-          {
-            "name": "IPE_2_Discussions.pptx",
-            "ext": "pptx",
-            "kb": 354,
-            "date": "2026-11-05",
-            "sha": "8d3ea72166339134",
-            "rel": "4.1 Horizontal/HC-017/IPE_2_Discussions.pptx"
-          },
           {
             "name": "IPE_2_Assignments.pptx",
             "ext": "pptx",
-            "kb": 576,
-            "date": "2026-11-05",
-            "sha": "b17c4e0ae933f4ca",
+            "kb": 575,
+            "date": "2026-11-06",
+            "sha": "60a68d188957be51",
             "rel": "4.1 Horizontal/HC-017/IPE_2_Assignments.pptx"
           },
           {
             "name": "IPE_2_Introduction.pptx",
             "ext": "pptx",
             "kb": 1019,
-            "date": "2026-11-05",
-            "sha": "ddf7e366da55d2fd",
+            "date": "2026-11-06",
+            "sha": "64abbd33ea3bc4c4",
             "rel": "4.1 Horizontal/HC-017/IPE_2_Introduction.pptx"
+          },
+          {
+            "name": "IPE_2_Discussions.pptx",
+            "ext": "pptx",
+            "kb": 354,
+            "date": "2026-11-06",
+            "sha": "126278fc50e9f47b",
+            "rel": "4.1 Horizontal/HC-017/IPE_2_Discussions.pptx"
           },
           {
             "name": "Prompt Log Example Solutions.xlsx",
@@ -38995,7 +39123,7 @@
       "realai_wiki_gap": false,
       "review_done": true,
       "revision_requested": false,
-      "review_note": "Material reviewed 11 Sep 2026 at the author's request (Ahmad Khalidi, HAW, asked for feedback because he was unsure the material design suits the other two Prompt Engineering LEs). Posted to Talk page rev 8582. VERDICT: strongest LE material we have read in this project. Three design pieces are genuinely good and worth naming as reusable rules: the Prompt Log whose columns ARE the taxonomy being taught, observe-then-name teaching order, and an ethics question closing each experiment rather than an ethics block at the end. ANSWER TO HIS QUESTION: the flipped two-sitting shape does NOT carry, and his own plans already diverge - HC-016 is 30min + homework + 30min, while HC-017 (10+20+5+20+5) and HC-018 (10+30+10+10) are single in-class sessions with no homework, so the mirrored Reflect-and-Discuss device has nothing to mirror. 5 must-fix: the flipped-vs-single decision; documentation and ethics threads missing from HC-017/018 outcomes; HC-016 installs gemma-4-e4b whose thinking mode undercuts HC-017's chain-of-thought experiment (fix: use the toggle as the experiment); HC-017/018 outcomes lack level tags and assessable verbs; the 15-min in-class LM Studio setup cannot deliver a 5.9GB model to a room of laptops. Plus 10 should-fix (8192 context stated as a model property when it is LM Studio's loaded length; Prompt Log has no temperature column though the assignment turns on temperature; System Prompt block missing its Reflect and Discuss slide, breaking the one-to-one mirror; between-session work has no size, due point or collection stance) and 4 small. HC-018's prerequisite line reads 'HC-017 Introduction to Prompt Engineering 03' and points at an LE that does not exist. 113 raw findings, 72 dropped on adversarial verification, 41 kept.",
+      "review_note": "Material reviewed 11 Sep 2026 at the author's request (Ahmad Khalidi, HAW, asked for feedback because he was unsure the material design suits the other two Prompt Engineering LEs). Posted to Talk page rev 8582. VERDICT: strongest LE material we have read in this project. Three design pieces are genuinely good and worth naming as reusable rules: the Prompt Log whose columns ARE the taxonomy being taught, observe-then-name teaching order, and an ethics question closing each experiment rather than an ethics block at the end. ANSWER TO HIS QUESTION: the flipped two-sitting shape does NOT carry, and his own plans already diverge - HC-016 is 30min + homework + 30min, while HC-017 (10+20+5+20+5) and HC-018 (10+30+10+10) are single in-class sessions with no homework, so the mirrored Reflect-and-Discuss device has nothing to mirror. 5 must-fix: the flipped-vs-single decision; documentation and ethics threads missing from HC-017/018 outcomes; HC-016 installs gemma-4-e4b whose thinking mode undercuts HC-017's chain-of-thought experiment (fix: use the toggle as the experiment); HC-017/018 outcomes lack level tags and assessable verbs; the 15-min in-class LM Studio setup cannot deliver a 5.9GB model to a room of laptops. Plus 10 should-fix (8192 context stated as a model property when it is LM Studio's loaded length; Prompt Log has no temperature column though the assignment turns on temperature; System Prompt block missing its Reflect and Discuss slide, breaking the one-to-one mirror; between-session work has no size, due point or collection stance) and 4 small. HC-018's prerequisite line reads 'HC-017 Introduction to Prompt Engineering 03' and points at an LE that does not exist. 113 raw findings, 72 dropped on adversarial verification, 41 kept. CLOSED 6 Nov 2026 (Talk rev 9186): our request for criteria on ethics questions withdrawn after Ahmad showed our 4 Nov example repeated its own question; correction posted; review closed with one fix (Discussions slide 3) and the rest as suggestions. Ahmad sets the status.",
       "early_feedback": null,
       "action_summary": {
         "posted": "14 October 2026, 20:54 CEST",
@@ -39004,10 +39132,58 @@
       },
       "author_activity": null,
       "materials": {
-        "count": 15,
+        "count": 25,
         "has": true,
-        "newest": "2026-10-29",
+        "newest": "2026-11-06",
         "files": [
+          {
+            "name": "IPE_1_Assignments_v3(latest).pptx",
+            "ext": "pptx",
+            "kb": 759,
+            "date": "2026-11-06",
+            "sha": "3adc8eba4e92c9e1",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Assignments_v3(latest).pptx"
+          },
+          {
+            "name": "IPE_1_Discussions_v3(latest).pptx",
+            "ext": "pptx",
+            "kb": 354,
+            "date": "2026-11-06",
+            "sha": "41f230f1d99cd6d2",
+            "rel": "4.1 Horizontal/HC-016/IPE_1_Discussions_v3(latest).pptx"
+          },
+          {
+            "name": "Prompt Log Example Solutions_v2 (depricated).xlsx",
+            "ext": "xlsx",
+            "kb": 22,
+            "date": "2026-11-06",
+            "sha": "83b317ce2acbf31a",
+            "rel": "4.1 Horizontal/HC-016/Version-History/Prompt Log Example Solutions_v2 (depricated).xlsx"
+          },
+          {
+            "name": "Prompt Log Example Solutions_v3 (latest).xlsx",
+            "ext": "xlsx",
+            "kb": 21,
+            "date": "2026-11-06",
+            "sha": "be33bb10f211c0c9",
+            "rel": "4.1 Horizontal/HC-016/Prompt Log Example Solutions_v3 (latest).xlsx"
+          },
+          {
+            "name": "IPE_1_Discussions_v2(depricated).pptx",
+            "ext": "pptx",
+            "kb": 348,
+            "date": "2026-11-06",
+            "sha": "d84c40020afb3370",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Discussions_v2(depricated).pptx"
+          },
+          {
+            "name": "IPE_1_Assignments_v2(depricated).pptx",
+            "ext": "pptx",
+            "kb": 756,
+            "date": "2026-11-06",
+            "sha": "b105dbcb082f44fe",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Assignments_v2(depricated).pptx"
+          },
           {
             "name": "Setup LM Studio.pptx",
             "ext": "pptx",
@@ -39049,12 +39225,28 @@
             "rel": "4.1 Horizontal/HC-016/IPE_1_Introduction_v1(depricated).pptx"
           },
           {
+            "name": "IPE_1_Introduction_v1(depricated).pptx",
+            "ext": "pptx",
+            "kb": 405,
+            "date": "2026-10-29",
+            "sha": "f31da77f21eb675d",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Introduction_v1(depricated).pptx"
+          },
+          {
             "name": "Prompt Log Example Solutions_v1 (depricated).xlsx",
             "ext": "xlsx",
             "kb": 19,
             "date": "2026-10-29",
             "sha": "2aedc7b74d7df829",
             "rel": "4.1 Horizontal/HC-016/Prompt Log Example Solutions_v1 (depricated).xlsx"
+          },
+          {
+            "name": "Prompt Log Example Solutions_v1 (depricated).xlsx",
+            "ext": "xlsx",
+            "kb": 19,
+            "date": "2026-10-29",
+            "sha": "600a35a87b225309",
+            "rel": "4.1 Horizontal/HC-016/Version-History/Prompt Log Example Solutions_v1 (depricated).xlsx"
           },
           {
             "name": "IPE_1_Discussions_v2(latest).pptx",
@@ -39073,12 +39265,28 @@
             "rel": "4.1 Horizontal/HC-016/IPE_1_Discussions_v1(depricated).pptx"
           },
           {
+            "name": "IPE_1_Discussions_v1(depricated).pptx",
+            "ext": "pptx",
+            "kb": 351,
+            "date": "2026-10-29",
+            "sha": "8a419a54681d834c",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Discussions_v1(depricated).pptx"
+          },
+          {
             "name": "IPE_1_Assignments_v1(depricated).pptx",
             "ext": "pptx",
             "kb": 770,
             "date": "2026-10-29",
             "sha": "fcb981ba5e4f9475",
             "rel": "4.1 Horizontal/HC-016/IPE_1_Assignments_v1(depricated).pptx"
+          },
+          {
+            "name": "IPE_1_Assignments_v1(depricated).pptx",
+            "ext": "pptx",
+            "kb": 770,
+            "date": "2026-10-29",
+            "sha": "bb0d25c58e1668b0",
+            "rel": "4.1 Horizontal/HC-016/Version-History/IPE_1_Assignments_v1(depricated).pptx"
           },
           {
             "name": "IPE_1_Introduction.pptx",
