@@ -2,9 +2,18 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-11-04T15:02:31.539674+00:00",
-  "refreshed_at": "2026-11-04T15:02:31.539674+00:00",
+  "generated_at": "2026-11-06T09:37:26.499084+00:00",
+  "refreshed_at": "2026-11-06T09:37:26.499084+00:00",
   "refresh_history": [
+    {
+      "at": "2026-11-06T09:37:26.499084+00:00",
+      "wiki_captured": "2026-11-04T15:01:57.688Z",
+      "sharepoint_generated": "2026-11-06T09:37:00.613426Z",
+      "realai_total": 84,
+      "reviewed": 49,
+      "revision_requested": 15,
+      "early_feedback": 16
+    },
     {
       "at": "2026-11-04T15:02:31.539674+00:00",
       "wiki_captured": "2026-11-04T15:01:57.688Z",
@@ -67,15 +76,6 @@
       "reviewed": 59,
       "revision_requested": 14,
       "early_feedback": 16
-    },
-    {
-      "at": "2026-09-17T11:45:23.781700+00:00",
-      "wiki_captured": "2026-09-17T11:43:17.284Z",
-      "sharepoint_generated": "2026-09-17T11:45:23.601920Z",
-      "realai_total": 90,
-      "reviewed": 59,
-      "revision_requested": 14,
-      "early_feedback": 16
     }
   ],
   "data_sources": {
@@ -85,10 +85,10 @@
       "master_total": 435
     },
     "sharepoint": {
-      "generated_at": "2026-11-04T15:02:21.488215Z",
+      "generated_at": "2026-11-06T09:37:00.613426Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 189,
+        "with_materials": 191,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -116,12 +116,12 @@
       "Finalized": 3,
       "Ready for pilot": 58
     },
-    "with_materials": 184,
-    "materials_pending": 205,
+    "with_materials": 186,
+    "materials_pending": 203,
     "coverage": {
       "wiki_total": 389,
-      "with_sharepoint_material": 184,
-      "awaiting_material": 205,
+      "with_sharepoint_material": 186,
+      "awaiting_material": 203,
       "off_wiki": 54,
       "off_wiki_realai": 0,
       "realai_wiki_gap": 0
@@ -130,8 +130,8 @@
       "total": 84,
       "author": 4,
       "reviewer": 80,
-      "reviewed": 48,
-      "revision_requested": 14,
+      "reviewed": 49,
+      "revision_requested": 15,
       "early_feedback": 16,
       "by_status": {
         "In development": 31,
@@ -8066,37 +8066,69 @@
       "author_activity": {
         "files": [
           {
-            "name": "IPE_1_Assignments.pptx",
-            "date": "2026-11-03"
+            "name": "IPE_2_Discussions.pptx",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "IPE_2_Assignments.pptx",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "IPE_2_Introduction.pptx",
+            "date": "2026-11-05"
           },
           {
             "name": "Prompt Log Example Solutions.xlsx",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
             "date": "2026-11-03"
           },
           {
             "name": "Prompt Log.xlsx",
             "date": "2026-10-20"
-          },
-          {
-            "name": "Setup LM Studio.pptx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "IPE_1_Introduction.pptx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "IPE_1_Discussions.pptx",
-            "date": "2026-10-19"
           }
         ],
         "content": true
       },
       "materials": {
-        "count": 6,
+        "count": 9,
         "has": true,
-        "newest": "2026-11-03",
+        "newest": "2026-11-05",
         "files": [
+          {
+            "name": "IPE_2_Discussions.pptx",
+            "ext": "pptx",
+            "kb": 354,
+            "date": "2026-11-05",
+            "sha": "8d3ea72166339134",
+            "rel": "4.1 Horizontal/HC-017/IPE_2_Discussions.pptx"
+          },
+          {
+            "name": "IPE_2_Assignments.pptx",
+            "ext": "pptx",
+            "kb": 576,
+            "date": "2026-11-05",
+            "sha": "b17c4e0ae933f4ca",
+            "rel": "4.1 Horizontal/HC-017/IPE_2_Assignments.pptx"
+          },
+          {
+            "name": "IPE_2_Introduction.pptx",
+            "ext": "pptx",
+            "kb": 1019,
+            "date": "2026-11-05",
+            "sha": "ddf7e366da55d2fd",
+            "rel": "4.1 Horizontal/HC-017/IPE_2_Introduction.pptx"
+          },
+          {
+            "name": "Prompt Log Example Solutions.xlsx",
+            "ext": "xlsx",
+            "kb": 19,
+            "date": "2026-11-05",
+            "sha": "db2fc8410524fd29",
+            "rel": "4.1 Horizontal/HC-017/Prompt Log Example Solutions.xlsx"
+          },
           {
             "name": "IPE_1_Assignments.pptx",
             "ext": "pptx",
@@ -8104,14 +8136,6 @@
             "date": "2026-11-03",
             "sha": "988865a11331bc85",
             "rel": "4.1 Horizontal/HC-017/IPE_1_Assignments.pptx"
-          },
-          {
-            "name": "Prompt Log Example Solutions.xlsx",
-            "ext": "xlsx",
-            "kb": 16,
-            "date": "2026-11-03",
-            "sha": "713afbce15bc46e6",
-            "rel": "4.1 Horizontal/HC-017/Prompt Log Example Solutions.xlsx"
           },
           {
             "name": "Prompt Log.xlsx",
@@ -8535,12 +8559,53 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8894
       },
-      "author_activity": null,
+      "author_activity": {
+        "files": [
+          {
+            "name": "HC020_Designing_a_Machine_Learning_System_RAISE-U.pptx",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "HC020_Designing_a_Machine_Learning_System_RAISE-U.pdf",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "HC020_Teacher_Guide.pdf",
+            "date": "2026-11-05"
+          }
+        ],
+        "content": true
+      },
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-11-05",
+        "files": [
+          {
+            "name": "HC020_Designing_a_Machine_Learning_System_RAISE-U.pptx",
+            "ext": "pptx",
+            "kb": 566,
+            "date": "2026-11-05",
+            "sha": "f2d8335a7226aec4",
+            "rel": "4.1 Horizontal/HC-020/HC020_Designing_a_Machine_Learning_System_RAISE-U.pptx"
+          },
+          {
+            "name": "HC020_Designing_a_Machine_Learning_System_RAISE-U.pdf",
+            "ext": "pdf",
+            "kb": 537,
+            "date": "2026-11-05",
+            "sha": "60c83c40de511f5f",
+            "rel": "4.1 Horizontal/HC-020/HC020_Designing_a_Machine_Learning_System_RAISE-U.pdf"
+          },
+          {
+            "name": "HC020_Teacher_Guide.pdf",
+            "ext": "pdf",
+            "kb": 216,
+            "date": "2026-11-05",
+            "sha": "2b8a6b5dde907f96",
+            "rel": "4.1 Horizontal/HC-020/HC020_Teacher_Guide.pdf"
+          }
+        ],
         "folder": "HC-020"
       },
       "lesson_plan": {
@@ -8610,7 +8675,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -10055,10 +10120,43 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 4,
+        "has": true,
+        "newest": "2026-11-05",
+        "files": [
+          {
+            "name": "HC071_Principles_of_Research_RAISE-U.pptx",
+            "ext": "pptx",
+            "kb": 477,
+            "date": "2026-11-05",
+            "sha": "d0c79f60ee28ac7b",
+            "rel": "4.1 Horizontal/HC-071/HC071_Principles_of_Research_RAISE-U.pptx"
+          },
+          {
+            "name": "HC071_Teacher_Guide.docx",
+            "ext": "docx",
+            "kb": 57,
+            "date": "2026-11-05",
+            "sha": "1268eb9fb845e5bd",
+            "rel": "4.1 Horizontal/HC-071/HC071_Teacher_Guide.docx"
+          },
+          {
+            "name": "HC071_Teacher_Guide.pdf",
+            "ext": "pdf",
+            "kb": 157,
+            "date": "2026-11-05",
+            "sha": "9112326452e1fc20",
+            "rel": "4.1 Horizontal/HC-071/HC071_Teacher_Guide.pdf"
+          },
+          {
+            "name": "HC071_Principles_of_Research_RAISE-U.pdf",
+            "ext": "pdf",
+            "kb": 301,
+            "date": "2026-11-05",
+            "sha": "a5894473047ba13d",
+            "rel": "4.1 Horizontal/HC-071/HC071_Principles_of_Research_RAISE-U.pdf"
+          }
+        ],
         "folder": "HC-071"
       },
       "lesson_plan": {
@@ -13674,10 +13772,26 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 2,
+        "count": 4,
         "has": true,
-        "newest": "2026-08-07",
+        "newest": "2026-11-04",
         "files": [
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-HL002-ENEA-04-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 198,
+            "date": "2026-11-04",
+            "sha": "9b3e33961f6ef731",
+            "rel": "4.2 Health & Lifescience/HL-002/Learning-Outcomes-Reviewer-Checklist-HL002-ENEA-04-Nov-2026.docx"
+          },
+          {
+            "name": "Reviewer-Checklist-HL002-ENEA-04-Nov-2026.docx",
+            "ext": "docx",
+            "kb": 200,
+            "date": "2026-11-04",
+            "sha": "b89b0f0d6242196e",
+            "rel": "4.2 Health & Lifescience/HL-002/Reviewer-Checklist-HL002-ENEA-04-Nov-2026.docx"
+          },
           {
             "name": "Link to editable source.docx",
             "ext": "docx",
@@ -18307,10 +18421,26 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-08-04",
+        "newest": "2026-11-05",
         "files": [
+          {
+            "name": "HL035_Teacher_Guide.pdf",
+            "ext": "pdf",
+            "kb": 240,
+            "date": "2026-11-05",
+            "sha": "2e9faf3e3872558d",
+            "rel": "4.2 Health & Lifescience/HL-035/HL035_Teacher_Guide.pdf"
+          },
+          {
+            "name": "HL035_Accountability_Traceability_Medical_AI_RAISE-U.pdf",
+            "ext": "pdf",
+            "kb": 1054,
+            "date": "2026-11-05",
+            "sha": "740fd7b216eb64f9",
+            "rel": "4.2 Health & Lifescience/HL-035/HL035_Accountability_Traceability_Medical_AI_RAISE-U.pdf"
+          },
           {
             "name": "HL035_Accountability_Traceability_Medical_AI.pdf",
             "ext": "pdf",
@@ -18318,14 +18448,6 @@
             "date": "2026-08-04",
             "sha": "a01b0e3f9ba013c2",
             "rel": "4.2 Health & Lifescience/HL-035/HL035_Accountability_Traceability_Medical_AI.pdf"
-          },
-          {
-            "name": "HL035_Teacher_Guide.pdf",
-            "ext": "pdf",
-            "kb": 241,
-            "date": "2026-08-04",
-            "sha": "fab1a47a399176d6",
-            "rel": "4.2 Health & Lifescience/HL-035/HL035_Teacher_Guide.pdf"
           }
         ],
         "folder": "HL-035"
@@ -18371,10 +18493,26 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-08-04",
+        "newest": "2026-11-05",
         "files": [
+          {
+            "name": "HL036_Trust_in_Medical_AI_RAISE-U.pdf",
+            "ext": "pdf",
+            "kb": 1052,
+            "date": "2026-11-05",
+            "sha": "e855cde2cb39ecb8",
+            "rel": "4.2 Health & Lifescience/HL-036/HL036_Trust_in_Medical_AI_RAISE-U.pdf"
+          },
+          {
+            "name": "HL036_Teacher_Guide.pdf",
+            "ext": "pdf",
+            "kb": 227,
+            "date": "2026-11-05",
+            "sha": "ba22ef4a9780f92c",
+            "rel": "4.2 Health & Lifescience/HL-036/HL036_Teacher_Guide.pdf"
+          },
           {
             "name": "HL036_Trust_in_Medical_AI.pdf",
             "ext": "pdf",
@@ -18382,14 +18520,6 @@
             "date": "2026-08-04",
             "sha": "8b56e3f880c8e324",
             "rel": "4.2 Health & Lifescience/HL-036/HL036_Trust_in_Medical_AI.pdf"
-          },
-          {
-            "name": "HL036_Teacher_Guide.pdf",
-            "ext": "pdf",
-            "kb": 228,
-            "date": "2026-08-04",
-            "sha": "7d28d9c0fff5d4d6",
-            "rel": "4.2 Health & Lifescience/HL-036/HL036_Teacher_Guide.pdf"
           }
         ],
         "folder": "HL-036"
@@ -22260,9 +22390,9 @@
       "reviewer": "REAL AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "revision_requested": false,
-      "review_note": null,
+      "review_done": true,
+      "revision_requested": true,
+      "review_note": "Full review posted 5 Nov 2026 (rev 9105) on the 3 Nov deck (31 slides) and the wiki page. Verdict: revision requested. Open: wiki says no harmonised standard cited, but EN 18286:2026 (Article 17 only) was cited in October 2026; wiki has four cases and 5/15/55/15, deck has three cases and 40+50; slides 4 to 22 have no lecturer notes; no human-centred question; no guidance on choosing a route.",
       "early_feedback": null,
       "action_summary": null,
       "author_activity": null,
@@ -30852,12 +30982,53 @@
         "iso": "2026-10-14T18:54:00Z",
         "talk_rev": 8894
       },
-      "author_activity": null,
+      "author_activity": {
+        "files": [
+          {
+            "name": "HC020_Designing_a_Machine_Learning_System_RAISE-U.pptx",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "HC020_Designing_a_Machine_Learning_System_RAISE-U.pdf",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "HC020_Teacher_Guide.pdf",
+            "date": "2026-11-05"
+          }
+        ],
+        "content": true
+      },
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-11-05",
+        "files": [
+          {
+            "name": "HC020_Designing_a_Machine_Learning_System_RAISE-U.pptx",
+            "ext": "pptx",
+            "kb": 566,
+            "date": "2026-11-05",
+            "sha": "f2d8335a7226aec4",
+            "rel": "4.1 Horizontal/HC-020/HC020_Designing_a_Machine_Learning_System_RAISE-U.pptx"
+          },
+          {
+            "name": "HC020_Designing_a_Machine_Learning_System_RAISE-U.pdf",
+            "ext": "pdf",
+            "kb": 537,
+            "date": "2026-11-05",
+            "sha": "60c83c40de511f5f",
+            "rel": "4.1 Horizontal/HC-020/HC020_Designing_a_Machine_Learning_System_RAISE-U.pdf"
+          },
+          {
+            "name": "HC020_Teacher_Guide.pdf",
+            "ext": "pdf",
+            "kb": 216,
+            "date": "2026-11-05",
+            "sha": "2b8a6b5dde907f96",
+            "rel": "4.1 Horizontal/HC-020/HC020_Teacher_Guide.pdf"
+          }
+        ],
         "folder": "HC-020"
       },
       "lesson_plan": {
@@ -30927,7 +31098,7 @@
         "is_author": false,
         "instructions_written": true,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [],
         "author_needs": [],
         "ready_to_review": true
@@ -33874,9 +34045,9 @@
       "reviewer": "REAL AI · Tarry Singh",
       "off_wiki": false,
       "realai_wiki_gap": false,
-      "review_done": false,
-      "revision_requested": false,
-      "review_note": null,
+      "review_done": true,
+      "revision_requested": true,
+      "review_note": "Full review posted 5 Nov 2026 (rev 9105) on the 3 Nov deck (31 slides) and the wiki page. Verdict: revision requested. Open: wiki says no harmonised standard cited, but EN 18286:2026 (Article 17 only) was cited in October 2026; wiki has four cases and 5/15/55/15, deck has three cases and 40+50; slides 4 to 22 have no lecturer notes; no human-centred question; no guidance on choosing a route.",
       "early_feedback": null,
       "action_summary": null,
       "author_activity": null,
@@ -35634,37 +35805,69 @@
       "author_activity": {
         "files": [
           {
-            "name": "IPE_1_Assignments.pptx",
-            "date": "2026-11-03"
+            "name": "IPE_2_Discussions.pptx",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "IPE_2_Assignments.pptx",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "IPE_2_Introduction.pptx",
+            "date": "2026-11-05"
           },
           {
             "name": "Prompt Log Example Solutions.xlsx",
+            "date": "2026-11-05"
+          },
+          {
+            "name": "IPE_1_Assignments.pptx",
             "date": "2026-11-03"
           },
           {
             "name": "Prompt Log.xlsx",
             "date": "2026-10-20"
-          },
-          {
-            "name": "Setup LM Studio.pptx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "IPE_1_Introduction.pptx",
-            "date": "2026-10-19"
-          },
-          {
-            "name": "IPE_1_Discussions.pptx",
-            "date": "2026-10-19"
           }
         ],
         "content": true
       },
       "materials": {
-        "count": 6,
+        "count": 9,
         "has": true,
-        "newest": "2026-11-03",
+        "newest": "2026-11-05",
         "files": [
+          {
+            "name": "IPE_2_Discussions.pptx",
+            "ext": "pptx",
+            "kb": 354,
+            "date": "2026-11-05",
+            "sha": "8d3ea72166339134",
+            "rel": "4.1 Horizontal/HC-017/IPE_2_Discussions.pptx"
+          },
+          {
+            "name": "IPE_2_Assignments.pptx",
+            "ext": "pptx",
+            "kb": 576,
+            "date": "2026-11-05",
+            "sha": "b17c4e0ae933f4ca",
+            "rel": "4.1 Horizontal/HC-017/IPE_2_Assignments.pptx"
+          },
+          {
+            "name": "IPE_2_Introduction.pptx",
+            "ext": "pptx",
+            "kb": 1019,
+            "date": "2026-11-05",
+            "sha": "ddf7e366da55d2fd",
+            "rel": "4.1 Horizontal/HC-017/IPE_2_Introduction.pptx"
+          },
+          {
+            "name": "Prompt Log Example Solutions.xlsx",
+            "ext": "xlsx",
+            "kb": 19,
+            "date": "2026-11-05",
+            "sha": "db2fc8410524fd29",
+            "rel": "4.1 Horizontal/HC-017/Prompt Log Example Solutions.xlsx"
+          },
           {
             "name": "IPE_1_Assignments.pptx",
             "ext": "pptx",
@@ -35672,14 +35875,6 @@
             "date": "2026-11-03",
             "sha": "988865a11331bc85",
             "rel": "4.1 Horizontal/HC-017/IPE_1_Assignments.pptx"
-          },
-          {
-            "name": "Prompt Log Example Solutions.xlsx",
-            "ext": "xlsx",
-            "kb": 16,
-            "date": "2026-11-03",
-            "sha": "713afbce15bc46e6",
-            "rel": "4.1 Horizontal/HC-017/Prompt Log Example Solutions.xlsx"
           },
           {
             "name": "Prompt Log.xlsx",
