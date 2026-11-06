@@ -18,3 +18,9 @@ The application uses Supabase Auth email/password and stores completed workouts 
 - Verify mobile and desktop layouts and TLS. The images are AI-generated stills, not verified motion demonstrations; Apple Health and animation are not yet integrated.
 
 This folder is independent of the parent Next.js app. Adding it to this repository does not automatically make it available at the subdomain. Root repository deployment instructions still apply.
+
+## Exercise library and session templates
+
+The library incorporates the 876-entry [Free Exercise DB](https://github.com/yuhonas/free-exercise-db) snapshot at commit `f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5`, distributed by its authors under the Unlicense. Reference images are loaded from that pinned revision and require an internet connection. Exercise information and images have not been clinically verified. Session templates sync per account via `plans-schema.sql`; workout drafts remain device-local.
+
+Additional exercise data comes from [Glowupp Open ExerciseDB](https://github.com/Glowupp-app/open-exercisedb), MIT licensed, snapshot `80b98f38721a88119b860e0e0e969bf1592c2525`. Machine variants were informed by [Atlantis](https://atlantisstrength.com/gym-equipment/legs) and [Technogym](https://www.technogym.com/en-US/category/plate-loaded/) catalogues; those entries have no manufacturer photos. Custom exercises can fill gaps. Machine starting resistance and adjustments differ by model; follow the machine's instructions.
