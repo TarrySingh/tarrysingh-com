@@ -1,0 +1,21 @@
+{
+  "name": "gym",
+  "version": "1.0.0",
+  "description": "Standalone static workout journal for gym.tarrysingh.com. `index.html`, `app.js`, `style.css`, and `assets/` must be served together from the web root of the gym subdomain. This folder is independent of the repository's Next.js app and is not automatically exposed or deployed by merely committing it.",
+  "main": "app.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node --check app.js && node --check auth.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@supabase/supabase-js": "2.99.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  },
+  "private": true
+}
