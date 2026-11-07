@@ -48,6 +48,16 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_Alternating_Deltoid_Raise':'alternating-deltoid-raise',
+  'db_Ankle_Circles':'ankle-circles',
+  'db_3_4_Sit-Up':'three-quarter-situp',
+  'db_Adductor':'adductor-foam-roll',
+  'db_Arm_Circles':'arm-circles',
+  'db_Balance_Board':'balance-board',
+  'db_Axle_Deadlift':'axle-deadlift',
+  'db_Backward_Drag':'backward-sled-drag',
+  'db_Atlas_Stones':'atlas-stones',
+  'db_Alternating_Floor_Press':'alternating-kettlebell-floor-press',
   'db_All_Fours_Quad_Stretch':'all-fours-quad-stretch',
   'db_Chest_And_Front_Of_Shoulder_Stretch':'chest-shoulder-stick-stretch',
   'db_Dynamic_Chest_Stretch':'dynamic-chest-stretch',
