@@ -48,6 +48,17 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+'db_Shoulder_Press_-_With_Bands':'shoulder-press-bands',
+'db_Side_Bridge':'side-bridge',
+'db_Side_Standing_Long_Jump':'side-standing-long-jump',
+'db_Side_To_Side_Chins':'side-to-side-chins',
+'db_Single-Arm_Push-Up':'single-arm-push-up',
+'db_Single-Arm_Linear_Jammer':'single-arm-linear-jammer',
+'db_Single-Leg_Lateral_Hop':'single-leg-lateral-hop',
+'db_Single-Leg_Leg_Extension':'single-leg-leg-extension',
+'db_Single_Leg_Glute_Bridge':'single-leg-glute-bridge',
+'db_Sled_Push':'sled-push',
+'db_Sled_Drag_-_Harness':'sled-drag-harness',
 'db_Rope_Jumping':'rope-jumping',
 'db_Romanian_Deadlift_from_Deficit':'romanian-deadlift-deficit',
 'db_Rope_Straight-Arm_Pulldown':'rope-straight-arm-pulldown',
