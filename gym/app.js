@@ -48,6 +48,17 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_modern_diamond_push_up':'diamond-push-up-v2',
+  'db_modern_oblique_crunch':'oblique-crunch-v2',
+  'db_modern_plank_cross_knee_drive':'plank-cross-knee-drive-v2',
+  'db_modern_walkout':'walkout-v2',
+  'db_modern_side_to_side_punch':'side-to-side-punch-v2',
+  'db_modern_star_jump':'star-jump-v2',
+  'db_modern_middle_crunches':'middle-crunches-v2',
+  'db_modern_alternating_lunge_with_rotation':'alternating-lunge-with-rotation-v2',
+  'db_modern_dragonfly':'dragonfly-v2',
+  'db_modern_spider_plank':'spider-plank-v2',
+  'db_modern_back_squeeze':'back-squeeze-v2',
   'db_modern_upper_back_stretch':'upper-back-stretch-v2',
   'db_modern_triceps_light_stretch':'triceps-light-stretch-v2',
   'db_modern_shoulder_circle':'shoulder-circle-v2',
