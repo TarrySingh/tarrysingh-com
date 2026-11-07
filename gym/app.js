@@ -48,6 +48,14 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_Weighted_Crunches':'weighted-crunch-photo-v2',
+  'db_Stiff-Legged_Barbell_Deadlift':'stiff-leg-barbell-deadlift-photo-v2',
+  'db_Wide_Stance_Barbell_Squat':'wide-stance-barbell-squat-photo-v2',
+  'db_Lying_Triceps_Press':'lying-triceps-press-photo-v2',
+  'db_Standing_Overhead_Barbell_Triceps_Extension':'standing-overhead-barbell-triceps-extension-photo-v2',
+  'db_Dips_-_Triceps_Version':'triceps-parallel-bar-dip-photo-v2',
+  'db_Standing_Dumbbell_Triceps_Extension':'standing-dumbbell-triceps-extension-photo-v2',
+
   'db_Upper_Back_Stretch':'upper-back-stretch-photo-v2',
   'db_Elbows_Back':'elbows-back-stretch-photo-v2',
   'db_Standing_Concentration_Curl':'standing-concentration-curl-photo-v2',
