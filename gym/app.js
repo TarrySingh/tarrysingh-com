@@ -48,6 +48,17 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+'db_Skating':'roller-skating',
+'db_Sled_Row':'sled-row',
+'db_Snatch':'snatch-catch',
+'db_Snatch_Balance':'snatch-catch',
+'db_Snatch_Deadlift':'snatch-deadlift',
+'db_Smith_Single-Leg_Split_Squat':'smith-single-leg-split-squat',
+'db_Snatch_Shrug':'snatch-shrug',
+'db_Snatch_from_Blocks':'snatch-from-blocks',
+'db_Speed_Band_Overhead_Triceps':'speed-band-overhead-triceps',
+'db_Spider_Crawl':'spider-crawl',
+'db_Split_Jerk':'split-jerk',
 'db_Shoulder_Press_-_With_Bands':'shoulder-press-bands',
 'db_Side_Bridge':'side-bridge',
 'db_Side_Standing_Long_Jump':'side-standing-long-jump',
