@@ -48,6 +48,16 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_All_Fours_Quad_Stretch':'all-fours-quad-stretch',
+  'db_Chest_And_Front_Of_Shoulder_Stretch':'chest-shoulder-stick-stretch',
+  'db_Dynamic_Chest_Stretch':'dynamic-chest-stretch',
+  'db_Dynamic_Back_Stretch':'dynamic-back-stretch',
+  'db_Seated_Floor_Hamstring_Stretch':'seated-floor-hamstring-stretch',
+  'db_Seated_Calf_Stretch':'seated-calf-stretch',
+  'db_Runners_Stretch':'runners-stretch',
+  'db_Seated_Hamstring_and_Calf_Stretch':'seated-hamstring-calf-stretch',
+  'db_On_Your_Side_Quad_Stretch':'side-lying-quad-stretch',
+  'db_Quad_Stretch':'side-lying-strap-quad-stretch',
   'db_Shoulder_Stretch':'shoulder-stretch',
   'db_Side_Neck_Stretch':'side-neck-stretch',
   'db_Standing_Soleus_And_Achilles_Stretch':'soleus-stretch',
