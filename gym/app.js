@@ -48,6 +48,14 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_modern_upper_back_stretch':'upper-back-stretch-v2',
+  'db_modern_triceps_light_stretch':'triceps-light-stretch-v2',
+  'db_modern_shoulder_circle':'shoulder-circle-v2',
+  'db_modern_skipping':'skipping-v2',
+  'db_modern_shadow_boxing':'shadow-boxing-v2',
+  'db_modern_superman':'superman-v2',
+  'db_modern_situps':'situps-v2',
+  'db_modern_pull_up_normal_grip':'pull-up-normal-grip-v2',
   'db_modern_plate_front_raise':'plate-front-raise-v2',
   'db_modern_l_sit_hold':'l-sit-hold-v2',
   'db_modern_raised_leg_crunch':'raised-leg-crunch-v2',
