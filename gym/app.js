@@ -48,6 +48,12 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_Jogging_Treadmill':'jogging-treadmill',
+  'db_Keg_Load':'keg-load',
+  'db_Kettlebell_Hang_Clean':'kettlebell-hang-clean',
+  'db_Kettlebell_Seesaw_Press':'kettlebell-seesaw-press',
+  'db_Kettlebell_Thruster':'kettlebell-thruster',
+  'db_Knee_Circles':'knee-circles',
   'db_Handstand_Push-Ups':'handstand-push-ups',
   'db_Hug_Knees_To_Chest':'hug-knees-to-chest',
   'db_Hurdle_Hops':'hurdle-hops',
