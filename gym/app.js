@@ -48,6 +48,14 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_Bottoms_Up':'bottoms-up-reverse-crunch',
+  'db_Box_Jump_Multiple_Response':'box-jump-multiple-response',
+  'db_Butt-Ups':'butt-ups',
+  'db_Calves-SMR':'calf-foam-roll',
+  'db_Car_Drivers':'car-drivers',
+  'db_Catch_and_Overhead_Throw':'catch-overhead-throw',
+  'db_Chest_Push_multiple_response':'kneeling-medicine-ball-chest-push',
+  'db_Chest_Push_single_response':'kneeling-medicine-ball-chest-push',
   'db_Bear_Crawl_Sled_Drags':'bear-crawl-sled-drag',
   'db_Bench_Press_-_Powerlifting':'powerlifting-bench-press',
   'db_Barbell_Incline_Shoulder_Raise':'barbell-incline-shoulder-raise',
