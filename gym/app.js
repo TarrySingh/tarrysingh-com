@@ -48,6 +48,13 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+'db_Prowler_Sprint':'prowler-sprint',
+'db_Push-Up_Wide':'push-up-wide',
+'db_Push-Ups_-_Close_Triceps_Position':'push-up-close-triceps',
+'db_Rear_Leg_Raises':'rear-leg-raises',
+'db_Reverse_Flyes':'reverse-flyes-incline',
+'db_Rack_Pulls':'rack-pulls',
+'db_Quick_Leap':'quick-leap',
   'db_Physioball_Hip_Bridge':'physioball-hip-bridge',
   'db_Plate_Pinch':'plate-pinch',
   'db_Plate_Twist':'plate-twist',
