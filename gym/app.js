@@ -48,6 +48,16 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_modern_kettlebell_sumo_deadlift':'kettlebell-sumo-deadlift-v2',
+  'db_modern_kettlebell_swing':'kettlebell-swing-v2',
+  'db_modern_kettlebell_glute_bridge':'kettlebell-glute-bridge-v2',
+  'db_modern_kettlebell_pullover':'kettlebell-pullover-v2',
+  'db_modern_ring_dips':'ring-dips-v2',
+  'db_modern_v_up':'v-up-v2',
+  'db_modern_wall_sit_bodyweight':'bodyweight-wall-sit-v2',
+  'db_modern_scissors_kick':'scissors-kick-v2',
+  'db_modern_russian_twist_weighted_ball':'weighted-ball-russian-twist-v2',
+
   'db_modern_barbell_single_arm_biceps_curl':'single-arm-barbell-curl-v2',
   'db_modern_barbell_clean_and_jerk':'barbell-clean-jerk-v2',
   'db_modern_deep_push_up':'deep-pushup-v2',
