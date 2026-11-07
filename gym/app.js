@@ -48,6 +48,16 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_modern_bodyweight_knee_thrust':'bodyweight-knee-thrust-v2',
+  'db_modern_dumbbell_decline_triceps_pull_over_extension':'decline-dumbbell-triceps-pullover-v2',
+  'db_modern_dumbbell_overhead_sit_up':'dumbbell-overhead-sit-up-v2',
+  'db_modern_behind_neck_lat_pull_down_machine':'behind-neck-lat-pulldown-v2',
+  'db_modern_barbell_behind_neck_push_press':'behind-neck-push-press-v2',
+  'db_modern_chest_tap_push_up':'chest-tap-pushup-v2',
+  'db_modern_dumbbell_high_curl':'dumbbell-high-curl-v2',
+  'db_modern_jump_rope_alternating_foot':'jump-rope-alternating-foot-v2',
+  'db_modern_alternating_hamstring_curl_with_punch':'alternating-hamstring-curl-punch-v2',
+
   'db_modern_hack_squat_machine':'hack-squat-machine-v2',
   'db_modern_hanging_knee_raises':'hanging-knee-raise-v2',
   'db_modern_hanging_leg_raises':'hanging-leg-raise-v2',
