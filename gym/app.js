@@ -48,6 +48,11 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_Upper_Back_Stretch':'upper-back-stretch-photo-v2',
+  'db_Elbows_Back':'elbows-back-stretch-photo-v2',
+  'db_Standing_Concentration_Curl':'standing-concentration-curl-photo-v2',
+  'db_Standing_Rope_Crunch':'standing-rope-crunch-photo-v2',
+
   'db_Childs_Pose':'childs-pose-photo-v2',
   'db_Cat_Stretch':'cat-stretch-photo-v2',
   'db_Triceps_Stretch':'triceps-stretch-photo-v2',
