@@ -48,6 +48,14 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+'db_Split_Snatch':'split-snatch',
+'db_Squat_Jerk':'squat-jerk',
+'db_Split_Jump':'split-jump',
+'db_Split_Squats':'split-jump',
+'db_Standing_Alternating_Dumbbell_Press':'standing-alternating-dumbbell-press',
+'db_Standing_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension':'standing-two-arm-dumbbell-triceps-extension',
+'db_Standing_Hip_Circles':'standing-hip-circles',
+'db_Standing_Long_Jump':'standing-long-jump',
 'db_Skating':'roller-skating',
 'db_Sled_Row':'sled-row',
 'db_Snatch':'snatch-catch',
