@@ -1,5 +1,15 @@
 # Claude / AI agent notes for `tarrysingh-com`
 
+## ⚠️ The gym app does NOT live in this repo
+
+The gym app (gym.tarrysingh.com) lives in its own repo, `TarrySingh/stronger-gym`
+(local: `~/Documents/GitHub/stronger-gym`), with its own Vercel project. It was moved out on 7 Nov 2026.
+
+- **Never commit gym files, exercise images or `gym/` anything to this repo.**
+- Every push here triggers Vercel preview + production builds of the Next.js site (~7 min each).
+  On 6-7 Nov 2026 ~70 gym-image PRs pushed here burned ~24 build-hours (about 146 CPU-hours on the dashboard).
+- Push discipline for any agent: commit locally as often as you like, push once per session; one branch, one PR.
+
 ## ⚠️ Deploy target rules (READ BEFORE ANY VERCEL ACTION)
 
 This repo must **ONLY** deploy to the **DK AI Lab (`dkailab`) Pro team** on Vercel.
