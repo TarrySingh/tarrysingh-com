@@ -50,7 +50,6 @@ function setTitle(){let data={today:['Your next session.','Show up, record the w
 const exerciseVisuals={
   db_modern_bodyweight_kneeling_push_up_row:'kneeling-pushup-row-v2',
   db_modern_jumping_pistol_squat:'jumping-pistol-squat-v2',
-  db_modern_jump_rope_face_pull:'band-face-pull-v2',
 
   db_modern_bench_bulgarian_split_squats_left:'bulgarian-split-squat-left-v2',
   db_modern_bulgarian_split_squat_bodyweight_left:'bulgarian-split-squat-left-v2',
