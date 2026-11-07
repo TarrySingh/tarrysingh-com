@@ -1,0 +1,63 @@
+---
+title: "Who Gets the Last Hour in a Docomo Battery?"
+date: "2026-11-07"
+category: "Essays"
+excerpt: "Japan's March 2025 network-safety standards require mobile base stations on peninsulas to hold up to 72 hours of backup power—a floor that reshapes the business case for grid-connected base-station batteries. DOCOMO and NTT's new workload-shifting trial has the right instinct: its outage mode lengthens backup rather than trading it. Any demand-response programme that follows should report, per site, the backup hours remaining before and after each grid event, measured against that site's regulatory floor."
+draft: false
+tags: ["mobile-networks", "energy-storage", "grid-services", "japan", "backup-power", "disaster-resilience"]
+---
+
+The battery inside a mobile base station was bought for one night, and Japan has started teaching it a second job. I think the second job is worth doing. I also think it should be graded, site by site, against the first one, and the trial DOCOMO and NTT have just started does not yet say how it will be.
+
+The trial is small and carefully worded. [NTT DOCOMO and NTT announced on 20 October 2026](https://www.docomo.ne.jp/english/info/media_center/pr/2026/1020_00.html) what they call the first demonstration of coordinated control of workload shifting and energy management at radio base stations, running until 31 December 2026. One DOCOMO base station, fitted with solar panels, a storage battery and an energy-management system, is linked to an NTT research site running a virtual RAN simulation on open-source software. NTT's AI optimisation model decides where the communications processing should run. DOCOMO's planning model decides when the battery charges, discharges or waits. The two are tested in three conditions: normal operation, periods when the grid is tight and asks for demand response, and power cuts.
+
+## What is being shifted, exactly?
+
+"Workload shifting" sounds abstract until you picture the radio stack as a computer that happens to sit under an antenna. Once the baseband runs as software, some of the processing can move. If the base station's own panels are producing more than the site needs, work moves toward it and the battery charges. If the regional grid is short on a hot afternoon, the site discharges and hands work to the other location, so its draw from the grid falls. If the grid fails, work moves away to stretch how long the battery keeps the radios alive.
+
+That third mode is the one I would put at the top of the release. It is the first time I have seen a carrier propose using software to lengthen backup time rather than spend it. The release lists no battery capacity, no site count and no results, which is right for a trial that has only just started. The companies say they will "consider" linking the method to data centres and to more energy resources, and they will show it at [NTT R&D Forum 2026 in Musashino](https://www.rd.ntt/e/forum/2026/) later this month.
+
+## Why would a telco want its batteries on the grid at all?
+
+Because the fleet is large and mostly idle. NTT's own [decarbonisation disclosures](https://group.ntt/en/sustainability/environment/decarbonization/) say the group consumes the equivalent of 1% of Japan's power generation, and that "some 7,300 NTT buildings" house "around 4 million kWh of battery storage capacity" kept to maintain communications during outages. Divide one by the other and the average building holds a little under 550 kWh. That excludes the radio sites, which sit on DOCOMO's side of the house and carry their own cells. Batteries that wait years for an outage look, from a grid planner's desk, like storage that somebody else has already paid for.
+
+The demand side gives that view weight. The Agency for Natural Resources and Energy [published its data-centre column on 20 May 2026](https://www.enecho.meti.go.jp/about/special/johoteikyo/data_center2026.html), setting out rules in force since April: operators face a benchmark of PUE 1.4 or lower by FY2030, and new facilities built from FY2029 must reach 1.3. The agency's chart of rising national demand comes from OCCTO, whose [supply-area forecasts](https://www.occto.or.jp/assets/news/juyousoutei/260121_sanko_juyousoutei_r1.pdf) now add data-centre and semiconductor projects individually in the Tokyo, Tohoku and Chubu areas. Efficiency rules slow the curve. They do not flatten it. A grid that is adding large, steady loads will pay for flexibility wherever it can find some.
+
+## What did the last bad night teach?
+
+The last bad night was 1 January 2024. The [Ministry of Internal Affairs and Communications' 2024 white paper](https://www.soumu.go.jp/johotsusintokei/whitepaper/eng/WP2024/pdf/01-chap1_sec2.pdf) records 839 mobile base stations across the four carriers out of service as of 3 January, 799 of them in Ishikawa. The causes it names are "prolonged power outages and transmission route disruptions caused by landslides." Emergency restoration was completed by 15 January for KDDI, SoftBank and Rakuten Mobile, and by 17 January for DOCOMO, outside the areas landslides had cut off. Around 200 power-supply vehicles and generators were brought in.
+
+The ministry then rewrote the floor. Its Network Safety and Reliability Division explained in the [ITU Association of Japan's New Breeze, Spring 2026](https://ituaj.jp/wp-content/uploads/2026/04/nb38-2_web1_Special_MIC_TelecomBiz_SafetyReliability.pdf) that the March 2025 revision of the network safety and reliability standards draws its lesson from peninsulas, where blocked roads stretch power cuts. The resulting hours are the whole argument of this piece, so here they are side by side.
+
+| Whose coverage | Backup floor | Status |
+|---|---|---|
+| Typical assumption in the grid-services literature | 3 hours | Modelling assumption |
+| Prefectural and municipal offices | At least 24 hours | Obligatory |
+| Disaster base hospitals | At least 24 hours | Recommended |
+| Offices on remote islands and peninsulas; national institutions | At least 72 hours | Recommended |
+
+Every kilowatt-hour a base station offers the grid has to come out of whatever sits above that floor.
+
+## Doesn't the research say there is plenty to spare?
+
+The best case for the opposite view is a good paper. Leonardo Dias, Brigitte Jaumard and Lackis Eleftheriadis published [a study in Energies in July 2024](https://mdpi.com/1996-1073/17/15/3775) modelling how base-station batteries could bid into frequency-regulation auctions. They build battery ageing into the optimisation, keep each battery's state of charge high enough to preserve its backup duty, and conclude on real data that the service is feasible and pays operators extra revenue. Meng Song and colleagues made a related case in [Applied Energy in 2025](https://doi.org/10.1016/j.apenergy.2025.126268), modelling spare 5G battery capacity as a resource to help a distribution network restore load after an outage.
+
+I accept their method. The disagreement is about the input. Dias and colleagues describe "a typical requirement of three hours of battery life." In Japan, the base station covering a town hall must now hold at least a full day, and the recommendation on a peninsula is three. Spare capacity is the difference between what is installed and what is promised, so the promise sets the size of the market. Take a site sized for 30 hours against a 24-hour floor: it has 6 hours to trade, a fifth of its capacity. Sized for 26 hours, it has 2, under a tenth. Those are my illustrative figures, not DOCOMO's, and the real ones depend on each site's load. They show why a business case built on a three-hour floor does not carry over to a coast where the floor is now measured in days.
+
+There is a second gap. A floor is a number on a certificate. Noto showed the time that matters is set by road crews and landslides, and power cuts outlast whatever the certificate says. A battery that discharged into a demand-response event at four in the afternoon starts that night lighter than its rating. Battery ageing in the Energies model is about money. Here it is about how many hours of coverage remain.
+
+## So what should the trial report?
+
+The DOCOMO and NTT design already contains the right instinct, because the outage mode lengthens backup rather than selling it. My position is a flat one. A demand-response programme for base-station batteries in Japan should not move past the pilot until it reports, for every site and every grid event, the hours of backup left at the moment the grid called and the hours left when the event ended, measured against that site's own floor under the March 2025 standards. Renewable share and revenue per site are secondary numbers. The floor is a hard constraint for the optimiser, never a soft penalty it can trade off when the price is high.
+
+That rule costs little to implement. The energy-management system in the trial already monitors remaining battery capacity and consumption. Turning that into a per-site reserve ledger, visible to the operator and auditable by the ministry, is a reporting choice. It also protects the companies. The first time a base station covering a disaster hospital goes dark two hours early because it sold its margin to the grid that afternoon, the conversation with MIC will not be about workload shifting.
+
+There is a version of this that makes the network sturdier as well as greener. If software can move work toward the sun on a normal day, it can move work away from a dying battery on a bad one, and the second skill is worth more to the people the radios serve. The trial runs to the end of December. I hope its write-up leads with the outage scenario, and gives the grid scenario its numbers in hours.
+
+## For the person who keeps the site up
+
+You are the DOCOMO field technician who drives the coast road out of Wajima when the power goes. Before you leave, you check the dashboard to see how long the cabinet at the end of that road will hold. You want two figures: what the battery has left, and whether anything spent it this afternoon. If the screen can show you both, you know which site to reach first.
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
