@@ -48,6 +48,11 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_Narrow_Stance_Squats':'narrow-stance-squats',
+  'db_Muscle_Snatch':'muscle-snatch',
+  'db_Moving_Claw_Series':'moving-claw-series',
+  'db_One-Arm_Kettlebell_Row':'one-arm-kettlebell-row',
+  'db_One-Arm_Kettlebell_Push_Press':'one-arm-kettlebell-push-press',
   'db_Linear_Acceleration_Wall_Drill':'linear-acceleration-wall-drill',
   'db_Log_Lift':'log-lift',
   'db_Lunge_Pass_Through':'lunge-pass-through',
