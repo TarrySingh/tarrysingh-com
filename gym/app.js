@@ -48,6 +48,20 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_modern_hack_squat_machine':'hack-squat-machine-v2',
+  'db_modern_hanging_knee_raises':'hanging-knee-raise-v2',
+  'db_modern_hanging_leg_raises':'hanging-leg-raise-v2',
+  'db_modern_hollow_hold':'hollow-hold-v2',
+  'db_modern_jump_rope_basic_jump':'jump-rope-basic-v2',
+  'db_modern_jumping_jack':'jumping-jack-v2',
+  'db_modern_front_raises_barbell':'barbell-front-raise-v2',
+  'db_modern_dumbbell_straight_leg_russian_twist':'dumbbell-straight-leg-russian-twist-v2',
+  'db_modern_jogging':'jogging-treadmill-v2',
+  'db_modern_jump_squats_bodyweight':'bodyweight-jump-squat-v2',
+  'db_modern_jumping_lunge':'jumping-lunge-v2',
+  'db_modern_heel_touches':'heel-touches-v2',
+  'db_modern_frog_jumps':'frog-jumps-v2',
+
   'db_modern_alternating_oblique_sit_ups':'alternating-oblique-sit-up-v2',
   'db_modern_dips_between_chairs':'dips-between-chairs-v2',
   'db_modern_barbell_calf_jump':'barbell-calf-jump-v2',
