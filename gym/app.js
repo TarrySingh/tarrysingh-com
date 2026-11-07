@@ -48,6 +48,21 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+'db_Rope_Jumping':'rope-jumping',
+'db_Romanian_Deadlift_from_Deficit':'romanian-deadlift-deficit',
+'db_Rope_Straight-Arm_Pulldown':'rope-straight-arm-pulldown',
+'db_Rowing_Stationary':'rowing-stationary',
+'db_Running_Treadmill':'running-treadmill',
+'db_Scissor_Kick':'scissor-kick',
+'db_Seated_Bent-Over_Rear_Delt_Raise':'seated-bent-rear-delt-raise',
+'db_Seated_Barbell_Military_Press':'seated-barbell-military-press',
+'db_Seated_Band_Hamstring_Curl':'seated-band-hamstring-curl',
+'db_Seated_Dumbbell_Press':'seated-dumbbell-press',
+'db_Seated_Flat_Bench_Leg_Pull-In':'seated-flat-bench-leg-pull-in',
+'db_Seated_Leg_Tucks':'seated-flat-bench-leg-pull-in',
+'db_Seated_Side_Lateral_Raise':'seated-side-lateral-raise',
+'db_Seated_Triceps_Press':'seated-triceps-press',
+'db_Seated_Palms-Down_Barbell_Wrist_Curl':'seated-palms-down-barbell-wrist-curl',
 'db_Prowler_Sprint':'prowler-sprint',
 'db_Push-Up_Wide':'push-up-wide',
 'db_Push-Ups_-_Close_Triceps_Position':'push-up-close-triceps',
