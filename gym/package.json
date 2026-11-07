@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "node build.mjs",
-    "check": "node --check app.js && node --check auth.js"
+    "check": "node --check app.js && node --check auth.js && node check-visual-keys.cjs"
   },
   "keywords": [],
   "author": "",
