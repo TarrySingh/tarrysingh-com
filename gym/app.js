@@ -48,6 +48,15 @@ function newDraft(t){return {tab:t,date:new Date().toISOString(),items:plans[t].
 function setTitle(){let data={today:['Your next session.','Show up, record the work, and let consistency do its thing.'],history:['See how far you’ve come.','Your work, captured one set at a time.'],library:['Move with intention.','Find your next movement and add it to your programme.'],settings:['Your data, your call.','Manage local backups and understand what is connected.']}[page];$('#page-title').textContent=data[0];$('#page-sub').textContent=data[1];document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page))}function goto(p){page=p;render();window.scrollTo(0,0)}document.addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(b)goto(b.dataset.page)});
 // Exact exercise matches only: do not infer photos from similar names or equipment.
 const exerciseVisuals={
+  'db_Dips_-_Chest_Version':'chest-dips',
+  'db_Double_Kettlebell_Push_Press':'double-kettlebell-push-press',
+  'db_Downward_Facing_Balance':'downward-ball-balance',
+  'db_Dumbbell_Incline_Shoulder_Raise':'dumbbell-incline-shoulder-raise',
+  'db_Elbow_Circles':'elbow-circles',
+  'db_Dumbbell_Tricep_Extension_-Pronated_Grip':'dumbbell-pronated-triceps-extension',
+  'db_Elliptical_Trainer':'elliptical-trainer',
+  'db_Farmers_Walk':'farmers-walk',
+  'db_Flat_Bench_Leg_Pull-In':'flat-bench-leg-pull-in',
   'db_Chest_Push_with_Run_Release':'chest-push-run-release',
   'db_Clean_Shrug':'clean-shrug',
   'db_Close-Grip_Front_Lat_Pulldown':'close-grip-front-lat-pulldown',
