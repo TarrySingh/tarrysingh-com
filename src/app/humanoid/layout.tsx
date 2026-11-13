@@ -1,15 +1,26 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
-import { Space_Grotesk, Geist, IBM_Plex_Mono } from "next/font/google"
+import localFont from "next/font/local"
 import "./humanoid.css"
 
-// The three reference fonts, self-hosted via next/font and exposed as the
+// The three reference fonts, self-hosted from src/fonts via next/font/local and exposed as the
 // CSS variables the scoped design system reads (--font-ha-display / -sans / -mono).
-const haDisplay = Space_Grotesk({ subsets: ["latin"], variable: "--font-ha-display", display: "swap" })
-const haSans = Geist({ subsets: ["latin"], variable: "--font-ha-sans", display: "swap" })
-const haMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const haDisplay = localFont({
+  src: [{ path: "../../fonts/space-grotesk-latin-wght-normal.woff2", weight: "300 700", style: "normal" }],
+  variable: "--font-ha-display",
+  display: "swap",
+})
+const haSans = localFont({
+  src: [{ path: "../../fonts/geist-latin-wght-normal.woff2", weight: "100 900", style: "normal" }],
+  variable: "--font-ha-sans",
+  display: "swap",
+})
+const haMono = localFont({
+  src: [
+    { path: "../../fonts/ibm-plex-mono-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../../fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "../../fonts/ibm-plex-mono-latin-600-normal.woff2", weight: "600", style: "normal" },
+  ],
   variable: "--font-ha-mono",
   display: "swap",
 })

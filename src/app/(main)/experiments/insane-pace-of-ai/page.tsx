@@ -1,27 +1,26 @@
 import type { Metadata } from "next"
-import { Instrument_Serif, Geist, Geist_Mono } from "next/font/google"
+import localFont from "next/font/local"
 import Dashboard from "./Dashboard"
 import { NewsletterFooter } from "@/components/blog/NewsletterFooter"
 import "./styles.css"
 
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+const instrumentSerif = localFont({
+  src: [
+    { path: "../../../../fonts/instrument-serif-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../../../../fonts/instrument-serif-latin-400-italic.woff2", weight: "400", style: "italic" },
+  ],
   variable: "--font-instrument-serif",
   display: "swap",
 })
 
-const geist = Geist({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+const geist = localFont({
+  src: [{ path: "../../../../fonts/geist-latin-wght-normal.woff2", weight: "300 700", style: "normal" }],
   variable: "--font-geist",
   display: "swap",
 })
 
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const geistMono = localFont({
+  src: [{ path: "../../../../fonts/geist-mono-latin-wght-normal.woff2", weight: "400 600", style: "normal" }],
   variable: "--font-geist-mono",
   display: "swap",
 })
