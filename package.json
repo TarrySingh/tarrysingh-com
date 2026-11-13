@@ -14,6 +14,7 @@
     "blog:new": "node scripts/blog/new.mjs",
     "blog:audit": "node scripts/blog/audit.mjs",
     "blog:promote": "node scripts/blog/promote.mjs",
+    "blog:slop": "tsx scripts/scan-dispatch-slop.ts",
     "blog:bake-nudge": "node scripts/blog/bake-nudge-card.mjs",
     "covers": "tsx scripts/plates/render-covers.ts",
     "cv:sync": "tsx scripts/cv/sync.ts",
