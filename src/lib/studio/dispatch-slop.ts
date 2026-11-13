@@ -1,3 +1,4 @@
+import { countEmDashes } from "./em-dash"
 /**
  * Dispatch slop scanner — the enforcement half of the anti-LLM-smell contract.
  *
@@ -825,7 +826,10 @@ export function scanDispatchSlop(text: string): SlopHit[] {
   // than the source: /blog/your-ai-doesn-t-discover-anything-here-s showed a
   // dash the file scan swore was not there. It was `&#8212;` in an instrument
   // caption. A repo-wide count then turned up 580 more.
-  const entityDashes = (proseNoUrls.match(/&mdash;|&#8212;|&#x2014;/gi) ?? []).length
+  // Every other rendered spelling (entities without the semicolon or with zero
+  // padding, JS escapes inside an MDX expression) comes from the same counter
+  // the publish gate uses, so the scanner and the gate cannot disagree.
+  const entityDashes = countEmDashes(proseNoUrls) - dashes
   if (dashes + fauxDashes + entityDashes > 0) {
     hits.push({
       id: "em-dash",
