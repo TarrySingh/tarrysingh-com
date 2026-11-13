@@ -222,6 +222,152 @@ const RULES: Rule[] = [
     allow: 0,
     re: /\b(?:I'?ll be honest|let me be honest|let'?s be honest|full disclosure|I'?ll admit it|if I'?m being honest)\b/gi,
   },
+  // ── Added 2026-09-01 by the ai-slop-watch cron ────────────────────────
+  // Source: conorbronsdon/avoid-ai-writing (33 named patterns, the densest
+  // directory found to date), plus Wikipedia's "vague connection" cluster and
+  // the Towards Data Science model-free-detection writeup. Every rule below was
+  // verified at ZERO hits across all 119 Dispatches AND the realai-v2 corpus
+  // before promotion, so HARD costs nothing and stops them ever landing.
+  {
+    // THE THIRD COUPLET SIBLING (contract §3a). We banned the negated form
+    // ("it is not X, it is Y") and then the affirmative form (Tarry's specimen,
+    // 2026-08-15). This is the ELIDED form: the second sentence reverses the
+    // first and ends on a bare negated auxiliary, so the verb is never repeated.
+    // "Abu Dhabi wrote that risk down. Dubai did not."
+    // Soft, not hard: 15 hits across 12 files on the live corpus and a handful
+    // are genuinely good lines ("Execution is becoming free. Judgement is not.").
+    // It reports so the writer decides, per the §7 calibration discipline.
+    id: "stranded-auxiliary-contrast",
+    label: "second sentence reverses the first and strands a bare auxiliary (the elided couplet)",
+    severity: "soft",
+    allow: 0,
+    re: /[A-Z][a-z][^.?!;]{2,60}[;.] ?[A-Z][a-z]+ (?:did|does|do|was|were|is|are|has|have|had|will|can|would|could|should)(?:n'?t| not)\./g,
+  },
+  {
+    // A NEW ERA OF LEAK. The 2023 tell was the chat register ("I hope this
+    // helps"); the 2026 tell is the reasoning scratchpad surfacing in prose.
+    id: "reasoning-chain-leak",
+    label: "reasoning-scratchpad register leaking into published prose",
+    severity: "hard",
+    re: /\b(?:let me think step by step|breaking this down|to approach this systematically|here'?s my thought process|working through this logically)\b/gi,
+  },
+  {
+    id: "endorsement-closer",
+    label: "social-endorsement closer (the LinkedIn register)",
+    severity: "hard",
+    re: /\b(?:a must-read|save this for later|bookmark this|don'?t sleep on|thank me later|do yourself a favou?r)\b/gi,
+  },
+  {
+    id: "emotional-flatline",
+    label: "performed reaction standing in for a real observation",
+    severity: "hard",
+    re: /\b(?:what surprised me most|what struck me was|I was fascinated to discover|the most interesting part)\b/gi,
+  },
+  {
+    // "keep coming back to" excluded on evidence: 7 real hits in realai-v2.
+    id: "lingering-attention",
+    label: "claiming the thought has stayed with you, as a credibility move",
+    severity: "hard",
+    re: /\b(?:can'?t stop thinking about|rattling around in my head|still thinking about this)\b/gi,
+  },
+  {
+    id: "aphorism-formula",
+    label: "closing epigram by template ('X is the currency of Y')",
+    severity: "hard",
+    re: /\b(?:is the language of|is the currency of|the architecture of trust|not a tool but a mirror)\b/gi,
+  },
+  {
+    id: "devblog-boilerplate",
+    label: "dev-blog boilerplate ('it just works', 'sane defaults')",
+    severity: "hard",
+    re: /\b(?:batteries included|it just works|zero config|sane defaults|small enough to fit in your head)\b/gi,
+  },
+  {
+    // "could potentially" and "is poised to become" excluded: 1 real hit each.
+    id: "hedge-stacked-prediction",
+    label: "three hedges bolted onto one prediction",
+    severity: "hard",
+    re: /\b(?:may eventually|might ultimately)\b/gi,
+  },
+  {
+    // "is the real story" excluded: 1 real hit in each corpus.
+    id: "self-labelled-significance",
+    label: "telling the reader which of your own points is the clever one",
+    severity: "hard",
+    re: /\b(?:here'?s where it gets (?:clever|interesting)|that'?s the contrarian one)\b/gi,
+  },
+  {
+    id: "false-concession",
+    label: "raise a strength, concede a challenge, resolve nothing",
+    severity: "hard",
+    re: /\bwhile [^.?!]{2,40} is impressive\b|\balthough [^.?!]{2,40} has made strides\b/gi,
+  },
+  {
+    id: "infomercial-hook",
+    label: "infomercial hook ('plot twist', 'let's be clear')",
+    severity: "hard",
+    re: /\bplot twist\b|\blet'?s be clear\b|\bquite frankly\b/gi,
+  },
+  {
+    // Wikipedia lists "vague connection" as newly prominent from mid-2025:
+    // implying a relationship without ever stating one.
+    id: "vague-connection",
+    label: "implying a relationship without stating one",
+    severity: "hard",
+    re: /\bin (?:association|connection) with\b/gi,
+  },
+  {
+    // Wikipedia Signs of AI writing, 2026-11: the disambiguation hedge, the
+    // "identification by primary sources" frame (new section, 3 Nov), and
+    // placeholder example.com citations. Zero hits in both corpora at promotion.
+    id: "source-identification-hedge",
+    label: "disambiguation hedge, source-identifies frame, or example.com citation",
+    severity: "hard",
+    re: /\bshould not be confused with\b|\bidentifies (?:him|her|them) as\b|\bwas identified by [^.?!]{2,60}\bas\b|\bexample\.com\//gi,
+  },
+  {
+    // slopdetector.org's "empty-opener cliches" and "fake-authority phrases"
+    // (2026-09). The authority family is the uncited sibling of the vague
+    // attribution already banned in the contract: it names a source class
+    // ("studies", "experts", "research") and then never names the source.
+    id: "empty-opener-fake-authority",
+    label: "empty-opener cliche or uncited appeal to authority",
+    severity: "hard",
+    re: /\bin the digital age\b|\bin a fast-paced\b|\bstudies have shown\b|\bexperts agree\b|\bresearch suggests\b|\bthe key is to find\b/gi,
+  },
+  {
+    // Graphite's Opus 5.5 study (via remio.ai, 2026-10): templates at 98x, 40x
+    // and 27x the human rate in a model that cut em-dashes ~99%. Verified at
+    // ZERO occurrences in both corpora before promotion.
+    id: "opus-template-2026-10",
+    label: "2026-10 model template ('is more than a X, it is', 'adds another layer', 'Looking ahead, the')",
+    severity: "hard",
+    re: /\bis more than an? [a-z]+(?: [a-z]+)?,? it(?:['’]s| is)\b|\badds? another layer\b|\blooking ahead, the\b/gi,
+  },
+  {
+    // The "matters" family: "This matters" 116x, "Why _ matters" 92x (Graphite,
+    // 2026-10), "matters because" 146x (Fast Company, 2026-10-07). Soft: some
+    // uses are a real causal claim. The tell is announcing importance in place
+    // of the reason.
+    id: "announced-importance",
+    label: "announces that something matters instead of saying why",
+    severity: "soft",
+    re: /\bthis matters\b|^#+\s+why\b.{0,40}\bmatters\b|\bmatters because\b/gim,
+  },
+  {
+    id: "slop-vocabulary-2026-09",
+    label: "2026-09 vocabulary batch (watershed moment, burgeoning, paramount...)",
+    severity: "hard",
+    re: /\b(?:watershed moment|hit differently|bustling|burgeoning|nascent|quintessential|paramount|learnings|spearheads?|spearheaded|galvaniz(?:e|ing)|catalyze|juxtapose|paradigm-shifting)\b/gi,
+  },
+  {
+    // Paste artifacts: AI-tool UTM/referrer params left on a reference URL, and
+    // the invented names LLMs reach for (Towards Data Science, 2026-09).
+    id: "ai-tool-paste-artifact",
+    label: "AI-tool UTM/referrer param or LLM-favoured invented name",
+    severity: "hard",
+    re: /utm_source=(?:chatgpt|copilot|openai|claude|perplexity)|referrer=grok|\b(?:Marcus Chen|Elena Vasquez|Elara Voss)\b/g,
+  },
 ]
 
 /**
