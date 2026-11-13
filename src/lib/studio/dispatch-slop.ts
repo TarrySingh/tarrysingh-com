@@ -511,8 +511,8 @@ function spelledOutPercent(text: string): number {
  * game on its own: the field has moved, and the 2026 detection research is
  * unanimous that structure beats vocabulary. StoryScope (UMD + DeepMind)
  * classifies AI prose at 93.2% accuracy using NO word analysis at all, and the
- * commercial detectors score "burstiness" — the standard deviation of sentence
- * length — as a primary feature. A draft can pass every word list we own and
+ * commercial detectors score "burstiness" — sentence-length variation relative
+ * to mean length — as a primary feature. A draft can pass every word list we own and
  * still read as a machine wrote it, because the tell is the rhythm.
  *
  * The specimen that prompted this, from the live site
@@ -698,21 +698,36 @@ function cadenceFindings(text: string): CadenceFinding[] {
   }
 
   // ── Burstiness ───────────────────────────────────────────────────────────
-  // The detectors' primary structural feature: the standard deviation of
-  // sentence length in words. Human multi-paragraph prose sits well above 4;
-  // below 4 is the uniform-cadence signature. Needs a real sample, so it only
-  // runs on posts with 15+ sentences.
+  // The detectors' primary structural feature. CORRECTED 2026-09-15: this used
+  // a raw standard deviation with a threshold of 4 words, and it was measurably
+  // dead — it fired on ZERO files across both corpora, for three straight runs
+  // that we then reported as "comfortably human". The reason is that raw sd is
+  // not scale-free: our sentences run long (mean 17-23 words), so an sd of 11
+  // looks large while describing prose that is proportionally flat.
+  //
+  // Two independent 2026 sources (slopdetector.org, humangpt detector data)
+  // give the SAME band for the scale-free form, sd / mean: human prose sits at
+  // 0.6-1.2, AI output at 0.2-0.4. So we measure the coefficient of variation.
+  //
+  // The per-file gate fires at 0.4, the top of the AI band, NOT at 0.6. That is
+  // deliberate and follows the calibration discipline in the contract (§7/§5b):
+  // at 0.6 this would fire on 38 of 118 Dispatches and 329 of 456 realai-v2
+  // files, and a gate that fires on most of a corpus gets ignored. The 0.6
+  // human floor is tracked as a corpus-level drift metric in the weekly report
+  // instead, which is where a slow slide belongs. Needs a real sample, so it
+  // only runs on posts with 15+ sentences.
   if (lengths.length >= 15) {
     const mean = lengths.reduce((a, b) => a + b, 0) / lengths.length
     const sd = Math.sqrt(
       lengths.reduce((a, b) => a + (b - mean) ** 2, 0) / lengths.length,
     )
-    if (sd < 4) {
+    const cv = mean > 0 ? sd / mean : 1
+    if (cv < 0.4) {
       out.push({
         id: "uniform-cadence",
-        label: `sentence-length spread is flat (sd ${sd.toFixed(1)} words, mean ${mean.toFixed(1)}) — vary the rhythm`,
+        label: `sentence-length spread is flat (cv ${cv.toFixed(2)}, sd ${sd.toFixed(1)} on mean ${mean.toFixed(1)}) — human prose runs 0.6-1.2, vary the rhythm`,
         severity: "soft",
-        match: `sd=${sd.toFixed(2)} over ${lengths.length} sentences`,
+        match: `cv=${cv.toFixed(3)} sd=${sd.toFixed(2)} over ${lengths.length} sentences`,
       })
     }
   }
