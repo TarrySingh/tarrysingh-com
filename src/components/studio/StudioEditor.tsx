@@ -274,9 +274,13 @@ export function StudioEditor({
         | { ok: true; blogUrl: string; commitUrl: string }
         | { ok: false; error: string }
       if (!res.ok || !j.ok) {
+        const fail = j as { error?: string; emDashes?: { now: number; before: number } }
         setPublishStatus({
           kind: "error",
-          message: (j as { error?: string }).error ?? `publish_failed_${res.status}`,
+          message:
+            fail.error === "em_dash" && fail.emDashes
+              ? `blocked: ${fail.emDashes.now} em-dash(es) in title, excerpt or body (house style is zero${fail.emDashes.before ? `; the live version has ${fail.emDashes.before}, so this edit adds some` : ""})`
+              : fail.error ?? `publish_failed_${res.status}`,
         })
         return
       }

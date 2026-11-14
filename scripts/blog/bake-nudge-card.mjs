@@ -52,10 +52,10 @@ Voice rules (non-negotiable):
   - British English: -ise / -our / -re (organise, colour, centre, behaviour, modelling, analyse).
   - Never use SaaS-marketing slop: leverage, ideate, unlock, seamless, supercharge, revolutionary, game-changing, best-in-class, world-class, thought leader, synergy.
   - Never use tracking-vocabulary: convert, optimise, acquire, capture, monetise.
-  - One italic close per page — the final phrase or sentence in italics, nothing else.
+  - One italic close per page: the final phrase or sentence in italics, nothing else.
   - No emoji.
-  - Em dashes (—), smart quotes ('').
-  - Honest about the work — no funnel performance.`
+  - No em-dashes; smart quotes ('').
+  - Honest about the work, no funnel performance.`
 
 function userPromptFor(post) {
   return `Read this Dispatch and write a 60-90 word footer "nudge card" that earns the reader's subscription on the strength of the argument they just read.
@@ -70,7 +70,7 @@ Constraints:
 
   - 60-90 words. Plex Serif rhythm. ONE italic close at the very end (no other italics).
   - First sentence must REFERENCE the specific argument of this piece, not a generic line. Name the actual claim.
-  - Invite the reader to subscribe to "the next Dispatch" or "one quiet plate when it ships" — never "newsletter."
+  - Invite the reader to subscribe to "the next Dispatch" or "one quiet plate when it ships", never "newsletter."
   - No SaaS slop. No tracking vocabulary.
   - Plain prose in Markdown. No headings.
 

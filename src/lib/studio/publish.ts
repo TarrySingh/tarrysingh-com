@@ -2,6 +2,7 @@ import { Octokit } from "@octokit/rest"
 import type { DispatchFrontmatter } from "./types"
 import { buildMdx } from "./serialize"
 import { assertMdxCompiles } from "./validate-mdx"
+import { countEmDashes } from "./em-dash"
 import { scanDispatchSlop, summariseSlop } from "./dispatch-slop"
 
 /**
@@ -52,6 +53,9 @@ export type PublishOutcome =
         | "github_api_error"
         | "invalid_input"
         | "invalid_mdx"
+        | "em_dash"
+      /** Present when error === "em_dash": dashes in the new file / in the version on main. */
+      emDashes?: { now: number; before: number }
     }
 
 function getOctokit(): Octokit | null {
@@ -77,6 +81,7 @@ export async function publishDispatch(
   //   - file exists + allowOverwrite=false → reject as slug_already_exists
   //   - file missing                       → create path
   let existingSha: string | undefined
+  let existingText = ""
   try {
     const existing = await octokit.repos.getContent({
       owner: REPO_OWNER,
@@ -96,6 +101,9 @@ export async function publishDispatch(
       return { ok: false, error: "github_api_error" }
     }
     existingSha = data.sha
+    if ("content" in data && typeof data.content === "string") {
+      existingText = Buffer.from(data.content, "base64").toString("utf8")
+    }
   } catch (err) {
     const status = (err as { status?: number }).status
     if (status !== 404) {
@@ -139,6 +147,28 @@ export async function publishDispatch(
       }),
     )
     return { ok: false, error: "invalid_mdx" }
+  }
+
+  // BLOCKING em-dash gate (contract §1: zero, title and excerpt included).
+  // The slop scan below only logs, and logging is how 168 dashes reached 73
+  // posts by 2026-11-13. This is the one house rule enforced fail-closed,
+  // because it is unambiguous and cheap to fix in the editor.
+  //   - a NEW post must carry zero;
+  //   - an UPDATE may not ADD any, so editing an old post that still has
+  //     dashes is never blocked, and a cleanup edit always passes.
+  // The draft stays in Supabase, exactly like the invalid_mdx gate.
+  const dashesNow = countEmDashes(fullMdx)
+  const dashesBefore = existingSha ? countEmDashes(existingText) : 0
+  if (dashesNow > dashesBefore) {
+    console.error(
+      JSON.stringify({
+        tag: "studio.publish.em_dash_blocked",
+        slug: input.slug,
+        now: dashesNow,
+        before: dashesBefore,
+      }),
+    )
+    return { ok: false, error: "em_dash", emDashes: { now: dashesNow, before: dashesBefore } }
   }
 
   // House-style scan on the PUBLISH path, not just inside the backup writer.
