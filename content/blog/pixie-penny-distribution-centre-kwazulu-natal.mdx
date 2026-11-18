@@ -1,0 +1,64 @@
+---
+title: "Pixie, Penny and the Distribution Centre in KwaZulu-Natal"
+date: "2026-11-18"
+category: "Essays"
+excerpt: "South Africa's three major grocery groups are carrying different debt stacks. SPAR spent over three years — and R1.6 billion in lost turnover — unwinding a SAP distribution-centre failure in KwaZulu-Natal; Shoprite and Pick n Pay are now layering conversational AI assistants onto their online platforms. The argument here is narrow: a probabilistic layer wired into catalogues and prices that independent retailers already distrust does not reduce the liability — it compounds it."
+draft: false
+tags: ["south-african-retail", "ai-debt", "enterprise-ai", "grocery-retail", "spar", "conversational-ai"]
+---
+
+How long does a grocer keep paying for a system that went live in a single warehouse? Put that to South Africa's supermarket groups this month and the answers spread uncomfortably wide, because two of them are racing to put conversational AI into customers' phones while a third is still settling the bill for its last big software move.
+
+The answer takes some building, and it starts on the east coast.
+
+## What did KwaZulu-Natal cost, and is it paid off?
+
+SPAR switched its South African central office to SAP in October 2022 and picked the KwaZulu-Natal distribution centre as the first regional site to follow, in February 2023, precisely to contain the risk. Containment worked in the narrow sense that only one region broke. [SPAR's results for the year to 30 September 2023](https://senspdf.jse.co.za/documents/SENS_20231130_S483079.pdf) estimate the damage at R1.6 billion of lost turnover and R720.0 million of lost profit, plus a R94.1 million write-off of the SAP asset under construction. Stores in the province were fed from other distribution centres, direct-to-store and through supplier drop-shipping until the KZN site resumed full service in August 2023. The same document called the system "stable and performing consistently" and froze the rollout elsewhere until management was satisfied.
+
+That was meant to close the matter. It did not. In February 2026 SPAR told the market it had [changed the rollout to "focus on capability enablement rather than distribution centre integration"](https://sharedata.co.za/sens.asp?id=539748), that a retailer had served it with a summons over the KZN implementation for an amount that "significantly exceeds the initial claim of R5 million," and that retailer loyalty in KZN stood at 71.5% against roughly 84% across the rest of its South African network. For a wholesaler whose customers are independent owners free to buy elsewhere, that gap is the debt in its plainest form: retailers who learned not to rely on the warehouse.
+
+In May, [the half-year trading statement](https://senspdf.jse.co.za/documents/SENS_20260529_S521963.pdf) put continuing headline earnings per share 50% to 60% lower. It traced the sharp first-quarter decline mainly to "insufficient logistics capacity planning," and while KZN turned a profit in February, March and April 2026, the board still called it "a key ongoing risk for the Group." In September, TechCentral reported that [SAP finance is now "live and stable" in the central office and four distribution centres](https://techcentral.co.za/?p=286512), three of them only since early August, and that SPAR's cost cuts would fall "primarily on IT, discretionary spend, marketing and logistics."
+
+So the answer to the opening question, for one grocer, is at least three and a half years and counting. Look at where the money went. Very little of it was licence fees. It went on lost sales, on lost loyalty, on a warehouse that had to be bypassed, and on planning that had to be redone. In retail, technical debt collects in the joins between a system, a warehouse floor and the people who stopped trusting both.
+
+## What are Pixie and Penny sitting on?
+
+Now look at what the two healthier groups are building.
+
+Shoprite launched Pixie inside its Checkers Sixty60 app in April 2026. By July the company said [98% of its paying Xtra Savings Plus members use it, and that customers had added more than four million products to baskets through it](https://persfin.co.za/companies/2026-07-13-shoprites-ai-pixie-reaches-98-adoption-among-sixty60-members/). Shoprite did not define "use", and a paid tier is a self-selected group that already shops in the app. I treat the 98% as a marketing figure until Shoprite publishes one with a denominator and a time window. The business underneath is solid. Sixty60 sold [R25.5 billion in the 52 weeks to 28 June 2026, up 34.5%](https://sharedata.co.za/sens.asp?id=556683), and Business Day reported on 6 November that [its sales rose a further 33.4% in the four months to October](https://www.businessday.co.za/companies/2026-11-06-shoprite-widens-lead-over-grocery-rivals-as-sixty60-sales-surge/).
+
+Pick n Pay answered in July with Penny, built on Google's Gemini models and connected, according to the launch coverage, [through APIs to Pick n Pay's product catalogue, Smart Shopper loyalty data, order history and curated content "rather than accessing its systems directly"](https://www.bizcommunity.com/article/pick-n-pay-rolls-out-gemini-powered-grocery-assistant-penny-175696a). That is a sensible design. It also shows what Penny depends on: four feeds, each of which has to stay accurate, inside a business that [reported a R516 million trading loss in its core supermarkets for the six months to 30 August](https://www.ewn.co.za/2026/10/26/pick-n-pay-targets-fy2029-break-even-as-turnaround-continues) and is targeting break-even in FY2029. Online grew 35.4% over the same period. The assistant rides on the fastest-growing part of a company still digging out.
+
+## Where does the slop accumulate?
+
+Here the second layer of the debt stack starts to form. AI slop debt is the accumulating liability of half-finished POCs, unevaluated agent fleets, unmaintained eval harnesses, RAG systems with no clear owner, prompt sprawl across business units, and orphaned fine-tunes nobody can reproduce. A grocery assistant generates most of those categories by default. Every catalogue change, promotion, substitution rule and loyalty tweak is a fresh way for it to recommend something the warehouse cannot pick or the till will price differently. Someone has to own the tests that catch it, every week, for as long as the assistant runs.
+
+The cost side is a simple product: price per token, times call volume, times redundancy. Shoprite's group CTO Chris Shortt has spoken to the first two terms more plainly than most retail executives. In September he described an internal platform, Shoprite AI, whose [gateways route each request to a model sized to its complexity, aiming for least-cost compute](https://techcentral.co.za/shoprite-cto-ai-agents-recruits/285897/). "If you don't watch the economics of these things they can really get out of hand very fast," he said, adding that model outputs are "probabilistic models, not deterministic finalities." About 12,000 Shoprite employees use generative tools.
+
+A gateway cuts the price of each call. It does little for the third term. Redundancy is every assistant, internal copilot, prompt library and evaluation suite a business keeps alive in parallel, often doing overlapping jobs for different owners. That term grows quietly, and it is the one that becomes a SPAR-sized bill when a migration finally forces someone to touch all of it at once.
+
+| Layer | South African example | Where it surfaces |
+|---|---|---|
+| Legacy integration debt | SPAR's KZN distribution centre, 2023 onward | Lost turnover, retailer loyalty, litigation |
+| AI slop debt | Assistants wired to catalogue, loyalty and order feeds | Wrong recommendations, untested prompts, orphaned evals |
+| Cost overhang | Inference volume across customer and staff tools | Opex that grows faster than the orders it serves |
+
+## Is the vendor right that you can start before the data is clean?
+
+The strongest case against caution comes, fittingly, from SAP. In a September feature on SAP's Africa news site, Blessed Hwaire argues that African retailers already hold plenty of data and need AI that acts on it, and that ["retailers do not need to solve every data problem before beginning."](https://news.sap.com/africa/2026/09/beyond-the-dashboard-why-african-retail-needs-ai-that-can-act/)
+
+On the narrow claim, Hwaire is right. Waiting for perfect master data is a reliable way never to ship, and Sixty60's growth shows what shipping buys. The same piece concedes that "autonomous systems do require reliable business context," and the argument turns on that concession. By SPAR's own account, its latest KZN setback came from logistics capacity planning, exactly the kind of business context an agent takes as given. An assistant that builds baskets, or an agent that reorders stock, inherits whatever is wrong with the planning beneath it, and passes it on faster and at greater scale than a clerk would. Starting early is defensible. Starting on a foundation that has not been tested under load is how the KZN bill was run up.
+
+## Who should hold back?
+
+My position is narrow. SPAR plans to pilot a refreshed Spar2U service in December, and it should launch without a conversational assistant, however loud the parity argument with Pixie and Penny becomes. Its KZN retailers remain more cautious than the rest of the network. A retailer's SAP-related claim was still open when SPAR last reported on it in February. Its finance migration has been live in three distribution centres only since August. Adding a probabilistic layer on top, wired into catalogues and prices that independent owners already second-guess, would put a new liability on a balance sheet still carrying the old one. One dull year of on-time, in-full deliveries comes first. The chatbot will still be available next year, and cheaper.
+
+Shoprite sits at the other end, and its gateway suggests it knows where the next bill will come from. Pick n Pay sits between them, growing online quickly on top of a loss-making core, with Penny depending on four internal feeds staying clean.
+
+## Which line will it appear on?
+
+SPAR's mistake became visible because it was large enough to land in a results announcement with a rand figure attached. Lost turnover, lost profit, a write-off: auditable and, eventually, payable. The debt these assistants create will build more gradually, in eval suites left unrun, prompts without owners and inference bills folded into "IT" alongside everything else. If one of South Africa's grocers has to unwind an assistant three years from now, which line of its trading statement will carry the cost, and will anyone outside the building be able to find it?
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
