@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T14:43:59Z",
+  "generated_at": "2026-11-18T12:24:54Z",
   "wps": [
     {
       "wp": "WP2",
@@ -55,11 +55,11 @@
       "description": "Define the learning events and competence profiles that anchor the PANORAIMA curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 54,
+        "total_files": 58,
         "size_mb": 1089,
         "by_ext": {
-          ".xlsx": 30,
-          ".docx": 7,
+          ".xlsx": 33,
+          ".docx": 8,
           ".pptx": 3,
           ".pdf": 3,
           ".ods": 1,
@@ -67,7 +67,7 @@
           ".potx": 1
         },
         "by_type": {
-          "other": 53,
+          "other": 57,
           "presentation": 1
         },
         "by_region": {}
@@ -84,39 +84,40 @@
       "description": "Design lesson plans and run the cross-university pilots that validate the curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 1389,
-        "size_mb": 826,
+        "total_files": 1851,
+        "size_mb": 1119,
         "by_ext": {
-          ".docx": 224,
-          ".xlsx": 25,
-          ".pdf": 119,
-          ".pptx": 165,
+          ".docx": 282,
+          ".xlsx": 34,
+          ".pdf": 179,
+          ".pptx": 227,
           ".odp": 2,
           ".potx": 11,
-          ".md": 55,
-          ".html": 91,
-          ".json": 11,
-          ".css": 90,
-          ".qmd": 57,
-          ".csv": 153,
-          ".woff": 18,
-          ".js": 184,
-          ".png": 104,
-          ".txt": 25,
-          ".zip": 15,
-          ".yml": 1,
+          ".csv": 169,
+          ".md": 84,
+          ".html": 124,
+          ".json": 15,
+          ".css": 114,
+          ".qmd": 60,
+          ".woff": 21,
+          ".js": 228,
+          ".png": 185,
+          ".txt": 32,
+          ".zip": 22,
+          ".yml": 2,
           ".sh": 1,
           ".r": 2,
-          ".py": 23,
+          ".ipynb": 16,
+          ".py": 37,
           ".pyc": 1,
-          ".ipynb": 10,
-          ".fastq": 2
+          ".fastq": 2,
+          ".doc": 1
         },
         "by_type": {
-          "other": 1287,
-          "template": 76,
-          "presentation": 21,
-          "research": 5
+          "other": 1730,
+          "template": 87,
+          "presentation": 26,
+          "research": 8
         },
         "by_region": {}
       },
@@ -150,15 +151,17 @@
       "description": "Weave responsible AI practice into every track and deliverable.",
       "status": "sparse",
       "stats": {
-        "total_files": 5,
-        "size_mb": 1,
+        "total_files": 38,
+        "size_mb": 10,
         "by_ext": {
-          ".docx": 2,
+          ".docx": 32,
           ".pptx": 2,
-          ".xlsx": 1
+          ".xlsx": 1,
+          ".pdf": 3
         },
         "by_type": {
-          "other": 5
+          "other": 35,
+          "template": 3
         },
         "by_region": {}
       },
@@ -174,24 +177,28 @@
       "description": "Amplify PANORAIMA's reach through clusters for social media, student recruitment, knowledge exchange and brand.",
       "status": "active",
       "stats": {
-        "total_files": 620,
-        "size_mb": 1190,
+        "total_files": 683,
+        "size_mb": 1202,
         "by_ext": {
-          ".docx": 150,
-          ".pptx": 37,
+          ".docx": 168,
+          ".pptx": 41,
           ".dotx": 11,
-          ".pdf": 139,
-          ".xlsx": 55,
+          ".pdf": 142,
+          ".xlsx": 65,
           ".odt": 2,
-          ".webloc": 1,
-          ".txt": 3,
+          ".webloc": 2,
+          ".txt": 4,
           ".md": 14,
           ".json": 2,
+          ".htm": 5,
+          ".xml": 10,
+          ".png": 72,
+          ".thmx": 5,
+          ".gif": 2,
+          ".jpg": 67,
           ".xlsm": 6,
           ".heic": 9,
-          ".jpg": 66,
           ".potx": 4,
-          ".png": 69,
           ".psd": 13,
           ".ai": 4,
           ".ttf": 19,
@@ -200,14 +207,14 @@
           ".ase": 1
         },
         "by_type": {
-          "other": 421,
+          "other": 430,
           "template": 32,
-          "presentation": 25,
-          "research": 140,
+          "presentation": 27,
+          "research": 192,
           "deliverable": 2
         },
         "by_region": {
-          "Germany": 1
+          "Germany": 2
         }
       },
       "task_count": 0,

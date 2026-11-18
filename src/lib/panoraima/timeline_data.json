@@ -4683,6 +4683,8 @@
     "has_progress_reports": false,
     "other_docs": [
       "1st Project Review Meeting attendence.xlsx",
+      "20261109 - Result of the Review of your project.pdf",
+      "20261109 - Review Report.pdf",
       "Certificate of fund use - Lumpsum blanco.docx",
       "Draft Technical Periodic Report - Part B - version July 2026.docx",
       "Draft Technical Periodic Report - Part B.docx",
@@ -5412,7 +5414,431 @@
     "other_docs": [
       "Hotels walking distance from SU modern building of the CoE UNITe.docx",
       "Programme Sofia Worksprint October 2026.xlsx",
+      "Transcript Sofia 22 October Microsoft Teams meeting (1).docx",
       "WS Sofia - Attendence October 2026.xlsx"
+    ],
+    "partners": {
+      "BME": {
+        "submitted": false
+      },
+      "CeADAR": {
+        "submitted": false
+      },
+      "CNR": {
+        "submitted": false
+      },
+      "ENEA": {
+        "submitted": false
+      },
+      "ESI": {
+        "submitted": false
+      },
+      "HAW": {
+        "submitted": false
+      },
+      "HU": {
+        "submitted": false
+      },
+      "KPI": {
+        "submitted": false
+      },
+      "NAT": {
+        "submitted": false
+      },
+      "QTICS": {
+        "submitted": false
+      },
+      "SU": {
+        "submitted": false
+      },
+      "TUD": {
+        "submitted": false
+      },
+      "UniNa": {
+        "submitted": false
+      },
+      "UNIWA": {
+        "submitted": false
+      },
+      "RealAI": {
+        "submitted": false
+      }
+    },
+    "wp_reports": {}
+  },
+  {
+    "id": "2026-11",
+    "label": "Nov 2026",
+    "title": "PMC Meeting",
+    "type": "pmc",
+    "date": "2026-11-13",
+    "dirname": "2026-11-13 PMC",
+    "has_progress_reports": true,
+    "other_docs": [
+      "Agenda PMC 13 November 2026.docx"
+    ],
+    "partners": {
+      "BME": {
+        "submitted": false
+      },
+      "CeADAR": {
+        "submitted": true,
+        "file": "CeADAR LC Progress Report 12-11-2026.docx",
+        "activities": [
+          "The review of HL-023 is currently ongoing. After an initial read of the material, we sought clarifications from the author on the content developed, and the review will be completed once those points have been addressed.",
+          "In parallel, CeADAR has reviewed the other core LEs required for the pilot, for which we were assigned as reviewer. This means the material needed to run the pilots from CeADAR’s side has been checked, and the main dependency now is the out",
+          "The main activity in WP7 during this period was T7.3 in Cluster C, covering market analysis, research and knowledge exchange, and work towards the development and delivery of D7.3. As part of this, we are contributing to designing the marke",
+          "In parallel, we worked with the team to support the WP7 lead and the other cluster leads in developing the updated communication and dissemination plan.",
+          "Aditya Grover, Reviewer",
+          "During this period, progress on reviewing the remaining LEs was limited, as most of the authors had not yet completed their material. Without finished drafts to work from, there was little for us to assess, so this part of the workstream mo",
+          "Aditya Grover, Cluster C leader",
+          "The main dependency is the contribution from the wider consortium partners, as their input is essential to achieve the tasks."
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP7"
+        ],
+        "excerpt": "The review of HL-023 is currently ongoing. After an initial read of the material, we sought clarifications from the author on the content developed, and the review will be completed once those points have been addressed.",
+        "word_count": 1480
+      },
+      "CNR": {
+        "submitted": true,
+        "file": "CNR_LC Progress Report_13_11_2026.docx",
+        "activities": [
+          "Marco Pota: Participation in weekly Healthcare group meetings, review of Lesson Plans and learning materials (HL-007, HL-013, HL-019, HL-036),",
+          "Luigi Barbato: Participation in WP4.1 Horizontal group meetings and review of Lesson Plans (H-211a, H-211b).",
+          "Francesco Gargiulo: Participation in group meetings and review of Lesson Plans and learning materials for eight Learning Events (MC-025 to MC-032).",
+          "CNR continued contributing to WP7/T7.3 and the D2.1 internal review and market-research update. Francesco Gargiulo and Massimo Esposito participated in WP7 activities and in the evaluation of corrections to DL2.1 requested by the ETS. The a",
+          "CNR activities depend on continued cooperation from Learning Event authors, reviewers, WP leaders and WP7 partners. Timely inputs are required to complete the WP4 review cycle and consolidate the D2.1 and DL2.1 follow-up activities.",
+          "No CNR personnel are assigned to new WP3 activities because WP3 is closed.",
+          "Continue to review LEs and materials in the Horizontal Track (Luigi Barbato),healthcare and life sciences track (Marco Pota) and Media and Culture Track (Francesco Gargiulo)",
+          "Francesco Gargiulo – Media and Culture; Luigi Barbato – Horizontal Track; Marco Pota – Healthcare; Maria Antonietta Panza – operational support."
+        ],
+        "challenges": [
+          "No major issues were identified. The main activity was the coordination of review feedback, author revisions and status updates in the shared Learning Event tracker.",
+          "No major additional risks were reported during the period."
+        ],
+        "wp_focus": [
+          "WP3",
+          "WP4",
+          "WP7"
+        ],
+        "excerpt": "Marco Pota: Participation in weekly Healthcare group meetings, review of Lesson Plans and learning materials (HL-007, HL-013, HL-019, HL-036),",
+        "word_count": 1401
+      },
+      "ENEA": {
+        "submitted": true,
+        "file": "ENEA - 2026_11_13 - Progress Report LC.docx",
+        "activities": [
+          "ENEA completed the reviews of all its pilot Learning Events in the Health & Life Sciences track: HL-002, HL-004, HL-005, HL-008, HL-015, HL-040 and HL-058 (Gabriele Piantadosi, reviewer).",
+          "For each Learning Event, the Reviewer Checklist and the Learning Outcomes Checklist were uploaded to the SharePoint folder and a short summary was published on the wiki discussion page, as agreed with the track lead; the wiki status was mov",
+          "After the authors' revisions, HL-040 was confirmed as ready for the pilot, and the revised HL-008 materials were checked (only the wiki page still needs to be updated by the authors). The track lead received a recap of all ENEA reviews on 6",
+          "Gabriele Piantadosi also took part in the Health & Life Sciences track meetings.",
+          "It was clarified with the track lead that, after addressing the reviewers' comments, the authors confirm the \"Ready for Pilot\" status.",
+          "Gabriele Piantadosi is the lead of Cluster D \"Collaboration Platforms & Information Management\" in the updated Dissemination & Communication Plan 2026-2027. ENEA contributed to the plan (v0.4, 6 November) and to the Cluster D 90-day plannin",
+          "Website analytics: the PANORAIMA and RAISE-U websites shared an old tracking code that no partner could access. ENEA replaced it with two new Google Analytics 4 properties under a shared project account, added a GDPR cookie banner on both s",
+          "Thesis Portal: Gabriele Piantadosi developed and maintains the PANORAIMA Thesis Portal (partner proposals open since 14 October, student applications since 21 October). New features requested by the partners (catalogue for proposers, PDF do"
+        ],
+        "challenges": [
+          "No major issues. The materials of HL-014 and HL-062 (UNINA) are not yet available, so their review has not started; the track lead is following up with the authors."
+        ],
+        "wp_focus": [
+          "WP1",
+          "WP3",
+          "WP4",
+          "WP6",
+          "WP7"
+        ],
+        "excerpt": "ENEA completed the reviews of all its pilot Learning Events in the Health & Life Sciences track: HL-002, HL-004, HL-005, HL-008, HL-015, HL-040 and HL-058 (Gabriele Piantadosi, reviewer).",
+        "word_count": 1512
+      },
+      "ESI": {
+        "submitted": true,
+        "file": "LC Progress Report ESI 10.26.docx",
+        "activities": [
+          "Ivaylo Gueorguiev supported the Management and Finance track by aligning its draft research requirements with the current 60 Learning Events. The review identified lesson-outcome and reference gaps and informed follow-up with the track. Thi",
+          "ESI continued to lead T7.3, coordinated by Ivaylo Gueorguiev. The work moved from draft research requirements to track consultation and preparation for the next evidence-collection cycle.",
+          "Five feedback forms, working-group materials and the Sofia workshop presentation supported consultation. By 11 November, input had been received from all four sector tracks and the Horizontal group. Management and Finance requirements were",
+          "The methodology and diagram were revised to link findings to explicit track responses: Already covered, Included, Pending or Rejected. The 10 November discussion retained monthly evidence reviews with quarterly consolidated feedback and rep",
+          "A stakeholder identification form was created and shared with track leaders and LC so they can contribute contacts to be addressed during the research phase. ESI entered 10 contacts, mainly for the Management and Finance track, in the form.",
+          "Support needed: resolve remaining track edits, nominate relevant stakeholders, contribute recent sources and agree when WP3/WP4 authors can use the findings. Track consultation does not itself demonstrate a curriculum change.",
+          "T7.3 neds to be aligned WP3/WP4 and pilot-feedback coordinators- Ivaylo Gueorguiev initiated a join meeting to discuss the alignment.",
+          "In November and December, continue Management and Finance coordination, resolve lesson-outcome/reference gaps, and align research questions with current learning content. Agree with how emerging findings are passed to curriculum owners for"
+        ],
+        "challenges": [
+          "Partner engagement and timely inputs from the tracks remain delivery risks."
+        ],
+        "wp_focus": [
+          "WP3",
+          "WP4"
+        ],
+        "excerpt": "Ivaylo Gueorguiev supported the Management and Finance track by aligning its draft research requirements with the current 60 Learning Events. The review identified lesson-outcome and reference gaps and informed follow-up with the track. This was a contribution to curriculum alignment. In the reported period, Ivaylo Gue",
+        "word_count": 1443
+      },
+      "HAW": {
+        "submitted": true,
+        "file": "HAW LC Progress Report-11.2026.docx",
+        "activities": [
+          "In all tracks, HAW is still working on the development of lesson materials for the Learning Events. According to the wiki, HAW currently has:",
+          "Learning materials: development: 1",
+          "Learning materials reviewed by HAW: 14",
+          "Lesson plans reviewed by HAW:  13",
+          "Lesson plan: development: 1",
+          "Reviews were done by Michael Gille, Frauke Schade, and Alena Störmer.",
+          "Lesson plans and learning materials were also developed by Ahmad Khalidi, Michael Gille, Frauke Schade and Alena Störmer as well as Katharina Jeorgakopulos.",
+          "The ongoing institutional cost-cutting and reform process at HAW Hamburg makes it somewhat challenging to implement curriculum reform initiatives such as those required for PANORAIMA. Many decision-makers are heavily involved in these refor"
+        ],
+        "challenges": [
+          "The workflow is hindered by the fact that the reviewer is not automatically notified when a lesson plan or learning materials are ready to be reviewed. In the same vein, it would be much easier if authors were notified that their materials"
+        ],
+        "wp_focus": [
+          "WP4",
+          "WP7"
+        ],
+        "excerpt": "In all tracks, HAW is still working on the development of lesson materials for the Learning Events. According to the wiki, HAW currently has:",
+        "word_count": 1650
+      },
+      "HU": {
+        "submitted": false
+      },
+      "KPI": {
+        "submitted": true,
+        "file": "KPI LC Progress Report 12.11.2026.docx",
+        "activities": [
+          "3.6 ToT. Anna has sent invitations to various lecturers about their LE’s and discussing the convenient dates and time slots. (Anna Ishchenko)",
+          "M&C track:  Filling out wiki with reviews and correspondence with reviewers  on the Les developed; Attending meetings to prepare evaluation materials for the pilot, developing proposals, and communicating with consortium colleagues. (Maksym",
+          "L&C track: Reviewed LEs developed by project partners: LC-033 Prohibited AI Practices (Art 5) (Oksana Karpenko), LC-004 Regulatory Sandboxes (Svitlana Podoliak), LC-003 The AI Office & Enforcement, H-198 Transparency & Instructions for Use",
+          "M&F track: Attended local meetings; contributing to discussions on the content of the LEs and reduction of their overall number (Olena Butnyk)",
+          "Attended the LC meetings (Sergii Geraskov)",
+          "Attended the Work Sprint in Sofia, online (Iurii Perga, Sergii Geraskov, Oksana Karpenko, Iurii Ruban)",
+          "Asked UNINA to accelerate the development of two LEs on M&C track: MC-023 Text Analytics and NLP for Discourse, Topic, and Positioning Analysis, and MC-024 Practical Lab: NLP Pipelines for Discourse, Topic Modeling, and Stance Analysis.",
+          "According to KPI curriculum, both LEs are intended to be piloted during the current semester (end-of-November timeline)."
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP7"
+        ],
+        "excerpt": "3.6 ToT. Anna has sent invitations to various lecturers about their LE’s and discussing the convenient dates and time slots. (Anna Ishchenko)",
+        "word_count": 1765
+      },
+      "NAT": {
+        "submitted": true,
+        "file": "LC Progress Report NAT 13th Nov 2026.docx",
+        "activities": [
+          "Nathean continued coordinating the Healthcare & Life Sciences (HC&LS) track through weekly partner meetings, monitoring Learning Event (LE) development, managing author and reviewer follow-ups, and tracking progress against the TU Dublin an",
+          "Nathean clarified the review and sign-off process, confirming that authors are responsible for determining pilot readiness following consideration of reviewer feedback. The emphasis was on completing materials sufficiently for pilot deliver",
+          "Nathean participated in the Sofia consortium discussions covering pilot preparation, evaluation activities and the review of learning requirements against market needs. This included contributing to discussions on collecting student and tea",
+          "Nathean also coordinated HC&LS input to the WP7.3 research requirements review, including gathering partner responses to the research propositions and arranging representation in the subsequent review process.",
+          "Personnel and contributions",
+          "Consortium-level clarification is also needed on the final pilot evaluation framework, including arrangements for collecting feedback from students and teachers where teaching has already commenced. Greater clarity on which Learning Events",
+          "Maurice Lynch – Lead on Cluster A",
+          "Biweekly planning meetings"
+        ],
+        "challenges": [
+          "John Pugh represented Nathean as HC&LS track lead, chairing weekly meetings, coordinating partners, maintaining oversight of development and review progress, undertaking assigned LE reviews, resolving outstanding issues and liaising with ot",
+          "The principal challenges concerned delays in completing Learning Event reviews and obtaining author responses, inconsistencies between the tracking spreadsheet and wiki, and limited partner availability due to teaching commitments and compe",
+          "Nathean addressed these issues through targeted communications with authors and reviewers, closer monitoring of outstanding work and clarification of the author sign-off process. Reviewers were instructed to reconcile wiki content with the",
+          "A further issue emerged concerning the timing of the pilot evaluation framework. Some teaching activities had already commenced before standardised student and teacher feedback arrangements were available, creating a risk that early evaluat"
+        ],
+        "wp_focus": [
+          "WP4",
+          "WP7"
+        ],
+        "excerpt": "Nathean continued coordinating the Healthcare & Life Sciences (HC&LS) track through weekly partner meetings, monitoring Learning Event (LE) development, managing author and reviewer follow-ups, and tracking progress against the TU Dublin and Sofia pilot requirements. Following the October consortium meeting in Sofia, p",
+        "word_count": 2292
+      },
+      "QTICS": {
+        "submitted": true,
+        "file": "QTICS_LC_Progress_Report_12_November_2026.docx",
+        "activities": [
+          "QTICS contributes to 35 Learning Events (LEs) across the Healthcare & Life Sciences (9), Media & Culture (19) and Law & Compliance (7) tracks, primarily as co-author, professional contributor and reviewer, as assigned.",
+          "Task 3.2 – Healthcare & Life Sciences (Katalin Tauberné Jakab, Ákos Molnár): QTICS has completed the validation of all 9 assigned Learning Events in the Healthcare & Life Sciences Track during the reporting period.",
+          "Task 3.3 – Media & Culture (Adrienn Szirmai): QTICS provides practitioner input from marketing practice; Hédi Csordás develops the educational materials based on these contributions.",
+          "Task 3.4 – Law & Compliance (Edina Pőcze, Szandra Sánta, Ákos Molnár): QTICS contacted the relevant first authors and co-authors. Of the three core LEs, two drafts had been received for validation as of 12 November; Dr Ákos Molnár is workin",
+          "WP4 development and quality assurance:",
+          "QTICS has submitted two thesis proposals to the designated Thesis Portal:",
+          "‘Evaluation of Clinical Evidence for AI-Based Clinical Decision Support Medical Device Software in Accordance with EU MDR Requirements’ (Katalin Tauberné Jakab)",
+          "The first cohort of the six-month hybrid programme jointly developed by QTICS and BME has been completed, and the second cohort is ongoing. Following QTICS’s clarification request, project management confirmed that the first cohort’s statis"
+        ],
+        "challenges": [
+          "Our team discussed the required documentation of reviews, author responses and revisions in the Wiki and uploading of all relevant versions. Issues were identified with discrepancies between individual LE Wiki records and the central Master",
+          "First cohort (reported start: 1 February 2026; 8 practical training days): 27 participants, 25 certificates issued (2 participants did not pass either examination attempt), 12 women, 2 participants under 25; 27 employed and 0 unemployed par",
+          "Inclusion of the statistics in the EU report does not settle the separate question of formal WP6 inclusion of the 8 practical training days, the use and sharing of workshop/presentation materials, or access to the 19 digital e-learning chap",
+          "Challenges and actions:"
+        ],
+        "wp_focus": [
+          "WP3",
+          "WP4",
+          "WP6",
+          "WP7"
+        ],
+        "excerpt": "QTICS contributes to 35 Learning Events (LEs) across the Healthcare & Life Sciences (9), Media & Culture (19) and Law & Compliance (7) tracks, primarily as co-author, professional contributor and reviewer, as assigned.",
+        "word_count": 2480
+      },
+      "SU": {
+        "submitted": true,
+        "file": "SU LC Progress Report 13-11-2026.docx",
+        "activities": [
+          "Attending the WP 3 & WP 4 LC and Task Leaders meetings (Dafina Petkova).",
+          "Four internal meetings to discuss tasks across the tracks.",
+          "Participation in the regular track meetings. (Maria Nisheva, Kristina Arnaoudova)",
+          "Intensive work on the development of learning materials.",
+          "Developed learning materials for 4 new LEs. Revised learning materials for 3 LEs. Ready for pilot: 7 LEs.",
+          "Participation in the regular track meetings. (Kalinka Kaloyanova)",
+          "Participation in the regular track meetings. (Ioannis Patias)",
+          "Participation in the meetings (Dafina Petkova, Ioannis Patias)"
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP3",
+          "WP4",
+          "WP7"
+        ],
+        "excerpt": "Attending the WP 3 & WP 4 LC and Task Leaders meetings (Dafina Petkova).",
+        "word_count": 1982
+      },
+      "TUD": {
+        "submitted": true,
+        "file": "TU Dublin LC Progress Report.docx",
+        "activities": [
+          "Musfira is conducting her weekly meeting to for the track – Management and Finance. She has reported the following status of completion for M&F track",
+          "60 Lesson plans completed",
+          "59 lesson plans reviewed",
+          "13 Lesson materials developed",
+          "Delivery of Pilot (Full Masters with M&F track) and a mini journey ( microcred – H&L) is underway.",
+          "https://www.tudublin.ie/explore/news/tu-dublin-launches-innovative-msc-in-human-centred-ai-technologies.php",
+          "Led by DJ Ranade, Barry and supported by Rajesh Jaiswal",
+          "PANORAIMA was also promoted in five different cities in India by Rajesh Jaiswal ( Delhi, Bangalore, Pune, Chennai and Mumbai) and received a good response for international intake. There is a possibility of international collaboration (gues"
+        ],
+        "challenges": [
+          "International Week was organised by TU Dublin from 26th  Oct to 30th Oct as an Erasmus event. The event consisted of working on an ethical challenge, developing a Human-Centred AI project proposal and presenting. The event was attended by t"
+        ],
+        "wp_focus": [],
+        "excerpt": "Musfira is conducting her weekly meeting to for the track – Management and Finance. She has reported the following status of completion for M&F track",
+        "word_count": 1344
+      },
+      "UniNa": {
+        "submitted": true,
+        "file": "UNINA LC Progress Report.docx",
+        "activities": [
+          "Still a very small contribution. We are facing and internal re-structuring and this is impacting people availability.",
+          "Finalize the remaining LE: Michela Gravina and Stefano Marrone.",
+          "Review the LE: All the team",
+          "We are leading the task and contribuiting to TF 1, 3 and 4.",
+          "Stefano Marrone (WP lead and TF3)",
+          "Industry, Business partners;  Academic institutions; Innovators; Investors; EU institutions; Other International Organisation (UN, OECD, etc.); National authorities; Regional authorities; Local authorities; Research communities; Specific us",
+          "Regional; National; International | Social Media; Press release; Media article; Print materials (brochure, leaflet, posters, stickers, banners etc.); Newsletter; Interview; Video; TV/Radio; Event (conference, meeting, workshop, internet deb",
+          "Conferences; Meetings; Education and training events; Clustering activities; Collaboration with EU-funded projects; Other scientific collaboration, Other (namely …) | Industry, Business partners; EU Institutions; Scientists; Education/train"
+        ],
+        "challenges": [],
+        "wp_focus": [],
+        "excerpt": "Almost no activity. Remaining bit addressed by Michela Gravina and Egidia Cirillo.",
+        "word_count": 1223
+      },
+      "UNIWA": {
+        "submitted": true,
+        "file": "UNIWA - LC Progress Report November 2026.docx",
+        "activities": [
+          "Participating in all activities regarding:",
+          "• Participation in MS Teams meetings",
+          "• 1st authors, 2nd authors and reviewers of LEs",
+          "• Final lessons for pilot delivered",
+          "• Discussions on learning events",
+          "• 2nd authors and reviewers of Les",
+          "Attended WP3, LC meetings (Grigoris Nikolaou)",
+          "Attended meetings and contributed WP7, T7.3 (Grigoris Nikolaou)"
+        ],
+        "challenges": [],
+        "wp_focus": [
+          "WP3",
+          "WP4",
+          "WP6",
+          "WP7"
+        ],
+        "excerpt": "Healthcare & Life Sciences Track (Anna Mavromanoli, Grigoris Nikolaou)",
+        "word_count": 1248
+      },
+      "RealAI": {
+        "submitted": false
+      }
+    },
+    "wp_reports": {
+      "WP4": {
+        "file": "WP4 Leader Progress Report HU.docx",
+        "partner": "HU",
+        "activities": [
+          "Work Package Leader: Meike Grol",
+          "Activities in the Work Package that you are leading",
+          "Planned - no implementation started | 0% | done | done | done | done | done | done",
+          "Kick-off completed- initial meeting held; first documents or schedules produced. | 5–10 | done | done | done | done | done | done",
+          "Development underway | 20–30 | done | done | done | done | done | Evaluation procedure decided, pilots started",
+          "Core development underway - main work in progress; intermediate deliverables produced | 40–50 | Pilot LE’s developed, further development in progress | Pilot LE’s developed, further development in progress | Pilot LE’s developed, further de",
+          "First deliverables completed | 60–70",
+          "All deliverables produced – pending review | 80–90"
+        ],
+        "challenges": [
+          "Does any of  the partners encounter challenges in delivering (e.g. participation, contributions to assigned tasks, discussions or meetings, delivering input).  Is clear what the reason is, potential consequences are, and are there ideas on",
+          "T4.2 Health and Lifesciences is going fine, John is continuously keeping track of everything his team is doing and making sure everything is done in time for the pilots. SU and TUD have started piloting part of the LE’s of this track. Most",
+          "T4.3 Media and Culture is on time for the pilot, BME is piloting the LE’s at the moment. Dori reports that she often gets no response on her emails from part of the team, especially not when the questions are not directly associated with le",
+          "T4.4 Law and Compliance is piloting materials made by partner QTICS, but these cannot directly be used for PANORAIMA. The themes and materials will be changed into LE’s later. Edit asks what this means for the evaluation of the pilot, as th"
+        ],
+        "excerpt": "Overview of the progress of this Work Package towards the objectives of the project"
+      },
+      "WP6": {
+        "file": "WP6 Leader Progress_Report UNINA.docx",
+        "partner": "UniNa",
+        "activities": [
+          "Work Package Leader: Stefano Marrone",
+          "Activities in the Work Package that you are leading",
+          "Planned - no implementation started | 0%",
+          "Kick-off completed- initial meeting held; first documents or schedules produced. | 5–10 | X",
+          "Development underway | 20–30 | X | X",
+          "Core development underway - main work in progress; intermediate deliverables produced | 40–50 | X",
+          "First deliverables completed | 60–70 | X",
+          "All deliverables produced – pending review | 80–90"
+        ],
+        "challenges": [
+          "Does any of the partners encounter challenges in delivering (e.g. participation, contributions to assigned tasks, discussions or meetings, delivering Preparation. input).  If so, iIs clear what the reason is, and potential consequences are,",
+          "Learner enrolment, completion, certification and caption functions still require development/verification. The rationale for selection, any genuinely assessed alternatives, accessible learner journey, risks and DSJP publication link require",
+          "TU Dublin's institutional micro-credential procedures differ from the standard WP6 planning range (1–6 ECTS). A 10-ECTS host course or an institutional award cannot automatically be treated as a WP6 Mini-Journey or a consortium-wide credent",
+          "At the moment, no occurrence of these risks has been encountered."
+        ],
+        "excerpt": "Overview of the progress of this Work Package towards the objectives of the project"
+      },
+      "WP7": {
+        "file": "WP7 Leader Progress Report 13-11-2026.docx",
+        "partner": null,
+        "activities": [
+          "Progress Report Work Package 7",
+          "Overview of the progress of this Work Package towards the objectives of the project",
+          "Work Package Leader: Micky Lammertink",
+          "Summary of progress of the activities of the Work Package that you are leading",
+          "In relation to the sprint planning",
+          "In relation to the monthly planning;",
+          "Add the (link) to the latest Action Plan in Annex 1 below/end of this document (or upload separately) - Have any changes been made to the Action Plan since last Progress report? If so: describe/indicate",
+          "Is the planning/progress in any way ‘in danger’ as compared to the original planning? Is this expected to happen? If so, explain. Any ideas on how to ‘repair’ this? What is needed for that?"
+        ],
+        "challenges": [
+          "Does any of  the partners encounter challenges in delivering (e.g.  participation, contributions to assigned tasks, discussions or meetings, delivering input).  Is clear what the reason is, potential consequences are, and are there ideas on",
+          "Review the three mixed D2.1 cases and a random sample of additional evidence links to identify potential errors or missing topics. (Aditya - CeADAR)",
+          "Risks: Late inputs from track leads. Mitigation: follow-up, then escalation to the PMB (as in the plan).",
+          "Sprint: Deliver a working KPI 30 monitoring system by 31 Dec, to be validated with WP7 in January. Complete the agreed PANORAIMA and RAISE-U pages with content from A/E. Monitor the thesis portal and resolve access/submission issues with B."
+        ],
+        "excerpt": "Overview of the progress of this Work Package towards the objectives of the project"
+      }
+    }
+  },
+  {
+    "id": "2027-01",
+    "label": "Jan 2027",
+    "title": "Worksprint — Budapest",
+    "type": "worksprint",
+    "date": "2027-01-01",
+    "dirname": "2027-01 WS Budapest 4 and 5 February 2027",
+    "has_progress_reports": false,
+    "other_docs": [
+      "BME recommends these hotels for the.docx",
+      "WS + BLIP Budapest - Attendance January 2027.xlsx"
     ],
     "partners": {
       "BME": {
