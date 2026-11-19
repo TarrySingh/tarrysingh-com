@@ -1,0 +1,63 @@
+---
+title: "Swearing to the Shelf Price, Forgetting the Coupon"
+date: "2026-11-19"
+category: "Essays"
+excerpt: "In October 2026 the FTC issued compulsory information orders to Walmart and Target demanding sworn inventories of every pricing model that uses personal data. Both pledge that shelf prices do not vary by customer — but neither pledge extends to the offer engine running beside it, which uses shopping history to vary what two people pay for the same basket. That gap is where the regulatory and model risk now sits."
+draft: false
+tags: ["personalized-pricing", "algorithmic-pricing", "retail-regulation", "model-risk", "ftc", "ai-regulation"]
+---
+
+An electronic shelf label is a grey rectangle about the size of a playing card, clipped to the lip of a shelf, with an e-ink face that holds its figure without drawing power. Somewhere far from the aisle a server tells it what to show, and overnight, while the floor is mopped and the pallets come in, that figure can change without anyone touching it. The shopper standing in front of it in the morning sees one price. The shopper beside her, holding a phone open on a loyalty app, may be looking at a second one.
+
+That second price is where a federal order now points. On 28 October 2026 the Federal Trade Commission [voted 2-0](https://www.hklaw.com/en/insights/publications/2026/11/ftcs-section-6b-orders-on-personalized-pricing-and-pay-what-businesses) to send compulsory information orders to nine companies, and [its press release](https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-launches-personalized-pricing-compensation-inquiry) names Walmart and Target alongside Delta, United, JetBlue, Lyft, Uber, DoorDash and Instacart. Chairman Andrew Ferguson's statement says consumers "deserve to know whether companies use their web surfing habits or other personal data" to set what they pay. The release even frets about pricing by "superintelligence algorithms", which is not a phrase one expects in a Section 6(b) announcement.
+
+Both retailers have already answered in public. Both answers are probably true as written. And both answer an easier question than the one the order asks. That is my position: the shelf price is the part of retail pricing a company can comfortably swear to, the offer engine running beside it is where the regulatory and model risk now sits, and the pledges published this autumn leave that engine outside the fence.
+
+## Note on what the order asks for
+
+Holland & Knight's [2 November reading of the template](https://www.hklaw.com/en/insights/publications/2026/11/ftcs-section-6b-orders-on-personalized-pricing-and-pay-what-businesses) sets out what each recipient owes: a meet-and-confer within 14 days, then a sworn, Bates-stamped special report within 45 days, with most deadlines landing in mid-December. The look-back runs from 1 January 2023 to the date of compliance, and research and testing projects reach back to 1 January 2021.
+
+The scope reads like a model-risk examiner's checklist. Every methodology that uses personal information to set or adjust a consumer price, with its inputs, its AI tools, its processing steps, its handling of missing data and its overrides, including overrides driven by state or local restrictions. Every A/B test and internal study. The provenance of each dataset and the names of third-party vendors. The exact wording, placement and dates of every disclosure, with screenshots of pop-ups and mouseovers. Headcounts for the pricing, AI, loyalty and privacy teams.
+
+Put plainly, the FTC wants two of America's largest retailers to produce, under oath, an inventory of their pricing models and the decision trail around them. NIST's [AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) has asked for something similar since January 2023 (its GOVERN 1.6 item calls for mechanisms to inventory AI systems), but a voluntary framework never came with a 45-day clock. Walmart's own [annual report on Form 10-K for fiscal 2026](https://stock.walmart.com/sec-filings/all-sec-filings/content/0000104169-26-000091/0000104169-26-000091.pdf) already tells investors the company "may be exposed to new or expanded liabilities and risks due to elevated governmental scrutiny and monitoring" of its AI use.
+
+## Note on two corporate pages
+
+Walmart moved first. On 25 September, according to [the Associated Press](https://ny1.com/nyc/all-boroughs/ap-top-news/2026/09/27/walmart-says-its-not-using-personal-information-to-set-prices-as-it-expands-digital-shelf-labels), chief executive John Furner posted a statement saying "We don't set different prices based on who you are or the time of day, and we won't," and extended the pledge to Sparky, the company's AI shopping assistant, which he said would not be used to raise a customer's price or hide cheaper options. The same report says 2,300 US Walmart locations were already running digital shelf labels in March, with full coverage expected within a year. I could not find the original statement on Walmart's own site, so the quotation rests on the AP's account.
+
+Target's [pricing fact sheet, updated 15 October](https://corporate.target.com/press/fact-sheet/2026/10/pricing-at-target), is more precise, and more revealing. "Target does not use your personal information to raise an item's price," it says. Then, on the loyalty programme: Target Circle "can use your shopping history to help surface deals and offers that are more relevant to you and that help you save — not to raise your price."
+
+Put the two sentences side by side. Target is telling customers that it does use their shopping history to change what they pay, but only downward. That is a legitimate practice. In a regulator's arithmetic, it is also personalized pricing. Two shoppers in the same Saint Paul store buy the same basket; one is shown a relevant offer and the other is not; they pay different amounts because of their personal data. The word "raise" carries the entire load, and its meaning depends on where the reference price sits.
+
+## Note on why the discount is the hard part
+
+The FTC's [proposed enforcement policy statement of 19 August](https://www.ftc.gov/system/files/ftc_gov/pdf/p034101-ftc-enforcement-policy-statement-re-personalized-pricing-proposed-for-public-comment.pdf) shows the agency sees the same seam. It asks companies to "clearly and conspicuously disclose not just that the price is personalized" but also its basis and the data behind it, wherever consumers "reasonably expect that prices for a product or service will not vary based on their personal data." Its grocery example is a delivery customer charged "a higher price for milk based on data showing that several children live" in the household. It also warns against presenting a higher price as "a discount based on their purchase history."
+
+Industry pushed on exactly that point. Covington's [9 November review of the state patchwork](https://www.globalpolicywatch.com/2026/11/algorithmic-pricing-laws-a-growing-state-patchwork-and-what-businesses-should-know/) reports that the proposal drew more than 4,500 comments, many asking the FTC to separate personal-data price increases from discounts and to protect loyalty programmes. The states have not agreed on where that line goes:
+
+| Jurisdiction | What the rule covers | How a loyalty discount fares | Effective |
+|---|---|---|---|
+| Maryland | Grocers and delivery apps may not use dynamic pricing to set higher prices on covered items | Outside the rule, which targets higher prices | 1 Oct 2026 |
+| Connecticut | Retailers may use algorithmic pricing only to set a discounted price, with exceptions | Permitted; an exception must carry the notice "This price was increased using your personal data" | July 2027 |
+| New Jersey | No surveillance pricing to "set or vary" grocery prices based on personal data | Exposed, since the text covers variation in either direction | Aug 2027 |
+| Seattle | Large grocers (20+ locations) and delivery providers may not use algorithmic price discrimination | Depends on how the city reads "discrimination" | 1 Sept 2027 |
+
+Rule summaries are Covington's; effective dates are Holland & Knight's. A Target Circle offer clears Maryland and Connecticut without trouble and looks very different under New Jersey's wording. A national chain trading in all four places needs its offer engine to know which side of each line every offer falls on, and to log it. That geofenced logic is precisely the "overrides driven by state or local restrictions" the FTC order asks to see. The override is a model component, and it belongs in the inventory.
+
+## Note on an economist's objection
+
+The strongest case against my concern comes out of Chicago. Jean-Pierre Dubé and Sanjog Misra's [field experiment on personalized pricing](https://www.nber.org/papers/w23775), first circulated in 2017 and published in the Journal of Political Economy in 2023, found that personalization lifted the firm's profits by a further 19% over an optimized uniform price, and that "over 60% of consumers benefit from lower prices under personalization." If most shoppers pay less, why make the discount engine carry a compliance burden at all?
+
+Two answers. The first sits in the same abstract: total consumer surplus fell 23% under personalized pricing relative to uniform pricing. Most customers gain a little, a minority lose more, and the firm gains most of all. That can be a defensible trade, but it is a distribution, and showing a distribution is the whole purpose of a disclosure rule. The second answer concerns who knows what. The experiment studied a firm that knew it was personalizing. My worry is a retailer that sincerely believes it is not, because its loyalty offers live in a marketing stack, its shelf prices live in a merchandising stack, and the two have never been entered in the same register. Dubé and Misra give a good argument for permitting the practice. Their paper offers no argument for leaving it unmeasured.
+
+## Note on prices that are neither personal nor uniform
+
+One more category falls between the pledges. In September 2025 the Groundwork Collaborative, Consumer Reports and More Perfect Union ran [five coordinated shopping tests on Instacart](https://groundworkcollaborative.org/wp-content/uploads/2025/12/Same-Cart-Different-Price.pdf), two of them at Target stores in Saint Paul and North Canton, Ohio. Across 193 usable submissions, some shoppers were quoted prices up to 23% higher than others for the same item, at the same store, at the same moment, and 74% of grocery items appeared at more than one price. Instacart told the researchers the variation came from randomized experiments run through Eversight, the pricing tool it bought in 2022, and that no personal or demographic data was involved.
+
+Take that explanation at face value. A randomized test uses no personal information, so it sits outside Walmart's pledge and outside Target's as written. It still charges two neighbours different amounts for the same groceries, and the FTC's order asks for every A/B test going back to January 2021.
+
+The sworn reports are due in mid-December. Until they arrive, the question for anyone who owns pricing risk at a large American retailer is one the corporate pages never reach. If an experiment that touches no personal data at all puts a different figure on the same bag of rice for two people standing in the same aisle, which promise was the second shopper given, and who inside the company would know it had happened?
+
+---
+
+*Tarry Singh is the founder and CEO of [Real AI](https://realai.eu), an enterprise AI advisory and deployment firm working with global enterprises on production agent systems, model risk, and AI sovereignty strategy. He also leads [Earthscan](https://earthscan.io) for Energy AI startup, and is a founding contributor to the EU-funded HCAIM and PANORAIMA programmes for responsible AI education across European universities. He writes at [tarrysingh.com](https://tarrysingh.com).*
