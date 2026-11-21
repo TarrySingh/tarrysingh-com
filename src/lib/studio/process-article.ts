@@ -8,6 +8,7 @@ import { sendApprovalEmail } from "./email"
 import { makeApprovalToken } from "./approval-token"
 import { createServiceClient } from "@/lib/supabase/server"
 import type { DispatchFrontmatter } from "./types"
+import { countEmDashes, scrubEmDashes } from "./em-dash"
 
 /**
  * Sprint 9.1 — shared "drop one article into the publish-approval
@@ -100,7 +101,14 @@ export async function processArticle(
   if (!parsed.ok) {
     return { ok: false, stage: "parse", error: parsed.error }
   }
-  const { slug, title, body, wordCount } = parsed
+  const { slug, title: rawTitle, body, wordCount } = parsed
+  // Titles and excerpts are generated one-liners, and they are where the
+  // em-dash leak lived: from 2026-10-20 to 2026-11-13, 16 of the 17 Dispatches
+  // that shipped a dash had it ONLY in the title or excerpt, because the
+  // frontmatter routine's prompt asked for one. Scrub them deterministically
+  // here, before the draft and the approval email, so Tarry reviews the
+  // result. The body is never rewritten; publishDispatch gates it instead.
+  const title = scrubEmDashes(rawTitle)
 
   // ── 1.5. Same-day dedup ───────────────────────────────────────────
   //
@@ -175,11 +183,23 @@ export async function processArticle(
     }
   }
 
+  const excerpt = scrubEmDashes(prepared.excerpt)
+  if (title !== rawTitle || excerpt !== prepared.excerpt) {
+    console.warn(
+      JSON.stringify({
+        tag: "studio.process.em_dash_scrubbed",
+        slug,
+        title: countEmDashes(rawTitle),
+        excerpt: countEmDashes(prepared.excerpt),
+      }),
+    )
+  }
+
   const frontmatter: DispatchFrontmatter = {
     title,
     date: articleDate,
     category: prepared.category,
-    excerpt: prepared.excerpt,
+    excerpt,
     theme: "editorial",
     draft: true,
     tags: prepared.tags,
@@ -219,7 +239,7 @@ export async function processArticle(
   const emailRes = await sendApprovalEmail({
     slug,
     title,
-    excerpt: prepared.excerpt,
+    excerpt,
     category: prepared.category,
     wordCount,
     previewUrl,
@@ -243,7 +263,7 @@ export async function processArticle(
     title,
     wordCount,
     category: prepared.category,
-    excerpt: prepared.excerpt,
+    excerpt,
     tags: prepared.tags,
     previewUrl,
     approveUrl,

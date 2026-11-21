@@ -50,7 +50,7 @@ Format rules:
 
   - Output Markdown only. No HTML, no YAML, no commentary about what you wrote.
   - Use ## for section headings, ### for sub-sections.
-  - Em dashes (, ) not double hyphens.
+  - No em-dashes, and no double hyphens standing in for one. Use the mark the sentence needs: a colon, a semicolon, commas or parentheses.
   - Smart quotes ('') not straight quotes ('').
   - Match the surrounding rhythm: if the existing prose runs in short paragraphs, keep paragraphs short.`
 
@@ -405,7 +405,7 @@ Voice rules (non-negotiable):
   - No SaaS slop: leverage, ideate, unlock, seamless, supercharge, revolutionary, game-changing, best-in-class, world-class, thought leader, synergy.
   - No tracking-vocabulary: convert, optimise, acquire, capture, monetise.
   - End by inviting the reader to subscribe via the existing newsletter form, but don't call it a "newsletter", call it "the next Dispatch" or "one quiet plate when it ships."
-  - British English. Em dashes. Smart quotes.
+  - British English. No em-dashes. Smart quotes.
   - No headings. Plain prose, in Markdown.
 
 Return only the card text. No commentary. No preamble.`

@@ -73,24 +73,24 @@ tags: []
 ---
 
 The first paragraph carries the whole argument. Make it stand
-on its own — a reader who never scrolls past should still know
+on its own: a reader who never scrolls past should still know
 what you're claiming.
 
 ## A heading lives here
 
 Plex Serif body at 1.85 line-height. Headings render in Gloock.
 Code fences (\`\`\`ts ... \`\`\`) compile through Shiki at build
-time — zero client-side JS.
+time, with zero client-side JS.
 
 Images use \`next/image\` automatically with alt-text as the
 caption.
 
 ## Closing thought
 
-End with one short italic line — the studio convention is
+End with one short italic line; the studio convention is
 *one italic close per page*.
 
-— *the studio*
+*the studio*
 `
 }
 

@@ -74,6 +74,7 @@ export async function POST(req: NextRequest) {
       result.error === "github_unconfigured" ? 503 :
       result.error === "slug_already_exists" ? 409 :
       result.error === "invalid_input" ? 422 :
+      result.error === "em_dash" ? 422 :
       502
     return NextResponse.json(result, { status })
   }
