@@ -3,6 +3,11 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
+import {
+  HoneypotField,
+  TurnstileWidget,
+  useBotCheck,
+} from "@/components/forms/bot-check"
 
 type Status = "idle" | "loading" | "sent" | "error"
 
@@ -50,6 +55,10 @@ export function TarryPeekABoo({
   const [status, setStatus] = useState<Status>("idle")
   const [message, setMessage] = useState("")
   const wrapperRef = useRef<HTMLDivElement | null>(null)
+  // Owned here, not by the bubble, so hover in/out never resets the
+  // timer or the honeypot. The timer starts when the bubble (and its
+  // form) first opens.
+  const bot = useBotCheck({ active: visible && expanded })
 
   // Mount-time eligibility + scroll listener.
   useEffect(() => {
@@ -107,12 +116,14 @@ export function TarryPeekABoo({
     setStatus("loading")
     setMessage("")
     try {
+      const botCheck = await bot.getBotCheck()
       const res = await fetch("/api/newsletter/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: trimmed,
           source: slug ? `blog-tarry-peek:${slug}` : "blog-tarry-peek",
+          botCheck,
         }),
       })
       if (!res.ok) throw new Error(`status ${res.status}`)
@@ -124,6 +135,7 @@ export function TarryPeekABoo({
         setVisible(false)
       }, 4000)
     } catch {
+      bot.rearm()
       setStatus("error")
       setMessage("Snagged on our side. Try again in a moment.")
     }
@@ -284,10 +296,12 @@ export function TarryPeekABoo({
             </p>
 
             <form
+              {...bot.formProps}
               onSubmit={onSubmit}
               noValidate
               className="flex flex-col gap-1.5"
             >
+              <HoneypotField value={bot.hp} onChange={bot.setHp} />
               <label htmlFor="tarry-mascot-email" className="sr-only">
                 Email address
               </label>
@@ -327,6 +341,7 @@ export function TarryPeekABoo({
                     : "Subscribe"}
               </button>
             </form>
+            <TurnstileWidget {...bot.turnstile} theme="light" />
 
             <div
               className="mt-2 min-h-[1rem] text-[10px]"

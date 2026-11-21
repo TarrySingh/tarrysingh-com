@@ -35,6 +35,22 @@ export interface LeadContextUtm {
   content?: string
 }
 
+/**
+ * Anti-bot signals gathered by the signup forms
+ * (src/components/forms/bot-check) and verified by the realai-crm
+ * receiver for the newsletter, contact-form and whitepaper sources.
+ * The field names are the CRM's contract: do not rename them.
+ *   turnstileToken  Cloudflare Turnstile response token; '' when the
+ *                   widget is off or produced no token.
+ *   hp              honeypot value; '' for a person, non-empty = bot.
+ *   elapsedMs       ms between the form first appearing and the submit.
+ */
+export interface LeadBotCheck {
+  turnstileToken: string
+  hp: string
+  elapsedMs: number
+}
+
 export interface LeadContext {
   consent?: boolean
   referrer?: string
@@ -43,6 +59,8 @@ export interface LeadContext {
   engagement?: string
   tags?: string[]
   utm?: LeadContextUtm
+  /** Signup sources only. Never sent with `unsubscribe`. */
+  botCheck?: LeadBotCheck
   // Open-ended; receiver tolerates unknown keys.
   [key: string]: unknown
 }

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { postLeadToCrm } from "@/lib/crm/post-lead"
+import { readBotCheck } from "@/lib/crm/bot-check"
 
 export const runtime = "nodejs"
 
@@ -36,6 +37,8 @@ interface SubscribeBody {
   utm_campaign?: unknown
   utm_term?: unknown
   utm_content?: unknown
+  /** { turnstileToken, hp, elapsedMs } from the form's bot-check layer. */
+  botCheck?: unknown
 }
 
 function isValidEmail(value: string): boolean {
@@ -80,6 +83,13 @@ export async function POST(req: NextRequest) {
   }
   const hasUtm = Object.values(utm).some((v) => v !== undefined)
 
+  // Anti-bot signals: type-checked and size-capped, never judged here.
+  // The CRM receiver verifies them and decides (soft mode until
+  // TARRYSINGH_BOT_CHECK_ENFORCE=true), so the visitor's response
+  // below is the same whatever they contain. Always sent: a request
+  // with no envelope goes out with the empty one, so the CRM checks it.
+  const botCheck = readBotCheck(body.botCheck)
+
   const result = await postLeadToCrm({
     source: "newsletter",
     lead: { email },
@@ -91,6 +101,7 @@ export async function POST(req: NextRequest) {
       page: source,
       ip,
       userAgent: ua,
+      botCheck,
     },
   })
 

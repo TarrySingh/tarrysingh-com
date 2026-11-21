@@ -1,6 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import {
+  HoneypotField,
+  TurnstileWidget,
+  useBotCheck,
+} from "@/components/forms/bot-check"
 
 type Status = "idle" | "loading" | "sent" | "error"
 
@@ -21,6 +26,7 @@ export function NewsletterCard({ variant = "wide" }: NewsletterCardProps) {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<Status>("idle")
   const [message, setMessage] = useState("")
+  const bot = useBotCheck()
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -33,6 +39,7 @@ export function NewsletterCard({ variant = "wide" }: NewsletterCardProps) {
     setStatus("loading")
     setMessage("")
     try {
+      const botCheck = await bot.getBotCheck()
       const res = await fetch("/api/newsletter/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -40,6 +47,7 @@ export function NewsletterCard({ variant = "wide" }: NewsletterCardProps) {
           email: trimmed,
           source:
             typeof window !== "undefined" ? window.location.pathname : "/",
+          botCheck,
         }),
       })
       if (!res.ok) throw new Error(`status ${res.status}`)
@@ -47,6 +55,7 @@ export function NewsletterCard({ variant = "wide" }: NewsletterCardProps) {
       setMessage("Filed. Welcome to the dispatches list.")
       setEmail("")
     } catch {
+      bot.rearm()
       setStatus("error")
       setMessage("Something snagged. Try again in a moment?")
     }
@@ -112,10 +121,12 @@ export function NewsletterCard({ variant = "wide" }: NewsletterCardProps) {
       </p>
 
       <form
+        {...bot.formProps}
         onSubmit={onSubmit}
         className="flex flex-col sm:flex-row gap-3 sm:items-stretch"
         noValidate
       >
+        <HoneypotField value={bot.hp} onChange={bot.setHp} />
         <label htmlFor="dispatches-email" className="sr-only">
           Email address
         </label>
@@ -156,6 +167,7 @@ export function NewsletterCard({ variant = "wide" }: NewsletterCardProps) {
           {status === "loading" ? "Filing…" : status === "sent" ? "Filed" : "Subscribe"}
         </button>
       </form>
+      <TurnstileWidget {...bot.turnstile} theme="light" />
 
       <div className="min-h-[1.5rem] mt-4" aria-live="polite">
         {message ? (

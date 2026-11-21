@@ -37,6 +37,21 @@ function buildPayload({
 }
 
 /**
+ * The log-only line is for replaying a lead by hand. A Turnstile token
+ * is single-use and dies after 300s, so a replay can never reuse it:
+ * log its length instead of up to 2KB of opaque token. The payload
+ * that goes to the CRM is not touched.
+ */
+function contextForLog(context?: LeadContext): LeadContext | undefined {
+  if (!context?.botCheck) return context
+  const { turnstileToken, ...rest } = context.botCheck
+  return {
+    ...context,
+    botCheck: { ...rest, turnstileToken: `<${turnstileToken.length} chars>` },
+  }
+}
+
+/**
  * Post a Lead payload to RealAI-CRM at /api/webhooks/tarrysingh,
  * HMAC-signed with CRM_WEBHOOK_SECRET. Always returns a result —
  * never throws — so the calling route handler can render a clean
@@ -69,7 +84,7 @@ export async function postLeadToCrm(
         eventId: payload.eventId,
         source: payload.source,
         email: payload.lead.email,
-        context: payload.context,
+        context: contextForLog(payload.context),
         ts: payload.ts,
       }),
     )

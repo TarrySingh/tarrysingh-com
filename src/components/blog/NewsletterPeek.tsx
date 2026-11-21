@@ -3,6 +3,11 @@
 import { useEffect, useRef, useState } from "react"
 import { usePathname } from "next/navigation"
 import { X } from "lucide-react"
+import {
+  HoneypotField,
+  TurnstileWidget,
+  useBotCheck,
+} from "@/components/forms/bot-check"
 
 type Status = "idle" | "loading" | "sent" | "error"
 
@@ -31,6 +36,9 @@ export function NewsletterPeek() {
   const [status, setStatus] = useState<Status>("idle")
   const [message, setMessage] = useState("")
   const wrapperRef = useRef<HTMLDivElement | null>(null)
+  // This host lives in the layout and outlasts navigations; time the
+  // form from when the card slides in, not from the first page view.
+  const bot = useBotCheck({ active: visible })
   const pathname = usePathname()
   // Suppress on /blog/<slug> routes — those mount the TarryPeekABoo
   // mascot (right-edge sliding peek) instead. Two peeks fighting for
@@ -113,12 +121,14 @@ export function NewsletterPeek() {
     setStatus("loading")
     setMessage("")
     try {
+      const botCheck = await bot.getBotCheck()
       const res = await fetch("/api/newsletter/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: trimmed,
           source: window.location.pathname,
+          botCheck,
         }),
       })
       if (!res.ok) throw new Error(`status ${res.status}`)
@@ -131,6 +141,7 @@ export function NewsletterPeek() {
         setVisible(false)
       }, 4000)
     } catch {
+      bot.rearm()
       setStatus("error")
       setMessage("Snagged on our side. Try again in a moment.")
     }
@@ -210,7 +221,13 @@ export function NewsletterPeek() {
           I&apos;m reading. No funnels.
         </p>
 
-        <form onSubmit={onSubmit} className="flex flex-col gap-2" noValidate>
+        <form
+          {...bot.formProps}
+          onSubmit={onSubmit}
+          className="flex flex-col gap-2"
+          noValidate
+        >
+          <HoneypotField value={bot.hp} onChange={bot.setHp} />
           <label htmlFor="dispatches-peek-email" className="sr-only">
             Email address
           </label>
@@ -252,6 +269,7 @@ export function NewsletterPeek() {
               : "Subscribe"}
           </button>
         </form>
+        <TurnstileWidget {...bot.turnstile} theme="light" />
 
         <div
           className="min-h-[1.25rem] mt-2.5 text-[11px]"
