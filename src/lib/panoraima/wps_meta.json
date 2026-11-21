@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T12:24:54Z",
+  "generated_at": "2026-11-21T11:10:13Z",
   "wps": [
     {
       "wp": "WP2",
@@ -84,13 +84,13 @@
       "description": "Design lesson plans and run the cross-university pilots that validate the curriculum.",
       "status": "active",
       "stats": {
-        "total_files": 1851,
-        "size_mb": 1119,
+        "total_files": 1871,
+        "size_mb": 1219,
         "by_ext": {
-          ".docx": 282,
+          ".docx": 287,
           ".xlsx": 34,
-          ".pdf": 179,
-          ".pptx": 227,
+          ".pdf": 180,
+          ".pptx": 239,
           ".odp": 2,
           ".potx": 11,
           ".csv": 169,
@@ -107,14 +107,14 @@
           ".yml": 2,
           ".sh": 1,
           ".r": 2,
-          ".ipynb": 16,
+          ".ipynb": 18,
           ".py": 37,
           ".pyc": 1,
           ".fastq": 2,
           ".doc": 1
         },
         "by_type": {
-          "other": 1730,
+          "other": 1750,
           "template": 87,
           "presentation": 26,
           "research": 8
@@ -151,17 +151,17 @@
       "description": "Weave responsible AI practice into every track and deliverable.",
       "status": "sparse",
       "stats": {
-        "total_files": 38,
-        "size_mb": 10,
+        "total_files": 40,
+        "size_mb": 12,
         "by_ext": {
-          ".docx": 32,
+          ".docx": 34,
           ".pptx": 2,
           ".xlsx": 1,
           ".pdf": 3
         },
         "by_type": {
-          "other": 35,
-          "template": 3
+          "other": 36,
+          "template": 4
         },
         "by_region": {}
       },
@@ -177,25 +177,25 @@
       "description": "Amplify PANORAIMA's reach through clusters for social media, student recruitment, knowledge exchange and brand.",
       "status": "active",
       "stats": {
-        "total_files": 683,
-        "size_mb": 1202,
+        "total_files": 726,
+        "size_mb": 1209,
         "by_ext": {
-          ".docx": 168,
-          ".pptx": 41,
+          ".docx": 180,
+          ".pptx": 43,
           ".dotx": 11,
           ".pdf": 142,
-          ".xlsx": 65,
+          ".xlsx": 67,
           ".odt": 2,
           ".webloc": 2,
-          ".txt": 4,
+          ".htm": 10,
+          ".txt": 5,
+          ".xml": 20,
+          ".png": 75,
+          ".thmx": 10,
+          ".gif": 4,
+          ".jpg": 68,
           ".md": 14,
           ".json": 2,
-          ".htm": 5,
-          ".xml": 10,
-          ".png": 72,
-          ".thmx": 5,
-          ".gif": 2,
-          ".jpg": 67,
           ".xlsm": 6,
           ".heic": 9,
           ".potx": 4,
@@ -209,8 +209,8 @@
         "by_type": {
           "other": 430,
           "template": 32,
-          "presentation": 27,
-          "research": 192,
+          "presentation": 29,
+          "research": 233,
           "deliverable": 2
         },
         "by_region": {

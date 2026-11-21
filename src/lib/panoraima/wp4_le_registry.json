@@ -2,9 +2,18 @@
   "wp": "WP4",
   "title": "Curriculum & Pilot Programmes",
   "tagline": "Every Learning Event across the four tracks — what exists, what's RealAI's, and what's missing.",
-  "generated_at": "2026-11-18T12:25:16.590817+00:00",
-  "refreshed_at": "2026-11-18T12:25:16.590817+00:00",
+  "generated_at": "2026-11-21T11:10:42.811527+00:00",
+  "refreshed_at": "2026-11-21T11:10:42.811527+00:00",
   "refresh_history": [
+    {
+      "at": "2026-11-21T11:10:42.811527+00:00",
+      "wiki_captured": "2026-11-21T11:09:46.993Z",
+      "sharepoint_generated": "2026-11-21T11:10:42.470273Z",
+      "realai_total": 84,
+      "reviewed": 50,
+      "revision_requested": 23,
+      "early_feedback": 16
+    },
     {
       "at": "2026-11-18T12:25:16.590817+00:00",
       "wiki_captured": "2026-11-18T12:20:39.992Z",
@@ -67,28 +76,19 @@
       "reviewed": 48,
       "revision_requested": 14,
       "early_feedback": 16
-    },
-    {
-      "at": "2026-10-20T11:43:55.185573+00:00",
-      "wiki_captured": "2026-10-20T11:42:51.719Z",
-      "sharepoint_generated": "2026-10-20T11:43:54.597679Z",
-      "realai_total": 96,
-      "reviewed": 58,
-      "revision_requested": 14,
-      "early_feedback": 16
     }
   ],
   "data_sources": {
     "wiki": {
       "status": "live",
-      "captured_at": "2026-11-18T12:20:39.992Z",
+      "captured_at": "2026-11-21T11:09:46.993Z",
       "master_total": 389
     },
     "sharepoint": {
-      "generated_at": "2026-11-18T12:25:16.256560Z",
+      "generated_at": "2026-11-21T11:10:42.470273Z",
       "counts": {
         "codes_total": 497,
-        "with_materials": 205,
+        "with_materials": 209,
         "material_folders": 470,
         "lesson_plan_docs": 32,
         "registry_rows": 114
@@ -109,19 +109,19 @@
     },
     "by_status": {
       "In review": 112,
-      "In development": 129,
-      "Status not set": 45,
+      "In development": 126,
+      "Status not set": 42,
       "Not started": 4,
       "Materials in progress": 22,
-      "Finalized": 5,
-      "Ready for pilot": 72
+      "Finalized": 7,
+      "Ready for pilot": 76
     },
-    "with_materials": 199,
-    "materials_pending": 190,
+    "with_materials": 203,
+    "materials_pending": 186,
     "coverage": {
       "wiki_total": 389,
-      "with_sharepoint_material": 199,
-      "awaiting_material": 190,
+      "with_sharepoint_material": 203,
+      "awaiting_material": 186,
       "off_wiki": 54,
       "off_wiki_realai": 0,
       "realai_wiki_gap": 0
@@ -134,9 +134,9 @@
       "revision_requested": 23,
       "early_feedback": 16,
       "by_status": {
-        "In review": 43,
+        "In review": 42,
         "In development": 27,
-        "Ready for pilot": 9,
+        "Ready for pilot": 10,
         "Materials in progress": 4,
         "Status not set": 1
       },
@@ -7927,8 +7927,8 @@
       "lesson_type": "Practical",
       "duration": "90",
       "job_role": "Any",
-      "status": "In review",
-      "wiki_status": "Learning materials: review",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "mf_final": null,
       "author": "TUD · Abdelsalam Busalim",
@@ -7943,10 +7943,26 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 1,
+        "count": 3,
         "has": true,
-        "newest": "2026-11-04",
+        "newest": "2026-11-20",
         "files": [
+          {
+            "name": "Learning-Event-Reviewer-Checklist.docx",
+            "ext": "docx",
+            "kb": 210,
+            "date": "2026-11-20",
+            "sha": "bcd1fced92393b32",
+            "rel": "4.1 Horizontal/H-231/Learning-Event-Reviewer-Checklist.docx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist.docx",
+            "ext": "docx",
+            "kb": 210,
+            "date": "2026-11-20",
+            "sha": "20de4aa37c5b648c",
+            "rel": "4.1 Horizontal/H-231/Learning-Outcomes-Reviewer-Checklist.docx"
+          },
           {
             "name": "H231-AI Act Risk Management and Risk Mitigation.pptx",
             "ext": "pptx",
@@ -7999,10 +8015,18 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-11",
+        "newest": "2026-11-19",
         "files": [
+          {
+            "name": "H-239 corr.pptx",
+            "ext": "pptx",
+            "kb": 18786,
+            "date": "2026-11-19",
+            "sha": "1d76d9eed4f94b47",
+            "rel": "4.1 Horizontal/H-239/H-239 corr.pptx"
+          },
           {
             "name": "H-239.pptx",
             "ext": "pptx",
@@ -8039,8 +8063,8 @@
       "lesson_type": "Practice",
       "duration": "45",
       "job_role": "Comm$Conflict",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "status": "Finalized",
+      "wiki_status": "Learning event: finalized",
       "due_date": "",
       "mf_final": null,
       "author": "BME · Hédi Virág Csordás",
@@ -8055,10 +8079,18 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-19",
+        "newest": "2026-11-20",
         "files": [
+          {
+            "name": "A-B BATNA practice Corr.docx",
+            "ext": "docx",
+            "kb": 30,
+            "date": "2026-11-20",
+            "sha": "6be97abdabd03bb2",
+            "rel": "4.1 Horizontal/H-240/A-B BATNA practice Corr.docx"
+          },
           {
             "name": "A-B BATNA practice.docx",
             "ext": "docx",
@@ -8111,10 +8143,18 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-11",
+        "newest": "2026-11-19",
         "files": [
+          {
+            "name": "H-241 korr.pptx",
+            "ext": "pptx",
+            "kb": 9927,
+            "date": "2026-11-19",
+            "sha": "a618eb49041ca38a",
+            "rel": "4.1 Horizontal/H-241/H-241 korr.pptx"
+          },
           {
             "name": "H-241.pptx",
             "ext": "pptx",
@@ -8167,10 +8207,18 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 2,
+        "count": 3,
         "has": true,
-        "newest": "2026-06-12",
+        "newest": "2026-11-19",
         "files": [
+          {
+            "name": "H-242 korr.pptx",
+            "ext": "pptx",
+            "kb": 4646,
+            "date": "2026-11-19",
+            "sha": "709e5a985426df30",
+            "rel": "4.1 Horizontal/H-242/H-242 korr.pptx"
+          },
           {
             "name": "H-242.pptx",
             "ext": "pptx",
@@ -8215,8 +8263,8 @@
       "lesson_type": "Practice",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "Materials in progress",
-      "wiki_status": "Learning materials: under revision",
+      "status": "Finalized",
+      "wiki_status": "Learning event: finalized",
       "due_date": "",
       "mf_final": null,
       "author": "BME · Hédi Virág Csordás",
@@ -8231,10 +8279,18 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-07-09",
+        "newest": "2026-11-20",
         "files": [
+          {
+            "name": "H-243 CORR.pptx",
+            "ext": "pptx",
+            "kb": 5052,
+            "date": "2026-11-20",
+            "sha": "d19c2cc727598b86",
+            "rel": "4.1 Horizontal/H-243/H-243 CORR.pptx"
+          },
           {
             "name": "H-243 NEW.pptx",
             "ext": "pptx",
@@ -8287,10 +8343,18 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 4,
+        "count": 5,
         "has": true,
-        "newest": "2026-07-09",
+        "newest": "2026-11-19",
         "files": [
+          {
+            "name": "H-244 corr.pptx",
+            "ext": "pptx",
+            "kb": 5675,
+            "date": "2026-11-19",
+            "sha": "1a9a12fec466407a",
+            "rel": "4.1 Horizontal/H-244/H-244 corr.pptx"
+          },
           {
             "name": "H-244 E_MAIL CARDS.png",
             "ext": "png",
@@ -8450,7 +8514,7 @@
       "due_date": "",
       "mf_final": null,
       "author": "BME · Edit Tomasovszky",
-      "coauthor": "HU",
+      "coauthor": "HU · Tina van der Linden",
       "reviewer": "",
       "off_wiki": false,
       "realai_wiki_gap": false,
@@ -8564,10 +8628,18 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-09-17",
+        "newest": "2026-11-21",
         "files": [
+          {
+            "name": "H_272-Disinformation_Schade_2026-11-21_FIN.pptx",
+            "ext": "pptx",
+            "kb": 34774,
+            "date": "2026-11-21",
+            "sha": "8afcb864f3984b07",
+            "rel": "4.1 Horizontal/H-272/H_272-Disinformation_Schade_2026-11-21_FIN.pptx"
+          },
           {
             "name": "H_272-Disinformation_Schade_2026-09-18_FIN.pptx",
             "ext": "pptx",
@@ -11482,10 +11554,18 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 1,
+        "count": 2,
         "has": true,
-        "newest": "2026-06-11",
+        "newest": "2026-11-19",
         "files": [
+          {
+            "name": "HC-076b corr.pptx",
+            "ext": "pptx",
+            "kb": 6385,
+            "date": "2026-11-19",
+            "sha": "71f49e758522e5b3",
+            "rel": "4.1 Horizontal/HC-076b/HC-076b corr.pptx"
+          },
           {
             "name": "HC-076b.pptx",
             "ext": "pptx",
@@ -16409,8 +16489,8 @@
       "lesson_type": "Tutorial",
       "duration": "120",
       "job_role": "Researcher",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
+      "status": "Ready for pilot",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "mf_final": null,
       "author": "HU · Bas van Gestel / René van der Ploeg",
@@ -16427,8 +16507,16 @@
       "materials": {
         "count": 142,
         "has": true,
-        "newest": "2026-07-01",
+        "newest": "2026-11-20",
         "files": [
+          {
+            "name": "1_tutorial_omics_data_intro.pptx",
+            "ext": "pptx",
+            "kb": 4959,
+            "date": "2026-11-20",
+            "sha": "95f4a373fca55534",
+            "rel": "4.2 Health & Lifescience/HL-009/1_tutorial_omics_data_intro.pptx"
+          },
           {
             "name": "mermaid.min.js",
             "ext": "js",
@@ -16740,14 +16828,6 @@
             "date": "2026-07-01",
             "sha": "06e34c8903add62c",
             "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-39-output-1.png"
-          },
-          {
-            "name": "bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css",
-            "ext": "css",
-            "kb": 486,
-            "date": "2026-07-01",
-            "sha": "6383064d07eacf8e",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css"
           }
         ],
         "folder": "HL-009"
@@ -16774,9 +16854,9 @@
         },
         {
           "name": "Management information",
-          "len": 827,
+          "len": 823,
           "empty": false,
-          "text": "Author Organisation 1\n\nHU\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\nAuthor Organisation 2\n\nUNINA\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen, Tannistha Maiti\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nThe student understands the different data aspects that are specific for omics data, such as batch effects, sparse data and high dimensionality.The students can apply methods (such as log transformation and variance filtering) to make the omics data more suited for machine learning applications.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nomics datasets (genomic, transcriptomic, proteomic, metabolomic),high dimensionality,batch effects,normalisation,sparsity,feature processing,integration with clinical and imaging modalities,"
+          "text": "Author Organisation 1\n\nHU\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\nAuthor Organisation 2\n\nUNINA\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen, Tannistha Maiti\n\nStatus\n\nReady for pilot\n\nLearning Outcomes:   \n\nThe student understands the different data aspects that are specific for omics data, such as batch effects, sparse data and high dimensionality.The students can apply methods (such as log transformation and variance filtering) to make the omics data more suited for machine learning applications.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nomics datasets (genomic, transcriptomic, proteomic, metabolomic),high dimensionality,batch effects,normalisation,sparsity,feature processing,integration with clinical and imaging modalities,"
         },
         {
           "name": "Expected preparation",
@@ -16932,10 +17012,19 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-11-19",
+        "files": [
+          {
+            "name": "Slides.pptx",
+            "ext": "pptx",
+            "kb": 374,
+            "date": "2026-11-19",
+            "sha": "c524e9f81144042c",
+            "rel": "4.2 Health & Lifescience/HL-011/Slides.pptx"
+          }
+        ],
         "folder": "HL-011"
       },
       "lesson_plan": {
@@ -17005,7 +17094,7 @@
         "is_author": false,
         "instructions_written": false,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [
           "Instructions for teachers (detailed)"
         ],
@@ -18468,10 +18557,35 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-11-19",
+        "files": [
+          {
+            "name": "HL021_Notebook2_DL_BrainTumorCNN.ipynb",
+            "ext": "ipynb",
+            "kb": 3204,
+            "date": "2026-11-19",
+            "sha": "510887695d482405",
+            "rel": "4.2 Health & Lifescience/HL-021/HL021_Notebook2_DL_BrainTumorCNN.ipynb"
+          },
+          {
+            "name": "HL021_Notebook1_ML_BreastCancer.ipynb",
+            "ext": "ipynb",
+            "kb": 863,
+            "date": "2026-11-19",
+            "sha": "2aece373818792ba",
+            "rel": "4.2 Health & Lifescience/HL-021/HL021_Notebook1_ML_BreastCancer.ipynb"
+          },
+          {
+            "name": "HL021_From_ML_to_DL-3.pptx",
+            "ext": "pptx",
+            "kb": 702,
+            "date": "2026-11-19",
+            "sha": "7244e81f35f5d8db",
+            "rel": "4.2 Health & Lifescience/HL-021/HL021_From_ML_to_DL-3.pptx"
+          }
+        ],
         "folder": "HL-021"
       },
       "lesson_plan": {
@@ -19617,8 +19731,8 @@
       "lesson_type": "Lecture",
       "duration": "60",
       "job_role": "Governance",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Ready for pilot",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "mf_final": null,
       "author": "UNINA",
@@ -20403,8 +20517,8 @@
       "lesson_type": "Lecture+tutorial",
       "duration": "120",
       "job_role": "Researcher, Practitioner",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Ready for pilot",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "mf_final": null,
       "author": "UNINA",
@@ -21296,8 +21410,8 @@
       "lesson_type": "Practical",
       "duration": "120",
       "job_role": "Researcher and Governance",
-      "status": "Status not set",
-      "wiki_status": "!Missing status!",
+      "status": "Ready for pilot",
+      "wiki_status": "Ready for pilot",
       "due_date": "",
       "mf_final": null,
       "author": "UNIWA · Anna Mavromanoli",
@@ -22423,9 +22537,9 @@
         },
         {
           "name": "Acknowledgements, thanks",
-          "len": 114,
+          "len": 390,
           "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+          "text": "Ownership: RealAI wrote the starting text of this lesson plan in July 2026 as guidance notes, to get the author started. This learning event belongs to its author, who owns the lesson plan and the teaching material. RealAI is the reviewer, not the author. See the Talk page.\n\nThe PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
         },
         {
           "name": "Lesson materials",
@@ -22735,9 +22849,9 @@
         },
         {
           "name": "Acknowledgements, thanks",
-          "len": 114,
+          "len": 390,
           "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+          "text": "Ownership: RealAI wrote the starting text of this lesson plan in July 2026 as guidance notes, to get the author started. This learning event belongs to its author, who owns the lesson plan and the teaching material. RealAI is the reviewer, not the author. See the Talk page.\n\nThe PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
         },
         {
           "name": "Lesson materials",
@@ -22832,8 +22946,8 @@
       "lesson_type": "Lecture + practical",
       "duration": "180",
       "job_role": "EU AI Compliance Specialist",
-      "status": "In development",
-      "wiki_status": "Learning materials: development",
+      "status": "Materials in progress",
+      "wiki_status": "Learning materials: under revision",
       "due_date": "",
       "mf_final": null,
       "author": "BME · Zoltán Víg",
@@ -22848,10 +22962,35 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 3,
+        "has": true,
+        "newest": "2026-11-20",
+        "files": [
+          {
+            "name": "Learning-Event-Reviewer-Checklist-LC-14.docx",
+            "ext": "docx",
+            "kb": 210,
+            "date": "2026-11-20",
+            "sha": "a3a6016579e21cb6",
+            "rel": "4.4 Law & Compliance/LC-014/Learning-Event-Reviewer-Checklist-LC-14.docx"
+          },
+          {
+            "name": "Víg Zoltán_AI Governance.pptx",
+            "ext": "pptx",
+            "kb": 467,
+            "date": "2026-11-20",
+            "sha": "77d041a713d13cf8",
+            "rel": "4.4 Law & Compliance/LC-014/Víg Zoltán_AI Governance.pptx"
+          },
+          {
+            "name": "Learning-Outcomes-Reviewer-Checklist-LC-14.docx",
+            "ext": "docx",
+            "kb": 208,
+            "date": "2026-11-20",
+            "sha": "211d0939d5298b22",
+            "rel": "4.4 Law & Compliance/LC-014/Learning-Outcomes-Reviewer-Checklist-LC-14.docx"
+          }
+        ],
         "folder": "LC-014"
       },
       "lesson_plan": {
@@ -22935,9 +23074,9 @@
         },
         {
           "name": "Acknowledgements, thanks",
-          "len": 114,
+          "len": 390,
           "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+          "text": "Ownership: RealAI wrote the starting text of this lesson plan in July 2026 as guidance notes, to get the author started. This learning event belongs to its author, who owns the lesson plan and the teaching material. RealAI is the reviewer, not the author. See the Talk page.\n\nThe PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
         },
         {
           "name": "Lesson materials",
@@ -23436,11 +23575,11 @@
       "lesson_type": "Practical",
       "duration": "90",
       "job_role": "EU AI Compliance Specialist",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Learning materials: review",
       "due_date": "",
       "mf_final": null,
-      "author": "HU",
+      "author": "HU · Sieuwert van Otterloo",
       "coauthor": "TUD",
       "reviewer": "",
       "off_wiki": false,
@@ -23452,10 +23591,27 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 2,
+        "has": true,
+        "newest": "2026-11-21",
+        "files": [
+          {
+            "name": "LC-022 Shadow AI & Acceptable Use.pdf",
+            "ext": "pdf",
+            "kb": 584,
+            "date": "2026-11-21",
+            "sha": "b3df9155fd92f8a7",
+            "rel": "4.4 Law & Compliance/LC-022/LC-022 Shadow AI & Acceptable Use.pdf"
+          },
+          {
+            "name": "LC-022 Shadow AI & Acceptable Use.pptx",
+            "ext": "pptx",
+            "kb": 1357,
+            "date": "2026-11-21",
+            "sha": "439bd6daa6cd9326",
+            "rel": "4.4 Law & Compliance/LC-022/LC-022 Shadow AI & Acceptable Use.pptx"
+          }
+        ],
         "folder": "LC-022"
       },
       "lesson_plan": {
@@ -23957,9 +24113,9 @@
         },
         {
           "name": "Acknowledgements, thanks",
-          "len": 114,
+          "len": 390,
           "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+          "text": "Ownership: RealAI wrote the starting text of this lesson plan in July 2026 as guidance notes, to get the author started. This learning event belongs to its author, who owns the lesson plan and the teaching material. RealAI is the reviewer, not the author. See the Talk page.\n\nThe PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
         },
         {
           "name": "Lesson materials",
@@ -26641,8 +26797,8 @@
       "lesson_type": "Interactive",
       "duration": "90",
       "job_role": "Comm$Conflict",
-      "status": "In development",
-      "wiki_status": "Lesson plan: development",
+      "status": "In review",
+      "wiki_status": "Lesson plan: review",
       "due_date": "",
       "mf_final": null,
       "author": "BME · Dorottya Egres",
@@ -32958,433 +33114,6 @@
       ]
     },
     {
-      "code": "HL-009",
-      "track": "Health",
-      "title": "HL-009 Tutorial — Omics Data",
-      "lesson_type": "Tutorial",
-      "duration": "120",
-      "job_role": "Researcher",
-      "status": "In review",
-      "wiki_status": "Lesson plan: review",
-      "due_date": "",
-      "mf_final": null,
-      "author": "HU · Bas van Gestel / René van der Ploeg",
-      "coauthor": "UNINA",
-      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen, Tannistha Maiti",
-      "off_wiki": false,
-      "realai_wiki_gap": false,
-      "review_done": true,
-      "revision_requested": false,
-      "review_note": "Major revision. Part 2 is built on library-size confounding but never teaches the fix (CPM or size-factor normalisation), and Part 1's text mislabels log2(count+1) as 'normalization'; the definitions slide is in Dutch; the lesson plan is not on the wiki yet.",
-      "early_feedback": null,
-      "action_summary": null,
-      "author_activity": null,
-      "materials": {
-        "count": 142,
-        "has": true,
-        "newest": "2026-07-01",
-        "files": [
-          {
-            "name": "mermaid.min.js",
-            "ext": "js",
-            "kb": 2684,
-            "date": "2026-07-01",
-            "sha": "07e37dfa97b337cc",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.min.js"
-          },
-          {
-            "name": "quarto-search.js",
-            "ext": "js",
-            "kb": 42,
-            "date": "2026-07-01",
-            "sha": "1a23221f499b3993",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/quarto-search.js"
-          },
-          {
-            "name": "autocomplete.umd.js",
-            "ext": "js",
-            "kb": 94,
-            "date": "2026-07-01",
-            "sha": "cd9db3b7d812139a",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/autocomplete.umd.js"
-          },
-          {
-            "name": "clipboard.min.js",
-            "ext": "js",
-            "kb": 8,
-            "date": "2026-07-01",
-            "sha": "e17a1d816e13c082",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
-          },
-          {
-            "name": "tabsets.js",
-            "ext": "js",
-            "kb": 2,
-            "date": "2026-07-01",
-            "sha": "a9c226bf70e82eaf",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
-          },
-          {
-            "name": "popper.min.js",
-            "ext": "js",
-            "kb": 19,
-            "date": "2026-07-01",
-            "sha": "4d50586b184724d3",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/popper.min.js"
-          },
-          {
-            "name": "fuse.min.js",
-            "ext": "js",
-            "kb": 22,
-            "date": "2026-07-01",
-            "sha": "c57339c3fa16b1d6",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/fuse.min.js"
-          },
-          {
-            "name": "anchor.min.js",
-            "ext": "js",
-            "kb": 5,
-            "date": "2026-07-01",
-            "sha": "69098e105d990f83",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/anchor.min.js"
-          },
-          {
-            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
-            "ext": "css",
-            "kb": 3,
-            "date": "2026-07-01",
-            "sha": "34a771139d2d6c07",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
-          },
-          {
-            "name": "mermaid-init.js",
-            "ext": "js",
-            "kb": 13,
-            "date": "2026-07-01",
-            "sha": "a68a1b7deabddb8d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid-init.js"
-          },
-          {
-            "name": "quarto.js",
-            "ext": "js",
-            "kb": 26,
-            "date": "2026-07-01",
-            "sha": "4ecb60f215d96b2a",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto.js"
-          },
-          {
-            "name": "tippy.css",
-            "ext": "css",
-            "kb": 1,
-            "date": "2026-07-01",
-            "sha": "5969f497d9158d76",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tippy.css"
-          },
-          {
-            "name": "tippy.umd.min.js",
-            "ext": "js",
-            "kb": 23,
-            "date": "2026-07-01",
-            "sha": "41181eeec6d7ba64",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tippy.umd.min.js"
-          },
-          {
-            "name": "headroom.min.js",
-            "ext": "js",
-            "kb": 4,
-            "date": "2026-07-01",
-            "sha": "5b80cc4165a661a3",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/headroom.min.js"
-          },
-          {
-            "name": "cell-32-output-1.png",
-            "ext": "png",
-            "kb": 58,
-            "date": "2026-07-01",
-            "sha": "0aef2657d3e752e1",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-32-output-1.png"
-          },
-          {
-            "name": "cell-38-output-1.png",
-            "ext": "png",
-            "kb": 57,
-            "date": "2026-07-01",
-            "sha": "99178a578c6c1b75",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-38-output-1.png"
-          },
-          {
-            "name": "cell-39-output-1.png",
-            "ext": "png",
-            "kb": 64,
-            "date": "2026-07-01",
-            "sha": "54f40be8c57fdcc2",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-39-output-1.png"
-          },
-          {
-            "name": "mermaid.css",
-            "ext": "css",
-            "kb": 0,
-            "date": "2026-07-01",
-            "sha": "7cde9e49bfab3857",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
-          },
-          {
-            "name": "quarto-nav.js",
-            "ext": "js",
-            "kb": 9,
-            "date": "2026-07-01",
-            "sha": "a3e9c8c52dd54d78",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
-          },
-          {
-            "name": "cell-24-output-1.png",
-            "ext": "png",
-            "kb": 73,
-            "date": "2026-07-01",
-            "sha": "20705b99416400fd",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-24-output-1.png"
-          },
-          {
-            "name": "cell-34-output-1.png",
-            "ext": "png",
-            "kb": 89,
-            "date": "2026-07-01",
-            "sha": "83b26cb5b38f7f52",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-34-output-1.png"
-          },
-          {
-            "name": "cell-33-output-1.png",
-            "ext": "png",
-            "kb": 66,
-            "date": "2026-07-01",
-            "sha": "9871d22424a33df4",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-33-output-1.png"
-          },
-          {
-            "name": "cell-21-output-1.png",
-            "ext": "png",
-            "kb": 63,
-            "date": "2026-07-01",
-            "sha": "cf8ed93f65479315",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-21-output-1.png"
-          },
-          {
-            "name": "cell-27-output-1.png",
-            "ext": "png",
-            "kb": 55,
-            "date": "2026-07-01",
-            "sha": "fe2afccd6bb7081d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-27-output-1.png"
-          },
-          {
-            "name": "cell-19-output-1.png",
-            "ext": "png",
-            "kb": 58,
-            "date": "2026-07-01",
-            "sha": "7790940d748aa4ed",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-19-output-1.png"
-          },
-          {
-            "name": "cell-14-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-07-01",
-            "sha": "8573a7ea7cc56ad9",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-14-output-1.png"
-          },
-          {
-            "name": "cell-15-output-1.png",
-            "ext": "png",
-            "kb": 59,
-            "date": "2026-07-01",
-            "sha": "7eba804a8882d493",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-15-output-1.png"
-          },
-          {
-            "name": "cell-29-output-1.png",
-            "ext": "png",
-            "kb": 88,
-            "date": "2026-07-01",
-            "sha": "63b749244bf7fce4",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-29-output-1.png"
-          },
-          {
-            "name": "cell-28-output-1.png",
-            "ext": "png",
-            "kb": 67,
-            "date": "2026-07-01",
-            "sha": "f63d7472ab403f78",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-28-output-1.png"
-          },
-          {
-            "name": "cell-14-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-07-01",
-            "sha": "8573a7ea7cc56ad9",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-14-output-1.png"
-          },
-          {
-            "name": "cell-15-output-1.png",
-            "ext": "png",
-            "kb": 59,
-            "date": "2026-07-01",
-            "sha": "7eba804a8882d493",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-15-output-1.png"
-          },
-          {
-            "name": "cell-24-output-1.png",
-            "ext": "png",
-            "kb": 75,
-            "date": "2026-07-01",
-            "sha": "c8356e1a835fadd2",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-24-output-1.png"
-          },
-          {
-            "name": "cell-34-output-1.png",
-            "ext": "png",
-            "kb": 88,
-            "date": "2026-07-01",
-            "sha": "9331c4214723c5cd",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-34-output-1.png"
-          },
-          {
-            "name": "cell-33-output-1.png",
-            "ext": "png",
-            "kb": 66,
-            "date": "2026-07-01",
-            "sha": "8229577a3dfc4c6d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-33-output-1.png"
-          },
-          {
-            "name": "cell-21-output-1.png",
-            "ext": "png",
-            "kb": 63,
-            "date": "2026-07-01",
-            "sha": "dc4cf7b8bd534ba0",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-21-output-1.png"
-          },
-          {
-            "name": "cell-27-output-1.png",
-            "ext": "png",
-            "kb": 61,
-            "date": "2026-07-01",
-            "sha": "6b26c655b73be758",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-27-output-1.png"
-          },
-          {
-            "name": "cell-32-output-1.png",
-            "ext": "png",
-            "kb": 55,
-            "date": "2026-07-01",
-            "sha": "6038d05a7ea67c6d",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-32-output-1.png"
-          },
-          {
-            "name": "cell-38-output-1.png",
-            "ext": "png",
-            "kb": 57,
-            "date": "2026-07-01",
-            "sha": "0bc65d7d2f4ed721",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-38-output-1.png"
-          },
-          {
-            "name": "cell-39-output-1.png",
-            "ext": "png",
-            "kb": 62,
-            "date": "2026-07-01",
-            "sha": "06e34c8903add62c",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-39-output-1.png"
-          },
-          {
-            "name": "bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css",
-            "ext": "css",
-            "kb": 486,
-            "date": "2026-07-01",
-            "sha": "6383064d07eacf8e",
-            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css"
-          }
-        ],
-        "folder": "HL-009"
-      },
-      "lesson_plan": {
-        "doc": "",
-        "rel": "",
-        "has_meta_block": false,
-        "date": ""
-      },
-      "wiki_page": "https://hcaim.bme.hu/wiki/HL-009_Tutorial_%E2%80%94_Omics_Data",
-      "wiki_sections": [
-        {
-          "name": "(lead)",
-          "len": 160,
-          "empty": false,
-          "text": "Contents\n\n1 Administrative information\n2 Management information\n3 Expected preparation\n4 Acknowledgements, thanks\n5 Lesson materials\n6 Instructions for teachers"
-        },
-        {
-          "name": "Administrative information",
-          "len": 137,
-          "empty": false,
-          "text": "Title\n\nTutorial — Omics Data\n\nCODE\n\nHL-009\n\nDuration\n\n120\n\nTrack\n\nHealth\n\nLesson Type\n\ntutorial\n\nSelf-standing\n\nYes\n\nJob role\n\nResearcher"
-        },
-        {
-          "name": "Management information",
-          "len": 827,
-          "empty": false,
-          "text": "Author Organisation 1\n\nHU\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\nAuthor Organisation 2\n\nUNINA\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen, Tannistha Maiti\n\nStatus\n\nLesson plan: review\n\nLearning Outcomes:   \n\nThe student understands the different data aspects that are specific for omics data, such as batch effects, sparse data and high dimensionality.The students can apply methods (such as log transformation and variance filtering) to make the omics data more suited for machine learning applications.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nomics datasets (genomic, transcriptomic, proteomic, metabolomic),high dimensionality,batch effects,normalisation,sparsity,feature processing,integration with clinical and imaging modalities,"
-        },
-        {
-          "name": "Expected preparation",
-          "len": 156,
-          "empty": false,
-          "text": "Obligatory for students:   \n\nNone.\n\nOptional for students:   \n\nNone.\n\nReferences and background for students:   \n\nNone.\n\nRecommended for teachers:   \n\nNone."
-        },
-        {
-          "name": "Acknowledgements, thanks",
-          "len": 114,
-          "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
-        },
-        {
-          "name": "Lesson materials",
-          "len": 81,
-          "empty": false,
-          "text": "HL-009\n\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
-        },
-        {
-          "name": "Instructions for teachers",
-          "len": 1275,
-          "empty": false,
-          "text": "When?\n\nWhat?\n\nFirst 30 minutes of the lesson\n\nIntroduction to omics data. Discuss the different types of omics data (metabolomics, proteomics, transcriptomics etc.) and the characteristics that make omics data special (batch effects, sparse data, high dimensionality (p >> n).\n\nShort introduction of the RNA-sequencing case study and the RNA-sequencing data processing workflow (before the count table).\n\n60 minutes of the lesson\n\nStudents work on a case study (count table of an RNA-seq experiment):\n\n1.        The students shortly look at the mapping statistics and try to interpret them. \n2.        The students explore the raw count table (amount of zero values, library size [=total counts per sample], number of detected genes etc.) and the metadata.\n3.        The students create a PCA plot and perform hierarchical clustering on the raw count table. The students draw conclusions. \n4.        The students perform log-transformation (log2(count + 1)) and redo the PCA/clustering/drawing conclusions.\n5.        The students perform variance filtering and redo the PCA/clustering/drawing conclusions. \n\nLast 10 minutes of the lesson\n\nShort wrap up for the lesson (conclusions + discussion point that all different forms of omics data have their own specific challenges)."
-        }
-      ],
-      "realai": {
-        "involved": true,
-        "roles": [
-          {
-            "role": "reviewer",
-            "recipients": [
-              "tannistha.maiti@realai.eu",
-              "monira.majhabeen@realai.eu"
-            ]
-          }
-        ]
-      },
-      "completeness": {
-        "is_author": false,
-        "instructions_written": true,
-        "outcomes_present": true,
-        "materials_uploaded": true,
-        "wiki_missing": [],
-        "author_needs": [],
-        "ready_to_review": true
-      },
-      "sources": [
-        "wiki",
-        "materials"
-      ]
-    },
-    {
       "code": "HL-051",
       "track": "Health",
       "title": "HL-051 Hands-On with AI-Enhanced Clinical Tools",
@@ -34845,9 +34574,9 @@
         },
         {
           "name": "Acknowledgements, thanks",
-          "len": 114,
+          "len": 390,
           "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+          "text": "Ownership: RealAI wrote the starting text of this lesson plan in July 2026 as guidance notes, to get the author started. This learning event belongs to its author, who owns the lesson plan and the teaching material. RealAI is the reviewer, not the author. See the Talk page.\n\nThe PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
         },
         {
           "name": "Lesson materials",
@@ -34951,9 +34680,9 @@
         },
         {
           "name": "Acknowledgements, thanks",
-          "len": 114,
+          "len": 390,
           "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+          "text": "Ownership: RealAI wrote the starting text of this lesson plan in July 2026 as guidance notes, to get the author started. This learning event belongs to its author, who owns the lesson plan and the teaching material. RealAI is the reviewer, not the author. See the Talk page.\n\nThe PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
         },
         {
           "name": "Lesson materials",
@@ -35302,9 +35031,9 @@
         },
         {
           "name": "Acknowledgements, thanks",
-          "len": 114,
+          "len": 390,
           "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+          "text": "Ownership: RealAI wrote the starting text of this lesson plan in July 2026 as guidance notes, to get the author started. This learning event belongs to its author, who owns the lesson plan and the teaching material. RealAI is the reviewer, not the author. See the Talk page.\n\nThe PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
         },
         {
           "name": "Lesson materials",
@@ -38899,10 +38628,19 @@
       "action_summary": null,
       "author_activity": null,
       "materials": {
-        "count": 0,
-        "has": false,
-        "newest": "",
-        "files": [],
+        "count": 1,
+        "has": true,
+        "newest": "2026-11-19",
+        "files": [
+          {
+            "name": "Slides.pptx",
+            "ext": "pptx",
+            "kb": 374,
+            "date": "2026-11-19",
+            "sha": "c524e9f81144042c",
+            "rel": "4.2 Health & Lifescience/HL-011/Slides.pptx"
+          }
+        ],
         "folder": "HL-011"
       },
       "lesson_plan": {
@@ -38972,7 +38710,7 @@
         "is_author": false,
         "instructions_written": false,
         "outcomes_present": true,
-        "materials_uploaded": false,
+        "materials_uploaded": true,
         "wiki_missing": [
           "Instructions for teachers (detailed)"
         ],
@@ -41511,6 +41249,433 @@
       ]
     },
     {
+      "code": "HL-009",
+      "track": "Health",
+      "title": "HL-009 Tutorial — Omics Data",
+      "lesson_type": "Tutorial",
+      "duration": "120",
+      "job_role": "Researcher",
+      "status": "Ready for pilot",
+      "wiki_status": "Ready for pilot",
+      "due_date": "",
+      "mf_final": null,
+      "author": "HU · Bas van Gestel / René van der Ploeg",
+      "coauthor": "UNINA",
+      "reviewer": "RealAI · Tarry Singh, Monira Majhabeen, Tannistha Maiti",
+      "off_wiki": false,
+      "realai_wiki_gap": false,
+      "review_done": true,
+      "revision_requested": false,
+      "review_note": "Major revision. Part 2 is built on library-size confounding but never teaches the fix (CPM or size-factor normalisation), and Part 1's text mislabels log2(count+1) as 'normalization'; the definitions slide is in Dutch; the lesson plan is not on the wiki yet.",
+      "early_feedback": null,
+      "action_summary": null,
+      "author_activity": null,
+      "materials": {
+        "count": 142,
+        "has": true,
+        "newest": "2026-11-20",
+        "files": [
+          {
+            "name": "1_tutorial_omics_data_intro.pptx",
+            "ext": "pptx",
+            "kb": 4959,
+            "date": "2026-11-20",
+            "sha": "95f4a373fca55534",
+            "rel": "4.2 Health & Lifescience/HL-009/1_tutorial_omics_data_intro.pptx"
+          },
+          {
+            "name": "mermaid.min.js",
+            "ext": "js",
+            "kb": 2684,
+            "date": "2026-07-01",
+            "sha": "07e37dfa97b337cc",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.min.js"
+          },
+          {
+            "name": "quarto-search.js",
+            "ext": "js",
+            "kb": 42,
+            "date": "2026-07-01",
+            "sha": "1a23221f499b3993",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/quarto-search.js"
+          },
+          {
+            "name": "autocomplete.umd.js",
+            "ext": "js",
+            "kb": 94,
+            "date": "2026-07-01",
+            "sha": "cd9db3b7d812139a",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/autocomplete.umd.js"
+          },
+          {
+            "name": "clipboard.min.js",
+            "ext": "js",
+            "kb": 8,
+            "date": "2026-07-01",
+            "sha": "e17a1d816e13c082",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/clipboard/clipboard.min.js"
+          },
+          {
+            "name": "tabsets.js",
+            "ext": "js",
+            "kb": 2,
+            "date": "2026-07-01",
+            "sha": "a9c226bf70e82eaf",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tabsets/tabsets.js"
+          },
+          {
+            "name": "popper.min.js",
+            "ext": "js",
+            "kb": 19,
+            "date": "2026-07-01",
+            "sha": "4d50586b184724d3",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/popper.min.js"
+          },
+          {
+            "name": "fuse.min.js",
+            "ext": "js",
+            "kb": 22,
+            "date": "2026-07-01",
+            "sha": "c57339c3fa16b1d6",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-search/fuse.min.js"
+          },
+          {
+            "name": "anchor.min.js",
+            "ext": "js",
+            "kb": 5,
+            "date": "2026-07-01",
+            "sha": "69098e105d990f83",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/anchor.min.js"
+          },
+          {
+            "name": "quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css",
+            "ext": "css",
+            "kb": 3,
+            "date": "2026-07-01",
+            "sha": "34a771139d2d6c07",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css"
+          },
+          {
+            "name": "mermaid-init.js",
+            "ext": "js",
+            "kb": 13,
+            "date": "2026-07-01",
+            "sha": "a68a1b7deabddb8d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid-init.js"
+          },
+          {
+            "name": "quarto.js",
+            "ext": "js",
+            "kb": 26,
+            "date": "2026-07-01",
+            "sha": "4ecb60f215d96b2a",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/quarto.js"
+          },
+          {
+            "name": "tippy.css",
+            "ext": "css",
+            "kb": 1,
+            "date": "2026-07-01",
+            "sha": "5969f497d9158d76",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tippy.css"
+          },
+          {
+            "name": "tippy.umd.min.js",
+            "ext": "js",
+            "kb": 23,
+            "date": "2026-07-01",
+            "sha": "41181eeec6d7ba64",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-html/tippy.umd.min.js"
+          },
+          {
+            "name": "headroom.min.js",
+            "ext": "js",
+            "kb": 4,
+            "date": "2026-07-01",
+            "sha": "5b80cc4165a661a3",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/headroom.min.js"
+          },
+          {
+            "name": "cell-32-output-1.png",
+            "ext": "png",
+            "kb": 58,
+            "date": "2026-07-01",
+            "sha": "0aef2657d3e752e1",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-32-output-1.png"
+          },
+          {
+            "name": "cell-38-output-1.png",
+            "ext": "png",
+            "kb": 57,
+            "date": "2026-07-01",
+            "sha": "99178a578c6c1b75",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-38-output-1.png"
+          },
+          {
+            "name": "cell-39-output-1.png",
+            "ext": "png",
+            "kb": 64,
+            "date": "2026-07-01",
+            "sha": "54f40be8c57fdcc2",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-39-output-1.png"
+          },
+          {
+            "name": "mermaid.css",
+            "ext": "css",
+            "kb": 0,
+            "date": "2026-07-01",
+            "sha": "7cde9e49bfab3857",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-diagram/mermaid.css"
+          },
+          {
+            "name": "quarto-nav.js",
+            "ext": "js",
+            "kb": 9,
+            "date": "2026-07-01",
+            "sha": "a3e9c8c52dd54d78",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/site_libs/quarto-nav/quarto-nav.js"
+          },
+          {
+            "name": "cell-24-output-1.png",
+            "ext": "png",
+            "kb": 73,
+            "date": "2026-07-01",
+            "sha": "20705b99416400fd",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-24-output-1.png"
+          },
+          {
+            "name": "cell-34-output-1.png",
+            "ext": "png",
+            "kb": 89,
+            "date": "2026-07-01",
+            "sha": "83b26cb5b38f7f52",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-34-output-1.png"
+          },
+          {
+            "name": "cell-33-output-1.png",
+            "ext": "png",
+            "kb": 66,
+            "date": "2026-07-01",
+            "sha": "9871d22424a33df4",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-33-output-1.png"
+          },
+          {
+            "name": "cell-21-output-1.png",
+            "ext": "png",
+            "kb": 63,
+            "date": "2026-07-01",
+            "sha": "cf8ed93f65479315",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-21-output-1.png"
+          },
+          {
+            "name": "cell-27-output-1.png",
+            "ext": "png",
+            "kb": 55,
+            "date": "2026-07-01",
+            "sha": "fe2afccd6bb7081d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-27-output-1.png"
+          },
+          {
+            "name": "cell-19-output-1.png",
+            "ext": "png",
+            "kb": 58,
+            "date": "2026-07-01",
+            "sha": "7790940d748aa4ed",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-19-output-1.png"
+          },
+          {
+            "name": "cell-14-output-1.png",
+            "ext": "png",
+            "kb": 61,
+            "date": "2026-07-01",
+            "sha": "8573a7ea7cc56ad9",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-14-output-1.png"
+          },
+          {
+            "name": "cell-15-output-1.png",
+            "ext": "png",
+            "kb": 59,
+            "date": "2026-07-01",
+            "sha": "7eba804a8882d493",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-15-output-1.png"
+          },
+          {
+            "name": "cell-29-output-1.png",
+            "ext": "png",
+            "kb": 88,
+            "date": "2026-07-01",
+            "sha": "63b749244bf7fce4",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-29-output-1.png"
+          },
+          {
+            "name": "cell-28-output-1.png",
+            "ext": "png",
+            "kb": 67,
+            "date": "2026-07-01",
+            "sha": "f63d7472ab403f78",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/clean_files/figure-html/cell-28-output-1.png"
+          },
+          {
+            "name": "cell-14-output-1.png",
+            "ext": "png",
+            "kb": 61,
+            "date": "2026-07-01",
+            "sha": "8573a7ea7cc56ad9",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-14-output-1.png"
+          },
+          {
+            "name": "cell-15-output-1.png",
+            "ext": "png",
+            "kb": 59,
+            "date": "2026-07-01",
+            "sha": "7eba804a8882d493",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-15-output-1.png"
+          },
+          {
+            "name": "cell-24-output-1.png",
+            "ext": "png",
+            "kb": 75,
+            "date": "2026-07-01",
+            "sha": "c8356e1a835fadd2",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-24-output-1.png"
+          },
+          {
+            "name": "cell-34-output-1.png",
+            "ext": "png",
+            "kb": 88,
+            "date": "2026-07-01",
+            "sha": "9331c4214723c5cd",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-34-output-1.png"
+          },
+          {
+            "name": "cell-33-output-1.png",
+            "ext": "png",
+            "kb": 66,
+            "date": "2026-07-01",
+            "sha": "8229577a3dfc4c6d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-33-output-1.png"
+          },
+          {
+            "name": "cell-21-output-1.png",
+            "ext": "png",
+            "kb": 63,
+            "date": "2026-07-01",
+            "sha": "dc4cf7b8bd534ba0",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-21-output-1.png"
+          },
+          {
+            "name": "cell-27-output-1.png",
+            "ext": "png",
+            "kb": 61,
+            "date": "2026-07-01",
+            "sha": "6b26c655b73be758",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-27-output-1.png"
+          },
+          {
+            "name": "cell-32-output-1.png",
+            "ext": "png",
+            "kb": 55,
+            "date": "2026-07-01",
+            "sha": "6038d05a7ea67c6d",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-32-output-1.png"
+          },
+          {
+            "name": "cell-38-output-1.png",
+            "ext": "png",
+            "kb": 57,
+            "date": "2026-07-01",
+            "sha": "0bc65d7d2f4ed721",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-38-output-1.png"
+          },
+          {
+            "name": "cell-39-output-1.png",
+            "ext": "png",
+            "kb": 62,
+            "date": "2026-07-01",
+            "sha": "06e34c8903add62c",
+            "rel": "4.2 Health & Lifescience/HL-009/3_course_files/reader/noisy_files/figure-html/cell-39-output-1.png"
+          }
+        ],
+        "folder": "HL-009"
+      },
+      "lesson_plan": {
+        "doc": "",
+        "rel": "",
+        "has_meta_block": false,
+        "date": ""
+      },
+      "wiki_page": "https://hcaim.bme.hu/wiki/HL-009_Tutorial_%E2%80%94_Omics_Data",
+      "wiki_sections": [
+        {
+          "name": "(lead)",
+          "len": 160,
+          "empty": false,
+          "text": "Contents\n\n1 Administrative information\n2 Management information\n3 Expected preparation\n4 Acknowledgements, thanks\n5 Lesson materials\n6 Instructions for teachers"
+        },
+        {
+          "name": "Administrative information",
+          "len": 137,
+          "empty": false,
+          "text": "Title\n\nTutorial — Omics Data\n\nCODE\n\nHL-009\n\nDuration\n\n120\n\nTrack\n\nHealth\n\nLesson Type\n\ntutorial\n\nSelf-standing\n\nYes\n\nJob role\n\nResearcher"
+        },
+        {
+          "name": "Management information",
+          "len": 823,
+          "empty": false,
+          "text": "Author Organisation 1\n\nHU\n\nAuthor Person 1\n\nBas van Gestel / René van der Ploeg\n\nAuthor Organisation 2\n\nUNINA\n\nAuthor Person 2\n\nReviewer Organisation\n\nRealAI\n\nReviewer Person\n\nTarry Singh, Monira Majhabeen, Tannistha Maiti\n\nStatus\n\nReady for pilot\n\nLearning Outcomes:   \n\nThe student understands the different data aspects that are specific for omics data, such as batch effects, sparse data and high dimensionality.The students can apply methods (such as log transformation and variance filtering) to make the omics data more suited for machine learning applications.\n\nLearning Events to be completed before:   \n\nNone.\n\nKeywords: \n\nomics datasets (genomic, transcriptomic, proteomic, metabolomic),high dimensionality,batch effects,normalisation,sparsity,feature processing,integration with clinical and imaging modalities,"
+        },
+        {
+          "name": "Expected preparation",
+          "len": 156,
+          "empty": false,
+          "text": "Obligatory for students:   \n\nNone.\n\nOptional for students:   \n\nNone.\n\nReferences and background for students:   \n\nNone.\n\nRecommended for teachers:   \n\nNone."
+        },
+        {
+          "name": "Acknowledgements, thanks",
+          "len": 114,
+          "empty": false,
+          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+        },
+        {
+          "name": "Lesson materials",
+          "len": 81,
+          "empty": false,
+          "text": "HL-009\n\nThe materials of this learning event are available under CC BY-NC-SA 4.0."
+        },
+        {
+          "name": "Instructions for teachers",
+          "len": 1275,
+          "empty": false,
+          "text": "When?\n\nWhat?\n\nFirst 30 minutes of the lesson\n\nIntroduction to omics data. Discuss the different types of omics data (metabolomics, proteomics, transcriptomics etc.) and the characteristics that make omics data special (batch effects, sparse data, high dimensionality (p >> n).\n\nShort introduction of the RNA-sequencing case study and the RNA-sequencing data processing workflow (before the count table).\n\n60 minutes of the lesson\n\nStudents work on a case study (count table of an RNA-seq experiment):\n\n1.        The students shortly look at the mapping statistics and try to interpret them. \n2.        The students explore the raw count table (amount of zero values, library size [=total counts per sample], number of detected genes etc.) and the metadata.\n3.        The students create a PCA plot and perform hierarchical clustering on the raw count table. The students draw conclusions. \n4.        The students perform log-transformation (log2(count + 1)) and redo the PCA/clustering/drawing conclusions.\n5.        The students perform variance filtering and redo the PCA/clustering/drawing conclusions. \n\nLast 10 minutes of the lesson\n\nShort wrap up for the lesson (conclusions + discussion point that all different forms of omics data have their own specific challenges)."
+        }
+      ],
+      "realai": {
+        "involved": true,
+        "roles": [
+          {
+            "role": "reviewer",
+            "recipients": [
+              "tannistha.maiti@realai.eu",
+              "monira.majhabeen@realai.eu"
+            ]
+          }
+        ]
+      },
+      "completeness": {
+        "is_author": false,
+        "instructions_written": true,
+        "outcomes_present": true,
+        "materials_uploaded": true,
+        "wiki_missing": [],
+        "author_needs": [],
+        "ready_to_review": true
+      },
+      "sources": [
+        "wiki",
+        "materials"
+      ]
+    },
+    {
       "code": "HL-048",
       "track": "Health",
       "title": "HL-048 Communication of AI output to patients and peers",
@@ -42195,9 +42360,9 @@
         },
         {
           "name": "Acknowledgements, thanks",
-          "len": 114,
+          "len": 390,
           "empty": false,
-          "text": "The PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
+          "text": "Ownership: RealAI wrote the starting text of this lesson plan in July 2026 as guidance notes, to get the author started. This learning event belongs to its author, who owns the lesson plan and the teaching material. RealAI is the reviewer, not the author. See the Talk page.\n\nThe PANORAIMA programme was Co-Financed by the Connecting Europe Facility of the European Union Under Grant № ???."
         },
         {
           "name": "Lesson materials",
